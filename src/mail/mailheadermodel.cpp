@@ -66,3 +66,5 @@ void MailHeaderModel::updateHeaderType(const int row, const Header headerName)
     header.header = headerName;
     Q_EMIT dataChanged(index(row, 0), index(row, 0), { NameRole });
 }
+
+#include "moc_mailheadermodel.cpp"

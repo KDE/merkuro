@@ -85,3 +85,5 @@ void Importer::setImportAction(QAction *importAction)
         });
     }
 }
+
+#include "moc_importer.cpp"

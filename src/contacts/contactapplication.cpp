@@ -66,3 +66,5 @@ void ContactApplication::saveWindowGeometry(QQuickWindow *window)
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();
 }
+
+#include "moc_contactapplication.cpp"

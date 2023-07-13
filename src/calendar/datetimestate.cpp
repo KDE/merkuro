@@ -84,3 +84,5 @@ void DateTimeState::setSelectedYear(const int year)
 {
     setSelectedYearMonthDay(year, m_selectedDate.month(), m_selectedDate.day());
 }
+
+#include "moc_datetimestate.cpp"

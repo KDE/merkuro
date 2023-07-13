@@ -8,3 +8,5 @@ QString Helper::iconName(const QIcon &icon) const
 {
     return icon.name();
 }
+
+#include "moc_helper.cpp"

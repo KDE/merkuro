@@ -32,3 +32,5 @@ QVector<KActionCollection *> MailApplication::actionCollections() const
         mCollection,
     };
 }
+
+#include "moc_mailapplication.cpp"

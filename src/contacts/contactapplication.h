@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
-
+#pragma once
 #include <abstractapplication.h>
 class QQuickWindow;
 class ContactApplication : public AbstractApplication

@@ -194,3 +194,5 @@ void AbstractApplication::quit()
 {
     qGuiApp->exit();
 }
+
+#include "moc_abstractapplication.cpp"

@@ -491,3 +491,5 @@ bool CalendarApplication::showMenubar() const
 #ifndef UNITY_CMAKE_SUPPORT
 Q_DECLARE_METATYPE(KCalendarCore::Incidence::Ptr)
 #endif
+
+#include "moc_calendarapplication.cpp"

@@ -68,3 +68,5 @@ QHash<int, QByteArray> IdentityModel::roleNames() const
         {EmailRole, QByteArrayLiteral("email")}
     };
 }
+
+#include "moc_identitymodel.cpp"
