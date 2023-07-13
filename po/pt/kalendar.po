@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-12 00:48+0000\n"
-"PO-Revision-Date: 2023-07-02 02:15+0100\n"
+"POT-Creation-Date: 2023-07-13 00:50+0000\n"
+"PO-Revision-Date: 2023-07-13 00:37+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-POFile-SpellExtra: RSVP Kalendar Schwan Clau mín Seg Mín Felipe\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Kinoshita QR Azteca Blog Men Jr PCS Pager Srt enc\n"
-"X-POFile-SpellExtra: resp Meet SDE jpg BCC\n"
+"X-POFile-SpellExtra: resp Meet SDE jpg BCC ics vcs\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -226,11 +226,10 @@ msgid "Task"
 msgstr "Tarefa"
 
 #: calendar/main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calendars"
+#, kde-format
 msgctxt "@title"
 msgid "Calendar"
-msgstr "Calendários"
+msgstr "Calendário"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -391,10 +390,10 @@ msgid "An error occurred importing incidences: %1"
 msgstr "Ocorreu um erro ao importar as incidências: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:62
-#, fuzzy, kde-format
-#| msgid "New calendar  created from imported file successfully."
+#, kde-format
 msgid "New calendar created from imported file successfully."
-msgstr "Foi criado o calendário novo a partir do importado com sucesso."
+msgstr ""
+"Foi criado o calendário novo a partir do ficheiro importado com sucesso."
 
 #: calendar/qml/Controls/ImportHandler.qml:88
 #, kde-format
@@ -404,7 +403,7 @@ msgstr "Importar um calendário"
 #: calendar/qml/Controls/ImportHandler.qml:90
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
-msgstr ""
+msgstr "Ficheiros de calendário (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:107
 #, kde-format
@@ -2294,17 +2293,15 @@ msgid "Other:"
 msgstr "Outro:"
 
 #: contacts/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title"
 msgid "Contact"
 msgstr "Contacto"
 
 #: contacts/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Address Book:"
+#, kde-format
 msgid "Address Book Application"
-msgstr "Livro de Endereços:"
+msgstr "Aplicação de Livro de Endereços"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2807,8 +2804,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: contacts/qml/private/ContactPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Cancelar"
@@ -2978,8 +2974,7 @@ msgid "Creating QR code failed"
 msgstr "Não foi possível criar o código QR"
 
 #: contacts/qml/Settings.qml:13
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuração"
@@ -3002,13 +2997,12 @@ msgstr "Abrir a Barra de Comandos"
 #: lib/abstractapplication.cpp:168
 #, kde-format
 msgid "About %1"
-msgstr ""
+msgstr "Acerca do %1"
 
 #: lib/abstractapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About KDE"
-msgstr "Acerca do Kalendar"
+msgstr "Acerca do KDE"
 
 #: lib/abstractapplication.cpp:188
 #, kde-format
@@ -3056,17 +3050,15 @@ msgid "Unknown"
 msgstr "Desconhecido"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgctxt "@title"
 msgid "Mail"
 msgstr "E-mail"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
+#, kde-format
 msgid "EMail Client Application"
-msgstr "Aplicação de Calendário"
+msgstr "Cliente de E-Mail"
 
 #: mail/mime/attachmentmodel.cpp:222
 #, kde-format
@@ -3322,28 +3314,3 @@ msgstr "Criar uma Nova Marca…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Adicionar Rapidamente uma Nova Marca."
-
-#, fuzzy
-#~| msgid "Address Book:"
-#~ msgctxt "@title"
-#~ msgid "Address Book"
-#~ msgstr "Livro de Endereços:"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "Contas de E-mail"
-
-#~ msgid "Add New mail account…"
-#~ msgstr "Adicionar uma nova conta de e-mail…"
-
-#~ msgid "Contacts View"
-#~ msgstr "Área de Contactos"
-
-#~ msgid "Mail View"
-#~ msgstr "Vista de E-Mail"
-
-#~ msgid "Ctrl+7"
-#~ msgstr "Ctrl+7"
-
-#~ msgctxt "@title"
-#~ msgid "Kalendar"
-#~ msgstr "Kalendar"
