@@ -1,37 +1,37 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-set(kalendar_components_SRCS)
+set(merkuro_components_SRCS)
 
-ecm_qt_declare_logging_category(kalendar_components_SRCS
-    HEADER kalendar_components_debug.h
-    IDENTIFIER "KALENDAR_components_LOG"
-    CATEGORY_NAME org.kde.kalendar.components
-    DESCRIPTION "kalendar components"
-    EXPORT KALENDAR
+ecm_qt_declare_logging_category(merkuro_components_SRCS
+    HEADER merkuro_components_debug.h
+    IDENTIFIER "merkuro_components_LOG"
+    CATEGORY_NAME org.kde.merkuro.components
+    DESCRIPTION "merkuro components"
+    EXPORT merkuro
 )
 
 ecm_qt_export_logging_category(
-    IDENTIFIER "KALENDAR_components_LOG"
-    CATEGORY_NAME "org.kde.kalendar.components"
-    DESCRIPTION "Kalendar - components"
-    EXPORT KALENDAR
+    IDENTIFIER "merkuro_components_LOG"
+    CATEGORY_NAME "org.kde.merkuro.components"
+    DESCRIPTION "merkuro - components"
+    EXPORT merkuro
 )
 
-add_library(kalendar_components_static STATIC ${kalendar_components_SRCS})
-set_target_properties(kalendar_components_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(kalendar_components_static PUBLIC kalendar_lib)
+add_library(merkuro_components_static STATIC ${merkuro_components_SRCS})
+set_target_properties(merkuro_components_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(merkuro_components_static PUBLIC merkuro_lib)
 
-ecm_add_qml_module(kalendar_components_plugin URI "org.kde.kalendar.components" VERSION 1.0)
+ecm_add_qml_module(merkuro_components_plugin URI "org.kde.merkuro.components" VERSION 1.0)
 
-target_sources(kalendar_components_plugin PRIVATE
+target_sources(merkuro_components_plugin PRIVATE
     componentsplugin.cpp
     componentsplugin.h
     helper.cpp
     helper.h
 )
 
-ecm_target_qml_sources(kalendar_components_plugin SOURCES
+ecm_target_qml_sources(merkuro_components_plugin SOURCES
     # Shell components
     qml/BaseApplication.qml
     qml/KQuickCommandBarPage.qml
@@ -56,8 +56,8 @@ ecm_target_qml_sources(kalendar_components_plugin SOURCES
     qml/ColoredCheckbox.qml
 )
 
-target_link_libraries(kalendar_components_plugin PUBLIC kalendar_components_static)
+target_link_libraries(merkuro_components_plugin PUBLIC merkuro_components_static)
 
-ecm_finalize_qml_module(kalendar_components_plugin
+ecm_finalize_qml_module(merkuro_components_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR}
     BUILD_SHARED_LIBS OFF)

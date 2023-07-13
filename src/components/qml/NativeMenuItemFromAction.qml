@@ -3,7 +3,7 @@
 
 import QtQuick 2.7
 import Qt.labs.platform 1.1
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
 MenuItem {
     required property var action

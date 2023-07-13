@@ -8,8 +8,8 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 //import org.kde.kirigamiaddons.treeview 1.0 as KirigamiAddonsTreeView
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -28,7 +28,7 @@ TreeListView {
             allDay: todoData.allDay,
             durationString: todoData.durationString
         };
-        KalendarUiUtils.setUpView(retainedTodoData, incidenceItem);
+        CalendarUiUtils.setUpView(retainedTodoData, incidenceItem);
     }
 
     property var retainedTodoData: ({})
@@ -37,42 +37,42 @@ TreeListView {
     property date currentDate: new Date()
     property var filterCollectionDetails
 
-    property int showCompleted: Kalendar.TodoSortFilterProxyModel.ShowAll
-    property int sortBy: Kalendar.TodoSortFilterProxyModel.SummaryColumn
+    property int showCompleted: Calendar.TodoSortFilterProxyModel.ShowAll
+    property int sortBy: Calendar.TodoSortFilterProxyModel.SummaryColumn
     property bool ascendingOrder: false
     property bool dragDropEnabled: true
 
     property alias model: todoModel
-    readonly property bool isDark: KalendarUiUtils.darkMode
+    readonly property bool isDark: CalendarUiUtils.darkMode
 
     currentIndex: -1
     clip: true
 
     section {
-        criteria: sortBy === Kalendar.TodoSortFilterProxyModel.SummaryColumn ?
+        criteria: sortBy === Calendar.TodoSortFilterProxyModel.SummaryColumn ?
             ViewSection.FirstCharacter : ViewSection.FullString
         property: switch(sortBy) {
-            case Kalendar.TodoSortFilterProxyModel.PriorityColumn:
+            case Calendar.TodoSortFilterProxyModel.PriorityColumn:
                 return "topMostParentPriority";
-            case Kalendar.TodoSortFilterProxyModel.DueDateColumn:
+            case Calendar.TodoSortFilterProxyModel.DueDateColumn:
                 return "topMostParentDueDate";
-            case Kalendar.TodoSortFilterProxyModel.SummaryColumn:
+            case Calendar.TodoSortFilterProxyModel.SummaryColumn:
             default:
                 return "topMostParentSummary";
         }
         delegate: Kirigami.ListSectionHeader {
             id: listSection
 
-            readonly property bool dateSort: root.sortBy === Kalendar.TodoSortFilterProxyModel.DueDateColumn
+            readonly property bool dateSort: root.sortBy === Calendar.TodoSortFilterProxyModel.DueDateColumn
             readonly property bool isOverdue: dateSort && section === i18n("Overdue")
             readonly property bool isToday: dateSort && section === i18n("Today")
 
             text: {
                 switch(root.sortBy) {
-                    case Kalendar.TodoSortFilterProxyModel.PriorityColumn:
+                    case Calendar.TodoSortFilterProxyModel.PriorityColumn:
                         return section !== "--" ? i18n("Priority %1", section) : i18n("No set priority");
-                    case Kalendar.TodoSortFilterProxyModel.DueDateColumn:
-                    case Kalendar.TodoSortFilterProxyModel.SummaryColumn:
+                    case Calendar.TodoSortFilterProxyModel.DueDateColumn:
+                    case Calendar.TodoSortFilterProxyModel.SummaryColumn:
                     default:
                         return section;
                 }
@@ -109,50 +109,50 @@ TreeListView {
         anchors.fill: parent
         enabled: !Kirigami.Settings.isMobile
         parent: background
-        onClicked: KalendarUiUtils.appMain.incidenceInfoViewer.close()
+        onClicked: CalendarUiUtils.appMain.incidenceInfoViewer.close()
         propagateComposedEvents: true
     }
 
     Kirigami.PlaceholderMessage {
         id: allTasksPlaceholderMessage
         anchors.centerIn: parent
-        visible: (!Kalendar.Filter.collectionId || Kalendar.Filter.collectionId < 0) && Kalendar.CalendarManager.enabledTodoCollections.length === 0 && parent.count === 0
+        visible: (!Calendar.Filter.collectionId || Calendar.Filter.collectionId < 0) && Calendar.CalendarManager.enabledTodoCollections.length === 0 && parent.count === 0
         text: i18n("No task calendars enabled.")
     }
 
     Kirigami.PlaceholderMessage {
         id: collectionPlaceholderMessage
         anchors.centerIn: parent
-        visible: Kalendar.Filter && Kalendar.Filter.collectionId >= 0 && !Kalendar.CalendarManager.enabledTodoCollections.includes(Kalendar.Filter.collectionId) && parent.count === 0
+        visible: Calendar.Filter && Calendar.Filter.collectionId >= 0 && !Calendar.CalendarManager.enabledTodoCollections.includes(Calendar.Filter.collectionId) && parent.count === 0
         text: i18n("Calendar is not enabled")
         helpfulAction: Kirigami.Action {
             icon.name: "gtk-yes"
             text: i18n("Enable")
-            onTriggered: Kalendar.CalendarManager.toggleCollection(root.filterCollectionDetails.id)
+            onTriggered: Calendar.CalendarManager.toggleCollection(root.filterCollectionDetails.id)
         }
     }
 
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         visible: parent.count === 0 && !allTasksPlaceholderMessage.visible && !collectionPlaceholderMessage.visible
-        text: root.showCompleted === Kalendar.TodoSortFilterProxyModel.ShowCompleteOnly ?
+        text: root.showCompleted === Calendar.TodoSortFilterProxyModel.ShowCompleteOnly ?
             i18n("No tasks completed") : i18n("No tasks left to complete")
         helpfulAction: Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: KalendarUiUtils.setUpAdd(Kalendar.IncidenceWrapper.TypeTodo, new Date(), Kalendar.Filter.collectionId);
+            onTriggered: CalendarUiUtils.setUpAdd(Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
         }
     }
 
-    sourceModel: Kalendar.TodoSortFilterProxyModel {
+    sourceModel: Calendar.TodoSortFilterProxyModel {
         id: todoModel
-        calendar: Kalendar.CalendarManager.calendar
-        incidenceChanger: Kalendar.CalendarManager.incidenceChanger
-        filterObject: Kalendar.Filter
+        calendar: Calendar.CalendarManager.calendar
+        incidenceChanger: Calendar.CalendarManager.incidenceChanger
+        filterObject: Calendar.Filter
         showCompleted: root.showCompleted
         sortBy: root.sortBy
         sortAscending: root.ascendingOrder
-        showCompletedSubtodosInIncomplete: Kalendar.Config.showCompletedSubtodos
+        showCompletedSubtodosInIncomplete: Calendar.Config.showCompletedSubtodos
 
     }
     delegate: AbstractTreeItem {
@@ -232,13 +232,13 @@ TreeListView {
             onReleased: listItem.Drag.drop()
 
             onViewClicked: listItem.clicked()
-            onEditClicked: KalendarUiUtils.setUpEdit(model.incidencePtr)
-            onDeleteClicked: KalendarUiUtils.setUpDelete(model.incidencePtr,
+            onEditClicked: CalendarUiUtils.setUpEdit(model.incidencePtr)
+            onDeleteClicked: CalendarUiUtils.setUpDelete(model.incidencePtr,
                                                          model.endTime ? model.endTime :
                                                                          model.startTime ? model.startTime :
                                                                                            null)
             onTodoCompletedClicked: model.checked = model.checked === 0 ? 2 : 0
-            onAddSubTodoClicked: KalendarUiUtils.setUpAddSubTodo(parentWrapper)
+            onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
 
             GridLayout {
                 id: todoItemContents

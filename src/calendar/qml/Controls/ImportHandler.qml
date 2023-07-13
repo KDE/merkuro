@@ -7,8 +7,8 @@ import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.0
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kalendar.calendar 1.0 as Calendar
-import org.kde.kalendar.calendar.private 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.calendar.private 1.0
 
 Importer {
     id: root

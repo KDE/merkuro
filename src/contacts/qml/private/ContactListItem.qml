@@ -12,7 +12,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 
 Kirigami.BasicListItem {
     id: listItem

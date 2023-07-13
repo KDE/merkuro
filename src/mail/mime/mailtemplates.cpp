@@ -842,7 +842,7 @@ KMime::Message::Ptr MailTemplates::createMessage(KMime::Message::Ptr existingMes
 
     mail->date()->setDateTime(QDateTime::currentDateTime());
     mail->userAgent()->fromUnicodeString(
-        QStringLiteral("%1/%2(%3)").arg(QString::fromLocal8Bit("Kalendar"), QStringLiteral("0.1"), QSysInfo::prettyProductName()),
+        QStringLiteral("%1/%2(%3)").arg(QString::fromLocal8Bit("Merkuro"), QStringLiteral("0.1"), QSysInfo::prettyProductName()),
         "utf-8");
 
     setRecipients(*mail, {to, cc, bcc});
@@ -853,7 +853,7 @@ KMime::Message::Ptr MailTemplates::createMessage(KMime::Message::Ptr existingMes
     mail->subject(true)->fromUnicodeString(subject, "utf-8");
     if (!mail->messageID(false)) {
         // A globally unique messageId that doesn't leak the local hostname
-        const QString messageId = QLatin1Char('<') + QUuid::createUuid().toString().mid(1, 36).remove(QLatin1Char('-')) + QStringLiteral("@kalendar>");
+        const QString messageId = QLatin1Char('<') + QUuid::createUuid().toString().mid(1, 36).remove(QLatin1Char('-')) + QStringLiteral("@merkuro>");
         mail->messageID(true)->fromUnicodeString(messageId, "utf-8");
     }
     if (!mail->date(true)->dateTime().isValid()) {
@@ -935,7 +935,7 @@ MailTemplates::createIMipMessage(const QString &from, const Recipients &recipien
 
     // Set the headers
     message->userAgent()->fromUnicodeString(
-        QStringLiteral("%1/%2(%3)").arg(QString::fromLocal8Bit("Kalendar"), QStringLiteral("0.1"), QSysInfo::prettyProductName()),
+        QStringLiteral("%1/%2(%3)").arg(QString::fromLocal8Bit("Merkuro"), QStringLiteral("0.1"), QSysInfo::prettyProductName()),
         "utf-8");
     message->from()->fromUnicodeString(from, "utf-8");
 

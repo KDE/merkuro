@@ -6,8 +6,8 @@ import QtQuick.Controls 2.12 as QQC2
 import QtQuick.Layouts 1.10
 import org.kde.kirigami 2.15 as Kirigami
 import QtQuick.Window 2.15
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.components 1.0
 
 QQC2.MenuBar {
     id: bar
@@ -181,7 +181,7 @@ QQC2.MenuBar {
         }
 
         QQC2.MenuItem {
-            text: i18nc("@action:menu", "Kalendar Handbook") // todo
+            text: i18nc("@action:menu", "Calendar Handbook") // todo
             visible: false
         }
     }

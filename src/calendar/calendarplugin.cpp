@@ -29,7 +29,7 @@
 
 void CalendarPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QByteArray("org.kde.kalendar.calendar"));
+    Q_ASSERT(uri == QByteArray("org.kde.merkuro.calendar"));
 
     qmlRegisterSingletonType<Utils>(uri, 1, 0, "Utils", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
@@ -89,7 +89,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     qmlRegisterType<MonthModel>(uri, 1, 0, "MonthModel");
     qmlRegisterType<InfiniteCalendarViewModel>(uri, 1, 0, "InfiniteCalendarViewModel");
 
-    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/KalendarUiUtils.qml")), "org.kde.kalendar.utils", 1, 0, "KalendarUiUtils");
+    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/CalendarUiUtils.qml")), "org.kde.merkuro.utils", 1, 0, "CalendarUiUtils");
 
     qRegisterMetaType<Akonadi::ETMCalendar::Ptr>();
     qRegisterMetaType<QAbstractProxyModel *>("QAbstractProxyModel*");

@@ -12,7 +12,7 @@
 #include "calendarconfig.h"
 
 // Akonadi
-#include "kalendar_calendar_debug.h"
+#include "merkuro_calendar_debug.h"
 
 #include <Akonadi/AgentFilterProxyModel>
 #include <Akonadi/AgentInstanceModel>
@@ -511,7 +511,7 @@ void CalendarManager::updateIncidenceDates(IncidenceWrapper *incidenceWrapper, i
             // All occurrences
             KCalendarCore::Incidence::Ptr oldIncidence(incidenceWrapper->incidencePtr()->clone());
             setNewDates(incidenceWrapper->incidencePtr());
-            qCDebug(KALENDAR_CALENDAR_LOG) << incidenceWrapper->incidenceStart();
+            qCDebug(MERKURO_CALENDAR_LOG) << incidenceWrapper->incidenceStart();
             m_changer->modifyIncidence(item, oldIncidence);
             break;
         }
@@ -528,7 +528,7 @@ void CalendarManager::updateIncidenceDates(IncidenceWrapper *incidenceWrapper, i
                 m_changer->createIncidence(newIncidence, m_calendar->collection(incidenceWrapper->collectionId()));
                 m_changer->endAtomicOperation();
             } else {
-                qCDebug(KALENDAR_CALENDAR_LOG) << i18n("Unable to add the exception item to the calendar. No change will be done.");
+                qCDebug(MERKURO_CALENDAR_LOG) << i18n("Unable to add the exception item to the calendar. No change will be done.");
             }
             break;
         }
@@ -619,7 +619,7 @@ void CalendarManager::changeIncidenceCollection(Akonadi::Item item, qint64 colle
     auto job = new Akonadi::ItemMoveJob(item, newCollection);
     // Add some type of check here?
     connect(job, &KJob::result, job, [this, job, item, collectionId]() {
-        qCDebug(KALENDAR_CALENDAR_LOG) << job->error();
+        qCDebug(MERKURO_CALENDAR_LOG) << job->error();
 
         if (!job->error()) {
             const auto allChildren = m_calendar->childIncidences(item.id());
@@ -676,7 +676,7 @@ void CalendarManager::setCollectionColor(qint64 collectionId, const QColor &colo
     auto modifyJob = new Akonadi::CollectionModifyJob(collection);
     connect(modifyJob, &Akonadi::CollectionModifyJob::result, this, [this, collectionId, color](KJob *job) {
         if (job->error()) {
-            qCWarning(KALENDAR_CALENDAR_LOG) << "Error occurred modifying collection color: " << job->errorString();
+            qCWarning(MERKURO_CALENDAR_LOG) << "Error occurred modifying collection color: " << job->errorString();
         } else {
             m_baseModel->setColor(collectionId, color);
         }
@@ -717,7 +717,7 @@ void CalendarManager::deleteCollection(qint64 collectionId)
         auto job = new Akonadi::CollectionDeleteJob(collection, this);
         connect(job, &Akonadi::CollectionDeleteJob::result, this, [](KJob *job) {
             if (job->error()) {
-                qCWarning(KALENDAR_CALENDAR_LOG) << "Error occurred deleting collection: " << job->errorString();
+                qCWarning(MERKURO_CALENDAR_LOG) << "Error occurred deleting collection: " << job->errorString();
             }
         });
         return;

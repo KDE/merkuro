@@ -3,7 +3,7 @@
 
 import QtQuick 2.7
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
 Kirigami.Action {
     required property var action

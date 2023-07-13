@@ -8,8 +8,8 @@ import org.kde.kirigami 2.15 as Kirigami
 import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kalendar.mail 1.0
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.mail 1.0
+import org.kde.merkuro.components 1.0
 
 import './mailboxselector'
 

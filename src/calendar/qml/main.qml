@@ -12,10 +12,10 @@ import QtGraphicalEffects 1.12
 
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.utils 1.0
-import org.kde.kalendar.components 1.0
-import org.kde.kalendar.calendar.private 1.0
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.utils 1.0
+import org.kde.merkuro.components 1.0
+import org.kde.merkuro.calendar.private 1.0
 
 BaseApplication {
     id: root
@@ -75,7 +75,7 @@ BaseApplication {
 
     Component.onCompleted: {
         CalendarApplication.calendar = CalendarManager.calendar
-        KalendarUiUtils.appMain = root; // Most of our util functions use things defined here in main
+        CalendarUiUtils.appMain = root; // Most of our util functions use things defined here in main
 
         if (Config.lastOpenedView === -1) {
             Kirigami.Settings.isMobile ? scheduleViewAction.trigger() : monthViewAction.trigger();
@@ -113,7 +113,7 @@ BaseApplication {
         shortcut: "Delete"
         onTriggered: {
             if(root.openOccurrence) {
-                KalendarUiUtils.setUpDelete(root.openOccurrence.incidencePtr,
+                CalendarUiUtils.setUpDelete(root.openOccurrence.incidencePtr,
                                             root.openOccurrence.startTime);
             }
         }
@@ -176,11 +176,11 @@ BaseApplication {
         }
 
         function onCreateNewEvent() {
-            KalendarUiUtils.setUpAdd(IncidenceWrapper.TypeEvent);
+            CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeEvent);
         }
 
         function onCreateNewTodo() {
-            KalendarUiUtils.setUpAdd(IncidenceWrapper.TypeTodo);
+            CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeTodo);
         }
 
         function onUndo() {
@@ -249,13 +249,13 @@ BaseApplication {
 
         function onOpenIncidence(incidenceData, occurrenceDate) {
             // Switch to an event view if the current view is not compatible with the current incidence type
-            if (pageStack.currentItem.mode & (CalendarApplication.Todo | KalendarApplication.Event) ||
+            if (pageStack.currentItem.mode & (CalendarApplication.Todo | CalendarApplication.Event) ||
                 (pageStack.currentItem.mode === CalendarApplication.Todo && incidenceData.incidenceType !== IncidenceWrapper.TypeTodo)) {
 
                 Kirigami.Settings.isMobile ? dayViewAction.trigger() : weekViewAction.trigger();
             }
 
-            KalendarUiUtils.setUpView(incidenceData);
+            CalendarUiUtils.setUpView(incidenceData);
             DateTimeState.selectedDate = occurrenceDate;
         }
     }
@@ -321,10 +321,10 @@ BaseApplication {
 
             default:
                 // Should not happen
-                return 'Kalendar';
+                return 'Calendar';
         }
     } else {
-        return 'Kalendar';
+        return 'Calendar';
     }
 
     menuBar: Loader {
@@ -633,7 +633,7 @@ BaseApplication {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     mode: pageStack.currentItem ? pageStack.currentItem.mode : CalendarApplication.Event
-                    isDark: KalendarUiUtils.darkMode
+                    isDark: CalendarUiUtils.darkMode
                     clip: true
                 }
             }
@@ -657,7 +657,7 @@ BaseApplication {
 
     Connections {
         target: CalendarManager
-        function onUpdateIncidenceDatesCompleted() { KalendarUiUtils.reenableDragOnCurrentView(); }
+        function onUpdateIncidenceDatesCompleted() { CalendarUiUtils.reenableDragOnCurrentView(); }
     }
 
     property alias deleteIncidencePageComponent: deleteIncidencePageComponent
@@ -747,7 +747,7 @@ BaseApplication {
             }
             onCancel: {
                 caughtDelegate.caught = false;
-                KalendarUiUtils.reenableDragOnCurrentView();
+                CalendarUiUtils.reenableDragOnCurrentView();
                 closeDialog();
             }
         }

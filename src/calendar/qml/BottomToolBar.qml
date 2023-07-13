@@ -6,8 +6,8 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kalendar.components 1.0
-import org.kde.kalendar.calendar 1.0 as Calendar
+import org.kde.merkuro.components 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
 
 Kirigami.NavigationTabBar {
     actions: [

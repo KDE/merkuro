@@ -6,8 +6,8 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -193,7 +193,7 @@ Item {
         }
 
         QQC2.Label {
-            text: modelData.incidenceType === Kalendar.IncidenceWrapper.TypeTodo ?
+            text: modelData.incidenceType === Calendar.IncidenceWrapper.TypeTodo ?
                 incidenceDelegate.occurrenceEndDate.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat) :
                 incidenceDelegate.occurrenceDate.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)
             font.pointSize: parent.spaceRestricted ? Kirigami.Theme.smallFont.pointSize :
@@ -214,10 +214,10 @@ Item {
         drag.target: !Kirigami.Settings.isMobile && !modelData.isReadOnly && incidenceDelegate.dragDropEnabled ? parent : undefined
         onReleased: parent.Drag.drop()
 
-        onViewClicked: KalendarUiUtils.setUpView(modelData, incidenceDelegate)
-        onEditClicked: KalendarUiUtils.setUpEdit(modelData.incidencePtr)
-        onDeleteClicked: KalendarUiUtils.setUpDelete(modelData.incidencePtr, deleteDate)
-        onTodoCompletedClicked: KalendarUiUtils.completeTodo(incidencePtr)
-        onAddSubTodoClicked: KalendarUiUtils.setUpAddSubTodo(parentWrapper)
+        onViewClicked: CalendarUiUtils.setUpView(modelData, incidenceDelegate)
+        onEditClicked: CalendarUiUtils.setUpEdit(modelData.incidencePtr)
+        onDeleteClicked: CalendarUiUtils.setUpDelete(modelData.incidencePtr, deleteDate)
+        onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
+        onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
     }
 }

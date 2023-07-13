@@ -5,7 +5,7 @@ import QtQuick 2.15
 import org.kde.kirigami 2.18 as Kirigami
 import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
-import org.kde.kalendar.calendar 1.0
+import org.kde.merkuro.calendar 1.0
 
 Kirigami.CategorizedSettings {
     objectName: "settingsPage"
@@ -26,7 +26,7 @@ Kirigami.CategorizedSettings {
             page: Qt.resolvedUrl("CalendarSettingsPage.qml")
         },
         Kirigami.SettingAction {
-            text: i18n("About Kalendar")
+            text: i18n("About Merkuro Calendar")
             icon.name: "help-about"
             page: Qt.resolvedUrl("AboutPage.qml")
         }

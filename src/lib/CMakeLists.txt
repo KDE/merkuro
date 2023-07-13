@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 
-add_library(kalendar_lib STATIC)
-target_sources(kalendar_lib PRIVATE
+add_library(merkuro_lib STATIC)
+target_sources(merkuro_lib PRIVATE
     colorproxymodel.cpp
     sortedcollectionproxymodel.cpp
     colorproxymodel.h
@@ -16,10 +16,10 @@ target_sources(kalendar_lib PRIVATE
     commandbarfiltermodel.cpp
     commandbarfiltermodel.h
 )
-set_property(TARGET kalendar_lib PROPERTY POSITION_INDEPENDENT_CODE ON)
+set_property(TARGET merkuro_lib PROPERTY POSITION_INDEPENDENT_CODE ON)
 
-target_include_directories(kalendar_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(kalendar_lib PUBLIC
+target_include_directories(merkuro_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(merkuro_lib PUBLIC
     Qt::Core
     Qt::Gui
     Qt::Qml

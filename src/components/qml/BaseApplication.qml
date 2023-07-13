@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.15
 
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
 Kirigami.ApplicationWindow {

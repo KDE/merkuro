@@ -21,7 +21,7 @@
 #include <vector>
 
 #include "calendaradaptor.h"
-#include "kalendar_calendar_debug.h"
+#include "merkuro_calendar_debug.h"
 #include "mousetracker.h"
 
 CalendarApplication::CalendarApplication(QObject *parent)
@@ -38,7 +38,7 @@ CalendarApplication::CalendarApplication(QObject *parent)
 
     KConfig cfg(QStringLiteral("defaultcalendarrc"));
     KConfigGroup grp(&cfg, QStringLiteral("General"));
-    grp.writeEntry(QStringLiteral("ApplicationId"), QStringLiteral("org.kde.kalendar"));
+    grp.writeEntry(QStringLiteral("ApplicationId"), QStringLiteral("org.kde.merkuro"));
 
     connect(MouseTracker::instance(), &MouseTracker::mouseButtonReleased, this, &CalendarApplication::handleMouseViewNavButtons);
 }
@@ -151,7 +151,7 @@ void CalendarApplication::setupActions()
     actionName = QLatin1String("open_about_page");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &CalendarApplication::openAboutPage);
-        action->setText(i18n("About Kalendar"));
+        action->setText(i18n("About Merkuro"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     }
 

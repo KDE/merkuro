@@ -10,7 +10,7 @@ import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
 MobileForm.FormCard {
@@ -63,7 +63,7 @@ MobileForm.FormCard {
             label: i18n("Department")
             text: root.contactEditor.contact.department
             onTextEdited: root.contactEditor.contact.department = text
-            placeholderText: i18nc("Placeholder value for name of Department", "Kalendar-Team")
+            placeholderText: i18nc("Placeholder value for name of Department", "Merkuro-Team")
         }
 
         MobileForm.FormDelegateSeparator {}

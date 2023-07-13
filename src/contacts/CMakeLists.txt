@@ -3,11 +3,11 @@
 
 ### Static lib
 
-add_library(kalendar_contact_static STATIC)
+add_library(merkuro_contact_static STATIC)
 
-target_link_libraries(kalendar_contact_static PUBLIC kalendar_lib KF${QT_MAJOR_VERSION}::XmlGui)
-set_target_properties(kalendar_contact_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_sources(kalendar_contact_static PUBLIC
+target_link_libraries(merkuro_contact_static PUBLIC merkuro_lib KF${QT_MAJOR_VERSION}::XmlGui)
+set_target_properties(merkuro_contact_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_sources(merkuro_contact_static PUBLIC
     contactapplication.cpp
     contactapplication.h
     addresseewrapper.cpp
@@ -43,25 +43,25 @@ target_sources(kalendar_contact_static PUBLIC
     attributes/attributeregistrar.cpp
 )
 
-kconfig_add_kcfg_files(kalendar_contact_static GENERATE_MOC contactconfig.kcfgc)
+kconfig_add_kcfg_files(merkuro_contact_static GENERATE_MOC contactconfig.kcfgc)
 
-ecm_qt_declare_logging_category(kalendar_contact_static
-    HEADER kalendar_contact_debug.h
-    IDENTIFIER KALENDAR_LOG
-    CATEGORY_NAME org.kde.kalendar.contact
-    DESCRIPTION "kalendar contact"
-    EXPORT KALENDAR
+ecm_qt_declare_logging_category(merkuro_contact_static
+    HEADER merkuro_contact_debug.h
+    IDENTIFIER MERKURO_LOG
+    CATEGORY_NAME org.kde.merkuro.contact
+    DESCRIPTION "merkuro contact"
+    EXPORT MERKURO
 )
 
-ecm_add_qml_module(kalendar_contact_plugin URI "org.kde.kalendar.contact" VERSION 1.0)
+ecm_add_qml_module(merkuro_contact_plugin URI "org.kde.merkuro.contact" VERSION 1.0)
 
-target_sources(kalendar_contact_plugin PRIVATE
+target_sources(merkuro_contact_plugin PRIVATE
     contactplugin.cpp
     contactplugin.h
     resources.qrc
 )
 
-ecm_target_qml_sources(kalendar_contact_plugin SOURCES
+ecm_target_qml_sources(merkuro_contact_plugin SOURCES
     qml/ContactChooserPage.qml
     qml/AddressBookCollectionHandler.qml
     qml/ContactView.qml
@@ -70,7 +70,7 @@ ecm_target_qml_sources(kalendar_contact_plugin SOURCES
     qml/GlobalMenuBar.qml
 )
 
-ecm_target_qml_sources(kalendar_contact_plugin
+ecm_target_qml_sources(merkuro_contact_plugin
     PRIVATE PATH private SOURCES
     qml/private/ContactPage.qml
     qml/private/ContactGroupPage.qml
@@ -83,7 +83,7 @@ ecm_target_qml_sources(kalendar_contact_plugin
     qml/private/DeleteContactAction.qml
 )
 
-ecm_target_qml_sources(kalendar_contact_plugin
+ecm_target_qml_sources(merkuro_contact_plugin
     PRIVATE PATH private/contact_editor SOURCES
     qml/private/contact_editor/AddressBookEditorCard.qml
     qml/private/contact_editor/BusinessEditorCard.qml
@@ -97,11 +97,11 @@ ecm_target_qml_sources(kalendar_contact_plugin
 )
 
 
-target_link_libraries(kalendar_contact_plugin PRIVATE kalendar_contact_static)
+target_link_libraries(merkuro_contact_plugin PRIVATE merkuro_contact_static)
 
 ecm_qt_install_logging_categories(
-    EXPORT KALENDAR
-    FILE kalendar.contact.categories
+    EXPORT merkuro
+    FILE merkuro.contact.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
@@ -111,14 +111,14 @@ endif()
 
 add_subdirectory(applet)
 
-ecm_finalize_qml_module(kalendar_contact_plugin
+ecm_finalize_qml_module(merkuro_contact_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR}
     BUILD_SHARED_LIBS OFF)
 
 #### Binary
 
-add_executable(kalendar-contact main.cpp resources.qrc)
-target_link_libraries(kalendar-contact
+add_executable(merkuro-contact main.cpp resources.qrc)
+target_link_libraries(merkuro-contact
     PRIVATE
         Qt::Widgets
         Qt::Quick
@@ -129,5 +129,6 @@ target_link_libraries(kalendar-contact
         KF${QT_MAJOR_VERSION}::WindowSystem
         KF${QT_MAJOR_VERSION}::ConfigGui
 )
-install(TARGETS kalendar-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.kalendar.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.merkuro.contact.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

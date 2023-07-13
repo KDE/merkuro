@@ -8,8 +8,8 @@ import org.kde.kirigami 2.14 as Kirigami
 
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.contact 1.0
 
 QtObject {
     id: utilsObject

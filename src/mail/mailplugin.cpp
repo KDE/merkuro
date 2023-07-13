@@ -18,7 +18,7 @@
 
 void CalendarPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QByteArray("org.kde.kalendar.mail"));
+    Q_ASSERT(uri == QByteArray("org.kde.merkuro.mail"));
 
     qmlRegisterSingletonType<MailApplication>(uri, 1, 0, "MailApplication", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
@@ -26,25 +26,25 @@ void CalendarPlugin::registerTypes(const char *uri)
         return new MailApplication;
     });
 
-    qmlRegisterSingletonType<MailManager>("org.kde.kalendar.mail", 1, 0, "MailManager", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+    qmlRegisterSingletonType<MailManager>("org.kde.merkuro.mail", 1, 0, "MailManager", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new MailManager;
     });
 
-    qmlRegisterSingletonType<HtmlUtils::HtmlUtils>("org.kde.kalendar.mail", 1, 0, "HtmlUtils", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+    qmlRegisterSingletonType<HtmlUtils::HtmlUtils>("org.kde.merkuro.mail", 1, 0, "HtmlUtils", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new HtmlUtils::HtmlUtils;
     });
 
-    qmlRegisterSingletonType<MailCollectionHelper>("org.kde.kalendar.mail", 1, 0, "MailCollectionHelper", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+    qmlRegisterSingletonType<MailCollectionHelper>("org.kde.merkuro.mail", 1, 0, "MailCollectionHelper", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new MailCollectionHelper;
     });
 
-    qmlRegisterType<MailHeaderModel>("org.kde.kalendar.mail", 1, 0, "MailHeaderModel");
+    qmlRegisterType<MailHeaderModel>("org.kde.merkuro.mail", 1, 0, "MailHeaderModel");
     qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
     qmlRegisterType<IdentityModel>(uri, 1, 0, "IdentityModel");
 

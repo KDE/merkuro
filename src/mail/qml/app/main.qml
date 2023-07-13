@@ -3,8 +3,8 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kalendar.components 1.0
-import org.kde.kalendar.mail 1.0 as Mail
+import org.kde.merkuro.components 1.0
+import org.kde.merkuro.mail 1.0 as Mail
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm

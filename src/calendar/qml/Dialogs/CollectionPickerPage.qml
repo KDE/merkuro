@@ -11,16 +11,16 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
+import org.kde.merkuro.calendar 1.0 as Calendar
 
 Kirigami.ScrollablePage {
     id: collectionPickerSheet
     title: switch (mode) {
-    case Kalendar.CalendarApplication.Todo:
+    case Calendar.CalendarApplication.Todo:
         return i18n("Choose a Task Calendar");
-    case Kalendar.CalendarApplication.Event:
+    case Calendar.CalendarApplication.Event:
         return i18n("Choose a Calendar");
-    case Kalendar.CalendarApplication.Contact:
+    case Calendar.CalendarApplication.Contact:
         return i18n("Choose an Address Book");
     default:
         return 'BUG';
@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
     signal cancel
     signal collectionPicked(int collectionId)
 
-    property int mode: Kalendar.CalendarApplication.Event
+    property int mode: Calendar.CalendarApplication.Event
 
     ListView {
         id: collectionsList
@@ -44,11 +44,11 @@ Kirigami.ScrollablePage {
             model: Akonadi.CollectionPickerModel {
                 id: collectionPickerModel
                 mimeTypeFilter: switch (collectionPickerSheet.mode) {
-                case Kalendar.CalendarApplication.Todo:
+                case Calendar.CalendarApplication.Todo:
                     return [Akonadi.MimeTypes.todo];
-                case Kalendar.CalendarApplication.Event:
+                case Calendar.CalendarApplication.Event:
                     return [Akonadi.MimeTypes.calendar];
-                case Kalendar.CalendarApplication.Contact:
+                case Calendar.CalendarApplication.Contact:
                     return [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup];
                 }
                 excludeVirtualCollections: true

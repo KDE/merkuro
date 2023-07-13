@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #include "importer.h"
-#include "kalendar_calendar_debug.h"
+#include "merkuro_calendar_debug.h"
 #include <Akonadi/ICalImporter>
 #include <KLocalizedString>
 #include <QTimer>
@@ -46,7 +46,7 @@ void Importer::importCalendarFromUrl(const QUrl &url, bool merge, qint64 collect
         Q_EMIT importStarted();
     } else if (!importer->errorMessage().isEmpty()) {
         // empty error message means user canceled.
-        qCDebug(KALENDAR_CALENDAR_LOG) << i18n("An error occurred: %1", importer->errorMessage());
+        qCDebug(MERKURO_CALENDAR_LOG) << i18n("An error occurred: %1", importer->errorMessage());
         m_importErrorMessage = importer->errorMessage();
         Q_EMIT importErrorMessageChanged();
     }

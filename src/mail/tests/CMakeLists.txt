@@ -12,5 +12,5 @@ target_include_directories(cryptotest PRIVATE
 add_gpg_crypto_test(cryptotest cryptotest)
 target_link_libraries(cryptotest
     Qt::Test
-    kalendar_mail_static
+    merkuro_mail_static
 )

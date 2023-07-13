@@ -33,17 +33,18 @@ ecm_qt_declare_logging_category(akonadi_quick_plugin
     IDENTIFIER AKONADI_QUICK_LOG
     CATEGORY_NAME org.kde.akonadi.quick
     DESCRIPTION "Akonadi QtQuick Plugin"
-    EXPORT KALENDAR
+    EXPORT MERKURO
 )
 
-target_link_libraries(akonadi_quick_plugin PRIVATE kalendar_lib KF${QT_MAJOR_VERSION}::WindowSystem)
+target_link_libraries(akonadi_quick_plugin PRIVATE merkuro_lib KF${QT_MAJOR_VERSION}::WindowSystem)
 
 ecm_qt_install_logging_categories(
-    EXPORT KALENDAR
+    EXPORT MERKURO
     FILE akonadi.quick.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
 ecm_finalize_qml_module(akonadi_quick_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS OFF)
+    BUILD_SHARED_LIBS OFF
+)

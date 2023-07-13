@@ -7,7 +7,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kitemmodels 1.0 as KItemModels
-import org.kde.kalendar.mail 1.0
+import org.kde.merkuro.mail 1.0
 
 
 Kirigami.ScrollablePage {

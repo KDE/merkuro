@@ -3,24 +3,24 @@
 
 ecm_add_test(emailmodeltest.cpp
     TEST_NAME emailmodeltest
-    LINK_LIBRARIES kalendar_contact_static Qt::Test
-    NAME_PREFIX "kalendar-contact-"
+    LINK_LIBRARIES merkuro_contact_static Qt::Test
+    NAME_PREFIX "merkuro-contact-"
 )
 
 ecm_add_test(imppmodeltest.cpp
     TEST_NAME imppmodeltest
-    LINK_LIBRARIES kalendar_contact_static Qt::Test
-    NAME_PREFIX "kalendar-contact-"
+    LINK_LIBRARIES merkuro_contact_static Qt::Test
+    NAME_PREFIX "merkuro-contact-"
 )
 
 ecm_add_test(addressmodeltest.cpp
     TEST_NAME addressmodeltest
-    LINK_LIBRARIES kalendar_contact_static Qt::Test
-    NAME_PREFIX "kalendar-contact-"
+    LINK_LIBRARIES merkuro_contact_static Qt::Test
+    NAME_PREFIX "merkuro-contact-"
 )
 
 ecm_add_test(phonemodeltest.cpp
     TEST_NAME phonemodeltest
-    LINK_LIBRARIES kalendar_contact_static Qt::Test
-    NAME_PREFIX "kalendar-contact-"
+    LINK_LIBRARIES merkuro_contact_static Qt::Test
+    NAME_PREFIX "merkuro-contact-"
 )

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "addresseewrapper.h"
-#include "kalendar_contact_debug.h"
+#include "merkuro_contact_debug.h"
 #include <KContacts/VCardConverter>
 #include <QGuiApplication>
 
@@ -98,7 +98,7 @@ void AddresseeWrapper::setAddresseeItem(const Akonadi::Item &addresseeItem)
                 Q_EMIT addresseeItemChanged();
                 Q_EMIT collectionChanged();
             } else {
-                qCWarning(KALENDAR_LOG) << "This is not an addressee item.";
+                qCWarning(MERKURO_LOG) << "This is not an addressee item.";
             }
         });
     }

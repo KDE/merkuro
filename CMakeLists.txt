@@ -10,7 +10,7 @@ set(RELEASE_SERVICE_VERSION_MINOR "07")
 set(RELEASE_SERVICE_VERSION_MICRO "70")
 set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 
-project(kalendar VERSION ${RELEASE_SERVICE_VERSION})
+project(merkuro VERSION ${RELEASE_SERVICE_VERSION})
 
 set(KF_MAJOR_VERSION "5")
 set(QT_MIN_VERSION "5.15.2")
@@ -62,9 +62,9 @@ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 ecm_setup_version(${PROJECT_VERSION}
-    VARIABLE_PREFIX KALENDAR
+    VARIABLE_PREFIX MERKURO
     SOVERSION ${PROJECT_VERSION_MAJOR}
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/config-kalendar.h"
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/config-merkuro.h"
 )
 
 set(KF_MAJOR_VERSION ${QT_MAJOR_VERSION})
@@ -130,12 +130,11 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2  KF 5.105.0)
 add_definitions(-DQT_STRICT_ITERATORS)
 add_subdirectory(src)
 
-install(FILES org.kde.kalendar.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES org.kde.kalendar.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
+install(FILES org.kde.merkuro.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
 
 ecm_qt_install_logging_categories(
-    EXPORT KALENDAR
-    FILE kalendar.categories
+    EXPORT MERKURO
+    FILE merkuro.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 

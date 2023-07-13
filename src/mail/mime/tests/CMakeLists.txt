@@ -12,5 +12,5 @@ add_executable(mailtemplatetest mailtemplatetest.cpp)
 add_gpg_crypto_test(mailtemplatetest mailtemplatetest)
 target_link_libraries(mailtemplatetest
     Qt::Test
-    kalendar_mail_static
+    merkuro_mail_static
 )

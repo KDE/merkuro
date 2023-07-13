@@ -8,7 +8,7 @@ import QtQuick.Layouts 1.15
 import QtLocation 5.15
 import "labelutils.js" as LabelUtils
 
-import org.kde.kalendar.calendar 1.0
+import org.kde.merkuro.calendar 1.0
 
 Kirigami.OverlayDrawer {
     id: root
@@ -69,7 +69,7 @@ Kirigami.OverlayDrawer {
                                 text: i18n("Add Sub-Task")
                                 visible: incidenceInfoContents.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
                                 onTriggered: {
-                                    KalendarUiUtils.setUpAddSubTodo(incidenceInfoContents.incidenceWrapper);
+                                    CalendarUiUtils.setUpAddSubTodo(incidenceInfoContents.incidenceWrapper);
 
                                     if(Kirigami.Settings.isMobile) {
                                         root.close();
@@ -90,14 +90,14 @@ Kirigami.OverlayDrawer {
                                 icon.name: "edit-entry"
                                 text: i18n("Edit")
                                 enabled: incidenceInfoContents.collectionData && !incidenceInfoContents.collectionData.readOnly
-                                onTriggered: KalendarUiUtils.setUpEdit(incidenceInfoContents.incidenceData.incidencePtr)
+                                onTriggered: CalendarUiUtils.setUpEdit(incidenceInfoContents.incidenceData.incidencePtr)
                             },
                             Kirigami.Action {
                                 icon.name: "edit-delete"
                                 text: i18n("Delete")
                                 enabled: incidenceInfoContents.collectionData && !incidenceInfoContents.collectionData.readOnly
                                 onTriggered: {
-                                    KalendarUiUtils.setUpDelete(incidenceInfoContents.incidenceData.incidencePtr, incidenceInfoContents.incidenceData.startTime);
+                                    CalendarUiUtils.setUpDelete(incidenceInfoContents.incidenceData.incidencePtr, incidenceInfoContents.incidenceData.startTime);
 
                                     if(Kirigami.Settings.isMobile) {
                                         root.close();

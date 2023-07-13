@@ -8,7 +8,7 @@ import Qt.labs.platform 1.1
 import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 
 ColumnLayout {
     id: root

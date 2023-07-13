@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import Qt.labs.platform 1.1 as Labs
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
 Labs.Menu {
     id: root
@@ -20,7 +20,7 @@ Labs.Menu {
     }
 
     Labs.MenuItem {
-        text: i18nc("@action:menu", "Kalendar Handbook") // todo
+        text: i18nc("@action:menu", "Merkuro Handbook") // todo
         visible: false
     }
 }

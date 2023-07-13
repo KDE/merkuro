@@ -4,5 +4,5 @@
 find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} OPTIONAL_COMPONENTS Plasma)
 
 if (KF${QT_MAJOR_VERSION}Plasma_FOUND)
-    plasma_install_package(package org.kde.kalendar.contact)
+    plasma_install_package(package org.kde.merkuro.contact)
 endif()
