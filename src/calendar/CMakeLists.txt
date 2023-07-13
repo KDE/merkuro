@@ -66,7 +66,7 @@ kconfig_add_kcfg_files(kalendar_calendar_static GENERATE_MOC calendarconfig.kcfg
 set_target_properties(kalendar_calendar_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(kalendar_calendar_static PUBLIC
     kalendar_lib
-    KF${QT_MAJOR_VERSION}::WindowSystem
+    KF6::WindowSystem
 )
 
 
@@ -109,11 +109,11 @@ target_link_libraries(kalendar-calendar
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::CoreAddons
-        KF${QT_MAJOR_VERSION}::DBusAddons
-        KF${QT_MAJOR_VERSION}::WindowSystem
-        KF${QT_MAJOR_VERSION}::ConfigGui
+        KF6::I18n
+        KF6::CoreAddons
+        KF6::DBusAddons
+        KF6::WindowSystem
+        KF6::ConfigGui
 )
 install(TARGETS kalendar-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kalendar.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})

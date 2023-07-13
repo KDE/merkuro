@@ -144,11 +144,11 @@ target_link_libraries(kalendar-mail
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::CoreAddons
-        KF${QT_MAJOR_VERSION}::DBusAddons
-        KF${QT_MAJOR_VERSION}::WindowSystem
-        KF${QT_MAJOR_VERSION}::ConfigGui
+        KF6::I18n
+        KF6::CoreAddons
+        KF6::DBusAddons
+        KF6::WindowSystem
+        KF6::ConfigGui
 )
 install(TARGETS kalendar-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kalendar.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})

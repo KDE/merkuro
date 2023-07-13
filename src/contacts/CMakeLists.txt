@@ -5,7 +5,7 @@
 
 add_library(kalendar_contact_static STATIC)
 
-target_link_libraries(kalendar_contact_static PUBLIC kalendar_lib KF${QT_MAJOR_VERSION}::XmlGui)
+target_link_libraries(kalendar_contact_static PUBLIC kalendar_lib KF6::XmlGui)
 set_target_properties(kalendar_contact_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_sources(kalendar_contact_static PUBLIC
     contactapplication.cpp
@@ -123,11 +123,11 @@ target_link_libraries(kalendar-contact
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::CoreAddons
-        KF${QT_MAJOR_VERSION}::DBusAddons
-        KF${QT_MAJOR_VERSION}::WindowSystem
-        KF${QT_MAJOR_VERSION}::ConfigGui
+        KF6::I18n
+        KF6::CoreAddons
+        KF6::DBusAddons
+        KF6::WindowSystem
+        KF6::ConfigGui
 )
 install(TARGETS kalendar-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kalendar.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
