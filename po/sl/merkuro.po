@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-14 00:49+0000\n"
-"PO-Revision-Date: 2023-07-10 07:39+0200\n"
+"PO-Revision-Date: 2023-07-14 06:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "Ctrl+1"
 #: calendar/calendarapplication.cpp:154
 #, kde-format
 msgid "About Merkuro"
-msgstr ""
+msgstr "O Mercuro"
 
 #: calendar/calendarapplication.cpp:161
 #, kde-format
@@ -226,12 +226,10 @@ msgid "Task"
 msgstr "Naloge"
 
 #: calendar/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Koledar"
+msgstr "Mercuro koledar"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -1315,9 +1313,7 @@ msgid "Mark Complete"
 msgstr "Označi kot dokončano"
 
 #: calendar/qml/Drawers/MainDrawer.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Calendar"
+#, kde-format
 msgid "Calendar"
 msgstr "Koledar"
 
@@ -1765,12 +1761,10 @@ msgid "Help"
 msgstr "Pomoč"
 
 #: calendar/qml/Menus/MenuBar.qml:184
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr "Navodila za Kalendar"
+msgstr "Priročnik za koledar"
 
 #: calendar/qml/Settings/CalendarSettingsPage.qml:138
 #, kde-format
@@ -1912,10 +1906,9 @@ msgid "Accounts"
 msgstr "Računi"
 
 #: calendar/qml/Settings/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About Merkuro Calendar"
-msgstr "O programu Kalendar"
+msgstr "O Merkuro Calendar"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:21
 #, kde-format
@@ -2217,15 +2210,13 @@ msgstr "Datoteka"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Zapusti Mercuro"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Navodila za Kalendar"
+msgstr "Priročnik za Mercuro"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2340,11 +2331,10 @@ msgid "Other:"
 msgstr "Ostalo:"
 
 #: contacts/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Stik"
+msgstr "Mercuro stik"
 
 #: contacts/main.cpp:51
 #, kde-format
@@ -2596,7 +2586,7 @@ msgstr "Oddelek"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Merkuro-Team"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
