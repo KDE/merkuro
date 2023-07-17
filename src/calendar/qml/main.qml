@@ -755,7 +755,7 @@ BaseApplication {
             objectName: "monthView"
 
             openOccurrence: root.openOccurrence
-            actions.contextualActions: createAction
+            actions: createAction
         }
     }
 
@@ -769,7 +769,7 @@ BaseApplication {
             openOccurrence: root.openOccurrence
             createEventAction: createAction
 
-            actions.contextualActions: createAction
+            actions: createAction
         }
     }
 
