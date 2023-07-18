@@ -13,8 +13,10 @@ import QtGraphicalEffects 1.0
 
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.merkuro.contact 1.0
+import org.kde.kirigamiaddons.labs.components 1.0 as KAComponents
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
-Kirigami.BasicListItem {
+Delegates.RoundedItemDelegate {
     id: listItem
 
     property string name
@@ -24,7 +26,9 @@ Kirigami.BasicListItem {
     signal createContextMenu
 
     contentItem: RowLayout {
-        Kirigami.Avatar {
+        spacing: Kirigami.Units.largeSpacing
+
+        KAComponents.Avatar {
             id: avatar
             Layout.maximumHeight: parent.height
             Layout.maximumWidth: parent.height
