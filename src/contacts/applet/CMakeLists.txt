@@ -4,5 +4,5 @@
 find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS Plasma)
 
 if (KF6Plasma_FOUND)
-    plasma_install_package(package org.kde.kalendar.contact)
+    plasma_install_package(package org.kde.merkuro.contact)
 endif()

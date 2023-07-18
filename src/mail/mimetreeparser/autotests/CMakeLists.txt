@@ -12,7 +12,7 @@ function(add_mimetreeparser_class_unittest _name _additionalSource)
     add_executable(${_name} ${_name}.cpp setupenv.cpp setupenv.h ${_additionalSource})
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        kalendar_mail_static
+        merkuro_mail_static
     )
     target_include_directories(${_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
     add_test(NAME ${_name} COMMAND $<TARGET_FILE:${_name}>)
@@ -27,7 +27,7 @@ function(add_mimetreeparser_crypto_unittest _name)
     )
     target_link_libraries(${_name} PRIVATE
         Qt::Test
-        kalendar_mail_static
+        merkuro_mail_static
     )
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endfunction()

@@ -13,6 +13,7 @@
 #include <QDesktopServices>
 #include <QDir>
 #include <QFile>
+#include <QGuiApplication>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QUrl>
@@ -182,7 +183,7 @@ bool AttachmentModel::saveAttachmentToDisk(const QModelIndex &index)
     if (downloadDir.isEmpty()) {
         downloadDir = QStringLiteral("~");
     }
-    downloadDir += QStringLiteral("/kalendar/");
+    downloadDir += QLatin1Char('/') + qGuiApp->applicationName() + QLatin1Char('/');
     QDir{}.mkpath(downloadDir);
 
     auto path = internalSaveAttachmentToDisk(index, downloadDir);
@@ -195,7 +196,7 @@ bool AttachmentModel::saveAttachmentToDisk(const QModelIndex &index)
 
 bool AttachmentModel::openAttachment(const QModelIndex &index)
 {
-    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QStringLiteral("/kalendar/");
+    QString downloadDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + QLatin1Char('/') + qGuiApp->applicationName() + QLatin1Char('/');
     QDir{}.mkpath(downloadDir);
     const auto filePath = internalSaveAttachmentToDisk(index, downloadDir, true);
     if (!filePath.isEmpty()) {

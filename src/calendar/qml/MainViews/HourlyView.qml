@@ -7,9 +7,9 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import Qt5Compat.GraphicalEffects
 
-import org.kde.kalendar.calendar 1.0 as Calendar
-import org.kde.kalendar.components 1.0
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.components 1.0
+import org.kde.merkuro.utils 1.0
 
 Kirigami.Page {
     id: root

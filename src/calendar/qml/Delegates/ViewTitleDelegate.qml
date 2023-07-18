@@ -3,7 +3,7 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import org.kde.kalendar.calendar 1.0 as Calendar
+import org.kde.merkuro.calendar 1.0 as Calendar
 
 RowLayout {
     id: root

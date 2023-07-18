@@ -7,8 +7,8 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import "labelutils.js" as LabelUtils
 
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.utils 1.0
 
 Item {
     id: root
@@ -19,7 +19,7 @@ Item {
 
     IncidenceMouseArea {
         id: mouseArea
-        incidenceData: KalendarUiUtils.fakeModelDataFromIncidenceWrapper(incidenceWrapper)
+        incidenceData: CalendarUiUtils.fakeModelDataFromIncidenceWrapper(incidenceWrapper)
         collectionId: incidenceWrapper.collectionId
 
         preventStealing: !Kirigami.Settings.tabletMode && !Kirigami.Settings.isMobile
@@ -27,21 +27,21 @@ Item {
         //drag.target: !Kirigami.Settings.isMobile && !modelData.isReadOnly && incidenceDelegate.dragDropEnabled ? parent : undefined
         //onReleased: parent.Drag.drop()
 
-        onViewClicked: KalendarUiUtils.setUpView(incidenceData, root)
-        onEditClicked: KalendarUiUtils.setUpEdit(incidencePtr)
-        onDeleteClicked: KalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
-        onTodoCompletedClicked: KalendarUiUtils.completeTodo(incidencePtr)
-        onAddSubTodoClicked: KalendarUiUtils.setUpAddSubTodo(parentWrapper)
+        onViewClicked: CalendarUiUtils.setUpView(incidenceData, root)
+        onEditClicked: CalendarUiUtils.setUpEdit(incidencePtr)
+        onDeleteClicked: CalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
+        onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
+        onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
     }
 
     IncidenceDelegateBackground {
-        color: LabelUtils.getIncidenceDelegateBackgroundColor(collectionData.color, KalendarUiUtils.darkMode)
+        color: LabelUtils.getIncidenceDelegateBackgroundColor(collectionData.color, CalendarUiUtils.darkMode)
     }
 
     RowLayout {
         id: incidenceContents
         clip: true
-        property color textColor: LabelUtils.getIncidenceLabelColor(collectionData.color, KalendarUiUtils.darkMode)
+        property color textColor: LabelUtils.getIncidenceLabelColor(collectionData.color, CalendarUiUtils.darkMode)
 
         anchors.fill: parent
         anchors.margins: Kirigami.Units.largeSpacing

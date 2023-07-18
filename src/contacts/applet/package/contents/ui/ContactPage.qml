@@ -8,7 +8,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 
 PlasmaComponents3.ScrollView {
     id: root

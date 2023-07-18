@@ -52,10 +52,18 @@ MobileForm.FormComboBoxDelegate {
      */
     property alias accessRightsFilter: collectionComboBoxModel.accessRightsFilter
 
+    readonly property var collection: if (currentIndex >= 0) {
+        const selectedModelIndex = collectionComboBoxModel.index(currentIndex, 0);
+        console.log(collectionComboBoxModel.data(selectedModelIndex, Akonadi.Collection.CollectionRole))
+        return collectionComboBoxModel.data(selectedModelIndex, Akonadi.Collection.CollectionRole);
+    } else {
+        null
+    }
+
     signal userSelectedCollection(var collection)
 
     currentIndex: 0
-    onActivated: index => { if (index > -1) {
+    onActivated: index => { if (currentIndex > -1) {
         const selectedModelIndex = collectionComboBoxModel.index(currentIndex, 0);
         const selectedCollection = collectionComboBoxModel.data(selectedModelIndex, Akonadi.Collection.CollectionRole);
         userSelectedCollection(selectedCollection);

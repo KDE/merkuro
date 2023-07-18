@@ -10,9 +10,9 @@ import org.kde.kirigami 2.14 as Kirigami
 import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 
-import org.kde.kalendar.calendar 1.0 as Calendar
-import org.kde.kalendar.utils 1.0
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
+import org.kde.merkuro.components 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -37,7 +37,7 @@ Kirigami.ScrollablePage {
     property bool ascendingOrder: Calendar.Config.ascendingOrder
 
     readonly property color standardTextColor: Kirigami.Theme.textColor
-    readonly property bool isDark: KalendarUiUtils.darkMode
+    readonly property bool isDark: CalendarUiUtils.darkMode
 
     readonly property alias incompleteView: incompleteView
 

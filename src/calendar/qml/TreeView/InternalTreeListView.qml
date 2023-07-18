@@ -20,7 +20,7 @@ ListView {
     Connections {
         target: root.sourceModel
 
-        // NOTE: This is Kalendar and TodoSortFilterProxyModel-specific
+        // NOTE: This is Calendar and TodoSortFilterProxyModel-specific
         function onFilterObjectAboutToChange() {
             // This is a must to prevent the KDescendantsProxyModel from crashing
             for(let i = 0; i < descendantsModel.rowCount(); i++) {

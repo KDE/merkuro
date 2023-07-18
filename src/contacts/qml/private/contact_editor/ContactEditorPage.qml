@@ -9,7 +9,7 @@ import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
 Kirigami.ScrollablePage {
@@ -105,10 +105,12 @@ Kirigami.ScrollablePage {
         }
 
         PhoneEditorCard {
+            id: phoneEditorId
             contactEditor: root.contactEditor
         }
 
         EmailEditorCard {
+            id: emailEditorId
             contactEditor: root.contactEditor
         }
 

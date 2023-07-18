@@ -11,7 +11,7 @@
 
 void ComponentsPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QByteArray("org.kde.kalendar.components"));
+    Q_ASSERT(uri == QByteArray("org.kde.merkuro.components"));
     qmlRegisterModule(uri, 1, 0);
     qmlRegisterSingletonType<Helper>(uri, 1, 0, "Helper", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
@@ -19,7 +19,7 @@ void ComponentsPlugin::registerTypes(const char *uri)
         return new Helper;
     });
 
-    qmlRegisterSingletonType("org.kde.kalendar.components", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+    qmlRegisterSingletonType("org.kde.merkuro.components", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });
 

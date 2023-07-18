@@ -6,7 +6,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Dialogs
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kalendar.calendar 1.0 as Kalendar
+import org.kde.merkuro.calendar 1.0 as Calendar
 import org.kde.akonadi 1.0 as Akonadi
 
 QQC2.Menu {
@@ -22,12 +22,12 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "edit-entry"
         text: i18nc("@action:inmenu", "Edit calendar…")
-        onClicked: Kalendar.CalendarManager.editCollection(actionsPopup.collectionId);
+        onClicked: Calendar.CalendarManager.editCollection(actionsPopup.collectionId);
     }
     QQC2.MenuItem {
         icon.name: "view-refresh"
         text: i18nc("@action:inmenu", "Update calendar")
-        onClicked: Kalendar.CalendarManager.updateCollection(actionsPopup.collectionId);
+        onClicked: Calendar.CalendarManager.updateCollection(actionsPopup.collectionId);
     }
     QQC2.MenuItem {
         icon.name: "edit-delete"

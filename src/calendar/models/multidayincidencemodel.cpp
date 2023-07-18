@@ -69,7 +69,7 @@ QList<QModelIndex> MultiDayIncidenceModel::sortedIncidencesFromSourceModel(const
 
         // Skip incidences not part of the week
         if (end < rowStart || start > rowEnd) {
-            // qCWarning(KALENDAR_CALENDAR_LOG) << "Skipping because not part of this week";
+            // qCWarning(MERKURO_CALENDAR_LOG) << "Skipping because not part of this week";
             continue;
         }
 
@@ -77,7 +77,7 @@ QList<QModelIndex> MultiDayIncidenceModel::sortedIncidencesFromSourceModel(const
             continue;
         }
 
-        // qCWarning(KALENDAR_CALENDAR_LOG) << "found " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
+        // qCWarning(MERKURO_CALENDAR_LOG) << "found " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
         // srcIdx.data(IncidenceOccurrenceModel::Summary).toString();
         sorted.append(srcIdx);
     }
@@ -131,7 +131,7 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
     QList<QModelIndex> sorted = sortedIncidencesFromSourceModel(rowStart);
 
     // for (const auto &srcIdx : sorted) {
-    //     qCWarning(KALENDAR_CALENDAR_LOG) << "sorted " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
+    //     qCWarning(MERKURO_CALENDAR_LOG) << "sorted " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
     //     srcIdx.data(IncidenceOccurrenceModel::Summary).toString()
     //     << srcIdx.data(IncidenceOccurrenceModel::AllDay).toBool();
     // }
@@ -145,7 +145,7 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
         const auto start = getStart(srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date());
         const auto duration = qMin(getDuration(startDate, srcIdx.data(IncidenceOccurrenceModel::EndTime).toDateTime().date()), mPeriodLength - start);
 
-        // qCWarning(KALENDAR_CALENDAR_LOG) << "First of line " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() << duration <<
+        // qCWarning(MERKURO_CALENDAR_LOG) << "First of line " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() << duration <<
         // srcIdx.data(IncidenceOccurrenceModel::Summary).toString();
         QVariantList currentLine;
 
@@ -178,7 +178,7 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
         };
 
         if (start >= mPeriodLength) {
-            // qCWarning(KALENDAR_CALENDAR_LOG) << "Skipping " << srcIdx.data(IncidenceOccurrenceModel::Summary);
+            // qCWarning(MERKURO_CALENDAR_LOG) << "Skipping " << srcIdx.data(IncidenceOccurrenceModel::Summary);
             continue;
         }
 
@@ -196,7 +196,7 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
         auto doesIntersect = [&](int start, int end) {
             for (int i = start; i < end; i++) {
                 if (takenSpaces[i]) {
-                    // qCWarning(KALENDAR_CALENDAR_LOG) << "Found intersection " << start << end;
+                    // qCWarning(MERKURO_CALENDAR_LOG) << "Found intersection " << start << end;
                     return true;
                 }
             }
@@ -229,7 +229,7 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
                 it = sorted.erase(it);
             }
         }
-        // qCWarning(KALENDAR_CALENDAR_LOG) << "Appending line " << currentLine;
+        // qCWarning(MERKURO_CALENDAR_LOG) << "Appending line " << currentLine;
         result.append(QVariant::fromValue(currentLine));
     }
     return result;
@@ -434,7 +434,7 @@ int MultiDayIncidenceModel::incidenceCount() const
 
             // Skip incidences not part of the week
             if (end < rowStart || start > rowEnd) {
-                // qCWarning(KALENDAR_CALENDAR_LOG) << "Skipping because not part of this week";
+                // qCWarning(MERKURO_CALENDAR_LOG) << "Skipping because not part of this week";
                 continue;
             }
 

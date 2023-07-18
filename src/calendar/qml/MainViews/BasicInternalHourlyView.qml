@@ -7,8 +7,8 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import Qt5Compat.GraphicalEffects
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -19,13 +19,13 @@ Column {
     required property int daysToShow
     required property date startDate
 
-    property date endDate: Kalendar.Utils.addDaysToDate(startDate, viewColumn.daysToShow)
+    property date endDate: Calendar.Utils.addDaysToDate(startDate, viewColumn.daysToShow)
 
-    readonly property date currentDate: Kalendar.DateTimeState.currentDate
+    readonly property date currentDate: Calendar.DateTimeState.currentDate
     readonly property int daysFromWeekStart: DateUtils.fullDaysBetweenDates(startDate, currentDate) - 1
 
     readonly property int minutesFromStartOfDay: (currentDate.getHours() * 60) + currentDate.getMinutes()
-    readonly property bool isDark: KalendarUiUtils.darkMode
+    readonly property bool isDark: CalendarUiUtils.darkMode
     property bool dragDropEnabled: true
 
     property int allDayViewDelegateHeight: Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
@@ -45,12 +45,12 @@ Column {
     property real scrollPosition: 0
 
     readonly property alias hourScrollView: hourlyView
-    readonly property var hourLabels: Kalendar.Utils.hourlyViewLocalisedHourLabels
+    readonly property var hourLabels: Calendar.Utils.hourlyViewLocalisedHourLabels
 
     spacing: 0
 
     Connections {
-        target: Kalendar.DateTimeState
+        target: Calendar.DateTimeState
         function onSelectedDateChanged() {
             hourScrollView.setToCurrentTime(true);
         }
@@ -95,8 +95,8 @@ Column {
 
                 required property int index
 
-                readonly property date headingDate: Kalendar.Utils.addDaysToDate(viewColumn.startDate, index)
-                readonly property bool isToday: Kalendar.DateTimeState.isToday(headingDate)
+                readonly property date headingDate: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
+                readonly property bool isToday: Calendar.DateTimeState.isToday(headingDate)
 
                 width: viewColumn.dayWidth
                 implicitHeight: dayHeading.implicitHeight
@@ -134,7 +134,7 @@ Column {
                     enabled: viewColumn.daysToShow === 7
                     Accessible.name: dayHeading.text
                     onClicked: {
-                        Kalendar.DateTimeState.selectedDate = dayDelegate.headingDate;
+                        Calendar.DateTimeState.selectedDate = dayDelegate.headingDate;
                         applicationWindow().pageStack.layers.push("qrc:/HourlyView.qml", {
                             daysToShow: 1,
                         });
@@ -178,10 +178,10 @@ Column {
             0
         readonly property int defaultHeight: Math.min(lineHeight, maxHeight)
         property int actualHeight: {
-            if (Kalendar.Config.weekViewAllDayHeaderHeight === -1) {
+            if (Calendar.Config.weekViewAllDayHeaderHeight === -1) {
                 return defaultHeight;
             } else {
-                return Kalendar.Config.weekViewAllDayHeaderHeight;
+                return Calendar.Config.weekViewAllDayHeaderHeight;
             }
         }
 
@@ -193,8 +193,8 @@ Column {
             duration: Kirigami.Units.longDuration
             easing.type: Easing.InOutQuad
             onFinished: {
-                Kalendar.Config.weekViewAllDayHeaderHeight = -1;
-                Kalendar.Config.save();
+                Calendar.Config.weekViewAllDayHeaderHeight = -1;
+                Calendar.Config.save();
                 allDayHeader.actualHeight = allDayHeader.defaultHeight;
             }
         }
@@ -209,7 +209,7 @@ Column {
             anchors.left: parent.left
             anchors.top: parent.bottom
             width: viewColumn.hourLabelWidth
-            height: Kalendar.Config.weekViewAllDayHeaderHeight !== -1 ?
+            height: Calendar.Config.weekViewAllDayHeaderHeight !== -1 ?
                 resetHeaderHeightButton.height :
                 0
             z: -1
@@ -267,17 +267,17 @@ Column {
                 clip: true
 
                 Repeater {
-                    model: Kalendar.MultiDayIncidenceModel {
+                    model: Calendar.MultiDayIncidenceModel {
                         periodLength: viewColumn.daysToShow
-                        filters: Kalendar.MultiDayIncidenceModel.AllDayOnly | Kalendar.MultiDayIncidenceModel.MultiDayOnly
-                        showTodos: Kalendar.Config.showTodosInCalendarViews
-                        showSubTodos: Kalendar.Config.showSubtodosInCalendarViews
+                        filters: Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
+                        showTodos: Calendar.Config.showTodosInCalendarViews
+                        showSubTodos: Calendar.Config.showSubtodosInCalendarViews
                         active: viewColumn.isCurrentItem
-                        model: Kalendar.IncidenceOccurrenceModel {
+                        model: Calendar.IncidenceOccurrenceModel {
                             start: viewColumn.startDate
                             length: viewColumn.daysToShow
-                            calendar: Kalendar.CalendarManager.calendar
-                            filter: Kalendar.Filter
+                            calendar: Calendar.CalendarManager.calendar
+                            filter: Calendar.Filter
                         }
                     }
 
@@ -383,8 +383,8 @@ Column {
 
                                                 required property int index
 
-                                                readonly property date date: Kalendar.Utils.addDaysToDate(viewColumn.startDate, index)
-                                                readonly property bool isToday: Kalendar.DateTimeState.isToday(date)
+                                                readonly property date date: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
+                                                readonly property bool isToday: Calendar.DateTimeState.isToday(date)
 
                                                 width: viewColumn.dayWidth
                                                 height: linesListViewScrollView.height
@@ -396,7 +396,7 @@ Column {
                                                     anchors.fill: parent
 
                                                     addDate: parent.date
-                                                    onAddNewIncidence: KalendarUiUtils.setUpAdd(type, addDate)
+                                                    onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate)
                                                     onDeselect: applicationWindow().incidenceInfoViewer.close()
 
                                                     DropArea {
@@ -409,8 +409,8 @@ Column {
                                                             drop.source.caughtY = pos.y;
                                                             drop.source.caught = true;
 
-                                                            const incidenceWrapper = Kalendar.CalendarManager.createIncidenceWrapper();
-                                                            incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                            const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
                                                             let sameTimeOnDate = new Date(listViewMenu.addDate);
                                                             sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
@@ -420,9 +420,9 @@ Column {
                                                              */
                                                             if (drop.source.objectName === 'hourlyIncidenceDelegateBackgroundBackground') {
                                                                 // This is conversion from non-multiday to multiday
-                                                                KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
+                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
                                                             } else {
-                                                                KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
+                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                                             }
                                                         }
                                                     }
@@ -449,13 +449,13 @@ Column {
         visible: allDayViewLoader.active
 
         function setPos() {
-            Kalendar.Config.weekViewAllDayHeaderHeight = allDayHeader.actualHeight;
-            Kalendar.Config.save();
+            Calendar.Config.weekViewAllDayHeaderHeight = allDayHeader.actualHeight;
+            Calendar.Config.save();
         }
 
         onDragBegin:  setPos()
         onDragReleased: setPos()
-        onDragPositionChanged: allDayHeader.actualHeight = Math.min(allDayHeader.maxHeight, Math.max(allDayHeader.minHeight, Kalendar.Config.weekViewAllDayHeaderHeight + changeY))
+        onDragPositionChanged: allDayHeader.actualHeight = Math.min(allDayHeader.maxHeight, Math.max(allDayHeader.minHeight, Calendar.Config.weekViewAllDayHeaderHeight + changeY))
     }
 
     RectangularGlow {
@@ -628,17 +628,17 @@ Column {
 
                     Repeater {
                         id: dayColumnRepeater
-                        model: Kalendar.HourlyIncidenceModel {
+                        model: Calendar.HourlyIncidenceModel {
                            periodLength: viewColumn.periodLength
-                           filters: Kalendar.MultiDayIncidenceModel.AllDayOnly | Kalendar.MultiDayIncidenceModel.MultiDayOnly
-                           showTodos: Kalendar.Config.showTodosInCalendarViews
-                           showSubTodos: Kalendar.Config.showSubtodosInCalendarViews
+                           filters: Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
+                           showTodos: Calendar.Config.showTodosInCalendarViews
+                           showSubTodos: Calendar.Config.showSubtodosInCalendarViews
                            active: viewColumn.isCurrentItem
-                           model: Kalendar.IncidenceOccurrenceModel {
+                           model: Calendar.IncidenceOccurrenceModel {
                                start: viewColumn.startDate
                                length: viewColumn.daysToShow
-                               calendar: Kalendar.CalendarManager.calendar
-                               filter: Kalendar.Filter
+                               calendar: Calendar.CalendarManager.calendar
+                               filter: Calendar.Filter
                            }
                         }
 
@@ -698,13 +698,13 @@ Column {
                                                     Layout.fillHeight: true
                                                     z: 9999
                                                     onDropped: if(viewColumn.isCurrentItem) {
-                                                        let incidenceWrapper = Kalendar.CalendarManager.createIncidenceWrapper();
+                                                        let incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                                                         /* So when we drop the entire incidence card somewhere, we are dropping the delegate with object name "hourlyIncidenceDelegateBackgroundBackground" or "multiDayIncidenceDelegateBackgroundBackground" in case when all day event is converted to the hour incidence.
                                                          * However, when we are simply resizing, we are actually dropping the specific mouseArea within the delegate that handles
                                                          * the dragging for the incidence's bottom edge which has name "endDtResizeMouseArea". Hence why we check the object names
                                                          */
                                                         if(drop.source.objectName === "hourlyIncidenceDelegateBackgroundBackground") {
-                                                            incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
                                                             const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
                                                             drop.source.caughtX = pos.x + incidenceSpacing;
@@ -721,9 +721,9 @@ Column {
                                                                 return;
                                                             }
 
-                                                            KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, drop.source.occurrenceDate, drop.source);
+                                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, drop.source.occurrenceDate, drop.source);
                                                         } else if(drop.source.objectName === "multiDayIncidenceDelegateBackgroundBackground") {
-                                                            incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
                                                             const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
                                                             drop.source.caughtX = pos.x + incidenceSpacing;
@@ -738,10 +738,10 @@ Column {
                                                             const startOffset = startPosDate.getTime() - drop.source.occurrenceDate.getTime();
                                                             const endOffset = endPosDate.getTime() - drop.source.occurrenceEndDate.getTime();
 
-                                                            KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, drop.source.occurrenceDate, drop.source);
+                                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, drop.source.occurrenceDate, drop.source);
 
                                                         } else { // The resize affects the end time
-                                                            incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.resizerSeparator.parent.incidencePtr);
+                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.resizerSeparator.parent.incidencePtr);
 
                                                             const pos = mapToItem(drop.source.resizerSeparator.parent, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
                                                             drop.source.resizerSeparator.parent.caughtHeight = (pos.y + dropAreaHighlightRectangle.height - incidenceSpacing)
@@ -756,7 +756,7 @@ Column {
 
                                                             const endOffset = posDate.getTime() - drop.source.resizerSeparator.parent.occurrenceEndDate.getTime();
 
-                                                            KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, 0, endOffset, drop.source.resizerSeparator.parent.occurrenceDate, drop.source.resizerSeparator.parent);
+                                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, 0, endOffset, drop.source.resizerSeparator.parent.occurrenceDate, drop.source.resizerSeparator.parent);
                                                         }
                                                     }
 
@@ -774,8 +774,8 @@ Column {
                                             id: backgroundDayMouseArea
                                             anchors.fill: parent
                                             addDate: new Date(DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
-                                            onAddNewIncidence: KalendarUiUtils.setUpAdd(type, addDate, null, true)
-                                            onDeselect: KalendarUiUtils.appMain.incidenceInfoViewer.close()
+                                            onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate, null, true)
+                                            onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
                                     }
                                 }
@@ -945,11 +945,11 @@ Column {
                                             drag.target: !Kirigami.Settings.isMobile && !modelData.isReadOnly && viewColumn.dragDropEnabled ? parent : undefined
                                             onReleased: parent.Drag.drop()
 
-                                            onViewClicked: KalendarUiUtils.setUpView(modelData, hourlyIncidenceDelegateBackgroundBackground)
-                                            onEditClicked: KalendarUiUtils.setUpEdit(incidencePtr)
-                                            onDeleteClicked: KalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
-                                            onTodoCompletedClicked: KalendarUiUtils.completeTodo(incidencePtr)
-                                            onAddSubTodoClicked: KalendarUiUtils.setUpAddSubTodo(parentWrapper)
+                                            onViewClicked: CalendarUiUtils.setUpView(modelData, hourlyIncidenceDelegateBackgroundBackground)
+                                            onEditClicked: CalendarUiUtils.setUpEdit(incidencePtr)
+                                            onDeleteClicked: CalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
+                                            onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
+                                            onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
                                         }
 
                                         ResizerSeparator {

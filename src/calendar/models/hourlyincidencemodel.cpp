@@ -51,7 +51,7 @@ QList<QModelIndex> HourlyIncidenceModel::sortedIncidencesFromSourceModel(const Q
 
         // Skip incidences not part of the week
         if (end < rowStart || start > rowEnd) {
-            // qCWarning(KALENDAR_CALENDAR_LOG) << "Skipping because not part of this week";
+            // qCWarning(MERKURO_CALENDAR_LOG) << "Skipping because not part of this week";
             continue;
         }
 
@@ -72,7 +72,7 @@ QList<QModelIndex> HourlyIncidenceModel::sortedIncidencesFromSourceModel(const Q
         if (m_showTodos && incidenceIsTodo && !m_showSubTodos && !incidencePtr->relatedTo().isEmpty()) {
             continue;
         }
-        // qCWarning(KALENDAR_CALENDAR_LOG) << "found " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
+        // qCWarning(MERKURO_CALENDAR_LOG) << "found " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
         // srcIdx.data(IncidenceOccurrenceModel::Summary).toString();
         sorted.append(srcIdx);
     }
@@ -114,7 +114,7 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
     const int periodsPerDay = (24 * 60) / mPeriodLength;
 
     // for (const auto &srcIdx : sorted) {
-    //     qCWarning(KALENDAR_CALENDAR_LOG) << "sorted " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
+    //     qCWarning(MERKURO_CALENDAR_LOG) << "sorted " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
     //     srcIdx.data(IncidenceOccurrenceModel::Summary).toString()
     //     << srcIdx.data(IncidenceOccurrenceModel::AllDay).toBool();
     // }

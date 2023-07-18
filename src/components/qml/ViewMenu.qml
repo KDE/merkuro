@@ -3,15 +3,15 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
     KActionFromAction {
-        kalendarAction: "open_contact_view"
+        merkuroAction: "open_contact_view"
     }
     KActionFromAction {
-        kalendarAction: "open_mail_view"
+        merkuroAction: "open_mail_view"
     }
     KActionFromAction {
-        kalendarAction: 'open_kcommand_bar'
+        merkuroAction: 'open_kcommand_bar'
     }
 }

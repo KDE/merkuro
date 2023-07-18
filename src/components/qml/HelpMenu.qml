@@ -3,7 +3,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
 QQC2.Menu {
     id: root
@@ -21,7 +21,7 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        text: i18nc("@action:menu", "Kalendar Handbook") // todo
+        text: i18nc("@action:menu", "Merkuro Handbook") // todo
         visible: false
     }
 }

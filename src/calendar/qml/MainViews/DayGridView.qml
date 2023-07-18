@@ -8,8 +8,8 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -20,9 +20,9 @@ Item {
 
     property int daysToShow: daysPerRow * 6
     property int daysPerRow: 7
-    property double weekHeaderWidth: Kalendar.Config.showWeekNumbers ? Kirigami.Units.gridUnit * 1.5 : 0
+    property double weekHeaderWidth: Calendar.Config.showWeekNumbers ? Kirigami.Units.gridUnit * 1.5 : 0
 
-    readonly property date currentDate: Kalendar.DateTimeState.currentDate
+    readonly property date currentDate: Calendar.DateTimeState.currentDate
     // Getting the components once makes this faster when we need them repeatedly
     readonly property int currentDay: currentDate.getDate()
     readonly property int currentMonth: currentDate.getMonth()
@@ -45,15 +45,15 @@ Item {
     //Internal
     property int numberOfLinesShown: 0
     property int numberOfRows: (daysToShow / daysPerRow)
-    property int dayWidth: Kalendar.Config.showWeekNumbers ?
+    property int dayWidth: Calendar.Config.showWeekNumbers ?
         ((width - weekHeaderWidth) / daysPerRow) - spacing : // No spacing on right, spacing in between weekheader and monthgrid
         (width - weekHeaderWidth - (spacing * (daysPerRow - 1))) / daysPerRow // No spacing on left or right of month grid when no week header
     property int dayHeight: ((height - bgLoader.dayLabelsBar.height) / numberOfRows) - spacing
-    property int spacing: Kalendar.Config.monthGridBorderWidth // Between grid squares in background
+    property int spacing: Calendar.Config.monthGridBorderWidth // Between grid squares in background
     property int listViewSpacing: root.dayWidth < (Kirigami.Units.gridUnit * 5 + Kirigami.Units.smallSpacing * 2) ?
         Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing // Between lines of incidences ( ====== <- )
-    readonly property bool isDark: KalendarUiUtils.darkMode
-    readonly property int mode: Kalendar.CalendarApplication.Event
+    readonly property bool isDark: CalendarUiUtils.darkMode
+    readonly property int mode: Calendar.CalendarApplication.Event
 
     implicitHeight: (numberOfRows > 1 ? Kirigami.Units.gridUnit * 10 * numberOfRows : numberOfLinesShown * Kirigami.Units.gridUnit) + bgLoader.dayLabelsBar.height
     height: implicitHeight
@@ -90,7 +90,7 @@ Item {
                 spacing: root.spacing
 
                 anchors {
-                    leftMargin: Kalendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
+                    leftMargin: Calendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
                     left: parent.left
                     right: parent.right
                 }
@@ -117,11 +117,11 @@ Item {
                         Loader {
                             id: weekHeader
 
-                            property date startDate: Kalendar.Utils.addDaysToDate(root.startDate, index * 7)
+                            property date startDate: Calendar.Utils.addDaysToDate(root.startDate, index * 7)
 
                             sourceComponent: root.weekHeaderDelegate
-                            active: Kalendar.Config.showWeekNumbers
-                            visible: Kalendar.Config.showWeekNumbers
+                            active: Calendar.Config.showWeekNumbers
+                            visible: Calendar.Config.showWeekNumbers
 
                             Layout.preferredWidth: weekHeaderWidth
                             Layout.fillHeight: true
@@ -130,7 +130,7 @@ Item {
                         Item {
                             id: dayDelegate
 
-                            property date startDate: Kalendar.Utils.addDaysToDate(root.startDate, index * 7)
+                            property date startDate: Calendar.Utils.addDaysToDate(root.startDate, index * 7)
 
                             Layout.fillWidth: true
                             Layout.fillHeight: true
@@ -175,8 +175,8 @@ Item {
                                                 id: backgroundDayMouseArea
                                                 anchors.fill: parent
                                                 addDate: gridItem.date
-                                                onAddNewIncidence: KalendarUiUtils.setUpAdd(type, addDate)
-                                                onDeselect: KalendarUiUtils.appMain.incidenceInfoViewer.close()
+                                                onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate)
+                                                onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
 
                                                 DropArea {
                                                     id: incidenceDropArea
@@ -193,13 +193,13 @@ Item {
                                                             pos.y;
                                                         drop.source.caught = true;
 
-                                                        const incidenceWrapper = Kalendar.CalendarManager.createIncidenceWrapper();
-                                                        incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                        const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                        incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
                                                         let sameTimeOnDate = new Date(backgroundDayMouseArea.addDate);
                                                         sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
                                                         const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                        KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
+                                                        CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                                     }
                                                 }
                                             }
@@ -212,7 +212,7 @@ Item {
                                             flat: true
                                             visible: root.showDayIndicator
                                             enabled: root.daysToShow > 1
-                                            onClicked: KalendarUiUtils.openDayLayer(gridItem.date)
+                                            onClicked: CalendarUiUtils.openDayLayer(gridItem.date)
 
                                             anchors {
                                                 top: parent.top
@@ -269,21 +269,21 @@ Item {
             anchors {
                 fill: parent
                 topMargin: root.bgLoader.dayLabelsBar.height + root.spacing
-                leftMargin: Kalendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
+                leftMargin: Calendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
             }
 
             // Weeks
             Repeater {
-                model: Kalendar.MultiDayIncidenceModel {
+                model: Calendar.MultiDayIncidenceModel {
                     periodLength: 7
-                    showTodos: Kalendar.Config.showTodosInCalendarViews
-                    showSubTodos: Kalendar.Config.showSubtodosInCalendarViews
+                    showTodos: Calendar.Config.showTodosInCalendarViews
+                    showSubTodos: Calendar.Config.showSubtodosInCalendarViews
                     active: root.isCurrentView
-                    model: Kalendar.IncidenceOccurrenceModel {
+                    model: Calendar.IncidenceOccurrenceModel {
                         start: root.startDate
                         length: root.daysToShow
-                        calendar: Kalendar.CalendarManager.calendar
-                        filter: Kalendar.Filter
+                        calendar: Calendar.CalendarManager.calendar
+                        filter: Calendar.Filter
                     }
                 }
 
@@ -384,7 +384,7 @@ Item {
                                             const localPosition = child.mapFromGlobal(globalPosition.x, globalPosition.y);
 
                                             if(child.contains(localPosition) && child.gridSquareDate) {
-                                                KalendarUiUtils.setUpAdd(type, child.gridSquareDate);
+                                                CalendarUiUtils.setUpAdd(type, child.gridSquareDate);
                                             } else {
                                                 useGridSquareDate(type, child, globalPosition);
                                             }
@@ -392,7 +392,7 @@ Item {
                                     }
 
                                     onAddNewIncidence: useGridSquareDate(type, applicationWindow().contentItem, this.mapToGlobal(clickX, clickY))
-                                    onDeselect: KalendarUiUtils.appMain.incidenceInfoViewer.close()
+                                    onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                 }
 
                             }

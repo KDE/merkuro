@@ -5,8 +5,8 @@ import Qt.labs.platform 1.1 as Labs
 
 import QtQuick 2.15
 import QtQuick.Window 2.15
-import org.kde.kalendar 1.0
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro 1.0
+import org.kde.merkuro.components 1.0
 
 Labs.MenuBar {
     id: bar
@@ -19,35 +19,35 @@ Labs.MenuBar {
         title: i18nc("@action:menu", "View")
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_month_view'
+            merkuroAction: 'open_month_view'
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_week_view'
+            merkuroAction: 'open_week_view'
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: "open_threeday_view"
+            merkuroAction: "open_threeday_view"
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: "open_day_view"
+            merkuroAction: "open_day_view"
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_schedule_view'
+            merkuroAction: 'open_schedule_view'
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_todo_view'
+            merkuroAction: 'open_todo_view'
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_contact_view'
+            merkuroAction: 'open_contact_view'
         }
 
         NativeMenuItemFromAction {
-            kalendarAction: 'open_kcommand_bar'
+            merkuroAction: 'open_kcommand_bar'
         }
     }
 
@@ -55,7 +55,7 @@ Labs.MenuBar {
         title: i18nc("@action:menu", "Create")
 
         NativeMenuItemFromAction {
-            kalendarAction: 'create_mail'
+            merkuroAction: 'create_mail'
         }
     }
     Labs.Menu {

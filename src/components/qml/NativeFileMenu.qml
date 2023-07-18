@@ -3,7 +3,7 @@
 
 import QtQuick 2.15
 import Qt.labs.platform 1.1 as Labs
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.components 1.0
 
 Labs.Menu {
     id: fileMenu
@@ -13,7 +13,7 @@ Labs.Menu {
 
     property list<QtObject> _menuItems: [
         Labs.MenuItem {
-            text: i18nc("@action:menu", "Quit Kalendar")
+            text: i18nc("@action:menu", "Quit Merkuro")
             icon.name: "application-exit"
             shortcut: StandardKey.Quit
             onTriggered: Qt.quit()

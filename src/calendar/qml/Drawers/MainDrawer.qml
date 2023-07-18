@@ -10,8 +10,8 @@ import Qt.labs.qmlmodels 1.0
 import Qt5Compat.GraphicalEffects
 
 import org.kde.akonadi 1.0
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.components 1.0
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.components 1.0
 import org.kde.kirigami 2.16 as Kirigami
 import org.kde.kitemmodels 1.0
 
@@ -112,7 +112,7 @@ Kirigami.OverlayDrawer {
 
                 Kirigami.Heading { // TODO: Remove once search results page complete
                     Layout.leftMargin: Kirigami.Units.smallSpacing + Kirigami.Units.largeSpacing
-                    text: i18n("Kalendar")
+                    text: i18n("Calendar")
 
                     visible: !searchField.visible
                     opacity: mainDrawer.collapsed ? 0 : 1

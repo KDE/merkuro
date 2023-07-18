@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-set(kalendar_calendar_SRCS
+set(merkuro_calendar_SRCS
     remindersmodel.h
     remindersmodel.cpp
     utils.h
@@ -45,49 +45,49 @@ set(kalendar_calendar_SRCS
     models/todosortfilterproxymodel.h
 )
 
-ecm_qt_declare_logging_category(kalendar_calendar_SRCS
-    HEADER kalendar_calendar_debug.h
-    IDENTIFIER "KALENDAR_CALENDAR_LOG"
-    CATEGORY_NAME org.kde.kalendar.calendar
-    DESCRIPTION "kalendar calendar"
-    EXPORT KALENDAR
+ecm_qt_declare_logging_category(merkuro_calendar_SRCS
+    HEADER merkuro_calendar_debug.h
+    IDENTIFIER "MERKURO_CALENDAR_LOG"
+    CATEGORY_NAME org.kde.merkuro.calendar
+    DESCRIPTION "merkuro calendar"
+    EXPORT MERKURO
 )
 
 ecm_qt_export_logging_category(
-    IDENTIFIER "KALENDAR_CALENDAR_LOG"
-    CATEGORY_NAME "org.kde.kalendar.calendar"
-    DESCRIPTION "Kalendar - calendar"
-    EXPORT KALENDAR
+    IDENTIFIER "MERKURO_CALENDAR_LOG"
+    CATEGORY_NAME "org.kde.merkuro.calendar"
+    DESCRIPTION "merkuro - calendar"
+    EXPORT MERKURO
 )
-qt_add_dbus_adaptor(kalendar_calendar_SRCS org.kde.calendar.Calendar.xml calendarapplication.h CalendarApplication)
+qt_add_dbus_adaptor(merkuro_calendar_SRCS org.kde.calendar.Calendar.xml calendarapplication.h CalendarApplication)
 
-add_library(kalendar_calendar_static STATIC ${kalendar_calendar_SRCS})
-kconfig_add_kcfg_files(kalendar_calendar_static GENERATE_MOC calendarconfig.kcfgc)
-set_target_properties(kalendar_calendar_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(kalendar_calendar_static PUBLIC
-    kalendar_lib
+add_library(merkuro_calendar_static STATIC ${merkuro_calendar_SRCS})
+kconfig_add_kcfg_files(merkuro_calendar_static GENERATE_MOC calendarconfig.kcfgc)
+set_target_properties(merkuro_calendar_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(merkuro_calendar_static PUBLIC
+    merkuro_lib
     KF6::WindowSystem
 )
 
 
-ecm_add_qml_module(kalendar_calendar_plugin URI "org.kde.kalendar.calendar" VERSION 1.0)
+ecm_add_qml_module(merkuro_calendar_plugin URI "org.kde.merkuro.calendar" VERSION 1.0)
 
-target_sources(kalendar_calendar_plugin PRIVATE
+target_sources(merkuro_calendar_plugin PRIVATE
     calendarplugin.cpp
     calendarplugin.h
 )
 
 set_source_files_properties(models/todosortfilterproxymodel.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
 
-ecm_target_qml_sources(kalendar_calendar_plugin SOURCES
+ecm_target_qml_sources(merkuro_calendar_plugin SOURCES
     qml/incidenceeditor/ReminderDelegate.qml
     qml/incidenceeditor/PriorityComboBox.qml
     qml/BottomToolBar.qml
 )
 
-target_link_libraries(kalendar_calendar_plugin PUBLIC kalendar_calendar_static)
+target_link_libraries(merkuro_calendar_plugin PUBLIC merkuro_calendar_static)
 
-ecm_finalize_qml_module(kalendar_calendar_plugin
+ecm_finalize_qml_module(merkuro_calendar_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR}
     BUILD_SHARED_LIBS ON)
 
@@ -97,15 +97,15 @@ endif()
 
 #### Binary
 
-add_executable(kalendar-calendar
+add_executable(merkuro-calendar
     main.cpp
     importer.h
     importer.cpp
     resources.qrc
 )
-target_link_libraries(kalendar-calendar
+target_link_libraries(merkuro-calendar
     PRIVATE
-        kalendar_calendar_static
+        merkuro_calendar_static
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
@@ -115,5 +115,6 @@ target_link_libraries(kalendar-calendar
         KF6::WindowSystem
         KF6::ConfigGui
 )
-install(TARGETS kalendar-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.kalendar.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(TARGETS merkuro-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS org.kde.merkuro.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.merkuro.calendar.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

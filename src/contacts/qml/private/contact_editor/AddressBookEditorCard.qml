@@ -9,7 +9,7 @@ import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
 MobileForm.FormCard {
@@ -32,9 +32,9 @@ MobileForm.FormCard {
 
             text: i18n("Address book:")
             Layout.fillWidth: true
-            enabled: mode === ContactEditor.CreateMode
+            enabled: mode == ContactEditor.CreateMode
 
-            defaultCollectionId: if (mode === ContactEditor.CreateMode) {
+            defaultCollectionId: if (mode == ContactEditor.CreateMode) {
                 return Config.lastUsedAddressBookCollection;
             } else {
                 return contactEditor.collectionId;
@@ -43,6 +43,9 @@ MobileForm.FormCard {
             mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
             accessRightsFilter: Akonadi.Collection.CanCreateItem
             onUserSelectedCollection: collection => contactEditor.setDefaultAddressBook(collection)
+            onCollectionChanged: if (collection) {
+                contactEditor.setDefaultAddressBook(collection)
+            }
         }
 
         MobileForm.FormDelegateSeparator { above: addressBookComboBox; below: nameDelegate }

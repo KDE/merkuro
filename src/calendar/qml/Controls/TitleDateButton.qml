@@ -5,7 +5,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.0 as QQC2
 import QtQuick.Layouts 1.7
 import org.kde.kirigami 2.12 as Kirigami
-import org.kde.kalendar.calendar 1.0 as Calendar
+import org.kde.merkuro.calendar 1.0 as Calendar
 
 QQC2.ToolButton {
     id: root

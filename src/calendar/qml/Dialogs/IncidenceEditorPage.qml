@@ -9,9 +9,9 @@ import Qt.labs.platform
 import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kalendar.calendar 1.0
-import org.kde.kalendar.contact 1.0
-import org.kde.kalendar.calendar 1.0 as Calendar
+import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.contact 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
 import org.kde.akonadi 1.0 as Akonadi
 import "labelutils.js" as LabelUtils
 

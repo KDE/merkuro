@@ -11,7 +11,7 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kquickcontrolsaddons 2.0
-import org.kde.kalendar.contact 1.0
+import org.kde.merkuro.contact 1.0
 import org.kde.prison 1.0 as Prison
 
 ColumnLayout {

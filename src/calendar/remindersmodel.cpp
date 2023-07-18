@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "remindersmodel.h"
-#include "kalendar_calendar_debug.h"
+#include "merkuro_calendar_debug.h"
 #include <QMetaEnum>
 
 RemindersModel::RemindersModel(QObject *parent)
@@ -52,7 +52,7 @@ QVariant RemindersModel::data(const QModelIndex &idx, int role) const
     case EndOffsetRole:
         return alarm->endOffset().asSeconds();
     default:
-        qCWarning(KALENDAR_CALENDAR_LOG) << "Unknown role for incidence:" << QMetaEnum::fromType<Roles>().valueToKey(role);
+        qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for incidence:" << QMetaEnum::fromType<Roles>().valueToKey(role);
         return {};
     }
 }
@@ -90,7 +90,7 @@ bool RemindersModel::setData(const QModelIndex &idx, const QVariant &value, int 
         break;
     }
     default:
-        qCWarning(KALENDAR_CALENDAR_LOG) << "Unknown role for incidence:" << QMetaEnum::fromType<Roles>().valueToKey(role);
+        qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for incidence:" << QMetaEnum::fromType<Roles>().valueToKey(role);
         return false;
     }
     Q_EMIT dataChanged(idx, idx);
@@ -125,7 +125,7 @@ void RemindersModel::addAlarm()
     alarm->setText(m_incidence->summary());
     alarm->setStartOffset(0);
 
-    qCDebug(KALENDAR_CALENDAR_LOG) << alarm->parentUid();
+    qCDebug(MERKURO_CALENDAR_LOG) << alarm->parentUid();
 
     m_incidence->addAlarm(alarm);
     Q_EMIT alarmsChanged();

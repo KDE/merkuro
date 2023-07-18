@@ -7,8 +7,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 
-import org.kde.kalendar.calendar 1.0 as Kalendar
-import org.kde.kalendar.utils 1.0
+import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
@@ -30,44 +30,44 @@ QQC2.ScrollView {
     property real maxTimeLabelWidth: 0
 
     readonly property bool isLarge: width > Kirigami.Units.gridUnit * 30
-    readonly property bool isDark: KalendarUiUtils.darkMode
+    readonly property bool isDark: CalendarUiUtils.darkMode
 
     contentWidth: availableWidth
     QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
     function addIncidence(type, addDate) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpAdd(type, addDate);
+        CalendarUiUtils.setUpAdd(type, addDate);
     }
 
     function viewIncidence(modelData, incidenceItem) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpView(modelData, incidenceItem);
+        CalendarUiUtils.setUpView(modelData, incidenceItem);
     }
 
     function editIncidence(incidencePtr) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpEdit(incidencePtr);
+        CalendarUiUtils.setUpEdit(incidencePtr);
     }
 
     function deleteIncidence(incidencePtr, deleteDate) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpDelete(incidencePtr, deleteDate);
+        CalendarUiUtils.setUpDelete(incidencePtr, deleteDate);
     }
 
     function completeTodo(incidencePtr) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.completeTodo(incidencePtr);
+        CalendarUiUtils.completeTodo(incidencePtr);
     }
 
     function addSubTodo(parentWrapper) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpAddSubTodo(parentWrapper);
+        CalendarUiUtils.setUpAddSubTodo(parentWrapper);
     }
 
     function moveIncidence(startOffset, occurrenceDate, incidenceWrapper, caughtDelegate) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        KalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, occurrenceDate, caughtDelegate);
+        CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, occurrenceDate, caughtDelegate);
     }
 
     function moveToSelected() {
@@ -76,7 +76,7 @@ QQC2.ScrollView {
             return;
         }
 
-        const currentDate = Kalendar.DateTimeState.currentDate;
+        const currentDate = Calendar.DateTimeState.currentDate;
         if (currentDate.getDate() > 1 && currentDate.getMonth() === month && currentDate.getFullYear() === year) {
             scheduleListView.positionViewAtIndex(currentDate.getDate() - 1, ListView.Beginning);
         } else {
@@ -97,16 +97,16 @@ QQC2.ScrollView {
 
         onCountChanged: if(scrollView.initialMonth) scrollView.moveToSelected()
 
-        model: Kalendar.MultiDayIncidenceModel {
+        model: Calendar.MultiDayIncidenceModel {
            periodLength: 1
-           showTodos: Kalendar.Config.showTodosInCalendarViews
-           showSubTodos: Kalendar.Config.showSubtodosInCalendarViews
+           showTodos: Calendar.Config.showTodosInCalendarViews
+           showSubTodos: Calendar.Config.showSubtodosInCalendarViews
            active: scrollView.isCurrentItem
-           model: Kalendar.IncidenceOccurrenceModel {
+           model: Calendar.IncidenceOccurrenceModel {
                start: scrollView.startDate
                length: scrollView.daysInMonth
-               calendar: Kalendar.CalendarManager.calendar
-               filter: Kalendar.Filter
+               calendar: Calendar.CalendarManager.calendar
+               filter: Calendar.Filter
            }
        }
 
@@ -118,7 +118,7 @@ QQC2.ScrollView {
 
             addDate: periodStartDate
             onAddNewIncidence: addIncidence(type, addDate)
-            onDeselect: KalendarUiUtils.appMain.incidenceInfoViewer.close()
+            onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
 
             Rectangle {
                 id: backgroundRectangle
@@ -154,8 +154,8 @@ QQC2.ScrollView {
                     drop.source.caughtY = pos.y + dayColumn.spacing + Kirigami.Units.largeSpacing;
                     drop.source.caught = true;
 
-                    const incidenceWrapper = Kalendar.CalendarManager.createIncidenceWrapper();
-                    incidenceWrapper.incidenceItem = Kalendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                    const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                    incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
                     let sameTimeOnDate = new Date(dayMouseArea.addDate);
                     sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
@@ -187,7 +187,7 @@ QQC2.ScrollView {
                         const nextDay = new Date(periodStartDate.getFullYear(), periodStartDate.getMonth(), nextDayDate);
                         return periodStartDate.toLocaleDateString(Qt.locale(), "dddd <b>dd</b>") + "–" + nextDay.toLocaleDateString(Qt.locale(), "dddd <b>dd</b> MMMM");
                     }
-                    visible: Kalendar.Config.showWeekHeaders &&
+                    visible: Calendar.Config.showWeekHeaders &&
                         periodStartDate !== undefined &&
                         (periodStartDate.getDay() === Qt.locale().firstDayOfWeek || index === 0)
                 }
@@ -221,7 +221,7 @@ QQC2.ScrollView {
                         rightPadding: Kirigami.Units.largeSpacing
 
                         flat: true
-                        onClicked: KalendarUiUtils.openDayLayer(periodStartDate)
+                        onClicked: CalendarUiUtils.openDayLayer(periodStartDate)
 
                         property Item smallDayLabel: QQC2.Label {
                             id: smallDayLabel
@@ -285,7 +285,7 @@ QQC2.ScrollView {
                                 wrapMode: Text.Wrap
                             }
 
-                            onClicked: scrollView.addIncidence(Kalendar.IncidenceWrapper.TypeEvent, periodStartDate)
+                            onClicked: scrollView.addIncidence(Calendar.IncidenceWrapper.TypeEvent, periodStartDate)
                         }
 
                         Repeater {

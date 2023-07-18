@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "../config-kalendar.h"
+#include "../config-merkuro.h"
 #include <KAboutData>
 #include <KDBusService>
 #include <KLocalizedContext>
@@ -28,9 +28,9 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("kalendar");
+    KLocalizedString::setApplicationDomain("merkuro");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
-    QCoreApplication::setApplicationName(QStringLiteral("Kalendar"));
+    QCoreApplication::setApplicationName(QStringLiteral("Merkuro Mail"));
 
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
@@ -43,10 +43,10 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData(
         // The program name used internally.
-        QStringLiteral("kalendar-mail"),
+        QStringLiteral("merkuro-mail"),
         // A displayable program name string.
         i18nc("@title", "Mail"),
-        QStringLiteral(KALENDAR_VERSION_STRING),
+        QStringLiteral(MERKURO_VERSION_STRING),
         // Short description of what the app does.
         i18n("EMail Client Application"),
         // The license this code is released under.
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
                         QStringLiteral("claudio.cambra@gmail.com"),
                         QStringLiteral("https://claudiocambra.com"));
     KAboutData::setApplicationData(aboutData);
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kalendar.mail")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.merkuro.mail")));
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);

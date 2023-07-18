@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "attachmentsmodel.h"
-#include "kalendar_calendar_debug.h"
+#include "merkuro_calendar_debug.h"
 #include <QMetaEnum>
 
 AttachmentsModel::AttachmentsModel(QObject *parent, KCalendarCore::Incidence::Ptr incidencePtr)
@@ -67,7 +67,7 @@ QVariant AttachmentsModel::data(const QModelIndex &idx, int role) const
     case URIRole:
         return attachment.uri();
     default:
-        qCWarning(KALENDAR_CALENDAR_LOG) << "Unknown role for attachment:" << QMetaEnum::fromType<Roles>().valueToKey(role);
+        qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for attachment:" << QMetaEnum::fromType<Roles>().valueToKey(role);
         return {};
     }
 }

@@ -10,7 +10,7 @@ import Qt.labs.qmlmodels 1.0
 
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kitemmodels 1.0
-import org.kde.kalendar.mail 1.0
+import org.kde.merkuro.mail 1.0
 
 ListView {
     id: mailList
