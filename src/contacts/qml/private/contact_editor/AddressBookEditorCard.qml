@@ -32,9 +32,9 @@ MobileForm.FormCard {
 
             text: i18n("Address book:")
             Layout.fillWidth: true
-            enabled: mode === ContactEditor.CreateMode
+            enabled: mode == ContactEditor.CreateMode
 
-            defaultCollectionId: if (mode === ContactEditor.CreateMode) {
+            defaultCollectionId: if (mode == ContactEditor.CreateMode) {
                 return Config.lastUsedAddressBookCollection;
             } else {
                 return contactEditor.collectionId;
@@ -43,6 +43,9 @@ MobileForm.FormCard {
             mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
             accessRightsFilter: Akonadi.Collection.CanCreateItem
             onUserSelectedCollection: contactEditor.setDefaultAddressBook(collection)
+            onCollectionChanged: if (collection) {
+                contactEditor.setDefaultAddressBook(collection)
+            }
         }
 
         MobileForm.FormDelegateSeparator { above: addressBookComboBox; below: nameDelegate }
