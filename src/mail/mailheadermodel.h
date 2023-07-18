@@ -23,7 +23,7 @@ public:
         CC,
         ReplyTo,
     };
-    Q_ENUM(Header);
+    Q_ENUM(Header)
 
     explicit MailHeaderModel(QObject *parent = nullptr);
     ~MailHeaderModel() override = default;
