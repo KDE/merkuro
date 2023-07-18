@@ -31,7 +31,6 @@ ContactsPage {
             removeAttendee(itemId);
         } else {
             const allEmail = root.model.data(root.model.index(index, 0), ContactsModel.AllEmailsRole);
-            console.log(model.itemId, model.item)
             if (allEmail.length > 1) {
                 emailsView.model = allEmail;
                 emailsView.itemId = model.itemId;

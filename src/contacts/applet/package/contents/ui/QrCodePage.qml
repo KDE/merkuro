@@ -72,7 +72,6 @@ ColumnLayout {
                 id: configureButton
                 checkable: true
                 icon.name: "configure"
-                onCheckedChanged: console.log("checked", checked)
                 onClicked: menu.open()
 
                 PlasmaComponents3.ToolTip {
