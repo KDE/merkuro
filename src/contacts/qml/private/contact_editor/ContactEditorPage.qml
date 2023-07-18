@@ -105,10 +105,12 @@ Kirigami.ScrollablePage {
         }
 
         PhoneEditorCard {
+            id: phoneEditorId
             contactEditor: root.contactEditor
         }
 
         EmailEditorCard {
+            id: emailEditorId
             contactEditor: root.contactEditor
         }
 
