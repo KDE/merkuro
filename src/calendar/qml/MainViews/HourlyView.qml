@@ -65,7 +65,7 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
     }
 
-    actions.contextualActions: [
+    actions: [
         previousAction,
         nextAction,
         todayAction,
