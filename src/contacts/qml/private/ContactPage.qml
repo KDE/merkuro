@@ -66,17 +66,12 @@ Kirigami.ScrollablePage {
         spacing: 0
         Header {
             id: header
+
             Layout.fillWidth: true
             Layout.preferredHeight: Kirigami.Units.gridUnit * 8
 
             source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
-
-            backgroundSource: "qrc:/fallbackBackground.png"
-
-            contentItems: Kirigami.Heading {
-                text: addressee.formattedName
-                color: "#fcfcfc"
-            }
+            name: addressee.formattedName
         }
 
         QQC2.ToolBar {
