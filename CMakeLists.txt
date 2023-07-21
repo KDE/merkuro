@@ -12,7 +12,7 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(merkuro VERSION ${RELEASE_SERVICE_VERSION})
 
-set(QT_MIN_VERSION "6.4.0")
+set(QT_REQUIRED_VERSION "6.4.0")
 set(KF_MIN_VERSION "5.240.0")
 
 set(AKONADI_CONTACT_VERSION "5.240.43")
@@ -66,7 +66,7 @@ ecm_setup_version(${PROJECT_VERSION}
 )
 
 ################# Find dependencies #################
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
     Core
     DBus
     Gui
