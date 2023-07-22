@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:51+0000\n"
-"PO-Revision-Date: 2023-07-05 21:50+0200\n"
+"POT-Creation-Date: 2023-07-22 00:51+0000\n"
+"PO-Revision-Date: 2023-07-20 09:09+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -94,7 +94,7 @@ msgstr "CRTL + 1"
 #: calendar/calendarapplication.cpp:154
 #, kde-format
 msgid "About Merkuro"
-msgstr ""
+msgstr "À propos de Merkuro"
 
 #: calendar/calendarapplication.cpp:161
 #, kde-format
@@ -225,11 +225,10 @@ msgid "Task"
 msgstr "Tâche"
 
 #: calendar/main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Calendrier"
+msgstr "Agenda de Merkuro"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -515,8 +514,7 @@ msgid "An error occurred importing incidences: %1"
 msgstr "Une erreur s'est produite lors de l'importation des incidences : %1 "
 
 #: calendar/qml/Controls/ImportHandler.qml:62
-#, fuzzy, kde-format
-#| msgid "New calendar  created from imported file successfully."
+#, kde-format
 msgid "New calendar created from imported file successfully."
 msgstr "Création réussie du nouvel agenda à partir du fichier importé."
 
@@ -528,7 +526,7 @@ msgstr "Importer un agenda"
 #: calendar/qml/Controls/ImportHandler.qml:90
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
-msgstr ""
+msgstr "Fichiers d'agenda (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:107
 #, kde-format
@@ -1187,7 +1185,7 @@ msgstr "Participants :"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:159
+#: contacts/qml/private/ContactPage.qml:154
 #, kde-format
 msgid "Name:"
 msgstr "Nom :"
@@ -1284,10 +1282,9 @@ msgid "Mark Complete"
 msgstr "Marquer comme « Terminé »"
 
 #: calendar/qml/Drawers/MainDrawer.qml:115
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgid "Calendar"
-msgstr "Calendrier"
+msgstr "Agenda"
 
 #: calendar/qml/Drawers/MainDrawer.qml:159
 #: calendar/qml/Drawers/MainDrawer.qml:275
@@ -1733,12 +1730,10 @@ msgid "Help"
 msgstr "Aide"
 
 #: calendar/qml/Menus/MenuBar.qml:184
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr "Manuel de Kalendar"
+msgstr "Agenda"
 
 #: calendar/qml/Settings/CalendarSettingsPage.qml:138
 #, kde-format
@@ -1887,10 +1882,9 @@ msgid "Accounts"
 msgstr "Comptes"
 
 #: calendar/qml/Settings/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About Merkuro Calendar"
-msgstr "À propos de Kalendar"
+msgstr "À propos de l'agenda dans Merkuro"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:21
 #, kde-format
@@ -2200,15 +2194,13 @@ msgstr "Fichier"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Quitter Merkuro"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Manuel de Kalendar"
+msgstr "Manuel de Merkuro"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2249,7 +2241,7 @@ msgid "Enter Full Screen"
 msgstr "Passer en mode « Plein écran »"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgid "Home:"
 msgstr "Maison :"
@@ -2323,17 +2315,15 @@ msgid "Other:"
 msgstr "Autre :"
 
 #: contacts/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Return to Contact"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Revenir au contact"
+msgstr "Contacts dans Merkuro"
 
 #: contacts/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Address Book:"
+#, kde-format
 msgid "Address Book Application"
-msgstr "Carnet d'adresses :"
+msgstr "Application de carnet d'adresses"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2346,7 +2336,7 @@ msgstr "Sélectionner une couleur de carnet d'adresses"
 msgid "Done"
 msgstr "Terminé"
 
-#: contacts/qml/ContactChooserPage.qml:51
+#: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
 msgstr "Sélectionnez une adresse de courriel"
@@ -2533,7 +2523,7 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
 msgstr "Informations professionnelles"
@@ -2580,7 +2570,7 @@ msgstr "Service"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Équipe de Merkuro"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
@@ -2836,150 +2826,149 @@ msgid "Edit"
 msgstr "Modifier"
 
 #: contacts/qml/private/ContactPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: contacts/qml/private/ContactPage.qml:89
+#: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Call"
 msgstr "Appeler"
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to call"
 msgstr "Sélection un numéro à appeler"
 
-#: contacts/qml/private/ContactPage.qml:108
+#: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send SMS"
 msgstr "Envoyer un SMS"
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:114
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Sélection un numéro pour y envoyer un message"
 
-#: contacts/qml/private/ContactPage.qml:127
+#: contacts/qml/private/ContactPage.qml:122
 #, kde-format
 msgid "Send email"
 msgstr "Trouver un courriel"
 
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:128
 #, kde-format
 msgid "Show QR Code"
 msgstr "Afficher le code « QR »"
 
-#: contacts/qml/private/ContactPage.qml:153
+#: contacts/qml/private/ContactPage.qml:148
 #, kde-format
 msgid "Contact information"
 msgstr "Informations sur un contact"
 
-#: contacts/qml/private/ContactPage.qml:165
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Nickname:"
 msgstr "Pseudonyme :"
 
-#: contacts/qml/private/ContactPage.qml:171
+#: contacts/qml/private/ContactPage.qml:166
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Flux de blogue :"
 
-#: contacts/qml/private/ContactPage.qml:188
+#: contacts/qml/private/ContactPage.qml:183
 #, kde-format
 msgid "Personal information"
 msgstr "Informations personnelles "
 
-#: contacts/qml/private/ContactPage.qml:194
+#: contacts/qml/private/ContactPage.qml:189
 #, kde-format
 msgid "Birthday:"
 msgstr "Anniversaire :"
 
-#: contacts/qml/private/ContactPage.qml:212
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Anniversary:"
 msgstr "Anniversaire :"
 
-#: contacts/qml/private/ContactPage.qml:219
+#: contacts/qml/private/ContactPage.qml:214
 #, kde-format
 msgid "Partner's name:"
 msgstr "Nom de l'associé :"
 
-#: contacts/qml/private/ContactPage.qml:234
+#: contacts/qml/private/ContactPage.qml:229
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Numéro de téléphone"
 msgstr[1] "Numéros de téléphone"
 
-#: contacts/qml/private/ContactPage.qml:246
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1 :"
 
-#: contacts/qml/private/ContactPage.qml:264
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adresse"
 msgstr[1] "Adresses"
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1 :"
 
-#: contacts/qml/private/ContactPage.qml:295
+#: contacts/qml/private/ContactPage.qml:290
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Messagerie instantanée"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:307
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1 :"
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Organization:"
 msgstr "Organisation :"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Profession:"
 msgstr "Profession :"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:352
 #, kde-format
 msgid "Title:"
 msgstr "Titre :"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:359
 #, kde-format
 msgid "Department:"
 msgstr "Service :"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgid "Office:"
 msgstr "Bureau :"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgid "Manager's name:"
 msgstr "Nom du responsable :"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:380
 #, kde-format
 msgid "Assistants's name:"
 msgstr "Noms des assistants :"
 
-#: contacts/qml/private/ContactPage.qml:401
+#: contacts/qml/private/ContactPage.qml:396
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -3007,8 +2996,7 @@ msgid "Creating QR code failed"
 msgstr "Il a été impossible de créer un code « QR »"
 
 #: contacts/qml/Settings.qml:13
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuration"
@@ -3031,13 +3019,12 @@ msgstr "Ouvrir la barre de commandes"
 #: lib/abstractapplication.cpp:168
 #, kde-format
 msgid "About %1"
-msgstr ""
+msgstr "À propos de %1"
 
 #: lib/abstractapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About KDE"
-msgstr "À propos de Kalendar"
+msgstr "À propos de KDE"
 
 #: lib/abstractapplication.cpp:188
 #, kde-format
@@ -3085,17 +3072,15 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgctxt "@title"
 msgid "Mail"
 msgstr "Courriel"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
+#, kde-format
 msgid "EMail Client Application"
-msgstr "Application de calendrier"
+msgstr "Application de client de messagerie électronique"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
