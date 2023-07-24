@@ -102,7 +102,6 @@ Kirigami.OverlayDrawer {
                             id: collectionSourceItem
 
                             required property int index
-                            required property string displayName
                             required property var decoration
                             required property var model
                             required property var collection
@@ -115,7 +114,7 @@ Kirigami.OverlayDrawer {
                             Layout.topMargin: 2 * Kirigami.Units.largeSpacing
                             width: ListView.view.width
 
-                            label: displayName
+                            label: model.display
                             labelItem {
                                 color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                                 font.weight: Font.DemiBold
@@ -201,7 +200,6 @@ Kirigami.OverlayDrawer {
                             id: collectionItem
 
                             required property int index
-                            required property string displayName
                             required property var decoration
                             required property var model
                             required property var collection
@@ -212,7 +210,7 @@ Kirigami.OverlayDrawer {
                             required property color collectionColor
 
                             width: ListView.view.width
-                            label: displayName
+                            label: model.display
                             labelItem.color: Kirigami.Theme.textColor
                             leftPadding: if (Kirigami.Settings.isMobile) {
                                 (Kirigami.Units.largeSpacing * 2 * kDescendantLevel)
