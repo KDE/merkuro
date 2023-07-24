@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData(
         // The program name used internally.
-        QStringLiteral("merkuro-mail"),
+        QStringLiteral("merkuro.mail"),
         // A displayable program name string.
         i18nc("@title", "Mail"),
         QStringLiteral(MERKURO_VERSION_STRING),
