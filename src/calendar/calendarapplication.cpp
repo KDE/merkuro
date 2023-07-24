@@ -148,13 +148,6 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openMonthAction, QKeySequence(i18n("Ctrl+1")));
     }
 
-    actionName = QLatin1String("open_about_page");
-    if (KAuthorized::authorizeAction(actionName)) {
-        auto action = mCollection->addAction(actionName, this, &CalendarApplication::openAboutPage);
-        action->setText(i18n("About Merkuro"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
-    }
-
     actionName = QLatin1String("move_view_backwards");
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewBackwardsAction = mCollection->addAction(actionName, this, &CalendarApplication::moveViewBackwards);
