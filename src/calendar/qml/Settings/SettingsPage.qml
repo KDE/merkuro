@@ -27,12 +27,6 @@ Kirigami.CategorizedSettings {
             text: i18n("Calendars")
             icon.name: "korganizer"
             page: Qt.resolvedUrl("CalendarSettingsPage.qml")
-        },
-        Kirigami.SettingAction {
-            actionName: "about"
-            text: i18n("About Merkuro Calendar")
-            icon.name: "about"
-            page: Qt.resolvedUrl("AboutPage.qml")
         }
     ]
 }
