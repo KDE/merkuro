@@ -12,7 +12,7 @@ Kirigami.CategorizedSettings {
         Kirigami.SettingAction {
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
-            //page: Qt.resolvedUrl("AccountSettingsPage.qml")
+            page: Qt.resolvedUrl("AccountSettingsPage.qml")
         }
     ]
 }
