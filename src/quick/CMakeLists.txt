@@ -19,6 +19,8 @@ target_sources(akonadi_quick_plugin PRIVATE
     agentconfiguration.h
     tagmanager.h
     tagmanager.cpp
+    identitymodel.h
+    identitymodel.cpp
 )
 
 ecm_target_qml_sources(akonadi_quick_plugin SOURCES
