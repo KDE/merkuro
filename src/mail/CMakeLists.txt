@@ -44,9 +44,6 @@ set(merkuro_mail_SRCS
     mailheadermodel.h
     mailheadermodel.cpp
 
-    identitymodel.h
-    identitymodel.cpp
-
     crypto.h
     mimetreeparser/messagepart.h
     mimetreeparser/bodypartformatter.h

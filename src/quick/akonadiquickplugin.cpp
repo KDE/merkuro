@@ -7,6 +7,7 @@
 #include "collection.h"
 #include "collectioncomboboxmodel.h"
 #include "collectionpickermodel.h"
+#include "identitymodel.h"
 #include "mimetypes.h"
 #include "tagmanager.h"
 #include <akonadi_version.h>
@@ -32,6 +33,7 @@ void AkonadiQuickPlugin::registerTypes(const char *uri)
     qmlRegisterType<AgentConfiguration>("org.kde.akonadi", 1, 0, "AgentConfiguration");
     qmlRegisterType<Akonadi::Quick::CollectionComboBoxModel>("org.kde.akonadi", 1, 0, "CollectionComboBoxModel");
     qmlRegisterType<Akonadi::Quick::CollectionPickerModel>("org.kde.akonadi", 1, 0, "CollectionPickerModel");
+    qmlRegisterType<Akonadi::Quick::IdentityModel>("org.kde.akonadi", 1, 0, "IdentityModel");
 
     qmlRegisterUncreatableType<Akonadi::Quick::Collection>("org.kde.akonadi", 1, 0, "Collection", QStringLiteral("It's just an enum"));
 }

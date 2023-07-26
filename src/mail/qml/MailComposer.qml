@@ -8,6 +8,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kitemmodels 1.0 as KItemModels
 import org.kde.merkuro.mail 1.0
+import org.kde.akonadi 1.0 as Akonadi
 
 
 Kirigami.ScrollablePage {
@@ -42,12 +43,10 @@ Kirigami.ScrollablePage {
 
         QQC2.ComboBox {
             id: identity
-            model: IdentityModel {}
+            model: Akonadi.IdentityModel {}
             textRole: "display"
             valueRole: "uoid"
-            onCurrentIndexChanged: {
-                from.text = model.email(currentValue)
-            }
+            onCurrentIndexChanged: from.text = model.email(currentValue)
             Layout.rightMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
         }
