@@ -24,51 +24,9 @@ MobileForm.FormCard {
         Repeater {
             model: root._identityModel
             delegate: MobileForm.FormButtonDelegate {
-                Loader {
-                    id: dialogLoader
-                    sourceComponent: Kirigami.PromptDialog {
-                        id: dialog
-                        title: i18n("Configure %1", model.display)
-                        subtitle: i18n("Modify or delete this account agent.")
-                        standardButtons: Kirigami.Dialog.NoButton
-
-                        customFooterActions: [
-                        Kirigami.Action {
-                            text: i18n("Modify")
-                            iconName: "edit-entry"
-                        },
-                        Kirigami.Action {
-                            text: i18n("Delete")
-                            iconName: "delete"
-                        }
-                        ]
-                    }
-                }
-
                 leadingPadding: Kirigami.Units.largeSpacing
-                leading: Kirigami.Icon {
-                    source: model.decoration
-                    implicitWidth: Kirigami.Units.iconSizes.medium
-                    implicitHeight: Kirigami.Units.iconSizes.medium
-                }
-                
                 text: model.display
-                //description: model.statusMessage
-
-                onClicked: {
-                    dialogLoader.active = true;
-                    dialogLoader.item.open();
-                }
             }
-        }
-
-        MobileForm.FormDelegateSeparator { below: addAccountDelegate }
-
-        MobileForm.FormButtonDelegate {
-            id: addIdentityDelegate
-            text: i18n("Add Identity")
-            icon.name: "list-add"
-            //onClicked: pageStack.pushDialogLayer(addIdentityPage)
         }
     }
 }
