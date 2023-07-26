@@ -40,12 +40,14 @@ BaseApplication {
         target: Mail.MailApplication
 
         function onOpenSettings() {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/qml/Settings.qml", {
+            const openDialogWindow = pageStack.pushDialogLayer("qrc:/qml/settings/Settings.qml", {
                 width: root.width
             }, {
-                width: Kirigami.Units.gridUnit * 30,
+                title: i18n("Configure"),
+                width: Kirigami.Units.gridUnit * 40,
                 height: Kirigami.Units.gridUnit * 30
             });
+            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
         }
     }
 }
