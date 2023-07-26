@@ -26,5 +26,9 @@ Kirigami.ScrollablePage {
             }
         }
 
+        Akonadi.IdentityConfigurationForm {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+        }
     }
 }
