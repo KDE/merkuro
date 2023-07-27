@@ -42,7 +42,7 @@ void IdentityEditorBackend::setIdentity(IdentityWrapper *identity)
     Q_EMIT identityChanged();
 }
 
-uint IdentityEditorBackend::identityUiod() const
+uint IdentityEditorBackend::identityUoid() const
 {
     if (!m_identity) {
         return 0;
@@ -51,13 +51,13 @@ uint IdentityEditorBackend::identityUiod() const
     return m_identity->uoid();
 }
 
-void IdentityEditorBackend::setIdentityUiod(uint identityUiod)
+void IdentityEditorBackend::setIdentityUoid(uint identityUoid)
 {
-    if (m_identity && m_identity->uoid() == identityUiod) {
+    if (m_identity && m_identity->uoid() == identityUoid) {
         return;
     }
 
-    const auto identity = m_identityManager->modifyIdentityForUoid(identityUiod);
+    const auto identity = m_identityManager->modifyIdentityForUoid(identityUoid);
     setIdentity(new IdentityWrapper(identity, this));
 }
 
