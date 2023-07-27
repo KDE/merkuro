@@ -29,9 +29,9 @@ Kirigami.ScrollablePage {
         })
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
-            iconName: "document-edit"
+            icon.name: "document-edit"
             text: i18nc("@action:inmenu", "Edit")
             onTriggered: openEditor()
         },
