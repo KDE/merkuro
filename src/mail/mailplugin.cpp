@@ -7,7 +7,6 @@
 
 #include "contactimageprovider.h"
 #include "helper.h"
-#include "identitymodel.h"
 #include "mailapplication.h"
 #include "mailheadermodel.h"
 #include "mailmanager.h"
