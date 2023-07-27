@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2023-01-07 14:24+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -1319,6 +1319,7 @@ msgid "Refresh All Calendars"
 msgstr "Obnoviť všetky kalendáre"
 
 #: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Konfigurovať"
@@ -1895,6 +1896,8 @@ msgstr "Vzhľad"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Účty"
@@ -3090,12 +3093,6 @@ msgstr "%1 (Predvolený)"
 msgid "Image request has been cancelled"
 msgstr "Požiadavka na obrázok bola zrušená"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr ""
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3220,51 +3217,51 @@ msgstr "E-mailové schránky"
 msgid "Mail"
 msgstr "Pošta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Odosielanie správ"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, fuzzy, kde-format
 #| msgctxt "displayed as subject when the subject of a mail is empty"
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "Bez predmetu"
 
-#: mail/qml/MailComposer.qml:139
+#: mail/qml/MailComposer.qml:138
 #, fuzzy, kde-format
 #| msgid "Send SMS"
 msgid "Send"
@@ -3340,6 +3337,18 @@ msgstr "Uložiť prílohu"
 msgid "Import key"
 msgstr "Importovať kľúč"
 
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Nastavenia pre zobrazenie mesiaca"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr ""
+
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
 msgid "Configure %1"
@@ -3359,6 +3368,11 @@ msgstr "Zmeniť"
 #, kde-format
 msgid "Add Account"
 msgstr "Pridať účet"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, kde-format
+msgid "Identities"
+msgstr ""
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
