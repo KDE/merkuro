@@ -35,6 +35,7 @@ ecm_target_qml_sources(akonadi_quick_plugin SOURCES
     qml/AgentConfigurationForm.qml
     qml/TagManagerPage.qml
     qml/IdentityConfigurationForm.qml
+    qml/identity/IdentityEditorPage.qml
 )
 
 ecm_qt_declare_logging_category(akonadi_quick_plugin
