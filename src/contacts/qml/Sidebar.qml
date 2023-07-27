@@ -40,7 +40,8 @@ Kirigami.OverlayDrawer {
         }
     }
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     leftPadding: 0
     rightPadding: 0
@@ -127,6 +128,7 @@ Kirigami.OverlayDrawer {
                                     + (Kirigami.Units.iconSizes.smallMedium * (kDescendantLevel - 1))
                             }
                             hoverEnabled: false
+                            highlighted: false
                             enabled: !root.parentDrawerCollapsed
 
                             separatorVisible: false
