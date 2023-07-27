@@ -45,10 +45,10 @@ int main(int argc, char *argv[])
         // The program name used internally.
         QStringLiteral("merkuro.mail"),
         // A displayable program name string.
-        i18nc("@title", "Mail"),
+        i18nc("@title", "Merkuro Mail"),
         QStringLiteral(MERKURO_VERSION_STRING),
         // Short description of what the app does.
-        i18n("EMail Client Application"),
+        i18n("Email Client"),
         // The license this code is released under.
         KAboutLicense::GPL_V3,
         // Copyright Statement.
