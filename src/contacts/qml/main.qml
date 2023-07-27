@@ -15,6 +15,8 @@ BaseApplication {
 
     application: Contact.ContactApplication
 
+    title: pageStack.currentItem.title
+
     menuBar: Loader {
         active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && Contact.Config.showMenubar && applicationWindow().pageStack.currentItem
 
