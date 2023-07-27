@@ -34,7 +34,7 @@ ecm_target_qml_sources(akonadi_quick_plugin SOURCES
     qml/MobileCollectionComboBox.qml
     qml/AgentConfigurationForm.qml
     qml/TagManagerPage.qml
-    qml/IdentityConfigurationForm.qml
+    qml/identity/IdentityConfigurationForm.qml
     qml/identity/IdentityEditorPage.qml
 )
 
