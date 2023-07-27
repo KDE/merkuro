@@ -38,7 +38,8 @@ Kirigami.OverlayDrawer {
         }
     }
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     leftPadding: 0
     rightPadding: 0
