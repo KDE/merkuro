@@ -57,9 +57,17 @@ void IdentityEditorBackend::setIdentityUiod(uint identityUiod)
         return;
     }
 
-    const auto identity = m_identityManager->identityForUoid(identityUiod);
+    const auto identity = m_identityManager->modifyIdentityForUoid(identityUiod);
     setIdentity(new IdentityWrapper(identity, this));
 }
 
+void IdentityEditorBackend::saveIdentity()
+{
+    if (!m_identity) {
+        return;
+    }
+
+    m_identityManager->commit();
+}
 }
 }
