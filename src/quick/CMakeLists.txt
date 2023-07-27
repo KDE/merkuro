@@ -23,6 +23,8 @@ target_sources(akonadi_quick_plugin PRIVATE
     identitymodel.cpp
     identityutils.h
     identityutils.cpp
+    identitywrapper.h
+    identitywrapper.cpp
 )
 
 ecm_target_qml_sources(akonadi_quick_plugin SOURCES
