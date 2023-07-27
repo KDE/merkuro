@@ -155,6 +155,7 @@ void IdentityWrapper::setPrimaryEmailAddress(const QString &primaryEmailAddress)
 
     m_identity.setPrimaryEmailAddress(primaryEmailAddress);
     Q_EMIT primaryEmailAddressChanged();
+    Q_EMIT mailingAllowedChanged();
 }
 
 const QStringList IdentityWrapper::emailAliases() const
