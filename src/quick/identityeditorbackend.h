@@ -21,7 +21,7 @@ class IdentityEditorBackend : public QObject
 
     Q_PROPERTY(Mode mode READ mode WRITE setMode NOTIFY modeChanged)
     Q_PROPERTY(IdentityWrapper *identity READ identity NOTIFY identityChanged NOTIFY modeChanged)
-    Q_PROPERTY(uint identityUiod READ identityUiod WRITE setIdentityUiod NOTIFY identityChanged)
+    Q_PROPERTY(uint identityUoid READ identityUoid WRITE setIdentityUoid NOTIFY identityChanged)
 
 public:
     enum Mode { CreateMode, EditMode };
@@ -35,8 +35,8 @@ public:
     Q_REQUIRED_RESULT IdentityWrapper *identity() const;
     void setIdentity(IdentityWrapper *identity);
 
-    Q_REQUIRED_RESULT uint identityUiod() const;
-    void setIdentityUiod(uint identityUiod);
+    Q_REQUIRED_RESULT uint identityUoid() const;
+    void setIdentityUoid(uint identityUoid);
 
     Q_INVOKABLE void saveIdentity();
 
