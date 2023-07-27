@@ -7,7 +7,9 @@
 #include "collection.h"
 #include "collectioncomboboxmodel.h"
 #include "collectionpickermodel.h"
+#include "identityeditorbackend.h"
 #include "identitymodel.h"
+#include "identitywrapper.h"
 #include "mimetypes.h"
 #include "tagmanager.h"
 #include <akonadi_version.h>
@@ -34,6 +36,12 @@ void AkonadiQuickPlugin::registerTypes(const char *uri)
     qmlRegisterType<Akonadi::Quick::CollectionComboBoxModel>("org.kde.akonadi", 1, 0, "CollectionComboBoxModel");
     qmlRegisterType<Akonadi::Quick::CollectionPickerModel>("org.kde.akonadi", 1, 0, "CollectionPickerModel");
     qmlRegisterType<Akonadi::Quick::IdentityModel>("org.kde.akonadi", 1, 0, "IdentityModel");
+    qmlRegisterType<Akonadi::Quick::IdentityEditorBackend>("org.kde.akonadi", 1, 0, "IdentityEditorBackend");
 
     qmlRegisterUncreatableType<Akonadi::Quick::Collection>("org.kde.akonadi", 1, 0, "Collection", QStringLiteral("It's just an enum"));
+    qmlRegisterUncreatableType<Akonadi::Quick::IdentityWrapper>("org.kde.akonadi",
+                                                                1,
+                                                                0,
+                                                                "IdentityWrapper",
+                                                                QStringLiteral("A QML-friendly wrapper of Identity"));
 }
