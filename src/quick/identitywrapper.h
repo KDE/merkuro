@@ -62,7 +62,7 @@ class IdentityWrapper : public QObject
     Q_PROPERTY(bool isNull READ isNull NOTIFY isNullChanged)
 
 public:
-    explicit IdentityWrapper(const Identity &identity);
+    explicit IdentityWrapper(const Identity &identity, QObject *const parent = nullptr);
 
     /** Tests if there are enough values set to allow mailing */
     Q_REQUIRED_RESULT bool mailingAllowed() const;
