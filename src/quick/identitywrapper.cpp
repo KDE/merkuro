@@ -10,7 +10,7 @@ namespace Akonadi
 namespace Quick
 {
 
-IdentityWrapper::IdentityWrapper(const Identity &identity, QObject *const parent)
+IdentityWrapper::IdentityWrapper(Identity &identity, QObject *const parent)
     : QObject(parent)
     , m_identity(identity)
 {
