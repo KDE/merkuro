@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2023-07-22 23:45+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1290,6 +1290,7 @@ msgid "Refresh All Calendars"
 msgstr "Refresca omne calendarios"
 
 #: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -1852,6 +1853,8 @@ msgstr "Apparentia"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Contos"
@@ -3010,12 +3013,6 @@ msgstr "%1 (Predefinite)"
 msgid "Image request has been cancelled"
 msgstr "Requesta de image ha essite annullate"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3136,48 +3133,48 @@ msgstr ""
 msgid "Mail"
 msgstr "E-posta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nove message"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr "Ex:"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr "Identitate:"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr "Responde a:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
 msgstr "Subjecto:"
 
-#: mail/qml/MailComposer.qml:139
+#: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr "Invia"
@@ -3252,6 +3249,18 @@ msgstr "Salveguarda attachamento"
 msgid "Import key"
 msgstr "Importa clave ..."
 
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Account settings"
+msgstr "Contos"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
+
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
 msgid "Configure %1"
@@ -3271,6 +3280,12 @@ msgstr "Modifica"
 #, kde-format
 msgid "Add Account"
 msgstr "Adde conto"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "Identitate:"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

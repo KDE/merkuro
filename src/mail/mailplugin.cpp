@@ -45,7 +45,6 @@ void CalendarPlugin::registerTypes(const char *uri)
 
     qmlRegisterType<MailHeaderModel>("org.kde.merkuro.mail", 1, 0, "MailHeaderModel");
     qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
-    qmlRegisterType<IdentityModel>(uri, 1, 0, "IdentityModel");
 
     qRegisterMetaType<MailModel *>("MailModel*");
 }

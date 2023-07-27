@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2023-07-14 05:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1299,6 +1299,7 @@ msgid "Refresh All Calendars"
 msgstr "Tüm Takvimleri Yenile"
 
 #: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
@@ -1865,6 +1866,8 @@ msgstr "Görünüş"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Hesaplar"
@@ -3023,12 +3026,6 @@ msgstr "%1 (Öntanımlı)"
 msgid "Image request has been cancelled"
 msgstr "Görsel isteği iptal edildi"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3149,48 +3146,48 @@ msgstr "Posta Kutuları"
 msgid "Mail"
 msgstr "Posta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Yeni İleti"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr "Kimlik:"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "Kime:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr "Kopya:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr "Gizli Kopya:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr "Yanıt Adresi:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
 msgstr "Konu:"
 
-#: mail/qml/MailComposer.qml:139
+#: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
@@ -3265,6 +3262,18 @@ msgstr "Eki kaydet"
 msgid "Import key"
 msgstr "Anahtar içe aktar"
 
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Ay görünümü ayarları"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
+
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
 msgid "Configure %1"
@@ -3284,6 +3293,12 @@ msgstr "Değiştir"
 #, kde-format
 msgid "Add Account"
 msgstr "Hesap Ekle"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "Kimlik:"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:46+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2023-04-21 00:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1307,6 +1307,7 @@ msgid "Refresh All Calendars"
 msgstr "Berritu egutegi guztiak"
 
 #: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
@@ -1875,6 +1876,8 @@ msgstr "Itxura"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Kontuak"
@@ -3046,12 +3049,6 @@ msgstr "%1 (Lehenetsia)"
 msgid "Image request has been cancelled"
 msgstr "Irudi eskaera bertan behera utzi da"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr ""
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3174,51 +3171,51 @@ msgstr "Postontziak"
 msgid "Mail"
 msgstr "Posta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Mezularitza"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, fuzzy, kde-format
 #| msgctxt "displayed as subject when the subject of a mail is empty"
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "Gairik ez"
 
-#: mail/qml/MailComposer.qml:139
+#: mail/qml/MailComposer.qml:138
 #, fuzzy, kde-format
 #| msgid "Send SMS"
 msgid "Send"
@@ -3294,6 +3291,18 @@ msgstr "Gorde eranskina"
 msgid "Import key"
 msgstr "Inportatu gakoa"
 
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Hilabeteko ikuspegiaren ezarpenak"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr ""
+
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
 msgid "Configure %1"
@@ -3313,6 +3322,11 @@ msgstr "Aldatu"
 #, kde-format
 msgid "Add Account"
 msgstr "Gehitu kontua"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, kde-format
+msgid "Identities"
+msgstr ""
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

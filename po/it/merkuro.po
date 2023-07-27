@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:46+0000\n"
-"PO-Revision-Date: 2023-06-29 10:31+0200\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"PO-Revision-Date: 2023-07-15 23:45+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -222,11 +222,10 @@ msgid "Task"
 msgstr "Attività"
 
 #: calendar/main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Calendario"
+msgstr "Merkuro Calendario"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -512,8 +511,7 @@ msgid "An error occurred importing incidences: %1"
 msgstr "Si è verificato un errore durante l'importazione delle occorrenze: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:62
-#, fuzzy, kde-format
-#| msgid "New calendar  created from imported file successfully."
+#, kde-format
 msgid "New calendar created from imported file successfully."
 msgstr "Nuovo calendario creato correttamente dal file importato."
 
@@ -525,7 +523,7 @@ msgstr "Importa un calendario"
 #: calendar/qml/Controls/ImportHandler.qml:90
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
-msgstr ""
+msgstr "File di calendario (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:107
 #, kde-format
@@ -1281,8 +1279,7 @@ msgid "Mark Complete"
 msgstr "Marca come completata"
 
 #: calendar/qml/Drawers/MainDrawer.qml:115
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -1304,6 +1301,7 @@ msgid "Refresh All Calendars"
 msgstr "Aggiorna tutti i calendari"
 
 #: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -1730,12 +1728,10 @@ msgid "Help"
 msgstr "Aiuto"
 
 #: calendar/qml/Menus/MenuBar.qml:184
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr "Manuale di Kalendar"
+msgstr "Manuale di Calendario"
 
 #: calendar/qml/Settings/CalendarSettingsPage.qml:138
 #, kde-format
@@ -1874,6 +1870,8 @@ msgstr "Aspetto"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Account"
@@ -2182,15 +2180,13 @@ msgstr "File"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Chiudi Merkuro"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Manuale di Kalendar"
+msgstr "Manuale di Merkuro"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2305,17 +2301,15 @@ msgid "Other:"
 msgstr "Altro:"
 
 #: contacts/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Return to Location"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Ritorna alla località"
+msgstr "Merkuro Contatto"
 
 #: contacts/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Address Book:"
+#, kde-format
 msgid "Address Book Application"
-msgstr "Rubrica:"
+msgstr "Applicazione della rubrica"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2562,7 +2556,7 @@ msgstr "Reparto"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Squadra di Merkuro"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
@@ -2818,8 +2812,7 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: contacts/qml/private/ContactPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Annulla"
@@ -2989,8 +2982,7 @@ msgid "Creating QR code failed"
 msgstr "Creazione del codice QR non riuscita"
 
 #: contacts/qml/Settings.qml:13
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Impostazioni"
@@ -3013,13 +3005,12 @@ msgstr "Apri la barra dei comandi"
 #: lib/abstractapplication.cpp:168
 #, kde-format
 msgid "About %1"
-msgstr ""
+msgstr "Informazioni su %1"
 
 #: lib/abstractapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About KDE"
-msgstr "Informazioni su Kalendar"
+msgstr "Informazioni su KDE"
 
 #: lib/abstractapplication.cpp:188
 #, kde-format
@@ -3043,12 +3034,6 @@ msgstr "%1 (Predefinito)"
 msgid "Image request has been cancelled"
 msgstr "La richiesta dell'immagine è stata annullata"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3067,17 +3052,15 @@ msgid "Unknown"
 msgstr "Sconosciuto"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Mail"
+#, kde-format
 msgctxt "@title"
 msgid "Mail"
-msgstr "Posta"
+msgstr "Posta elettronica"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
+#, kde-format
 msgid "EMail Client Application"
-msgstr "Applicazione di calendario"
+msgstr "Applicazione client di posta elettronica"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
@@ -3172,48 +3155,48 @@ msgstr "Caselle di posta"
 msgid "Mail"
 msgstr "Posta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nuovo messaggio"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr "Da:"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr "Identità:"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr "CCN:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr "Rispondi a:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
 msgstr "Oggetto:"
 
-#: mail/qml/MailComposer.qml:139
+#: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr "Invia"
@@ -3288,6 +3271,18 @@ msgstr "Salva allegato"
 msgid "Import key"
 msgstr "Importa chiave"
 
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Impostazioni della vista mensile"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
+
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
 msgid "Configure %1"
@@ -3307,6 +3302,12 @@ msgstr "Modifica"
 #, kde-format
 msgid "Add Account"
 msgstr "Aggiungi account"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "Identità:"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

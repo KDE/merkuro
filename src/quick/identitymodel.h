@@ -9,28 +9,31 @@ namespace KIdentityManagementCore {
 class IdentityManager;
 }
 
+namespace Akonadi
+{
+namespace Quick
+{
 class IdentityModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    enum Roles {
-        EmailRole = Qt::UserRole,
-        UoidRole
-    };
+    enum Roles { EmailRole = Qt::UserRole, UoidRole };
 
 public:
     IdentityModel(QObject *parent = nullptr);
     ~IdentityModel();
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex& parent) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent) const override;
     QHash<int, QByteArray> roleNames() const override;
-    
+
     Q_INVOKABLE QString email(uint uoid);
-    
+
 private:
     void reloadUoidList();
-    
+
     QList<int> m_identitiesUoid;
     KIdentityManagementCore::IdentityManager *const m_identityManager;
 };
+}
+}

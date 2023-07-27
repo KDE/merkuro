@@ -6,14 +6,16 @@
 #include <KIdentityManagementCore/IdentityManager>
 #include <KLocalizedString>
 
-
+namespace Akonadi
+{
+namespace Quick
+{
 IdentityModel::IdentityModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_identityManager(KIdentityManagementCore::IdentityManager::self())
 {
     connect(m_identityManager, &KIdentityManagementCore::IdentityManager::needToReloadIdentitySettings, this, &IdentityModel::reloadUoidList);
     reloadUoidList();
-
 }
 
 void IdentityModel::reloadUoidList()
@@ -26,30 +28,29 @@ void IdentityModel::reloadUoidList()
     endResetModel();
 }
 
-
 IdentityModel::~IdentityModel()
 {
 }
 
-QVariant IdentityModel::data (const QModelIndex& index, int role) const
+QVariant IdentityModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return {};
     }
     const auto &identity = m_identityManager->modifyIdentityForUoid(m_identitiesUoid[index.row()]);
     switch (role) {
-        case Qt::DisplayRole:
-            return QString(identity.identityName() + i18nc("Separator between identity name and email address", " - ") + identity.fullEmailAddr());
-        case EmailRole:
-            return identity.primaryEmailAddress();
-        case UoidRole:
-            return identity.uoid();
+    case Qt::DisplayRole:
+        return QString(identity.identityName() + i18nc("Separator between identity name and email address", " - ") + identity.fullEmailAddr());
+    case EmailRole:
+        return identity.primaryEmailAddress();
+    case UoidRole:
+        return identity.uoid();
     }
-    
+
     return {};
 }
 
-int IdentityModel::rowCount(const QModelIndex& parent) const
+int IdentityModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return m_identitiesUoid.count();
@@ -67,6 +68,9 @@ QHash<int, QByteArray> IdentityModel::roleNames() const
         {UoidRole, QByteArrayLiteral("uoid")},
         {EmailRole, QByteArrayLiteral("email")}
     };
+}
+
+}
 }
 
 #include "moc_identitymodel.cpp"
