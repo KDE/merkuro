@@ -12,7 +12,7 @@ namespace Akonadi
 namespace Quick
 {
 
-IdentityWrapper::IdentityWrapper(Identity &identity)
+IdentityWrapper::IdentityWrapper(const Identity &identity)
     : m_identity(identity)
 {
 }
