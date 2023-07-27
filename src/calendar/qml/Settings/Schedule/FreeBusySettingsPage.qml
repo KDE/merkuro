@@ -140,7 +140,7 @@ Kirigami.ScrollablePage {
                             placeholderText: i18n("Enter email of recipient...")
                         }
                         QQC2.Button {
-                            text: i18n('Send')
+                            text: i18n("Send")
                             onClicked: Calendar.FreeBusyManager.mailFreeBusy(freeBusyMailAddress.text);
                         }
                     }

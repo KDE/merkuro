@@ -166,11 +166,11 @@ PlasmaComponents3.ScrollView {
                 Layout.leftMargin: PlasmaCore.Units.smallSpacing
                 Layout.rightMargin: PlasmaCore.Units.smallSpacing
                 Layout.topMargin: PlasmaCore.Units.smallSpacing
-                visible: text !== i18n('Birthday:') + ' '
+                visible: text !== i18n("Birthday:") + ' '
                 text: if (addressee.birthday.getFullYear() === 0) {
-                    return Qt.formatDate(addressee.birthday, i18nc('Day month format', 'dd.MM.'))
+                    return Qt.formatDate(addressee.birthday, i18nc("Day month format", "dd.MM."))
                 } else {
-                    return i18n('Birthday:') + ' ' + addressee.birthday.toLocaleDateString()
+                    return i18n("Birthday:") + ' ' + addressee.birthday.toLocaleDateString()
                 }
             }
 
@@ -238,7 +238,7 @@ PlasmaComponents3.ScrollView {
                 model: addressee.phoneModel
                 PlasmaComponents3.Label {
                     visible: text !== ""
-                    text: i18n('%1:', model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
+                    text: i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
                     Layout.leftMargin: PlasmaCore.Units.smallSpacing
                     Layout.rightMargin: PlasmaCore.Units.smallSpacing
                     PlasmaComponents3.ToolTip { text: i18n("Call") }
