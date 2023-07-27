@@ -19,6 +19,8 @@ target_sources(akonadi_quick_plugin PRIVATE
     agentconfiguration.h
     tagmanager.h
     tagmanager.cpp
+    identityeditorbackend.h
+    identityeditorbackend.cpp
     identitymodel.h
     identitymodel.cpp
     identityutils.h
