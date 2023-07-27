@@ -145,7 +145,7 @@ MobileForm.FormCard {
             id: blogFeedUrl
             label: i18n("Blog Feed")
             text: contactEditor.contact.blogFeed
-            onTextEdited: contactEditor.contact.blogFeed = text
+            onTextChanged: contactEditor.contact.blogFeed = text
             placeholderText: i18n("https://planet.kde.org/")
         }
     }
