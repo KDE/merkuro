@@ -5,7 +5,8 @@
 
 #include <QAbstractListModel>
 
-namespace KIdentityManagementCore {
+namespace KIdentityManagementCore
+{
 class IdentityManager;
 }
 
