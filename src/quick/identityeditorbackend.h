@@ -38,6 +38,8 @@ public:
     Q_REQUIRED_RESULT uint identityUiod() const;
     void setIdentityUiod(uint identityUiod);
 
+    Q_INVOKABLE void saveIdentity();
+
 Q_SIGNALS:
     void modeChanged();
     void identityChanged();
