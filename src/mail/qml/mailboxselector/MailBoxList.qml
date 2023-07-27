@@ -9,6 +9,8 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 
 import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.treeview 1.0 as Tree
 import org.kde.kitemmodels 1.0
 import org.kde.merkuro.mail 1.0
 
@@ -30,60 +32,82 @@ ListView {
         DelegateChoice {
             roleValue: true
 
-            ColumnLayout {
-                spacing: 0
-                width: ListView.view.width
+            Delegates.RoundedItemDelegate {
+                id: categoryHeader
 
-                Kirigami.BasicListItem {
-                    id: categoryHeader
+                leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0
+                leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
 
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
+                rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
+                rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
 
-                    bottomPadding: Kirigami.Units.largeSpacing
-                    leftPadding: Kirigami.Units.largeSpacing * (model.kDescendantLevel )
+                text: model.display
 
-                    label: model.display
-                    highlighted: visualFocus
-                    hoverEnabled: false
-                    separatorVisible: false
+                data: [
+                    Tree.TreeViewDecoration {
+                        id: decoration
+                        anchors {
+                            left: parent.left
+                            top:parent.top
+                            bottom: parent.bottom
+                            leftMargin: categoryHeader.padding
+                        }
+                        parent: categoryHeader
+                        parentDelegate: categoryHeader
+                        model: foldersModel
+                    }
+                ]
 
-                    labelItem.color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                    labelItem.font.weight: Font.DemiBold
-
-                    leading: Kirigami.Icon {
+                contentItem: RowLayout {
+                    Kirigami.Icon {
                         implicitWidth: Kirigami.Units.iconSizes.smallMedium
                         implicitHeight: Kirigami.Units.iconSizes.smallMedium
                         isMask: true
-                        color: categoryHeader.labelItem.color
                         source: "folder-symbolic"
                     }
-                    leadingPadding: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
 
-                    trailing: Kirigami.Icon {
-                        implicitWidth: Kirigami.Units.iconSizes.small
-                        implicitHeight: Kirigami.Units.iconSizes.small
-                        source: model.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
-                        isMask: true
-                        color: categoryHeader.labelItem.color
+                    QQC2.Label {
+                        color: Kirigami.Theme.textColor
+                        font.weight: Font.DemiBold
+                        text: model.display
+                        Layout.fillWidth: true
                     }
-
-                    onClicked: mailList.model.toggleChildren(index)
                 }
+
+                onClicked: mailList.model.toggleChildren(index)
             }
         }
 
         DelegateChoice {
             roleValue: false
 
-            QQC2.ItemDelegate {
+            Delegates.RoundedItemDelegate {
                 id: controlRoot
+
                 text: model.display
-                width: ListView.view.width
-                padding: Kirigami.Units.largeSpacing
-                leftPadding: Kirigami.Units.largeSpacing * model.kDescendantLevel
+
+                leftInset: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0)
+                leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
+
+                rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
+                rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
 
                 property bool chosen: false
+
+                data: [
+                    Tree.TreeViewDecoration {
+                        id: decoration
+                        anchors {
+                            left: parent.left
+                            top:parent.top
+                            bottom: parent.bottom
+                            leftMargin: controlRoot.padding
+                        }
+                        parent: controlRoot
+                        parentDelegate: controlRoot
+                        model: foldersModel
+                    }
+                ]
 
                 Connections {
                     target: mailList
@@ -100,34 +124,7 @@ ListView {
 
                 property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
 
-                background: Rectangle {
-                    color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, controlRoot.showSelected ? 0.5 : hoverHandler.hovered ? 0.2 : 0)
-
-                    // indicator rectangle
-                    Rectangle {
-                        anchors {
-                            left: parent.left
-                            top: parent.top
-                            topMargin: 1
-                            bottom: parent.bottom
-                            bottomMargin: 1
-                        }
-
-                        width: 4
-                        visible: controlRoot.highlighted
-                        color: Kirigami.Theme.highlightColor
-                    }
-
-                    HoverHandler {
-                        id: hoverHandler
-                        // disable hover input on mobile because touchscreens trigger hover feedback and do not "unhover" in Qt
-                        enabled: !Kirigami.Settings.isMobile
-                    }
-                }
-
                 contentItem: RowLayout {
-                    spacing: Kirigami.Units.largeSpacing
-
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
                         source: model.decoration
@@ -152,8 +149,7 @@ ListView {
 
                     QQC2.Label {
                         property int unreadCount: MailCollectionHelper.unreadCount(model.collection)
-                        text: unreadCount
-                        visible: unreadCount > 0
+                        text: unreadCount > 0 ? unreadCount : ''
                         padding: Kirigami.Units.smallSpacing
                         color: Kirigami.Theme.textColor
                         font: Kirigami.Theme.smallFont

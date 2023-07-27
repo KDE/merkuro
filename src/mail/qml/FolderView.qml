@@ -99,27 +99,28 @@ Kirigami.ScrollablePage {
         section.property: "date"
 
         delegate: MailDelegate {
-            datetime: model.datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat) // TODO this is not showing date !
-            author: model.from
-            title: model.title
-
-            isRead: !model.status || model.status.isRead
-
+            id: mailDelegate
             onOpenMailRequested: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
-                    item: model.item,
-                    props: model,
+                    item: mailDelegate.item,
+                    props: {
+                        from: mailDelegate.from,
+                        to: mailDelegate.to,
+                        sender: mailDelegate.sender,
+                        item: mailDelegate.item,
+                        title: mailDelegate.title,
+                    }
                 });
 
-                if (!model.status.isRead) {
-                    const status = MailManager.folderModel.copyMessageStatus(model.status);
+                if (!mailDelegate.status.isRead) {
+                    const status = MailManager.folderModel.copyMessageStatus(mailDelegate.status);
                     status.isRead = true;
                     MailManager.folderModel.updateMessageStatus(index, status)
                 }
             }
 
             onStarMailRequested: {
-                const status = MailManager.folderModel.copyMessageStatus(model.status);
+                const status = MailManager.folderModel.copyMessageStatus(mailDelegate.status);
                 status.isImportant = !status.isImportant;
                 MailManager.folderModel.updateMessageStatus(index, status)
             }
@@ -127,7 +128,7 @@ Kirigami.ScrollablePage {
             onContextMenuRequested: {
                 const menu = contextMenu.createObject(folderView, {
                     row: index,
-                    status: MailManager.folderModel.copyMessageStatus(model.status),
+                    status: MailManager.folderModel.copyMessageStatus(mailDelegate.status),
                 });
                 menu.popup();
             }
