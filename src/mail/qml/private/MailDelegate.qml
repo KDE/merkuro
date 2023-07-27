@@ -71,7 +71,7 @@ Delegates.IndicatorItemDelegate {
                 Layout.fillWidth: true
                 text: root.title
                 elide: Text.ElideRight
-                font.weight: root.isRead ? Font.Normal : Font.Bold
+                font.weight: root.unread ? Font.Bold : Font.Normal
             }
         }
     }
