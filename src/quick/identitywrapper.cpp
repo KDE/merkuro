@@ -35,6 +35,7 @@ void IdentityWrapper::setIdentityName(const QString &identityName)
 
     m_identity.setIdentityName(identityName);
     Q_EMIT identityNameChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::fullName() const
@@ -50,6 +51,7 @@ void IdentityWrapper::setFullName(const QString &fullName)
 
     m_identity.setFullName(fullName);
     Q_EMIT fullNameChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::organization() const
@@ -65,6 +67,7 @@ void IdentityWrapper::setOrganization(const QString &organization)
 
     m_identity.setOrganization(organization);
     Q_EMIT organizationChanged();
+    Q_EMIT isNullChanged();
 }
 
 QByteArray IdentityWrapper::pgpEncryptionKey() const
@@ -80,6 +83,7 @@ void IdentityWrapper::setPGPEncryptionKey(const QByteArray &pgpEncryptionKey)
 
     m_identity.setPGPEncryptionKey(pgpEncryptionKey);
     Q_EMIT pgpEncryptionKeyChanged();
+    Q_EMIT isNullChanged();
 }
 
 QByteArray IdentityWrapper::pgpSigningKey() const
@@ -95,6 +99,7 @@ void IdentityWrapper::setPGPSigningKey(const QByteArray &pgpSigningKey)
 
     m_identity.setPGPSigningKey(pgpSigningKey);
     Q_EMIT pgpSigningKeyChanged();
+    Q_EMIT isNullChanged();
 }
 
 QByteArray IdentityWrapper::smimeEncryptionKey() const
@@ -110,6 +115,7 @@ void IdentityWrapper::setSMIMEEncryptionKey(const QByteArray &smimeEncryptionKey
 
     m_identity.setSMIMEEncryptionKey(smimeEncryptionKey);
     Q_EMIT smimeEncryptionKeyChanged();
+    Q_EMIT isNullChanged();
 }
 
 QByteArray IdentityWrapper::smimeSigningKey() const
@@ -125,6 +131,7 @@ void IdentityWrapper::setSMIMESigningKey(const QByteArray &smimeSigningKey)
 
     m_identity.setSMIMESigningKey(smimeSigningKey);
     Q_EMIT smimeSigningKeyChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::preferredCryptoMessageFormat() const
@@ -140,6 +147,7 @@ void IdentityWrapper::setPreferredCryptoMessageFormat(const QString &preferredCr
 
     m_identity.setPreferredCryptoMessageFormat(preferredCryptoMessageFormat);
     Q_EMIT preferredCryptoMessageFormatChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::primaryEmailAddress() const
@@ -156,6 +164,7 @@ void IdentityWrapper::setPrimaryEmailAddress(const QString &primaryEmailAddress)
     m_identity.setPrimaryEmailAddress(primaryEmailAddress);
     Q_EMIT primaryEmailAddressChanged();
     Q_EMIT mailingAllowedChanged();
+    Q_EMIT isNullChanged();
 }
 
 const QStringList IdentityWrapper::emailAliases() const
@@ -171,6 +180,7 @@ void IdentityWrapper::setEmailAliases(const QStringList &emailAliases)
 
     m_identity.setEmailAliases(emailAliases);
     Q_EMIT emailAliasesChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::vCardFile() const
@@ -186,6 +196,7 @@ void IdentityWrapper::setVCardFile(const QString &vCardFile)
 
     m_identity.setVCardFile(vCardFile);
     Q_EMIT vCardFileChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::fullEmailAddr() const
@@ -206,6 +217,7 @@ void IdentityWrapper::setReplyToAddr(const QString &replyToAddr)
 
     m_identity.setReplyToAddr(replyToAddr);
     Q_EMIT replyToAddrChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::bcc() const
@@ -221,6 +233,7 @@ void IdentityWrapper::setBcc(const QString &bcc)
 
     m_identity.setBcc(bcc);
     Q_EMIT bccChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::cc() const
@@ -236,6 +249,7 @@ void IdentityWrapper::setCc(const QString &cc)
 
     m_identity.setCc(cc);
     Q_EMIT ccChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::attachVcard() const
@@ -251,6 +265,7 @@ void IdentityWrapper::setAttachVcard(bool attachVcard)
 
     m_identity.setAttachVcard(attachVcard);
     Q_EMIT attachVcardChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::autocorrectionLanguage() const
@@ -266,6 +281,7 @@ void IdentityWrapper::setAutocorrectionLanguage(const QString &autocorrectionLan
 
     m_identity.setAutocorrectionLanguage(autocorrectionLanguage);
     Q_EMIT autocorrectionLanguageChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::disabledFcc() const
@@ -281,6 +297,7 @@ void IdentityWrapper::setDisabledFcc(bool disabledFcc)
 
     m_identity.setDisabledFcc(disabledFcc);
     Q_EMIT disabledFccChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::pgpAutoSign() const
@@ -296,6 +313,7 @@ void IdentityWrapper::setPgpAutoSign(bool pgpAutoSign)
 
     m_identity.setPgpAutoSign(pgpAutoSign);
     Q_EMIT pgpAutoSignChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::pgpAutoEncrypt() const
@@ -311,6 +329,7 @@ void IdentityWrapper::setPgpAutoEncrypt(bool pgpAutoEncrypt)
 
     m_identity.setPgpAutoEncrypt(pgpAutoEncrypt);
     Q_EMIT pgpAutoEncryptChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::autocryptEnabled() const
@@ -326,6 +345,7 @@ void IdentityWrapper::setAutocryptEnabled(bool autocryptEnabled)
 
     m_identity.setAutocryptEnabled(autocryptEnabled);
     Q_EMIT autocryptEnabledChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::autocryptPrefer() const
@@ -341,6 +361,7 @@ void IdentityWrapper::setAutocryptPrefer(bool autocryptPrefer)
 
     m_identity.setAutocryptPrefer(autocryptPrefer);
     Q_EMIT autocryptPreferChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::encryptionOverride() const
@@ -356,6 +377,7 @@ void IdentityWrapper::setEncryptionOverride(bool encryptionOverride)
 
     m_identity.setEncryptionOverride(encryptionOverride);
     Q_EMIT encryptionOverrideChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::warnNotSign() const
@@ -371,6 +393,7 @@ void IdentityWrapper::setWarnNotSign(bool warnNotSign)
 
     m_identity.setWarnNotSign(warnNotSign);
     Q_EMIT warnNotSignChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::warnNotEncrypt() const
@@ -386,6 +409,7 @@ void IdentityWrapper::setWarnNotEncrypt(bool warnNotEncrypt)
 
     m_identity.setWarnNotEncrypt(warnNotEncrypt);
     Q_EMIT warnNotEncryptChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::defaultDomainName() const
@@ -401,6 +425,7 @@ void IdentityWrapper::setDefaultDomainName(const QString &defaultDomainName)
 
     m_identity.setDefaultDomainName(defaultDomainName);
     Q_EMIT defaultDomainNameChanged();
+    Q_EMIT isNullChanged();
 }
 
 Signature IdentityWrapper::signature()
@@ -418,6 +443,7 @@ void IdentityWrapper::setSignature(const Signature &signature)
     Q_EMIT signatureChanged();
     Q_EMIT signatureTextChanged();
     Q_EMIT signatureIsInlinedHtmlChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::signatureText() const
@@ -443,6 +469,7 @@ void IdentityWrapper::setTransport(const QString &transport)
 
     m_identity.setTransport(transport);
     Q_EMIT transportChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::fcc() const
@@ -458,6 +485,7 @@ void IdentityWrapper::setFcc(const QString &fcc)
 
     m_identity.setFcc(fcc);
     Q_EMIT fccChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::drafts() const
@@ -473,6 +501,7 @@ void IdentityWrapper::setDrafts(const QString &drafts)
 
     m_identity.setDrafts(drafts);
     Q_EMIT draftsChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::templates() const
@@ -488,6 +517,7 @@ void IdentityWrapper::setTemplates(const QString &templates)
 
     m_identity.setTemplates(templates);
     Q_EMIT templatesChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::dictionary() const
@@ -503,6 +533,7 @@ void IdentityWrapper::setDictionary(const QString &dictionary)
 
     m_identity.setDictionary(dictionary);
     Q_EMIT dictionaryChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::xface() const
@@ -518,6 +549,7 @@ void IdentityWrapper::setXFace(const QString &xface)
 
     m_identity.setXFace(xface);
     Q_EMIT xfaceChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::isXFaceEnabled() const
@@ -533,6 +565,7 @@ void IdentityWrapper::setXFaceEnabled(bool xfaceEnabled)
 
     m_identity.setXFaceEnabled(xfaceEnabled);
     Q_EMIT isXFaceEnabledChanged();
+    Q_EMIT isNullChanged();
 }
 
 QString IdentityWrapper::face() const
@@ -548,6 +581,7 @@ void IdentityWrapper::setFace(const QString &face)
 
     m_identity.setFace(face);
     Q_EMIT faceChanged();
+    Q_EMIT isNullChanged();
 }
 
 bool IdentityWrapper::isFaceEnabled() const
@@ -563,6 +597,7 @@ void IdentityWrapper::setFaceEnabled(bool faceEnabled)
 
     m_identity.setFaceEnabled(faceEnabled);
     Q_EMIT isFaceEnabledChanged();
+    Q_EMIT isNullChanged();
 }
 
 uint IdentityWrapper::uoid() const
