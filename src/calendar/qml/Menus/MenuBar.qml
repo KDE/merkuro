@@ -104,7 +104,7 @@ QQC2.MenuBar {
         }
 
         KActionFromAction {
-            text: i18n('Refresh All Calendars')
+            text: i18n("Refresh All Calendars")
             action: CalendarApplication.action("refresh_all")
         }
     }

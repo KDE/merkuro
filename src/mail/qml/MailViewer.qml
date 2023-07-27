@@ -77,7 +77,7 @@ QQC2.Page {
                 Layout.fillWidth: true
 
                 QQC2.Label {
-                    text: i18n('Sender:')
+                    text: i18n("Sender:")
                     font.bold: true
                     visible: root.sender.length > 0 && root.sender !== root.from
                     Layout.rightMargin: Kirigami.Units.largeSpacing
@@ -95,7 +95,7 @@ QQC2.Page {
                 Layout.fillWidth: true
 
                 QQC2.Label {
-                    text: i18n('To:')
+                    text: i18n("To:")
                     font.bold: true
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }

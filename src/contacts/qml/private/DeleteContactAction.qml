@@ -16,7 +16,7 @@ Kirigami.Action {
         QQC2.Dialog {
             id: deleteContactConfirmationDialog
             visible: false
-            title: i18n('Warning')
+            title: i18n("Warning")
             modal: true
             focus: true
             x: (parent.width - width) / 2
@@ -26,7 +26,7 @@ Kirigami.Action {
             contentItem: ColumnLayout {
                 Kirigami.Heading {
                     level: 4
-                    text: i18n('Do you really want to delete your contact: %1?', name)
+                    text: i18n("Do you really want to delete your contact: %1?", name)
                     wrapMode: Text.WordWrap
                     Layout.fillWidth: true
                 }
