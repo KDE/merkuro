@@ -11,8 +11,7 @@
 #include "mailheadermodel.h"
 #include "mailmanager.h"
 #include "mailmodel.h"
-#include "mime/htmlutils.h"
-#include "mime/messageparser.h"
+#include "messageloader.h"
 
 void CalendarPlugin::registerTypes(const char *uri)
 {
@@ -30,12 +29,6 @@ void CalendarPlugin::registerTypes(const char *uri)
         return new MailManager;
     });
 
-    qmlRegisterSingletonType<HtmlUtils::HtmlUtils>("org.kde.merkuro.mail", 1, 0, "HtmlUtils", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        return new HtmlUtils::HtmlUtils;
-    });
-
     qmlRegisterSingletonType<MailCollectionHelper>("org.kde.merkuro.mail", 1, 0, "MailCollectionHelper", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
@@ -43,7 +36,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     });
 
     qmlRegisterType<MailHeaderModel>("org.kde.merkuro.mail", 1, 0, "MailHeaderModel");
-    qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
+    qmlRegisterType<MessageLoader>(uri, 1, 0, "MessageLoader");
 
     qRegisterMetaType<MailModel *>("MailModel*");
 }

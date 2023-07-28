@@ -9,14 +9,15 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.merkuro.mail 1.0
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kitemmodels 1.0 as KItemModels
+import org.kde.pim.mimetreeparser 1.0 as MimeTreeParser
 
 import './mailpartview'
 
-Kirigami.ScrollablePage {
+MimeTreeParser.MailViewer {
     id: root
 
-    property var item
-    property var props
+    required property var emptyItem
+    required property var props
 
     leftPadding: 0
     rightPadding: 0
@@ -34,34 +35,131 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    ColumnLayout {
+    header: ColumnLayout {
+        width: parent.width
         spacing: 0
 
-        QQC2.Label {
-            Layout.leftMargin: Kirigami.Units.largeSpacing * 2
-            Layout.rightMargin: Kirigami.Units.largeSpacing * 2
-            Layout.topMargin: Kirigami.Units.gridUnit
-            Layout.bottomMargin: Kirigami.Units.gridUnit
+        QQC2.Pane {
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
+
             Layout.fillWidth: true
+            padding: root.padding
 
-            text: props.title
-            maximumLineCount: 2
-            wrapMode: Text.Wrap
-            elide: Text.ElideRight
-
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
+            contentItem: Kirigami.Heading {
+                text: props.title
+                maximumLineCount: 2
+                wrapMode: Text.Wrap
+                elide: Text.ElideRight
+            }
         }
 
-        // TODO use repeater to see the full conversation
-        MailViewer {
+        QQC2.ToolBar {
+            id: mailHeader
+
             Layout.fillWidth: true
 
-            item: root.item ?? ''
-            subject: props.title ?? ''
-            from: props.from ?? ''
-            to: props.to ?? ''
-            sender: props.sender ?? ''
-            dateTime: props.datetime ?? ''
+            padding: root.padding
+            visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0 
+
+            Kirigami.Theme.inherit: false
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+            background: Item {
+                Rectangle {
+                    anchors.fill: parent
+                    color: Kirigami.Theme.alternateBackgroundColor
+                }
+
+                Kirigami.Separator {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                }
+
+                Kirigami.Separator {
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                }
+            }
+
+            contentItem: GridLayout {
+                rowSpacing: Kirigami.Units.smallSpacing
+                columnSpacing: Kirigami.Units.smallSpacing
+
+                columns: 2
+
+                QQC2.Label {
+                    text: i18n('Date:')
+                    font.bold: true
+                    visible: date.text.length > 0
+
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+
+                QQC2.Label {
+                    id: date
+                    text: root.dateTime.toLocaleString(Qt.locale(), Locale.ShortFormat)
+                    visible: text.length > 0
+                    horizontalAlignment: Text.AlignRight
+                }
+
+                QQC2.Label {
+                    text: i18n('From:')
+                    font.bold: true
+                    visible: root.from.length > 0
+
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+
+                QQC2.Label {
+                    text: root.from
+                    visible: text.length > 0
+                    elide: Text.ElideRight
+
+                    Layout.fillWidth: true
+                }
+
+                QQC2.Label {
+                    text: i18n('Sender:')
+                    font.bold: true
+                    visible: root.sender.length > 0 && root.sender !== root.from
+
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+
+                QQC2.Label {
+                    visible: root.sender.length > 0 && root.sender !== root.from
+                    text: root.sender
+                    elide: Text.ElideRight
+
+                    Layout.fillWidth: true
+                }
+
+                QQC2.Label {
+                    text: i18n('To:')
+                    font.bold: true
+                    visible: root.to.length > 0
+
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+
+                QQC2.Label {
+                    text: root.to
+                    elide: Text.ElideRight
+                    visible: root.to.length > 0
+
+                    Layout.fillWidth: true
+                }
+            }
         }
+    }
+
+    MessageLoader {
+        id: messageLoader
+
+        item: root.emptyItem
+        onMessageChanged: root.message = message
     }
 }

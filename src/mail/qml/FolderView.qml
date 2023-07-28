@@ -100,9 +100,11 @@ Kirigami.ScrollablePage {
 
         delegate: MailDelegate {
             id: mailDelegate
+
             onOpenMailRequested: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
-                    item: mailDelegate.item,
+                    emptyItem: mailDelegate.item,
+                    message: mailDelegate.message,
                     props: {
                         from: mailDelegate.from,
                         to: mailDelegate.to,
