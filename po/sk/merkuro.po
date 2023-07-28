@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:32+0000\n"
+"POT-Creation-Date: 2023-07-28 02:36+0000\n"
 "PO-Revision-Date: 2023-01-07 14:24+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -1198,7 +1198,7 @@ msgstr "Účastníci:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:159
+#: contacts/qml/private/ContactPage.qml:154
 #, kde-format
 msgid "Name:"
 msgstr "Názov:"
@@ -1295,50 +1295,52 @@ msgstr "Označiť nedokončené"
 msgid "Mark Complete"
 msgstr "Označiť dokončené"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Calendar"
 msgstr "Kalendár"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Späť: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Znovu: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Obnoviť všetky kalendáre"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Konfigurovať"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "Späť"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "Znovu"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "Zobraziť všetky úlohy"
@@ -1729,6 +1731,7 @@ msgstr "Prejsť"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1859,6 +1862,13 @@ msgstr "Emailová adresa"
 msgid "Enter email of recipient..."
 msgstr ""
 
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Send"
+msgstr "Poslať SMS"
+
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, fuzzy, kde-format
 #| msgid "General settings"
@@ -1895,6 +1905,8 @@ msgstr "Vzhľad"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Účty"
@@ -2248,7 +2260,7 @@ msgid "Enter Full Screen"
 msgstr "Prejsť do režimu celej obrazovky"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgid "Home:"
 msgstr "Domov:"
@@ -2346,10 +2358,31 @@ msgstr "Vybrať farbu adresára"
 msgid "Done"
 msgstr "Hotovo"
 
-#: contacts/qml/ContactChooserPage.qml:51
+#: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
 msgstr "Zvoľte emailovú adresu"
+
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Vytvoriť"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Nový kontakt..."
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Nový kontakt..."
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2429,11 +2462,22 @@ msgstr "Meno"
 msgid "Contact name"
 msgstr "Meno kontaktu"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, fuzzy, kde-format
 #| msgid "Honorific prefix:"
 msgid "Honorific prefix"
 msgstr "Titul pred menom:"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "pán"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2499,6 +2543,12 @@ msgid "Honorific suffix"
 msgstr "Titul za menom:"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "II"
 msgstr "II"
@@ -2541,7 +2591,7 @@ msgid "https://planet.kde.org/"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
 msgstr "Firemné informácie"
@@ -2642,6 +2692,24 @@ msgstr "Pridať kontakt"
 msgid "Edit Contact"
 msgstr "Upraviť kontakt"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:152
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2653,6 +2721,19 @@ msgstr "Aktuálne zmeny"
 #, kde-format
 msgid "External changes"
 msgstr "Externé zmeny"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "Upraviť %1"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgid "Create Contact Group"
+msgstr "Nový kontakt..."
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2669,6 +2750,16 @@ msgstr "Názov skupiny kontaktov"
 #| msgid "Members:"
 msgid "Members"
 msgstr "Členovia:"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, fuzzy, kde-format
@@ -2865,72 +2956,72 @@ msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: contacts/qml/private/ContactPage.qml:89
+#: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Call"
 msgstr "Volať"
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to call"
 msgstr "Vybrať číslo, na ktoré sa má volať"
 
-#: contacts/qml/private/ContactPage.qml:108
+#: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send SMS"
 msgstr "Poslať SMS"
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:114
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Vybrať číslo, na ktoré sa má poslať správa"
 
-#: contacts/qml/private/ContactPage.qml:127
+#: contacts/qml/private/ContactPage.qml:122
 #, kde-format
 msgid "Send email"
 msgstr "Poslať email"
 
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:128
 #, kde-format
 msgid "Show QR Code"
 msgstr "Zobraziť QR kód"
 
-#: contacts/qml/private/ContactPage.qml:153
+#: contacts/qml/private/ContactPage.qml:148
 #, kde-format
 msgid "Contact information"
 msgstr "Informácie o kontakte"
 
-#: contacts/qml/private/ContactPage.qml:165
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Nickname:"
 msgstr "Prezývka:"
 
-#: contacts/qml/private/ContactPage.qml:171
+#: contacts/qml/private/ContactPage.qml:166
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Kanál pre blog:"
 
-#: contacts/qml/private/ContactPage.qml:188
+#: contacts/qml/private/ContactPage.qml:183
 #, kde-format
 msgid "Personal information"
 msgstr "Osobné informácie"
 
-#: contacts/qml/private/ContactPage.qml:194
+#: contacts/qml/private/ContactPage.qml:189
 #, kde-format
 msgid "Birthday:"
 msgstr "Dátum narodenia"
 
-#: contacts/qml/private/ContactPage.qml:212
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Anniversary:"
 msgstr "Výročie:"
 
-#: contacts/qml/private/ContactPage.qml:219
+#: contacts/qml/private/ContactPage.qml:214
 #, kde-format
 msgid "Partner's name:"
 msgstr "Meno partnera:"
 
-#: contacts/qml/private/ContactPage.qml:234
+#: contacts/qml/private/ContactPage.qml:229
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
@@ -2938,13 +3029,13 @@ msgstr[0] "Telefónne číslo"
 msgstr[1] "Telefónne čísla"
 msgstr[2] "Phone Numbers"
 
-#: contacts/qml/private/ContactPage.qml:246
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:264
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
@@ -2952,19 +3043,19 @@ msgstr[0] "Adresa"
 msgstr[1] "Adresy"
 msgstr[2] "Adresy"
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:295
+#: contacts/qml/private/ContactPage.qml:290
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgid "Instant Messaging"
 msgstr "Odosielanie správ"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:307
 #, fuzzy, kde-format
 #| msgctxt "Label for a phone number type"
 #| msgid "%1:"
@@ -2972,48 +3063,54 @@ msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Organization:"
 msgstr "Organizácia:"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Profession:"
 msgstr "Povolanie:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:352
 #, kde-format
 msgid "Title:"
 msgstr "Funkcia:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:359
 #, kde-format
 msgid "Department:"
 msgstr "Oddelenie:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgid "Office:"
 msgstr "Funkcia:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgid "Manager's name:"
 msgstr "Meno manažéra:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:380
 #, kde-format
 msgid "Assistants's name:"
 msgstr "Meno asistenta:"
 
-#: contacts/qml/private/ContactPage.qml:401
+#: contacts/qml/private/ContactPage.qml:396
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Emailová adresa"
 msgstr[1] "Emailové adresy"
 msgstr[2] "Emailové adresy"
+
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "Chcete vymazať kalendár: \"%1\"?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3090,12 +3187,6 @@ msgstr "%1 (Predvolený)"
 msgid "Image request has been cancelled"
 msgstr "Požiadavka na obrázok bola zrušená"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr ""
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3115,15 +3206,15 @@ msgstr "Neznáme"
 
 #: mail/main.cpp:48
 #, fuzzy, kde-format
-#| msgid "Mail"
+#| msgid "Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "Pošta"
+msgid "Merkuro Mail"
+msgstr "Kalendár"
 
 #: mail/main.cpp:51
 #, fuzzy, kde-format
 #| msgid "Calendar Application"
-msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "Aplikácia Calendar"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3189,10 +3280,56 @@ msgstr "Dáta sa nepodarilo dešifrovať."
 msgid "Move to trash"
 msgstr "Presunúť do koša"
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Odosielanie správ"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Neoznačovať ako dôležité"
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Don't Mark as Important"
+msgid "Mark as Important"
+msgstr "Neoznačovať ako dôležité"
+
+#: mail/qml/FolderView.qml:51
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgid "Move to Trash"
+msgstr "Presunúť do koša"
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgid "Move Message to..."
+msgstr "Odosielanie správ"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "Pridať pripomienku"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3220,55 +3357,49 @@ msgstr "E-mailové schránky"
 msgid "Mail"
 msgstr "Pošta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Odosielanie správ"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, fuzzy, kde-format
 #| msgctxt "displayed as subject when the subject of a mail is empty"
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "Bez predmetu"
-
-#: mail/qml/MailComposer.qml:139
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Send"
-msgstr "Poslať SMS"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3330,6 +3461,12 @@ msgstr "Táto správa je zašifrovaná kľúčom: %1"
 msgid "Loading mail..."
 msgstr "Načítava sa pošta..."
 
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Sender:"
+msgstr "Poslať SMS"
+
 #: mail/qml/MailViewer.qml:149
 #, kde-format
 msgid "Save attachment"
@@ -3339,6 +3476,18 @@ msgstr "Uložiť prílohu"
 #, kde-format
 msgid "Import key"
 msgstr "Importovať kľúč"
+
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Nastavenia pre zobrazenie mesiaca"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr ""
 
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
@@ -3359,6 +3508,11 @@ msgstr "Zmeniť"
 #, kde-format
 msgid "Add Account"
 msgstr "Pridať účet"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, kde-format
+msgid "Identities"
+msgstr ""
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3384,6 +3538,12 @@ msgstr "Vytvoriť novú značku..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rýchlo pridať novú značku."
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "Pošta"
 
 #, fuzzy
 #~| msgid "About Kalendar"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:32+0000\n"
+"POT-Creation-Date: 2023-07-28 02:36+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1232,7 +1232,7 @@ msgstr "Συμμετέχοντες:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:159
+#: contacts/qml/private/ContactPage.qml:154
 #, kde-format
 msgid "Name:"
 msgstr "Όνομα:"
@@ -1330,51 +1330,53 @@ msgstr "Να σημειωθεί ως ασυμπλήρωτο"
 msgid "Mark Complete"
 msgstr "Να σημειωθεί ως συμπληρωμένο"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Αναίρεση: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Επανάληψη: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "Refresh All Calendars"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "Επανάληψη"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "Προβολή όλων των εργασιών"
@@ -1784,6 +1786,7 @@ msgstr "Μετάβαση"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1912,6 +1915,12 @@ msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
 msgid "Enter email of recipient..."
 msgstr ""
 
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, kde-format
+msgid "Send"
+msgstr ""
+
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, fuzzy, kde-format
 #| msgid "Month View settings"
@@ -1948,6 +1957,8 @@ msgstr ""
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Λογαριασμοί"
@@ -2316,7 +2327,7 @@ msgid "Enter Full Screen"
 msgstr "Είσοδος σε πλήρη οθόνη"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgid "Home:"
 msgstr ""
@@ -2420,10 +2431,31 @@ msgstr "Επιλογή χρώματος ημερολογίου"
 msgid "Done"
 msgstr "Έγινε"
 
-#: contacts/qml/ContactChooserPage.qml:51
+#: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
 msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
+
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Δημιουργία"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Νέο γεγονός…"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Νέο γεγονός…"
 
 #: contacts/qml/ContactView.qml:90
 #, fuzzy, kde-format
@@ -2513,9 +2545,19 @@ msgstr "Όνομα:"
 msgid "Contact name"
 msgstr "Επαφές"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
+#, kde-format
+msgid "Dr."
 msgstr ""
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
@@ -2581,6 +2623,11 @@ msgstr ""
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
+msgid "I"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
+#, kde-format
 msgid "II"
 msgstr ""
 
@@ -2621,7 +2668,7 @@ msgid "https://planet.kde.org/"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
 msgstr ""
@@ -2718,6 +2765,24 @@ msgstr "Επαφές"
 msgid "Edit Contact"
 msgstr "Επαφές"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:152
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2729,6 +2794,19 @@ msgstr ""
 #, kde-format
 msgid "External changes"
 msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "Επεξεργασία %1"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgid "Create Contact Group"
+msgstr "Νέο γεγονός…"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, fuzzy, kde-format
@@ -2746,6 +2824,16 @@ msgstr ""
 #| msgid "Reminders:"
 msgid "Members"
 msgstr "Υπενθυμίσεις:"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, fuzzy, kde-format
@@ -2943,74 +3031,74 @@ msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: contacts/qml/private/ContactPage.qml:89
+#: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Call"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to call"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:108
+#: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send SMS"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:114
 #, kde-format
 msgid "Select number to send message to"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:127
+#: contacts/qml/private/ContactPage.qml:122
 #, kde-format
 msgid "Send email"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:128
 #, fuzzy, kde-format
 #| msgid "Show Completed"
 msgid "Show QR Code"
 msgstr "Εμφάνιση συμπληρωμένων"
 
-#: contacts/qml/private/ContactPage.qml:153
+#: contacts/qml/private/ContactPage.qml:148
 #, kde-format
 msgid "Contact information"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:165
+#: contacts/qml/private/ContactPage.qml:160
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Nickname:"
 msgstr "Όνομα:"
 
-#: contacts/qml/private/ContactPage.qml:171
+#: contacts/qml/private/ContactPage.qml:166
 #, kde-format
 msgid "Blog Feed:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:188
+#: contacts/qml/private/ContactPage.qml:183
 #, kde-format
 msgid "Personal information"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:194
+#: contacts/qml/private/ContactPage.qml:189
 #, kde-format
 msgid "Birthday:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:212
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Anniversary:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:219
+#: contacts/qml/private/ContactPage.qml:214
 #, kde-format
 msgid "Partner's name:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:234
+#: contacts/qml/private/ContactPage.qml:229
 #, fuzzy, kde-format
 #| msgid "Show week numbers"
 msgid "Phone Number"
@@ -3018,79 +3106,85 @@ msgid_plural "Phone Numbers"
 msgstr[0] "Εμφάνιση αριθμών εβδομάδας"
 msgstr[1] "Εμφάνιση αριθμών εβδομάδας"
 
-#: contacts/qml/private/ContactPage.qml:246
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:264
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:295
+#: contacts/qml/private/ContactPage.qml:290
 #, kde-format
 msgid "Instant Messaging"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:307
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Organization:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Profession:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:352
 #, kde-format
 msgid "Title:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:359
 #, kde-format
 msgid "Department:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgid "Office:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:373
 #, fuzzy, kde-format
 #| msgid "Manage Tags"
 msgid "Manager's name:"
 msgstr "Διαχείριση ετικετών"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:380
 #, kde-format
 msgid "Assistants's name:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:401
+#: contacts/qml/private/ContactPage.qml:396
 #, fuzzy, kde-format
 #| msgid "Select Email Address"
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Επιλογή διεύθυνσης αλληλογραφίας"
 msgstr[1] "Επιλογή διεύθυνσης αλληλογραφίας"
+
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete item: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "Θέλετε να διαγράψετε το αντικείμενο: «%1»;"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3170,12 +3264,6 @@ msgstr "%1 (προκαθορισμένο)"
 msgid "Image request has been cancelled"
 msgstr ""
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr ""
-
 #: mail/mailapplication.cpp:22
 #, fuzzy, kde-format
 #| msgid "New Task…"
@@ -3197,15 +3285,15 @@ msgstr "Άγνωστο"
 
 #: mail/main.cpp:48
 #, fuzzy, kde-format
-#| msgid "Tasks View"
+#| msgid "Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "Προβολή εργασιών"
+msgid "Merkuro Mail"
+msgstr "Ημερολόγιο"
 
 #: mail/main.cpp:51
 #, fuzzy, kde-format
 #| msgid "Calendar Application"
-msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "Εφαρμογή ημερολογίου"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3269,10 +3357,55 @@ msgstr ""
 msgid "Move to trash"
 msgstr ""
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgid "New event"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Νέο γεγονός"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr ""
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgid "Mark as Important"
+msgstr "Να σημειωθεί η εργασία ως ελλιπής"
+
+#: mail/qml/FolderView.qml:51
+#, kde-format
+msgid "Move to Trash"
+msgstr ""
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgid "New event"
+msgid "Move Message to..."
+msgstr "Νέο γεγονός"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "Προσθήκη υπενθύμισης"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3301,51 +3434,46 @@ msgstr ""
 msgid "Mail"
 msgstr "Προβολή εργασιών"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, fuzzy, kde-format
 #| msgid "New event"
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Νέο γεγονός"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
-msgstr ""
-
-#: mail/qml/MailComposer.qml:139
-#, kde-format
-msgid "Send"
 msgstr ""
 
 #: mail/qml/mailpartview/ICalPart.qml:28
@@ -3408,6 +3536,12 @@ msgstr ""
 msgid "Loading mail..."
 msgstr ""
 
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Reminders:"
+msgid "Sender:"
+msgstr "Υπενθυμίσεις:"
+
 #: mail/qml/MailViewer.qml:149
 #, fuzzy, kde-format
 #| msgid "Add Attachment"
@@ -3419,6 +3553,18 @@ msgstr "Προσθήκη συνημμένου"
 #| msgid "Import Calendar"
 msgid "Import key"
 msgstr "Εισαγωγή ημερολογίου"
+
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month View settings"
+msgid "Account settings"
+msgstr "Ρυθμίσεις προβολής μήνα"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr ""
 
 #: quick/qml/AgentConfigurationForm.qml:36
 #, fuzzy, kde-format
@@ -3441,6 +3587,11 @@ msgstr ""
 #| msgid "Accounts"
 msgid "Add Account"
 msgstr "Λογαριασμοί"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, kde-format
+msgid "Identities"
+msgstr ""
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3466,6 +3617,12 @@ msgstr "Δημιουργία νέας ετικέτας…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Γρήγορη προσθήκη νέας ετικέτας."
+
+#, fuzzy
+#~| msgid "Tasks View"
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "Προβολή εργασιών"
 
 #, fuzzy
 #~| msgid "About Kalendar"

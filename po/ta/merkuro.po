@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:32+0000\n"
+"POT-Creation-Date: 2023-07-28 02:36+0000\n"
 "PO-Revision-Date: 2023-07-16 14:14+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1179,7 +1179,7 @@ msgstr "பங்கேற்போர்:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:159
+#: contacts/qml/private/ContactPage.qml:154
 #, kde-format
 msgid "Name:"
 msgstr "பெயர்:"
@@ -1275,49 +1275,51 @@ msgstr "முடிக்காத‍தாக குறி"
 msgid "Mark Complete"
 msgstr "முடித்த‍தாக குறி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, kde-format
 msgid "Calendar"
 msgstr "நாள்காட்டி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "செயல்நீக்கு: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "மீளச்செய்: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "அனைத்து நாள்காட்டிகளையும் புதுப்பி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "அமை"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "செயல்நீக்கு"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "மீளச்செய்"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "அமைப்புகள்"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "அனைத்து பணிகளையும் காட்டு"
@@ -1699,6 +1701,7 @@ msgstr "செல்"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1826,6 +1829,12 @@ msgstr "வேலையுள்ள/இல்லா விவரங்களை 
 msgid "Enter email of recipient..."
 msgstr "பெறுநரின் முகவரியை உள்ளிடுக..."
 
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, kde-format
+msgid "Send"
+msgstr "அனுப்பு"
+
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, kde-format
 msgid "Free/Busy Retrieval settings"
@@ -1863,6 +1872,8 @@ msgstr "தோற்றம்"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "கணக்குகள்"
@@ -2214,7 +2225,7 @@ msgid "Enter Full Screen"
 msgstr "முழுத்திரை முறையில் நுழை"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgid "Home:"
 msgstr "வீடு:"
@@ -2309,10 +2320,31 @@ msgstr "முகவரிப்புத்தகத்தின் நிற�
 msgid "Done"
 msgstr "முடிந்தது"
 
-#: contacts/qml/ContactChooserPage.qml:51
+#: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
 msgstr "மின்னஞ்சல் முகவரியை தேர்ந்தெடுப்பது"
+
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "உருவாக்கு"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "புதிய தொடர்பு…"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "புதிய தொடர்புக்குழு…"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2390,10 +2422,21 @@ msgstr "பெயர்"
 msgid "Contact name"
 msgstr "தொடர்பின் பெயர்"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
 msgstr "மரியாதைப்படுத்தும் முன்னொட்டு"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "திரு"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2456,6 +2499,12 @@ msgid "Honorific suffix"
 msgstr "மரியாதைப்படுத்தும் பின்னொட்டு"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "II"
 msgstr "II"
@@ -2496,7 +2545,7 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
 msgstr "வேலை விவரங்கள்"
@@ -2588,6 +2637,24 @@ msgstr "தொடர்பை சேர்"
 msgid "Edit Contact"
 msgstr "தொடர்பை திருத்து"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:152
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2599,6 +2666,19 @@ msgstr "தற்போதைய மாற்றங்கள்"
 #, kde-format
 msgid "External changes"
 msgstr "வேளி மாற்றங்கள்"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "%1 திருத்து"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgid "Create Contact Group"
+msgstr "புதிய தொடர்புக்குழு…"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2614,6 +2694,16 @@ msgstr "தொடர்புக்குழுவின் பெயர்"
 #, kde-format
 msgid "Members"
 msgstr "உறுப்பினர்கள்"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2804,149 +2894,155 @@ msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "ரத்து செய்"
 
-#: contacts/qml/private/ContactPage.qml:89
+#: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Call"
 msgstr "அழை"
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to call"
 msgstr "அழைக்க வேண்டிய எண்ணை தேர்ந்தெடுப்பது"
 
-#: contacts/qml/private/ContactPage.qml:108
+#: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send SMS"
 msgstr "SMS அனுப்பு"
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:114
 #, kde-format
 msgid "Select number to send message to"
 msgstr "SMS-ஐ பெற வேண்டிய எண்ணை தேர்ந்தெடுப்பது"
 
-#: contacts/qml/private/ContactPage.qml:127
+#: contacts/qml/private/ContactPage.qml:122
 #, kde-format
 msgid "Send email"
 msgstr "மின்னஞ்சலை அனுப்பு"
 
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:128
 #, kde-format
 msgid "Show QR Code"
 msgstr "QR குறியீட்டை காட்டு"
 
-#: contacts/qml/private/ContactPage.qml:153
+#: contacts/qml/private/ContactPage.qml:148
 #, kde-format
 msgid "Contact information"
 msgstr "தொடர்பு விவரங்கள்"
 
-#: contacts/qml/private/ContactPage.qml:165
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Nickname:"
 msgstr "செல்லப்பெயர்:"
 
-#: contacts/qml/private/ContactPage.qml:171
+#: contacts/qml/private/ContactPage.qml:166
 #, kde-format
 msgid "Blog Feed:"
 msgstr "வலைப்பதிவு பக்கம்:"
 
-#: contacts/qml/private/ContactPage.qml:188
+#: contacts/qml/private/ContactPage.qml:183
 #, kde-format
 msgid "Personal information"
 msgstr "தனிப்பட்ட விவரங்கள்"
 
-#: contacts/qml/private/ContactPage.qml:194
+#: contacts/qml/private/ContactPage.qml:189
 #, kde-format
 msgid "Birthday:"
 msgstr "பிறந்தநாள்:"
 
-#: contacts/qml/private/ContactPage.qml:212
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Anniversary:"
 msgstr "திருமணநாள்:"
 
-#: contacts/qml/private/ContactPage.qml:219
+#: contacts/qml/private/ContactPage.qml:214
 #, kde-format
 msgid "Partner's name:"
 msgstr "துணைவர்:"
 
-#: contacts/qml/private/ContactPage.qml:234
+#: contacts/qml/private/ContactPage.qml:229
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "தொலைபேசி எண்"
 msgstr[1] "தொலைபேசி எண்கள்"
 
-#: contacts/qml/private/ContactPage.qml:246
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:264
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "முகவரி"
 msgstr[1] "முகவரிகள்"
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:295
+#: contacts/qml/private/ContactPage.qml:290
 #, kde-format
 msgid "Instant Messaging"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:307
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Organization:"
 msgstr "நிறுவனம்:"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Profession:"
 msgstr "பணி:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:352
 #, kde-format
 msgid "Title:"
 msgstr "பொறுப்பு:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:359
 #, kde-format
 msgid "Department:"
 msgstr "பிரிவு:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgid "Office:"
 msgstr "அலுவலகம்:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgid "Manager's name:"
 msgstr "மேலாளரின் பெயர்:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:380
 #, kde-format
 msgid "Assistants's name:"
 msgstr "உதவியாளரின் பெயர்:"
 
-#: contacts/qml/private/ContactPage.qml:401
+#: contacts/qml/private/ContactPage.qml:396
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "மின்னஞ்சல் முகவரி"
 msgstr[1] "மின்னஞ்சல் முகவரிகள்"
+
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "\"%1\" என்ற நாள்காட்டியை உறுதியாக நீக்க வேண்டுமா?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3021,12 +3117,6 @@ msgstr "%1 (இயல்பிருப்பு)"
 msgid "Image request has been cancelled"
 msgstr "பட கோரிக்கை ரத்து செய்யப்பட்டது"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3045,14 +3135,17 @@ msgid "Unknown"
 msgstr "தெரியாதது"
 
 #: mail/main.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "அஞ்சல்"
+msgid "Merkuro Mail"
+msgstr "மெற்குரோ நாள்காட்டி"
 
 #: mail/main.cpp:51
-#, kde-format
-msgid "EMail Client Application"
+#, fuzzy, kde-format
+#| msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "மின்னஞ்சல் செயலி"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3116,10 +3209,58 @@ msgstr "தரவின் மறையாக்கத்தை நீக்க 
 msgid "Move to trash"
 msgstr "அகற்றிடத்துக்கு நகர்த்து"
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "புதிய அஞ்சல்"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "முக்கியமானதாக குறிக்காதே"
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Don't Mark as Important"
+msgid "Mark as Important"
+msgstr "முக்கியமானதாக குறிக்காதே"
+
+#: mail/qml/FolderView.qml:51
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgid "Move to Trash"
+msgstr "அகற்றிடத்துக்கு நகர்த்து"
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgid "Move Message to..."
+msgstr "புதிய அஞ்சல்"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "நினைவூட்டலை சேர்"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3147,51 +3288,46 @@ msgstr "அஞ்சல்பெட்டிகள்"
 msgid "Mail"
 msgstr "அஞ்சல்"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "புதிய அஞ்சல்"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr "அனுப்புநர்:"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr "அடையாளம்:"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr "பெறுநர்:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr "நகல்:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr "மறைநகல்:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr "பதில் பெறுபவர்:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
 msgstr "தலைப்பு:"
-
-#: mail/qml/MailComposer.qml:139
-#, kde-format
-msgid "Send"
-msgstr "அனுப்பு"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3253,6 +3389,12 @@ msgstr "இவ்வஞ்சல் பின்வரும் சாவிய�
 msgid "Loading mail..."
 msgstr "அஞ்சல் ஏற்றப்படுகிறது..."
 
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send"
+msgid "Sender:"
+msgstr "அனுப்பு"
+
 #: mail/qml/MailViewer.qml:149
 #, kde-format
 msgid "Save attachment"
@@ -3262,6 +3404,18 @@ msgstr "உடனிணைப்பை சேமி"
 #, kde-format
 msgid "Import key"
 msgstr "சாவியை இறக்குமதி செய்"
+
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "மாத காட்சிமுறைக்கான அமைப்புகள்"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
@@ -3282,6 +3436,12 @@ msgstr "திருத்து"
 #, kde-format
 msgid "Add Account"
 msgstr "கணக்கை சேர்"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "அடையாளம்:"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3307,6 +3467,10 @@ msgstr "புதிய குறிச்சொல்லை உருவாக�
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "புதிய குறிச்சொல்லை எளிதில் சேர்க்கும்."
+
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "அஞ்சல்"
 
 #~ msgid "About Merkuro"
 #~ msgstr "மெற்குரோ பற்றி"

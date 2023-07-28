@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:50+0000\n"
+"POT-Creation-Date: 2023-07-28 02:36+0000\n"
 "PO-Revision-Date: 2023-03-05 17:59+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -62,6 +62,18 @@ msgstr "QR-Code anzeigen"
 msgid "Nickname: %1"
 msgstr "Spitzname: %1"
 
+#: package/contents/ui/ContactPage.qml:169
+#: package/contents/ui/ContactPage.qml:173
+#, kde-format
+msgid "Birthday:"
+msgstr ""
+
+#: package/contents/ui/ContactPage.qml:171
+#, kde-format
+msgctxt "Day month format"
+msgid "dd.MM."
+msgstr ""
+
 #: package/contents/ui/ContactPage.qml:182
 #, kde-format
 msgid "Address"
@@ -88,6 +100,13 @@ msgid "Phone number"
 msgid_plural "Phone numbers"
 msgstr[0] "Telefonnummer"
 msgstr[1] "Telefonnummern"
+
+#: package/contents/ui/ContactPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the address, e.g. home, work, ..."
+#| msgid "%1:"
+msgid "%1:"
+msgstr "%1:"
 
 #: package/contents/ui/ContactsPage.qml:16
 #, kde-format
@@ -120,17 +139,17 @@ msgctxt "Aztec barcode"
 msgid "Aztec"
 msgstr "Aztec"
 
-#: package/contents/ui/QrCodePage.qml:79
+#: package/contents/ui/QrCodePage.qml:78
 #, kde-format
 msgid "Change the QR code type"
 msgstr "Den QR-Code-Typ ändern"
 
-#: package/contents/ui/QrCodePage.qml:103
+#: package/contents/ui/QrCodePage.qml:102
 #, kde-format
 msgid "Creating QR code failed"
 msgstr "Das Erstellen des QR-Codes ist fehlgeschlagen"
 
-#: package/contents/ui/QrCodePage.qml:112
+#: package/contents/ui/QrCodePage.qml:111
 #, kde-format
 msgid "The QR code is too large to be displayed"
 msgstr "Der QR-Code ist zu groß, um angezeigt zu werden"

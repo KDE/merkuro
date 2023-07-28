@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:32+0000\n"
-"PO-Revision-Date: 2023-07-26 18:02+0200\n"
+"POT-Creation-Date: 2023-07-28 02:36+0000\n"
+"PO-Revision-Date: 2023-07-27 12:39+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1171,7 +1171,7 @@ msgstr "Participantes:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:159
+#: contacts/qml/private/ContactPage.qml:154
 #, kde-format
 msgid "Name:"
 msgstr "Nomine:"
@@ -1267,49 +1267,51 @@ msgstr "Marca Incomplete"
 msgid "Mark Complete"
 msgstr "Marca omplete"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, kde-format
 msgid "Calendar"
 msgstr "Calendario"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Annulla: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Reface: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Refresca omne calendarios"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
+#: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "Annulla"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "Reface"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "Preferentias"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "Vide omne cargas"
@@ -1691,6 +1693,7 @@ msgstr "Vade"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1815,10 +1818,16 @@ msgstr "E-posta Libere/Occupate"
 msgid "Enter email of recipient..."
 msgstr "Inserta e-posta de destinatario..."
 
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, kde-format
+msgid "Send"
+msgstr "Invia"
+
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, kde-format
 msgid "Free/Busy Retrieval settings"
-msgstr ""
+msgstr "Preferentia de recuperation de Libere/Occupate"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:162
 #, kde-format
@@ -1832,7 +1841,7 @@ msgstr ""
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:167
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
-msgstr ""
+msgstr "Recupera information de Libere/occupate de alteres automaticamente"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:176
 #, kde-format
@@ -1852,6 +1861,8 @@ msgstr "Apparentia"
 
 #: calendar/qml/Settings/SettingsPage.qml:19
 #: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Contos"
@@ -1869,52 +1880,52 @@ msgstr "Preferentias General"
 #: calendar/qml/Settings/ViewSettingsPage.qml:28
 #, kde-format
 msgid "Use popup to show incidence information"
-msgstr ""
+msgstr "Usa popup per monstrar information de incidentia"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:39
 #, kde-format
 msgid "Show tasks in calendar views"
-msgstr ""
+msgstr "Monstra cargas in vistas de calendario"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:49
 #, kde-format
 msgid "Show sub-tasks in calendar views"
-msgstr ""
+msgstr "Monstra sub-cargas in vistas de calendario"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:63
 #, kde-format
 msgid "Past event transparency"
-msgstr ""
+msgstr "Transparentia de evento passate"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:88
 #, kde-format
 msgid "Month view settings"
-msgstr ""
+msgstr "Preferentias de vista per Mense"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:100
 #, kde-format
 msgid "Month view mode"
-msgstr ""
+msgstr "Modo de vista per Mense"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:107
 #, kde-format
 msgid "Swipeable month grid"
-msgstr ""
+msgstr "Grillia de mense glissabile"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:114
 #, kde-format
 msgid "Basic month grid"
-msgstr ""
+msgstr "Grillia per mense basic"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:120
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
-msgstr ""
+msgstr "Grillia de mense glissabile require prestationes de systema plus alte"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:135
 #, kde-format
 msgid "Weekday label alignment"
-msgstr ""
+msgstr "Alineamento de etiquetta de die de septimana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:142
 #, kde-format
@@ -1934,7 +1945,7 @@ msgstr "Dextera"
 #: calendar/qml/Settings/ViewSettingsPage.qml:174
 #, kde-format
 msgid "Weekday label length:"
-msgstr ""
+msgstr "Longitude de etiquetta de die de septimana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:179
 #, kde-format
@@ -1959,72 +1970,74 @@ msgstr "Monstra numeros de septimana"
 #: calendar/qml/Settings/ViewSettingsPage.qml:217
 #, kde-format
 msgid "Grid border width (pixels):"
-msgstr ""
+msgstr "Largessa de bordo de grillia (pixels):"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:247
 #, kde-format
 msgid "Week view settings"
-msgstr ""
+msgstr "Preferentias de vista de seprimana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:259
 #, kde-format
 msgid "Week view mode"
-msgstr ""
+msgstr "Modo de vista de septimana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #, kde-format
 msgid "Swipeable week view"
-msgstr ""
+msgstr "Vista per septimana glissabile"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:273
 #, kde-format
 msgid "Basic week view"
-msgstr ""
+msgstr "Vista per septimana basic"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:279
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr ""
+"Vista per septimana glissabile require prestationes de systema plus alte."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:292
 #, kde-format
 msgid "Schedule View settings"
-msgstr ""
+msgstr "Preferentias de vista de Planificatoon"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:304
 #, kde-format
 msgid "Schedule view mode"
-msgstr ""
+msgstr "Modo de vista de Planification"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:311
 #, kde-format
 msgid "Swipeable schedule view"
-msgstr ""
+msgstr "Vista de planification glissabile"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:318
 #, kde-format
 msgid "Basic schedule view"
-msgstr ""
+msgstr "Vista de planification Basic"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:324
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
+"Vista de planification glissabile require prestationes de systema plus alte."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:333
 #, kde-format
 msgid "Show week headers"
-msgstr ""
+msgstr "Monstra capites de septimana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:350
 #, kde-format
 msgid "Tasks View settings"
-msgstr ""
+msgstr "Preferentias de vista per Cargas"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:353
 #, kde-format
 msgid "Show completed sub-tasks"
-msgstr ""
+msgstr "Monstra sub-cargas completate"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:369
 #, kde-format
@@ -2039,22 +2052,22 @@ msgstr "Habilita Mappas"
 #: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "May cause crashing on some systems."
-msgstr ""
+msgstr "Pote causar fracassura sur alcun systemas."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:392
 #, kde-format
 msgid "Location marker"
-msgstr ""
+msgstr "Marcator de locatioon"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Circle (shows area of location)"
-msgstr ""
+msgstr "Circulo (monstra area de location)"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:407
 #, kde-format
 msgid "Pin (shows exact location)"
-msgstr ""
+msgstr "Spinula (monstra location exacte)"
 
 #: calendar/utils.cpp:21
 #, kde-format
@@ -2096,7 +2109,7 @@ msgstr "%1 post initio de evento"
 #: calendar/utils.cpp:51
 #, kde-format
 msgid "On event start"
-msgstr ""
+msgstr "Initia sur evento"
 
 #: components/qml/EditMenu.qml:13 components/qml/NativeEditMenu.qml:11
 #, kde-format
@@ -2114,7 +2127,7 @@ msgstr "Annulla Texto"
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Redo Text"
-msgstr ""
+msgstr "Reface texto"
 
 #: components/qml/EditMenu.qml:60 components/qml/NativeEditMenu.qml:63
 #, kde-format
@@ -2162,7 +2175,7 @@ msgstr "Quita Merkuro"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr ""
+msgstr "Merkuro Handbook (Manual de Merkuro)"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2203,7 +2216,7 @@ msgid "Enter Full Screen"
 msgstr "Inserta schermo plen"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgid "Home:"
 msgstr "Domo:"
@@ -2298,10 +2311,31 @@ msgstr ""
 msgid "Done"
 msgstr "Facite"
 
-#: contacts/qml/ContactChooserPage.qml:51
+#: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
 msgstr "Selige adresses de e-posta"
+
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Crea"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Nove contacto…"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Nove gruppo de contacto"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2379,10 +2413,21 @@ msgstr "Nomine"
 msgid "Contact name"
 msgstr "Nomine de contacto:"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
 msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "Senior"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2445,6 +2490,12 @@ msgid "Honorific suffix"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "II"
 msgstr "II"
@@ -2485,7 +2536,7 @@ msgid "https://planet.kde.org/"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
 msgstr ""
@@ -2577,6 +2628,24 @@ msgstr "Adde contacto"
 msgid "Edit Contact"
 msgstr "Modifica contacto"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:152
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2588,6 +2657,19 @@ msgstr "Modificationes currente"
 #, kde-format
 msgid "External changes"
 msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "Modifica %1"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgid "Create Contact Group"
+msgstr "Nove gruppo de contacto"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2603,6 +2685,16 @@ msgstr ""
 #, kde-format
 msgid "Members"
 msgstr "Membros"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2793,149 +2885,155 @@ msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Cancella"
 
-#: contacts/qml/private/ContactPage.qml:89
+#: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Call"
 msgstr "Appello"
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to call"
 msgstr "Selige  numero de appellar"
 
-#: contacts/qml/private/ContactPage.qml:108
+#: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send SMS"
 msgstr "Invia SMS"
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:114
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Selige numero al qual inviar message"
 
-#: contacts/qml/private/ContactPage.qml:127
+#: contacts/qml/private/ContactPage.qml:122
 #, kde-format
 msgid "Send email"
 msgstr "Invia e-posta"
 
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:128
 #, kde-format
 msgid "Show QR Code"
 msgstr "Monstra codice QR"
 
-#: contacts/qml/private/ContactPage.qml:153
+#: contacts/qml/private/ContactPage.qml:148
 #, kde-format
 msgid "Contact information"
 msgstr "Information de contacto"
 
-#: contacts/qml/private/ContactPage.qml:165
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Nickname:"
 msgstr "Pseudonymo:"
 
-#: contacts/qml/private/ContactPage.qml:171
+#: contacts/qml/private/ContactPage.qml:166
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Syndication de Blog:"
 
-#: contacts/qml/private/ContactPage.qml:188
+#: contacts/qml/private/ContactPage.qml:183
 #, kde-format
 msgid "Personal information"
 msgstr "Information personal"
 
-#: contacts/qml/private/ContactPage.qml:194
+#: contacts/qml/private/ContactPage.qml:189
 #, kde-format
 msgid "Birthday:"
 msgstr "Anniversario de nativitate:"
 
-#: contacts/qml/private/ContactPage.qml:212
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Anniversary:"
 msgstr "Anniversario:"
 
-#: contacts/qml/private/ContactPage.qml:219
+#: contacts/qml/private/ContactPage.qml:214
 #, kde-format
 msgid "Partner's name:"
 msgstr "Nomine de partner:"
 
-#: contacts/qml/private/ContactPage.qml:234
+#: contacts/qml/private/ContactPage.qml:229
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Numero de telephono:"
 msgstr[1] "Numeros de telephono"
 
-#: contacts/qml/private/ContactPage.qml:246
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:264
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adresse"
 msgstr[1] "Adresses"
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:295
+#: contacts/qml/private/ContactPage.qml:290
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Messageria instantanee"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:307
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Organization:"
 msgstr "Organization:"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Profession:"
 msgstr "Profession:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:352
 #, kde-format
 msgid "Title:"
 msgstr "Titulo:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:359
 #, kde-format
 msgid "Department:"
 msgstr "Departimento:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgid "Office:"
 msgstr "Officio:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgid "Manager's name:"
 msgstr "Nomine de gerente:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:380
 #, kde-format
 msgid "Assistants's name:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:401
+#: contacts/qml/private/ContactPage.qml:396
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Adresse de E-Posta"
 msgstr[1] "Adresses de E-Posta"
+
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "Tu volel devel calendario: \"%1\"?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3010,12 +3108,6 @@ msgstr "%1 (Predefinite)"
 msgid "Image request has been cancelled"
 msgstr "Requesta de image ha essite annullate"
 
-#: mail/identitymodel.cpp:41
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
-
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3034,14 +3126,17 @@ msgid "Unknown"
 msgstr "Incognite"
 
 #: mail/main.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "E-posta"
+msgid "Merkuro Mail"
+msgstr "Calendario de Merkuro"
 
 #: mail/main.cpp:51
-#, kde-format
-msgid "EMail Client Application"
+#, fuzzy, kde-format
+#| msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "Application cliente de E-Posta"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3105,10 +3200,58 @@ msgstr "Il non pote decryptar datos."
 msgid "Move to trash"
 msgstr "Move a corbe"
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Nove message"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr ""
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgid "Mark as Important"
+msgstr "Marca Carga como Incomplete"
+
+#: mail/qml/FolderView.qml:51
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgid "Move to Trash"
+msgstr "Move a corbe"
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgid "Move Message to..."
+msgstr "Nove message"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "Adde memento"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3136,51 +3279,46 @@ msgstr ""
 msgid "Mail"
 msgstr "E-posta"
 
-#: mail/qml/MailComposer.qml:15
+#: mail/qml/MailComposer.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nove message"
 
-#: mail/qml/MailComposer.qml:28
+#: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
 msgstr "Ex:"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
 msgstr "Identitate:"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
 msgstr "Responde a:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
 msgstr "Subjecto:"
-
-#: mail/qml/MailComposer.qml:139
-#, kde-format
-msgid "Send"
-msgstr "Invia"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3242,6 +3380,12 @@ msgstr ""
 msgid "Loading mail..."
 msgstr "Cargante posta .."
 
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send"
+msgid "Sender:"
+msgstr "Invia"
+
 #: mail/qml/MailViewer.qml:149
 #, kde-format
 msgid "Save attachment"
@@ -3251,6 +3395,18 @@ msgstr "Salveguarda attachamento"
 #, kde-format
 msgid "Import key"
 msgstr "Importa clave ..."
+
+#: mail/qml/settings/AccountSettingsPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgid "Account settings"
+msgstr "Preferentias de vista per Mense"
+
+#: quick/identitymodel.cpp:42
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
@@ -3271,6 +3427,12 @@ msgstr "Modifica"
 #, kde-format
 msgid "Add Account"
 msgstr "Adde conto"
+
+#: quick/qml/IdentityConfigurationForm.qml:21
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "Identitate:"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3296,6 +3458,10 @@ msgstr "Crea un nove  etiquetta..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rapidemente adde un note Etiquetta."
+
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "E-posta"
 
 #~ msgid "About Merkuro"
 #~ msgstr "A proposito de Merkuro"
