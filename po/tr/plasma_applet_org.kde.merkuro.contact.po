@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-22 00:51+0000\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
 "PO-Revision-Date: 2023-07-14 05:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -59,6 +59,18 @@ msgstr "Kare Kodu Göster"
 msgid "Nickname: %1"
 msgstr "Takma ad: %1"
 
+#: package/contents/ui/ContactPage.qml:169
+#: package/contents/ui/ContactPage.qml:173
+#, kde-format
+msgid "Birthday:"
+msgstr ""
+
+#: package/contents/ui/ContactPage.qml:171
+#, kde-format
+msgctxt "Day month format"
+msgid "dd.MM."
+msgstr ""
+
 #: package/contents/ui/ContactPage.qml:182
 #, kde-format
 msgid "Address"
@@ -85,6 +97,13 @@ msgid "Phone number"
 msgid_plural "Phone numbers"
 msgstr[0] "Telefon numarası"
 msgstr[1] "Telefon numaraları"
+
+#: package/contents/ui/ContactPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the address, e.g. home, work, ..."
+#| msgid "%1:"
+msgid "%1:"
+msgstr "%1:"
 
 #: package/contents/ui/ContactsPage.qml:16
 #, kde-format

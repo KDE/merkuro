@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-22 00:51+0000\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
 "PO-Revision-Date: 2022-08-09 00:10+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -61,6 +61,18 @@ msgstr "Mostrar código QR"
 msgid "Nickname: %1"
 msgstr "Apodo: %1"
 
+#: package/contents/ui/ContactPage.qml:169
+#: package/contents/ui/ContactPage.qml:173
+#, kde-format
+msgid "Birthday:"
+msgstr ""
+
+#: package/contents/ui/ContactPage.qml:171
+#, kde-format
+msgctxt "Day month format"
+msgid "dd.MM."
+msgstr ""
+
 #: package/contents/ui/ContactPage.qml:182
 #, kde-format
 msgid "Address"
@@ -87,6 +99,13 @@ msgid "Phone number"
 msgid_plural "Phone numbers"
 msgstr[0] "Número de teléfono"
 msgstr[1] "Números de teléfono"
+
+#: package/contents/ui/ContactPage.qml:241
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the address, e.g. home, work, ..."
+#| msgid "%1:"
+msgid "%1:"
+msgstr "%1:"
 
 #: package/contents/ui/ContactsPage.qml:16
 #, kde-format

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
-"PO-Revision-Date: 2023-07-15 12:03+0300\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"PO-Revision-Date: 2023-07-27 09:56+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1280,50 +1280,51 @@ msgstr "Marca com a no finalitzada"
 msgid "Mark Complete"
 msgstr "Marca com a finalitzada"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, kde-format
 msgid "Calendar"
 msgstr "Calendari"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Desfés: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Refés: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Actualitza tots els calendaris"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
 #: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "Desfés"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "Refés"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "Arranjament"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "Vista de totes les tasques"
@@ -1705,6 +1706,7 @@ msgstr "Ves"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1832,6 +1834,12 @@ msgstr "Adreça lliure/ocupat"
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr "Introduïu el correu electrònic del destinatari..."
+
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, kde-format
+msgid "Send"
+msgstr "Envia"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, kde-format
@@ -2329,6 +2337,27 @@ msgstr "Fet"
 msgid "Select Email Address"
 msgstr "Seleccioneu una adreça de correu electrònic"
 
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Crea"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Contacte nou…"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Grup de contactes nou…"
+
 #: contacts/qml/ContactView.qml:90
 #, kde-format
 msgctxt "@action:inmenu"
@@ -2405,10 +2434,21 @@ msgstr "Nom"
 msgid "Contact name"
 msgstr "Nom del contacte"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Honorific prefix"
 msgstr "Prefix honorífic"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "Sr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2469,6 +2509,12 @@ msgstr "Cognoms"
 #, kde-format
 msgid "Honorific suffix"
 msgstr "Sufix honorífic"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2603,6 +2649,24 @@ msgstr "Afegeix un contacte"
 msgid "Edit Contact"
 msgstr "Edita el contacte"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2614,6 +2678,19 @@ msgstr "Canvis actuals"
 #, kde-format
 msgid "External changes"
 msgstr "Canvis externs"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "Edita %1"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgid "Create Contact Group"
+msgstr "Grup de contactes nou…"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2629,6 +2706,16 @@ msgstr "Nom del grup de contactes"
 #, kde-format
 msgid "Members"
 msgstr "Membres"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2963,6 +3050,12 @@ msgid_plural "Email Addresses"
 msgstr[0] "Adreça de correu electrònic"
 msgstr[1] "Adreces de correu electrònic"
 
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "Esteu segur que voleu suprimir aquest calendari: «%1»?"
+
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
 msgid "You won't be able to revert this action"
@@ -3054,14 +3147,17 @@ msgid "Unknown"
 msgstr "Desconegut"
 
 #: mail/main.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "Correu"
+msgid "Merkuro Mail"
+msgstr "Calendari del Merkuro"
 
 #: mail/main.cpp:51
-#, kde-format
-msgid "EMail Client Application"
+#, fuzzy, kde-format
+#| msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "Aplicació de client de correu"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3127,10 +3223,58 @@ msgstr "No s'han pogut desencriptar les dades."
 msgid "Move to trash"
 msgstr "Mou a la paperera"
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Missatge nou"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "No marquis com a important"
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Don't Mark as Important"
+msgid "Mark as Important"
+msgstr "No marquis com a important"
+
+#: mail/qml/FolderView.qml:51
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgid "Move to Trash"
+msgstr "Mou a la paperera"
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgid "Move Message to..."
+msgstr "Missatge nou"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "Afegeix un recordatori"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3174,7 +3318,7 @@ msgstr "De:"
 msgid "Identity:"
 msgstr "Identitat:"
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr "A:"
@@ -3198,11 +3342,6 @@ msgstr "Respon a:"
 #, kde-format
 msgid "Subject:"
 msgstr "Assumpte:"
-
-#: mail/qml/MailComposer.qml:138
-#, kde-format
-msgid "Send"
-msgstr "Envia"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3264,6 +3403,12 @@ msgstr "Aquest missatge està encriptat amb la clau: %1"
 msgid "Loading mail..."
 msgstr "S'està carregant el correu..."
 
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send"
+msgid "Sender:"
+msgstr "Envia"
+
 #: mail/qml/MailViewer.qml:149
 #, kde-format
 msgid "Save attachment"
@@ -3275,10 +3420,9 @@ msgid "Import key"
 msgstr "Importa la clau"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "Configuració de la vista mensual"
+msgstr "Configuració del compte"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
@@ -3307,10 +3451,9 @@ msgid "Add Account"
 msgstr "Afegeix un compte"
 
 #: quick/qml/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identities"
-msgstr "Identitat:"
+msgstr "Identitats"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3337,8 +3480,6 @@ msgstr "Crea una etiqueta nova…"
 msgid "Quickly Add a New Tag."
 msgstr "Afegeix ràpidament una etiqueta nova."
 
-#~ msgid "About Merkuro"
-#~ msgstr "Quant al Merkuro"
-
-#~ msgid "About Merkuro Calendar"
-#~ msgstr "Quant al Calendari del Merkuro"
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "Correu"

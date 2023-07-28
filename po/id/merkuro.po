@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
 "PO-Revision-Date: 2023-03-22 00:50+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -1276,51 +1276,52 @@ msgstr ""
 msgid "Mark Complete"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, fuzzy, kde-format
 #| msgid "Calendars"
 msgid "Calendar"
 msgstr "Kalender"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Urungkan:"
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Ulangi:"
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Muat Ulang Semua Kalender"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
 #: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr ""
@@ -1702,6 +1703,7 @@ msgstr "Pergi"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1830,6 +1832,13 @@ msgstr "Alamat Surel"
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr ""
+
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Send"
+msgstr "Kirim SMS"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, kde-format
@@ -2323,6 +2332,28 @@ msgstr "Selesai"
 msgid "Select Email Address"
 msgstr "Pilih Alamat Surel"
 
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Buat"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Kontak"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "Contact name"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Nama kontak"
+
 #: contacts/qml/ContactView.qml:90
 #, kde-format
 msgctxt "@action:inmenu"
@@ -2399,10 +2430,21 @@ msgstr "Nama"
 msgid "Contact name"
 msgstr "Nama kontak"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Honorific prefix"
 msgstr "Awalan kehormatan"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "Tn."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2463,6 +2505,12 @@ msgstr "Nama keluarga atau nama belakang"
 #, kde-format
 msgid "Honorific suffix"
 msgstr "Akhiran kehormatan"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2604,6 +2652,24 @@ msgstr "Tambahkan Kontak"
 msgid "Edit Contact"
 msgstr "Sunting Kontak"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2615,6 +2681,18 @@ msgstr "Perubahan saat ini"
 #, kde-format
 msgid "External changes"
 msgstr "Perubahan eksternal"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit %1"
+msgstr "Sunting"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "Contact group name"
+msgid "Create Contact Group"
+msgstr "Nama grup kontak"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2630,6 +2708,16 @@ msgstr "Nama grup kontak"
 #, kde-format
 msgid "Members"
 msgstr "Anggota"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2968,6 +3056,11 @@ msgid_plural "Email Addresses"
 msgstr[0] "Alamat Surel"
 msgstr[1] "Alamat Surel"
 
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, kde-format
+msgid "Do you really want to delete your contact: %1?"
+msgstr ""
+
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
 msgid "You won't be able to revert this action"
@@ -3062,15 +3155,14 @@ msgstr ""
 
 #: mail/main.cpp:48
 #, fuzzy, kde-format
-#| msgctxt "contact's email address"
-#| msgid "EMail"
+#| msgid "Calendars"
 msgctxt "@title"
-msgid "Mail"
-msgstr "Surel"
+msgid "Merkuro Mail"
+msgstr "Kalender"
 
 #: mail/main.cpp:51
 #, kde-format
-msgid "EMail Client Application"
+msgid "Email Client"
 msgstr ""
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3134,9 +3226,52 @@ msgstr ""
 msgid "Move to trash"
 msgstr ""
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Perpesanan"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
+msgstr ""
+
+#: mail/qml/FolderView.qml:45
+#, kde-format
+msgid "Mark as Important"
+msgstr ""
+
+#: mail/qml/FolderView.qml:51
+#, kde-format
+msgid "Move to Trash"
+msgstr ""
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgid "Move Message to..."
+msgstr "Perpesanan"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, kde-format
+msgid "Add Followup Reminder"
 msgstr ""
 
 #: mail/qml/FolderView.qml:83
@@ -3182,7 +3317,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3206,12 +3341,6 @@ msgstr ""
 #, kde-format
 msgid "Subject:"
 msgstr ""
-
-#: mail/qml/MailComposer.qml:138
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Send"
-msgstr "Kirim SMS"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3272,6 +3401,12 @@ msgstr ""
 #, kde-format
 msgid "Loading mail..."
 msgstr ""
+
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Sender:"
+msgstr "Kirim SMS"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format
@@ -3343,6 +3478,13 @@ msgstr ""
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "contact's email address"
+#~| msgid "EMail"
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "Surel"
 
 #~ msgctxt "@action:menu"
 #~ msgid "Quit Kalendar"
