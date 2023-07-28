@@ -53,12 +53,6 @@ ecm_qt_declare_logging_category(merkuro_calendar_SRCS
     EXPORT MERKURO
 )
 
-ecm_qt_export_logging_category(
-    IDENTIFIER "MERKURO_CALENDAR_LOG"
-    CATEGORY_NAME "org.kde.merkuro.calendar"
-    DESCRIPTION "merkuro - calendar"
-    EXPORT MERKURO
-)
 qt_add_dbus_adaptor(merkuro_calendar_SRCS org.kde.calendar.Calendar.xml calendarapplication.h CalendarApplication)
 
 add_library(merkuro_calendar_static STATIC ${merkuro_calendar_SRCS})

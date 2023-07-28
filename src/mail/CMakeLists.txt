@@ -70,12 +70,6 @@ ecm_qt_declare_logging_category(merkuro_mail_SRCS
     EXPORT merkuro
 )
 
-ecm_qt_export_logging_category(
-    IDENTIFIER "merkuro_MAIL_LOG"
-    CATEGORY_NAME "org.kde.merkuro.mail"
-    DESCRIPTION "merkuro - mail"
-    EXPORT merkuro
-)
 
 add_library(merkuro_mail_static STATIC ${merkuro_mail_SRCS})
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)

@@ -11,13 +11,6 @@ ecm_qt_declare_logging_category(merkuro_components_SRCS
     EXPORT merkuro
 )
 
-ecm_qt_export_logging_category(
-    IDENTIFIER "merkuro_components_LOG"
-    CATEGORY_NAME "org.kde.merkuro.components"
-    DESCRIPTION "merkuro - components"
-    EXPORT merkuro
-)
-
 add_library(merkuro_components_static STATIC ${merkuro_components_SRCS})
 set_target_properties(merkuro_components_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_components_static PUBLIC merkuro_lib)
