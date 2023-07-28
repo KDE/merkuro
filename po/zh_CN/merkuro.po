@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
 "PO-Revision-Date: 2023-07-23 12:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1251,50 +1251,51 @@ msgstr "标记为未完成"
 msgid "Mark Complete"
 msgstr "标记为已完成"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, kde-format
 msgid "Calendar"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "撤销："
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "重做："
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "刷新全部日历"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
 #: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "配置"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "撤销"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "重做"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "设置"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "查看所有任务"
@@ -1676,6 +1677,7 @@ msgstr "转到"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1798,6 +1800,12 @@ msgstr ""
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:140
 #, kde-format
 msgid "Enter email of recipient..."
+msgstr ""
+
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, kde-format
+msgid "Send"
 msgstr ""
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
@@ -2288,6 +2296,27 @@ msgstr "完成"
 msgid "Select Email Address"
 msgstr "选择电子邮件地址"
 
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "创建"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Contact…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "新建联系人"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "新建联系人组"
+
 #: contacts/qml/ContactView.qml:90
 #, kde-format
 msgctxt "@action:inmenu"
@@ -2364,10 +2393,21 @@ msgstr "姓名"
 msgid "Contact name"
 msgstr "联系人姓名"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Honorific prefix"
 msgstr "敬称前缀："
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "先生"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2428,6 +2468,12 @@ msgstr ""
 #, kde-format
 msgid "Honorific suffix"
 msgstr "敬称后缀："
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2562,6 +2608,24 @@ msgstr "添加联系人"
 msgid "Edit Contact"
 msgstr "编辑联系人"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2573,6 +2637,19 @@ msgstr ""
 #, kde-format
 msgid "External changes"
 msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "编辑 %1"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Contact Group…"
+msgid "Create Contact Group"
+msgstr "新建联系人组"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2588,6 +2665,16 @@ msgstr ""
 #, kde-format
 msgid "Members"
 msgstr "成员"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2919,6 +3006,12 @@ msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "邮箱地址"
 
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "您是否想要删除日历“%1”？"
+
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
 msgid "You won't be able to revert this action"
@@ -3012,12 +3105,12 @@ msgstr "未知"
 #: mail/main.cpp:48
 #, kde-format
 msgctxt "@title"
-msgid "Mail"
+msgid "Merkuro Mail"
 msgstr ""
 
 #: mail/main.cpp:51
 #, kde-format
-msgid "EMail Client Application"
+msgid "Email Client"
 msgstr ""
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3079,10 +3172,54 @@ msgstr "无法解密数据"
 msgid "Move to trash"
 msgstr "移入回收站"
 
+#: mail/qml/FolderView.qml:34
+#, kde-format
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr ""
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "不标为重要"
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Don't Mark as Important"
+msgid "Mark as Important"
+msgstr "不标为重要"
+
+#: mail/qml/FolderView.qml:51
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgid "Move to Trash"
+msgstr "移入回收站"
+
+#: mail/qml/FolderView.qml:56
+#, kde-format
+msgid "Move Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "添加提醒"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3126,7 +3263,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3149,11 +3286,6 @@ msgstr ""
 #: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "Subject:"
-msgstr ""
-
-#: mail/qml/MailComposer.qml:138
-#, kde-format
-msgid "Send"
 msgstr ""
 
 #: mail/qml/mailpartview/ICalPart.qml:28
@@ -3215,6 +3347,12 @@ msgstr ""
 #, kde-format
 msgid "Loading mail..."
 msgstr ""
+
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Reminders:"
+msgid "Sender:"
+msgstr "提醒:"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format

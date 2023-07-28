@@ -72,7 +72,7 @@ MobileForm.FormCard {
                         icon.name: 'settings-configure'
                         onClicked: displayAdvancedNameFields = !displayAdvancedNameFields
                         QQC2.ToolTip {
-                            text: i18n('Advanced')
+                            text: i18n("Advanced")
                         }
                     }
                 }
@@ -88,7 +88,7 @@ MobileForm.FormCard {
                 text: i18n("Honorific prefix")
 
                 editable: true
-                model: [i18n('Dr.'), i18n("Miss"), i18n("Mr."), i18n("Mrs."), i18n("Ms."), i18n("Prof.")]
+                model: [i18n("Dr."), i18n("Miss"), i18n("Mr."), i18n("Mrs."), i18n("Ms."), i18n("Prof.")]
                 currentIndex: -1
                 editText: contactEditor.contact.prefix
                 onCurrentValueChanged: contactEditor.contact.prefix = currentValue
@@ -128,7 +128,7 @@ MobileForm.FormCard {
                 onCurrentValueChanged: contactEditor.contact.suffix = currentValue
                 editable: true
                 editText: contactEditor.contact.suffix
-                model: [i18n('I'), i18n("II"), i18n("III"), i18n("Jr."), i18n("Sr.")]
+                model: [i18n("I"), i18n("II"), i18n("III"), i18n("Jr."), i18n("Sr.")]
                 currentIndex: -1
             }
 
@@ -148,7 +148,7 @@ MobileForm.FormCard {
             id: blogFeedUrl
             label: i18n("Blog Feed")
             text: contactEditor.contact.blogFeed
-            onTextEdited: contactEditor.contact.blogFeed = text
+            onTextChanged: contactEditor.contact.blogFeed = text
             placeholderText: i18n("https://planet.kde.org/")
         }
     }

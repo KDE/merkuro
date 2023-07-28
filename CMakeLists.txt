@@ -55,6 +55,7 @@ include(KDEClangFormat)
 include(ECMDeprecationSettings)
 include(ECMGenerateQmlTypes)
 include(ECMQmlModule)
+include(ECMInstallIcons)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
@@ -123,8 +124,7 @@ ki18n_install(po)
 ecm_set_disabled_deprecation_versions(QT 6.5  KF 5.240.0)
 add_definitions(-DQT_STRICT_ITERATORS)
 add_subdirectory(src)
-
-install(FILES org.kde.merkuro.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
+add_subdirectory(icons)
 
 ecm_qt_install_logging_categories(
     EXPORT MERKURO

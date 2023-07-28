@@ -14,7 +14,7 @@ Kirigami.ScrollablePage {
     id: root
     property alias mode: contactGroupEditor.mode
     property var item
-    title: mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? i18n('Edit %1', contactGroupEditor.name) : i18n('Create Contact Group')
+    title: mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? i18n("Edit %1", contactGroupEditor.name) : i18n("Create Contact Group")
 
     onItemChanged: contactGroupEditor.loadContactGroup(item)
 
@@ -169,7 +169,7 @@ Kirigami.ScrollablePage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    description: i18n('Only contacts with an email address can be added to a contact group')
+                    description: i18n("Only contacts with an email address can be added to a contact group")
                 }
             }
         }
@@ -196,7 +196,7 @@ Kirigami.ScrollablePage {
     property QQC2.Dialog itemChangedExternallySheet: QQC2.Dialog {
         id: itemChangedExternallySheet
         visible: false
-        title: i18n('Warning')
+        title: i18n("Warning")
         modal: true
         focus: true
         x: (parent.width - width) / 2
@@ -206,12 +206,12 @@ Kirigami.ScrollablePage {
         contentItem: ColumnLayout {
             Kirigami.Heading {
                 level: 4
-                text: i18n('This contact group was changed elsewhere during editing.')
+                text: i18n("This contact group was changed elsewhere during editing.")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: i18n('Which changes should be kept?')
+                text: i18n("Which changes should be kept?")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }

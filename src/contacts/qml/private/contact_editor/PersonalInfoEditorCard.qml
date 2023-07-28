@@ -32,7 +32,7 @@ MobileForm.FormCard {
             id: spousesName
             label: i18n("Spouse's Name")
             text: root.contactEditor.contact.spousesName
-            onTextEdited: root.contactEditor.contact.spousesName = text
+            onTextChanged: root.contactEditor.contact.spousesName = text
         }
     }
 }

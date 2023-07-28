@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
                 contactEditor.contact.emailModel.addEmail(emailEditorId.toAddEmailText, emailEditorId.newEmailTypeCurrentValue);
             }
             contactEditor.saveContactInAddressBook()
-            Config.lastUsedAddressBookCollection = addressBookId.addressBookComboBoxId;
+            Config.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
             Config.save();
         }
     }
@@ -151,7 +151,7 @@ Kirigami.ScrollablePage {
     property QQC2.Dialog itemChangedExternallySheet: QQC2.Dialog {
         id: itemChangedExternallySheet
         visible: false
-        title: i18n('Warning')
+        title: i18n("Warning")
         modal: true
         focus: true
         x: (parent.width - width) / 2
@@ -161,12 +161,12 @@ Kirigami.ScrollablePage {
         contentItem: ColumnLayout {
             Kirigami.Heading {
                 level: 4
-                text: i18n('This contact was changed elsewhere during editing.')
+                text: i18n("This contact was changed elsewhere during editing.")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: i18n('Which changes should be kept?')
+                text: i18n("Which changes should be kept?")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }

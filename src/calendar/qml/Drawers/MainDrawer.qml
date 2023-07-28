@@ -5,6 +5,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Templates 2.15 as T
 import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import Qt5Compat.GraphicalEffects
@@ -13,6 +14,7 @@ import org.kde.akonadi 1.0
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.components 1.0
 import org.kde.kirigami 2.16 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.kitemmodels 1.0
 
 Kirigami.OverlayDrawer {
@@ -85,7 +87,8 @@ Kirigami.OverlayDrawer {
     onWidthChanged: if(width === collapsedWidth) refuseModal = false
     Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     leftPadding: 0
     rightPadding: 0
@@ -214,8 +217,11 @@ Kirigami.OverlayDrawer {
             id: generalView
             implicitWidth: Kirigami.Units.gridUnit * 16
             Layout.fillWidth: true
-            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
             contentWidth: availableWidth
+
+            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
 
             clip: true
 
@@ -223,11 +229,15 @@ Kirigami.OverlayDrawer {
                 anchors.fill: parent
                 leftPadding: 0
                 rightPadding: 0
-                topPadding: 0
-                bottomPadding: 0
-                topInset: toolbar.visible ? -Kirigami.Units.smallSpacing - 1 : 0
+                topPadding: Kirigami.Units.smallSpacing / 2
+                bottomPadding: Kirigami.Units.smallSpacing / 2
+
                 contentItem: ColumnLayout {
                     spacing: 0
+
+                    QQC2.ButtonGroup {
+                        id: pageGroup
+                    }
 
                     Repeater {
                         id: generalActions
@@ -297,12 +307,16 @@ Kirigami.OverlayDrawer {
                             }
                         ]
                         model: !Kirigami.Settings.isMobile ? actions : mobileActions
-                        delegate: Kirigami.BasicListItem {
-                            label: modelData.text
+                        delegate: Delegates.RoundedItemDelegate {
+                            required property T.Action modelData
+
+                            QQC2.ButtonGroup.group: pageGroup
+
+                            text: modelData.text
                             icon.name: modelData.icon.name
-                            separatorVisible: false
                             action: modelData
                             visible: modelData.visible
+                            Layout.fillWidth: true
                         }
                     }
                 }
@@ -315,26 +329,9 @@ Kirigami.OverlayDrawer {
         }
 
         Kirigami.Separator {
-            id: headerTopSeparator
             Layout.fillWidth: true
-            height: 1
-            z: -2
-
-            opacity: mainDrawer.collapsed ? 0 : 1
-            Behavior on opacity {
-                OpacityAnimator {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
-                }
-            }
-
-            RectangularGlow {
-                anchors.fill: parent
-                z: -1
-                glowRadius: 5
-                spread: 0.3
-                color: Qt.rgba(0.0, 0.0, 0.0, 0.15)
-            }
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
         }
 
         CheckableCollectionNavigationView {

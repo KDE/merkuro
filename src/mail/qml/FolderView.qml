@@ -15,7 +15,7 @@ Kirigami.ScrollablePage {
 
     actions: Kirigami.Action {
         icon.name: 'mail-send'
-        text: i18nc('@action:menu', 'Create')
+        text: i18nc("@action:menu", "Create")
         onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
     }
 
@@ -31,39 +31,39 @@ Kirigami.ScrollablePage {
                 property var status
 
                 QQC2.Menu {
-                    title: i18nc('@action:menu', 'Mark Message')
+                    title: i18nc("@action:menu", "Mark Message")
                     QQC2.MenuItem {
-                        text: i18n('Mark Message as Read')
+                        text: i18n("Mark Message as Read")
                     }
                     QQC2.MenuItem {
-                        text: i18n('Mark Message as Unread')
+                        text: i18n("Mark Message as Unread")
                     }
 
                     QQC2.MenuSeparator {}
 
                     QQC2.MenuItem {
-                        text: status.isImportant ? i18n("Don't Mark as Important") : i18n('Mark as Important')
+                        text: status.isImportant ? i18n("Don't Mark as Important") : i18n("Mark as Important")
                     }
                 }
 
                 QQC2.MenuItem {
                     icon.name: 'delete'
-                    text: i18n('Move to Trash')
+                    text: i18n("Move to Trash")
                 }
 
                 QQC2.MenuItem {
                     icon.name: 'edit-move'
-                    text: i18n('Move Message to...')
+                    text: i18n("Move Message to...")
                 }
 
                 QQC2.MenuItem {
                     icon.name: 'edit-copy'
-                    text: i18n('Copy Message to...')
+                    text: i18n("Copy Message to...")
                 }
 
                 QQC2.MenuItem {
                     icon.name: 'edit-copy'
-                    text: i18n('Add Followup Reminder')
+                    text: i18n("Add Followup Reminder")
                 }
             }
         }
@@ -99,27 +99,28 @@ Kirigami.ScrollablePage {
         section.property: "date"
 
         delegate: MailDelegate {
-            datetime: model.datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat) // TODO this is not showing date !
-            author: model.from
-            title: model.title
-
-            isRead: !model.status || model.status.isRead
-
+            id: mailDelegate
             onOpenMailRequested: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
-                    item: model.item,
-                    props: model,
+                    item: mailDelegate.item,
+                    props: {
+                        from: mailDelegate.from,
+                        to: mailDelegate.to,
+                        sender: mailDelegate.sender,
+                        item: mailDelegate.item,
+                        title: mailDelegate.title,
+                    }
                 });
 
-                if (!model.status.isRead) {
-                    const status = MailManager.folderModel.copyMessageStatus(model.status);
+                if (!mailDelegate.status.isRead) {
+                    const status = MailManager.folderModel.copyMessageStatus(mailDelegate.status);
                     status.isRead = true;
                     MailManager.folderModel.updateMessageStatus(index, status)
                 }
             }
 
             onStarMailRequested: {
-                const status = MailManager.folderModel.copyMessageStatus(model.status);
+                const status = MailManager.folderModel.copyMessageStatus(mailDelegate.status);
                 status.isImportant = !status.isImportant;
                 MailManager.folderModel.updateMessageStatus(index, status)
             }
@@ -127,7 +128,7 @@ Kirigami.ScrollablePage {
             onContextMenuRequested: {
                 const menu = contextMenu.createObject(folderView, {
                     row: index,
-                    status: MailManager.folderModel.copyMessageStatus(model.status),
+                    status: MailManager.folderModel.copyMessageStatus(mailDelegate.status),
                 });
                 menu.popup();
             }

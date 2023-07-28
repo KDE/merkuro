@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:49+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -1286,51 +1286,52 @@ msgstr "Tamamlanmamış kimi işarələ"
 msgid "Mark Complete"
 msgstr "Tamamlanmış kimi işarələ"
 
-#: calendar/qml/Drawers/MainDrawer.qml:115
+#: calendar/qml/Drawers/MainDrawer.qml:118
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Calendar"
 msgstr "Təqvim"
 
-#: calendar/qml/Drawers/MainDrawer.qml:159
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:162
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo: "
 msgstr "Geri qaytarmaq: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:167
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:170
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo: "
 msgstr "Təkrar etmək: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:176
+#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Bütün təqvimləri yeniləyin"
 
-#: calendar/qml/Drawers/MainDrawer.qml:183 calendar/qml/main.qml:239
+#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:239
 #: mail/qml/app/main.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Tənzimlə"
 
-#: calendar/qml/Drawers/MainDrawer.qml:275
+#: calendar/qml/Drawers/MainDrawer.qml:285
 #, kde-format
 msgid "Undo"
 msgstr "Geri qaytarın"
 
-#: calendar/qml/Drawers/MainDrawer.qml:280
+#: calendar/qml/Drawers/MainDrawer.qml:290
 #, kde-format
 msgid "Redo"
 msgstr "Təkrar edin"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:301
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:374
 #, kde-format
 msgid "View all tasks"
 msgstr "Bütün tapşırıqlara baxış"
@@ -1712,6 +1713,7 @@ msgstr "İrəli"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
+#: mail/qml/FolderView.qml:18
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1841,6 +1843,13 @@ msgstr "Sərbəst/məşğul e-poçt ünvanı"
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr "E-poçt ünvanını və ya alıcını daxil edin..."
+
+#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: mail/qml/MailComposer.qml:138
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Send"
+msgstr "SMS göndərin"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
 #, kde-format
@@ -2351,6 +2360,27 @@ msgstr "Hazır oldu"
 msgid "Select Email Address"
 msgstr "E-poçt ünvanını seçin"
 
+#: contacts/qml/ContactView.qml:21
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:inmenu"
+msgid "Create"
+msgstr "Yarat"
+
+#: contacts/qml/ContactView.qml:24
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:inmenu"
+msgid "New Contact"
+msgstr "Yeni tədbir…"
+
+#: contacts/qml/ContactView.qml:31
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:inmenu"
+msgid "New Contact Contact"
+msgstr "Yeni tədbir…"
+
 #: contacts/qml/ContactView.qml:90
 #, kde-format
 msgctxt "@action:inmenu"
@@ -2427,10 +2457,21 @@ msgstr "Ad"
 msgid "Contact name"
 msgstr "Əlaqənin adı"
 
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
+#, kde-format
+msgid "Advanced"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Honorific prefix"
 msgstr "Hörmətlə müraciət forması"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#, fuzzy, kde-format
+#| msgid "Mr."
+msgid "Dr."
+msgstr "Cənab"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2491,6 +2532,12 @@ msgstr "Soyadı"
 #, kde-format
 msgid "Honorific suffix"
 msgstr "Hörmətlə müraciət (sonluq):"
+
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#, fuzzy, kde-format
+#| msgid "II"
+msgid "I"
+msgstr "II"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2625,6 +2672,24 @@ msgstr "Əlaqə əlavə edin"
 msgid "Edit Contact"
 msgstr "Əlaqəyə düzəliş edin"
 
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/DeleteContactAction.qml:19
+#, kde-format
+msgid "Warning"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
+#, kde-format
+msgid "This contact was changed elsewhere during editing."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#, kde-format
+msgid "Which changes should be kept?"
+msgstr ""
+
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
@@ -2636,6 +2701,19 @@ msgstr "Cari dəyişikliklər"
 #, kde-format
 msgid "External changes"
 msgstr "Əlavə dəyişikliklər"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt "%1 is incidence type"
+#| msgid "Edit %1"
+msgid "Edit %1"
+msgstr "%1-ə düzəliş edin"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgid "Create Contact Group"
+msgstr "Yeni tədbir…"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2651,6 +2729,16 @@ msgstr "Əlaqələr qrupunun adı"
 #, kde-format
 msgid "Members"
 msgstr "Üzvlər"
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#, kde-format
+msgid "Only contacts with an email address can be added to a contact group"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#, kde-format
+msgid "This contact group was changed elsewhere during editing."
+msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2986,6 +3074,12 @@ msgid_plural "Email Addresses"
 msgstr[0] "E-poçt ünvanı"
 msgstr[1] "E-poçt ünvanları"
 
+#: contacts/qml/private/DeleteContactAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you really want to delete your contact: %1?"
+msgstr "Bu təqvimi silmək istəyirsiniz: \"%1\"?"
+
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
 msgid "You won't be able to revert this action"
@@ -3082,15 +3176,15 @@ msgstr "Bilinməyən"
 
 #: mail/main.cpp:48
 #, fuzzy, kde-format
-#| msgid "Mail"
+#| msgid "Calendar"
 msgctxt "@title"
-msgid "Mail"
-msgstr "Poçt"
+msgid "Merkuro Mail"
+msgstr "Təqvim"
 
 #: mail/main.cpp:51
 #, fuzzy, kde-format
 #| msgid "Calendar Application"
-msgid "EMail Client Application"
+msgid "Email Client"
 msgstr "Təqvim tətbiqi"
 
 #: mail/mime/attachmentmodel.cpp:223
@@ -3154,10 +3248,55 @@ msgstr ""
 msgid "Move to trash"
 msgstr ""
 
+#: mail/qml/FolderView.qml:34
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgctxt "@action:menu"
+msgid "Mark Message"
+msgstr "Ani ismarıc mübadiləsi"
+
+#: mail/qml/FolderView.qml:36
+#, kde-format
+msgid "Mark Message as Read"
+msgstr ""
+
+#: mail/qml/FolderView.qml:39
+#, kde-format
+msgid "Mark Message as Unread"
+msgstr ""
+
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr ""
+
+#: mail/qml/FolderView.qml:45
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgid "Mark as Important"
+msgstr "Tapşırığı tamamlanmamış kimi işarələ"
+
+#: mail/qml/FolderView.qml:51
+#, kde-format
+msgid "Move to Trash"
+msgstr ""
+
+#: mail/qml/FolderView.qml:56
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgid "Move Message to..."
+msgstr "Ani ismarıc mübadiləsi"
+
+#: mail/qml/FolderView.qml:61
+#, kde-format
+msgid "Copy Message to..."
+msgstr ""
+
+#: mail/qml/FolderView.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add Followup Reminder"
+msgstr "Xatırlatma əlavə et"
 
 #: mail/qml/FolderView.qml:83
 #, fuzzy, kde-format
@@ -3205,7 +3344,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3229,12 +3368,6 @@ msgstr ""
 #, kde-format
 msgid "Subject:"
 msgstr ""
-
-#: mail/qml/MailComposer.qml:138
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Send"
-msgstr "SMS göndərin"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3295,6 +3428,12 @@ msgstr ""
 #, kde-format
 msgid "Loading mail..."
 msgstr ""
+
+#: mail/qml/MailViewer.qml:80
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgid "Sender:"
+msgstr "SMS göndərin"
 
 #: mail/qml/MailViewer.qml:149
 #, fuzzy, kde-format
@@ -3371,6 +3510,12 @@ msgstr "Yeni yarlıq yaradın..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Cəld yeni yarlıq əlavə edin."
+
+#, fuzzy
+#~| msgid "Mail"
+#~ msgctxt "@title"
+#~ msgid "Mail"
+#~ msgstr "Poçt"
 
 #, fuzzy
 #~| msgid "About Kalendar"

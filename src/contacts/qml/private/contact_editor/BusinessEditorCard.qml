@@ -32,7 +32,7 @@ MobileForm.FormCard {
             id: organizationId
             label: i18n("Organization")
             text: root.contactEditor.contact.organization
-            onTextEdited: root.contactEditor.contact.organization = text
+            onTextChanged: root.contactEditor.contact.organization = text
             placeholderText: i18nc("Placeholder value for name of Organization", "KDE")
         }
 
@@ -42,7 +42,7 @@ MobileForm.FormCard {
             id: professionId
             label: i18n("Profession")
             text: root.contactEditor.contact.profession
-            onTextEdited: root.contactEditor.contact.profession = text
+            onTextChanged: root.contactEditor.contact.profession = text
             placeholderText: i18nc("Placeholder value for name of Profession", "Software Developer")
         }
 
@@ -52,7 +52,7 @@ MobileForm.FormCard {
             id: titleId
             label: i18n("Title")
             text: root.contactEditor.contact.title
-            onTextEdited: root.contactEditor.contact.title = text
+            onTextChanged: root.contactEditor.contact.title = text
             placeholderText: i18nc("Placeholder value for Title", "SDE-1")
         }
 
@@ -62,7 +62,7 @@ MobileForm.FormCard {
             id: deptId
             label: i18n("Department")
             text: root.contactEditor.contact.department
-            onTextEdited: root.contactEditor.contact.department = text
+            onTextChanged: root.contactEditor.contact.department = text
             placeholderText: i18nc("Placeholder value for name of Department", "Merkuro-Team")
         }
 
@@ -72,7 +72,7 @@ MobileForm.FormCard {
             id: officeId
             label: i18n("Office")
             text: root.contactEditor.contact.office
-            onTextEdited: root.contactEditor.contact.office = text
+            onTextChanged: root.contactEditor.contact.office = text
             placeholderText: i18nc("Placeholder value for Office", "Tech Wing, 4th Floor")
         }
 
@@ -82,7 +82,7 @@ MobileForm.FormCard {
             id: managersNameId
             label: i18n("Manager's Name")
             text: root.contactEditor.contact.managersName
-            onTextEdited: root.contactEditor.contact.managersName = text
+            onTextChanged: root.contactEditor.contact.managersName = text
             placeholderText: i18nc("Placeholder value for Manager's Name", "Bob")
         }
 
@@ -92,7 +92,7 @@ MobileForm.FormCard {
             id: assistantsNameId
             label: i18n("Assistant's Name")
             text: root.contactEditor.contact.assistantsName
-            onTextEdited: root.contactEditor.contact.assistantsName = text
+            onTextChanged: root.contactEditor.contact.assistantsName = text
             placeholderText: i18nc("Placeholder value for Assistants's Name", "Jill")
         }
     }

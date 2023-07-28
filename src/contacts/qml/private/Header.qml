@@ -17,7 +17,6 @@ Control {
     required property var source
     required property string name
 
-    bottomPadding: strip.children.length > 0 ? strip.height : 0
     clip: true
 
     // Container for the content of the header
