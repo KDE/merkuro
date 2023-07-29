@@ -47,6 +47,8 @@ QVariant IdentityModel::data(const QModelIndex &index, int role) const
         return identity.primaryEmailAddress();
     case UoidRole:
         return identity.uoid();
+    case IdentityNameRole:
+        return identity.identityName();
     }
 
     return {};
@@ -65,7 +67,12 @@ QString IdentityModel::email(uint uoid)
 
 QHash<int, QByteArray> IdentityModel::roleNames() const
 {
-    return {{Qt::DisplayRole, QByteArrayLiteral("display")}, {UoidRole, QByteArrayLiteral("uoid")}, {EmailRole, QByteArrayLiteral("email")}};
+    return {
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {UoidRole, QByteArrayLiteral("uoid")},
+        {EmailRole, QByteArrayLiteral("email")},
+        {IdentityNameRole, QByteArrayLiteral("identityName")},
+    };
 }
 
 }

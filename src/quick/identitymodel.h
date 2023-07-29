@@ -17,7 +17,7 @@ class IdentityModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    enum Roles { EmailRole = Qt::UserRole, UoidRole };
+    enum Roles { EmailRole = Qt::UserRole, UoidRole, IdentityNameRole };
 
 public:
     IdentityModel(QObject *parent = nullptr);
