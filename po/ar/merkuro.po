@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-05-17 19:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3237,71 +3237,7 @@ msgstr "التّقويم"
 msgid "Email Client"
 msgstr "تطبيق التقويم"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "لا يوجد مفاتيح في المرفقات"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "استورد مفتاح"
-msgstr[1] "استورد مفتاح واحد "
-msgstr[2] "استورد مفتاحين"
-msgstr[3] "استورد %1 مفاتيح"
-msgstr[4] "استورد %1 مفتاحاً"
-msgstr[5] "استورد %1 مفتاح"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "استورد مفتاح بالفعل"
-msgstr[1] "استورد مفتاح واحد بالفعل"
-msgstr[2] "استورد مفتاحين بالفعل"
-msgstr[3] "استورد %1 مفاتيح بالفعل"
-msgstr[4] "استورد %1 مفتاحاً بالفعل"
-msgstr[5] "استورد %1 مفتاح بالفعل"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "تمرير"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "رد"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "لا يوجد مفتاح"
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "عبارة مرور خاطئة"
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "ملحقة التّعمية خاطئة."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "تعذر فك تشفير البيانات: لم يعثر على مفتاح للمستلمين."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "تعذّر فكّ تعمية البيانات."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "انقل إلى المهملات"
@@ -3400,7 +3336,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3487,17 +3423,6 @@ msgstr "هذه الرّسالة معمّاة بالمفتاح: %1"
 msgid "Loading mail..."
 msgstr "يحمل البريد…"
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "أرسل رسالة نصية قصيرة"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "احفظ المرفق"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3564,6 +3489,56 @@ msgstr "أنشئ وسمًا جديدًا…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "أضف وسماً جديداً بسرعة."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "لا يوجد مفاتيح في المرفقات"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "استورد مفتاح"
+#~ msgstr[1] "استورد مفتاح واحد "
+#~ msgstr[2] "استورد مفتاحين"
+#~ msgstr[3] "استورد %1 مفاتيح"
+#~ msgstr[4] "استورد %1 مفتاحاً"
+#~ msgstr[5] "استورد %1 مفتاح"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "استورد مفتاح بالفعل"
+#~ msgstr[1] "استورد مفتاح واحد بالفعل"
+#~ msgstr[2] "استورد مفتاحين بالفعل"
+#~ msgstr[3] "استورد %1 مفاتيح بالفعل"
+#~ msgstr[4] "استورد %1 مفتاحاً بالفعل"
+#~ msgstr[5] "استورد %1 مفتاح بالفعل"
+
+#~ msgid "fwd"
+#~ msgstr "تمرير"
+
+#~ msgid "re"
+#~ msgstr "رد"
+
+#~ msgid "No key available."
+#~ msgstr "لا يوجد مفتاح"
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "عبارة مرور خاطئة"
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "ملحقة التّعمية خاطئة."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr "تعذر فك تشفير البيانات: لم يعثر على مفتاح للمستلمين."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "تعذّر فكّ تعمية البيانات."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "أرسل رسالة نصية قصيرة"
+
+#~ msgid "Save attachment"
+#~ msgstr "احفظ المرفق"
 
 #, fuzzy
 #~| msgid "Mail"

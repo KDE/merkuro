@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
-"PO-Revision-Date: 2023-07-15 23:45+0200\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
+"PO-Revision-Date: 2023-07-28 16:26+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2336,25 +2336,22 @@ msgid "Select Email Address"
 msgstr "Seleziona indirizzo di posta"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Crea"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Nuovo contatto…"
+msgstr "Nuovo contatto"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Contact"
-msgstr "Nuovo gruppo di contatti…"
+msgstr "Nuovo contatto"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2435,7 +2432,7 @@ msgstr "Nome del contatto"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzate"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2443,10 +2440,9 @@ msgid "Honorific prefix"
 msgstr "Prefisso onorifico"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "Sig."
+msgstr "Dott."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2509,10 +2505,9 @@ msgid "Honorific suffix"
 msgstr "Suffisso onorifico"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2652,18 +2647,18 @@ msgstr "Modifica contatto"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Avviso"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Questo contatto è stato modificato altrove durante la modifica."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Quali modifiche devono essere mantenute?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2678,17 +2673,14 @@ msgid "External changes"
 msgstr "Modifiche esterne"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "Modifica %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Nuovo gruppo di contatti…"
+msgstr "Crea gruppo di contatti"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2709,11 +2701,14 @@ msgstr "Membri"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
+"Solo i contatti con un indirizzo di posta elettronica possono essere "
+"aggiunti a un gruppo di contatti"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr ""
+"Questo gruppo di contatti è stato modificato altrove durante la modifica."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -3049,10 +3044,9 @@ msgstr[0] "Indirizzo di posta elettronica"
 msgstr[1] "Indirizzi di posta elettronica"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "Vuoi veramente eliminare il calendario: «%1»?"
+msgstr "Vuoi veramente eliminare il contatto: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3145,98 +3139,36 @@ msgid "Unknown"
 msgstr "Sconosciuto"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Merkuro Calendario"
+msgstr "Merkuro Posta"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
+#, kde-format
 msgid "Email Client"
-msgstr "Applicazione client di posta elettronica"
+msgstr "Programma di posta elettronica"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "Non è stata trovata alcuna chiave in questo allegato"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "una chiave importata"
-msgstr[1] "%1 chiavi importate"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "una chiave è già stata importata"
-msgstr[1] "%1 chiavi sono già state importate"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Nessuna chiave disponibile."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Frase segreta errata."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Estensione di cifratura errata."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"Impossibile decifrare i dati: nessuna chiave trovata per i destinatari."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Impossibile decifrare i dati."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Cestina"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Nuovo messaggio"
+msgstr "Marca il messaggio"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "Marca il messaggio come letto"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "Marca il messaggio come non letto"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3244,34 +3176,29 @@ msgid "Don't Mark as Important"
 msgstr "Non marcare come importante"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Non marcare come importante"
+msgstr "Segna come importante"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Cestina"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Nuovo messaggio"
+msgstr "Sposta messaggio in..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "Copia messaggio in..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Aggiungi promemoria"
+msgstr "Aggiungi promemoria di delle azioni da seguire"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3315,7 +3242,7 @@ msgstr "Da:"
 msgid "Identity:"
 msgstr "Identità:"
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "A:"
@@ -3400,27 +3327,15 @@ msgstr "Questo messaggio è cifrato con la chiave: %1"
 msgid "Loading mail..."
 msgstr "Caricamento della posta..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
-msgid "Sender:"
-msgstr "Invia"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Salva allegato"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
 msgstr "Importa chiave"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "Impostazioni della vista mensile"
+msgstr "Impostazioni account"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
@@ -3449,10 +3364,9 @@ msgid "Add Account"
 msgstr "Aggiungi account"
 
 #: quick/qml/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identities"
-msgstr "Identità:"
+msgstr "Identità"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3478,6 +3392,47 @@ msgstr "Crea una nuova etichetta…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Aggiungi rapidamente una nuova etichetta."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "Non è stata trovata alcuna chiave in questo allegato"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "una chiave importata"
+#~ msgstr[1] "%1 chiavi importate"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "una chiave è già stata importata"
+#~ msgstr[1] "%1 chiavi sono già state importate"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "Nessuna chiave disponibile."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Frase segreta errata."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Estensione di cifratura errata."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Impossibile decifrare i dati: nessuna chiave trovata per i destinatari."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Impossibile decifrare i dati."
+
+#~ msgid "Sender:"
+#~ msgstr "Mittente:"
+
+#~ msgid "Save attachment"
+#~ msgstr "Salva allegato"
 
 #~ msgctxt "@title"
 #~ msgid "Mail"

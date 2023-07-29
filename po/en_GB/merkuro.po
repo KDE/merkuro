@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-05-21 14:52+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -3164,63 +3164,7 @@ msgstr "Calendar"
 msgid "Email Client"
 msgstr "Calendar Application"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "No keys were found in this attachment"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "one key imported"
-msgstr[1] "%1 keys imported"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "one key was already imported"
-msgstr[1] "%1 keys were already imported"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "No key available."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Wrong passphrase."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Wrong Crypto Plug-In."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Could not decrypt the data: no key found for recipients."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Could not decrypt the data."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Move to wastebin"
@@ -3319,7 +3263,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3406,17 +3350,6 @@ msgstr "This message is encrypted to the key: %1"
 msgid "Loading mail..."
 msgstr "Loading mail..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "Send SMS"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Save attachment"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3483,6 +3416,48 @@ msgstr "Create a New Tag…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Quickly Add a New Tag."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "No keys were found in this attachment"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "one key imported"
+#~ msgstr[1] "%1 keys imported"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "one key was already imported"
+#~ msgstr[1] "%1 keys were already imported"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "No key available."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Wrong passphrase."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Wrong Crypto Plug-In."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr "Could not decrypt the data: no key found for recipients."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Could not decrypt the data."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "Send SMS"
+
+#~ msgid "Save attachment"
+#~ msgstr "Save attachment"
 
 #, fuzzy
 #~| msgid "Mail"

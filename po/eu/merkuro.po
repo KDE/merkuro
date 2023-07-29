@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-04-21 00:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3173,63 +3173,7 @@ msgstr "Egutegia"
 msgid "Email Client"
 msgstr "Egutegi aplikazioa"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "Eranskin honetan ez da gakorik aurkitu"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "gako bat inportatu da"
-msgstr[1] "%1 gako inportatu dira"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "gako bat dagoeneko inportatuta zegoen"
-msgstr[1] "%1 gako dagoeneko inportatuta zeuden"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Ez dago gako erabilgarririk."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Pasaesaldi okerra."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Crypto plugin okerra."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Datuak ezin izan ditu deszifratu: ez da aurkitu hartzailearen gakorik."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Datuak ezin izan ditu deszifratu."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Eraman zakarrontzira"
@@ -3328,7 +3272,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3415,17 +3359,6 @@ msgstr "Mezu hau ondoko gakorako zifratuta dago: %1"
 msgid "Loading mail..."
 msgstr "Posta zamatzen..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "Bidali SMS"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Gorde eranskina"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3492,6 +3425,49 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "Eranskin honetan ez da gakorik aurkitu"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "gako bat inportatu da"
+#~ msgstr[1] "%1 gako inportatu dira"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "gako bat dagoeneko inportatuta zegoen"
+#~ msgstr[1] "%1 gako dagoeneko inportatuta zeuden"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "Ez dago gako erabilgarririk."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Pasaesaldi okerra."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Crypto plugin okerra."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Datuak ezin izan ditu deszifratu: ez da aurkitu hartzailearen gakorik."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Datuak ezin izan ditu deszifratu."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "Bidali SMS"
+
+#~ msgid "Save attachment"
+#~ msgstr "Gorde eranskina"
 
 #, fuzzy
 #~| msgid "Mail"
