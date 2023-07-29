@@ -1,42 +1,38 @@
 <!--
 SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
-SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
+SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@kde.org>
 SPDX-License-Identifier: CC0-1.0
 -->
 
-# Kalendar
+# Merkuro
 
-Kalendar is a Kirigami-based calendar and task management application that uses Akonadi. It lets you add, edit and delete events and tasks from local and remote accounts of your choice, while keeping changes synchronised across your Plasma desktop or phone.
+Merkuro is a application suite designed to make handling your emails, calendars, contacts, and tasks simple. Merkuro handles local and remote accounts of your choice, keeping changes synchronised across your Plasma desktop or phone.
 
-**Get involved and join our Matrix channel: [#kalendar:kde.org](https://matrix.to/#/#kalendar:kde.org=)**
+Merkuro was formerly known as Kalendar.
+
+**Get involved and join our Matrix channel: [#merkuro:kde.org](https://matrix.to/#/#merkuro:kde.org=)**
 
 ## Screenshots
 
-![Screenshot of Kalendar's month view](https://cdn.kde.org/screenshots/kalendar/month_view.png)
-![Screenshot of Kalendar's task view](https://cdn.kde.org/screenshots/kalendar/task_view.png)
-![Screenshot of Kalendar's week view](https://cdn.kde.org/screenshots/kalendar/week_view.png)
-![Screenshot of Kalendar's schedule view](https://cdn.kde.org/screenshots/kalendar/schedule_view.png)
-![Screenshot of Kalendar's schedule view on mobile](https://cdn.kde.org/screenshots/kalendar/mobile_view.png)
+![Screenshot of Merkuro calendar's month view](https://cdn.kde.org/screenshots/kalendar/month_view.png)
+![Screenshot of Merkuro calendar's task view](https://cdn.kde.org/screenshots/kalendar/task_view.png)
+![Screenshot of Merkuro calendar's week view](https://cdn.kde.org/screenshots/kalendar/week_view.png)
+![Screenshot of Merkuro calendar's schedule view](https://cdn.kde.org/screenshots/kalendar/schedule_view.png)
+![Screenshot of Merkuro calendar's schedule view on mobile](https://cdn.kde.org/screenshots/kalendar/mobile_view.png)
 
 ## Get it
 
-Kalendar is available in the Arch AUR, in Fedora, and in openSUSE Tumbleweed using
-the following two OBS repositories: https://build.opensuse.org/project/show/home:KaratekHD:kirigami
-and https://build.opensuse.org/project/show/home:andresbs:plasma-mobile
+Merkuro will soon be available on most major distributions with the release of KDE Gear 23.08.
 
-Installation for Fedora 
-
-```
-sudo dnf install kalendar
-```
+If not, you can get prior versions of Merkuro (previously known as Kalendar) from most major distributions.
 
 ## Build
 
-**Kalendar requires KFrameworks 5.96 and version 22.08 of the KDE PIM-related dependencies (e.g. Akonadi, kdepim-runtime) to be installed.** This package version is fairly recent and may not yet be available in your distribution of choice, meaning Kalendar might not work.
+**Mekuro requires up-to-date KFrameworks and KDE PIM-related dependencies (e.g. Akonadi, kdepim-runtime) to be installed.** These may not yet be available in your distribution of choice, meaning Merkuro might not build. **We therefore recommend the use of kdesrc-build to build Merkuro easily and correctly.**
 
-**We also strongly recommend you install the `kdepim-runtime` package before starting Kalendar** -- this will provide you with the ability to add calendars from online resources. Having this package will also let Kalendar's backend automatically create a default local calendar. 
+**We also strongly recommend you install the `kdepim-runtime` package before starting Merkuro** as without functionality of certain components, such as the calendar component, will be heavily restricted.
 
-If you have already installed and started Kalendar and are now installing `kdepim-runtime`, make sure to run `akonadictl restart`; this will enable online resources and the local calendar after installing `kdepim-runtime`.
+If you have already installed and started Merkuro and are now installing `kdepim-runtime`, make sure to run `akonadictl restart`; this will enable online resources after installing `kdepim-runtime`.
 
 KDE Neon dependencies:
 ```
@@ -51,7 +47,7 @@ ninja
 
 ## Frequently asked questions
 
-### Does Kalendar support Google/Exchange/Nextcloud calendars?
+### Does Merkuro calendar support Google/Exchange/Nextcloud calendars?
 
 Yes. We support:
 
@@ -67,39 +63,39 @@ Yes. We support:
 
 Online event/task services such as Todoist that have non-standard implementations of calendars/task lists depend on someone taking the time to write code that adds support for the specific service in question. When (or if) that will happen will depend on how popular the service is, and on someone being willing to maintain support for said service.
 
-Proton Calendar specifically is problematic, and it is impossible for us to support until Proton provides a way for us to interact and interface with the calendar (i.e. with the bridge application). 
+Proton Calendar specifically is problematic, and it is impossible for us to support until Proton provides a way for us to interact and interface with the calendar (i.e. with the bridge application).
 
-#### Does Kalendar work with Plasma's digital clock calendar widget?
+#### Does Merkuro calendar work with Plasma's digital clock calendar widget?
 
 Yes. This can be configured by right-clicking on the digital clock -> Configure digital clock... -> Calendar -> enable PIM Events Plugin
 
 This should reveal a new section in the widget settings, letting you configure which calendars' events will be visible in the widget.
 
-#### Does Kalendar use Akonadi?
+#### Does Merkuro use Akonadi?
 
-Yes. It is what allows us to support all the services that we support, and provides the core functionality of Kalendar (fetching, editing, creating, and deleting events from remote resources).
+Yes. It is what allows us to support all the services that we support, and provides the core functionality of Merkuro's various apps (fetching, editing, creating, and deleting events from remote resources, for instance).
 
 #### Why all the dependencies?
 
 While we’re actively working on reducing our number of external dependencies, these removals often take time and require reimplementing things in a new way, which is not always easy.
 
-Other dependencies we require are there so we don’t bloat Kalendar by copying functionality that can be provided by an external package also used by other applications.
+Other dependencies we require are there so we don’t bloat Merkuro by copying functionality that can be provided by an external package also used by other applications.
 
-#### Will Kalendar replace KOrganizer?
+#### Will <insert Merkuro application> replace <insert Kontact application>?
 
 For the time being, no.
 
-KOrganizer has an incredibly expansive feature set, which makes it a powerful tool for power users. Kalendar is instead focused on providing an approachable calendar for Plasma. You can expect great usability and a visually appealing interface that works on both desktop and mobile.
+Kontact has an incredibly expansive feature set, which makes it a powerful tool for power users. Merkuro is instead focused on providing an approachable PIM suite for Plasma. You can expect great usability and a visually appealing interface that works on both desktop and mobile.
 
-The intention is for the two apps to co-exist and for you to have the choice of using the one best suited to your needs. If you really need the advanced and expansive feature-set of KOrganizer, you will want to use that. If you want a versatile calendar application that is nice to use and you can comfortably use on your desktop and on your phone, Kalendar will fill that role well!
+The intention is for the two suites to co-exist and for you to have the choice of using the one best suited to your needs. If you really need the advanced and expansive feature-set of Kontaxt, you will want to use that. If you want a versatile app set that is nice to use and you can comfortably use on your desktop and on your phone, Merkuro will fill that role well!
 
 #### Will there be a flatpak?
 
-Yes, Kalendar is part of the [org.kde.kontact flatpak](https://flathub.org/apps/details/org.kde.kontact). Please note that this package is missing some desktop integration features (e.g. the calendar applet plugin), and we generally recommend the use of the distro package if the version provided in the repositories is recent.
+Yes, Merkuro is part of the [org.kde.kontact flatpak](https://flathub.org/apps/details/org.kde.kontact). Please note that this package is missing some desktop integration features (e.g. the calendar applet plugin), and we generally recommend the use of the distro package if the version provided in the repositories is recent.
 
-#### How can I install Kalendar on distro "X"?
+#### How can I install Merkuro on distro "X"?
 
-This is unfortunately out of our hands. If you'd like a Kalendar package on your distribution of choice, ask your distribution's packagers (nicely!) if they'd like to package Kalendar.
+This is unfortunately out of our hands. If you'd like a Merkuro package on your distribution of choice, ask your distribution's packagers (nicely!) if they'd like to package Merkuro.
 
 ## License
 
