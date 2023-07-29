@@ -22,7 +22,10 @@ MobileForm.FormCard {
         }
 
         Repeater {
+            id: identityRepeater
+
             model: root._identityModel
+
             delegate: MobileForm.FormButtonDelegate {
                 leadingPadding: Kirigami.Units.largeSpacing
                 text: model.display
@@ -54,6 +57,7 @@ MobileForm.FormCard {
                         Kirigami.Action {
                             text: i18n("Delete")
                             iconName: "delete"
+                            enabled: identityRepeater.count > 1
                             onTriggered: {
                                 IdentityUtils.removeIdentity(model.identityName);
                                 dialog.close();
