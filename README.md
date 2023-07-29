@@ -28,7 +28,7 @@ If not, you can get prior versions of Merkuro (previously known as Kalendar) fro
 
 ## Build
 
-**Mekuro requires up-to-date KFrameworks and KDE PIM-related dependencies (e.g. Akonadi, kdepim-runtime) to be installed.** These may not yet be available in your distribution of choice, meaning Merkuro might not build. **We therefore recommend the use of kdesrc-build to build Merkuro easily and correctly.**
+**Merkuro requires up-to-date KFrameworks and KDE PIM-related dependencies (e.g. Akonadi, kdepim-runtime) to be installed.** These may not yet be available in your distribution of choice, meaning Merkuro might not build. **We therefore recommend the use of kdesrc-build to build Merkuro easily and correctly.**
 
 **We also strongly recommend you install the `kdepim-runtime` package before starting Merkuro** as without functionality of certain components, such as the calendar component, will be heavily restricted.
 
