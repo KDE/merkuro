@@ -81,5 +81,11 @@ void IdentityEditorBackend::modifyEmailAlias(const QString &originalAlias, const
     m_identity->setEmailAliases(aliases);
 }
 
+void IdentityEditorBackend::removeEmailAlias(const QString &alias)
+{
+    auto aliases = m_identity->emailAliases();
+    aliases.removeAll(alias);
+    m_identity->setEmailAliases(aliases);
+}
 }
 }

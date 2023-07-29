@@ -42,6 +42,7 @@ public:
 
     Q_INVOKABLE void addEmailAlias(const QString &alias);
     Q_INVOKABLE void modifyEmailAlias(const QString &originalAlias, const QString &modifiedAlias);
+    Q_INVOKABLE void removeEmailAlias(const QString &alias);
 
 Q_SIGNALS:
     void modeChanged();
