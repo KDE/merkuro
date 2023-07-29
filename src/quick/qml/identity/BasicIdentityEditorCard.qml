@@ -75,7 +75,7 @@ MobileForm.FormCard {
                         QQC2.ToolTip {
                             text: i18n("Remove email alias")
                         }
-                        // onClicked: TODO
+                        onClicked: identityEditorBackend.removeEmailAlias(modelData)
                     }
                 }
             }
