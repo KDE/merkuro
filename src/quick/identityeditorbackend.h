@@ -40,6 +40,8 @@ public:
 
     Q_INVOKABLE void saveIdentity();
 
+    Q_INVOKABLE void addEmailAlias(const QString &alias);
+
 Q_SIGNALS:
     void modeChanged();
     void identityChanged();

@@ -66,5 +66,13 @@ void IdentityEditorBackend::saveIdentity()
 {
     m_identityManager->commit();
 }
+
+void IdentityEditorBackend::addEmailAlias(const QString &alias)
+{
+    auto aliases = m_identity->emailAliases();
+    aliases.append(alias);
+    m_identity->setEmailAliases(aliases);
+}
+
 }
 }

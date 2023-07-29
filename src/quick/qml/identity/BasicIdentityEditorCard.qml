@@ -98,7 +98,10 @@ MobileForm.FormCard {
                     QQC2.ToolTip {
                         text: i18n("Add email alias")
                     }
-                    // onClicked: TODO
+                    onClicked: {
+                        identityEditorBackend.addEmailAlias(toAddEmail.text);
+                        toAddEmail.clear();
+                    }
                 }
             }
         }
