@@ -27,7 +27,7 @@ MobileForm.FormCard {
         spacing: 0
 
         MobileForm.FormCardHeader {
-            title: i18n("E-mail")
+            title: i18n("Identity")
         }
 
         MobileForm.FormTextFieldDelegate {
@@ -45,6 +45,10 @@ MobileForm.FormCard {
             text: root.identityEditorBackend.identity.primaryEmailAddress
             onTextChanged: root.identityEditorBackend.identity.primaryEmailAddress = text
             inputMethodHints: Qt.ImhEmailCharactersOnly
+        }
+
+        MobileForm.FormCardHeader {
+            title: i18n("E-mail aliases")
         }
 
         Repeater {
@@ -80,8 +84,6 @@ MobileForm.FormCard {
             Layout.fillWidth: true
 
             contentItem: RowLayout {
-                visible: !root.saving
-
                 QQC2.TextField {
                     id: toAddEmail
                     Layout.fillWidth: true
