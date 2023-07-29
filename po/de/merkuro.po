@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-07-24 21:35+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -3168,65 +3168,7 @@ msgstr "Kalender"
 msgid "Email Client"
 msgstr "Kalender-Anwendung"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "In diesem Anhang wurden keine Schlüssel gefunden"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "Ein Schlüssel importiert"
-msgstr[1] "%1 Schlüssel importiert"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "Ein Schlüssel war bereits importiert"
-msgstr[1] "%1 Schlüssel waren bereits importiert"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "Fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "Re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Kein Schlüssel verfügbar."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Falsche Passphrase."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Falsches Kryptografie-Modul."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"Die Daten können nicht entschlüsselt werden: Kein Schlüssel für Empfänger "
-"gefunden."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Die Daten können nicht entschlüsselt werden."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "In den Papierkorb verschieben"
@@ -3325,7 +3267,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3412,17 +3354,6 @@ msgstr "Diese Nachricht ist mit folgendem Schlüssel verschlüsselt: %1"
 msgid "Loading mail..."
 msgstr "E-Mail wird geladen ..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "SMS senden"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Anhang speichern"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3489,6 +3420,50 @@ msgstr "Neues Stichwort erstellen ..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Neues Stichwort schnell erstellen."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "In diesem Anhang wurden keine Schlüssel gefunden"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "Ein Schlüssel importiert"
+#~ msgstr[1] "%1 Schlüssel importiert"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "Ein Schlüssel war bereits importiert"
+#~ msgstr[1] "%1 Schlüssel waren bereits importiert"
+
+#~ msgid "fwd"
+#~ msgstr "Fwd"
+
+#~ msgid "re"
+#~ msgstr "Re"
+
+#~ msgid "No key available."
+#~ msgstr "Kein Schlüssel verfügbar."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Falsche Passphrase."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Falsches Kryptografie-Modul."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Die Daten können nicht entschlüsselt werden: Kein Schlüssel für Empfänger "
+#~ "gefunden."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Die Daten können nicht entschlüsselt werden."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "SMS senden"
+
+#~ msgid "Save attachment"
+#~ msgstr "Anhang speichern"
 
 #, fuzzy
 #~| msgid "Mail"

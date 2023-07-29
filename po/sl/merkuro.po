@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
-"PO-Revision-Date: 2023-07-14 06:49+0200\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
+"PO-Revision-Date: 2023-07-28 10:19+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2359,25 +2359,22 @@ msgid "Select Email Address"
 msgstr "Izberite naslov e-pošte"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Ustvari"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Nov stik…"
+msgstr "Nov stik"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Contact"
-msgstr "Nova skupina stikov…"
+msgstr "Nova skupina stikov"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2458,7 +2455,7 @@ msgstr "Ime stika"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2466,10 +2463,9 @@ msgid "Honorific prefix"
 msgstr "Častna predpona"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "G."
+msgstr "Dr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
@@ -2532,10 +2528,9 @@ msgid "Honorific suffix"
 msgstr "Častni naslov za imenom"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2675,18 +2670,18 @@ msgstr "Uredi stik"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Opozorilo"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Ta stik je bil med urejanjem spremenjen drugje."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Katere spremembe je treba ohraniti?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2701,17 +2696,14 @@ msgid "External changes"
 msgstr "Zunanje spremembe"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "Uredi %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Nova skupina stikov…"
+msgstr "Ustvari skupino stikov"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2731,12 +2723,12 @@ msgstr "Člani"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
-msgstr ""
+msgstr "V skupino stikov je mogoče dodati samo stike z e-poštnim naslovom"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "Ta skupina stikov je bila med urejanjem spremenjena drugje."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -3078,10 +3070,9 @@ msgstr[2] "Naslovi e-pošte"
 msgstr[3] "Naslovi e-pošte"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "Ali zares želite zbrisati koledar: \"%1\"?"
+msgstr "Ali zares želite zbrisati stik: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3174,102 +3165,36 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Mercuro koledar"
+msgstr "Mercuro pošta"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
+#, kde-format
 msgid "Email Client"
-msgstr "Aplikacija odjemalca elektronske pošte"
+msgstr "Odjemalec elektronske pošte"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "V prilogi ni bilo najdenih ključev"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "uvožen %1 ključ"
-msgstr[1] "uvožena %1 ključa"
-msgstr[2] "uvoženi %1 ključi"
-msgstr[3] "uvoženo %1 ključev"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "%1 ključ je že bil uvožen"
-msgstr[1] "%1 ključa sta že bila uvožena"
-msgstr[2] "%1 ključi so že bili uvoženi"
-msgstr[3] "%1 ključev je že bilo uvoženih"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Ključa ni na voljo."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Napačna geselna fraza."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Napačen šifrirni vtičnik."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"Ni bilo mogoče dešifrirati podatkov: ni bilo najdenih ključev za sprejemnike."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Ni bilo mogoče dešifrirati podatkov."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Prenesi v smeti"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Novo sporočilo"
+msgstr "Označi sporočilo"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "Označi sporočilo kot prebrano"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "Označi sporočilo kot neprebrano"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3277,34 +3202,29 @@ msgid "Don't Mark as Important"
 msgstr "Ne označi kot pomembno"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Ne označi kot pomembno"
+msgstr "Označi kot pomembno"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Prenesi v smeti"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Novo sporočilo"
+msgstr "Premakni sporočilo v..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "Kopiraj sporočilo v..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Dodaj opomnik"
+msgstr "Dodaj opomnik za spremljanje"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3348,7 +3268,7 @@ msgstr "Od:"
 msgid "Identity:"
 msgstr "Identiteta:"
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "Za:"
@@ -3433,27 +3353,15 @@ msgstr "To sporočilo je šifrirano s ključem: %1"
 msgid "Loading mail..."
 msgstr "Nalaganje pošte..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
-msgid "Sender:"
-msgstr "Pošlji"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Shrani prilogo"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
 msgstr "Uvozi ključ"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "Nastavitve mesečnega pogleda"
+msgstr "Nastavitve računa"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
@@ -3482,10 +3390,9 @@ msgid "Add Account"
 msgstr "Dodaj račun"
 
 #: quick/qml/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identities"
-msgstr "Identiteta:"
+msgstr "Identitete"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3511,6 +3418,52 @@ msgstr "Ustvari novo oznako…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Hitro dodaj novo oznako."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "V prilogi ni bilo najdenih ključev"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "uvožen %1 ključ"
+#~ msgstr[1] "uvožena %1 ključa"
+#~ msgstr[2] "uvoženi %1 ključi"
+#~ msgstr[3] "uvoženo %1 ključev"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "%1 ključ je že bil uvožen"
+#~ msgstr[1] "%1 ključa sta že bila uvožena"
+#~ msgstr[2] "%1 ključi so že bili uvoženi"
+#~ msgstr[3] "%1 ključev je že bilo uvoženih"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "Ključa ni na voljo."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Napačna geselna fraza."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Napačen šifrirni vtičnik."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Ni bilo mogoče dešifrirati podatkov: ni bilo najdenih ključev za "
+#~ "sprejemnike."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Ni bilo mogoče dešifrirati podatkov."
+
+#~ msgid "Sender:"
+#~ msgstr "Pošiljatelj:"
+
+#~ msgid "Save attachment"
+#~ msgstr "Shrani prilogo"
 
 #~ msgctxt "@title"
 #~ msgid "Mail"

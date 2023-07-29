@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-04-26 10:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3206,67 +3206,7 @@ msgstr "Календарь"
 msgid "Email Client"
 msgstr "Программа с функциями календаря"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "В этом вложении не найдены ключи"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "импортирован %1 ключ"
-msgstr[1] "импортированы %1 ключа"
-msgstr[2] "импортированы %1 ключей"
-msgstr[3] "импортирован один ключ"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "уже импортирован %1 ключ"
-msgstr[1] "уже импортированы %1 ключа"
-msgstr[2] "уже импортированы %1 ключей"
-msgstr[3] "уже импортирован один ключ"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Нет ни одного ключа."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Неверный пароль."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Неверный модуль шифрования."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Не удалось расшифровать данные: не найден ключ для получателей."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Не удалось расшифровать данные."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Удалить в корзину"
@@ -3365,7 +3305,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3452,17 +3392,6 @@ msgstr "Это письмо зашифровано следующим ключо
 msgid "Loading mail..."
 msgstr "Загрузка почты…"
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "Отправить SMS"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Сохранить вложение"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3529,6 +3458,52 @@ msgstr "Создать метку…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Быстро добавить новую метку."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "В этом вложении не найдены ключи"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "импортирован %1 ключ"
+#~ msgstr[1] "импортированы %1 ключа"
+#~ msgstr[2] "импортированы %1 ключей"
+#~ msgstr[3] "импортирован один ключ"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "уже импортирован %1 ключ"
+#~ msgstr[1] "уже импортированы %1 ключа"
+#~ msgstr[2] "уже импортированы %1 ключей"
+#~ msgstr[3] "уже импортирован один ключ"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "Нет ни одного ключа."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Неверный пароль."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Неверный модуль шифрования."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr "Не удалось расшифровать данные: не найден ключ для получателей."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Не удалось расшифровать данные."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "Отправить SMS"
+
+#~ msgid "Save attachment"
+#~ msgstr "Сохранить вложение"
 
 #, fuzzy
 #~| msgid "Mail"

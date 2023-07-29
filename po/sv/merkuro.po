@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2022-09-28 17:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3213,63 +3213,7 @@ msgstr "Kalender"
 msgid "Email Client"
 msgstr "Kalenderprogram"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "Inga nycklar hittades i den här bilagan"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "en nyckel importerad"
-msgstr[1] "%1 nycklar importerade"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "en nyckel har redan importerats"
-msgstr[1] "%1 nycklar har redan importerats"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fw"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "sv"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Ingen nyckel tillgänglig."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Felaktig lösenordsfras."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Felaktigt kryptoinsticksprogram."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Kunde inte dekryptera data. Ingen nyckel hittades för mottagarna."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Kunde inte dekryptera data."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Flytta till papperskorgen"
@@ -3368,7 +3312,7 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr ""
@@ -3455,17 +3399,6 @@ msgstr "Brevet är krypterat med nyckeln: %1"
 msgid "Loading mail..."
 msgstr "Läser in e-post..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
-msgid "Sender:"
-msgstr "Skicka SMS"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Spara bilaga"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3532,6 +3465,48 @@ msgstr "Skapa en ny etikett…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "Inga nycklar hittades i den här bilagan"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "en nyckel importerad"
+#~ msgstr[1] "%1 nycklar importerade"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "en nyckel har redan importerats"
+#~ msgstr[1] "%1 nycklar har redan importerats"
+
+#~ msgid "fwd"
+#~ msgstr "fw"
+
+#~ msgid "re"
+#~ msgstr "sv"
+
+#~ msgid "No key available."
+#~ msgstr "Ingen nyckel tillgänglig."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Felaktig lösenordsfras."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Felaktigt kryptoinsticksprogram."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr "Kunde inte dekryptera data. Ingen nyckel hittades för mottagarna."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Kunde inte dekryptera data."
+
+#, fuzzy
+#~| msgid "Send SMS"
+#~ msgid "Sender:"
+#~ msgstr "Skicka SMS"
+
+#~ msgid "Save attachment"
+#~ msgstr "Spara bilaga"
 
 #, fuzzy
 #~| msgid "Mail"

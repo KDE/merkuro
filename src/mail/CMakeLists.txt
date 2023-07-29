@@ -1,13 +1,6 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-if (BUILD_TESTING)
-    add_subdirectory(tests)
-    add_subdirectory(mime/tests)
-    add_subdirectory(mimetreeparser/autotests)
-    add_subdirectory(mimetreeparser/tests)
-endif()
-
 set(merkuro_mail_SRCS
     mailapplication.cpp
     mailapplication.h
@@ -22,45 +15,11 @@ set(merkuro_mail_SRCS
 
     messagestatus.h
     messagestatus.cpp
-
-    crypto.cpp
-    mimetreeparser/messagepart.cpp
-    mimetreeparser/bodypartformatter.cpp
-    mimetreeparser/bodypartformatter_impl.cpp
-    mimetreeparser/bodypartformatterbasefactory.cpp
-    mimetreeparser/bodypartformatterbasefactory.cpp
-    mimetreeparser/cryptohelper.cpp
-    mimetreeparser/messagepart.cpp
-    mimetreeparser/mimetreeparser_debug.cpp 
-    mimetreeparser/mimetreeparser_debug.h
-    mimetreeparser/objecttreeparser.cpp
-    mimetreeparser/utils.cpp
-    mime/attachmentmodel.cpp
-    mime/htmlutils.cpp
-    mime/mailcrypto.cpp
-    mime/mailtemplates.cpp
-    mime/messageparser.cpp
-    mime/partmodel.cpp
+    messageloader.h
+    messageloader.cpp
 
     mailheadermodel.h
     mailheadermodel.cpp
-
-    crypto.h
-    mimetreeparser/messagepart.h
-    mimetreeparser/bodypartformatter.h
-    mimetreeparser/bodypartformatterbasefactory.h
-    mimetreeparser/bodypartformatterbasefactory.h
-    mimetreeparser/cryptohelper.h
-    mimetreeparser/messagepart.h
-    mimetreeparser/objecttreeparser.h
-    mimetreeparser/utils.h
-    mime/attachmentmodel.h
-    mime/htmlutils.h
-    mime/mailcrypto.h
-    mime/mailtemplates.h
-    mime/messageparser.h
-    mime/partmodel.h
-
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -95,7 +54,6 @@ target_sources(merkuro_mail_plugin PRIVATE
 ecm_target_qml_sources(merkuro_mail_plugin SOURCES
     qml/MailSidebar.qml
     qml/FolderView.qml
-    qml/MailViewer.qml
     qml/MailComposer.qml
     qml/ConversationViewer.qml
 )
@@ -109,16 +67,6 @@ ecm_target_qml_sources(merkuro_mail_plugin
     PRIVATE PATH mailboxselector SOURCES
     qml/mailboxselector/MailBoxList.qml
     qml/mailboxselector/MailBoxListPage.qml
-)
-
-ecm_target_qml_sources(merkuro_mail_plugin
-    PRIVATE PATH mailpartview SOURCES
-    qml/mailpartview/HtmlPart.qml
-    qml/mailpartview/ICalPart.qml
-    qml/mailpartview/MailPart.qml
-    qml/mailpartview/MailPartModel.qml
-    qml/mailpartview/MailPartView.qml
-    qml/mailpartview/TextPart.qml
 )
 
 target_link_libraries(merkuro_mail_plugin PUBLIC merkuro_mail_static)

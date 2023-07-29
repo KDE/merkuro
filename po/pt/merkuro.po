@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-07-14 22:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -3152,65 +3152,7 @@ msgstr "Calendário do Merkuro"
 msgid "Email Client"
 msgstr "Cliente de E-Mail"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "Não foram encontradas chaves neste anexo"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "uma chave importada"
-msgstr[1] "%1 chaves importadas"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "uma chave já foi importada"
-msgstr[1] "%1 chaves já foram importadas"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "enc"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "resp"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Não está disponível nenhuma chave."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "A frase-senha está errada."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "'Plugin' de Cifra inválido."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"Não foi possível descodificar os dados: não foi encontrada a chave dos "
-"destinatários."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Não foi possível descodificar os dados."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Enviar para o lixo"
@@ -3310,7 +3252,7 @@ msgstr "De:"
 msgid "Identity:"
 msgstr "Identidade:"
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "Para:"
@@ -3395,17 +3337,6 @@ msgstr "Esta mensagem está encriptada com a chave: %1"
 msgid "Loading mail..."
 msgstr "A carregar o correio..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
-msgid "Sender:"
-msgstr "Enviar"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Gravar o anexo"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3473,6 +3404,50 @@ msgstr "Criar uma Nova Marca…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Adicionar Rapidamente uma Nova Marca."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "Não foram encontradas chaves neste anexo"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "uma chave importada"
+#~ msgstr[1] "%1 chaves importadas"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "uma chave já foi importada"
+#~ msgstr[1] "%1 chaves já foram importadas"
+
+#~ msgid "fwd"
+#~ msgstr "enc"
+
+#~ msgid "re"
+#~ msgstr "resp"
+
+#~ msgid "No key available."
+#~ msgstr "Não está disponível nenhuma chave."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "A frase-senha está errada."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "'Plugin' de Cifra inválido."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Não foi possível descodificar os dados: não foi encontrada a chave dos "
+#~ "destinatários."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Não foi possível descodificar os dados."
+
+#, fuzzy
+#~| msgid "Send"
+#~ msgid "Sender:"
+#~ msgstr "Enviar"
+
+#~ msgid "Save attachment"
+#~ msgstr "Gravar o anexo"
 
 #~ msgctxt "@title"
 #~ msgid "Mail"

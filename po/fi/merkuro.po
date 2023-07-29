@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-07-25 13:38+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3158,63 +3158,7 @@ msgstr "Kalenteri"
 msgid "Email Client"
 msgstr "Sähköpostisovellus"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "Liitteestä ei löytynyt avaimia."
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "tuotiin yksi avain"
-msgstr[1] "tuotiin %1 avainta"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "yksi avain oli jo tuotu"
-msgstr[1] "%1 avainta oli jo tuotu"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "fwd"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "Avainta ei ole saatavilla."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Väärä salasana."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Väärä salauslaajennus."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr "Datan salausta ei voitu purkaa: vastaanottajille ei löytynyt avaimia."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "Salausta ei saanut puretuksi."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Siirrä roskakoriin"
@@ -3314,7 +3258,7 @@ msgstr "Lähettäjä:"
 msgid "Identity:"
 msgstr "Henkilöys:"
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "Vastaanottaja:"
@@ -3399,17 +3343,6 @@ msgstr "Viesti on salattu avaimella: %1"
 msgid "Loading mail..."
 msgstr "Ladataan postia…"
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
-msgid "Sender:"
-msgstr "Lähetä"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Tallenna liite"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3477,6 +3410,49 @@ msgstr "Luo uusi luokitus…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lisää pikaisesti uusi luokitus."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "Liitteestä ei löytynyt avaimia."
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "tuotiin yksi avain"
+#~ msgstr[1] "tuotiin %1 avainta"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "yksi avain oli jo tuotu"
+#~ msgstr[1] "%1 avainta oli jo tuotu"
+
+#~ msgid "fwd"
+#~ msgstr "fwd"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "Avainta ei ole saatavilla."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Väärä salasana."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Väärä salauslaajennus."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "Datan salausta ei voitu purkaa: vastaanottajille ei löytynyt avaimia."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "Salausta ei saanut puretuksi."
+
+#, fuzzy
+#~| msgid "Send"
+#~ msgid "Sender:"
+#~ msgstr "Lähetä"
+
+#~ msgid "Save attachment"
+#~ msgstr "Tallenna liite"
 
 #~ msgctxt "@title"
 #~ msgid "Mail"

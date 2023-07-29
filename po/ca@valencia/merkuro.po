@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:49+0000\n"
+"POT-Creation-Date: 2023-07-29 00:47+0000\n"
 "PO-Revision-Date: 2023-07-15 12:03+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3162,65 +3162,7 @@ msgstr "Calendari de Merkuro"
 msgid "Email Client"
 msgstr "Aplicació de client de correu"
 
-#: mail/mime/attachmentmodel.cpp:223
-#, kde-format
-msgid "No keys were found in this attachment"
-msgstr "No s'ha trobat cap clau en este adjunt"
-
-#: mail/mime/attachmentmodel.cpp:226
-#, kde-format
-msgid "one key imported"
-msgid_plural "%1 keys imported"
-msgstr[0] "s'ha importat una clau"
-msgstr[1] "s'han importat %1 claus"
-
-#: mail/mime/attachmentmodel.cpp:228
-#, kde-format
-msgid "one key was already imported"
-msgid_plural "%1 keys were already imported"
-msgstr[0] "ja s'havia importat una clau"
-msgstr[1] "ja s'havien importat %1 claus"
-
-#: mail/mime/mailtemplates.cpp:103
-#, kde-format
-msgid "fwd"
-msgstr "reen"
-
-#: mail/mime/mailtemplates.cpp:132
-#, kde-format
-msgid "re"
-msgstr "re"
-
-#: mail/mime/partmodel.cpp:473
-#, kde-format
-msgid "No key available."
-msgstr "No hi ha cap clau disponible."
-
-#: mail/mime/partmodel.cpp:475
-#, kde-format
-msgid "Wrong passphrase."
-msgstr "Frase de pas incorrecta."
-
-#: mail/mimetreeparser/messagepart.cpp:618
-#: mail/mimetreeparser/messagepart.cpp:709
-#: mail/mimetreeparser/messagepart.cpp:783
-#, kde-format
-msgid "Wrong Crypto Plug-In."
-msgstr "Connector criptogràfic erroni."
-
-#: mail/mimetreeparser/messagepart.cpp:857
-#, kde-format
-msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
-"No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
-"destinataris."
-
-#: mail/mimetreeparser/messagepart.cpp:862
-#, kde-format
-msgid "Could not decrypt the data."
-msgstr "No s'han pogut desencriptar les dades."
-
-#: mail/qml/ConversationViewer.qml:28
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Mou a la paperera"
@@ -3320,7 +3262,7 @@ msgstr "De:"
 msgid "Identity:"
 msgstr "Identitat:"
 
-#: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
+#: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
 msgstr "A:"
@@ -3405,17 +3347,6 @@ msgstr "Este missatge està encriptat amb la clau: %1"
 msgid "Loading mail..."
 msgstr "S'està carregant el correu..."
 
-#: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
-msgid "Sender:"
-msgstr "Envia"
-
-#: mail/qml/MailViewer.qml:149
-#, kde-format
-msgid "Save attachment"
-msgstr "Guarda l'adjunt"
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3483,6 +3414,50 @@ msgstr "Crea una etiqueta nova…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Afig ràpidament una etiqueta nova."
+
+#~ msgid "No keys were found in this attachment"
+#~ msgstr "No s'ha trobat cap clau en este adjunt"
+
+#~ msgid "one key imported"
+#~ msgid_plural "%1 keys imported"
+#~ msgstr[0] "s'ha importat una clau"
+#~ msgstr[1] "s'han importat %1 claus"
+
+#~ msgid "one key was already imported"
+#~ msgid_plural "%1 keys were already imported"
+#~ msgstr[0] "ja s'havia importat una clau"
+#~ msgstr[1] "ja s'havien importat %1 claus"
+
+#~ msgid "fwd"
+#~ msgstr "reen"
+
+#~ msgid "re"
+#~ msgstr "re"
+
+#~ msgid "No key available."
+#~ msgstr "No hi ha cap clau disponible."
+
+#~ msgid "Wrong passphrase."
+#~ msgstr "Frase de pas incorrecta."
+
+#~ msgid "Wrong Crypto Plug-In."
+#~ msgstr "Connector criptogràfic erroni."
+
+#~ msgid "Could not decrypt the data: no key found for recipients."
+#~ msgstr ""
+#~ "No s'han pogut desencriptar les dades: no s'ha trobat la clau dels "
+#~ "destinataris."
+
+#~ msgid "Could not decrypt the data."
+#~ msgstr "No s'han pogut desencriptar les dades."
+
+#, fuzzy
+#~| msgid "Send"
+#~ msgid "Sender:"
+#~ msgstr "Envia"
+
+#~ msgid "Save attachment"
+#~ msgstr "Guarda l'adjunt"
 
 #~ msgctxt "@title"
 #~ msgid "Mail"

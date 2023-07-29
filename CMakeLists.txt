@@ -25,6 +25,7 @@ set(KONTACTINTERFACE_LIB_VERSION "5.240.40")
 set(KMIME_LIB_VERSION "5.240.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.240.40")
 set(AKONADI_VERSION "5.240.40")
+set(MIMETREEPARSER_LIB_VERSION "5.240.40")
 
 include(FeatureSummary)
 
@@ -108,6 +109,7 @@ find_package(KPim6AkonadiMime ${AKONADIMIME_LIB_VERSION} REQUIRED)
 find_package(KPim6CalendarUtils ${CALENDARUTILS_LIB_VERSION} REQUIRED)
 find_package(KPim6IdentityManagementWidgets ${IDENTITYMANAGEMENT_LIB_VERSION} REQUIRED)
 find_package(KPim6MailCommon ${MAILCOMMON_LIB_VERSION} REQUIRED)
+find_package(KPim6MimeTreeParserCore ${MIMETREEPARSER_LIB_VERSION} REQUIRED)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
