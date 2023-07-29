@@ -28,9 +28,10 @@ public:
 
     Q_INVOKABLE QString email(uint uoid);
 
-private:
+private Q_SLOTS:
     void reloadUoidList();
 
+private:
     QList<int> m_identitiesUoid;
     IdentityManager *const m_identityManager;
 };

@@ -5,6 +5,8 @@
 #include <KIdentityManagement/Identity>
 #include <KLocalizedString>
 
+using namespace KIdentityManagement;
+
 namespace Akonadi
 {
 namespace Quick
@@ -13,7 +15,8 @@ IdentityModel::IdentityModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_identityManager(IdentityManager::self())
 {
-    connect(m_identityManager, &KIdentityManagement::IdentityManager::needToReloadIdentitySettings, this, &IdentityModel::reloadUoidList);
+    connect(m_identityManager, &IdentityManager::needToReloadIdentitySettings, this, &IdentityModel::reloadUoidList);
+    connect(m_identityManager, &IdentityManager::identitiesWereChanged, this, &IdentityModel::reloadUoidList);
     reloadUoidList();
 }
 
