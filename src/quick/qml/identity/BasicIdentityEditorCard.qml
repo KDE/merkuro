@@ -66,7 +66,7 @@ MobileForm.FormCard {
                         Layout.fillWidth: true
                         text: modelData
                         inputMethodHints: Qt.ImhEmailCharactersOnly
-                        // onTextChanged: TODO
+                        onEditingFinished: identityEditorBackend.modifyEmailAlias(modelData, text)
                     }
 
                     QQC2.Button {

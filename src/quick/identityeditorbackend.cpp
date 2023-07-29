@@ -74,5 +74,12 @@ void IdentityEditorBackend::addEmailAlias(const QString &alias)
     m_identity->setEmailAliases(aliases);
 }
 
+void IdentityEditorBackend::modifyEmailAlias(const QString &originalAlias, const QString &modifiedAlias)
+{
+    auto aliases = m_identity->emailAliases();
+    std::replace(aliases.begin(), aliases.end(), originalAlias, modifiedAlias);
+    m_identity->setEmailAliases(aliases);
+}
+
 }
 }
