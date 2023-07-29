@@ -19,6 +19,8 @@ class IdentityUtils : public QObject
 public:
     explicit IdentityUtils() = default;
 
+    Q_INVOKABLE bool removeIdentity(const QString &identityName);
+
 private:
     IdentityManager *const m_identityManager = IdentityManager::self();
 };
