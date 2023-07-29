@@ -55,7 +55,7 @@ MobileForm.FormCard {
                             text: i18n("Delete")
                             iconName: "delete"
                             onTriggered: {
-                                //root._configuration.remove(model.index);
+                                IdentityUtils.removeIdentity(model.identityName);
                                 dialog.close();
                             }
                         }
