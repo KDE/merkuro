@@ -1,15 +1,15 @@
 # Translation of plasma_applet_org.kde.merkuro.contact.po to Catalan
-# Copyright (C) 2022 This_file_is_part_of_KDE
+# Copyright (C) 2022-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 02:36+0000\n"
-"PO-Revision-Date: 2022-08-08 18:15+0200\n"
+"PO-Revision-Date: 2023-07-28 10:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: package/contents/ui/ContactPage.qml:49
 #, kde-format
@@ -65,13 +65,14 @@ msgstr "Sobrenom: %1"
 #: package/contents/ui/ContactPage.qml:173
 #, kde-format
 msgid "Birthday:"
-msgstr ""
+msgstr "Data de naixement:"
 
+# skip-rule: punctuation-period
 #: package/contents/ui/ContactPage.qml:171
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd/MM/"
 
 #: package/contents/ui/ContactPage.qml:182
 #, kde-format
@@ -101,9 +102,7 @@ msgstr[0] "Número de telèfon"
 msgstr[1] "Números de telèfon"
 
 #: package/contents/ui/ContactPage.qml:241
-#, fuzzy, kde-format
-#| msgctxt "%1 is the type of the address, e.g. home, work, ..."
-#| msgid "%1:"
+#, kde-format
 msgid "%1:"
 msgstr "%1:"
 

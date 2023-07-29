@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 02:36+0000\n"
-"PO-Revision-Date: 2023-07-15 06:26+0200\n"
+"PO-Revision-Date: 2023-07-29 03:04+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2324,25 +2324,22 @@ msgid "Select Email Address"
 msgstr "აირჩიეთ ელფოსტის მისამართები"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "შექმნა"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "ახალი კონტაქტი…"
+msgstr "ახალი კონტაქტი"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Contact"
-msgstr "კონტაქტების ახალი ჯგუფი…"
+msgstr "ახალი &კონტაქტის კონტაქტი"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2423,7 +2420,7 @@ msgstr "კონტაქტის სახელი"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "დამატებითი"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
@@ -2431,10 +2428,9 @@ msgid "Honorific prefix"
 msgstr "საპატიო პრეფიქსი"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "ბნ."
+msgstr "დრ."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2497,10 +2493,9 @@ msgid "Honorific suffix"
 msgstr "საპატიო სუფიქსი"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2640,18 +2635,18 @@ msgstr "კოტაქტის ჩასწორება"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "გაფრთხილება"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "ეს კონტაქტი ჩასწორებისას სადღაც სხვა ადგილიდან შეიცვალა."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "რომელი ცვლილებები შევინახო?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2666,17 +2661,14 @@ msgid "External changes"
 msgstr "გარე ცვლილებები"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "%1-ის ჩასწორება"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "კონტაქტების ახალი ჯგუფი…"
+msgstr "კონტაქტების ჯგუფის შექმნა"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2697,11 +2689,12 @@ msgstr "წევრები"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
+"კონტაქტების ჯგუფში მხოლოდ ელფოსტის მქონე კონტაქტების ჩამატება შეგიძლიათ"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "ეს კონტაქტი ჩასწორებისას სადღაც სხვა ადგილიდან შეიცვალა."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -3037,10 +3030,9 @@ msgstr[0] "ელფოსტის მისამართი"
 msgstr[1] "ელფოსტის მისამართი"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "მართლა გნებავთ %1 კალენდრის წაშლა?"
+msgstr "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3133,18 +3125,15 @@ msgid "Unknown"
 msgstr "უცნობი"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Merkuro-ის კალენდარი"
+msgstr "Merkuro-ის ფოსტა"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
+#, kde-format
 msgid "Email Client"
-msgstr "ელფოსტის კლიენტის აპლიკაცია"
+msgstr "ელფოსტის კლიენტი"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
@@ -3208,22 +3197,20 @@ msgid "Move to trash"
 msgstr "ნაგავში მოთავსება"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "ახალი შეტყობინება"
+msgstr "შეტყობინების დანიშვნა"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "შეტყობინების წაკითხულად &მონიშვნა"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "შეტყობინების წაუკითხავად მონიშვნა"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3231,32 +3218,27 @@ msgid "Don't Mark as Important"
 msgstr "არ მონიშნო, როგორც მნიშვნელოვანი"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "არ მონიშნო, როგორც მნიშვნელოვანი"
+msgstr "მნიშვნელოვნად მონიშვნა"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
-msgstr "ნაგავში მოთავსება"
+msgstr "ნაგვის ყუთში გადატანა"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgid "Move Message to..."
-msgstr "ახალი შეტყობინება"
+msgstr "შეტყობინების გადატანა..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "შეტყობინების კოპირება..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
 msgstr "შეხსენების დამატება"
 
@@ -3388,10 +3370,9 @@ msgid "Loading mail..."
 msgstr "ელფოსტის ჩატვირთვა..."
 
 #: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgid "Sender:"
-msgstr "გაგზავნა"
+msgstr "გამგზავნი:"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format
@@ -3404,10 +3385,9 @@ msgid "Import key"
 msgstr "გასაღების შემოტანა"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "თვის ხედის მორგება"
+msgstr "ანგარიშის მორგება"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
@@ -3436,10 +3416,9 @@ msgid "Add Account"
 msgstr "ანგარიშის დამატება"
 
 #: quick/qml/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identities"
-msgstr "იდენტიფიკაცია:"
+msgstr "იდენტიფიკატორები"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 02:36+0000\n"
-"PO-Revision-Date: 2023-07-27 23:10+0300\n"
+"PO-Revision-Date: 2023-07-28 12:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2328,25 +2328,22 @@ msgid "Select Email Address"
 msgstr "E-posta Adresi Seç"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Oluştur"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Yeni Kişi…"
+msgstr "Yeni Kişi"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Contact"
-msgstr "Yeni Kişi Grubu…"
+msgstr "Yeni Kişiler Kişisi"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2427,7 +2424,7 @@ msgstr "Kişi adı"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
@@ -2435,10 +2432,9 @@ msgid "Honorific prefix"
 msgstr "Saygı öneki"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "Bay"
+msgstr "Dr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2501,10 +2497,9 @@ msgid "Honorific suffix"
 msgstr "Saygı soneki"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2644,18 +2639,18 @@ msgstr "Kişiyi Düzenle"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Uyarı"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Bu kişi, düzenleme sırasında başka bir yerde değiştirilmiş."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Hangi değişiklikler tutulmalı?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2670,17 +2665,14 @@ msgid "External changes"
 msgstr "Dış değişiklikler"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
-msgstr "%1 Düzenle"
+msgstr "Düzenle: %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Yeni Kişi Grubu…"
+msgstr "Kişi Grubu Oluştur"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2700,12 +2692,12 @@ msgstr "Üyeler"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
-msgstr ""
+msgstr "Yalnızca e-posta adresi olan kişiler bir kişi grubuna eklenebilir"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "Bu kişi grubu, düzenleme sırasında başka bir yerde değiştirilmiş."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -3041,10 +3033,9 @@ msgstr[0] "E-posta Adresi"
 msgstr[1] "E-posta Adresleri"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "Takvimi silmek istiyor musunuz: \"%1\"?"
+msgstr "Kişinizi silmeyi gerçekten istiyor musunuz: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3137,18 +3128,15 @@ msgid "Unknown"
 msgstr "Bilinmiyor"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Erdenay Takvim"
+msgstr "Erdenay Posta"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
+#, kde-format
 msgid "Email Client"
-msgstr "E-posta İstemcisi Uygulaması"
+msgstr "E-posta İstemcisi"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
@@ -3212,22 +3200,20 @@ msgid "Move to trash"
 msgstr "Çöp Kutusuna Taşı"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Yeni İleti"
+msgstr "İletiyi İmle"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "İletiyi Okundu Olarak İmle"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "İletiyi Okunmadı Olarak İmle"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3235,34 +3221,29 @@ msgid "Don't Mark as Important"
 msgstr "Önemli Olarak İmleme"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Önemli Olarak İmleme"
+msgstr "Önemli Olarak İmle"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Çöp Kutusuna Taşı"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Yeni İleti"
+msgstr "İletiyi Şuraya Taşı..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "İletiyi Şuraya Kopyala..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Anımsatıcı Ekle"
+msgstr "Takip Anımsatıcısı Ekle"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3392,10 +3373,9 @@ msgid "Loading mail..."
 msgstr "Posta yükleniyor..."
 
 #: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgid "Sender:"
-msgstr "Gönder"
+msgstr "Gönderici:"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format
