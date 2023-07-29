@@ -69,6 +69,10 @@ void IdentityEditorBackend::saveIdentity()
 
 void IdentityEditorBackend::addEmailAlias(const QString &alias)
 {
+    if (!m_identity) {
+        return;
+    }
+
     auto aliases = m_identity->emailAliases();
     aliases.append(alias);
     m_identity->setEmailAliases(aliases);
@@ -76,6 +80,10 @@ void IdentityEditorBackend::addEmailAlias(const QString &alias)
 
 void IdentityEditorBackend::modifyEmailAlias(const QString &originalAlias, const QString &modifiedAlias)
 {
+    if (!m_identity) {
+        return;
+    }
+
     auto aliases = m_identity->emailAliases();
     std::replace(aliases.begin(), aliases.end(), originalAlias, modifiedAlias);
     m_identity->setEmailAliases(aliases);
@@ -83,6 +91,10 @@ void IdentityEditorBackend::modifyEmailAlias(const QString &originalAlias, const
 
 void IdentityEditorBackend::removeEmailAlias(const QString &alias)
 {
+    if (!m_identity) {
+        return;
+    }
+
     auto aliases = m_identity->emailAliases();
     aliases.removeAll(alias);
     m_identity->setEmailAliases(aliases);
