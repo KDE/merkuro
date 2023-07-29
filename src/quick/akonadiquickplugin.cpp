@@ -9,6 +9,7 @@
 #include "collectionpickermodel.h"
 #include "identityeditorbackend.h"
 #include "identitymodel.h"
+#include "identityutils.h"
 #include "identitywrapper.h"
 #include "mimetypes.h"
 #include "tagmanager.h"
@@ -32,6 +33,13 @@ void AkonadiQuickPlugin::registerTypes(const char *uri)
         Q_UNUSED(scriptEngine)
         return new TagManager;
     });
+
+    qmlRegisterSingletonType<Akonadi::Quick::IdentityUtils>("org.kde.akonadi", 1, 0, "IdentityUtils", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new Akonadi::Quick::IdentityUtils;
+    });
+
     qmlRegisterType<AgentConfiguration>("org.kde.akonadi", 1, 0, "AgentConfiguration");
     qmlRegisterType<Akonadi::Quick::CollectionComboBoxModel>("org.kde.akonadi", 1, 0, "CollectionComboBoxModel");
     qmlRegisterType<Akonadi::Quick::CollectionPickerModel>("org.kde.akonadi", 1, 0, "CollectionPickerModel");
