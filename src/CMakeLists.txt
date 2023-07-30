@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_subdirectory(lib)
+add_subdirectory(kleo-quick)
 add_subdirectory(akonadi-quick)
 add_subdirectory(contacts)
 add_subdirectory(mail)
