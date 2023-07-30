@@ -216,6 +216,11 @@ TreeListView {
 
         onClicked: root.viewAndRetainTodoData(model, listItem);
 
+        text: model.text
+        Accessible.description: if (validEndDt) {
+            model.displayDueDate + model.isOverdue ? i18n(" , is overdue")
+        }
+
         contentItem: IncidenceMouseArea {
             id: mouseArea
 
