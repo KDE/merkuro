@@ -3,12 +3,13 @@
 
 #include "kleoquickplugin.h"
 
-#include <Libkleo/KeyListSortFilterProxyModel>
 #include <QQmlEngine>
+
+#include "keycomboboxmodel.h"
 
 void KleoQuickPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QByteArray("org.kde.kleo"));
 
-    qmlRegisterType<Kleo::KeyListSortFilterProxyModel>("org.kde.kleo", 1, 0, "KeyListSortFilterProxyModel");
+    qmlRegisterType<Kleo::Quick::KeyComboBoxModel>("org.kde.kleo", 1, 0, "KeyComboBoxModel");
 }

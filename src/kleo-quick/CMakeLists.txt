@@ -6,6 +6,8 @@ ecm_add_qml_module(kleo_quick_plugin URI "org.kde.kleo" VERSION 1.0)
 target_sources(kleo_quick_plugin PRIVATE
     kleoquickplugin.h
     kleoquickplugin.cpp
+    keycomboboxmodel.h
+    keycomboboxmodel.cpp
 )
 
 ecm_target_qml_sources(kleo_quick_plugin SOURCES
