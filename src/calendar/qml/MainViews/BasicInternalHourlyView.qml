@@ -212,6 +212,7 @@ Column {
             height: Calendar.Config.weekViewAllDayHeaderHeight !== -1 ?
                 resetHeaderHeightButton.height :
                 0
+            visible: height !== 0
             z: -1
             corners.bottomRightRadius: Kirigami.Units.smallSpacing
             shadow.size: Kirigami.Units.largeSpacing
