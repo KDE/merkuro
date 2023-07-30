@@ -5,6 +5,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.merkuro.contact 1.0 as Contact
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.merkuro.components 1.0
@@ -89,6 +90,37 @@ Kirigami.OverlayDrawer {
             ListView {
                 id: collectionList
 
+                activeFocusOnTab: true
+                currentIndex: -1
+                onActiveFocusChanged: if (currentIndex === -1 && activeFocus) {
+                    currentIndex = 0;
+                }
+
+                header: Delegates.RoundedItemDelegate {
+                    id: collectionHeadingItem
+
+                    hoverEnabled: false
+                    width: parent.width
+                    text: i18n("Contacts")
+
+                    contentItem: RowLayout {
+                        Kirigami.Icon {
+                            implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                            implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                            source: "view-pim-contacts"
+                            isMask: true
+                            color: Kirigami.Theme.disabledTextColor
+                        }
+
+                        Kirigami.Heading {
+                            level: 4
+                            text: collectionHeadingItem.text
+                            color: Kirigami.Theme.disabledTextColor
+                            Layout.fillWidth: true
+                        }
+                    }
+                }
+
                 model: KDescendantsProxyModel {
                     model: Contact.ContactManager.contactCollections
                 }
@@ -99,7 +131,7 @@ Kirigami.OverlayDrawer {
                     DelegateChoice {
                         roleValue: true
 
-                        Kirigami.BasicListItem {
+                        Delegates.RoundedItemDelegate {
                             id: collectionSourceItem
 
                             required property int index
@@ -112,38 +144,71 @@ Kirigami.OverlayDrawer {
                             required property var checkState
                             required property color collectionColor
 
-                            Layout.topMargin: 2 * Kirigami.Units.largeSpacing
-                            width: ListView.view.width
+                            topInset: 2 * Kirigami.Units.largeSpacing + Math.round(Kirigami.Units.smallSpacing / 2)
+                            topPadding: 2 * Kirigami.Units.largeSpacing + verticalPadding
+                            leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                            leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
-                            label: model.display
-                            labelItem {
-                                color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                                font.weight: Font.DemiBold
-                            }
-                            leftPadding: if (Kirigami.Settings.isMobile) {
-                                (Kirigami.Units.largeSpacing * 2 * kDescendantLevel)
-                                    + (Kirigami.Units.iconSizes.smallMedium * (kDescendantLevel - 1))
-                            } else {
-                                (Kirigami.Units.largeSpacing * kDescendantLevel)
-                                    + (Kirigami.Units.iconSizes.smallMedium * (kDescendantLevel - 1))
-                            }
+                            rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                            rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
+
+                            text: model.display
+                            highlighted: activeFocus
+
                             hoverEnabled: false
-                            highlighted: false
-                            enabled: !root.parentDrawerCollapsed
+                            Accessible.checkable: true
+                            Accessible.checked: collectionSourceItem.kDescendantExpanded
 
-                            separatorVisible: false
+                            onClicked: collectionList.model.toggleChildren(collectionSourceItem.index)
 
-                            leadingPadding: if (Kirigami.Settings.isMobile) {
-                                Kirigami.Units.largeSpacing * 2;
-                            } else {
-                                Kirigami.Units.largeSpacing
-                            }
-                            leading: Kirigami.Icon {
-                                implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                                implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                                color: collectionSourceItem.labelItem.color
-                                isMask: true
-                                source: collectionSourceItem.decoration
+                            contentItem: RowLayout {
+                                Kirigami.Icon {
+                                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                                    isMask: true
+                                    source: collectionSourceItem.decoration
+                                    color: Kirigami.Theme.disabledTextColor
+                                    Layout.leftMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                                }
+
+                                Kirigami.Heading {
+                                    text: collectionSourceItem.text
+                                    elide: Text.ElideRight
+                                    color: Kirigami.Theme.disabledTextColor
+                                    level: 4
+
+                                    Layout.fillWidth: true
+                                }
+
+                                QQC2.BusyIndicator {
+                                    id: loadingIndicator
+                                    Layout.fillHeight: true
+                                    padding: 0
+                                    visible: false
+                                    running: visible
+                                }
+
+                                Kirigami.Icon {
+                                    implicitWidth: Kirigami.Units.iconSizes.small
+                                    implicitHeight: Kirigami.Units.iconSizes.small
+                                    source: collectionSourceItem.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
+                                    isMask: true
+                                }
+
+                                ColoredCheckbox {
+                                    id: collectionCheckbox
+
+                                    visible: model.checkState != null
+                                    color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
+                                    checked: model.checkState === 2
+                                    onCheckedChanged: root.collectionCheckChanged()
+                                    onClicked: {
+                                        model.checkState = model.checkState === 0 ? 2 : 0
+                                        root.collectionCheckChanged()
+                                    }
+
+                                    Layout.alignment: Qt.AlignVCenter
+                                }
                             }
 
                             Connections {
@@ -159,46 +224,13 @@ Kirigami.OverlayDrawer {
                                     }
                                 }
                             }
-
-                            trailing: RowLayout {
-                                QQC2.BusyIndicator {
-                                    id: loadingIndicator
-                                    Layout.fillHeight: true
-                                    padding: 0
-                                    visible: false
-                                    running: visible
-                                }
-
-                                Kirigami.Icon {
-                                    implicitWidth: Kirigami.Units.iconSizes.small
-                                    implicitHeight: Kirigami.Units.iconSizes.small
-                                    source: collectionSourceItem.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
-                                    color: collectionSourceItem.labelItem.color
-                                    isMask: true
-                                }
-                                ColoredCheckbox {
-                                    id: collectionCheckbox
-
-                                    Layout.fillHeight: true
-                                    visible: collectionSourceItem.checkState != null
-                                    color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
-                                    checked: collectionSourceItem.checkState === 2
-                                    onCheckedChanged: root.collectionCheckChanged()
-                                    onClicked: {
-                                        // TODO port away from model
-                                        collectionSourceItem.model.checkState = collectionSourceItem.checkState === 0 ? 2 : 0
-                                        root.collectionCheckChanged()
-                                    }
-                                }
-                            }
-
-                            onClicked: collectionList.model.toggleChildren(collectionSourceItem.index)
                         }
                     }
 
                     DelegateChoice {
                         roleValue: false
-                        Kirigami.BasicListItem {
+
+                        Delegates.RoundedItemDelegate {
                             id: collectionItem
 
                             required property int index
@@ -211,33 +243,48 @@ Kirigami.OverlayDrawer {
                             required property var checkState
                             required property color collectionColor
 
-                            width: ListView.view.width
-                            label: model.display
-                            labelItem.color: Kirigami.Theme.textColor
-                            leftPadding: if (Kirigami.Settings.isMobile) {
-                                (Kirigami.Units.largeSpacing * 2 * kDescendantLevel)
-                                    + (Kirigami.Units.iconSizes.smallMedium * (kDescendantLevel - 1))
-                            } else {
-                                (Kirigami.Units.largeSpacing * kDescendantLevel)
-                                    + (Kirigami.Units.iconSizes.smallMedium * (kDescendantLevel - 1))
-                            }
-                            separatorVisible: false
+                            text: model.display
                             enabled: !root.drawerCollapsed
+                            highlighted: activeFocus
 
-                            leading: Kirigami.Icon {
-                                implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                                implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                                source: collectionItem.decoration
-                            }
-                            leadingPadding: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
+                            leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                            leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
-                            trailing: ColoredCheckbox {
-                                id: collectionCheckbox
+                            rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                            rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
-                                visible: collectionItem.checkState != null
-                                color: collectionItem.collectionColor
-                                checked: collectionItem.checkState === 2
-                                onCheckedChanged: root.collectionCheckChanged()
+                            Accessible.checkable: true
+                            Accessible.checked: model.checkState === 2
+                            Accessible.onToggleAction: clicked()
+
+                            contentItem: RowLayout {
+                                Kirigami.Icon {
+                                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                                    source: collectionItem.decoration
+                                    Layout.leftMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                                }
+
+                                QQC2.Label {
+                                    text: collectionItem.text
+                                    elide: Text.ElideRight
+                                    Layout.fillWidth: true
+                                }
+
+                                ColoredCheckbox {
+                                    id: collectionCheckbox
+
+                                    Layout.alignment: Qt.AlignVCenter
+                                    visible: model.checkState != null
+                                    color: collectionItem.collectionColor
+                                    checked: model.checkState === 2
+                                    onCheckedChanged: root.collectionCheckChanged()
+                                    activeFocusOnTab: false
+                                    onClicked: {
+                                        model.checkState = model.checkState === 0 ? 2 : 0
+                                        root.collectionCheckChanged()
+                                    }
+                                }
                             }
 
                             onClicked: {
