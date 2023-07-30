@@ -187,6 +187,7 @@ QQC2.ScrollView {
                         const nextDay = new Date(periodStartDate.getFullYear(), periodStartDate.getMonth(), nextDayDate);
                         return periodStartDate.toLocaleDateString(Qt.locale(), "dddd <b>dd</b>") + "–" + nextDay.toLocaleDateString(Qt.locale(), "dddd <b>dd</b> MMMM");
                     }
+                    Accessible.name: text.replace(/<\/?b>/g, '')
                     visible: Calendar.Config.showWeekHeaders &&
                         periodStartDate !== undefined &&
                         (periodStartDate.getDay() === Qt.locale().firstDayOfWeek || index === 0)

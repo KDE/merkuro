@@ -132,7 +132,7 @@ Column {
 
                     flat: true
                     enabled: viewColumn.daysToShow === 7
-                    Accessible.name: dayHeading.text
+                    Accessible.name: dayHeading.text.replace(/<\/?b>/g, '')
                     onClicked: {
                         Calendar.DateTimeState.selectedDate = dayDelegate.headingDate;
                         applicationWindow().pageStack.layers.push("qrc:/HourlyView.qml", {

@@ -9,15 +9,17 @@ import org.kde.merkuro.calendar 1.0 as Calendar
 
 QQC2.ToolButton {
     id: root
-    implicitHeight: titleText.implicitHeight
-    implicitWidth: titleText.implicitWidth
 
     property bool range: false
     property date lastDate
     readonly property date date: Calendar.DateTimeState.firstDayOfMonth
 
+    implicitHeight: contentItem.implicitHeight
+    implicitWidth: contentItem.implicitWidth
+
+    Accessible.name: contentItem.text.replace(/<\/?b>/g, '')
+
     contentItem: Kirigami.Heading {
-        id: titleText
         topPadding: Kirigami.Units.smallSpacing
         bottomPadding: Kirigami.Units.smallSpacing
         leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
