@@ -37,6 +37,7 @@ ecm_target_qml_sources(akonadi_quick_plugin SOURCES
     qml/identity/IdentityConfigurationForm.qml
     qml/identity/IdentityEditorPage.qml
     qml/identity/BasicIdentityEditorCard.qml
+    qml/identity/CryptographyEditorCard.qml
 )
 
 ecm_qt_declare_logging_category(akonadi_quick_plugin

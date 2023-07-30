@@ -65,6 +65,10 @@ Kirigami.ScrollablePage {
         BasicIdentityEditorCard {
             identityEditorBackend: backend
         }
+
+        CryptographyEditorCard {
+            identityEditorBackend: backend
+        }
     }
 
     footer: ColumnLayout {
