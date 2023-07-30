@@ -210,7 +210,6 @@ QQC2.ScrollView {
 
                         hoverEnabled: false
                         enabled: !root.parentDrawerCollapsed
-                        onClicked: collectionList.model.toggleChildren(index)
 
                         Layout.topMargin: 2 * Kirigami.Units.largeSpacing
                         Layout.fillWidth: true
@@ -251,6 +250,7 @@ QQC2.ScrollView {
                                 source: collectionSourceItem.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
                                 isMask: true
                             }
+
                             ColoredCheckbox {
                                 id: collectionCheckbox
 
@@ -283,6 +283,10 @@ QQC2.ScrollView {
                         }
 
                         CalendarItemTapHandler {
+                            id: tapHandler
+
+                            onLeftClicked: collectionList.model.toggleChildren(index)
+
                             collectionId: model.collectionId
                             collectionDetails: CalendarManager.getCollectionDetails(collectionId)
                             agentConfiguration: root.agentConfiguration
@@ -369,21 +373,20 @@ QQC2.ScrollView {
                             }
                         }
 
-                        onClicked: {
-                            Filter.collectionId = collectionId;
-                            model.checkState = model.checkState === 0 ? 2 : 0
-                            root.collectionCheckChanged()
-                            if (root.parentDrawerModal) {
-                                root.closeParentDrawer();
-                            }
-                        }
-
                         CalendarItemTapHandler {
                             collectionId: model.collectionId
                             collectionDetails: CalendarManager.getCollectionDetails(collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: mode !== CalendarApplication.Contact
                             onDeleteCalendar: root.deleteCollection(collectionId, collectionDetails)
+                            onLeftClicked: {
+                                Filter.collectionId = collectionId;
+                                model.checkState = model.checkState === 0 ? 2 : 0;
+                                root.collectionCheckChanged();
+                                if (root.parentDrawerModal) {
+                                    root.closeParentDrawer();
+                                }
+                            }
                         }
 
                         DropArea {

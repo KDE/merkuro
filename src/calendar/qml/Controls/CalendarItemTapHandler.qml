@@ -18,14 +18,24 @@ TapHandler {
     property var collectionDetails
     property Akonadi.AgentConfiguration agentConfiguration
 
-    acceptedButtons: Kirigami.Settings.isMobile ? Qt.LeftButton | Qt.RightButton : Qt.RightButton
+    signal leftClicked
 
-    onTapped: if(!Kirigami.Settings.isMobile) {
-        calendarActions.createObject(calendarTapHandler, {}).open();
+    acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+    onTapped: (eventPoint, button) => {
+        // TODO Qt6 remove
+        if (!button) {
+            button = eventPoint.event.button
+        }
+        if (button === Qt.LeftButton) {
+            calendarTapHandler.leftClicked();
+        } else if (!Kirigami.Settings.isMobile) {
+            calendarActions.createObject(calendarTapHandler, {}).popup();
+        }
     }
 
-    onLongPressed: if(Kirigami.Settings.isMobile) {
-        calendarActions.createObject(calendarTapHandler, {}).open();
+    onLongPressed: if (Kirigami.Settings.tabletMode) {
+        calendarActions.createObject(calendarTapHandler, {}).popup();
     }
 
     property Loader colorDialogLoader: Loader {
