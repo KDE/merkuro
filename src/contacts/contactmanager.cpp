@@ -30,6 +30,8 @@
 #include <Akonadi/SelectionProxyModel>
 #include <KCheckableProxyModel>
 #include <KConfigGroup>
+#include <KContacts/Addressee>
+#include <KContacts/ContactGroup>
 #include <KDescendantsProxyModel>
 #include <KLocalizedString>
 #include <KSelectionProxyModel>
@@ -59,8 +61,16 @@ ContactManager::ContactManager(QObject *parent)
     auto contactConfig = new ContactConfig(this);
     contactConfig->lastUsedAddressBookCollection();
 
+    auto sortedModel = new SortedCollectionProxModel(this);
+    sortedModel->setObjectName(QStringLiteral("Sort collection"));
+    sortedModel->setSourceModel(m_checkableProxyModel);
+    sortedModel->addMimeTypeFilter(KContacts::Addressee::mimeType());
+    sortedModel->addMimeTypeFilter(KContacts::ContactGroup::mimeType());
+    sortedModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    sortedModel->sort(0, Qt::AscendingOrder);
+
     m_colorProxy = new ColorProxyModel(this);
-    m_colorProxy->setSourceModel(m_checkableProxyModel);
+    m_colorProxy->setSourceModel(sortedModel);
     m_colorProxy->setObjectName(QStringLiteral("Show contact colors"));
     m_colorProxy->setDynamicSortFilter(true);
     m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
