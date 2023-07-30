@@ -129,6 +129,7 @@ Column {
                 QQC2.Button {
                     implicitHeight: dayHeading.implicitHeight
                     width: parent.width
+                    activeFocusOnTab: viewColumn.isCurrentItem
 
                     flat: true
                     enabled: viewColumn.daysToShow === 7
@@ -661,7 +662,7 @@ Column {
 
                             Loader {
                                 anchors.fill: parent
-                                asynchronous: !viewColumn.isCurrentView
+                                asynchronous: !viewColumn.isCurrentItem
 
                                 ListView {
                                     anchors.fill: parent
@@ -784,7 +785,7 @@ Column {
 
                             Loader {
                                 anchors.fill: parent
-                                asynchronous: !viewColumn.isCurrentView
+                                asynchronous: !viewColumn.isCurrentItem
                                 Repeater {
                                     id: hourlyIncidencesRepeater
                                     model: dayColumn.incidences

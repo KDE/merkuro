@@ -213,6 +213,7 @@ Item {
                                             visible: root.showDayIndicator
                                             enabled: root.daysToShow > 1
                                             onClicked: CalendarUiUtils.openDayLayer(gridItem.date)
+                                            activeFocusOnTab: isCurrentView
 
                                             anchors {
                                                 top: parent.top
