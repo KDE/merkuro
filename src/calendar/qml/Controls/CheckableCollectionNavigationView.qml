@@ -6,6 +6,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.16 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.contact 1.0
 import org.kde.merkuro.mail 1.0
@@ -36,13 +37,12 @@ QQC2.ScrollView {
         anchors.fill: parent
         spacing: 0
 
-        Kirigami.BasicListItem {
+        Delegates.RoundedItemDelegate {
             id: tagsHeadingItem
 
             property bool expanded: Config.tagsSectionExpanded
 
             Layout.topMargin: Kirigami.Units.largeSpacing
-            separatorVisible: false
             hoverEnabled: false
             visible: TagManager.tagModel.rowCount() > 0 && mode !== CalendarApplication.Contact
             Accessible.name: tagsHeadingItem.expanded ? i18nc('Accessible description of dropdown menu', 'Tags, Expanded') : i18nc('Accessible description of dropdown menu', 'Tags, Collapsed')
@@ -52,29 +52,43 @@ QQC2.ScrollView {
                 level: 4
             }
 
+            activeFocusOnTab: true
             highlighted: visualFocus
-            leading: Kirigami.Icon {
-                implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                isMask: true
-                color: tagsHeadingItem.labelItem.color
-                source: "action-rss_tag"
-            }
             text: i18n("Tags")
-            labelItem.color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            labelItem.font.pointSize: headingSizeCalculator.font.pointSize
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-            trailing: Kirigami.Icon {
-                implicitWidth: Kirigami.Units.iconSizes.small
-                implicitHeight: Kirigami.Units.iconSizes.small
-                source: tagsHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
-                isMask: true
-                color: tagsHeadingItem.labelItem.color
-            }
+
             onClicked: {
                 Config.tagsSectionExpanded = !Config.tagsSectionExpanded;
                 Config.save();
             }
+
+            contentItem: RowLayout {
+                Kirigami.Icon {
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                    isMask: true
+                    source: "action-rss_tag"
+                    color: Kirigami.Theme.disabledTextColor
+                }
+
+                QQC2.Label {
+                    font.pointSize: headingSizeCalculator.font.pointSize
+                    text: tagsHeadingItem.text
+                    color: Kirigami.Theme.disabledTextColor
+                    elide: Text.ElideRight
+                    Layout.fillWidth: true
+                }
+
+                Kirigami.Icon {
+                    implicitWidth: Kirigami.Units.iconSizes.small
+                    implicitHeight: Kirigami.Units.iconSizes.small
+                    source: tagsHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
+                    isMask: true
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
+                }
+            }
+
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
         }
 
         Flow {
@@ -105,45 +119,50 @@ QQC2.ScrollView {
             }
         }
 
-        Kirigami.BasicListItem {
+        Delegates.RoundedItemDelegate {
             id: collectionHeadingItem
 
             readonly property bool expanded: Config.collectionsSectionExpanded
 
-            separatorVisible: false
-            hoverEnabled: false
-            Layout.topMargin: Kirigami.Units.largeSpacing
-
-            leading: Kirigami.Icon {
-                implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                source: if (mode === CalendarApplication.Contact) {
-                    return "view-pim-contacts";
-                } else {
-                    return "view-calendar";
-                }
-                isMask: true
-                color: collectionHeadingItem.labelItem.color
-            }
-            text: if (mode === CalendarApplication.Contact) {
-                return i18n("Contacts");
-            } else {
-                return i18n("Calendars");
-            }
-            highlighted: visualFocus
-            labelItem.color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            labelItem.font.pointSize: headingSizeCalculator.font.pointSize
-            trailing: Kirigami.Icon {
-                implicitWidth: Kirigami.Units.iconSizes.small
-                implicitHeight: Kirigami.Units.iconSizes.small
-                source: collectionHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
-                isMask: true
-                color: collectionHeadingItem.labelItem.color
-            }
             onClicked: {
                 Config.collectionsSectionExpanded = !Config.collectionsSectionExpanded;
                 Config.save();
             }
+
+            hoverEnabled: false
+            text: i18n("Calendars")
+            Accessible.name: tagsHeadingItem.expanded ? i18nc('Accessible description of dropdown menu', 'Calendars, Expanded') : i18nc('Accessible description of dropdown menu', 'Calendars, Collapsed')
+            activeFocusOnTab: true
+
+            contentItem: RowLayout {
+                Kirigami.Icon {
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                    source: "view-calendar"
+                    isMask: true
+                    color: Kirigami.Theme.disabledTextColor
+                }
+
+                QQC2.Label {
+                    font.pointSize: headingSizeCalculator.font.pointSize
+                    text: collectionHeadingItem.text
+                    elide: Text.ElideRight
+                    color: Kirigami.Theme.disabledTextColor
+                    Layout.fillWidth: true
+                }
+
+                Kirigami.Icon {
+                    implicitWidth: Kirigami.Units.iconSizes.small
+                    implicitHeight: Kirigami.Units.iconSizes.small
+                    source: tagsHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
+                    isMask: true
+                    Layout.rightMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                    Layout.alignment: Qt.AlignVCenter
+                }
+            }
+
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
         }
 
         Repeater {
@@ -167,33 +186,90 @@ QQC2.ScrollView {
                 DelegateChoice {
                     roleValue: true
 
-                    Kirigami.BasicListItem {
+                    Delegates.RoundedItemDelegate {
                         id: collectionSourceItem
-                        label: display
+
+                        required property int index
+                        required property var model
+                        required property var decoration
+                        required property var collectionId
+                        required property bool kDescendantExpanded
+                        required property int kDescendantLevel
+                        required property color collectionColor
+                        required property int checkState
+
+                        text: model.display
                         highlighted: visualFocus || incidenceDropArea.containsDrag
-                        labelItem.color: visualFocus ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                        labelItem.font.weight: Font.DemiBold
-                        Layout.topMargin: 2 * Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Settings.isMobile ?
-                            (Kirigami.Units.largeSpacing * 2 * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1)) :
-                            (Kirigami.Units.largeSpacing * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1))
+                        activeFocusOnTab: true
+
+                        leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                        leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
+
+                        rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                        rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
+
                         hoverEnabled: false
                         enabled: !root.parentDrawerCollapsed
+                        onClicked: collectionList.model.toggleChildren(index)
 
-                        separatorVisible: false
+                        Layout.topMargin: 2 * Kirigami.Units.largeSpacing
+                        Layout.fillWidth: true
 
-                        leading: Kirigami.Icon {
-                            implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                            implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                            color: collectionSourceItem.labelItem.color
-                            isMask: true
-                            source: model.decoration
+                        Accessible.checkable: true
+                        Accessible.checked: collectionSourceItem.kDescendantExpanded
+
+                        contentItem: RowLayout {
+                            Kirigami.Icon {
+                                implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                                isMask: true
+                                source: collectionSourceItem.decoration
+                                color: Kirigami.Theme.disabledTextColor
+                                Layout.leftMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                            }
+
+                            QQC2.Label {
+                                text: collectionSourceItem.text
+                                elide: Text.ElideRight
+                                font.pointSize: headingSizeCalculator.font.pointSize
+                                color: Kirigami.Theme.disabledTextColor
+
+                                Layout.fillWidth: true
+                            }
+
+                            QQC2.BusyIndicator {
+                                id: loadingIndicator
+                                Layout.fillHeight: true
+                                padding: 0
+                                visible: false
+                                running: visible
+                            }
+
+                            Kirigami.Icon {
+                                implicitWidth: Kirigami.Units.iconSizes.small
+                                implicitHeight: Kirigami.Units.iconSizes.small
+                                source: collectionSourceItem.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
+                                isMask: true
+                            }
+                            ColoredCheckbox {
+                                id: collectionCheckbox
+
+                                visible: model.checkState != null
+                                color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
+                                checked: model.checkState === 2
+                                onCheckedChanged: root.collectionCheckChanged()
+                                onClicked: {
+                                    model.checkState = model.checkState === 0 ? 2 : 0
+                                    root.collectionCheckChanged()
+                                }
+
+                                Layout.alignment: Qt.AlignVCenter
+                            }
                         }
-                        leadingPadding: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
 
                         Connections {
                             target: root.agentConfiguration
-                            property var collectionDetails: CalendarManager.getCollectionDetails(collectionId)
+                            property var collectionDetails: CalendarManager.getCollectionDetails(collectionSourceItem.collectionId)
 
                             function onAgentProgressChanged(agentData) {
                                 if(agentData.instanceId === collectionDetails.resource &&
@@ -206,39 +282,6 @@ QQC2.ScrollView {
                             }
                         }
 
-                        trailing: RowLayout {
-                            QQC2.BusyIndicator {
-                                id: loadingIndicator
-                                Layout.fillHeight: true
-                                padding: 0
-                                visible: false
-                                running: visible
-                            }
-
-                            Kirigami.Icon {
-                                implicitWidth: Kirigami.Units.iconSizes.small
-                                implicitHeight: Kirigami.Units.iconSizes.small
-                                source: model.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
-                                color: collectionSourceItem.labelItem.color
-                                isMask: true
-                            }
-                            ColoredCheckbox {
-                                id: collectionCheckbox
-
-                                Layout.fillHeight: true
-                                visible: model.checkState != null
-                                color: model.collectionColor ?? Kirigami.Theme.highlightedTextColor
-                                checked: model.checkState === 2
-                                onCheckedChanged: root.collectionCheckChanged()
-                                onClicked: {
-                                    model.checkState = model.checkState === 0 ? 2 : 0
-                                    root.collectionCheckChanged()
-                                }
-                            }
-                        }
-
-                        onClicked: collectionList.model.toggleChildren(index)
-
                         CalendarItemTapHandler {
                             collectionId: model.collectionId
                             collectionDetails: CalendarManager.getCollectionDetails(collectionId)
@@ -249,7 +292,6 @@ QQC2.ScrollView {
                         DropArea {
                             id: incidenceDropArea
                             property var collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
-                            parent: collectionSourceItem.contentItem // Otherwise label elide breaks
                             anchors.fill: parent
                             z: 9999
                             enabled: collectionDetails.canCreate
@@ -267,39 +309,70 @@ QQC2.ScrollView {
 
                 DelegateChoice {
                     roleValue: false
-                    Kirigami.BasicListItem {
+
+                    Delegates.RoundedItemDelegate {
                         id: collectionItem
-                        label: display
-                        labelItem.color: Kirigami.Theme.textColor
-                        leftPadding: Kirigami.Settings.isMobile ?
-                            (Kirigami.Units.largeSpacing * 2 * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1)) :
-                            (Kirigami.Units.largeSpacing * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1))
-                        separatorVisible: false
+
+                        required property int index
+                        required property var model
+                        required property var decoration
+                        required property var collectionId
+                        required property bool kDescendantExpanded
+                        required property int kDescendantLevel
+                        required property color collectionColor
+                        required property int checkState
+
+                        activeFocusOnTab: true
+                        text: model.display
                         enabled: !root.parentDrawerCollapsed
                         highlighted: visualFocus || incidenceDropArea.containsDrag
 
-                        leading: Kirigami.Icon {
-                            implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                            implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                            source: model.decoration
-                        }
-                        leadingPadding: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
+                        leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                        leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
-                        trailing: ColoredCheckbox {
-                            id: collectionCheckbox
+                        rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                        rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
-                            visible: model.checkState != null
-                            color: model.collectionColor
-                            checked: model.checkState === 2
-                            onCheckedChanged: root.collectionCheckChanged()
-                            onClicked: {
-                                model.checkState = model.checkState === 0 ? 2 : 0
-                                root.collectionCheckChanged()
+                        Layout.fillWidth: true
+
+                        Accessible.checkable: true
+                        Accessible.checked: model.checkState === 2
+                        Accessible.onToggleAction: clicked()
+
+                        contentItem: RowLayout {
+                            Kirigami.Icon {
+                                implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                                source: collectionItem.decoration
+                                Layout.leftMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                            }
+
+                            QQC2.Label {
+                                text: collectionItem.text
+                                elide: Text.ElideRight
+                                Layout.fillWidth: true
+                            }
+
+                            ColoredCheckbox {
+                                id: collectionCheckbox
+
+                                Layout.alignment: Qt.AlignVCenter
+                                visible: model.checkState != null
+                                color: collectionItem.collectionColor
+                                checked: model.checkState === 2
+                                onCheckedChanged: root.collectionCheckChanged()
+                                activeFocusOnTab: false
+                                onClicked: {
+                                    model.checkState = model.checkState === 0 ? 2 : 0
+                                    root.collectionCheckChanged()
+                                }
                             }
                         }
 
                         onClicked: {
                             Filter.collectionId = collectionId;
+                            model.checkState = model.checkState === 0 ? 2 : 0
+                            root.collectionCheckChanged()
                             if (root.parentDrawerModal) {
                                 root.closeParentDrawer();
                             }
@@ -316,7 +389,6 @@ QQC2.ScrollView {
                         DropArea {
                             id: incidenceDropArea
                             property var collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
-                            parent: collectionItem.contentItem // Otherwise label elide breaks
                             anchors.fill: parent
                             z: 9999
                             enabled: collectionDetails.canCreate
