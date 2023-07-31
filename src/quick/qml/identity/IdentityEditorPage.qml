@@ -15,12 +15,12 @@ Kirigami.ScrollablePage {
     property alias mode: backend.mode
     property alias identityUoid: backend.identityUoid
 
-    property bool saving: false
+    required property bool allowDelete
+    required property string identityName
 
     readonly property IdentityEditorBackend backend: IdentityEditorBackend {
         id: backend
         mode: IdentityEditorBackend.CreateMode
-        //onFinished: root.closeDialog()
     }
 
     QQC2.Action {
@@ -80,6 +80,14 @@ Kirigami.ScrollablePage {
             standardButtons: QQC2.DialogButtonBox.Cancel
 
             QQC2.Button {
+                icon.name: "delete"
+                text: i18n("Delete")
+                visible: root.mode === IdentityEditorBackend.EditMode
+                enabled: root.allowDelete
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.DestructiveRole
+            }
+
+            QQC2.Button {
                 icon.name: root.mode === IdentityEditorBackend.EditMode ? "document-save" : "list-add"
                 text: root.mode === IdentityEditorBackend.EditMode ? i18n("Save") : i18n("Add")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
@@ -87,6 +95,36 @@ Kirigami.ScrollablePage {
 
             onRejected: root.closeDialog()
             onAccepted: submitAction.trigger();
+            onDiscarded: {
+                dialogLoader.active = true;
+                dialogLoader.item.open();
+            }
+
+            Loader {
+                id: dialogLoader
+                sourceComponent: Kirigami.PromptDialog {
+                    id: dialog
+                    title: i18n("Delete %1", root.identityName)
+                    subtitle: i18n("Are you sure you want to delete this identity?")
+                    standardButtons: Kirigami.Dialog.NoButton
+
+                    customFooterActions: [
+                        Kirigami.Action {
+                            text: i18n("Delete")
+                            iconName: "delete"
+                            onTriggered: {
+                                IdentityUtils.removeIdentity(root.identityName);
+                                dialog.close();
+                            }
+                        },
+                        Kirigami.Action {
+                            text: i18n("Cancel")
+                            iconName: "dialog-cancel"
+                            onTriggered: dialog.close()
+                        }
+                    ]
+                }
+            }
         }
     }
 }

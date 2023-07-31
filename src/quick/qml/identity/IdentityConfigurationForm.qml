@@ -30,41 +30,12 @@ MobileForm.FormCard {
                 leadingPadding: Kirigami.Units.largeSpacing
                 text: model.display
                 onClicked: {
-                    dialogLoader.active = true;
-                    dialogLoader.item.open();
-                }
-
-                Loader {
-                    id: dialogLoader
-                    sourceComponent: Kirigami.PromptDialog {
-                        id: dialog
-                        title: i18n("Configure %1", model.display)
-                        subtitle: i18n("Modify or delete this account agent.")
-                        standardButtons: Kirigami.Dialog.NoButton
-
-                        customFooterActions: [
-                            Kirigami.Action {
-                                text: i18n("Modify")
-                                iconName: "edit-entry"
-                                onTriggered: {
-                                    pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
-                                        mode: IdentityEditorBackend.EditMode,
-                                        identityUoid: model.uoid
-                                    }, {title: i18nc("@title", "Edit Identity")});
-                                    dialog.close();
-                                }
-                            },
-                            Kirigami.Action {
-                                text: i18n("Delete")
-                                iconName: "delete"
-                                enabled: identityRepeater.count > 1
-                                onTriggered: {
-                                    IdentityUtils.removeIdentity(model.identityName);
-                                    dialog.close();
-                                }
-                            }
-                        ]
-                    }
+                    pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
+                        mode: IdentityEditorBackend.EditMode,
+                        identityUoid: model.uoid,
+                        allowDelete: identityRepeater.count > 1,
+                        identityName: model.display
+                    }, {title: i18nc("@title", "Edit Identity")});
                 }
             }
         }
