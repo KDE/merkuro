@@ -316,6 +316,7 @@ Kirigami.OverlayDrawer {
                             icon.name: modelData.icon.name
                             action: modelData
                             visible: modelData.visible
+                            activeFocusOnTab: true
                             Layout.fillWidth: true
                         }
                     }

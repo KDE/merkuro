@@ -213,6 +213,7 @@ Item {
                                             visible: root.showDayIndicator
                                             enabled: root.daysToShow > 1
                                             onClicked: CalendarUiUtils.openDayLayer(gridItem.date)
+                                            activeFocusOnTab: isCurrentView
 
                                             anchors {
                                                 top: parent.top
@@ -220,11 +221,15 @@ Item {
                                                 left: parent.left
                                             }
 
+                                            Accessible.name: gridItem.isToday && gridItem.width > Kirigami.Units.gridUnit * 5 ? todayLabel.text.replace(/<b>/g, '').replace(/<\/b>/g, '') : gridItem.date.toLocaleDateString(Qt.locale(), Locale.LongFormat)
+
                                             contentItem: RowLayout {
                                                 id: dayNumberLayout
                                                 visible: root.showDayIndicator
 
                                                 QQC2.Label {
+                                                    id: todayLabel
+
                                                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
                                                     padding: Kirigami.Units.smallSpacing
                                                     text: i18n("<b>Today</b>")
@@ -233,6 +238,8 @@ Item {
                                                     visible: gridItem.isToday && gridItem.width > Kirigami.Units.gridUnit * 5
                                                 }
                                                 QQC2.Label {
+                                                    id: dateLabel
+
                                                     Layout.alignment: Qt.AlignRight | Qt.AlignTop
                                                     text: gridItem.date.toLocaleDateString(Qt.locale(), gridItem.day == 1 ?
                                                     "d MMM" : "d")

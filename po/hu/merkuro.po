@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-29 00:47+0000\n"
+"POT-Creation-Date: 2023-07-31 00:48+0000\n"
 "PO-Revision-Date: 2022-02-21 13:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -452,26 +452,18 @@ msgstr "%1 (legalacsonyabb prioritás)"
 msgid "No set priority level"
 msgstr "Nincs megadva prioritási szint"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:36
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
 msgstr "Naptárszín kiválasztása"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:63
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:57
 #, kde-format
 msgid "Tags"
 msgstr "Címkék"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:129
-#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#, kde-format
-msgid "Contacts"
-msgstr "Névjegyek"
-
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:131
-#: calendar/qml/Settings/CalendarSettingsPage.qml:14
-#: calendar/qml/Settings/SettingsPage.qml:24
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
 #: calendar/qml/Settings/SourceSettingsPage.qml:20
 #, kde-format
 msgid "Calendars"
@@ -837,21 +829,21 @@ msgstr "Oldalsáv összecsukása"
 msgid "Remove Tag"
 msgstr "Címke eltávolítása"
 
-#: calendar/qml/Controls/TitleDateButton.qml:29
-#: calendar/qml/Controls/TitleDateButton.qml:34
+#: calendar/qml/Controls/TitleDateButton.qml:31
+#: calendar/qml/Controls/TitleDateButton.qml:36
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "<b>%1</b> %2"
 msgstr "%2 <b>%1</b>"
 
-#: calendar/qml/Controls/TitleDateButton.qml:37
+#: calendar/qml/Controls/TitleDateButton.qml:39
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/Controls/TitleDateButton.qml:39
+#: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
@@ -1344,7 +1336,7 @@ msgstr "Újra"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: calendar/qml/Drawers/MainDrawer.qml:374
+#: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
 msgstr "Minden feladat megtekintése"
@@ -1500,71 +1492,71 @@ msgstr "Ütemezés nézet"
 msgid "Tasks"
 msgstr "Feladatok"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:238
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Visszaállítás"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:251
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:253
 #, kde-format
 msgid "All day or Multi day"
 msgstr "Minden nap, vagy több nap"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:265
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "Nap kiürítése."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Tap"
 msgstr "Koppintson"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Click"
 msgstr "Kattintson"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:284
+#: calendar/qml/MainViews/BasicMonthListView.qml:285
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "Nincs semmi a mai napra. %1 a hozzáadáshoz."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:407
+#: calendar/qml/MainViews/BasicMonthListView.qml:408
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (%2 / %3 nap)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:463
+#: calendar/qml/MainViews/BasicMonthListView.qml:464
 #, kde-format
 msgid "Runs all day"
 msgstr "Egész napos"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:467
+#: calendar/qml/MainViews/BasicMonthListView.qml:468
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:470
+#: calendar/qml/MainViews/BasicMonthListView.qml:471
 #, kde-format
 msgid "Starts at %1"
 msgstr "Kezdés: %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:472
+#: calendar/qml/MainViews/BasicMonthListView.qml:473
 #, kde-format
 msgid "Ends at %1"
 msgstr "Befejezés: %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:474
+#: calendar/qml/MainViews/BasicMonthListView.qml:475
 #, kde-format
 msgid "Runs All Day"
 msgstr "Egész napos"
 
-#: calendar/qml/MainViews/DayGridView.qml:230
+#: calendar/qml/MainViews/DayGridView.qml:235
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Ma</b>"
@@ -1651,6 +1643,12 @@ msgstr "Nincsenek befejezett feladatok"
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "Nincsenek befejezendő feladatok"
+
+#: calendar/qml/MainViews/TodoTreeView.qml:224
+#, fuzzy, kde-format
+#| msgid "(overdue)"
+msgid " , is overdue"
+msgstr "(lejárt)"
 
 #: calendar/qml/MainViews/TodoView.qml:102
 #, kde-format
@@ -1775,16 +1773,6 @@ msgstr "Súgó"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Kalendar kézikönyv"
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:138
-#, kde-format
-msgid "Change Calendar Color…"
-msgstr "Naptárszín megváltoztatása…"
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:148
-#, kde-format
-msgid "Choose Calendar Color"
-msgstr "Naptárszín kiválasztása"
 
 #: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
 #, kde-format
@@ -2339,7 +2327,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr ""
 
-#: contacts/contactmanager.cpp:193
+#: contacts/contactmanager.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Properties of Calendar %1"
@@ -2391,6 +2379,12 @@ msgstr "Kész"
 #, kde-format
 msgid "Select Email Address"
 msgstr "Válasszon e-mail címet"
+
+#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:104
+#, kde-format
+msgid "Contacts"
+msgstr "Névjegyek"
 
 #: contacts/qml/ContactView.qml:21
 #, fuzzy, kde-format
@@ -3507,6 +3501,12 @@ msgstr "Új címkre létrehozása…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Új címke létrehozása gyorsan."
+
+#~ msgid "Change Calendar Color…"
+#~ msgstr "Naptárszín megváltoztatása…"
+
+#~ msgid "Choose Calendar Color"
+#~ msgstr "Naptárszín kiválasztása"
 
 #, fuzzy
 #~| msgid "Reminders:"

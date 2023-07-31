@@ -157,6 +157,9 @@ TreeListView {
     }
     delegate: AbstractTreeItem {
         id: listItem
+
+        readonly property bool validEndDt: !isNaN(model.endTime.getTime())
+
         objectName: "taskDelegate"
 
         decoration.decorationHighlightColor: model.color
@@ -215,6 +218,13 @@ TreeListView {
         ]
 
         onClicked: root.viewAndRetainTodoData(model, listItem);
+
+        text: model.text
+        Accessible.description: if (listItem.validEndDt) {
+            model.displayDueDate + model.isOverdue ? i18n(" , is overdue") : ""
+        } else {
+            ''
+        }
 
         contentItem: IncidenceMouseArea {
             id: mouseArea
@@ -336,12 +346,10 @@ TreeListView {
                     QQC2.Label {
                         id: dateLabel
 
-                        readonly property bool validEndDt: !isNaN(model.endTime.getTime())
-
                         text: model.displayDueDate
                         color: model.isOverdue ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                         font: Kirigami.Theme.smallFont
-                        visible: validEndDt
+                        visible: listItem.validEndDt
                     }
                     Kirigami.Icon {
                         id: recurIcon

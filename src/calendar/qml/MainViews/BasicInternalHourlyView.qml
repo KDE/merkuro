@@ -129,10 +129,11 @@ Column {
                 QQC2.Button {
                     implicitHeight: dayHeading.implicitHeight
                     width: parent.width
+                    activeFocusOnTab: viewColumn.isCurrentItem
 
                     flat: true
                     enabled: viewColumn.daysToShow === 7
-                    Accessible.name: dayHeading.text
+                    Accessible.name: dayHeading.text.replace(/<\/?b>/g, '')
                     onClicked: {
                         Calendar.DateTimeState.selectedDate = dayDelegate.headingDate;
                         applicationWindow().pageStack.layers.push("qrc:/HourlyView.qml", {
@@ -212,6 +213,7 @@ Column {
             height: Calendar.Config.weekViewAllDayHeaderHeight !== -1 ?
                 resetHeaderHeightButton.height :
                 0
+            visible: height !== 0
             z: -1
             corners.bottomRightRadius: Kirigami.Units.smallSpacing
             shadow.size: Kirigami.Units.largeSpacing
@@ -660,7 +662,7 @@ Column {
 
                             Loader {
                                 anchors.fill: parent
-                                asynchronous: !viewColumn.isCurrentView
+                                asynchronous: !viewColumn.isCurrentItem
 
                                 ListView {
                                     anchors.fill: parent
@@ -783,7 +785,7 @@ Column {
 
                             Loader {
                                 anchors.fill: parent
-                                asynchronous: !viewColumn.isCurrentView
+                                asynchronous: !viewColumn.isCurrentItem
                                 Repeater {
                                     id: hourlyIncidencesRepeater
                                     model: dayColumn.incidences

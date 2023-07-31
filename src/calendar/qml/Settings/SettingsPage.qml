@@ -21,12 +21,6 @@ Kirigami.CategorizedSettings {
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
             page: Qt.resolvedUrl("SourceSettingsPage.qml")
-        },
-        Kirigami.SettingAction {
-            actionName: "calendars"
-            text: i18n("Calendars")
-            icon.name: "korganizer"
-            page: Qt.resolvedUrl("CalendarSettingsPage.qml")
         }
     ]
 }
