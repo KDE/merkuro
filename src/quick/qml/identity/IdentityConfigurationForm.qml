@@ -50,7 +50,7 @@ MobileForm.FormCard {
                                 pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
                                     mode: IdentityEditorBackend.EditMode,
                                     identityUoid: model.uoid
-                                })
+                                }, {title: i18nc("@title", "Edit Identity")});
                                 dialog.close();
                             }
                         },
