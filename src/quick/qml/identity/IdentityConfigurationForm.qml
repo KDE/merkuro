@@ -43,26 +43,26 @@ MobileForm.FormCard {
                         standardButtons: Kirigami.Dialog.NoButton
 
                         customFooterActions: [
-                        Kirigami.Action {
-                            text: i18n("Modify")
-                            iconName: "edit-entry"
-                            onTriggered: {
-                                pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
-                                    mode: IdentityEditorBackend.EditMode,
-                                    identityUoid: model.uoid
-                                }, {title: i18nc("@title", "Edit Identity")});
-                                dialog.close();
+                            Kirigami.Action {
+                                text: i18n("Modify")
+                                iconName: "edit-entry"
+                                onTriggered: {
+                                    pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
+                                        mode: IdentityEditorBackend.EditMode,
+                                        identityUoid: model.uoid
+                                    }, {title: i18nc("@title", "Edit Identity")});
+                                    dialog.close();
+                                }
+                            },
+                            Kirigami.Action {
+                                text: i18n("Delete")
+                                iconName: "delete"
+                                enabled: identityRepeater.count > 1
+                                onTriggered: {
+                                    IdentityUtils.removeIdentity(model.identityName);
+                                    dialog.close();
+                                }
                             }
-                        },
-                        Kirigami.Action {
-                            text: i18n("Delete")
-                            iconName: "delete"
-                            enabled: identityRepeater.count > 1
-                            onTriggered: {
-                                IdentityUtils.removeIdentity(model.identityName);
-                                dialog.close();
-                            }
-                        }
                         ]
                     }
                 }
