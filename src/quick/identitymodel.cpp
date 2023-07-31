@@ -70,12 +70,13 @@ QString IdentityModel::email(uint uoid)
 
 QHash<int, QByteArray> IdentityModel::roleNames() const
 {
-    return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
+    auto roles = QAbstractListModel::roleNames();
+    roles.insert({
         {UoidRole, QByteArrayLiteral("uoid")},
         {EmailRole, QByteArrayLiteral("email")},
         {IdentityNameRole, QByteArrayLiteral("identityName")},
-    };
+    });
+    return roles;
 }
 
 }
