@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:36+0000\n"
+"POT-Creation-Date: 2023-07-31 03:13+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -453,26 +453,18 @@ msgstr "%1 (ən aşağı üstünlük)"
 msgid "No set priority level"
 msgstr "Üstünlük səviyyəsi verilməyib"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:36
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
 msgstr "Təqvimin rəngini seçin"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:63
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:57
 #, kde-format
 msgid "Tags"
 msgstr "Yarlıqlar"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:129
-#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#, kde-format
-msgid "Contacts"
-msgstr "Əlaqələr"
-
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:131
-#: calendar/qml/Settings/CalendarSettingsPage.qml:14
-#: calendar/qml/Settings/SettingsPage.qml:24
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
 #: calendar/qml/Settings/SourceSettingsPage.qml:20
 #, kde-format
 msgid "Calendars"
@@ -827,21 +819,21 @@ msgstr "Əsas paneli bağlayın"
 msgid "Remove Tag"
 msgstr "Yarlığı qaldırın"
 
-#: calendar/qml/Controls/TitleDateButton.qml:29
-#: calendar/qml/Controls/TitleDateButton.qml:34
+#: calendar/qml/Controls/TitleDateButton.qml:31
+#: calendar/qml/Controls/TitleDateButton.qml:36
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "<b>%1</b> %2"
 msgstr "<b>%1</b> %2"
 
-#: calendar/qml/Controls/TitleDateButton.qml:37
+#: calendar/qml/Controls/TitleDateButton.qml:39
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/Controls/TitleDateButton.qml:39
+#: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
@@ -1331,7 +1323,7 @@ msgstr "Təkrar edin"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: calendar/qml/Drawers/MainDrawer.qml:374
+#: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
 msgstr "Bütün tapşırıqlara baxış"
@@ -1473,71 +1465,71 @@ msgstr "Planlaşdırma"
 msgid "Tasks"
 msgstr "Tapşırıqlar"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:238
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:251
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:253
 #, kde-format
 msgid "All day or Multi day"
 msgstr "Bütün günlər və ya bir neçə gün"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:265
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "Günü təmizləyin."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Tap"
 msgstr "Toxunun"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Click"
 msgstr "Vurun"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:284
+#: calendar/qml/MainViews/BasicMonthListView.qml:285
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "Bu gün qeydlərdə heç nə yoxdur. əlavə etmək üçün %1."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:407
+#: calendar/qml/MainViews/BasicMonthListView.qml:408
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (%3-n %2)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:463
+#: calendar/qml/MainViews/BasicMonthListView.qml:464
 #, kde-format
 msgid "Runs all day"
 msgstr "Bütöv gün davam edir"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:467
+#: calendar/qml/MainViews/BasicMonthListView.qml:468
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:470
+#: calendar/qml/MainViews/BasicMonthListView.qml:471
 #, kde-format
 msgid "Starts at %1"
 msgstr "Başlayır: %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:472
+#: calendar/qml/MainViews/BasicMonthListView.qml:473
 #, kde-format
 msgid "Ends at %1"
 msgstr "Sonlanır: %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:474
+#: calendar/qml/MainViews/BasicMonthListView.qml:475
 #, kde-format
 msgid "Runs All Day"
 msgstr "Bütöv gün davam edir"
 
-#: calendar/qml/MainViews/DayGridView.qml:230
+#: calendar/qml/MainViews/DayGridView.qml:235
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Bu gün</b>"
@@ -1621,6 +1613,12 @@ msgstr "Tamamlanmış tapşırıqlar yoxdur"
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "Tamamlanacaq tapşırıq qalmayıb"
+
+#: calendar/qml/MainViews/TodoTreeView.qml:224
+#, fuzzy, kde-format
+#| msgid "(overdue)"
+msgid " , is overdue"
+msgstr "(vaxtı keçmiş)"
 
 #: calendar/qml/MainViews/TodoView.qml:102
 #, kde-format
@@ -1745,16 +1743,6 @@ msgstr "Kömək"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Kalebdar sorğu kitabı"
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:138
-#, kde-format
-msgid "Change Calendar Color…"
-msgstr "Təqvimin rəngini dəyişin..."
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:148
-#, kde-format
-msgid "Choose Calendar Color"
-msgstr "Təqvimin rəngini seçin"
 
 #: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
 #, kde-format
@@ -2310,7 +2298,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "E-Poçt"
 
-#: contacts/contactmanager.cpp:193
+#: contacts/contactmanager.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -2359,6 +2347,12 @@ msgstr "Hazır oldu"
 #, kde-format
 msgid "Select Email Address"
 msgstr "E-poçt ünvanını seçin"
+
+#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:104
+#, kde-format
+msgid "Contacts"
+msgstr "Əlaqələr"
 
 #: contacts/qml/ContactView.qml:21
 #, fuzzy, kde-format
@@ -3510,6 +3504,12 @@ msgstr "Yeni yarlıq yaradın..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Cəld yeni yarlıq əlavə edin."
+
+#~ msgid "Change Calendar Color…"
+#~ msgstr "Təqvimin rəngini dəyişin..."
+
+#~ msgid "Choose Calendar Color"
+#~ msgstr "Təqvimin rəngini seçin"
 
 #, fuzzy
 #~| msgid "Mail"

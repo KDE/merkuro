@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:36+0000\n"
+"POT-Creation-Date: 2023-07-31 03:13+0000\n"
 "PO-Revision-Date: 2023-02-10 00:59+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -453,26 +453,18 @@ msgstr ""
 msgid "No set priority level"
 msgstr ""
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:36
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
 msgstr ""
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:63
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:57
 #, kde-format
 msgid "Tags"
 msgstr ""
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:129
-#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#, kde-format
-msgid "Contacts"
-msgstr ""
-
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:131
-#: calendar/qml/Settings/CalendarSettingsPage.qml:14
-#: calendar/qml/Settings/SettingsPage.qml:24
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
 #: calendar/qml/Settings/SourceSettingsPage.qml:20
 #, kde-format
 msgid "Calendars"
@@ -825,21 +817,21 @@ msgstr ""
 msgid "Remove Tag"
 msgstr ""
 
-#: calendar/qml/Controls/TitleDateButton.qml:29
-#: calendar/qml/Controls/TitleDateButton.qml:34
+#: calendar/qml/Controls/TitleDateButton.qml:31
+#: calendar/qml/Controls/TitleDateButton.qml:36
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "<b>%1</b> %2"
 msgstr ""
 
-#: calendar/qml/Controls/TitleDateButton.qml:37
+#: calendar/qml/Controls/TitleDateButton.qml:39
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 - %2"
 msgstr ""
 
-#: calendar/qml/Controls/TitleDateButton.qml:39
+#: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
@@ -1318,7 +1310,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:374
+#: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
 msgstr ""
@@ -1460,71 +1452,71 @@ msgstr ""
 msgid "Tasks"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:238
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:251
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:253
 #, kde-format
 msgid "All day or Multi day"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:265
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Tap"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:283
+#: calendar/qml/MainViews/BasicMonthListView.qml:284
 #, kde-format
 msgid "Click"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:284
+#: calendar/qml/MainViews/BasicMonthListView.qml:285
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:407
+#: calendar/qml/MainViews/BasicMonthListView.qml:408
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:463
+#: calendar/qml/MainViews/BasicMonthListView.qml:464
 #, kde-format
 msgid "Runs all day"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:467
+#: calendar/qml/MainViews/BasicMonthListView.qml:468
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:470
+#: calendar/qml/MainViews/BasicMonthListView.qml:471
 #, kde-format
 msgid "Starts at %1"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:472
+#: calendar/qml/MainViews/BasicMonthListView.qml:473
 #, kde-format
 msgid "Ends at %1"
 msgstr ""
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:474
+#: calendar/qml/MainViews/BasicMonthListView.qml:475
 #, kde-format
 msgid "Runs All Day"
 msgstr ""
 
-#: calendar/qml/MainViews/DayGridView.qml:230
+#: calendar/qml/MainViews/DayGridView.qml:235
 #, kde-format
 msgid "<b>Today</b>"
 msgstr ""
@@ -1607,6 +1599,11 @@ msgstr ""
 #: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
+msgstr ""
+
+#: calendar/qml/MainViews/TodoTreeView.qml:224
+#, kde-format
+msgid " , is overdue"
 msgstr ""
 
 #: calendar/qml/MainViews/TodoView.qml:102
@@ -1729,16 +1726,6 @@ msgstr ""
 #, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr ""
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:138
-#, kde-format
-msgid "Change Calendar Color…"
-msgstr ""
-
-#: calendar/qml/Settings/CalendarSettingsPage.qml:148
-#, kde-format
-msgid "Choose Calendar Color"
 msgstr ""
 
 #: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
@@ -2271,7 +2258,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr ""
 
-#: contacts/contactmanager.cpp:193
+#: contacts/contactmanager.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -2317,6 +2304,12 @@ msgstr ""
 #: contacts/qml/ContactChooserPage.qml:50
 #, kde-format
 msgid "Select Email Address"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:104
+#, kde-format
+msgid "Contacts"
 msgstr ""
 
 #: contacts/qml/ContactView.qml:21
