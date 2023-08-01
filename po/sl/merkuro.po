@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-31 03:13+0000\n"
-"PO-Revision-Date: 2023-07-14 06:49+0200\n"
+"PO-Revision-Date: 2023-07-31 06:59+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1635,11 +1635,9 @@ msgid "No tasks left to complete"
 msgstr "Nobene naloge ni več za dokončati"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Please retain parenthesis and space"
-#| msgid " (overdue)"
+#, kde-format
 msgid " , is overdue"
-msgstr " (preteklo)"
+msgstr " , je preteklo"
 
 #: calendar/qml/MainViews/TodoView.qml:102
 #, kde-format
@@ -2354,25 +2352,22 @@ msgid "Contacts"
 msgstr "Stiki"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Ustvari"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Nov stik…"
+msgstr "Nov stik"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Contact"
-msgstr "Nova skupina stikov…"
+msgstr "Nova skupina stikov"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2453,7 +2448,7 @@ msgstr "Ime stika"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
@@ -2461,10 +2456,9 @@ msgid "Honorific prefix"
 msgstr "Častna predpona"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "G."
+msgstr "Dr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2527,10 +2521,9 @@ msgid "Honorific suffix"
 msgstr "Častni naslov za imenom"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2670,18 +2663,18 @@ msgstr "Uredi stik"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Opozorilo"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Ta stik je bil med urejanjem spremenjen drugje."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Katere spremembe je treba ohraniti?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2696,17 +2689,14 @@ msgid "External changes"
 msgstr "Zunanje spremembe"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "Uredi %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Nova skupina stikov…"
+msgstr "Ustvari skupino stikov"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2726,12 +2716,12 @@ msgstr "Člani"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
-msgstr ""
+msgstr "V skupino stikov je mogoče dodati samo stike z e-poštnim naslovom"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "Ta skupina stikov je bila med urejanjem spremenjena drugje."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -3073,10 +3063,9 @@ msgstr[2] "Naslovi e-pošte"
 msgstr[3] "Naslovi e-pošte"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "Ali zares želite zbrisati koledar: \"%1\"?"
+msgstr "Ali zares želite zbrisati stik: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3169,18 +3158,15 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Mercuro koledar"
+msgstr "Mercuro pošta"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
+#, kde-format
 msgid "Email Client"
-msgstr "Aplikacija odjemalca elektronske pošte"
+msgstr "Odjemalec elektronske pošte"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
@@ -3249,22 +3235,20 @@ msgid "Move to trash"
 msgstr "Prenesi v smeti"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Novo sporočilo"
+msgstr "Označi sporočilo"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "Označi sporočilo kot prebrano"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "Označi sporočilo kot neprebrano"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3272,34 +3256,29 @@ msgid "Don't Mark as Important"
 msgstr "Ne označi kot pomembno"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Ne označi kot pomembno"
+msgstr "Označi kot pomembno"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Prenesi v smeti"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Novo sporočilo"
+msgstr "Premakni sporočilo v..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "Kopiraj sporočilo v..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Dodaj opomnik"
+msgstr "Dodaj opomnik za spremljanje"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3429,10 +3408,9 @@ msgid "Loading mail..."
 msgstr "Nalaganje pošte..."
 
 #: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgid "Sender:"
-msgstr "Pošlji"
+msgstr "Pošiljatelj:"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format
@@ -3445,10 +3423,9 @@ msgid "Import key"
 msgstr "Uvozi ključ"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "Nastavitve mesečnega pogleda"
+msgstr "Nastavitve računa"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
@@ -3477,10 +3454,9 @@ msgid "Add Account"
 msgstr "Dodaj račun"
 
 #: quick/qml/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identities"
-msgstr "Identiteta:"
+msgstr "Identitete"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
