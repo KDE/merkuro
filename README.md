@@ -81,7 +81,7 @@ While we’re actively working on reducing our number of external dependencies, 
 
 Other dependencies we require are there so we don’t bloat Merkuro by copying functionality that can be provided by an external package also used by other applications.
 
-#### Will <insert Merkuro application> replace <insert Kontact application>?
+#### Will \<insert Merkuro application> replace \<insert Kontact application>?
 
 For the time being, no.
 
