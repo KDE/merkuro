@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <QObject>
 
 #include "identitywrapper.h"
 
-using namespace KIdentityManagement;
+using namespace KIdentityManagementCore;
 
 namespace Akonadi
 {

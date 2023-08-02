@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <QObject>
 
-using namespace KIdentityManagement;
+using namespace KIdentityManagementCore;
 
 namespace Akonadi
 {

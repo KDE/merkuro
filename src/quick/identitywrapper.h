@@ -3,11 +3,11 @@
 
 #pragma once
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/Signature>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/Signature>
 #include <QObject>
 
-using namespace KIdentityManagement;
+using namespace KIdentityManagementCore;
 
 namespace Akonadi
 {

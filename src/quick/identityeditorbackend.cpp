@@ -5,7 +5,7 @@
 
 #include "identitywrapper.h"
 
-using namespace KIdentityManagement;
+using namespace KIdentityManagementCore;
 
 namespace Akonadi
 {

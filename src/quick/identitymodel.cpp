@@ -6,7 +6,7 @@
 #include <KIdentityManagementCore/IdentityManager>
 #include <KLocalizedString>
 
-using namespace KIdentityManagement;
+using namespace KIdentityManagementCore;
 
 namespace Akonadi
 {
