@@ -101,3 +101,5 @@ void IdentityEditorBackend::removeEmailAlias(const QString &alias)
 }
 }
 }
+
+#include "moc_identityeditorbackend.cpp"

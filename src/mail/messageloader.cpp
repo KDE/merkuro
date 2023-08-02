@@ -48,3 +48,5 @@ KMime::Message::Ptr MessageLoader::message() const
 {
     return m_message;
 }
+
+#include "moc_messageloader.cpp"

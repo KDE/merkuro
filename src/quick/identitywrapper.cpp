@@ -610,3 +610,5 @@ bool IdentityWrapper::isNull() const
 }
 }
 }
+
+#include "moc_identitywrapper.cpp"

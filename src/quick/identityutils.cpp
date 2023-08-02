@@ -24,3 +24,5 @@ bool IdentityUtils::removeIdentity(const QString &identityName)
 
 }
 }
+
+#include "moc_identityutils.cpp"
