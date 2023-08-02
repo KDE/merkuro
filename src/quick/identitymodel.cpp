@@ -6,6 +6,8 @@
 #include <KIdentityManagementCore/IdentityManager>
 #include <KLocalizedString>
 
+using namespace KIdentityManagement;
+
 namespace Akonadi
 {
 namespace Quick
@@ -15,6 +17,7 @@ IdentityModel::IdentityModel(QObject *parent)
     , m_identityManager(KIdentityManagementCore::IdentityManager::self())
 {
     connect(m_identityManager, &KIdentityManagementCore::IdentityManager::needToReloadIdentitySettings, this, &IdentityModel::reloadUoidList);
+    connect(m_identityManager, &KIdentityManagementCore::IdentityManager::identitiesWereChanged, this, &IdentityModel::reloadUoidList);
     reloadUoidList();
 }
 
@@ -45,6 +48,8 @@ QVariant IdentityModel::data(const QModelIndex &index, int role) const
         return identity.primaryEmailAddress();
     case UoidRole:
         return identity.uoid();
+    case IdentityNameRole:
+        return identity.identityName();
     }
 
     return {};
@@ -52,7 +57,10 @@ QVariant IdentityModel::data(const QModelIndex &index, int role) const
 
 int IdentityModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
+    if (parent.isValid()) {
+        return 0;
+    }
+
     return m_identitiesUoid.count();
 }
 
@@ -63,7 +71,13 @@ QString IdentityModel::email(uint uoid)
 
 QHash<int, QByteArray> IdentityModel::roleNames() const
 {
-    return {{Qt::DisplayRole, QByteArrayLiteral("display")}, {UoidRole, QByteArrayLiteral("uoid")}, {EmailRole, QByteArrayLiteral("email")}};
+    auto roles = QAbstractListModel::roleNames();
+    roles.insert({
+        {UoidRole, QByteArrayLiteral("uoid")},
+        {EmailRole, QByteArrayLiteral("email")},
+        {IdentityNameRole, QByteArrayLiteral("identityName")},
+    });
+    return roles;
 }
 
 }

@@ -19,7 +19,7 @@ class IdentityModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    enum Roles { EmailRole = Qt::UserRole, UoidRole };
+    enum Roles { EmailRole = Qt::UserRole, UoidRole, IdentityNameRole };
 
 public:
     IdentityModel(QObject *parent = nullptr);
@@ -30,9 +30,10 @@ public:
 
     Q_INVOKABLE QString email(uint uoid);
 
-private:
+private Q_SLOTS:
     void reloadUoidList();
 
+private:
     QList<int> m_identitiesUoid;
     KIdentityManagementCore::IdentityManager *const m_identityManager;
 };

@@ -22,10 +22,21 @@ MobileForm.FormCard {
         }
 
         Repeater {
+            id: identityRepeater
+
             model: root._identityModel
+
             delegate: MobileForm.FormButtonDelegate {
                 leadingPadding: Kirigami.Units.largeSpacing
                 text: model.display
+                onClicked: {
+                    pageStack.pushDialogLayer(Qt.resolvedUrl("IdentityEditorPage.qml"), {
+                        mode: IdentityEditorBackend.EditMode,
+                        identityUoid: model.uoid,
+                        allowDelete: identityRepeater.count > 1,
+                        identityName: model.display
+                    }, {title: i18nc("@title", "Edit Identity")});
+                }
             }
         }
     }
