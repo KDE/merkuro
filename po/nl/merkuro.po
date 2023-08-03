@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2023-07-31 16:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -549,6 +549,7 @@ msgstr "Nieuwe agenda aanmaken"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
@@ -694,6 +695,8 @@ msgstr "Bewerken"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
@@ -938,6 +941,7 @@ msgstr "%1 toevoegen"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Opslaan"
@@ -945,6 +949,7 @@ msgstr "Opslaan"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Toevoegen"
@@ -2737,6 +2742,7 @@ msgid "Other…"
 msgstr "Overigen…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "gebruiker@voorbeeld.nl"
@@ -3322,7 +3328,7 @@ msgstr "Sleutel importeren"
 msgid "Account settings"
 msgstr "Accountinstellingen"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3348,10 +3354,80 @@ msgstr "Wijzigen"
 msgid "Add Account"
 msgstr "Account toevoegen"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identity"
+msgstr "Identiteit:"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "Your name"
+msgstr "Freek de Kruijf - 2022-2023"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, fuzzy, kde-format
+#| msgid "Email Address"
+#| msgid_plural "Email Addresses"
+msgid "Email address"
+msgstr "E-mailadres"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, fuzzy, kde-format
+#| msgid "Email Client"
+msgid "E-mail aliases"
+msgstr "E-mailprogramma"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove email"
+msgid "Remove email alias"
+msgstr "E-mailadres verwijderen"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, fuzzy, kde-format
+#| msgid "Add email"
+msgid "Add email alias"
+msgstr "E-mail toevoegen"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr "Identiteiten"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "Identiteit:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Add Identity"
+msgstr "Identiteit:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Edit Identity"
+msgstr "Identiteit:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#| msgid "Delete %1"
+msgid "Delete %1"
+msgstr "%1 verwijderen"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Are you sure you want to delete tag \"%1\"?"
+msgid "Are you sure you want to delete this identity?"
+msgstr "Wilt u tag \"%1\" verwijderen?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

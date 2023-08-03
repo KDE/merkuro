@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2022-02-21 13:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -556,6 +556,7 @@ msgstr "Új naptár létrehozása"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Mégsem"
@@ -703,6 +704,8 @@ msgstr "Szerkesztés"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Törlés"
@@ -960,6 +963,7 @@ msgstr "%1 hozzáadása"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Mentés"
@@ -967,6 +971,7 @@ msgstr "Mentés"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Hozzáadás"
@@ -2834,6 +2839,7 @@ msgid "Other…"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr ""
@@ -3444,7 +3450,7 @@ msgstr "Naptár importálása"
 msgid "Account settings"
 msgstr "Havi nézet beállításai"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3472,10 +3478,78 @@ msgstr ""
 msgid "Add Account"
 msgstr "Melléklet hozzáadása"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, kde-format
+msgid "Identity"
+msgstr ""
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "Your name"
+msgstr "Kiszel Kristóf"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, fuzzy, kde-format
+#| msgid "Select Email Address"
+msgid "Email address"
+msgstr "Válasszon e-mail címet"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, fuzzy, kde-format
+#| msgid "Calendar Application"
+msgid "E-mail aliases"
+msgstr "Naptáralkalmazás"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgid "Remove email alias"
+msgstr "Címke eltávolítása"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, fuzzy, kde-format
+#| msgid "Add Reminder"
+msgid "Add email alias"
+msgstr "Emlékeztető hozzáadása"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr ""
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "Névjegyek"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add Identity"
+msgstr "Névjegyek"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Edit Identity"
+msgstr "Névjegyek"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#| msgid "Delete %1"
+msgid "Delete %1"
+msgstr "%1 törlése"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Are you sure you want to delete tag \"%1\"?"
+msgid "Are you sure you want to delete this identity?"
+msgstr "Biztosan törölni szeretné a(z) „%1” címkét?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

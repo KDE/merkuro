@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2023-08-01 06:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -548,6 +548,7 @@ msgstr "ახალი კალენდარის შექმნა"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "შეწყვეტა"
@@ -693,6 +694,8 @@ msgstr "ჩასწორება"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
@@ -937,6 +940,7 @@ msgstr "%1-ის დამატება"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
@@ -944,6 +948,7 @@ msgstr "შენახვა"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
@@ -2731,6 +2736,7 @@ msgid "Other…"
 msgstr "სხვა…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "user@example.org"
@@ -3316,7 +3322,7 @@ msgstr "გასაღების შემოტანა"
 msgid "Account settings"
 msgstr "ანგარიშის მორგება"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3342,10 +3348,80 @@ msgstr "ჩასწორება"
 msgid "Add Account"
 msgstr "ანგარიშის დამატება"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identity"
+msgstr "იდენტიფიკაცია:"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "Your name"
+msgstr "Temuri Doghonadze"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, fuzzy, kde-format
+#| msgid "Email Address"
+#| msgid_plural "Email Addresses"
+msgid "Email address"
+msgstr "ელფოსტის მისამართი"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, fuzzy, kde-format
+#| msgid "Email Client"
+msgid "E-mail aliases"
+msgstr "ელფოსტის კლიენტი"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove email"
+msgid "Remove email alias"
+msgstr "ელფოსტის წაშლა"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, fuzzy, kde-format
+#| msgid "Add email"
+msgid "Add email alias"
+msgstr "ელფოსტის დამატება"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr "იდენტიფიკატორები"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "იდენტიფიკაცია:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Add Identity"
+msgstr "იდენტიფიკაცია:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Edit Identity"
+msgstr "იდენტიფიკაცია:"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#| msgid "Delete %1"
+msgid "Delete %1"
+msgstr "%1-ის წაშლა"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Are you sure you want to delete tag \"%1\"?"
+msgid "Are you sure you want to delete this identity?"
+msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ჭდე \"%1\" ?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
