@@ -18,6 +18,9 @@ set(merkuro_mail_SRCS
     messageloader.h
     messageloader.cpp
 
+    mailkernel.h
+    mailkernel.cpp
+
     mailheadermodel.h
     mailheadermodel.cpp
 )
@@ -37,6 +40,7 @@ target_link_libraries(merkuro_mail_static
     PUBLIC
         merkuro_lib
         KPim${QT_MAJOR_VERSION}::MailCommon
+        KPim${QT_MAJOR_VERSION}::MailTransport
         KPim${QT_MAJOR_VERSION}::AkonadiMime
         KF${QT_MAJOR_VERSION}::Codecs
         KF${QT_MAJOR_VERSION}::XmlGui

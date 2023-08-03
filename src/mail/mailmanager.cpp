@@ -4,7 +4,9 @@
 #include "mailmanager.h"
 
 // Akonadi
+#include "mailkernel.h"
 #include <Akonadi/ChangeRecorder>
+#include <Akonadi/CollectionFilterProxyModel>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemFetchScope>
@@ -14,18 +16,23 @@
 #include <Akonadi/SelectionProxyModel>
 #include <Akonadi/ServerManager>
 #include <Akonadi/Session>
+#include <KConfigGroup>
 #include <KDescendantsProxyModel>
 #include <KMime/Message>
+#include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
 #include <QApplication>
-#include <QItemSelectionModel>
+#include <sortedcollectionproxymodel.h>
 
 MailManager::MailManager(QObject *parent)
     : QObject(parent)
     , m_loading(true)
 {
     using namespace Akonadi;
+
+    MailKernel::self();
+
     //                              mailModel
     //                                  ^
     //                                  |
@@ -46,9 +53,16 @@ MailManager::MailManager(QObject *parent)
     auto treeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);
     treeModel->setItemPopulationStrategy(Akonadi::EntityTreeModel::LazyPopulation);
 
-    m_foldersModel = new Akonadi::CollectionFilterProxyModel(this);
-    m_foldersModel->setSourceModel(treeModel);
-    m_foldersModel->addMimeTypeFilter(KMime::Message::mimeType());
+    auto foldersModel = new Akonadi::CollectionFilterProxyModel(this);
+    foldersModel->setSourceModel(treeModel);
+    foldersModel->addMimeTypeFilter(KMime::Message::mimeType());
+
+    m_foldersModel = new MailCommon::EntityCollectionOrderProxyModel(this);
+    m_foldersModel->setSourceModel(foldersModel);
+    m_foldersModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    KConfigGroup grp(KernelIf->config(), "CollectionTreeOrder");
+    m_foldersModel->setOrderConfig(grp);
+    m_foldersModel->sort(0, Qt::AscendingOrder);
 
     // Setup selection model
     m_collectionSelectionModel = new QItemSelectionModel(m_foldersModel);
@@ -103,6 +117,22 @@ MailManager::MailManager(QObject *parent)
         });
     }
     CommonKernel->initFolders();
+
+    loadConfig();
+}
+
+void MailManager::loadConfig()
+{
+    KConfigGroup readerConfig(KernelIf->config(), "AccountOrder");
+    QStringList listOrder;
+    if (readerConfig.readEntry("EnableAccountOrder", true)) {
+        listOrder = readerConfig.readEntry("order", QStringList());
+    }
+    m_foldersModel->setTopLevelOrder(listOrder);
+}
+
+void MailManager::saveConfig()
+{
 }
 
 MailModel *MailManager::folderModel() const
@@ -124,7 +154,7 @@ bool MailManager::loading() const
     return m_loading;
 }
 
-Akonadi::CollectionFilterProxyModel *MailManager::foldersModel() const
+MailCommon::EntityCollectionOrderProxyModel *MailManager::foldersModel() const
 {
     return m_foldersModel;
 }
