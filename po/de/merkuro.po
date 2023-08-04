@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2023-07-24 21:35+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -555,6 +555,7 @@ msgstr "Neuen Kalender hinzufügen"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -700,6 +701,8 @@ msgstr "Bearbeiten"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
@@ -946,6 +949,7 @@ msgstr "%1 hinzufügen"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Speichern"
@@ -953,6 +957,7 @@ msgstr "Speichern"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Hinzufügen"
@@ -2760,6 +2765,7 @@ msgid "Other…"
 msgstr "Weitere ..."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "benutzer@beispiel.com"
@@ -3360,7 +3366,7 @@ msgstr "Schlüssel importieren"
 msgid "Account settings"
 msgstr "Einstellungen der Monatsansicht"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3386,10 +3392,79 @@ msgstr "Ändern"
 msgid "Add Account"
 msgstr "Konto hinzufügen"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, kde-format
+msgid "Identity"
+msgstr ""
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "Your name"
+msgstr "Deutsches KDE-Übersetzerteam"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, fuzzy, kde-format
+#| msgid "Email Address"
+#| msgid_plural "Email Addresses"
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, fuzzy, kde-format
+#| msgid "Calendar Application"
+msgid "E-mail aliases"
+msgstr "Kalender-Anwendung"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove email"
+msgid "Remove email alias"
+msgstr "E-Mail-Adresse entfernen"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, fuzzy, kde-format
+#| msgid "Add email"
+msgid "Add email alias"
+msgstr "E-Mail-Adresse hinzufügen"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr ""
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, fuzzy, kde-format
+#| msgid "Edit event"
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "Termin bearbeiten"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Add event"
+msgid "Add Identity"
+msgstr "Termin hinzufügen"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, fuzzy, kde-format
+#| msgid "Edit event"
+msgid "Edit Identity"
+msgstr "Termin bearbeiten"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#| msgid "Delete %1"
+msgid "Delete %1"
+msgstr "%1 löschen"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Are you sure you want to delete tag \"%1\"?"
+msgid "Are you sure you want to delete this identity?"
+msgstr "Möchten Sie das Stichwort „%1“ wirklich löschen?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3671,12 +3746,6 @@ msgstr "Neues Stichwort schnell erstellen."
 #~| msgid "Add attendee"
 #~ msgid "Add todo"
 #~ msgstr "Teilnehmer hinzufügen"
-
-#~ msgid "Add event"
-#~ msgstr "Termin hinzufügen"
-
-#~ msgid "Edit event"
-#~ msgstr "Termin bearbeiten"
 
 #~ msgid "weeks"
 #~ msgstr "Wochen"

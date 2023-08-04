@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2021-08-09 22:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -562,6 +562,7 @@ msgstr "새 캘린더 추가"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "취소"
@@ -710,6 +711,8 @@ msgstr "편집"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -995,6 +998,7 @@ msgstr "%1 추가"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "저장"
@@ -1002,6 +1006,7 @@ msgstr "저장"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "추가"
@@ -2906,6 +2911,7 @@ msgid "Other…"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr ""
@@ -3513,7 +3519,7 @@ msgstr "Kalendar 정보"
 msgid "Account settings"
 msgstr "월간 보기"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3540,10 +3546,78 @@ msgstr ""
 msgid "Add Account"
 msgstr "계정"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, kde-format
+msgid "Identity"
+msgstr ""
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, fuzzy, kde-format
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
+msgid "Your name"
+msgstr "박신조"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, fuzzy, kde-format
+#| msgid "Select email address"
+msgid "Email address"
+msgstr "이메일 주소 선택"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, fuzzy, kde-format
+#| msgid "Calendar application"
+msgid "E-mail aliases"
+msgstr "캘린더 프로그램"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgid "Remove email alias"
+msgstr "삭제"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, fuzzy, kde-format
+#| msgid "Add reminder"
+msgid "Add email alias"
+msgstr "미리 알림 추가"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr ""
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "연락처"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add Identity"
+msgstr "연락처"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Edit Identity"
+msgstr "연락처"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, fuzzy, kde-format
+#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#| msgid "Delete %1"
+msgid "Delete %1"
+msgstr "%1 삭제"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete item: \"%1\"?"
+msgid "Are you sure you want to delete this identity?"
+msgstr "다음 항목을 삭제하시겠습니까: \"%1\"?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format

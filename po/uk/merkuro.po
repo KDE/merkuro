@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:48+0000\n"
-"PO-Revision-Date: 2023-07-31 08:53+0300\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"PO-Revision-Date: 2023-08-03 09:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -565,6 +565,7 @@ msgstr "Створити новий календар"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
@@ -716,6 +717,8 @@ msgstr "Змінити"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/identity/IdentityEditorPage.qml:84
+#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -961,6 +964,7 @@ msgstr "Додати %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Зберегти"
@@ -968,6 +972,7 @@ msgstr "Зберегти"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Додати"
@@ -2772,6 +2777,7 @@ msgid "Other…"
 msgstr "Інше…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "користувач@example.org"
@@ -3364,7 +3370,7 @@ msgstr "Імпортувати ключ"
 msgid "Account settings"
 msgstr "Параметри облікового запису"
 
-#: quick/identitymodel.cpp:42
+#: quick/identitymodel.cpp:45
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
@@ -3390,10 +3396,66 @@ msgstr "Змінити"
 msgid "Add Account"
 msgstr "Додати обліковий запис"
 
-#: quick/qml/IdentityConfigurationForm.qml:21
+#: quick/qml/identity/BasicIdentityEditorCard.qml:30
+#, kde-format
+msgid "Identity"
+msgstr "Профіль"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:36
+#, kde-format
+msgid "Your name"
+msgstr "Ваше ім’я"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:44
+#, kde-format
+msgid "Email address"
+msgstr "Адреса ел. пошти"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:51
+#, kde-format
+msgid "E-mail aliases"
+msgstr "Альтернативні адреси ел. пошти"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:76
+#, kde-format
+msgid "Remove email alias"
+msgstr "Вилучити альтернативну адресу ел. пошти"
+
+#: quick/qml/identity/BasicIdentityEditorCard.qml:99
+#, kde-format
+msgid "Add email alias"
+msgstr "Додати альтернативну адресу ел. пошти"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
 msgstr "Профілі"
+
+#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#, kde-format
+msgctxt "@title"
+msgid "Edit Identity"
+msgstr "Редагування профілю"
+
+#: quick/qml/identity/IdentityEditorPage.qml:37
+#, kde-format
+msgid "Add Identity"
+msgstr "Додати профіль"
+
+#: quick/qml/identity/IdentityEditorPage.qml:39
+#, kde-format
+msgid "Edit Identity"
+msgstr "Змінити профіль"
+
+#: quick/qml/identity/IdentityEditorPage.qml:107
+#, kde-format
+msgid "Delete %1"
+msgstr "Вилучити %1"
+
+#: quick/qml/identity/IdentityEditorPage.qml:108
+#, kde-format
+msgid "Are you sure you want to delete this identity?"
+msgstr "Ви справді хочете вилучити цей профіль?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
