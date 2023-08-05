@@ -19,7 +19,6 @@
 #include <KContacts/ContactGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <QColor>
 #include <QFont>
 #include <QRandomGenerator>
 

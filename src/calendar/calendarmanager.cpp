@@ -9,7 +9,6 @@
 //  SPDX-License-Identifier: GPL-2.0-or-later WITH LicenseRef-Qt-Commercial-exception-1.0
 
 #include "calendarmanager.h"
-#include "calendarconfig.h"
 
 // Akonadi
 #include "merkuro_calendar_debug.h"

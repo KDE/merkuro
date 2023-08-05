@@ -3,8 +3,6 @@
 
 #include "identityeditorbackend.h"
 
-#include "identitywrapper.h"
-
 using namespace KIdentityManagementCore;
 
 namespace Akonadi

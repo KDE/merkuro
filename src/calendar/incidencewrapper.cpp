@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "incidencewrapper.h"
-#include "calendarmanager.h"
 #include "merkuro_calendar_debug.h"
 #include "utils.h"
 #include <KLocalizedString>
