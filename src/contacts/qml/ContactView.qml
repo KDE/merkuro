@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
         }
         Kirigami.Action {
             id: createNewContactGroupAction
-            text: i18nc("@action:inmenu", "New Contact Contact")
+            text: i18nc("@action:inmenu", "New Contact Group")
             onTriggered: pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
                 mode: ContactGroupEditor.CreateMode,
             })
