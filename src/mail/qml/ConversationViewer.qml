@@ -11,8 +11,6 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kitemmodels 1.0 as KItemModels
 import org.kde.pim.mimetreeparser 1.0 as MimeTreeParser
 
-import './mailpartview'
-
 MimeTreeParser.MailViewer {
     id: root
 
