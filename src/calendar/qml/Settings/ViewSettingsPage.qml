@@ -11,18 +11,22 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 Kirigami.ScrollablePage {
     title: i18n("Appearance")
 
+    topPadding: 0
     leftPadding: 0
     rightPadding: 0
 
     ColumnLayout {
+        spacing: 0
+
+        MobileForm.FormHeader {
+            title: i18n("General settings")
+            Layout.fillWidth: true
+        }
+
         MobileForm.FormCard {
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("General settings")
-                }
 
                 MobileForm.FormSwitchDelegate {
                     text: i18n("Use popup to show incidence information")
@@ -79,14 +83,17 @@ Kirigami.ScrollablePage {
             }
         }
 
+        MobileForm.FormHeader {
+            title: i18n("Month view settings")
+
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+        }
+
         MobileForm.FormCard {
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Month view settings")
-                }
 
                 QQC2.ButtonGroup {
                     id: monthGridModeGroup
@@ -238,14 +245,18 @@ Kirigami.ScrollablePage {
             }
         }
 
-        MobileForm.FormCard {
+        MobileForm.FormHeader {
+            title: i18n("Week view settings")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Week view settings")
-                }
 
                 QQC2.ButtonGroup {
                     id: hourlyViewModeGroup
@@ -283,14 +294,17 @@ Kirigami.ScrollablePage {
             }
         }
 
-        MobileForm.FormCard {
+        MobileForm.FormHeader {
+            title: i18n("Schedule View settings")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Schedule View settings")
-                }
 
                 QQC2.ButtonGroup {
                     id: monthListModeGroup
@@ -341,14 +355,18 @@ Kirigami.ScrollablePage {
             }
         }
 
-        MobileForm.FormCard {
+        MobileForm.FormHeader {
+            title: i18n("Tasks View settings")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Tasks View settings")
-                }
+
                 MobileForm.FormCheckDelegate {
                     text: i18n("Show completed sub-tasks")
                     checked: Config.showCompletedSubtodos
@@ -360,14 +378,20 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-        MobileForm.FormCard {
+
+        MobileForm.FormHeader {
+            title: i18n("Maps")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Maps")
-                }
+
                 MobileForm.FormCheckDelegate {
                     id: enableMapsDelegate
                     text: i18n("Enable maps")
@@ -388,9 +412,21 @@ Kirigami.ScrollablePage {
                         Config.save();
                     }
                 }
-                MobileForm.FormCardHeader {
-                    title: i18n("Location marker")
-                }
+            }
+        }
+
+        MobileForm.FormHeader {
+            title: i18n("Location marker")
+
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+
+            contentItem: ColumnLayout {
+                spacing: 0
                 ColumnLayout {
                     id: locationMarkerButtonColumn
                     Layout.fillWidth: true

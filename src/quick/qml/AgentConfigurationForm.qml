@@ -11,8 +11,8 @@ import org.kde.akonadi 1.0
 
 MobileForm.FormCard {
     id: root
+
     required property var mimetypes
-    required property string title
     required property string addPageTitle
 
     readonly property AgentConfiguration _configuration: AgentConfiguration {
@@ -21,10 +21,6 @@ MobileForm.FormCard {
 
     contentItem: ColumnLayout {
         spacing: 0
-
-        MobileForm.FormCardHeader {
-            title: root.title
-        }
 
         Repeater {
             model: root._configuration.runningAgents

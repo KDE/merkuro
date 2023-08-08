@@ -9,24 +9,32 @@ import org.kde.akonadi 1.0
 import org.kde.merkuro.calendar 1.0 as Calendar
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
-
 Kirigami.ScrollablePage {
     id: freeBusySettingsPage
+
     title: i18n("Configure Free/Busy")
+
+    topPadding: 0
     leftPadding: 0
     rightPadding: 0
 
     ColumnLayout {
+        spacing: 0
+
+        MobileForm.FormHeader {
+            title: i18n("Free/Busy Publishing settings")
+
+            Layout.fillWidth: true
+        }
+
         MobileForm.FormCard {
             id: freeBusyPublishSection
+
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    id: freeBusyPublishHeader
-                    title: i18n("Free/Busy Publishing settings")
-                }
+
                 MobileForm.FormTextDelegate {
                     id: freeBusyPublishInfo
                     description: i18n("When you publish your free/busy information, it enables others to consider your calendar availability when inviting you to a meeting. Only the times that are already marked as busy are disclosed, without revealing the specific reasons for your availability.")
@@ -147,16 +155,22 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-        MobileForm.FormCard{
-            id: freeBusyRetrieveSection
+
+        MobileForm.FormHeader {
+            title: i18n("Free/Busy Retrieval settings")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        MobileForm.FormCard {
+            id: freeBusyRetrieveSection
+
+            Layout.fillWidth: true
+
             contentItem: ColumnLayout {
                 spacing: 0
-                MobileForm.FormCardHeader {
-                    id: freeBusyRetrieveHeader
-                    title: i18n("Free/Busy Retrieval settings")
-                }
+
                 MobileForm.FormTextDelegate {
                     id: freeBusyRetrieveInfo
                     description: i18n("By retrieving Free/Busy information that others have published, you can take their calendar into account when inviting them to a meeting.")
