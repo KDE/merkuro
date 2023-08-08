@@ -162,10 +162,6 @@ Labs.MenuBar {
         NativeMenuItemFromAction {
             action: CalendarApplication.action('options_configure')
         }
-
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("options_configure_schedule")
-        }
     }
 
     NativeHelpMenu {
