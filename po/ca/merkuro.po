@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-07 00:50+0000\n"
-"PO-Revision-Date: 2023-08-03 11:04+0200\n"
+"POT-Creation-Date: 2023-08-08 00:47+0000\n"
+"PO-Revision-Date: 2023-08-07 17:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1612,6 +1612,7 @@ msgstr "No hi ha completada cap tasca"
 msgid "No tasks left to complete"
 msgstr "No queda cap tasca per a completar"
 
+# skip-rule: t-sp_co
 #: calendar/qml/MainViews/TodoTreeView.qml:224
 #, kde-format
 msgid " , is overdue"
@@ -2348,11 +2349,10 @@ msgid "New Contact"
 msgstr "Contacte nou"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
-msgstr "Grup de contactes nou…"
+msgstr "Grup de contactes nou"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2445,6 +2445,7 @@ msgstr "Prefix honorífic"
 msgid "Dr."
 msgstr "Dr."
 
+# skip-rule: punctuation-period-no
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Miss"
@@ -3151,7 +3152,7 @@ msgstr "Merkuro Mail"
 msgid "Email Client"
 msgstr "Client de correu"
 
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:27
 #, kde-format
 msgid "Move to trash"
 msgstr "Mou a la paperera"
