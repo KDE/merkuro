@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"POT-Creation-Date: 2023-08-09 00:47+0000\n"
 "PO-Revision-Date: 2023-07-20 09:09+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -133,47 +133,42 @@ msgstr "Nouvel évènement..."
 msgid "New Task…"
 msgstr "Nouvelle tâche..."
 
-#: calendar/calendarapplication.cpp:230
-#, kde-format
-msgid "Configure Schedule…"
-msgstr "Configurer le planning..."
-
-#: calendar/calendarapplication.cpp:243
+#: calendar/calendarapplication.cpp:236
 #, kde-format
 msgid "Import Calendar…"
 msgstr "Importer un agenda..."
 
-#: calendar/calendarapplication.cpp:263
+#: calendar/calendarapplication.cpp:256
 #, kde-format
 msgid "Alphabetically"
 msgstr "Par ordre alphabétique"
 
-#: calendar/calendarapplication.cpp:279
+#: calendar/calendarapplication.cpp:272
 #, kde-format
 msgid "By Due Date"
 msgstr "Par date d'échéance"
 
-#: calendar/calendarapplication.cpp:295
+#: calendar/calendarapplication.cpp:288
 #, kde-format
 msgid "By Priority Level"
 msgstr "Par niveau de priorité"
 
-#: calendar/calendarapplication.cpp:311
+#: calendar/calendarapplication.cpp:304
 #, kde-format
 msgid "Ascending order"
 msgstr "Tri en ordre croissant"
 
-#: calendar/calendarapplication.cpp:327
+#: calendar/calendarapplication.cpp:320
 #, kde-format
 msgid "Descending Order"
 msgstr "Tri en ordre décroissant"
 
-#: calendar/calendarapplication.cpp:343
+#: calendar/calendarapplication.cpp:336
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr "Afficher les tâches terminées"
 
-#: calendar/calendarapplication.cpp:357
+#: calendar/calendarapplication.cpp:350
 #, kde-format
 msgid "Refresh All"
 msgstr "Tout rafraîchir"
@@ -456,7 +451,7 @@ msgid "Tags"
 msgstr "Étiquettes"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:20
+#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "Calendriers"
@@ -693,7 +688,7 @@ msgstr "Modifier"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
-#: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/AgentConfigurationForm.qml:46
 #: quick/qml/identity/IdentityEditorPage.qml:84
 #: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
@@ -1724,35 +1719,30 @@ msgstr "Configuration"
 msgid "Sort Tasks"
 msgstr "Trier les tâches"
 
-#: calendar/qml/Menus/MenuBar.qml:173 components/qml/HelpMenu.qml:13
+#: calendar/qml/Menus/MenuBar.qml:169 components/qml/HelpMenu.qml:13
 #: components/qml/NativeHelpMenu.qml:12
 #, kde-format
 msgctxt "@action:menu"
 msgid "Help"
 msgstr "Aide"
 
-#: calendar/qml/Menus/MenuBar.qml:184
+#: calendar/qml/Menus/MenuBar.qml:180
 #, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Agenda"
 
-#: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
-#, kde-format
-msgid "Configure Availability"
-msgstr "Configurer la disponibilité"
-
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:15
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Free/Busy"
 msgstr "Configurer l'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:28
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
 msgid "Free/Busy Publishing settings"
 msgstr "Configuration pour la publication de l'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:32
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:40
 #, kde-format
 msgid ""
 "When you publish your free/busy information, it enables others to consider "
@@ -1766,81 +1756,81 @@ msgstr ""
 "les heures où vous avez indiquées être occupées sont masquées, sans indiquer "
 "les raisons particulières de votre indisponibilité."
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:37
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:45
 #, kde-format
 msgid "Publish your free/busy information automatically"
 msgstr "Publier automatiquement vos informations d'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:49
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:57
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
 msgstr "Temps minimal (En minutes) entre deux envois"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:62
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:70
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
 msgstr ""
 "Nombre de jours pour la publication des information d'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:74
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:186
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:82
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:200
 #, kde-format
 msgid "Server information"
 msgstr "Informations sur le serveur "
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:78
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:190
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:86
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:204
 #, kde-format
 msgid "Server URL"
 msgstr "URL du serveur"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:88
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:200
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:96
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:214
 #, kde-format
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:98
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:210
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:106
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:224
 #, kde-format
 msgid "Password"
 msgstr "Mot de passe"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:114
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:220
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:122
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:234
 #, kde-format
 msgid "Save password"
 msgstr "Enregistrer un mot de passe"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:124
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:132
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
 msgstr ""
 "Cliquer ici pour publier manuellement les informations d'état « Libre / "
 "Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:135
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:143
 #, kde-format
 msgid "Email Free/Busy"
 msgstr "Envoyer par courriel l'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:140
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:148
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr "Saisir le courriel du destinataire..."
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:151
 #: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr "Envoyer"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:160
 #, kde-format
 msgid "Free/Busy Retrieval settings"
 msgstr "Configuration pour la mise à disposition de l'état « Libre / Occupé »"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:162
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:176
 #, kde-format
 msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
@@ -1850,241 +1840,241 @@ msgstr ""
 "autres personnes ont publiées, vous pouvez prendre en compte leurs agendas "
 "pour les inviter à des réunions."
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:167
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:181
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
 msgstr ""
 "Mettre à disposition automatiquement l'état « Libre / Occupé » pour les "
 "autres personnes"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:176
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:190
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "Utiliser un adresse complète de courriel pour la mise à disposition"
 
-#: calendar/qml/Settings/Schedule/ScheduleSettingsPage.qml:13
-#, kde-format
-msgid "Free/Busy"
-msgstr "Libre / Occupé"
-
-#: calendar/qml/Settings/SettingsPage.qml:14
+#: calendar/qml/Settings/SettingsPage.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:12
 #, kde-format
 msgid "Appearance"
 msgstr "Apparence"
 
-#: calendar/qml/Settings/SettingsPage.qml:19
-#: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: calendar/qml/Settings/SettingsPage.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:14
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Comptes"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:21
+#: calendar/qml/Settings/SettingsPage.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr "Libre / Occupé"
+
+#: calendar/qml/Settings/SourceSettingsPage.qml:33
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "Ajouter une nouvelle source de calendrier..."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:24
+#: calendar/qml/Settings/ViewSettingsPage.qml:22
 #, kde-format
 msgid "General settings"
 msgstr "Configuration générale"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:28
+#: calendar/qml/Settings/ViewSettingsPage.qml:32
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr ""
 "Utiliser une fenêtre contextuelle pour afficher des informations sur "
 "l'incidence"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:39
+#: calendar/qml/Settings/ViewSettingsPage.qml:43
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Afficher les tâches dans les affichages d'agenda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:49
+#: calendar/qml/Settings/ViewSettingsPage.qml:53
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Afficher les sous-tâches dans les affichages d'agenda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:63
+#: calendar/qml/Settings/ViewSettingsPage.qml:67
 #, kde-format
 msgid "Past event transparency"
 msgstr "Transparence pour les évènements précédents"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:88
+#: calendar/qml/Settings/ViewSettingsPage.qml:87
 #, kde-format
 msgid "Month view settings"
 msgstr "Configuration de l'affichage par mois"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:100
+#: calendar/qml/Settings/ViewSettingsPage.qml:107
 #, kde-format
 msgid "Month view mode"
 msgstr "Mode d'affichage par mois"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:107
+#: calendar/qml/Settings/ViewSettingsPage.qml:114
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Grille des mois avec balayage"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:114
+#: calendar/qml/Settings/ViewSettingsPage.qml:121
 #, kde-format
 msgid "Basic month grid"
 msgstr "Grille basique en mois"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:120
+#: calendar/qml/Settings/ViewSettingsPage.qml:127
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr ""
 "La grille des mois avec balayage nécessite de plus grandes performances du "
 "système."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:135
+#: calendar/qml/Settings/ViewSettingsPage.qml:142
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Alignement des étiquettes des jours de la semaine"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:142
+#: calendar/qml/Settings/ViewSettingsPage.qml:149
 #, kde-format
 msgid "Left"
 msgstr "Gauche"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:149
+#: calendar/qml/Settings/ViewSettingsPage.qml:156
 #, kde-format
 msgid "Center"
 msgstr "Centre"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:156
+#: calendar/qml/Settings/ViewSettingsPage.qml:163
 #, kde-format
 msgid "Right"
 msgstr "Droite"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:174
+#: calendar/qml/Settings/ViewSettingsPage.qml:181
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Longueur des étiquettes des jours de la semaine :"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:179
+#: calendar/qml/Settings/ViewSettingsPage.qml:186
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Nom complet (Lundi)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:186
+#: calendar/qml/Settings/ViewSettingsPage.qml:193
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Abrégé (Lun)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:194
+#: calendar/qml/Settings/ViewSettingsPage.qml:201
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Uniquement en lettre (L)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:203
+#: calendar/qml/Settings/ViewSettingsPage.qml:210
 #, kde-format
 msgid "Show week numbers"
 msgstr "Afficher les numéros de semaine"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:217
+#: calendar/qml/Settings/ViewSettingsPage.qml:224
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Largeur de la bordure de la grille (pixels) :"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:247
+#: calendar/qml/Settings/ViewSettingsPage.qml:249
 #, kde-format
 msgid "Week view settings"
 msgstr "Configuration de l'affichage en semaines"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:259
+#: calendar/qml/Settings/ViewSettingsPage.qml:270
 #, kde-format
 msgid "Week view mode"
 msgstr "Mode d'affichage en semaines"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:266
+#: calendar/qml/Settings/ViewSettingsPage.qml:277
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Grille des semaines avec balayage"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:273
+#: calendar/qml/Settings/ViewSettingsPage.qml:284
 #, kde-format
 msgid "Basic week view"
 msgstr "Affichage basique en semaines"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:279
+#: calendar/qml/Settings/ViewSettingsPage.qml:290
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr ""
 "La grille des semaines avec balayage nécessite de plus grandes performances "
 "du système."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:292
+#: calendar/qml/Settings/ViewSettingsPage.qml:298
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Configuration de l'affichage par agenda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:304
+#: calendar/qml/Settings/ViewSettingsPage.qml:318
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Mode d'affichage en planning"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:311
+#: calendar/qml/Settings/ViewSettingsPage.qml:325
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Grille de planning avec balayage"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:318
+#: calendar/qml/Settings/ViewSettingsPage.qml:332
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Affichage basique en planning"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:324
+#: calendar/qml/Settings/ViewSettingsPage.qml:338
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
 "La grille de planning avec balayage nécessite de plus grandes performances "
 "du système."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:333
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Show week headers"
 msgstr "Afficher l'en-tête avec les semaines"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:350
+#: calendar/qml/Settings/ViewSettingsPage.qml:359
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Configuration de l'affichage des tâches"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:353
+#: calendar/qml/Settings/ViewSettingsPage.qml:371
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Afficher les sous-tâches terminées"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:369
+#: calendar/qml/Settings/ViewSettingsPage.qml:383
 #, kde-format
 msgid "Maps"
 msgstr "Cartes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:373
+#: calendar/qml/Settings/ViewSettingsPage.qml:397
 #, kde-format
 msgid "Enable maps"
 msgstr "Activer les cartes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:380
+#: calendar/qml/Settings/ViewSettingsPage.qml:404
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "Pourrait provoquer des plantages sur certains systèmes."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:392
+#: calendar/qml/Settings/ViewSettingsPage.qml:419
 #, kde-format
 msgid "Location marker"
 msgstr "Marqueur d'emplacement"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:400
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Cercle (Affiche les zones d'emplacement)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:407
+#: calendar/qml/Settings/ViewSettingsPage.qml:443
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Épingle (indique l'emplacement exact)"
@@ -2360,7 +2350,7 @@ msgstr "Nouvel contact..."
 #, fuzzy, kde-format
 #| msgid "New Contact Group…"
 msgctxt "@action:inmenu"
-msgid "New Contact Contact"
+msgid "New Contact Group"
 msgstr "Nouveau groupe de contacts..."
 
 #: contacts/qml/ContactView.qml:90
@@ -3088,12 +3078,12 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuration"
 
-#: contacts/qml/Settings.qml:21
+#: contacts/qml/Settings.qml:23
 #, kde-format
 msgid "Contact Books"
 msgstr "Carnets de contacts"
 
-#: contacts/qml/Settings.qml:22
+#: contacts/qml/Settings.qml:31
 #, kde-format
 msgid "Add New Address Book Source…"
 msgstr "Ajouter une nouvelle source de carnets d'adresses..."
@@ -3166,7 +3156,7 @@ msgstr "Agenda de Merkuro"
 msgid "Email Client"
 msgstr "Application de client de messagerie électronique"
 
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:27
 #, kde-format
 msgid "Move to trash"
 msgstr "Déplacer vers le corbeille"
@@ -3369,22 +3359,22 @@ msgctxt "Separator between identity name and email address"
 msgid " - "
 msgstr " - "
 
-#: quick/qml/AgentConfigurationForm.qml:36
+#: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
 msgid "Configure %1"
 msgstr "Configurer %1"
 
-#: quick/qml/AgentConfigurationForm.qml:37
+#: quick/qml/AgentConfigurationForm.qml:33
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr "Modifier ou supprimer cet agent de compte."
 
-#: quick/qml/AgentConfigurationForm.qml:42
+#: quick/qml/AgentConfigurationForm.qml:38
 #, kde-format
 msgid "Modify"
 msgstr "Modifier"
 
-#: quick/qml/AgentConfigurationForm.qml:82
+#: quick/qml/AgentConfigurationForm.qml:78
 #, kde-format
 msgid "Add Account"
 msgstr "Ajouter un compte"
@@ -3489,6 +3479,18 @@ msgstr "Créer une nouvelle étiquette..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Ajouter rapidement une nouvelle étiquette."
+
+#~ msgid "Configure Schedule…"
+#~ msgstr "Configurer le planning..."
+
+#~ msgid "Configure Availability"
+#~ msgstr "Configurer la disponibilité"
+
+#, fuzzy
+#~| msgid "New Contact Group…"
+#~ msgctxt "@action:inmenu"
+#~ msgid "New Contact Contact"
+#~ msgstr "Nouveau groupe de contacts..."
 
 #~ msgid "Change Calendar Color…"
 #~ msgstr "Modifier la couleur du calendrier..."

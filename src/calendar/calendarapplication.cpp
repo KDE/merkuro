@@ -224,13 +224,6 @@ void CalendarApplication::setupActions()
         action->setIcon(QIcon::fromTheme(QStringLiteral("view-task-add")));
     }
 
-    actionName = QLatin1String("options_configure_schedule");
-    if (KAuthorized::authorizeAction(actionName)) {
-        auto action = mCollection->addAction(actionName, this, &CalendarApplication::configureSchedule);
-        action->setText(i18n("Configure Schedule…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-month")));
-    }
-
     actionName = QLatin1String("switch_application_language");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::switchApplicationLanguage(this, &CalendarApplication::openLanguageSwitcher, this);

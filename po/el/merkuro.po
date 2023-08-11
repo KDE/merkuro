@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"POT-Creation-Date: 2023-08-09 00:47+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -139,48 +139,42 @@ msgstr "Νέο γεγονός…"
 msgid "New Task…"
 msgstr "Νέα εργασία…"
 
-#: calendar/calendarapplication.cpp:230
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure Schedule…"
-msgstr "Διαμόρφωση"
-
-#: calendar/calendarapplication.cpp:243
+#: calendar/calendarapplication.cpp:236
 #, kde-format
 msgid "Import Calendar…"
 msgstr "Εισαγωγή ημερολογίου…"
 
-#: calendar/calendarapplication.cpp:263
+#: calendar/calendarapplication.cpp:256
 #, kde-format
 msgid "Alphabetically"
 msgstr "Αλφαβητικά"
 
-#: calendar/calendarapplication.cpp:279
+#: calendar/calendarapplication.cpp:272
 #, kde-format
 msgid "By Due Date"
 msgstr "Με ημερομηνία λήξης"
 
-#: calendar/calendarapplication.cpp:295
+#: calendar/calendarapplication.cpp:288
 #, kde-format
 msgid "By Priority Level"
 msgstr "Με επίπεδο προτεραιότητας"
 
-#: calendar/calendarapplication.cpp:311
+#: calendar/calendarapplication.cpp:304
 #, kde-format
 msgid "Ascending order"
 msgstr "Αύξουσα σειρά"
 
-#: calendar/calendarapplication.cpp:327
+#: calendar/calendarapplication.cpp:320
 #, kde-format
 msgid "Descending Order"
 msgstr "Φθίνουσα σειρά"
 
-#: calendar/calendarapplication.cpp:343
+#: calendar/calendarapplication.cpp:336
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr "Εμφάνιση συμπληρωμένων εργασιών"
 
-#: calendar/calendarapplication.cpp:357
+#: calendar/calendarapplication.cpp:350
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "Refresh All"
@@ -474,7 +468,7 @@ msgid "Tags"
 msgstr "Ετικέτες"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:20
+#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "Ημερολόγια"
@@ -715,7 +709,7 @@ msgstr "Επεξεργασία"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
-#: quick/qml/AgentConfigurationForm.qml:50
+#: quick/qml/AgentConfigurationForm.qml:46
 #: quick/qml/identity/IdentityEditorPage.qml:84
 #: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
@@ -1807,14 +1801,14 @@ msgstr "Ρυθμίσεις"
 msgid "Sort Tasks"
 msgstr "Ταξινόμηση εργασιών"
 
-#: calendar/qml/Menus/MenuBar.qml:173 components/qml/HelpMenu.qml:13
+#: calendar/qml/Menus/MenuBar.qml:169 components/qml/HelpMenu.qml:13
 #: components/qml/NativeHelpMenu.qml:12
 #, kde-format
 msgctxt "@action:menu"
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: calendar/qml/Menus/MenuBar.qml:184
+#: calendar/qml/Menus/MenuBar.qml:180
 #, fuzzy, kde-format
 #| msgctxt "@action:menu"
 #| msgid "Kalendar Handbook"
@@ -1822,23 +1816,18 @@ msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Το εγχειρίδιο του Kalendar"
 
-#: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
-#, kde-format
-msgid "Configure Availability"
-msgstr ""
-
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:15
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure Free/Busy"
 msgstr "Διαμόρφωση"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:28
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
 msgid "Free/Busy Publishing settings"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:32
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:40
 #, kde-format
 msgid ""
 "When you publish your free/busy information, it enables others to consider "
@@ -1847,326 +1836,326 @@ msgid ""
 "specific reasons for your availability."
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:37
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:45
 #, kde-format
 msgid "Publish your free/busy information automatically"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:49
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:57
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:62
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:70
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:74
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:186
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:82
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:200
 #, kde-format
 msgid "Server information"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:78
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:190
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:86
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:204
 #, kde-format
 msgid "Server URL"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:88
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:200
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:96
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:214
 #, kde-format
 msgid "Username"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:98
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:210
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:106
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:224
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:114
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:220
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:122
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:234
 #, kde-format
 msgid "Save password"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:124
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:132
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:135
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:143
 #, fuzzy, kde-format
 #| msgid "Select Email Address"
 msgid "Email Free/Busy"
 msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:140
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:148
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:151
 #: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:160
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "Free/Busy Retrieval settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:162
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:176
 #, kde-format
 msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
 "their calendar into account when inviting them to a meeting."
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:167
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:181
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:176
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:190
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr ""
 
-#: calendar/qml/Settings/Schedule/ScheduleSettingsPage.qml:13
-#, kde-format
-msgid "Free/Busy"
-msgstr ""
-
-#: calendar/qml/Settings/SettingsPage.qml:14
+#: calendar/qml/Settings/SettingsPage.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:12
 #, kde-format
 msgid "Appearance"
 msgstr ""
 
-#: calendar/qml/Settings/SettingsPage.qml:19
-#: calendar/qml/Settings/SourceSettingsPage.qml:13
+#: calendar/qml/Settings/SettingsPage.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:14
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Λογαριασμοί"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:21
+#: calendar/qml/Settings/SettingsPage.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr ""
+
+#: calendar/qml/Settings/SourceSettingsPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Add New Calendar Source"
 msgid "Add New Calendar Source…"
 msgstr "Προσθήκη νέας πηγής ημερολογίου"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:24
+#: calendar/qml/Settings/ViewSettingsPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "General settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:28
+#: calendar/qml/Settings/ViewSettingsPage.qml:32
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:39
+#: calendar/qml/Settings/ViewSettingsPage.qml:43
 #, fuzzy, kde-format
 #| msgid "No task calendars enabled."
 msgid "Show tasks in calendar views"
 msgstr "Ημερολόγια εργασιών δεν έχουν ενεργοποιηθεί."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:49
+#: calendar/qml/Settings/ViewSettingsPage.qml:53
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:63
+#: calendar/qml/Settings/ViewSettingsPage.qml:67
 #, kde-format
 msgid "Past event transparency"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:88
+#: calendar/qml/Settings/ViewSettingsPage.qml:87
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "Month view settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:100
+#: calendar/qml/Settings/ViewSettingsPage.qml:107
 #, fuzzy, kde-format
 #| msgid "Month View"
 msgid "Month view mode"
 msgstr "Προβολή μήνα"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:107
+#: calendar/qml/Settings/ViewSettingsPage.qml:114
 #, kde-format
 msgid "Swipeable month grid"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:114
+#: calendar/qml/Settings/ViewSettingsPage.qml:121
 #, kde-format
 msgid "Basic month grid"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:120
+#: calendar/qml/Settings/ViewSettingsPage.qml:127
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:135
+#: calendar/qml/Settings/ViewSettingsPage.qml:142
 #, fuzzy, kde-format
 #| msgid "Weekday label alignment:"
 msgid "Weekday label alignment"
 msgstr "Στοίχιση ετικέτας καθημερινής:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:142
+#: calendar/qml/Settings/ViewSettingsPage.qml:149
 #, kde-format
 msgid "Left"
 msgstr "Αριστερά"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:149
+#: calendar/qml/Settings/ViewSettingsPage.qml:156
 #, kde-format
 msgid "Center"
 msgstr "Κέντρο"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:156
+#: calendar/qml/Settings/ViewSettingsPage.qml:163
 #, kde-format
 msgid "Right"
 msgstr "Δεξιά"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:174
+#: calendar/qml/Settings/ViewSettingsPage.qml:181
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Μήκος ετικέτας καθημερινής:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:179
+#: calendar/qml/Settings/ViewSettingsPage.qml:186
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Πλήρες όνομα (Δευτέρα)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:186
+#: calendar/qml/Settings/ViewSettingsPage.qml:193
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Σύντμηση (Δε)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:194
+#: calendar/qml/Settings/ViewSettingsPage.qml:201
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Αρχικό γράμμα μόνο (Δ)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:203
+#: calendar/qml/Settings/ViewSettingsPage.qml:210
 #, kde-format
 msgid "Show week numbers"
 msgstr "Εμφάνιση αριθμών εβδομάδας"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:217
+#: calendar/qml/Settings/ViewSettingsPage.qml:224
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Πλάτος πλαισίου πλέγματος (εικονοστοιχεία):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:247
+#: calendar/qml/Settings/ViewSettingsPage.qml:249
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "Week view settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:259
+#: calendar/qml/Settings/ViewSettingsPage.qml:270
 #, fuzzy, kde-format
 #| msgid "Week View"
 msgid "Week view mode"
 msgstr "Προβολή εβδομάδας"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:266
+#: calendar/qml/Settings/ViewSettingsPage.qml:277
 #, kde-format
 msgid "Swipeable week view"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:273
+#: calendar/qml/Settings/ViewSettingsPage.qml:284
 #, kde-format
 msgid "Basic week view"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:279
+#: calendar/qml/Settings/ViewSettingsPage.qml:290
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:292
+#: calendar/qml/Settings/ViewSettingsPage.qml:298
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Ρυθμίσεις προβολής χρονοπρογραμματισμού"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:304
+#: calendar/qml/Settings/ViewSettingsPage.qml:318
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgid "Schedule view mode"
 msgstr "Προβολή χρονοπρογραμματισμού"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:311
+#: calendar/qml/Settings/ViewSettingsPage.qml:325
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgid "Swipeable schedule view"
 msgstr "Προβολή χρονοπρογραμματισμού"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:318
+#: calendar/qml/Settings/ViewSettingsPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgid "Basic schedule view"
 msgstr "Προβολή χρονοπρογραμματισμού"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:324
+#: calendar/qml/Settings/ViewSettingsPage.qml:338
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:333
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Show week headers"
 msgstr "Εμφάνιση επικεφαλίδας εβδομάδας"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:350
+#: calendar/qml/Settings/ViewSettingsPage.qml:359
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "Tasks View settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:353
+#: calendar/qml/Settings/ViewSettingsPage.qml:371
 #, fuzzy, kde-format
 #| msgid "Show Completed Tasks"
 msgid "Show completed sub-tasks"
 msgstr "Εμφάνιση συμπληρωμένων εργασιών"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:369
+#: calendar/qml/Settings/ViewSettingsPage.qml:383
 #, kde-format
 msgid "Maps"
 msgstr "Χάρτες"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:373
+#: calendar/qml/Settings/ViewSettingsPage.qml:397
 #, fuzzy, kde-format
 #| msgid "Enable maps:"
 msgid "Enable maps"
 msgstr "Ενεργοποίηση χαρτών:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:380
+#: calendar/qml/Settings/ViewSettingsPage.qml:404
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "Ίσως προκαλέσει κατάρρευση σε κάποια συστήματα."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:392
+#: calendar/qml/Settings/ViewSettingsPage.qml:419
 #, fuzzy, kde-format
 #| msgid "Location marker:"
 msgid "Location marker"
 msgstr "Δείκτης τοποθεσίας:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:400
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Κύκλος (δείχνει την περιοχή της τοποθεσίας)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:407
+#: calendar/qml/Settings/ViewSettingsPage.qml:443
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Καρφίτσα (δείχνει την ακριβή τοποθεσία)"
@@ -2453,7 +2442,7 @@ msgstr "Νέο γεγονός…"
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:inmenu"
-msgid "New Contact Contact"
+msgid "New Contact Group"
 msgstr "Νέο γεγονός…"
 
 #: contacts/qml/ContactView.qml:90
@@ -3214,13 +3203,13 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: contacts/qml/Settings.qml:21
+#: contacts/qml/Settings.qml:23
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Contact Books"
 msgstr "Επαφές"
 
-#: contacts/qml/Settings.qml:22
+#: contacts/qml/Settings.qml:31
 #, fuzzy, kde-format
 #| msgid "Add New Calendar Source…"
 msgid "Add New Address Book Source…"
@@ -3296,7 +3285,7 @@ msgstr "Ημερολόγιο"
 msgid "Email Client"
 msgstr "Εφαρμογή ημερολογίου"
 
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:27
 #, kde-format
 msgid "Move to trash"
 msgstr ""
@@ -3498,23 +3487,23 @@ msgctxt "Separator between identity name and email address"
 msgid " - "
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:36
+#: quick/qml/AgentConfigurationForm.qml:32
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure %1"
 msgstr "Διαμόρφωση"
 
-#: quick/qml/AgentConfigurationForm.qml:37
+#: quick/qml/AgentConfigurationForm.qml:33
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:42
+#: quick/qml/AgentConfigurationForm.qml:38
 #, kde-format
 msgid "Modify"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:82
+#: quick/qml/AgentConfigurationForm.qml:78
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Add Account"
@@ -3617,6 +3606,17 @@ msgstr "Δημιουργία νέας ετικέτας…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Γρήγορη προσθήκη νέας ετικέτας."
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure Schedule…"
+#~ msgstr "Διαμόρφωση"
+
+#, fuzzy
+#~| msgid "New Event…"
+#~ msgctxt "@action:inmenu"
+#~ msgid "New Contact Contact"
+#~ msgstr "Νέο γεγονός…"
 
 #~ msgid "Change Calendar Color…"
 #~ msgstr "Αλλαγή χρώματος ημερολογίου…"

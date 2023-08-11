@@ -12,16 +12,24 @@ Kirigami.ScrollablePage {
 
     title: i18nc("@title:window", "Settings")
 
+    topPadding: 0
     leftPadding: 0
     rightPadding: 0
 
     ColumnLayout {
-        Akonadi.AgentConfigurationForm {
-            mimetypes: [Akonadi.MimeTypes.contactGroup, Akonadi.MimeTypes.address]
+        spacing: 0
+
+        MobileForm.FormHeader {
             title: i18n("Contact Books")
-            addPageTitle: i18n("Add New Address Book Source…")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        Akonadi.AgentConfigurationForm {
+            mimetypes: [Akonadi.MimeTypes.contactGroup, Akonadi.MimeTypes.address]
+            addPageTitle: i18n("Add New Address Book Source…")
+            Layout.fillWidth: true
         }
     }
 }

@@ -10,17 +10,29 @@ import org.kde.akonadi 1.0
 
 Kirigami.ScrollablePage {
     id: sourcesSettingsPage
+
     title: i18n("Accounts")
+
+    topPadding: 0
     leftPadding: 0
     rightPadding: 0
 
     ColumnLayout {
-        AgentConfigurationForm {
-            mimetypes: [MimeTypes.calendar, MimeTypes.todo]
+        spacing: 0
+
+        MobileForm.FormHeader {
+            title: root.title
             title: i18n("Calendars")
-            addPageTitle: i18n("Add New Calendar Source…")
+
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        AgentConfigurationForm {
+            mimetypes: [MimeTypes.calendar, MimeTypes.todo]
+            addPageTitle: i18n("Add New Calendar Source…")
+
+            Layout.fillWidth: true
         }
     }
 }
