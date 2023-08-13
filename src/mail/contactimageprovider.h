@@ -6,18 +6,21 @@
 #include <QQuickAsyncImageProvider>
 
 #include <KContacts/Addressee>
+#include <QNetworkAccessManager>
 #include <QReadWriteLock>
 
 namespace Akonadi
 {
 class ContactSearchJob;
 }
+class QDnsLookup;
+class QNetworkReply;
 
 class ThumbnailResponse : public QQuickImageResponse
 {
     Q_OBJECT
 public:
-    ThumbnailResponse(QString mediaId, QSize requestedSize);
+    ThumbnailResponse(QString mediaId, QSize requestedSize, QNetworkAccessManager *qnam);
     ~ThumbnailResponse() override = default;
 
 private Q_SLOTS:
@@ -27,9 +30,13 @@ private Q_SLOTS:
 
 private:
     bool searchPhoto(const KContacts::AddresseeList &list);
-    const QString m_email;
+    void queryImage(const QString &hostame = QStringLiteral("https://seccdn.libravatar.org/avatar/"));
+    void imageQueried(QNetworkReply *reply);
+    void dnsLookupFinished(QDnsLookup *dns);
+    QString m_email;
     QSize requestedSize;
     const QString localFile;
+    QNetworkAccessManager *m_qnam;
 
     QImage m_image;
     KContacts::Picture m_photo;
@@ -45,5 +52,9 @@ private:
 class ContactImageProvider : public QQuickAsyncImageProvider
 {
 public:
+    explicit ContactImageProvider();
     QQuickImageResponse *requestImageResponse(const QString &id, const QSize &requestedSize) override;
+
+private:
+    QNetworkAccessManager qnam;
 };

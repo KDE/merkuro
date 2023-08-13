@@ -12,6 +12,7 @@
 #include "mailmanager.h"
 #include "mailmodel.h"
 #include "messageloader.h"
+#include <MailCommon/EntityCollectionOrderProxyModel>
 
 void CalendarPlugin::registerTypes(const char *uri)
 {
@@ -39,6 +40,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     qmlRegisterType<MessageLoader>(uri, 1, 0, "MessageLoader");
 
     qRegisterMetaType<MailModel *>("MailModel*");
+    qRegisterMetaType<MailCommon::EntityCollectionOrderProxyModel *>("MailCommon::EntityCollectionOrderProxyModel*");
 }
 
 void CalendarPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
