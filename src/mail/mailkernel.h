@@ -39,7 +39,7 @@ public:
     static MailKernel &self();
 
     // IKernel
-    KIdentityManagement::IdentityManager *identityManager() override;
+    KIdentityManagementCore::IdentityManager *identityManager() override;
     MessageComposer::MessageSender *msgSender() override;
 
     // ISettings
@@ -67,7 +67,7 @@ private:
     ~MailKernel() override;
 
     KSharedConfigPtr mConfig;
-    KIdentityManagement::IdentityManager *const mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *const mIdentityManager = nullptr;
     MessageComposer::MessageSender *const mMessageSender = nullptr;
     MailCommon::FolderCollectionMonitor *mFolderCollectionMonitor = nullptr;
     Akonadi::EntityTreeModel *mEntityTreeModel = nullptr;

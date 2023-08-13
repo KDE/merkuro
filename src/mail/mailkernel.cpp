@@ -8,7 +8,7 @@
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/Session>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KSharedConfig>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
@@ -25,7 +25,7 @@ MailKernel &MailKernel::self()
 MailKernel::MailKernel(QObject *parent)
     : QObject(parent)
     , mConfig(KSharedConfig::openConfig(QStringLiteral("merkuromailrc")))
-    , mIdentityManager(new KIdentityManagement::IdentityManager(true, this))
+    , mIdentityManager(new KIdentityManagementCore::IdentityManager(true, this))
     , mMessageSender(new MessageComposer::AkonadiSender(this))
 {
     auto session = new Akonadi::Session("Merkuro Mail Kernel ETM", this);
@@ -55,7 +55,7 @@ MailKernel::~MailKernel()
     CommonKernel->registerFilterIf(nullptr);
 }
 
-KIdentityManagement::IdentityManager *MailKernel::identityManager()
+KIdentityManagementCore::IdentityManager *MailKernel::identityManager()
 {
     return mIdentityManager;
 }
