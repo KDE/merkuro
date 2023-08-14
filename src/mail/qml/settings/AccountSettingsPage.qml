@@ -26,9 +26,14 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Akonadi.IdentityConfigurationForm {
+        MobileForm.FormHeader {
+            title: i18n("Identities")
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        Akonadi.IdentityConfigurationForm {
+            Layout.fillWidth: true
         }
 
         MobileForm.FormHeader {
