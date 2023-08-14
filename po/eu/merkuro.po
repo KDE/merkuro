@@ -1,4 +1,4 @@
-# Translation for kalendar.po to Euskara/Basque (eu).
+# Translation for merkuro.po to Euskara/Basque (eu).
 # Copyright (C) 2022-2023 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
@@ -7,10 +7,10 @@
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: kalendar\n"
+"Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-07 03:01+0000\n"
-"PO-Revision-Date: 2023-04-21 00:02+0200\n"
+"PO-Revision-Date: 2023-08-13 22:03+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -139,10 +139,9 @@ msgid "New Task…"
 msgstr "Zeregin berria..."
 
 #: calendar/calendarapplication.cpp:230
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgid "Configure Schedule…"
-msgstr "Konfiguratu %1"
+msgstr "Konfiguratu antolaketa…"
 
 #: calendar/calendarapplication.cpp:243
 #, kde-format
@@ -225,11 +224,10 @@ msgid "Task"
 msgstr "Zeregina"
 
 #: calendar/main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Egutegia"
+msgstr "Merkuro Calendar"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -239,7 +237,7 @@ msgstr "Egutegi aplikazioa"
 #: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:55
 #, kde-format
 msgid "(c) KDE Community 2021"
-msgstr "(c) KDE Community 2021"
+msgstr "(c) KDE Komunitatea 2021"
 
 #: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:56
 #, kde-format
@@ -507,8 +505,7 @@ msgid "An error occurred importing incidences: %1"
 msgstr "Errore bat gertatu da intzidentziak inportatzean: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:62
-#, fuzzy, kde-format
-#| msgid "New calendar  created from imported file successfully."
+#, kde-format
 msgid "New calendar created from imported file successfully."
 msgstr "Inportatutako fitxategitik egutegi berria ondo sortu da."
 
@@ -520,7 +517,7 @@ msgstr "Inportatu egutegi bat"
 #: calendar/qml/Controls/ImportHandler.qml:90
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
-msgstr ""
+msgstr "Egutegi fitxategiak (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:107
 #, kde-format
@@ -537,12 +534,13 @@ msgid ""
 msgstr ""
 "Egutegi fitxategi honetako ekitaldi eta zereginak dituzun egutegietako "
 "batean bateratzea nahi zenuke, edo fitxategi honetatik egutegi berri bat "
-"sortzea nahiago zenuke?"
+"sortzea nahiago duzu?\n"
+" "
 
 #: calendar/qml/Controls/ImportHandler.qml:123
 #, kde-format
 msgid "Merge with existing calendar"
-msgstr "Bateratu aurrez dagoen egutegiarekin"
+msgstr "Bateratu dagoen egutegiarekin"
 
 #: calendar/qml/Controls/ImportHandler.qml:137
 #, kde-format
@@ -1229,10 +1227,9 @@ msgid "Add Attachment"
 msgstr "Gehitu eranskina"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1061
-#, fuzzy, kde-format
-#| msgid "Add Attachment"
+#, kde-format
 msgid "Add an attachment"
-msgstr "Gehitu eranskina"
+msgstr "Gehitu eranskin bat"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:29
 #, kde-format
@@ -1276,8 +1273,7 @@ msgid "Mark Complete"
 msgstr "Markatu Osatuta"
 
 #: calendar/qml/Drawers/MainDrawer.qml:118
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgid "Calendar"
 msgstr "Egutegia"
 
@@ -1422,10 +1418,9 @@ msgid "Return to Location"
 msgstr "Itzuli kokalekura"
 
 #: calendar/qml/main.qml:228
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgid "Configure Schedule"
-msgstr "Konfiguratu %1"
+msgstr "Konfiguratu antolaketa"
 
 #: calendar/qml/main.qml:285 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
@@ -1613,11 +1608,9 @@ msgid "No tasks left to complete"
 msgstr "Ez dago osatu beharreko zereginak"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:224
-#, fuzzy, kde-format
-#| msgctxt "Please retain parenthesis and space"
-#| msgid " (overdue)"
+#, kde-format
 msgid " , is overdue"
-msgstr " (atzeratua)"
+msgstr " , atzeratuta dago"
 
 #: calendar/qml/MainViews/TodoView.qml:102
 #, kde-format
@@ -1627,7 +1620,7 @@ msgstr "Erakutsi Osatutakoak"
 #: calendar/qml/MainViews/TodoView.qml:110
 #, kde-format
 msgid "Completed Tasks in %1"
-msgstr "%1(e)an bukatutako zereginak"
+msgstr "%1(e)an osatutako zereginak"
 
 #: calendar/qml/MainViews/TodoView.qml:110
 #, kde-format
@@ -1643,7 +1636,7 @@ msgstr "Sortu zeregin berria..."
 #: calendar/qml/MainViews/TodoView.qml:199
 #, kde-format
 msgid "Quickly Add a New Task."
-msgstr "Gehitu zeregin berria."
+msgstr "Zeregin berri bat azkar gehitzea."
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:24
 #, kde-format
@@ -1736,28 +1729,25 @@ msgid "Help"
 msgstr "Laguntza"
 
 #: calendar/qml/Menus/MenuBar.qml:184
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr "Kalendar-ren eskuliburua"
+msgstr "«Calendar»ren eskuliburua"
 
 #: calendar/qml/Settings/Schedule/AvailabilitySettingsPage.qml:12
 #, kde-format
 msgid "Configure Availability"
-msgstr ""
+msgstr "Konfiguratu eskuragarritasuna"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgid "Configure Free/Busy"
-msgstr "Konfiguratu %1"
+msgstr "Konfiguratu libre/lanpetua"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:28
 #, kde-format
 msgid "Free/Busy Publishing settings"
-msgstr ""
+msgstr "Libre/Lanpetua argitaratzeko ezarpenak"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:32
 #, kde-format
@@ -1767,82 +1757,81 @@ msgid ""
 "that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"Zure libre/lanpetua informazioa argitaratzen duzunean, zu bilera batera "
+"gonbidatzerakoan, besteei zure egutegiko eskuragarritasuna kontuan izateko "
+"aukera ematen die. Dagoeneko lanpetua gisa markatuta dauden aldiak bakarrik "
+"ezagutarazten dira, zure eskuragarritasunaren arrazoi zehatzik agertu gabe."
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:37
 #, kde-format
 msgid "Publish your free/busy information automatically"
-msgstr ""
+msgstr "Argitaratu zure libre/lanpetua informazioa automatikoki"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:49
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
-msgstr ""
+msgstr "Zama-igoeren arteko gutxieneko denbora (minututan)"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:62
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
-msgstr ""
+msgstr "Libre/lanpetu informazioa argitaratzeko egun kopurua:"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:74
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:186
-#, fuzzy, kde-format
-#| msgid "Personal information"
+#, kde-format
 msgid "Server information"
-msgstr "Norbanakoaren informazioa"
+msgstr "Zerbitzariaren informazioa"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:78
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:190
 #, kde-format
 msgid "Server URL"
-msgstr ""
+msgstr "Zerbitzariaren URL"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:88
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:200
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Erabiltzaile-izena"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:98
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:210
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Pasahitza"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:114
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:220
 #, kde-format
 msgid "Save password"
-msgstr ""
+msgstr "Gogoratu pasahitza"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:124
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
-msgstr ""
+msgstr "Egin klik hemen Libre/lanpetua informazioa eskuz argitaratzeko"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Email Address"
-#| msgid_plural "Email Addresses"
+#, kde-format
 msgid "Email Free/Busy"
-msgstr "E-posta helbidea"
+msgstr "Bidali e-posta bidez libre/lanpetua"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:140
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr ""
+msgstr "Sartu hartzailearen e-posta..."
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:143
 #: mail/qml/MailComposer.qml:138
-#, fuzzy, kde-format
-#| msgid "Send SMS"
+#, kde-format
 msgid "Send"
-msgstr "Bidali SMS"
+msgstr "Bidali"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:158
-#, fuzzy, kde-format
-#| msgid "General settings"
+#, kde-format
 msgid "Free/Busy Retrieval settings"
-msgstr "Ezarpen orokorrak"
+msgstr "Libre/lanpetua eskuratzeko ezarpenak"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:162
 #, kde-format
@@ -1850,21 +1839,23 @@ msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
 "their calendar into account when inviting them to a meeting."
 msgstr ""
+"Besteek argitaratu duten libre/lanpetua informazioa eskuratuz, beren "
+"egutegiak kontuan har ditzakezu bilera batera gonbidatzerakoan."
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:167
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
-msgstr ""
+msgstr "Eskuratu besteen libre/lanpetua informazioa automatikoki"
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:176
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr ""
+msgstr "Erabili e-posta helbide osoa eskuratzeko"
 
 #: calendar/qml/Settings/Schedule/ScheduleSettingsPage.qml:13
 #, kde-format
 msgid "Free/Busy"
-msgstr ""
+msgstr "Libre/Lanpetua"
 
 #: calendar/qml/Settings/SettingsPage.qml:14
 #: calendar/qml/Settings/ViewSettingsPage.qml:12
@@ -2186,15 +2177,13 @@ msgstr "Fitxategia"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Irten «Merkuro»tik"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Kalendar-ren eskuliburua"
+msgstr "«Merkuro»ren eskuliburua"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2309,17 +2298,15 @@ msgid "Other:"
 msgstr "Bestelakoa:"
 
 #: contacts/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Kontaktua"
+msgstr "Merkuro Contact"
 
 #: contacts/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Address Book:"
+#, kde-format
 msgid "Address Book Application"
-msgstr "Helbide-liburua:"
+msgstr "Helbide-liburua aplikazioa"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2344,25 +2331,22 @@ msgid "Contacts"
 msgstr "Kontaktuak"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Sortu"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Kontaktu berria..."
+msgstr "Kontaktu berria"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
-msgstr "Kontaktu-talde berria..."
+msgstr "Kontaktu-talde berria"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2443,7 +2427,7 @@ msgstr "Kontaktuaren izena"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Aurreratua"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
@@ -2451,10 +2435,9 @@ msgid "Honorific prefix"
 msgstr "Ohorezko aurrizkia"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "jn."
+msgstr "Dk."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2517,10 +2500,9 @@ msgid "Honorific suffix"
 msgstr "Ohorezko atzizkia"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2610,7 +2592,7 @@ msgstr "Saila"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Merkuro-taldea"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
@@ -2660,18 +2642,18 @@ msgstr "Editatu kontaktua"
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Abisua"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Kontaktu hori editatu bitartean beste nonbait aldatu da."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:167
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Zein aldaketa mantendu beharko lirateke?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
@@ -2686,17 +2668,14 @@ msgid "External changes"
 msgstr "Kanpoko aldaketak"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "Editatu %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Kontaktu-talde berria..."
+msgstr "Sortu kontaktu-taldea"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
 #, kde-format
@@ -2717,11 +2696,13 @@ msgstr "Partaideak"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
+"E-posta helbide bat duten kontaktuak bakarrik gehitu daitezke kontaktu-talde "
+"batera."
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "Kontaktu-talde hori editatu bitartean beste nonbait aldatu da."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2907,11 +2888,10 @@ msgid "Edit"
 msgstr "Editatu"
 
 #: contacts/qml/private/ContactPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
-msgstr "Utzi"
+msgstr "*Utzi"
 
 #: contacts/qml/private/ContactPage.qml:84
 #, kde-format
@@ -3058,10 +3038,9 @@ msgstr[0] "E-posta helbidea"
 msgstr[1] "E-posta helbideak"
 
 #: contacts/qml/private/DeleteContactAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: %1?"
-msgstr "«%1» egutegia ezabatu nahi duzu?"
+msgstr "Benetan ezabatu nahi duzu zure kontaktua: %1?"
 
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
@@ -3084,8 +3063,7 @@ msgid "Creating QR code failed"
 msgstr "QR kodea sortzea huts egin du"
 
 #: contacts/qml/Settings.qml:13
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -3108,13 +3086,12 @@ msgstr "Ireki komando-barra"
 #: lib/abstractapplication.cpp:168
 #, kde-format
 msgid "About %1"
-msgstr ""
+msgstr "%1(e)ri buruz"
 
 #: lib/abstractapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About KDE"
-msgstr "Kalendar-reri buruz"
+msgstr "KDEri buruz"
 
 #: lib/abstractapplication.cpp:188
 #, kde-format
@@ -3156,17 +3133,15 @@ msgid "Unknown"
 msgstr "Ezezaguna"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Egutegia"
+msgstr "Merkuro Mail"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
+#, kde-format
 msgid "Email Client"
-msgstr "Egutegi aplikazioa"
+msgstr "E-posta-bezeroa"
 
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
@@ -3230,21 +3205,20 @@ msgid "Move to trash"
 msgstr "Eraman zakarrontzira"
 
 #: mail/qml/FolderView.qml:34
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Mezularitza"
+msgstr "Markatu mezua"
 
 #: mail/qml/FolderView.qml:36
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "Markatu mezua irakurritzat"
 
 #: mail/qml/FolderView.qml:39
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "Markatu mezua irakurri gabe gisa"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3252,33 +3226,29 @@ msgid "Don't Mark as Important"
 msgstr "Ez markatu Garrantzitsu gisa"
 
 #: mail/qml/FolderView.qml:45
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Ez markatu Garrantzitsu gisa"
+msgstr "Markatu Garrantzitsu gisa"
 
 #: mail/qml/FolderView.qml:51
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Eraman zakarrontzira"
 
 #: mail/qml/FolderView.qml:56
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Mezularitza"
+msgstr "Eraman mezua hona..."
 
 #: mail/qml/FolderView.qml:61
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "Kopiatu mezua hona..."
 
 #: mail/qml/FolderView.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Gehitu oroigarria"
+msgstr "Gehitu jarraipen oroigarria"
 
 #: mail/qml/FolderView.qml:83
 #, kde-format
@@ -3307,48 +3277,45 @@ msgid "Mail"
 msgstr "Posta"
 
 #: mail/qml/MailComposer.qml:16
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Message"
-msgstr "Mezularitza"
+msgstr "Mezu berria"
 
 #: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "Nork:"
 
 #: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Nortasuna:"
 
 #: mail/qml/MailComposer.qml:66 mail/qml/MailViewer.qml:98
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "Nori:"
 
 #: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
-msgstr ""
+msgstr "CC:"
 
 #: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
-msgstr ""
+msgstr "BCC:"
 
 #: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
-msgstr ""
+msgstr "Erantzun-honi:"
 
 #: mail/qml/MailComposer.qml:89
-#, fuzzy, kde-format
-#| msgctxt "displayed as subject when the subject of a mail is empty"
-#| msgid "No Subject"
+#, kde-format
 msgid "Subject:"
-msgstr "Gairik ez"
+msgstr "Gaia:"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3411,10 +3378,9 @@ msgid "Loading mail..."
 msgstr "Posta zamatzen..."
 
 #: mail/qml/MailViewer.qml:80
-#, fuzzy, kde-format
-#| msgid "Send SMS"
+#, kde-format
 msgid "Sender:"
-msgstr "Bidali SMS"
+msgstr "Bidaltzailea:"
 
 #: mail/qml/MailViewer.qml:149
 #, kde-format
@@ -3427,16 +3393,15 @@ msgid "Import key"
 msgstr "Inportatu gakoa"
 
 #: mail/qml/settings/AccountSettingsPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgid "Account settings"
-msgstr "Hilabeteko ikuspegiaren ezarpenak"
+msgstr "Kontuaren ezarpenak"
 
 #: quick/identitymodel.cpp:42
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " - "
-msgstr ""
+msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:36
 #, kde-format
@@ -3461,7 +3426,7 @@ msgstr "Gehitu kontua"
 #: quick/qml/IdentityConfigurationForm.qml:21
 #, kde-format
 msgid "Identities"
-msgstr ""
+msgstr "Nortasunak"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
