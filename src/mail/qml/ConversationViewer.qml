@@ -22,6 +22,8 @@ MimeTreeParser.MailViewer {
     topPadding: 0
     bottomPadding: 0
 
+    icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
+
     contextualActions: [
         Kirigami.Action {
             text: i18n("Move to trash")
