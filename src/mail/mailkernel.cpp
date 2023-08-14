@@ -144,3 +144,5 @@ void MailKernel::openFilterDialog(bool createDummyFilter)
 void MailKernel::createFilter(const QByteArray &field, const QString &value)
 {
 }
+
+#include "moc_mailkernel.cpp"
