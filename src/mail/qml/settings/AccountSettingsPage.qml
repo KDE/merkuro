@@ -26,9 +26,26 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Akonadi.IdentityConfigurationForm {
+        MobileForm.FormHeader {
+            title: i18n("Identities")
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+
+        Akonadi.IdentityConfigurationForm {
+            Layout.fillWidth: true
+        }
+
+        MobileForm.FormHeader {
+            title: i18n("Recieving Accounts")
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+        }
+        
+        Akonadi.AgentConfigurationForm {
+            addPageTitle: i18n("Mail Account Configuration")
+            mimetypes: Akonadi.MimeTypes.mail
+            Layout.fillWidth: true
         }
     }
 }

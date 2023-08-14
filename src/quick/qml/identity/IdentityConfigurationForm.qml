@@ -17,10 +17,6 @@ MobileForm.FormCard {
     contentItem: ColumnLayout {
         spacing: 0
 
-        MobileForm.FormCardHeader {
-            title: i18n("Identities")
-        }
-
         Repeater {
             id: identityRepeater
 
