@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -210,7 +210,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Παρουσιάστηκε σφάλμα: %1"
@@ -3285,7 +3285,7 @@ msgstr "Ημερολόγιο"
 msgid "Email Client"
 msgstr "Εφαρμογή ημερολογίου"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr ""
@@ -3414,61 +3414,6 @@ msgstr ""
 msgid "This mail contains an invitation"
 msgstr ""
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr ""
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
@@ -3480,6 +3425,23 @@ msgstr "Εισαγωγή ημερολογίου"
 #| msgid "Month View settings"
 msgid "Account settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr ""
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Recieving Accounts"
+msgstr "Λογαριασμοί"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Mail Account Configuration"
+msgstr "Λογαριασμοί"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3545,12 +3507,7 @@ msgstr "Αφαίρεση ετικέτας"
 msgid "Add email alias"
 msgstr "Προσθήκη υπενθύμισης"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr ""
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, fuzzy, kde-format
 #| msgid "Edit event"
 msgctxt "@title"
@@ -3669,11 +3626,6 @@ msgstr "Γρήγορη προσθήκη νέας ετικέτας."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Επιλογή χρώματος ημερολογίου"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Mail Accounts"
-#~ msgstr "Λογαριασμοί"
 
 #, fuzzy
 #~| msgid "Contacts"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-07-05 17:38-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -204,7 +204,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Propriedades do calendário %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Ocorreu um erro: %1"
@@ -3156,7 +3156,7 @@ msgstr "Calendário"
 msgid "Email Client"
 msgstr "Aplicativo de calendário"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Mover para a Lixeira"
@@ -3286,61 +3286,6 @@ msgstr "Assunto:"
 msgid "This mail contains an invitation"
 msgstr "Esse e-mail contém um convite"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "enviado por %1 em %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Esta mensagem foi assinada usando a chave %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "Os detalhes da chave não estão disponíveis."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Esta mensagem foi assinada usando a chave %1 por %2."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "A chave foi revogada."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "A chave expirou."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Você está confiando nesta chave."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "A assinatura é inválida."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Essa mensagem está criptografada, mas não temos a chave para ela."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Esta mensagem é criptografada com a chave: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "Carregando e-mail..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3351,6 +3296,24 @@ msgstr "Importar chave"
 #| msgid "Month view settings"
 msgid "Account settings"
 msgstr "Configurações da visualização do mês"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, fuzzy, kde-format
+#| msgid "Identity:"
+msgid "Identities"
+msgstr "Identidade:"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Recieving Accounts"
+msgstr "Contas de e-mails"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Mail Account Configuration"
+msgstr "Contas de e-mails"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3416,13 +3379,7 @@ msgstr "Remover e-mail"
 msgid "Add email alias"
 msgstr "Adicionar e-mail"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Identities"
-msgstr "Identidade:"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, fuzzy, kde-format
 #| msgid "Identity:"
 msgctxt "@title"
@@ -3478,6 +3435,39 @@ msgstr "Criar uma nova etiqueta…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Adicionar rapidamente uma nova etiqueta."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "enviado por %1 em %2"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "Esta mensagem foi assinada usando a chave %1."
+
+#~ msgid "The key details are not available."
+#~ msgstr "Os detalhes da chave não estão disponíveis."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "Esta mensagem foi assinada usando a chave %1 por %2."
+
+#~ msgid "The key was revoked."
+#~ msgstr "A chave foi revogada."
+
+#~ msgid "The key has expired."
+#~ msgstr "A chave expirou."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "Você está confiando nesta chave."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "A assinatura é inválida."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "Essa mensagem está criptografada, mas não temos a chave para ela."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "Esta mensagem é criptografada com a chave: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "Carregando e-mail..."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Configurar agenda…"
@@ -3574,9 +3564,6 @@ msgstr "Adicionar rapidamente uma nova etiqueta."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Livro de endereços:"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "Contas de e-mails"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "Adicionar nova conta de e-mail..."

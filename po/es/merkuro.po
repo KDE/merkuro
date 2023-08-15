@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-13 00:56+0200\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
+"PO-Revision-Date: 2023-08-14 17:36+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -206,7 +206,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Propiedades del calendario %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Ha ocurrido un error: %1"
@@ -3139,7 +3139,7 @@ msgstr "Correo de Merkuro"
 msgid "Email Client"
 msgstr "Cliente de correo electrónico"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Mover a la papelera"
@@ -3262,61 +3262,6 @@ msgstr "Asunto:"
 msgid "This mail contains an invitation"
 msgstr "Este mensaje contiene una invitación"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "enviado por %1 el %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Este mensaje se ha firmado con la clave %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "No se dispone de detalles sobre la clave."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Este mensaje se ha firmado con la clave %1 por %2."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "La clave había sido revocada."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "La clave ha expirado."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Usted confía en esta clave."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "La firma no es válida."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Este mensaje está cifrado, pero no se dispone de la clave para él."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Este mensaje está cifrado con la clave: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "Cargando correo..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3326,6 +3271,23 @@ msgstr "Importar clave"
 #, kde-format
 msgid "Account settings"
 msgstr "Preferencias de la cuenta"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Identidades"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Recieving Accounts"
+msgstr "Cuentas de correo"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Mail Account Configuration"
+msgstr "Cuentas de correo"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3354,79 +3316,60 @@ msgid "Add Account"
 msgstr "Añadir cuenta"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Identity"
-msgstr "Identidad:"
+msgstr "Identidad"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
+#, kde-format
 msgid "Your name"
-msgstr "Eloy Cuadra"
+msgstr "Su nombre"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, fuzzy, kde-format
-#| msgid "Email Address"
-#| msgid_plural "Email Addresses"
+#, kde-format
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, fuzzy, kde-format
-#| msgid "Email Client"
+#, kde-format
 msgid "E-mail aliases"
-msgstr "Cliente de correo electrónico"
+msgstr "Alias de correo electrónico"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgid "Remove email alias"
-msgstr "Eliminar correo electrónico"
+msgstr "Eliminar alias de correo electrónico"
 
 #: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, fuzzy, kde-format
-#| msgid "Add email"
-msgid "Add email alias"
-msgstr "Añadir correo electrónico"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
 #, kde-format
-msgid "Identities"
-msgstr "Identidades"
+msgid "Add email alias"
+msgstr "Añadir alias de correo electrónico"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
+#, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
-msgstr "Identidad:"
+msgstr "Editar identidad"
 
 #: quick/qml/identity/IdentityEditorPage.qml:37
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Add Identity"
-msgstr "Identidad:"
+msgstr "Añadir identidad"
 
 #: quick/qml/identity/IdentityEditorPage.qml:39
-#, fuzzy, kde-format
-#| msgid "Identity:"
+#, kde-format
 msgid "Edit Identity"
-msgstr "Identidad:"
+msgstr "Editar identidad"
 
 #: quick/qml/identity/IdentityEditorPage.qml:107
-#, fuzzy, kde-format
-#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
-#| msgid "Delete %1"
+#, kde-format
 msgid "Delete %1"
 msgstr "Borrar %1"
 
 #: quick/qml/identity/IdentityEditorPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete this identity?"
-msgstr "¿Seguro que desea borrar la etiqueta «%1»?"
+msgstr "¿Seguro que desea borrar esta identidad?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3452,6 +3395,39 @@ msgstr "Crear una nueva etiqueta..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Añadir rápidamente una nueva etiqueta."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "enviado por %1 el %2"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "Este mensaje se ha firmado con la clave %1."
+
+#~ msgid "The key details are not available."
+#~ msgstr "No se dispone de detalles sobre la clave."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "Este mensaje se ha firmado con la clave %1 por %2."
+
+#~ msgid "The key was revoked."
+#~ msgstr "La clave había sido revocada."
+
+#~ msgid "The key has expired."
+#~ msgstr "La clave ha expirado."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "Usted confía en esta clave."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "La firma no es válida."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "Este mensaje está cifrado, pero no se dispone de la clave para él."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "Este mensaje está cifrado con la clave: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "Cargando correo..."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Configurar planificación..."
@@ -3542,9 +3518,6 @@ msgstr "Añadir rápidamente una nueva etiqueta."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Libreta de direcciones"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "Cuentas de correo"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "Añadir nueva cuenta de correo..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-08 08:16+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -204,7 +204,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Egenskaper för kalender %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Ett fel uppstod: %1"
@@ -3128,7 +3128,7 @@ msgstr "Merkuro e-post"
 msgid "Email Client"
 msgstr "E-postprogram"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Flytta till papperskorgen"
@@ -3251,61 +3251,6 @@ msgstr "Rubrik:"
 msgid "This mail contains an invitation"
 msgstr "Brevet innehåller en inbjudan"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "skickat av %1 %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Brevet har signerats med användning av nyckel %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "Nyckelinformationen är inte tillgänglig."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Brevet har signerats med användning av nyckel %1 av %2."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "Nyckeln har återkallats."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "Nyckeln har gått ut."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Du litar på den här nyckeln."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "Signaturen är ogiltig."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Brevet är krypterat men vi har inte nyckeln för det."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Brevet är krypterat med nyckeln: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "Läser in e-post..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3315,6 +3260,23 @@ msgstr "Importera nyckel"
 #, kde-format
 msgid "Account settings"
 msgstr "Kontoinställningar"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Identiteter"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Recieving Accounts"
+msgstr "E-postkonton"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Mail Account Configuration"
+msgstr "E-postkonton"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3372,12 +3334,7 @@ msgstr "Ta bort e-postalias"
 msgid "Add email alias"
 msgstr "Lägg till e-postalias"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "Identiteter"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3427,6 +3384,39 @@ msgstr "Skapa en ny etikett…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "skickat av %1 %2"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "Brevet har signerats med användning av nyckel %1."
+
+#~ msgid "The key details are not available."
+#~ msgstr "Nyckelinformationen är inte tillgänglig."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "Brevet har signerats med användning av nyckel %1 av %2."
+
+#~ msgid "The key was revoked."
+#~ msgstr "Nyckeln har återkallats."
+
+#~ msgid "The key has expired."
+#~ msgstr "Nyckeln har gått ut."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "Du litar på den här nyckeln."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "Signaturen är ogiltig."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "Brevet är krypterat men vi har inte nyckeln för det."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "Brevet är krypterat med nyckeln: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "Läser in e-post..."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Anpassa schema…"
@@ -3518,9 +3508,6 @@ msgstr "Lägg snabbt till en ny etikett."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Adressbok:"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "E-postkonton"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "Lägg till nytt e-postkonto…"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-13 21:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -206,7 +206,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "%1 egutegiaren propietateak"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Errore bat gertatu da: %1"
@@ -3139,7 +3139,7 @@ msgstr "Merkuro Mail"
 msgid "Email Client"
 msgstr "E-posta-bezeroa"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Eraman zakarrontzira"
@@ -3262,61 +3262,6 @@ msgstr "Gaia:"
 msgid "This mail contains an invitation"
 msgstr "Posta honek gonbidapen bat du"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "%1(e)k %2(e)an bidalia"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Mezu hau %1 gakoa erabiliz sinatu da."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "Gakoaren xehetasuna ez daude erabilgarri."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Mezu hau %2(r)en %1 gakoa erabiliz sinatu da."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "Gakoa indargabetua dago."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "Gakoa iraungita dago."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Gako honetan konfiantza duzu."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "Sinadura baliogabea da."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Mezu hau zifratuta dago baina ez dugu dagokion gakoa."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Mezu hau ondoko gakorako zifratuta dago: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "Posta zamatzen..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3326,6 +3271,23 @@ msgstr "Inportatu gakoa"
 #, kde-format
 msgid "Account settings"
 msgstr "Kontuaren ezarpenak"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Nortasunak"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Recieving Accounts"
+msgstr "Posta kontuak"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgid "Mail Account Configuration"
+msgstr "Posta kontuak"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3383,12 +3345,7 @@ msgstr "Kendu e-posta goitizenak"
 msgid "Add email alias"
 msgstr "Gehitu e-posta goitizenak"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "Nortasunak"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3438,6 +3395,39 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "%1(e)k %2(e)an bidalia"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "Mezu hau %1 gakoa erabiliz sinatu da."
+
+#~ msgid "The key details are not available."
+#~ msgstr "Gakoaren xehetasuna ez daude erabilgarri."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "Mezu hau %2(r)en %1 gakoa erabiliz sinatu da."
+
+#~ msgid "The key was revoked."
+#~ msgstr "Gakoa indargabetua dago."
+
+#~ msgid "The key has expired."
+#~ msgstr "Gakoa iraungita dago."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "Gako honetan konfiantza duzu."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "Sinadura baliogabea da."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "Mezu hau zifratuta dago baina ez dugu dagokion gakoa."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "Mezu hau ondoko gakorako zifratuta dago: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "Posta zamatzen..."
 
 #, fuzzy
 #~| msgid "Configure %1"
@@ -3532,9 +3522,6 @@ msgstr "Azkar gehitu etiketa berri bat."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Helbide-liburua:"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "Posta kontuak"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "Gehitu posta kontu berria..."
