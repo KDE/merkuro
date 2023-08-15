@@ -37,7 +37,7 @@ Kirigami.ScrollablePage {
         }
 
         MobileForm.FormHeader {
-            title: i18n("Recieving Accounts")
+            title: i18n("Receiving Accounts")
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
         }
