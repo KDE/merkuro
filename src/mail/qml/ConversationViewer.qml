@@ -29,7 +29,7 @@ MimeTreeParser.MailViewer {
             text: i18n("Move to trash")
             iconName: "albumfolder-user-trash"
             onTriggered: {
-                MailManager.moveToTrash(root.item);
+                MailManager.moveToTrash(root.emptyItem);
                 applicationWindow().pageStack.pop();
             }
         }
