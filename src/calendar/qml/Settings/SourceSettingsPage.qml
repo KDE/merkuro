@@ -8,6 +8,8 @@ import QtQuick.Layouts 1.15
 import org.kde.merkuro.calendar 1.0
 import org.kde.akonadi 1.0
 
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+
 Kirigami.ScrollablePage {
     id: sourcesSettingsPage
 
@@ -22,7 +24,6 @@ Kirigami.ScrollablePage {
 
         MobileForm.FormHeader {
             title: root.title
-            title: i18n("Calendars")
 
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
