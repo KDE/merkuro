@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2023-08-13 15:10+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -204,7 +204,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Proprietates de Calendar %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Un error occurreva: %1"
@@ -453,7 +453,6 @@ msgid "Tags"
 msgstr "Etiquettas"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "Calendarios"
@@ -1837,7 +1836,7 @@ msgid "Appearance"
 msgstr "Apparentia"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:14
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
@@ -1849,7 +1848,7 @@ msgstr "Contos"
 msgid "Free/Busy"
 msgstr "Libere/Occupate"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:33
+#: calendar/qml/Settings/SourceSettingsPage.qml:34
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "Adde Nove Fonte de Calendario... "
@@ -3116,7 +3115,7 @@ msgstr "Merkuro Mail"
 msgid "Email Client"
 msgstr "Cliente de E-Posta"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Move a corbe"
@@ -3239,61 +3238,6 @@ msgstr "Subjecto:"
 msgid "This mail contains an invitation"
 msgstr ""
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "inviate per %1 sur %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "Le signatura es invalide."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "Cargante posta .."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3303,6 +3247,22 @@ msgstr "Importa clave ..."
 #, kde-format
 msgid "Account settings"
 msgstr "Preferentias de conto"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Identitates"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Receiving Accounts"
+msgstr "Contos"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, kde-format
+msgid "Mail Account Configuration"
+msgstr ""
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3360,12 +3320,7 @@ msgstr "Remove alias de e-posta"
 msgid "Add email alias"
 msgstr "Adde alias de e-posta"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "Identitates"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3415,6 +3370,15 @@ msgstr "Crea un nove  etiquetta..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rapidemente adde un note Etiquetta."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "inviate per %1 sur %2"
+
+#~ msgid "The signature is invalid."
+#~ msgstr "Le signatura es invalide."
+
+#~ msgid "Loading mail..."
+#~ msgstr "Cargante posta .."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Configura Planification..."

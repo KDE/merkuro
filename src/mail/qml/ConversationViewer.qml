@@ -22,12 +22,14 @@ MimeTreeParser.MailViewer {
     topPadding: 0
     bottomPadding: 0
 
+    icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
+
     actions: [
         Kirigami.Action {
             text: i18n("Move to trash")
             icon.name: "albumfolder-user-trash"
             onTriggered: {
-                MailManager.moveToTrash(root.item);
+                MailManager.moveToTrash(root.emptyItem);
                 applicationWindow().pageStack.pop();
             }
         }

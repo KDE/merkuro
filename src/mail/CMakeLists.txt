@@ -73,6 +73,11 @@ ecm_target_qml_sources(merkuro_mail_plugin
     qml/mailboxselector/MailBoxListPage.qml
 )
 
+ecm_target_qml_sources(merkuro_mail_plugin
+    PRIVATE PATH mailpartview SOURCES
+    qml/mailpartview/ICalPart.qml
+)
+
 target_link_libraries(merkuro_mail_plugin PUBLIC merkuro_mail_static)
 
 ecm_finalize_qml_module(merkuro_mail_plugin

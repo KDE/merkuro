@@ -131,7 +131,7 @@ QQC2.ScrollView {
 
             hoverEnabled: false
             text: i18n("Calendars")
-            Accessible.name: tagsHeadingItem.expanded ? i18nc('Accessible description of dropdown menu', 'Calendars, Expanded') : i18nc('Accessible description of dropdown menu', 'Calendars, Collapsed')
+            Accessible.name: collectionHeadingItem.expanded ? i18nc('Accessible description of dropdown menu', 'Calendars, Expanded') : i18nc('Accessible description of dropdown menu', 'Calendars, Collapsed')
             activeFocusOnTab: true
 
             contentItem: RowLayout {
@@ -154,7 +154,7 @@ QQC2.ScrollView {
                 Kirigami.Icon {
                     implicitWidth: Kirigami.Units.iconSizes.small
                     implicitHeight: Kirigami.Units.iconSizes.small
-                    source: tagsHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
+                    source: collectionHeadingItem.expanded ? 'arrow-up' : 'arrow-down'
                     isMask: true
                     Layout.rightMargin: Math.round(Kirigami.Units.smallSpacing / 2)
                     Layout.alignment: Qt.AlignVCenter

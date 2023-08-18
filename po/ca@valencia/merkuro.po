@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-07 17:49+0200\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 10:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -206,7 +206,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Propietats del calendari %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "S'ha produït un error: %1"
@@ -455,7 +455,6 @@ msgid "Tags"
 msgstr "Etiquetes"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "Calendaris"
@@ -1855,7 +1854,7 @@ msgid "Appearance"
 msgstr "Aparença"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:14
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
@@ -1867,7 +1866,7 @@ msgstr "Comptes"
 msgid "Free/Busy"
 msgstr "Lliure/ocupat"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:33
+#: calendar/qml/Settings/SourceSettingsPage.qml:34
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "Afig una font nova de calendari…"
@@ -3143,7 +3142,7 @@ msgstr "Correu de Merkuro"
 msgid "Email Client"
 msgstr "Client de correu"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Mou a la paperera"
@@ -3266,61 +3265,6 @@ msgstr "Assumpte:"
 msgid "This mail contains an invitation"
 msgstr "Este correu conté una invitació"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "enviat per %1 a %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Este missatge s'ha signat emprant la clau %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "Els detalls de la clau no estan disponibles."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Este missatge s'ha signat emprant la clau %1 de %2."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "S'ha revocat la clau."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "La clau ha caducat."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Esteu confiant en esta clau."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "La signatura no és vàlida."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Este missatge està encriptat, però no es disposa de la seua clau."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Este missatge està encriptat amb la clau: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "S'està carregant el correu..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3330,6 +3274,21 @@ msgstr "Importa la clau"
 #, kde-format
 msgid "Account settings"
 msgstr "Configureu el compte"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Identitats"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, kde-format
+msgid "Receiving Accounts"
+msgstr "Comptes de recepció"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, kde-format
+msgid "Mail Account Configuration"
+msgstr "Configureu el compte de correu"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3387,12 +3346,7 @@ msgstr "Elimina l'àlies de correu electrònic"
 msgid "Add email alias"
 msgstr "Afig un àlies de correu electrònic"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "Identitats"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3442,9 +3396,3 @@ msgstr "Crea una etiqueta nova…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Afig ràpidament una etiqueta nova."
-
-#~ msgid "Configure Schedule…"
-#~ msgstr "Configura la planificació…"
-
-#~ msgid "Configure Availability"
-#~ msgstr "Configura la disponibilitat"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-08 06:57+0200\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 06:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -203,7 +203,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "კალენდარის (%1) თვისებები"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "შეცდომა: %1"
@@ -452,7 +452,6 @@ msgid "Tags"
 msgstr "ჭდეები"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "კალენდრები"
@@ -1846,7 +1845,7 @@ msgid "Appearance"
 msgstr "გარემოს იერსახე"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:14
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
@@ -1858,7 +1857,7 @@ msgstr "ანგარიშები"
 msgid "Free/Busy"
 msgstr "თავისუფალი/დაკავებული"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:33
+#: calendar/qml/Settings/SourceSettingsPage.qml:34
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "ახალი კალენდარის წყაროს დამატება…"
@@ -3124,7 +3123,7 @@ msgstr "Merkuro-ის ფოსტა"
 msgid "Email Client"
 msgstr "ელფოსტის კლიენტი"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "ნაგავში მოთავსება"
@@ -3247,61 +3246,6 @@ msgstr "სათაური:"
 msgid "This mail contains an invitation"
 msgstr "ეს ელფოსტა მოსაწვევს შეიცავს"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "გაგზავნილია %1-ის მიერ. თარიღი %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "გასაღების დეტალები ხელმიუწვდომელია."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1, %2-ის მიერ."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "გასაღები გაუქმებულია."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "გასაღების ვადაგასულია."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "თქვენ ენდობით ამ გასაღებს."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "ხელმოწერა არასწორია."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "შეტყობინება დაშიფრულია, მაგრამ მისი გასაღები არ გვაქვს."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "ელფოსტის ჩატვირთვა..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3311,6 +3255,21 @@ msgstr "გასაღების შემოტანა"
 #, kde-format
 msgid "Account settings"
 msgstr "ანგარიშის მორგება"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "იდენტიფიკატორები"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, kde-format
+msgid "Receiving Accounts"
+msgstr "ანგარიშების მიღება"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, kde-format
+msgid "Mail Account Configuration"
+msgstr "ელფოსტის ანგარიშების მორგება"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3368,12 +3327,7 @@ msgstr "ელფოსტის ფსევდონიმის წაშლ�
 msgid "Add email alias"
 msgstr "ელფოსტის ფსევდონიმის დამატება"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "იდენტიფიკატორები"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3423,6 +3377,39 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "გაგზავნილია %1-ის მიერ. თარიღი %2"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1."
+
+#~ msgid "The key details are not available."
+#~ msgstr "გასაღების დეტალები ხელმიუწვდომელია."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "ეს შეტყობინება ხელმოწერილია გასაღებით %1, %2-ის მიერ."
+
+#~ msgid "The key was revoked."
+#~ msgstr "გასაღები გაუქმებულია."
+
+#~ msgid "The key has expired."
+#~ msgstr "გასაღების ვადაგასულია."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "თქვენ ენდობით ამ გასაღებს."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "ხელმოწერა არასწორია."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "შეტყობინება დაშიფრულია, მაგრამ მისი გასაღები არ გვაქვს."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "შეტყობინება დაშიფრულია ამ გასაღებამდე: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "ელფოსტის ჩატვირთვა..."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "გეგმის მორგება…"
@@ -3510,9 +3497,6 @@ msgstr "ახალი ჭდის სწრაფი დამატება
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "მისამართების წიგნი:"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "ელფოსტის ანგარიშები"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "ელფოსტის ახალი ანგარიშის დამატება…"

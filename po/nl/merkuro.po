@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-07 10:17+0200\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 11:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -203,7 +203,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Eigenschappen van agenda %1"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr "Er is een fout opgetreden: %1"
@@ -452,7 +452,6 @@ msgid "Tags"
 msgstr "Tags"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "Agenda's"
@@ -1850,7 +1849,7 @@ msgid "Appearance"
 msgstr "Uiterlijk"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:14
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
@@ -1862,7 +1861,7 @@ msgstr "Accounts"
 msgid "Free/Busy"
 msgstr "Vrij/bezet"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:33
+#: calendar/qml/Settings/SourceSettingsPage.qml:34
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "Nieuwe agendabron toevoegen…"
@@ -3130,7 +3129,7 @@ msgstr "Merkuro-e-mail"
 msgid "Email Client"
 msgstr "E-mailprogramma"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr "Naar prullenbak verplaatsen"
@@ -3253,61 +3252,6 @@ msgstr "Onderwerp:"
 msgid "This mail contains an invitation"
 msgstr "Deze e-mail bevat een uitnodiging"
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr "verzonden door %1 op %2"
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr "Dit bericht was ondertekend met de sleutel %1."
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr "De details van de sleutel zijn niet beschikbaar."
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr "Dit bericht was ondertekend met de sleutel %1 door %2."
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr "De sleutel is ingetrokken."
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr "De sleutel is verlopen."
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr "Deze sleutel wordt door u vertrouwd."
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr "De ondertekening is ongeldig."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr "Dit bericht is versleuteld maar we hebben de sleutel ervoor niet."
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr "Dit bericht is versleuteld met de sleutel: %1"
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr "E-mail laden..."
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
 msgid "Import key"
@@ -3317,6 +3261,21 @@ msgstr "Sleutel importeren"
 #, kde-format
 msgid "Account settings"
 msgstr "Accountinstellingen"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr "Identiteiten"
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, kde-format
+msgid "Receiving Accounts"
+msgstr "Accounts worden ontvangen"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, kde-format
+msgid "Mail Account Configuration"
+msgstr "Configuratie van e-mailaccount"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3374,12 +3333,7 @@ msgstr "E-mail-alias verwijderen"
 msgid "Add email alias"
 msgstr "E-mail-alias toevoegen"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr "Identiteiten"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Edit Identity"
@@ -3429,6 +3383,39 @@ msgstr "Een nieuwe tag aanmaken…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Snel een nieuwe tag toevoegen."
+
+#~ msgid "sent by %1 on %2"
+#~ msgstr "verzonden door %1 op %2"
+
+#~ msgid "This message has been signed using the key %1."
+#~ msgstr "Dit bericht was ondertekend met de sleutel %1."
+
+#~ msgid "The key details are not available."
+#~ msgstr "De details van de sleutel zijn niet beschikbaar."
+
+#~ msgid "This message has been signed using the key %1 by %2."
+#~ msgstr "Dit bericht was ondertekend met de sleutel %1 door %2."
+
+#~ msgid "The key was revoked."
+#~ msgstr "De sleutel is ingetrokken."
+
+#~ msgid "The key has expired."
+#~ msgstr "De sleutel is verlopen."
+
+#~ msgid "You are trusting this key."
+#~ msgstr "Deze sleutel wordt door u vertrouwd."
+
+#~ msgid "The signature is invalid."
+#~ msgstr "De ondertekening is ongeldig."
+
+#~ msgid "This message is encrypted but we don't have the key for it."
+#~ msgstr "Dit bericht is versleuteld maar we hebben de sleutel ervoor niet."
+
+#~ msgid "This message is encrypted to the key: %1"
+#~ msgstr "Dit bericht is versleuteld met de sleutel: %1"
+
+#~ msgid "Loading mail..."
+#~ msgstr "E-mail laden..."
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Planning configureren…"
@@ -3519,9 +3506,6 @@ msgstr "Snel een nieuwe tag toevoegen."
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Adresboek"
-
-#~ msgid "Mail Accounts"
-#~ msgstr "E-mailaccounts"
 
 #~ msgid "Add New mail account…"
 #~ msgstr "Nieuw e-mailaccount toevoegen…"

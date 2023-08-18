@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-18 00:46+0000\n"
 "PO-Revision-Date: 2021-08-09 22:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -218,7 +218,7 @@ msgctxt "@title:window"
 msgid "Properties of Calendar %1"
 msgstr "Kalendar 정보"
 
-#: calendar/importer.cpp:49 mail/qml/mailpartview/ErrorPart.qml:26
+#: calendar/importer.cpp:49
 #, kde-format
 msgid "An error occurred: %1"
 msgstr ""
@@ -465,7 +465,6 @@ msgid "Tags"
 msgstr ""
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
-#: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
 msgid "Calendars"
 msgstr "캘린더"
@@ -1962,7 +1961,7 @@ msgid "Appearance"
 msgstr ""
 
 #: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:14
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
 #: mail/qml/settings/AccountSettingsPage.qml:13
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
@@ -1974,7 +1973,7 @@ msgstr "계정"
 msgid "Free/Busy"
 msgstr ""
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:33
+#: calendar/qml/Settings/SourceSettingsPage.qml:34
 #, fuzzy, kde-format
 #| msgid "Add new calendar"
 msgid "Add New Calendar Source…"
@@ -3313,7 +3312,7 @@ msgstr "캘린더"
 msgid "Email Client"
 msgstr "캘린더 프로그램"
 
-#: mail/qml/ConversationViewer.qml:27
+#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgid "Move to trash"
 msgstr ""
@@ -3442,61 +3441,6 @@ msgstr ""
 msgid "This mail contains an invitation"
 msgstr ""
 
-#: mail/qml/mailpartview/MailPart.qml:42
-#, kde-format
-msgid "sent by %1 on %2"
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:53
-#, kde-format
-msgid "This message has been signed using the key %1."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:54
-#, kde-format
-msgid "The key details are not available."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:56
-#, kde-format
-msgid "This message has been signed using the key %1 by %2."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:58
-#, kde-format
-msgid "The key was revoked."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:61
-#, kde-format
-msgid "The key has expired."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:64
-#, kde-format
-msgid "You are trusting this key."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:67
-#, kde-format
-msgid "The signature is invalid."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartModel.qml:89
-#, kde-format
-msgid "This message is encrypted to the key: %1"
-msgstr ""
-
-#: mail/qml/mailpartview/MailPartView.qml:32
-#, kde-format
-msgid "Loading mail..."
-msgstr ""
-
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, fuzzy, kde-format
 #| msgid "About Kalendar"
@@ -3508,6 +3452,23 @@ msgstr "Kalendar 정보"
 #| msgid "Month view"
 msgid "Account settings"
 msgstr "월간 보기"
+
+#: mail/qml/settings/AccountSettingsPage.qml:30
+#, kde-format
+msgid "Identities"
+msgstr ""
+
+#: mail/qml/settings/AccountSettingsPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Receiving Accounts"
+msgstr "계정"
+
+#: mail/qml/settings/AccountSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Mail Account Configuration"
+msgstr "계정"
 
 #: quick/identitymodel.cpp:45
 #, kde-format
@@ -3572,12 +3533,7 @@ msgstr "삭제"
 msgid "Add email alias"
 msgstr "미리 알림 추가"
 
-#: quick/qml/identity/IdentityConfigurationForm.qml:21
-#, kde-format
-msgid "Identities"
-msgstr ""
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:38
+#: quick/qml/identity/IdentityConfigurationForm.qml:34
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgctxt "@title"
@@ -3694,11 +3650,6 @@ msgstr ""
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "캘린더"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Mail Accounts"
-#~ msgstr "계정"
 
 #, fuzzy
 #~| msgid "Contacts"
