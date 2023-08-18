@@ -4,9 +4,15 @@
 #include "mailmanager.h"
 
 // Akonadi
+#include "merkuro_mail_debug.h"
+
 #include "mailkernel.h"
+#include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/CollectionFilterProxyModel>
+#include <Akonadi/CollectionCreateJob>
+#include <Akonadi/CollectionDeleteJob>
+#include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemFetchScope>
@@ -19,11 +25,14 @@
 #include <KConfigGroup>
 #include <KDescendantsProxyModel>
 #include <KMime/Message>
+#include <KLocalizedString>
 #include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
 #include <QApplication>
 #include <sortedcollectionproxymodel.h>
+#include <QPointer>
+#include <QLoggingCategory>
 
 MailManager::MailManager(QObject *parent)
     : QObject(parent)
@@ -178,4 +187,59 @@ void MailManager::moveToTrash(Akonadi::Item item)
         trash = CommonKernel->trashCollectionFolder();
     }
     new Akonadi::ItemMoveJob(item, trash);
+}
+
+void MailManager::updateCollection(const QModelIndex &index)
+{
+    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    Akonadi::AgentManager::self()->synchronizeCollection(collection, true);
+}
+
+void MailManager::addCollection(const QModelIndex &index, const QVariant &name)
+{
+    const auto parentCollection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    const auto collection = new Akonadi::Collection();
+    collection->setParentCollection(parentCollection);
+    collection->setName(name.toString());
+    collection->setContentMimeTypes({QStringLiteral("message/rfc822")});
+
+    const auto job = new Akonadi::CollectionCreateJob(*collection);
+    connect(job, SIGNAL(result(KJob*)), job, SLOT(slotResult(KJob*)));
+}
+
+void MailManager::deleteCollection(const QModelIndex &index)
+{
+    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    const bool isTopLevel = collection.parentCollection() == Akonadi::Collection::root();
+
+    if (!isTopLevel) {
+        // delete contents
+        const auto job = new Akonadi::CollectionDeleteJob(collection);
+        connect(job, &Akonadi::CollectionDeleteJob::result, this, [](KJob *job) {
+            if (job->error()) {
+                qCWarning(merkuro_MAIL_LOG) << "Error occured deleting collection: " << job->errorString();
+            }
+        });
+        return;
+    }
+
+    // deletes agent but not the contents
+    const auto instance = Akonadi::AgentManager::self()->instance(collection.resource());
+    if (instance.isValid()) {
+        Akonadi::AgentManager::self()->removeInstance(instance);
+    }
+}
+
+void MailManager::editCollection(const QModelIndex &index)
+{
+    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    QPointer<Akonadi::CollectionPropertiesDialog> dialog = new Akonadi::CollectionPropertiesDialog(collection);
+    dialog->setWindowTitle(i18nc("@title:window", "Account Configuration: %1", collection.name()));
+    dialog->show();
+}
+
+QString MailManager::resourceIdentifier(const QModelIndex &index)
+{
+    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    return collection.resource();
 }
