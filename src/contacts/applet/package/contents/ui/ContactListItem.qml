@@ -14,6 +14,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.merkuro.contact 1.0
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 
 PlasmaComponents3.ItemDelegate {
     id: listItem
@@ -22,7 +23,7 @@ PlasmaComponents3.ItemDelegate {
     property var avatarIcon
 
     contentItem: RowLayout {
-        Kirigami.Avatar {
+        KirigamiComponents.Avatar {
             id: avatar
             Layout.maximumHeight: parent.height
             Layout.maximumWidth: parent.height
