@@ -9,7 +9,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kitemmodels 1.0 as KItemModels
 import org.kde.merkuro.mail 1.0
 import org.kde.akonadi 1.0 as Akonadi
-
+import org.kde.kidentitymanagement 1.0 as KIdentityManagement
 
 Kirigami.ScrollablePage {
     id: mailComposition
@@ -43,7 +43,7 @@ Kirigami.ScrollablePage {
 
         QQC2.ComboBox {
             id: identity
-            model: Akonadi.IdentityModel {}
+            model: KIdentityManagement.IdentityModel {}
             textRole: "display"
             valueRole: "uoid"
             onCurrentIndexChanged: from.text = model.email(currentValue)
