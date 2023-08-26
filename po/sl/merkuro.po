@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-08-16 20:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -558,7 +558,6 @@ msgstr "Ustvari nov koledar"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
@@ -710,8 +709,6 @@ msgstr "Uredi"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Zbriši"
@@ -957,7 +954,6 @@ msgstr "Dodaj %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Shrani"
@@ -965,7 +961,6 @@ msgstr "Shrani"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
@@ -1881,7 +1876,7 @@ msgstr "Videz"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:14
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2759,7 +2754,6 @@ msgid "Other…"
 msgstr "Ostalo…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "user@example.org"
@@ -3291,31 +3285,25 @@ msgstr "To sporočilo vsebuje povabilo"
 msgid "Import key"
 msgstr "Uvozi ključ"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:25
 #, kde-format
 msgid "Account settings"
 msgstr "Nastavitve računa"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:31
 #, kde-format
 msgid "Identities"
 msgstr "Identitete"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Računi prejemanja"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:47
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Konfiguracija poštnega računa"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3336,62 +3324,6 @@ msgstr "Spremeni"
 #, kde-format
 msgid "Add Account"
 msgstr "Dodaj račun"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr "Identiteta"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, kde-format
-msgid "Your name"
-msgstr "Vaše ime"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, kde-format
-msgid "Email address"
-msgstr "Naslov e-pošte"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, kde-format
-msgid "E-mail aliases"
-msgstr "Sinonimi elektronske pošte"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, kde-format
-msgid "Remove email alias"
-msgstr "Odstrani sinonim e-pošte"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, kde-format
-msgid "Add email alias"
-msgstr "Dodaj sinonim e-pošte"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, kde-format
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Uredi identiteto"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, kde-format
-msgid "Add Identity"
-msgstr "Dodaj identiteto"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, kde-format
-msgid "Edit Identity"
-msgstr "Uredi identiteto"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, kde-format
-msgid "Delete %1"
-msgstr "Zbriši %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, kde-format
-msgid "Are you sure you want to delete this identity?"
-msgstr "Ali zares želite zbrisati to identiteto?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3417,6 +3349,44 @@ msgstr "Ustvari novo oznako…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Hitro dodaj novo oznako."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#~ msgid "Identity"
+#~ msgstr "Identiteta"
+
+#~ msgid "Your name"
+#~ msgstr "Vaše ime"
+
+#~ msgid "Email address"
+#~ msgstr "Naslov e-pošte"
+
+#~ msgid "E-mail aliases"
+#~ msgstr "Sinonimi elektronske pošte"
+
+#~ msgid "Remove email alias"
+#~ msgstr "Odstrani sinonim e-pošte"
+
+#~ msgid "Add email alias"
+#~ msgstr "Dodaj sinonim e-pošte"
+
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Uredi identiteto"
+
+#~ msgid "Add Identity"
+#~ msgstr "Dodaj identiteto"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Uredi identiteto"
+
+#~ msgid "Delete %1"
+#~ msgstr "Zbriši %1"
+
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Ali zares želite zbrisati to identiteto?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "poslal %1 na %2"

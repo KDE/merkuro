@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -561,7 +561,6 @@ msgstr "Δημιουργία νέου ημερολογίου"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -709,8 +708,6 @@ msgstr "Επεξεργασία"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Διαγραφή"
@@ -987,7 +984,6 @@ msgstr "Προσθήκη %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Αποθήκευση"
@@ -995,7 +991,6 @@ msgstr "Αποθήκευση"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Προσθήκη"
@@ -1933,7 +1928,7 @@ msgstr ""
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:14
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2866,7 +2861,6 @@ msgid "Other…"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr ""
@@ -3419,34 +3413,28 @@ msgstr ""
 msgid "Import key"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:25
 #, fuzzy, kde-format
 #| msgid "Month View settings"
 msgid "Account settings"
 msgstr "Ρυθμίσεις προβολής μήνα"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:31
 #, kde-format
 msgid "Identities"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Receiving Accounts"
 msgstr "Λογαριασμοί"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Mail Account Configuration"
 msgstr "Λογαριασμοί"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr ""
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, fuzzy, kde-format
@@ -3469,74 +3457,6 @@ msgstr ""
 #| msgid "Accounts"
 msgid "Add Account"
 msgstr "Λογαριασμοί"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr ""
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgid "Your name"
-msgstr "Stelios"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, fuzzy, kde-format
-#| msgid "Select Email Address"
-msgid "Email address"
-msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
-msgid "E-mail aliases"
-msgstr "Εφαρμογή ημερολογίου"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
-msgid "Remove email alias"
-msgstr "Αφαίρεση ετικέτας"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
-msgid "Add email alias"
-msgstr "Προσθήκη υπενθύμισης"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, fuzzy, kde-format
-#| msgid "Edit event"
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Επεξεργασία γεγονότος"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, fuzzy, kde-format
-#| msgid "Add event"
-msgid "Add Identity"
-msgstr "Προσθήκη γεγονότος"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, fuzzy, kde-format
-#| msgid "Edit event"
-msgid "Edit Identity"
-msgstr "Επεξεργασία γεγονότος"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, fuzzy, kde-format
-#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
-#| msgid "Delete %1"
-msgid "Delete %1"
-msgstr "Διαγραφή %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
-msgid "Are you sure you want to delete this identity?"
-msgstr "Θέλετε πράγματι να διαγράψετε την ετικέτα «%1»;"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3562,6 +3482,59 @@ msgstr "Δημιουργία νέας ετικέτας…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Γρήγορη προσθήκη νέας ετικέτας."
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "Your name"
+#~ msgstr "Stelios"
+
+#, fuzzy
+#~| msgid "Select Email Address"
+#~ msgid "Email address"
+#~ msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
+
+#, fuzzy
+#~| msgid "Calendar Application"
+#~ msgid "E-mail aliases"
+#~ msgstr "Εφαρμογή ημερολογίου"
+
+#, fuzzy
+#~| msgid "Remove Tag"
+#~ msgid "Remove email alias"
+#~ msgstr "Αφαίρεση ετικέτας"
+
+#, fuzzy
+#~| msgid "Add Reminder"
+#~ msgid "Add email alias"
+#~ msgstr "Προσθήκη υπενθύμισης"
+
+#, fuzzy
+#~| msgid "Edit event"
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Επεξεργασία γεγονότος"
+
+#, fuzzy
+#~| msgid "Add event"
+#~ msgid "Add Identity"
+#~ msgstr "Προσθήκη γεγονότος"
+
+#, fuzzy
+#~| msgid "Edit event"
+#~ msgid "Edit Identity"
+#~ msgstr "Επεξεργασία γεγονότος"
+
+#, fuzzy
+#~| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#~| msgid "Delete %1"
+#~ msgid "Delete %1"
+#~ msgstr "Διαγραφή %1"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete tag \"%1\"?"
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Θέλετε πράγματι να διαγράψετε την ετικέτα «%1»;"
 
 #, fuzzy
 #~| msgid "Configure"

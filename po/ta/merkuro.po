@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-08-20 15:04+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -541,7 +541,6 @@ msgstr "புதிய நாள்காட்டியை உருவாக�
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "ரத்து செய்"
@@ -687,8 +686,6 @@ msgstr "திருத்து"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "நீக்கு"
@@ -935,7 +932,6 @@ msgstr "%1 சேர்"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "சேமி"
@@ -943,7 +939,6 @@ msgstr "சேமி"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "சேர்"
@@ -1848,7 +1843,7 @@ msgstr "தோற்றம்"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:14
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2726,7 +2721,6 @@ msgid "Other…"
 msgstr "வேறு…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "user@example.org"
@@ -3252,31 +3246,25 @@ msgstr "இவ்வஞ்சல் அழைப்பிதழைக் கொ�
 msgid "Import key"
 msgstr "சாவியை இறக்குமதி செய்"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:25
 #, kde-format
 msgid "Account settings"
 msgstr "கணக்கிற்கான அமைப்புகள்"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:31
 #, kde-format
 msgid "Identities"
 msgstr "அடையாளங்கள்"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "அஞ்சல்பெறு கணக்குகள்"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:47
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "அஞ்சல் கணக்கு அமைப்புகள்"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3297,62 +3285,6 @@ msgstr "திருத்து"
 #, kde-format
 msgid "Add Account"
 msgstr "கணக்கை சேர்"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr "அடையாளம்"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, kde-format
-msgid "Your name"
-msgstr "உங்கள் பெயர்"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, kde-format
-msgid "Email address"
-msgstr "மின்னஞ்சல் முகவரி"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, kde-format
-msgid "E-mail aliases"
-msgstr "மாற்று மின்னஞ்சல் முகவரிகள்"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, kde-format
-msgid "Remove email alias"
-msgstr "மாற்று மின்னஞ்சல் முகவரியை நீக்கு"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, kde-format
-msgid "Add email alias"
-msgstr "மாற்று மின்னஞ்சல் முகவரியை சேர்"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, kde-format
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "அடையாளத்தை திருத்து"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, kde-format
-msgid "Add Identity"
-msgstr "அடையாளத்தைச் சேர்"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, kde-format
-msgid "Edit Identity"
-msgstr "அடையாளத்தை திருத்து"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, kde-format
-msgid "Delete %1"
-msgstr "%1 தனை நீக்கு"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, kde-format
-msgid "Are you sure you want to delete this identity?"
-msgstr "இந்த அடையாளத்தை உறுதியாக நீக்க வேண்டுமா?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3378,6 +3310,44 @@ msgstr "புதிய குறிச்சொல்லை உருவாக�
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "புதிய குறிச்சொல்லை எளிதில் சேர்க்கும்."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#~ msgid "Identity"
+#~ msgstr "அடையாளம்"
+
+#~ msgid "Your name"
+#~ msgstr "உங்கள் பெயர்"
+
+#~ msgid "Email address"
+#~ msgstr "மின்னஞ்சல் முகவரி"
+
+#~ msgid "E-mail aliases"
+#~ msgstr "மாற்று மின்னஞ்சல் முகவரிகள்"
+
+#~ msgid "Remove email alias"
+#~ msgstr "மாற்று மின்னஞ்சல் முகவரியை நீக்கு"
+
+#~ msgid "Add email alias"
+#~ msgstr "மாற்று மின்னஞ்சல் முகவரியை சேர்"
+
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "அடையாளத்தை திருத்து"
+
+#~ msgid "Add Identity"
+#~ msgstr "அடையாளத்தைச் சேர்"
+
+#~ msgid "Edit Identity"
+#~ msgstr "அடையாளத்தை திருத்து"
+
+#~ msgid "Delete %1"
+#~ msgstr "%1 தனை நீக்கு"
+
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "இந்த அடையாளத்தை உறுதியாக நீக்க வேண்டுமா?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "%2 அன்று %1 அனுப்பியது"

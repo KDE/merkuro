@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-08-16 10:51+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -546,7 +546,6 @@ msgstr "Crea un calendari nou"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -693,8 +692,6 @@ msgstr "Edita"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Suprimeix"
@@ -940,7 +937,6 @@ msgstr "Afegeix %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Desa"
@@ -948,7 +944,6 @@ msgstr "Desa"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Afegeix"
@@ -1855,7 +1850,7 @@ msgstr "Aparença"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:14
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2743,7 +2738,6 @@ msgid "Other…"
 msgstr "Altres…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "usuari@exemple.cat"
@@ -3269,31 +3263,25 @@ msgstr "Aquest correu conté una invitació"
 msgid "Import key"
 msgstr "Importa la clau"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:25
 #, kde-format
 msgid "Account settings"
 msgstr "Configuració del compte"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:31
 #, kde-format
 msgid "Identities"
 msgstr "Identitats"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Comptes de recepció"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:47
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configuració del compte de correu"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3314,62 +3302,6 @@ msgstr "Modifica"
 #, kde-format
 msgid "Add Account"
 msgstr "Afegeix un compte"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr "Identitat"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, kde-format
-msgid "Your name"
-msgstr "El vostre nom"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, kde-format
-msgid "Email address"
-msgstr "Adreça de correu electrònic"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, kde-format
-msgid "E-mail aliases"
-msgstr "Àlies de correu electrònic"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, kde-format
-msgid "Remove email alias"
-msgstr "Elimina l'àlies de correu electrònic"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, kde-format
-msgid "Add email alias"
-msgstr "Afegeix un àlies de correu electrònic"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, kde-format
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Edició de la identitat"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, kde-format
-msgid "Add Identity"
-msgstr "Afegeix una identitat"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, kde-format
-msgid "Edit Identity"
-msgstr "Edita la identitat"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, kde-format
-msgid "Delete %1"
-msgstr "Suprimeix %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, kde-format
-msgid "Are you sure you want to delete this identity?"
-msgstr "Segur que voleu suprimir aquesta identitat?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3395,3 +3327,41 @@ msgstr "Crea una etiqueta nova…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Afegeix ràpidament una etiqueta nova."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#~ msgid "Identity"
+#~ msgstr "Identitat"
+
+#~ msgid "Your name"
+#~ msgstr "El vostre nom"
+
+#~ msgid "Email address"
+#~ msgstr "Adreça de correu electrònic"
+
+#~ msgid "E-mail aliases"
+#~ msgstr "Àlies de correu electrònic"
+
+#~ msgid "Remove email alias"
+#~ msgstr "Elimina l'àlies de correu electrònic"
+
+#~ msgid "Add email alias"
+#~ msgstr "Afegeix un àlies de correu electrònic"
+
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Edició de la identitat"
+
+#~ msgid "Add Identity"
+#~ msgstr "Afegeix una identitat"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Edita la identitat"
+
+#~ msgid "Delete %1"
+#~ msgstr "Suprimeix %1"
+
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Segur que voleu suprimir aquesta identitat?"
