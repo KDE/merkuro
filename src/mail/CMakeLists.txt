@@ -26,6 +26,8 @@ set(merkuro_mail_SRCS
 
     identity/identitycryptographybackend.h
     identity/identitycryptographybackend.cpp
+    identity/identitypgpkeylistmodel.h
+    identity/identitypgpkeylistmodel.cpp
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
