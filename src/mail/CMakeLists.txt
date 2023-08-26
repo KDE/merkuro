@@ -23,6 +23,9 @@ set(merkuro_mail_SRCS
 
     mailheadermodel.h
     mailheadermodel.cpp
+
+    identity/identitycryptographybackend.h
+    identity/identitycryptographybackend.cpp
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -38,12 +41,13 @@ add_library(merkuro_mail_static STATIC ${merkuro_mail_SRCS})
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
     PUBLIC
-        merkuro_lib
-        KPim${QT_MAJOR_VERSION}::MailCommon
-        KPim${QT_MAJOR_VERSION}::MailTransport
-        KPim${QT_MAJOR_VERSION}::AkonadiMime
-        KF${QT_MAJOR_VERSION}::Codecs
-        KF${QT_MAJOR_VERSION}::XmlGui
+    merkuro_lib
+    KPim${QT_MAJOR_VERSION}::MailCommon
+    KPim${QT_MAJOR_VERSION}::MailTransport
+    KPim${QT_MAJOR_VERSION}::AkonadiMime
+    KPim${QT_MAJOR_VERSION}::IdentityManagementQuick
+    KF${QT_MAJOR_VERSION}::Codecs
+    KF${QT_MAJOR_VERSION}::XmlGui
 )
 
 if(QT_MAJOR_VERSION STREQUAL "6")
@@ -91,14 +95,14 @@ ecm_finalize_qml_module(merkuro_mail_plugin
 add_executable(merkuro-mail main.cpp resources.qrc)
 target_link_libraries(merkuro-mail
     PRIVATE
-        Qt::Widgets
-        Qt::Quick
-        Qt::QuickControls2
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::CoreAddons
-        KF${QT_MAJOR_VERSION}::DBusAddons
-        KF${QT_MAJOR_VERSION}::WindowSystem
-        KF${QT_MAJOR_VERSION}::ConfigGui
+    Qt::Widgets
+    Qt::Quick
+    Qt::QuickControls2
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::DBusAddons
+    KF${QT_MAJOR_VERSION}::WindowSystem
+    KF${QT_MAJOR_VERSION}::ConfigGui
 )
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})
