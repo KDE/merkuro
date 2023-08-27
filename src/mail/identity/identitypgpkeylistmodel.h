@@ -13,6 +13,9 @@ class IdentityPGPKeyListModel : public QIdentityProxyModel
 public:
     explicit IdentityPGPKeyListModel(QObject *parent = nullptr);
 
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    QHash<int, QByteArray> roleNames() const override;
+
 private:
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
 };
