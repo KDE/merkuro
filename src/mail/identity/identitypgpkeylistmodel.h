@@ -3,12 +3,16 @@
 
 #pragma once
 
-#include <KIdentityManagement/AbstractKeyListModel>
+#include <Libkleo/KeyListSortFilterProxyModel>
+#include <QIdentityProxyModel>
 
-class IdentityPGPKeyListModel : public KIdentityManagement::Quick::AbstractKeyListModel
+class IdentityPGPKeyListModel : public QIdentityProxyModel
 {
     Q_OBJECT
 
 public:
     explicit IdentityPGPKeyListModel(QObject *parent = nullptr);
+
+private:
+    Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
 };
