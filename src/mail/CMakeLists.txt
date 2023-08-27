@@ -26,6 +26,8 @@ set(merkuro_mail_SRCS
 
     identity/identitycryptographybackend.h
     identity/identitycryptographybackend.cpp
+    identity/identitycryptographyeditorbackendfactory.h
+    identity/identitycryptographyeditorbackendfactory.cpp
     identity/identitypgpkeylistmodel.h
     identity/identitypgpkeylistmodel.cpp
 )
