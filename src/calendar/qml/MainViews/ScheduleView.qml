@@ -78,6 +78,7 @@ Kirigami.Page {
             openOccurrence: root.openOccurrence
             dragDropEnabled: root.dragDropEnabled
             isCurrentItem: true
+            startDate: Calendar.DateTimeState.currentDate
         }
     }
 }
