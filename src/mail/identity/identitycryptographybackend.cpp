@@ -5,17 +5,18 @@
 
 #include "identitypgpkeylistmodel.h"
 
-IdentityCryptographyBackend::IdentityCryptographyBackend()
-    : KIdentityManagement::Quick::AbstractCryptographyBackend()
+IdentityCryptographyBackend::IdentityCryptographyBackend(QObject *parent)
+    : QObject(parent)
+    , KIdentityManagement::Quick::CryptographyBackendInterface()
 {
 }
 
-KIdentityManagement::Quick::AbstractKeyListModel *IdentityCryptographyBackend::openPgpKeyListModel() const
+QAbstractItemModel *IdentityCryptographyBackend::openPgpKeyListModel() const
 {
     return m_openPgpKeyListModel;
 }
 
-KIdentityManagement::Quick::AbstractKeyListModel *IdentityCryptographyBackend::smimeKeyListModel() const
+QAbstractItemModel *IdentityCryptographyBackend::smimeKeyListModel() const
 {
     return m_smimeKeyListModel;
 }

@@ -3,27 +3,23 @@
 
 #pragma once
 
-#include <KIdentityManagement/AbstractCryptographyBackend>
+#include <KIdentityManagement/CryptographyBackendInterface>
+#include <QAbstractItemModel>
 
-namespace KIdentityManagement
-{
-namespace Quick
-{
-class AbstractKeyListModel;
-}
-}
+class IdentityPGPKeyListModel;
 
-class IdentityCryptographyBackend : public KIdentityManagement::Quick::AbstractCryptographyBackend
+class IdentityCryptographyBackend : public QObject, public KIdentityManagement::Quick::CryptographyBackendInterface
 {
     Q_OBJECT
+    Q_INTERFACES(KIdentityManagement::Quick::CryptographyBackendInterface)
 
 public:
-    IdentityCryptographyBackend();
+    explicit IdentityCryptographyBackend(QObject *parent = nullptr);
 
-    KIdentityManagement::Quick::AbstractKeyListModel *openPgpKeyListModel() const override;
-    KIdentityManagement::Quick::AbstractKeyListModel *smimeKeyListModel() const override;
+    Q_INVOKABLE QAbstractItemModel *openPgpKeyListModel() const override;
+    Q_INVOKABLE QAbstractItemModel *smimeKeyListModel() const override;
 
 private:
-    KIdentityManagement::Quick::AbstractKeyListModel *m_openPgpKeyListModel = nullptr;
-    KIdentityManagement::Quick::AbstractKeyListModel *m_smimeKeyListModel = nullptr;
+    QAbstractItemModel *m_openPgpKeyListModel = nullptr;
+    QAbstractItemModel *m_smimeKeyListModel = nullptr;
 };
