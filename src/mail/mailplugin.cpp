@@ -5,6 +5,8 @@
 
 #include <QQmlEngine>
 
+#include <MailCommon/EntityCollectionOrderProxyModel>
+
 #include "contactimageprovider.h"
 #include "helper.h"
 #include "mailapplication.h"
@@ -12,11 +14,18 @@
 #include "mailmanager.h"
 #include "mailmodel.h"
 #include "messageloader.h"
-#include <MailCommon/EntityCollectionOrderProxyModel>
+
+#include "identity/identitycryptographyeditorbackendfactory.h"
 
 void CalendarPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QByteArray("org.kde.merkuro.mail"));
+
+    qmlRegisterSingletonType<MailApplication>(uri, 1, 0, "IdentityCryptographyEditorBackendFactory", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new IdentityCryptographyEditorBackendFactory;
+    });
 
     qmlRegisterSingletonType<MailApplication>(uri, 1, 0, "MailApplication", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
