@@ -1,15 +1,16 @@
 // SPDX-FileCopyrightText: 2023 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "identitypgpkeylistmodel.h"
+#include "identitykeylistmodel.h"
 
 #include <KIdentityManagement/KeyListModel>
 #include <KLocalizedString>
+#include <Libkleo/DefaultKeyFilter>
 #include <Libkleo/KeyCache>
 #include <Libkleo/KeyListModel>
 #include <gpgme++/key.h>
 
-IdentityPGPKeyListModel::IdentityPGPKeyListModel(QObject *parent)
+IdentityKeyListModel::IdentityKeyListModel(QObject *parent)
     : QIdentityProxyModel(parent)
 {
     const auto flatModel = Kleo::AbstractKeyListModel::createFlatKeyListModel(this);
@@ -20,7 +21,7 @@ IdentityPGPKeyListModel::IdentityPGPKeyListModel(QObject *parent)
     setSourceModel(m_baseModel);
 }
 
-QVariant IdentityPGPKeyListModel::data(const QModelIndex &index, int role) const
+QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
 {
     if (index.row() == 0) {
         switch (role) {
@@ -41,19 +42,19 @@ QVariant IdentityPGPKeyListModel::data(const QModelIndex &index, int role) const
     return QIdentityProxyModel::data(index, role);
 }
 
-QHash<int, QByteArray> IdentityPGPKeyListModel::roleNames() const
+QHash<int, QByteArray> IdentityKeyListModel::roleNames() const
 {
     auto names = QIdentityProxyModel::roleNames();
     names.insert(KIdentityManagement::Quick::KeyListModel::roleNames());
     return names;
 }
 
-int IdentityPGPKeyListModel::rowCount(const QModelIndex &parent) const
+int IdentityKeyListModel::rowCount(const QModelIndex &parent) const
 {
     return QIdentityProxyModel::rowCount(parent) + m_customKeyCount;
 }
 
-QModelIndex IdentityPGPKeyListModel::mapToSource(const QModelIndex &index) const
+QModelIndex IdentityKeyListModel::mapToSource(const QModelIndex &index) const
 {
     if (!index.isValid()) {
         return {};
@@ -64,13 +65,13 @@ QModelIndex IdentityPGPKeyListModel::mapToSource(const QModelIndex &index) const
     return {};
 }
 
-QModelIndex IdentityPGPKeyListModel::mapFromSource(const QModelIndex &source_index) const
+QModelIndex IdentityKeyListModel::mapFromSource(const QModelIndex &source_index) const
 {
     const QModelIndex idx = QIdentityProxyModel::mapFromSource(source_index);
     return createIndex(m_customKeyCount + idx.row(), idx.column(), idx.internalPointer());
 }
 
-QModelIndex IdentityPGPKeyListModel::index(int row, int column, const QModelIndex &parent) const
+QModelIndex IdentityKeyListModel::index(int row, int column, const QModelIndex &parent) const
 {
     if (row < 0 || row >= rowCount()) {
         return {};
@@ -82,7 +83,7 @@ QModelIndex IdentityPGPKeyListModel::index(int row, int column, const QModelInde
     }
 }
 
-QString IdentityPGPKeyListModel::filterEmail() const
+QString IdentityKeyListModel::filterEmail() const
 {
     if (!m_baseModel) {
         return {};
@@ -90,11 +91,10 @@ QString IdentityPGPKeyListModel::filterEmail() const
     return m_baseModel->filterRegularExpression().pattern();
 }
 
-void IdentityPGPKeyListModel::setEmailFilter(const QString &email)
+void IdentityKeyListModel::setEmailFilter(const QString &email)
 {
     if (!m_baseModel) {
         return;
     }
-
     m_baseModel->setFilterRegularExpression(email);
 }

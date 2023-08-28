@@ -6,7 +6,7 @@
 #include <KIdentityManagement/CryptographyBackendInterface>
 #include <QAbstractItemModel>
 
-class IdentityPGPKeyListModel;
+class IdentityKeyListModel;
 
 class IdentityCryptographyBackend : public QObject, public KIdentityManagement::Quick::CryptographyBackendInterface
 {
@@ -24,7 +24,7 @@ protected:
     void setIdentity(const KIdentityManagement::Identity &identity) override;
 
 private:
-    IdentityPGPKeyListModel *m_openPgpKeyListModel = nullptr;
+    IdentityKeyListModel *m_openPgpKeyListModel = nullptr;
     QAbstractItemModel *m_smimeKeyListModel = nullptr;
     KIdentityManagement::Identity m_identity;
 };

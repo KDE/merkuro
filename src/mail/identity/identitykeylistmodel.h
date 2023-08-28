@@ -6,12 +6,12 @@
 #include <Libkleo/KeyListSortFilterProxyModel>
 #include <QIdentityProxyModel>
 
-class IdentityPGPKeyListModel : public QIdentityProxyModel
+class IdentityKeyListModel : public QIdentityProxyModel
 {
     Q_OBJECT
 
 public:
-    explicit IdentityPGPKeyListModel(QObject *parent = nullptr);
+    explicit IdentityKeyListModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
@@ -26,6 +26,7 @@ public:
 
 private:
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
+
     const int m_noKeyRow = 0;
     const int m_customKeyCount = 1;
 };

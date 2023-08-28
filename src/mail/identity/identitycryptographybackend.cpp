@@ -3,7 +3,7 @@
 
 #include "identitycryptographybackend.h"
 
-#include "identitypgpkeylistmodel.h"
+#include "identitykeylistmodel.h"
 
 IdentityCryptographyBackend::IdentityCryptographyBackend(QObject *parent)
     : QObject(parent)
