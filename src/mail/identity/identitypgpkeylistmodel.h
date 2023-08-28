@@ -16,6 +16,9 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    QString filterEmail() const;
+    void setEmailFilter(const QString &email);
+
 private:
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
 };

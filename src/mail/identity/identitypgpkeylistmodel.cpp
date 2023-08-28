@@ -16,7 +16,7 @@ IdentityPGPKeyListModel::IdentityPGPKeyListModel(QObject *parent)
     flatModel->setKeys(keys);
     m_baseModel = new Kleo::KeyListSortFilterProxyModel(this);
     m_baseModel->setSourceModel(flatModel);
-    setSourceModel(flatModel);
+    setSourceModel(m_baseModel);
 }
 
 QVariant IdentityPGPKeyListModel::data(const QModelIndex &index, int role) const
@@ -36,4 +36,21 @@ QHash<int, QByteArray> IdentityPGPKeyListModel::roleNames() const
     auto names = QIdentityProxyModel::roleNames();
     names.insert(KIdentityManagement::Quick::KeyListModel::roleNames());
     return names;
+}
+
+QString IdentityPGPKeyListModel::filterEmail() const
+{
+    if (!m_baseModel) {
+        return {};
+    }
+    return m_baseModel->filterRegularExpression().pattern();
+}
+
+void IdentityPGPKeyListModel::setEmailFilter(const QString &email)
+{
+    if (!m_baseModel) {
+        return;
+    }
+
+    m_baseModel->setFilterRegularExpression(email);
 }
