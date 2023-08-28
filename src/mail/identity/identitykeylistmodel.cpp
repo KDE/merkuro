@@ -3,6 +3,7 @@
 
 #include "identitykeylistmodel.h"
 
+#include <KIdentityManagement/Identity>
 #include <KIdentityManagement/KeyListModel>
 #include <KLocalizedString>
 #include <Libkleo/DefaultKeyFilter>
@@ -35,9 +36,9 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-    case KIdentityManagement::Quick::KeyListModel::Roles::KeyByteArrayRole:
+    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyByteArrayRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).primaryFingerprint());
-    case KIdentityManagement::Quick::KeyListModel::Roles::KeyIdentifierRole:
+    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyIdentifierRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).keyID());
     }
 
@@ -47,7 +48,7 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> IdentityKeyListModel::roleNames() const
 {
     auto names = QIdentityProxyModel::roleNames();
-    names.insert(KIdentityManagement::Quick::KeyListModel::roleNames());
+    names.insert(KIdentityManagement::Quick::KeyListModelInterface::roleNames());
     return names;
 }
 
@@ -82,6 +83,56 @@ QModelIndex IdentityKeyListModel::index(int row, int column, const QModelIndex &
     } else {
         const auto index = QIdentityProxyModel::index(row - m_customKeyCount, column, parent);
         return createIndex(row, column, index.internalPointer());
+    }
+}
+
+QModelIndex IdentityKeyListModel::indexForKey(const QByteArray &key) const
+{
+    if (key.isEmpty() || key.isNull()) {
+        return index(0, 0);
+    }
+
+    for (auto i = m_noKeyRow + 1; i < rowCount(); ++i) {
+        const auto idx = index(i, 0);
+        const auto idxKeyByteArray = idx.data(KeyListModelInterface::KeyByteArrayRole).toByteArray();
+
+        if (idxKeyByteArray == key) {
+            return idx;
+        }
+    }
+
+    return index(0, 0);
+}
+
+QModelIndex IdentityKeyListModel::indexForIdentity(const KIdentityManagement::Identity &identity,
+                                                   const KIdentityManagement::Quick::KeyUseTypes::KeyUse keyUse) const
+{
+    QByteArray pgpKey;
+    QByteArray smimeKey;
+
+    switch (keyUse) {
+    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeyEncryptionUse:
+        pgpKey = identity.pgpEncryptionKey();
+        smimeKey = identity.smimeEncryptionKey();
+        break;
+    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeySigningUse:
+        pgpKey = identity.pgpSigningKey();
+        smimeKey = identity.smimeSigningKey();
+        break;
+    default:
+        Q_UNREACHABLE();
+        return {};
+    }
+
+    const auto matchingPgpIdx = indexForKey(pgpKey);
+    const auto matchingSmimeIdx = indexForKey(smimeKey);
+
+    if (m_displayedTypeKeys == TypeKeys::OpenPGPTypeKeys) {
+        return matchingPgpIdx;
+    } else if (m_displayedTypeKeys == TypeKeys::SMimeTypeKeys) {
+        return matchingSmimeIdx;
+    } else {
+        return qMax(matchingPgpIdx, matchingSmimeIdx);
     }
 }
 

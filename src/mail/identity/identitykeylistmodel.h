@@ -3,12 +3,19 @@
 
 #pragma once
 
+#include <KIdentityManagement/KeyListModelInterface>
 #include <Libkleo/KeyListSortFilterProxyModel>
 #include <QIdentityProxyModel>
 
-class IdentityKeyListModel : public QIdentityProxyModel
+namespace KIdentityManagement
+{
+class Identity;
+}
+
+class IdentityKeyListModel : public QIdentityProxyModel, public KIdentityManagement::Quick::KeyListModelInterface
 {
     Q_OBJECT
+    Q_INTERFACES(KIdentityManagement::Quick::KeyListModelInterface)
 
 public:
     enum class TypeKeys { AnyTypeKeys, OpenPGPTypeKeys, SMimeTypeKeys };
@@ -24,6 +31,8 @@ public:
     QModelIndex mapFromSource(const QModelIndex &source_index) const override;
     QModelIndex index(int row, int column, const QModelIndex &parent = {}) const override;
 
+    QModelIndex indexForIdentity(const KIdentityManagement::Identity &identity, const KIdentityManagement::Quick::KeyUseTypes::KeyUse keyUse) const override;
+
     QString filterEmail() const;
     void setEmailFilter(const QString &email);
 
@@ -32,6 +41,7 @@ public:
 
 private:
     void updateKeyFilter();
+    QModelIndex indexForKey(const QByteArray &key) const;
 
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
     TypeKeys m_displayedTypeKeys = TypeKeys::AnyTypeKeys;
