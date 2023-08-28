@@ -10,7 +10,7 @@
 #include <Libkleo/KeyListModel>
 #include <gpgme++/key.h>
 
-IdentityKeyListModel::IdentityKeyListModel(QObject *parent)
+IdentityKeyListModel::IdentityKeyListModel(QObject *parent, const TypeKeys typeOfKeysToDisplay)
     : QIdentityProxyModel(parent)
 {
     const auto flatModel = Kleo::AbstractKeyListModel::createFlatKeyListModel(this);
@@ -19,6 +19,8 @@ IdentityKeyListModel::IdentityKeyListModel(QObject *parent)
     m_baseModel = new Kleo::KeyListSortFilterProxyModel(this);
     m_baseModel->setSourceModel(flatModel);
     setSourceModel(m_baseModel);
+
+    setDisplayedTypeKeys(typeOfKeysToDisplay);
 }
 
 QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const

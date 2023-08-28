@@ -14,7 +14,7 @@ public:
     enum class TypeKeys { AnyTypeKeys, OpenPGPTypeKeys, SMimeTypeKeys };
     Q_ENUM(TypeKeys)
 
-    explicit IdentityKeyListModel(QObject *parent = nullptr);
+    explicit IdentityKeyListModel(QObject *parent = nullptr, const TypeKeys typeOfKeysToDisplay = TypeKeys::AnyTypeKeys);
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
