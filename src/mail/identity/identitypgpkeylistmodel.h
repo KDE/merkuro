@@ -15,10 +15,17 @@ public:
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
+    int rowCount(const QModelIndex &parent = {}) const override;
+
+    QModelIndex mapToSource(const QModelIndex &index) const override;
+    QModelIndex mapFromSource(const QModelIndex &source_index) const override;
+    QModelIndex index(int row, int column, const QModelIndex &parent = {}) const override;
 
     QString filterEmail() const;
     void setEmailFilter(const QString &email);
 
 private:
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
+    const int m_noKeyRow = 0;
+    const int m_customKeyCount = 1;
 };
