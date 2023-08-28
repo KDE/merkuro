@@ -125,10 +125,12 @@ void IdentityKeyListModel::updateKeyFilter()
         keyFilter->setIsOpenPGP(Kleo::DefaultKeyFilter::Set);
         break;
     case TypeKeys::OpenPGPTypeKeys:
+        keyFilter->setValidIfSMIME(Kleo::DefaultKeyFilter::NotSet);
         keyFilter->setIsOpenPGP(Kleo::DefaultKeyFilter::Set);
         break;
     case TypeKeys::SMimeTypeKeys:
         keyFilter->setValidIfSMIME(Kleo::DefaultKeyFilter::Set);
+        keyFilter->setIsOpenPGP(Kleo::DefaultKeyFilter::NotSet);
         break;
     }
 
