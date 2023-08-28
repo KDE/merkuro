@@ -8,6 +8,8 @@
 IdentityCryptographyBackend::IdentityCryptographyBackend(QObject *parent)
     : QObject(parent)
     , KIdentityManagement::Quick::CryptographyBackendInterface()
+    , m_openPgpKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::OpenPGPTypeKeys))
+    , m_smimeKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::SMimeTypeKeys))
 {
 }
 
@@ -34,4 +36,5 @@ void IdentityCryptographyBackend::setIdentity(const KIdentityManagement::Identit
 
     m_identity = identity;
     m_openPgpKeyListModel->setEmailFilter(identity.primaryEmailAddress());
+    m_smimeKeyListModel->setEmailFilter(identity.primaryEmailAddress());
 }

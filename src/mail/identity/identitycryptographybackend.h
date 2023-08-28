@@ -25,6 +25,6 @@ protected:
 
 private:
     IdentityKeyListModel *m_openPgpKeyListModel = nullptr;
-    QAbstractItemModel *m_smimeKeyListModel = nullptr;
+    IdentityKeyListModel *m_smimeKeyListModel = nullptr;
     KIdentityManagement::Identity m_identity;
 };
