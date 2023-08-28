@@ -11,6 +11,9 @@ class IdentityKeyListModel : public QIdentityProxyModel
     Q_OBJECT
 
 public:
+    enum class TypeKeys { AnyTypeKeys, OpenPGPTypeKeys, SMimeTypeKeys };
+    Q_ENUM(TypeKeys)
+
     explicit IdentityKeyListModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
@@ -24,8 +27,14 @@ public:
     QString filterEmail() const;
     void setEmailFilter(const QString &email);
 
+    TypeKeys displayedTypeKeys() const;
+    void setDisplayedTypeKeys(const TypeKeys displayedKeyTypes);
+
 private:
+    void updateKeyFilter();
+
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
+    TypeKeys m_displayedTypeKeys = TypeKeys::AnyTypeKeys;
 
     const int m_noKeyRow = 0;
     const int m_customKeyCount = 1;

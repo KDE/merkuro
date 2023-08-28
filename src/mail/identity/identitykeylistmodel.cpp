@@ -98,3 +98,37 @@ void IdentityKeyListModel::setEmailFilter(const QString &email)
     }
     m_baseModel->setFilterRegularExpression(email);
 }
+
+IdentityKeyListModel::TypeKeys IdentityKeyListModel::displayedTypeKeys() const
+{
+    return m_displayedTypeKeys;
+}
+
+void IdentityKeyListModel::setDisplayedTypeKeys(const TypeKeys displayedTypeKeys)
+{
+    if (!m_baseModel || m_displayedTypeKeys == displayedTypeKeys) {
+        return;
+    }
+    m_displayedTypeKeys = displayedTypeKeys;
+    updateKeyFilter();
+}
+
+void IdentityKeyListModel::updateKeyFilter()
+{
+    const auto keyFilter = std::make_shared<Kleo::DefaultKeyFilter>();
+
+    switch (m_displayedTypeKeys) {
+    case TypeKeys::AnyTypeKeys:
+        keyFilter->setValidIfSMIME(Kleo::DefaultKeyFilter::Set);
+        keyFilter->setIsOpenPGP(Kleo::DefaultKeyFilter::Set);
+        break;
+    case TypeKeys::OpenPGPTypeKeys:
+        keyFilter->setIsOpenPGP(Kleo::DefaultKeyFilter::Set);
+        break;
+    case TypeKeys::SMimeTypeKeys:
+        keyFilter->setValidIfSMIME(Kleo::DefaultKeyFilter::Set);
+        break;
+    }
+
+    m_baseModel->setKeyFilter(keyFilter);
+}
