@@ -20,3 +20,18 @@ QAbstractItemModel *IdentityCryptographyBackend::smimeKeyListModel() const
 {
     return m_smimeKeyListModel;
 }
+
+KIdentityManagement::Identity IdentityCryptographyBackend::identity() const
+{
+    return m_identity;
+}
+
+void IdentityCryptographyBackend::setIdentity(const KIdentityManagement::Identity &identity)
+{
+    if (identity == m_identity) {
+        return;
+    }
+
+    m_identity = identity;
+    m_openPgpKeyListModel->setEmailFilter(identity.primaryEmailAddress());
+}

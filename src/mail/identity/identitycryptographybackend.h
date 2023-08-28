@@ -19,7 +19,12 @@ public:
     Q_INVOKABLE QAbstractItemModel *openPgpKeyListModel() const override;
     Q_INVOKABLE QAbstractItemModel *smimeKeyListModel() const override;
 
+protected:
+    KIdentityManagement::Identity identity() const override;
+    void setIdentity(const KIdentityManagement::Identity &identity) override;
+
 private:
-    QAbstractItemModel *m_openPgpKeyListModel = nullptr;
+    IdentityPGPKeyListModel *m_openPgpKeyListModel = nullptr;
     QAbstractItemModel *m_smimeKeyListModel = nullptr;
+    KIdentityManagement::Identity m_identity;
 };
