@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2023 Claudio Cambra <claudio.cambra@kde.org>
-// SPDX-License-Identifier: GPL-3.0-only
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "identitykeylistmodel.h"
 
