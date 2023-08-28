@@ -8,6 +8,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kidentitymanagement 1.0 as KIdentityManagement
+import org.kde.merkuro.mail 1.0
 
 Kirigami.ScrollablePage {
     id: accountsSettingsPage
@@ -35,6 +36,7 @@ Kirigami.ScrollablePage {
 
         KIdentityManagement.IdentityConfigurationForm {
             Layout.fillWidth: true
+            cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.newCryptoEditorBackend()
         }
 
         MobileForm.FormHeader {
