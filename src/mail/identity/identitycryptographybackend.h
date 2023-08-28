@@ -4,6 +4,7 @@
 #pragma once
 
 #include <KIdentityManagement/CryptographyBackendInterface>
+#include <KIdentityManagement/Identity>
 #include <QAbstractItemModel>
 
 class IdentityKeyListModel;
