@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-29 00:46+0000\n"
 "PO-Revision-Date: 2023-08-18 20:55+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -546,7 +546,6 @@ msgstr "Sortu egutegi berria"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
@@ -692,8 +691,6 @@ msgstr "Editatu"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
@@ -940,7 +937,6 @@ msgstr "Gehitu %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Gorde"
@@ -948,7 +944,6 @@ msgstr "Gorde"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Gehitu"
@@ -1854,7 +1849,7 @@ msgstr "Itxura"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:15
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2740,7 +2735,6 @@ msgid "Other…"
 msgstr "Bestelakoa..."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "erabiltzailea@adibidea.org"
@@ -3110,6 +3104,12 @@ msgstr "%1 (Lehenetsia)"
 msgid "Image request has been cancelled"
 msgstr "Irudi eskaera bertan behera utzi da"
 
+#: mail/identity/identitykeylistmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Import key"
+msgid "No key"
+msgstr "Inportatu gakoa"
+
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3266,31 +3266,25 @@ msgstr "Posta honek gonbidapen bat du"
 msgid "Import key"
 msgstr "Inportatu gakoa"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:26
 #, kde-format
 msgid "Account settings"
 msgstr "Kontuaren ezarpenak"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Identities"
 msgstr "Nortasunak"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:43
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Jasotzeko kontuak"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:49
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Posta kontua konfiguratzea"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3311,62 +3305,6 @@ msgstr "Aldatu"
 #, kde-format
 msgid "Add Account"
 msgstr "Gehitu kontua"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr "Nortasuna"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, kde-format
-msgid "Your name"
-msgstr "Zure izena:"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, kde-format
-msgid "Email address"
-msgstr "E-posta helbidea"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, kde-format
-msgid "E-mail aliases"
-msgstr "E-posta goitizenak"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, kde-format
-msgid "Remove email alias"
-msgstr "Kendu e-posta goitizenak"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, kde-format
-msgid "Add email alias"
-msgstr "Gehitu e-posta goitizenak"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, kde-format
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Editatu nortasuna"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, kde-format
-msgid "Add Identity"
-msgstr "Gehitu nortasuna"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, kde-format
-msgid "Edit Identity"
-msgstr "Editatu nortasuna"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, kde-format
-msgid "Delete %1"
-msgstr "Ezabatu %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, kde-format
-msgid "Are you sure you want to delete this identity?"
-msgstr "Ziur zaude nortasun hori ezabatu nahi duzula?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3392,6 +3330,44 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#~ msgid "Identity"
+#~ msgstr "Nortasuna"
+
+#~ msgid "Your name"
+#~ msgstr "Zure izena:"
+
+#~ msgid "Email address"
+#~ msgstr "E-posta helbidea"
+
+#~ msgid "E-mail aliases"
+#~ msgstr "E-posta goitizenak"
+
+#~ msgid "Remove email alias"
+#~ msgstr "Kendu e-posta goitizenak"
+
+#~ msgid "Add email alias"
+#~ msgstr "Gehitu e-posta goitizenak"
+
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Editatu nortasuna"
+
+#~ msgid "Add Identity"
+#~ msgstr "Gehitu nortasuna"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Editatu nortasuna"
+
+#~ msgid "Delete %1"
+#~ msgstr "Ezabatu %1"
+
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Ziur zaude nortasun hori ezabatu nahi duzula?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "%1(e)k %2(e)an bidalia"

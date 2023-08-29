@@ -19,14 +19,6 @@ target_sources(akonadi_quick_plugin PRIVATE
     agentconfiguration.h
     tagmanager.h
     tagmanager.cpp
-    identityeditorbackend.h
-    identityeditorbackend.cpp
-    identitymodel.h
-    identitymodel.cpp
-    identityutils.h
-    identityutils.cpp
-    identitywrapper.h
-    identitywrapper.cpp
 )
 
 ecm_target_qml_sources(akonadi_quick_plugin SOURCES
@@ -34,9 +26,6 @@ ecm_target_qml_sources(akonadi_quick_plugin SOURCES
     qml/MobileCollectionComboBox.qml
     qml/AgentConfigurationForm.qml
     qml/TagManagerPage.qml
-    qml/identity/IdentityConfigurationForm.qml
-    qml/identity/IdentityEditorPage.qml
-    qml/identity/BasicIdentityEditorCard.qml
 )
 
 ecm_qt_declare_logging_category(akonadi_quick_plugin

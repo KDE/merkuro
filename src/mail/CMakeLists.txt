@@ -23,6 +23,13 @@ set(merkuro_mail_SRCS
 
     mailheadermodel.h
     mailheadermodel.cpp
+
+    identity/identitycryptographybackend.h
+    identity/identitycryptographybackend.cpp
+    identity/identitycryptographyeditorbackendfactory.h
+    identity/identitycryptographyeditorbackendfactory.cpp
+    identity/identitykeylistmodel.h
+    identity/identitykeylistmodel.cpp
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -44,6 +51,7 @@ target_link_libraries(merkuro_mail_static
         KPim6::AkonadiMime
         KF6::Codecs
         KF6::XmlGui
+        KPim6::IdentityManagementQuick
 )
 
 target_link_libraries(merkuro_mail_static PUBLIC Qt::Core5Compat)

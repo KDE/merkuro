@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-29 00:46+0000\n"
 "PO-Revision-Date: 2023-08-16 12:26+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -544,7 +544,6 @@ msgstr "Skapa ny kalender"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Avbryt"
@@ -690,8 +689,6 @@ msgstr "Redigera"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
@@ -937,7 +934,6 @@ msgstr "Lägg till %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Spara"
@@ -945,7 +941,6 @@ msgstr "Spara"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Lägg till"
@@ -1851,7 +1846,7 @@ msgstr "Utseende"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:15
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2729,7 +2724,6 @@ msgid "Other…"
 msgstr "Annan…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "användare@exempel.org"
@@ -3099,6 +3093,12 @@ msgstr "%1 (förval)"
 msgid "Image request has been cancelled"
 msgstr "Bildbegäran har avbrutits"
 
+#: mail/identity/identitykeylistmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Import key"
+msgid "No key"
+msgstr "Importera nyckel"
+
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3255,31 +3255,25 @@ msgstr "Brevet innehåller en inbjudan"
 msgid "Import key"
 msgstr "Importera nyckel"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:26
 #, kde-format
 msgid "Account settings"
 msgstr "Kontoinställningar"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Identities"
 msgstr "Identiteter"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:43
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Mottagarkonton"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:49
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Inställning av e-postkonton"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3300,62 +3294,6 @@ msgstr "Ändra"
 #, kde-format
 msgid "Add Account"
 msgstr "Lägg till konto"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, kde-format
-msgid "Identity"
-msgstr "Identitet"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, kde-format
-msgid "Your name"
-msgstr "Ditt namn"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, kde-format
-msgid "Email address"
-msgstr "E-postadress"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, kde-format
-msgid "E-mail aliases"
-msgstr "E-postalias"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, kde-format
-msgid "Remove email alias"
-msgstr "Ta bort e-postalias"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, kde-format
-msgid "Add email alias"
-msgstr "Lägg till e-postalias"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, kde-format
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Redigera identitet"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, kde-format
-msgid "Add Identity"
-msgstr "Lägg till identitet"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, kde-format
-msgid "Edit Identity"
-msgstr "Redigera identitet"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, kde-format
-msgid "Delete %1"
-msgstr "Ta bort %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, kde-format
-msgid "Are you sure you want to delete this identity?"
-msgstr "Är du säker på att du vill ta bort identiteten?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3381,6 +3319,44 @@ msgstr "Skapa en ny etikett…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#~ msgid "Identity"
+#~ msgstr "Identitet"
+
+#~ msgid "Your name"
+#~ msgstr "Ditt namn"
+
+#~ msgid "Email address"
+#~ msgstr "E-postadress"
+
+#~ msgid "E-mail aliases"
+#~ msgstr "E-postalias"
+
+#~ msgid "Remove email alias"
+#~ msgstr "Ta bort e-postalias"
+
+#~ msgid "Add email alias"
+#~ msgstr "Lägg till e-postalias"
+
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Redigera identitet"
+
+#~ msgid "Add Identity"
+#~ msgstr "Lägg till identitet"
+
+#~ msgid "Edit Identity"
+#~ msgstr "Redigera identitet"
+
+#~ msgid "Delete %1"
+#~ msgstr "Ta bort %1"
+
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Är du säker på att du vill ta bort identiteten?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "skickat av %1 %2"

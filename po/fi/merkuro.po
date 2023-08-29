@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-29 00:46+0000\n"
 "PO-Revision-Date: 2023-07-27 15:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -543,7 +543,6 @@ msgstr "Luo uusi kalenteri"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Peru"
@@ -689,8 +688,6 @@ msgstr "Muokkaa"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
@@ -936,7 +933,6 @@ msgstr "Lisää %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Tallenna"
@@ -944,7 +940,6 @@ msgstr "Tallenna"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Lisää"
@@ -1853,7 +1848,7 @@ msgstr "Ulkoasu"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:15
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2740,7 +2735,6 @@ msgid "Other…"
 msgstr "Muu…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "kayttaja@esimerkki.fi"
@@ -3111,6 +3105,12 @@ msgstr "%1 (oletus)"
 msgid "Image request has been cancelled"
 msgstr "Kuvapyyntö on peruttu"
 
+#: mail/identity/identitykeylistmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Import key"
+msgid "No key"
+msgstr "Tuo avain"
+
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3276,35 +3276,29 @@ msgstr "Tämä viesti sisältää kutsun"
 msgid "Import key"
 msgstr "Tuo avain"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:26
 #, fuzzy, kde-format
 #| msgid "Month view settings"
 msgid "Account settings"
 msgstr "Kuukausinäkymän asetukset"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Identity:"
 msgid "Identities"
 msgstr "Henkilöys:"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Receiving Accounts"
 msgstr "Sähköpostitilit"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:49
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Mail Account Configuration"
 msgstr "Sähköpostitilit"
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " – "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3325,76 +3319,6 @@ msgstr "Muuta"
 #, kde-format
 msgid "Add Account"
 msgstr "Lisää tili"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Identity"
-msgstr "Henkilöys:"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgid "Your name"
-msgstr "Tommi Nieminen"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, fuzzy, kde-format
-#| msgid "Email Address"
-#| msgid_plural "Email Addresses"
-msgid "Email address"
-msgstr "Sähköpostiosoite"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
-msgid "E-mail aliases"
-msgstr "Sähköpostisovellus"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove email"
-msgid "Remove email alias"
-msgstr "Poista sähköposti"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, fuzzy, kde-format
-#| msgid "Add email"
-msgid "Add email alias"
-msgstr "Lisää sähköposti"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Henkilöys:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Add Identity"
-msgstr "Henkilöys:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Edit Identity"
-msgstr "Henkilöys:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, fuzzy, kde-format
-#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
-#| msgid "Delete %1"
-msgid "Delete %1"
-msgstr "Poista %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
-msgid "Are you sure you want to delete this identity?"
-msgstr "Haluatko varmasti poistaa luokituksen ”%1”?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3420,6 +3344,69 @@ msgstr "Luo uusi luokitus…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lisää pikaisesti uusi luokitus."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " – "
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Identity"
+#~ msgstr "Henkilöys:"
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "Your name"
+#~ msgstr "Tommi Nieminen"
+
+#, fuzzy
+#~| msgid "Email Address"
+#~| msgid_plural "Email Addresses"
+#~ msgid "Email address"
+#~ msgstr "Sähköpostiosoite"
+
+#, fuzzy
+#~| msgid "EMail Client Application"
+#~ msgid "E-mail aliases"
+#~ msgstr "Sähköpostisovellus"
+
+#, fuzzy
+#~| msgid "Remove email"
+#~ msgid "Remove email alias"
+#~ msgstr "Poista sähköposti"
+
+#, fuzzy
+#~| msgid "Add email"
+#~ msgid "Add email alias"
+#~ msgstr "Lisää sähköposti"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Henkilöys:"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Add Identity"
+#~ msgstr "Henkilöys:"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Edit Identity"
+#~ msgstr "Henkilöys:"
+
+#, fuzzy
+#~| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#~| msgid "Delete %1"
+#~ msgid "Delete %1"
+#~ msgstr "Poista %1"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete tag \"%1\"?"
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Haluatko varmasti poistaa luokituksen ”%1”?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "lähettänyt %1 %2"

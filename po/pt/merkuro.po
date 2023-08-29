@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:46+0000\n"
+"POT-Creation-Date: 2023-08-29 00:46+0000\n"
 "PO-Revision-Date: 2023-07-14 22:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -543,7 +543,6 @@ msgstr "Criar um novo calendário"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
-#: quick/qml/identity/IdentityEditorPage.qml:121
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -689,8 +688,6 @@ msgstr "Editar"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
 #: quick/qml/AgentConfigurationForm.qml:46
-#: quick/qml/identity/IdentityEditorPage.qml:84
-#: quick/qml/identity/IdentityEditorPage.qml:113
 #, kde-format
 msgid "Delete"
 msgstr "Apagar"
@@ -937,7 +934,6 @@ msgstr "Adicionar um %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Save"
 msgstr "Gravar"
@@ -945,7 +941,6 @@ msgstr "Gravar"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
-#: quick/qml/identity/IdentityEditorPage.qml:92
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
@@ -1853,7 +1848,7 @@ msgstr "Aparência"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:13
+#: mail/qml/settings/AccountSettingsPage.qml:15
 #: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
@@ -2740,7 +2735,6 @@ msgid "Other…"
 msgstr "Outro…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
-#: quick/qml/identity/BasicIdentityEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "utilizador@exemplo.org"
@@ -3111,6 +3105,12 @@ msgstr "%1 (Predefinição)"
 msgid "Image request has been cancelled"
 msgstr "O pedido da imagem foi cancelado"
 
+#: mail/identity/identitykeylistmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Import key"
+msgid "No key"
+msgstr "Importar a chave"
+
 #: mail/mailapplication.cpp:22
 #, kde-format
 msgid "New Mail…"
@@ -3277,34 +3277,28 @@ msgstr "Esta mensagem contém um convite"
 msgid "Import key"
 msgstr "Importar a chave"
 
-#: mail/qml/settings/AccountSettingsPage.qml:24
+#: mail/qml/settings/AccountSettingsPage.qml:26
 #, fuzzy, kde-format
 #| msgid "Month view settings"
 msgid "Account settings"
 msgstr "Configuração da vista mensal"
 
-#: mail/qml/settings/AccountSettingsPage.qml:30
+#: mail/qml/settings/AccountSettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Identity:"
 msgid "Identities"
 msgstr "Identidade:"
 
-#: mail/qml/settings/AccountSettingsPage.qml:40
+#: mail/qml/settings/AccountSettingsPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Receiving Accounts"
 msgstr "Contas"
 
-#: mail/qml/settings/AccountSettingsPage.qml:46
+#: mail/qml/settings/AccountSettingsPage.qml:49
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr ""
-
-#: quick/identitymodel.cpp:45
-#, kde-format
-msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3325,76 +3319,6 @@ msgstr "Modificar"
 #, kde-format
 msgid "Add Account"
 msgstr "Adicionar uma Conta"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:30
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Identity"
-msgstr "Identidade:"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:36
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgid "Your name"
-msgstr "José Nuno Pires"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:44
-#, fuzzy, kde-format
-#| msgid "Email Address"
-#| msgid_plural "Email Addresses"
-msgid "Email address"
-msgstr "Endereço de E-mail"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:51
-#, fuzzy, kde-format
-#| msgid "EMail Client Application"
-msgid "E-mail aliases"
-msgstr "Cliente de E-Mail"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove email"
-msgid "Remove email alias"
-msgstr "Remover o e-mail"
-
-#: quick/qml/identity/BasicIdentityEditorCard.qml:99
-#, fuzzy, kde-format
-#| msgid "Add email"
-msgid "Add email alias"
-msgstr "Adicionar um e-mail"
-
-#: quick/qml/identity/IdentityConfigurationForm.qml:34
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgctxt "@title"
-msgid "Edit Identity"
-msgstr "Identidade:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:37
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Add Identity"
-msgstr "Identidade:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:39
-#, fuzzy, kde-format
-#| msgid "Identity:"
-msgid "Edit Identity"
-msgstr "Identidade:"
-
-#: quick/qml/identity/IdentityEditorPage.qml:107
-#, fuzzy, kde-format
-#| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
-#| msgid "Delete %1"
-msgid "Delete %1"
-msgstr "Apagar o %1"
-
-#: quick/qml/identity/IdentityEditorPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
-msgid "Are you sure you want to delete this identity?"
-msgstr "Deseja realmente apagar a marca \"%1\"?"
 
 #: quick/qml/TagManagerPage.qml:13
 #, kde-format
@@ -3420,6 +3344,69 @@ msgstr "Criar uma Nova Marca…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Adicionar Rapidamente uma Nova Marca."
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Identity"
+#~ msgstr "Identidade:"
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgid "Your name"
+#~ msgstr "José Nuno Pires"
+
+#, fuzzy
+#~| msgid "Email Address"
+#~| msgid_plural "Email Addresses"
+#~ msgid "Email address"
+#~ msgstr "Endereço de E-mail"
+
+#, fuzzy
+#~| msgid "EMail Client Application"
+#~ msgid "E-mail aliases"
+#~ msgstr "Cliente de E-Mail"
+
+#, fuzzy
+#~| msgid "Remove email"
+#~ msgid "Remove email alias"
+#~ msgstr "Remover o e-mail"
+
+#, fuzzy
+#~| msgid "Add email"
+#~ msgid "Add email alias"
+#~ msgstr "Adicionar um e-mail"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgctxt "@title"
+#~ msgid "Edit Identity"
+#~ msgstr "Identidade:"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Add Identity"
+#~ msgstr "Identidade:"
+
+#, fuzzy
+#~| msgid "Identity:"
+#~ msgid "Edit Identity"
+#~ msgstr "Identidade:"
+
+#, fuzzy
+#~| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
+#~| msgid "Delete %1"
+#~ msgid "Delete %1"
+#~ msgstr "Apagar o %1"
+
+#, fuzzy
+#~| msgid "Are you sure you want to delete tag \"%1\"?"
+#~ msgid "Are you sure you want to delete this identity?"
+#~ msgstr "Deseja realmente apagar a marca \"%1\"?"
 
 #~ msgid "sent by %1 on %2"
 #~ msgstr "enviado por %1 a %2"
