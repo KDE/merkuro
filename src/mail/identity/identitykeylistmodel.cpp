@@ -4,7 +4,6 @@
 #include "identitykeylistmodel.h"
 
 #include <KIdentityManagement/Identity>
-#include <KIdentityManagement/KeyListModel>
 #include <KLocalizedString>
 #include <Libkleo/DefaultKeyFilter>
 #include <Libkleo/KeyCache>
