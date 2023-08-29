@@ -4,7 +4,6 @@
 #include "identitykeylistmodel.h"
 
 #include <KIdentityManagementCore/Identity>
-#include <KIdentityManagementCore/KeyListModel>
 #include <KLocalizedString>
 #include <Libkleo/DefaultKeyFilter>
 #include <Libkleo/KeyCache>
@@ -50,7 +49,7 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> IdentityKeyListModel::roleNames() const
 {
     auto names = QIdentityProxyModel::roleNames();
-    names.insert(KIdentityManagement::Quick::KeyListModelInterface::roleNames());
+    names.insert(KIdentityManagementCore::Quick::KeyListModelInterface::roleNames());
     return names;
 }
 
