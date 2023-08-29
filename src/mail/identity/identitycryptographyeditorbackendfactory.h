@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <KIdentityManagement/CryptographyEditorBackend>
+#include <KIdentityManagementCore/CryptographyEditorBackend>
 #include <QObject>
 
 class IdentityCryptographyEditorBackendFactory : public QObject
@@ -13,5 +13,5 @@ class IdentityCryptographyEditorBackendFactory : public QObject
 public:
     explicit IdentityCryptographyEditorBackendFactory() = default;
 
-    Q_INVOKABLE static KIdentityManagement::Quick::CryptographyEditorBackend *newCryptoEditorBackend();
+    Q_INVOKABLE static KIdentityManagementCore::Quick::CryptographyEditorBackend *newCryptoEditorBackend();
 };

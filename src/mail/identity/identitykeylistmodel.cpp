@@ -3,8 +3,8 @@
 
 #include "identitykeylistmodel.h"
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/KeyListModel>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/KeyListModel>
 #include <KLocalizedString>
 #include <Libkleo/DefaultKeyFilter>
 #include <Libkleo/KeyCache>
@@ -38,9 +38,9 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyByteArrayRole:
+    case KIdentityManagementCore::Quick::KeyListModelInterface::Roles::KeyByteArrayRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).primaryFingerprint());
-    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyIdentifierRole:
+    case KIdentityManagementCore::Quick::KeyListModelInterface::Roles::KeyIdentifierRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).keyID());
     }
 
@@ -106,18 +106,18 @@ QModelIndex IdentityKeyListModel::indexForKey(const QByteArray &key) const
     return index(0, 0);
 }
 
-QModelIndex IdentityKeyListModel::indexForIdentity(const KIdentityManagement::Identity &identity,
-                                                   const KIdentityManagement::Quick::KeyUseTypes::KeyUse keyUse) const
+QModelIndex IdentityKeyListModel::indexForIdentity(const KIdentityManagementCore::Identity &identity,
+                                                   const KIdentityManagementCore::Quick::KeyUseTypes::KeyUse keyUse) const
 {
     QByteArray pgpKey;
     QByteArray smimeKey;
 
     switch (keyUse) {
-    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeyEncryptionUse:
+    case KIdentityManagementCore::Quick::KeyUseTypes::KeyUse::KeyEncryptionUse:
         pgpKey = identity.pgpEncryptionKey();
         smimeKey = identity.smimeEncryptionKey();
         break;
-    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeySigningUse:
+    case KIdentityManagementCore::Quick::KeyUseTypes::KeyUse::KeySigningUse:
         pgpKey = identity.pgpSigningKey();
         smimeKey = identity.smimeSigningKey();
         break;

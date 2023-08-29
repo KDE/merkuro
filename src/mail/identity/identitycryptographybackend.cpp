@@ -7,7 +7,7 @@
 
 IdentityCryptographyBackend::IdentityCryptographyBackend(QObject *parent)
     : QObject(parent)
-    , KIdentityManagement::Quick::CryptographyBackendInterface()
+    , KIdentityManagementCore::Quick::CryptographyBackendInterface()
     , m_openPgpKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::OpenPGPTypeKeys))
     , m_smimeKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::SMimeTypeKeys))
 {
@@ -23,12 +23,12 @@ QAbstractItemModel *IdentityCryptographyBackend::smimeKeyListModel() const
     return m_smimeKeyListModel;
 }
 
-KIdentityManagement::Identity IdentityCryptographyBackend::identity() const
+KIdentityManagementCore::Identity IdentityCryptographyBackend::identity() const
 {
     return m_identity;
 }
 
-void IdentityCryptographyBackend::setIdentity(const KIdentityManagement::Identity &identity)
+void IdentityCryptographyBackend::setIdentity(const KIdentityManagementCore::Identity &identity)
 {
     if (identity == m_identity) {
         return;

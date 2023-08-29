@@ -3,16 +3,16 @@
 
 #pragma once
 
-#include <KIdentityManagement/CryptographyBackendInterface>
-#include <KIdentityManagement/Identity>
+#include <KIdentityManagementCore/CryptographyBackendInterface>
+#include <KIdentityManagementCore/Identity>
 #include <QAbstractItemModel>
 
 class IdentityKeyListModel;
 
-class IdentityCryptographyBackend : public QObject, public KIdentityManagement::Quick::CryptographyBackendInterface
+class IdentityCryptographyBackend : public QObject, public KIdentityManagementCore::Quick::CryptographyBackendInterface
 {
     Q_OBJECT
-    Q_INTERFACES(KIdentityManagement::Quick::CryptographyBackendInterface)
+    Q_INTERFACES(KIdentityManagementCore::Quick::CryptographyBackendInterface)
 
 public:
     explicit IdentityCryptographyBackend(QObject *parent = nullptr);
@@ -21,11 +21,11 @@ public:
     Q_INVOKABLE QAbstractItemModel *smimeKeyListModel() const override;
 
 protected:
-    KIdentityManagement::Identity identity() const override;
-    void setIdentity(const KIdentityManagement::Identity &identity) override;
+    KIdentityManagementCore::Identity identity() const override;
+    void setIdentity(const KIdentityManagementCore::Identity &identity) override;
 
 private:
     IdentityKeyListModel *m_openPgpKeyListModel = nullptr;
     IdentityKeyListModel *m_smimeKeyListModel = nullptr;
-    KIdentityManagement::Identity m_identity;
+    KIdentityManagementCore::Identity m_identity;
 };
