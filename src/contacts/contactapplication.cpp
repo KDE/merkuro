@@ -18,7 +18,7 @@ ContactApplication::ContactApplication(QObject *parent)
     setupActions();
 }
 
-QVector<KActionCollection *> ContactApplication::actionCollections() const
+QList<KActionCollection *> ContactApplication::actionCollections() const
 {
     return {
         mCollection,

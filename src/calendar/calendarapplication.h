@@ -38,7 +38,7 @@ public:
     explicit CalendarApplication(QObject *parent = nullptr);
     ~CalendarApplication() override;
 
-    QVector<KActionCollection *> actionCollections() const override;
+    QList<KActionCollection *> actionCollections() const override;
 
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
     QWindow *window() const;

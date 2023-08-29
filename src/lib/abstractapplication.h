@@ -18,7 +18,7 @@ public:
     Q_INVOKABLE void configureShortcuts();
     Q_INVOKABLE QAction *action(const QString &actionName);
 
-    virtual QVector<KActionCollection *> actionCollections() const = 0;
+    virtual QList<KActionCollection *> actionCollections() const = 0;
     QSortFilterProxyModel *actionsModel();
 
 Q_SIGNALS:

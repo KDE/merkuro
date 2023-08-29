@@ -10,7 +10,7 @@ class ContactApplication : public AbstractApplication
 public:
     explicit ContactApplication(QObject *parent = nullptr);
 
-    QVector<KActionCollection *> actionCollections() const override;
+    QList<KActionCollection *> actionCollections() const override;
 
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
 

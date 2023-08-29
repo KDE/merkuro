@@ -458,7 +458,7 @@ void CalendarApplication::handleMouseViewNavButtons(const Qt::MouseButton presse
     }
 }
 
-QVector<KActionCollection *> CalendarApplication::actionCollections() const
+QList<KActionCollection *> CalendarApplication::actionCollections() const
 {
     return {mCollection, mSortCollection};
 }

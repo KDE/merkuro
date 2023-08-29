@@ -26,7 +26,7 @@ void MailApplication::setupActions()
     mCollection->readSettings();
 }
 
-QVector<KActionCollection *> MailApplication::actionCollections() const
+QList<KActionCollection *> MailApplication::actionCollections() const
 {
     return {
         mCollection,
