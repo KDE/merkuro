@@ -38,3 +38,5 @@ void IdentityCryptographyBackend::setIdentity(const KIdentityManagementCore::Ide
     m_openPgpKeyListModel->setEmailFilter(identity.primaryEmailAddress());
     m_smimeKeyListModel->setEmailFilter(identity.primaryEmailAddress());
 }
+
+#include "moc_identitycryptographybackend.cpp"

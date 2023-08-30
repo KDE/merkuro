@@ -188,3 +188,5 @@ void IdentityKeyListModel::updateKeyFilter()
 
     m_baseModel->setKeyFilter(keyFilter);
 }
+
+#include "moc_identitykeylistmodel.cpp"
