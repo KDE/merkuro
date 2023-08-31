@@ -7,7 +7,7 @@
 
 IdentityCryptographyBackend::IdentityCryptographyBackend(QObject *parent)
     : QObject(parent)
-    , KIdentityManagementCore::Quick::CryptographyBackendInterface()
+    , KIdentityManagementQuick::CryptographyBackendInterface()
     , m_openPgpKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::OpenPGPTypeKeys))
     , m_smimeKeyListModel(new IdentityKeyListModel(this, IdentityKeyListModel::TypeKeys::SMimeTypeKeys))
 {
