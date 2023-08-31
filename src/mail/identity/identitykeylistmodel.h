@@ -7,7 +7,7 @@
 #include <Libkleo/KeyListSortFilterProxyModel>
 #include <QIdentityProxyModel>
 
-namespace KIdentityManagementCore
+namespace KIdentityManagement
 {
 class Identity;
 }
