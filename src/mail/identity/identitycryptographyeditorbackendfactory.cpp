@@ -5,8 +5,8 @@
 
 #include "identitycryptographybackend.h"
 
-KIdentityManagement::Quick::CryptographyEditorBackend *IdentityCryptographyEditorBackendFactory::newCryptoEditorBackend()
+KIdentityManagementQuick::CryptographyEditorBackend *IdentityCryptographyEditorBackendFactory::newCryptoEditorBackend()
 {
     const auto cryptoBackend = QSharedPointer<IdentityCryptographyBackend>::create();
-    return new KIdentityManagement::Quick::CryptographyEditorBackend(nullptr, std::move(cryptoBackend));
+    return new KIdentityManagementQuick::CryptographyEditorBackend(nullptr, std::move(cryptoBackend));
 }

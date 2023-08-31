@@ -3,16 +3,16 @@
 
 #pragma once
 
-#include <KIdentityManagement/CryptographyBackendInterface>
+#include <KIdentityManagementQuick/CryptographyBackendInterface>
 #include <KIdentityManagement/Identity>
 #include <QAbstractItemModel>
 
 class IdentityKeyListModel;
 
-class IdentityCryptographyBackend : public QObject, public KIdentityManagement::Quick::CryptographyBackendInterface
+class IdentityCryptographyBackend : public QObject, public KIdentityManagementQuick::CryptographyBackendInterface
 {
     Q_OBJECT
-    Q_INTERFACES(KIdentityManagement::Quick::CryptographyBackendInterface)
+    Q_INTERFACES(KIdentityManagementQuick::CryptographyBackendInterface)
 
 public:
     explicit IdentityCryptographyBackend(QObject *parent = nullptr);

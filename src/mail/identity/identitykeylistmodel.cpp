@@ -37,9 +37,9 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyByteArrayRole:
+    case KIdentityManagementQuick::KeyListModelInterface::Roles::KeyByteArrayRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).primaryFingerprint());
-    case KIdentityManagement::Quick::KeyListModelInterface::Roles::KeyIdentifierRole:
+    case KIdentityManagementQuick::KeyListModelInterface::Roles::KeyIdentifierRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).keyID());
     }
 
@@ -49,7 +49,7 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> IdentityKeyListModel::roleNames() const
 {
     auto names = QIdentityProxyModel::roleNames();
-    names.insert(KIdentityManagement::Quick::KeyListModelInterface::roleNames());
+    names.insert(KIdentityManagementQuick::KeyListModelInterface::roleNames());
     return names;
 }
 
@@ -106,17 +106,17 @@ QModelIndex IdentityKeyListModel::indexForKey(const QByteArray &key) const
 }
 
 QModelIndex IdentityKeyListModel::indexForIdentity(const KIdentityManagement::Identity &identity,
-                                                   const KIdentityManagement::Quick::KeyUseTypes::KeyUse keyUse) const
+                                                   const KIdentityManagementQuick::KeyUseTypes::KeyUse keyUse) const
 {
     QByteArray pgpKey;
     QByteArray smimeKey;
 
     switch (keyUse) {
-    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeyEncryptionUse:
+    case KIdentityManagementQuick::KeyUseTypes::KeyUse::KeyEncryptionUse:
         pgpKey = identity.pgpEncryptionKey();
         smimeKey = identity.smimeEncryptionKey();
         break;
-    case KIdentityManagement::Quick::KeyUseTypes::KeyUse::KeySigningUse:
+    case KIdentityManagementQuick::KeyUseTypes::KeyUse::KeySigningUse:
         pgpKey = identity.pgpSigningKey();
         smimeKey = identity.smimeSigningKey();
         break;
