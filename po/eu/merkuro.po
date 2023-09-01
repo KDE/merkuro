@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
-"PO-Revision-Date: 2023-08-18 20:55+0200\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"PO-Revision-Date: 2023-08-29 08:46+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1849,8 +1849,6 @@ msgstr "Itxura"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Kontuak"
@@ -3104,11 +3102,10 @@ msgstr "%1 (Lehenetsia)"
 msgid "Image request has been cancelled"
 msgstr "Irudi eskaera bertan behera utzi da"
 
-#: mail/identity/identitykeylistmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Import key"
+#: mail/identity/identitykeylistmodel.cpp:33
+#, kde-format
 msgid "No key"
-msgstr "Inportatu gakoa"
+msgstr "Gakorik ez"
 
 #: mail/mailapplication.cpp:22
 #, kde-format
@@ -3266,25 +3263,27 @@ msgstr "Posta honek gonbidapen bat du"
 msgid "Import key"
 msgstr "Inportatu gakoa"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr "Kontuaren ezarpenak"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "Nortasunak"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Jasotzeko kontuak"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Posta kontua konfiguratzea"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Kontuak"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3330,6 +3329,9 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
+
+#~ msgid "Account settings"
+#~ msgstr "Kontuaren ezarpenak"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

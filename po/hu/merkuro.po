@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2022-02-21 13:23+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1885,8 +1885,6 @@ msgstr ""
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr ""
@@ -3207,7 +3205,7 @@ msgstr "%1 (alapértelmezett)"
 msgid "Image request has been cancelled"
 msgstr ""
 
-#: mail/identity/identitykeylistmodel.cpp:34
+#: mail/identity/identitykeylistmodel.cpp:33
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "No key"
@@ -3377,26 +3375,27 @@ msgstr ""
 msgid "Import key"
 msgstr "Naptár importálása"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month View settings"
-msgid "Account settings"
-msgstr "Havi nézet beállításai"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr ""
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Add Attachment"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Melléklet hozzáadása"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, fuzzy, kde-format
@@ -3444,6 +3443,11 @@ msgstr "Új címkre létrehozása…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Új címke létrehozása gyorsan."
+
+#, fuzzy
+#~| msgid "Month View settings"
+#~ msgid "Account settings"
+#~ msgstr "Havi nézet beállításai"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"

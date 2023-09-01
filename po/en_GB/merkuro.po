@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-05-21 14:52+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1854,8 +1854,6 @@ msgstr "Appearance"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Accounts"
@@ -3117,7 +3115,7 @@ msgstr "%1 (Default)"
 msgid "Image request has been cancelled"
 msgstr "Image request has been cancelled"
 
-#: mail/identity/identitykeylistmodel.cpp:34
+#: mail/identity/identitykeylistmodel.cpp:33
 #, fuzzy, kde-format
 #| msgid "Import key"
 msgid "No key"
@@ -3289,28 +3287,29 @@ msgstr "This mail contains an invitation"
 msgid "Import key"
 msgstr "Import key"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month view settings"
-msgid "Account settings"
-msgstr "Month view settings"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Receiving Accounts"
 msgstr "Mail Accounts"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Mail Account Configuration"
 msgstr "Mail Accounts"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Accounts"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3356,6 +3355,11 @@ msgstr "Create a New Tag…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Quickly Add a New Tag."
+
+#, fuzzy
+#~| msgid "Month view settings"
+#~ msgid "Account settings"
+#~ msgstr "Month view settings"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"

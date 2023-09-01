@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-04-26 10:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1889,8 +1889,6 @@ msgstr "Внешний вид"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Учётные записи"
@@ -3159,7 +3157,7 @@ msgstr "%1 (по умолчанию)"
 msgid "Image request has been cancelled"
 msgstr "Запрос изображения был отменён"
 
-#: mail/identity/identitykeylistmodel.cpp:34
+#: mail/identity/identitykeylistmodel.cpp:33
 #, fuzzy, kde-format
 #| msgid "Import key"
 msgid "No key"
@@ -3331,28 +3329,29 @@ msgstr "Это письмо содержит приглашение"
 msgid "Import key"
 msgstr "Импорт ключа"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month view settings"
-msgid "Account settings"
-msgstr "Параметры просмотра месяца"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Receiving Accounts"
 msgstr "Учётные записи почты"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Mail Account Configuration"
 msgstr "Учётные записи почты"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Учётные записи"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3398,6 +3397,11 @@ msgstr "Создать метку…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Быстро добавить новую метку."
+
+#, fuzzy
+#~| msgid "Month view settings"
+#~ msgid "Account settings"
+#~ msgstr "Параметры просмотра месяца"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
-"PO-Revision-Date: 2023-08-16 06:24+0200\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"PO-Revision-Date: 2023-08-30 08:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1841,8 +1841,6 @@ msgstr "გარემოს იერსახე"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "ანგარიშები"
@@ -1970,7 +1968,7 @@ msgstr "კვირის ხედის რეჟიმი"
 #: calendar/qml/Settings/ViewSettingsPage.qml:277
 #, kde-format
 msgid "Swipeable week view"
-msgstr "გასამდი კვირის ხედ"
+msgstr "გასმადი კვირის ხედი"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:284
 #, kde-format
@@ -3089,11 +3087,10 @@ msgstr "%1 (ნაგულისხმები)"
 msgid "Image request has been cancelled"
 msgstr "გამოსახულების მოთხოვნა გაუქმდა"
 
-#: mail/identity/identitykeylistmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Import key"
+#: mail/identity/identitykeylistmodel.cpp:33
+#, kde-format
 msgid "No key"
-msgstr "გასაღების შემოტანა"
+msgstr "გასაღების გარეშე"
 
 #: mail/mailapplication.cpp:22
 #, kde-format
@@ -3251,25 +3248,27 @@ msgstr "ეს ელფოსტა მოსაწვევს შეიცა
 msgid "Import key"
 msgstr "გასაღების შემოტანა"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr "ანგარიშის მორგება"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "იდენტიფიკატორები"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "ანგარიშების მიღება"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "ელფოსტის ანგარიშების მორგება"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "ანგარიშები"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3315,6 +3314,9 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
+
+#~ msgid "Account settings"
+#~ msgstr "ანგარიშის მორგება"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-08-17 15:03+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1849,8 +1849,6 @@ msgstr "Aspetto"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Account"
@@ -3103,7 +3101,7 @@ msgstr "%1 (Predefinito)"
 msgid "Image request has been cancelled"
 msgstr "La richiesta dell'immagine è stata annullata"
 
-#: mail/identity/identitykeylistmodel.cpp:34
+#: mail/identity/identitykeylistmodel.cpp:33
 #, fuzzy, kde-format
 #| msgid "Import key"
 msgid "No key"
@@ -3265,25 +3263,27 @@ msgstr "Questo messaggi contiene un invito"
 msgid "Import key"
 msgstr "Importa chiave"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr "Impostazioni account"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "Identità"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Account di ricezione"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configurazione account di posta"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Account"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3329,6 +3329,9 @@ msgstr "Crea una nuova etichetta…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Aggiungi rapidamente una nuova etichetta."
+
+#~ msgid "Account settings"
+#~ msgstr "Impostazioni account"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-29 00:46+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2022-03-30 17:51+0300\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1893,8 +1893,6 @@ msgstr ""
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr ""
@@ -3215,7 +3213,7 @@ msgstr "%1 (Noklusējuma) "
 msgid "Image request has been cancelled"
 msgstr ""
 
-#: mail/identity/identitykeylistmodel.cpp:34
+#: mail/identity/identitykeylistmodel.cpp:33
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "No key"
@@ -3385,26 +3383,27 @@ msgstr ""
 msgid "Import key"
 msgstr "Importēt kalendāru"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month View settings"
-msgid "Account settings"
-msgstr "Mēneša skata iestatījumi"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr ""
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Add Attachment"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Pievienot pielikumu"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, fuzzy, kde-format
@@ -3452,6 +3451,11 @@ msgstr "Izveidot jaunu atzīmi..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Ātri izveidot jaunu atzīmi."
+
+#, fuzzy
+#~| msgid "Month View settings"
+#~ msgid "Account settings"
+#~ msgstr "Mēneša skata iestatījumi"
 
 #, fuzzy
 #~| msgctxt "NAME OF TRANSLATORS"
