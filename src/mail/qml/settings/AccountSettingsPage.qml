@@ -21,14 +21,14 @@ FormCard.FormCardPage {
 
     KIdentityManagement.IdentityConfigurationForm {
         Layout.fillWidth: true
-        cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.newCryptoEditorBackend()
+        cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
     }
 
     FormCard.FormHeader {
         title: i18n("Receiving Accounts")
         Layout.fillWidth: true
     }
-    
+
     Akonadi.AgentConfigurationForm {
         addPageTitle: i18n("Mail Account Configuration")
         mimetypes: Akonadi.MimeTypes.mail

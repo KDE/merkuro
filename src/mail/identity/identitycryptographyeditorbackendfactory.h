@@ -9,9 +9,10 @@
 class IdentityCryptographyEditorBackendFactory : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(KIdentityManagementQuick::CryptographyEditorBackend *cryptoEditorBackend READ cryptoEditorBackend CONSTANT)
 
 public:
     explicit IdentityCryptographyEditorBackendFactory() = default;
 
-    Q_INVOKABLE static KIdentityManagementQuick::CryptographyEditorBackend *newCryptoEditorBackend();
+    Q_INVOKABLE KIdentityManagementQuick::CryptographyEditorBackend *cryptoEditorBackend() const;
 };
