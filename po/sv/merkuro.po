@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 00:47+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-08-29 20:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1846,8 +1846,6 @@ msgstr "Utseende"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Konton"
@@ -3254,25 +3252,27 @@ msgstr "Brevet innehåller en inbjudan"
 msgid "Import key"
 msgstr "Importera nyckel"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr "Kontoinställningar"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "Identiteter"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Mottagarkonton"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Inställning av e-postkonton"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Konton"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3318,6 +3318,9 @@ msgstr "Skapa en ny etikett…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#~ msgid "Account settings"
+#~ msgstr "Kontoinställningar"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

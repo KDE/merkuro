@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 00:47+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-07-14 22:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1848,8 +1848,6 @@ msgstr "Aparência"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Contas"
@@ -3277,28 +3275,29 @@ msgstr "Esta mensagem contém um convite"
 msgid "Import key"
 msgstr "Importar a chave"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month view settings"
-msgid "Account settings"
-msgstr "Configuração da vista mensal"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Identity:"
 msgid "Identities"
 msgstr "Identidade:"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Receiving Accounts"
 msgstr "Contas"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr ""
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Contas"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3344,6 +3343,11 @@ msgstr "Criar uma Nova Marca…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Adicionar Rapidamente uma Nova Marca."
+
+#, fuzzy
+#~| msgid "Month view settings"
+#~ msgid "Account settings"
+#~ msgstr "Configuração da vista mensal"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 00:47+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-08-29 13:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1850,8 +1850,6 @@ msgstr "Aparença"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Comptes"
@@ -3268,25 +3266,27 @@ msgstr "Aquest correu conté una invitació"
 msgid "Import key"
 msgstr "Importa la clau"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr "Configuració del compte"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "Identitats"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Comptes de recepció"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configuració del compte de correu"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Comptes"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3332,6 +3332,9 @@ msgstr "Crea una etiqueta nova…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Afegeix ràpidament una etiqueta nova."
+
+#~ msgid "Account settings"
+#~ msgstr "Configuració del compte"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

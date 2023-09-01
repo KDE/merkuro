@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 00:47+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-08-27 01:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1809,8 +1809,6 @@ msgstr "모양"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "계정"
@@ -3215,25 +3213,27 @@ msgstr "이 메일에는 초대장이 첨부되어 있습니다"
 msgid "Import key"
 msgstr "키 가져오기..."
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, kde-format
-msgid "Account settings"
-msgstr ""
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgid "Identities"
 msgstr "프로필"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgid "Receiving Accounts"
 msgstr ""
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr ""
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "계정"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format

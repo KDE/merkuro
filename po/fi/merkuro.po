@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-30 00:47+0000\n"
+"POT-Creation-Date: 2023-09-01 00:47+0000\n"
 "PO-Revision-Date: 2023-07-27 15:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1848,8 +1848,6 @@ msgstr "Ulkoasu"
 
 #: calendar/qml/Settings/SettingsPage.qml:22
 #: calendar/qml/Settings/SourceSettingsPage.qml:16
-#: mail/qml/settings/AccountSettingsPage.qml:15
-#: mail/qml/settings/Settings.qml:13
 #, kde-format
 msgid "Accounts"
 msgstr "Tilit"
@@ -3276,29 +3274,30 @@ msgstr "Tämä viesti sisältää kutsun"
 msgid "Import key"
 msgstr "Tuo avain"
 
-#: mail/qml/settings/AccountSettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Month view settings"
-msgid "Account settings"
-msgstr "Kuukausinäkymän asetukset"
-
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/qml/settings/AccountSettingsPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Identity:"
 msgid "Identities"
 msgstr "Henkilöys:"
 
-#: mail/qml/settings/AccountSettingsPage.qml:43
+#: mail/qml/settings/AccountSettingsPage.qml:28
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Receiving Accounts"
 msgstr "Sähköpostitilit"
 
-#: mail/qml/settings/AccountSettingsPage.qml:49
+#: mail/qml/settings/AccountSettingsPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Mail Account Configuration"
 msgstr "Sähköpostitilit"
+
+#: mail/qml/settings/Settings.qml:12
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Accounts"
+msgstr "Tilit"
 
 #: quick/qml/AgentConfigurationForm.qml:32
 #, kde-format
@@ -3344,6 +3343,11 @@ msgstr "Luo uusi luokitus…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lisää pikaisesti uusi luokitus."
+
+#, fuzzy
+#~| msgid "Month view settings"
+#~ msgid "Account settings"
+#~ msgstr "Kuukausinäkymän asetukset"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
