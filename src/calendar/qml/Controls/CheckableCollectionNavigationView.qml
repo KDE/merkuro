@@ -188,7 +188,17 @@ QQC2.ScrollView {
 
                     Delegates.RoundedItemDelegate {
                         id: collectionSourceItem
-                        // FIXME label: model.display
+
+                        required property int index
+                        required property var model
+                        required property var decoration
+                        required property var collectionId
+                        required property bool kDescendantExpanded
+                        required property int kDescendantLevel
+                        required property color collectionColor
+                        required property int checkState
+
+                        text: model.display
                         highlighted: visualFocus || incidenceDropArea.containsDrag
                         activeFocusOnTab: true
 
@@ -306,17 +316,23 @@ QQC2.ScrollView {
 
                     Delegates.RoundedItemDelegate {
                         id: collectionItem
-                        // FIXME label: model.display
-                        // FIXME labelItem.color: Kirigami.Theme.textColor
-                        leftPadding: Kirigami.Settings.isMobile ?
-                            (Kirigami.Units.largeSpacing * 2 * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1)) :
-                            (Kirigami.Units.largeSpacing * model.kDescendantLevel) + (Kirigami.Units.iconSizes.smallMedium * (model.kDescendantLevel - 1))
-                        // FIXME separatorVisible: false
+
+                        required property int index
+                        required property var model
+                        required property var decoration
+                        required property var collectionId
+                        required property bool kDescendantExpanded
+                        required property int kDescendantLevel
+                        required property color collectionColor
+                        required property int checkState
+
+                        activeFocusOnTab: true
+                        text: model.display
                         enabled: !root.parentDrawerCollapsed
                         highlighted: visualFocus || incidenceDropArea.containsDrag
 
                         leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
-                        //leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
+                        leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
                         rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
                         rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
