@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
-"PO-Revision-Date: 2023-08-29 18:27+0200\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
+"PO-Revision-Date: 2023-09-01 09:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -543,6 +543,8 @@ msgstr "Nieuwe agenda aanmaken"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
@@ -3103,6 +3105,13 @@ msgstr "Geen sleutel"
 msgid "New Mail…"
 msgstr "Nieuwe e-mail…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Account Configuration"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Configuratie van e-mailaccount"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3125,6 +3134,65 @@ msgstr "Merkuro-e-mail"
 #, kde-format
 msgid "Email Client"
 msgstr "E-mailprogramma"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Agenda verwijderen"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add todo"
+msgid "Add Folder"
+msgstr "Taak toevoegen"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Herstarten"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Accountinstellingen"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, fuzzy, kde-format
+#| msgid "New todo"
+msgid "New Folder"
+msgstr "Nieuwe tedoen"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Aanmaken"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3270,8 +3338,7 @@ msgid "Mail Account Configuration"
 msgstr "Configuratie van e-mailaccount"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Accounts"
@@ -3320,9 +3387,6 @@ msgstr "Een nieuwe tag aanmaken…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Snel een nieuwe tag toevoegen."
-
-#~ msgid "Account settings"
-#~ msgstr "Accountinstellingen"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3558,9 +3622,6 @@ msgstr "Snel een nieuwe tag toevoegen."
 #~ msgid "Address Book Sources"
 #~ msgstr "Adresboekbronnen"
 
-#~ msgid "Restart"
-#~ msgstr "Herstarten"
-
 #~ msgid "Return to Contact List"
 #~ msgstr "Naar contactenlijst terugkeren"
 
@@ -3674,15 +3735,9 @@ msgstr "Snel een nieuwe tag toevoegen."
 #~ msgid "New event"
 #~ msgstr "Nieuwe gebeurtenis"
 
-#~ msgid "New todo"
-#~ msgstr "Nieuwe tedoen"
-
 #~ msgctxt "@action:menu"
 #~ msgid "Actions"
 #~ msgstr "Acties"
-
-#~ msgid "Add todo"
-#~ msgstr "Taak toevoegen"
 
 #~ msgid "By priority"
 #~ msgstr "Op prioriteit"

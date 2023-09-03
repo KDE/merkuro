@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-09-01 05:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
@@ -558,6 +558,8 @@ msgstr "Ustvari nov koledar"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
@@ -3137,6 +3139,13 @@ msgstr "Ni ključa"
 msgid "New Mail…"
 msgstr "Novo sporočilo…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Account Configuration"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Konfiguracija poštnega računa"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3159,6 +3168,64 @@ msgstr "Mercuro pošta"
 #, kde-format
 msgid "Email Client"
 msgstr "Odjemalec elektronske pošte"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Zbriši koledar"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Followup Reminder"
+msgid "Add Folder"
+msgstr "Dodaj opomnik za spremljanje"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Dodaj račun"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Nastavitve računa"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Ustvari"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3353,9 +3420,6 @@ msgstr "Ustvari novo oznako…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Hitro dodaj novo oznako."
-
-#~ msgid "Account settings"
-#~ msgstr "Nastavitve računa"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-09-01 09:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -559,6 +559,8 @@ msgstr "Створити новий календар"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
@@ -3144,6 +3146,13 @@ msgstr "Немає ключа"
 msgid "New Mail…"
 msgstr "Створити повідомлення…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Account Configuration"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Налаштування облікових записів пошти"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3166,6 +3175,65 @@ msgstr "Пошта Merkuro"
 #, kde-format
 msgid "Email Client"
 msgstr "Клієнт електронної пошти"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Вилучення календаря"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add todo"
+msgid "Add Folder"
+msgstr "Додати завдання"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Перезапустити"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Параметри облікового запису"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, fuzzy, kde-format
+#| msgid "New todo"
+msgid "New Folder"
+msgstr "Нове завдання"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Створити"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3360,9 +3428,6 @@ msgstr "Створити мітку…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Швидко додати нову мітку."
-
-#~ msgid "Account settings"
-#~ msgstr "Параметри облікового запису"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3601,9 +3666,6 @@ msgstr "Швидко додати нову мітку."
 #~ msgid "Address Book Sources"
 #~ msgstr "Джерела адресної книги"
 
-#~ msgid "Restart"
-#~ msgstr "Перезапустити"
-
 #~ msgid "Return to Contact List"
 #~ msgstr "Повернутися до списку контактів"
 
@@ -3716,15 +3778,9 @@ msgstr "Швидко додати нову мітку."
 #~ msgid "New event"
 #~ msgstr "Нова подія"
 
-#~ msgid "New todo"
-#~ msgstr "Нове завдання"
-
 #~ msgctxt "@action:menu"
 #~ msgid "Actions"
 #~ msgstr "Дії"
-
-#~ msgid "Add todo"
-#~ msgstr "Додати завдання"
 
 #~ msgid "By priority"
 #~ msgstr "За пріоритетністю"

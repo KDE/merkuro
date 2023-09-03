@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-09-01 12:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -542,6 +542,8 @@ msgstr "Yeni takvim oluştur"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "İptal"
@@ -3100,6 +3102,13 @@ msgstr "Anahtar yok"
 msgid "New Mail…"
 msgstr "Yeni Posta…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Account Configuration"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Posta Hesabı Yapılandırması"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3122,6 +3131,64 @@ msgstr "Erdenay Posta"
 #, kde-format
 msgid "Email Client"
 msgstr "E-posta İstemcisi"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Takvimi sil"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Followup Reminder"
+msgid "Add Folder"
+msgstr "Takip Anımsatıcısı Ekle"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Yeniden Başlat"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Hesap ayarları"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Oluştur"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3316,9 +3383,6 @@ msgstr "Yeni Etiket Oluştur…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Tez Yeni Etiket Ekle."
-
-#~ msgid "Account settings"
-#~ msgstr "Hesap ayarları"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3550,6 +3614,3 @@ msgstr "Tez Yeni Etiket Ekle."
 
 #~ msgid "Address Book Sources"
 #~ msgstr "Adres Defteri Kaynakları"
-
-#~ msgid "Restart"
-#~ msgstr "Yeniden Başlat"

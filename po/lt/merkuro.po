@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-02-10 00:59+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -547,6 +547,8 @@ msgstr ""
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr ""
@@ -3095,6 +3097,12 @@ msgstr ""
 msgid "New Mail…"
 msgstr ""
 
+#: mail/mailmanager.cpp:237
+#, kde-format
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr ""
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3116,6 +3124,59 @@ msgstr ""
 #: mail/main.cpp:51
 #, kde-format
 msgid "Email Client"
+msgstr ""
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, kde-format
+msgid "Delete Folder"
+msgstr ""
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, kde-format
+msgid "Add Folder"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, kde-format
+msgid "Create Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
 msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
