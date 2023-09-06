@@ -56,10 +56,6 @@ Akonadi::Item ContactEditorBackend::item() const
 
 void ContactEditorBackend::setItem(const Akonadi::Item &item)
 {
-    if (m_mode == CreateMode) {
-        Q_ASSERT_X(false, "ContactEditorBackend::loadContact", "You are calling loadContact in CreateMode!");
-    }
-
     auto job = new Akonadi::ItemFetchJob(item);
     job->fetchScope().fetchFullPayload();
     job->fetchScope().fetchAttribute<ContactMetaDataAttribute>();
