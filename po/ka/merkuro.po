@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
-"PO-Revision-Date: 2023-08-30 08:13+0200\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
+"PO-Revision-Date: 2023-09-04 06:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -542,6 +542,8 @@ msgstr "ახალი კალენდარის შექმნა"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "შეწყვეტა"
@@ -3097,6 +3099,12 @@ msgstr "გასაღების გარეშე"
 msgid "New Mail…"
 msgstr "ახალი ელ-ფოსტა…"
 
+#: mail/mailmanager.cpp:237
+#, kde-format
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "ანგარიშის მორგება: %1"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3119,6 +3127,63 @@ msgstr "Merkuro-ის ფოსტა"
 #, kde-format
 msgid "Email Client"
 msgstr "ელფოსტის კლიენტი"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, kde-format
+msgid "Delete Folder"
+msgstr "საქაღალდის წაშლა"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+"დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ საქაღალდე %1, რითიც მის "
+"შემცველობასაც ზედ მიაყოლებთ? <br /> <br>გაითვალისწინეთ</b>, რომ მოცილებული "
+"შეტყობინებები ნაგვის ყუთის საქაღალდეში შენახული არ იქნება და სამუდამოდ "
+"წაიშლება."
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, kde-format
+msgid "Add Folder"
+msgstr "საქაღალდის დამატება"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr "საქაღალდის თვისებები"
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "ანგარიშის გადატვირთვა"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "ანგარიშის მორგება"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr "ახალი საქაღალდე"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, kde-format
+msgid "Create Folder"
+msgstr "საქაღალდის შექმნა"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr "საქაღალდის სახელი..."
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3264,8 +3329,7 @@ msgid "Mail Account Configuration"
 msgstr "ელფოსტის ანგარიშების მორგება"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "ანგარიშები"
@@ -3314,9 +3378,6 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
-
-#~ msgid "Account settings"
-#~ msgstr "ანგარიშის მორგება"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "

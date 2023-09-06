@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
-"PO-Revision-Date: 2023-08-29 08:46+0200\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
+"PO-Revision-Date: 2023-09-05 08:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -546,6 +546,8 @@ msgstr "Sortu egutegi berria"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
@@ -3112,6 +3114,12 @@ msgstr "Gakorik ez"
 msgid "New Mail…"
 msgstr "Posta berria..."
 
+#: mail/mailmanager.cpp:237
+#, kde-format
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Kontuaren konfiguratzea: %1"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3134,6 +3142,62 @@ msgstr "Merkuro Mail"
 #, kde-format
 msgid "Email Client"
 msgstr "E-posta-bezeroa"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, kde-format
+msgid "Delete Folder"
+msgstr "Ezabatu karpeta"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+"Ziur zaude %1 karpeta ezabatu nahi duzula, edukia baztertuz?<br /><b>Jakizu</"
+"b> baztertutako mezuak ez direla zakarrontzian gordetzen eta behin betiko "
+"ezabatzen direla."
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, kde-format
+msgid "Add Folder"
+msgstr "Gehitu karpeta"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr "Karpeten propietateak"
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Kontua berrekitea"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Kontuaren ezarpenak"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr "Karpeta berria"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, kde-format
+msgid "Create Folder"
+msgstr "Sortu karpeta"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr "Karpetaren izena..."
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3279,8 +3343,7 @@ msgid "Mail Account Configuration"
 msgstr "Posta kontua konfiguratzea"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Kontuak"
@@ -3329,9 +3392,6 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
-
-#~ msgid "Account settings"
-#~ msgstr "Kontuaren ezarpenak"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3570,6 +3630,3 @@ msgstr "Azkar gehitu etiketa berri bat."
 
 #~ msgid "Address Book Sources"
 #~ msgstr "Helbide-liburu sorburuak"
-
-#~ msgid "Restart"
-#~ msgstr "Berrabiarazi"

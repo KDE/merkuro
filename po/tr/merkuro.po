@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
-"PO-Revision-Date: 2023-09-01 12:30+0300\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
+"PO-Revision-Date: 2023-09-03 20:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -218,7 +218,7 @@ msgstr "Görev"
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Erdenay Takvim"
+msgstr "Merkuro Takvim"
 
 #: calendar/main.cpp:60
 #, kde-format
@@ -542,6 +542,8 @@ msgstr "Yeni takvim oluştur"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "İptal"
@@ -2154,13 +2156,13 @@ msgstr "Dosya"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr "Erdenay'dan Çık"
+msgstr "Merkuro'dan Çık"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
 #, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Erdenay El Kitabı"
+msgstr "Merkuro El Kitabı"
 
 #: components/qml/KQuickCommandBarPage.qml:90
 #, kde-format
@@ -2278,7 +2280,7 @@ msgstr "Diğer:"
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Erdenay Kişiler"
+msgstr "Merkuro Kişiler"
 
 #: contacts/main.cpp:51
 #, kde-format
@@ -2569,7 +2571,7 @@ msgstr "Bölüm"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr "Erdenay Takımı"
+msgstr "Merkuro Takımı"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
@@ -3100,6 +3102,12 @@ msgstr "Anahtar yok"
 msgid "New Mail…"
 msgstr "Yeni Posta…"
 
+#: mail/mailmanager.cpp:237
+#, kde-format
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Hesap yapılandırması: %1"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3116,12 +3124,68 @@ msgstr "Bilinmiyor"
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Erdenay Posta"
+msgstr "Merkuro Posta"
 
 #: mail/main.cpp:51
 #, kde-format
 msgid "Email Client"
 msgstr "E-posta İstemcisi"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, kde-format
+msgid "Delete Folder"
+msgstr "Klasörü Sil"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+"%1 klasörünü silmek ve tüm içeriğini kaldırmak istediğinizden emin misiniz? "
+"<br /> Kuldırılan iletilerin Çöp Kutusu klasörüne gönderilmediğini ve kalıcı "
+"olarak silindiğini <b>aklınızdan çıkarmayın</b>\t."
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, kde-format
+msgid "Add Folder"
+msgstr "Klasör Ekle"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr "Klasör Özellikleri"
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Hesabı Yeniden Başlat"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Hesap Ayarları"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr "Yeni Klasör"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, kde-format
+msgid "Create Folder"
+msgstr "Klasör Oluştur"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr "Klasör Adı"
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3316,9 +3380,6 @@ msgstr "Yeni Etiket Oluştur…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Tez Yeni Etiket Ekle."
-
-#~ msgid "Account settings"
-#~ msgstr "Hesap ayarları"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3550,6 +3611,3 @@ msgstr "Tez Yeni Etiket Ekle."
 
 #~ msgid "Address Book Sources"
 #~ msgstr "Adres Defteri Kaynakları"
-
-#~ msgid "Restart"
-#~ msgstr "Yeniden Başlat"

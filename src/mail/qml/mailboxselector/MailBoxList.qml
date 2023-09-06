@@ -9,10 +9,12 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 
 import org.kde.kirigami 2.15 as Kirigami
+import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.kirigamiaddons.treeview 1.0 as Tree
 import org.kde.kitemmodels 1.0
 import org.kde.merkuro.mail 1.0
+import '../actions'
 
 ListView {
     id: mailList
@@ -23,6 +25,15 @@ ListView {
     }
 
     onModelChanged: currentIndex = -1
+
+    required property var collectionId
+    required property string name
+    required property string resourceIdentifier
+    property MailItemMenu mailActionsPopup: MailItemMenu {
+        collectionId: mailList.collectionId
+        name: mailList.name
+        resourceIdentifier: mailList.resourceIdentifier
+    }
 
     signal folderChosen()
 
@@ -74,7 +85,22 @@ ListView {
                     }
                 }
 
-                onClicked: mailList.model.toggleChildren(index)
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.LeftButton | Qt.RightButton
+                    onClicked: {
+                        if (mouse.button === Qt.LeftButton) {
+                            mailList.model.toggleChildren(index);
+                        }
+                        if (mouse.button === Qt.RightButton) {
+                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(index, 0));
+                            mailList.name = model.display;
+                            mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
+
+                            mailActionsPopup.popup()
+                        }
+                    }
+                }
             }
         }
 
@@ -165,12 +191,25 @@ ListView {
                     }
                 }
 
-                onClicked: {
-                    model.checkState = model.checkState === 0 ? 2 : 0
-                    MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.LeftButton | Qt.RightButton
+                    onClicked: {
+                        if (mouse.button === Qt.LeftButton) {
+                            model.checkState = model.checkState === 0 ? 2 : 0
+                            MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
 
-                    controlRoot.chosen = true;
-                    mailList.folderChosen();
+                            controlRoot.chosen = true;
+                            mailList.folderChosen();
+                        }
+                        if (mouse.button === Qt.RightButton) {
+                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(model.index, 0));
+                            mailList.name = model.display;
+                            mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
+
+                            mailActionsPopup.popup();
+                        }
+                    }
                 }
             }
         }

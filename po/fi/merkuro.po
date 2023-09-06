@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-07-27 15:53+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -543,6 +543,8 @@ msgstr "Luo uusi kalenteri"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Peru"
@@ -3114,6 +3116,13 @@ msgstr "Tuo avain"
 msgid "New Mail…"
 msgstr "Uusi sähköposti…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "Sähköpostitilit"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3138,6 +3147,65 @@ msgstr "Kalenteri"
 #| msgid "EMail Client Application"
 msgid "Email Client"
 msgstr "Sähköpostisovellus"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Poista kalenteri"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "New todo"
+msgid "Add Folder"
+msgstr "Uusi tehtävä"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Käynnistä uudelleen"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Month view settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Kuukausinäkymän asetukset"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, fuzzy, kde-format
+#| msgid "New todo"
+msgid "New Folder"
+msgstr "Uusi tehtävä"
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Luo"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3343,11 +3411,6 @@ msgstr "Luo uusi luokitus…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lisää pikaisesti uusi luokitus."
-
-#, fuzzy
-#~| msgid "Month view settings"
-#~ msgid "Account settings"
-#~ msgstr "Kuukausinäkymän asetukset"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3611,9 +3674,6 @@ msgstr "Lisää pikaisesti uusi luokitus."
 #~ msgid "Address Book Sources"
 #~ msgstr "Osoitekirjalähteet"
 
-#~ msgid "Restart"
-#~ msgstr "Käynnistä uudelleen"
-
 #, fuzzy
 #~| msgid "Return to Location"
 #~ msgid "Return to Contact List"
@@ -3707,19 +3767,11 @@ msgstr "Lisää pikaisesti uusi luokitus."
 #~ msgid "New event"
 #~ msgstr "Uusi tapahtuma"
 
-#~ msgid "New todo"
-#~ msgstr "Uusi tehtävä"
-
 #, fuzzy
 #~| msgid "Exceptions:"
 #~ msgctxt "@action:menu"
 #~ msgid "Actions"
 #~ msgstr "Poikkeukset:"
-
-#, fuzzy
-#~| msgid "New todo"
-#~ msgid "Add todo"
-#~ msgstr "Uusi tehtävä"
 
 #, fuzzy
 #~| msgid "Priority:"

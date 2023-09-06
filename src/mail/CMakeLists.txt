@@ -76,6 +76,13 @@ ecm_target_qml_sources(merkuro_mail_plugin
 )
 
 ecm_target_qml_sources(merkuro_mail_plugin
+    PRIVATE PATH actions SOURCES
+    qml/actions/NewFolderAction.qml
+    qml/actions/DeleteFolderAction.qml
+    qml/actions/MailItemMenu.qml
+)
+
+ecm_target_qml_sources(merkuro_mail_plugin
     PRIVATE PATH mailboxselector SOURCES
     qml/mailboxselector/MailBoxList.qml
     qml/mailboxselector/MailBoxListPage.qml

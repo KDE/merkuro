@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-08-20 15:04+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -541,6 +541,8 @@ msgstr "புதிய நாள்காட்டியை உருவாக�
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "ரத்து செய்"
@@ -3099,6 +3101,13 @@ msgstr "சாவியை இறக்குமதி செய்"
 msgid "New Mail…"
 msgstr "புதிய அஞ்சல்…"
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Account Configuration"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "அஞ்சல் கணக்கு அமைப்புகள்"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3121,6 +3130,64 @@ msgstr "மெற்குரோ அஞ்சல்"
 #, kde-format
 msgid "Email Client"
 msgstr "மின்னஞ்சல் செயலி"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "நாள்காட்டியை நீக்கு"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Followup Reminder"
+msgid "Add Folder"
+msgstr "பதிலளிக்க நினைவூட்டு"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "மீள்துவக்கு"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "கணக்கிற்கான அமைப்புகள்"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "உருவாக்கு"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3316,9 +3383,6 @@ msgstr "புதிய குறிச்சொல்லை உருவாக�
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "புதிய குறிச்சொல்லை எளிதில் சேர்க்கும்."
-
-#~ msgid "Account settings"
-#~ msgstr "கணக்கிற்கான அமைப்புகள்"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3555,9 +3619,6 @@ msgstr "புதிய குறிச்சொல்லை எளிதில�
 
 #~ msgid "Address Book Sources"
 #~ msgstr "முகவரிபுத்தக மூலங்கள்"
-
-#~ msgid "Restart"
-#~ msgstr "மீள்துவக்கு"
 
 #~ msgid "Return to Contact List"
 #~ msgstr "தொடர்புப்பட்டியலுக்கு திரும்பச்செல்"

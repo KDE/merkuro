@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:47+0000\n"
+"POT-Creation-Date: 2023-09-03 00:47+0000\n"
 "PO-Revision-Date: 2023-08-14 21:52+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -547,6 +547,8 @@ msgstr "Neuen Kalender hinzufügen"
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:51
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -3116,6 +3118,13 @@ msgstr "Schlüssel importieren"
 msgid "New Mail…"
 msgstr "Neue E-Mail ..."
 
+#: mail/mailmanager.cpp:237
+#, fuzzy, kde-format
+#| msgid "Mail Accounts"
+msgctxt "@title:window"
+msgid "Account Configuration: %1"
+msgstr "E-Mail-Konten"
+
 #: mail/mailmodel.cpp:48
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
@@ -3139,6 +3148,64 @@ msgstr "Kalender"
 #, kde-format
 msgid "Email Client"
 msgstr "E-Mail-Programm"
+
+#: mail/qml/actions/DeleteFolderAction.qml:19
+#: mail/qml/actions/DeleteFolderAction.qml:24
+#: mail/qml/actions/MailItemMenu.qml:32
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgid "Delete Folder"
+msgstr "Kalender löschen"
+
+#: mail/qml/actions/DeleteFolderAction.qml:39
+#, kde-format
+msgid ""
+"Are you sure you want to delete the folder %1, discarding its contents? <br /"
+"> <b>Beware</b> that discarded messages are not saved into your Trash folder "
+"and are permanently deleted."
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:25
+#, fuzzy, kde-format
+#| msgid "Add attendee"
+msgid "Add Folder"
+msgstr "Teilnehmer hinzufügen"
+
+#: mail/qml/actions/MailItemMenu.qml:40
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Folder Properties"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Restart"
+msgctxt "@action:inmenu"
+msgid "Restart Account"
+msgstr "Neu starten"
+
+#: mail/qml/actions/MailItemMenu.qml:55
+#, fuzzy, kde-format
+#| msgid "Account settings"
+msgctxt "@action:inmenu"
+msgid "Account Settings"
+msgstr "Zugangseinstellungen"
+
+#: mail/qml/actions/NewFolderAction.qml:18
+#, kde-format
+msgid "New Folder"
+msgstr ""
+
+#: mail/qml/actions/NewFolderAction.qml:23
+#, fuzzy, kde-format
+#| msgid "Create"
+msgid "Create Folder"
+msgstr "Erstellen"
+
+#: mail/qml/actions/NewFolderAction.qml:39
+#, kde-format
+msgid "Folder Name..."
+msgstr ""
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3336,9 +3403,6 @@ msgstr "Neues Stichwort erstellen ..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Neues Stichwort schnell erstellen."
-
-#~ msgid "Account settings"
-#~ msgstr "Zugangseinstellungen"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
@@ -3584,9 +3648,6 @@ msgstr "Neues Stichwort schnell erstellen."
 #~ msgid "Calendar Sources"
 #~ msgstr "Kalender-Zugänge"
 
-#~ msgid "Restart"
-#~ msgstr "Neu starten"
-
 #, fuzzy
 #~| msgid "Return to Location"
 #~ msgid "Return to Contact List"
@@ -3670,11 +3731,6 @@ msgstr "Neues Stichwort schnell erstellen."
 #~ msgctxt "@action:menu"
 #~ msgid "Actions"
 #~ msgstr "Beschreibung:"
-
-#, fuzzy
-#~| msgid "Add attendee"
-#~ msgid "Add todo"
-#~ msgstr "Teilnehmer hinzufügen"
 
 #~ msgid "weeks"
 #~ msgstr "Wochen"
