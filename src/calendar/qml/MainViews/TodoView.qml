@@ -71,17 +71,17 @@ Kirigami.ScrollablePage {
             KActionFromAction {
                 action: Calendar.CalendarApplication.action("todoview_sort_by_due_date")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.DueDateColumn
-                onCheckedChanged: action.checked = checked // Needed for the actions in the menu bars to be checked on load
+                onCheckedChanged: checked => action.checked = checked // Needed for the actions in the menu bars to be checked on load
             }
             KActionFromAction {
                 action: Calendar.CalendarApplication.action("todoview_sort_by_priority")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.PriorityColumn
-                onCheckedChanged: action.checked = checked
+                onCheckedChanged: checked => action.checked = checked
             }
             KActionFromAction {
                 action: Calendar.CalendarApplication.action("todoview_sort_alphabetically")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.SummaryColumn
-                onCheckedChanged: action.checked = checked
+                onCheckedChanged: checked => action.checked = checked
             }
 
             Kirigami.Action { separator: true }
@@ -89,12 +89,12 @@ Kirigami.ScrollablePage {
             KActionFromAction {
                 action: Calendar.CalendarApplication.action("todoview_order_ascending")
                 checked: root.ascendingOrder
-                onCheckedChanged: action.checked = checked
+                onCheckedChanged: checked => action.checked = checked
             }
             KActionFromAction {
                 action: Calendar.CalendarApplication.action("todoview_order_descending")
                 checked: !root.ascendingOrder
-                onCheckedChanged: action.checked = checked
+                onCheckedChanged: checked => action.checked = checked
             }
         },
         KActionFromAction {
