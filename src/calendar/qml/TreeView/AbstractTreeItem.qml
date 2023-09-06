@@ -8,7 +8,8 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.4
 import QtQuick.Controls 2.2 as QQC2
 import org.kde.kirigami 2.13 as Kirigami
-import org.kde.kitemmodels 1.0 
+import org.kde.kirigamiaddons.treeview 1.0 as Tree
+import org.kde.kitemmodels 1.0
 
 /**
  * An item delegate for the TreeListView and TreeTableView components.
@@ -84,11 +85,11 @@ QQC2.ItemDelegate {
     Layout.fillWidth: true
 
     data: [
-        TreeViewDecoration {
+        Tree.TreeViewDecoration {
             id: decoration
             anchors {
                 left: parent.left
-                top:parent.top
+                top: parent.top
                 bottom: parent.bottom
                 leftMargin: delegate.padding
             }
@@ -99,9 +100,9 @@ QQC2.ItemDelegate {
         }
     ]
 
-    Keys.onLeftPressed: if (kDescendantExpandable && kDescendantExpanded) {
+    Keys.onLeftPressed: if (model.kDescendantExpandable && model.kDescendantExpanded) {
         decoration.model.collapseChildren(index);
-    } else if (!kDescendantExpandable && kDescendantLevel > 0) {
+    } else if (!model.kDescendantExpandable && model.kDescendantLevel > 0) {
         if (delegate.ListView.view) {
             const sourceIndex = decoration.model.mapToSource(decoration.model.index(index, 0));
             const newIndex = decoration.model.mapFromSource(sourceIndex.parent);

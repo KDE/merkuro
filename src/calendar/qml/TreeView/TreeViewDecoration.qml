@@ -38,7 +38,7 @@ RowLayout {
     Layout.topMargin: -parentDelegate.topPadding
     Layout.bottomMargin: -parentDelegate.bottomPadding
     Repeater {
-        model: kDescendantLevel-1
+        model: decorationLayout.parent.model.kDescendantLevel-1
         delegate: Item {
             Layout.preferredWidth: controlRoot.width
             Layout.fillHeight: true

@@ -18,6 +18,6 @@ import QtQuick 2.12
  */
 InternalTreeListView {
     id: root
-    property alias model: root.sourceModel
+    model: root.sourceModel
 }
 

@@ -6,14 +6,16 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
-//import org.kde.kirigamiaddons.treeview 1.0 as KirigamiAddonsTreeView
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.treeview 1.0 as Tree
+import org.kde.kitemmodels 1.0
 
 import org.kde.merkuro.calendar 1.0 as Calendar
 import org.kde.merkuro.utils 1.0
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 
-TreeListView {
+ListView {
     id: root
 
     // We need to store a copy of opened incidence data or we will lose it as we scroll the listviews.
@@ -42,7 +44,6 @@ TreeListView {
     property bool ascendingOrder: false
     property bool dragDropEnabled: true
 
-    property alias model: todoModel
     readonly property bool isDark: CalendarUiUtils.darkMode
 
     currentIndex: -1
@@ -144,29 +145,23 @@ TreeListView {
         }
     }
 
-    sourceModel: Calendar.TodoSortFilterProxyModel {
-        id: todoModel
-        calendar: Calendar.CalendarManager.calendar
-        incidenceChanger: Calendar.CalendarManager.incidenceChanger
-        filterObject: Calendar.Filter
-        showCompleted: root.showCompleted
-        sortBy: root.sortBy
-        sortAscending: root.ascendingOrder
-        showCompletedSubtodosInIncomplete: Calendar.Config.showCompletedSubtodos
-
+    model: KDescendantsProxyModel {
+        model: Calendar.TodoSortFilterProxyModel {
+            id: todoModel
+            calendar: Calendar.CalendarManager.calendar
+            incidenceChanger: Calendar.CalendarManager.incidenceChanger
+            filterObject: Calendar.Filter
+            showCompleted: root.showCompleted
+            sortBy: root.sortBy
+            sortAscending: root.ascendingOrder
+            showCompletedSubtodosInIncomplete: Calendar.Config.showCompletedSubtodos
+        }
     }
-    delegate: AbstractTreeItem {
+
+    delegate: Delegates.RoundedItemDelegate {
         id: listItem
 
         readonly property bool validEndDt: !isNaN(model.endTime.getTime())
-
-        objectName: "taskDelegate"
-
-        decoration.decorationHighlightColor: model.color
-        activeBackgroundColor: LabelUtils.getIncidenceDelegateBackgroundColor(model.color, root.isDark)
-        onActiveBackgroundColorChanged: activeBackgroundColor.a = 0.15
-        Kirigami.Theme.inherit: false
-        Kirigami.Theme.highlightColor: activeBackgroundColor
 
         property alias mouseArea: mouseArea
         property var incidencePtr: model.incidencePtr
@@ -177,9 +172,23 @@ TreeListView {
         property real caughtX: x
         property real caughtY: y
 
+        objectName: "taskDelegate"
+
+        leftInset: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0)
+        leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing
+
+        rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing
+        rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
+
+        //onActiveBackgroundColorChanged: activeBackgroundColor.a = 0.15
+
         Drag.active: mouseArea.drag.active
         Drag.hotSpot.x: mouseArea.mouseX
         Drag.hotSpot.y: mouseArea.mouseY
+
+        Kirigami.Theme.inherit: false
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.highlightColor: LabelUtils.getIncidenceDelegateBackgroundColor(model.color, root.isDark)
 
         Behavior on x {
             enabled: repositionAnimationEnabled
@@ -217,6 +226,22 @@ TreeListView {
             }
         ]
 
+        data: [
+            Tree.TreeViewDecoration {
+                id: decoration
+                anchors {
+                    left: parent.left
+                    top:parent.top
+                    bottom: parent.bottom
+                    leftMargin: listItem.padding
+                }
+                //decorationHighlightColor: model.color
+                parent: listItem
+                parentDelegate: listItem
+                model: root.model
+            }
+        ]
+
         onClicked: root.viewAndRetainTodoData(model, listItem);
 
         text: model.text
@@ -229,12 +254,11 @@ TreeListView {
         contentItem: IncidenceMouseArea {
             id: mouseArea
 
-            anchors.fill: undefined
-            implicitWidth: todoItemContents.implicitWidth
             implicitHeight: todoItemContents.implicitHeight + (Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing)
 
             incidenceData: model
             collectionId: model.collectionId
+            anchors.fill: null
 
             preventStealing: !Kirigami.Settings.tabletMode && !Kirigami.Settings.isMobile
 

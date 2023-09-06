@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
             text: i18n("Create")
             icon.name: "list-add"
             onTriggered: KalendarUiUtils.setUpAdd(Kalendar.IncidenceWrapper.TypeTodo, new Date(), Kalendar.Filter.collectionId);
-        }
+        },
         Kirigami.Action {
             text: i18n("Sort")
             icon.name: "view-sort"
