@@ -756,6 +756,7 @@ BaseApplication {
 
             openOccurrence: root.openOccurrence
             actions: createAction
+            createEventAction: createAction
         }
     }
 
