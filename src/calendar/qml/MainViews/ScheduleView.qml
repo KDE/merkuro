@@ -50,7 +50,12 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
     }
 
-    actions: [previousAction, nextAction, todayAction]
+    actions: [
+        previousAction,
+        nextAction,
+        todayAction,
+        createEventAction
+    ]
 
     padding: 0
 

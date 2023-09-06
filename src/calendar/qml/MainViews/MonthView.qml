@@ -46,7 +46,12 @@ Kirigami.Page {
         onTriggered: Calendar.DateTimeState.resetTime();
     }
 
-    actions: [todayAction, nextAction, previousAction, createEventAction]
+    actions: [
+        previousAction,
+        nextAction,
+        todayAction,
+        createEventAction
+    ]
 
     padding: 0
 

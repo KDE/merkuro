@@ -37,6 +37,8 @@ Kirigami.Page {
             return Calendar.CalendarApplication.Week;
     }
 
+    required property QQC2.Action createEventAction
+
     readonly property Kirigami.Action previousAction: Kirigami.Action {
         icon.name: "go-previous"
         text: i18n("Previous Week")
@@ -69,7 +71,7 @@ Kirigami.Page {
         previousAction,
         nextAction,
         todayAction,
-        applicationWindow().createAction
+        createEventAction
     ]
 
     padding: 0
