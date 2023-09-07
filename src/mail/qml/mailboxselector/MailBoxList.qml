@@ -88,7 +88,7 @@ ListView {
                 MouseArea {
                     anchors.fill: parent
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
-                    onClicked: {
+                    onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
                             mailList.model.toggleChildren(index);
                         }
@@ -194,7 +194,7 @@ ListView {
                 MouseArea {
                     anchors.fill: parent
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
-                    onClicked: {
+                    onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
                             model.checkState = model.checkState === 0 ? 2 : 0
                             MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
