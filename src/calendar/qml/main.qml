@@ -136,19 +136,19 @@ BaseApplication {
 
         function onOpenWeekView() {
             if(pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml");
+                root.switchView("qrc:/HourlyView.qml", { createEventAction: createAction} );
             }
         }
 
         function onOpenThreeDayView() {
             if(pageStack.currentItem.mode !== CalendarApplication.ThreeDay || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml", { daysToShow: 3 });
+                root.switchView("qrc:/HourlyView.qml", { daysToShow: 3, createEventAction: createAction });
             }
         }
 
         function onOpenDayView() {
             if(pageStack.currentItem.mode !== CalendarApplication.Day || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml", { daysToShow: 1 });
+                root.switchView("qrc:/HourlyView.qml", { daysToShow: 1, createEventAction: createAction });
             }
         }
 
