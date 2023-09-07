@@ -755,7 +755,6 @@ BaseApplication {
             objectName: "monthView"
 
             openOccurrence: root.openOccurrence
-            actions: createAction
             createEventAction: createAction
         }
     }
@@ -769,8 +768,6 @@ BaseApplication {
 
             openOccurrence: root.openOccurrence
             createEventAction: createAction
-
-            actions: createAction
         }
     }
 
