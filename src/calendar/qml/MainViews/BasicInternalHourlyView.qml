@@ -457,7 +457,7 @@ Column {
 
         onDragBegin:  setPos()
         onDragReleased: setPos()
-        onDragPositionChanged: allDayHeader.actualHeight = Math.min(allDayHeader.maxHeight, Math.max(allDayHeader.minHeight, Calendar.Config.weekViewAllDayHeaderHeight + changeY))
+        onDragPositionChanged: (changeX, changeY) => allDayHeader.actualHeight = Math.min(allDayHeader.maxHeight, Math.max(allDayHeader.minHeight, Calendar.Config.weekViewAllDayHeaderHeight + changeY))
     }
 
     RectangularGlow {
