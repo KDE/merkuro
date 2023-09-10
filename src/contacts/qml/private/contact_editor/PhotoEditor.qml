@@ -14,7 +14,7 @@ ColumnLayout {
     id: root
 
     required property ContactEditor contactEditor
-    readonly property var loadedPhoto: contactEditor.contact.photo
+    property var loadedPhoto: contactEditor.contact.photo
 
     Layout.alignment: Qt.AlignHCenter
 
