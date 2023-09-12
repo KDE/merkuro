@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
 #
-# Kishore G <kishore96@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-03 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 15:04+0530\n"
+"PO-Revision-Date: 2023-09-10 17:32+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3091,10 +3091,9 @@ msgid "Image request has been cancelled"
 msgstr "பட கோரிக்கை ரத்து செய்யப்பட்டது"
 
 #: mail/identity/identitykeylistmodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgid "No key"
-msgstr "சாவியை இறக்குமதி செய்"
+msgstr "சாவி இல்லை"
 
 #: mail/mailapplication.cpp:22
 #, kde-format
@@ -3102,11 +3101,10 @@ msgid "New Mail…"
 msgstr "புதிய அஞ்சல்…"
 
 #: mail/mailmanager.cpp:237
-#, fuzzy, kde-format
-#| msgid "Mail Account Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
-msgstr "அஞ்சல் கணக்கு அமைப்புகள்"
+msgstr "கணக்கிற்கான அமைப்புகள்: %1"
 
 #: mail/mailmodel.cpp:48
 #, kde-format
@@ -3134,10 +3132,9 @@ msgstr "மின்னஞ்சல் செயலி"
 #: mail/qml/actions/DeleteFolderAction.qml:19
 #: mail/qml/actions/DeleteFolderAction.qml:24
 #: mail/qml/actions/MailItemMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgid "Delete Folder"
-msgstr "நாள்காட்டியை நீக்கு"
+msgstr "அடைவை நீக்கு"
 
 #: mail/qml/actions/DeleteFolderAction.qml:39
 #, kde-format
@@ -3146,29 +3143,28 @@ msgid ""
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
 msgstr ""
+"%1 எனும் அடைவையும் அதன் உள்ளடக்கத்தையும் உறுதியாக நீக்க வேண்டுமா? <br /> நீக்கப்படும் "
+"அஞ்சல்கள், அகற்றிடத்தில் சேமிக்கப்படாமல் <b>நிரந்தராமாக அழிக்கப்படும்</b>."
 
 #: mail/qml/actions/MailItemMenu.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Followup Reminder"
+#, kde-format
 msgid "Add Folder"
-msgstr "பதிலளிக்க நினைவூட்டு"
+msgstr "அடைவை சேர்"
 
 #: mail/qml/actions/MailItemMenu.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
-msgstr ""
+msgstr "அடைவின் பண்புகள்"
 
 #: mail/qml/actions/MailItemMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Restart"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
-msgstr "மீள்துவக்கு"
+msgstr "கணக்கை மீள்துவக்கு"
 
 #: mail/qml/actions/MailItemMenu.qml:55
-#, fuzzy, kde-format
-#| msgid "Account settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
 msgstr "கணக்கிற்கான அமைப்புகள்"
@@ -3176,18 +3172,17 @@ msgstr "கணக்கிற்கான அமைப்புகள்"
 #: mail/qml/actions/NewFolderAction.qml:18
 #, kde-format
 msgid "New Folder"
-msgstr ""
+msgstr "புதிய அடைவு"
 
 #: mail/qml/actions/NewFolderAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Create Folder"
-msgstr "உருவாக்கு"
+msgstr "அடைவை உருவாக்கு"
 
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr ""
+msgstr "அடைவின் பெயர்..."
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3333,8 +3328,7 @@ msgid "Mail Account Configuration"
 msgstr "அஞ்சல் கணக்கு அமைப்புகள்"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "கணக்குகள்"
