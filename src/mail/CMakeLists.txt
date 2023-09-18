@@ -40,7 +40,6 @@ ecm_qt_declare_logging_category(merkuro_mail_SRCS
     EXPORT merkuro
 )
 
-
 add_library(merkuro_mail_static STATIC ${merkuro_mail_SRCS})
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
@@ -50,6 +49,9 @@ target_link_libraries(merkuro_mail_static
     KPim${QT_MAJOR_VERSION}::MailTransport
     KPim${QT_MAJOR_VERSION}::AkonadiMime
     KPim${QT_MAJOR_VERSION}::IdentityManagementQuick
+    KPim${QT_MAJOR_VERSION}::Mbox
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
+    KPim${QT_MAJOR_VERSION}::Mime
     KF${QT_MAJOR_VERSION}::Codecs
     KF${QT_MAJOR_VERSION}::XmlGui
 )
@@ -85,6 +87,11 @@ ecm_target_qml_sources(merkuro_mail_plugin
 )
 
 ecm_target_qml_sources(merkuro_mail_plugin
+    PRIVATE PATH desktopactions SOURCES
+    qml/desktopactions/openmbox.qml
+)
+
+ecm_target_qml_sources(merkuro_mail_plugin
     PRIVATE PATH mailboxselector SOURCES
     qml/mailboxselector/MailBoxList.qml
     qml/mailboxselector/MailBoxListPage.qml
@@ -103,7 +110,13 @@ ecm_finalize_qml_module(merkuro_mail_plugin
 
 #### Binary
 
-add_executable(merkuro-mail main.cpp resources.qrc)
+add_executable(merkuro-mail 
+    main.cpp 
+    resources.qrc 
+    messagehandler.cpp 
+    messagehandler.h
+)
+
 target_link_libraries(merkuro-mail
     PRIVATE
     Qt::Widgets
@@ -114,6 +127,8 @@ target_link_libraries(merkuro-mail
     KF${QT_MAJOR_VERSION}::DBusAddons
     KF${QT_MAJOR_VERSION}::WindowSystem
     KF${QT_MAJOR_VERSION}::ConfigGui
+    KPim${QT_MAJOR_VERSION}::Mime
+    KPim${KF_MAJOR_VERSION}::MimeTreeParserCore
 )
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})

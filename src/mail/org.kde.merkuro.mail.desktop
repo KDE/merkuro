@@ -73,14 +73,12 @@ Comment[ta]=மெற்குரோ அஞ்சலால் உங்கள்
 Comment[tr]=Merkuro Posta ile e-postalarınızı yönetin
 Comment[uk]=Керуйте вашими повідомленнями електронної пошти за допомогою Пошти Merkuro
 Comment[x-test]=xxManage your e-mails with Merkuro Mailxx
-Exec=merkuro-mail
+Type=Application
+Exec=merkuro-mail %U
 Categories=Qt;KDE;Office;Email;
 Icon=org.kde.merkuro.mail
-Type=Application
 Terminal=false
-StartupNotify=true
 SingleMainWindow=true
 Version=1.5
-
-# This component is not yet release ready
-NoDisplay=true
+StartupNotify=true
+X-DBUS-StartupType=Unique

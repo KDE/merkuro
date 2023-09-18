@@ -6,6 +6,8 @@
 #include <QQmlEngine>
 
 #include <MailCommon/EntityCollectionOrderProxyModel>
+#include <MimeTreeParserCore/FileOpener>
+#include <MimeTreeParserCore/MessageParser>
 
 #include "contactimageprovider.h"
 #include "helper.h"
@@ -14,6 +16,7 @@
 #include "mailmanager.h"
 #include "mailmodel.h"
 #include "messageloader.h"
+#include "messagehandler.h"
 
 #include "identity/identitycryptographyeditorbackendfactory.h"
 
@@ -47,6 +50,7 @@ void CalendarPlugin::registerTypes(const char *uri)
 
     qmlRegisterType<MailHeaderModel>("org.kde.merkuro.mail", 1, 0, "MailHeaderModel");
     qmlRegisterType<MessageLoader>(uri, 1, 0, "MessageLoader");
+    qmlRegisterType<MessageParser>(uri, 1, 0, "MessageParser");
 
     qRegisterMetaType<MailModel *>("MailModel*");
     qRegisterMetaType<MailCommon::EntityCollectionOrderProxyModel *>("MailCommon::EntityCollectionOrderProxyModel*");
