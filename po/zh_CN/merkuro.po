@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-03 00:47+0000\n"
-"PO-Revision-Date: 2023-09-02 02:57\n"
+"POT-Creation-Date: 2023-09-19 00:46+0000\n"
+"PO-Revision-Date: 2023-09-16 10:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -225,25 +225,25 @@ msgstr ""
 msgid "Calendar Application"
 msgstr "日历应用程序"
 
-#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:55
+#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:57
 #, kde-format
 msgid "(c) KDE Community 2021"
 msgstr "(c) KDE Community 2021"
 
-#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:56
+#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:58
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:66 calendar/main.cpp:70 contacts/main.cpp:57
-#: contacts/main.cpp:61 mail/main.cpp:57 mail/main.cpp:61
+#: contacts/main.cpp:61 mail/main.cpp:59 mail/main.cpp:63
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "维护者"
 
-#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:60
+#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
@@ -3086,13 +3086,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "未知"
 
-#: mail/main.cpp:48
+#: mail/main.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
 msgstr ""
 
-#: mail/main.cpp:51
+#: mail/main.cpp:53
 #, kde-format
 msgid "Email Client"
 msgstr ""
@@ -3100,10 +3100,9 @@ msgstr ""
 #: mail/qml/actions/DeleteFolderAction.qml:19
 #: mail/qml/actions/DeleteFolderAction.qml:24
 #: mail/qml/actions/MailItemMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgid "Delete Folder"
-msgstr "删除日历"
+msgstr ""
 
 #: mail/qml/actions/DeleteFolderAction.qml:39
 #, kde-format
@@ -3114,10 +3113,9 @@ msgid ""
 msgstr ""
 
 #: mail/qml/actions/MailItemMenu.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Folder"
-msgstr "添加提醒"
+msgstr ""
 
 #: mail/qml/actions/MailItemMenu.qml:40
 #, kde-format
@@ -3126,18 +3124,16 @@ msgid "Folder Properties"
 msgstr ""
 
 #: mail/qml/actions/MailItemMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
-msgstr "账户"
+msgstr ""
 
 #: mail/qml/actions/MailItemMenu.qml:55
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
-msgstr "设置"
+msgstr ""
 
 #: mail/qml/actions/NewFolderAction.qml:18
 #, kde-format
@@ -3145,10 +3141,9 @@ msgid "New Folder"
 msgstr ""
 
 #: mail/qml/actions/NewFolderAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Create Folder"
-msgstr "创建"
+msgstr ""
 
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
@@ -3159,6 +3154,19 @@ msgstr ""
 #, kde-format
 msgid "Move to trash"
 msgstr "移入回收站"
+
+#: mail/qml/desktopactions/openmbox.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "File"
+msgid "Open File"
+msgstr "文件"
+
+#: mail/qml/desktopactions/openmbox.qml:21
+#, fuzzy, kde-format
+#| msgid "Choose a Calendar"
+msgid "Choose file"
+msgstr "选择日历"
 
 #: mail/qml/FolderView.qml:34
 #, kde-format

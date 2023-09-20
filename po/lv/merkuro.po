@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-03 00:47+0000\n"
+"POT-Creation-Date: 2023-09-19 00:46+0000\n"
 "PO-Revision-Date: 2022-03-30 17:51+0300\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -229,25 +229,25 @@ msgstr "Kalendārs"
 msgid "Calendar Application"
 msgstr "Lietotne kalendāriem"
 
-#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:55
+#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:57
 #, kde-format
 msgid "(c) KDE Community 2021"
 msgstr "(c) KDE kopiena 2021"
 
-#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:56
+#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:58
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
 #: calendar/main.cpp:66 calendar/main.cpp:70 contacts/main.cpp:57
-#: contacts/main.cpp:61 mail/main.cpp:57 mail/main.cpp:61
+#: contacts/main.cpp:61 mail/main.cpp:59 mail/main.cpp:63
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Uzturētājs"
 
-#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:60
+#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
@@ -3246,14 +3246,14 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: mail/main.cpp:48
+#: mail/main.cpp:50
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title"
 msgid "Merkuro Mail"
 msgstr "Kalendārs"
 
-#: mail/main.cpp:51
+#: mail/main.cpp:53
 #, fuzzy, kde-format
 #| msgid "Calendar Application"
 msgid "Email Client"
@@ -3321,6 +3321,19 @@ msgstr ""
 #, kde-format
 msgid "Move to trash"
 msgstr ""
+
+#: mail/qml/desktopactions/openmbox.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "File"
+msgid "Open File"
+msgstr "Fails"
+
+#: mail/qml/desktopactions/openmbox.qml:21
+#, fuzzy, kde-format
+#| msgid "Choose a Calendar"
+msgid "Choose file"
+msgstr "Izvēlēties kalendāru"
 
 #: mail/qml/FolderView.qml:34
 #, kde-format

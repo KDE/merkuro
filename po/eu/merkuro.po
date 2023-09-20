@@ -1,7 +1,7 @@
 # Translation for merkuro.po to Euskara/Basque (eu).
 # Copyright (C) 2022-2023 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023.
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-03 00:47+0000\n"
-"PO-Revision-Date: 2023-09-05 08:02+0200\n"
+"POT-Creation-Date: 2023-09-19 00:46+0000\n"
+"PO-Revision-Date: 2023-09-19 20:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -229,25 +229,25 @@ msgstr "Merkuro Calendar"
 msgid "Calendar Application"
 msgstr "Egutegi aplikazioa"
 
-#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:55
+#: calendar/main.cpp:64 contacts/main.cpp:55 mail/main.cpp:57
 #, kde-format
 msgid "(c) KDE Community 2021"
 msgstr "(c) KDE Komunitatea 2021"
 
-#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:56
+#: calendar/main.cpp:65 contacts/main.cpp:56 mail/main.cpp:58
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:66 calendar/main.cpp:70 contacts/main.cpp:57
-#: contacts/main.cpp:61 mail/main.cpp:57 mail/main.cpp:61
+#: contacts/main.cpp:61 mail/main.cpp:59 mail/main.cpp:63
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Mantentzailea"
 
-#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:60
+#: calendar/main.cpp:69 contacts/main.cpp:60 mail/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
@@ -3132,13 +3132,13 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: mail/main.cpp:48
+#: mail/main.cpp:50
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
 msgstr "Merkuro Mail"
 
-#: mail/main.cpp:51
+#: mail/main.cpp:53
 #, kde-format
 msgid "Email Client"
 msgstr "E-posta-bezeroa"
@@ -3203,6 +3203,16 @@ msgstr "Karpetaren izena..."
 #, kde-format
 msgid "Move to trash"
 msgstr "Eraman zakarrontzira"
+
+#: mail/qml/desktopactions/openmbox.qml:15
+#, kde-format
+msgid "Open File"
+msgstr "Ireki fitxategia"
+
+#: mail/qml/desktopactions/openmbox.qml:21
+#, kde-format
+msgid "Choose file"
+msgstr "Hautatu fitxategia"
 
 #: mail/qml/FolderView.qml:34
 #, kde-format

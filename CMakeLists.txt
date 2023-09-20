@@ -26,6 +26,7 @@ set(MIMETREEPARSER_LIB_VERSION "5.240.40")
 set(MAILCOMMON_LIB_VERSION "5.240.40")
 set(AKONADIMIME_LIB_VERSION "5.240.40")
 set(AKONADICONTACT_LIB_VERSION "5.240.40")
+set(KMIME_LIB_VERSION "5.240.40")
 
 include(FeatureSummary)
 
@@ -111,6 +112,8 @@ find_package(KPim6IdentityManagementQuick ${IDENTITYMANAGEMENT_LIB_VERSION} REQU
 find_package(KPim6MailCommon ${MAILCOMMON_LIB_VERSION} REQUIRED)
 find_package(KPim6MailTransport ${MAILTRANSPORT_LIB_VERSION} REQUIRED)
 find_package(KPim6MimeTreeParserCore ${MIMETREEPARSER_LIB_VERSION} REQUIRED)
+find_package(KPim6Mbox ${KMBOX_LIB_VERSION} REQUIRED)
+find_package(KPim6Mime ${KMIME_LIB_VERSION} REQUIRED)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
