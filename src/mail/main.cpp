@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "../config-merkuro.h"
+#include "messagehandler.h"
 #include <KAboutData>
 #include <KDBusService>
 #include <KLocalizedContext>
@@ -9,13 +10,12 @@
 #include <KWindowSystem>
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDir>
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
-#include <QDir>
-#include "messagehandler.h"
 
 static void raiseWindow(QWindow *window)
 {
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     const auto args = parser.positionalArguments();
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    if(args.length() > 0) {
+    if (args.length() > 0) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
         QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
         engine.load(QUrl(QStringLiteral("qrc:/qml/desktopactions/openmbox.qml")));
@@ -91,21 +91,22 @@ int main(int argc, char *argv[])
             const auto file = QUrl::fromUserInput(args.at(args.count() - 1), QDir::currentPath());
             messageHandler->open(file);
         }
-    }
-    else {
+    } else {
         engine.load(QUrl(QStringLiteral("qrc:/qml/app/main.qml")));
 
-        QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
-            const auto rootObjects = engine.rootObjects();
-            for (auto obj : rootObjects) {
-                auto view = qobject_cast<QQuickWindow *>(obj);
-                if (view) {
-                    raiseWindow(view);
-                    return;
-                }
-            }
-        });
-
+        QObject::connect(&service,
+                         &KDBusService::activateRequested,
+                         &engine,
+                         [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
+                             const auto rootObjects = engine.rootObjects();
+                             for (auto obj : rootObjects) {
+                                 auto view = qobject_cast<QQuickWindow *>(obj);
+                                 if (view) {
+                                     raiseWindow(view);
+                                     return;
+                                 }
+                             }
+                         });
     }
 
     if (engine.rootObjects().isEmpty()) {

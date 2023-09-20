@@ -15,8 +15,8 @@
 #include "mailheadermodel.h"
 #include "mailmanager.h"
 #include "mailmodel.h"
-#include "messageloader.h"
 #include "messagehandler.h"
+#include "messageloader.h"
 
 #include "identity/identitycryptographyeditorbackendfactory.h"
 
