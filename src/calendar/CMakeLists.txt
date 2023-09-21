@@ -77,6 +77,7 @@ ecm_target_qml_sources(merkuro_calendar_plugin SOURCES
     qml/incidenceeditor/ReminderDelegate.qml
     qml/incidenceeditor/PriorityComboBox.qml
     qml/BottomToolBar.qml
+    qml/Menus/MenuBar.qml
 )
 
 target_link_libraries(merkuro_calendar_plugin PUBLIC merkuro_calendar_static)

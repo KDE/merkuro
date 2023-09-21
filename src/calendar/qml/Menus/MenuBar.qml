@@ -11,7 +11,6 @@ import org.kde.merkuro.components 1.0
 
 QQC2.MenuBar {
     id: bar
-
     FileMenu {
         QQC2.MenuItem {
             action: KActionFromAction {

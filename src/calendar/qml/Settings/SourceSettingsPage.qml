@@ -8,32 +8,24 @@ import QtQuick.Layouts 1.15
 import org.kde.merkuro.calendar 1.0
 import org.kde.akonadi 1.0
 
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: sourcesSettingsPage
 
     title: i18n("Accounts")
 
-    topPadding: 0
-    leftPadding: 0
-    rightPadding: 0
+    FormCard.FormHeader {
+        title: root.title
 
-    ColumnLayout {
-        spacing: 0
+        Layout.fillWidth: true
+        Layout.topMargin: Kirigami.Units.largeSpacing
+    }
 
-        MobileForm.FormHeader {
-            title: root.title
+    AgentConfigurationForm {
+        mimetypes: [MimeTypes.calendar, MimeTypes.todo]
+        addPageTitle: i18n("Add New Calendar Source…")
 
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
-        }
-
-        AgentConfigurationForm {
-            mimetypes: [MimeTypes.calendar, MimeTypes.todo]
-            addPageTitle: i18n("Add New Calendar Source…")
-
-            Layout.fillWidth: true
-        }
+        Layout.fillWidth: true
     }
 }

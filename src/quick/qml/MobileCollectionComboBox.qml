@@ -5,14 +5,14 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 /**
  * Special combobox control that allows to choose a collection.
  * The collection displayed can be filtered using the \p mimeTypeFilter
  * and \p accessRightsFilter properties.
  */
-MobileForm.FormComboBoxDelegate {
+FormCard.FormComboBoxDelegate {
     id: comboBox
 
     /**

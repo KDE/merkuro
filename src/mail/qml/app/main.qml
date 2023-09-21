@@ -7,7 +7,6 @@ import org.kde.merkuro.components 1.0
 import org.kde.merkuro.mail 1.0 as Mail
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 BaseApplication {
     id: root

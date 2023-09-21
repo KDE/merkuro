@@ -331,10 +331,9 @@ BaseApplication {
 
     menuBar: Loader {
         id: menuLoader
-        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && Config.showMenubar && applicationWindow().pageStack.currentItem
+        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && applicationWindow().pageStack.currentItem
 
-        visible: Config.showMenubar
-        height: visible ? implicitHeight : 0
+        height: active ? implicitHeight : 0
 
         onItemChanged: if (item) {
             item.Kirigami.Theme.colorSet = Kirigami.Theme.Header;
