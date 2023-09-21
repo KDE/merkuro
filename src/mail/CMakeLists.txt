@@ -46,14 +46,14 @@ target_link_libraries(merkuro_mail_static
     PUBLIC
         merkuro_lib
         KPim6::MailCommon
-	KPim6::MailTransport
+        KPim6::MailTransport
         KPim6::AkonadiMime
+        KPim6::IdentityManagementQuick
+        KPim6::Mbox
+        KPim6::Mime
+        KF6::XmlGui
         KF6::Codecs
         KF6::XmlGui
-        KPim6::IdentityManagementQuick
-	KPim6::Mbox
-	KPim6::Mime
-	KF6::XmlGui
 )
 
 target_link_libraries(merkuro_mail_static PUBLIC Qt::Core5Compat)
@@ -100,7 +100,11 @@ ecm_target_qml_sources(merkuro_mail_plugin
     qml/mailpartview/ICalPart.qml
 )
 
-target_link_libraries(merkuro_mail_plugin PUBLIC merkuro_mail_static)
+target_link_libraries(merkuro_mail_plugin
+    PUBLIC
+        merkuro_mail_static
+        KPim6::MimeTreeParserCore
+)
 
 ecm_finalize_qml_module(merkuro_mail_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR}
