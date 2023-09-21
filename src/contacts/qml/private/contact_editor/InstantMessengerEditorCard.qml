@@ -8,92 +8,81 @@ import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.merkuro.contact 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
-MobileForm.FormCard {
+FormCard.FormCard {
     id: root
 
     required property ContactEditor contactEditor
 
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
+    Repeater {
+        model: root.contactEditor.contact.imppModel
 
-    contentItem: ColumnLayout {
-        spacing: 0
+        delegate: FormCard.AbstractFormDelegate {
+            id: imppDelegate
 
-        MobileForm.FormCardHeader {
-            title: i18n("Instant Messenger")
-        }
+            required property int index
+            required property string url
+            required property var model
 
-        Repeater {
-            model: root.contactEditor.contact.imppModel
-
-            delegate: MobileForm.AbstractFormDelegate {
-                id: imppDelegate
-
-                required property int index
-                required property string url
-                required property var model
-
-                background: Item {}
-                Layout.fillWidth: true
-
-                contentItem: RowLayout {
-                    QQC2.TextField {
-                        id: imppField
-                        text: imppDelegate.url
-                        inputMethodHints: Qt.ImhEmailCharactersOnly
-                        Layout.fillWidth: true
-                        onTextChanged: imppDelegate.model.url = text
-                    }
-
-                    QQC2.Button {
-                        icon.name: "list-remove"
-                        implicitWidth: implicitHeight
-                        onClicked: root.contactEditor.contact.imppModel.deleteImpp(imppDelegate.index);
-                    }
-                }
-            }
-        }
-
-        MobileForm.AbstractFormDelegate {
-            background: Item {}
+            background: null
             Layout.fillWidth: true
+
             contentItem: RowLayout {
                 QQC2.TextField {
-                    id: toAddImpp
-                    Layout.fillWidth: true
-                    placeholderText: i18n("protocol:person@example.com")
+                    id: imppField
+                    text: imppDelegate.url
                     inputMethodHints: Qt.ImhEmailCharactersOnly
+                    Layout.fillWidth: true
+                    onTextChanged: imppDelegate.model.url = text
                 }
 
-                // button to add additional text field
                 QQC2.Button {
-                    icon.name: "list-add"
+                    icon.name: "list-remove"
                     implicitWidth: implicitHeight
-                    enabled: isNotEmptyStr(toAddImpp.text)
-                    onClicked: {
-                        root.contactEditor.contact.imppModel.addImpp(toAddImpp.text);
-                        toAddImpp.text = "";
-                    }
+                    onClicked: root.contactEditor.contact.imppModel.deleteImpp(imppDelegate.index);
                 }
             }
         }
-
-        //KirigamiDateTime.DateInput {
-        //    id: birthday
-        //    Kirigami.FormData.label: i18n("Birthday:")
-
-        //    selectedDate: addressee.birthday
-
-        //    Connections {
-        //        target: root
-        //        function onSave() {
-        //            addressee.birthday = birthday.selectedDate // TODO birthday is not writable
-        //        }
-        //    }
-        //}
     }
+
+    FormCard.AbstractFormDelegate {
+        background: null
+        Layout.fillWidth: true
+        contentItem: RowLayout {
+            QQC2.TextField {
+                id: toAddImpp
+                Layout.fillWidth: true
+                placeholderText: i18n("protocol:person@example.com")
+                inputMethodHints: Qt.ImhEmailCharactersOnly
+            }
+
+            // button to add additional text field
+            QQC2.Button {
+                icon.name: "list-add"
+                implicitWidth: implicitHeight
+                enabled: isNotEmptyStr(toAddImpp.text)
+                onClicked: {
+                    root.contactEditor.contact.imppModel.addImpp(toAddImpp.text);
+                    toAddImpp.text = "";
+                }
+            }
+        }
+    }
+
+    //KirigamiDateTime.DateInput {
+    //    id: birthday
+    //    Kirigami.FormData.label: i18n("Birthday:")
+
+    //    selectedDate: addressee.birthday
+
+    //    Connections {
+    //        target: root
+    //        function onSave() {
+    //            addressee.birthday = birthday.selectedDate // TODO birthday is not writable
+    //        }
+    //    }
+    //}
 }

@@ -8,11 +8,11 @@ import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.merkuro.contact 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
 
     property alias mode: contactEditor.mode
@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
     function isNotEmptyStr(str) {
         return str.trim().length > 0;
     }
-    QQC2.Action {
+    data: QQC2.Action {
         id: submitAction
         enabled: contactEditor.contact.formattedName.length > 0
         shortcut: "Return"
@@ -86,37 +86,56 @@ Kirigami.ScrollablePage {
         }
     }
 
-    leftPadding: 0
-    rightPadding: 0
+    PhotoEditor {
+        contactEditor: root.contactEditor
+    }
 
-    ColumnLayout {
-        PhotoEditor {
-            contactEditor: root.contactEditor
-        }
+    AddressBookEditorCard {
+        id: addressBookEditorCard
+        contactEditor: root.contactEditor
+        mode: root.mode
+    }
 
-        AddressBookEditorCard {
-            id: addressBookEditorCard
-            contactEditor: root.contactEditor
-            mode: root.mode
-        }
+    FormCard.FormHeader {
+        title: i18n("Personal Information")
+    }
 
-        BusinessEditorCard {
-            contactEditor: root.contactEditor
-        }
+    PersonalInfoEditorCard {
+        contactEditor: root.contactEditor
+    }
 
-        PhoneEditorCard {
-            id: phoneEditorId
-            contactEditor: root.contactEditor
-        }
+    FormCard.FormHeader {
+        title: i18n("Business Information")
+    }
 
-        EmailEditorCard {
-            id: emailEditorId
-            contactEditor: root.contactEditor
-        }
+    BusinessEditorCard {
+        contactEditor: root.contactEditor
+    }
 
-        InstantMessengerEditorCard {
-            contactEditor: root.contactEditor
-        }
+    FormCard.FormHeader {
+        title: i18n("Phone")
+    }
+
+    PhoneEditorCard {
+        id: phoneEditorId
+        contactEditor: root.contactEditor
+    }
+
+    FormCard.FormHeader {
+        title: i18n("E-mail")
+    }
+
+    EmailEditorCard {
+        id: emailEditorId
+        contactEditor: root.contactEditor
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Instant Messenger")
+    }
+
+    InstantMessengerEditorCard {
+        contactEditor: root.contactEditor
     }
 
 

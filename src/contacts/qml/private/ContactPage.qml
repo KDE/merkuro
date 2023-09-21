@@ -6,9 +6,9 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.merkuro.contact 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: page
 
     property int itemId
@@ -18,9 +18,6 @@ Kirigami.ScrollablePage {
     }
 
     title: addressee.formattedName
-
-    leftPadding: 0
-    rightPadding: 0
 
     function openEditor() {
         pageStack.pushDialogLayer(Qt.resolvedUrl("./contact_editor/ContactEditorPage.qml"), {
@@ -56,12 +53,6 @@ Kirigami.ScrollablePage {
         Qt.openUrlExternally("sms:" + number)
     }
 
-    Component {
-        id: callPopup
-
-        PhoneNumberDialog {}
-    }
-
     header: ColumnLayout {
         spacing: 0
         Header {
@@ -78,6 +69,12 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             contentItem: Kirigami.ActionToolBar {
                 id: toolbar
+
+                Component {
+                    id: callPopup
+
+                    PhoneNumberDialog {}
+                }
 
                 actions: [
                     Kirigami.Action {
@@ -136,277 +133,235 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ColumnLayout {
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+    FormCard.FormHeader {
+        title: i18n("Contact information")
+    }
 
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            visible: description !== ""
+            description: addressee.formattedName
+            text: i18n("Name:")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Contact information")
-                }
+        FormCard.FormTextDelegate {
+            visible: description !== ""
+            description: addressee.nickName
+            text: i18n("Nickname:")
+        }
 
-                MobileForm.FormTextDelegate {
-                    visible: description !== ""
-                    description: addressee.formattedName
-                    text: i18n("Name:")
-                }
+        FormCard.FormButtonDelegate {
+            id: blogFeed
+            visible: addressee.blogFeed + '' !== ''
+            text: i18n("Blog Feed:")
+            // We do not always have the year
+            description: `<a href="${addressee.blogFeed}">${addressee.blogFeed}</a>`
+            onClicked: Qt.openUrlExternally(addressee.blogFeed)
+        }
+    }
 
-                MobileForm.FormTextDelegate {
-                    visible: description !== ""
-                    description: addressee.nickName
-                    text: i18n("Nickname:")
-                }
+    FormCard.FormHeader {
+        title: i18n("Personal information")
+        visible: birthday.visible || anniversary.visible || spousesName.visible
+    }
 
-                MobileForm.FormButtonDelegate {
-                    id: blogFeed
-                    visible: addressee.blogFeed + '' !== ''
-                    text: i18n("Blog Feed:")
-                    // We do not always have the year
-                    description: `<a href="${addressee.blogFeed}">${addressee.blogFeed}</a>`
-                    onClicked: Qt.openUrlExternally(addressee.blogFeed)
-                }
+    FormCard.FormCard {
+        visible: birthday.visible || anniversary.visible || spousesName.visible
+
+        FormCard.FormTextDelegate {
+            id: birthday
+            visible: description !== ""
+            text: i18n("Birthday:")
+            // We do not always have the year
+            description: if (addressee.birthday.getFullYear() === 0) {
+                return Qt.formatDate(addressee.birthday, i18nc('Day month format', 'dd.MM.'))
+            } else {
+                return addressee.birthday.toLocaleDateString()
             }
         }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            visible: birthday.visible || anniversary.visible || spousesName.visible
-
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Personal information")
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: birthday
-                    visible: description !== ""
-                    text: i18n("Birthday:")
-                    // We do not always have the year
-                    description: if (addressee.birthday.getFullYear() === 0) {
-                        return Qt.formatDate(addressee.birthday, i18nc('Day month format', 'dd.MM.'))
-                    } else {
-                        return addressee.birthday.toLocaleDateString()
-                    }
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: anniversary
-                    visible: description !== ""
-                    // We do not always have the year
-                    description: if (addressee.anniversary.getFullYear() === 0) {
-                        return Qt.formatDate(addressee.anniversary, i18nc('Day month format', 'dd.MM.'))
-                    } else {
-                        return addressee.anniversary.toLocaleDateString()
-                    }
-                    text: i18n("Anniversary:")
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: spousesName
-                    visible: description !== ""
-                    description: addressee.spousesName
-                    text: i18n("Partner's name:")
-                }
+        FormCard.FormTextDelegate {
+            id: anniversary
+            visible: description !== ""
+            // We do not always have the year
+            description: if (addressee.anniversary.getFullYear() === 0) {
+                return Qt.formatDate(addressee.anniversary, i18nc('Day month format', 'dd.MM.'))
+            } else {
+                return addressee.anniversary.toLocaleDateString()
             }
+            text: i18n("Anniversary:")
         }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+        FormCard.FormTextDelegate {
+            id: spousesName
+            visible: description !== ""
+            description: addressee.spousesName
+            text: i18n("Partner's name:")
+        }
+    }
 
-            visible: phoneRepeater.count > 0
+    FormCard.FormHeader {
+        title: i18np("Phone Number", "Phone Numbers", addressee.phoneModel.count)
+        visible: phoneRepeater.count > 0
+    }
 
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormCard {
+        visible: phoneRepeater.count > 0
 
-                MobileForm.FormCardHeader {
-                    title: i18np("Phone Number", "Phone Numbers", addressee.phoneModel.count)
-                }
+        Repeater {
+            id: phoneRepeater
 
-                Repeater {
-                    id: phoneRepeater
+            model: addressee.phoneModel
+            delegate: FormCard.FormButtonDelegate {
+                required property string phoneNumber
+                required property string type
 
-                    model: addressee.phoneModel
-                    delegate: MobileForm.FormButtonDelegate {
-                        required property string phoneNumber
-                        required property string type
-
-                        visible: text.length > 0
-                        text: i18nc("Label for a phone number type", "%1:", type)
-                        description: phoneNumber
-                        onClicked: Qt.openUrlExternally(link)
-                    }
-                }
+                visible: text.length > 0
+                text: i18nc("Label for a phone number type", "%1:", type)
+                description: phoneNumber
+                onClicked: Qt.openUrlExternally(link)
             }
         }
+    }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+    FormCard.FormHeader {
+        title: i18np("Address", "Addresses", addressesRepeater.count)
+        visible: addressesRepeater.count > 0
+    }
 
-            visible: addressesRepeater.count > 0
+    FormCard.FormCard {
+        visible: addressesRepeater.count > 0
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        Repeater {
+            id: addressesRepeater
+            model: addressee.addressesModel
 
-                MobileForm.FormCardHeader {
-                    title: i18np("Address", "Addresses", addressesRepeater.count)
-                }
+            delegate: FormCard.FormTextDelegate {
+                required property string formattedAddress
+                required property string typeLabel
 
+                visible: text.length > 0
 
-                Repeater {
-                    id: addressesRepeater
-                    model: addressee.addressesModel
-
-                    delegate: MobileForm.FormTextDelegate {
-                        required property string formattedAddress
-                        required property string typeLabel
-
-                        visible: text.length > 0
-
-                        text: typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", typeLabel) : i18n("Home:")
-                        description: formattedAddress
-                    }
-                }
+                text: typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", typeLabel) : i18n("Home:")
+                description: formattedAddress
             }
         }
+    }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+    FormCard.FormHeader {
+        title: i18n("Instant Messaging")
+        visible: imppRepeater.count > 0
+    }
 
-            visible: imppRepeater.count > 0
+    FormCard.FormCard {
+        visible: imppRepeater.count > 0
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        Repeater {
+            id: imppRepeater
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Instant Messaging")
-                }
+            model: addressee.imppModel
+            delegate: FormCard.FormButtonDelegate {
+                id: imppDelegate
 
-                Repeater {
-                    id: imppRepeater
+                required property string url
+                readonly property var parts: url.split(':')
+                readonly property string protocol: parts.length > 0 ? parts[0] : ''
+                readonly property string address: parts.length > 0 ? parts.slice(1, parts.length).join(':') : ''
+                readonly property bool isMatrix: protocol === 'matrix'
 
-                    model: addressee.imppModel
-                    delegate: MobileForm.FormButtonDelegate {
-                        id: imppDelegate
+                visible: text !== ""
+                text: i18nc("Label for a messaging protocol", "%1:", isMatrix ? 'Matrix' : protocol)
+                description: address
 
-                        required property string url
-                        readonly property var parts: url.split(':')
-                        readonly property string protocol: parts.length > 0 ? parts[0] : ''
-                        readonly property string address: parts.length > 0 ? parts.slice(1, parts.length).join(':') : ''
-                        readonly property bool isMatrix: protocol === 'matrix'
-
-                        visible: text !== ""
-                        text: i18nc("Label for a messaging protocol", "%1:", isMatrix ? 'Matrix' : protocol)
-                        description: address
-
-                        onClicked: Qt.openUrlExternally(parent.url)
-                    }
-                }
+                onClicked: Qt.openUrlExternally(parent.url)
             }
         }
+    }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+    FormCard.FormHeader {
+        title: i18n("Business Information")
+        visible: businessCard.visible
+    }
 
-            visible: addressee.organization.length > 0
-                || addressee.profession.length > 0
-                || addressee.title.length > 0
-                || addressee.department.length > 0
-                || addressee.office.length > 0
-                || addressee.managersName.length > 0
-                || addressee.assistantsName.length > 0
+    FormCard.FormCard {
+        id: businessCard
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        visible: addressee.organization.length > 0
+            || addressee.profession.length > 0
+            || addressee.title.length > 0
+            || addressee.department.length > 0
+            || addressee.office.length > 0
+            || addressee.managersName.length > 0
+            || addressee.assistantsName.length > 0
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Business Information")
-                }
 
-                MobileForm.FormTextDelegate {
-                    id: organization
-                    visible: description.length > 0
-                    text: i18n("Organization:")
-                    description: addressee.organization
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: profession
-                    visible: description.length > 0
-                    text: i18n("Profession:")
-                    description: addressee.profession
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: title
-                    visible: description !== ''
-                    text: i18n("Title:")
-                    description: addressee.title
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: department
-                    visible: description !== ''
-                    text: i18n("Department:")
-                    description: addressee.department
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: office
-                    visible: description.length > 0
-                    text: i18n("Office:")
-                    description: addressee.office
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: managersName
-                    visible: description.length > 0
-                    text: i18n("Manager's name:")
-                    description: addressee.managersName
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: assistantsName
-                    visible: description.length > 0
-                    text: i18n("Assistants's name:")
-                    description: addressee.assistantsName
-                }
-            }
+        FormCard.FormTextDelegate {
+            id: organization
+            visible: description.length > 0
+            text: i18n("Organization:")
+            description: addressee.organization
         }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+        FormCard.FormTextDelegate {
+            id: profession
+            visible: description.length > 0
+            text: i18n("Profession:")
+            description: addressee.profession
+        }
 
-            visible: imppRepeater.count > 0
+        FormCard.FormTextDelegate {
+            id: title
+            visible: description !== ''
+            text: i18n("Title:")
+            description: addressee.title
+        }
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormTextDelegate {
+            id: department
+            visible: description !== ''
+            text: i18n("Department:")
+            description: addressee.department
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18np("Email Address", "Email Addresses", emailRepeater.count > 0)
-                }
+        FormCard.FormTextDelegate {
+            id: office
+            visible: description.length > 0
+            text: i18n("Office:")
+            description: addressee.office
+        }
 
-                Repeater {
-                    id: emailRepeater
+        FormCard.FormTextDelegate {
+            id: managersName
+            visible: description.length > 0
+            text: i18n("Manager's name:")
+            description: addressee.managersName
+        }
 
-                    model: addressee.emailModel
-                    delegate: MobileForm.FormButtonDelegate {
-                        required property string email
+        FormCard.FormTextDelegate {
+            id: assistantsName
+            visible: description.length > 0
+            text: i18n("Assistants's name:")
+            description: addressee.assistantsName
+        }
+    }
 
-                        text: email
-                        onClicked: Qt.openUrlExternally(`mailto:${email}`)
-                    }
-                }
+    FormCard.FormHeader {
+        title: i18np("Email Address", "Email Addresses", emailRepeater.count > 0)
+        visible: emailRepeater.count > 0
+    }
+
+    FormCard.FormCard {
+        visible: emailRepeater.count > 0
+
+        Repeater {
+            id: emailRepeater
+
+            model: addressee.emailModel
+            delegate: FormCard.FormButtonDelegate {
+                required property string email
+
+                text: email
+                onClicked: Qt.openUrlExternally(`mailto:${email}`)
             }
         }
     }

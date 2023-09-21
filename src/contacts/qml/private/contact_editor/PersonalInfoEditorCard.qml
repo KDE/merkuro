@@ -2,37 +2,26 @@
 // SPDX-FileCopyrightText: 2023 Aakarsh MJ <mj.akarsh@gmail.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import Qt.labs.platform 1.1
-import Qt5Compat.GraphicalEffects 
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import Qt.labs.platform
+import Qt5Compat.GraphicalEffects
 
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.merkuro.contact 1.0
-import org.kde.akonadi 1.0 as Akonadi
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.merkuro.contact
+import org.kde.akonadi as Akonadi
 
-MobileForm.FormCard {
+FormCard.FormCard {
     id: root
 
     required property ContactEditor contactEditor
 
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
-
-    contentItem: ColumnLayout {
-        spacing: 0
-
-        MobileForm.FormCardHeader {
-            title: i18n("Personal Information")
-        }
-
-        MobileForm.FormTextFieldDelegate {
-            id: spousesName
-            label: i18n("Spouse's Name")
-            text: root.contactEditor.contact.spousesName
-            onTextChanged: root.contactEditor.contact.spousesName = text
-        }
+    FormCard.FormTextFieldDelegate {
+        id: spousesName
+        label: i18n("Spouse's Name")
+        text: root.contactEditor.contact.spousesName
+        onTextChanged: root.contactEditor.contact.spousesName = text
     }
 }

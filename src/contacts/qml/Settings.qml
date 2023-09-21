@@ -4,32 +4,21 @@
 import QtQuick 2.15
 import org.kde.kirigami 2.18 as Kirigami
 import QtQuick.Layouts 1.15
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.akonadi 1.0 as Akonadi
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
 
     title: i18nc("@title:window", "Settings")
 
-    topPadding: 0
-    leftPadding: 0
-    rightPadding: 0
+    FormCard.FormHeader {
+        title: i18n("Contact Books")
+    }
 
-    ColumnLayout {
-        spacing: 0
-
-        MobileForm.FormHeader {
-            title: i18n("Contact Books")
-
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
-        }
-
-        Akonadi.AgentConfigurationForm {
-            mimetypes: [Akonadi.MimeTypes.contactGroup, Akonadi.MimeTypes.address]
-            addPageTitle: i18n("Add New Address Book Source…")
-            Layout.fillWidth: true
-        }
+    Akonadi.AgentConfigurationForm {
+        mimetypes: [Akonadi.MimeTypes.contactGroup, Akonadi.MimeTypes.address]
+        addPageTitle: i18n("Add New Address Book Source…")
+        Layout.fillWidth: true
     }
 }
