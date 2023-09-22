@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-22 01:46+0000\n"
 "PO-Revision-Date: 2023-09-19 10:04+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -932,15 +932,15 @@ msgid "Add %1"
 msgstr "%1 toevoegen"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:170
 #, kde-format
 msgid "Save"
 msgstr "Opslaan"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:183
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:170
 #, kde-format
 msgid "Add"
 msgstr "Toevoegen"
@@ -1166,8 +1166,8 @@ msgid "Attendees:"
 msgstr "Deelnemers:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:926
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:88
-#: contacts/qml/private/ContactPage.qml:154
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:82
+#: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Name:"
 msgstr "Naam:"
@@ -1281,13 +1281,13 @@ msgid "Redo: "
 msgstr "Opnieuw: "
 
 #: calendar/qml/Drawers/MainDrawer.qml:179
-#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:107
+#: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Alle agenda's vernieuwen"
 
 #: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:46
+#: mail/qml/app/main.qml:45
 #, kde-format
 msgid "Configure"
 msgstr "Configureren"
@@ -1671,7 +1671,7 @@ msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Agendabron verwijderen"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:36 calendar/qml/Menus/MenuBar.qml:41
+#: calendar/qml/Menus/GlobalMenuBar.qml:36 calendar/qml/Menus/MenuBar.qml:40
 #: contacts/qml/GlobalMenuBar.qml:18 contacts/qml/MenuBar.qml:16
 #: mail/qml/app/GlobalMenuBar.qml:19 mail/qml/app/MenuBar.qml:17
 #, kde-format
@@ -1685,13 +1685,13 @@ msgctxt "@action:menu"
 msgid "Sort Tasks"
 msgstr "Taken sorteren"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:112 calendar/qml/Menus/MenuBar.qml:113
+#: calendar/qml/Menus/GlobalMenuBar.qml:112 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
 msgstr "Ga naar"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:137
+#: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
 #: mail/qml/FolderView.qml:18
@@ -1700,26 +1700,26 @@ msgctxt "@action:menu"
 msgid "Create"
 msgstr "Aanmaken"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:150 calendar/qml/Menus/MenuBar.qml:150
+#: calendar/qml/Menus/GlobalMenuBar.qml:150 calendar/qml/Menus/MenuBar.qml:149
 #: components/qml/SettingsMenu.qml:13 contacts/qml/GlobalMenuBar.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: calendar/qml/Menus/MenuBar.qml:71
+#: calendar/qml/Menus/MenuBar.qml:70
 #, kde-format
 msgid "Sort Tasks"
 msgstr "Taken sorteren"
 
-#: calendar/qml/Menus/MenuBar.qml:169 components/qml/HelpMenu.qml:13
+#: calendar/qml/Menus/MenuBar.qml:168 components/qml/HelpMenu.qml:13
 #: components/qml/NativeHelpMenu.qml:12
 #, kde-format
 msgctxt "@action:menu"
 msgid "Help"
 msgstr "Help"
 
-#: calendar/qml/Menus/MenuBar.qml:180
+#: calendar/qml/Menus/MenuBar.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
@@ -1730,12 +1730,12 @@ msgstr "Handboek van agenda"
 msgid "Configure Free/Busy"
 msgstr "Vrij/bezet configureren"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:25
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:18
 #, kde-format
 msgid "Free/Busy Publishing settings"
 msgstr "Vrij/bezet instellingen voor publiceren"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:40
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:26
 #, kde-format
 msgid ""
 "When you publish your free/busy information, it enables others to consider "
@@ -1748,79 +1748,79 @@ msgstr ""
 "bijeenkomst. Alleen de tijden die al gemarkeerd zijn als bezet worden "
 "getoond, zonder de specifieke reden voor uw beschikbaarheid."
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:45
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:31
 #, kde-format
 msgid "Publish your free/busy information automatically"
 msgstr "Uw informatie over vrij/bezet automatisch publiceren"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:57
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
 msgstr "Minimale tijdsduur (in minuten) tussen uploads"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:70
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:56
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
 msgstr ""
 "Aantal te publiceren dagen voor te publiceren informatie over vrij/bezet: "
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:82
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:200
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:68
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:171
 #, kde-format
 msgid "Server information"
 msgstr "Serverinformatie"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:86
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:204
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:72
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:175
 #, kde-format
 msgid "Server URL"
 msgstr "URL-adres server"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:96
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:214
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:82
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:185
 #, kde-format
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:106
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:224
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:92
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:195
 #, kde-format
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:122
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:234
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:102
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:205
 #, kde-format
 msgid "Save password"
 msgstr "Wachtwoord opslaan"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:132
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
 msgstr "Klik hier om informatie over vrij/bezet handmatig te publiceren"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:143
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:123
 #, kde-format
 msgid "Email Free/Busy"
 msgstr "E-mail verzenden over vrij/bezet"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:148
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
 msgstr "E-mailadres van ontvanger invoeren..."
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:151
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:138
 #, kde-format
 msgid "Send"
 msgstr "Verzonden"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:160
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:139
 #, kde-format
 msgid "Free/Busy Retrieval settings"
 msgstr "Instellingen voor ophalen van vrij/bezet"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:176
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:147
 #, kde-format
 msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
@@ -1829,18 +1829,18 @@ msgstr ""
 "Als u vrij/bezetinformatie van anderen ophaalt, kunt u met hun "
 "agendagegevens rekening houden als u hen uitnodigt voor een ontmoeting."
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:181
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:152
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
 msgstr "Informatie over vrij/bezet van anderen automatisch ophalen"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:190
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "Volledig e-mailadres voor ophalen gebruiken"
 
 #: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:12
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
 #, kde-format
 msgid "Appearance"
 msgstr "Uiterlijk"
@@ -1856,203 +1856,203 @@ msgstr "Accounts"
 msgid "Free/Busy"
 msgstr "Vrij/bezet"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:34
+#: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
 msgid "Add New Calendar Source…"
 msgstr "Nieuwe agendabron toevoegen…"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:22
+#: calendar/qml/Settings/ViewSettingsPage.qml:17
 #, kde-format
 msgid "General settings"
 msgstr "Algemene instellingen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:32
+#: calendar/qml/Settings/ViewSettingsPage.qml:23
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr "Pop-up gebruiken om incidentinformatie te tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:43
+#: calendar/qml/Settings/ViewSettingsPage.qml:34
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Taken in agendaweergaven tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:53
+#: calendar/qml/Settings/ViewSettingsPage.qml:44
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Subtaken in agendaweergaven tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:67
+#: calendar/qml/Settings/ViewSettingsPage.qml:58
 #, kde-format
 msgid "Past event transparency"
 msgstr "Transparantie van voorbije gebeurtenis"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:87
+#: calendar/qml/Settings/ViewSettingsPage.qml:77
 #, kde-format
 msgid "Month view settings"
 msgstr "Instellingen maandweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:107
+#: calendar/qml/Settings/ViewSettingsPage.qml:108
 #, kde-format
 msgid "Month view mode"
 msgstr "Modus maandweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:114
+#: calendar/qml/Settings/ViewSettingsPage.qml:115
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Maandraster met vegen te bedienen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:121
+#: calendar/qml/Settings/ViewSettingsPage.qml:122
 #, kde-format
 msgid "Basic month grid"
 msgstr "Basismaandraster"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:127
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "Maandraster met vegen te bedienen vereist hogere systeemprestaties."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:142
+#: calendar/qml/Settings/ViewSettingsPage.qml:135
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Uitlijning van weekdaglabel"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:149
+#: calendar/qml/Settings/ViewSettingsPage.qml:142
 #, kde-format
 msgid "Left"
 msgstr "Links"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:156
+#: calendar/qml/Settings/ViewSettingsPage.qml:149
 #, kde-format
 msgid "Center"
 msgstr "Midden"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:163
+#: calendar/qml/Settings/ViewSettingsPage.qml:156
 #, kde-format
 msgid "Right"
 msgstr "Rechts"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:181
+#: calendar/qml/Settings/ViewSettingsPage.qml:166
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Lengte van weekdaglabel:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:186
+#: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Volledige naam (maandag)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:193
+#: calendar/qml/Settings/ViewSettingsPage.qml:178
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Afkorting (ma)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:201
+#: calendar/qml/Settings/ViewSettingsPage.qml:186
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Alleen letter (m)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:210
+#: calendar/qml/Settings/ViewSettingsPage.qml:195
 #, kde-format
 msgid "Show week numbers"
 msgstr "Weeknummers tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:224
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Randbreedte van raster (pixels):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:249
+#: calendar/qml/Settings/ViewSettingsPage.qml:233
 #, kde-format
 msgid "Week view settings"
 msgstr "Instellingen weekweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:270
+#: calendar/qml/Settings/ViewSettingsPage.qml:246
 #, kde-format
 msgid "Week view mode"
 msgstr "Modus weekweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:277
+#: calendar/qml/Settings/ViewSettingsPage.qml:253
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Weekweergave met vegen te bedienen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:284
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Basic week view"
 msgstr "Basisweekweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:290
+#: calendar/qml/Settings/ViewSettingsPage.qml:266
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "Weekweergave met vegen te bedienen vereist hogere systeemprestaties."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:298
+#: calendar/qml/Settings/ViewSettingsPage.qml:273
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Instellingen van weergave van planning"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:318
+#: calendar/qml/Settings/ViewSettingsPage.qml:286
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Modus planningsweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:325
+#: calendar/qml/Settings/ViewSettingsPage.qml:293
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Planningsweergave met vegen te bedienen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:332
+#: calendar/qml/Settings/ViewSettingsPage.qml:300
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Basisplanningsweergave"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:338
+#: calendar/qml/Settings/ViewSettingsPage.qml:306
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
 "Planningsweergave met vegen te bedienen vereist hogere systeemprestaties."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:347
+#: calendar/qml/Settings/ViewSettingsPage.qml:315
 #, kde-format
 msgid "Show week headers"
 msgstr "Weekkoppen tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:359
+#: calendar/qml/Settings/ViewSettingsPage.qml:326
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Instellingen weergave van taken"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:371
+#: calendar/qml/Settings/ViewSettingsPage.qml:331
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Voltooide subtaken tonen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:383
+#: calendar/qml/Settings/ViewSettingsPage.qml:342
 #, kde-format
 msgid "Maps"
 msgstr "Kaarten"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:397
+#: calendar/qml/Settings/ViewSettingsPage.qml:348
 #, kde-format
 msgid "Enable maps"
 msgstr "Kaarten inschakelen"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:404
+#: calendar/qml/Settings/ViewSettingsPage.qml:355
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "Kan een crash op sommige systemen veroorzaken."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:419
+#: calendar/qml/Settings/ViewSettingsPage.qml:362
 #, kde-format
 msgid "Location marker"
 msgstr "Locatiemarkering"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:436
+#: calendar/qml/Settings/ViewSettingsPage.qml:368
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Cirkel (toont gebied van locatie)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:443
+#: calendar/qml/Settings/ViewSettingsPage.qml:375
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Pin (toont exacte locatie)"
@@ -2204,7 +2204,7 @@ msgid "Enter Full Screen"
 msgstr "Volledig scherm ingaan"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:273
+#: contacts/qml/private/ContactPage.qml:245
 #, kde-format
 msgid "Home:"
 msgstr "Privé:"
@@ -2388,220 +2388,214 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "Adresboekbron verwijderen"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:33
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
 #, kde-format
 msgid "Address book:"
 msgstr "Adresboek:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:58
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:65
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:55
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:62
 #, kde-format
 msgid "Name"
 msgstr "Naam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:69
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
 msgstr "Naam van contactpersoon"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:75
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
 msgstr "Geavanceerd"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
 msgstr "Titel-voorvoegsel"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Dr."
 msgstr "Dr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Miss"
 msgstr "Mej."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Mr."
 msgstr "Men."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Mrs."
 msgstr "Mevr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Ms."
 msgstr "Mevr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Prof."
 msgstr "Prof."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:100
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:97
 #, kde-format
 msgid "Given name"
 msgstr "Voornaam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:103
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:100
 #, kde-format
 msgid "First name or chosen name"
 msgstr "Eerste naam of voornaam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:109
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
 #, kde-format
 msgid "Additional name"
 msgstr "Extra naam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:112
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:109
 #, kde-format
 msgid "Middle name or other name"
 msgstr "Middelste naam of andere naam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:118
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
 #, kde-format
 msgid "Family name:"
 msgstr "Achternaam:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:121
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:118
 #, kde-format
 msgid "Surname or last name"
 msgstr "Achternaam of laatste naam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:124
 #, kde-format
 msgid "Honorific suffix"
 msgstr "Titel-voorvoegsel"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "I"
 msgstr "I"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "II"
 msgstr "II"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "III"
 msgstr "III"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "Jr."
 msgstr "Jr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "Sr."
 msgstr "Sr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
 #, kde-format
 msgid "Nickname"
 msgstr "Schermnaam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:141
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
 #, kde-format
 msgid "Alternative name"
 msgstr "Alternatieve naam"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:149
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
 #, kde-format
 msgid "Blog Feed"
 msgstr "Blogfeed"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:152
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:149
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
-#: contacts/qml/private/ContactPage.qml:332
-#, kde-format
-msgid "Business Information"
-msgstr "Zakelijke informatie"
-
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:33
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
 #, kde-format
 msgid "Organization"
 msgstr "Organisatie"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:36
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:26
 #, kde-format
 msgctxt "Placeholder value for name of Organization"
 msgid "KDE"
 msgstr "KDE"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:43
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:33
 #, kde-format
 msgid "Profession"
 msgstr "Beroep"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:46
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:36
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
 msgstr "Software-ontwikkelaar"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:53
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:43
 #, kde-format
 msgid "Title"
 msgstr "Titel"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:56
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:46
 #, kde-format
 msgctxt "Placeholder value for Title"
 msgid "SDE-1"
 msgstr "SDE-1"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:63
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:53
 #, kde-format
 msgid "Department"
 msgstr "Afdeling"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:66
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:56
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
 msgstr "Merkuro-team"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:63
 #, kde-format
 msgid "Office"
 msgstr "Kantoor"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:76
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:66
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
 msgstr "Tech Wing, 4th Floor"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:83
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
 #, kde-format
 msgid "Manager's Name"
 msgstr "Naam manager"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:86
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:76
 #, kde-format
 msgctxt "Placeholder value for Manager's Name"
 msgid "Bob"
 msgstr "Bob"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:93
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:83
 #, kde-format
 msgid "Assistant's Name"
 msgstr "Naam assistent"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:96
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:86
 #, kde-format
 msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
@@ -2617,221 +2611,227 @@ msgstr "contactpersoon toevoegen"
 msgid "Edit Contact"
 msgstr "Contactpersoon bewerken"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:199
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:100
+#, kde-format
+msgid "Personal Information"
+msgstr "Persoonlijke informatie"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
+#: contacts/qml/private/ContactPage.qml:282
+#, kde-format
+msgid "Business Information"
+msgstr "Zakelijke informatie"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#, kde-format
+msgid "Phone"
+msgstr "Telefoon"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:125
+#, kde-format
+msgid "E-mail"
+msgstr "E-mail"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:134
+#, kde-format
+msgid "Instant Messenger"
+msgstr "Instant-messenger"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:173
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:186
 #: contacts/qml/private/DeleteContactAction.qml:19
 #, kde-format
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:183
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "Deze contactpersoon is elders gewijzigd tijdens de bewerking."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "Welke wijzigingen moeten behouden worden?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:201
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
 #, kde-format
 msgid "Current changes"
 msgstr "Huidige wijzigingen"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:187
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:232
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
 #, kde-format
 msgid "External changes"
 msgstr "Externe wijzigingen"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:29
 #, kde-format
 msgid "Edit %1"
 msgstr "%1 bewerken"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:17
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:29
 #, kde-format
 msgid "Create Contact Group"
 msgstr "Contactgroep aanmaken"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:70
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:64
 #, kde-format
 msgid "Address Book:"
 msgstr "Adresboek:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:91
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:85
 #, kde-format
 msgid "Contact group name"
 msgstr "Naam van contactgroep"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:103
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:91
 #, kde-format
 msgid "Members"
 msgstr "Leden"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:172
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:161
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
 "Alleen contacten met een e-mailadres kunnen aan een contactgroep worden "
 "toegevoegd"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:196
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "Deze contactgroep is elders gewijzigd tijdens de bewerking."
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
-#, kde-format
-msgid "E-mail"
-msgstr "E-mail"
-
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:46
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:88
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:44
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:92
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:36
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:78
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:34
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:82
 #, kde-format
 msgid "Home"
 msgstr "Thuis"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:47
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:89
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:45
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:93
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:37
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:79
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:35
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:83
 #, kde-format
 msgid "Work"
 msgstr "Werk"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:48
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:38
 #, kde-format
 msgid "Other"
 msgstr "Overig"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:69
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:59
 #, kde-format
 msgid "Remove email"
 msgstr "E-mailadres verwijderen"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:90
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:80
 #, kde-format
 msgid "Both"
 msgstr "Beiden"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:91
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:81
 #, kde-format
 msgid "Other…"
 msgstr "Overigen…"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:100
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
 msgstr "gebruiker@voorbeeld.nl"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:109
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:99
 #, kde-format
 msgid "Add email"
 msgstr "E-mail toevoegen"
 
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:27
-#, kde-format
-msgid "Instant Messenger"
-msgstr "Instant-messenger"
-
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:68
+#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:58
 #, kde-format
 msgid "protocol:person@example.com"
 msgstr "protocol:persoon@voorbeeld.nl"
 
-#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:28
-#, kde-format
-msgid "Personal Information"
-msgstr "Persoonlijke informatie"
-
-#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:33
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
 #, kde-format
 msgid "Spouse's Name"
 msgstr "Naam echtgenoot"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:29
-#, kde-format
-msgid "Phone"
-msgstr "Telefoon"
-
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:46
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:94
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
 #, kde-format
 msgid "Messaging"
 msgstr "Messaging"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:47
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:95
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:37
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:85
 #, kde-format
 msgid "Voice"
 msgstr "Stem"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:48
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:96
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:38
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:86
 #, kde-format
 msgid "Fax"
 msgstr "Fax"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:49
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:97
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:39
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:87
 #, kde-format
 msgid "Cell"
 msgstr "Mobiel"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:50
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:98
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:40
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:88
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:51
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:99
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:41
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:89
 #, kde-format
 msgid "Mailbox"
 msgstr "Postbus"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:52
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:100
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:42
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:90
 #, kde-format
 msgid "Modem"
 msgstr "Modem"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:53
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:101
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:43
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:91
 #, kde-format
 msgid "Car"
 msgstr "Auto"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:54
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:102
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:44
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:92
 #, kde-format
 msgid "ISDN"
 msgstr "ISDN"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:55
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:103
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:45
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:93
 #, kde-format
 msgid "PCS"
 msgstr "PCS"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:56
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:104
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:46
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:94
 #, kde-format
 msgid "Pager"
 msgstr "Pager"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:57
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:47
 #, kde-format
 msgid "Undefined"
 msgstr "Ongedefinieerd"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:116
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:106
 #, kde-format
 msgid "+33 7 55 23 68 67"
 msgstr "+33 7 55 23 68 67"
@@ -2861,156 +2861,156 @@ msgstr "Profielafbeelding toevoegen"
 msgid "Update Profile Picture"
 msgstr "Profielafbeelding bijwerken"
 
-#: contacts/qml/private/ContactPage.qml:35
+#: contacts/qml/private/ContactPage.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: contacts/qml/private/ContactPage.qml:43
+#: contacts/qml/private/ContactPage.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: contacts/qml/private/ContactPage.qml:84
+#: contacts/qml/private/ContactPage.qml:81
 #, kde-format
 msgid "Call"
 msgstr "Oproep"
 
-#: contacts/qml/private/ContactPage.qml:95
+#: contacts/qml/private/ContactPage.qml:92
 #, kde-format
 msgid "Select number to call"
 msgstr "Te bellen nummer selecteren"
 
-#: contacts/qml/private/ContactPage.qml:103
+#: contacts/qml/private/ContactPage.qml:100
 #, kde-format
 msgid "Send SMS"
 msgstr "SMS verzenden"
 
-#: contacts/qml/private/ContactPage.qml:114
+#: contacts/qml/private/ContactPage.qml:111
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Telefoonnummer om bericht naar te verzenden selecteren"
 
-#: contacts/qml/private/ContactPage.qml:122
+#: contacts/qml/private/ContactPage.qml:119
 #, kde-format
 msgid "Send email"
 msgstr "E-mail verzenden"
 
-#: contacts/qml/private/ContactPage.qml:128
+#: contacts/qml/private/ContactPage.qml:125
 #, kde-format
 msgid "Show QR Code"
 msgstr "QR-code tonen"
 
-#: contacts/qml/private/ContactPage.qml:148
+#: contacts/qml/private/ContactPage.qml:137
 #, kde-format
 msgid "Contact information"
 msgstr "Contactinformatie"
 
-#: contacts/qml/private/ContactPage.qml:160
+#: contacts/qml/private/ContactPage.qml:150
 #, kde-format
 msgid "Nickname:"
 msgstr "Schermnaam:"
 
-#: contacts/qml/private/ContactPage.qml:166
+#: contacts/qml/private/ContactPage.qml:156
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Blogfeed:"
 
-#: contacts/qml/private/ContactPage.qml:183
+#: contacts/qml/private/ContactPage.qml:164
 #, kde-format
 msgid "Personal information"
 msgstr "Persoonlijke informatie"
 
-#: contacts/qml/private/ContactPage.qml:189
+#: contacts/qml/private/ContactPage.qml:174
 #, kde-format
 msgid "Birthday:"
 msgstr "Verjaardag:"
 
-#: contacts/qml/private/ContactPage.qml:207
+#: contacts/qml/private/ContactPage.qml:192
 #, kde-format
 msgid "Anniversary:"
 msgstr "Trouwdag:"
 
-#: contacts/qml/private/ContactPage.qml:214
+#: contacts/qml/private/ContactPage.qml:199
 #, kde-format
 msgid "Partner's name:"
 msgstr "Naam van partner:"
 
-#: contacts/qml/private/ContactPage.qml:229
+#: contacts/qml/private/ContactPage.qml:204
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "telefoonnummer"
 msgstr[1] "Telefoonnummers"
 
-#: contacts/qml/private/ContactPage.qml:241
+#: contacts/qml/private/ContactPage.qml:220
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:259
+#: contacts/qml/private/ContactPage.qml:228
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adres"
 msgstr[1] "Adressen"
 
-#: contacts/qml/private/ContactPage.qml:273
+#: contacts/qml/private/ContactPage.qml:245
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:290
+#: contacts/qml/private/ContactPage.qml:252
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
 
-#: contacts/qml/private/ContactPage.qml:307
+#: contacts/qml/private/ContactPage.qml:273
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:338
+#: contacts/qml/private/ContactPage.qml:301
 #, kde-format
 msgid "Organization:"
 msgstr "Organisatie:"
 
-#: contacts/qml/private/ContactPage.qml:345
+#: contacts/qml/private/ContactPage.qml:308
 #, kde-format
 msgid "Profession:"
 msgstr "Beroep:"
 
-#: contacts/qml/private/ContactPage.qml:352
+#: contacts/qml/private/ContactPage.qml:315
 #, kde-format
 msgid "Title:"
 msgstr "Titel:"
 
-#: contacts/qml/private/ContactPage.qml:359
+#: contacts/qml/private/ContactPage.qml:322
 #, kde-format
 msgid "Department:"
 msgstr "Afdeling:"
 
-#: contacts/qml/private/ContactPage.qml:366
+#: contacts/qml/private/ContactPage.qml:329
 #, kde-format
 msgid "Office:"
 msgstr "Kantoor:"
 
-#: contacts/qml/private/ContactPage.qml:373
+#: contacts/qml/private/ContactPage.qml:336
 #, kde-format
 msgid "Manager's name:"
 msgstr "Naam van manager:"
 
-#: contacts/qml/private/ContactPage.qml:380
+#: contacts/qml/private/ContactPage.qml:343
 #, kde-format
 msgid "Assistants's name:"
 msgstr "Naam van assistent:"
 
-#: contacts/qml/private/ContactPage.qml:396
+#: contacts/qml/private/ContactPage.qml:349
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -3048,12 +3048,12 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: contacts/qml/Settings.qml:23
+#: contacts/qml/Settings.qml:16
 #, kde-format
 msgid "Contact Books"
 msgstr "Contactpersonenboeken"
 
-#: contacts/qml/Settings.qml:31
+#: contacts/qml/Settings.qml:21
 #, kde-format
 msgid "Add New Address Book Source…"
 msgstr "Nieuw adresboekbron toevoegen…"
@@ -3328,17 +3328,17 @@ msgstr "Deze e-mail bevat een uitnodiging"
 msgid "Import key"
 msgstr "Sleutel importeren"
 
-#: mail/qml/settings/AccountSettingsPage.qml:18
+#: mail/qml/settings/AccountSettingsPage.qml:17
 #, kde-format
 msgid "Identities"
 msgstr "Identiteiten"
 
-#: mail/qml/settings/AccountSettingsPage.qml:28
+#: mail/qml/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgid "Receiving Accounts"
 msgstr "Accounts worden ontvangen"
 
-#: mail/qml/settings/AccountSettingsPage.qml:33
+#: mail/qml/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configuratie van e-mailaccount"
