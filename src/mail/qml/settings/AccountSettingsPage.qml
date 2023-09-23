@@ -1,20 +1,20 @@
 // SPDX-FileCopyrightText: 2023 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import org.kde.kirigami 2.20 as Kirigami
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kidentitymanagement 1.0 as KIdentityManagement
-import org.kde.merkuro.mail 1.0
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.akonadi 1 as Akonadi
+import org.kde.kidentitymanagement 1 as KIdentityManagement
+import org.kde.merkuro.mail
 
 FormCard.FormCardPage {
     id: accountsSettingsPage
 
     FormCard.FormHeader {
-        title: i18n("Identities")
+        title: i18nc("@action:group", "Identities")
         Layout.fillWidth: true
     }
 
@@ -24,7 +24,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Receiving Accounts")
+        title: i18nc("@title:group Title for the list of receiving accounts which are imap or pop3 email accounts", "Receiving Accounts")
         Layout.fillWidth: true
     }
 
