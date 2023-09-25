@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-24 01:44+0000\n"
-"PO-Revision-Date: 2023-09-16 10:58+0200\n"
+"PO-Revision-Date: 2023-09-24 07:53+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -533,8 +533,8 @@ msgid ""
 "file?\n"
 " "
 msgstr ""
-"Czy zaimportować wydarzenia i zadania tego pliku kalendarza do jednego "
-"ztwoich kalendarzy, czy raczej utworzyć nowy kalendarz z tego pliku?\n"
+"Czy zaimportować wydarzenia i zadania tego pliku kalendarza do jednego z "
+"twoich kalendarzy, czy raczej utworzyć nowy kalendarz z tego pliku?\n"
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:123
@@ -3113,10 +3113,9 @@ msgid "Image request has been cancelled"
 msgstr "Żądanie wiadomości zostało anulowane"
 
 #: mail/identity/identitykeylistmodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgid "No key"
-msgstr "Zaimportuj klucz"
+msgstr "Brak klucza"
 
 #: mail/mailapplication.cpp:22
 #, kde-format
@@ -3124,11 +3123,10 @@ msgid "New Mail…"
 msgstr "Nowa wiadomość…"
 
 #: mail/mailmanager.cpp:237
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
-msgstr "Konta pocztowe"
+msgstr "Ustawienia konta: %1"
 
 #: mail/mailmodel.cpp:48
 #, kde-format
@@ -3156,10 +3154,9 @@ msgstr "Program pocztowy"
 #: mail/qml/actions/DeleteFolderAction.qml:19
 #: mail/qml/actions/DeleteFolderAction.qml:24
 #: mail/qml/actions/MailItemMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgid "Delete Folder"
-msgstr "Usuń kalendarz"
+msgstr "Usuń katalog"
 
 #: mail/qml/actions/DeleteFolderAction.qml:39
 #, kde-format
@@ -3168,49 +3165,47 @@ msgid ""
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
 msgstr ""
+"Czy na pewno usunąć katalog %1 wraz z zawartością?<br /><b>Uwaga:</b> "
+"usunięte w ten sposób wiadomości nie są przenoszone do Kosza i są na zawsze "
+"stracone."
 
 #: mail/qml/actions/MailItemMenu.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Folder"
-msgstr "Dodaj przypomnienie"
+msgstr "Dodaj katalog"
 
 #: mail/qml/actions/MailItemMenu.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
-msgstr ""
+msgstr "Właściwości katalogu"
 
 #: mail/qml/actions/MailItemMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Restart"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
-msgstr "Uruchom ponownie"
+msgstr "Uruchom konto ponownie"
 
 #: mail/qml/actions/MailItemMenu.qml:55
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
-msgstr "Ustawienia widoku miesiąca"
+msgstr "Ustawienia konta"
 
 #: mail/qml/actions/NewFolderAction.qml:18
-#, fuzzy, kde-format
-#| msgid "New todo"
+#, kde-format
 msgid "New Folder"
-msgstr "Nowe zadanie"
+msgstr "Nowy katalog"
 
 #: mail/qml/actions/NewFolderAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Create Folder"
-msgstr "Utwórz"
+msgstr "Utwórz katalog"
 
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr ""
+msgstr "Nazwa katalogu..."
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3218,17 +3213,14 @@ msgid "Move to trash"
 msgstr "Wyrzuć do kosza"
 
 #: mail/qml/desktopactions/openmbox.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "File"
+#, kde-format
 msgid "Open File"
-msgstr "Plik"
+msgstr "Otwórz plik"
 
 #: mail/qml/desktopactions/openmbox.qml:21
-#, fuzzy, kde-format
-#| msgid "Choose a Calendar"
+#, kde-format
 msgid "Choose file"
-msgstr "Wybierz kalendarz"
+msgstr "Wybierz plik"
 
 #: mail/qml/FolderView.qml:34
 #, kde-format
@@ -3349,37 +3341,32 @@ msgid "This mail contains an invitation"
 msgstr "Ta wiadomość zawiera zaproszenie"
 
 #: mail/qml/private/AttachmentDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "Zaimportuj klucz"
 
 #: mail/qml/settings/AccountSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Identities"
+#, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Tożsamości"
 
 #: mail/qml/settings/AccountSettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
 "email accounts"
 msgid "Receiving Accounts"
-msgstr "Konta pocztowe"
+msgstr "Konta odbiorcze"
 
 #: mail/qml/settings/AccountSettingsPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgid "Mail Account Configuration"
-msgstr "Konta pocztowe"
+msgstr "Ustawienia kont pocztowych"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Konta"
