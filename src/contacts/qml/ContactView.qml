@@ -54,7 +54,7 @@ Kirigami.ScrollablePage {
             property: "display"
             criteria: ViewSection.FirstCharacter
             delegate: Kirigami.ListSectionHeader {
-                text: section
+                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
             }
         }
         clip: true
@@ -62,7 +62,7 @@ Kirigami.ScrollablePage {
         delegate: ContactListItem {
             id: contactListItem
             height: Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit * 3 : Kirigami.Units.gridUnit * 2
-            name: model && model.display
+            name: model && model.display && model.display.trim().length > 0 ? model.display : i18nc("Placeholder", "No Name")
             avatarIcon: model && model.decoration
 
             onClicked: if (model.mimeType === 'application/x-vnd.kde.contactgroup') {

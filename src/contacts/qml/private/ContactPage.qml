@@ -62,7 +62,7 @@ FormCard.FormCardPage {
             Layout.preferredHeight: Kirigami.Units.gridUnit * 8
 
             source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
-            name: addressee.formattedName
+            name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : i18nc("Placeholder", "No Name")
         }
 
         QQC2.ToolBar {
