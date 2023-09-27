@@ -32,6 +32,7 @@ public:
 
     enum Role {
         Score = Qt::UserRole + 1,
+        DisplayNameRole,
         ShortcutRole,
     };
 

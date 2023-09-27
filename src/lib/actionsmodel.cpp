@@ -101,6 +101,7 @@ QVariant KalCommandBarModel::data(const QModelIndex &index, int role) const
 
     switch (role) {
     case Qt::DisplayRole:
+    case DisplayNameRole:
         if (col == 0) {
             QString groupName = KLocalizedString::removeAcceleratorMarker(entry.groupName);
             QString actionText = KLocalizedString::removeAcceleratorMarker(entry.action->text());
@@ -156,9 +157,10 @@ void KalCommandBarModel::setLastUsedActions(const QStringList &actionNames)
 QHash<int, QByteArray> KalCommandBarModel::roleNames() const
 {
     auto roles = QAbstractTableModel::roleNames();
-    roles[Qt::UserRole] = QByteArrayLiteral("action");
+    roles[Qt::UserRole] = QByteArrayLiteral("qaction");
     roles[Score] = QByteArrayLiteral("score");
     roles[ShortcutRole] = QByteArrayLiteral("shortcut");
+    roles[DisplayNameRole] = QByteArrayLiteral("displayName");
     return roles;
 }
 

@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.12 as QQC2
-import QtQuick.Layouts 1.10
-import org.kde.kirigami 2.15 as Kirigami
-import QtQuick.Templates 2.15 as T
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import QtQuick.Templates as T
 
 QQC2.Dialog {
     id: root
@@ -18,12 +19,26 @@ QQC2.Dialog {
     width: Math.min(700, parent.width)
     height: 400
 
-    leftPadding: 0
-    rightPadding: 0
-    bottomPadding: 0
+    leftPadding: 1
+    rightPadding: 1
+    bottomPadding: 1
     topPadding: 0
 
     anchors.centerIn: applicationWindow().overlay
+
+    background: Kirigami.ShadowedRectangle {
+        color: Kirigami.Theme.backgroundColor
+        radius: Kirigami.Units.mediumSpacing
+        shadow {
+            size: Kirigami.Units.largeSpacing
+            color: Qt.rgba(0.0, 0.0, 0.0, 0.3)
+            yOffset: 2
+        }
+        border {
+            color: Kirigami.ColorUtils.tintWithAlpha(color, Kirigami.Theme.textColor, 0.15)
+            width: 1
+        }
+    }
 
     onOpened: {
         searchField.forceActiveFocus();
@@ -36,9 +51,8 @@ QQC2.Dialog {
                                 implicitContentWidth + leftPadding + rightPadding)
         implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
                                 implicitContentHeight + topPadding + bottomPadding)
-        
-        padding: Kirigami.Units.largeSpacing
-        bottomPadding: verticalPadding + headerSeparator.implicitHeight // add space for bottom separator
+
+        padding: Kirigami.Units.smallSpacing
 
         contentItem: Kirigami.SearchField {
             id: searchField
@@ -52,39 +66,77 @@ QQC2.Dialog {
                 topLeftRadius: Kirigami.Units.smallSpacing
                 topRightRadius: Kirigami.Units.smallSpacing
             }
-            Kirigami.Theme.colorSet: Kirigami.Theme.Header
-            Kirigami.Theme.inherit: false
-            color: Kirigami.Theme.backgroundColor
+            color: "transparent"
+
             Kirigami.Separator {
                 id: headerSeparator
-                width: parent.width
-                anchors.bottom: parent.bottom
+                anchors {
+                    bottom: parent.bottom
+                    left: parent.left
+                    right: parent.right
+                }
+                height: 1
             }
         }
     }
 
-    QQC2.ScrollView {
-        anchors.fill: parent
+    contentItem: QQC2.ScrollView {
         QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+
+        background: Kirigami.ShadowedRectangle {
+            color: Kirigami.Theme.backgroundColor
+            corners {
+                bottomLeftRadius: Kirigami.Units.smallSpacing
+                bottomRightRadius: Kirigami.Units.smallSpacing
+            }
+        }
+
         ListView {
             id: actionList
-            model: root.application.actionsModel
+
             Keys.onPressed: if (event.text.length > 0) {
                 searchField.forceActiveFocus();
                 searchField.text += event.text;
             }
-            delegate: Kirigami.BasicListItem {
-                icon.name: model.decoration
-                text: model.display
-                trailing: QQC2.Label {
-                    text: model.shortcut
-                    color: Kirigami.Theme.disabledTextColor
+
+            clip: true
+
+            model: root.application.actionsModel
+            delegate: Delegates.RoundedItemDelegate {
+                id: commandDelegate
+
+                required property int index
+                required property string decoration
+                required property string displayName
+                required property string shortcut
+                required property var qaction
+
+                icon.name: decoration
+                text: displayName
+
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Delegates.DefaultContentItem {
+                        itemDelegate: commandDelegate
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Label {
+                        text: commandDelegate.shortcut
+                        color: Kirigami.Theme.disabledTextColor
+                    }
                 }
+
                 onClicked: {
-                    model.action.trigger()
+                    qaction.trigger()
                     root.close()
                 }
             }
+
             Kirigami.PlaceholderMessage {
                 anchors.centerIn: parent
                 text: i18n("No results found")
