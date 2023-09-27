@@ -1,11 +1,13 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kirigami 2.15 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.akonadi as Akonadi
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.ScrollablePage {
     id: root
@@ -23,14 +25,31 @@ Kirigami.ScrollablePage {
         focus: true
         x: Math.round((parent.width - width) / 2)
         y: Math.round(parent.height / 3)
-        width: Math.round(Math.min(parent.width - Kirigami.Units.gridUnit, Kirigami.Units.gridUnit * 30))
+        width: Math.min(parent.width - Kirigami.Units.gridUnit, Kirigami.Units.gridUnit * 30)
 
+        background: Components.DialogRoundedBackground {}
 
-        contentItem: ColumnLayout {
-            QQC2.Label {
+        contentItem: RowLayout {
+            ColumnLayout {
                 Layout.fillWidth: true
-                text: i18n("Are you sure you want to delete tag \"%1\"?", deleteConfirmSheet.tagName)
-                wrapMode: Text.Wrap
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: i18n("Are you sure you want to delete tag \"%1\"?", deleteConfirmSheet.tagName)
+                    wrapMode: Text.Wrap
+                }
+
+                QQC2.Label {
+                    text: i18n("You won't be able to revert this action")
+                    wrapMode: Text.WordWrap
+                    Layout.fillWidth: true
+                }
+            }
+
+            Kirigami.Icon {
+                source: "data-warning"
+                Layout.preferredWidth: Kirigami.Units.iconSizes.huge
+                Layout.preferredHeight: Kirigami.Units.iconSizes.huge
             }
         }
 
@@ -49,77 +68,65 @@ Kirigami.ScrollablePage {
         currentIndex: -1
         model: Akonadi.TagManager.tagModel
 
-        delegate: QQC2.ItemDelegate {
+        delegate: Delegates.RoundedItemDelegate {
             id: tagDelegate
 
+            required property int index
             required property string name
             required property var tag
 
             property bool editMode: false
 
-            width: ListView.view.width
+            contentItem: RowLayout {
+                id: delegateLayout
 
-            contentItem: Item {
-                implicitWidth: delegateLayout.implicitWidth
-                implicitHeight: delegateLayout.implicitHeight
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: tagDelegate.name
+                    visible: !tagDelegate.editMode
+                    wrapMode: Text.Wrap
+                }
 
-                RowLayout {
-                    id: delegateLayout
+                QQC2.ToolButton {
+                    icon.name: "edit-rename"
+                    onClicked: tagDelegate.editMode = true
+                    visible: !tagDelegate.editMode
+                }
 
-                    anchors {
-                        left: parent.left
-                        top: parent.top
-                        right: parent.right
+                QQC2.ToolButton {
+                    icon.name: "delete"
+                    onClicked: {
+                        deleteConfirmSheet.tag = tagDelegate.tag;
+                        deleteConfirmSheet.tagName = tagDelegate.name;
+                        deleteConfirmSheet.open();
                     }
+                    visible: !tagDelegate.editMode
+                }
 
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: tagDelegate.name
-                        visible: !tagDelegate.editMode
-                        wrapMode: Text.Wrap
-                    }
+                QQC2.TextField {
+                    id: tagNameField
+                    Layout.fillWidth: true
+                    text: tagDelegate.name
+                    visible: tagDelegate.editMode
+                    wrapMode: Text.Wrap
+                }
 
-                    QQC2.ToolButton {
-                        icon.name: "edit-rename"
-                        onClicked: tagDelegate.editMode = true
-                        visible: !tagDelegate.editMode
+                QQC2.ToolButton {
+                    icon.name: "gtk-apply"
+                    visible: tagDelegate.editMode
+                    onClicked: {
+                        Akonadi.TagManager.renameTag(tagDelegate.tag, tagNameField.text)
+                        tagDelegate.editMode = false;
                     }
+                }
 
-                    QQC2.ToolButton {
-                        icon.name: "delete"
-                        onClicked: {
-                            deleteConfirmSheet.tag = tagDelegate.tag;
-                            deleteConfirmSheet.tagName = tagDelegate.name;
-                            deleteConfirmSheet.open();
-                        }
-                        visible: !tagDelegate.editMode
+                QQC2.ToolButton {
+                    icon.name: "gtk-cancel"
+                    onClicked: {
+                        tagDelegate.editMode = false;
+                        tagNameField.text = tagDelegate.name
                     }
-
-                    QQC2.TextField {
-                        id: tagNameField
-                        Layout.fillWidth: true
-                        text: tagDelegate.name
-                        visible: tagDelegate.editMode
-                        wrapMode: Text.Wrap
-                    }
-
-                    QQC2.ToolButton {
-                        icon.name: "gtk-apply"
-                        visible: tagDelegate.editMode
-                        onClicked: {
-                            Akonadi.TagManager.renameTag(tagDelegate.tag, tagNameField.text)
-                            tagDelegate.editMode = false;
-                        }
-                    }
-
-                    QQC2.ToolButton {
-                        icon.name: "gtk-cancel"
-                        onClicked: {
-                            tagDelegate.editMode = false;
-                            tagNameField.text = tagDelegate.name
-                        }
-                        visible: tagDelegate.editMode
-                    }
+                    visible: tagDelegate.editMode
                 }
             }
         }
@@ -147,7 +154,6 @@ Kirigami.ScrollablePage {
 
                 placeholderText: i18n("Create a New Tag…")
                 maximumLength: 50
-                implicitHeight: Kirigami.Units.gridUnit * 3
                 onAccepted: addTagButton.click()
                 background: null
 
