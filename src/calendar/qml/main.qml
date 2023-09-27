@@ -361,18 +361,6 @@ BaseApplication {
     globalDrawer: MainDrawer {
         id: mainDrawer
         mode: pageStack.currentItem ? pageStack.currentItem.mode : CalendarApplication.Event
-
-        onDeleteCalendar: {
-            const openDialogWindow = pageStack.pushDialogLayer(deleteCalendarPageComponent, {
-                collectionId: collectionId,
-                collectionDetails: collectionDetails
-            }, {
-                width: Kirigami.Units.gridUnit * 30,
-                height: Kirigami.Units.gridUnit * 6
-            });
-
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
-        }
     }
 
     contextDrawer: incidenceInfoDrawerEnabled ? incidenceInfoDrawer : null
@@ -700,20 +688,6 @@ BaseApplication {
                 // TODO: Check if parent deleted too
                 closeOpenIncidenceIfSame();
                 CalendarManager.deleteIncidence(incidencePtr, true);
-                closeDialog();
-            }
-            onCancel: closeDialog()
-        }
-    }
-
-    property alias deleteCalendarPageComponent: deleteCalendarPageComponent
-    Component {
-        id: deleteCalendarPageComponent
-        DeleteCalendarPage {
-            id: deleteCalendarPage
-
-            onDeleteCollection: {
-                CalendarManager.deleteCollection(collectionId);
                 closeDialog();
             }
             onCancel: closeDialog()

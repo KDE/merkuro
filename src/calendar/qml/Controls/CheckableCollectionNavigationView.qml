@@ -18,7 +18,6 @@ QQC2.ScrollView {
 
     signal collectionCheckChanged
     signal closeParentDrawer
-    signal deleteCollection(int collectionId, var collectionDetails)
 
     readonly property AgentConfiguration agentConfiguration: AgentConfiguration {}
     readonly property var activeTags: Filter.tags
@@ -376,7 +375,6 @@ QQC2.ScrollView {
                             collectionDetails: CalendarManager.getCollectionDetails(collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: mode !== CalendarApplication.Contact
-                            onDeleteCalendar: root.deleteCollection(collectionId, collectionDetails)
                             onLeftClicked: {
                                 Filter.collectionId = collectionId;
                                 model.checkState = model.checkState === 0 ? 2 : 0;

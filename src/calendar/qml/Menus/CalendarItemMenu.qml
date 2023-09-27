@@ -13,27 +13,41 @@ QQC2.Menu {
     id: actionsPopup
     z: 1000
 
-    signal deleteCalendar(int collectionId, var collectionDetails)
-
-    property var collectionId
-    property var collectionDetails
-    property Akonadi.AgentConfiguration agentConfiguration
+    required property var collectionId
+    required property var collectionDetails
+    required property Akonadi.AgentConfiguration agentConfiguration
 
     QQC2.MenuItem {
         icon.name: "edit-entry"
         text: i18nc("@action:inmenu", "Edit calendar…")
         onClicked: Calendar.CalendarManager.editCollection(actionsPopup.collectionId);
     }
+
     QQC2.MenuItem {
         icon.name: "view-refresh"
         text: i18nc("@action:inmenu", "Update calendar")
         onClicked: Calendar.CalendarManager.updateCollection(actionsPopup.collectionId);
     }
+
     QQC2.MenuItem {
         icon.name: "edit-delete"
         text: i18nc("@action:inmenu", "Delete calendar")
         enabled: actionsPopup.collectionDetails["canDelete"]
-        onClicked: deleteCalendar(actionsPopup.collectionId, actionsPopup.collectionDetails)
+        onClicked: () => {
+            const dialogComponent = Qt.createComponent("qrc:/DeleteCalendarDialog.qml");
+            if (dialogComponent.status !== Component.Ready) {
+                console.error("Error:", dialogComponent.errorString());
+                return;
+            }
+
+            const dialog = dialogComponent.createObject(applicationWindow(), {
+                collectionId: actionsPopup.collectionId,
+                collectionDetails: actionsPopup.collectionDetails
+            });
+
+            dialog.open();
+        }
+
     }
     QQC2.MenuSeparator {
     }

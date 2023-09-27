@@ -21,7 +21,6 @@ Kirigami.OverlayDrawer {
     id: mainDrawer
 
     signal calendarClicked(int collectionId)
-    signal deleteCalendar(int collectionId, var collectionDetails)
 
     required property var mode
     property alias toolbar: toolbar
@@ -338,7 +337,6 @@ Kirigami.OverlayDrawer {
         CheckableCollectionNavigationView {
             onCollectionCheckChanged: mainDrawer.collectionCheckChanged()
             onCloseParentDrawer: mainDrawer.close()
-            onDeleteCollection: mainDrawer.deleteCollection(collectionId, collectionDetails)
 
             mode: mainDrawer.mode
             parentDrawerModal: mainDrawer.modal

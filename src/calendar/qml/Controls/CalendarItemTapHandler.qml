@@ -12,8 +12,6 @@ import org.kde.akonadi 1.0 as Akonadi
 TapHandler {
     id: calendarTapHandler
 
-    signal deleteCalendar(int collectionId, var collectionDetails)
-
     property var collectionId
     property var collectionDetails
     property Akonadi.AgentConfiguration agentConfiguration
@@ -60,8 +58,6 @@ TapHandler {
             collectionId: calendarTapHandler.collectionId
             collectionDetails: calendarTapHandler.collectionDetails
             agentConfiguration: calendarTapHandler.agentConfiguration
-
-            onDeleteCalendar: calendarTapHandler.deleteCalendar(collectionId, collectionDetails)
 
             Component.onCompleted: if(calendarTapHandler.collectionId && !calendarTapHandler.collectionDetails) {
                 calendarTapHandler.collectionDetails = Calendar.CalendarManager.getCollectionDetails(calendarTapHandler.collectionId)
