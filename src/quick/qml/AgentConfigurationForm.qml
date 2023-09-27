@@ -1,15 +1,16 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import org.kde.akonadi 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.akonadi
 
-MobileForm.FormCard {
+FormCard.FormCard {
     id: root
 
     required property var mimetypes
@@ -19,93 +20,108 @@ MobileForm.FormCard {
         mimetypes: root.mimetypes
     }
 
-    contentItem: ColumnLayout {
-        spacing: 0
+    Repeater {
+        model: root._configuration.runningAgents
+        delegate: FormCard.FormButtonDelegate {
+            id: agentDelegate
 
-        Repeater {
-            model: root._configuration.runningAgents
-            delegate: MobileForm.FormButtonDelegate {
-                Loader {
-                    id: dialogLoader
-                    sourceComponent: Kirigami.PromptDialog {
-                        id: dialog
-                        title: i18n("Configure %1", model.display)
-                        subtitle: i18n("Modify or delete this account agent.")
-                        standardButtons: Kirigami.Dialog.NoButton
+            required property int index
+            required property string iconName
+            required property string name
+            required property string statusMessage
+            required property bool online
 
-                        customFooterActions: [
-                            Kirigami.Action {
-                                text: i18n("Modify")
-                                icon.name: "edit-entry"
-                                onTriggered: {
-                                    root._configuration.edit(model.index);
-                                    dialog.close();
-                                }
-                            },
-                            Kirigami.Action {
-                                text: i18n("Delete")
-                                icon.name: "delete"
-                                onTriggered: {
-                                    root._configuration.remove(model.index);
-                                    dialog.close();
-                                }
+            Loader {
+                id: dialogLoader
+                sourceComponent: Kirigami.PromptDialog {
+                    id: dialog
+                    title: i18n("Configure %1", agentDelegate.name)
+                    subtitle: i18n("Modify or delete this account agent.")
+                    standardButtons: Kirigami.Dialog.NoButton
+
+                    customFooterActions: [
+                        Kirigami.Action {
+                            text: i18n("Modify")
+                            icon.name: "edit-entry"
+                            onTriggered: {
+                                root._configuration.edit(agentDelegate.index);
+                                dialog.close();
                             }
-                        ]
-                    }
-                }
-
-                leadingPadding: Kirigami.Units.largeSpacing
-                leading: Kirigami.Icon {
-                    source: model.decoration
-                    implicitWidth: Kirigami.Units.iconSizes.medium
-                    implicitHeight: Kirigami.Units.iconSizes.medium
-                }
-
-                text: model.display
-                description: model.statusMessage
-
-                onClicked: {
-                    dialogLoader.active = true;
-                    dialogLoader.item.open();
+                        },
+                        Kirigami.Action {
+                            text: i18n("Delete")
+                            icon.name: "delete"
+                            onTriggered: {
+                                root._configuration.remove(agentDelegate.index);
+                                dialog.close();
+                            }
+                        }
+                    ]
                 }
             }
-        }
 
-        MobileForm.FormDelegateSeparator { below: addAccountDelegate }
+            leadingPadding: Kirigami.Units.largeSpacing
+            leading: Kirigami.Icon {
+                source: agentDelegate.iconName
+                implicitWidth: Kirigami.Units.iconSizes.medium
+                implicitHeight: Kirigami.Units.iconSizes.medium
+            }
 
-        MobileForm.FormButtonDelegate {
-            id: addAccountDelegate
-            text: i18n("Add Account")
-            icon.name: "list-add"
-            onClicked: pageStack.pushDialogLayer(addAccountPage)
+            text: name
+            description: statusMessage
+
+            onClicked: {
+                dialogLoader.active = true;
+                dialogLoader.item.open();
+            }
         }
     }
 
-    Component {
+    FormCard.FormDelegateSeparator { below: addAccountDelegate }
+
+    FormCard.FormButtonDelegate {
+        id: addAccountDelegate
+        text: i18n("Add Account")
+        icon.name: "list-add"
+        onClicked: pageStack.pushDialogLayer(addAccountPage)
+    }
+
+    data: Component {
         id: addAccountPage
         Kirigami.ScrollablePage {
             id: overlay
             title: root.addPageTitle
 
-            footer: QQC2.DialogButtonBox {
-                Kirigami.Theme.inherit: false
-                Kirigami.Theme.colorSet: Kirigami.Theme.Window
-                standardButtons: QQC2.DialogButtonBox.Close
-                onRejected: closeDialog()
+            footer: QQC2.ToolBar {
+                width: parent.width
 
-                background: Rectangle {
-                    color: Kirigami.Theme.backgroundColor
+                contentItem: QQC2.DialogButtonBox {
+                    padding: 0
+                    standardButtons: QQC2.DialogButtonBox.Close
+                    onRejected: closeDialog()
                 }
             }
 
             ListView {
                 implicitWidth: Kirigami.Units.gridUnit * 20
                 model: root._configuration.availableAgents
-                delegate: Kirigami.BasicListItem {
-                    label: model.display
-                    icon.name: model.decoration
-                    subtitle: model.description
-                    subtitleItem.wrapMode: Text.Wrap
+                delegate: Delegates.RoundedItemDelegate {
+                    id: agentDelegate
+
+                    required property int index
+                    required property string name
+                    required property string iconName
+                    required property string description
+
+                    text: name
+                    icon.name: iconName
+
+                    contentItem: Delegates.SubtitleContentItem {
+                        itemDelegate: agentDelegate
+                        subtitle: agentDelegate.description
+                        subtitleItem.wrapMode: Text.Wrap
+                    }
+
                     enabled: root._configuration.availableAgents.flags(root._configuration.availableAgents.index(index, 0)) & Qt.ItemIsEnabled
                     onClicked: {
                         root._configuration.createNew(index);
