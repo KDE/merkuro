@@ -7,6 +7,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
 
@@ -19,7 +20,7 @@ FormCard.FormCardPage {
         id: contactGroupEditor
         mode: ContactGroupEditor.CreateMode
         onFinished: root.closeDialog()
-        onErrorOccured: {
+        onErrorOccured: (error) => {
             errorContainer.text = error;
             errorContainer.visible = true;
         }
@@ -45,7 +46,7 @@ FormCard.FormCardPage {
         }
     }
 
-    header: KirigamiComponents.Banner {
+    header: Components.Banner {
         id: errorContainer
         type: Kirigami.MessageType.Error
         visible: false
@@ -55,35 +56,32 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.largeSpacing
-        contentItem: ColumnLayout {
-            spacing: 0
 
-            Akonadi.MobileCollectionComboBox {
-                id: addressBookComboBox
+        Akonadi.MobileCollectionComboBox {
+            id: addressBookComboBox
 
-                text: i18n("Address Book:")
-                Layout.fillWidth: true
-                enabled: mode === ContactGroupEditor.CreateMode
+            text: i18n("Address Book:")
+            Layout.fillWidth: true
+            enabled: mode === ContactGroupEditor.CreateMode
 
-                defaultCollectionId: if (mode === ContactGroupEditor.CreateMode) {
-                    return Config.lastUsedAddressBookCollection;
-                } else {
-                    return contactGroupEditor.collectionId;
-                }
-
-                mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
-                accessRightsFilter: Akonadi.Collection.CanCreateItem
-                onUserSelectedCollection: collection => contactGroupEditor.setDefaultAddressBook(collection)
+            defaultCollectionId: if (mode === ContactGroupEditor.CreateMode) {
+                return Config.lastUsedAddressBookCollection;
+            } else {
+                return contactGroupEditor.collectionId;
             }
 
-            FormCard.FormDelegateSeparator {}
+            mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
+            accessRightsFilter: Akonadi.Collection.CanCreateItem
+            onUserSelectedCollection: collection => contactGroupEditor.setDefaultAddressBook(collection)
+        }
 
-            FormCard.FormTextFieldDelegate {
-                label: i18n("Name:")
-                text: contactGroupEditor.name
-                onTextChanged: contactGroupEditor.name = text;
-                placeholderText: i18n("Contact group name")
-            }
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextFieldDelegate {
+            label: i18n("Name:")
+            text: contactGroupEditor.name
+            onTextChanged: contactGroupEditor.name = text;
+            placeholderText: i18n("Contact group name")
         }
     }
 
@@ -95,17 +93,24 @@ FormCard.FormCardPage {
         Repeater {
             id: repeater
             model: contactGroupEditor.groupModel
-            FormCard.AbstractFormDelegate {
+
+            delegate: FormCard.AbstractFormDelegate {
+                id: contactDelegate
+
+                required property int index
+                required property string displayName
+                required property string email
+
                 background: null
                 contentItem: RowLayout {
                     QQC2.TextField {
-                        text: model.display
+                        text: contactDelegate.displayName
                         enabled: false
                         Layout.fillWidth: true
                         Layout.maximumWidth: Math.round(0.4 * parent.width)
                     }
                     QQC2.TextField {
-                        text: model.email
+                        text: contactDelegate.email
                         enabled: false
                         Layout.fillWidth: true
                     }
@@ -121,8 +126,8 @@ FormCard.FormCardPage {
             background: null
             contentItem: RowLayout {
                 QQC2.ComboBox {
-                    property string gid: null
                     id: nameSearch
+                    property string gid: ''
                     textRole: 'display'
                     valueRole: 'gid'
                     model: ContactsModel {}

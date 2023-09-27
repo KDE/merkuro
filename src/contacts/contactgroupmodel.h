@@ -18,6 +18,7 @@ class ContactGroupModel : public QAbstractListModel
 public:
     enum Role {
         IsReferenceRole = Qt::UserRole,
+        DisplayNameRole,
         AllEmailsRole,
         EmailRole,
         IconNameRole,

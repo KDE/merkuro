@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as Controls
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.merkuro.contact 1.0
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.merkuro.contact
 
 Kirigami.ScrollablePage {
     id: page
@@ -23,24 +24,35 @@ Kirigami.ScrollablePage {
     topPadding: 0
 
     function openEditor() {
-        pageStack.pushDialogLayer(Qt.resolvedUrl("ContactGroupEditorPage.qml"), {
+        const editor = pageStack.pushDialogLayer(Qt.resolvedUrl("contact_editor/ContactGroupEditorPage.qml"), {
             mode: ContactGroupEditor.EditMode,
-            item: page.contactGroup.item
-        })
+        });
+        editor.item = page.contactGroup.item;
     }
 
     actions: Kirigami.Action {
-        iconName: "document-edit"
-        text: i18n("Edit")
+        icon.name: "document-edit"
+        text: i18nc("@action:button", "Edit")
         onTriggered: openEditor()
     }
 
     ListView {
         model: contactGroup.model
-        delegate: Kirigami.BasicListItem {
-            icon: model.iconName
-            label: model.display
-            subtitle: model.email
+        delegate: Delegates.RoundedItemDelegate {
+            id: contact
+
+            required property int index
+            required property string iconName
+            required property string email
+            required property string displayName
+
+            icon.name: iconName
+            text: displayName
+
+            contentItem: Delegates.SubtitleContentItem {
+                itemDelegate: contact
+                subtitle: contact.email
+            }
         }
     }
 }

@@ -223,6 +223,7 @@ QVariant ContactGroupModel::data(const QModelIndex &index, int role) const
 
     switch (role) {
     case Qt::DisplayRole:
+    case DisplayNameRole:
         if (member.loadingError) {
             return i18n("Contact does not exist any more");
         }
@@ -269,6 +270,7 @@ QHash<int, QByteArray> ContactGroupModel::roleNames() const
     return {
         {Qt::DisplayRole, QByteArray("display")},
         {EmailRole, QByteArray("email")},
+        {DisplayNameRole, QByteArray("displayName")},
         {IconNameRole, QByteArray("iconName")},
     };
 }
