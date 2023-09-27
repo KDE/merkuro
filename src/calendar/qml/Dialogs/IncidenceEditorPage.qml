@@ -9,6 +9,7 @@ import Qt.labs.platform
 import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.contact 1.0
 import org.kde.merkuro.calendar 1.0 as Calendar
@@ -825,17 +826,43 @@ Kirigami.ScrollablePage {
                             root.incidenceWrapper.categories.join(i18nc("List separator", ", ")) :
                             Kirigami.Settings.tabletMode ? i18n("Tap to set tags…") : i18n("Click to set tags…")
 
-                        delegate: Kirigami.CheckableListItem {
-                            label: model.display
-                            reserveSpaceForIcon: false
-                            checked: root.incidenceWrapper.categories.includes(model.display)
-                            action: QQC2.Action {
-                                onTriggered: {
-                                    checked = !checked;
-                                    root.incidenceWrapper.categories.includes(model.display) ?
-                                        root.incidenceWrapper.categories = root.incidenceWrapper.categories.filter(tag => tag !== model.display) :
-                                        root.incidenceWrapper.categories = [...root.incidenceWrapper.categories, model.display]
+                        delegate: Delegates.RoundedItemDelegate {
+                            id: delegate
+
+                            required property int index
+                            required property string name
+
+                            text: name
+
+                            checkable: true
+                            checked: root.incidenceWrapper.categories.includes(name)
+                            highlighted: false
+
+                            topInset: index === 0 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
+                            bottomInset: index === ListView.view.count - 1 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
+
+                            contentItem: RowLayout {
+                                QQC2.CheckBox {
+                                    id: checkBox
+                                    activeFocusOnTab: false
+
+                                    checked: delegate.checked
+                                    onCheckedChanged: if (delegate.checked !== checked) {
+                                        delegate.checked = checked;
+                                    }
                                 }
+
+                                Delegates.DefaultContentItem {
+                                    itemDelegate: delegate
+                                }
+                            }
+
+                            onCheckedChanged: {
+                                root.incidenceWrapper.categories.includes(name) ?
+                                    root.incidenceWrapper.categories = root.incidenceWrapper.categories.filter(tag => tag !== name) :
+                                    root.incidenceWrapper.categories = [...root.incidenceWrapper.categories, name]
+                                checkBox.checked = delegate.checked;
+
                             }
                         }
                     }
