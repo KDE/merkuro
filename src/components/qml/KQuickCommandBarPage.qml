@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as Components
 import QtQuick.Templates as T
 
 QQC2.Dialog {
@@ -26,19 +27,7 @@ QQC2.Dialog {
 
     anchors.centerIn: applicationWindow().overlay
 
-    background: Kirigami.ShadowedRectangle {
-        color: Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.mediumSpacing
-        shadow {
-            size: Kirigami.Units.largeSpacing
-            color: Qt.rgba(0.0, 0.0, 0.0, 0.3)
-            yOffset: 2
-        }
-        border {
-            color: Kirigami.ColorUtils.tintWithAlpha(color, Kirigami.Theme.textColor, 0.15)
-            width: 1
-        }
-    }
+    background: Components.DialogRoundedBackground {}
 
     onOpened: {
         searchField.forceActiveFocus();

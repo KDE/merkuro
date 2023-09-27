@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.merkuro.contact 1.0
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.merkuro.contact
 
 Kirigami.Action {
     property string name
@@ -16,24 +17,36 @@ Kirigami.Action {
         QQC2.Dialog {
             id: deleteContactConfirmationDialog
             visible: false
-            title: i18n("Warning")
+            title: i18nc("@title:window", "Warning")
             modal: true
             focus: true
-            x: (parent.width - width) / 2
-            y: parent.height / 3
+            x: Math.round((parent.width - width) / 2)
+            y: Math.round(parent.height / 3)
             width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
 
-            contentItem: ColumnLayout {
-                Kirigami.Heading {
-                    level: 4
-                    text: i18n("Do you really want to delete your contact: %1?", name)
-                    wrapMode: Text.WordWrap
+            background: Components.DialogRoundedBackground {}
+
+            contentItem: RowLayout {
+                ColumnLayout {
                     Layout.fillWidth: true
+
+                    Kirigami.Heading {
+                        level: 4
+                        text: i18n("Do you really want to delete your contact: \"%1\"?", name.trim().length > 0 ? name : i18nc("Placeholder when no name is set", "No name"))
+                        wrapMode: Text.WordWrap
+                        Layout.fillWidth: true
+                    }
+                    QQC2.Label {
+                        text: i18n("You won't be able to revert this action")
+                        wrapMode: Text.WordWrap
+                        Layout.fillWidth: true
+                    }
                 }
-                QQC2.Label {
-                    text: i18n("You won't be able to revert this action")
-                    wrapMode: Text.WordWrap
-                    Layout.fillWidth: true
+
+                Kirigami.Icon {
+                    source: "data-warning"
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.huge
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.huge
                 }
             }
 
