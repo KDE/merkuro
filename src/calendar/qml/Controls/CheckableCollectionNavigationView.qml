@@ -9,7 +9,6 @@ import org.kde.kirigami 2.16 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.contact 1.0
-import org.kde.merkuro.mail 1.0
 import org.kde.akonadi 1.0
 import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
@@ -257,7 +256,6 @@ QQC2.ScrollView {
                                 visible: model.checkState != null
                                 color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
                                 checked: model.checkState === 2
-                                onCheckedChanged: root.collectionCheckChanged()
                                 onClicked: {
                                     model.checkState = model.checkState === 0 ? 2 : 0
                                     root.collectionCheckChanged()
