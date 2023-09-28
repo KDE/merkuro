@@ -61,7 +61,7 @@ public:
      * Returns the content mimetype the collections are filtered by.
      * Don't assume this list has the original order.
      */
-    Q_REQUIRED_RESULT QStringList mimeTypeFilter() const;
+    [[nodiscard]] QStringList mimeTypeFilter() const;
 
     /**
      * Sets the access @p rights the collections shall be filtered by.
@@ -71,7 +71,7 @@ public:
     /**
      * Returns the access rights the collections are filtered by.
      */
-    Q_REQUIRED_RESULT int accessRightsFilter() const;
+    [[nodiscard]] int accessRightsFilter() const;
 
     /**
      * Return the default collection id.
@@ -91,7 +91,7 @@ public:
     /**
      * Returns if the virual exollections are excluded
      */
-    Q_REQUIRED_RESULT bool excludeVirtualCollections() const;
+    [[nodiscard]] bool excludeVirtualCollections() const;
 
     int currentIndex() const;
     void setCurrentIndex(int currendIndex);

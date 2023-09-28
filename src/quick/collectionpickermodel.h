@@ -59,7 +59,7 @@ public:
      * Returns the content mimetype the collections are filtered by.
      * Don't assume this list has the original order.
      */
-    Q_REQUIRED_RESULT QStringList mimeTypeFilter() const;
+    [[nodiscard]] QStringList mimeTypeFilter() const;
 
     /**
      * Sets the access @p rights the collections shall be filtered by.
@@ -69,7 +69,7 @@ public:
     /**
      * Returns the access rights the collections are filtered by.
      */
-    Q_REQUIRED_RESULT Akonadi::Collection::Right accessRightsFilter() const;
+    [[nodiscard]] Akonadi::Collection::Right accessRightsFilter() const;
 
     /**
      * Sets if the virtual collections are excluded.
@@ -79,7 +79,7 @@ public:
     /**
      * Returns if the virual exollections are excluded
      */
-    Q_REQUIRED_RESULT bool excludeVirtualCollections() const;
+    [[nodiscard]] bool excludeVirtualCollections() const;
 
 Q_SIGNALS:
     void mimeTypeFilterChanged();

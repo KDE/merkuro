@@ -44,7 +44,7 @@ public:
     /**
      * Stores the meta data to the given @p contact.
      */
-    Q_REQUIRED_RESULT QVariantMap storeMetaData() const;
+    [[nodiscard]] QVariantMap storeMetaData() const;
 
     /**
      * Sets the mode that is used for the display
@@ -56,7 +56,7 @@ public:
      * Returns the mode that is used for the display
      * name of that contact.
      */
-    Q_REQUIRED_RESULT int displayNameMode() const;
+    [[nodiscard]] int displayNameMode() const;
 
     /**
      * Sets the @p descriptions of the custom fields of that contact.
@@ -79,7 +79,7 @@ public:
     /**
      * Returns the descriptions of the custom fields of the contact.
      */
-    Q_REQUIRED_RESULT QVariantList customFieldDescriptions() const;
+    [[nodiscard]] QVariantList customFieldDescriptions() const;
 
 private:
     int m_displayNameMode = -1;

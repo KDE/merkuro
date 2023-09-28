@@ -34,7 +34,7 @@ public:
     void memberChanged();
 
     void loadContactGroup(const KContacts::ContactGroup &group);
-    Q_REQUIRED_RESULT bool storeContactGroup(KContacts::ContactGroup &group);
+    [[nodiscard]] bool storeContactGroup(KContacts::ContactGroup &group);
     void setupMonitor();
 
     ContactGroupEditor::Mode mMode = ContactGroupEditor::Mode::CreateMode;

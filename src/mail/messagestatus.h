@@ -100,92 +100,92 @@ public:
     /** Check for Unknown status.
         @return true if status is unknown.
     */
-    Q_REQUIRED_RESULT bool isOfUnknownStatus() const;
+    [[nodiscard]] bool isOfUnknownStatus() const;
 
     /** Check for Read status. Note that ignored messages are read.
         @return true if status is read.
     */
-    Q_REQUIRED_RESULT bool isRead() const;
+    [[nodiscard]] bool isRead() const;
 
     /** Check for Deleted status.
         @return true if status is deleted.
     */
-    Q_REQUIRED_RESULT bool isDeleted() const;
+    [[nodiscard]] bool isDeleted() const;
 
     /** Check for Replied status.
         @return true if status is replied.
     */
-    Q_REQUIRED_RESULT bool isReplied() const;
+    [[nodiscard]] bool isReplied() const;
 
     /** Check for Forwarded status.
         @return true if status is forwarded.
     */
-    Q_REQUIRED_RESULT bool isForwarded() const;
+    [[nodiscard]] bool isForwarded() const;
 
     /** Check for Queued status.
         @return true if status is queued.
     */
-    Q_REQUIRED_RESULT bool isQueued() const;
+    [[nodiscard]] bool isQueued() const;
 
     /** Check for Sent status.
         @return true if status is sent.
     */
-    Q_REQUIRED_RESULT bool isSent() const;
+    [[nodiscard]] bool isSent() const;
 
     /** Check for Important status.
         @return true if status is important.
     */
-    Q_REQUIRED_RESULT bool isImportant() const;
+    [[nodiscard]] bool isImportant() const;
 
     /** Check for Watched status.
         @return true if status is watched.
     */
-    Q_REQUIRED_RESULT bool isWatched() const;
+    [[nodiscard]] bool isWatched() const;
 
     /** Check for Ignored status.
         @return true if status is ignored.
     */
-    Q_REQUIRED_RESULT bool isIgnored() const;
+    [[nodiscard]] bool isIgnored() const;
 
     /** Check for ToAct status.
         @return true if status is action item.
     */
-    Q_REQUIRED_RESULT bool isToAct() const;
+    [[nodiscard]] bool isToAct() const;
 
     /** Check for Spam status.
         @return true if status is spam.
     */
-    Q_REQUIRED_RESULT bool isSpam() const;
+    [[nodiscard]] bool isSpam() const;
 
     /** Check for Ham status.
         @return true if status is not spam.
     */
-    Q_REQUIRED_RESULT bool isHam() const;
+    [[nodiscard]] bool isHam() const;
 
     /** Check for Attachment status.
         @return true if status indicates an attachment.
     */
-    Q_REQUIRED_RESULT bool hasAttachment() const;
+    [[nodiscard]] bool hasAttachment() const;
 
     /** Check for Invitation status.
         @return true if status indicates an invitation.
     */
-    Q_REQUIRED_RESULT bool hasInvitation() const;
+    [[nodiscard]] bool hasInvitation() const;
 
     /** Check for Signed status.
         @return true if status is signed.
     */
-    Q_REQUIRED_RESULT bool isSigned() const;
+    [[nodiscard]] bool isSigned() const;
 
     /** Check for Encrypted status.
         @return true if status is encrypted.
     */
-    Q_REQUIRED_RESULT bool isEncrypted() const;
+    [[nodiscard]] bool isEncrypted() const;
 
     /** Check for error status.
         @return true if status indicates an error.
     */
-    Q_REQUIRED_RESULT bool hasError() const;
+    [[nodiscard]] bool hasError() const;
 
     /* ----- setters ----------------------------------------------------- */
 
@@ -282,7 +282,7 @@ public:
      all integrity checks in the setter methods.
      @return The status encoded in bits.
      */
-    Q_REQUIRED_RESULT qint32 toQInt32() const;
+    [[nodiscard]] qint32 toQInt32() const;
 
     /** Set the status as a whole e.g. for reading from an index.
         Don't manipulte the index via this value, this bypasses
@@ -297,7 +297,7 @@ public:
 
         @note This code is legacy for the KMail1 indexes
     */
-    Q_REQUIRED_RESULT QString statusStr() const;
+    [[nodiscard]] QString statusStr() const;
 
     /** Set the status based on a string representation.
         @param aStr The status string to be analyzed.
@@ -311,7 +311,7 @@ public:
     /** Get the status as a whole e.g. for storage as IMAP flags.
         @return The status encoded in flags.
     */
-    Q_REQUIRED_RESULT QSet<QByteArray> statusFlags() const;
+    [[nodiscard]] QSet<QByteArray> statusFlags() const;
 
     /** Set the status as a whole e.g. for reading from IMAP flags.
         @param flags set of flags for status as a whole

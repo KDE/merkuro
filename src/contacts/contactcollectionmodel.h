@@ -11,5 +11,5 @@ class ContactCollectionModel : public KCheckableProxyModel
 public:
     explicit ContactCollectionModel(QObject *parent);
 
-    Q_REQUIRED_RESULT QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 };
