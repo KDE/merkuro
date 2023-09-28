@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-24 01:44+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2023-09-10 17:32+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -262,7 +262,7 @@ msgid "Developer"
 msgstr "நிரலாளர்"
 
 #: calendar/models/todosortfilterproxymodel.cpp:146
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:826
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -337,8 +337,8 @@ msgstr[0] "ஒவ்வொரு ஆண்டும் %3 %2"
 msgstr[1] "%1 ஆண்டுகளுக்கு ஒருமுறை %3 %2"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:596
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
 #, kde-format
 msgid "Never"
 msgstr "ஒருபோதும் வேண்டாம்"
@@ -439,18 +439,18 @@ msgstr "%1 (குறைவான முக்கியத்துவம்)"
 msgid "No set priority level"
 msgstr "முக்கியத்துவம் அமைக்கப்படவில்லை"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
 msgstr "நாள்காட்டிக்கான நிறத்தை தேர்ந்தெடுப்பது"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:57
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:55
 #, kde-format
 msgid "Tags"
 msgstr "குறிச்சொற்கள்"
 
-#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:133
+#: calendar/qml/Controls/CheckableCollectionNavigationView.qml:131
 #, kde-format
 msgid "Calendars"
 msgstr "நாள்காட்டிகள்"
@@ -537,10 +537,10 @@ msgid "Create new calendar"
 msgstr "புதிய நாள்காட்டியை உருவாக்கு"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
-#: calendar/qml/Dialogs/DeleteCalendarPage.qml:71
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:51
+#: contacts/qml/private/DeleteContactAction.qml:64
 #: mail/qml/actions/DeleteFolderAction.qml:32
 #: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
@@ -676,18 +676,15 @@ msgstr "பார்"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:66
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:90
-#: contacts/qml/private/ContactGroupPage.qml:34
 #, kde-format
 msgid "Edit"
 msgstr "திருத்து"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:72
-#: calendar/qml/Dialogs/DeleteCalendarPage.qml:22
-#: calendar/qml/Dialogs/DeleteCalendarPage.qml:65
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:46
+#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "நீக்கு"
@@ -824,30 +821,52 @@ msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
 msgstr "<b>%1</b> - %2"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:20
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:22
 #, kde-format
 msgid "Choose a Task Calendar"
 msgstr "பணிகளுக்கான நாள்காட்டியை தேர்ந்தெடுப்பது"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:22
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:24
 #, kde-format
 msgid "Choose a Calendar"
 msgstr "நாள்காட்டியை தேர்ந்தெடுப்பது"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:24
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:26
 #, kde-format
 msgid "Choose an Address Book"
 msgstr "முகவரிப்புத்தகத்தை தேர்ந்தெடுப்பது"
 
-#: calendar/qml/Dialogs/DeleteCalendarPage.qml:22
-#, kde-format
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
+#, fuzzy, kde-format
+#| msgid "Delete calendar"
+msgctxt "@title:window"
 msgid "Delete calendar"
 msgstr "நாள்காட்டியை நீக்கு"
 
-#: calendar/qml/Dialogs/DeleteCalendarPage.qml:49
-#, kde-format
-msgid "Do you want to delete calendar: \"%1\"?"
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@title:window"
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:51
+#, fuzzy, kde-format
+#| msgid "Do you want to delete calendar: \"%1\"?"
+msgid "Do you want to delete the calendar: \"%1\"?"
 msgstr "\"%1\" என்ற நாள்காட்டியை உறுதியாக நீக்க வேண்டுமா?"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:57
+#: contacts/qml/private/DeleteContactAction.qml:40
+#: quick/qml/TagManagerPage.qml:43
+#, kde-format
+msgid "You won't be able to revert this action"
+msgstr "இச்செயலை திரும்பப்பெற முடியாது"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:76
+#, kde-format
+msgid "Delete calendar"
+msgstr "நாள்காட்டியை நீக்கு"
 
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:27
 #, kde-format
@@ -919,305 +938,305 @@ msgstr "இதை மட்டும் நீக்கு"
 msgid "Delete All"
 msgstr "அனைத்தையும் நீக்கு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:42
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "%1 திருத்து"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "%1 சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:54
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:170
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "சேமி"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:53
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:54
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:170
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:134
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "செல்லுபடியாகாத தேதிகள் உள்ளிடப்பட்டன."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:134
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "முடியும் தேதி, துவக்க தேதிக்கு முந்தையதாக இருக்க முடியாது."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:147
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:148
 #, kde-format
 msgid "Calendar:"
 msgstr "நாள்காட்டி:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:175
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:176
 #, kde-format
 msgid "Summary:"
 msgstr "தலைப்பு:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:186
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Completion:"
 msgstr "நிறைவு:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:220
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:221
 #, kde-format
 msgid "All day"
 msgstr "முழு நாளும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:252
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:253
 #, kde-format
 msgid "Start:"
 msgstr "துவக்கம்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:299
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:300
 #, kde-format
 msgid "Due:"
 msgstr "உரிய நேரம்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:299
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:300
 #, kde-format
 msgid "End:"
 msgstr "முடிவு:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:346
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:347
 #, kde-format
 msgid "Timezone:"
 msgstr "நேரமண்டலம்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:365
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:366
 #, kde-format
 msgid "Repeat:"
 msgstr "மீளநிகழ்வது:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
 #, kde-format
 msgid "Daily"
 msgstr "ஒவ்வொரு நாளும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
 #, kde-format
 msgid "Weekly"
 msgstr "ஒவ்வொரு வாரமும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
 #, kde-format
 msgid "Monthly"
 msgstr "ஒவ்வொரு மாதமும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
 #, kde-format
 msgid "Yearly"
 msgstr "ஒவ்வொரு ஆண்டும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "வேறு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:431
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:432
 #, kde-format
 msgid "Every:"
 msgstr "ஒவ்வொரு:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:478
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:479
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "நாள்"
 msgstr[1] "நாட்கள்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:479
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:480
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "வாரம்"
 msgstr[1] "வாரங்கள்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:480
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:481
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "மாதம்"
 msgstr[1] "மாதங்கள்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:481
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:482
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "ஆண்டு"
 msgstr[1] "ஆண்டுகள்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:551
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:552
 #, kde-format
 msgid "On:"
 msgstr "இந்நாளில்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "ஒவ்வொரு மாத‍த்தின் %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:572
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "ஒவ்வொரு மாத‍த்தின் %1 %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:582
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgid "Ends:"
 msgstr "முடிவது:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
 #, kde-format
 msgid "On"
 msgstr "குறிப்பிட்ட நேரத்தில்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:599
 #, kde-format
 msgid "After"
 msgstr "நிகழ்வுகளுக்கு பிறகு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:634
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:635
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "நிகழ்வு"
 msgstr[1] "நிகழ்வுகள்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:640
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:641
 #, kde-format
 msgid "Exceptions:"
 msgstr "விதிவிலக்குகள்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:647
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "மறுநிகழ்வுக்கான விதிவிலக்கை சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:689
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:690
 #, kde-format
 msgid "Location:"
 msgstr "இடம்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:714
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:801
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:802
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:960
 #, kde-format
 msgid "Optional"
 msgstr "கட்டாயமில்லை"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:764
 #, kde-format
 msgid "Show map"
 msgstr "நிலப்படத்தை காட்டு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:795
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:796
 #, kde-format
 msgid "Description:"
 msgstr "விவரணம்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:816
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
 #, kde-format
 msgid "Tags:"
 msgstr "குறிச்சொற்கள்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:826
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "குறிச்சொற்களை அமைக்க தட்டுங்கள்…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:826
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
 #, kde-format
 msgid "Click to set tags…"
 msgstr "குறிச்சொற்களை அமைக்க கிளிக் செய்யுங்கள்…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:843
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:870
 #, kde-format
 msgid "Manage tags…"
 msgstr "குறிச்சொற்களை நிர்வகி…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:881
 #, kde-format
 msgid "Reminders:"
 msgstr "நினைவூட்டல்கள்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:877
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
 #, kde-format
 msgid "Add Reminder"
 msgstr "நினைவூட்டலை சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:918
 #, kde-format
 msgid "Attendees:"
 msgstr "பங்கேற்போர்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:926
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:82
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:953
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Name:"
 msgstr "பெயர்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:951
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:978
 #, kde-format
 msgid "Email:"
 msgstr "மின்னஞ்சல்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:958
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:985
 #, kde-format
 msgid "Required"
 msgstr "கட்டாயம் வரவேண்டும்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:967
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
 #, kde-format
 msgid "Status:"
 msgstr "நிலை:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:991
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1018
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP கோரு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1032
 #, kde-format
 msgid "Add Attendee"
 msgstr "பங்கேற்பவரை சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1016
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1043
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "தொடர்புகளிலிருந்து தேர்ந்தெடு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
 #, kde-format
 msgid "Fill in Manually"
 msgstr "கைமுறையாக நிரப்பு"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1034
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1061
 #, kde-format
 msgid "Attachments:"
 msgstr "உடனிணைப்புகள்:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1057
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1084
 #, kde-format
 msgid "Add Attachment"
 msgstr "உடனிணைப்பை சேர்"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1064
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1091
 #, kde-format
 msgid "Add an attachment"
 msgstr "உடனிணைப்பை சேர்"
@@ -1263,51 +1282,51 @@ msgstr "முடிக்காத‍தாக குறி"
 msgid "Mark Complete"
 msgstr "முடித்த‍தாக குறி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:117
 #, kde-format
 msgid "Calendar"
 msgstr "நாள்காட்டி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:162
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:161
+#: calendar/qml/Drawers/MainDrawer.qml:284
 #, kde-format
 msgid "Undo: "
 msgstr "செயல்நீக்கு: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:170
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:169
+#: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
 msgid "Redo: "
 msgstr "மீளச்செய்: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:179
+#: calendar/qml/Drawers/MainDrawer.qml:178
 #: calendar/qml/Menus/GlobalMenuBar.qml:106 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "அனைத்து நாள்காட்டிகளையும் புதுப்பி"
 
-#: calendar/qml/Drawers/MainDrawer.qml:186 calendar/qml/main.qml:241
+#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
 #: mail/qml/app/main.qml:45
 #, kde-format
 msgid "Configure"
 msgstr "அமை"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:284
 #, kde-format
 msgid "Undo"
 msgstr "செயல்நீக்கு"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
 msgid "Redo"
 msgstr "மீளச்செய்"
 
-#: calendar/qml/Drawers/MainDrawer.qml:301
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgid "Settings"
 msgstr "அமைப்புகள்"
 
-#: calendar/qml/Drawers/MainDrawer.qml:375
+#: calendar/qml/Drawers/MainDrawer.qml:373
 #, kde-format
 msgid "View all tasks"
 msgstr "அனைத்து பணிகளையும் காட்டு"
@@ -1629,13 +1648,13 @@ msgstr "புதிய பணியை உருவாக்கு…"
 msgid "Quickly Add a New Task."
 msgstr "புதிய பணியை எளிதில் சேர்க்கும்."
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:24
+#: calendar/qml/Menus/CalendarItemMenu.qml:22
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit calendar…"
 msgstr "நாள்காட்டியை திருத்து…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:29
+#: calendar/qml/Menus/CalendarItemMenu.qml:28
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar"
@@ -1647,25 +1666,25 @@ msgctxt "@action:inmenu"
 msgid "Delete calendar"
 msgstr "நாள்காட்டியை நீக்கு"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:42
+#: calendar/qml/Menus/CalendarItemMenu.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar colour…"
 msgstr "நாள்காட்டிக்கான நிறத்தை அமை…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:54
+#: calendar/qml/Menus/CalendarItemMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "நாள்காட்டியின் மூலம் குறித்த அமைப்புகள்…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:60
+#: calendar/qml/Menus/CalendarItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "நாள்காட்டியின் மூலத்தை புதுப்பி"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:66
+#: calendar/qml/Menus/CalendarItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
@@ -2162,7 +2181,7 @@ msgctxt "@action:menu"
 msgid "Merkuro Handbook"
 msgstr "மெற்குரோ கையேடு"
 
-#: components/qml/KQuickCommandBarPage.qml:90
+#: components/qml/KQuickCommandBarPage.qml:131
 #, kde-format
 msgid "No results found"
 msgstr "முடிவேதும் இல்லை"
@@ -2236,18 +2255,18 @@ msgstr "எந்த முகவரிப்புத்தகமும் த�
 msgid "The member with name <b>%1</b> is missing an email address"
 msgstr "<b>%1</b> என்பவரின் மின்னஞ்சல் முகவரியை காணவில்லை"
 
-#: contacts/contactgroupmodel.cpp:227
+#: contacts/contactgroupmodel.cpp:228
 #, kde-format
 msgid "Contact does not exist any more"
 msgstr "இத்தொடர்பு இருப்பில் இல்லை"
 
-#: contacts/contactgroupmodel.cpp:346
+#: contacts/contactgroupmodel.cpp:348
 #, kde-format
 msgctxt "contact's name"
 msgid "Name"
 msgstr "பெயர்"
 
-#: contacts/contactgroupmodel.cpp:348
+#: contacts/contactgroupmodel.cpp:350
 #, kde-format
 msgctxt "contact's email address"
 msgid "EMail"
@@ -2291,12 +2310,12 @@ msgctxt "@title:window"
 msgid "Choose Address Book Color"
 msgstr "முகவரிப்புத்தகத்தின் நிறத்தைத் தேர்ந்தெடுப்பது"
 
-#: contacts/qml/ContactChooserPage.qml:21
+#: contacts/qml/ContactChooserPage.qml:22
 #, kde-format
 msgid "Done"
 msgstr "முடிந்தது"
 
-#: contacts/qml/ContactChooserPage.qml:50
+#: contacts/qml/ContactChooserPage.qml:51
 #, kde-format
 msgid "Select Email Address"
 msgstr "மின்னஞ்சல் முகவரியை தேர்ந்தெடுப்பது"
@@ -2325,6 +2344,14 @@ msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "புதிய தொடர்புக்குழு"
 
+#: contacts/qml/ContactView.qml:57 contacts/qml/ContactView.qml:65
+#: contacts/qml/private/ContactPage.qml:65
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt "Placeholder"
+msgid "No Name"
+msgstr "பெயர்"
+
 #: contacts/qml/ContactView.qml:90
 #, kde-format
 msgctxt "@action:inmenu"
@@ -2332,7 +2359,7 @@ msgid "Edit contact…"
 msgstr "தொடர்பைத் திருத்து…"
 
 #: contacts/qml/ContactView.qml:105
-#: contacts/qml/private/DeleteContactAction.qml:63
+#: contacts/qml/private/DeleteContactAction.qml:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete contact"
@@ -2635,8 +2662,7 @@ msgid "Instant Messenger"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:173
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:186
-#: contacts/qml/private/DeleteContactAction.qml:19
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:191
 #, kde-format
 msgid "Warning"
 msgstr "எச்சரிக்கை"
@@ -2647,54 +2673,54 @@ msgid "This contact was changed elsewhere during editing."
 msgstr "திருத்துகையில் இத்தொடர்பு வேறு நிரலால் மாற்றப்பட்டுள்ளது."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "எந்த மாற்றங்களை வைத்திருக்க வேண்டும்?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:201
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
 #, kde-format
 msgid "Current changes"
 msgstr "தற்போதைய மாற்றங்கள்"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:224
 #, kde-format
 msgid "External changes"
 msgstr "வேளி மாற்றங்கள்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:29
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
 #, kde-format
 msgid "Edit %1"
 msgstr "%1 தனை திருத்து"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:29
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
 #, kde-format
 msgid "Create Contact Group"
 msgstr "தொடர்புக்குழுவை உருவாக்கு"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:64
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:63
 #, kde-format
 msgid "Address Book:"
 msgstr "முகவரிப்புத்தகம்:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:85
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
 #, kde-format
 msgid "Contact group name"
 msgstr "தொடர்புக்குழுவின் பெயர்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:91
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:89
 #, kde-format
 msgid "Members"
 msgstr "உறுப்பினர்கள்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:166
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr "மின்னஞ்சல் முகவரியையுடைய தொடர்புகளையே தொடர்புக்குழுவில் சேர்க்க முடியும்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:196
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "திருத்துகையில் இத்தொடர்புக்குழு வேறு நிரலால் மாற்றப்பட்டுள்ளது."
@@ -2856,6 +2882,13 @@ msgstr "பயனர் படத்தைச் சேர்"
 msgid "Update Profile Picture"
 msgstr "பயனர் படத்தை மாற்று"
 
+#: contacts/qml/private/ContactGroupPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "திருத்து"
+
 #: contacts/qml/private/ContactPage.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
@@ -3012,17 +3045,27 @@ msgid_plural "Email Addresses"
 msgstr[0] "மின்னஞ்சல் முகவரி"
 msgstr[1] "மின்னஞ்சல் முகவரிகள்"
 
-#: contacts/qml/private/DeleteContactAction.qml:29
-#, kde-format
-msgid "Do you really want to delete your contact: %1?"
+#: contacts/qml/private/DeleteContactAction.qml:20
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "எச்சரிக்கை"
+
+#: contacts/qml/private/DeleteContactAction.qml:35
+#, fuzzy, kde-format
+#| msgid "Your name"
+msgctxt "Placeholder when no name is set"
+msgid "No name"
+msgstr "உங்கள் பெயர்"
+
+#: contacts/qml/private/DeleteContactAction.qml:35
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete your contact: %1?"
+msgid "Do you really want to delete your contact: \"%1\"?"
 msgstr "இத்தொடர்பை உறுதியாக நீக்க வேண்டுமா: %1?"
 
-#: contacts/qml/private/DeleteContactAction.qml:34
-#, kde-format
-msgid "You won't be able to revert this action"
-msgstr "இச்செயலை திரும்பப்பெற முடியாது"
-
-#: contacts/qml/private/DeleteContactAction.qml:55
+#: contacts/qml/private/DeleteContactAction.qml:68
 #, kde-format
 msgid "Delete contact"
 msgstr "தொடர்பை நீக்கு"
@@ -3354,47 +3397,47 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "கணக்குகள்"
 
-#: quick/qml/AgentConfigurationForm.qml:32
+#: quick/qml/AgentConfigurationForm.qml:38
 #, kde-format
 msgid "Configure %1"
 msgstr "%1 தனை அமை"
 
-#: quick/qml/AgentConfigurationForm.qml:33
+#: quick/qml/AgentConfigurationForm.qml:39
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr "இந்த கணக்கிற்கான பின்னணி சேவையை மாற்றியமையுங்கள் அல்லது நீக்குங்கள்."
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:44
 #, kde-format
 msgid "Modify"
 msgstr "திருத்து"
 
-#: quick/qml/AgentConfigurationForm.qml:78
+#: quick/qml/AgentConfigurationForm.qml:84
 #, kde-format
 msgid "Add Account"
 msgstr "கணக்கை சேர்"
 
-#: quick/qml/TagManagerPage.qml:13
+#: quick/qml/TagManagerPage.qml:15
 #, kde-format
 msgid "Manage Tags"
 msgstr "குறிச்சொற்களை நிர்வகி"
 
-#: quick/qml/TagManagerPage.qml:21
+#: quick/qml/TagManagerPage.qml:23
 #, kde-format
 msgid "Delete Tag"
 msgstr "குறிச்சொல்லை நீக்குவது"
 
-#: quick/qml/TagManagerPage.qml:32
+#: quick/qml/TagManagerPage.qml:38
 #, kde-format
 msgid "Are you sure you want to delete tag \"%1\"?"
 msgstr "\"%1\" என்ற குறிச்சொல்லை உறுதியாக நீக்க வேண்டுமா?"
 
-#: quick/qml/TagManagerPage.qml:148
+#: quick/qml/TagManagerPage.qml:155
 #, kde-format
 msgid "Create a New Tag…"
 msgstr "புதிய குறிச்சொல்லை உருவாக்கு…"
 
-#: quick/qml/TagManagerPage.qml:160
+#: quick/qml/TagManagerPage.qml:166
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "புதிய குறிச்சொல்லை எளிதில் சேர்க்கும்."
@@ -3405,9 +3448,6 @@ msgstr "புதிய குறிச்சொல்லை எளிதில�
 
 #~ msgid "Identity"
 #~ msgstr "அடையாளம்"
-
-#~ msgid "Your name"
-#~ msgstr "உங்கள் பெயர்"
 
 #~ msgid "Email address"
 #~ msgstr "மின்னஞ்சல் முகவரி"
