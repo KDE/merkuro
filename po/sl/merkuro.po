@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 07:53+0200\n"
+"PO-Revision-Date: 2023-09-28 12:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
@@ -860,22 +860,19 @@ msgid "Choose an Address Book"
 msgstr "Izberite adresar"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete calendar"
 msgstr "Zbriši koledar"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete"
 msgstr "Zbriši"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:51
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you want to delete the calendar: \"%1\"?"
 msgstr "Ali zares želite zbrisati koledar: \"%1\"?"
 
@@ -2379,11 +2376,10 @@ msgstr "Nova skupina stikov"
 
 #: contacts/qml/ContactView.qml:57 contacts/qml/ContactView.qml:65
 #: contacts/qml/private/ContactPage.qml:65
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
-msgstr "Ime"
+msgstr "Brez imena"
 
 #: contacts/qml/ContactView.qml:90
 #, kde-format
@@ -2916,8 +2912,7 @@ msgid "Update Profile Picture"
 msgstr "Posodobi sliko profila"
 
 #: contacts/qml/private/ContactGroupPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Uredi"
@@ -3085,22 +3080,19 @@ msgstr[2] "Naslovi e-pošte"
 msgstr[3] "Naslovi e-pošte"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Opozorilo"
 
 #: contacts/qml/private/DeleteContactAction.qml:35
-#, fuzzy, kde-format
-#| msgid "Your name"
+#, kde-format
 msgctxt "Placeholder when no name is set"
 msgid "No name"
-msgstr "Vaše ime"
+msgstr "Brez imena"
 
 #: contacts/qml/private/DeleteContactAction.qml:35
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: %1?"
+#, kde-format
 msgid "Do you really want to delete your contact: \"%1\"?"
 msgstr "Ali zares želite zbrisati stik: %1?"
 
