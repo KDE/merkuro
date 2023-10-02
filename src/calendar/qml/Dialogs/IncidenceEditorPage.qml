@@ -70,6 +70,11 @@ Kirigami.ScrollablePage {
                 if(root.incidenceWrapper.collectionId < 0) {
                     root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
                 }
+                if (root.incidenceWrapper.collectionId < 0) {
+                    root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
+                }
+
+                console.log(root.incidenceWrapper.collectionId)
 
                 if(root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
                     Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
