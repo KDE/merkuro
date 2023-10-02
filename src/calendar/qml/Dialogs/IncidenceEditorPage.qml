@@ -10,6 +10,7 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.components 1.0 as Components
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.contact 1.0
 import org.kde.merkuro.calendar 1.0 as Calendar
@@ -44,6 +45,17 @@ Kirigami.ScrollablePage {
             i18nc("%1 is incidence type", "Add %1", incidenceWrapper.incidenceTypeStr);
     } else {
         "";
+    }
+
+    header: Components.Banner {
+        id: invalidDateMessage
+
+        width: parent.width
+        visible: !root.validDates
+        type: Kirigami.MessageType.Error
+        // Specify what the problem is to aid user
+        text: root.incidenceWrapper.incidenceStart < root.incidenceWrapper.incidenceEnd ?
+              i18n("Invalid dates provided.") : i18n("End date cannot be before start date.")
     }
 
     footer: QQC2.DialogButtonBox {
@@ -128,17 +140,6 @@ Kirigami.ScrollablePage {
             property alias attendeesColumnY: attendeesColumn.y
 
             readonly property alias calendarCombo: calendarCombo
-
-            Kirigami.InlineMessage {
-                id: invalidDateMessage
-
-                Layout.fillWidth: true
-                visible: !root.validDates
-                type: Kirigami.MessageType.Error
-                // Specify what the problem is to aid user
-                text: root.incidenceWrapper.incidenceStart < root.incidenceWrapper.incidenceEnd ?
-                      i18n("Invalid dates provided.") : i18n("End date cannot be before start date.")
-            }
 
             Kirigami.FormLayout {
                 id: incidenceForm
