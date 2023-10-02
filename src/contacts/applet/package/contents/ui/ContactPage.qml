@@ -219,7 +219,6 @@ PlasmaComponents3.ScrollView {
                         hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
                         onClicked: Qt.openUrlExternally(`mailto:${model.display}`)
-                        onPressed: Qt.openUrlExternally(`mailto:${model.display}`)
                     }
                 }
             }
@@ -249,7 +248,6 @@ PlasmaComponents3.ScrollView {
                         hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
                         onClicked: Qt.openUrlExternally(`tel:${model.display}`)
-                        onPressed: Qt.openUrlExternally(`tel:${model.display}`)
                     }
                 }
             }
