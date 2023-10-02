@@ -87,8 +87,6 @@ Kirigami.ScrollablePage {
                     root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
                 }
 
-                console.log(root.incidenceWrapper.collectionId)
-
                 if(root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
                     Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
                 } else {
