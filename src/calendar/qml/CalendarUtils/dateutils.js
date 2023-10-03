@@ -185,7 +185,7 @@ function parseDateString(dateString) {
         return defaultParse();
     }
 
-    let fullyWrittenYear = userProvidedYear.split("");
+    let fullyWrittenYear = userProvidedYear.trim().split("");
     const digitsToAdd = stringifiedCurrentYear.length - fullyWrittenYear.length;
     for(let i = 0; i < digitsToAdd; i++) {
         fullyWrittenYear.splice(i, 0, stringifiedCurrentYear[i])
