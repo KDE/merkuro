@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-10-03 01:39+0000\n"
 "PO-Revision-Date: 2023-04-26 10:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -267,7 +267,7 @@ msgid "Developer"
 msgstr "Разработчик"
 
 #: calendar/models/todosortfilterproxymodel.cpp:146
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:826
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -348,8 +348,8 @@ msgstr[2] "Каждые %1 лет %2 %3"
 msgstr[3] "Каждый год %2 %3"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
 #, kde-format
 msgid "Never"
 msgstr "Никогда"
@@ -969,119 +969,119 @@ msgstr "Только эту задачу"
 msgid "Delete All"
 msgstr "Удалить все"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "Изменить %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "Добавить %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:54
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#, kde-format
+msgid "Invalid dates provided."
+msgstr "Указаны некорректные даты."
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#, kde-format
+msgid "End date cannot be before start date."
+msgstr "Дата окончания не может предшествовать дате начала."
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "Сохранить"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:54
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "Добавить"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
-#, kde-format
-msgid "Invalid dates provided."
-msgstr "Указаны некорректные даты."
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
-#, kde-format
-msgid "End date cannot be before start date."
-msgstr "Дата окончания не может предшествовать дате начала."
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:148
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:152
 #, kde-format
 msgid "Calendar:"
 msgstr "Календарь:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:176
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:180
 #, kde-format
 msgid "Summary:"
 msgstr "Краткое описание:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Completion:"
 msgstr "Завершено:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:221
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:225
 #, kde-format
 msgid "All day"
 msgstr "Весь день"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:253
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:257
 #, kde-format
 msgid "Start:"
 msgstr "Начало:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:300
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
 #, kde-format
 msgid "Due:"
 msgstr "Срок:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:300
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
 #, kde-format
 msgid "End:"
 msgstr "Окончание:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:347
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:351
 #, kde-format
 msgid "Timezone:"
 msgstr "Часовой пояс:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:366
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:370
 #, kde-format
 msgid "Repeat:"
 msgstr "Повтор:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
 #, kde-format
 msgid "Daily"
 msgstr "Ежедневно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
 #, kde-format
 msgid "Weekly"
 msgstr "Еженедельно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
 #, kde-format
 msgid "Monthly"
 msgstr "Ежемесячно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
 #, kde-format
 msgid "Yearly"
 msgstr "Ежегодно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:405
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "Пользовательский"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:432
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:436
 #, kde-format
 msgid "Every:"
 msgstr "Периодичность:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:479
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:483
 #, kde-format
 msgid "day"
 msgid_plural "days"
@@ -1090,7 +1090,7 @@ msgstr[1] "дня"
 msgstr[2] "дней"
 msgstr[3] "день"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:480
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:484
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
@@ -1099,7 +1099,7 @@ msgstr[1] "недели"
 msgstr[2] "недель"
 msgstr[3] "неделя"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:481
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:485
 #, kde-format
 msgid "month"
 msgid_plural "months"
@@ -1108,7 +1108,7 @@ msgstr[1] "месяца"
 msgstr[2] "месяцев"
 msgstr[3] "месяц"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:482
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:486
 #, kde-format
 msgid "year"
 msgid_plural "years"
@@ -1117,39 +1117,39 @@ msgstr[1] "года"
 msgstr[2] "лет"
 msgstr[3] "год"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:552
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
 #, kde-format
 msgid "On:"
 msgstr "Дата:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:564
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "%1 числа каждого месяца"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:572
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:576
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%1 %2 каждого месяца"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgid "Ends:"
 msgstr "Закончить:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:602
 #, kde-format
 msgid "On"
 msgstr "Дата"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:599
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:603
 #, kde-format
 msgid "After"
 msgstr "После"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:635
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:639
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
@@ -1158,126 +1158,126 @@ msgstr[1] "повторения"
 msgstr[2] "повторений"
 msgstr[3] "повторение"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:641
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:645
 #, kde-format
 msgid "Exceptions:"
 msgstr "Исключения:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:647
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "Добавить исключение из повторения"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:690
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
 #, kde-format
 msgid "Location:"
 msgstr "Расположение:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:802
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:960
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:719
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:806
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Optional"
 msgstr "Необязательно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:764
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:768
 #, kde-format
 msgid "Show map"
 msgstr "Показать карту"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:796
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:800
 #, kde-format
 msgid "Description:"
 msgstr "Описание:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
 #, kde-format
 msgid "Tags:"
 msgstr "Метки:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Коснитесь для установки меток…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Нажмите для установки меток…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:870
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:874
 #, kde-format
 msgid "Manage tags…"
 msgstr "Редактор меток…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:881
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
 #, kde-format
 msgid "Reminders:"
 msgstr "Напоминания:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:908
 #, kde-format
 msgid "Add Reminder"
 msgstr "Добавить напоминание"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:918
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
 #, kde-format
 msgid "Attendees:"
 msgstr "Участники"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:953
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Name:"
 msgstr "Имя:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:978
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:982
 #, kde-format
 msgid "Email:"
 msgstr "Эл. почта:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:985
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:989
 #, kde-format
 msgid "Required"
 msgstr "Необходимо"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:998
 #, kde-format
 msgid "Status:"
 msgstr "Состояние:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1018
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
 #, kde-format
 msgid "Request RSVP"
 msgstr "Запросить ответ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1032
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1036
 #, kde-format
 msgid "Add Attendee"
 msgstr "Добавить участника"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1043
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Выбрать из списка контактов"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Заполнить вручную"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1061
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1065
 #, kde-format
 msgid "Attachments:"
 msgstr "Вложения:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1084
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1088
 #, kde-format
 msgid "Add Attachment"
 msgstr "Добавить вложение"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1091
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
 #, fuzzy, kde-format
 #| msgid "Add Attachment"
 msgid "Add an attachment"
