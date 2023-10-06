@@ -79,7 +79,7 @@ Column {
             horizontalAlignment: Text.AlignRight
             padding: Kirigami.Units.smallSpacing
             level: 2
-            text: DateUtils.getWeek(viewColumn.startDate, Qt.locale().firstDayOfWeek)
+            text: Calendar.Utils.weekNumber(viewColumn.startDate)
             color: Kirigami.Theme.disabledTextColor
             background: Rectangle {
                 color: Kirigami.Theme.backgroundColor
