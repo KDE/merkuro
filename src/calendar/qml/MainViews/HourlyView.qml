@@ -136,6 +136,7 @@ Kirigami.Page {
         sourceComponent: BasicInternalHourlyView {
             anchors.fill: parent
 
+            startDate: DateTimeState.firstDayOfWeek
             daysToShow: root.daysToShow
             dragDropEnabled: root.dragDropEnabled
             openOccurrence: root.openOccurrence
