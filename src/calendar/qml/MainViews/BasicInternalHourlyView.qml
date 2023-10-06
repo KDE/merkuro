@@ -25,7 +25,6 @@ Column {
     readonly property int daysFromWeekStart: DateUtils.fullDaysBetweenDates(startDate, currentDate) - 1
 
     readonly property int minutesFromStartOfDay: (currentDate.getHours() * 60) + currentDate.getMinutes()
-    readonly property bool isDark: CalendarUiUtils.darkMode
     property bool dragDropEnabled: true
 
     property int allDayViewDelegateHeight: Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
@@ -359,7 +358,6 @@ Column {
                                                     parentViewSpacing: viewColumn.gridLineWidth
                                                     horizontalSpacing: linesRepeater.spacing
                                                     openOccurrenceId: viewColumn.openOccurrence ? viewColumn.openOccurrence.incidenceId : ""
-                                                    isDark: viewColumn.isDark
                                                     reactToCurrentMonth: false
                                                     dragDropEnabled: viewColumn.dragDropEnabled
                                                 }
@@ -873,15 +871,14 @@ Column {
                                         IncidenceDelegateBackground {
                                             id: incidenceDelegateBackground
                                             isOpenOccurrence: parent.isOpenOccurrence
-                                            isDark: viewColumn.isDark
+                                            hovered: mouseArea.containsMouse
+                                            incidenceColor: modelData.color
                                         }
 
                                         ColumnLayout {
                                             id: incidenceContents
 
-                                            readonly property color textColor: isOpenOccurrence ?
-                                                (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                LabelUtils.getIncidenceLabelColor(modelData.color, viewColumn.isDark)
+                                            readonly property color textColor: modelData.color
                                             readonly property bool isTinyHeight: parent.height <= Kirigami.Units.gridUnit
 
                                             clip: true

@@ -9,28 +9,33 @@ import org.kde.merkuro.calendar 1.0 as Calendar
 import "labelutils.js" as LabelUtils
 
 Kirigami.ShadowedRectangle {
-    id: incidenceDelegateBackground
+    id: root
 
     property bool isInDayGridView: false
     property bool isOpenOccurrence: false
     property bool reactToCurrentMonth: false
     property bool isInCurrentMonth: true
-    property bool isDark: CalendarUiUtils.darkMode
     property bool allDay: false
-    
-    anchors.fill: parent
-    color: isOpenOccurrence ? modelData.color :
-        LabelUtils.getIncidenceDelegateBackgroundColor(modelData.color, root.isDark, modelData.endTime, Calendar.Config.pastEventsTransparencyLevel)
-    Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
-    opacity: !isInDayGridView || isOpenOccurrence || (isInCurrentMonth && allDay) ? 1 : 0
-    Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
 
+    required property bool hovered
+    required property color incidenceColor
+
+    color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, root.incidenceColor, hovered || isOpenOccurrence ? 0.07 : 0.15)
+    opacity: !isInDayGridView || isOpenOccurrence || (isInCurrentMonth && allDay) ? 1 : 0
     radius: Kirigami.Units.smallSpacing
 
-    shadow.size: Kirigami.Units.largeSpacing
-    shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.2)
-    shadow.yOffset: 2
+    anchors.fill: parent
 
-    border.width: 1
-    border.color: Kirigami.ColorUtils.tintWithAlpha(color, Kirigami.Theme.textColor, 0.2)
+    shadow {
+        size: Kirigami.Units.smallSpacing
+        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, root.incidenceColor, 0.4)
+        yOffset: 2
+    }
+
+    Behavior on opacity {
+        NumberAnimation {
+            duration: Kirigami.Units.shortDuration
+            easing.type: Easing.OutCubic
+        }
+    }
 }

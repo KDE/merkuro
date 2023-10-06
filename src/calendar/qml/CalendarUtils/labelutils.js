@@ -131,59 +131,6 @@ function recurrenceEndToString(recurrenceData) {
     }
 }
 
-function getDarkness(background) {
-    // Thanks to Gojir4 from the Qt forum
-    // https://forum.qt.io/topic/106362/best-way-to-set-text-color-for-maximum-contrast-on-background-color/
-    var temp = Qt.darker(background, 1);
-    var a = 1 - ( 0.299 * temp.r + 0.587 * temp.g + 0.114 * temp.b);
-    return a;
-}
-
-function isDarkColor(background) {
-    var temp = Qt.darker(background, 1);
-    return temp.a > 0 && getDarkness(background) >= 0.4;
-}
-
-function getIncidenceDelegateBackgroundColor(backgroundColor, darkMode, eventEnd = null, pastEventsDimLevel = 0.0) {
-    let bgColor = getDarkness(backgroundColor) > 0.9 ? Qt.lighter(backgroundColor, 1.5) : backgroundColor;
-    if(darkMode) {
-        if(getDarkness(backgroundColor) >= 0.5) {
-            bgColor.a = 0.6;
-        } else {
-            bgColor.a = 0.4;
-        }
-    } else {
-        bgColor.a = 0.7;
-    }
-
-    if(pastEventsDimLevel > 0 && eventEnd) {
-        const now = new Date();
-        if (modelData.endTime < now) {
-            bgColor.a = Math.max(0.0, bgColor.a - pastEventsDimLevel);
-        }
-    }
-    return bgColor;
-}
-
-function getIncidenceLabelColor(background, darkMode) {
-
-    if(getDarkness(background) >= 0.9) {
-        return "white";
-    } else if(darkMode) {
-        if(getDarkness(background) >= 0.5) {
-            return Qt.lighter(background, 2.1);
-        } else {
-            return Qt.lighter(background, 1.5);
-        }
-    }
-    else if(getDarkness(background) >= 0.68) {
-        return Qt.lighter(background, 2.4);
-    } else {
-        return Qt.darker(background, 2.1);
-    }
-
-}
-
 function priorityString(priority) {
     if(priority === 1) {
         return i18nc("%1 is the priority level number", "%1 (Highest priority)", priority);

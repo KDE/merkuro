@@ -30,7 +30,6 @@ QQC2.ScrollView {
     property real maxTimeLabelWidth: 0
 
     readonly property bool isLarge: width > Kirigami.Units.gridUnit * 30
-    readonly property bool isDark: CalendarUiUtils.darkMode
 
     contentWidth: availableWidth
     QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
@@ -327,7 +326,8 @@ QQC2.ScrollView {
                                     background: IncidenceDelegateBackground {
                                         id: incidenceDelegateBackground
                                         isOpenOccurrence: parent.isOpenOccurrence
-                                        isDark: scrollView.isDark
+                                        hovered: incidenceMouseArea.containsMouse
+                                        incidenceColor: mouseArea.color
                                     }
 
                                     Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.OutCubic } }
@@ -374,7 +374,7 @@ QQC2.ScrollView {
                                         columns: scrollView.isLarge ? 3 : 2
                                         rows: scrollView.isLarge ? 1 : 2
 
-                                        property color textColor: LabelUtils.getIncidenceLabelColor(modelData.color, scrollView.isDark)
+                                        property color textColor: modelData.color
 
                                         RowLayout {
                                             Kirigami.Icon {
@@ -386,10 +386,7 @@ QQC2.ScrollView {
                                                 Layout.maximumWidth: Kirigami.Units.iconSizes.medium
                                                 Layout.maximumHeight: Kirigami.Units.iconSizes.medium
 
-                                                color: incidenceCard.isOpenOccurrence ?
-                                                    (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                    cardContents.textColor
-                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                                color: cardContents.textColor
                                             }
 
                                             QQC2.Label {
@@ -399,10 +396,7 @@ QQC2.ScrollView {
                                                 Layout.row: 0
                                                 Layout.columnSpan: scrollView.isLarge ? 2 : 1
 
-                                                color: incidenceCard.isOpenOccurrence ?
-                                                    (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                    cardContents.textColor
-                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                                color: cardContents.textColor
                                                 text: {
                                                     if(incidenceCard.multiday) {
                                                         return i18nc("%1 is the name of the event", "%1 (Day %2 of %3)", modelData.text, incidenceCard.dayOfMultidayIncidence, incidenceCard.incidenceDays);
@@ -429,9 +423,7 @@ QQC2.ScrollView {
                                                 Layout.fillHeight: true
                                                 source: "appointment-recurring"
                                                 isMask: true
-                                                color: incidenceCard.isOpenOccurrence ? (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                    cardContents.textColor
-                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                                color: cardContents.textColor
                                                 visible: modelData.recurs
                                             }
                                             Kirigami.Icon {
@@ -439,9 +431,7 @@ QQC2.ScrollView {
                                                 Layout.fillHeight: true
                                                 source: "appointment-reminder"
                                                 isMask: true
-                                                color: incidenceCard.isOpenOccurrence ? (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                    cardContents.textColor
-                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                                color: cardContents.textColor
                                                 visible: modelData.hasReminders
                                             }
                                         }
@@ -456,9 +446,7 @@ QQC2.ScrollView {
                                             Layout.row: scrollView.isLarge ? 0 : 1
 
                                             horizontalAlignment: scrollView.isLarge ? Text.AlignRight : Text.AlignLeft
-                                            color: incidenceCard.isOpenOccurrence ? (LabelUtils.isDarkColor(modelData.color) ? "white" : "black") :
-                                                cardContents.textColor
-                                            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                            color: cardContents.textColor
                                             text: {
                                                 if (modelData.allDay) {
                                                     i18n("Runs all day")

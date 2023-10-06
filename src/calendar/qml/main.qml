@@ -622,7 +622,6 @@ BaseApplication {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     mode: pageStack.currentItem ? pageStack.currentItem.mode : CalendarApplication.Event
-                    isDark: CalendarUiUtils.darkMode
                     clip: true
                 }
             }

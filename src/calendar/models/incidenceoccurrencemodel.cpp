@@ -16,7 +16,19 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <QGuiApplication>
 #include <QMetaEnum>
+#include <QPalette>
+
+namespace
+{
+QColor contrastColor(const QColor &color)
+{
+    const auto lightness = static_cast<QGuiApplication *>(QGuiApplication::instance())->palette().color(QPalette::Active, QPalette::Window).lightnessF();
+    // https://github.com/quotient-im/libQuotient/wiki/User-color-coding-standard-draft-proposal
+    return QColor::fromHslF(color.hsvHueF(), 1, -0.7 * lightness + 0.9, 1);
+}
+}
 
 IncidenceOccurrenceModel::IncidenceOccurrenceModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -196,7 +208,7 @@ qint64 IncidenceOccurrenceModel::getCollectionId(const KCalendarCore::Incidence:
 QColor IncidenceOccurrenceModel::getColor(const KCalendarCore::Incidence::Ptr &incidence)
 {
     if (!incidence->color().isEmpty()) {
-        return incidence->color();
+        return contrastColor(incidence->color());
     }
 
     const auto item = m_coreCalendar->item(incidence);
@@ -215,12 +227,12 @@ QColor IncidenceOccurrenceModel::getColor(const KCalendarCore::Incidence::Ptr &i
         const auto colorAttr = collection.attribute<Akonadi::CollectionColorAttribute>();
         if (colorAttr && colorAttr->color().isValid()) {
             m_colors[id] = colorAttr->color();
-            return colorAttr->color();
+            return contrastColor(colorAttr->color());
         }
     }
 
     if (m_colors.contains(id)) {
-        return m_colors[id];
+        return contrastColor(m_colors[id]);
     }
 
     return {};

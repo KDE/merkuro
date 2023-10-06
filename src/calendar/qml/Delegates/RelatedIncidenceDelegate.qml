@@ -35,7 +35,8 @@ Item {
     }
 
     IncidenceDelegateBackground {
-        color: LabelUtils.getIncidenceDelegateBackgroundColor(collectionData.color, CalendarUiUtils.darkMode)
+        incidenceColor: collectionData.color
+        hovered: mouseArea.containsMouse
     }
 
     RowLayout {

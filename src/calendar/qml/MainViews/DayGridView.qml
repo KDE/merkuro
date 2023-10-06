@@ -52,7 +52,6 @@ Item {
     property int spacing: Calendar.Config.monthGridBorderWidth // Between grid squares in background
     property int listViewSpacing: root.dayWidth < (Kirigami.Units.gridUnit * 5 + Kirigami.Units.smallSpacing * 2) ?
         Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing // Between lines of incidences ( ====== <- )
-    readonly property bool isDark: CalendarUiUtils.darkMode
     readonly property int mode: Calendar.CalendarApplication.Event
 
     implicitHeight: (numberOfRows > 1 ? Kirigami.Units.gridUnit * 10 * numberOfRows : numberOfLinesShown * Kirigami.Units.gridUnit) + bgLoader.dayLabelsBar.height
@@ -368,7 +367,6 @@ Item {
                                             occurrenceEndDate: incidenceDelegate.modelData.endTime
                                             incidencePtr: incidenceDelegate.modelData.incidencePtr
                                             allDay: incidenceDelegate.modelData.allDay
-                                            isDark: root.isDark
 
                                             dayWidth: root.dayWidth
                                             height: line.height

@@ -21,7 +21,6 @@ Item {
     required property date occurrenceDate
     required property date occurrenceEndDate
     required property bool allDay
-    required property bool isDark
 
     property real dayWidth: 0
     property real parentViewSpacing: 0
@@ -112,8 +111,9 @@ Item {
         isOpenOccurrence: incidenceDelegate.isOpenOccurrence
         reactToCurrentMonth: incidenceDelegate.reactToCurrentMonth
         isInCurrentMonth: incidenceDelegate.isInCurrentMonth
-        isDark: incidenceDelegate.isDark
         allDay: incidenceDelegate.allDay
+        hovered: mouseArea.containsMouse
+        incidenceColor: modelData.color
     }
 
     RowLayout {
@@ -121,25 +121,6 @@ Item {
         clip: true
 
         readonly property bool spaceRestricted: parent.width < Kirigami.Units.gridUnit * 5
-
-        readonly property color textColor: incidenceDelegateBackground.opacity > 0 ?
-            LabelUtils.getIncidenceLabelColor(modelData.color, incidenceDelegate.isDark) : Kirigami.Theme.textColor
-        readonly property color otherMonthTextColor: {
-            if(incidenceDelegateBackground.visible && incidenceDelegateBackground.opacity > 0) {
-                if (incidenceDelegate.isDark) {
-                    return LabelUtils.getDarkness(modelData.color) >= 0.5 ?
-                        Qt.lighter(modelData.color, 2) : Qt.lighter(modelData.color, 1.5);
-                }
-
-                return Qt.darker(modelData.color, 3);
-            }
-
-            return Kirigami.Theme.textColor;
-        }
-        readonly property color selectedContentColor: LabelUtils.isDarkColor(modelData.color) ? "white" : "black"
-        readonly property color contentColor: incidenceDelegate.isOpenOccurrence ?
-            selectedContentColor : incidenceDelegate.isInCurrentMonth ?
-            textColor : otherMonthTextColor
 
         readonly property int leadingIconSize: Kirigami.Units.gridUnit / 2
 
@@ -158,9 +139,7 @@ Item {
             // We want equal alignment for items that both have a dot, don't have a dot because they are all-day, and
             // items that don't have a dot because they represent todos. Hidden items are compressed to a size of 0 so
             // instead we set the color to transparent.
-            color: incidenceDelegate.allDay ? "transparent" :
-            incidenceDelegate.isOpenOccurrence ? incidenceContents.selectedContentColor : modelData.color
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+            color: incidenceDelegate.allDay ? "transparent" : modelData.color
         }
 
         QQC2.Label {
@@ -176,8 +155,7 @@ Item {
                 Kirigami.Theme.defaultFont.pointSize
             font.strikeout: modelData.todoCompleted
             renderType: Text.QtRendering
-            color: incidenceContents.contentColor
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+            color: modelData.color
         }
 
         Rectangle {
@@ -188,8 +166,7 @@ Item {
             Layout.preferredHeight: Kirigami.Units.gridUnit / 8
 
             radius: width / 2
-            color: incidenceDelegate.isOpenOccurrence ? incidenceContents.selectedContentColor : modelData.color
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+            color: modelData.color
         }
 
         QQC2.Label {
@@ -199,8 +176,7 @@ Item {
             font.pointSize: parent.spaceRestricted ? Kirigami.Theme.smallFont.pointSize :
                 Kirigami.Theme.defaultFont.pointSize
             renderType: Text.QtRendering
-            color: incidenceContents.contentColor
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+            color: modelData.color
             visible: !incidenceDelegate.allDay
         }
     }

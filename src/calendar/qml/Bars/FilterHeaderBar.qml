@@ -12,7 +12,6 @@ import "labelutils.js" as LabelUtils
 RowLayout {
     id: headerLayout
 
-    property bool isDark: CalendarUiUtils.darkMode
     property var mode: Calendar.CalendarApplication.Event
     property var filterCollectionDetails: Calendar.Filter.collectionId >= 0 ?
         Calendar.CalendarManager.getCollectionDetails(Calendar.Filter.collectionId) : null

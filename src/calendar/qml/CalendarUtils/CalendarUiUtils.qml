@@ -15,8 +15,6 @@ QtObject {
     id: utilsObject
     property var appMain
 
-    readonly property bool darkMode: LabelUtils.isDarkColor(Kirigami.Theme.backgroundColor)
-
     function editorToUse() {
         if (!Kirigami.Settings.isMobile) {
             appMain.editorWindowedLoaderItem.active = true

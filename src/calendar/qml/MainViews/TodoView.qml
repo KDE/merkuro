@@ -37,7 +37,6 @@ Kirigami.ScrollablePage {
     property bool ascendingOrder: Calendar.Config.ascendingOrder
 
     readonly property color standardTextColor: Kirigami.Theme.textColor
-    readonly property bool isDark: CalendarUiUtils.darkMode
 
     readonly property alias incompleteView: incompleteView
 
