@@ -18,7 +18,7 @@ public:
 
     QStringList hourlyViewLocalisedHourLabels() const;
 
-    Q_INVOKABLE QDate addDaysToDate(const QDate &date, const int days);
+    Q_INVOKABLE QDateTime addDaysToDate(const QDateTime &date, const int days);
 
     /// Gives prettified time
     Q_INVOKABLE QString secondsToReminderLabel(const qint64 seconds) const;

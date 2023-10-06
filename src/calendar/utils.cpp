@@ -65,7 +65,7 @@ QString Utils::formatSpelloutDuration(const KCalendarCore::Duration &duration, c
     }
 }
 
-QDate Utils::addDaysToDate(const QDate &date, const int days)
+QDateTime Utils::addDaysToDate(const QDateTime &date, const int days)
 {
     return date.addDays(days);
 }
