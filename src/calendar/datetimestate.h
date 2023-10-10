@@ -12,21 +12,21 @@ class DateTimeState : public QObject
     Q_OBJECT
 
     /// This property holds the current selected date by the user
-    Q_PROPERTY(QDate selectedDate MEMBER m_selectedDate NOTIFY selectedDateChanged)
+    Q_PROPERTY(QDateTime selectedDate MEMBER m_selectedDate NOTIFY selectedDateChanged)
 
     /// This property holds the first day of the month selected by the user
-    Q_PROPERTY(QDate firstDayOfMonth READ firstDayOfMonth NOTIFY selectedDateChanged)
+    Q_PROPERTY(QDateTime firstDayOfMonth READ firstDayOfMonth NOTIFY selectedDateChanged)
 
     /// This property holds the first day of the week selected by the user
-    Q_PROPERTY(QDate firstDayOfWeek READ firstDayOfWeek NOTIFY selectedDateChanged)
+    Q_PROPERTY(QDateTime firstDayOfWeek READ firstDayOfWeek NOTIFY selectedDateChanged)
 
     Q_PROPERTY(QDateTime currentDate MEMBER m_currentDate NOTIFY currentDateChanged)
 
 public:
     explicit DateTimeState(QObject *parent = nullptr);
 
-    QDate firstDayOfMonth() const;
-    QDate firstDayOfWeek() const;
+    QDateTime firstDayOfMonth() const;
+    QDateTime firstDayOfWeek() const;
 
     Q_INVOKABLE void setSelectedYearMonthDay(const int year, const int month, const int day);
     Q_INVOKABLE void setSelectedDay(const int day);
@@ -47,6 +47,6 @@ Q_SIGNALS:
     void currentDateChanged();
 
 private:
-    QDate m_selectedDate;
+    QDateTime m_selectedDate;
     QDateTime m_currentDate;
 };

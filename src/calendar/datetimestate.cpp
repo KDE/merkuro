@@ -8,7 +8,7 @@ using namespace std::chrono_literals;
 
 DateTimeState::DateTimeState(QObject *parent)
     : QObject(parent)
-    , m_selectedDate(QDate::currentDate())
+    , m_selectedDate(QDateTime::currentDateTime())
     , m_currentDate(QDateTime::currentDateTime())
 {
     auto timer = new QTimer(this);
@@ -45,44 +45,44 @@ void DateTimeState::addDays(const int days)
     Q_EMIT selectedDateChanged();
 }
 
-QDate DateTimeState::firstDayOfMonth() const
+QDateTime DateTimeState::firstDayOfMonth() const
 {
-    QDate date = m_selectedDate;
-    date.setDate(m_selectedDate.year(), m_selectedDate.month(), 1);
+    QDateTime date = m_selectedDate;
+    date.setDate(QDate(m_selectedDate.date().year(), m_selectedDate.date().month(), 1));
     return date;
 }
 
-QDate DateTimeState::firstDayOfWeek() const
+QDateTime DateTimeState::firstDayOfWeek() const
 {
-    int dayOfWeek = m_selectedDate.dayOfWeek();
+    int dayOfWeek = m_selectedDate.date().dayOfWeek();
     return m_selectedDate.addDays(-dayOfWeek + 1);
 }
 
 void DateTimeState::resetTime()
 {
-    m_selectedDate = QDate::currentDate();
+    m_selectedDate = QDateTime::currentDateTime();
     Q_EMIT selectedDateChanged();
 }
 
 void DateTimeState::setSelectedYearMonthDay(const int year, const int month, const int day)
 {
-    m_selectedDate.setDate(year, month, day);
+    m_selectedDate.setDate(QDate(year, month, day));
     Q_EMIT selectedDateChanged();
 }
 
 void DateTimeState::setSelectedDay(const int day)
 {
-    setSelectedYearMonthDay(m_selectedDate.year(), m_selectedDate.month(), day);
+    setSelectedYearMonthDay(m_selectedDate.date().year(), m_selectedDate.date().month(), day);
 }
 
 void DateTimeState::setSelectedMonth(const int month)
 {
-    setSelectedYearMonthDay(m_selectedDate.year(), month, m_selectedDate.day());
+    setSelectedYearMonthDay(m_selectedDate.date().year(), month, m_selectedDate.date().day());
 }
 
 void DateTimeState::setSelectedYear(const int year)
 {
-    setSelectedYearMonthDay(year, m_selectedDate.month(), m_selectedDate.day());
+    setSelectedYearMonthDay(year, m_selectedDate.date().month(), m_selectedDate.date().day());
 }
 
 #include "moc_datetimestate.cpp"
