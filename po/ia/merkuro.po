@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the merkuro package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-03 02:28+0000\n"
-"PO-Revision-Date: 2023-08-13 15:08+0200\n"
+"PO-Revision-Date: 2023-10-16 13:15+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -886,6 +886,13 @@ msgid ""
 "\n"
 "Deleting all will also delete sub-items!"
 msgstr ""
+"Le elemento de calendario \"%1\" repete se in multiple datas. Iste elemento "
+"ha anquesub-elementos.\n"
+"\n"
+"Tu vole deler le seligite occurrentia sur %2, anque occurrentias future, o "
+"omnes su occurrentias?\n"
+"\n"
+"Deler toto anque delera sub-elementos!"
 
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:64
 #, kde-format
@@ -894,6 +901,8 @@ msgid ""
 "the selected occurrence on %2, also future occurrences, or all of its "
 "occurrences?"
 msgstr ""
+"Le elemento de calendario \"%1\" recurre in multiple datas. Tu vole deler "
+"solmentelo currente in %2, anque future recurrentias, o tote su occurrentias?"
 
 #: calendar/qml/Dialogs/DeleteIncidencePage.qml:80
 #, kde-format
@@ -1744,6 +1753,10 @@ msgid ""
 "that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"Quando tu publica tu information  de libere/occupate, il habilita alteres a "
+"considerar tu disponibilitate de calendario quando te invita a un reunion. "
+"Solmente le tempores que es ja marcate como occupate es revelate, sin "
+"revelar le motivationes specific per tu disponibilitate."
 
 #: calendar/qml/Settings/Schedule/FreeBusySettingsPage.qml:37
 #, kde-format
@@ -2527,7 +2540,7 @@ msgstr "https://planet.kde.org/"
 #: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Business Information"
-msgstr ""
+msgstr "Information de affaires"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:33
 #, kde-format
@@ -2582,7 +2595,7 @@ msgstr "Officio"
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
-msgstr ""
+msgstr "Tech Wing, 4th Floor (Ala Tech, Etage 4)"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:83
 #, kde-format
@@ -2626,7 +2639,7 @@ msgstr "Aviso"
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:164
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Iste contacto esseva modificate alibi durante que on  modificava."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:169
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:214
@@ -2675,11 +2688,14 @@ msgstr "Membros"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
+"Solmente contactos con un adresse de e-posta pote esser addite a un gruppo "
+"de contacto"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr ""
+"Iste gruppo de contacto esseva modificate alibi durante que on  modificava."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:29
 #, kde-format
@@ -2750,7 +2766,7 @@ msgstr "Information personal"
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:33
 #, kde-format
 msgid "Spouse's Name"
-msgstr ""
+msgstr "Nimine de Sposa"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:29
 #, kde-format
@@ -3022,7 +3038,7 @@ msgstr "Tu vermente vole deler tu contacto: %1?"
 #: contacts/qml/private/DeleteContactAction.qml:34
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr ""
+msgstr "Tu nonpoterea revenir iste action"
 
 #: contacts/qml/private/DeleteContactAction.qml:55
 #, kde-format
@@ -3123,7 +3139,7 @@ msgstr "Cliente de E-Posta"
 #: mail/mime/attachmentmodel.cpp:223
 #, kde-format
 msgid "No keys were found in this attachment"
-msgstr ""
+msgstr "Nulle claves esseva trovate in iste attachamento"
 
 #: mail/mime/attachmentmodel.cpp:226
 #, kde-format
@@ -3136,13 +3152,13 @@ msgstr[1] "%1 claves importate:"
 #, kde-format
 msgid "one key was already imported"
 msgid_plural "%1 keys were already imported"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "un clave esseva jam importate"
+msgstr[1] "%1 claves esseva jam importate"
 
 #: mail/mime/mailtemplates.cpp:103
 #, kde-format
 msgid "fwd"
-msgstr ""
+msgstr "fwd"
 
 #: mail/mime/mailtemplates.cpp:132
 #, kde-format
@@ -3157,7 +3173,7 @@ msgstr "Necun clave disponibile"
 #: mail/mime/partmodel.cpp:475
 #, kde-format
 msgid "Wrong passphrase."
-msgstr ""
+msgstr "Phrase de contrasigno errate"
 
 #: mail/mimetreeparser/messagepart.cpp:618
 #: mail/mimetreeparser/messagepart.cpp:709
@@ -3169,7 +3185,7 @@ msgstr "Errate Plug-in de Crypto"
 #: mail/mimetreeparser/messagepart.cpp:857
 #, kde-format
 msgid "Could not decrypt the data: no key found for recipients."
-msgstr ""
+msgstr "Il non pote decryptar datos: nulle clave trovate per destinatarios."
 
 #: mail/mimetreeparser/messagepart.cpp:862
 #, kde-format
@@ -3200,7 +3216,7 @@ msgstr "Marca message  como non legite"
 #: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "Don't Mark as Important"
-msgstr ""
+msgstr "Non marcar como importante"
 
 #: mail/qml/FolderView.qml:45
 #, kde-format
@@ -3230,22 +3246,22 @@ msgstr "Adde memorar de continuation"
 #: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "No mailbox selected"
-msgstr ""
+msgstr "Nulle cassa postal seligite"
 
 #: mail/qml/FolderView.qml:84
 #, kde-format
 msgid "Select a mailbox from the sidebar."
-msgstr ""
+msgstr "Selige un cassa postal ab le barra lateral."
 
 #: mail/qml/FolderView.qml:91
 #, kde-format
 msgid "Mailbox is empty"
-msgstr ""
+msgstr "Cassa postal es vacue"
 
 #: mail/qml/mailboxselector/MailBoxListPage.qml:16
 #, kde-format
 msgid "Mailboxes"
-msgstr ""
+msgstr "Cassas postal"
 
 #: mail/qml/mailboxselector/MailBoxListSidebar.qml:17
 #: mail/qml/mailboxselector/MailBoxListSidebar.qml:39
@@ -3297,7 +3313,7 @@ msgstr "Subjecto:"
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "Iste message de eposta contine un invitation"
 
 #: mail/qml/mailpartview/MailPart.qml:42
 #, kde-format
@@ -3307,32 +3323,32 @@ msgstr "inviate per %1 sur %2"
 #: mail/qml/mailpartview/MailPartModel.qml:53
 #, kde-format
 msgid "This message has been signed using the key %1."
-msgstr ""
+msgstr "Iste message ha essite signate usante le clave  %1."
 
 #: mail/qml/mailpartview/MailPartModel.qml:54
 #, kde-format
 msgid "The key details are not available."
-msgstr ""
+msgstr "Le detalios de clave non es disponibile."
 
 #: mail/qml/mailpartview/MailPartModel.qml:56
 #, kde-format
 msgid "This message has been signed using the key %1 by %2."
-msgstr ""
+msgstr "Iste mssage ha essite signate usnte le clave %1 per %2"
 
 #: mail/qml/mailpartview/MailPartModel.qml:58
 #, kde-format
 msgid "The key was revoked."
-msgstr ""
+msgstr "Le clave esseva revocate."
 
 #: mail/qml/mailpartview/MailPartModel.qml:61
 #, kde-format
 msgid "The key has expired."
-msgstr ""
+msgstr "Le clave ha expirate."
 
 #: mail/qml/mailpartview/MailPartModel.qml:64
 #, kde-format
 msgid "You are trusting this key."
-msgstr ""
+msgstr "Tu es confidente in iste clave"
 
 #: mail/qml/mailpartview/MailPartModel.qml:67
 #, kde-format
@@ -3342,12 +3358,12 @@ msgstr "Le signatura es invalide."
 #: mail/qml/mailpartview/MailPartModel.qml:89
 #, kde-format
 msgid "This message is encrypted but we don't have the key for it."
-msgstr ""
+msgstr "Iste message es cryptate ma on non ha le clave per illo."
 
 #: mail/qml/mailpartview/MailPartModel.qml:89
 #, kde-format
 msgid "This message is encrypted to the key: %1"
-msgstr ""
+msgstr "Iste message es cryptate al clave: %1"
 
 #: mail/qml/mailpartview/MailPartView.qml:32
 #, kde-format
