@@ -776,7 +776,7 @@ Column {
                                             id: backgroundDayMouseArea
                                             anchors.fill: parent
                                             addDate: new Date(DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
-                                            onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate, null, true)
+                                            onAddNewIncidence: (type, addDate) =>  CalendarUiUtils.setUpAdd(type, addDate, null, true)
                                             onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
                                     }
