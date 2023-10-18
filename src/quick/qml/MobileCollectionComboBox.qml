@@ -99,7 +99,7 @@ FormCard.FormComboBoxDelegate {
 
     comboBoxDelegate: Kirigami.BasicListItem {
         label: model.display
-        icon.name: decoration
+        icon.name: model.icon
         trailing: Rectangle {
             anchors.margins: Kirigami.Units.smallSpacing
             width: height
