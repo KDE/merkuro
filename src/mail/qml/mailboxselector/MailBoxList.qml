@@ -43,31 +43,12 @@ ListView {
         DelegateChoice {
             roleValue: true
 
-            Delegates.RoundedItemDelegate {
+            Delegates.RoundedTreeDelegate {
                 id: categoryHeader
 
-                leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0
-                leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
+                required property string displayName
 
-                rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
-                rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
-
-                text: model.display
-
-                data: [
-                    Tree.TreeViewDecoration {
-                        id: decoration
-                        anchors {
-                            left: parent.left
-                            top:parent.top
-                            bottom: parent.bottom
-                            leftMargin: categoryHeader.padding
-                        }
-                        parent: categoryHeader
-                        parentDelegate: categoryHeader
-                        model: foldersModel
-                    }
-                ]
+                text: displayName
 
                 contentItem: RowLayout {
                     Kirigami.Icon {
@@ -80,7 +61,7 @@ ListView {
                     QQC2.Label {
                         color: Kirigami.Theme.textColor
                         font.weight: Font.DemiBold
-                        text: model.display
+                        text: categoryHeader.displayName
                         Layout.fillWidth: true
                     }
                 }
@@ -94,7 +75,7 @@ ListView {
                         }
                         if (mouse.button === Qt.RightButton) {
                             mailList.collectionId = foldersModel.mapToSource(foldersModel.index(index, 0));
-                            mailList.name = model.display;
+                            mailList.name = categoryHeader.displayName;
                             mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
 
                             mailActionsPopup.popup()
@@ -107,33 +88,16 @@ ListView {
         DelegateChoice {
             roleValue: false
 
-            Delegates.RoundedItemDelegate {
+            Delegates.RoundedTreeDelegate {
                 id: controlRoot
 
-                text: model.display
-
-                leftInset: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0)
-                leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
-
-                rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
-                rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
+                required property string displayName
+                required property var collection
+                required property var model
 
                 property bool chosen: false
 
-                data: [
-                    Tree.TreeViewDecoration {
-                        id: decoration
-                        anchors {
-                            left: parent.left
-                            top:parent.top
-                            bottom: parent.bottom
-                            leftMargin: controlRoot.padding
-                        }
-                        parent: controlRoot
-                        parentDelegate: controlRoot
-                        model: foldersModel
-                    }
-                ]
+                text: displayName
 
                 Connections {
                     target: mailList
@@ -174,7 +138,8 @@ ListView {
                     }
 
                     QQC2.Label {
-                        property int unreadCount: MailCollectionHelper.unreadCount(model.collection)
+                        property int unreadCount: MailCollectionHelper.unreadCount(controlRoot.collection)
+
                         text: unreadCount > 0 ? unreadCount : ''
                         padding: Kirigami.Units.smallSpacing
                         color: Kirigami.Theme.textColor
@@ -182,7 +147,7 @@ ListView {
                         Layout.minimumWidth: height
                         horizontalAlignment: Text.AlignHCenter
                         background: Rectangle {
-                            visible: unreadCount > 0
+                            visible: parent.unreadCount > 0
                             Kirigami.Theme.colorSet: Kirigami.Theme.Button
                             color: Kirigami.Theme.disabledTextColor
                             opacity: 0.3
@@ -196,15 +161,15 @@ ListView {
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
                     onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
-                            model.checkState = model.checkState === 0 ? 2 : 0
-                            MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
+                            controlRoot.model.checkState = controlRoot.model.checkState === 0 ? 2 : 0
+                            MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(controlRoot.model.index, 0)));
 
                             controlRoot.chosen = true;
                             mailList.folderChosen();
                         }
                         if (mouse.button === Qt.RightButton) {
-                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(model.index, 0));
-                            mailList.name = model.display;
+                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(controlRoot.model.index, 0));
+                            mailList.name = controlRoot.displayName;
                             mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
 
                             mailActionsPopup.popup();

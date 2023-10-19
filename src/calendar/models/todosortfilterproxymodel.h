@@ -42,6 +42,7 @@ public:
         DurationStringRole,
         RecursRole,
         IsOverdueRole,
+        IsReadOnly,
         IncidenceIdRole,
         IncidenceTypeRole,
         IncidenceTypeStrRole,

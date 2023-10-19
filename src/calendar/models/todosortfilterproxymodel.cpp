@@ -50,6 +50,7 @@ QHash<int, QByteArray> TodoSortFilterProxyModel::roleNames() const
     roleNames[Roles::CollectionIdRole] = "collectionId";
     roleNames[Roles::DurationStringRole] = "durationString";
     roleNames[Roles::RecursRole] = "recurs";
+    roleNames[Roles::IsReadOnly] = "isReadOnly";
     roleNames[Roles::IsOverdueRole] = "isOverdue";
     roleNames[Roles::IncidenceIdRole] = "incidenceId";
     roleNames[Roles::IncidenceTypeRole] = "incidenceType";
@@ -126,6 +127,8 @@ QVariant TodoSortFilterProxyModel::data(const QModelIndex &index, int role) cons
         return todoPtr->recurs();
     } else if (role == Roles::IsOverdueRole) {
         return todoPtr->isOverdue();
+    } else if (role == Roles::IsReadOnly) {
+        return todoPtr->isReadOnly();
     } else if (role == Roles::IncidenceIdRole) {
         return todoPtr->uid();
     } else if (role == Roles::IncidenceTypeRole) {

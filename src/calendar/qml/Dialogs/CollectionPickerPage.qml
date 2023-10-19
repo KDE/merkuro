@@ -11,7 +11,6 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kitemmodels 1.0
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kirigamiaddons.treeview 1.0 as Tree
 
 import org.kde.merkuro.calendar 1.0 as Calendar
 
@@ -64,31 +63,12 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: true
 
-                Delegates.RoundedItemDelegate {
+                Delegates.RoundedTreeDelegate {
                     id: categoryHeader
 
-                    leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0
-                    leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
-
-                    rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing
-                    rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + categoryHeader.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
+                    required property var model
 
                     text: model.display
-
-                    data: [
-                        Tree.TreeViewDecoration {
-                            id: decoration
-                            anchors {
-                                left: parent.left
-                                top:parent.top
-                                bottom: parent.bottom
-                                leftMargin: categoryHeader.padding
-                            }
-                            parent: categoryHeader
-                            parentDelegate: categoryHeader
-                            model: treeModel
-                        }
-                    ]
 
                     contentItem: RowLayout {
                         Kirigami.Icon {
@@ -101,48 +81,32 @@ Kirigami.ScrollablePage {
                         QQC2.Label {
                             color: Kirigami.Theme.textColor
                             font.weight: Font.DemiBold
-                            text: model.display
+                            text: categoryHeader.text
                             Layout.fillWidth: true
                         }
                     }
 
-                    onClicked: treeModel.toggleChildren(index)
+                    onClicked: treeModel.toggleChildren(model.index)
                 }
             }
 
             DelegateChoice {
                 roleValue: false
 
-                Delegates.RoundedItemDelegate {
+                Delegates.RoundedTreeDelegate {
                     id: controlRoot
 
+                    required property var model
+                    required property var collectionColor
+                    required property var collectionId
+                    required property string decoration
+
                     text: model.display
-
-                    leftInset: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0)
-                    leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
-
-                    rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing
-                    rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + controlRoot.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
-
-                    data: [
-                        Tree.TreeViewDecoration {
-                            id: decoration
-                            anchors {
-                                left: parent.left
-                                top:parent.top
-                                bottom: parent.bottom
-                                leftMargin: controlRoot.padding
-                            }
-                            parent: controlRoot
-                            parentDelegate: controlRoot
-                            model: treeModel
-                        }
-                    ]
 
                     contentItem: RowLayout {
                         Kirigami.Icon {
                             Layout.alignment: Qt.AlignVCenter
-                            source: model.decoration
+                            source: controlRoot.decoration
                             Layout.preferredHeight: Kirigami.Units.iconSizes.small
                             Layout.preferredWidth: Layout.preferredHeight
                         }
@@ -164,14 +128,14 @@ Kirigami.ScrollablePage {
 
                         Rectangle {
                             anchors.margins: Kirigami.Units.smallSpacing
-                            color: model.collectionColor
+                            color: controlRoot.collectionColor
                             radius: width
                             Layout.preferredHeight: Kirigami.Units.iconSizes.small
                             Layout.preferredWidth: Kirigami.Units.iconSizes.small
                         }
                     }
 
-                    onClicked: collectionPickerSheet.collectionPicked(collectionId);
+                    onClicked: collectionPickerSheet.collectionPicked(controlRoot.collectionId);
                 }
             }
         }

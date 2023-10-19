@@ -7,7 +7,6 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kirigamiaddons.treeview 1.0 as Tree
 import org.kde.kitemmodels 1.0
 
 import org.kde.merkuro.calendar 1.0 as Calendar
@@ -158,29 +157,34 @@ ListView {
         }
     }
 
-    delegate: Delegates.RoundedItemDelegate {
+    delegate: Delegates.RoundedTreeDelegate {
         id: listItem
 
         readonly property bool validEndDt: !isNaN(model.endTime.getTime())
 
         property alias mouseArea: mouseArea
-        property var incidencePtr: model.incidencePtr
-        property date occurrenceDate: model.startTime
-        property date occurrenceEndDate: model.endTime
         property bool repositionAnimationEnabled: false
         property bool caught: false
         property real caughtX: x
         property real caughtY: y
 
+        required property var model
+
+        required property string displayDueDate
+        required property bool isOverdue
+        required property int percent
+        required property bool todoCompleted
+        required property bool isReadOnly
+        required property var color
+        required property var incidencePtr
+        required property var collectionId
+        required property date startTime
+        required property date endTime
+        required property var priority
+        required property var todoCategories
+        required property bool recurs
+
         objectName: "taskDelegate"
-
-        leftInset: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0)
-        leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing
-
-        rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing
-        rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? decoration.width + listItem.padding * 2 : 0) + Kirigami.Units.smallSpacing * 2
-
-        //onActiveBackgroundColorChanged: activeBackgroundColor.a = 0.15
 
         Drag.active: mouseArea.drag.active
         Drag.hotSpot.x: mouseArea.mouseX
@@ -188,7 +192,7 @@ ListView {
 
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
-        Kirigami.Theme.highlightColor: LabelUtils.getIncidenceDelegateBackgroundColor(model.color, root.isDark)
+        Kirigami.Theme.highlightColor: LabelUtils.getIncidenceDelegateBackgroundColor(color, root.isDark)
 
         Behavior on x {
             enabled: repositionAnimationEnabled
@@ -226,27 +230,10 @@ ListView {
             }
         ]
 
-        data: [
-            Tree.TreeViewDecoration {
-                id: decoration
-                anchors {
-                    left: parent.left
-                    top:parent.top
-                    bottom: parent.bottom
-                    leftMargin: listItem.padding
-                }
-                //decorationHighlightColor: model.color
-                parent: listItem
-                parentDelegate: listItem
-                model: root.model
-            }
-        ]
-
         onClicked: root.viewAndRetainTodoData(model, listItem);
 
-        text: model.text
         Accessible.description: if (listItem.validEndDt) {
-            model.displayDueDate + model.isOverdue ? i18n(" , is overdue") : ""
+            displayDueDate + isOverdue ? i18n(" , is overdue") : ""
         } else {
             ''
         }
@@ -256,22 +243,22 @@ ListView {
 
             implicitHeight: todoItemContents.implicitHeight + (Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing)
 
-            incidenceData: model
-            collectionId: model.collectionId
+            incidenceData: listItem.model
+            collectionId: listItem.collectionId
             anchors.fill: null
 
             preventStealing: !Kirigami.Settings.tabletMode && !Kirigami.Settings.isMobile
 
-            drag.target: !Kirigami.Settings.isMobile && !model.isReadOnly && root.dragDropEnabled ? listItem : undefined
+            drag.target: !Kirigami.Settings.isMobile && !listItem.isReadOnly && root.dragDropEnabled ? listItem : undefined
             onReleased: listItem.Drag.drop()
 
             onViewClicked: listItem.clicked()
-            onEditClicked: CalendarUiUtils.setUpEdit(model.incidencePtr)
-            onDeleteClicked: CalendarUiUtils.setUpDelete(model.incidencePtr,
-                                                         model.endTime ? model.endTime :
-                                                                         model.startTime ? model.startTime :
+            onEditClicked: CalendarUiUtils.setUpEdit(listItem.incidencePtr)
+            onDeleteClicked: CalendarUiUtils.setUpDelete(listItem.incidencePtr,
+                                                         listItem.endTime ? listItem.endTime :
+                                                                         listItem.startTime ? listItem.startTime :
                                                                                            null)
-            onTodoCompletedClicked: model.checked = model.checked === 0 ? 2 : 0
+            onTodoCompletedClicked: listItem.model.checked = listItem.model.checked === 0 ? 2 : 0
             onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
 
             GridLayout {
@@ -293,10 +280,10 @@ ListView {
                     Layout.column: 0
                     Layout.rowSpan: root.width < Kirigami.Units.gridUnit * 28 || recurIcon.visible || dateLabel.visible ? 1 : 2
 
-                    todoCompleted: model.todoCompleted
-                    todoCompletion: model.percent
-                    todoPtr: model.incidencePtr
-                    color: model.color
+                    todoCompleted: listItem.todoCompleted
+                    todoCompletion: listItem.percent
+                    todoPtr: listItem.incidencePtr
+                    color: listItem.color
                 }
 
                 QQC2.Label {
@@ -307,8 +294,8 @@ ListView {
                     Layout.rowSpan: occurrenceLayout.visible ? 1 : 2
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignVCenter
-                    text: model.text
-                    font.strikeout: model.todoCompleted
+                    text: listItem.model.text
+                    font.strikeout: listItem.todoCompleted
                     font.weight: Font.Medium
                     wrapMode: Text.Wrap
                 }
@@ -328,7 +315,7 @@ ListView {
 
                     Repeater {
                         id: tagsRepeater
-                        model: todoCategories // From todoModel
+                        model: listItem.todoCategories // From todoModel
 
                         Tag {
                             width: implicitWidth > tagFlow.width ? tagFlow.width : implicitWidth
@@ -346,7 +333,7 @@ ListView {
                     Layout.alignment: Qt.AlignRight
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     spacing: 0
-                    visible: model.priority > 0
+                    visible: listItem.priority > 0
 
                     Kirigami.Icon {
                         Layout.maximumHeight: priorityLabel.height
@@ -354,7 +341,7 @@ ListView {
                     }
                     QQC2.Label {
                         id: priorityLabel
-                        text: model.priority
+                        text: listItem.priority
                     }
                 }
 
@@ -370,15 +357,15 @@ ListView {
                     QQC2.Label {
                         id: dateLabel
 
-                        text: model.displayDueDate
-                        color: model.isOverdue ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                        text: listItem.displayDueDate
+                        color: listItem.isOverdue ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                         font: Kirigami.Theme.smallFont
                         visible: listItem.validEndDt
                     }
                     Kirigami.Icon {
                         id: recurIcon
                         source: "task-recurring"
-                        visible: model.recurs
+                        visible: listItem.recurs
                         Layout.maximumHeight: parent.height
                     }
                 }
