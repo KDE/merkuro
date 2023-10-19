@@ -5,6 +5,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 /**
  * Special combobox control that allows to choose a collection.
@@ -86,10 +87,10 @@ QQC2.ComboBox {
         onCurrentIndexChanged: comboBox.currentIndex = currentIndex
     }
 
-    delegate: Kirigami.BasicListItem {
-        label: model.display
+    delegate: Delegates.RoundedItemDelegate {
+        text: model.display
         icon.name: decoration
-        trailing: Rectangle {
+        Rectangle {
             anchors.margins: Kirigami.Units.smallSpacing
             width: height
             radius: width * 0.5

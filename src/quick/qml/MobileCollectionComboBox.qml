@@ -6,6 +6,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.kirigamiaddons.delegates as Delegates
 
 /**
  * Special combobox control that allows to choose a collection.
@@ -97,10 +98,10 @@ FormCard.FormComboBoxDelegate {
         onCurrentIndexChanged: comboBox.currentIndex = currentIndex
     }
 
-    comboBoxDelegate: Kirigami.BasicListItem {
-        label: model.display
-        icon.name: model.icon
-        trailing: Rectangle {
+    comboBoxDelegate: Delegates.RoundedItemDelegate {
+        text: model.display
+        icon.source: decoration
+        Rectangle {
             anchors.margins: Kirigami.Units.smallSpacing
             width: height
             radius: width * 0.5
