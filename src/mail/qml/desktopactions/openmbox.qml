@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl.schwan@gnupg.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.0
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.pim.mimetreeparser 1.0
-import org.kde.merkuro.mail.desktop 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Dialogs
+import org.kde.kirigami as Kirigami
+import org.kde.pim.mimetreeparser
+import org.kde.merkuro.mail.desktop
 
 Kirigami.ApplicationWindow {
     id: root
