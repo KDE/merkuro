@@ -236,9 +236,9 @@ QString AddresseeWrapper::note() const
     return m_addressee.note();
 }
 
-QDate AddresseeWrapper::anniversary() const
+QDateTime AddresseeWrapper::anniversary() const
 {
-    return m_addressee.anniversary();
+    return QDateTime(m_addressee.anniversary(), QTime());
 }
 
 QString AddresseeWrapper::spousesName() const
@@ -290,12 +290,12 @@ void AddresseeWrapper::setNote(const QString &note)
     Q_EMIT noteChanged();
 }
 
-void AddresseeWrapper::setAnniversary(const QDate &anniversary)
+void AddresseeWrapper::setAnniversary(const QDateTime &anniversary)
 {
-    if (anniversary == m_addressee.anniversary()) {
+    if (anniversary.date() == m_addressee.anniversary()) {
         return;
     }
-    m_addressee.setAnniversary(anniversary);
+    m_addressee.setAnniversary(anniversary.date());
     Q_EMIT anniversaryChanged();
 }
 

@@ -19,9 +19,29 @@ FormCard.FormCard {
     required property ContactEditor contactEditor
 
     FormCard.FormTextFieldDelegate {
-        id: spousesName
-        label: i18n("Spouse's Name")
+        id: partnerDelegate
+        label: i18nc("@label", "Partners's name")
         text: root.contactEditor.contact.spousesName
         onTextChanged: root.contactEditor.contact.spousesName = text
+    }
+
+    FormCard.FormDelegateSeparator {}
+
+    FormCard.FormDateTimeDelegate {
+        id: anniversaryDelegate
+        text: i18nc("@label", "Anniversary")
+        dateTimeDisplay: FormCard.FormDateTimeDelegate.DateTimeDisplay.Date
+        value: root.contactEditor.contact.anniversary
+        onValueChanged: root.contactEditor.contact.anniversary = value
+    }
+
+    FormCard.FormDelegateSeparator {}
+
+    FormCard.FormDateTimeDelegate {
+        id: birtdayDelegate
+        text: i18nc("@label", "Birthday")
+        dateTimeDisplay: FormCard.FormDateTimeDelegate.DateTimeDisplay.Date
+        value: root.contactEditor.contact.birthday
+        onValueChanged: root.contactEditor.contact.birthday = value
     }
 }

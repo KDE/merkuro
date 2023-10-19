@@ -51,7 +51,7 @@ class AddresseeWrapper : public QObject, public Akonadi::ItemMonitor
 
     // Personal information
     Q_PROPERTY(QDateTime birthday READ birthday WRITE setBirthday NOTIFY birthdayChanged)
-    Q_PROPERTY(QDate anniversary READ anniversary WRITE setAnniversary NOTIFY anniversaryChanged)
+    Q_PROPERTY(QDateTime anniversary READ anniversary WRITE setAnniversary NOTIFY anniversaryChanged)
     Q_PROPERTY(QString spousesName READ spousesName WRITE setSpousesName NOTIFY spousesNameChanged)
 
     // Buisness information
@@ -125,8 +125,8 @@ public:
     QString note() const;
     void setNote(const QString &note);
 
-    QDate anniversary() const;
-    void setAnniversary(const QDate &anniversary);
+    QDateTime anniversary() const;
+    void setAnniversary(const QDateTime &anniversary);
 
     QString organization() const;
     void setOrganization(const QString &organization);
