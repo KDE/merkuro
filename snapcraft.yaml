@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: merkuro
-version: 23.04.3
 apps:
     merkuro:
         # extensions:
         # - kde-neon
         common-id: org.kde.merkuro
+        desktop: usr/share/applications/org.kde.merkuro.desktop
         command: usr/bin/merkuro
         plugs:
         - home
@@ -157,7 +157,6 @@ parts:
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
-        - kirigami2-dev
         - kirigami-addons-dev
         stage-packages:
         - libboost-graph1.74.0
@@ -214,7 +213,6 @@ parts:
         - akonadi-server
         - sqlite
         - akonadi-backend-sqlite
-        - libkf5kirigami2-5
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kirigami-addons-labs-components
