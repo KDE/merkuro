@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:39+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -2820,9 +2820,25 @@ msgid "protocol:person@example.com"
 msgstr "protokol:şəxs@example.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
-msgid "Spouse's Name"
-msgstr "Həyat yoldaşının adı"
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
+msgctxt "@label"
+msgid "Partners's name"
+msgstr "Həyat yoldaşı:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
+#, fuzzy, kde-format
+#| msgid "Anniversary:"
+msgctxt "@label"
+msgid "Anniversary"
+msgstr "İldönümü:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:42
+#, fuzzy, kde-format
+#| msgid "Birthday:"
+msgctxt "@label"
+msgid "Birthday"
+msgstr "Ad günü:"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -3508,6 +3524,9 @@ msgstr "Yeni yarlıq yaradın..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Cəld yeni yarlıq əlavə edin."
+
+#~ msgid "Spouse's Name"
+#~ msgstr "Həyat yoldaşının adı"
 
 #, fuzzy
 #~| msgid "Email Address"

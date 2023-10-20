@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:39+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2023-09-28 10:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2775,9 +2775,25 @@ msgid "protocol:person@example.com"
 msgstr "protokol:kişi@örnek.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
-msgid "Spouse's Name"
-msgstr "Eşinin Adı"
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
+msgctxt "@label"
+msgid "Partners's name"
+msgstr "Eşinin adı:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
+#, fuzzy, kde-format
+#| msgid "Anniversary:"
+msgctxt "@label"
+msgid "Anniversary"
+msgstr "Yıldönümü:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:42
+#, fuzzy, kde-format
+#| msgid "Birthday:"
+msgctxt "@label"
+msgid "Birthday"
+msgstr "Doğum günü:"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -3430,3 +3446,6 @@ msgstr "Yeni Etiket Oluştur…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Tez Yeni Etiket Ekle."
+
+#~ msgid "Spouse's Name"
+#~ msgstr "Eşinin Adı"

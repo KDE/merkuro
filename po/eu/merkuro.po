@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 01:39+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2023-09-28 19:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2787,9 +2787,25 @@ msgid "protocol:person@example.com"
 msgstr "protokoloa:nor@adibidea.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
-msgid "Spouse's Name"
-msgstr "Bikotekidearen izena"
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
+msgctxt "@label"
+msgid "Partners's name"
+msgstr "Bikotekidearen izena:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
+#, fuzzy, kde-format
+#| msgid "Anniversary:"
+msgctxt "@label"
+msgid "Anniversary"
+msgstr "Urtemuga:"
+
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:42
+#, fuzzy, kde-format
+#| msgid "Birthday:"
+msgctxt "@label"
+msgid "Birthday"
+msgstr "Jaiotza data:"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -3442,6 +3458,9 @@ msgstr "Sortu etiketa berria..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Azkar gehitu etiketa berri bat."
+
+#~ msgid "Spouse's Name"
+#~ msgstr "Bikotekidearen izena"
 
 #~ msgctxt "Separator between identity name and email address"
 #~ msgid " - "
