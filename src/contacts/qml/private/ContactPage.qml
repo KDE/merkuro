@@ -4,9 +4,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.merkuro.contact 1.0
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import Qt5Compat.GraphicalEffects
+
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.formcard as FormCard
+
+import org.kde.merkuro.contact
 
 FormCard.FormCardPage {
     id: page
@@ -53,83 +57,68 @@ FormCard.FormCardPage {
         Qt.openUrlExternally("sms:" + number)
     }
 
-    header: ColumnLayout {
-        spacing: 0
-        Header {
-            id: header
+    Header {
+        Layout.fillWidth: true
+        source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
+        name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : i18nc("Placeholder", "No Name")
+        actions: [
+            Kirigami.Action {
+                text: i18n("Call")
+                icon.name: "call-start"
+                visible: addressee.phoneNumbers.length > 0
+                onTriggered: {
+                    const model = addressee.phoneNumbers;
 
-            Layout.fillWidth: true
-            Layout.preferredHeight: Kirigami.Units.gridUnit * 8
-
-            source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
-            name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : i18nc("Placeholder", "No Name")
-        }
-
-        QQC2.ToolBar {
-            Layout.fillWidth: true
-            contentItem: Kirigami.ActionToolBar {
-                id: toolbar
-
-                Component {
-                    id: callPopup
-
-                    PhoneNumberDialog {}
-                }
-
-                actions: [
-                    Kirigami.Action {
-                        text: i18n("Call")
-                        icon.name: "call-start"
-                        visible: addressee.phoneNumbers.length > 0
-                        onTriggered: {
-                            const model = addressee.phoneNumbers;
-
-                            if (addressee.phoneNumbers.length === 1) {
-                                page.callNumber(model[0].normalizedNumber);
-                            } else {
-                                const pop = callPopup.createObject(page, {
-                                    numbers: addressee.phoneNumbers,
-                                    title: i18n("Select number to call")
-                                });
-                                pop.onNumberSelected.connect(number => callNumber(number));
-                                pop.open();
-                            }
-                        }
-                    },
-                    Kirigami.Action {
-                        text: i18n("Send SMS")
-                        icon.name: "mail-message"
-                        visible: addressee.phoneNumbers.length > 0
-                        onTriggered: {
-                            const model = addressee.phoneNumbers;
-
-                            if (addressee.phoneNumbers.length === 1) {
-                                page.sendSms(model[0].normalizedNumber);
-                            } else {
-                                const pop = callPopup.createObject(page, {
-                                    numbers: addressee.phoneNumbers,
-                                    title: i18n("Select number to send message to"),
-                                });
-                                pop.onNumberSelected.connect(number => sendSms(number));
-                                pop.open();
-                            }
-                        }
-                    },
-                    Kirigami.Action {
-                        text: i18n("Send email")
-                        icon.name: "mail-message"
-                        visible: addressee.preferredEmail.length > 0
-                        onTriggered: Qt.openUrlExternally(`mailto:${addressee.preferredEmail}`)
-                    },
-                    Kirigami.Action {
-                        text: i18n("Show QR Code")
-                        icon.name: 'view-barcode-qr'
-                        onTriggered: pageStack.layers.push(Qt.resolvedUrl('./QrCodePage.qml'), {
-                            qrCodeData: addressee.qrCodeData(),
-                        })
+                    if (addressee.phoneNumbers.length === 1) {
+                        page.callNumber(model[0].normalizedNumber);
+                    } else {
+                        const pop = callPopup.createObject(page, {
+                            numbers: addressee.phoneNumbers,
+                            title: i18n("Select number to call")
+                        });
+                        pop.onNumberSelected.connect(number => callNumber(number));
+                        pop.open();
                     }
-                ]
+                }
+            },
+            Kirigami.Action {
+                text: i18n("Send SMS")
+                icon.name: "mail-message"
+                visible: addressee.phoneNumbers.length > 0
+                onTriggered: {
+                    const model = addressee.phoneNumbers;
+
+                    if (addressee.phoneNumbers.length === 1) {
+                        page.sendSms(model[0].normalizedNumber);
+                    } else {
+                        const pop = callPopup.createObject(page, {
+                            numbers: addressee.phoneNumbers,
+                            title: i18n("Select number to send message to"),
+                        });
+                        pop.onNumberSelected.connect(number => sendSms(number));
+                        pop.open();
+                    }
+                }
+            },
+            Kirigami.Action {
+                text: i18n("Send email")
+                icon.name: "mail-message"
+                visible: addressee.preferredEmail.length > 0
+                onTriggered: Qt.openUrlExternally(`mailto:${addressee.preferredEmail}`)
+            },
+            Kirigami.Action {
+                text: i18n("Show QR Code")
+                icon.name: 'view-barcode-qr'
+                onTriggered: pageStack.layers.push(Qt.resolvedUrl('./QrCodePage.qml'), {
+                    qrCodeData: addressee.qrCodeData(),
+                })
             }
+        ]
+
+        Component {
+            id: callPopup
+
+            PhoneNumberDialog {}
         }
     }
 
