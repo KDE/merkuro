@@ -115,7 +115,7 @@ void ThumbnailResponse::prepareResult()
                             } else {
                                 QByteArray imageData;
                                 KIO::TransferJob *jobTransfert = KIO::get(url, KIO::NoReload);
-                                QObject::connect(jobTransfert, &KIO::TransferJob::data, [&imageData](KIO::Job *, const QByteArray &data) {
+                                QObject::connect(jobTransfert, &KIO::TransferJob::data, this, [&imageData](KIO::Job *, const QByteArray &data) {
                                     imageData.append(data);
                                 });
                                 if (jobTransfert->exec()) {
