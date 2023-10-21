@@ -66,13 +66,15 @@ Kirigami.ScrollablePage {
             avatarIcon: model && model.decoration
 
             onClicked: if (model.mimeType === 'application/x-vnd.kde.contactgroup') {
+                contactsList.currentIndex = index;
                 applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
                     itemId: model.itemId,
-                })
+                });
             } else {
+                contactsList.currentIndex = index;
                 applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
                     itemId: model.itemId,
-                })
+                });
             }
 
             onCreateContextMenu: createContactListContextMenu(model.item, model.display)
