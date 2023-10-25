@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("merkuro");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("merkuro"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setApplicationName(QStringLiteral("Merkuro"));
 
