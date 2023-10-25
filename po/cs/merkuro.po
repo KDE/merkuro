@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-06-29 11:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1189,7 +1189,7 @@ msgstr "Účastníci:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
-#: contacts/qml/private/ContactPage.qml:144
+#: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Název:"
@@ -2220,7 +2220,7 @@ msgid "Enter Full Screen"
 msgstr "Přejít do celoobrazovkového režimu"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
-#: contacts/qml/private/ContactPage.qml:245
+#: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgid "Home:"
 msgstr "Domácí stránka:"
@@ -2345,7 +2345,7 @@ msgid "New Contact Group"
 msgstr ""
 
 #: contacts/qml/ContactView.qml:57 contacts/qml/ContactView.qml:65
-#: contacts/qml/private/ContactPage.qml:65
+#: contacts/qml/private/ContactPage.qml:63
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
@@ -2641,7 +2641,7 @@ msgid "Personal Information"
 msgstr "Osobní informace"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
-#: contacts/qml/private/ContactPage.qml:282
+#: contacts/qml/private/ContactPage.qml:271
 #, kde-format
 msgid "Business Information"
 msgstr "Informace o zaměstnání"
@@ -2904,84 +2904,84 @@ msgctxt "@action:button"
 msgid "Edit"
 msgstr "Úpravy"
 
-#: contacts/qml/private/ContactPage.qml:32
+#: contacts/qml/private/ContactPage.qml:36
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Upravit"
 
-#: contacts/qml/private/ContactPage.qml:40
+#: contacts/qml/private/ContactPage.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: contacts/qml/private/ContactPage.qml:81
+#: contacts/qml/private/ContactPage.qml:66
 #, kde-format
 msgid "Call"
 msgstr "Volání"
 
-#: contacts/qml/private/ContactPage.qml:92
+#: contacts/qml/private/ContactPage.qml:77
 #, kde-format
 msgid "Select number to call"
 msgstr "Vyberte číslo k zavolání"
 
-#: contacts/qml/private/ContactPage.qml:100
+#: contacts/qml/private/ContactPage.qml:85
 #, kde-format
 msgid "Send SMS"
 msgstr "Poslat SMS"
 
-#: contacts/qml/private/ContactPage.qml:111
+#: contacts/qml/private/ContactPage.qml:96
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Vyberte číslo pro poslání zprávy"
 
-#: contacts/qml/private/ContactPage.qml:119
+#: contacts/qml/private/ContactPage.qml:104
 #, kde-format
 msgid "Send email"
 msgstr "Odeslat e-mail"
 
-#: contacts/qml/private/ContactPage.qml:125
+#: contacts/qml/private/ContactPage.qml:110
 #, kde-format
 msgid "Show QR Code"
 msgstr "Zobrazit QR kód"
 
-#: contacts/qml/private/ContactPage.qml:137
+#: contacts/qml/private/ContactPage.qml:126
 #, kde-format
 msgid "Contact information"
 msgstr "Informace o kontaktu"
 
-#: contacts/qml/private/ContactPage.qml:150
+#: contacts/qml/private/ContactPage.qml:139
 #, kde-format
 msgid "Nickname:"
 msgstr "Přezdívka:"
 
-#: contacts/qml/private/ContactPage.qml:156
+#: contacts/qml/private/ContactPage.qml:145
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Kanál blogu:"
 
-#: contacts/qml/private/ContactPage.qml:164
+#: contacts/qml/private/ContactPage.qml:153
 #, kde-format
 msgid "Personal information"
 msgstr "Osobní informace"
 
-#: contacts/qml/private/ContactPage.qml:174
+#: contacts/qml/private/ContactPage.qml:163
 #, kde-format
 msgid "Birthday:"
 msgstr "Narozeniny:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:181
 #, kde-format
 msgid "Anniversary:"
 msgstr "Výročí:"
 
-#: contacts/qml/private/ContactPage.qml:199
+#: contacts/qml/private/ContactPage.qml:188
 #, kde-format
 msgid "Partner's name:"
 msgstr "Jméno partnera:"
 
-#: contacts/qml/private/ContactPage.qml:204
+#: contacts/qml/private/ContactPage.qml:193
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
@@ -2989,13 +2989,13 @@ msgstr[0] "Telefonní číslo"
 msgstr[1] "Telefonní čísla"
 msgstr[2] "Telefonní čísla"
 
-#: contacts/qml/private/ContactPage.qml:220
+#: contacts/qml/private/ContactPage.qml:209
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:228
+#: contacts/qml/private/ContactPage.qml:217
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
@@ -3003,59 +3003,59 @@ msgstr[0] "Adresa"
 msgstr[1] "Adresy"
 msgstr[2] "Adresy"
 
-#: contacts/qml/private/ContactPage.qml:245
+#: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:252
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
 
-#: contacts/qml/private/ContactPage.qml:273
+#: contacts/qml/private/ContactPage.qml:262
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:301
+#: contacts/qml/private/ContactPage.qml:290
 #, kde-format
 msgid "Organization:"
 msgstr "Organizace:"
 
-#: contacts/qml/private/ContactPage.qml:308
+#: contacts/qml/private/ContactPage.qml:297
 #, kde-format
 msgid "Profession:"
 msgstr "Profese:"
 
-#: contacts/qml/private/ContactPage.qml:315
+#: contacts/qml/private/ContactPage.qml:304
 #, kde-format
 msgid "Title:"
 msgstr "Název:"
 
-#: contacts/qml/private/ContactPage.qml:322
+#: contacts/qml/private/ContactPage.qml:311
 #, kde-format
 msgid "Department:"
 msgstr "Oddělení:"
 
-#: contacts/qml/private/ContactPage.qml:329
+#: contacts/qml/private/ContactPage.qml:318
 #, kde-format
 msgid "Office:"
 msgstr "Kancelář:"
 
-#: contacts/qml/private/ContactPage.qml:336
+#: contacts/qml/private/ContactPage.qml:325
 #, kde-format
 msgid "Manager's name:"
 msgstr "Jméno manažera:"
 
-#: contacts/qml/private/ContactPage.qml:343
+#: contacts/qml/private/ContactPage.qml:332
 #, kde-format
 msgid "Assistants's name:"
 msgstr "Jméno asistenta:"
 
-#: contacts/qml/private/ContactPage.qml:349
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
