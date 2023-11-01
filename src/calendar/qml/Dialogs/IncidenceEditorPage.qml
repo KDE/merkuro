@@ -1,20 +1,20 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-import QtCore 6.5
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import Qt.labs.platform
-import Qt.labs.qmlmodels 1.0
-import org.kde.kitemmodels 1.0
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kirigamiaddons.components 1.0 as Components
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.contact 1.0
-import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.akonadi 1.0 as Akonadi
+import QtCore
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import QtQuick.Dialogs
+import Qt.labs.qmlmodels
+import org.kde.kitemmodels
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as Components
+import org.kde.merkuro.calendar
+import org.kde.merkuro.contact
+import org.kde.merkuro.calendar as Calendar
+import org.kde.akonadi as Akonadi
 import "labelutils.js" as LabelUtils
 
 Kirigami.ScrollablePage {
@@ -358,8 +358,8 @@ Kirigami.ScrollablePage {
                     textRole: "display"
                     valueRole: "id"
                     currentIndex: model ? timeZonesModel.getTimeZoneRow(root.incidenceWrapper.timeZone) : -1
-                    delegate: Kirigami.BasicListItem {
-                        label: model.display
+                    delegate: Delegates.RoundedItemDelegate {
+                        text: model.display
                         onClicked: root.incidenceWrapper.timeZone = model.id
                     }
                     enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
@@ -404,7 +404,7 @@ Kirigami.ScrollablePage {
                         {key: "yearly", display: i18n("Yearly"), interval: IncidenceWrapper.Yearly},
                         {key: "custom", display: i18n("Custom"), interval: -1}
                     ]
-                    delegate: Kirigami.BasicListItem {
+                    delegate: Delegates.RoundedItemDelegate {
                         text: modelData.display
                         onClicked: if (modelData.interval >= 0) {
                             root.incidenceWrapper.setRegularRecurrence(modelData.interval)
@@ -485,7 +485,7 @@ Kirigami.ScrollablePage {
                                 {key: "month", display: i18np("month", "months", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Monthly},
                                 {key: "year", display: i18np("year", "years", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Yearly},
                             ]
-                            delegate: Kirigami.BasicListItem {
+                            delegate: Delegates.RoundedItemDelegate {
                                 text: modelData.display
                                 onClicked: {
                                     customRecurrenceLayout.setOccurrence();
@@ -602,7 +602,7 @@ Kirigami.ScrollablePage {
                                 {display: i18n("On"), duration: 0},
                                 {display: i18n("After"), duration: 1}
                             ]
-                            delegate: Kirigami.BasicListItem {
+                            delegate: Delegates.RoundedItemDelegate {
                                 text: modelData.display
                                 onClicked: root.incidenceWrapper.setRecurrenceDataItem("duration", modelData.duration)
                             }
@@ -672,14 +672,22 @@ Kirigami.ScrollablePage {
                         Repeater {
                             id: exceptionsRepeater
                             model: root.incidenceWrapper.recurrenceExceptionsModel
-                            delegate: RowLayout {
-                                Kirigami.BasicListItem {
-                                    Layout.fillWidth: true
-                                    text: date.toLocaleDateString(Qt.locale())
-                                }
-                                QQC2.Button {
-                                    icon.name: "edit-delete-remove"
-                                    onClicked: root.incidenceWrapper.recurrenceExceptionsModel.deleteExceptionDateTime(date)
+
+                            delegate: Delegates.RoundedItemDelegate {
+                                id: exceptionDelegate
+
+                                text: date.toLocaleDateString(Qt.locale())
+
+                                contentItem: RowLayout {
+                                    Delegates.DefaultContentItem {
+                                        itemDelegate: exceptionDelegate
+                                        Layout.fillWidth: true
+                                    }
+
+                                    QQC2.Button {
+                                        icon.name: "edit-delete-remove"
+                                        onClicked: root.incidenceWrapper.recurrenceExceptionsModel.deleteExceptionDateTime(date)
+                                    }
                                 }
                             }
                         }
@@ -748,7 +756,7 @@ Kirigami.ScrollablePage {
                             autoUpdate: true
                             onLocationsChanged: locationField.openOrCloseLocationsPopup()
                         }*/
-                        delegate: Kirigami.BasicListItem {
+                        delegate: Delegates.RoundedItemDelegate {
                             text: locationData.address.text
                             onClicked: root.incidenceWrapper.location = locationData.address.text
                         }
@@ -1069,16 +1077,28 @@ Kirigami.ScrollablePage {
                     Repeater {
                         id: attachmentsRepeater
                         model: root.incidenceWrapper.attachmentsModel
-                        delegate: RowLayout {
-                            Kirigami.BasicListItem {
-                                Layout.fillWidth: true
-                                icon: iconName // Why isn't this icon.name??
-                                label: attachmentLabel
-                                onClicked: Qt.openUrlExternally(uri)
-                            }
-                            QQC2.Button {
-                                icon.name: "edit-delete-remove"
-                                onClicked: root.incidenceWrapper.attachmentsModel.deleteAttachment(uri)
+                        delegate: Delegates.RoundedItemDelegate {
+                            id: attachmentDelegate
+
+                            required property string iconName
+                            required property string attachmentLabel
+                            required property string uri
+
+                            icon.name: iconName
+                            text: attachmentLabel
+
+                            onClicked: Qt.openUrlExternally(uri)
+
+                            contentItem: RowLayout {
+                                Delegates.DefaultContentItem {
+                                    itemDelegate: attachmentDelegate
+                                    Layout.fillWidth: true
+                                }
+
+                                QQC2.Button {
+                                    icon.name: "edit-delete-remove"
+                                    onClicked: root.incidenceWrapper.attachmentsModel.deleteAttachment(attachmentDelegate.uri)
+                                }
                             }
                         }
                     }
@@ -1093,8 +1113,8 @@ Kirigami.ScrollablePage {
                             id: attachmentFileDialog
 
                             title: i18n("Add an attachment")
-                            folder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
-                            onAccepted: root.incidenceWrapper.attachmentsModel.addAttachment(fileUrls)
+                            currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
+                            onAccepted: root.incidenceWrapper.attachmentsModel.addAttachment(selectedFile)
                         }
                     }
                 }

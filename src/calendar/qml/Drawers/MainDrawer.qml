@@ -14,8 +14,8 @@ import org.kde.akonadi 1.0
 import org.kde.merkuro.calendar 1.0
 import org.kde.merkuro.components 1.0
 import org.kde.kirigami 2.16 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kitemmodels 1.0
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kitemmodels
 
 Kirigami.OverlayDrawer {
     id: mainDrawer
@@ -363,17 +363,18 @@ Kirigami.OverlayDrawer {
         Layout.fillWidth: true
     }
 
-    Kirigami.BasicListItem {
+    Delegates.RoundedItemDelegate {
         FontMetrics {
             id: textMetrics
         }
 
-        implicitHeight: textMetrics.height + Kirigami.Units.largeSpacing * 2
+        implicitHeight: textMetrics.height + Kirigami.Units.largeSpacing * 2 - 1
+        topInset: Kirigami.Units.smallSpacing
+        bottomInset: Kirigami.Units.smallSpacing
         icon.name: "show-all-effects"
-        label: i18n("View all tasks")
-        labelItem.color: Kirigami.Theme.textColor
+        text: i18n("View all tasks")
         visible: mainDrawer.mode === CalendarApplication.Todo
-        separatorVisible: false
+        Layout.fillWidth: true
         onClicked: {
             Filter.reset()
             if (mainDrawer.modal && mainDrawer.mode === CalendarApplication.Todo) {
