@@ -14,8 +14,8 @@ QQC2.CheckBox {
     indicator: Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        height: parent.height * 0.8
-        width: height
+        implicitHeight: Kirigami.Units.iconSizes.small
+        implicitWidth: Kirigami.Units.iconSizes.small
         x: checkbox.leftPadding
         y: parent.height / 2 - height / 2
         radius: checkbox.radius
