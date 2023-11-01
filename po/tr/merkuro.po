@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
-"PO-Revision-Date: 2023-10-20 12:09+0300\n"
+"POT-Creation-Date: 2023-11-01 01:41+0000\n"
+"PO-Revision-Date: 2023-11-01 00:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -210,7 +210,7 @@ msgstr "Bir hata oluştu: %1"
 
 #: calendar/incidencewrapper.cpp:137
 #: calendar/models/incidenceoccurrencemodel.cpp:305
-#: calendar/models/todosortfilterproxymodel.cpp:134
+#: calendar/models/todosortfilterproxymodel.cpp:137
 #, kde-format
 msgid "Task"
 msgstr "Görev"
@@ -262,39 +262,39 @@ msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Geliştirici"
 
-#: calendar/models/todosortfilterproxymodel.cpp:146
+#: calendar/models/todosortfilterproxymodel.cpp:149
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgctxt "List separator"
 msgid ", "
 msgstr ", "
 
-#: calendar/models/todosortfilterproxymodel.cpp:164
+#: calendar/models/todosortfilterproxymodel.cpp:167
 #, kde-format
 msgid "No set date"
 msgstr "Tarih ayarlanmamış"
 
-#: calendar/models/todosortfilterproxymodel.cpp:168
-#: calendar/qml/MainViews/TodoTreeView.qml:68
+#: calendar/models/todosortfilterproxymodel.cpp:171
+#: calendar/qml/MainViews/TodoTreeView.qml:67
 #, kde-format
 msgid "Overdue"
 msgstr "Süresi geçmiş"
 
-#: calendar/models/todosortfilterproxymodel.cpp:174
+#: calendar/models/todosortfilterproxymodel.cpp:177
 #: calendar/qml/MainViews/MonthView.qml:44
 #: calendar/qml/MainViews/ScheduleView.qml:39
-#: calendar/qml/MainViews/TodoTreeView.qml:69
+#: calendar/qml/MainViews/TodoTreeView.qml:68
 #, kde-format
 msgid "Today"
 msgstr "Bugün"
 
-#: calendar/models/todosortfilterproxymodel.cpp:197
+#: calendar/models/todosortfilterproxymodel.cpp:200
 #, kde-format
 msgctxt "Please retain space"
 msgid " at %1"
 msgstr "%1 konumunda"
 
-#: calendar/models/todosortfilterproxymodel.cpp:198
+#: calendar/models/todosortfilterproxymodel.cpp:201
 #, kde-format
 msgctxt "Please retain parenthesis and space"
 msgid " (overdue)"
@@ -480,7 +480,7 @@ msgstr "Yıl"
 #: calendar/qml/Controls/DateControls/TimePicker.qml:50
 #, kde-format
 msgid "Min. Interval:"
-msgstr "Dakika Aralığı:"
+msgstr "Dakika aralığı:"
 
 #: calendar/qml/Controls/ImportHandler.qml:48
 #, kde-format
@@ -615,7 +615,7 @@ msgstr "<b>Yeniden oluş:</b>"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:338
 #, kde-format
 msgid "Except on:"
-msgstr "Şunlar haricinde:"
+msgstr "Şu tarih dışında:"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:368
 #, kde-format
@@ -823,17 +823,17 @@ msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
 msgstr "<b>%1</b> - %2"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:22
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
 msgstr "Görev Takvimi Seç"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:24
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:23
 #, kde-format
 msgid "Choose a Calendar"
 msgstr "Takvim Seç"
 
-#: calendar/qml/Dialogs/CollectionPickerPage.qml:26
+#: calendar/qml/Dialogs/CollectionPickerPage.qml:25
 #, kde-format
 msgid "Choose an Address Book"
 msgstr "Bir Adres Defteri Seç"
@@ -860,7 +860,7 @@ msgstr "Takvimi silmek istiyor musunuz: \"%1\"?"
 #: quick/qml/TagManagerPage.qml:43
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr "Bu eylemi geri alamayacaksınız"
+msgstr "Bu eylemi geri alınamaz"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:76
 #, kde-format
@@ -1431,7 +1431,7 @@ msgstr "Konuma Dön"
 msgid "Configure Schedule"
 msgstr "Programı Yapılandır"
 
-#: calendar/qml/main.qml:287 calendar/qml/MainViews/TodoTreeView.qml:142
+#: calendar/qml/main.qml:287 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
@@ -1581,42 +1581,42 @@ msgstr "Önceki Ay"
 msgid "Next Month"
 msgstr "Sonraki Ay"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:74
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "Priority %1"
 msgstr "Öncelik %1"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:74
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "No set priority"
 msgstr "Öncelik ayarlanmamış"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:121
+#: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task calendars enabled."
 msgstr "Görev takvimleri etkinleştirilmemiş."
 
-#: calendar/qml/MainViews/TodoTreeView.qml:128
+#: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
 msgid "Calendar is not enabled"
 msgstr "Takvim etkinleştirilmemiş"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:131
+#: calendar/qml/MainViews/TodoTreeView.qml:130
 #, kde-format
 msgid "Enable"
 msgstr "Etkinleştir"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
 msgstr "Tamamlanan görev yok"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "Tamamlanacak görev yok"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:249
+#: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
 msgstr " , süresi geçmiş"
@@ -1651,43 +1651,43 @@ msgstr "Tez Yeni Görev Oluştur."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit calendar…"
-msgstr "Takvimi düzenle…"
+msgstr "Takvimi Düzenle…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:28
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar"
-msgstr "Takvimi güncelle"
+msgstr "Takvimi Güncelle"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar"
-msgstr "Takvimi sil"
+msgstr "Takvimi Sil"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar colour…"
-msgstr "Takvim rengini ayarla…"
+msgstr "Takvim Rengini Ayarla…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
-msgstr "Takvim kaynağı ayarları…"
+msgstr "Takvim Kaynağı Ayarları…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
-msgstr "Takvim kaynağını güncelle"
+msgstr "Takvim Kaynağını Güncelle"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
-msgstr "Takvim kaynağını sil"
+msgstr "Takvim Kaynağını Sil"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:36 calendar/qml/Menus/MenuBar.qml:40
 #: contacts/qml/GlobalMenuBar.qml:18 contacts/qml/MenuBar.qml:16
@@ -2355,14 +2355,14 @@ msgstr "Adsız"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit contact…"
-msgstr "Kişiyi düzenle…"
+msgstr "Kişiyi Düzenle…"
 
 #: contacts/qml/ContactView.qml:107
 #: contacts/qml/private/DeleteContactAction.qml:76
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete contact"
-msgstr "Kişiyi sil"
+msgstr "Kişiyi Sil"
 
 #: contacts/qml/ContactView.qml:125 contacts/qml/private/ContactsPage.qml:46
 #, kde-format
@@ -2373,43 +2373,43 @@ msgstr "Kişi yok"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit address book…"
-msgstr "Adres defterini düzenle…"
+msgstr "Adres Defterini Düzenle…"
 
 #: contacts/qml/private/AddressBookMenu.qml:29
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update address book"
-msgstr "Adres defterini güncelle"
+msgstr "Adres Defterini Güncelle"
 
 #: contacts/qml/private/AddressBookMenu.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete address book"
-msgstr "Adres defterini sil"
+msgstr "Adres Defterini Sil"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book colour…"
-msgstr "Adres defteri rengi ayarla…"
+msgstr "Adres Defteri Rengini Ayarla…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Address book source settings…"
-msgstr "Adres defteri kaynağı ayarları…"
+msgstr "Adres Defteri Kaynağı Ayarları…"
 
 #: contacts/qml/private/AddressBookMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update address book source"
-msgstr "Adres defteri kaynağını güncelle"
+msgstr "Adres Defteri Kaynağını Güncelle"
 
 #: contacts/qml/private/AddressBookMenu.qml:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete address source"
-msgstr "Adres kaynağını sil"
+msgstr "Adres Kaynağını Sil"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
 #, kde-format
@@ -2567,7 +2567,7 @@ msgstr "Meslek"
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
-msgstr "Yazılım Geliştirici"
+msgstr "Yazılım Geliştiricisi"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:43
 #, kde-format
@@ -2791,7 +2791,7 @@ msgstr "Yıldönümü:"
 #, kde-format
 msgctxt "@label"
 msgid "Birthday"
-msgstr "Doğum günü:"
+msgstr "Doğum günü"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -2915,7 +2915,7 @@ msgstr "İptal"
 #: contacts/qml/private/ContactPage.qml:66
 #, kde-format
 msgid "Call"
-msgstr "Çağrı"
+msgstr "Ara"
 
 #: contacts/qml/private/ContactPage.qml:77
 #, kde-format
@@ -2945,7 +2945,7 @@ msgstr "Kare Kodu Göster"
 #: contacts/qml/private/ContactPage.qml:126
 #, kde-format
 msgid "Contact information"
-msgstr "Kişi bilgisi"
+msgstr "Kişisel Bilgiler"
 
 #: contacts/qml/private/ContactPage.qml:139
 #, kde-format
@@ -2955,7 +2955,7 @@ msgstr "Takma ad:"
 #: contacts/qml/private/ContactPage.qml:145
 #, kde-format
 msgid "Blog Feed:"
-msgstr "Blog Beslemesi:"
+msgstr "Blog beslemesi:"
 
 #: contacts/qml/private/ContactPage.qml:153
 #, kde-format
@@ -3076,7 +3076,7 @@ msgstr "Kişinizi silmeyi gerçekten istiyor musunuz: \"%1\"?"
 #: contacts/qml/private/DeleteContactAction.qml:68
 #, kde-format
 msgid "Delete contact"
-msgstr "Kişiyi sil"
+msgstr "Kişiyi Sil"
 
 #: contacts/qml/private/QrCodePage.qml:15
 #, kde-format
@@ -3195,7 +3195,7 @@ msgid ""
 "and are permanently deleted."
 msgstr ""
 "%1 klasörünü silmek ve tüm içeriğini kaldırmak istediğinizden emin misiniz? "
-"<br /> Kuldırılan iletilerin Çöp Kutusu klasörüne gönderilmediğini ve kalıcı "
+"<br /> Kaldırılan iletilerin Çöp Kutusu klasörüne gönderilmediğini ve kalıcı "
 "olarak silindiğini <b>aklınızdan çıkarmayın</b>\t."
 
 #: mail/qml/actions/MailItemMenu.qml:25
@@ -3249,7 +3249,7 @@ msgstr "Dosya Aç"
 #: mail/qml/desktopactions/openmbox.qml:21
 #, kde-format
 msgid "Choose file"
-msgstr "Dosya seç"
+msgstr "Dosya Seç"
 
 #: mail/qml/FolderView.qml:34
 #, kde-format
