@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:41+0000\n"
+"POT-Creation-Date: 2023-11-02 01:40+0000\n"
 "PO-Revision-Date: 2023-10-21 13:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -262,7 +262,7 @@ msgid "Developer"
 msgstr "开发者"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -334,8 +334,8 @@ msgid_plural "Every %1 years on the %2 of %3"
 msgstr[0] "每 %1 年的 %2 %3"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
 #, kde-format
 msgid "Never"
 msgstr "从不"
@@ -963,254 +963,269 @@ msgstr "日历："
 msgid "Summary:"
 msgstr "摘要："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#, kde-format
+msgid "Add a title for your task"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#, kde-format
+msgid "Add a title for your event"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#, kde-format
+msgid "Add a title for your journal entry"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
 #, kde-format
 msgid "Completion:"
 msgstr "完成："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:225
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
 #, kde-format
 msgid "All day"
 msgstr "全天"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:257
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
 #, kde-format
 msgid "Start:"
 msgstr "起始："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
 #, kde-format
 msgid "Due:"
 msgstr "到期："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
 #, kde-format
 msgid "End:"
 msgstr "结束："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:351
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
 #, kde-format
 msgid "Timezone:"
 msgstr "时区："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:370
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
 #, kde-format
 msgid "Repeat:"
 msgstr "重复："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
 #, kde-format
 msgid "Daily"
 msgstr "每天"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
 #, kde-format
 msgid "Weekly"
 msgstr "每周"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
 #, kde-format
 msgid "Monthly"
 msgstr "每月"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
 #, kde-format
 msgid "Yearly"
 msgstr "每年"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:405
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:83
 #, kde-format
 msgid "Custom"
 msgstr "自定义"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:436
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
 #, kde-format
 msgid "Every:"
 msgstr "每隔："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:483
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "天"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:484
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "周"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:485
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "月"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:486
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "年"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
 #, kde-format
 msgid "On:"
 msgstr "于："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:564
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "每月的第 %1 天"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:576
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "每月的第 %1 个 %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
 #, kde-format
 msgid "Ends:"
 msgstr "结束："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:602
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
 #, kde-format
 msgid "On"
 msgstr "在"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:603
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
 #, kde-format
 msgid "After"
 msgstr "之后"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:639
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "次重复"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:645
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
 #, kde-format
 msgid "Exceptions:"
 msgstr "例外："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "添加重现例外"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
 #, kde-format
 msgid "Location:"
 msgstr "位置："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:719
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:806
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
 #, kde-format
 msgid "Optional"
 msgstr "可选项目"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:768
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
 #, kde-format
 msgid "Show map"
 msgstr "显示地图"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:800
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
 #, kde-format
 msgid "Description:"
 msgstr "描述："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
 #, kde-format
 msgid "Tags:"
 msgstr "标签："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "点击设置标签..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
 #, kde-format
 msgid "Click to set tags…"
 msgstr "点击设置标签..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:874
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
 #, kde-format
 msgid "Manage tags…"
 msgstr "管理标签..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
 #, kde-format
 msgid "Reminders:"
 msgstr "提醒:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:908
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #, kde-format
 msgid "Add Reminder"
 msgstr "添加提醒"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
 #, kde-format
 msgid "Attendees:"
 msgstr "参与者："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "姓名："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:982
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
 msgid "Email:"
 msgstr "电子邮箱："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:989
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
 #, kde-format
 msgid "Required"
 msgstr "必需项目"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:998
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Status:"
 msgstr "状态："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
 #, kde-format
 msgid "Request RSVP"
 msgstr "请求对方收到时回复 (RSVP)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1036
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
 #, kde-format
 msgid "Add Attendee"
 msgstr "添加参与者"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "选择联系人"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Fill in Manually"
 msgstr "手动填写"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1065
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
 #, kde-format
 msgid "Attachments:"
 msgstr "附件："
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1088
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
 #, kde-format
 msgid "Add Attachment"
 msgstr "添加附件"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
 #, kde-format
 msgid "Add an attachment"
 msgstr ""
@@ -1299,7 +1314,7 @@ msgstr "重做"
 msgid "Settings"
 msgstr "设置"
 
-#: calendar/qml/Drawers/MainDrawer.qml:373
+#: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
 msgstr "查看所有任务"
@@ -1359,38 +1374,38 @@ msgstr "8"
 msgid "9 (Lowest Priority)"
 msgstr "9 (最低优先级)"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:50
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:51
 #, kde-format
 msgctxt "Custom reminder"
 msgid "Custom"
 msgstr "自定义"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:145
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
 #, kde-format
 msgid "minutes"
 msgstr " 分钟"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
 #, kde-format
 msgid "hours"
 msgstr " 小时"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:148
 #, kde-format
 msgid "days"
 msgstr " 天"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:159
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
 #, kde-format
 msgid "before start of event"
 msgstr "事件开始前"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:161
 #, kde-format
 msgid "after start of event"
 msgstr "事件开始后"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:170
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:171
 #, kde-format
 msgid "Remove"
 msgstr "删除"

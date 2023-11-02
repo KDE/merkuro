@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:41+0000\n"
+"POT-Creation-Date: 2023-11-02 01:40+0000\n"
 "PO-Revision-Date: 2023-10-20 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -263,7 +263,7 @@ msgid "Developer"
 msgstr "Розробник"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -344,8 +344,8 @@ msgstr[2] "Кожні %1 років %2 %3"
 msgstr[3] "Щороку %2 %3"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
 #, kde-format
 msgid "Never"
 msgstr "Ніколи"
@@ -1004,73 +1004,88 @@ msgstr "Календар:"
 msgid "Summary:"
 msgstr "Резюме:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#, kde-format
+msgid "Add a title for your task"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#, kde-format
+msgid "Add a title for your event"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#, kde-format
+msgid "Add a title for your journal entry"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
 #, kde-format
 msgid "Completion:"
 msgstr "Завершеність:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:225
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
 #, kde-format
 msgid "All day"
 msgstr "Увесь день"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:257
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
 #, kde-format
 msgid "Start:"
 msgstr "Початок:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
 #, kde-format
 msgid "Due:"
 msgstr "Призначення:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:304
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
 #, kde-format
 msgid "End:"
 msgstr "Кінець:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:351
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
 #, kde-format
 msgid "Timezone:"
 msgstr "Часовий пояс:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:370
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
 #, kde-format
 msgid "Repeat:"
 msgstr "Повторення:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
 #, kde-format
 msgid "Daily"
 msgstr "Щодня"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
 #, kde-format
 msgid "Weekly"
 msgstr "Щотижня"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
 #, kde-format
 msgid "Monthly"
 msgstr "Щомісяця"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
 #, kde-format
 msgid "Yearly"
 msgstr "Щорічно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:405
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:83
 #, kde-format
 msgid "Custom"
 msgstr "Нетиповий"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:436
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
 #, kde-format
 msgid "Every:"
 msgstr "Раз на:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:483
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
 #, kde-format
 msgid "day"
 msgid_plural "days"
@@ -1079,7 +1094,7 @@ msgstr[1] "дні"
 msgstr[2] "днів"
 msgstr[3] "день"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:484
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
@@ -1088,7 +1103,7 @@ msgstr[1] "тиждень"
 msgstr[2] "тиждень"
 msgstr[3] "тиждень"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:485
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
 #, kde-format
 msgid "month"
 msgid_plural "months"
@@ -1097,7 +1112,7 @@ msgstr[1] "місяці"
 msgstr[2] "місяців"
 msgstr[3] "місяць"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:486
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
 #, kde-format
 msgid "year"
 msgid_plural "years"
@@ -1106,39 +1121,39 @@ msgstr[1] "роки"
 msgstr[2] "років"
 msgstr[3] "рік"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
 #, kde-format
 msgid "On:"
 msgstr "Точно:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:564
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "%1 кожного місяця"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:576
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%1 %2 кожного місяця"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
 #, kde-format
 msgid "Ends:"
 msgstr "Завершується:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:602
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
 #, kde-format
 msgid "On"
 msgstr "Точно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:603
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
 #, kde-format
 msgid "After"
 msgstr "Після"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:639
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
@@ -1147,126 +1162,126 @@ msgstr[1] "повторення"
 msgstr[2] "повторень"
 msgstr[3] "повторення"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:645
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
 #, kde-format
 msgid "Exceptions:"
 msgstr "Винятки:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "Додати виключення щодо повторення"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
 #, kde-format
 msgid "Location:"
 msgstr "Місце:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:719
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:806
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
 #, kde-format
 msgid "Optional"
 msgstr "Необов'язкове"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:768
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
 #, kde-format
 msgid "Show map"
 msgstr "Показати мапу"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:800
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
 #, kde-format
 msgid "Description:"
 msgstr "Опис:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
 #, kde-format
 msgid "Tags:"
 msgstr "Мітки:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Торкніться, щоб встановити мітки…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Натисніть, щоб встановити мітки…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:874
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
 #, kde-format
 msgid "Manage tags…"
 msgstr "Керування мітками…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
 #, kde-format
 msgid "Reminders:"
 msgstr "Нагадування:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:908
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
 #, kde-format
 msgid "Add Reminder"
 msgstr "Додати нагадування"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
 #, kde-format
 msgid "Attendees:"
 msgstr "Учасники:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Ім'я:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:982
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
 msgid "Email:"
 msgstr "Ел. пошта:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:989
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
 #, kde-format
 msgid "Required"
 msgstr "Обов'язковий"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:998
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Status:"
 msgstr "Стан:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
 #, kde-format
 msgid "Request RSVP"
 msgstr "Попросити про відповідь"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1036
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
 #, kde-format
 msgid "Add Attendee"
 msgstr "Додати учасника"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Вибрати з контактів"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Заповнити вручну"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1065
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
 #, kde-format
 msgid "Attachments:"
 msgstr "Долучення:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1088
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
 #, kde-format
 msgid "Add Attachment"
 msgstr "Додати долучення"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
 #, kde-format
 msgid "Add an attachment"
 msgstr "Додати долучення"
@@ -1356,7 +1371,7 @@ msgstr "Повторити"
 msgid "Settings"
 msgstr "Параметри"
 
-#: calendar/qml/Drawers/MainDrawer.qml:373
+#: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
 msgstr "Переглянути усі завдання"
@@ -1416,38 +1431,38 @@ msgstr "8"
 msgid "9 (Lowest Priority)"
 msgstr "9 (найнижчий пріоритет)"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:50
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:51
 #, kde-format
 msgctxt "Custom reminder"
 msgid "Custom"
 msgstr "Нетипове"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:145
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
 #, kde-format
 msgid "minutes"
 msgstr "хвилин"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
 #, kde-format
 msgid "hours"
 msgstr "годин"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:148
 #, kde-format
 msgid "days"
 msgstr "днів"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:159
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
 #, kde-format
 msgid "before start of event"
 msgstr "до початку події"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:161
 #, kde-format
 msgid "after start of event"
 msgstr "після початку події"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:170
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:171
 #, kde-format
 msgid "Remove"
 msgstr "Вилучити"
