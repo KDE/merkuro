@@ -19,7 +19,7 @@ TodoSortFilterProxyModel::TodoSortFilterProxyModel(QObject *parent)
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, "Resources Colors");
+    KConfigGroup rColorsConfig(config, QLatin1String("Resources Colors"));
     m_colorWatcher = KConfigWatcher::create(config);
     QObject::connect(m_colorWatcher.data(), &KConfigWatcher::configChanged, this, &TodoSortFilterProxyModel::loadColors);
 
@@ -408,7 +408,7 @@ void TodoSortFilterProxyModel::loadColors()
 {
     Q_EMIT layoutAboutToBeChanged();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, "Resources Colors");
+    KConfigGroup rColorsConfig(config, QLatin1String("Resources Colors"));
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     for (const QString &key : colorKeyList) {

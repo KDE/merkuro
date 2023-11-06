@@ -69,7 +69,7 @@ MailManager::MailManager(QObject *parent)
     m_foldersModel = new MailCommon::EntityCollectionOrderProxyModel(this);
     m_foldersModel->setSourceModel(foldersModel);
     m_foldersModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
-    KConfigGroup grp(KernelIf->config(), "CollectionTreeOrder");
+    KConfigGroup grp(KernelIf->config(), QLatin1String("CollectionTreeOrder"));
     m_foldersModel->setOrderConfig(grp);
     m_foldersModel->sort(0, Qt::AscendingOrder);
 
@@ -132,7 +132,7 @@ MailManager::MailManager(QObject *parent)
 
 void MailManager::loadConfig()
 {
-    KConfigGroup readerConfig(KernelIf->config(), "AccountOrder");
+    KConfigGroup readerConfig(KernelIf->config(), QLatin1String("AccountOrder"));
     QStringList listOrder;
     if (readerConfig.readEntry("EnableAccountOrder", true)) {
         listOrder = readerConfig.readEntry("order", QStringList());

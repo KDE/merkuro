@@ -162,7 +162,7 @@ CalendarManager::CalendarManager(QObject *parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     mCollectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver(); // not a leak
-    KConfigGroup selectionGroup = config->group("GlobalCollectionSelection");
+    KConfigGroup selectionGroup = config->group(QLatin1String("GlobalCollectionSelection"));
     mCollectionSelectionModelStateSaver->setView(nullptr);
     mCollectionSelectionModelStateSaver->setSelectionModel(m_calendar->checkableProxyModel()->selectionModel());
     mCollectionSelectionModelStateSaver->restoreState(selectionGroup);
@@ -224,7 +224,7 @@ CalendarManager::CalendarManager(QObject *parent)
     };
     connect(m_flatCollectionTreeModel, &QSortFilterProxyModel::rowsInserted, this, refreshColors);
 
-    KConfigGroup rColorsConfig(config, "Resources Colors");
+    KConfigGroup rColorsConfig(config, QLatin1String("Resources Colors"));
     m_colorWatcher = KConfigWatcher::create(config);
     connect(m_colorWatcher.data(), &KConfigWatcher::configChanged, this, &CalendarManager::collectionColorsChanged);
 
@@ -241,7 +241,7 @@ void CalendarManager::save()
 {
     Akonadi::ETMViewStateSaver treeStateSaver;
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("GlobalCollectionSelection");
+    KConfigGroup group = config->group(QLatin1String("GlobalCollectionSelection"));
     treeStateSaver.setView(nullptr);
     treeStateSaver.setSelectionModel(m_calendar->checkableProxyModel()->selectionModel());
     treeStateSaver.saveState(group);
@@ -410,7 +410,7 @@ void CalendarManager::addIncidence(IncidenceWrapper *incidenceWrapper)
 {
     if (incidenceWrapper->collectionId() < 0) {
         const auto sharedConfig = KSharedConfig::openConfig();
-        const auto editorConfigSection = sharedConfig->group("Editor");
+        const auto editorConfigSection = sharedConfig->group(QLatin1String("Editor"));
 
         const auto lastUsedCollectionType = incidenceWrapper->incidenceType() == KCalendarCore::IncidenceBase::TypeTodo
             ? QStringLiteral("lastUsedTodoCollection")

@@ -80,7 +80,7 @@ ContactManager::ContactManager(QObject *parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kalendarrc"));
     m_collectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver(this);
-    KConfigGroup selectionGroup = config->group("ContactCollectionSelection");
+    KConfigGroup selectionGroup = config->group(QLatin1String("ContactCollectionSelection"));
     m_collectionSelectionModelStateSaver->setView(nullptr);
     m_collectionSelectionModelStateSaver->setSelectionModel(m_checkableProxyModel->selectionModel());
     m_collectionSelectionModelStateSaver->restoreState(selectionGroup);
@@ -118,7 +118,7 @@ void ContactManager::saveState() const
 {
     Akonadi::ETMViewStateSaver treeStateSaver;
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("kalendarrc"));
-    KConfigGroup group = config->group("ContactCollectionSelection");
+    KConfigGroup group = config->group(QLatin1String("ContactCollectionSelection"));
     treeStateSaver.setView(nullptr);
     treeStateSaver.setSelectionModel(m_checkableProxyModel->selectionModel());
     treeStateSaver.saveState(group);

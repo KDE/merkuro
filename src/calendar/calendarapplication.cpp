@@ -394,7 +394,7 @@ void CalendarApplication::showIncidenceByUid(const QString &uid, const QDateTime
     KCalendarCore::Duration duration(occurrence, incidenceEnd);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, "Resources Colors");
+    KConfigGroup rColorsConfig(config, QLatin1String("Resources Colors"));
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     QColor incidenceColor;

@@ -138,7 +138,7 @@ QColor ColorProxyModel::getCollectionColor(Akonadi::Collection collection) const
     }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup resourcesColorsConfig(config, "Resources Colors");
+    KConfigGroup resourcesColorsConfig(config, QLatin1String("Resources Colors"));
     const QStringList colorKeyList = resourcesColorsConfig.keyList();
 
     QColor color;
