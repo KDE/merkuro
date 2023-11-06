@@ -24,7 +24,7 @@ AbstractApplication::~AbstractApplication()
     if (m_actionModel) {
         auto lastUsedActions = m_actionModel->lastUsedActions();
         auto cfg = KSharedConfig::openConfig();
-        KConfigGroup cg(cfg, QLatin1String("General"));
+        KConfigGroup cg(cfg, QStringLiteral("General"));
         cg.writeEntry("CommandBarLastUsedActions", lastUsedActions);
     }
 }
@@ -96,7 +96,7 @@ QSortFilterProxyModel *AbstractApplication::actionsModel()
 
     // setLastUsedActions
     auto cfg = KSharedConfig::openConfig();
-    KConfigGroup cg(cfg, QLatin1String("General"));
+    KConfigGroup cg(cfg, QStringLiteral("General"));
 
     const auto actionNames = cg.readEntry(QStringLiteral("CommandBarLastUsedActions"), QStringList());
 

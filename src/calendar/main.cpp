@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
         const auto view = qobject_cast<QQuickWindow *>(obj);
         if (view) {
             KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-            KConfigGroup windowGroup(&dataResource, QLatin1String("Window"));
+            KConfigGroup windowGroup(&dataResource, QStringLiteral("Window"));
             KWindowConfig::restoreWindowSize(view, windowGroup);
             KWindowConfig::restoreWindowPosition(view, windowGroup);
 
