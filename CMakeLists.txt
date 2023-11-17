@@ -80,8 +80,6 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
     QuickTest
 )
 
-find_package(Qt6Core5Compat REQUIRED)
-
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CalendarCore
     ConfigWidgets

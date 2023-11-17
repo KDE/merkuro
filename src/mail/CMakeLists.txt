@@ -56,8 +56,6 @@ target_link_libraries(merkuro_mail_static
         KF6::XmlGui
 )
 
-target_link_libraries(merkuro_mail_static PUBLIC Qt::Core5Compat)
-
 ecm_add_qml_module(merkuro_mail_plugin URI "org.kde.merkuro.mail" VERSION 1.0)
 
 target_sources(merkuro_mail_plugin PRIVATE
