@@ -13,3 +13,5 @@ void MessageHandler::open(const QUrl &file)
         Q_EMIT messageOpened(messages[0]);
     }
 }
+
+#include "moc_messagehandler.cpp"
