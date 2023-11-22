@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
         KAboutLicense::GPL_V3,
         // Copyright Statement.
         i18n("(c) KDE Community 2021"));
+    aboutData.setBugAddress("https://bugs.kde.org/enter_bug.cgi?format=guided&product=merkuro&version=" + QStringLiteral(MERKURO_VERSION_STRING).toUtf8());
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
                         QStringLiteral("carl@carlschwan.eu"),
