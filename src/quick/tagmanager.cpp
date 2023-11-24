@@ -76,7 +76,7 @@ void TagManager::createTag(const QString &name)
 {
     Akonadi::Tag tag(name);
     auto job = new Akonadi::TagCreateJob(tag, this);
-    connect(job, &Akonadi::TagCreateJob::finished, this, [=](KJob *job) {
+    connect(job, &Akonadi::TagCreateJob::finished, this, [](KJob *job) {
         if (job->error())
             qCDebug(AKONADI_QUICK_LOG) << "Error occurred creating tag";
     });
@@ -85,7 +85,7 @@ void TagManager::createTag(const QString &name)
 void TagManager::deleteTag(Akonadi::Tag tag)
 {
     auto job = new Akonadi::TagDeleteJob(tag);
-    connect(job, &Akonadi::TagDeleteJob::result, this, [=](KJob *job) {
+    connect(job, &Akonadi::TagDeleteJob::result, this, [](KJob *job) {
         if (job->error())
             qCDebug(AKONADI_QUICK_LOG) << "Error occurred renaming tag";
     });
@@ -95,7 +95,7 @@ void TagManager::renameTag(Akonadi::Tag tag, const QString &newName)
 {
     tag.setName(newName);
     auto job = new Akonadi::TagModifyJob(tag);
-    connect(job, &Akonadi::TagModifyJob::result, this, [=](KJob *job) {
+    connect(job, &Akonadi::TagModifyJob::result, this, [](KJob *job) {
         if (job->error())
             qCDebug(AKONADI_QUICK_LOG) << "Error occurred renaming tag";
     });
