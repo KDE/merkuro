@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-find_package(KF6Plasma)
+find_package(Plasma)
 
-if (KF6Plasma_FOUND)
+if (Plasma_FOUND)
     plasma_install_package(package org.kde.merkuro.contact)
 endif()
