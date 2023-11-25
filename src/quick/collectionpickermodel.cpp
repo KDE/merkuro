@@ -28,7 +28,7 @@ public:
         : mParent(parent)
     {
         mMonitor = new Akonadi::Monitor(mParent);
-        mMonitor->setObjectName(QStringLiteral("CollectionPickerMonitor"));
+        mMonitor->setObjectName(QLatin1StringView("CollectionPickerMonitor"));
         mMonitor->fetchCollection(true);
         mMonitor->setCollectionMonitored(Akonadi::Collection::root());
 
@@ -41,7 +41,7 @@ public:
 
         // Display color
         auto colorProxy = new ColorProxyModel(mParent);
-        colorProxy->setObjectName(QStringLiteral("Show collection colors"));
+        colorProxy->setObjectName(QLatin1StringView("Show collection colors"));
         colorProxy->setDynamicSortFilter(true);
         colorProxy->setSourceModel(mBaseModel);
 

@@ -16,7 +16,7 @@ public:
         : QSortFilterProxyModel(parent)
     {
         auto monitor = new Akonadi::Monitor(this);
-        monitor->setObjectName(QStringLiteral("TagModelMonitor"));
+        monitor->setObjectName(QLatin1StringView("TagModelMonitor"));
         monitor->setTypeMonitored(Akonadi::Monitor::Tags);
 
         auto flatTagModel = new KDescendantsProxyModel;

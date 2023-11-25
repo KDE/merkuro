@@ -139,7 +139,7 @@ CalendarManager::CalendarManager(QObject *parent)
     }
 
     auto colorProxy = new ColorProxyModel(this);
-    colorProxy->setObjectName(QStringLiteral("Show calendar colors"));
+    colorProxy->setObjectName(QLatin1StringView("Show calendar colors"));
     colorProxy->setDynamicSortFilter(true);
     colorProxy->setStandardCollectionId(m_config->lastUsedEventCollection());
 

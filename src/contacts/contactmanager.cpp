@@ -62,7 +62,7 @@ ContactManager::ContactManager(QObject *parent)
     contactConfig->lastUsedAddressBookCollection();
 
     auto sortedModel = new SortedCollectionProxModel(this);
-    sortedModel->setObjectName(QStringLiteral("Sort collection"));
+    sortedModel->setObjectName(QLatin1StringView("Sort collection"));
     sortedModel->setSourceModel(m_checkableProxyModel);
     sortedModel->addMimeTypeFilter(KContacts::Addressee::mimeType());
     sortedModel->addMimeTypeFilter(KContacts::ContactGroup::mimeType());
@@ -71,7 +71,7 @@ ContactManager::ContactManager(QObject *parent)
 
     m_colorProxy = new ColorProxyModel(this);
     m_colorProxy->setSourceModel(sortedModel);
-    m_colorProxy->setObjectName(QStringLiteral("Show contact colors"));
+    m_colorProxy->setObjectName(QLatin1StringView("Show contact colors"));
     m_colorProxy->setDynamicSortFilter(true);
     m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
     connect(contactConfig, &ContactConfig::lastUsedAddressBookCollectionChanged, this, [this, contactConfig]() {

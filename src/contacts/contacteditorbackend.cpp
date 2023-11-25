@@ -73,7 +73,7 @@ void ContactEditorBackend::setupMonitor()
 {
     delete m_monitor;
     m_monitor = new Akonadi::Monitor;
-    m_monitor->setObjectName(QStringLiteral("ContactEditorMonitor"));
+    m_monitor->setObjectName(QLatin1StringView("ContactEditorMonitor"));
     m_monitor->ignoreSession(Akonadi::Session::defaultSession());
 
     connect(m_monitor, &Akonadi::Monitor::itemChanged, this, [this](const Akonadi::Item &item, const QSet<QByteArray> &) {
