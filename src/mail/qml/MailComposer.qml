@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     topPadding: Kirigami.Units.largeSpacing
 
     property MailHeaderModel mailHeaderModel: MailHeaderModel {}
-    
+
     GridLayout {
         columns: 2
         anchors.fill: parent
@@ -97,7 +97,7 @@ Kirigami.ScrollablePage {
             KeyNavigation.priority: KeyNavigation.BeforeItem
             KeyNavigation.tab: mailContent
         }
-        
+
         QQC2.TextArea {
             id: mailContent
             Layout.columnSpan: 2
