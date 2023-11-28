@@ -112,7 +112,7 @@ Kirigami.ScrollablePage {
 
             textFormat: TextEdit.PlainText
             textMargin: 10
-            wrapMode: Text.Wrap
+            wrapMode: TextEdit.Wrap
             KeyNavigation.priority: KeyNavigation.BeforeItem
             KeyNavigation.tab: attachment
         }

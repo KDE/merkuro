@@ -820,7 +820,7 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         placeholderText: i18n("Optional")
                         text: root.incidenceWrapper.description
-                        wrapMode: Text.Wrap
+                        wrapMode: TextEdit.Wrap
                         onTextChanged: root.incidenceWrapper.description = text
                         Keys.onReturnPressed: {
                             if (event.modifiers & Qt.ShiftModifier) {
