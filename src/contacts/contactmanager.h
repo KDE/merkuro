@@ -50,7 +50,6 @@ private:
 
     Akonadi::EntityMimeTypeFilterModel *m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel;
-    Akonadi::CollectionFilterProxyModel *m_contactMimeTypeFilterModel = nullptr;
     Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver;
     QSortFilterProxyModel *m_filteredContacts;
     KCheckableProxyModel *m_checkableProxyModel;
