@@ -21,7 +21,6 @@ void InfiniteCalendarViewModel::setup()
     m_firstDayOfMonthDates.clear();
 
     const auto today = QDate::currentDate();
-    QTime time;
 
     switch (m_scale) {
     case DayScale: {

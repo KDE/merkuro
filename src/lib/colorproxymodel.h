@@ -30,7 +30,6 @@ public:
     void setStandardCollectionId(Akonadi::Collection::Id standardCollectionId);
 
 private:
-    mutable bool mInitDefaultCalendar;
     mutable QHash<Akonadi::Collection::Id, QColor> colorCache;
     Akonadi::Collection::Id m_standardCollectionId = -1;
 };

@@ -45,7 +45,6 @@ static bool hasCompatibleMimeTypes(const Akonadi::Collection &collection)
 
 ColorProxyModel::ColorProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
-    , mInitDefaultCalendar(false)
 {
     // Needed to read colorattribute of collections for incidence colors
     Akonadi::AttributeFactory::registerAttribute<Akonadi::CollectionColorAttribute>();
