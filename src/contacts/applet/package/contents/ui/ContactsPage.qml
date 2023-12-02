@@ -4,6 +4,8 @@
 import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Layouts 1.15
+
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
@@ -84,7 +86,7 @@ PlasmaComponents3.ScrollView {
         focus: true
         delegate: ContactListItem {
             width: contactsList.width - contactsList.leftMargin - contactsList.rightMargin
-            height: PlasmaCore.Units.gridUnit * 2
+            height: Kirigami.Units.gridUnit * 2
             name: model && model.display
             avatarIcon: model && model.decoration
             onClicked: stack.push(Qt.resolvedUrl('./ContactPage.qml'), {

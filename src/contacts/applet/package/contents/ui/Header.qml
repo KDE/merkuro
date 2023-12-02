@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import org.kde.plasma.core 2.0 as PlasmaCore
+
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.kirigami as Kirigami
@@ -58,12 +58,12 @@ Control {
     contentItem: Kirigami.FlexColumn {
         id: contentContainer
 
-        maximumWidth: PlasmaCore.Units.gridUnit * 30
+        maximumWidth: Kirigami.Units.gridUnit * 30
 
         RowLayout {
             Layout.fillHeight: true
-            Layout.topMargin: PlasmaCore.Units.gridUnit
-            Layout.bottomMargin: PlasmaCore.Units.gridUnit
+            Layout.topMargin: Kirigami.Units.gridUnit
+            Layout.bottomMargin: Kirigami.Units.gridUnit
 
             Kirigami.Icon {
                 id: img

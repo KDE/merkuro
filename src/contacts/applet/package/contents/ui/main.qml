@@ -4,6 +4,8 @@
 import QtQuick 2.2
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
+
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -15,12 +17,12 @@ Item {
     Plasmoid.toolTipMainText: i18n("Contact")
     Plasmoid.icon: 'im-user'
 
-    Plasmoid.switchWidth: PlasmaCore.Units.gridUnit * 5
-    Plasmoid.switchHeight: PlasmaCore.Units.gridUnit * 5
+    Plasmoid.switchWidth: Kirigami.Units.gridUnit * 5
+    Plasmoid.switchHeight: Kirigami.Units.gridUnit * 5
 
     Plasmoid.fullRepresentation: PlasmaExtras.Representation {
-        Layout.minimumWidth: PlasmaCore.Units.gridUnit * 5
-        Layout.minimumHeight: PlasmaCore.Units.gridUnit * 5
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 5
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 5
         collapseMarginsHint: true
 
         focus: true
