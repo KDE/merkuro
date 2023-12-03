@@ -10,7 +10,7 @@ import QtQuick.Layouts 1.15
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
 Control {
@@ -74,7 +74,7 @@ Control {
             ColumnLayout {
                 id: content
                 Layout.alignment: Qt.AlignBottom
-                Layout.leftMargin: PlasmaCore.Units.largeSpacing
+                Layout.leftMargin: Kirigami.Units.gridUnit
             }
         }
     }
