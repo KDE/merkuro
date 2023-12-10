@@ -25,6 +25,7 @@ apps:
         - gpg-public-keys
         - browser-support
         - cups
+        - akonadi-svc
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -41,11 +42,15 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-110-qt-5-15-11-core22:
-        content: kf5-5-110-qt-5-15-11-core22-all
+    kf5-5-111-qt-5-15-11-core22:
+        content: kf5-5-111-qt-5-15-11-core22-all
         interface: content
-        default-provider: kf5-5-110-qt-5-15-11-core22
+        default-provider: kf5-5-111-qt-5-15-11-core22
         target: $SNAP/kf5
+    akonadi-svc:
+        bus: system
+        interface: dbus
+        name: org.freedesktop.Akonadi
     foo-install-cups:
         interface: content
         content: foo
@@ -82,18 +87,18 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-110-qt-5-15-11-core22
+        - PLATFORM_PLUG=kf5-5-111-qt-5-15-11-core22
         build-snaps:
-        - kf5-5-110-qt-5-15-11-core22-sdk
+        - kf5-5-111-qt-5-15-11-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-110-qt-5-15-11-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-111-qt-5-15-11-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-110-qt-5-15-11-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-111-qt-5-15-11-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-110-qt-5-15-11-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-111-qt-5-15-11-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-110-qt-5-15-11-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-111-qt-5-15-11-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     merkuro:
         after:
         - kde-neon
@@ -108,49 +113,7 @@ parts:
         - libgpgme11-dev
         - libgpgmepp-dev
         - libqgpgme-dev
-        - libkf5akonadi-dev
-        - libkf5akonadicalendar-dev
-        - libkf5akonadicontact-dev
-        - libkf5akonadimime-dev
-        - libkf5akonadinotes-dev
-        - libkf5akonadisearch-dev
-        - libkf5akonadiserver-dev
-        - libkf5calendarcore-dev
-        - libkf5calendarsupport-dev
-        - libkf5calendarutils-dev
-        - libkf5contacteditor-dev
-        - libkf5contacts-dev
-        - libkf5grantleetheme-dev
-        - libkf5gravatar-dev
-        - libkf5holidays-dev
-        - libkf5identitymanagement-dev
-        - libkf5imap-dev
-        - libkf5incidenceeditor-dev
-        - libkf5kontactinterface-dev
-        - libkf5ksieve-dev
-        - libkf5ktextaddons-dev
-        - libkf5ldap-dev
-        - libkf5libkdepim-dev
-        - libkf5libkleo-dev
-        - libkf5mailcommon-dev
-        - libkf5mailimporter-dev
-        - libkf5mailtransport-dev
-        - libkf5mbox-dev
-        - libkf5messagecomposer-dev
-        - libkf5messagecore-dev
-        - libkf5messagelist-dev
-        - libkf5messageviewer-dev
-        - libkf5mime-dev
-        - libkf5mimetreeparser-dev
-        - libkf5pimcommon-dev
-        - libkf5pimtextedit-dev
-        - libkf5syndication-dev
-        - libkf5templateparser-dev
         - libkf5qqc2desktopstyle-dev
-        - libkf5webengineviewer-dev
-        - libkf5tnef-dev
-        - libkgantt-dev
-        - libkpimgapi-dev
         - libx11-dev
         - pkg-config
         - libphonon4qt5-dev
@@ -158,65 +121,26 @@ parts:
         - xsltproc
         - zlib1g-dev
         - kirigami-addons-dev
+        build-snaps:
+        - akonadi/edge
         stage-packages:
         - libboost-graph1.74.0
         - libgpgme11
         - libgpgmepp6
         - libqgpgme15
-        - libkf5akonadicore5
-        - libkf5akonadicalendar5
-        - libkf5akonadicontact5
-        - libkf5akonadimime5
-        - libkf5akonadinotes5
-        - libkf5akonadisearchpim5
-        - libkf5calendarcore5
-        - libkf5calendarsupport5
-        - libkf5calendarutils5
-        - libkf5contacteditor5
-        - libkf5contacts5
-        - libkf5doctools5
-        - libkf5grantleetheme5
-        - libkf5gravatar5
-        - libkf5holidays5
-        - libkf5identitymanagement5
-        - libkf5imap5
-        - libkf5incidenceeditor5
-        - libkf5kontactinterface5
-        - libkf5ksieve5
-        - libkf5ldap5
-        - libkf5libkdepim5
-        - libkf5libkleo5
-        - libkf5mailcommon5
-        - libkf5mailimporter5
-        - libkf5mailtransport5
-        - libkf5mbox5
-        - libkf5messagecomposer5
-        - libkf5messagecore5
-        - libkf5messagelist5
-        - libkf5messageviewer5
-        - libkf5mime5
-        - libkf5mimetreeparser5
-        - libkf5pimcommon5
-        - libkf5pimtextedit5
-        - libkf5syndication5
-        - libkf5templateparser5
-        - libkf5webengineviewer5
-        - libkf5tnef5
-        - libkgantt2
-        - libkpimgapicore5
         - pkg-config
         - phonon4qt5
         - phonon4qt5-backend-gstreamer
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
-        - akonadi-server
         - sqlite
-        - akonadi-backend-sqlite
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kirigami-addons-labs-components
         - qml-module-org-kde-kirigami-addons-labs-mobileform
+        stage-snaps:
+        - akonadi/edge
         source: .
         source-type: local
         cmake-parameters:
@@ -226,7 +150,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-110-qt-5-15-11-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-111-qt-5-15-11-core22-sdk/current"
         build-environment: &id005
         - *id001
         - *id002
