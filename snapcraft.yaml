@@ -125,7 +125,7 @@ parts:
         - zlib1g-dev
         - kirigami-addons-dev
         build-snaps:
-        - akonadi/edge
+        - akonadi-sdk/edge
         stage-packages:
         - libboost-graph1.74.0
         - libgpgme11
@@ -153,7 +153,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-113-qt-5-15-11-core22-sdk/current\\;/snap/akonadi/current"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-113-qt-5-15-11-core22-sdk/current\\;/snap/akonadi-sdk/current"
         build-environment: &id005
         - *id001
         - *id002
