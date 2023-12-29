@@ -11,7 +11,6 @@
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/CollectionCreateJob>
 #include <Akonadi/CollectionDeleteJob>
-#include <Akonadi/CollectionFilterProxyModel>
 #include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
