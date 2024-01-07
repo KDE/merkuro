@@ -629,7 +629,7 @@ AttachmentsModel *IncidenceWrapper::attachmentsModel()
     return &m_attachmentsModel;
 }
 
-bool IncidenceWrapper::todoCompleted()
+bool IncidenceWrapper::todoCompleted() const
 {
     if (m_incidence->type() != KCalendarCore::IncidenceBase::TypeTodo) {
         return false;
@@ -664,7 +664,7 @@ QDateTime IncidenceWrapper::todoCompletionDt()
     return todo->completed();
 }
 
-int IncidenceWrapper::todoPercentComplete()
+int IncidenceWrapper::todoPercentComplete() const
 {
     if (m_incidence->type() != KCalendarCore::IncidenceBase::TypeTodo) {
         return 0;
@@ -790,12 +790,12 @@ void IncidenceWrapper::cleanupChildIncidences()
     }
 }
 
-bool IncidenceWrapper::hasReminders()
+bool IncidenceWrapper::hasReminders() const
 {
     return !m_incidence->alarms().isEmpty();
 }
 
-void IncidenceWrapper::addAlarms(KCalendarCore::Alarm::List alarms)
+void IncidenceWrapper::addAlarms(const KCalendarCore::Alarm::List &alarms)
 {
     for (int i = 0; i < alarms.size(); i++) {
         m_incidence->addAlarm(alarms[i]);

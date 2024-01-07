@@ -177,17 +177,17 @@ public:
     RecurrenceExceptionsModel *recurrenceExceptionsModel();
     AttachmentsModel *attachmentsModel();
 
-    bool todoCompleted();
+    bool todoCompleted() const;
     void setTodoCompleted(bool completed);
     QDateTime todoCompletionDt();
-    int todoPercentComplete();
+    int todoPercentComplete() const;
     void setTodoPercentComplete(int todoPercentComplete);
 
     Q_INVOKABLE void triggerEditMode();
     Q_INVOKABLE void setNewEvent();
     Q_INVOKABLE void setNewTodo();
-    Q_INVOKABLE void addAlarms(KCalendarCore::Alarm::List alarms);
-    Q_INVOKABLE bool hasReminders();
+    Q_INVOKABLE void addAlarms(const KCalendarCore::Alarm::List &alarms);
+    Q_INVOKABLE bool hasReminders() const;
     Q_INVOKABLE void setRegularRecurrence(IncidenceWrapper::RecurrenceIntervals interval, int freq = 1);
     Q_INVOKABLE void setMonthlyPosRecurrence(short pos, int day);
     Q_INVOKABLE void setRecurrenceOccurrences(int occurrences);
