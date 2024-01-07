@@ -101,7 +101,7 @@ private Q_SLOTS:
         checkAllItems(m_calendar->checkableProxyModel());
 
         QVERIFY(!m_calendar->isLoading());
-        QVERIFY(m_calendar->items().count() > 0);
+        QVERIFY(!m_calendar->items().isEmpty());
 
         // Grab the collection we are using for testing
         const auto firstCollectionAddedEmitted = collectionsAdded.first();

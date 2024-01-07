@@ -792,7 +792,7 @@ void IncidenceWrapper::cleanupChildIncidences()
 
 bool IncidenceWrapper::hasReminders()
 {
-    return m_incidence->alarms().count() > 0;
+    return !m_incidence->alarms().isEmpty();
 }
 
 void IncidenceWrapper::addAlarms(KCalendarCore::Alarm::List alarms)

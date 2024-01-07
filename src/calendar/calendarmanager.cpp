@@ -743,7 +743,7 @@ void CalendarManager::toggleCollection(qint64 collectionId)
                                                                   collectionId,
                                                                   1,
                                                                   Qt::MatchExactly | Qt::MatchWrap | Qt::MatchRecursive);
-    if (matches.count() > 0) {
+    if (!matches.isEmpty()) {
         const auto collectionIndex = matches.first();
         const auto collectionChecked = collectionIndex.data(Qt::CheckStateRole).toInt() == Qt::Checked;
         const auto checkStateToSet = collectionChecked ? Qt::Unchecked : Qt::Checked;
