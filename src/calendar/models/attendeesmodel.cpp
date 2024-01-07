@@ -267,7 +267,7 @@ int AttendeesModel::rowCount(const QModelIndex &) const
 void AttendeesModel::addAttendee(qint64 itemId, const QString &email)
 {
     if (itemId) {
-        qDebug() << "itemId" << itemId;
+        // qDebug() << "itemId" << itemId;
         Akonadi::Item item(itemId);
 
         auto job = new Akonadi::ItemFetchJob(item);
