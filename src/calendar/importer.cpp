@@ -14,7 +14,7 @@ Importer::Importer(QObject *parent)
     : QObject(parent)
 {
     connect(this, &Importer::calendarImportInProgressChanged, this, [this]() {
-        if (m_calendarImportInProgress && m_calendarFilesToImport.length() > 0) {
+        if (m_calendarImportInProgress && !m_calendarFilesToImport.isEmpty()) {
             QTimer::singleShot(100ms, [this]() {
                 Q_EMIT importCalendarFromFile(m_calendarFilesToImport.takeFirst());
             });
