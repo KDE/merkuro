@@ -473,8 +473,8 @@ void MultiDayIncidenceModel::setActive(const bool active)
 QHash<int, QByteArray> MultiDayIncidenceModel::roleNames() const
 {
     return {
-        {IncidencesRole, "incidences"},
-        {PeriodStartDateRole, "periodStartDate"},
+        {IncidencesRole, QByteArrayLiteral("incidences")},
+        {PeriodStartDateRole, QByteArrayLiteral("periodStartDate")},
     };
 }
 

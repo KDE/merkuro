@@ -433,8 +433,8 @@ void HourlyIncidenceModel::setActive(const bool active)
 QHash<int, QByteArray> HourlyIncidenceModel::roleNames() const
 {
     return {
-        {IncidencesRole, "incidences"},
-        {PeriodStartDateTimeRole, "periodStartDateTime"},
+        {IncidencesRole, QByteArrayLiteral("incidences")},
+        {PeriodStartDateTimeRole, QByteArrayLiteral("periodStartDateTime")},
     };
 }
 
