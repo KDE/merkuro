@@ -21,7 +21,7 @@ DayGridView {
             text: {
                 const longText = day.toLocaleString(Qt.locale(), "dddd");
                 const midText = day.toLocaleString(Qt.locale(), "ddd");
-                const shortText = midText.slice(0,1);
+                const shortText = Qt.locale().name.startsWith("zh_") ? midText.slice(-1) : midText.slice(0, 1);
                 switch(Calendar.Config.weekdayLabelLength) {
                     case Calendar.Config.Full:
                         let chosenFormat = "dddd"
