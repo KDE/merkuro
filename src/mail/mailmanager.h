@@ -6,6 +6,7 @@
 #include "mailmodel.h"
 #include <Akonadi/CollectionFilterProxyModel>
 #include <QObject>
+
 namespace Akonadi
 {
 class CollectionFilterProxyModel;

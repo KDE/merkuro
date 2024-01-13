@@ -24,6 +24,9 @@ set(merkuro_mail_SRCS
     mailheadermodel.h
     mailheadermodel.cpp
 
+    mailclient.h
+    mailclient.cpp
+
     identity/identitycryptographybackend.h
     identity/identitycryptographybackend.cpp
     identity/identitycryptographyeditorbackendfactory.h
@@ -45,6 +48,7 @@ set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE O
 target_link_libraries(merkuro_mail_static
     PUBLIC
         merkuro_lib
+        KPim6::MessageComposer 
         KPim6::MailCommon
         KPim6::MailTransport
         KPim6::AkonadiMime
