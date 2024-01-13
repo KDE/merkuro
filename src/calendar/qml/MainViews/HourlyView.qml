@@ -1,15 +1,16 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
+import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
-import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.utils 1.0
+import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components
+import org.kde.merkuro.utils
 
 Kirigami.Page {
     id: root
@@ -82,35 +83,44 @@ Kirigami.Page {
             lastDate: Calendar.Utils.addDaysToDate(Calendar.DateTimeState.selectedDate, root.daysToShow - 1)
         }
 
-        Kirigami.ActionToolBar {
+        Repeater {
             id: weekViewScaleToggles
 
-            Layout.preferredWidth: weekViewScaleToggles.maximumContentWidth
             Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
 
             visible: !Kirigami.Settings.isMobile
 
-            actions: [
+            readonly property list<T.Action> actions: [
                 KActionFromAction {
                     action: Calendar.CalendarApplication.action("open_week_view")
                     text: i18nc("@action:inmenu open week view", "Week")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.Week
                     onTriggered: weekViewAction.trigger()
+                    displayHint: Kirigami.DisplayHint.KeepVisible
                 },
                 KActionFromAction {
                     action: Calendar.CalendarApplication.action("open_threeday_view")
                     text: i18nc("@action:inmenu open 3 days view", "3 Days")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.ThreeDay
+                    displayHint: Kirigami.DisplayHint.KeepVisible
                 },
                 KActionFromAction {
                     action: Calendar.CalendarApplication.action("open_day_view")
                     text: i18nc("@action:inmenu open day view", "Day")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.Day
+                    displayHint: Kirigami.DisplayHint.KeepVisible
                 }
             ]
+
+            model: actions
+
+            QQC2.ToolButton {
+                action: modelData
+            }
         }
     }
 
