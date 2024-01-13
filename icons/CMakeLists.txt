@@ -12,6 +12,12 @@ ecm_install_icons(
         48-apps-org.kde.merkuro.calendar.png
         48-apps-org.kde.merkuro.contact.png
         48-apps-org.kde.merkuro.mail.png
+        32-apps-org.kde.merkuro.calendar.png
+        32-apps-org.kde.merkuro.mail.png
+        24-apps-org.kde.merkuro.calendar.png
+        24-apps-org.kde.merkuro.mail.png
+        16-apps-org.kde.merkuro.calendar.png
+        16-apps-org.kde.merkuro.mail.png
     DESTINATION
         ${KDE_INSTALL_ICONDIR}
     THEME
