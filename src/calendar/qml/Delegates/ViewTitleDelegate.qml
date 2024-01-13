@@ -38,10 +38,10 @@ RowLayout {
             y: pageStack.globalToolBar.height - 1
             showDays: pageStack.currentItem && pageStack.currentItem.mode !== Calendar.CalendarApplication.MonthView
             date: Calendar.DateTimeState.selectedDate
-	    onDateSelected: date =>  { 
-		if(visible) {
-                   Calendar.DateTimeState.selectedDate = date;
-		}
+            onDateSelected: date =>  { 
+                if(visible) {
+                           Calendar.DateTimeState.selectedDate = date;
+                }
             }
         }
     }
