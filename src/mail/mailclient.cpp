@@ -9,8 +9,8 @@
 
 #include "mailclient.h"
 #include "../config-merkuro.h"
-#include "merkuro_mail_debug.h"
 #include "mailheadermodel.h"
+#include "merkuro_mail_debug.h"
 
 #include <KEmailAddress>
 #include <KIdentityManagementCore/Identity>
@@ -42,10 +42,7 @@ MailClient::MailClient(QObject *parent)
 
 MailClient::~MailClient() = default;
 
-void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel,
-                      MailHeaderModel *header,
-                      const QString &subject,
-                      const QString &body)
+void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, MailHeaderModel *header, const QString &subject, const QString &body)
 {
     if (!header->rowCount()) {
         qCWarning(merkuro_MAIL_LOG) << "There are no attendees to e-mail";
@@ -53,32 +50,31 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel,
         return;
     }
 
-    MessageData msg; 
+    MessageData msg;
     msg.from = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::EmailRole).toString();
     msg.subject = subject;
     msg.body = body;
 
     const int numberOfAttendees = header->rowCount();
-    for(int attendee = 0; attendee < numberOfAttendees; attendee++) {
+    for (int attendee = 0; attendee < numberOfAttendees; attendee++) {
         const QString email = header->data(header->index(attendee, 0), MailHeaderModel::ValueRole).toString();
         const MailHeaderModel::Header headerAttendee = header->data(header->index(attendee, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
         if (email.isEmpty()) {
             continue;
-        }
-        else if (headerAttendee == MailHeaderModel::To) {
+        } else if (headerAttendee == MailHeaderModel::To) {
             msg.to.push_back(email);
         } else if (headerAttendee == MailHeaderModel::CC) {
             msg.cc.push_back(email);
         } else if (headerAttendee == MailHeaderModel::BCC) {
             msg.bcc.push_back(email);
-        } 
+        }
     }
 
     if (msg.cc.isEmpty() && msg.to.isEmpty() && msg.bcc.isEmpty()) {
         qCWarning(merkuro_MAIL_LOG) << "There are really no attendees to e-mail";
         Q_EMIT finished(ResultReallyNoAttendees, i18n("There are no attendees to e-mail"));
         return;
-    } 
+    }
 
     const auto uoid = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::UoidRole).toInt();
     const auto identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(uoid);
@@ -91,7 +87,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel,
         transportId = transportMgr->defaultTransportId();
     }
 
-    //No transport exits ask user to create one
+    // No transport exits ask user to create one
     if (transportId == -1) {
         if (!transportMgr->showTransportCreationDialog(nullptr, MailTransport::TransportManager::IfNoTransportExists)) {
             qCritical() << "Error creating transport";
@@ -111,7 +107,8 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel,
     composer->start();
 }
 
-std::unique_ptr<MessageComposer::Composer> MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId)
+std::unique_ptr<MessageComposer::Composer>
+MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId)
 {
     auto composer = std::make_unique<MessageComposer::Composer>();
     auto *globalPart = composer->globalPart();
@@ -130,7 +127,7 @@ std::unique_ptr<MessageComposer::Composer> MailClient::populateComposer(const Me
     infoPart->setUrgent(true);
     infoPart->setUserAgent(QStringLiteral("Merkuro-Mail"));
 
-    // Setting Headers 
+    // Setting Headers
     KMime::Headers::Base::List extras;
 
     auto *header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport");

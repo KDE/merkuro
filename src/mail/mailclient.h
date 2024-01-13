@@ -9,9 +9,9 @@
 
 #pragma once
 
+#include "mailheadermodel.h"
 #include <KMime/KMimeMessage>
 #include <QObject>
-#include "mailheadermodel.h"
 
 namespace KIdentityManagementCore
 {
@@ -64,13 +64,11 @@ public:
     explicit MailClient(QObject *parent = nullptr);
     ~MailClient() override;
 
-    Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel,
-                          MailHeaderModel *header,
-                          const QString &subject,
-                          const QString &body);
+    Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, MailHeaderModel *header, const QString &subject, const QString &body);
 
 private:
-    std::unique_ptr<MessageComposer::Composer> populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId);
+    std::unique_ptr<MessageComposer::Composer>
+    populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId);
 
     void queueMessage(const int transport,
                       const MessageComposer::Composer *composer,
@@ -82,7 +80,6 @@ private:
 
 Q_SIGNALS:
     void finished(Akonadi::MailClient::Result result, const QString &errorString);
-
 };
 }
 

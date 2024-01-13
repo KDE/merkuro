@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <KIdentityManagementQuick/CryptographyBackendInterface>
 #include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementQuick/CryptographyBackendInterface>
 #include <QAbstractItemModel>
 
 class IdentityKeyListModel;

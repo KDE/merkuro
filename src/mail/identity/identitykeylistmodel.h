@@ -31,8 +31,7 @@ public:
     QModelIndex mapFromSource(const QModelIndex &source_index) const override;
     QModelIndex index(int row, int column, const QModelIndex &parent = {}) const override;
 
-    QModelIndex indexForIdentity(const KIdentityManagementCore::Identity &identity,
-                                 const KIdentityManagementQuick::KeyUseTypes::KeyUse keyUse) const override;
+    QModelIndex indexForIdentity(const KIdentityManagementCore::Identity &identity, const KIdentityManagementQuick::KeyUseTypes::KeyUse keyUse) const override;
 
     QString filterEmail() const;
     void setEmailFilter(const QString &email);

@@ -5,11 +5,11 @@
 
 #include <QAbstractListModel>
 
-class MailHeaderModel : public QAbstractListModel 
+class MailHeaderModel : public QAbstractListModel
 {
     Q_OBJECT
 
-public: 
+public:
     enum Roles {
         NameRole = Qt::UserRole,
         ValueRole,
@@ -33,6 +33,7 @@ public:
 
     Q_INVOKABLE void updateModel(const int row, const QString &value);
     Q_INVOKABLE void updateHeaderType(const int row, const Header headerName);
+
 private:
     struct HeaderItem {
         Header header;

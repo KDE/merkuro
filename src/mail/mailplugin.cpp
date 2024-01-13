@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "merkuro_mail_debug.h"
 #include "mailplugin.h"
+#include "merkuro_mail_debug.h"
 
-#include <QQmlEngine>
 #include <QLoggingCategory>
+#include <QQmlEngine>
 
 #include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MimeTreeParserCore/FileOpener>
@@ -14,13 +14,12 @@
 #include "contactimageprovider.h"
 #include "helper.h"
 #include "mailapplication.h"
+#include "mailclient.h"
 #include "mailheadermodel.h"
 #include "mailmanager.h"
 #include "mailmodel.h"
 #include "messagehandler.h"
 #include "messageloader.h"
-#include "mailheadermodel.h"
-#include "mailclient.h"
 
 #include "identity/identitycryptographyeditorbackendfactory.h"
 

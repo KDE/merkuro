@@ -4,38 +4,38 @@
 #include "mailheadermodel.h"
 #include <QList>
 
-MailHeaderModel:: MailHeaderModel(QObject* parent)
+MailHeaderModel::MailHeaderModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     HeaderItem newItem{Header::To, QString{}};
     m_headers.append(newItem);
 }
 
-QVariant MailHeaderModel::data(const QModelIndex &index, int role) const 
+QVariant MailHeaderModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
     const auto &item = m_headers[index.row()];
     switch (role) {
-        case Qt::DisplayRole:
-        case NameRole:
-            return item.header;
-        case ValueRole:
-            return item.value;
-    } 
+    case Qt::DisplayRole:
+    case NameRole:
+        return item.header;
+    case ValueRole:
+        return item.value;
+    }
     return {};
 }
 
 int MailHeaderModel::rowCount(const QModelIndex &parent) const
 {
-    if(parent.isValid())
+    if (parent.isValid())
         return 0;
     return m_headers.size();
 }
 
 void MailHeaderModel::updateModel(const int row, const QString &value)
 {
-   Q_ASSERT(row >= 0 && row < m_headers.count());
+    Q_ASSERT(row >= 0 && row < m_headers.count());
 
     const auto text = value.trimmed();
     if (text.length() == 0 && row > 0 && row != rowCount() - 1) {
@@ -48,13 +48,13 @@ void MailHeaderModel::updateModel(const int row, const QString &value)
 
     auto &header = m_headers[row];
     header.value = text;
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), { ValueRole });
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {ValueRole});
 
     if (row == rowCount() - 1) {
         beginInsertRows({}, row + 1, row + 1);
-        m_headers.append(HeaderItem { Header::CC, QString{} });
+        m_headers.append(HeaderItem{Header::CC, QString{}});
         endInsertRows();
-    } 
+    }
 }
 
 void MailHeaderModel::updateHeaderType(const int row, const Header headerName)
@@ -63,7 +63,7 @@ void MailHeaderModel::updateHeaderType(const int row, const Header headerName)
 
     auto &header = m_headers[row];
     header.header = headerName;
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), { NameRole });
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {NameRole});
 }
 
 #include "moc_mailheadermodel.cpp"
