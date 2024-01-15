@@ -24,6 +24,11 @@ void ContactEditorBackend::setDefaultAddressBook(const Akonadi::Collection &addr
     m_defaultAddressBook = addressbook;
 }
 
+void ContactEditorBackend::setCollectionId(const qint64 collectionId)
+{
+    m_defaultAddressBook.setId(collectionId);
+}
+
 AddresseeWrapper *ContactEditorBackend::contact()
 {
     if (m_addressee) {

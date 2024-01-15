@@ -47,6 +47,9 @@ FormCard.FormCardPage {
             if (emailEditorId.toAddEmailText > 0) {
                 contactEditor.contact.emailModel.addEmail(emailEditorId.toAddEmailText, emailEditorId.newEmailTypeCurrentValue);
             }
+            if (contactEditor.collectionId < 0) {
+                contactEditor.collectionId = addressBookEditorCard.addressBookComboBoxId
+            }
             contactEditor.saveContactInAddressBook()
             Config.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
             Config.save();

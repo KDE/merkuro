@@ -75,7 +75,7 @@ class ContactEditorBackend : public QObject
     Q_PROPERTY(Mode mode READ mode WRITE setMode NOTIFY modeChanged)
     Q_PROPERTY(AddresseeWrapper *contact READ contact NOTIFY contactChanged NOTIFY modeChanged)
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)
-    Q_PROPERTY(qint64 collectionId READ collectionId NOTIFY collectionChanged)
+    Q_PROPERTY(qint64 collectionId READ collectionId WRITE setCollectionId NOTIFY collectionChanged)
     Q_PROPERTY(bool isReadOnly READ isReadOnly NOTIFY addresseeChanged NOTIFY modeChanged)
 
 public:
@@ -114,6 +114,7 @@ public:
     void setMode(Mode mode);
     [[nodiscard]] bool isReadOnly() const;
     void setReadOnly(bool isReadOnly);
+    void setCollectionId(qint64 collectionId);
 
     /**
      * Loads the @p contact into the editor.
