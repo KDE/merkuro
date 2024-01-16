@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the kalendar package.
 #
 # Automatically generated, 2021.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-02 17:03+0100\n"
+"POT-Creation-Date: 2024-01-16 00:38+0000\n"
+"PO-Revision-Date: 2024-01-15 00:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -963,14 +963,14 @@ msgid "End date cannot be before start date."
 msgstr "La fecha final no puede ser anterior a la inicial."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "Guardar"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:156
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
@@ -2648,66 +2648,66 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "Susana"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:57
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:60
 #, kde-format
 msgid "Add Contact"
 msgstr "Añadir contacto"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:59
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:62
 #, kde-format
 msgid "Edit Contact"
 msgstr "Editar contacto"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:100
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:103
 #, kde-format
 msgid "Personal Information"
 msgstr "Información personal"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
 #: contacts/qml/private/ContactPage.qml:271
 #, kde-format
 msgid "Business Information"
 msgstr "Información empresarial"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:119
 #, kde-format
 msgid "Phone"
 msgstr "Teléfono"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:125
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:128
 #, kde-format
 msgid "E-mail"
 msgstr "Correo electrónico"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:134
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:137
 #, kde-format
 msgid "Instant Messenger"
 msgstr "Mensajería instantánea"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:173
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:176
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:191
 #, kde-format
 msgid "Warning"
 msgstr "Advertencia"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:183
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:186
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "Este contacto se ha modificado en otra parte durante su edición."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:191
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "¿Qué cambios se deben conservar?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:201
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:204
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
 #, kde-format
 msgid "Current changes"
 msgstr "Cambios actuales"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:209
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:224
 #, kde-format
 msgid "External changes"
@@ -3180,22 +3180,23 @@ msgstr "Nuevo mensaje de correo..."
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
-msgstr ""
+msgstr "No hay asistentes al correo electrónico"
 
 #: mail/mailclient.cpp:94
 #, kde-format
 msgid "Error creating transport"
-msgstr ""
+msgstr "Ha ocurrido un error al crear el transporte"
 
 #: mail/mailclient.cpp:188
 #, kde-format
 msgid "Error loading transport"
-msgstr ""
+msgstr "Ha ocurrido un error al cargar el transporte"
 
 #: mail/mailclient.cpp:205
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr ""
+"Ha ocurrido un error al poner en cola el mensaje en la bandeja de salida: %1"
 
 #: mail/mailmanager.cpp:236
 #, kde-format
