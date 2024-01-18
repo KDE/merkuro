@@ -14,6 +14,7 @@
 #include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
+#include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemMoveJob>
 #include <Akonadi/MessageModel>
@@ -24,6 +25,7 @@
 #include <KConfigGroup>
 #include <KDescendantsProxyModel>
 #include <KLocalizedString>
+#include <KMbox/MBox>
 #include <KMime/Message>
 #include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MailCommon/FolderCollectionMonitor>
@@ -243,4 +245,34 @@ QString MailManager::resourceIdentifier(const QModelIndex &index)
     return collection.resource();
 }
 
-#include "moc_mailmanager.cpp"
+void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
+{
+    const auto filename = fileUrl.toLocalFile();
+
+    auto job = new Akonadi::ItemFetchJob(item);
+    job->fetchScope().fetchFullPayload();
+    connect(job, &Akonadi::ItemFetchJob::result, this, [this, filename](KJob *job) {
+        const auto *fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
+        const auto items = fetchJob->items();
+        if (items.isEmpty()) {
+            qWarning() << "Error occurred: empty fetch job";
+            return;
+        }
+        const auto item = items.at(0);
+        if (!item.hasPayload()) {
+            qCCritical(merkuro_MAIL_LOG) << "Error occured: error parsing mail";
+            return;
+        }
+
+        const auto message = item.payload<KMime::Message::Ptr>();
+        KMBox::MBox mbox;
+        if (!mbox.load(filename)) {
+            qCWarning(merkuro_MAIL_LOG) << "Error occured: error creating file";
+        }
+        mbox.appendMessage(message);
+
+        if (!mbox.save()) {
+            qCWarning(merkuro_MAIL_LOG) << "Error occured: error saving mail";
+        }
+    });
+}

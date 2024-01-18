@@ -5,6 +5,7 @@
 
 #include "mailmodel.h"
 #include <Akonadi/CollectionFilterProxyModel>
+#include <MailCommon/EntityCollectionOrderProxyModel>
 #include <QObject>
 
 namespace Akonadi
@@ -49,6 +50,7 @@ public:
     Q_INVOKABLE void deleteCollection(const QModelIndex &index);
     Q_INVOKABLE void editCollection(const QModelIndex &index);
     Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
+    Q_INVOKABLE void saveMail(const QUrl &fileUrl, const Akonadi::Item &item);
 
 Q_SIGNALS:
     void loadingChanged();

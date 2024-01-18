@@ -5,6 +5,8 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
+import Qt.labs.platform 1.1
+import QtQuick.Dialogs 6.2
 import org.kde.merkuro.mail 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
 import './private'
@@ -12,6 +14,30 @@ import './private'
 Kirigami.ScrollablePage {
     id: folderView
     title: MailManager.selectedFolderName
+
+    property var collection
+
+    Loader {
+        id: mailSaveLoader
+
+        active: false
+        onLoaded: item.open();
+        
+        sourceComponent: FileDialog {
+            title: i18n("Save Message - Merkuro-Mail")
+            nameFilters: [i18n("email messages (*.mbox)")]
+            currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+            fileMode: fileDialog.SaveFile
+
+            onAccepted: {
+                if (fileUrl) {
+                    MailManager.saveMail(fileUrl, folderView.collection);
+                }
+                mailSaveLoader.active = false;
+            }
+            onRejected: mailSaveLoader.active = false;
+        }
+    }
 
     actions: Kirigami.Action {
         icon.name: 'mail-send'
@@ -62,8 +88,14 @@ Kirigami.ScrollablePage {
                 }
 
                 QQC2.MenuItem {
-                    icon.name: 'edit-copy'
+                    icon.name: 'view-calendar'
                     text: i18n("Add Followup Reminder")
+                }
+
+                QQC2.MenuItem {
+                    icon.name: 'document-save-as'
+                    text: i18nc("@action:button", "Save as...")
+                    onClicked: mailSaveLoader.active = true 
                 }
             }
         }
@@ -104,7 +136,6 @@ Kirigami.ScrollablePage {
             onOpenMailRequested: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: mailDelegate.item,
-                    message: mailDelegate.message,
                     props: {
                         from: mailDelegate.from,
                         to: mailDelegate.to,
@@ -132,6 +163,7 @@ Kirigami.ScrollablePage {
                     row: index,
                     status: MailManager.folderModel.copyMessageStatus(mailDelegate.status),
                 });
+                folderView.collection = mailDelegate.item;
                 menu.popup();
             }
         }
