@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2024-01-14 12:36+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1727,7 +1727,7 @@ msgstr "Iri"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:18
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3186,7 +3186,7 @@ msgstr "Eraro ŝargante transporton"
 msgid "Error queuing message in outbox: %1"
 msgstr "Eraro envicigante mesaĝon en elirkesto: %1"
 
-#: mail/mailmanager.cpp:236
+#: mail/mailmanager.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3286,63 +3286,80 @@ msgstr "Malfermi Dosieron"
 msgid "Choose file"
 msgstr "Elekti dosieron"
 
-#: mail/qml/FolderView.qml:34
+#: mail/qml/FolderView.qml:27
+#, kde-format
+msgid "Save Message - Merkuro-Mail"
+msgstr ""
+
+#: mail/qml/FolderView.qml:28
+#, kde-format
+msgid "email messages (*.mbox)"
+msgstr ""
+
+#: mail/qml/FolderView.qml:60
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marki Mesaĝon"
 
-#: mail/qml/FolderView.qml:36
+#: mail/qml/FolderView.qml:62
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Marki Mesaĝon kiel Legita"
 
-#: mail/qml/FolderView.qml:39
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Marki Mesaĝon kiel Nelegita"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Ne Marki kiel Grava"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark as Important"
 msgstr "Marki kiel Grava"
 
-#: mail/qml/FolderView.qml:51
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Move to Trash"
 msgstr "Movi al Rubujo"
 
-#: mail/qml/FolderView.qml:56
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgid "Move Message to..."
 msgstr "Movi Mesaĝon al..."
 
-#: mail/qml/FolderView.qml:61
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Kopii mesaĝon al..."
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Aldoni Sekvan Rememorigilon"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:97
+#, fuzzy, kde-format
+#| msgid "Save password"
+msgctxt "@action:button"
+msgid "Save as..."
+msgstr "Konservi pasvorton"
+
+#: mail/qml/FolderView.qml:115
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Neniu leterkesto elektita"
 
-#: mail/qml/FolderView.qml:84
+#: mail/qml/FolderView.qml:116
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Elekti leterkeston el la flankbreto."
 
-#: mail/qml/FolderView.qml:91
+#: mail/qml/FolderView.qml:123
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Leterkesto estas malplena"

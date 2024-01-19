@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2024-01-14 13:51+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1728,7 +1728,7 @@ msgstr "Vai"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:18
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3196,7 +3196,7 @@ msgstr "Errore durante il caricamento del trasporto"
 msgid "Error queuing message in outbox: %1"
 msgstr "Errore durante l'accodamento dei messaggi in uscita: %1"
 
-#: mail/mailmanager.cpp:236
+#: mail/mailmanager.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3296,63 +3296,80 @@ msgstr "Apri file"
 msgid "Choose file"
 msgstr "Scegli un file"
 
-#: mail/qml/FolderView.qml:34
+#: mail/qml/FolderView.qml:27
+#, kde-format
+msgid "Save Message - Merkuro-Mail"
+msgstr ""
+
+#: mail/qml/FolderView.qml:28
+#, kde-format
+msgid "email messages (*.mbox)"
+msgstr ""
+
+#: mail/qml/FolderView.qml:60
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marca il messaggio"
 
-#: mail/qml/FolderView.qml:36
+#: mail/qml/FolderView.qml:62
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Marca il messaggio come letto"
 
-#: mail/qml/FolderView.qml:39
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Marca il messaggio come non letto"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Non marcare come importante"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark as Important"
 msgstr "Segna come importante"
 
-#: mail/qml/FolderView.qml:51
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Move to Trash"
 msgstr "Cestina"
 
-#: mail/qml/FolderView.qml:56
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgid "Move Message to..."
 msgstr "Sposta messaggio in..."
 
-#: mail/qml/FolderView.qml:61
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Copia messaggio in..."
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Aggiungi promemoria di delle azioni da seguire"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:97
+#, fuzzy, kde-format
+#| msgid "Save password"
+msgctxt "@action:button"
+msgid "Save as..."
+msgstr "Salva la password"
+
+#: mail/qml/FolderView.qml:115
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Nessuna casella di posta selezionata"
 
-#: mail/qml/FolderView.qml:84
+#: mail/qml/FolderView.qml:116
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Seleziona una casella di posta dalla barra laterale."
 
-#: mail/qml/FolderView.qml:91
+#: mail/qml/FolderView.qml:123
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "La casella di posta è vuota"

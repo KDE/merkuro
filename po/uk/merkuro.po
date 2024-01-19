@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:38+0000\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
 "PO-Revision-Date: 2024-01-14 09:08+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1758,7 +1758,7 @@ msgstr "Перейти"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:18
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3229,7 +3229,7 @@ msgstr "Помилка під час спроби завантажити пер�
 msgid "Error queuing message in outbox: %1"
 msgstr "Помилка під час додавання повідомлення до черги надсилання: %1"
 
-#: mail/mailmanager.cpp:236
+#: mail/mailmanager.cpp:238
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3329,63 +3329,80 @@ msgstr "Відкрити файл"
 msgid "Choose file"
 msgstr "Виберіть файл"
 
-#: mail/qml/FolderView.qml:34
+#: mail/qml/FolderView.qml:27
+#, kde-format
+msgid "Save Message - Merkuro-Mail"
+msgstr ""
+
+#: mail/qml/FolderView.qml:28
+#, kde-format
+msgid "email messages (*.mbox)"
+msgstr ""
+
+#: mail/qml/FolderView.qml:60
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Позначити повідомлення"
 
-#: mail/qml/FolderView.qml:36
+#: mail/qml/FolderView.qml:62
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Позначити повідомлення як прочитане"
 
-#: mail/qml/FolderView.qml:39
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Позначити повідомлення як непрочитане"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Не позначати як важливе"
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark as Important"
 msgstr "Позначити як важливе"
 
-#: mail/qml/FolderView.qml:51
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Move to Trash"
 msgstr "Пересунути до смітника"
 
-#: mail/qml/FolderView.qml:56
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgid "Move Message to..."
 msgstr "Пересунути повідомлення до…"
 
-#: mail/qml/FolderView.qml:61
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Копіювати повідомлення до…"
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Додати стеження за нагадуваннями"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:97
+#, fuzzy, kde-format
+#| msgid "Manage tags..."
+msgctxt "@action:button"
+msgid "Save as..."
+msgstr "Керування мітками…"
+
+#: mail/qml/FolderView.qml:115
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Немає вибраної поштової скриньки"
 
-#: mail/qml/FolderView.qml:84
+#: mail/qml/FolderView.qml:116
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Виберіть поштову скриньку на бічній панелі."
 
-#: mail/qml/FolderView.qml:91
+#: mail/qml/FolderView.qml:123
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Поштова скринька порожня"
@@ -3856,9 +3873,6 @@ msgstr "Швидко додати нову мітку."
 
 #~ msgid "<b>Summary:</b>"
 #~ msgstr "<b>Резюме:</b>"
-
-#~ msgid "Manage tags..."
-#~ msgstr "Керування мітками…"
 
 #~ msgid "Create a New Tag..."
 #~ msgstr "Створити мітку…"
