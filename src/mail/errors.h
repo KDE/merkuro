@@ -196,7 +196,7 @@ protected:
 };
 
 // Struct used to add the copy constructor / assignment only if both types are copy constructible
-template<typename Error, typename Type, bool both_copy_constructible = std::is_copy_constructible<Error>::value &&std::is_copy_constructible<Type>::value>
+template<typename Error, typename Type, bool both_copy_constructible = std::is_copy_constructible<Error>::value && std::is_copy_constructible<Type>::value>
 struct StorageCopyConstructor;
 
 template<typename Error, typename Type>
