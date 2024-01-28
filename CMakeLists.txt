@@ -57,6 +57,7 @@ include(ECMPoQmTools)
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
 include(ECMDeprecationSettings)
+include(ECMFeatureSummary)
 include(ECMGenerateQmlTypes)
 include(ECMQmlModule)
 include(ECMInstallIcons)
@@ -143,4 +144,4 @@ ecm_qt_install_logging_categories(
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ecm_feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
