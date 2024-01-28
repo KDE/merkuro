@@ -1,0 +1,581 @@
+{
+    "id": "org.kde.merkuro",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.6-kf6preview",
+    "base": "io.qt.qtwebengine.BaseApp",
+    "base-version": "6.6",
+    "sdk": "org.kde.Sdk",
+    "tags": [ "nightly" ],
+    "desktop-file-name-suffix": " (Nightly)",
+    "command": "run_merkuro.sh",
+    "finish-args": [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--own-name=org.freedesktop.Akonadi",
+        "--own-name=org.freedesktop.Akonadi.*",
+        "--own-name=org.freedesktop.Akonadi.Control.*",
+        "--own-name=org.freedesktop.Akonadi.Agent.*",
+        "--own-name=org.freedesktop.Akonadi.Resource.*",
+        "--own-name=org.kde.kalendarac",
+        "--own-name=org.kde.kalendarr",
+        "--own-name=org.kde.accountwizard",
+        "--own-name=org.kde.pimsettingsexporter",
+        "--own-name=org.kde.pim.*",
+        "--talk-name=org.kde.Solid.PowerManagement",
+        "--talk-name=org.kde.kded5",
+        "--talk-name=org.kde.kglobalaccel",
+        "--talk-name=org.kde.JobViewServer",
+        "--talk-name=org.kde.klauncher5",
+        "--talk-name=org.kde.knotify",
+        "--talk-name=org.kde.kwalletd5",
+        "--talk-name=org.kde.kcookiejar5",
+        "--system-talk-name=org.freedesktop.NetworkManager"
+    ],
+    "cleanup": [
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/lib/plugins/designer",
+        "/include",
+        "/docs",
+        "/mkspecs",
+        "/share/man",
+        "/bin/afmtodit",
+        "/usr/bin/xsd",
+        "/lib/libKF5*.so",
+        "/lib/libboost_*.so",
+        "*.a",
+        "*.la"
+    ],
+    "rename-icon": "org.kde.merkuro",
+    "copy-icon": true,
+    "modules": [
+        "boost.json",
+        "gpgme.json",
+        {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "archive", "url": "https://github.com/frankosterfeld/qtkeychain/archive/v0.12.0.tar.gz", "sha256": "cc547d58c1402f6724d3ff89e4ca83389d9e2bdcfd9ae3d695fcdffa50a625a8" ,
+                "x-checker-data": {
+                    "type": "anitya",
+                    "project-id": 4138,
+                    "stable-only": true,
+                    "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/v$version.tar.gz"
+                }} ],
+            "config-opts": [ "-DCMAKE_INSTALL_LIBDIR=/app/lib", "-DLIB_INSTALL_DIR=/app/lib", "-DBUILD_TRANSLATIONS=NO" ]
+        },
+        {
+            "name": "kdiagram",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/graphics/kdiagram.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "akonadi",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_TOOLS=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DDATABASE_BACKEND=SQLITE"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi.git",
+                    "branch": "master"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "sqlite3",
+                    "config-opts": [
+                        "--enable-threadsafe",
+                        "--enable-threads-override-locks"
+                    ],
+                    "build-options": {
+                        "cflags": "-DSQLITE_ENABLE_UNLOCK_NOTIFY=1"
+                    },
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "http://sqlite.org/2016/sqlite-autoconf-3150200.tar.gz",
+                            "sha256": "07b35063b9386865b78226cdaca9a299d938a87aaa8fdc4d73edb0cef30f3149"
+                        }
+                    ],
+                    "cleanup": [
+                        "/bin/sqlite3"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "kmime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmime.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "akonadi-mime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-mime.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
+        },
+        {
+            "name": "grantlee",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/steveire/grantlee/archive/v5.2.0.tar.gz",
+                    "sha256": "139acee5746b957bdf1327ec0d97c604d4c0b9be42aec5d584297cb5ed6a990a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 21448,
+                        "stable-only": true,
+                        "url-template": "https://github.com/steveire/grantlee/archive/v$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "grantleetheme",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/grantleetheme.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libkleo",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libkleo.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "akonadi-contacts",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-contacts.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libkgapi",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libkgapi.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "ksmtp",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/ksmtp.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kmailtransport",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmailtransport.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kpimtextedit",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kpimtextedit.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kidentitymanagement",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kidentitymanagement.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kcalutils",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kcalutils.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "xapian",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": " https://oligarchy.co.uk/xapian/1.4.18/xapian-core-1.4.18.tar.xz",
+                    "sha256": "196ddbb4ad10450100f0991a599e4ed944cbad92e4a6fe813be6dce160244b77",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 15919,
+                        "stable-only": true,
+                        "url-template": "https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz"
+                    }
+                }
+            ],
+            "config-opts": [
+                "--disable-documentation"
+            ],
+            "cleanup": [
+                "/share/doc/xapian-core",
+                "/bin/xapian-*",
+                "/bin/copydatabase",
+                "/bin/quest",
+                "/bin/simpleexpand",
+                "/bin/simpleindex",
+                "/bin/simplesearch"
+            ]
+        },
+        {
+            "name": "kldap",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kldap.git",
+                    "branch": "master"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "openldap",
+                    "config-opts": [
+                        "--disable-static",
+                        "--disable-slapd"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "http://mirror.eu.oneandone.net/software/openldap/openldap-release/openldap-2.4.44.tgz",
+                            "sha256": "d7de6bf3c67009c95525dde3a0212cc110d0a70b92af2af8e3ee800e81b88400",
+                            "x-checker-data": {
+                                "type": "html",
+                                "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/",
+                                "version-pattern": "openldap-([\\d\\.-]+).tgz",
+                                "url-template": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-$version.tgz"
+                            }
+                        }
+                    ],
+                    "cleanup": [
+                        "/bin/ldap*",
+                        "/sbin"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "akonadi-search",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DAKONADISEARCH_ENABLE_KRUNNER_RUNNER=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-search.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kmbox",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmbox.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libkdepim",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libkdepim.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kimap",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kimap.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "pimcommon",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/pimcommon.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "akonadi-calendar",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-calendar.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "akonadi-notes",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-notes.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libgravatar",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libgravatar.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "calendarsupport",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/calendarsupport.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "eventviews",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/eventviews.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kontactinterface",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kontactinterface.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kdepim-runtime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kdepim-runtime.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kalendar",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
+    ]
+}
