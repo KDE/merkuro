@@ -79,7 +79,7 @@ MailManager::MailManager(QObject *parent)
     connect(m_collectionSelectionModel, &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &selected, const QItemSelection &deselected) {
         Q_UNUSED(deselected)
         const auto indexes = selected.indexes();
-        if (indexes.count()) {
+        if (!indexes.isEmpty()) {
             QString name;
             QModelIndex index = indexes[0];
             while (index.isValid()) {
