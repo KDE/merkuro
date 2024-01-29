@@ -134,7 +134,7 @@ QAction *AbstractApplication::action(const QString &name)
 
 void AbstractApplication::setupActions()
 {
-    auto actionName = QLatin1String("open_kcommand_bar");
+    auto actionName = QLatin1StringView("open_kcommand_bar");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openKCommandBarAction = mCollection->addAction(actionName, this, &AbstractApplication::openKCommandBarAction);
         openKCommandBarAction->setText(i18n("Open Command Bar"));
@@ -144,45 +144,45 @@ void AbstractApplication::setupActions()
         mCollection->setDefaultShortcut(openKCommandBarAction, QKeySequence(Qt::CTRL | Qt::ALT | Qt::Key_I));
     }
 
-    actionName = QLatin1String("file_quit");
+    actionName = QLatin1StringView("file_quit");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::quit(this, &AbstractApplication::quit, this);
         mCollection->addAction(action->objectName(), action);
     }
 
-    actionName = QLatin1String("switch_application_language");
+    actionName = QLatin1StringView("switch_application_language");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::switchApplicationLanguage(this, &AbstractApplication::openLanguageSwitcher, this);
         mCollection->addAction(action->objectName(), action);
     }
 
-    actionName = QLatin1String("options_configure_keybinding");
+    actionName = QLatin1StringView("options_configure_keybinding");
     if (KAuthorized::authorizeAction(actionName)) {
         auto keyBindingsAction = KStandardAction::keyBindings(this, &AbstractApplication::configureShortcuts, this);
         mCollection->addAction(keyBindingsAction->objectName(), keyBindingsAction);
     }
 
-    actionName = QLatin1String("open_about_page");
+    actionName = QLatin1StringView("open_about_page");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &AbstractApplication::openAboutPage);
         action->setText(i18n("About %1", KAboutData::applicationData().displayName()));
         action->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     }
 
-    actionName = QLatin1String("open_about_kde_page");
+    actionName = QLatin1StringView("open_about_kde_page");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &AbstractApplication::openAboutKDEPage);
         action->setText(i18n("About KDE"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("kde")));
     }
 
-    actionName = QLatin1String("options_configure");
+    actionName = QLatin1StringView("options_configure");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::preferences(this, &AbstractApplication::openSettings, this);
         mCollection->addAction(action->objectName(), action);
     }
 
-    actionName = QLatin1String("open_tag_manager");
+    actionName = QLatin1StringView("open_tag_manager");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openTagManagerAction = mCollection->addAction(actionName, this, &AbstractApplication::openTagManager);
         openTagManagerAction->setText(i18n("Manage Tags…"));

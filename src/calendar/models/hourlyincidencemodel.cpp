@@ -211,13 +211,13 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
         auto incidence = result[i].value<QVariantMap>();
         int concurrentIncidences = 1;
 
-        const auto startDT = incidence[QLatin1String("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
-            ? incidence[QLatin1String("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+        const auto startDT = incidence[QLatin1StringView("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
+            ? incidence[QLatin1StringView("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
             : rowStart;
-        const auto endDT = incidence[QLatin1String("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
-            ? incidence[QLatin1String("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+        const auto endDT = incidence[QLatin1StringView("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
+            ? incidence[QLatin1StringView("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
             : rowEnd;
-        const auto duration = incidence[QLatin1String("duration")].toDouble();
+        const auto duration = incidence[QLatin1StringView("duration")].toDouble();
 
         // We need a "real" and "displayed" end time for two reasons:
         // 1. We need the real end minutes to give a fake start time to todos which do not have a start time
@@ -235,9 +235,9 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
             concurrentIncidences = qMax(concurrentIncidences, takenSpaces[i]);
         }
 
-        incidence[QLatin1String("maxConcurrentIncidences")] = concurrentIncidences;
+        incidence[QLatin1StringView("maxConcurrentIncidences")] = concurrentIncidences;
         double widthShare = 1.0 / (concurrentIncidences * 1.0); // Width as a fraction of the whole day column width
-        incidence[QLatin1String("widthShare")] = widthShare;
+        incidence[QLatin1StringView("widthShare")] = widthShare;
 
         // This is the value that the QML view will use to position the incidence rectangle on the day column's X axis.
         double priorTakenWidthShare = 0.0;
@@ -271,7 +271,7 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
             }
         }
 
-        incidence[QLatin1String("priorTakenWidthShare")] = priorTakenWidthShare;
+        incidence[QLatin1StringView("priorTakenWidthShare")] = priorTakenWidthShare;
 
         if (takenSpaces[startMinutesFromDayStart] < takenSpaces[displayedEndMinutesFromDayStart - 1] && priorTakenWidthShare > 0) {
             potentialMovers.append(PotentialMover{incidence, i, startMinutesFromDayStart, displayedEndMinutesFromDayStart});
@@ -287,8 +287,8 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
         }
 
         if (maxTakenWidth < 0.98) {
-            potentialMover.incidenceMap[QLatin1String("priorTakenWidthShare")] =
-                potentialMover.incidenceMap[QLatin1String("widthShare")].toDouble() * (takenSpaces[potentialMover.endMinutesFromDayStart - 1] - 1);
+            potentialMover.incidenceMap[QLatin1StringView("priorTakenWidthShare")] =
+                potentialMover.incidenceMap[QLatin1StringView("widthShare")].toDouble() * (takenSpaces[potentialMover.endMinutesFromDayStart - 1] - 1);
 
             result[potentialMover.resultIterator] = potentialMover.incidenceMap;
         }

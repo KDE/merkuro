@@ -11,7 +11,7 @@ AttachmentsModel::AttachmentsModel(QObject *parent, KCalendarCore::Incidence::Pt
 {
     for (int i = 0; i < QMetaEnum::fromType<AttachmentsModel::Roles>().keyCount(); i++) {
         const int value = QMetaEnum::fromType<AttachmentsModel::Roles>().value(i);
-        const QString key = QLatin1String(roleNames().value(value));
+        const QString key = QLatin1StringView(roleNames().value(value));
         m_dataRoles[key] = value;
     }
 }

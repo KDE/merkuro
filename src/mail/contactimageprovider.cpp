@@ -24,11 +24,11 @@ ContactImageProvider::ContactImageProvider()
 {
     qnam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
 
-    qnam.enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
+    qnam.enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/hsts/"));
     qnam.setStrictTransportSecurityEnabled(true);
 
     auto namDiskCache = new QNetworkDiskCache(&qnam);
-    namDiskCache->setCacheDirectory(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/nam/"));
+    namDiskCache->setCacheDirectory(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/nam/"));
     qnam.setCache(namDiskCache);
 }
 

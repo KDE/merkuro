@@ -11,7 +11,7 @@ RecurrenceExceptionsModel::RecurrenceExceptionsModel(QObject *parent, KCalendarC
 {
     for (int i = 0; i < QMetaEnum::fromType<RecurrenceExceptionsModel::Roles>().keyCount(); i++) {
         const int value = QMetaEnum::fromType<RecurrenceExceptionsModel::Roles>().value(i);
-        const QString key = QLatin1String(roleNames().value(value));
+        const QString key = QLatin1StringView(roleNames().value(value));
         m_dataRoles[key] = value;
     }
 

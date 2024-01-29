@@ -497,7 +497,7 @@ QString MessageStatus::statusStr() const
         sstr += 'T';
     }
 
-    return QLatin1String(sstr);
+    return QLatin1StringView(sstr);
 }
 
 void MessageStatus::setStatusFromStr(const QString &aStr)

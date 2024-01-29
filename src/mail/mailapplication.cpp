@@ -16,7 +16,7 @@ void MailApplication::setupActions()
 {
     AbstractApplication::setupActions();
 
-    auto actionName = QLatin1String("create_mail");
+    auto actionName = QLatin1StringView("create_mail");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &MailApplication::createNewMail);
         action->setText(i18n("New Mail…"));

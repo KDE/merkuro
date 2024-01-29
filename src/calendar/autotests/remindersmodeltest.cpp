@@ -17,7 +17,7 @@ private Q_SLOTS:
     void testReading()
     {
         KCalendarCore::Incidence::Ptr incidence(new KCalendarCore::Event());
-        incidence->setSummary(QLatin1String("LOREM"));
+        incidence->setSummary(QLatin1StringView("LOREM"));
 
         RemindersModel model;
         model.setIncidence(incidence);

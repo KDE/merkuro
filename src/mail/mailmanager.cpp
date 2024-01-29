@@ -86,7 +86,7 @@ MailManager::MailManager(QObject *parent)
                 if (name.isEmpty()) {
                     name = index.data(Qt::DisplayRole).toString();
                 } else {
-                    name = index.data(Qt::DisplayRole).toString() + QLatin1String(" / ") + name;
+                    name = index.data(Qt::DisplayRole).toString() + QLatin1StringView(" / ") + name;
                 }
                 index = index.parent();
             }

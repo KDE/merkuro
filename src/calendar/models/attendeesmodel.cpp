@@ -25,10 +25,10 @@ AttendeeStatusModel::AttendeeStatusModel(QObject *parent)
     for (int i = 0; i < QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().keyCount(); i++) {
         int value = QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().value(i);
 
-        // QLatin1String is a workaround for QT_NO_CAST_FROM_ASCII.
+        // QLatin1StringView is a workaround for QT_NO_CAST_FROM_ASCII.
         // Regular expression adds space between every lowercase and Capitalised character then does the same
         // for capitalised letters together, e.g. ThisIsATest. Not a problem right now, but best to be safe.
-        const QLatin1String enumName = QLatin1String(QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().key(i));
+        const QLatin1StringView enumName = QLatin1String(QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().key(i));
         QString displayName = enumName;
         displayName.replace(lowerToCapitalSep, QStringLiteral("\\1 \\2"));
         displayName.replace(capitalToCapitalSep, QStringLiteral("\\1 \\2"));
@@ -294,10 +294,10 @@ void AttendeesModel::addAttendee(qint64 itemId, const QString &email)
             Q_EMIT layoutChanged();
         });
     } else {
-        // QLatin1String is a workaround for QT_NO_CAST_FROM_ASCII
+        // QLatin1StringView is a workaround for QT_NO_CAST_FROM_ASCII
         // addAttendee method does not work with null strings, so we use empty strings
-        KCalendarCore::Attendee attendee(QLatin1String(""),
-                                         QLatin1String(""),
+        KCalendarCore::Attendee attendee(QLatin1StringView(""),
+                                         QLatin1StringView(""),
                                          true,
                                          KCalendarCore::Attendee::NeedsAction,
                                          KCalendarCore::Attendee::ReqParticipant);

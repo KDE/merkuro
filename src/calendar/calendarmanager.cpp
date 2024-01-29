@@ -121,7 +121,7 @@ protected:
         const auto attr = col.attribute<Akonadi::CollectionIdentificationAttribute>();
 
         // We filter the user folders because we insert person nodes for user folders.
-        if ((attr && attr->collectionNamespace().startsWith("usertoplevel")) || col.name().contains(QLatin1String("Other Users"))) {
+        if ((attr && attr->collectionNamespace().startsWith("usertoplevel")) || col.name().contains(QLatin1StringView("Other Users"))) {
             return false;
         }
         return true;
@@ -333,7 +333,7 @@ qint64 CalendarManager::defaultCalendarId(IncidenceWrapper *incidenceWrapper)
     // Checks if default collection accepts this type of incidence
     auto mimeType = incidenceWrapper->incidencePtr()->mimeType();
     Akonadi::Collection collection = m_calendar->collection(m_config->lastUsedEventCollection());
-    bool supportsMimeType = collection.contentMimeTypes().contains(mimeType) || mimeType == QLatin1String("");
+    bool supportsMimeType = collection.contentMimeTypes().contains(mimeType) || mimeType == QLatin1StringView("");
     bool hasRights = collection.rights() & Akonadi::Collection::CanCreateItem;
     if (collection.isValid() && supportsMimeType && hasRights) {
         return collection.id();
@@ -345,7 +345,7 @@ qint64 CalendarManager::defaultCalendarId(IncidenceWrapper *incidenceWrapper)
     for (int i = 0; i < m_allCalendars->rowCount(); i++) {
         QModelIndex idx = m_allCalendars->index(i, 0);
         collection = idx.data(Akonadi::EntityTreeModel::Roles::CollectionRole).value<Akonadi::Collection>();
-        supportsMimeType = collection.contentMimeTypes().contains(mimeType) || mimeType == QLatin1String("");
+        supportsMimeType = collection.contentMimeTypes().contains(mimeType) || mimeType == QLatin1StringView("");
         hasRights = collection.rights() & Akonadi::Collection::CanCreateItem;
         if (collection.isValid() && supportsMimeType && hasRights) {
             return collection.id();
@@ -649,20 +649,20 @@ QVariantMap CalendarManager::getCollectionDetails(QVariant collectionId)
         }
     }
 
-    collectionDetails[QLatin1String("id")] = collection.id();
-    collectionDetails[QLatin1String("name")] = collection.name();
-    collectionDetails[QLatin1String("displayName")] = collection.displayName();
-    collectionDetails[QLatin1String("color")] = m_baseModel->color(collection.id());
-    collectionDetails[QLatin1String("count")] = collection.statistics().count();
-    collectionDetails[QLatin1String("isResource")] = Akonadi::CollectionUtils::isResource(collection);
-    collectionDetails[QLatin1String("resource")] = collection.resource();
-    collectionDetails[QLatin1String("readOnly")] = collection.rights().testFlag(Collection::ReadOnly);
-    collectionDetails[QLatin1String("canChange")] = collection.rights().testFlag(Collection::CanChangeCollection);
-    collectionDetails[QLatin1String("canCreate")] = collection.rights().testFlag(Collection::CanCreateCollection);
-    collectionDetails[QLatin1String("canDelete")] =
+    collectionDetails[QLatin1StringView("id")] = collection.id();
+    collectionDetails[QLatin1StringView("name")] = collection.name();
+    collectionDetails[QLatin1StringView("displayName")] = collection.displayName();
+    collectionDetails[QLatin1StringView("color")] = m_baseModel->color(collection.id());
+    collectionDetails[QLatin1StringView("count")] = collection.statistics().count();
+    collectionDetails[QLatin1StringView("isResource")] = Akonadi::CollectionUtils::isResource(collection);
+    collectionDetails[QLatin1StringView("resource")] = collection.resource();
+    collectionDetails[QLatin1StringView("readOnly")] = collection.rights().testFlag(Collection::ReadOnly);
+    collectionDetails[QLatin1StringView("canChange")] = collection.rights().testFlag(Collection::CanChangeCollection);
+    collectionDetails[QLatin1StringView("canCreate")] = collection.rights().testFlag(Collection::CanCreateCollection);
+    collectionDetails[QLatin1StringView("canDelete")] =
         collection.rights().testFlag(Collection::CanDeleteCollection) && !Akonadi::CollectionUtils::isResource(collection);
-    collectionDetails[QLatin1String("isFiltered")] = isFiltered;
-    collectionDetails[QLatin1String("allCalendarsRow")] = allCalendarsRow;
+    collectionDetails[QLatin1StringView("isFiltered")] = isFiltered;
+    collectionDetails[QLatin1StringView("allCalendarsRow")] = allCalendarsRow;
 
     return collectionDetails;
 }

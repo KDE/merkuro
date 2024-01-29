@@ -51,7 +51,7 @@ void CalendarApplication::setupActions()
 {
     AbstractApplication::setupActions();
 
-    auto actionName = QLatin1String("open_todo_view");
+    auto actionName = QLatin1StringView("open_todo_view");
     QAction *openTodoAction = nullptr;
     if (KAuthorized::authorizeAction(actionName)) {
         openTodoAction = mCollection->addAction(actionName, this, &CalendarApplication::openTodoView);
@@ -68,7 +68,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openTodoAction, QKeySequence(i18n("Ctrl+6")));
     }
 
-    actionName = QLatin1String("open_week_view");
+    actionName = QLatin1StringView("open_week_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openWeekAction = mCollection->addAction(actionName, this, &CalendarApplication::openWeekView);
         openWeekAction->setText(i18n("Week View"));
@@ -84,7 +84,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openWeekAction, QKeySequence(i18n("Ctrl+2")));
     }
 
-    actionName = QLatin1String("open_threeday_view");
+    actionName = QLatin1StringView("open_threeday_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openThreeDayAction = mCollection->addAction(actionName, this, &CalendarApplication::openThreeDayView);
         openThreeDayAction->setText(i18n("3 Day View"));
@@ -100,7 +100,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openThreeDayAction, QKeySequence(i18n("Ctrl+3")));
     }
 
-    actionName = QLatin1String("open_day_view");
+    actionName = QLatin1StringView("open_day_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openDayAction = mCollection->addAction(actionName, this, &CalendarApplication::openDayView);
         openDayAction->setText(i18n("Day View"));
@@ -116,7 +116,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openDayAction, QKeySequence(i18n("Ctrl+4")));
     }
 
-    actionName = QLatin1String("open_schedule_view");
+    actionName = QLatin1StringView("open_schedule_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openScheduleAction = mCollection->addAction(actionName, this, &CalendarApplication::openScheduleView);
         openScheduleAction->setText(i18n("Schedule View"));
@@ -132,7 +132,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openScheduleAction, QKeySequence(i18n("Ctrl+5")));
     }
 
-    actionName = QLatin1String("open_month_view");
+    actionName = QLatin1StringView("open_month_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openMonthAction = mCollection->addAction(actionName, this, &CalendarApplication::openMonthView);
         openMonthAction->setText(i18n("Month View"));
@@ -148,7 +148,7 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(openMonthAction, QKeySequence(i18n("Ctrl+1")));
     }
 
-    actionName = QLatin1String("move_view_backwards");
+    actionName = QLatin1StringView("move_view_backwards");
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewBackwardsAction = mCollection->addAction(actionName, this, &CalendarApplication::moveViewBackwards);
         moveViewBackwardsAction->setText(i18n("Backwards"));
@@ -161,7 +161,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("move_view_forwards");
+    actionName = QLatin1StringView("move_view_forwards");
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewForwardsAction = mCollection->addAction(actionName, this, &CalendarApplication::moveViewForwards);
         moveViewForwardsAction->setText(i18n("Forwards"));
@@ -174,7 +174,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("move_view_to_today");
+    actionName = QLatin1StringView("move_view_to_today");
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewToTodayAction = mCollection->addAction(actionName, this, &CalendarApplication::moveViewToToday);
         moveViewToTodayAction->setText(i18n("To Today"));
@@ -187,7 +187,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("open_date_changer");
+    actionName = QLatin1StringView("open_date_changer");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openDateChangerAction = mCollection->addAction(actionName, this, &CalendarApplication::openDateChanger);
         openDateChangerAction->setText(i18n("To Date…"));
@@ -200,7 +200,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("toggle_menubar");
+    actionName = QLatin1StringView("toggle_menubar");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &CalendarApplication::toggleMenubar);
         action->setText(i18n("Show Menubar"));
@@ -210,47 +210,47 @@ void CalendarApplication::setupActions()
         mCollection->setDefaultShortcut(action, QKeySequence(i18n("Ctrl+M")));
     }
 
-    actionName = QLatin1String("create_event");
+    actionName = QLatin1StringView("create_event");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &CalendarApplication::createNewEvent);
         action->setText(i18n("New Event…"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("resource-calendar-insert")));
     }
 
-    actionName = QLatin1String("create_todo");
+    actionName = QLatin1StringView("create_todo");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mCollection->addAction(actionName, this, &CalendarApplication::createNewTodo);
         action->setText(i18n("New Task…"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("view-task-add")));
     }
 
-    actionName = QLatin1String("switch_application_language");
+    actionName = QLatin1StringView("switch_application_language");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::switchApplicationLanguage(this, &CalendarApplication::openLanguageSwitcher, this);
         mCollection->addAction(action->objectName(), action);
     }
 
-    actionName = QLatin1String("import_calendar");
+    actionName = QLatin1StringView("import_calendar");
     if (KAuthorized::authorizeAction(actionName)) {
         auto importIcalAction = mCollection->addAction(actionName, this, &CalendarApplication::importCalendar);
         importIcalAction->setText(i18n("Import Calendar…"));
         importIcalAction->setIcon(QIcon::fromTheme(QStringLiteral("document-import-ocal")));
     }
 
-    actionName = QLatin1String("edit_undo");
+    actionName = QLatin1StringView("edit_undo");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::undo(this, &CalendarApplication::undo, this);
         action->setEnabled(false);
         mCollection->addAction(action->objectName(), action);
     }
-    actionName = QLatin1String("edit_redo");
+    actionName = QLatin1StringView("edit_redo");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = KStandardAction::redo(this, &CalendarApplication::redo, this);
         action->setEnabled(false);
         mCollection->addAction(action->objectName(), action);
     }
 
-    actionName = QLatin1String("todoview_sort_alphabetically");
+    actionName = QLatin1StringView("todoview_sort_alphabetically");
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewAlphabeticallyAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortAlphabetically);
         sortTodoViewAlphabeticallyAction->setText(i18n("Alphabetically"));
@@ -266,7 +266,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("todoview_sort_by_due_date");
+    actionName = QLatin1StringView("todoview_sort_by_due_date");
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewByDueDateAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortByDueDate);
         sortTodoViewByDueDateAction->setText(i18n("By Due Date"));
@@ -282,7 +282,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("todoview_sort_by_priority");
+    actionName = QLatin1StringView("todoview_sort_by_priority");
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewByPriorityAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortByPriority);
         sortTodoViewByPriorityAction->setText(i18n("By Priority Level"));
@@ -298,7 +298,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("todoview_order_ascending");
+    actionName = QLatin1StringView("todoview_order_ascending");
     if (KAuthorized::authorizeAction(actionName)) {
         auto orderTodoViewAscendingAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewOrderAscending);
         orderTodoViewAscendingAction->setText(i18n("Ascending order"));
@@ -314,7 +314,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("todoview_order_descending");
+    actionName = QLatin1StringView("todoview_order_descending");
     if (KAuthorized::authorizeAction(actionName)) {
         auto orderTodoViewDescendingAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewOrderDescending);
         orderTodoViewDescendingAction->setText(i18n("Descending Order"));
@@ -330,7 +330,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("todoview_show_completed");
+    actionName = QLatin1StringView("todoview_show_completed");
     if (KAuthorized::authorizeAction(actionName)) {
         auto todoViewShowCompletedAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewShowCompleted);
         todoViewShowCompletedAction->setText(i18n("Show Completed Tasks"));
@@ -344,7 +344,7 @@ void CalendarApplication::setupActions()
         }
     }
 
-    actionName = QLatin1String("refresh_all");
+    actionName = QLatin1StringView("refresh_all");
     if (KAuthorized::authorizeAction(actionName)) {
         auto refreshAllAction = mCollection->addAction(actionName, this, &CalendarApplication::refreshAll);
         refreshAllAction->setText(i18n("Refresh All"));

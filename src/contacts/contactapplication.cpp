@@ -30,14 +30,14 @@ void ContactApplication::setupActions()
 {
     AbstractApplication::setupActions();
 
-    auto actionName = QLatin1String("create_contact");
+    auto actionName = QLatin1StringView("create_contact");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mContactCollection->addAction(actionName, this, &ContactApplication::createNewContact);
         action->setText(i18n("New Contact…"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("contact-new-symbolic")));
     }
 
-    actionName = QLatin1String("refresh_all");
+    actionName = QLatin1StringView("refresh_all");
     if (KAuthorized::authorizeAction(actionName)) {
         auto refreshAllAction = mContactCollection->addAction(actionName, this, &ContactApplication::refreshAll);
         refreshAllAction->setText(i18n("Refresh All Address Books"));
@@ -47,7 +47,7 @@ void ContactApplication::setupActions()
         mContactCollection->setDefaultShortcut(refreshAllAction, QKeySequence(QKeySequence::Refresh));
     }
 
-    actionName = QLatin1String("create_contact_group");
+    actionName = QLatin1StringView("create_contact_group");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mContactCollection->addAction(actionName, this, &ContactApplication::createNewContactGroup);
         action->setText(i18n("New Contact Group…"));

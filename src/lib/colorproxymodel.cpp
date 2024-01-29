@@ -114,9 +114,9 @@ QHash<int, QByteArray> ColorProxyModel::roleNames() const
 QColor ColorProxyModel::getCollectionColor(Akonadi::Collection collection) const
 {
     const auto id = collection.id();
-    auto supportsMimeType = collection.contentMimeTypes().contains(QLatin1String("application/x-vnd.akonadi.calendar.event"))
-        || collection.contentMimeTypes().contains(QLatin1String("application/x-vnd.akonadi.calendar.todo"))
-        || collection.contentMimeTypes().contains(QLatin1String("application/x-vnd.akonadi.calendar.journal"))
+    auto supportsMimeType = collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.event"))
+        || collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.todo"))
+        || collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.journal"))
         || collection.contentMimeTypes().contains(KContacts::Addressee::mimeType())
         || collection.contentMimeTypes().contains(KContacts::ContactGroup::mimeType());
 

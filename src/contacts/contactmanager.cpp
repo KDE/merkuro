@@ -153,7 +153,7 @@ QUrl ContactManager::decorationToUrl(QVariant decoration)
     buffer.open(QIODevice::WriteOnly);
     imgDecoration.save(&buffer, "png");
     const QString base64 = QString::fromUtf8(byteArray.toBase64());
-    return QUrl(QLatin1String("data:image/png;base64,") + base64);
+    return QUrl(QLatin1StringView("data:image/png;base64,") + base64);
 }
 
 void ContactManager::deleteItem(const Akonadi::Item &item)
@@ -208,17 +208,17 @@ QVariantMap ContactManager::getCollectionDetails(const Akonadi::Collection &coll
 {
     QVariantMap collectionDetails;
 
-    collectionDetails[QLatin1String("id")] = collection.id();
-    collectionDetails[QLatin1String("name")] = collection.name();
-    collectionDetails[QLatin1String("displayName")] = collection.displayName();
-    collectionDetails[QLatin1String("color")] = m_colorProxy->color(collection.id());
-    collectionDetails[QLatin1String("count")] = collection.statistics().count();
-    collectionDetails[QLatin1String("isResource")] = Akonadi::CollectionUtils::isResource(collection);
-    collectionDetails[QLatin1String("resource")] = collection.resource();
-    collectionDetails[QLatin1String("readOnly")] = collection.rights().testFlag(Akonadi::Collection::ReadOnly);
-    collectionDetails[QLatin1String("canChange")] = collection.rights().testFlag(Akonadi::Collection::CanChangeCollection);
-    collectionDetails[QLatin1String("canCreate")] = collection.rights().testFlag(Akonadi::Collection::CanCreateCollection);
-    collectionDetails[QLatin1String("canDelete")] =
+    collectionDetails[QLatin1StringView("id")] = collection.id();
+    collectionDetails[QLatin1StringView("name")] = collection.name();
+    collectionDetails[QLatin1StringView("displayName")] = collection.displayName();
+    collectionDetails[QLatin1StringView("color")] = m_colorProxy->color(collection.id());
+    collectionDetails[QLatin1StringView("count")] = collection.statistics().count();
+    collectionDetails[QLatin1StringView("isResource")] = Akonadi::CollectionUtils::isResource(collection);
+    collectionDetails[QLatin1StringView("resource")] = collection.resource();
+    collectionDetails[QLatin1StringView("readOnly")] = collection.rights().testFlag(Akonadi::Collection::ReadOnly);
+    collectionDetails[QLatin1StringView("canChange")] = collection.rights().testFlag(Akonadi::Collection::CanChangeCollection);
+    collectionDetails[QLatin1StringView("canCreate")] = collection.rights().testFlag(Akonadi::Collection::CanCreateCollection);
+    collectionDetails[QLatin1StringView("canDelete")] =
         collection.rights().testFlag(Akonadi::Collection::CanDeleteCollection) && !Akonadi::CollectionUtils::isResource(collection);
 
     return collectionDetails;
