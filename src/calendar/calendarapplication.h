@@ -4,8 +4,8 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #pragma once
+#include "abstractapplication.h"
 #include "calendarconfig.h"
-#include <abstractapplication.h>
 
 #include <Akonadi/ETMCalendar>
 #include <KActionCollection>

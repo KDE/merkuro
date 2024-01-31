@@ -7,6 +7,7 @@
 #include "merkuro_mail_debug.h"
 
 #include "mailkernel.h"
+#include "sortedcollectionproxymodel.h"
 #include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/CollectionCreateJob>
@@ -33,7 +34,6 @@
 #include <QApplication>
 #include <QLoggingCategory>
 #include <QPointer>
-#include <sortedcollectionproxymodel.h>
 
 MailManager::MailManager(QObject *parent)
     : QObject(parent)

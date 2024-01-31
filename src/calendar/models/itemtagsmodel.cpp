@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+#include "models/itemtagsmodel.h"
 #include "merkuro_calendar_debug.h"
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <QMetaEnum>
-#include <models/itemtagsmodel.h>
 
 ItemTagsModel::ItemTagsModel(QObject *parent)
     : QAbstractListModel(parent)

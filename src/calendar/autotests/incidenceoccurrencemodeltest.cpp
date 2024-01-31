@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include <models/incidenceoccurrencemodel.h>
+#include "models/incidenceoccurrencemodel.h"
 
+#include "filter.h"
+#include "utils.h"
 #include <Akonadi/IncidenceChanger>
 #include <KCalendarCore/Incidence>
 #include <KCheckableProxyModel>
@@ -11,8 +13,6 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <akonadi/qtest_akonadi.h>
-#include <filter.h>
-#include <utils.h>
 
 class IncidenceOccurrenceModelTest : public QObject
 {

@@ -13,6 +13,7 @@
 // Akonadi
 #include "merkuro_calendar_debug.h"
 
+#include "models/todosortfilterproxymodel.h"
 #include <Akonadi/AgentFilterProxyModel>
 #include <Akonadi/AgentInstanceModel>
 #include <Akonadi/AgentManager>
@@ -38,11 +39,10 @@
 #include <KLocalizedString>
 #include <QApplication>
 #include <QPointer>
-#include <models/todosortfilterproxymodel.h>
 
-#include <colorproxymodel.h>
-#include <incidencewrapper.h>
-#include <sortedcollectionproxymodel.h>
+#include "colorproxymodel.h"
+#include "incidencewrapper.h"
+#include "sortedcollectionproxymodel.h"
 
 using namespace Akonadi;
 

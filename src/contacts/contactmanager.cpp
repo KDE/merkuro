@@ -5,10 +5,12 @@
 
 #include "contactmanager.h"
 
+#include "colorproxymodel.h"
 #include "contactcollectionmodel.h"
 #include "contactconfig.h"
 #include "globalcontactmodel.h"
 #include "merkuro_contact_debug.h"
+#include "sortedcollectionproxymodel.h"
 #include <Akonadi/AgentManager>
 #include <Akonadi/Collection>
 #include <Akonadi/CollectionColorAttribute>
@@ -39,8 +41,6 @@
 #include <QBuffer>
 #include <QItemSelectionModel>
 #include <QPointer>
-#include <colorproxymodel.h>
-#include <sortedcollectionproxymodel.h>
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
