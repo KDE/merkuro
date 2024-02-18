@@ -7,7 +7,6 @@
 #include <KAboutData>
 #include <QAction>
 #include <QQmlEngine>
-#include <QtQml>
 
 void ComponentsPlugin::registerTypes(const char *uri)
 {

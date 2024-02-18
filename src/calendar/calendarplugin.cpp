@@ -22,7 +22,6 @@
 
 #include <QAbstractListModel>
 #include <QQmlEngine>
-#include <QtQml>
 
 #include <Akonadi/FreeBusyManager>
 #include <akonadi/calendarsettings.h> //krazy:exclude=camelcase this is a generated file
