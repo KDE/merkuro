@@ -87,7 +87,7 @@ FormCard.FormCardPage {
             }
         }
         FormCard.FormDelegateSeparator {}
-        FormCard.FormTextFieldDelegate {
+        FormCard.FormPasswordFieldDelegate {
             id: publishServerPassword
             label: i18n("Password")
             text: Calendar.CalendarSettings.freeBusyPublishPassword
@@ -190,7 +190,7 @@ FormCard.FormCardPage {
             }
         }
         FormCard.FormDelegateSeparator {}
-        FormCard.FormTextFieldDelegate {
+        FormCard.FormPasswordFieldDelegate {
             id: retrieveServerPassword
             label: i18n("Password")
             text: Calendar.CalendarSettings.freeBusyRetrievePassword
