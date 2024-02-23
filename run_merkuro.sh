@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-FileCopyrightTexti: 2020 Daniel Vrátil <dvratil@kde.org>
+# SPFX-License-Identifier: GPL-2.0-or-later
 
 # Use custom instance to avoid clash with stable or
 # system-wide instance
