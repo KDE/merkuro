@@ -39,7 +39,7 @@ public:
     };
     Q_ENUM(Type)
 
-    PhoneModel(QObject *parent = nullptr);
+    explicit PhoneModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &idx, int role) const override;

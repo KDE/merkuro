@@ -18,7 +18,7 @@ public:
         TypeIconRole,
     };
 
-    ImppModel(QObject *parent = nullptr);
+    explicit ImppModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &idx, int role) const override;

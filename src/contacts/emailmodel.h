@@ -21,7 +21,7 @@ public:
     enum Type { Unknown = 0, Home = 1, Work = 2, Other = 4 };
     Q_ENUM(Type)
 
-    EmailModel(QObject *parent = nullptr);
+    explicit EmailModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &idx, int role) const override;
