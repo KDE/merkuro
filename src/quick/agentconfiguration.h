@@ -27,7 +27,7 @@ public:
     Akonadi::AgentFilterProxyModel *availableAgents();
     Akonadi::AgentFilterProxyModel *runningAgents();
     [[nodiscard]] QStringList mimetypes() const;
-    void setMimetypes(QStringList mimetypes);
+    void setMimetypes(const QStringList &mimetypes);
 
     Q_INVOKABLE void createNew(int index);
     Q_INVOKABLE void edit(int index);

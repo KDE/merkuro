@@ -149,7 +149,7 @@ QStringList AgentConfiguration::mimetypes() const
     return m_mimetypes;
 }
 
-void AgentConfiguration::setMimetypes(QStringList mimetypes)
+void AgentConfiguration::setMimetypes(const QStringList &mimetypes)
 {
     if (mimetypes == m_mimetypes) {
         return;

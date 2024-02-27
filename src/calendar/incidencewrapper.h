@@ -126,14 +126,14 @@ public:
     [[nodiscard]] qint64 collectionId() const;
     void setCollectionId(qint64 collectionId);
     [[nodiscard]] QString parent() const;
-    void setParent(QString parent);
+    void setParent(const QString &parent);
     IncidenceWrapper *parentIncidence();
     QVariantList childIncidences();
 
     [[nodiscard]] QString summary() const;
     void setSummary(const QString &summary);
     [[nodiscard]] QStringList categories();
-    void setCategories(QStringList categories);
+    void setCategories(const QStringList &categories);
     [[nodiscard]] QString description() const;
     void setDescription(const QString &description);
     [[nodiscard]] QString location() const;

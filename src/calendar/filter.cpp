@@ -27,7 +27,7 @@ void Filter::setCollectionId(qint64 collectionId)
     Q_EMIT collectionIdChanged();
 }
 
-void Filter::setTags(QStringList tags)
+void Filter::setTags(const QStringList &tags)
 {
     if (m_tags == tags) {
         return;

@@ -20,7 +20,7 @@ public:
 
 public Q_SLOTS:
     void setCollectionId(const qint64 collectionId);
-    void setTags(const QStringList tags);
+    void setTags(const QStringList &tags);
     void setName(const QString &name);
 
     void toggleFilterTag(const QString tagName);

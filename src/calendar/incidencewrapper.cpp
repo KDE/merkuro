@@ -163,7 +163,7 @@ QString IncidenceWrapper::parent() const
     return m_incidence->relatedTo();
 }
 
-void IncidenceWrapper::setParent(QString parent)
+void IncidenceWrapper::setParent(const QString &parent)
 {
     m_incidence->setRelatedTo(parent);
     updateParentIncidence();
@@ -198,7 +198,7 @@ QStringList IncidenceWrapper::categories()
     return m_incidence->categories();
 }
 
-void IncidenceWrapper::setCategories(QStringList categories)
+void IncidenceWrapper::setCategories(const QStringList &categories)
 {
     m_incidence->setCategories(categories);
     Q_EMIT categoriesChanged();
