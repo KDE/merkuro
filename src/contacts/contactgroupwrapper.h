@@ -21,7 +21,7 @@ class ContactGroupWrapper : public QObject, public Akonadi::ItemMonitor
     Q_PROPERTY(QAbstractListModel *model READ model CONSTANT)
 
 public:
-    ContactGroupWrapper(QObject *parent = nullptr);
+    explicit ContactGroupWrapper(QObject *parent = nullptr);
     [[nodiscard]] QString name() const;
     void setName(const QString &name);
     [[nodiscard]] Akonadi::Item item() const;
