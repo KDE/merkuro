@@ -85,34 +85,34 @@ public:
     AddresseeWrapper(QObject *parent = nullptr);
     ~AddresseeWrapper() override;
 
-    Akonadi::Item addresseeItem() const;
+    [[nodiscard]] Akonadi::Item addresseeItem() const;
     void setAddresseeItem(const Akonadi::Item &item);
 
-    KContacts::Addressee addressee() const;
+    [[nodiscard]] KContacts::Addressee addressee() const;
     void setAddressee(const KContacts::Addressee &addressee);
 
-    QString uid() const;
+    [[nodiscard]] QString uid() const;
 
     Akonadi::Collection collection() const;
-    qint64 collectionId() const;
+    [[nodiscard]] qint64 collectionId() const;
     void setCollection(Akonadi::Collection collection);
 
-    DisplayType displayType() const;
+    [[nodiscard]] DisplayType displayType() const;
     void setDisplayType(DisplayType displayType);
 
-    QString formattedName() const;
+    [[nodiscard]] QString formattedName() const;
     void setFormattedName(const QString &formattedName);
 
-    QString nickName() const;
+    [[nodiscard]] QString nickName() const;
     void setNickName(const QString &nickName);
 
-    QUrl blogFeed() const;
+    [[nodiscard]] QUrl blogFeed() const;
     void setBlogFeed(const QUrl &blogFDeed);
 
-    QDateTime birthday() const;
+    [[nodiscard]] QDateTime birthday() const;
     void setBirthday(const QDateTime &birthday);
 
-    QString preferredEmail() const;
+    [[nodiscard]] QString preferredEmail() const;
     KContacts::Picture photo() const;
 
     AddressModel *addressesModel() const;
@@ -122,49 +122,49 @@ public:
     PhoneModel *phoneModel() const;
     KContacts::PhoneNumber::List phoneNumbers() const;
 
-    QString note() const;
+    [[nodiscard]] QString note() const;
     void setNote(const QString &note);
 
-    QDateTime anniversary() const;
+    [[nodiscard]] QDateTime anniversary() const;
     void setAnniversary(const QDateTime &anniversary);
 
-    QString organization() const;
+    [[nodiscard]] QString organization() const;
     void setOrganization(const QString &organization);
 
-    QString profession() const;
+    [[nodiscard]] QString profession() const;
     void setProfession(const QString &profession);
 
-    QString title() const;
+    [[nodiscard]] QString title() const;
     void setTitle(const QString &title);
 
-    QString department() const;
+    [[nodiscard]] QString department() const;
     void setDepartment(const QString &department);
 
-    QString office() const;
+    [[nodiscard]] QString office() const;
     void setOffice(const QString &office);
 
-    QString managersName() const;
+    [[nodiscard]] QString managersName() const;
     void setManagersName(const QString &managersName);
 
-    QString assistantsName() const;
+    [[nodiscard]] QString assistantsName() const;
     void setAssistantsName(const QString &assistantsName);
 
     void setSpousesName(const QString &spousesName);
-    QString spousesName() const;
+    [[nodiscard]] QString spousesName() const;
 
-    QString additionalName() const;
+    [[nodiscard]] QString additionalName() const;
     void setAdditionalName(const QString &additionalName);
 
-    QString familyName() const;
+    [[nodiscard]] QString familyName() const;
     void setFamilyName(const QString &familyName);
 
-    QString givenName() const;
+    [[nodiscard]] QString givenName() const;
     void setGivenName(const QString &givenName);
 
-    QString prefix() const;
+    [[nodiscard]] QString prefix() const;
     void setPrefix(const QString &prefix);
 
-    QString suffix() const;
+    [[nodiscard]] QString suffix() const;
     void setSuffix(const QString &suffix);
 
     // Invokable since we don't want expensive data bindings when any of the

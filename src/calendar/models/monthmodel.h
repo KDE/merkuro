@@ -34,14 +34,14 @@ public:
     explicit MonthModel(QObject *parent = nullptr);
     ~MonthModel() override;
 
-    int year() const;
+    [[nodiscard]] int year() const;
     void setYear(int year);
-    int month() const;
+    [[nodiscard]] int month() const;
     void setMonth(int month);
-    QDate selected() const;
+    [[nodiscard]] QDate selected() const;
     void setSelected(const QDate &selected);
 
-    QStringList weekDays() const;
+    [[nodiscard]] QStringList weekDays() const;
 
     /// Go to the next month.
     Q_INVOKABLE void next();

@@ -52,10 +52,10 @@ public:
     void addYearDates(const bool atEnd, const QDate &startFrom);
     void addDecadeDates(const bool atEnd, const QDate &startFrom);
 
-    int datesToAdd() const;
+    [[nodiscard]] int datesToAdd() const;
     void setDatesToAdd(const int datesToAdd);
 
-    int scale() const;
+    [[nodiscard]] int scale() const;
     void setScale(const int scale);
 
 Q_SIGNALS:

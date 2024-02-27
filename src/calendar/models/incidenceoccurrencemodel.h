@@ -83,7 +83,7 @@ public:
     QDate start() const;
     int length() const;
     Filter *filter() const;
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     int resetThrottleInterval() const;
 
     struct Occurrence {
@@ -118,10 +118,10 @@ private Q_SLOTS:
 
 private:
     static std::pair<QDateTime, QDateTime> incidenceOccurrenceStartEnd(const QDateTime &ocStart, const KCalendarCore::Incidence::Ptr &incidence);
-    bool incidencePassesFilter(const KCalendarCore::Incidence::Ptr &incidence);
+    [[nodiscard]] bool incidencePassesFilter(const KCalendarCore::Incidence::Ptr &incidence);
 
-    QColor getColor(const KCalendarCore::Incidence::Ptr &incidence);
-    qint64 getCollectionId(const KCalendarCore::Incidence::Ptr &incidence);
+    [[nodiscard]] QColor getColor(const KCalendarCore::Incidence::Ptr &incidence);
+    [[nodiscard]] qint64 getCollectionId(const KCalendarCore::Incidence::Ptr &incidence);
 
     QSharedPointer<QAbstractItemModel> mSourceModel;
     QDate mStart;

@@ -25,7 +25,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 
-    Akonadi::Item item() const;
+    [[nodiscard]] Akonadi::Item item() const;
     void setItem(Akonadi::Item item);
 
 Q_SIGNALS:

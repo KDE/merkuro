@@ -24,9 +24,9 @@ public:
 
     KCalendarCore::Incidence::Ptr incidencePtr();
     void setIncidencePtr(KCalendarCore::Incidence::Ptr incidence);
-    QList<QDate> exceptions();
+    [[nodiscard]] QList<QDate> exceptions();
     void updateExceptions();
-    QVariantMap dataroles();
+    [[nodiscard]] QVariantMap dataroles();
 
     QVariant data(const QModelIndex &idx, int role) const override;
     QHash<int, QByteArray> roleNames() const override;

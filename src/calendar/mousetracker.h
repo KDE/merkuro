@@ -13,7 +13,7 @@ class MouseTracker : public QObject
 
 public:
     static MouseTracker *instance();
-    QPointF mousePosition() const;
+    [[nodiscard]] QPointF mousePosition() const;
 
 Q_SIGNALS:
     void mousePositionChanged(QPointF position);

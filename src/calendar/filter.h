@@ -14,9 +14,9 @@ class Filter : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
 
 public:
-    qint64 collectionId() const;
-    QStringList tags() const;
-    QString name() const;
+    [[nodiscard]] qint64 collectionId() const;
+    [[nodiscard]] QStringList tags() const;
+    [[nodiscard]] QString name() const;
 
 public Q_SLOTS:
     void setCollectionId(const qint64 collectionId);

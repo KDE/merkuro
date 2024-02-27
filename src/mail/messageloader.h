@@ -17,7 +17,7 @@ class MessageLoader : public QObject
 public:
     explicit MessageLoader(QObject *parent = nullptr);
 
-    Akonadi::Item item() const;
+    [[nodiscard]] Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
     KMime::Message::Ptr message() const;
 

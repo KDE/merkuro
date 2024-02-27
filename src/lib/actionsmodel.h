@@ -83,7 +83,7 @@ public:
      * last used actions
      * max = 6;
      */
-    QStringList lastUsedActions() const;
+    [[nodiscard]] QStringList lastUsedActions() const;
 
     /**
      * incoming lastUsedActions

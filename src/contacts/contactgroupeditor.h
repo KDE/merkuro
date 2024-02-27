@@ -110,7 +110,7 @@ public:
     [[nodiscard]] bool isReadOnly() const;
     void setReadOnly(bool isReadOnly);
 
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
     QAbstractItemModel *groupModel() const;
 

@@ -38,7 +38,7 @@ public:
 
     KCalendarCore::Incidence::Ptr incidence() const;
     void setIncidence(KCalendarCore::Incidence::Ptr incidence);
-    KCalendarCore::Alarm::List alarms() const;
+    [[nodiscard]] KCalendarCore::Alarm::List alarms() const;
 
     QVariant data(const QModelIndex &idx, int role) const override;
     bool setData(const QModelIndex &idx, const QVariant &value, int role) override;

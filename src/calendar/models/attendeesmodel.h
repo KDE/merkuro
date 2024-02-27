@@ -59,7 +59,7 @@ public:
 
     KCalendarCore::Incidence::Ptr incidencePtr() const;
     void setIncidencePtr(const KCalendarCore::Incidence::Ptr incidence);
-    KCalendarCore::Attendee::List attendees() const;
+    [[nodiscard]] KCalendarCore::Attendee::List attendees() const;
     void updateAkonadiContactIds();
     AttendeeStatusModel *attendeeStatusModel();
     QList<qint64> attendeesAkonadiIds() const;

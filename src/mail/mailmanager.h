@@ -41,7 +41,7 @@ public:
     MailCommon::EntityCollectionOrderProxyModel *foldersModel() const;
     MailModel *folderModel() const;
     Akonadi::Session *session() const;
-    QString selectedFolderName() const;
+    [[nodiscard]] QString selectedFolderName() const;
 
     Q_INVOKABLE void loadMailCollection(const QModelIndex &index);
     Q_INVOKABLE void moveToTrash(Akonadi::Item item);

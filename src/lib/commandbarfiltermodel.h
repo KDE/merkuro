@@ -12,7 +12,7 @@ class CommandBarFilterModel final : public QSortFilterProxyModel
 public:
     explicit CommandBarFilterModel(QObject *parent = nullptr);
 
-    QString filterString() const;
+    [[nodiscard]] QString filterString() const;
 
     void setFilterString(const QString &string);
 

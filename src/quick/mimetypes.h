@@ -20,11 +20,11 @@ class MimeTypes : public QObject
 
 public:
     MimeTypes(QObject *parent = nullptr);
-    QString calendar() const;
-    QString todo() const;
-    QString address() const;
-    QString contactGroup() const;
-    QString mail() const;
+    [[nodiscard]] QString calendar() const;
+    [[nodiscard]] QString todo() const;
+    [[nodiscard]] QString address() const;
+    [[nodiscard]] QString contactGroup() const;
+    [[nodiscard]] QString mail() const;
 };
 }
 }

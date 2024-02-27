@@ -22,9 +22,9 @@ public:
     explicit Importer(QObject *parent = nullptr);
 
     Q_INVOKABLE void importCalendarFromUrl(const QUrl &url, bool merge, qint64 collectionId = -1);
-    QString importErrorMessage();
+    [[nodiscard]] QString importErrorMessage();
 
-    QAction *importAction() const;
+    [[nodiscard]] QAction *importAction() const;
     void setImportAction(QAction *importAction);
 
 Q_SIGNALS:

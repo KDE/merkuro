@@ -99,9 +99,9 @@ public:
     Akonadi::IncidenceChanger *incidenceChanger() const;
     int showCompleted() const;
     Filter *filterObject() const;
-    int sortBy() const;
-    bool sortAscending() const;
-    bool showCompletedSubtodosInIncomplete() const;
+    [[nodiscard]] int sortBy() const;
+    [[nodiscard]] bool sortAscending() const;
+    [[nodiscard]] bool showCompletedSubtodosInIncomplete() const;
 
 Q_SIGNALS:
     void calendarChanged();
@@ -136,14 +136,14 @@ private Q_SLOTS:
     void emitDateDataChanged(const QModelIndex &idx);
 
 private:
-    QHash<QString, QColor> colorCache() const;
-    QString todoDueDateDisplayString(const KCalendarCore::Todo::Ptr todo, const DueDateDisplayFormat format) const;
+    [[nodiscard]] QHash<QString, QColor> colorCache() const;
+    [[nodiscard]] QString todoDueDateDisplayString(const KCalendarCore::Todo::Ptr todo, const DueDateDisplayFormat format) const;
 
-    int compareStartDates(const QModelIndex &left, const QModelIndex &right) const;
-    int compareDueDates(const QModelIndex &left, const QModelIndex &right) const;
-    int compareCompletedDates(const QModelIndex &left, const QModelIndex &right) const;
-    int comparePriorities(const QModelIndex &left, const QModelIndex &right) const;
-    int compareCompletion(const QModelIndex &left, const QModelIndex &right) const;
+    [[nodiscard]] int compareStartDates(const QModelIndex &left, const QModelIndex &right) const;
+    [[nodiscard]] int compareDueDates(const QModelIndex &left, const QModelIndex &right) const;
+    [[nodiscard]] int compareCompletedDates(const QModelIndex &left, const QModelIndex &right) const;
+    [[nodiscard]] int comparePriorities(const QModelIndex &left, const QModelIndex &right) const;
+    [[nodiscard]] int compareCompletion(const QModelIndex &left, const QModelIndex &right) const;
 
     Akonadi::ETMCalendar::Ptr m_calendar;
     QScopedPointer<Akonadi::IncidenceTreeModel> m_todoTreeModel;

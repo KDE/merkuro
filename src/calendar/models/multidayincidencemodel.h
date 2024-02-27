@@ -59,13 +59,13 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     IncidenceOccurrenceModel *model() const;
-    int periodLength() const;
+    [[nodiscard]] int periodLength() const;
     MultiDayIncidenceModel::Filters filters() const;
-    bool showTodos() const;
-    bool showSubTodos() const;
-    int incidenceCount() const;
-    bool incidencePassesFilter(const QModelIndex &idx) const;
-    bool active() const;
+    [[nodiscard]] bool showTodos() const;
+    [[nodiscard]] bool showSubTodos() const;
+    [[nodiscard]] int incidenceCount() const;
+    [[nodiscard]] bool incidencePassesFilter(const QModelIndex &idx) const;
+    [[nodiscard]] bool active() const;
     void setActive(const bool active);
 
     void classBegin() override;
@@ -91,8 +91,8 @@ private Q_SLOTS:
     void slotSourceDataChanged(const QModelIndex &upperLeft, const QModelIndex &bottomRight);
 
 private:
-    QList<QModelIndex> sortedIncidencesFromSourceModel(const QDate &rowStart) const;
-    QVariantList layoutLines(const QDate &rowStart) const;
+    [[nodiscard]] QList<QModelIndex> sortedIncidencesFromSourceModel(const QDate &rowStart) const;
+    [[nodiscard]] QVariantList layoutLines(const QDate &rowStart) const;
     void scheduleReset();
 
     QSet<int> m_linesToUpdate;

@@ -48,11 +48,11 @@ public:
     KCheckableProxyModel *collectionSelectionProxyModel() const;
     void setCollectionSelectionProxyModel(KCheckableProxyModel *);
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     QAbstractProxyModel *collections();
     QAbstractItemModel *todoCollections();
     QAbstractItemModel *viewCollections();
-    QList<qint64> enabledTodoCollections();
+    [[nodiscard]] QList<qint64> enabledTodoCollections();
     void refreshEnabledTodoCollections();
 
     Q_INVOKABLE IncidenceWrapper *createIncidenceWrapper();
@@ -62,7 +62,7 @@ public:
     Akonadi::IncidenceChanger *incidenceChanger() const;
     Akonadi::CollectionFilterProxyModel *allCalendars();
     Q_INVOKABLE qint64 defaultCalendarId(IncidenceWrapper *incidenceWrapper);
-    QVariantMap undoRedoData();
+    [[nodiscard]] QVariantMap undoRedoData();
 
     Q_INVOKABLE Akonadi::Item incidenceItem(KCalendarCore::Incidence::Ptr incidence) const;
     Akonadi::Item incidenceItem(const QString &uid) const;

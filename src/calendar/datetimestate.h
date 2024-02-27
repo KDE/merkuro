@@ -25,8 +25,8 @@ class DateTimeState : public QObject
 public:
     explicit DateTimeState(QObject *parent = nullptr);
 
-    QDateTime firstDayOfMonth() const;
-    QDateTime firstDayOfWeek() const;
+    [[nodiscard]] QDateTime firstDayOfMonth() const;
+    [[nodiscard]] QDateTime firstDayOfWeek() const;
 
     Q_INVOKABLE void setSelectedYearMonthDay(const int year, const int month, const int day);
     Q_INVOKABLE void setSelectedDay(const int day);

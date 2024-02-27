@@ -29,7 +29,7 @@ private Q_SLOTS:
     void doCancel();
 
 private:
-    bool searchPhoto(const KContacts::AddresseeList &list);
+    [[nodiscard]] bool searchPhoto(const KContacts::AddresseeList &list);
     void queryImage(const QString &hostame = QStringLiteral("https://seccdn.libravatar.org/avatar/"));
     void imageQueried(QNetworkReply *reply);
     void dnsLookupFinished(QDnsLookup *dns);

@@ -115,55 +115,55 @@ public:
 
     void notifyDataChanged();
 
-    Akonadi::Item incidenceItem() const;
+    [[nodiscard]] Akonadi::Item incidenceItem() const;
     void setIncidenceItem(const Akonadi::Item &incidenceItem);
     KCalendarCore::Incidence::Ptr incidencePtr() const;
     KCalendarCore::Incidence::Ptr originalIncidencePtr();
-    int incidenceType() const;
-    QString incidenceTypeStr() const;
-    QString incidenceIconName() const;
-    QString uid() const;
-    qint64 collectionId() const;
+    [[nodiscard]] int incidenceType() const;
+    [[nodiscard]] QString incidenceTypeStr() const;
+    [[nodiscard]] QString incidenceIconName() const;
+    [[nodiscard]] QString uid() const;
+    [[nodiscard]] qint64 collectionId() const;
     void setCollectionId(qint64 collectionId);
-    QString parent() const;
+    [[nodiscard]] QString parent() const;
     void setParent(QString parent);
     IncidenceWrapper *parentIncidence();
     QVariantList childIncidences();
 
-    QString summary() const;
+    [[nodiscard]] QString summary() const;
     void setSummary(const QString &summary);
-    QStringList categories();
+    [[nodiscard]] QStringList categories();
     void setCategories(QStringList categories);
-    QString description() const;
+    [[nodiscard]] QString description() const;
     void setDescription(const QString &description);
-    QString location() const;
+    [[nodiscard]] QString location() const;
     void setLocation(const QString &location);
     bool hasGeo() const;
-    float geoLatitude() const;
-    float geoLongitude() const;
+    [[nodiscard]] float geoLatitude() const;
+    [[nodiscard]] float geoLongitude() const;
 
-    QDateTime incidenceStart() const;
+    [[nodiscard]] QDateTime incidenceStart() const;
     Q_INVOKABLE void setIncidenceStart(const QDateTime &incidenceStart, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceStartDate(int day, int month, int year);
     Q_INVOKABLE void setIncidenceStartTime(int hours, int minutes);
-    QString incidenceStartDateDisplay() const;
-    QString incidenceStartTimeDisplay() const;
-    QDateTime incidenceEnd() const;
+    [[nodiscard]] QString incidenceStartDateDisplay() const;
+    [[nodiscard]] QString incidenceStartTimeDisplay() const;
+    [[nodiscard]] QDateTime incidenceEnd() const;
     Q_INVOKABLE void setIncidenceEnd(const QDateTime &incidenceEnd, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceEndDate(int day, int month, int year);
     Q_INVOKABLE void setIncidenceEndTime(int hours, int minutes);
-    QString incidenceEndDateDisplay() const;
-    QString incidenceEndTimeDisplay() const;
+    [[nodiscard]] QString incidenceEndDateDisplay() const;
+    [[nodiscard]] QString incidenceEndTimeDisplay() const;
     Q_INVOKABLE void setIncidenceTimeToNearestQuarterHour(bool setStartTime = true, bool setEndTime = true);
     QByteArray timeZone() const;
     void setTimeZone(const QByteArray &timeZone);
-    int startTimeZoneUTCOffsetMins();
-    int endTimeZoneUTCOffsetMins();
-    KCalendarCore::Duration duration() const;
-    QString durationDisplayString() const;
-    bool allDay() const;
+    [[nodiscard]] int startTimeZoneUTCOffsetMins();
+    [[nodiscard]] int endTimeZoneUTCOffsetMins();
+    [[nodiscard]] KCalendarCore::Duration duration() const;
+    [[nodiscard]] QString durationDisplayString() const;
+    [[nodiscard]] bool allDay() const;
     void setAllDay(bool allDay);
-    int priority() const;
+    [[nodiscard]] int priority() const;
     void setPriority(int priority);
 
     KCalendarCore::Recurrence *recurrence() const;
@@ -177,10 +177,10 @@ public:
     RecurrenceExceptionsModel *recurrenceExceptionsModel();
     AttachmentsModel *attachmentsModel();
 
-    bool todoCompleted() const;
+    [[nodiscard]] bool todoCompleted() const;
     void setTodoCompleted(bool completed);
-    QDateTime todoCompletionDt();
-    int todoPercentComplete() const;
+    [[nodiscard]] QDateTime todoCompletionDt();
+    [[nodiscard]] int todoPercentComplete() const;
     void setTodoPercentComplete(int todoPercentComplete);
 
     Q_INVOKABLE void triggerEditMode();
@@ -195,7 +195,7 @@ public:
 
     Q_INVOKABLE void setCollection(const Akonadi::Collection &collection);
 
-    QString googleConferenceUrl();
+    [[nodiscard]] QString googleConferenceUrl();
 Q_SIGNALS:
     void incidenceItemChanged();
     void incidencePtrChanged(KCalendarCore::Incidence::Ptr incidencePtr);

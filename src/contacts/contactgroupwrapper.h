@@ -22,9 +22,9 @@ class ContactGroupWrapper : public QObject, public Akonadi::ItemMonitor
 
 public:
     ContactGroupWrapper(QObject *parent = nullptr);
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
-    Akonadi::Item item() const;
+    [[nodiscard]] Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
     QAbstractListModel *model() const;
 

@@ -30,7 +30,7 @@ public:
     void loadContactGroup(const KContacts::ContactGroup &contactGroup);
     bool storeContactGroup(KContacts::ContactGroup &contactGroup) const;
 
-    QString lastErrorMessage() const;
+    [[nodiscard]] QString lastErrorMessage() const;
 
     QModelIndex index(int row, int col, const QModelIndex &parent = QModelIndex()) const override;
     QModelIndex parent(const QModelIndex &child) const override;

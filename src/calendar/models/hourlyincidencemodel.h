@@ -52,11 +52,11 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     IncidenceOccurrenceModel *model() const;
-    int periodLength() const;
-    HourlyIncidenceModel::Filters filters() const;
-    bool showTodos() const;
-    bool showSubTodos() const;
-    bool active() const;
+    [[nodiscard]] int periodLength() const;
+    [[nodiscard]] HourlyIncidenceModel::Filters filters() const;
+    [[nodiscard]] bool showTodos() const;
+    [[nodiscard]] bool showSubTodos() const;
+    [[nodiscard]] bool active() const;
     void setActive(const bool active);
 
 Q_SIGNALS:
@@ -78,8 +78,8 @@ private Q_SLOTS:
     void scheduleReset();
 
 private:
-    QList<QModelIndex> sortedIncidencesFromSourceModel(const QDateTime &rowStart) const;
-    QVariantList layoutLines(const QDateTime &rowStart) const;
+    [[nodiscard]] QList<QModelIndex> sortedIncidencesFromSourceModel(const QDateTime &rowStart) const;
+    [[nodiscard]] QVariantList layoutLines(const QDateTime &rowStart) const;
 
     QTimer mRefreshTimer;
     IncidenceOccurrenceModel *mSourceModel{nullptr};

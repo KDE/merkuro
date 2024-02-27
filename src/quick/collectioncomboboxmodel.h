@@ -76,7 +76,7 @@ public:
     /**
      * Return the default collection id.
      */
-    qint64 defaultCollectionId() const;
+    [[nodiscard]] qint64 defaultCollectionId() const;
 
     /**
      * Sets the @p collection that shall be selected by default.

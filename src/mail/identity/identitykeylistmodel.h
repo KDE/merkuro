@@ -33,7 +33,7 @@ public:
 
     QModelIndex indexForIdentity(const KIdentityManagementCore::Identity &identity, const KIdentityManagementQuick::KeyUseTypes::KeyUse keyUse) const override;
 
-    QString filterEmail() const;
+    [[nodiscard]] QString filterEmail() const;
     void setEmailFilter(const QString &email);
 
     TypeKeys displayedTypeKeys() const;
@@ -41,7 +41,7 @@ public:
 
 private:
     void updateKeyFilter();
-    QModelIndex indexForKey(const QByteArray &key) const;
+    [[nodiscard]] QModelIndex indexForKey(const QByteArray &key) const;
 
     Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
     TypeKeys m_displayedTypeKeys = TypeKeys::AnyTypeKeys;
