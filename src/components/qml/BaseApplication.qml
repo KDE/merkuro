@@ -8,7 +8,6 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.merkuro.components 1.0
 import org.kde.akonadi 1.0 as Akonadi
 
@@ -65,7 +64,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenAboutPage() {
-            const openDialogWindow = pageStack.pushDialogLayer(aboutPage, {
+            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent('org.kde.kirigamiaddons.formcard', 'AboutPage'), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,
@@ -74,7 +73,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenAboutKDEPage() {
-            const openDialogWindow = pageStack.pushDialogLayer(aboutKDEPage, {
+            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent('org.kde.kirigamiaddons.formcard', 'AboutKDE'), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,
@@ -111,17 +110,5 @@ Kirigami.ApplicationWindow {
     Component {
         id: tagManagerPage
         Akonadi.TagManagerPage {}
-    }
-
-    Component {
-        id: aboutPage
-        FormCard.AboutPage {
-            aboutData: About
-        }
-    }
-
-    Component {
-        id: aboutKDEPage
-        FormCard.AboutKDE {}
     }
 }
