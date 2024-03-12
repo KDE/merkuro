@@ -641,56 +641,57 @@ BaseApplication {
         function onUpdateIncidenceDatesCompleted() { CalendarUiUtils.reenableDragOnCurrentView(); }
     }
 
-    property alias deleteIncidencePageComponent: deleteIncidencePageComponent
-    Component {
-        id: deleteIncidencePageComponent
-        DeleteIncidencePage {
-            id: deleteIncidencePage
+    property Component deleteIncidenceDialogComponent: DeleteIncidenceDialog {
+        function closeOpenIncidenceIfSame() {
+            const deletingIncidenceIsOpen = incidenceWrapper &&
+                                            root.incidenceInfoViewer &&
+                                            root.incidenceInfoViewer.incidenceWrapper &&
+                                            root.incidenceInfoViewer.incidenceWrapper.uid === incidenceWrapper.uid;
 
-            function closeOpenIncidenceIfSame() {
-                const deletingIncidenceIsOpen = incidenceWrapper &&
-                                                root.incidenceInfoViewer &&
-                                                root.incidenceInfoViewer.incidenceWrapper &&
-                                                root.incidenceInfoViewer.incidenceWrapper.uid === incidenceWrapper.uid;
-
-                if (deletingIncidenceIsOpen) {
-                    root.incidenceInfoViewer.incidenceData = undefined;
-                    root.openOccurrence = undefined;
-                }
+            if (deletingIncidenceIsOpen) {
+                root.incidenceInfoViewer.incidenceData = undefined;
+                root.openOccurrence = undefined;
             }
+        }
 
-            onAddException: {
-                if (root.openOccurrence && DateUtils.sameDay(root.openOccurrence.incidenceData.startTime, exceptionDate)) {
-                    closeOpenIncidenceIfSame()
-                }
-
-                incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(exceptionDate);
-                CalendarManager.editIncidence(incidenceWrapper);
-                closeDialog();
-            }
-            onAddRecurrenceEndDate: {
-                // If occurrence is past the new recurrence end date, it has ben deleted so kill instance in incidence info
-                if (root.openOccurrence && root.openOccurrence.startTime >= endDate) {
-                    closeOpenIncidenceIfSame();
-                }
-
-                incidenceWrapper.setRecurrenceDataItem("endDateTime", endDate);
-                CalendarManager.editIncidence(incidenceWrapper);
-                closeDialog();
-            }
-            onDeleteIncidence: {
-                // Deleting an incidence also means deleting all of its occurrences
+        onAddException: (exceptionDate, incidenceWrapper) => {
+            if (root.openOccurrence && DateUtils.sameDay(root.openOccurrence.incidenceData.startTime, exceptionDate)) {
                 closeOpenIncidenceIfSame()
-                CalendarManager.deleteIncidence(incidencePtr);
-                closeDialog();
             }
-            onDeleteIncidenceWithChildren: {
-                // TODO: Check if parent deleted too
+
+            incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(exceptionDate);
+            CalendarManager.editIncidence(incidenceWrapper);
+            close();
+            destroy();
+        }
+        onAddRecurrenceEndDate: (endDate, incidenceWrapper) => {
+            // If occurrence is past the new recurrence end date, it has ben deleted so kill instance in incidence info
+            if (root.openOccurrence && root.openOccurrence.startTime >= endDate) {
                 closeOpenIncidenceIfSame();
-                CalendarManager.deleteIncidence(incidencePtr, true);
-                closeDialog();
             }
-            onCancel: closeDialog()
+
+            incidenceWrapper.setRecurrenceDataItem("endDateTime", endDate);
+            CalendarManager.editIncidence(incidenceWrapper);
+            close();
+            destroy();
+        }
+        onDeleteIncidence: (incidencePtr) => {
+            // Deleting an incidence also means deleting all of its occurrences
+            closeOpenIncidenceIfSame()
+            CalendarManager.deleteIncidence(incidencePtr);
+            close();
+            destroy();
+        }
+        onDeleteIncidenceWithChildren: (incidencePtr) => {
+            // TODO: Check if parent deleted too
+            closeOpenIncidenceIfSame();
+            CalendarManager.deleteIncidence(incidencePtr, true);
+            close();
+            destroy();
+        }
+        onCancel: {
+            close();
+            destroy()
         }
     }
 

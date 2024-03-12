@@ -155,15 +155,12 @@ QtObject {
         let incidenceWrapper = CalendarManager.createIncidenceWrapper();
         incidenceWrapper.incidenceItem = CalendarManager.incidenceItem(incidencePtr);
 
-        const openDialogWindow = appMain.pageStack.pushDialogLayer(appMain.deleteIncidencePageComponent, {
+        const dialog = appMain.deleteIncidenceDialogComponent.createObject(appMain.contentItem, {
             incidenceWrapper: incidenceWrapper,
             deleteDate: deleteDate
-        }, {
-            width: Kirigami.Units.gridUnit * 32,
-            height: Kirigami.Units.gridUnit * 6
         });
 
-        openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+        dialog.open();
     }
 
     function completeTodo(incidencePtr) {
