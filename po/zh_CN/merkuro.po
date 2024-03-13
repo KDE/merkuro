@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 02:26+0000\n"
+"POT-Creation-Date: 2024-03-13 02:23+0000\n"
 "PO-Revision-Date: 2024-01-06 03:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -530,7 +530,7 @@ msgstr "新建日历"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:64
 #: mail/qml/actions/DeleteFolderAction.qml:32
@@ -670,8 +670,8 @@ msgid "Edit"
 msgstr "编辑"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:34
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
@@ -854,25 +854,25 @@ msgstr "您将无法恢复此操作"
 msgid "Delete calendar"
 msgstr "删除日历"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:27
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:33
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
 msgstr "删除 %1"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:58
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
 msgstr "您是否想要删除项目“%1”？"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:60
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
 msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
 "the currently selected item?"
 msgstr "项目“%1”有子项。您想要删除所有相关的项目，还是仅删除当前选中的项目？"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:58
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. This item also has sub-"
@@ -887,7 +887,7 @@ msgstr ""
 "您想要仅删除选中的 %2 时的重现，还是以及未来的重现，还是全部的重现？\n"
 "全部删除将会同时删除子项！"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:64
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:60
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. Do you want to delete "
@@ -897,22 +897,22 @@ msgstr ""
 "日历项“%1”在多个日期重复出现。您想要仅删除选中的 %2 时的重现，还是以及未来的"
 "重现，还是全部的重现？"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:80
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
 msgid "Only Delete Current"
 msgstr "仅删除当前项目"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:87
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:82
 #, kde-format
 msgid "Also Delete Future"
 msgstr "同时删除未来的项目"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:101
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:96
 #, kde-format
 msgid "Delete Only This"
 msgstr "仅删除此项目"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #, kde-format
 msgid "Delete All"
 msgstr "全部删除"

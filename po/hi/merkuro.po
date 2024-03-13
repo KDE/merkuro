@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 02:26+0000\n"
+"POT-Creation-Date: 2024-03-13 02:23+0000\n"
 "PO-Revision-Date: 2024-03-02 18:41+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -539,7 +539,7 @@ msgstr "नया कैलेंडर बनाएं"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:64
 #: mail/qml/actions/DeleteFolderAction.qml:32
@@ -682,8 +682,8 @@ msgid "Edit"
 msgstr "संपादित करें"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:34
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
@@ -866,18 +866,18 @@ msgstr "आप इस क्रिया को पूर्ववत नही�
 msgid "Delete calendar"
 msgstr "कैलेंडर हटाएं"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:27
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:33
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
 msgstr "%1 हटाएं"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:58
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
 msgstr "क्या आप वस्तु को हटाना चाहते हैं : \"%1\"?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:60
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
 msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
@@ -886,7 +886,7 @@ msgstr ""
 "आइटम \"%1\" में उप-वस्तु हैं। क्या आप केवल वर्तमान चयनित वस्तु को या फिर सभी संबंधित वस्तुओं "
 "को हटाना चाहते हैं ?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:58
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. This item also has sub-"
@@ -904,7 +904,7 @@ msgstr ""
 "\n"
 "सबी को हटाने से उप-वस्तु भी हट जाएंगे!"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:64
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:60
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. Do you want to delete "
@@ -914,22 +914,22 @@ msgstr ""
 "कैलेंडर वस्तु \"%1\" कई तारीखों पर पुनः आता है। क्या आप %2 को चयनित घटना, भविष्य की "
 "घटनाओं को भी हटाना चाहते हैं, या इसकी सभी घटनाओं को हटाना चाहते हैं?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:80
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
 msgid "Only Delete Current"
 msgstr "केवल वर्तमान हटाएं"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:87
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:82
 #, kde-format
 msgid "Also Delete Future"
 msgstr "भविष्य को भी हटाएं"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:101
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:96
 #, kde-format
 msgid "Delete Only This"
 msgstr "केवल इसे हटाएं"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #, kde-format
 msgid "Delete All"
 msgstr "सभी को हटाएं"

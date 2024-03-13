@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 02:26+0000\n"
+"POT-Creation-Date: 2024-03-13 02:23+0000\n"
 "PO-Revision-Date: 2023-11-02 12:23+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -541,7 +541,7 @@ msgstr "Crea nove calendario"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:64
 #: mail/qml/actions/DeleteFolderAction.qml:32
@@ -684,8 +684,8 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:34
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
@@ -868,18 +868,18 @@ msgstr "Tu nonpoterea revenir iste action"
 msgid "Delete calendar"
 msgstr "Dele calendario"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:27
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:33
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
 msgstr "Dele %1"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:58
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
 msgstr "Tu vole deler elemento: \"%1\"?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:60
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
 msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
@@ -888,7 +888,7 @@ msgstr ""
 "Elemento \"%1\" ha sub-elementos. Tu vole deler omne elementos connexe, o "
 "solmente le elemento currentemente seligite?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:58
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. This item also has sub-"
@@ -907,7 +907,7 @@ msgstr ""
 "\n"
 "Deler toto anque delera sub-elementos!"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:64
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:60
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. Do you want to delete "
@@ -918,22 +918,22 @@ msgstr ""
 "le seligite occurrentia sur %2, anque occurrentias future, o omnes su "
 "occurrentias?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:80
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
 msgid "Only Delete Current"
 msgstr "Solmente dele currente"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:87
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:82
 #, kde-format
 msgid "Also Delete Future"
 msgstr "Dele anque Future"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:101
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:96
 #, kde-format
 msgid "Delete Only This"
 msgstr "Dele solmente iste"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #, kde-format
 msgid "Delete All"
 msgstr "Dele toto"

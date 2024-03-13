@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 02:26+0000\n"
+"POT-Creation-Date: 2024-03-13 02:23+0000\n"
 "PO-Revision-Date: 2023-11-03 05:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -539,7 +539,7 @@ msgstr "ახალი კალენდარის შექმნა"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:114
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:64
 #: mail/qml/actions/DeleteFolderAction.qml:32
@@ -682,8 +682,8 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:72
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:28
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:34
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
@@ -866,18 +866,18 @@ msgstr "ამ მოქმედების დაბრუნებას ვ
 msgid "Delete calendar"
 msgstr "კალენდრის წაშლა"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:27
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:33
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
 msgstr "%1-ის წაშლა"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:58
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
 msgstr "გსურთ წაშალოთ \"%1\"?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:60
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
 msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
@@ -886,7 +886,7 @@ msgstr ""
 "ჩანაწერს \"%1\" ქვეჩანაწერები გააჩნია. მართლა გნებავთ ყველა შესაბამისი "
 "ჩანაწერის წაშლა, თუ მხოლოდ მონიშნულის?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:58
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. This item also has sub-"
@@ -904,7 +904,7 @@ msgstr ""
 "\n"
 "მისი წაშლა ქვეჩანაწერებსაც ზედ მიაყოლებს!"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:64
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:60
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. Do you want to delete "
@@ -914,22 +914,22 @@ msgstr ""
 "კალენდარის ჩანაწერი \"%1\" მრავალ თარიღზე ჩანს. გნებავთ წაშალოთ %2-ზე მისი "
 "გამოჩენა, მისი მომავალში გამოჩენების გარეშე?"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:80
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
 msgid "Only Delete Current"
 msgstr "მხოლოდ მიმდინარის წაშლა"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:87
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:82
 #, kde-format
 msgid "Also Delete Future"
 msgstr "მიმდინარეც წაიშლება"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:101
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:96
 #, kde-format
 msgid "Delete Only This"
 msgstr "მხოლოდ ამის წაშლა"
 
-#: calendar/qml/Dialogs/DeleteIncidencePage.qml:108
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:103
 #, kde-format
 msgid "Delete All"
 msgstr "ყველას წაშლა"
