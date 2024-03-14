@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-13 00:38+0000\n"
-"PO-Revision-Date: 2024-01-29 21:55+0100\n"
+"PO-Revision-Date: 2024-03-13 14:52+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -200,7 +200,7 @@ msgstr "Feladat törlése, részfeladatok függetlenné tétele"
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Calendar %1"
-msgstr "%1 naptár tulajdonságai"
+msgstr "A(z) %1 naptár tulajdonságai"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "Feladat"
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Merkuro naptár"
+msgstr "Merkuro Naptár"
 
 #: calendar/main.cpp:56
 #, kde-format
@@ -492,7 +492,7 @@ msgstr "%1 előfordulás sikeresen importálva."
 #, kde-format
 msgctxt "%1 is the error message"
 msgid "An error occurred importing incidences: %1"
-msgstr "Hiba történr az előfordulások importálásakor: %1"
+msgstr "Hiba történt az előfordulások importálásakor: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:62
 #, kde-format
@@ -545,25 +545,25 @@ msgstr "Új naptár létrehozása"
 #: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
 msgid "Cancel"
-msgstr "Mégsem"
+msgstr "Mégse"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:115
 #, kde-format
 msgid "This event is recurring"
-msgstr ""
+msgstr "Az esemény ismétlődik"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:126
 #, kde-format
 msgid "This event has reminder"
 msgid_plural "This event has reminders"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Az eseményhez tartozik emlékeztető"
+msgstr[1] "Az eseményhez tartoznak emlékeztetők"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:148
 #, kde-format
 msgctxt "%1 is a percentage number"
 msgid "<b>%1%</b> Complete"
-msgstr "<b>%1</b> kész"
+msgstr "<b>%1%</b> kész"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:178
 #, kde-format
@@ -660,7 +660,7 @@ msgstr "<b>Vendégek:</b>"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:593
 #, kde-format
 msgid "Super-task"
-msgstr ""
+msgstr "Szuperfeladat"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:618
 #, kde-format
@@ -692,7 +692,7 @@ msgstr "Törlés"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:81
 #, kde-format
 msgid "Mark Task as Incomplete"
-msgstr "Feladat megjelölése nem befejezettnek"
+msgstr "Feladat megjelölése befejezetlennek"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:81
 #, kde-format
@@ -764,7 +764,7 @@ msgstr "9 (legalacsonyabb prioritás)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:163
 #, kde-format
 msgid "Set due date..."
-msgstr ""
+msgstr "Határidő beállítása…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:191
 #, kde-format
@@ -779,12 +779,12 @@ msgstr "Holnap (%1)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:212
 #, kde-format
 msgid "In a week (%1)"
-msgstr ""
+msgstr "Egy héten belül (%1)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:223
 #, kde-format
 msgid "In a month (%1)"
-msgstr ""
+msgstr "Egy hónapon belül (%1)"
 
 #: calendar/qml/Controls/MainDrawerToggleButton.qml:25
 #, kde-format
@@ -858,7 +858,7 @@ msgstr "Szeretné törölni ezt a naptárat: „%1”?"
 #: quick/qml/TagManagerPage.qml:43
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr ""
+msgstr "Ez a művelet nem vonható vissza"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:76
 #, kde-format
@@ -869,7 +869,7 @@ msgstr "Naptár törlése"
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
-msgstr "%1 törlése"
+msgstr "A(z) %1 törlése"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
@@ -899,8 +899,8 @@ msgstr ""
 "A(z) „%1” naptárelem több alkalommal is ismétlődik. Az elemnek részelemei "
 "vannak.\n"
 "\n"
-"Szeretné törölni a %2 dátumú előfordulást, a jövőbel ielőfordulásokat, vagy "
-"az összes előfordulását?\n"
+"Szeretné törölni a(z) %2 dátumú előfordulást, a jövőbeli előfordulásokat, "
+"vagy az összes előfordulását?\n"
 "\n"
 "A törléssel törli a részelemeket is."
 
@@ -912,8 +912,8 @@ msgid ""
 "occurrences?"
 msgstr ""
 "A(z) „%1” naptárelem több alkalommal is ismétlődik Az elemnek részelemei "
-"vannak. Szeretné törölni a %2 dátumú előfordulást, a jövőbel "
-"ielőfordulásokat, vagy az összes előfordulását?"
+"vannak. Szeretné törölni a(z) %2 dátumú előfordulást, a jövőbeli "
+"előfordulásokat, vagy az összes előfordulását?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
@@ -939,13 +939,13 @@ msgstr "Összes törlése"
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
-msgstr "%1 szerkesztése"
+msgstr "A(z) %1 szerkesztése"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
-msgstr "%1 hozzáadása"
+msgstr "A(z) %1 hozzáadása"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
 #, kde-format
@@ -984,17 +984,17 @@ msgstr "Összefoglaló:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
 #, kde-format
 msgid "Add a title for your task"
-msgstr ""
+msgstr "Adjon címet a feladatának"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
 #, kde-format
 msgid "Add a title for your event"
-msgstr ""
+msgstr "Adjon címet az eseményének"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr ""
+msgstr "Adjon címet a naplóbejegyzésének"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
 #, kde-format
@@ -1105,7 +1105,7 @@ msgstr "Minden hónap %1. napján"
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
-msgstr "Minden hónap %1. hetének %2. napja"
+msgstr "Minden hónap %1. hetének %2. napján"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
 #, kde-format
@@ -1287,7 +1287,7 @@ msgstr "Minden előfordulást"
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Incomplete"
-msgstr "Megjelelős nem befejezettnek"
+msgstr "Megjelölés befejezetlennek"
 
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
@@ -1341,7 +1341,7 @@ msgstr "Beállítások"
 #: calendar/qml/Drawers/MainDrawer.qml:375
 #, kde-format
 msgid "View all tasks"
-msgstr "Minden feladat megtekintése"
+msgstr "Összes feladat megjelenítése"
 
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:18
 #, kde-format
@@ -1764,7 +1764,7 @@ msgstr "Foglaltság beállítása"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
 #, kde-format
 msgid "Free/Busy Publishing settings"
-msgstr ""
+msgstr "Foglaltság közzétételi beállításai"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
 #, kde-format
@@ -1774,33 +1774,36 @@ msgid ""
 "that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"Ha közzéteszi a foglaltsági adatait, azzal lehetővé teszi másoknak, hogy "
+"figyelembe vegyék az elérhetőségét, amikor meghívják egy megbeszélésre. Csak "
+"a foglalt időpontok lesznek láthatóak, a foglaltság oka nem."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
 #, kde-format
 msgid "Publish your free/busy information automatically"
-msgstr ""
+msgstr "Foglaltsági adatok automatikus közzététele"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
-msgstr ""
+msgstr "Feltöltések közötti minimális idő (percben)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
-msgstr ""
+msgstr "Foglaltsági adatok közzététele ennyi napra:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
 #, kde-format
 msgid "Server information"
-msgstr ""
+msgstr "Kiszolgálóinformációk"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:72
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:175
 #, kde-format
 msgid "Server URL"
-msgstr ""
+msgstr "Kiszolgáló URL-címe"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:82
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:185
@@ -1823,7 +1826,7 @@ msgstr "Jelszó mentése"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
-msgstr ""
+msgstr "Kattintson ide a foglaltsági adatok kézi közzétételéhez"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
 #, kde-format
@@ -1833,7 +1836,7 @@ msgstr "E-mail foglaltság"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr ""
+msgstr "Adja meg az e-mail címzettjét…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:138
@@ -1852,16 +1855,18 @@ msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
 "their calendar into account when inviting them to a meeting."
 msgstr ""
+"A mások által közzétett foglaltsági adatok lekérésével figyelembe veheti a "
+"naptárukat, amikor meghívja őket egy megbeszélésre."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
-msgstr ""
+msgstr "Mások foglaltsági adatainak automatikus lekérése"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr ""
+msgstr "Teljes e-mail cím használata a lekéréshez"
 
 #: calendar/qml/Settings/SettingsPage.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:14
@@ -1893,7 +1898,7 @@ msgstr "Általános beállítások"
 #: calendar/qml/Settings/ViewSettingsPage.qml:23
 #, kde-format
 msgid "Use popup to show incidence information"
-msgstr ""
+msgstr "Felugró használata az esemény információinak megjelenítéséhez"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:34
 #, kde-format
@@ -1908,7 +1913,7 @@ msgstr "Részfeladatok megjelenítése naptár nézetben"
 #: calendar/qml/Settings/ViewSettingsPage.qml:58
 #, kde-format
 msgid "Past event transparency"
-msgstr ""
+msgstr "Korábbi események átlátszósága"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:77
 #, kde-format
@@ -1923,17 +1928,17 @@ msgstr "Havi nézetmód"
 #: calendar/qml/Settings/ViewSettingsPage.qml:115
 #, kde-format
 msgid "Swipeable month grid"
-msgstr ""
+msgstr "Pöccinthető hónaprács"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:122
 #, kde-format
 msgid "Basic month grid"
-msgstr ""
+msgstr "Egyszerű hónaprács"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
-msgstr ""
+msgstr "A pöccinthető hónaprács nagyobb rendszerteljesítményt igényel."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:135
 #, kde-format
@@ -1998,17 +2003,17 @@ msgstr "Heti nézetmód"
 #: calendar/qml/Settings/ViewSettingsPage.qml:253
 #, kde-format
 msgid "Swipeable week view"
-msgstr ""
+msgstr "Pöccinthető heti nézet"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Basic week view"
-msgstr ""
+msgstr "Egyszerű heti nézet"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
-msgstr ""
+msgstr "A pöccinthető heti nézet nagyobb rendszerteljesítményt igényel."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:273
 #, kde-format
@@ -2033,7 +2038,7 @@ msgstr "Egyszerű ütemezés nézet"
 #: calendar/qml/Settings/ViewSettingsPage.qml:306
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
-msgstr ""
+msgstr "A pöccinthető ütemezés nézet nagyobb rendszerteljesítményt igényel."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:315
 #, kde-format
@@ -2084,38 +2089,38 @@ msgstr "Kitűző (a pontos helyszín)"
 #, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 days"
-msgstr "%1 nap"
+msgstr "%1 nappal"
 
 #: calendar/utils.cpp:23
 #, kde-format
 msgid "1 day"
-msgstr "1 nap"
+msgstr "1 nappal"
 
 #: calendar/utils.cpp:25
 #, kde-format
 msgctxt "%1 is 2 or mores"
 msgid "%1 hours"
-msgstr "%1 óra"
+msgstr "%1 órával"
 
 #: calendar/utils.cpp:27
 #, kde-format
 msgid "1 hour"
-msgstr "1 óra"
+msgstr "1 órával"
 
 #: calendar/utils.cpp:29
 #, kde-format
 msgid "%1 minutes"
-msgstr "%1 perc"
+msgstr "%1 perccel"
 
 #: calendar/utils.cpp:47
 #, kde-format
 msgid "%1 before start of event"
-msgstr "a kezdés előtt ennyivel: %1"
+msgstr "%1 az esemény kezdete előtt"
 
 #: calendar/utils.cpp:49
 #, kde-format
 msgid "%1 after start of event"
-msgstr "a kezdés után ennyivel: %1"
+msgstr "%1 az esemény kezdete után"
 
 #: calendar/utils.cpp:51
 #, kde-format
@@ -2180,7 +2185,7 @@ msgstr "Fájl"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Kilépés a Merkuroból"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
 #, kde-format
@@ -2191,7 +2196,7 @@ msgstr "Merkuro kézikönyv"
 #: components/qml/KQuickCommandBarPage.qml:131
 #, kde-format
 msgid "No results found"
-msgstr ""
+msgstr "Nincs találat"
 
 #: components/qml/NativeEditMenu.qml:40
 #, kde-format
@@ -2230,7 +2235,7 @@ msgstr "Teljes képernyős mód"
 #: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgid "Home:"
-msgstr ""
+msgstr "Kezdőlap:"
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -3453,7 +3458,7 @@ msgstr ""
 #: quick/qml/AgentConfigurationForm.qml:44
 #, kde-format
 msgid "Modify"
-msgstr ""
+msgstr "Módosítás"
 
 #: quick/qml/AgentConfigurationForm.qml:84
 #, kde-format
