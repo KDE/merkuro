@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-13 00:38+0000\n"
-"PO-Revision-Date: 2024-03-14 11:42+0100\n"
+"PO-Revision-Date: 2024-03-16 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -692,12 +692,12 @@ msgstr "Törlés"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:81
 #, kde-format
 msgid "Mark Task as Incomplete"
-msgstr "Feladat megjelölése befejezetlennek"
+msgstr "Feladat megjelölése befejezetlenként"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:81
 #, kde-format
 msgid "Mark Task as Complete"
-msgstr "Feladat megjelölése befejezettnek"
+msgstr "Feladat megjelölése befejezettként"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:88
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
@@ -1149,7 +1149,7 @@ msgstr "Hely:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
 #, kde-format
 msgid "Optional"
-msgstr "Opcionális"
+msgstr "Nem kötelező"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
 #, kde-format
@@ -1287,12 +1287,12 @@ msgstr "Minden előfordulást"
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Incomplete"
-msgstr "Megjelölés befejezetlennek"
+msgstr "Megjelölés befejezetlenként"
 
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Complete"
-msgstr "Megjelölés befejezettnek"
+msgstr "Megjelölés befejezettként"
 
 #: calendar/qml/Drawers/MainDrawer.qml:117
 #, kde-format
@@ -1803,7 +1803,7 @@ msgstr "Kiszolgálóinformációk"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:175
 #, kde-format
 msgid "Server URL"
-msgstr "Kiszolgáló URL-címe"
+msgstr "Kiszolgáló URL-je"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:82
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:185
@@ -1866,7 +1866,7 @@ msgstr "Mások foglaltsági adatainak automatikus lekérése"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr "Teljes e-mail cím használata a lekéréshez"
+msgstr "Teljes e-mail-cím használata a lekéréshez"
 
 #: calendar/qml/Settings/SettingsPage.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:14
@@ -2185,13 +2185,13 @@ msgstr "Fájl"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr "Kilépés a Merkuroból"
+msgstr "Kilépés a Merkuróból"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
 #, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Merkuro kézikönyv"
+msgstr "A Merkuro kézikönyve"
 
 #: components/qml/KQuickCommandBarPage.qml:131
 #, kde-format
@@ -2265,7 +2265,7 @@ msgstr "Nincs kiválasztva címjegyzék"
 #: contacts/contactgroupmodel.cpp:185
 #, kde-format
 msgid "The member with name <b>%1</b> is missing an email address"
-msgstr "A(z) <b>%1</b> nevű tag e-mail címe hiányzik"
+msgstr "A(z) <b>%1</b> nevű tag e-mail-címe hiányzik"
 
 #: contacts/contactgroupmodel.cpp:228
 #, kde-format
@@ -2288,7 +2288,7 @@ msgstr "E-mail"
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
-msgstr "A(z) %1 címzejgyzék tulajdonságai"
+msgstr "A(z) %1 címjegyzék tulajdonságai"
 
 #: contacts/emailmodel.cpp:39
 #, kde-format
@@ -2330,7 +2330,7 @@ msgstr "Kész"
 #: contacts/qml/ContactChooserPage.qml:51
 #, kde-format
 msgid "Select Email Address"
-msgstr "Válasszon e-mail címet"
+msgstr "Válasszon e-mail-címet"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:104
@@ -2472,7 +2472,7 @@ msgstr "Úrhölgy"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Ms."
-msgstr "Asszony"
+msgstr "Kisasszony"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2730,7 +2730,7 @@ msgstr "Tagok"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
-"Csak e-mail címmel rendelkező névjegyeket lehet hozzáadni névjegycsoporthoz"
+"Csak e-mail-címmel rendelkező névjegyeket lehet hozzáadni névjegycsoporthoz"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
@@ -2776,7 +2776,7 @@ msgstr "Egyéb…"
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:90
 #, kde-format
 msgid "user@example.org"
-msgstr "felhasznalo@pelda.hu"
+msgstr "user@example.org"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:99
 #, kde-format
@@ -3066,8 +3066,8 @@ msgstr "Asszisztens neve:"
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
-msgstr[0] "E-mail cím"
-msgstr[1] "E-mail címek"
+msgstr[0] "E-mail-cím"
+msgstr[1] "E-mail-címek"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format
@@ -3211,7 +3211,7 @@ msgstr "Merkuro Mail"
 #: mail/main.cpp:50
 #, kde-format
 msgid "Email Client"
-msgstr "E-mail kliens"
+msgstr "E-mail-kliens"
 
 #: mail/qml/actions/DeleteFolderAction.qml:19
 #: mail/qml/actions/DeleteFolderAction.qml:24
