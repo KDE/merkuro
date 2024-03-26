@@ -465,8 +465,11 @@ QList<KActionCollection *> CalendarApplication::actionCollections() const
 
 void CalendarApplication::toggleMenubar()
 {
-    m_config->setShowMenubar(!m_config->showMenubar());
+    auto state = !m_config->showMenubar();
+    m_config->setShowMenubar(state);
     m_config->save();
+
+    Q_EMIT showMenubarChanged(state);
 }
 
 bool CalendarApplication::showMenubar() const

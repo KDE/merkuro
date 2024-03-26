@@ -75,6 +75,7 @@ Q_SIGNALS:
     void refreshAll();
     void openIncidence(const QVariantMap incidenceData, const QDateTime occurrence);
     void calendarChanged();
+    void showMenubarChanged(bool state);
 
 private Q_SLOTS:
     void handleMouseViewNavButtons(const Qt::MouseButton pressedButton);
