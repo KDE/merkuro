@@ -260,6 +260,10 @@ BaseApplication {
             CalendarUiUtils.setUpView(incidenceData);
             DateTimeState.selectedDate = occurrenceDate;
         }
+
+        function onShowMenubarChanged(state) {
+            Config.showMenubar = state;
+        }
     }
 
     Loader {
