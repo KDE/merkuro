@@ -98,7 +98,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     WindowSystem
     XmlGui
 )
-find_package(KF6KirigamiAddons 0.7.2 REQUIRED)
+find_package(KF6KirigamiAddons 1.0 REQUIRED)
 find_package(Gpgme REQUIRED)
 set_package_properties(KF6QQC2DesktopStyle PROPERTIES
     TYPE RUNTIME
