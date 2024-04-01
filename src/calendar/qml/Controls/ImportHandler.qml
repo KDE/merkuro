@@ -2,13 +2,14 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 import QtQuick.Dialogs
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.merkuro.calendar.private 1.0
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
+import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.calendar.private
 
 Importer {
     id: root
@@ -34,12 +35,8 @@ Importer {
         root.currentFile = file;
         root.calendarImportInProgress = true;
 
-        pageStack.pushDialogLayer(importChoicePageComponent, {
-            width: root.width
-        }, {
-            width: Kirigami.Units.gridUnit * 30,
-            height: Kirigami.Units.gridUnit * 8,
-        });
+        const dialog = importChoiceDialogComponent.createObject(applicationWindow());
+        dialog.open();
     }
 
     onImportIntoExistingFinished: (success, total) => {
@@ -90,66 +87,71 @@ Importer {
         nameFilters: [i18n("Calendar files (*.ics *.vcs)")]
 
         onAccepted: {
-            root.currentFile = fileUrl;
-            const openDialogWindow = pageStack.pushDialogLayer(importChoicePageComponent, {
-                width: root.width
-            }, {
-                width: Kirigami.Units.gridUnit * 30,
-                height: Kirigami.Units.gridUnit * 8
-            });
+            root.currentFile = selectedFile;
+            const dialog = importChoiceDialogComponent.createObject(applicationWindow());
+            dialog.open();
         }
     }
 
-    property var importChoicePageComponent: Component {
-        Kirigami.Page {
-            id: importChoicePage
+    property Component importChoiceDialogComponent: MessageDialog {
+        title: i18nc("@title:dialog", "Import Calendar")
+        dialogType: MessageDialog.Information
+        iconName: 'text-calendar'
 
-            title: i18n("Import Calendar")
+        contentItem: QQC2.Label {
+            text: i18n("Would you like to merge this calendar file's events and tasks into one of your existing calendars, or would prefer to create a new calendar from this file?\n ")
+            wrapMode: Text.WordWrap
+        }
 
-            ColumnLayout {
-                anchors.fill: parent
+        footer: ColumnLayout {
+            id: control
 
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    text: i18n("Would you like to merge this calendar file's events and tasks into one of your existing calendars, or would prefer to create a new calendar from this file?\n ")
-                    wrapMode: Text.WordWrap
+            spacing: Kirigami.Units.mediumSpacing
+
+            QQC2.Button {
+                Layout.fillWidth: true
+                icon.name: "document-import"
+                text: i18n("Merge with existing calendar")
+                onClicked: {
+                    closeDialog();
+                    pageStack.pushDialogLayer(importMergeCollectionPickerComponent, {
+                        width: root.width
+                    }, {
+                        width: Kirigami.Units.gridUnit * 30,
+                        height: Kirigami.Units.gridUnit * 30
+                    });
                 }
 
-                RowLayout {
-                    QQC2.Button {
-                        Layout.fillWidth: true
-                        icon.name: "document-import"
-                        text: i18n("Merge with existing calendar")
-                        onClicked: {
-                            closeDialog();
-                            pageStack.pushDialogLayer(importMergeCollectionPickerComponent, {
-                                width: root.width
-                            }, {
-                                width: Kirigami.Units.gridUnit * 30,
-                                height: Kirigami.Units.gridUnit * 30
-                            });
-                        }
-                    }
-                    QQC2.Button {
-                        Layout.fillWidth: true
-                        icon.name: "document-new"
-                        text: i18n("Create new calendar")
-                        onClicked: {
-                            root.calendarImportInProgress = false;
-                            root.importCalendarFromUrl(root.currentFile, false);
-                            closeDialog();
-                        }
-                    }
-                    QQC2.Button {
-                        icon.name: "gtk-cancel"
-                        text: i18n("Cancel")
-                        onClicked: {
-                            root.calendarImportInProgress = false;
-                            closeDialog();
-                        }
-                    }
+                Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+                Layout.rightMargin: Kirigami.Units.largeSpacing * 2
+            }
+
+            QQC2.Button {
+                Layout.fillWidth: true
+                icon.name: "document-new"
+                text: i18n("Create new calendar")
+                onClicked: {
+                    root.calendarImportInProgress = false;
+                    root.importCalendarFromUrl(root.currentFile, false);
+                    closeDialog();
                 }
+
+                Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+                Layout.rightMargin: Kirigami.Units.largeSpacing * 2
+            }
+
+            QQC2.Button {
+                Layout.fillWidth: true
+                icon.name: "gtk-cancel"
+                text: i18n("Cancel")
+                onClicked: {
+                    root.calendarImportInProgress = false;
+                    closeDialog();
+                }
+
+                Layout.leftMargin: Kirigami.Units.largeSpacing * 2
+                Layout.rightMargin: Kirigami.Units.largeSpacing * 2
+                Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
             }
         }
     }
