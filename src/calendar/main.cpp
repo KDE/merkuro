@@ -98,12 +98,12 @@ int main(int argc, char *argv[])
             auto view = qobject_cast<QQuickWindow *>(obj);
             if (view) {
                 raiseWindow(view);
-                return;
-            }
 
-            auto importer = view->findChild<Importer *>(QStringLiteral("ImportHandler"));
-            for (const auto &arg : args) {
-                Q_EMIT importer->importCalendarFromFile(QUrl::fromUserInput(arg, QDir::currentPath(), QUrl::AssumeLocalFile));
+                auto importer = view->findChild<Importer *>(QStringLiteral("ImportHandler"));
+                for (const auto &arg : args) {
+                    Q_EMIT importer->importCalendarFromFile(QUrl::fromUserInput(arg, QDir::currentPath(), QUrl::AssumeLocalFile));
+                }
+                return;
             }
         }
     });
