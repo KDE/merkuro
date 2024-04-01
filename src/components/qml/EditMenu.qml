@@ -26,8 +26,8 @@ QQC2.Menu {
         for (let i in additionalMenuItems) {
             editMenu.addItem(additionalMenuItems[i])
         }
-        for (let i in _menuItems) {
-            editMenu.addItem(_menuItems[i])
+        for (let j in _menuItems) {
+            editMenu.addItem(_menuItems[j])
         }
     }
 
