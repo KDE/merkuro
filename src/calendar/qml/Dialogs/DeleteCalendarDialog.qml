@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar
 
-QQC2.Dialog {
+Components.MessageDialog {
     id: root
 
     signal deleteCollection(int collectionId)
@@ -19,20 +19,11 @@ QQC2.Dialog {
     property int collectionId
     property var collectionDetails
 
-    x: Math.round((parent.width - width) / 2)
-    y: Math.round(parent.height / 3)
-
-    width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
-
     title: collectionId ? i18nc("@title:window", "Delete calendar") : i18nc("@title:window", "Delete")
-
-    modal: true
-    focus: true
+    dialogType: Components.MessageDialog.Warning
 
     onRejected: root.close()
     onAccepted: CalendarManager.deleteCollection(root.collectionId)
-
-    background: Components.DialogRoundedBackground {}
 
     QQC2.Action {
         id: deleteAction
@@ -59,15 +50,14 @@ QQC2.Dialog {
                 Layout.fillWidth: true
             }
         }
-
-        Kirigami.Icon {
-            source: "data-warning"
-            Layout.preferredWidth: Kirigami.Units.iconSizes.huge
-            Layout.preferredHeight: Kirigami.Units.iconSizes.huge
-        }
     }
 
     footer: QQC2.DialogButtonBox {
+        leftPadding: Kirigami.Units.largeSpacing * 2
+        rightPadding: Kirigami.Units.largeSpacing * 2
+        bottomPadding: Kirigami.Units.largeSpacing * 2
+        topPadding: Kirigami.Units.largeSpacing
+
         QQC2.Button {
             text: i18n("Cancel")
             QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole

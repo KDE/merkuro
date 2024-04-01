@@ -14,54 +14,29 @@ Kirigami.ScrollablePage {
 
     title: i18n("Manage Tags")
 
-    QQC2.Dialog {
+    Components.MessageDialog {
         id: deleteConfirmSheet
 
         property string tagName
         property var tag
 
-        title: i18n("Delete Tag")
-        modal: true
-        focus: true
-        x: Math.round((parent.width - width) / 2)
-        y: Math.round(parent.height / 3)
-        width: Math.min(parent.width - Kirigami.Units.gridUnit, Kirigami.Units.gridUnit * 30)
+        parent: root
 
-        background: Components.DialogRoundedBackground {}
+        title: i18nc("@title:dialog", "Confirm Tag Deletion")
+        dialogType: Components.MessageDialog.Warning
 
-        contentItem: RowLayout {
-            ColumnLayout {
-                Layout.fillWidth: true
-
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: i18n("Are you sure you want to delete tag \"%1\"?", deleteConfirmSheet.tagName)
-                    wrapMode: Text.Wrap
-                }
-
-                QQC2.Label {
-                    text: i18n("You won't be able to revert this action")
-                    wrapMode: Text.WordWrap
-                    Layout.fillWidth: true
-                }
-            }
-
-            Kirigami.Icon {
-                source: "data-warning"
-                Layout.preferredWidth: Kirigami.Units.iconSizes.huge
-                Layout.preferredHeight: Kirigami.Units.iconSizes.huge
-            }
+        contentItem: QQC2.Label {
+            text: i18n("Are you sure you want to delete tag <b>%1</b>?", deleteConfirmSheet.tagName) + " " + i18n("You won't be able to revert this action.")
+            wrapMode: Text.Wrap
         }
 
-        footer: QQC2.DialogButtonBox {
-            standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
+        standardButtons: QQC2.DialogButtonBox.Ok | QQC2.DialogButtonBox.Cancel
 
-            onAccepted: {
-                Akonadi.TagManager.deleteTag(deleteConfirmSheet.tag);
-                deleteConfirmSheet.close();
-            }
-            onRejected: deleteConfirmSheet.close()
+        onAccepted: {
+            Akonadi.TagManager.deleteTag(deleteConfirmSheet.tag);
+            deleteConfirmSheet.close();
         }
+        onRejected: deleteConfirmSheet.close()
     }
 
     ListView {

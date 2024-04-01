@@ -14,40 +14,18 @@ Kirigami.Action {
 
     readonly property Component deleteContactConfirmationDialogComponent: Component {
         id: deleteContactConfirmationDialogComponent
-        QQC2.Dialog {
+        Components.MessageDialog {
             id: deleteContactConfirmationDialog
-            visible: false
-            title: i18nc("@title:window", "Warning")
-            modal: true
-            focus: true
-            x: Math.round((parent.width - width) / 2)
-            y: Math.round(parent.height / 3)
-            width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
 
-            background: Components.DialogRoundedBackground {}
+            title: i18nc("@title:dialog", "Confirm Contact Deletion")
 
-            contentItem: RowLayout {
-                ColumnLayout {
-                    Layout.fillWidth: true
+            dialogType: Components.MessageDialog.Warning
 
-                    Kirigami.Heading {
-                        level: 4
-                        text: i18n("Do you really want to delete your contact: \"%1\"?", name.trim().length > 0 ? name : i18nc("Placeholder when no name is set", "No name"))
-                        wrapMode: Text.WordWrap
-                        Layout.fillWidth: true
-                    }
-                    QQC2.Label {
-                        text: i18n("You won't be able to revert this action")
-                        wrapMode: Text.WordWrap
-                        Layout.fillWidth: true
-                    }
-                }
-
-                Kirigami.Icon {
-                    source: "data-warning"
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.huge
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.huge
-                }
+            contentItem: QQC2.Label {
+                text: i18n("Do you really want to delete your contact: <b>%1</b>?", name.trim().length > 0 ? name : i18nc("Placeholder when no name is set", "No name")) + " " +i18n("You won't be able to revert this action")
+                wrapMode: Text.WordWrap
+                leftPadding: Kirigami.Units.largeSpacing * 2
+                rightPadding: Kirigami.Units.largeSpacing * 2
             }
 
             onRejected: deleteContactConfirmationDialog.close()
@@ -60,6 +38,11 @@ Kirigami.Action {
             }
 
             footer: QQC2.DialogButtonBox {
+                leftPadding: Kirigami.Units.largeSpacing * 2
+                rightPadding: Kirigami.Units.largeSpacing * 2
+                bottomPadding: Kirigami.Units.largeSpacing * 2
+                topPadding: Kirigami.Units.largeSpacing
+
                 QQC2.Button {
                     text: i18n("Cancel")
                     QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
