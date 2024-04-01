@@ -93,7 +93,7 @@ public:
 
     [[nodiscard]] QString uid() const;
 
-    Akonadi::Collection collection() const;
+    [[nodiscard]] Akonadi::Collection collection() const;
     [[nodiscard]] qint64 collectionId() const;
     void setCollection(Akonadi::Collection collection);
 
@@ -120,7 +120,7 @@ public:
 
     EmailModel *emailModel() const;
     PhoneModel *phoneModel() const;
-    KContacts::PhoneNumber::List phoneNumbers() const;
+    [[nodiscard]] KContacts::PhoneNumber::List phoneNumbers() const;
 
     [[nodiscard]] QString note() const;
     void setNote(const QString &note);
