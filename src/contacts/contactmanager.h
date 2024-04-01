@@ -48,10 +48,10 @@ public:
 private:
     void saveState() const;
 
-    Akonadi::EntityMimeTypeFilterModel *m_collectionTree;
-    QItemSelectionModel *m_collectionSelectionModel;
-    Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver;
-    QSortFilterProxyModel *m_filteredContacts;
-    KCheckableProxyModel *m_checkableProxyModel;
-    ColorProxyModel *m_colorProxy;
+    Akonadi::EntityMimeTypeFilterModel *m_collectionTree = nullptr;
+    QItemSelectionModel *m_collectionSelectionModel = nullptr;
+    Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
+    QSortFilterProxyModel *m_filteredContacts = nullptr;
+    KCheckableProxyModel *m_checkableProxyModel = nullptr;
+    ColorProxyModel *m_colorProxy = nullptr;
 };

@@ -40,6 +40,6 @@ private:
     void loadContactGroup(const KContacts::ContactGroup &contactGroup);
 
     QString m_name;
-    ContactGroupModel *m_model;
+    ContactGroupModel *const m_model;
     Akonadi::Item m_item;
 };
