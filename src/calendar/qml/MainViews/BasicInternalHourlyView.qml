@@ -405,28 +405,30 @@ Column {
                                                         id: multiDayViewIncidenceDropArea
                                                         anchors.fill: parent
                                                         z: 9999
-                                                        onDropped: (drop) {
-                                                            if(viewColumn.isCurrentItem) {
-                                                                const pos = mapToItem(viewColumn, x, y);
-                                                                drop.source.caughtX = pos.x + viewColumn.incidenceSpacing;
-                                                                drop.source.caughtY = pos.y;
-                                                                drop.source.caught = true;
+                                                        onDropped: (drop) => {
+                                                            if (!viewColumn.isCurrentItem) {
+                                                                return;
+                                                            }
 
-                                                                const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-                                                                incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                            const pos = mapToItem(viewColumn, x, y);
+                                                            drop.source.caughtX = pos.x + viewColumn.incidenceSpacing;
+                                                            drop.source.caughtY = pos.y;
+                                                            drop.source.caught = true;
 
-                                                                let sameTimeOnDate = new Date(listViewMenu.addDate);
-                                                                sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                                                const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                                /* There are 2 possibilities here: we move multiday incidence between days or we move hourly incidence
-                                                                 * to convert it into multiday incidence
-                                                                 */
-                                                                if (drop.source.objectName === 'hourlyIncidenceDelegateBackgroundBackground') {
-                                                                    // This is conversion from non-multiday to multiday
-                                                                    CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
-                                                                } else {
-                                                                    CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
-                                                                }
+                                                            const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+
+                                                            let sameTimeOnDate = new Date(listViewMenu.addDate);
+                                                            sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
+                                                            const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                            /* There are 2 possibilities here: we move multiday incidence between days or we move hourly incidence
+                                                             * to convert it into multiday incidence
+                                                             */
+                                                            if (drop.source.objectName === 'hourlyIncidenceDelegateBackgroundBackground') {
+                                                                // This is conversion from non-multiday to multiday
+                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
+                                                            } else {
+                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                                             }
                                                         }
                                                     }
