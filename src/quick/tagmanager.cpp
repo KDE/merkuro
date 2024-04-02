@@ -56,9 +56,8 @@ protected:
 
 TagManager::TagManager(QObject *parent)
     : QObject(parent)
+    , m_tagModel(new FlatTagModel(this))
 {
-    m_tagModel = new FlatTagModel(this);
-
     QObject::connect(m_tagModel, &QSortFilterProxyModel::dataChanged, this, &TagManager::tagModelChanged);
     QObject::connect(m_tagModel, &QSortFilterProxyModel::layoutChanged, this, &TagManager::tagModelChanged);
     QObject::connect(m_tagModel, &QSortFilterProxyModel::modelReset, this, &TagManager::tagModelChanged);

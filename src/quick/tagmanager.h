@@ -26,5 +26,5 @@ Q_SIGNALS:
     void tagModelChanged();
 
 private:
-    QSortFilterProxyModel *m_tagModel = nullptr;
+    QSortFilterProxyModel *const m_tagModel;
 };
