@@ -29,9 +29,9 @@ FormCard.FormCard {
 
         text: i18n("Address book:")
         Layout.fillWidth: true
-        enabled: mode == ContactEditor.CreateMode
+        enabled: mode === ContactEditor.CreateMode
 
-        defaultCollectionId: if (mode == ContactEditor.CreateMode) {
+        defaultCollectionId: if (mode === ContactEditor.CreateMode) {
             return Config.lastUsedAddressBookCollection;
         } else {
             return contactEditor.collectionId;
