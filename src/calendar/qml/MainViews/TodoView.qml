@@ -3,11 +3,11 @@
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Controls as QQC2
 import org.kde.kirigami 2.14 as Kirigami
-import Qt.labs.qmlmodels 1.0
+import Qt.labs.qmlmodels
 import org.kde.kitemmodels 1.0
 
 import org.kde.merkuro.calendar 1.0 as Calendar

@@ -26,7 +26,7 @@ class CollectionComboBoxModelPrivate;
  *
  * @code{.qml}
  *
- * import QtQuick.Controls 2.15 as QQC2
+ * import QtQuick.Controls as QQC2
  * import org.kde.akonadi 1.0 as Akonadi
  *
  * QQC2.ComboBox {

@@ -1,15 +1,15 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.merkuro.contact 1.0 as Contact
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.merkuro.components 1.0
-import Qt.labs.qmlmodels 1.0
+import Qt.labs.qmlmodels
 import org.kde.kitemmodels 1.0
 
 Kirigami.OverlayDrawer {

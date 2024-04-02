@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Controls 2.12 as QQC2
 import org.kde.merkuro.components 1.0
 import org.kde.merkuro.contact 1.0

@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 import org.kde.kirigami 2.14 as Kirigami
-import QtQuick.Controls 2.15 as QQC2
-import Qt.labs.platform 1.1
-import QtQuick.Dialogs 6.2
+import QtQuick.Controls as QQC2
+import Qt.labs.platform
+import QtQuick.Dialogs
 import org.kde.merkuro.mail 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
 import './private'

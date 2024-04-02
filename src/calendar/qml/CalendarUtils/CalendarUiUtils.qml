@@ -3,7 +3,7 @@
 
 pragma Singleton
 
-import QtQuick 2.15
+import QtQuick
 import org.kde.kirigami 2.14 as Kirigami
 
 import "dateutils.js" as DateUtils

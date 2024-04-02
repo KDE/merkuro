@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
-import QtQuick 2.15
-import Qt.labs.platform 1.1 as Labs
+import QtQuick
+import Qt.labs.platform as Labs
 import org.kde.merkuro.components 1.0
 
 Labs.Menu {

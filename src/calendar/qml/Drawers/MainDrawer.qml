@@ -3,11 +3,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Templates 2.15 as T
-import QtQuick.Layouts 1.15
-import Qt.labs.qmlmodels 1.0
+import QtQuick.Layouts
+import Qt.labs.qmlmodels
 import Qt5Compat.GraphicalEffects
 
 import org.kde.akonadi 1.0

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import QtQuick 2.7
-import Qt.labs.platform 1.1
+import Qt.labs.platform
 import org.kde.merkuro.components 1.0
 
 MenuItem {

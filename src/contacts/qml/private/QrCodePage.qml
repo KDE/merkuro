@@ -2,10 +2,10 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <car@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
+import QtQuick
 import QtQml 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.merkuro.contact 1.0
 import org.kde.prison 1.0 as Prison
