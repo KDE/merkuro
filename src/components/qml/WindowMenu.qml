@@ -3,7 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Window 2.15
+import QtQuick.Window
 import org.kde.kirigami 2.19 as Kirigami
 
 QQC2.Menu {

@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2021 Nicolas Fella <nicolas.fella@gmx.de>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.6
-import QtQuick.Controls 2.13
-import QtQuick.Layouts 1.2
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import org.kde.kirigami 2.10 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 

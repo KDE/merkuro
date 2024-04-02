@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.4
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.merkuro.calendar 1.0 as Calendar

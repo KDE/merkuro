@@ -3,7 +3,7 @@
 
 import Qt.labs.platform as Labs
 import QtQuick
-import QtQuick.Window 2.15
+import QtQuick.Window
 import org.kde.merkuro.components 1.0
 
 Labs.Menu {

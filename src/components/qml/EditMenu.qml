@@ -3,7 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Window 2.15
+import QtQuick.Window
 import org.kde.merkuro.components 1.0
 
 QQC2.Menu {

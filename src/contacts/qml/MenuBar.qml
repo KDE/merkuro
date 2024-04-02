@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
-import QtQuick.Controls 2.12 as QQC2
+import QtQuick.Controls as QQC2
 import org.kde.merkuro.components 1.0
 import org.kde.merkuro.contact 1.0
 
