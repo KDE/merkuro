@@ -19,7 +19,7 @@ class MimeTypes : public QObject
     Q_PROPERTY(QString mail READ mail CONSTANT)
 
 public:
-    MimeTypes(QObject *parent = nullptr);
+    explicit MimeTypes(QObject *parent = nullptr);
     [[nodiscard]] QString calendar() const;
     [[nodiscard]] QString todo() const;
     [[nodiscard]] QString address() const;
