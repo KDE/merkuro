@@ -3,7 +3,9 @@
 
 import QtQuick
 import QtQuick.Layouts
-import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.calendar as Calendar
+import org.kde.kirigamiaddons.dateandtime
 
 RowLayout {
     id: root
@@ -18,7 +20,18 @@ RowLayout {
     TitleDateButton {
         id: titleDateButton
 
-        onClicked: dateChangerLoader.active = !dateChangerLoader.active
+        onClicked: {
+            if (!dateChangerLoader.active) {
+                dateChangerLoader.active = true;
+                return;
+            }
+
+            if (dateChangerLoader.item.visible) {
+                dateChangerLoader.item.close();
+            } else {
+                dateChangerLoader.item.open();
+            }
+        }
     }
 
     Connections {
@@ -33,15 +46,19 @@ RowLayout {
         id: dateChangerLoader
         active: false
         visible: status === Loader.Ready
-        onStatusChanged: if(status === Loader.Ready) item.open()
-        sourceComponent: DateChanger {
+        onStatusChanged: if(status === Loader.Ready) {
+            item.open()
+        }
+        sourceComponent: DatePopup {
             y: pageStack.globalToolBar.height - 1
-            showDays: pageStack.currentItem && pageStack.currentItem.mode !== Calendar.CalendarApplication.MonthView
-            date: Calendar.DateTimeState.selectedDate
-            onDateSelected: date =>  { 
-                if(visible) {
-                           Calendar.DateTimeState.selectedDate = date;
-                }
+            x: 0
+            parent: titleDateButton
+            value: Calendar.DateTimeState.selectedDate
+            implicitWidth: Kirigami.Units.gridUnit * 20
+            autoAccept: true
+            onAccepted: {
+                close();
+                Calendar.DateTimeState.selectedDate = value;
             }
         }
     }

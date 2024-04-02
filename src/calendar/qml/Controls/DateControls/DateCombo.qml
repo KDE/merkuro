@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigamiaddons.dateandtime
 
 import "dateutils.js" as DateUtils
 
@@ -19,10 +20,7 @@ QQC2.ComboBox {
     property date dateFromText: DateUtils.parseDateString(editText)
     property bool validDate: !isNaN(dateFromText.getTime())
 
-    onDateTimeChanged: {
-        datePicker.selectedDate = dateTime;
-        datePicker.clickedDate = dateTime;
-    }
+    onDateTimeChanged: datePicker.value = dateTime;
 
     editable: true
     editText: activeFocus ? editText : display
@@ -34,31 +32,26 @@ QQC2.ComboBox {
             dateFromText = DateUtils.parseDateString(editText);
 
             if (validDate) {
-                datePicker.selectedDate = dateFromText;
-                datePicker.clickedDate = dateFromText;
+                datePicker.value = dateFromText;
                 newDateChosen(dateFromText.getDate(), dateFromText.getMonth() + 1, dateFromText.getFullYear());
             }
         }
     }
 
-    popup: QQC2.Popup {
-        id: datePopup
+    popup: DatePopup {
+        id: datePicker
 
         width: Kirigami.Units.gridUnit * 18
         height: Kirigami.Units.gridUnit * 18
         y: parent.y + parent.height
         z: 1000
         padding: 0
+        value: root.dateTime
+        autoAccept: true
 
-        contentItem: DatePicker {
-            id: datePicker
-
-            clickedDate: root.dateTime
-            selectedDate: root.dateTime
-            onDatePicked: {
-                datePopup.close();
-                newDateChosen(pickedDate.getDate(), pickedDate.getMonth() + 1, pickedDate.getFullYear());
-            }
+        onAccepted: {
+            newDateChosen(value.getDate(), value.getMonth() + 1, value.getFullYear());
+            datePicker.close();
         }
     }
 }

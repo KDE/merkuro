@@ -11,6 +11,7 @@ import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.dateandtime
 import org.kde.merkuro.calendar
 import org.kde.merkuro.contact
 import org.kde.merkuro.calendar as Calendar
@@ -657,21 +658,18 @@ Kirigami.ScrollablePage {
                             Layout.fillWidth: true
                             displayText: i18n("Add Recurrence Exception")
 
-                            popup: QQC2.Popup {
+                            popup: DatePopup {
                                 id: recurExceptionPopup
 
                                 width: Kirigami.Units.gridUnit * 18
                                 height: Kirigami.Units.gridUnit * 18
                                 y: parent.y + parent.height
                                 z: 1000
+                                autoAccept: true
 
-                                DatePicker {
-                                    id: recurExceptionPicker
-                                    anchors.fill: parent
-                                    onDatePicked: {
-                                        root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(pickedDate)
-                                        recurExceptionPopup.close()
-                                    }
+                                onAccepted: {
+                                    root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(value);
+                                    recurExceptionPopup.close();
                                 }
                             }
                         }
