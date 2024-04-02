@@ -95,6 +95,12 @@ void CalendarPlugin::registerTypes(const char *uri)
     qRegisterMetaType<Akonadi::AgentFilterProxyModel *>();
     qRegisterMetaType<Akonadi::CollectionFilterProxyModel *>();
     qRegisterMetaType<QAction *>();
+
+    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/qt/qml/org/kde/merkuro/calendar/DatePopupSingleton.qml")),
+                             "org.kde.merkuro",
+                             1,
+                             0,
+                             "DatePopupSingleton");
 }
 
 #include "moc_calendarplugin.cpp"

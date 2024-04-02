@@ -20,16 +20,31 @@ RowLayout {
     TitleDateButton {
         id: titleDateButton
 
-        onClicked: {
-            if (!dateChangerLoader.active) {
-                dateChangerLoader.active = true;
-                return;
+        onClicked: if (Calendar.DatePopupSingleton.visible) {
+            Calendar.DatePopupSingleton.close();
+            connect.enabled = false;
+        } else {
+            Calendar.DatePopupSingleton.y = pageStack.globalToolBar.height - 1;
+            Calendar.DatePopupSingleton.x = 0;
+            Calendar.DatePopupSingleton.value = Calendar.DateTimeState.selectedDate
+            Calendar.DatePopupSingleton.popupParent = titleDateButton;
+            connect.enabled = true;
+            Calendar.DatePopupSingleton.open();
+        }
+
+        Connections {
+            id: connect
+
+            enabled: false
+            target: Calendar.DatePopupSingleton
+
+            function onAccepted(): void {
+                Calendar.DatePopupSingleton.close();
+                Calendar.DateTimeState.selectedDate = Calendar.DatePopupSingleton.value;
             }
 
-            if (dateChangerLoader.item.visible) {
-                dateChangerLoader.item.close();
-            } else {
-                dateChangerLoader.item.open();
+            function onClosed(): void {
+                connect.enabled = false;
             }
         }
     }
@@ -37,29 +52,8 @@ RowLayout {
     Connections {
         target: Calendar.CalendarApplication
 
-        function onOpenDateChanger() {
-            dateChangerLoader.active = true;
-        }
-    }
-
-    Loader {
-        id: dateChangerLoader
-        active: false
-        visible: status === Loader.Ready
-        onStatusChanged: if(status === Loader.Ready) {
-            item.open()
-        }
-        sourceComponent: DatePopup {
-            y: pageStack.globalToolBar.height - 1
-            x: 0
-            parent: titleDateButton
-            value: Calendar.DateTimeState.selectedDate
-            implicitWidth: Kirigami.Units.gridUnit * 20
-            autoAccept: true
-            onAccepted: {
-                close();
-                Calendar.DateTimeState.selectedDate = value;
-            }
+        function onOpenDateChanger(): void {
+            titleDateButton.clicked();
         }
     }
 }

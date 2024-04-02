@@ -4,8 +4,9 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime
+import org.kde.merkuro.calendar as Calendar
 
 import "dateutils.js" as DateUtils
 
@@ -20,10 +21,15 @@ QQC2.ComboBox {
     property date dateFromText: DateUtils.parseDateString(editText)
     property bool validDate: !isNaN(dateFromText.getTime())
 
-    onDateTimeChanged: datePicker.value = dateTime;
-
     editable: true
     editText: activeFocus ? editText : display
+
+    onPressedChanged: if (pressed) {
+        Calendar.DatePopupSingleton.value = root.dateTime;
+        Calendar.DatePopupSingleton.popupParent = root;
+        Calendar.DatePopupSingleton.y = y + height;
+        connect.enabled = true;
+    }
 
     onActiveFocusChanged: {
         // Set date from text here because it otherwise updates after this handler
@@ -32,26 +38,28 @@ QQC2.ComboBox {
             dateFromText = DateUtils.parseDateString(editText);
 
             if (validDate) {
-                datePicker.value = dateFromText;
                 newDateChosen(dateFromText.getDate(), dateFromText.getMonth() + 1, dateFromText.getFullYear());
             }
         }
     }
 
-    popup: DatePopup {
-        id: datePicker
+    popup: Calendar.DatePopupSingleton.popup
 
-        width: Kirigami.Units.gridUnit * 18
-        height: Kirigami.Units.gridUnit * 18
-        y: parent.y + parent.height
-        z: 1000
-        padding: 0
-        value: root.dateTime
-        autoAccept: true
+    Connections {
+        id: connect
 
-        onAccepted: {
-            newDateChosen(value.getDate(), value.getMonth() + 1, value.getFullYear());
-            datePicker.close();
+        target: Calendar.DatePopupSingleton
+
+        enabled: false
+
+        function onAccepted(): void {
+            const value = Calendar.DatePopupSingleton.value;
+            root.newDateChosen(value.getDate(), value.getMonth() + 1, value.getFullYear());
+            Calendar.DatePopupSingleton.close();
+        }
+
+        function onClosed(): void {
+            enabled = false;
         }
     }
 }

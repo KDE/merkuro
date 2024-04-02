@@ -655,21 +655,31 @@ Kirigami.ScrollablePage {
 
                         QQC2.ComboBox {
                             id: exceptionAddButton
+
                             Layout.fillWidth: true
                             displayText: i18n("Add Recurrence Exception")
 
-                            popup: DatePopup {
-                                id: recurExceptionPopup
+                            popup: Calendar.DatePopupSingleton.popup
+                            onPressedChanged: if (pressed) {
+                                Calendar.DatePopupSingleton.value = root.dateTime;
+                                Calendar.DatePopupSingleton.popupParent = root;
+                                Calendar.DatePopupSingleton.y = y + height;
+                                connect.enabled = true;
+                            }
 
-                                width: Kirigami.Units.gridUnit * 18
-                                height: Kirigami.Units.gridUnit * 18
-                                y: parent.y + parent.height
-                                z: 1000
-                                autoAccept: true
+                            Connections {
+                                id: connect
+
+                                target: Calendar.DatePopupSingleton
+                                enabled: false
 
                                 onAccepted: {
-                                    root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(value);
-                                    recurExceptionPopup.close();
+                                    root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(Calendar.DatePopupSingleton.value);
+                                    Calendar.DatePopupSingleton.close();
+                                }
+
+                                function onClosed(): void {
+                                    enabled = false;
                                 }
                             }
                         }

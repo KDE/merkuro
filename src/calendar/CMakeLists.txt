@@ -78,6 +78,11 @@ ecm_target_qml_sources(merkuro_calendar_plugin SOURCES
     qml/incidenceeditor/PriorityComboBox.qml
     qml/BottomToolBar.qml
     qml/Menus/MenuBar.qml
+    qml/Controls/DatePopupSingleton.qml
+)
+
+set_source_files_properties(qml/Controls/DatePopupSingleton.qml PROPERTIES
+    QT_QML_SINGLETON_TYPE TRUE
 )
 
 target_link_libraries(merkuro_calendar_plugin PUBLIC merkuro_calendar_static)
