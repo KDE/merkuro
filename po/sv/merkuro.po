@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-27 00:38+0000\n"
+"POT-Creation-Date: 2024-04-02 00:38+0000\n"
 "PO-Revision-Date: 2023-09-03 09:43+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -483,40 +483,42 @@ msgstr "År"
 msgid "Min. Interval:"
 msgstr "Minimalt intervall:"
 
-#: calendar/qml/Controls/ImportHandler.qml:48
+#: calendar/qml/Controls/ImportHandler.qml:45
 #, kde-format
 msgctxt "%1 is a number"
 msgid "%1 incidences were imported successfully."
 msgstr "%1 förekomster importerades med lyckat resultat."
 
-#: calendar/qml/Controls/ImportHandler.qml:53
-#: calendar/qml/Controls/ImportHandler.qml:67
+#: calendar/qml/Controls/ImportHandler.qml:50
+#: calendar/qml/Controls/ImportHandler.qml:64
 #, kde-format
 msgctxt "%1 is the error message"
 msgid "An error occurred importing incidences: %1"
 msgstr "Ett fel uppstod vid import av förekomster: %1"
 
-#: calendar/qml/Controls/ImportHandler.qml:62
+#: calendar/qml/Controls/ImportHandler.qml:59
 #, kde-format
 msgid "New calendar created from imported file successfully."
 msgstr "Ny kalender skapad från importerad fil med lyckat resultat."
 
-#: calendar/qml/Controls/ImportHandler.qml:88
+#: calendar/qml/Controls/ImportHandler.qml:85
 #, kde-format
 msgid "Import a calendar"
 msgstr "Importera en kalender"
 
-#: calendar/qml/Controls/ImportHandler.qml:90
+#: calendar/qml/Controls/ImportHandler.qml:87
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
 msgstr "Kalenderfiler (*.ics *.vcs)"
 
-#: calendar/qml/Controls/ImportHandler.qml:107
-#, kde-format
+#: calendar/qml/Controls/ImportHandler.qml:97
+#, fuzzy, kde-format
+#| msgid "Import Calendar"
+msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Importera kalender"
 
-#: calendar/qml/Controls/ImportHandler.qml:115
+#: calendar/qml/Controls/ImportHandler.qml:102
 #, kde-format
 msgid ""
 "Would you like to merge this calendar file's events and tasks into one of "
@@ -529,21 +531,21 @@ msgstr ""
 "filen?\n"
 " "
 
-#: calendar/qml/Controls/ImportHandler.qml:123
+#: calendar/qml/Controls/ImportHandler.qml:114
 #, kde-format
 msgid "Merge with existing calendar"
 msgstr "Sammanfoga med befintlig kalender"
 
-#: calendar/qml/Controls/ImportHandler.qml:137
+#: calendar/qml/Controls/ImportHandler.qml:132
 #, kde-format
 msgid "Create new calendar"
 msgstr "Skapa ny kalender"
 
 #: calendar/qml/Controls/ImportHandler.qml:146
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:72
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:64
+#: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
 #: mail/qml/actions/NewFolderAction.qml:31
 #, kde-format
@@ -839,34 +841,33 @@ msgstr "Välj en kalender"
 msgid "Choose an Address Book"
 msgstr "Välj en adressbok"
 
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
 #, fuzzy, kde-format
 #| msgid "Delete calendar"
 msgctxt "@title:window"
 msgid "Delete calendar"
 msgstr "Ta bort kalender"
 
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:27
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@title:window"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:51
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:42
 #, fuzzy, kde-format
 #| msgid "Do you want to delete calendar: \"%1\"?"
 msgid "Do you want to delete the calendar: \"%1\"?"
 msgstr "Vill du verkligen ta bort kalendern: \"%1\"?"
 
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:57
-#: contacts/qml/private/DeleteContactAction.qml:40
-#: quick/qml/TagManagerPage.qml:43
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:48
+#: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr "Det går inte att ångra åtgärden"
 
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:76
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
 msgid "Delete calendar"
 msgstr "Ta bort kalender"
@@ -1057,7 +1058,7 @@ msgid "Yearly"
 msgstr "Årligen"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:83
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "Egen"
@@ -1403,38 +1404,38 @@ msgstr "8"
 msgid "9 (Lowest Priority)"
 msgstr "9 (lägst prioritet)"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:51
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:50
 #, kde-format
 msgctxt "Custom reminder"
 msgid "Custom"
 msgstr "Egen"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:145
 #, kde-format
 msgid "minutes"
 msgstr "minuter"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
 #, kde-format
 msgid "hours"
 msgstr "timmar"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:148
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:147
 #, kde-format
 msgid "days"
 msgstr "dagar"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:159
 #, kde-format
 msgid "before start of event"
 msgstr "innan händelsens start"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:161
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
 #, kde-format
 msgid "after start of event"
 msgstr "efter händelsens start"
 
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:171
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:170
 #, kde-format
 msgid "Remove"
 msgstr "Ta bort"
@@ -2377,7 +2378,7 @@ msgid "Edit contact…"
 msgstr "Redigera kontakt…"
 
 #: contacts/qml/ContactView.qml:107
-#: contacts/qml/private/DeleteContactAction.qml:76
+#: contacts/qml/private/DeleteContactAction.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete contact"
@@ -3080,26 +3081,25 @@ msgstr[0] "E-postadress"
 msgstr[1] "E-postadresser"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
-#, fuzzy, kde-format
-#| msgid "Warning"
-msgctxt "@title:window"
-msgid "Warning"
-msgstr "Varning"
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Confirm Contact Deletion"
+msgstr ""
 
-#: contacts/qml/private/DeleteContactAction.qml:35
+#: contacts/qml/private/DeleteContactAction.qml:25
 #, fuzzy, kde-format
 #| msgid "Your name"
 msgctxt "Placeholder when no name is set"
 msgid "No name"
 msgstr "Ditt namn"
 
-#: contacts/qml/private/DeleteContactAction.qml:35
+#: contacts/qml/private/DeleteContactAction.qml:25
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete your contact: %1?"
-msgid "Do you really want to delete your contact: \"%1\"?"
+msgid "Do you really want to delete your contact: <b>%1</b>?"
 msgstr "Vill du verkligen ta bort kontakten: %1?"
 
-#: contacts/qml/private/DeleteContactAction.qml:68
+#: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
 msgid "Delete contact"
 msgstr "Ta bort kontakt"
@@ -3494,25 +3494,42 @@ msgstr "Lägg till konto"
 msgid "Manage Tags"
 msgstr "Hantera etiketter"
 
-#: quick/qml/TagManagerPage.qml:23
+#: quick/qml/TagManagerPage.qml:25
 #, kde-format
-msgid "Delete Tag"
-msgstr "Ta bort etikett"
+msgctxt "@title:dialog"
+msgid "Confirm Tag Deletion"
+msgstr ""
 
-#: quick/qml/TagManagerPage.qml:38
-#, kde-format
-msgid "Are you sure you want to delete tag \"%1\"?"
+#: quick/qml/TagManagerPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Are you sure you want to delete tag \"%1\"?"
+msgid "Are you sure you want to delete tag <b>%1</b>?"
 msgstr "Är du säker på att du vill ta bort etiketten \"%1\"?"
 
-#: quick/qml/TagManagerPage.qml:155
+#: quick/qml/TagManagerPage.qml:29
+#, fuzzy, kde-format
+#| msgid "You won't be able to revert this action"
+msgid "You won't be able to revert this action."
+msgstr "Det går inte att ångra åtgärden"
+
+#: quick/qml/TagManagerPage.qml:130
 #, kde-format
 msgid "Create a New Tag…"
 msgstr "Skapa en ny etikett…"
 
-#: quick/qml/TagManagerPage.qml:166
+#: quick/qml/TagManagerPage.qml:141
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title:window"
+#~ msgid "Warning"
+#~ msgstr "Varning"
+
+#~ msgid "Delete Tag"
+#~ msgstr "Ta bort etikett"
 
 #~ msgid "Spouse's Name"
 #~ msgstr "Partners namn"
