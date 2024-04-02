@@ -55,8 +55,11 @@ Kirigami.ScrollablePage {
         visible: !root.validDates
         type: Kirigami.MessageType.Error
         // Specify what the problem is to aid user
-        text: root.incidenceWrapper.incidenceStart < root.incidenceWrapper.incidenceEnd ?
-              i18n("Invalid dates provided.") : i18n("End date cannot be before start date.")
+        text: if (root.incidenceWrapper && root.incidenceWrapper.incidenceStart < root.incidenceWrapper.incidenceEnd) {
+            return i18n("Invalid dates provided.");
+        } else {
+            return i18n("End date cannot be before start date.");
+        }
     }
 
     footer: QQC2.DialogButtonBox {
