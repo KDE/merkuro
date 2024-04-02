@@ -93,6 +93,8 @@ Importer {
     }
 
     property Component importChoiceDialogComponent: MessageDialog {
+        id: dialog
+
         title: i18nc("@title:dialog", "Import Calendar")
         dialogType: MessageDialog.Information
         iconName: 'text-calendar'
@@ -112,7 +114,7 @@ Importer {
                 icon.name: "document-import"
                 text: i18n("Merge with existing calendar")
                 onClicked: {
-                    closeDialog();
+                    dialog.close();
                     pageStack.pushDialogLayer(importMergeCollectionPickerComponent, {
                         width: root.width
                     }, {
@@ -132,7 +134,7 @@ Importer {
                 onClicked: {
                     root.calendarImportInProgress = false;
                     root.importCalendarFromUrl(root.currentFile, false);
-                    closeDialog();
+                    dialog.close();
                 }
 
                 Layout.leftMargin: Kirigami.Units.largeSpacing * 2
@@ -145,7 +147,7 @@ Importer {
                 text: i18n("Cancel")
                 onClicked: {
                     root.calendarImportInProgress = false;
-                    closeDialog();
+                    dialog.close();
                 }
 
                 Layout.leftMargin: Kirigami.Units.largeSpacing * 2
