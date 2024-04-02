@@ -338,7 +338,9 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         display: root.incidenceWrapper.incidenceEndDateDisplay
                         dateTime: root.incidenceWrapper.incidenceEnd
-                        onNewDateChosen: root.incidenceWrapper.setIncidenceEndDate(day, month, year)
+                        onNewDateChosen: (day, month, year) => {
+                            root.incidenceWrapper.setIncidenceEndDate(day, month, year)
+                        }
                         enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                     }
                     TimeCombo {
@@ -627,7 +629,9 @@ Kirigami.ScrollablePage {
 
                             display: root.incidenceWrapper.recurrenceData.endDateTimeDisplay
                             dateTime: root.incidenceWrapper.recurrenceData.endDateTime
-                            onNewDateChosen: root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date(year, month - 1, day));
+                            onNewDateChosen: (day, month, year) => {
+                                root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date(year, month - 1, day));
+                            }
                         }
 
                         RowLayout {
