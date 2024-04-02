@@ -31,7 +31,7 @@ PathView {
             return;
         }
 
-        let position = root.currentItem.item.hourScrollView.getCurrentPosition();
+        let position = root.currentItem.item.hourScrollView.currentPosition();
         root.currentIndex = root.model.moveToDate(root.selectedDate, root.currentItem.startDate, root.currentIndex);
 
         if (initialWeek) {
@@ -72,7 +72,7 @@ PathView {
         }
     }
 
-    onMovementStarted: scrollPosition = root.currentItem.item.hourScrollView.getCurrentPosition();
+    onMovementStarted: scrollPosition = root.currentItem.item.hourScrollView.currentPosition();
     onMovementEnded: root.currentItem.item.hourScrollView.setPosition(scrollPosition);
 
     Component.onCompleted: currentIndex = count / 2;

@@ -52,11 +52,11 @@ Column {
     Connections {
         target: Calendar.DateTimeState
         function onSelectedDateChanged() {
-            hourScrollView.setToCurrentTime(true);
+            hourScrollView.setToCurrentTime();
         }
     }
 
-    Component.onCompleted: hourScrollView.setToCurrentTime(true);
+    Component.onCompleted: hourScrollView.setToCurrentTime();
 
     FontMetrics {
         id: hourLabelMetrics
@@ -498,37 +498,34 @@ Column {
             return h;
         }
 
-        function setToCurrentTime(animate = false) {
-            setPosition(Math.max(0, (new Date()).getHours() - 1) / 23, animate);
+        function setToCurrentTime(): void {
+            setPosition(Math.max(0, (new Date()).getHours() - 1) / 23);
         }
 
-        function getCurrentPosition() {
+        function currentPosition(): real {
             return vScrollBar.position;
         }
 
-        function setPosition(position, animate = false) {
+        function setPosition(position: real): void {
             let offset = vScrollBar.visualSize + position - 1;
             // Initially let's assume that we are still somewhere before bottom of the hourlyView
             // so lets simply set vScrollBar position to what was given
+
             let yPos = position;
             if (offset > 0) {
                 // Ups, it seems that we are going lower than bottom of the hourlyView
                 // Lets set position to the bottom of the vScrollBar then
                 yPos = 1 - vScrollBar.visualSize;
             }
-            if (animate) {
-                scrollAnimation.to = yPos;
-                if (scrollAnimation.running) {
-                    scrollAnimation.stop();
-                }
-                scrollAnimation.start();
-            } else {
-                vScrollBar.position = yPos;
-            }
+
+            vScrollBar.position = yPos;
         }
 
         Component.onCompleted: {
-            if(!Kirigami.Settings.isMobile) viewColumn.scrollbarWidth = hourlyView.QQC2.ScrollBar.vertical.width;
+            if (!Kirigami.Settings.isMobile) {
+                viewColumn.scrollbarWidth = hourlyView.QQC2.ScrollBar.vertical.width;
+            }
+
             if(currentTimeMarkerLoader.active && viewColumn.initialWeek) {
                 setToCurrentTime();
             }
