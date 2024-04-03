@@ -113,7 +113,7 @@ Importer {
             QQC2.Button {
                 Layout.fillWidth: true
                 icon.name: "document-import"
-                text: i18n("Merge with existing calendar")
+                text: i18nc("@action:button merge with existing calendar", "Merge with Existing")
                 onClicked: {
                     dialog.close();
                     pageStack.pushDialogLayer(importMergeCollectionPickerComponent, {
@@ -131,7 +131,7 @@ Importer {
             QQC2.Button {
                 Layout.fillWidth: true
                 icon.name: "document-new"
-                text: i18n("Create new calendar")
+                text: i18nc("@action:button Create new calendar", "Create New")
                 onClicked: {
                     root.calendarImportInProgress = false;
                     root.importCalendarFromUrl(root.currentFile, false);
@@ -145,7 +145,7 @@ Importer {
             QQC2.Button {
                 Layout.fillWidth: true
                 icon.name: "gtk-cancel"
-                text: i18n("Cancel")
+                text: i18nc("@action:button", "Cancel")
                 onClicked: {
                     root.calendarImportInProgress = false;
                     dialog.close();
