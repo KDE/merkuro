@@ -31,7 +31,7 @@ Q_SIGNALS:
 
 protected:
     virtual void setupActions();
-    KActionCollection *mCollection = nullptr;
+    KActionCollection *const mCollection;
 
 private:
     void quit();
