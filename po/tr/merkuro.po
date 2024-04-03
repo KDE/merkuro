@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 12:45+0300\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-02 13:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -263,7 +263,7 @@ msgid "Developer"
 msgstr "Geliştirici"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:860
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -338,8 +338,8 @@ msgstr[0] "Her yıl %3 %2"
 msgstr[1] "Her %1 yıl %3 %2"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "Never"
 msgstr "Hiçbir zaman"
@@ -415,7 +415,7 @@ msgstr "%1 (En yüksek öncelik)"
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Mid-high priority)"
-msgstr "%1 (Orta-yüksek öncelik)"
+msgstr "%1 (Orta–yüksek öncelik)"
 
 #: calendar/qml/CalendarUtils/labelutils.js:193
 #, kde-format
@@ -427,7 +427,7 @@ msgstr "%1 (Orta öncelik)"
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Mid-low priority)"
-msgstr "%1 (Orta-düşük öncelik)"
+msgstr "%1 (Orta–düşük öncelik)"
 
 #: calendar/qml/CalendarUtils/labelutils.js:197
 #, kde-format
@@ -455,27 +455,6 @@ msgstr "Etiketler"
 #, kde-format
 msgid "Calendars"
 msgstr "Takvimler"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:138
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:182
-#, kde-format
-msgid "Days"
-msgstr "Gün"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:190
-#, kde-format
-msgid "Months"
-msgstr "Ay"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:196
-#, kde-format
-msgid "Years"
-msgstr "Yıl"
 
 #: calendar/qml/Controls/DateControls/TimePicker.qml:50
 #, kde-format
@@ -510,14 +489,13 @@ msgstr "Bir takvim içe aktar"
 msgid "Calendar files (*.ics *.vcs)"
 msgstr "Takvim dosyaları (*.ics *.vcs)"
 
-#: calendar/qml/Controls/ImportHandler.qml:97
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#: calendar/qml/Controls/ImportHandler.qml:99
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Takvim İçe Aktar"
 
-#: calendar/qml/Controls/ImportHandler.qml:102
+#: calendar/qml/Controls/ImportHandler.qml:104
 #, kde-format
 msgid ""
 "Would you like to merge this calendar file's events and tasks into one of "
@@ -530,17 +508,17 @@ msgstr ""
 "oluşturmak mı istersiniz?\n"
 " "
 
-#: calendar/qml/Controls/ImportHandler.qml:114
+#: calendar/qml/Controls/ImportHandler.qml:116
 #, kde-format
 msgid "Merge with existing calendar"
 msgstr "Mevcut takvimle birleştir"
 
-#: calendar/qml/Controls/ImportHandler.qml:132
+#: calendar/qml/Controls/ImportHandler.qml:134
 #, kde-format
 msgid "Create new calendar"
 msgstr "Yeni takvim oluştur"
 
-#: calendar/qml/Controls/ImportHandler.qml:146
+#: calendar/qml/Controls/ImportHandler.qml:148
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
@@ -712,7 +690,7 @@ msgstr "Alt Görev Ekle"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:99
 #, kde-format
 msgid "Set priority..."
-msgstr "Öncelik ayarla..."
+msgstr "Öncelik ayarla…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:112
 #: calendar/qml/Controls/IncidenceMouseArea.qml:184
@@ -728,17 +706,17 @@ msgstr "1 (en yüksek öncelik)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:122
 #, kde-format
 msgid "2 (mid-high priority)"
-msgstr "2 (orta-yüksek öncelik)"
+msgstr "2 (orta–yüksek öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:127
 #, kde-format
 msgid "3 (mid-high priority)"
-msgstr "3 (orta-yüksek öncelik)"
+msgstr "3 (orta–yüksek öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:132
 #, kde-format
 msgid "4 (mid-high priority)"
-msgstr "4 (orta-yüksek öncelik)"
+msgstr "4 (orta–yüksek öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:137
 #, kde-format
@@ -748,17 +726,17 @@ msgstr "5 (orta öncelik)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:142
 #, kde-format
 msgid "6 (mid-low priority)"
-msgstr "6 (orta-düşük öncelik)"
+msgstr "6 (orta–düşük öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:147
 #, kde-format
 msgid "7 (mid-low priority)"
-msgstr "7 (orta-düşük öncelik)"
+msgstr "7 (orta–düşük öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:152
 #, kde-format
 msgid "8 (mid-low priority)"
-msgstr "8 (orta-düşük öncelik)"
+msgstr "8 (orta–düşük öncelik)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:157
 #, kde-format
@@ -768,7 +746,7 @@ msgstr "9 (en düşük öncelik)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:163
 #, kde-format
 msgid "Set due date..."
-msgstr "Bitiş tarihi ayarla..."
+msgstr "Bitiş tarihi ayarla…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:191
 #, kde-format
@@ -817,13 +795,13 @@ msgstr "<b>%1</b> %2"
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
-msgstr "<b>%1</b> - %2"
+msgstr "<b>%1</b> — %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -855,7 +833,7 @@ msgstr "Sil"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:42
 #, kde-format
 msgid "Do you want to delete the calendar: \"%1\"?"
-msgstr "Takvimi silmek istiyor musunuz: \"%1\"?"
+msgstr "Takvimi silmek istiyor musunuz: “%1”?"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:48
 #: contacts/qml/private/DeleteContactAction.qml:25
@@ -877,7 +855,7 @@ msgstr "Sil: %1"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
-msgstr "Ögeyi silmek istiyor musunuz: \"%1\"?"
+msgstr "Ögeyi silmek istiyor musunuz: “%1”?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
@@ -885,8 +863,8 @@ msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
 "the currently selected item?"
 msgstr ""
-"\"%1\" ögesinin alt ögeleri var. Tüm ilgili ögeleri mi yoksa yalnızca seçili "
-"ögeyi mi silmek istersiniz?"
+"“%1” ögesinin alt ögeleri var. Tüm ilgili ögeleri mi yoksa yalnızca seçili "
+"ögeyi mi silmek istiyorsunuz?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:58
 #, kde-format
@@ -899,13 +877,13 @@ msgid ""
 "\n"
 "Deleting all will also delete sub-items!"
 msgstr ""
-"\"%1\" takvim ögesi, birden çok tarih için ayarlanmış. Bu ögenin aynı "
-"zamanda alt ögeleri de mevcut.\n"
+"“%1” takvim ögesi, birden çok tarih için ayarlanmış. Bu ögenin aynı zamanda "
+"alt ögeleri de var.\n"
 "\n"
 "%2 tarihindeki seçili oluşu mu silmek, gelecekteki oluşları mı silmek, yoksa "
-"tüm oluşları mı silmek istersiniz?\n"
+"tüm oluşları mı silmek istiyorsunuz?\n"
 "\n"
-"Silmek, aynı zamanda tüm alt ögeleri de silecektir!"
+"Tümünü silmek, aynı zamanda alt ögeleri de silecektir!"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:60
 #, kde-format
@@ -914,9 +892,9 @@ msgid ""
 "the selected occurrence on %2, also future occurrences, or all of its "
 "occurrences?"
 msgstr ""
-"\"%1\" takvim ögesi, birden çok tarih için ayarlanmış. %2 tarihindeki seçili "
+"“%1” takvim ögesi, birden çok tarih için ayarlanmış. %2 tarihindeki seçili "
 "oluşu mu silmek, gelecekteki oluşları mı silmek, yoksa tüm oluşları mı "
-"silmek istersiniz?"
+"silmek istiyorsunuz?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:75
 #, kde-format
@@ -938,320 +916,320 @@ msgstr "Yalnızca Bunu Sil"
 msgid "Delete All"
 msgstr "Tümünü Sil"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "%1 Düzenle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:46
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "%1 Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "Geçersiz tarih verildi."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:61
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "Bitiş tarihi başlangıç tarihinden önce olamaz."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "Kaydet"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:152
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:156
 #, kde-format
 msgid "Calendar:"
 msgstr "Takvim:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:180
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
 #, kde-format
 msgid "Summary:"
 msgstr "Özet:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
 msgstr "Görev için bir başlık ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
 msgstr "Etkinlik için bir başlık ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "Günce girdisi için bir başlık ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
 msgid "Completion:"
 msgstr "Tamamlama:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:236
 #, kde-format
 msgid "All day"
 msgstr "Tüm gün"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:268
 #, kde-format
 msgid "Start:"
 msgstr "Başlangıç:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "Due:"
 msgstr "Sona erme:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "End:"
 msgstr "Bitiş:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:364
 #, kde-format
 msgid "Timezone:"
 msgstr "Zaman dilimi:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:383
 #, kde-format
 msgid "Repeat:"
 msgstr "Yineleme:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Daily"
 msgstr "Günlük"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Weekly"
 msgstr "Haftalık"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #, kde-format
 msgid "Monthly"
 msgstr "Aylık"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgid "Yearly"
 msgstr "Yıllık"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:418
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "Özel"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:449
 #, kde-format
 msgid "Every:"
 msgstr "Her:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "gün"
 msgstr[1] "gün"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "hafta"
 msgstr[1] "hafta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:498
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "ay"
 msgstr[1] "ay"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:499
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "yıl"
 msgstr[1] "yıl"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:569
 #, kde-format
 msgid "On:"
 msgstr "Şu tarihte:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:577
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "Her ayın %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:589
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "Her ayın %1 %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:600
 #, kde-format
 msgid "Ends:"
 msgstr "Biter:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
 #, kde-format
 msgid "On"
 msgstr "Şu tarihte"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
 #, kde-format
 msgid "After"
 msgstr "Sonra"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:654
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "oluş"
 msgstr[1] "oluş"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:660
 #, kde-format
 msgid "Exceptions:"
 msgstr "İstisnalar:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:667
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "Yeniden Oluş İstisnası Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:724
 #, kde-format
 msgid "Location:"
 msgstr "Konum:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:749
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
 #, kde-format
 msgid "Optional"
 msgstr "İsteğe bağlı"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
 #, kde-format
 msgid "Show map"
 msgstr "Haritayı göster"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
 msgid "Tags:"
 msgstr "Etiketler:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Ayarlamak için dokun…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Ayarlamak için tıkla…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
 #, kde-format
 msgid "Manage tags…"
 msgstr "Etiketleri Yönet…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Reminders:"
 msgstr "Anımsatıcılar:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:938
 #, kde-format
 msgid "Add Reminder"
 msgstr "Anımsatıcı Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Attendees:"
 msgstr "Katılımcılar:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:987
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1012
 #, kde-format
 msgid "Email:"
 msgstr "E-posta:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1019
 #, kde-format
 msgid "Required"
 msgstr "Gerekli"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1028
 #, kde-format
 msgid "Status:"
 msgstr "Durum:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
 #, kde-format
 msgid "Request RSVP"
 msgstr "Davet Yanıtı İste"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Add Attendee"
 msgstr "Katılımcı Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1077
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Kişilerden Seç"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1081
 #, kde-format
 msgid "Fill in Manually"
 msgstr "El ile Doldur"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
 #, kde-format
 msgid "Attachments:"
 msgstr "Ekler:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1130
 #, kde-format
 msgid "Add Attachment"
 msgstr "Ek Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1137
 #, kde-format
 msgid "Add an attachment"
 msgstr "Bir ek ekle"
@@ -1530,7 +1508,7 @@ msgstr "Tüm gün için"
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:471
 #, kde-format
@@ -1807,7 +1785,7 @@ msgstr "Sunucu bilgisi"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:175
 #, kde-format
 msgid "Server URL"
-msgstr "Sunucu URL'si"
+msgstr "Sunucu URL’si"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:82
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:185
@@ -1840,7 +1818,7 @@ msgstr "Uygun/Meşgul Bilgisi E-postala"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr "Alıcının e-posta adresini gir..."
+msgstr "Alıcının e-posta adresini gir…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:138
@@ -2189,7 +2167,7 @@ msgstr "Dosya"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr "Merkuro'dan Çık"
+msgstr "Merkuro’dan Çık"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
 #, kde-format
@@ -3076,7 +3054,7 @@ msgstr[1] "E-posta Adresleri"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Kişi Silmeyi Onayla"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3085,10 +3063,9 @@ msgid "No name"
 msgstr "Adsız"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Kişinizi silmeyi gerçekten istiyor musunuz: \"%1\"?"
+msgstr "Kişinizi silmeyi gerçekten istiyor musunuz: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3332,12 +3309,12 @@ msgstr "Çöp Kutusuna Taşı"
 #: mail/qml/FolderView.qml:82
 #, kde-format
 msgid "Move Message to..."
-msgstr "İletiyi Şuraya Taşı..."
+msgstr "İletiyi Şuraya Taşı…"
 
 #: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Copy Message to..."
-msgstr "İletiyi Şuraya Kopyala..."
+msgstr "İletiyi Şuraya Kopyala…"
 
 #: mail/qml/FolderView.qml:92
 #, kde-format
@@ -3348,7 +3325,7 @@ msgstr "Takip Anımsatıcısı Ekle"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
-msgstr "Farklı Kaydet..."
+msgstr "Farklı Kaydet…"
 
 #: mail/qml/FolderView.qml:115
 #, kde-format
@@ -3482,19 +3459,17 @@ msgstr "Etiketleri Yönet"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Etiket Silmeyi Onayla"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "\"%1\" etiketini silmek istediğinizden emin misiniz?"
+msgstr "<b>%1</b> etiketini silmek istediğinizden emin misiniz?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Bu eylemi geri alınamaz"
+msgstr "Bu eylemi geri alınamaz."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
@@ -3505,6 +3480,19 @@ msgstr "Yeni Etiket Oluştur…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Tez Yeni Etiket Ekle."
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Days"
+#~ msgstr "Gün"
+
+#~ msgid "Months"
+#~ msgstr "Ay"
+
+#~ msgid "Years"
+#~ msgstr "Yıl"
 
 #~ msgctxt "@title:window"
 #~ msgid "Warning"

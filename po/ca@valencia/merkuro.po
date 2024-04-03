@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 11:25+0100\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-02 16:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -266,7 +266,7 @@ msgid "Developer"
 msgstr "Desenvolupador"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:860
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -341,8 +341,8 @@ msgstr[0] "Cada any %2 de %3"
 msgstr[1] "Cada %1 anys %2 de %3"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "Never"
 msgstr "Mai"
@@ -459,27 +459,6 @@ msgstr "Etiquetes"
 msgid "Calendars"
 msgstr "Calendaris"
 
-#: calendar/qml/Controls/DateControls/DatePicker.qml:138
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:182
-#, kde-format
-msgid "Days"
-msgstr "Dies"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:190
-#, kde-format
-msgid "Months"
-msgstr "Mesos"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:196
-#, kde-format
-msgid "Years"
-msgstr "Anys"
-
 #: calendar/qml/Controls/DateControls/TimePicker.qml:50
 #, kde-format
 msgid "Min. Interval:"
@@ -513,14 +492,13 @@ msgstr "Importa un calendari"
 msgid "Calendar files (*.ics *.vcs)"
 msgstr "Fitxers de calendari (*.ics *.vcs)"
 
-#: calendar/qml/Controls/ImportHandler.qml:97
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#: calendar/qml/Controls/ImportHandler.qml:99
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Importa un calendari"
 
-#: calendar/qml/Controls/ImportHandler.qml:102
+#: calendar/qml/Controls/ImportHandler.qml:104
 #, kde-format
 msgid ""
 "Would you like to merge this calendar file's events and tasks into one of "
@@ -533,17 +511,17 @@ msgstr ""
 "partir d'este fitxer?\n"
 " "
 
-#: calendar/qml/Controls/ImportHandler.qml:114
+#: calendar/qml/Controls/ImportHandler.qml:116
 #, kde-format
 msgid "Merge with existing calendar"
 msgstr "Fusiona amb el calendari existent"
 
-#: calendar/qml/Controls/ImportHandler.qml:132
+#: calendar/qml/Controls/ImportHandler.qml:134
 #, kde-format
 msgid "Create new calendar"
 msgstr "Crea un calendari nou"
 
-#: calendar/qml/Controls/ImportHandler.qml:146
+#: calendar/qml/Controls/ImportHandler.qml:148
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
@@ -881,7 +859,7 @@ msgstr "Suprimix %1"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
-msgstr "Segur que voleu suprimir este element: «%1»?"
+msgstr "Voleu suprimir l'element: «%1»?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
@@ -941,320 +919,320 @@ msgstr "Suprimix només esta"
 msgid "Delete All"
 msgstr "Suprimix-ho tot"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "Edita %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:46
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "Afig %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "S'han proporcionat dates no vàlides."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:61
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "La data de finalització no pot ser anterior a la d'inici."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "Guarda"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "Afig"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:152
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:156
 #, kde-format
 msgid "Calendar:"
 msgstr "Calendari:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:180
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
 #, kde-format
 msgid "Summary:"
 msgstr "Resum:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
 msgstr "Afegiu un títol per a la tasca"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
 msgstr "Afegiu un títol per a l'esdeveniment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "Afegiu un títol per a l'entrada del diari"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
 msgid "Completion:"
 msgstr "Compleció:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:236
 #, kde-format
 msgid "All day"
 msgstr "Tot el dia"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:268
 #, kde-format
 msgid "Start:"
 msgstr "Inici:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "Due:"
 msgstr "Venciment:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "End:"
 msgstr "Final:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:364
 #, kde-format
 msgid "Timezone:"
 msgstr "Zona horària:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:383
 #, kde-format
 msgid "Repeat:"
 msgstr "Repetix:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Daily"
 msgstr "Diàriament"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Weekly"
 msgstr "Setmanalment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #, kde-format
 msgid "Monthly"
 msgstr "Mensualment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgid "Yearly"
 msgstr "Anualment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:418
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "Personalitzat"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:449
 #, kde-format
 msgid "Every:"
 msgstr "Cada:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "dia"
 msgstr[1] "dies"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "setmana"
 msgstr[1] "setmanes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:498
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "mes"
 msgstr[1] "mesos"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:499
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "any"
 msgstr[1] "anys"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:569
 #, kde-format
 msgid "On:"
 msgstr "Actiu:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:577
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "%1 de cada mes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:589
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%2 de %1 de cada mes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:600
 #, kde-format
 msgid "Ends:"
 msgstr "Acaba:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
 #, kde-format
 msgid "On"
 msgstr "En"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
 #, kde-format
 msgid "After"
 msgstr "Després"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:654
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "ocurrència"
 msgstr[1] "ocurrències"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:660
 #, kde-format
 msgid "Exceptions:"
 msgstr "Excepcions:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:667
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "Afig una excepció de recurrència"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:724
 #, kde-format
 msgid "Location:"
 msgstr "Ubicació:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:749
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
 #, kde-format
 msgid "Optional"
 msgstr "Opcional"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
 #, kde-format
 msgid "Show map"
 msgstr "Mostra el mapa"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgid "Description:"
 msgstr "Descripció:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
 msgid "Tags:"
 msgstr "Etiquetes:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Toqueu per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Feu clic per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
 #, kde-format
 msgid "Manage tags…"
 msgstr "Gestiona les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Reminders:"
 msgstr "Recordatoris:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:938
 #, kde-format
 msgid "Add Reminder"
 msgstr "Afig un recordatori"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Attendees:"
 msgstr "Assistents:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:987
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Nom:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1012
 #, kde-format
 msgid "Email:"
 msgstr "Correu electrònic:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1019
 #, kde-format
 msgid "Required"
 msgstr "Requerit"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1028
 #, kde-format
 msgid "Status:"
 msgstr "Estat:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
 #, kde-format
 msgid "Request RSVP"
 msgstr "Demana RSVP"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Add Attendee"
 msgstr "Afig assistents"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1077
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Escolliu des dels contactes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1081
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Emplena manualment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
 #, kde-format
 msgid "Attachments:"
 msgstr "Adjunts:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1130
 #, kde-format
 msgid "Add Attachment"
 msgstr "Afig un adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1137
 #, kde-format
 msgid "Add an attachment"
 msgstr "Afig un adjunt"
@@ -3091,7 +3069,7 @@ msgstr[1] "Adreces de correu electrònic"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Confirmeu la supressió del contacte"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3100,10 +3078,9 @@ msgid "No name"
 msgstr "Sense nom"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Voleu suprimir este contacte: «%1»?"
+msgstr "Voleu suprimir el contacte: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3499,19 +3476,17 @@ msgstr "Gestioneu les etiquetes"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Confirmeu la supressió de l'etiqueta"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Segur que voleu suprimir l'etiqueta «%1»?"
+msgstr "Segur que voleu suprimir l'etiqueta <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "No podreu desfer esta acció"
+msgstr "No podreu desfer esta acció."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
@@ -3523,9 +3498,15 @@ msgstr "Crea una etiqueta nova…"
 msgid "Quickly Add a New Tag."
 msgstr "Afig ràpidament una etiqueta nova."
 
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "Avís"
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
 
-#~ msgid "Delete Tag"
-#~ msgstr "Suprimix l'etiqueta"
+#~ msgid "Days"
+#~ msgstr "Dies"
+
+#~ msgid "Months"
+#~ msgstr "Mesos"
+
+#~ msgid "Years"
+#~ msgstr "Anys"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 06:26+0100\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-02 06:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -263,7 +263,7 @@ msgid "Developer"
 msgstr "პროგრამისტი"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:860
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -338,8 +338,8 @@ msgstr[0] "ყოველ წელს, %3-ის %2-ზე"
 msgstr[1] "ყოველ %1 წელში, %3-ის %2-ზე"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "Never"
 msgstr "არასდროს"
@@ -456,27 +456,6 @@ msgstr "ჭდეები"
 msgid "Calendars"
 msgstr "კალენდრები"
 
-#: calendar/qml/Controls/DateControls/DatePicker.qml:138
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:182
-#, kde-format
-msgid "Days"
-msgstr "დღე"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:190
-#, kde-format
-msgid "Months"
-msgstr "თვე"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:196
-#, kde-format
-msgid "Years"
-msgstr "წელი"
-
 #: calendar/qml/Controls/DateControls/TimePicker.qml:50
 #, kde-format
 msgid "Min. Interval:"
@@ -510,14 +489,13 @@ msgstr "კალენდრის შემოტანა"
 msgid "Calendar files (*.ics *.vcs)"
 msgstr "კალენდარის ფაილები (*.ics *.vcs)"
 
-#: calendar/qml/Controls/ImportHandler.qml:97
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#: calendar/qml/Controls/ImportHandler.qml:99
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "კალენდრის შემოტანა"
 
-#: calendar/qml/Controls/ImportHandler.qml:102
+#: calendar/qml/Controls/ImportHandler.qml:104
 #, kde-format
 msgid ""
 "Would you like to merge this calendar file's events and tasks into one of "
@@ -529,17 +507,17 @@ msgstr ""
 "კალენდარში შეიტანოთ, თუ გირჩევნიათ, ამ ფაილიდან ახალი კალენდარი შექმნათ?\n"
 " "
 
-#: calendar/qml/Controls/ImportHandler.qml:114
+#: calendar/qml/Controls/ImportHandler.qml:116
 #, kde-format
 msgid "Merge with existing calendar"
 msgstr "არსებულ კალენდარში შერწყმა"
 
-#: calendar/qml/Controls/ImportHandler.qml:132
+#: calendar/qml/Controls/ImportHandler.qml:134
 #, kde-format
 msgid "Create new calendar"
 msgstr "ახალი კალენდარის შექმნა"
 
-#: calendar/qml/Controls/ImportHandler.qml:146
+#: calendar/qml/Controls/ImportHandler.qml:148
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
@@ -935,320 +913,320 @@ msgstr "მხოლოდ ამის წაშლა"
 msgid "Delete All"
 msgstr "ყველას წაშლა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "%1-ის ჩასწორება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:46
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "%1-ის დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "მითითებული თარიღები არასწორია."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:61
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "დასრულების თარიღი არ შეიძლება დაწყების თარიღამდე იყოს."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:152
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:156
 #, kde-format
 msgid "Calendar:"
 msgstr "კალენდარი:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:180
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
 #, kde-format
 msgid "Summary:"
 msgstr "შეჯამება:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
 msgstr "სათაურის დამატება თქვენი ამოცანისთვის"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
 msgstr "სათაურის დამატება თქვენი მოვლენისთვის"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "სათაურის დამატება თქვენი ჟურნალის ჩანაწერისთვის"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
 msgid "Completion:"
 msgstr "დასრულება:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:236
 #, kde-format
 msgid "All day"
 msgstr "მთელი დღე"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:268
 #, kde-format
 msgid "Start:"
 msgstr "დასაწყისი:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "Due:"
 msgstr "თარიღამდე:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "End:"
 msgstr "დასასრული:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:364
 #, kde-format
 msgid "Timezone:"
 msgstr "დროის სარტყელი:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:383
 #, kde-format
 msgid "Repeat:"
 msgstr "გამეორება:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Daily"
 msgstr "დღიურად"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Weekly"
 msgstr "კვირაში ერთხელ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #, kde-format
 msgid "Monthly"
 msgstr "თვეში ერთხელ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgid "Yearly"
 msgstr "წლიურად"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:418
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "სხვა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:449
 #, kde-format
 msgid "Every:"
 msgstr "ყოველ:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "დღე"
 msgstr[1] "დღე"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "კვირა"
 msgstr[1] "კვირა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:498
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "თვე"
 msgstr[1] "თვე"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:499
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "წელი"
 msgstr[1] "წელი"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:569
 #, kde-format
 msgid "On:"
 msgstr "დრო:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:577
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "ყოველი თვის %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:589
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%1 ყოველი თვის %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:600
 #, kde-format
 msgid "Ends:"
 msgstr "მთავრდება:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
 #, kde-format
 msgid "On"
 msgstr "დრო"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
 #, kde-format
 msgid "After"
 msgstr "შემდეგ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:654
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "შემთხვევა"
 msgstr[1] "შემთხვევა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:660
 #, kde-format
 msgid "Exceptions:"
 msgstr "გამონაკლისები:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:667
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "გამეორებადი გამონაკლისის დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:724
 #, kde-format
 msgid "Location:"
 msgstr "მდებარეობა:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:749
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
 #, kde-format
 msgid "Optional"
 msgstr "არასავალდებულო"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
 #, kde-format
 msgid "Show map"
 msgstr "რუკის ჩვენება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgid "Description:"
 msgstr "აღწერა:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
 msgid "Tags:"
 msgstr "ჭდეები:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "ჭდეების დასაყენებლად დაატყაპუნეთ…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Click to set tags…"
 msgstr "ჭდეების დასამატებლად დააწკაპუნეთ…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
 #, kde-format
 msgid "Manage tags…"
 msgstr "ჭდეების მართვა…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Reminders:"
 msgstr "შეხსენებები:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:938
 #, kde-format
 msgid "Add Reminder"
 msgstr "შეხსენების დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Attendees:"
 msgstr "დამსწრეები:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:987
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "სახელი:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1012
 #, kde-format
 msgid "Email:"
 msgstr "ელფოტა:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1019
 #, kde-format
 msgid "Required"
 msgstr "სავალდებულო"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1028
 #, kde-format
 msgid "Status:"
 msgstr "მდგომარეობა:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP-ის მოთხოვნა"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Add Attendee"
 msgstr "დამსწრის დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1077
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "აირჩიეთ კონტაქტებიდან"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1081
 #, kde-format
 msgid "Fill in Manually"
 msgstr "შეავსეთ ხელით"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
 #, kde-format
 msgid "Attachments:"
 msgstr "მიმაგრებული ფაილები:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1130
 #, kde-format
 msgid "Add Attachment"
 msgstr "მიმაგრების დამატება"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1137
 #, kde-format
 msgid "Add an attachment"
 msgstr "მიმაგრების დამატება"
@@ -3072,7 +3050,7 @@ msgstr[1] "ელფოსტის მისამართი"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "კონტაქტის წაშლის დადასტურება"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3081,10 +3059,9 @@ msgid "No name"
 msgstr "უსახელო"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი: \"%1\"?"
+msgstr "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3479,19 +3456,17 @@ msgstr "ჭდეების მართვა"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "ჭდის წაშლის დადასტურება"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ჭდე \"%1\" ?"
+msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ჭდე <b>%1</b> ?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "ამ მოქმედების დაბრუნებას ვერ შეძლებთ"
+msgstr "ეს ქმედება შეუქცევადია."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
@@ -3502,6 +3477,19 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Days"
+#~ msgstr "დღე"
+
+#~ msgid "Months"
+#~ msgstr "თვე"
+
+#~ msgid "Years"
+#~ msgstr "წელი"
 
 #~ msgctxt "@title:window"
 #~ msgid "Warning"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-02 00:38+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2024-02-14 19:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -262,7 +262,7 @@ msgid "Developer"
 msgstr "Kehittäjä"
 
 #: calendar/models/todosortfilterproxymodel.cpp:149
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:860
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -338,8 +338,8 @@ msgstr[0] "Joka vuosi %2.%3."
 msgstr[1] "Joka %1. vuosi %2.%3."
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:407
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:608
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "Never"
 msgstr "Ei koskaan"
@@ -457,27 +457,6 @@ msgstr "Luokitukset"
 msgid "Calendars"
 msgstr "Kalenterit"
 
-#: calendar/qml/Controls/DateControls/DatePicker.qml:138
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:182
-#, kde-format
-msgid "Days"
-msgstr "Päivät"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:190
-#, kde-format
-msgid "Months"
-msgstr "Kuukaudet"
-
-#: calendar/qml/Controls/DateControls/DatePicker.qml:196
-#, kde-format
-msgid "Years"
-msgstr "Vuodet"
-
 #: calendar/qml/Controls/DateControls/TimePicker.qml:50
 #, kde-format
 msgid "Min. Interval:"
@@ -511,14 +490,14 @@ msgstr "Tuo kalenteri"
 msgid "Calendar files (*.ics *.vcs)"
 msgstr "Kalenteritiedostot (*.ics *.vcs)"
 
-#: calendar/qml/Controls/ImportHandler.qml:97
+#: calendar/qml/Controls/ImportHandler.qml:99
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Tuo kalenteri"
 
-#: calendar/qml/Controls/ImportHandler.qml:102
+#: calendar/qml/Controls/ImportHandler.qml:104
 #, kde-format
 msgid ""
 "Would you like to merge this calendar file's events and tasks into one of "
@@ -530,17 +509,17 @@ msgstr ""
 "olevaan kalenteriin vai luoda tiedostosta uuden kalenterin?\n"
 " "
 
-#: calendar/qml/Controls/ImportHandler.qml:114
+#: calendar/qml/Controls/ImportHandler.qml:116
 #, kde-format
 msgid "Merge with existing calendar"
 msgstr "Yhdistä olemassa olevaan kalenteriin"
 
-#: calendar/qml/Controls/ImportHandler.qml:132
+#: calendar/qml/Controls/ImportHandler.qml:134
 #, kde-format
 msgid "Create new calendar"
 msgstr "Luo uusi kalenteri"
 
-#: calendar/qml/Controls/ImportHandler.qml:146
+#: calendar/qml/Controls/ImportHandler.qml:148
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
@@ -937,320 +916,320 @@ msgstr "Poista vain tämä"
 msgid "Delete All"
 msgstr "Poista kaikki"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "Muokkaa: %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:46
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "Lisää %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "Annettu virheellisiä päiväyksiä."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:61
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "Päättymispäivä ei voi olla ennen alkamispäivää."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "Tallenna"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:66
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:70
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "Lisää"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:152
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:156
 #, kde-format
 msgid "Calendar:"
 msgstr "Kalenteri:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:180
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
 #, kde-format
 msgid "Summary:"
 msgstr "Yhteenveto:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:183
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
 msgstr "Lisää tehtävääsi otsikko"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
 msgstr "Lisää tapahtumaasi otsikko"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "Lisää päiväkirjamerkintääsi otsikko"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:198
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
 msgid "Completion:"
 msgstr "Valmius:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:232
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:236
 #, kde-format
 msgid "All day"
 msgstr "Koko päivä"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:264
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:268
 #, kde-format
 msgid "Start:"
 msgstr "Alkaa:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "Due:"
 msgstr "Määräaika:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:311
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:315
 #, kde-format
 msgid "End:"
 msgstr "Päättyy:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:358
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:364
 #, kde-format
 msgid "Timezone:"
 msgstr "Aikavyöhyke:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:377
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:383
 #, kde-format
 msgid "Repeat:"
 msgstr "Toisto:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:408
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Daily"
 msgstr "Päivittäin"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:409
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Weekly"
 msgstr "Viikoittain"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #, kde-format
 msgid "Monthly"
 msgstr "Kuukausittain"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgid "Yearly"
 msgstr "Vuosittain"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:418
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:443
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:449
 #, kde-format
 msgid "Every:"
 msgstr "Joka:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:490
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "päivä"
 msgstr[1] "päivää"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:491
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "viikko"
 msgstr[1] "viikkoa"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:492
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:498
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "kuukausi"
 msgstr[1] "kuukautta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:499
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "vuosi"
 msgstr[1] "vuotta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:563
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:569
 #, kde-format
 msgid "On:"
 msgstr "Aika:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:571
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:577
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "%1. päivä joka kuuta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:589
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "Joka kuun %1 %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:594
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:600
 #, kde-format
 msgid "Ends:"
 msgstr "Päättyy:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:609
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
 #, kde-format
 msgid "On"
 msgstr "Käytössä"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:610
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
 #, kde-format
 msgid "After"
 msgstr "Jälkeen"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:646
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:654
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "kerta"
 msgstr[1] "kertaa"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:660
 #, kde-format
 msgid "Exceptions:"
 msgstr "Poikkeukset:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:667
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "Lisää poikkeus toistoon"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:724
 #, kde-format
 msgid "Location:"
 msgstr "Sijainti:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:734
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:821
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:749
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:994
 #, kde-format
 msgid "Optional"
 msgstr "Valinnainen"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
 #, kde-format
 msgid "Show map"
 msgstr "Näytä kartta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:815
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
 #, kde-format
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:836
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
 msgid "Tags:"
 msgstr "Tunnisteet:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Aseta luokituksia napauttamalla…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:846
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:861
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Aseta luokituksia napsauttamalla…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:889
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:904
 #, kde-format
 msgid "Manage tags…"
 msgstr "Hallitse luokituksia…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:900
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Reminders:"
 msgstr "Muistutukset:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:938
 #, kde-format
 msgid "Add Reminder"
 msgstr "Lisää muistutus"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:937
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Attendees:"
 msgstr "Osallistujat:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:987
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Nimi:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1012
 #, kde-format
 msgid "Email:"
 msgstr "Sähköposti:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1019
 #, kde-format
 msgid "Required"
 msgstr "Pakollinen"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1028
 #, kde-format
 msgid "Status:"
 msgstr "Tila:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
 #, kde-format
 msgid "Request RSVP"
 msgstr "Pyydä vastausta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgid "Add Attendee"
 msgstr "Lisää osallistuja"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1062
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1077
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Valitse yhteystiedoista"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1081
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Täytä käsin"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1080
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
 #, kde-format
 msgid "Attachments:"
 msgstr "Liitteet:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1130
 #, kde-format
 msgid "Add Attachment"
 msgstr "Lisää liite"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1122
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1137
 #, kde-format
 msgid "Add an attachment"
 msgstr "Lisää liite"
@@ -3507,6 +3486,19 @@ msgstr "Luo uusi luokitus…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lisää pikaisesti uusi luokitus."
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Days"
+#~ msgstr "Päivät"
+
+#~ msgid "Months"
+#~ msgstr "Kuukaudet"
+
+#~ msgid "Years"
+#~ msgstr "Vuodet"
 
 #~ msgctxt "@title:window"
 #~ msgid "Warning"
