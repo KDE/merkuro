@@ -43,7 +43,7 @@ private:
     void updateKeyFilter();
     [[nodiscard]] QModelIndex indexForKey(const QByteArray &key) const;
 
-    Kleo::KeyListSortFilterProxyModel *m_baseModel = nullptr;
+    Kleo::KeyListSortFilterProxyModel *const m_baseModel;
     TypeKeys m_displayedTypeKeys = TypeKeys::AnyTypeKeys;
 
     const int m_noKeyRow = 0;

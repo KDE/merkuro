@@ -12,11 +12,11 @@
 
 IdentityKeyListModel::IdentityKeyListModel(QObject *parent, const TypeKeys typeOfKeysToDisplay)
     : QIdentityProxyModel(parent)
+    , m_baseModel(new Kleo::KeyListSortFilterProxyModel(this))
 {
     const auto flatModel = Kleo::AbstractKeyListModel::createFlatKeyListModel(this);
     const auto keys = Kleo::KeyCache::instance()->keys();
     flatModel->setKeys(keys);
-    m_baseModel = new Kleo::KeyListSortFilterProxyModel(this);
     m_baseModel->setSourceModel(flatModel);
     setSourceModel(m_baseModel);
 

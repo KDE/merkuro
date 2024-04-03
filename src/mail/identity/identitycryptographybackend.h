@@ -25,7 +25,7 @@ protected:
     void setIdentity(const KIdentityManagementCore::Identity &identity) override;
 
 private:
-    IdentityKeyListModel *m_openPgpKeyListModel = nullptr;
-    IdentityKeyListModel *m_smimeKeyListModel = nullptr;
+    IdentityKeyListModel *const m_openPgpKeyListModel;
+    IdentityKeyListModel *const m_smimeKeyListModel;
     KIdentityManagementCore::Identity m_identity;
 };
