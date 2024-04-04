@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
         QQC2.ComboBox {
             id: identity
             model: KIdentityManagement.IdentityModel {}
-            textRole: "display"
+            textRole: "displayName"
             valueRole: "uoid"
             onCurrentIndexChanged: from.text = model.email(currentValue)
             Layout.rightMargin: Kirigami.Units.largeSpacing
