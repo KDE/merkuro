@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2024-04-02 19:12\n"
+"POT-Creation-Date: 2024-04-04 00:39+0000\n"
+"PO-Revision-Date: 2024-04-03 19:13\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -499,23 +499,23 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, kde-format
-msgid "Merge with existing calendar"
+#, fuzzy, kde-format
+#| msgid "Merge with existing calendar"
+msgctxt "@action:button merge with existing calendar"
+msgid "Merge with Existing"
 msgstr "合并入已有日历"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, kde-format
-msgid "Create new calendar"
-msgstr "新建日历"
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button Create new calendar"
+msgid "Create New"
+msgstr "创建"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:47
-#: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
@@ -827,6 +827,16 @@ msgstr ""
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr "您将无法恢复此操作"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
+#: contacts/qml/private/DeleteContactAction.qml:47
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
+#, kde-format
+msgid "Cancel"
+msgstr "取消"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
@@ -3443,15 +3453,5 @@ msgstr "新建标签..."
 msgid "Quickly Add a New Tag."
 msgstr "快速添加新标签。"
 
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%2 %1"
-
-#~ msgid "Days"
-#~ msgstr "日"
-
-#~ msgid "Months"
-#~ msgstr "月"
-
-#~ msgid "Years"
-#~ msgstr "年"
+#~ msgid "Create new calendar"
+#~ msgstr "新建日历"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-04-04 00:39+0000\n"
 "PO-Revision-Date: 2024-03-16 11:02+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -508,23 +508,23 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, kde-format
-msgid "Merge with existing calendar"
+#, fuzzy, kde-format
+#| msgid "Merge with existing calendar"
+msgctxt "@action:button merge with existing calendar"
+msgid "Merge with Existing"
 msgstr "Összefésülés a meglévő naptárral"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, kde-format
-msgid "Create new calendar"
-msgstr "Új naptár létrehozása"
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button Create new calendar"
+msgid "Create New"
+msgstr "Létrehozás"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:47
-#: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -839,6 +839,16 @@ msgstr "Szeretné törölni ezt a naptárat: „%1”?"
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr "Ez a művelet nem vonható vissza"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
+#: contacts/qml/private/DeleteContactAction.qml:47
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
+#, kde-format
+msgid "Cancel"
+msgstr "Mégse"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
@@ -3482,6 +3492,9 @@ msgstr "Új címke létrehozása…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Új címke gyors hozzáadása."
+
+#~ msgid "Create new calendar"
+#~ msgstr "Új naptár létrehozása"
 
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"

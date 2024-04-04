@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 16:52+0100\n"
+"POT-Creation-Date: 2024-04-04 00:39+0000\n"
+"PO-Revision-Date: 2024-04-02 13:37+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -491,8 +491,7 @@ msgid "Calendar files (*.ics *.vcs)"
 msgstr "File di calendario (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:99
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Importa calendario"
@@ -511,23 +510,23 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, kde-format
-msgid "Merge with existing calendar"
+#, fuzzy, kde-format
+#| msgid "Merge with existing calendar"
+msgctxt "@action:button merge with existing calendar"
+msgid "Merge with Existing"
 msgstr "Fondi con un calendario esistente"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, kde-format
-msgid "Create new calendar"
-msgstr "Crea un nuovo calendario"
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button Create new calendar"
+msgid "Create New"
+msgstr "Crea"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:47
-#: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -842,6 +841,16 @@ msgstr "Vuoi eliminare il calendario: «%1»?"
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr "Non potrai annullare questa azione"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
+#: contacts/qml/private/DeleteContactAction.qml:47
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
+#, kde-format
+msgid "Cancel"
+msgstr "Annulla"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
@@ -3065,7 +3074,7 @@ msgstr[1] "Indirizzi di posta elettronica"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Conferma l'eliminazione del contatto"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3074,10 +3083,9 @@ msgid "No name"
 msgstr "Nessun nome"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Vuoi davvero eliminare il contatto: \"%1?"
+msgstr "Vuoi davvero eliminare il tuo contatto: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3471,19 +3479,17 @@ msgstr "Gestisci le etichette"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Conferma l'eliminazione dell'etichetta"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Se sicuro di voler eliminare l'etichetta «%1»?"
+msgstr "Se sicuro di voler eliminare l'etichetta <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Non potrai annullare questa azione"
+msgstr "Non potrai annullare questa azione."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
@@ -3494,6 +3500,9 @@ msgstr "Crea una nuova etichetta…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Aggiungi rapidamente una nuova etichetta."
+
+#~ msgid "Create new calendar"
+#~ msgstr "Crea un nuovo calendario"
 
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"

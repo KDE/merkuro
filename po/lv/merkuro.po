@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-04-04 00:39+0000\n"
 "PO-Revision-Date: 2022-03-30 17:51+0300\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -526,23 +526,23 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, kde-format
-msgid "Merge with existing calendar"
+#, fuzzy, kde-format
+#| msgid "Merge with existing calendar"
+msgctxt "@action:button merge with existing calendar"
+msgid "Merge with Existing"
 msgstr "Apvienot ar jau esošu kalendāru"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, kde-format
-msgid "Create new calendar"
-msgstr "Radīt jaunu kalendāru"
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button Create new calendar"
+msgid "Create New"
+msgstr "Radīt"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:47
-#: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Atcelt"
 
@@ -874,6 +874,16 @@ msgstr "Vai jūs vēlaties dzēst kalendāru: \"%1\"?"
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr ""
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
+#: contacts/qml/private/DeleteContactAction.qml:47
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
+#, kde-format
+msgid "Cancel"
+msgstr "Atcelt"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
@@ -3631,6 +3641,9 @@ msgstr "Izveidot jaunu atzīmi..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Ātri izveidot jaunu atzīmi."
+
+#~ msgid "Create new calendar"
+#~ msgstr "Radīt jaunu kalendāru"
 
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"

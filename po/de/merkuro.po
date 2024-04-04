@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-04-04 00:39+0000\n"
 "PO-Revision-Date: 2023-08-14 21:52+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -514,23 +514,23 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, kde-format
-msgid "Merge with existing calendar"
+#, fuzzy, kde-format
+#| msgid "Merge with existing calendar"
+msgctxt "@action:button merge with existing calendar"
+msgid "Merge with Existing"
 msgstr "Mit bestehendem Kalender zusammenführen"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, kde-format
-msgid "Create new calendar"
-msgstr "Neuen Kalender hinzufügen"
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button Create new calendar"
+msgid "Create New"
+msgstr "Erstellen"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
-#: contacts/qml/private/DeleteContactAction.qml:47
-#: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -848,6 +848,16 @@ msgstr "Möchten Sie den Kalender „%1“ löschen?"
 #, kde-format
 msgid "You won't be able to revert this action"
 msgstr "Diese Aktion kann nicht rückgängig gemacht werden"
+
+#: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
+#: contacts/qml/private/DeleteContactAction.qml:47
+#: mail/qml/actions/DeleteFolderAction.qml:32
+#: mail/qml/actions/NewFolderAction.qml:31
+#, kde-format
+msgid "Cancel"
+msgstr "Abbrechen"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
@@ -3521,6 +3531,9 @@ msgstr "Neues Stichwort erstellen ..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Neues Stichwort schnell erstellen."
+
+#~ msgid "Create new calendar"
+#~ msgstr "Neuen Kalender hinzufügen"
 
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"
