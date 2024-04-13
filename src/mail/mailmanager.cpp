@@ -276,3 +276,5 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
         }
     });
 }
+
+#include "moc_mailmanager.cpp"

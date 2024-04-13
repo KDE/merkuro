@@ -207,3 +207,4 @@ void MailClient::handleQueueJobFinished(KJob *job)
         Q_EMIT finished(ResultSuccess, QString());
     }
 }
+#include "moc_mailclient.cpp"
