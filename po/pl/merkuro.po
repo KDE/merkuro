@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-04 00:39+0000\n"
-"PO-Revision-Date: 2024-01-21 08:34+0100\n"
+"PO-Revision-Date: 2024-04-27 11:06+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -500,8 +500,7 @@ msgid "Calendar files (*.ics *.vcs)"
 msgstr "Pliki kalendarza (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:99
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Zaimportuj kalendarz"
@@ -519,22 +518,19 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, fuzzy, kde-format
-#| msgid "Merge with existing calendar"
+#, kde-format
 msgctxt "@action:button merge with existing calendar"
 msgid "Merge with Existing"
-msgstr "Zaimportuj do bieżącego kalendarza"
+msgstr "Scal z bieżącym"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create new calendar"
 msgid "Create New"
-msgstr "Utwórz"
+msgstr "Utwórz nowy"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Anuluj"
@@ -852,7 +848,7 @@ msgstr "Czy usunąć kalendarz: \"%1\"?"
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr "Nie będziesz w stanie cofnąć tego działania"
+msgstr "Nie będzie można wycofać tego działania"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:109
@@ -3084,7 +3080,7 @@ msgstr[2] "Adresy e-mail"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Potwierdź usunięcie kontaktu"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3093,10 +3089,9 @@ msgid "No name"
 msgstr "Brak nazwy"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Czy na pewno chcesz usunąć swój kontakt: \"%1\"?"
+msgstr "Czy na pewno usunąć swój kontakt: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3490,19 +3485,17 @@ msgstr "Zarządzanie znacznikami"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Potwierdzenie usunięcia znacznika"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Czy na pewno usunąć znacznik \"%1\"?"
+msgstr "Czy na pewno usunąć znacznik <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Nie będziesz w stanie cofnąć tego działania"
+msgstr "Nie będzie można wycofać tego działania."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
