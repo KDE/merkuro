@@ -602,7 +602,7 @@ Kirigami.ScrollablePage {
                         QQC2.ComboBox {
                             id: endRecurType
 
-                            Layout.fillWidth: true
+                            Layout.fillWidth: currentIndex !== 1 //The end date combo box should fill the layout
                             // Recurrence duration returns -1 for never ending and 0 when the recurrence
                             // end date is set. Any number larger is the set number of recurrences
                             currentIndex: root.incidenceWrapper.recurrenceData.duration <= 0 ?
@@ -630,7 +630,7 @@ Kirigami.ScrollablePage {
                                 root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date());
                             }
 
-                            display: root.incidenceWrapper.recurrenceData.endDateTimeDisplay
+                            display: root.incidenceWrapper.recurrenceData.endDateDisplay
                             dateTime: root.incidenceWrapper.recurrenceData.endDateTime
                             onNewDateChosen: (day, month, year) => {
                                 root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date(year, month - 1, day));

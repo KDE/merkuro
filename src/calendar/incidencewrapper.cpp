@@ -504,6 +504,7 @@ QVariantMap IncidenceWrapper::recurrenceData()
         {QStringLiteral("startDateTimeDisplay"), QLocale::system().toString(m_incidence->recurrence()->startDateTime(), QLocale::NarrowFormat)},
         {QStringLiteral("endDateTime"), m_incidence->recurrence()->endDateTime()},
         {QStringLiteral("endDateTimeDisplay"), QLocale::system().toString(m_incidence->recurrence()->endDateTime(), QLocale::NarrowFormat)},
+        {QStringLiteral("endDateDisplay"), QLocale::system().toString(m_incidence->recurrence()->endDate(), QLocale::NarrowFormat)},
         {QStringLiteral("allDay"), m_incidence->recurrence()->allDay()},
         {QStringLiteral("type"), m_incidence->recurrence()->recurrenceType()},
         {QStringLiteral("monthDays"), QVariant::fromValue(m_incidence->recurrence()->monthDays())},
