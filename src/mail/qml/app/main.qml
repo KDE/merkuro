@@ -7,6 +7,7 @@ import org.kde.merkuro.components 1.0
 import org.kde.merkuro.mail 1.0 as Mail
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.merkuro.mail.settings as Settings
 
 BaseApplication {
     id: root
@@ -39,14 +40,12 @@ BaseApplication {
         target: Mail.MailApplication
 
         function onOpenSettings() {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/qml/settings/Settings.qml", {
-                width: root.width
-            }, {
-                title: i18n("Configure"),
-                width: Kirigami.Units.gridUnit * 40,
-                height: Kirigami.Units.gridUnit * 30
-            });
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+            settings.open();
         }
+    }
+
+    Settings.Settings {
+        id: settings
+        window: root
     }
 }

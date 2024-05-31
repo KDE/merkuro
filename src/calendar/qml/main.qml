@@ -224,25 +224,11 @@ BaseApplication {
         }
 
         function onConfigureSchedule() {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/ScheduleSettingsPage.qml", {
-                width: root.width
-            }, {
-                title: i18n("Configure Schedule"),
-                width: Kirigami.Units.gridUnit * 45,
-                height: Kirigami.Units.gridUnit * 35
-            });
-            openDialogWindow.Keys.escapePressed.connect(() => openDialogWindow.closeDialog());
+            configurationsView.open("freebusy");
         }
 
         function onOpenSettings() {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/SettingsPage.qml", {
-                width: root.width
-            }, {
-                title: i18n("Configure"),
-                width: Kirigami.Units.gridUnit * 45,
-                height: Kirigami.Units.gridUnit * 35
-            });
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+            configurationsView.open();
         }
 
         function onRefreshAll() {
@@ -285,6 +271,10 @@ BaseApplication {
             undoAction.enabled = CalendarManager.undoRedoData.undoAvailable;
             redoAction.enabled = CalendarManager.undoRedoData.redoAvailable;
         }
+    }
+
+    ConfigurationsView {
+        id: configurationsView
     }
 
     property Kirigami.Action createAction: Kirigami.Action {

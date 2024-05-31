@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
+add_subdirectory(settings)
+
 set(merkuro_mail_SRCS
     mailapplication.cpp
     mailapplication.h
@@ -131,8 +133,9 @@ target_link_libraries(merkuro-mail
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
-	KPim6::Mime
+        KPim6::Mime
         KPim6::MimeTreeParserCore
+        mail_settingsplugin
 )
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})

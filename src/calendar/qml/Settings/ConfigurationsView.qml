@@ -8,26 +8,26 @@ import QtQuick.Layouts
 import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
 import org.kde.merkuro.calendar 1.0
 
-KirigamiSettings.CategorizedSettings {
+KirigamiSettings.ConfigurationsView {
     objectName: "settingsPage"
-    actions: [
-        KirigamiSettings.SettingAction {
-            actionName: "appearance"
+    modules: [
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "appearance"
             text: i18n("Appearance")
             icon.name: "preferences-desktop-theme-global"
-            page: Qt.resolvedUrl("ViewSettingsPage.qml")
+            page: () => Qt.createComponent("ViewSettingsPage.qml")
         },
-        KirigamiSettings.SettingAction {
-            actionName: "users"
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "users"
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
-            page: Qt.resolvedUrl("SourceSettingsPage.qml")
+            page: () => Qt.createComponent("SourceSettingsPage.qml")
         },
-        KirigamiSettings.SettingAction {
-            actionName: "freebusy"
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "freebusy"
             text: i18n("Free/Busy")
             icon.name: "view-calendar-month"
-            page: Qt.resolvedUrl("FreeBusySettingsPage.qml")
+            page: () => Qt.createComponent("FreeBusySettingsPage.qml")
         }
     ]
 }

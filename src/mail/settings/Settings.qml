@@ -4,14 +4,14 @@
 import QtQuick
 import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
 
-KirigamiSettings.CategorizedSettings {
+KirigamiSettings.ConfigurationsView {
     objectName: "settingsPage"
-    actions: [
-        KirigamiSettings.SettingAction {
-            actionName: "accounts"
+    modules: [
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "accounts"
             text: i18nc("@title", "Accounts")
             icon.name: "preferences-system-users"
-            page: Qt.resolvedUrl("AccountSettingsPage.qml")
+            page: () => Qt.createComponent("AccountSettingsPage.qml")
         }
     ]
 }
