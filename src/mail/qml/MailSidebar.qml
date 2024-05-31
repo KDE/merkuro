@@ -89,7 +89,9 @@ Kirigami.OverlayDrawer {
 
             QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
-            contentItem: MailBoxList { }
+            contentItem: MailBoxList {
+                clip: true
+            }
 
             property Kirigami.PagePool pagePool: Kirigami.PagePool {
                 id: pagePool
