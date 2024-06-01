@@ -680,7 +680,7 @@ Kirigami.ScrollablePage {
                                 target: Calendar.DatePopupSingleton
                                 enabled: false
 
-                                onAccepted: {
+                                function onAccepted(): void {
                                     root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(Calendar.DatePopupSingleton.value);
                                     Calendar.DatePopupSingleton.close();
                                 }
