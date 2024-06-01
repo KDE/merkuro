@@ -23,7 +23,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
-    [[nodiscard]] QColor getCollectionColor(Akonadi::Collection collection) const;
+    QColor getCollectionColor(Akonadi::Collection collection) const;
     [[nodiscard]] QColor color(Akonadi::Collection::Id collectionId) const;
     void setColor(Akonadi::Collection::Id collectionId, const QColor &color);
 
