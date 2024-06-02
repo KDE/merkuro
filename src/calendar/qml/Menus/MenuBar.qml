@@ -145,23 +145,8 @@ QQC2.MenuBar {
 
     WindowMenu {}
 
-    QQC2.Menu {
-        title: i18nc("@action:menu", "Settings")
-
-        KActionFromAction {
-            action: CalendarApplication.action("open_tag_manager")
-        }
-
-        QQC2.MenuSeparator {
-        }
-
-        KActionFromAction {
-            action: CalendarApplication.action("options_configure_keybinding")
-        }
-
-        KActionFromAction {
-            action: CalendarApplication.action("options_configure")
-        }
+    SettingsMenu {
+        application: CalendarApplication
     }
 
     QQC2.Menu {
