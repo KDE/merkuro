@@ -13,6 +13,10 @@ QQC2.Menu {
     title: i18nc("@action:menu", "Settings")
 
     KActionFromAction {
+        action: root.application.action("toggle_menubar")
+    }
+
+    KActionFromAction {
         action: root.application.action("open_tag_manager")
     }
 
