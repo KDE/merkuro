@@ -335,7 +335,10 @@ BaseApplication {
 
     menuBar: Loader {
         id: menuLoader
-        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && applicationWindow().pageStack.currentItem
+        active: Config.showMenubar &&
+                !Kirigami.Settings.hasPlatformMenuBar &&
+                !Kirigami.Settings.isMobile &&
+                applicationWindow().pageStack.currentItem
 
         height: active ? implicitHeight : 0
 
