@@ -368,7 +368,7 @@ Kirigami.OverlayDrawer {
             id: textMetrics
         }
 
-        implicitHeight: textMetrics.height + Kirigami.Units.largeSpacing * 2 - 1
+        implicitHeight: textMetrics.height + Kirigami.Units.largeSpacing * 2
         topInset: Kirigami.Units.smallSpacing
         bottomInset: Kirigami.Units.smallSpacing
         icon.name: "show-all-effects"
