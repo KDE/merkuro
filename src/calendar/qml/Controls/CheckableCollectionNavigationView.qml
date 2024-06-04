@@ -377,8 +377,7 @@ QQC2.ScrollView {
                             enabled: mode !== CalendarApplication.Contact
                             onLeftClicked: {
                                 Filter.collectionId = collectionId;
-                                model.checkState = model.checkState === 0 ? 2 : 0;
-                                root.collectionCheckChanged();
+
                                 if (root.parentDrawerModal) {
                                     root.closeParentDrawer();
                                 }
