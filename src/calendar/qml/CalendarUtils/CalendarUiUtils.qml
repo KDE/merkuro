@@ -22,6 +22,7 @@ QtObject {
             appMain.editorWindowedLoaderItem.active = true
             return appMain.editorWindowedLoaderItem.item.incidenceEditorPage
         } else {
+            const incidenceEditorPage = appMain.incidenceEditorPageItem;
             appMain.pageStack.layers.push(incidenceEditorPage);
             return incidenceEditorPage;
         }

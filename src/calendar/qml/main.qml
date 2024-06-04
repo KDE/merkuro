@@ -547,6 +547,7 @@ BaseApplication {
         onEdited: CalendarManager.editIncidence(incidenceWrapper)
         onCancel: pageStack.layers.pop()
     }
+    property alias incidenceEditorPageItem: incidenceEditorPage
 
     property alias editorWindowedLoaderItem: editorWindowedLoader
     Loader {
