@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "todosortfilterproxymodel.h"
+
+#include <Akonadi/CollectionColorAttribute>
+
 #include "../filter.h"
 
 TodoSortFilterProxyModel::TodoSortFilterProxyModel(QObject *parent)
@@ -105,8 +108,18 @@ QVariant TodoSortFilterProxyModel::data(const QModelIndex &index, int role) cons
     } else if (role == Roles::AllDayRole) {
         return todoPtr->allDay();
     } else if (role == Roles::ColorRole) {
-        QColor nullcolor;
-        return m_colors.contains(QString::number(collectionId)) ? m_colors[QString::number(collectionId)] : nullcolor;
+        if (m_colors.contains(QString::number(collectionId))) {
+            return m_colors[QString::number(collectionId)];
+        }
+
+        // TODO: We should use the same approach as we do in calendarmanager. We can probably create a shared collection color cache
+        if (const auto collection = m_calendar->collection(collectionId); collection.hasAttribute<Akonadi::CollectionColorAttribute>()) {
+            if (const auto colorAttr = collection.attribute<Akonadi::CollectionColorAttribute>(); colorAttr->color().isValid()) {
+                return colorAttr->color();
+            }
+        }
+
+        return QColor();
     } else if (role == Roles::CompletedRole) {
         return todoPtr->isCompleted();
     } else if (role == Roles::PriorityRole) {
