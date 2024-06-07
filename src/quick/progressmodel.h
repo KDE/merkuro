@@ -12,6 +12,10 @@ namespace Akonadi::Quick
 class ProgressModel : public QAbstractListModel
 {
     Q_OBJECT
+    // Properties useful for progress bar displaying overall progress status
+    Q_PROPERTY(bool working READ working NOTIFY workingChanged)
+    Q_PROPERTY(bool indeterminate READ indeterminate NOTIFY indeterminateChanged)
+    Q_PROPERTY(unsigned int progress READ progress NOTIFY progressChanged)
 
 public:
     enum Roles {
@@ -27,8 +31,15 @@ public:
     [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
+    [[nodiscard]] bool working() const;
+    [[nodiscard]] bool indeterminate() const;
+    [[nodiscard]] unsigned int progress() const;
+
 Q_SIGNALS:
     void showProgressView();
+    void workingChanged();
+    void indeterminateChanged();
+    void progressChanged();
 
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
@@ -39,8 +50,12 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles);
+    void updateOverallProperties();
 
 private:
     QList<KPIM::ProgressItem *> m_items;
+    bool m_working = false;
+    bool m_indeterminate = false;
+    unsigned int m_progress = 0;
 };
 }

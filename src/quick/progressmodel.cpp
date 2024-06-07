@@ -23,6 +23,7 @@ void ProgressModel::slotProgressItemAdded(KPIM::ProgressItem *const item)
     beginInsertRows(QModelIndex(), rowCount(), rowCount());
     m_items.append(item);
     endInsertRows();
+    updateOverallProperties();
 }
 
 void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
@@ -34,6 +35,7 @@ void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
     beginRemoveRows(QModelIndex(), row, row);
     m_items.removeAt(row);
     endRemoveRows();
+    updateOverallProperties();
 }
 
 void ProgressModel::slotProgressItemProgress(KPIM::ProgressItem *const item, const unsigned int progress)
@@ -62,6 +64,7 @@ void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, 
     }
     const auto idx = index(row);
     Q_EMIT dataChanged(idx, idx, roles);
+    updateOverallProperties();
 }
 
 int ProgressModel::rowCount(const QModelIndex &parent) const
@@ -100,4 +103,43 @@ QHash<int, QByteArray> ProgressModel::roleNames() const
         {CanBeCancelledRole, "canBeCancelled"},
     });
     return rolenames;
+}
+
+bool ProgressModel::working() const
+{
+    return m_working;
+}
+
+bool ProgressModel::indeterminate() const
+{
+    return m_indeterminate;
+}
+
+unsigned int ProgressModel::progress() const
+{
+    return m_progress;
+}
+
+void ProgressModel::updateOverallProperties()
+{
+    const auto working = !m_items.isEmpty();
+    if (m_working != working) {
+        m_working = working;
+        Q_EMIT workingChanged();
+    }
+
+    const auto indeterminate = m_items.count() > 1;
+    if (m_indeterminate != indeterminate) {
+        m_indeterminate = indeterminate;
+        Q_EMIT indeterminateChanged();
+    }
+
+    if (working && !indeterminate) {
+        const auto item = m_items.first();
+        const auto progress = item != nullptr ? item->progress() : 0;
+        if (m_progress != progress) {
+            m_progress = progress;
+            Q_EMIT progressChanged();
+        }
+    }
 }
