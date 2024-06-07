@@ -23,6 +23,13 @@ void MailApplication::setupActions()
         action->setIcon(QIcon::fromTheme(QStringLiteral("mail-message-new")));
     }
 
+    const auto checkMailActionName = QLatin1StringView("check_mail");
+    if (KAuthorized::authorizeAction(checkMailActionName)) {
+        const auto action = mCollection->addAction(checkMailActionName, this, &MailApplication::checkMail);
+        action->setText(i18n("Check Mail"));
+        action->setIcon(QIcon::fromTheme(QStringLiteral("mail-receive")));
+    }
+
     mCollection->readSettings();
 }
 

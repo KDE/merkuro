@@ -14,6 +14,7 @@ public:
 
 Q_SIGNALS:
     void createNewMail();
+    void checkMail();
 
 private:
     void setupActions() override;
