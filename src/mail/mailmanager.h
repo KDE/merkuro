@@ -51,6 +51,7 @@ public:
     Q_INVOKABLE void editCollection(const QModelIndex &index);
     Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
     Q_INVOKABLE void saveMail(const QUrl &fileUrl, const Akonadi::Item &item);
+    Q_INVOKABLE void checkMail();
 
 Q_SIGNALS:
     void loadingChanged();

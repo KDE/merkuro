@@ -8,6 +8,7 @@
 
 #include "mailkernel.h"
 #include "sortedcollectionproxymodel.h"
+
 #include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/CollectionCreateJob>
@@ -31,6 +32,7 @@
 #include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
+#include <MailCommon/MailUtil>
 #include <QApplication>
 #include <QLoggingCategory>
 #include <QPointer>
@@ -275,6 +277,17 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
             qCWarning(merkuro_MAIL_LOG) << "Error occured: error saving mail";
         }
     });
+}
+
+void MailManager::checkMail()
+{
+    auto agents = MailCommon::Util::agentInstances();
+    for (auto &agent : agents) {
+        if (!agent.isOnline()) {
+            agent.setIsOnline(true);
+        }
+        agent.synchronize();
+    }
 }
 
 #include "moc_mailmanager.cpp"
