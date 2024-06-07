@@ -14,6 +14,13 @@ class ProgressModel : public QAbstractListModel
     Q_OBJECT
 
 public:
+    enum Roles {
+        ProgressRole = Qt::UserRole + 1,
+        StatusRole,
+        CanBeCancelledRole,
+    };
+    Q_ENUM(Roles)
+
     explicit ProgressModel(QObject *const parent = nullptr);
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
