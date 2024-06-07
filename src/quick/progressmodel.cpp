@@ -58,3 +58,14 @@ QVariant ProgressModel::data(const QModelIndex &index, int role) const
         return {};
     }
 }
+
+QHash<int, QByteArray> ProgressModel::roleNames() const
+{
+    auto rolenames = QAbstractListModel::roleNames();
+    rolenames.insert({
+        {ProgressRole, "progress"},
+        {StatusRole, "status"},
+        {CanBeCancelledRole, "canBeCancelled"},
+    });
+    return rolenames;
+}

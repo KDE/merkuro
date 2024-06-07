@@ -25,6 +25,7 @@ public:
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
