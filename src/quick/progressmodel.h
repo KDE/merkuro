@@ -27,6 +27,9 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+Q_SIGNALS:
+    void showProgressView();
+
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
     void slotProgressItemCompleted(KPIM::ProgressItem *const item);

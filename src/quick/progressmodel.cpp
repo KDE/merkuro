@@ -15,6 +15,7 @@ ProgressModel::ProgressModel(QObject *const parent)
     connect(pm, &ProgressManager::progressItemProgress, this, &ProgressModel::slotProgressItemProgress);
     connect(pm, &ProgressManager::progressItemStatus, this, &ProgressModel::slotProgressItemStatus);
     connect(pm, &ProgressManager::progressItemLabel, this, &ProgressModel::slotProgressItemLabel);
+    connect(pm, &ProgressManager::showProgressDialog, this, &ProgressModel::showProgressView);
 }
 
 void ProgressModel::slotProgressItemAdded(KPIM::ProgressItem *const item)
