@@ -30,6 +30,9 @@ public:
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
     void slotProgressItemCompleted(KPIM::ProgressItem *const item);
+    void slotProgressItemProgress(KPIM::ProgressItem *const item, const unsigned int progress);
+    void slotProgressItemStatus(KPIM::ProgressItem *const item, const QString &status);
+    void slotProgressItemLabel(KPIM::ProgressItem *const item, const QString &label);
 
 private Q_SLOTS:
     void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles);

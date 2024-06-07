@@ -12,6 +12,9 @@ ProgressModel::ProgressModel(QObject *const parent)
     const auto pm = ProgressManager::instance();
     connect(pm, &ProgressManager::progressItemAdded, this, &ProgressModel::slotProgressItemAdded);
     connect(pm, &ProgressManager::progressItemCompleted, this, &ProgressModel::slotProgressItemCompleted);
+    connect(pm, &ProgressManager::progressItemProgress, this, &ProgressModel::slotProgressItemProgress);
+    connect(pm, &ProgressManager::progressItemStatus, this, &ProgressModel::slotProgressItemStatus);
+    connect(pm, &ProgressManager::progressItemLabel, this, &ProgressModel::slotProgressItemLabel);
 }
 
 void ProgressModel::slotProgressItemAdded(KPIM::ProgressItem *const item)
@@ -30,6 +33,24 @@ void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
     beginRemoveRows(QModelIndex(), row, row);
     m_items.removeAt(row);
     endRemoveRows();
+}
+
+void ProgressModel::slotProgressItemProgress(KPIM::ProgressItem *const item, const unsigned int progress)
+{
+    Q_UNUSED(progress)
+    slotItemProgressDataChanged(item, {ProgressRole});
+}
+
+void ProgressModel::slotProgressItemStatus(KPIM::ProgressItem *const item, const QString &status)
+{
+    Q_UNUSED(status)
+    slotItemProgressDataChanged(item, {StatusRole});
+}
+
+void ProgressModel::slotProgressItemLabel(KPIM::ProgressItem *const item, const QString &label)
+{
+    Q_UNUSED(label)
+    slotItemProgressDataChanged(item, {Qt::DisplayRole});
 }
 
 void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles)
