@@ -1,18 +1,29 @@
 // SPDX-FileCopyrightText: 2018 Daniel Vrátil <dvratil@kde.org>
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
+// SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "mailkernel.h"
 
+#include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/Session>
+
 #include <KIdentityManagementCore/IdentityManager>
+
 #include <KSharedConfig>
+
+#include <Libkdepim/ProgressManager>
+
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
+#include <MailCommon/MailUtil>
+
 #include <MessageComposer/AkonadiSender>
+
+#include <PimCommonAkonadi/ProgressManagerAkonadi>
 
 static MailKernel *mySelf = nullptr;
 
@@ -46,6 +57,8 @@ MailKernel::MailKernel(QObject *parent)
     CommonKernel->registerKernelIf(this);
     CommonKernel->registerSettingsIf(this);
     CommonKernel->registerFilterIf(this);
+
+    connect(Akonadi::AgentManager::self(), &Akonadi::AgentManager::instanceStatusChanged, this, &MailKernel::slotInstanceStatusChanged);
 }
 
 MailKernel::~MailKernel()
@@ -143,6 +156,28 @@ void MailKernel::openFilterDialog(bool createDummyFilter)
 
 void MailKernel::createFilter(const QByteArray &field, const QString &value)
 {
+}
+
+void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instance)
+{
+    const auto isMailInstance =
+        instance.identifier() == QStringLiteral("akonadi_mailfilter_agent") || MailCommon::Util::agentInstances(true).contains(instance);
+
+    if (!isMailInstance) {
+        return;
+    }
+
+    if (instance.status() == Akonadi::AgentInstance::Running) {
+        // Creating a progress item twice is ok, it will simply return the already existing item
+        const auto progress = PimCommon::ProgressManagerAkonadi::createProgressItem(nullptr,
+                                                                                    instance,
+                                                                                    instance.identifier(),
+                                                                                    instance.name(),
+                                                                                    instance.statusMessage(),
+                                                                                    true,
+                                                                                    KPIM::ProgressItem::Unknown);
+        progress->setProperty("AgentIdentifier", instance.identifier());
+    }
 }
 
 #include "moc_mailkernel.cpp"

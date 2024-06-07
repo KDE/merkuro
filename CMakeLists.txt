@@ -29,6 +29,8 @@ set(AKONADICONTACT_LIB_VERSION "6.1.40")
 set(KMIME_LIB_VERSION "6.1.40")
 set(MESSAGECOMPOSER_LIB_VERSION "6.1.40")
 set(KMBOX_LIB_VERSION "6.1.40")
+set(LIBKDEPIM_LIB_VERSION "6.1.40")
+set(PIMCOMMON_LIB_VERSION "6.1.40")
 
 include(FeatureSummary)
 
@@ -117,6 +119,8 @@ find_package(KPim6MailTransport ${MAILTRANSPORT_LIB_VERSION} REQUIRED)
 find_package(KPim6MimeTreeParserCore ${MIMETREEPARSER_LIB_VERSION} REQUIRED)
 find_package(KPim6Mbox ${KMBOX_LIB_VERSION} REQUIRED)
 find_package(KPim6Mime ${KMIME_LIB_VERSION} REQUIRED)
+find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

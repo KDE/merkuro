@@ -7,6 +7,7 @@
 
 namespace Akonadi
 {
+class AgentInstance;
 class EntityTreeModel;
 class EntityMimeTypeFilterModel;
 }
@@ -61,6 +62,9 @@ public:
     void setLastSelectedFolder(Akonadi::Collection::Id col) override;
     [[nodiscard]] bool showPopupAfterDnD() override;
     void expunge(Akonadi::Collection::Id id, bool sync) override;
+
+public Q_SLOTS:
+    void slotInstanceStatusChanged(const Akonadi::AgentInstance &instance);
 
 private:
     explicit MailKernel(QObject *parent = nullptr);

@@ -57,6 +57,8 @@ target_link_libraries(merkuro_mail_static
         KPim6::IdentityManagementQuick
         KPim6::Mbox
         KPim6::Mime
+        KPim6::Libkdepim
+        KPim6::PimCommonAkonadi
         KF6::XmlGui
         KF6::Codecs
         KF6::XmlGui
