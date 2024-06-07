@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import Qt.labs.platform
 import QtQuick.Dialogs
 import org.kde.merkuro.mail 1.0
+import org.kde.merkuro.components 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
 import './private'
 
@@ -39,11 +40,16 @@ Kirigami.ScrollablePage {
         }
     }
 
-    actions: Kirigami.Action {
-        icon.name: 'mail-send'
-        text: i18nc("@action:menu", "Create")
-        onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
-    }
+    actions: [
+        Kirigami.Action {
+            icon.name: 'mail-send'
+            text: i18nc("@action:menu", "Create")
+            onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
+        },
+        KActionFromAction {
+            action: MailApplication.action("check_mail")
+        }
+    ]
 
     ListView {
         id: mails
