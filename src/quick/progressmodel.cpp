@@ -31,3 +31,11 @@ void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
     m_items.removeAt(row);
     endRemoveRows();
 }
+
+int ProgressModel::rowCount(const QModelIndex &parent) const
+{
+    if (parent.isValid()) {
+        return 0;
+    }
+    return m_items.count();
+}

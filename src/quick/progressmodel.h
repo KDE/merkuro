@@ -22,6 +22,9 @@ public:
     Q_ENUM(Roles)
 
     explicit ProgressModel(QObject *const parent = nullptr);
+
+    int rowCount(const QModelIndex &parent = {}) const override;
+
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
     void slotProgressItemCompleted(KPIM::ProgressItem *const item);
