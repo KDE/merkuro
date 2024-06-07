@@ -32,6 +32,16 @@ void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
     endRemoveRows();
 }
 
+void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles)
+{
+    const auto row = m_items.indexOf(item);
+    if (row == -1) {
+        return;
+    }
+    const auto idx = index(row);
+    Q_EMIT dataChanged(idx, idx, roles);
+}
+
 int ProgressModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
