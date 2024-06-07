@@ -39,3 +39,22 @@ int ProgressModel::rowCount(const QModelIndex &parent) const
     }
     return m_items.count();
 }
+
+QVariant ProgressModel::data(const QModelIndex &index, int role) const
+{
+    Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
+
+    const auto item = m_items.at(index.row());
+    switch (role) {
+    case Qt::DisplayRole:
+        return item->label();
+    case ProgressRole:
+        return item->progress();
+    case StatusRole:
+        return item->status();
+    case CanBeCancelledRole:
+        return item->canBeCanceled();
+    default:
+        return {};
+    }
+}

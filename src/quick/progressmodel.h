@@ -24,6 +24,7 @@ public:
     explicit ProgressModel(QObject *const parent = nullptr);
 
     int rowCount(const QModelIndex &parent = {}) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
