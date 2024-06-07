@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <Libkdepim/ProgressManager>
 #include <QAbstractListModel>
 #include <QObject>
 
@@ -13,6 +14,11 @@ class ProgressModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    explicit ProgressModel(QObject *parent = nullptr);
+    explicit ProgressModel(QObject *const parent = nullptr);
+public Q_SLOTS:
+    void slotProgressItemAdded(KPIM::ProgressItem *const item);
+
+private:
+    QList<KPIM::ProgressItem *> m_items;
 };
 }
