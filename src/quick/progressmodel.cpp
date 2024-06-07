@@ -11,6 +11,7 @@ ProgressModel::ProgressModel(QObject *const parent)
 {
     const auto pm = ProgressManager::instance();
     connect(pm, &ProgressManager::progressItemAdded, this, &ProgressModel::slotProgressItemAdded);
+    connect(pm, &ProgressManager::progressItemCompleted, this, &ProgressModel::slotProgressItemCompleted);
 }
 
 void ProgressModel::slotProgressItemAdded(KPIM::ProgressItem *const item)
@@ -18,4 +19,15 @@ void ProgressModel::slotProgressItemAdded(KPIM::ProgressItem *const item)
     beginInsertRows(QModelIndex(), rowCount(), rowCount());
     m_items.append(item);
     endInsertRows();
+}
+
+void ProgressModel::slotProgressItemCompleted(KPIM::ProgressItem *const item)
+{
+    const auto row = m_items.indexOf(item);
+    if (row == -1) {
+        return;
+    }
+    beginRemoveRows(QModelIndex(), row, row);
+    m_items.removeAt(row);
+    endRemoveRows();
 }

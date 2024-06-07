@@ -17,6 +17,7 @@ public:
     explicit ProgressModel(QObject *const parent = nullptr);
 public Q_SLOTS:
     void slotProgressItemAdded(KPIM::ProgressItem *const item);
+    void slotProgressItemCompleted(KPIM::ProgressItem *const item);
 
 private:
     QList<KPIM::ProgressItem *> m_items;
