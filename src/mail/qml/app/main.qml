@@ -42,6 +42,10 @@ BaseApplication {
         function onOpenSettings() {
             settings.open();
         }
+
+        function onCheckMail() {
+            Mail.MailManager.checkMail();
+        }
     }
 
     Settings.Settings {
