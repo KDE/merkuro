@@ -106,5 +106,19 @@ Kirigami.OverlayDrawer {
                 }
             }
         }
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: 0
+            visible: progressStatusBar.working
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+
+            Akonadi.ProgressStatusBar {
+                id: progressStatusBar
+                Layout.fillWidth: true
+            }
+        }
     }
 }
