@@ -45,6 +45,8 @@ public Q_SLOTS:
     void slotProgressItemProgress(KPIM::ProgressItem *const item, const unsigned int progress);
     void slotProgressItemStatus(KPIM::ProgressItem *const item, const QString &status);
     void slotProgressItemLabel(KPIM::ProgressItem *const item, const QString &label);
+    void slotProgressItemCryptoStatus(KPIM::ProgressItem *const item, const KPIM::ProgressItem::CryptoStatus cryptoStatus);
+    void slotProgressItemUsesBusyIndicator(KPIM::ProgressItem *const item, const bool usesBusyIndicator);
 
 private Q_SLOTS:
     void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles);
