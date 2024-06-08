@@ -41,13 +41,13 @@ Kirigami.ScrollablePage {
     }
 
     actions: [
+        KActionFromAction {
+            action: MailApplication.action("check_mail")
+        },
         Kirigami.Action {
             icon.name: 'mail-send'
             text: i18nc("@action:menu", "Create")
             onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
-        },
-        KActionFromAction {
-            action: MailApplication.action("check_mail")
         }
     ]
 
