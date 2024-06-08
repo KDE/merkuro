@@ -16,6 +16,7 @@ ProgressModel::ProgressModel(QObject *const parent)
     connect(pm, &ProgressManager::progressItemStatus, this, &ProgressModel::slotProgressItemStatus);
     connect(pm, &ProgressManager::progressItemLabel, this, &ProgressModel::slotProgressItemLabel);
     connect(pm, &ProgressManager::progressItemCryptoStatus, this, &ProgressModel::slotProgressItemCryptoStatus);
+    connect(pm, &ProgressManager::progressItemUsesBusyIndicator, this, &ProgressModel::slotProgressItemUsesBusyIndicator);
     connect(pm, &ProgressManager::showProgressDialog, this, &ProgressModel::showProgressView);
 }
 
@@ -61,6 +62,12 @@ void ProgressModel::slotProgressItemCryptoStatus(KPIM::ProgressItem *const item,
 {
     Q_UNUSED(cryptoStatus)
     slotItemProgressDataChanged(item, {CryptoStatusRole});
+}
+
+void ProgressModel::slotProgressItemUsesBusyIndicator(KPIM::ProgressItem *const item, const bool usesBusyIndicator)
+{
+    Q_UNUSED(usesBusyIndicator)
+    slotItemProgressDataChanged(item, {UsesBusyIndicatorRole});
 }
 
 void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles)
