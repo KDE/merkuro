@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.akonadi as Akonadi
+import org.kde.kirigami 2.0 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 RowLayout {
@@ -44,18 +45,34 @@ RowLayout {
 
         active: false
         sourceComponent: QQC2.Popup {
+            id: progressPopup
+
             readonly property point rootPoint: mapFromItem(root, root.x, root.y)
+            readonly property int listViewTopMargin: Kirigami.Units.largeSpacing
+            readonly property int listViewBottomMargin: Kirigami.Units.largeSpacing
+            readonly property int scrollInternalHeight:
+                contentItem.contentHeight + listViewTopMargin + listViewBottomMargin
 
             x: rootPoint.x
             y: rootPoint.y - height
             width: root.width
-            height: Math.min(contentItem.contentHeight, root.popupMaxHeight)
+            height: Math.min(scrollInternalHeight, root.popupMaxHeight)
             padding: 0
 
             contentItem: QQC2.ScrollView {
                 ListView {
+                    topMargin: progressPopup.listViewTopMargin
+                    bottomMargin: progressPopup.listViewBottomMargin
+                    spacing: Kirigami.Units.largeSpacing
+
                     model: progressModel
                     delegate: ColumnLayout {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.leftMargin: Kirigami.Units.smallSpacing
+                        anchors.rightMargin: Kirigami.Units.smallSpacing
+
+                        spacing: 0
 
                         QQC2.Label {
                             text: model.display
