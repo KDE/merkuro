@@ -13,6 +13,8 @@
 
 #include <KIdentityManagementCore/IdentityManager>
 
+#include <KLocalizedString>
+#include <KNotification>
 #include <KSharedConfig>
 
 #include <Libkdepim/ProgressManager>
@@ -167,6 +169,7 @@ void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instanc
         return;
     }
 
+    // TODO: Crypto stuff
     if (instance.status() == Akonadi::AgentInstance::Running) {
         // Creating a progress item twice is ok, it will simply return the already existing item
         const auto progress = PimCommon::ProgressManagerAkonadi::createProgressItem(nullptr,
@@ -177,6 +180,9 @@ void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instanc
                                                                                     true,
                                                                                     KPIM::ProgressItem::Unknown);
         progress->setProperty("AgentIdentifier", instance.identifier());
+    } else if (instance.status() == Akonadi::AgentInstance::Broken) {
+        const QString summary = i18n("Resource %1 is broken.\n%2", instance.name(), instance.statusMessage());
+        KNotification::event(QStringLiteral("akonadi-resource-broken"), {}, summary, QStringLiteral("merkuro-mail"), KNotification::CloseOnTimeout);
     }
 }
 
