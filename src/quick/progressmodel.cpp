@@ -143,3 +143,17 @@ void ProgressModel::updateOverallProperties()
         }
     }
 }
+
+void ProgressModel::cancelItem(const QString &itemId)
+{
+    const auto item = std::find_if(m_items.begin(), m_items.end(), [itemId](const KPIM::ProgressItem *const item) {
+        return item->id() == itemId;
+    });
+
+    if (item == m_items.end()) {
+        qWarning() << "ProgressModel::cancelItem: item not found";
+        return;
+    }
+
+    (*item)->cancel();
+}

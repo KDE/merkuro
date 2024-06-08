@@ -35,6 +35,8 @@ public:
     [[nodiscard]] bool indeterminate() const;
     [[nodiscard]] unsigned int progress() const;
 
+    Q_INVOKABLE void cancelItem(const QString &itemId);
+
 Q_SIGNALS:
     void showProgressView();
     void workingChanged();
