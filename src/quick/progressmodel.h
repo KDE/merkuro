@@ -18,7 +18,7 @@ class ProgressModel : public QAbstractListModel
     Q_PROPERTY(unsigned int progress READ progress NOTIFY progressChanged)
 
 public:
-    enum Roles { ProgressRole = Qt::UserRole + 1, StatusRole, CanBeCancelledRole, IdRole };
+    enum Roles { ProgressRole = Qt::UserRole + 1, StatusRole, CanBeCancelledRole, CryptoStatusRole, IdRole };
     Q_ENUM(Roles)
 
     explicit ProgressModel(QObject *const parent = nullptr);

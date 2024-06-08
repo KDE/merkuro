@@ -89,6 +89,8 @@ QVariant ProgressModel::data(const QModelIndex &index, int role) const
         return item->status();
     case CanBeCancelledRole:
         return item->canBeCanceled();
+    case CryptoStatusRole:
+        return item->cryptoStatus();
     case IdRole:
         return item->id();
     default:
@@ -103,6 +105,7 @@ QHash<int, QByteArray> ProgressModel::roleNames() const
         {ProgressRole, "progress"},
         {StatusRole, "status"},
         {CanBeCancelledRole, "canBeCancelled"},
+        {CryptoStatusRole, "cryptoStatus"},
         {IdRole, "id"},
     });
     return rolenames;
