@@ -88,6 +88,7 @@ RowLayout {
                                 from: 0
                                 to: 100
                                 value: model.progress
+                                indeterminate: model.usesBusyIndicator
                             }
                             QQC2.Button {
                                 Layout.maximumHeight: itemProgressBar.implicitHeight
