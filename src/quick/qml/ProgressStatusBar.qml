@@ -77,7 +77,15 @@ RowLayout {
                         spacing: 0
 
                         QQC2.Label {
+                            Layout.fillWidth: true
                             text: model.display
+                            font.bold: true
+                            elide: Text.ElideRight
+                        }
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: model.status
+                            wrapMode: Text.Wrap
                         }
                         RowLayout {
                             spacing: 0
