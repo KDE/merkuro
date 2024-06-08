@@ -47,6 +47,24 @@ ListView {
                 id: categoryHeader
 
                 required property string displayName
+                required property var model
+
+                property bool chosen: false
+
+                Connections {
+                    target: mailList
+
+                    function onFolderChosen() {
+                        if (categoryHeader.chosen) {
+                            categoryHeader.chosen = false;
+                            categoryHeader.highlighted = true;
+                        } else {
+                            categoryHeader.highlighted = false;
+                        }
+                    }
+                }
+
+                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
 
                 text: displayName
 
@@ -71,9 +89,13 @@ ListView {
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
                     onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
-                            mailList.model.toggleChildren(index);
-                        }
-                        if (mouse.button === Qt.RightButton) {
+                            categoryHeader.model.checkState = categoryHeader.model.checkState === 0 ? 2 : 0
+                            const index = foldersModel.index(categoryHeader.model.index, 0);
+                            MailManager.loadMailCollection(foldersModel.mapToSource(index));
+
+                            categoryHeader.chosen = true;
+                            mailList.folderChosen();
+                        } else if (mouse.button === Qt.RightButton) {
                             mailList.collectionId = foldersModel.mapToSource(foldersModel.index(index, 0));
                             mailList.name = categoryHeader.displayName;
                             mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
