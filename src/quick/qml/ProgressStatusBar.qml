@@ -16,6 +16,8 @@ RowLayout {
     
     property int popupMaxHeight: 300
 
+    onVisibleChanged: if (!visible) popupLoader.active = false
+
     Akonadi.ProgressModel {
         id: progressModel
         onShowProgressView: popupLoader.active = true
