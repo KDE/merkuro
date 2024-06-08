@@ -78,10 +78,23 @@ RowLayout {
                             text: model.display
                         }
                         RowLayout {
+                            spacing: 0
+
                             QQC2.ProgressBar {
+                                Layout.fillWidth: true
+                                id: itemProgressBar
                                 from: 0
                                 to: 100
                                 value: model.progress
+                            }
+                            QQC2.Button {
+                                Layout.maximumHeight: itemProgressBar.implicitHeight
+                                display: QQC2.AbstractButton.IconOnly
+                                flat: true
+                                text: i18n("Cancel")
+                                icon.name: "process-stop"
+                                visible: model.canBeCancelled
+                                onClicked: progressModel.cancelItem(model.id)
                             }
                         }
                     }
