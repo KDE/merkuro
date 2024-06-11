@@ -17,7 +17,7 @@ public:
     explicit TagManager(QObject *parent = nullptr);
     ~TagManager() override = default;
 
-    QSortFilterProxyModel *tagModel();
+    QSortFilterProxyModel *tagModel() const;
     Q_INVOKABLE void createTag(const QString &name);
     Q_INVOKABLE void renameTag(Akonadi::Tag tag, const QString &newName);
     Q_INVOKABLE void deleteTag(Akonadi::Tag tag);

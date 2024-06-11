@@ -66,7 +66,7 @@ TagManager::TagManager(QObject *parent)
     QObject::connect(m_tagModel, &QSortFilterProxyModel::rowsRemoved, this, &TagManager::tagModelChanged);
 }
 
-QSortFilterProxyModel *TagManager::tagModel()
+QSortFilterProxyModel *TagManager::tagModel() const
 {
     return m_tagModel;
 }
