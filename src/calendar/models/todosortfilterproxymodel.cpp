@@ -41,33 +41,33 @@ int TodoSortFilterProxyModel::columnCount(const QModelIndex &) const
 QHash<int, QByteArray> TodoSortFilterProxyModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames = QSortFilterProxyModel::roleNames();
-    roleNames[Akonadi::TodoModel::SummaryRole] = "text";
-    roleNames[Roles::StartTimeRole] = "startTime";
-    roleNames[Roles::EndTimeRole] = "endTime";
-    roleNames[Roles::DisplayDueDateRole] = "displayDueDate";
-    roleNames[Roles::LocationRole] = "location";
-    roleNames[Roles::AllDayRole] = "allDay";
-    roleNames[Roles::ColorRole] = "color";
-    roleNames[Roles::CompletedRole] = "todoCompleted";
-    roleNames[Roles::PriorityRole] = "priority";
-    roleNames[Roles::CollectionIdRole] = "collectionId";
-    roleNames[Roles::DurationStringRole] = "durationString";
-    roleNames[Roles::RecursRole] = "recurs";
-    roleNames[Roles::IsReadOnly] = "isReadOnly";
-    roleNames[Roles::IsOverdueRole] = "isOverdue";
-    roleNames[Roles::IncidenceIdRole] = "incidenceId";
-    roleNames[Roles::IncidenceTypeRole] = "incidenceType";
-    roleNames[Roles::IncidenceTypeStrRole] = "incidenceTypeStr";
-    roleNames[Roles::IncidenceTypeIconRole] = "incidenceTypeIcon";
-    roleNames[Roles::IncidencePtrRole] = "incidencePtr";
-    roleNames[Roles::TagsRole] = "tags";
-    roleNames[Roles::ItemRole] = "item";
-    roleNames[Roles::CategoriesRole] = "todoCategories"; // Simply 'categories' causes issues
-    roleNames[Roles::CategoriesDisplayRole] = "categoriesDisplay";
-    roleNames[Roles::TreeDepthRole] = "treeDepth";
-    roleNames[Roles::TopMostParentDueDateRole] = "topMostParentDueDate";
-    roleNames[Roles::TopMostParentSummaryRole] = "topMostParentSummary";
-    roleNames[Roles::TopMostParentPriorityRole] = "topMostParentPriority";
+    roleNames[Akonadi::TodoModel::SummaryRole] = QByteArrayLiteral("text");
+    roleNames[Roles::StartTimeRole] = QByteArrayLiteral("startTime");
+    roleNames[Roles::EndTimeRole] = QByteArrayLiteral("endTime");
+    roleNames[Roles::DisplayDueDateRole] = QByteArrayLiteral("displayDueDate");
+    roleNames[Roles::LocationRole] = QByteArrayLiteral("location");
+    roleNames[Roles::AllDayRole] = QByteArrayLiteral("allDay");
+    roleNames[Roles::ColorRole] = QByteArrayLiteral("color");
+    roleNames[Roles::CompletedRole] = QByteArrayLiteral("todoCompleted");
+    roleNames[Roles::PriorityRole] = QByteArrayLiteral("priority");
+    roleNames[Roles::CollectionIdRole] = QByteArrayLiteral("collectionId");
+    roleNames[Roles::DurationStringRole] = QByteArrayLiteral("durationString");
+    roleNames[Roles::RecursRole] = QByteArrayLiteral("recurs");
+    roleNames[Roles::IsReadOnly] = QByteArrayLiteral("isReadOnly");
+    roleNames[Roles::IsOverdueRole] = QByteArrayLiteral("isOverdue");
+    roleNames[Roles::IncidenceIdRole] = QByteArrayLiteral("incidenceId");
+    roleNames[Roles::IncidenceTypeRole] = QByteArrayLiteral("incidenceType");
+    roleNames[Roles::IncidenceTypeStrRole] = QByteArrayLiteral("incidenceTypeStr");
+    roleNames[Roles::IncidenceTypeIconRole] = QByteArrayLiteral("incidenceTypeIcon");
+    roleNames[Roles::IncidencePtrRole] = QByteArrayLiteral("incidencePtr");
+    roleNames[Roles::TagsRole] = QByteArrayLiteral("tags");
+    roleNames[Roles::ItemRole] = QByteArrayLiteral("item");
+    roleNames[Roles::CategoriesRole] = QByteArrayLiteral("todoCategories"); // Simply 'categories' causes issues
+    roleNames[Roles::CategoriesDisplayRole] = QByteArrayLiteral("categoriesDisplay");
+    roleNames[Roles::TreeDepthRole] = QByteArrayLiteral("treeDepth");
+    roleNames[Roles::TopMostParentDueDateRole] = QByteArrayLiteral("topMostParentDueDate");
+    roleNames[Roles::TopMostParentSummaryRole] = QByteArrayLiteral("topMostParentSummary");
+    roleNames[Roles::TopMostParentPriorityRole] = QByteArrayLiteral("topMostParentPriority");
 
     return roleNames;
 }
