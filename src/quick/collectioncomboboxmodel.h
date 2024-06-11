@@ -93,7 +93,7 @@ public:
      */
     [[nodiscard]] bool excludeVirtualCollections() const;
 
-    int currentIndex() const;
+    [[nodiscard]] int currentIndex() const;
     void setCurrentIndex(int currendIndex);
 
 Q_SIGNALS:
