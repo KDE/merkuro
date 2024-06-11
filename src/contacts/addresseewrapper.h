@@ -208,9 +208,9 @@ private:
     void itemChanged(const Akonadi::Item &item) override;
     KContacts::Addressee m_addressee;
     Akonadi::Collection m_collection; // For when we want to edit, this is temporary
-    AddressModel *m_addressesModel;
-    EmailModel *m_emailModel;
-    ImppModel *m_imppModel;
-    PhoneModel *m_phoneModel;
+    AddressModel *const m_addressesModel;
+    EmailModel *const m_emailModel;
+    ImppModel *const m_imppModel;
+    PhoneModel *const m_phoneModel;
     DisplayType m_displayType;
 };
