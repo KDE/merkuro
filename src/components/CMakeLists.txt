@@ -27,10 +27,8 @@ target_sources(merkuro_components_plugin PRIVATE
 ecm_target_qml_sources(merkuro_components_plugin SOURCES
     # Shell components
     qml/BaseApplication.qml
-    qml/KQuickCommandBarPage.qml
 
     # In window-menu components
-    qml/KActionFromAction.qml
     qml/ViewMenu.qml
     qml/EditMenu.qml
     qml/FileMenu.qml

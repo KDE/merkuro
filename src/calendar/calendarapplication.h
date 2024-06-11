@@ -36,9 +36,8 @@ public:
     Q_ENUM(Mode)
 
     explicit CalendarApplication(QObject *parent = nullptr);
-    ~CalendarApplication() override;
 
-    QList<KActionCollection *> actionCollections() const override;
+    QList<KirigamiActionCollection *> actionCollections() const override;
 
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
     QWindow *window() const;
@@ -85,7 +84,7 @@ private:
     void toggleMenubar();
     bool showMenubar() const;
 
-    KActionCollection *mSortCollection = nullptr;
+    KirigamiActionCollection *mSortCollection = nullptr;
     QWindow *m_window = nullptr;
     QActionGroup *const m_viewGroup;
     QActionGroup *m_todoViewOrderGroup = nullptr;

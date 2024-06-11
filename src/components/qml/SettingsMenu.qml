@@ -3,7 +3,8 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.components
+import org.kde.kirigamiaddons.baseapp as BaseApp
 
 QQC2.Menu {
     id: root
@@ -12,21 +13,21 @@ QQC2.Menu {
 
     title: i18nc("@action:menu", "Settings")
 
-    KActionFromAction {
-        action: root.application.action("toggle_menubar")
+    BaseApp.Action {
+        actionName: "toggle_menubar"
     }
 
-    KActionFromAction {
-        action: root.application.action("open_tag_manager")
+    BaseApp.Action {
+        actionName: "open_tag_manager"
     }
 
     QQC2.MenuSeparator {}
 
-    KActionFromAction {
-        action: root.application.action("options_configure_keybinding")
+    BaseApp.Action {
+        actionName: "options_configure_keybinding"
     }
 
-    KActionFromAction {
-        action: root.application.action("options_configure")
+    BaseApp.Action {
+        actionName: "options_configure"
     }
 }

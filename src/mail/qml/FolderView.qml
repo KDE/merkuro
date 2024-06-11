@@ -10,6 +10,7 @@ import QtQuick.Dialogs
 import org.kde.merkuro.mail 1.0
 import org.kde.merkuro.components 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
+import org.kde.kirigamiaddons.baseapp as BaseApp
 import './private'
 
 Kirigami.ScrollablePage {
@@ -41,8 +42,8 @@ Kirigami.ScrollablePage {
     }
 
     actions: [
-        KActionFromAction {
-            action: MailApplication.action("check_mail")
+        BaseApp.Action {
+            actionName: "check_mail"
         },
         Kirigami.Action {
             icon.name: 'mail-send'

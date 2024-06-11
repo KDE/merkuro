@@ -3,7 +3,8 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.components
+import org.kde.kirigamiaddons.baseapp as BaseApp
 
 QQC2.Menu {
     id: root
@@ -12,12 +13,12 @@ QQC2.Menu {
 
     title: i18nc("@action:menu", "Help")
 
-    KActionFromAction {
-        action: root.application.action("open_about_page")
+    BaseApp.Action {
+        actionName: "open_about_page"
     }
 
-    KActionFromAction {
-        action: root.application.action("open_about_kde_page")
+    BaseApp.Action {
+        actionName: "open_about_kde_page"
     }
 
     QQC2.MenuItem {

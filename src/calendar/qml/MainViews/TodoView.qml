@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import Qt.labs.qmlmodels
 import org.kde.kitemmodels 1.0
+import org.kde.kirigamiaddons.baseapp as BaseApp
 
 import org.kde.merkuro.calendar 1.0 as Calendar
 import org.kde.merkuro.utils 1.0
@@ -68,37 +69,37 @@ Kirigami.ScrollablePage {
             text: i18n("Sort")
             icon.name: "view-sort"
 
-            KActionFromAction {
-                action: Calendar.CalendarApplication.action("todoview_sort_by_due_date")
+            BaseApp.Action {
+                actionName: "todoview_sort_by_due_date"
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.DueDateColumn
                 onCheckedChanged: checked => action.checked = checked // Needed for the actions in the menu bars to be checked on load
             }
-            KActionFromAction {
-                action: Calendar.CalendarApplication.action("todoview_sort_by_priority")
+            BaseApp.Action {
+                actionName: "todoview_sort_by_priority"
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.PriorityColumn
                 onCheckedChanged: checked => action.checked = checked
             }
-            KActionFromAction {
-                action: Calendar.CalendarApplication.action("todoview_sort_alphabetically")
+            BaseApp.Action {
+                actionName: "todoview_sort_alphabetically"
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.SummaryColumn
                 onCheckedChanged: checked => action.checked = checked
             }
 
             Kirigami.Action { separator: true }
 
-            KActionFromAction {
-                action: Calendar.CalendarApplication.action("todoview_order_ascending")
+            BaseApp.Action {
+                actionName: "todoview_order_ascending"
                 checked: root.ascendingOrder
                 onCheckedChanged: checked => action.checked = checked
             }
-            KActionFromAction {
-                action: Calendar.CalendarApplication.action("todoview_order_descending")
+            BaseApp.Action {
+                actionName: "todoview_order_descending"
                 checked: !root.ascendingOrder
                 onCheckedChanged: checked => action.checked = checked
             }
         },
-        KActionFromAction {
-            action: Calendar.CalendarApplication.action("todoview_show_completed")
+        BaseApp.Action {
+            actionName: "todoview_show_completed"
             text: i18n("Show Completed")
         }
     ]

@@ -10,11 +10,12 @@ import QtQuick.Layouts
 import Qt.labs.qmlmodels
 import Qt5Compat.GraphicalEffects
 
-import org.kde.akonadi 1.0
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.components 1.0
-import org.kde.kirigami 2.16 as Kirigami
+import org.kde.akonadi
+import org.kde.merkuro.calendar
+import org.kde.merkuro.components
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.baseapp as BaseApp
 import org.kde.kitemmodels
 
 Kirigami.OverlayDrawer {
@@ -171,31 +172,31 @@ Kirigami.OverlayDrawer {
                             enabled: CalendarManager.undoRedoData.redoAvailable
                             onTriggered: CalendarManager.redoAction();
                         },
-                        KActionFromAction {
-                            action: CalendarApplication.action("import_calendar")
+                        BaseApp.Action {
+                            actionName: "import_calendar"
                         },
-                        KActionFromAction {
+                        BaseApp.Action {
                             text: i18n("Refresh All Calendars")
-                            action: CalendarApplication.action("refresh_all")
+                            actionName: "refresh_all"
                         },
-                        KActionFromAction {
-                            action: CalendarApplication.action("toggle_menubar")
+                        BaseApp.Action {
+                            actionName: "toggle_menubar"
                         },
                         Kirigami.Action {
                             text: i18n("Configure")
                             icon.name: "settings-configure"
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_tag_manager")
+                            BaseApp.Action {
+                                actionName: "open_tag_manager"
                             }
-                            KActionFromAction {
-                                action: CalendarApplication.action("options_configure_keybinding")
+                            BaseApp.Action {
+                                actionName: "options_configure_keybinding"
                             }
-                            KActionFromAction {
-                                action: CalendarApplication.action("options_configure")
+                            BaseApp.Action {
+                                actionName: "options_configure"
                             }
                         },
-                        KActionFromAction {
-                            action: quitAction
+                        BaseApp.Action {
+                            actionName: 'file_quit'
                             visible: !Kirigami.Settings.isMobile
                         }
                     ]
@@ -241,16 +242,16 @@ Kirigami.OverlayDrawer {
                     Repeater {
                         id: generalActions
                         property list<Kirigami.Action> actions: [
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_month_view")
+                            BaseApp.Action {
+                                actionName: "open_month_view"
                                 checkable: false
                                 onTriggered: {
                                     monthViewAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_week_view")
+                            BaseApp.Action {
+                                actionName: "open_week_view"
                                 checkable: false
                                 // Override the default checked behaviour as we want this to stay highlighted
                                 // in any of the hourly views, at least in desktop mode
@@ -261,16 +262,16 @@ Kirigami.OverlayDrawer {
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_schedule_view")
+                            BaseApp.Action {
+                                actionName: "open_schedule_view"
                                 checkable: false
                                 onTriggered: {
                                     scheduleViewAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_todo_view")
+                            BaseApp.Action {
+                                actionName: "open_todo_view"
                                 checkable: false
                                 onTriggered: {
                                     todoViewAction.trigger()
@@ -279,26 +280,26 @@ Kirigami.OverlayDrawer {
                             }
                         ]
                         property list<Kirigami.Action> mobileActions: [
-                            KActionFromAction {
+                            BaseApp.Action {
                                 text: CalendarManager.undoRedoData.undoAvailable ?
                                     i18n("Undo: ") + CalendarManager.undoRedoData.nextUndoDescription : i18n("Undo")
-                                action: CalendarApplication.action("edit_undo")
+                                actionName: "edit_undo"
                             },
-                            KActionFromAction {
+                            BaseApp.Action {
                                 text: CalendarManager.undoRedoData.redoAvailable ?
                                     i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : i18n("Redo")
-                                action: CalendarApplication.action("edit_redo")
+                                actionName: "edit_redo"
                             },
-                            KActionFromAction {
-                                action: CalendarApplication.action("open_tag_manager")
+                            BaseApp.Action {
+                                actionName: "open_tag_manager"
                                 onTriggered: {
                                     tagManagerAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            KActionFromAction {
+                            BaseApp.Action {
                                 text: i18n("Settings")
-                                action: CalendarApplication.action("options_configure")
+                                actionName: "options_configure"
                                 onTriggered: {
                                     configureAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()

@@ -5,16 +5,12 @@
 
 add_library(merkuro_lib STATIC)
 target_sources(merkuro_lib PRIVATE
-    colorproxymodel.cpp
-    sortedcollectionproxymodel.cpp
-    colorproxymodel.h
-    sortedcollectionproxymodel.h
     abstractapplication.cpp
     abstractapplication.h
-    actionsmodel.cpp
-    actionsmodel.h
-    commandbarfiltermodel.cpp
-    commandbarfiltermodel.h
+    colorproxymodel.cpp
+    colorproxymodel.h
+    sortedcollectionproxymodel.cpp
+    sortedcollectionproxymodel.h
 )
 set_property(TARGET merkuro_lib PROPERTY POSITION_INDEPENDENT_CODE ON)
 
@@ -39,4 +35,5 @@ target_link_libraries(merkuro_lib PUBLIC
     KPim6::AkonadiWidgets
     KF6::XmlGui
     KPim6::CalendarUtils
+    KirigamiAddonsBaseApp
 )

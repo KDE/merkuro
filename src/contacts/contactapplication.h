@@ -1,9 +1,11 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 #pragma once
+
 #include "abstractapplication.h"
-#include "contactconfig.h"
+
 class QQuickWindow;
+
 class ContactApplication : public AbstractApplication
 {
     Q_OBJECT
@@ -11,7 +13,7 @@ class ContactApplication : public AbstractApplication
 public:
     explicit ContactApplication(QObject *parent = nullptr);
 
-    QList<KActionCollection *> actionCollections() const override;
+    QList<KirigamiActionCollection *> actionCollections() const override;
 
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
 
@@ -23,7 +25,5 @@ Q_SIGNALS:
 
 private:
     void setupActions() override;
-    void toggleMenubar();
-    KActionCollection *mContactCollection = nullptr;
-    ContactConfig *const m_config;
+    KirigamiActionCollection *mContactCollection = nullptr;
 };

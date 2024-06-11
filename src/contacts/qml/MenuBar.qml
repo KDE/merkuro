@@ -4,8 +4,9 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.contact 1.0
+import org.kde.merkuro.components
+import org.kde.merkuro.contact
+import org.kde.kirigamiaddons.baseapp as BaseApp
 
 QQC2.MenuBar {
     FileMenu {}
@@ -15,23 +16,23 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        KActionFromAction {
-            action: ContactApplication.action('open_kcommand_bar')
+        BaseApp.Action {
+            actionName: 'open_kcommand_bar'
         }
 
-        KActionFromAction {
-            action: ContactApplication.action("refresh_all")
+        BaseApp.Action {
+            actionName: "refresh_all"
         }
     }
 
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        KActionFromAction {
-            action: ContactApplication.action("create_contact")
+        BaseApp.Action {
+            actionName: "create_contact"
         }
-        KActionFromAction {
-            action: ContactApplication.action("create_contact_group")
+        BaseApp.Action {
+            actionName: "create_contact_group"
         }
     }
 

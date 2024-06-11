@@ -40,7 +40,6 @@ BaseApplication {
     readonly property var createEventAction: CalendarApplication.action("create_event")
     readonly property var createTodoAction: CalendarApplication.action("create_todo")
     readonly property var configureAction: CalendarApplication.action("options_configure")
-    readonly property var quitAction: CalendarApplication.action("file_quit")
     readonly property var undoAction: CalendarApplication.action("edit_undo")
     readonly property var redoAction: CalendarApplication.action("edit_redo")
     readonly property var refreshAllAction: CalendarApplication.action("refresh_all")
@@ -245,22 +244,6 @@ BaseApplication {
 
             CalendarUiUtils.setUpView(incidenceData);
             DateTimeState.selectedDate = occurrenceDate;
-        }
-
-        function onShowMenubarChanged(state) {
-            Config.showMenubar = state;
-        }
-    }
-
-    Loader {
-        id: kcommandbarLoader
-        active: false
-        sourceComponent: KQuickCommandBarPage {
-            application: CalendarApplication
-            onClosed: kcommandbarLoader.active = false
-        }
-        onActiveChanged: if (active) {
-            item.open()
         }
     }
 

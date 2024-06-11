@@ -3,8 +3,9 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.mail 1.0
+import org.kde.merkuro.components
+import org.kde.merkuro.mail
+import org.kde.kirigamiaddons.baseapp as BaseApp
 
 QQC2.MenuBar {
     id: bar
@@ -16,16 +17,16 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        KActionFromAction {
-            action: MailApplication.action('open_kcommand_bar')
+        BaseApp.Action {
+            actionName: 'open_kcommand_bar'
         }
     }
 
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        KActionFromAction {
-            action: MailApplication.action("create_mail")
+        BaseApp.Action {
+            actionName: "create_mail"
         }
     }
 
