@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2024-06-08 07:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -125,13 +125,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "Nov dogodek…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "Nova naloga…"
@@ -864,7 +864,7 @@ msgstr "Tega dejanja ne boste mogli povrniti"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
@@ -1335,8 +1335,7 @@ msgstr "Uveljavi: "
 msgid "Refresh All Calendars"
 msgstr "Osveži vse koledarje"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "Sestavi"
@@ -1457,43 +1456,38 @@ msgstr "Odstrani"
 msgid "Return to Location"
 msgstr "Vrni se na lokacijo"
 
-#: calendar/qml/main.qml:230
-#, kde-format
-msgid "Configure Schedule"
-msgstr "Konfiguriraj planiranje časa"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Ustvari"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, kde-format
 msgid "Month"
 msgstr "Mesec"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, kde-format
 msgid "Week"
 msgstr "Teden"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, kde-format
 msgid "3 Days"
 msgstr "3 dni"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, kde-format
 msgid "Day"
 msgstr "Dan"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, kde-format
 msgid "Schedule"
 msgstr "Časovnica"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "Naloge"
@@ -1743,7 +1737,7 @@ msgstr "Pojdi"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1773,6 +1767,23 @@ msgstr "Pomoč"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Priročnik za koledar"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr "Videz"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "Računi"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr "Prost/Zaseden"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1886,23 +1897,6 @@ msgstr "Samodejno pridobi podatke o prost/zaseden drugih"
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "Uporabi polni naslov e-pošte za pridobivanje"
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr "Videz"
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "Računi"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "Prost/Zaseden"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
@@ -3188,6 +3182,13 @@ msgstr "Ni ključa"
 msgid "New Mail…"
 msgstr "Novo sporočilo…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Mail"
+msgid "Check Mail"
+msgstr "Mercuro pošta"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3208,7 +3209,14 @@ msgstr "Napaka pri nalaganju transporta"
 msgid "Error queuing message in outbox: %1"
 msgstr "Napaka pri uvrščanju sporočila v čakalno vrsto za pošiljanje: %1"
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3308,79 +3316,79 @@ msgstr "Odpri datoteko"
 msgid "Choose file"
 msgstr "Izberi datoteko"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "Shrani sporočilo - Merkuro-Mail"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "e-poštna sporočila (*.mbox)"
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Označi sporočilo"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Označi sporočilo kot prebrano"
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Označi sporočilo kot neprebrano"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Ne označi kot pomembno"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Mark as Important"
 msgstr "Označi kot pomembno"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "Move to Trash"
 msgstr "Prenesi v smeti"
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, kde-format
 msgid "Move Message to..."
 msgstr "Premakni sporočilo v..."
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Kopiraj sporočilo v..."
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Dodaj opomnik za spremljanje"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Shrani kot..."
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Ni izbranega poštnega nabiralnika"
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Izberi poštni nabiralnik iz stranske vrstice."
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Poštni nabiralnik je prazen"
@@ -3448,13 +3456,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Uvozi ključ"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identitete"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3462,12 +3470,12 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Računi prejemanja"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Konfiguracija poštnega računa"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
@@ -3523,6 +3531,9 @@ msgstr "Ustvari novo oznako…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Hitro dodaj novo oznako."
+
+#~ msgid "Configure Schedule"
+#~ msgstr "Konfiguriraj planiranje časa"
 
 #~ msgid "Create new calendar"
 #~ msgstr "Ustvari nov koledar"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2023-04-26 10:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -126,13 +126,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "Создать событие…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "Создать задачу…"
@@ -879,7 +879,7 @@ msgstr "Это действие будет нельзя отменить"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "Отмена"
@@ -1353,8 +1353,7 @@ msgstr "Повторить: "
 msgid "Refresh All Calendars"
 msgstr "Обновить все календари"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "Параметры"
@@ -1475,44 +1474,38 @@ msgstr "Удалить"
 msgid "Return to Location"
 msgstr "Вернуться к расположению"
 
-#: calendar/qml/main.qml:230
-#, fuzzy, kde-format
-#| msgid "Configure %1"
-msgid "Configure Schedule"
-msgstr "Настроить %1"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Создать"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, kde-format
 msgid "Month"
 msgstr "Месяц"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, kde-format
 msgid "Week"
 msgstr "Неделя"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, kde-format
 msgid "3 Days"
 msgstr "3 дня"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, kde-format
 msgid "Day"
 msgstr "День"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, kde-format
 msgid "Schedule"
 msgstr "Расписание"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "Задачи"
@@ -1764,7 +1757,7 @@ msgstr "Переход"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1796,6 +1789,23 @@ msgstr "Справка"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Руководство пользователя Kalendar"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "Учётные записи"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, fuzzy, kde-format
@@ -1908,23 +1918,6 @@ msgstr ""
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr ""
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr "Внешний вид"
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "Учётные записи"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
 msgstr ""
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
@@ -3236,6 +3229,12 @@ msgstr "Импорт ключа"
 msgid "New Mail…"
 msgstr "Создать письмо…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "Check Mail"
+msgstr "Календарь"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3256,7 +3255,14 @@ msgstr ""
 msgid "Error queuing message in outbox: %1"
 msgstr ""
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgctxt "@title:window"
@@ -3366,84 +3372,84 @@ msgstr "Файл"
 msgid "Choose file"
 msgstr "Выберите календарь"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr ""
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr ""
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Мгновенные сообщения"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr ""
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr ""
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Не отмечать как важное"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, fuzzy, kde-format
 #| msgid "Don't Mark as Important"
 msgid "Mark as Important"
 msgstr "Не отмечать как важное"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, fuzzy, kde-format
 #| msgid "Move to trash"
 msgid "Move to Trash"
 msgstr "Удалить в корзину"
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgid "Move Message to..."
 msgstr "Мгновенные сообщения"
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr ""
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, fuzzy, kde-format
 #| msgid "Add Reminder"
 msgid "Add Followup Reminder"
 msgstr "Добавить напоминание"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr ""
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Не выбрано ни одного почтового ящика"
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Выберите почтовый ящик на боковой панели."
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Почтовый ящик пуст"
@@ -3515,14 +3521,14 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Импорт ключа"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Add Contact"
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Добавить контакт"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgctxt ""
@@ -3531,13 +3537,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Учётные записи почты"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Mail Accounts"
 msgid "Mail Account Configuration"
 msgstr "Учётные записи почты"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title"
@@ -3596,6 +3602,11 @@ msgstr "Создать метку…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Быстро добавить новую метку."
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgid "Configure Schedule"
+#~ msgstr "Настроить %1"
 
 #~ msgid "Create new calendar"
 #~ msgstr "Создать календарь"

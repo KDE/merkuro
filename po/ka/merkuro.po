@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2024-06-08 08:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -125,13 +125,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "ახალი მოვლენა…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "ახალი დავალება…"
@@ -842,7 +842,7 @@ msgstr "ამ მოქმედების დაბრუნებას ვ
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "შეწყვეტა"
@@ -1301,8 +1301,7 @@ msgstr "გამეორება: "
 msgid "Refresh All Calendars"
 msgstr "ყველა კალენდარის განახლება"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
@@ -1423,43 +1422,38 @@ msgstr "წაშლა"
 msgid "Return to Location"
 msgstr "მდებარეობაზე დაბრუნება"
 
-#: calendar/qml/main.qml:230
-#, kde-format
-msgid "Configure Schedule"
-msgstr "გეგმის მორგება"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "შექმნა"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, kde-format
 msgid "Month"
 msgstr "თვე"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, kde-format
 msgid "Week"
 msgstr "კვირა"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, kde-format
 msgid "3 Days"
 msgstr "3 დღე"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, kde-format
 msgid "Day"
 msgstr "დღე"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, kde-format
 msgid "Schedule"
 msgstr "განრიგი"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "Tasks"
@@ -1709,7 +1703,7 @@ msgstr "Go"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1739,6 +1733,23 @@ msgstr "დახმარება"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "კალენდრის სახელმძღვანელო"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr "გარემოს იერსახე"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "ანგარიშები"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr "თავისუფალი/დაკავებული"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1851,23 +1862,6 @@ msgstr "სხვების თავისუფალი/დაკავე�
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "მისაღებად ელფოსტის სრული მისამართის გამოყენება"
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr "გარემოს იერსახე"
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "ანგარიშები"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "თავისუფალი/დაკავებული"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
@@ -3148,6 +3142,13 @@ msgstr "გასაღების გარეშე"
 msgid "New Mail…"
 msgstr "ახალი ელ-ფოსტა…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Mail"
+msgid "Check Mail"
+msgstr "Merkuro-ის ფოსტა"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3168,7 +3169,14 @@ msgstr "ტრანსპორტის ჩატვირთვის შე�
 msgid "Error queuing message in outbox: %1"
 msgstr "ელფოსტის გამავლების სიაში ჩასმის შეცდომა: %1"
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3269,79 +3277,79 @@ msgstr "ფაილის გახსნა"
 msgid "Choose file"
 msgstr "ფაილის არჩევა"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "შეტყობინების შენახვა - Merkuro-ის ფოსტა"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "ელფოსტის შეტყობინებები (*.mbox)"
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "შეტყობინების დანიშვნა"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "შეტყობინების წაკითხულად &მონიშვნა"
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "შეტყობინების წაუკითხავად მონიშვნა"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "არ მონიშნო, როგორც მნიშვნელოვანი"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Mark as Important"
 msgstr "მნიშვნელოვნად მონიშვნა"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "Move to Trash"
 msgstr "ნაგვის ყუთში გადატანა"
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, kde-format
 msgid "Move Message to..."
 msgstr "შეტყობინების გადატანა..."
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr "შეტყობინების კოპირება..."
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "შემხსენებელი აგენტი"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "შენახვა, როგორც..."
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr "საფოსტო ყუთი არჩეული არაა"
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "გვერდითი პანელიდან საფოსტო ყუთის არჩევა."
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "საფოსტო ყუთი ცარიელია"
@@ -3409,13 +3417,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "გასაღების შემოტანა"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "იდენტიფიკატორები"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3423,12 +3431,12 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "ანგარიშების მიღება"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "ელფოსტის ანგარიშების მორგება"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
@@ -3484,6 +3492,9 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
+
+#~ msgid "Configure Schedule"
+#~ msgstr "გეგმის მორგება"
 
 #~ msgid "Create new calendar"
 #~ msgstr "ახალი კალენდარის შექმნა"

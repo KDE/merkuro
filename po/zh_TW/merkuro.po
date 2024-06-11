@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2024-06-09 19:08+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -129,13 +129,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "新事件…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "新工作…"
@@ -835,7 +835,7 @@ msgstr "您將無法復原這個動作"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -1288,8 +1288,7 @@ msgstr "重做："
 msgid "Refresh All Calendars"
 msgstr "重新整理所有行事曆"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "設定"
@@ -1410,43 +1409,38 @@ msgstr "移除"
 msgid "Return to Location"
 msgstr "回到位置"
 
-#: calendar/qml/main.qml:230
-#, kde-format
-msgid "Configure Schedule"
-msgstr "設定行程"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "建立"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, kde-format
 msgid "Month"
 msgstr "月"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, kde-format
 msgid "Week"
 msgstr "週"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, kde-format
 msgid "3 Days"
 msgstr "3 天"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, kde-format
 msgid "Day"
 msgstr "單日"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, kde-format
 msgid "Schedule"
 msgstr "行程"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "工作"
@@ -1696,7 +1690,7 @@ msgstr "跳至"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1726,6 +1720,23 @@ msgstr "說明"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "行事曆手冊"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr "外觀"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "帳號"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr "行程資訊"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1835,23 +1846,6 @@ msgstr "自動取得其他人的行程資訊"
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "使用完整電子郵件地址來取得行程資訊"
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr "外觀"
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "帳號"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "行程資訊"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
@@ -3128,6 +3122,13 @@ msgstr "無金鑰"
 msgid "New Mail…"
 msgstr "撰寫郵件…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Mail"
+msgid "Check Mail"
+msgstr "Merkuro 郵件"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3148,7 +3149,14 @@ msgstr "載入傳輸時發生錯誤"
 msgid "Error queuing message in outbox: %1"
 msgstr "將信件放入寄件匣時發生錯誤：%1"
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3247,79 +3255,79 @@ msgstr "開啟檔案"
 msgid "Choose file"
 msgstr "選擇檔案…"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "儲存信件 - Merkuro 郵件"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "郵件訊息 (*.mbox)"
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "標記信件"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "將信件標為已讀"
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "將信件標為未讀"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "取消標記為重要"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Mark as Important"
 msgstr "標記為重要"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "Move to Trash"
 msgstr "移到垃圾桶"
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, kde-format
 msgid "Move Message to..."
 msgstr "將信件移動到…"
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr "將信件複製到…"
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "新增回覆提醒"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "另存為…"
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr "未選取信箱"
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "請從側邊欄裡選取一個郵件。"
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "信箱是空的"
@@ -3387,13 +3395,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "匯入金鑰"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "身分"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3401,12 +3409,12 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "收件帳號"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "郵件帳號設定"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
@@ -3462,6 +3470,9 @@ msgstr "建立新標籤…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "快速建立新標籤。"
+
+#~ msgid "Configure Schedule"
+#~ msgstr "設定行程"
 
 #~ msgid "Create new calendar"
 #~ msgstr "建立新的行事曆"

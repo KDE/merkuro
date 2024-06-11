@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2023-09-03 09:43+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -124,13 +124,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "Ny händelse…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "Ny uppgift…"
@@ -852,7 +852,7 @@ msgstr "Det går inte att ångra åtgärden"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "Avbryt"
@@ -1313,8 +1313,7 @@ msgstr "Gör om: "
 msgid "Refresh All Calendars"
 msgstr "Uppdatera alla kalendrar"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "Anpassa"
@@ -1435,43 +1434,38 @@ msgstr "Ta bort"
 msgid "Return to Location"
 msgstr "Gå tillbaka till plats"
 
-#: calendar/qml/main.qml:230
-#, kde-format
-msgid "Configure Schedule"
-msgstr "Anpassa schema"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Skapa"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, kde-format
 msgid "Month"
 msgstr "Månad"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, kde-format
 msgid "Week"
 msgstr "Vecka"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, kde-format
 msgid "3 Days"
 msgstr "3 dagar"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, kde-format
 msgid "Day"
 msgstr "Dag"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, kde-format
 msgid "Schedule"
 msgstr "Schema"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "Uppgifter"
@@ -1721,7 +1715,7 @@ msgstr "Gå"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1751,6 +1745,23 @@ msgstr "Hjälp"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Handbok Kalender"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr "Utseende"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "Konton"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr "Ledig-upptagen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1864,23 +1875,6 @@ msgstr "Hämta andras ledig-upptagen information automatiskt"
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "Använd hela e-postadressen vid hämtning"
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr "Utseende"
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "Konton"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "Ledig-upptagen"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
@@ -3167,6 +3161,13 @@ msgstr "Ingen nyckel"
 msgid "New Mail…"
 msgstr "Nytt brev…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Mail"
+msgid "Check Mail"
+msgstr "Merkuro e-post"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3187,7 +3188,14 @@ msgstr ""
 msgid "Error queuing message in outbox: %1"
 msgstr ""
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
@@ -3290,80 +3298,80 @@ msgstr "Arkiv"
 msgid "Choose file"
 msgstr "Välj en kalender"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr ""
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr ""
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Markera brev"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Markera brev som läst"
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Markera brev som oläst"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Markera inte som viktigt"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Mark as Important"
 msgstr "Markera som viktigt"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, kde-format
 msgid "Move Message to..."
 msgstr "Flytta brev till..."
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Kopiera brev till..."
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Lägg till påminnelse om uppföljning"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, fuzzy, kde-format
 #| msgid "Manage tags..."
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Hantera etiketter..."
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Ingen brevlåda vald"
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Välj en brevlåda i sidoraden."
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Brevlådan är tom"
@@ -3432,14 +3440,14 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Importera nyckel"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Identities"
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identiteter"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, fuzzy, kde-format
 #| msgid "Receiving Accounts"
 msgctxt ""
@@ -3448,12 +3456,12 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Mottagarkonton"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Inställning av e-postkonton"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
@@ -3511,6 +3519,9 @@ msgstr "Skapa en ny etikett…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Lägg snabbt till en ny etikett."
+
+#~ msgid "Configure Schedule"
+#~ msgstr "Anpassa schema"
 
 #~ msgid "Create new calendar"
 #~ msgstr "Skapa ny kalender"

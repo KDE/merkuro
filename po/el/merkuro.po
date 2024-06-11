@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-08 00:40+0000\n"
+"POT-Creation-Date: 2024-06-11 00:39+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -128,13 +128,13 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: calendar/calendarapplication.cpp:216
-#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:296
+#: calendar/qml/Controls/DayMouseArea.qml:50 calendar/qml/main.qml:286
 #, kde-format
 msgid "New Event…"
 msgstr "Νέο γεγονός…"
 
 #: calendar/calendarapplication.cpp:223
-#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:302
+#: calendar/qml/Controls/DayMouseArea.qml:55 calendar/qml/main.qml:292
 #, kde-format
 msgid "New Task…"
 msgstr "Νέα εργασία…"
@@ -899,7 +899,7 @@ msgstr ""
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: contacts/qml/private/DeleteContactAction.qml:47
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31
+#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
 #, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -1366,8 +1366,7 @@ msgstr "Επανάληψη: "
 msgid "Refresh All Calendars"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: calendar/qml/Drawers/MainDrawer.qml:185 calendar/qml/main.qml:241
-#: mail/qml/app/main.qml:45
+#: calendar/qml/Drawers/MainDrawer.qml:185
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"
@@ -1494,49 +1493,43 @@ msgstr "Αφαίρεση"
 msgid "Return to Location"
 msgstr "Επιστροφή στην τοποθεσία"
 
-#: calendar/qml/main.qml:230
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure Schedule"
-msgstr "Διαμόρφωση"
-
-#: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:281 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: calendar/qml/main.qml:311
+#: calendar/qml/main.qml:301
 #, fuzzy, kde-format
 #| msgid "Months"
 msgid "Month"
 msgstr "Μήνες"
 
-#: calendar/qml/main.qml:314
+#: calendar/qml/main.qml:304
 #, fuzzy, kde-format
 #| msgid "Weekly"
 msgid "Week"
 msgstr "Εβδομαδιαίο"
 
-#: calendar/qml/main.qml:317
+#: calendar/qml/main.qml:307
 #, fuzzy, kde-format
 #| msgid "Days"
 msgid "3 Days"
 msgstr "Ημέρες"
 
-#: calendar/qml/main.qml:320
+#: calendar/qml/main.qml:310
 #, fuzzy, kde-format
 #| msgid "Days"
 msgid "Day"
 msgstr "Ημέρες"
 
-#: calendar/qml/main.qml:323
+#: calendar/qml/main.qml:313
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgid "Schedule"
 msgstr "Προβολή χρονοπρογραμματισμού"
 
-#: calendar/qml/main.qml:326 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/main.qml:316 calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
 msgstr "Εργασίες"
@@ -1803,7 +1796,7 @@ msgstr "Μετάβαση"
 #: calendar/qml/Menus/GlobalMenuBar.qml:136 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:28
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:25
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -1835,6 +1828,23 @@ msgstr "Βοήθεια"
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
 msgstr "Το εγχειρίδιο του Kalendar"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:16
+#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#, kde-format
+msgid "Appearance"
+msgstr ""
+
+#: calendar/qml/Settings/ConfigurationsView.qml:22
+#: calendar/qml/Settings/SourceSettingsPage.qml:16
+#, kde-format
+msgid "Accounts"
+msgstr "Λογαριασμοί"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:28
+#, kde-format
+msgid "Free/Busy"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, fuzzy, kde-format
@@ -1944,23 +1954,6 @@ msgstr ""
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr ""
-
-#: calendar/qml/Settings/SettingsPage.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
-#, kde-format
-msgid "Appearance"
-msgstr ""
-
-#: calendar/qml/Settings/SettingsPage.qml:22
-#: calendar/qml/Settings/SourceSettingsPage.qml:16
-#, kde-format
-msgid "Accounts"
-msgstr "Λογαριασμοί"
-
-#: calendar/qml/Settings/SettingsPage.qml:28
-#, kde-format
-msgid "Free/Busy"
 msgstr ""
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
@@ -3319,6 +3312,12 @@ msgstr "Εισαγωγή ημερολογίου"
 msgid "New Mail…"
 msgstr "Νέα εργασία…"
 
+#: mail/mailapplication.cpp:29
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "Check Mail"
+msgstr "Ημερολόγιο"
+
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
@@ -3339,7 +3338,14 @@ msgstr ""
 msgid "Error queuing message in outbox: %1"
 msgstr ""
 
-#: mail/mailmanager.cpp:238
+#: mail/mailkernel.cpp:184
+#, kde-format
+msgid ""
+"Resource %1 is broken.\n"
+"%2"
+msgstr ""
+
+#: mail/mailmanager.cpp:240
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title:window"
@@ -3449,84 +3455,84 @@ msgstr "Αρχείο"
 msgid "Choose file"
 msgstr "Επιλογή ημερολογίου"
 
-#: mail/qml/FolderView.qml:27
+#: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr ""
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr ""
 
-#: mail/qml/FolderView.qml:60
+#: mail/qml/FolderView.qml:66
 #, fuzzy, kde-format
 #| msgid "New event"
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Νέο γεγονός"
 
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:68
 #, kde-format
 msgid "Mark Message as Read"
 msgstr ""
 
-#: mail/qml/FolderView.qml:65
+#: mail/qml/FolderView.qml:71
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr ""
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr ""
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:77
 #, fuzzy, kde-format
 #| msgid "Mark Task as Incomplete"
 msgid "Mark as Important"
 msgstr "Να σημειωθεί η εργασία ως ελλιπής"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgid "Move to Trash"
 msgstr ""
 
-#: mail/qml/FolderView.qml:82
+#: mail/qml/FolderView.qml:88
 #, fuzzy, kde-format
 #| msgid "New event"
 msgid "Move Message to..."
 msgstr "Νέο γεγονός"
 
-#: mail/qml/FolderView.qml:87
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Copy Message to..."
 msgstr ""
 
-#: mail/qml/FolderView.qml:92
+#: mail/qml/FolderView.qml:98
 #, fuzzy, kde-format
 #| msgid "Add Reminder"
 msgid "Add Followup Reminder"
 msgstr "Προσθήκη υπενθύμισης"
 
-#: mail/qml/FolderView.qml:97
+#: mail/qml/FolderView.qml:103
 #, fuzzy, kde-format
 #| msgid "Manage tags..."
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Διαχείριση ετικετών..."
 
-#: mail/qml/FolderView.qml:115
+#: mail/qml/FolderView.qml:121
 #, kde-format
 msgid "No mailbox selected"
 msgstr ""
 
-#: mail/qml/FolderView.qml:116
+#: mail/qml/FolderView.qml:122
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr ""
 
-#: mail/qml/FolderView.qml:123
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "Mailbox is empty"
 msgstr ""
@@ -3597,14 +3603,14 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: mail/qml/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Add event"
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Προσθήκη γεγονότος"
 
-#: mail/qml/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:27
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt ""
@@ -3613,13 +3619,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Λογαριασμοί"
 
-#: mail/qml/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:32
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Mail Account Configuration"
 msgstr "Λογαριασμοί"
 
-#: mail/qml/settings/Settings.qml:12
+#: mail/settings/Settings.qml:12
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title"
@@ -3679,6 +3685,11 @@ msgstr "Δημιουργία νέας ετικέτας…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Γρήγορη προσθήκη νέας ετικέτας."
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure Schedule"
+#~ msgstr "Διαμόρφωση"
 
 #~ msgid "Create new calendar"
 #~ msgstr "Δημιουργία νέου ημερολογίου"
