@@ -154,10 +154,13 @@ void MailKernel::expunge(Akonadi::Collection::Id id, bool sync)
 
 void MailKernel::openFilterDialog(bool createDummyFilter)
 {
+    Q_UNUSED(createDummyFilter)
 }
 
 void MailKernel::createFilter(const QByteArray &field, const QString &value)
 {
+    Q_UNUSED(field)
+    Q_UNUSED(value)
 }
 
 void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instance)
