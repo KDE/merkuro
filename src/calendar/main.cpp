@@ -139,7 +139,5 @@ int main(int argc, char *argv[])
         }
     }
 
-    QDBusConnection::sessionBus().interface()->startService(QStringLiteral("org.kde.merkuroac"));
-
     return app.exec();
 }
