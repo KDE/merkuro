@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine, &parser](const QStringList &arguments, const QString &workingDirectory) {
+        Q_UNUSED(workingDirectory)
         parser.parse(arguments);
         const auto rootObjects = engine.rootObjects();
 
