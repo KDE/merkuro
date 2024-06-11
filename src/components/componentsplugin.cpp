@@ -18,7 +18,7 @@ void ComponentsPlugin::registerTypes(const char *uri)
         return new Helper;
     });
 
-    qmlRegisterSingletonType("org.kde.merkuro.components", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+    qmlRegisterSingletonType(uri, 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });
 
