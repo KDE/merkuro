@@ -118,12 +118,12 @@ QHash<int, QByteArray> ProgressModel::roleNames() const
 {
     auto rolenames = QAbstractListModel::roleNames();
     rolenames.insert({
-        {ProgressRole, "progress"},
-        {StatusRole, "status"},
-        {CanBeCancelledRole, "canBeCancelled"},
-        {UsesBusyIndicatorRole, "usesBusyIndicator"},
-        {CryptoStatusRole, "cryptoStatus"},
-        {IdRole, "id"},
+        {ProgressRole, QByteArrayLiteral("progress")},
+        {StatusRole, QByteArrayLiteral("status")},
+        {CanBeCancelledRole, QByteArrayLiteral("canBeCancelled")},
+        {UsesBusyIndicatorRole, QByteArrayLiteral("usesBusyIndicator")},
+        {CryptoStatusRole, QByteArrayLiteral("cryptoStatus")},
+        {IdRole, QByteArrayLiteral("id")},
     });
     return rolenames;
 }
