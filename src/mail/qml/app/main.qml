@@ -15,7 +15,7 @@ BaseApplication {
     application: Mail.MailApplication
 
     menuBar: Loader {
-        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && applicationWindow().pageStack.currentItem
+        active: Config.showMenubar && !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && applicationWindow().pageStack.currentItem
 
         height: visible ? implicitHeight : 0
         sourceComponent: MenuBar {}

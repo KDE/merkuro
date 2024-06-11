@@ -15,6 +15,7 @@
 #include "helper.h"
 #include "mailapplication.h"
 #include "mailclient.h"
+#include "mailconfig.h"
 #include "mailheadermodel.h"
 #include "mailmanager.h"
 #include "mailmodel.h"
@@ -55,6 +56,12 @@ void CalendarPlugin::registerTypes(const char *uri)
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new Akonadi::MailClient;
+    });
+
+    qmlRegisterSingletonType<MailConfig>("org.kde.merkuro.mail", 1, 0, "Config", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new MailConfig;
     });
 
     qmlRegisterType<MailHeaderModel>("org.kde.merkuro.mail", 1, 0, "MailHeaderModel");

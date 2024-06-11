@@ -46,6 +46,7 @@ ecm_qt_declare_logging_category(merkuro_mail_SRCS
 )
 
 add_library(merkuro_mail_static STATIC ${merkuro_mail_SRCS})
+kconfig_add_kcfg_files(merkuro_mail_static GENERATE_MOC mailconfig.kcfgc)
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
     PUBLIC

@@ -8,9 +8,12 @@
 
 MailApplication::MailApplication(QObject *parent)
     : AbstractApplication(parent)
+    , m_config(new MailConfig(this))
 {
     setupActions();
 }
+
+MailApplication::~MailApplication() = default;
 
 void MailApplication::setupActions()
 {
@@ -30,7 +33,26 @@ void MailApplication::setupActions()
         action->setIcon(QIcon::fromTheme(QStringLiteral("mail-receive")));
     }
 
+    actionName = QLatin1StringView("toggle_menubar");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto action = mCollection->addAction(actionName, this, &MailApplication::toggleMenubar);
+        action->setText(i18n("Show Menubar"));
+        action->setIcon(QIcon::fromTheme(QStringLiteral("show-menu")));
+        action->setCheckable(true);
+        action->setChecked(m_config->showMenubar());
+        mCollection->setDefaultShortcut(action, QKeySequence(i18n("Ctrl+M")));
+    }
+
     mCollection->readSettings();
+}
+
+void MailApplication::toggleMenubar()
+{
+    auto state = !m_config->showMenubar();
+    m_config->setShowMenubar(state);
+    m_config->save();
+
+    Q_EMIT showMenubarChanged(state);
 }
 
 QList<KActionCollection *> MailApplication::actionCollections() const
