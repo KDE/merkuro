@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 #pragma once
 #include "abstractapplication.h"
+#include "contactconfig.h"
 class QQuickWindow;
 class ContactApplication : public AbstractApplication
 {
@@ -18,8 +19,11 @@ Q_SIGNALS:
     void createNewContact();
     void createNewContactGroup();
     void refreshAll();
+    void showMenubarChanged(bool state);
 
 private:
     void setupActions() override;
+    void toggleMenubar();
     KActionCollection *mContactCollection = nullptr;
+    ContactConfig *const m_config;
 };

@@ -13,6 +13,7 @@
 ContactApplication::ContactApplication(QObject *parent)
     : AbstractApplication(parent)
     , mContactCollection(new KActionCollection(parent, i18n("Contact")))
+    , m_config(new ContactConfig(this))
 {
     mContactCollection->setComponentDisplayName(i18n("Contact"));
     setupActions();
@@ -53,7 +54,15 @@ void ContactApplication::setupActions()
         action->setText(i18n("New Contact Group…"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("contact-new-symbolic")));
     }
-
+    actionName = QLatin1StringView("toggle_menubar");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto action = mCollection->addAction(actionName, this, &ContactApplication::toggleMenubar);
+        action->setText(i18n("Show Menubar"));
+        action->setIcon(QIcon::fromTheme(QStringLiteral("show-menu")));
+        action->setCheckable(true);
+        action->setChecked(m_config->showMenubar());
+        mCollection->setDefaultShortcut(action, QKeySequence(i18n("Ctrl+M")));
+    }
     mCollection->readSettings();
     mContactCollection->readSettings();
 }
@@ -65,6 +74,15 @@ void ContactApplication::saveWindowGeometry(QQuickWindow *window)
     KWindowConfig::saveWindowPosition(window, windowGroup);
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();
+}
+
+void ContactApplication::toggleMenubar()
+{
+    auto state = !m_config->showMenubar();
+    m_config->setShowMenubar(state);
+    m_config->save();
+
+    Q_EMIT showMenubarChanged(state);
 }
 
 #include "moc_contactapplication.cpp"
