@@ -82,7 +82,7 @@ public:
     };
     Q_ENUM(DisplayType)
 
-    AddresseeWrapper(QObject *parent = nullptr);
+    explicit AddresseeWrapper(QObject *parent = nullptr);
     ~AddresseeWrapper() override;
 
     [[nodiscard]] Akonadi::Item addresseeItem() const;
