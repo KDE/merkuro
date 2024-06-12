@@ -50,9 +50,9 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles);
-    void updateOverallProperties();
 
 private:
+    void updateOverallProperties();
     QList<KPIM::ProgressItem *> m_items;
     bool m_working = false;
     bool m_indeterminate = false;
