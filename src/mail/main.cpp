@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     const auto args = parser.positionalArguments();
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    if (args.length() > 0) {
+    if (!args.isEmpty()) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
         QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
         engine.load(QUrl(QStringLiteral("qrc:/qml/desktopactions/openmbox.qml")));
