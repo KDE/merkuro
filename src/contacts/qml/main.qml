@@ -17,7 +17,7 @@ BaseApplication {
     title: pageStack.currentItem.title
 
     menuBar: Loader {
-        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && Contact.Config.showMenubar && applicationWindow().pageStack.currentItem
+        active: Config.showMenubar && !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && Contact.Config.showMenubar && applicationWindow().pageStack.currentItem
 
         visible: Contact.Config.showMenubar
         height: visible ? implicitHeight : 0
@@ -53,6 +53,9 @@ BaseApplication {
 
         function onRefreshAll() {
             Contact.ContactManager.updateAllCollections();
+        }
+        function onShowMenubarChanged(state) {
+            Config.showMenubar = state;
         }
     }
 }
