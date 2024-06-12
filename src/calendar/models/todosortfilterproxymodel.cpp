@@ -425,7 +425,7 @@ void TodoSortFilterProxyModel::loadColors()
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     for (const QString &key : colorKeyList) {
-        QColor color = rColorsConfig.readEntry(key, QColor("blue"));
+        const QColor color = rColorsConfig.readEntry(key, QColor("blue"));
         m_colors[key] = color;
     }
     Q_EMIT layoutChanged();

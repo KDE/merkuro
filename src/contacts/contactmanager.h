@@ -48,7 +48,7 @@ public:
 private:
     void saveState() const;
 
-    Akonadi::EntityMimeTypeFilterModel *m_collectionTree = nullptr;
+    Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
     QSortFilterProxyModel *m_filteredContacts = nullptr;

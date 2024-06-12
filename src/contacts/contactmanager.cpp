@@ -44,9 +44,9 @@
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
+    , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
 {
     // Sidebar collection model
-    m_collectionTree = new Akonadi::EntityMimeTypeFilterModel(this);
     m_collectionTree->setDynamicSortFilter(true);
     m_collectionTree->setSortCaseSensitivity(Qt::CaseInsensitive);
     m_collectionTree->setSourceModel(GlobalContactModel::instance()->model());
