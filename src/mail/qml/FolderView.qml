@@ -10,7 +10,7 @@ import QtQuick.Dialogs
 import org.kde.merkuro.mail 1.0
 import org.kde.merkuro.components 1.0
 import org.kde.kitemmodels 1.0 as KItemModels
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import './private'
 
 Kirigami.ScrollablePage {
@@ -42,7 +42,7 @@ Kirigami.ScrollablePage {
     }
 
     actions: [
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "check_mail"
         },
         Kirigami.Action {

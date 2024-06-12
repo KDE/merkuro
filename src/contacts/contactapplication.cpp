@@ -11,7 +11,7 @@
 #include <QQuickWindow>
 
 ContactApplication::ContactApplication(QObject *parent)
-    : AbstractApplication(parent)
+    : AbstractMerkuroApplication(parent)
     , mContactCollection(new KirigamiActionCollection(parent, i18n("Contact")))
 {
     mContactCollection->setComponentDisplayName(i18n("Contact"));
@@ -28,7 +28,7 @@ QList<KirigamiActionCollection *> ContactApplication::actionCollections() const
 
 void ContactApplication::setupActions()
 {
-    AbstractApplication::setupActions();
+    AbstractMerkuroApplication::setupActions();
 
     auto actionName = QLatin1StringView("create_contact");
     if (KAuthorized::authorizeAction(actionName)) {

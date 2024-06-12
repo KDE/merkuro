@@ -6,7 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import Qt5Compat.GraphicalEffects
 
 import org.kde.merkuro.calendar as Calendar
@@ -93,7 +93,7 @@ Kirigami.Page {
             visible: !Kirigami.Settings.isMobile
 
             readonly property list<T.Action> actions: [
-                BaseApp.Action {
+                StatefulApp.Action {
                     actionName: "open_week_view"
                     text: i18nc("@action:inmenu open week view", "Week")
                     checkable: true
@@ -101,14 +101,14 @@ Kirigami.Page {
                     onTriggered: weekViewAction.trigger()
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
-                BaseApp.Action {
+                StatefulApp.Action {
                     actionName: "open_threeday_view"
                     text: i18nc("@action:inmenu open 3 days view", "3 Days")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.ThreeDay
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
-                BaseApp.Action {
+                StatefulApp.Action {
                     actionName: "open_day_view"
                     text: i18nc("@action:inmenu open day view", "Day")
                     checkable: true

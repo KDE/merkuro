@@ -6,7 +6,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.merkuro.contact
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 QQC2.MenuBar {
     FileMenu {}
@@ -16,11 +16,11 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: 'open_kcommand_bar'
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "refresh_all"
         }
     }
@@ -28,10 +28,10 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "create_contact"
         }
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "create_contact_group"
         }
     }

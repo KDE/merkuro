@@ -15,7 +15,7 @@ import org.kde.merkuro.calendar
 import org.kde.merkuro.components
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.kitemmodels
 
 Kirigami.OverlayDrawer {
@@ -172,30 +172,30 @@ Kirigami.OverlayDrawer {
                             enabled: CalendarManager.undoRedoData.redoAvailable
                             onTriggered: CalendarManager.redoAction();
                         },
-                        BaseApp.Action {
+                        StatefulApp.Action {
                             actionName: "import_calendar"
                         },
-                        BaseApp.Action {
+                        StatefulApp.Action {
                             text: i18n("Refresh All Calendars")
                             actionName: "refresh_all"
                         },
-                        BaseApp.Action {
+                        StatefulApp.Action {
                             actionName: "toggle_menubar"
                         },
                         Kirigami.Action {
                             text: i18n("Configure")
                             icon.name: "settings-configure"
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_tag_manager"
                             }
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "options_configure_keybinding"
                             }
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "options_configure"
                             }
                         },
-                        BaseApp.Action {
+                        StatefulApp.Action {
                             actionName: 'file_quit'
                             visible: !Kirigami.Settings.isMobile
                         }
@@ -242,7 +242,7 @@ Kirigami.OverlayDrawer {
                     Repeater {
                         id: generalActions
                         property list<Kirigami.Action> actions: [
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_month_view"
                                 checkable: false
                                 onTriggered: {
@@ -250,7 +250,7 @@ Kirigami.OverlayDrawer {
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_week_view"
                                 checkable: false
                                 // Override the default checked behaviour as we want this to stay highlighted
@@ -262,7 +262,7 @@ Kirigami.OverlayDrawer {
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_schedule_view"
                                 checkable: false
                                 onTriggered: {
@@ -270,7 +270,7 @@ Kirigami.OverlayDrawer {
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_todo_view"
                                 checkable: false
                                 onTriggered: {
@@ -280,24 +280,24 @@ Kirigami.OverlayDrawer {
                             }
                         ]
                         property list<Kirigami.Action> mobileActions: [
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 text: CalendarManager.undoRedoData.undoAvailable ?
                                     i18n("Undo: ") + CalendarManager.undoRedoData.nextUndoDescription : i18n("Undo")
                                 actionName: "edit_undo"
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 text: CalendarManager.undoRedoData.redoAvailable ?
                                     i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : i18n("Redo")
                                 actionName: "edit_redo"
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 actionName: "open_tag_manager"
                                 onTriggered: {
                                     tagManagerAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            BaseApp.Action {
+                            StatefulApp.Action {
                                 text: i18n("Settings")
                                 actionName: "options_configure"
                                 onTriggered: {

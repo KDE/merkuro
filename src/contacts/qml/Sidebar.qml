@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.merkuro.contact 1.0 as Contact
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.merkuro.components 1.0
@@ -77,6 +78,24 @@ Kirigami.OverlayDrawer {
                         OpacityAnimator {
                             duration: Kirigami.Units.longDuration
                             easing.type: Easing.InOutQuad
+                        }
+                    }
+                }
+
+                QQC2.ToolButton {
+                    visible: !toogleMenubar.checked
+                    display: QQC2.ToolButton.IconOnly
+                    icon.name: "application-menu-symbolic"
+
+                    onClicked: menu.popup();
+
+                    QQC2.Menu {
+                        id: menu
+                        QQC2.MenuItem {
+                            id: toogleMenubar
+                            action: StatefulApp.Action {
+                                actionName: 'toggle_menubar'
+                            }
                         }
                     }
                 }

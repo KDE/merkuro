@@ -7,7 +7,7 @@
 #include <QIcon>
 
 MailApplication::MailApplication(QObject *parent)
-    : AbstractApplication(parent)
+    : AbstractMerkuroApplication(parent)
 {
     setupActions();
 }
@@ -16,7 +16,7 @@ MailApplication::~MailApplication() = default;
 
 void MailApplication::setupActions()
 {
-    AbstractApplication::setupActions();
+    AbstractMerkuroApplication::setupActions();
 
     auto actionName = QLatin1StringView("create_mail");
     if (KAuthorized::authorizeAction(actionName)) {

@@ -6,13 +6,13 @@ import QtQuick.Controls as QQC2
 import org.kde.merkuro.components 1.0
 
 QQC2.Menu {
-    BaseApp.Action {
+    StatefulApp.Action {
         merkuroAction: "open_contact_view"
     }
-    BaseApp.Action {
+    StatefulApp.Action {
         merkuroAction: "open_mail_view"
     }
-    BaseApp.Action {
+    StatefulApp.Action {
         merkuroAction: 'open_kcommand_bar'
     }
 }

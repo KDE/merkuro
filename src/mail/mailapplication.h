@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "abstractapplication.h"
+#include "abstractmerkuroapplication.h"
 
-class MailApplication : public AbstractApplication
+class MailApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
 

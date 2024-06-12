@@ -5,8 +5,8 @@
 
 add_library(merkuro_lib STATIC)
 target_sources(merkuro_lib PRIVATE
-    abstractapplication.cpp
-    abstractapplication.h
+    abstractmerkuroapplication.cpp
+    abstractmerkuroapplication.h
     colorproxymodel.cpp
     colorproxymodel.h
     sortedcollectionproxymodel.cpp
@@ -35,5 +35,5 @@ target_link_libraries(merkuro_lib PUBLIC
     KPim6::AkonadiWidgets
     KF6::XmlGui
     KPim6::CalendarUtils
-    KirigamiAddonsBaseApp
+    KirigamiAddonsStatefulApp
 )

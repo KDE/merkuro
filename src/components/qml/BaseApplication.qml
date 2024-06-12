@@ -10,10 +10,12 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.components
 import org.kde.akonadi as Akonadi
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
-BaseApp.ManagedWindow {
+StatefulApp.ManagedWindow {
     id: root
+
+    required property Component menubarComponent
 
     width: Kirigami.Units.gridUnit * 65
 
@@ -22,6 +24,33 @@ BaseApp.ManagedWindow {
     onClosing: root.application.saveWindowGeometry(root)
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+
+    menuBar: Loader {
+        active: !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && root.application.menubarVisible && root.pageStack.currentItem
+
+        height: active ? implicitHeight : 0
+        sourceComponent: root.menubarComponent
+        onItemChanged: if (item) {
+            item.Kirigami.Theme.colorSet = Kirigami.Theme.Header;
+        }
+    }
+
+    property Item hoverLinkIndicator: QQC2.Control {
+        parent: overlay.parent
+        property alias text: linkText.text
+        opacity: text.length > 0 ? 1 : 0
+
+        z: 9999
+        x: 0
+        y: parent.height - implicitHeight
+        contentItem: QQC2.Label {
+            id: linkText
+        }
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        background: Rectangle {
+             color: Kirigami.Theme.backgroundColor
+        }
+    }
 
     QQC2.Action {
         id: closeOverlayAction
@@ -42,7 +71,7 @@ BaseApp.ManagedWindow {
         target: root.application
 
         function onOpenTagManager() {
-            const openDialogWindow = pageStack.pushDialogLayer(tagManagerPage, {
+            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent('org.kde.akonadi', 'TagManagerPage'), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,
@@ -52,11 +81,5 @@ BaseApp.ManagedWindow {
             openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
         }
 
-    }
-
-    // TODO Qt6 use module url import instead for faster startup
-    Component {
-        id: tagManagerPage
-        Akonadi.TagManagerPage {}
     }
 }

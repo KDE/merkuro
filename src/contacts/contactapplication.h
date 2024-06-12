@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 #pragma once
 
-#include "abstractapplication.h"
+#include "abstractmerkuroapplication.h"
 
 class QQuickWindow;
 
-class ContactApplication : public AbstractApplication
+class ContactApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
 

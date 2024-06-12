@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #pragma once
-#include "abstractapplication.h"
+#include "abstractmerkuroapplication.h"
 #include "calendarconfig.h"
 
 #include <Akonadi/ETMCalendar>
@@ -16,7 +16,7 @@
 class QQuickWindow;
 class QSortFilterProxyModel;
 
-class CalendarApplication : public AbstractApplication
+class CalendarApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
 
@@ -81,7 +81,6 @@ private Q_SLOTS:
 
 private:
     void setupActions() override;
-    void toggleMenubar();
     bool showMenubar() const;
 
     KirigamiActionCollection *mSortCollection = nullptr;

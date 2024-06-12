@@ -9,20 +9,12 @@ import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.merkuro.mail.settings as Settings
 
-BaseApplication {
+StatefulApplication {
     id: root
 
     application: Mail.MailApplication
 
-    menuBar: Loader {
-        active: Config.showMenubar && !Kirigami.Settings.hasPlatformMenuBar && !Kirigami.Settings.isMobile && applicationWindow().pageStack.currentItem
-
-        height: visible ? implicitHeight : 0
-        sourceComponent: MenuBar {}
-        onItemChanged: if (item) {
-            item.Kirigami.Theme.colorSet = Kirigami.Theme.Header;
-        }
-    }
+    menubarComponent: MenuBar {}
 
     pageStack.initialPage: Mail.FolderView {}
 

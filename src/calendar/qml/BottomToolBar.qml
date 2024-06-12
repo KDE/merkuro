@@ -8,27 +8,27 @@ import QtQuick
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.merkuro.components 1.0
 import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 Kirigami.NavigationTabBar {
     actions: [
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_month_view"
             property string name: "monthView"
         },
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_threeday_view"
             property string name: "threeDayView"
         },
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_day_view"
             property string name: "dayView"
         },
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_schedule_view"
             property string name: "scheduleView"
         },
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_todo_view"
             property string name: "todoView"
         }

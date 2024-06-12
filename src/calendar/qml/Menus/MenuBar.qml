@@ -8,13 +8,13 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Window
 import org.kde.merkuro.calendar
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.baseapp as BaseApp
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 QQC2.MenuBar {
     id: bar
     FileMenu {
         QQC2.MenuItem {
-            action: BaseApp.Action {
+            action: StatefulApp.Action {
                 actionName: "import_calendar"
             }
         }
@@ -22,13 +22,13 @@ QQC2.MenuBar {
 
     EditMenu {
         QQC2.MenuItem {
-            action: BaseApp.Action {
+            action: StatefulApp.Action {
                 actionName: "edit_undo"
             }
         }
 
         QQC2.MenuItem {
-            action: BaseApp.Action {
+            action: StatefulApp.Action {
                 actionName: "edit_redo"
             }
         }
@@ -40,27 +40,27 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_month_view"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_week_view"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_threeday_view"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_day_view"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_schedule_view"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_todo_view"
         }
 
@@ -71,42 +71,42 @@ QQC2.MenuBar {
             title: i18n("Sort Tasks")
             enabled: applicationWindow().mode === CalendarApplication.Todo
 
-            BaseApp.Action {
+            StatefulApp.Action {
                 actionName: "todoview_sort_by_due_date"
             }
 
-            BaseApp.Action {
+            StatefulApp.Action {
                 actionName: "todoview_sort_by_priority"
             }
 
-            BaseApp.Action {
+            StatefulApp.Action {
                 actionName: "todoview_sort_alphabetically"
             }
 
             QQC2.MenuSeparator {
             }
 
-            BaseApp.Action {
+            StatefulApp.Action {
                 actionName: "todoview_order_ascending"
             }
 
-            BaseApp.Action {
+            StatefulApp.Action {
                 actionName: "todoview_order_descending"
             }
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "todoview_show_completed"
             enabled: mode === CalendarApplication.Todo
         }
 
         QQC2.MenuSeparator {}
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: 'open_kcommand_bar'
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             text: i18n("Refresh All Calendars")
             actionName: "refresh_all"
         }
@@ -115,24 +115,24 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "Go")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "move_view_backwards"
             enabled: mode & CalendarApplication.Event
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "move_view_forwards"
             enabled: mode & CalendarApplication.Event
         }
 
         QQC2.MenuSeparator {}
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "move_view_to_today"
             enabled: mode & CalendarApplication.Event
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_date_changer"
             enabled: mode & CalendarApplication.Event
         }
@@ -141,11 +141,11 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "create_event"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "create_todo"
         }
     }
@@ -159,11 +159,11 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "Help")
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_about_page"
         }
 
-        BaseApp.Action {
+        StatefulApp.Action {
             actionName: "open_about_kde_page"
         }
 

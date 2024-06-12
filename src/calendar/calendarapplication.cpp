@@ -24,7 +24,7 @@
 #include "mousetracker.h"
 
 CalendarApplication::CalendarApplication(QObject *parent)
-    : AbstractApplication(parent)
+    : AbstractMerkuroApplication(parent)
     , mSortCollection(new KirigamiActionCollection(parent, i18n("Sort")))
     , m_viewGroup(new QActionGroup(this))
     , m_config(new CalendarConfig(this))
@@ -44,7 +44,7 @@ CalendarApplication::CalendarApplication(QObject *parent)
 
 void CalendarApplication::setupActions()
 {
-    AbstractApplication::setupActions();
+    AbstractMerkuroApplication::setupActions();
 
     auto actionName = QLatin1StringView("open_todo_view");
     QAction *openTodoAction = nullptr;
@@ -193,16 +193,6 @@ void CalendarApplication::setupActions()
             });
             openDateChangerAction->setEnabled(!openTodoAction->isChecked());
         }
-    }
-
-    actionName = QLatin1StringView("toggle_menubar");
-    if (KAuthorized::authorizeAction(actionName)) {
-        auto action = mainCollection()->addAction(actionName, this, &CalendarApplication::toggleMenubar);
-        action->setText(i18n("Show Menubar"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("show-menu")));
-        action->setCheckable(true);
-        action->setChecked(m_config->showMenubar());
-        mainCollection()->setDefaultShortcut(action, QKeySequence(i18n("Ctrl+M")));
     }
 
     actionName = QLatin1StringView("create_event");
@@ -455,15 +445,6 @@ void CalendarApplication::handleMouseViewNavButtons(const Qt::MouseButton presse
 QList<KirigamiActionCollection *> CalendarApplication::actionCollections() const
 {
     return {mainCollection(), mSortCollection};
-}
-
-void CalendarApplication::toggleMenubar()
-{
-    auto state = !m_config->showMenubar();
-    m_config->setShowMenubar(state);
-    m_config->save();
-
-    Q_EMIT showMenubarChanged(state);
 }
 
 bool CalendarApplication::showMenubar() const
