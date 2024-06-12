@@ -37,7 +37,7 @@ public:
     void loadConfig();
     void saveConfig();
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     MailCommon::EntityCollectionOrderProxyModel *foldersModel() const;
     MailModel *folderModel() const;
     Akonadi::Session *session() const;
@@ -49,7 +49,7 @@ public:
     Q_INVOKABLE void addCollection(const QModelIndex &index, const QVariant &name);
     Q_INVOKABLE void deleteCollection(const QModelIndex &index);
     Q_INVOKABLE void editCollection(const QModelIndex &index);
-    Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
+    [[nodiscard]] Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
     Q_INVOKABLE void saveMail(const QUrl &fileUrl, const Akonadi::Item &item);
     Q_INVOKABLE void checkMail();
 

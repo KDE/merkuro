@@ -31,14 +31,14 @@ public:
     };
 
     explicit MailModel(QObject *parent = nullptr);
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     virtual QVariant data(const QModelIndex &index, int role) const override;
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
     Q_INVOKABLE void updateMessageStatus(int row, MessageStatus messageStatus);
     Q_INVOKABLE MessageStatus copyMessageStatus(MessageStatus messageStatus);
 
-    QString searchString() const;
+    [[nodiscard]] QString searchString() const;
     void setSearchString(const QString &searchString);
 
 Q_SIGNALS:

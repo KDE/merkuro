@@ -36,7 +36,7 @@ public:
     [[nodiscard]] QString filterEmail() const;
     void setEmailFilter(const QString &email);
 
-    TypeKeys displayedTypeKeys() const;
+    [[nodiscard]] TypeKeys displayedTypeKeys() const;
     void setDisplayedTypeKeys(const TypeKeys displayedKeyTypes);
 
 private:

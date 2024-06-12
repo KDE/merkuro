@@ -19,7 +19,7 @@ public:
 
     [[nodiscard]] Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
-    KMime::Message::Ptr message() const;
+    [[nodiscard]] KMime::Message::Ptr message() const;
 
 Q_SIGNALS:
     void itemChanged();
