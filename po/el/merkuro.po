@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -117,12 +117,14 @@ msgstr "Έως σήμερα"
 msgid "To Date…"
 msgstr "Έως ημερομηνία…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Εμφάνιση γραμμής μενού"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -2325,25 +2327,25 @@ msgstr "Είσοδος σε πλήρη οθόνη"
 msgid "Home:"
 msgstr ""
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, fuzzy, kde-format
 #| msgid "Contacts"
 msgid "Contact"
 msgstr "Επαφές"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgid "New Contact…"
 msgstr "Νέο γεγονός…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "Refresh All Address Books"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgid "New Contact Group…"
@@ -3306,13 +3308,13 @@ msgstr ""
 msgid "No key"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgid "New Mail…"
 msgstr "Νέα εργασία…"
 
-#: mail/mailapplication.cpp:29
+#: mail/mailapplication.cpp:32
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Check Mail"
@@ -3338,7 +3340,7 @@ msgstr ""
 msgid "Error queuing message in outbox: %1"
 msgstr ""
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"

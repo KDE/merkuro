@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
 "PO-Revision-Date: 2024-06-08 10:47+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -114,12 +114,14 @@ msgstr "Al Hodiaŭ"
 msgid "To Date…"
 msgstr "Ĝis nun…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Montri Menubreton"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -2220,22 +2222,22 @@ msgstr "Eniru Plenan Ekranon"
 msgid "Home:"
 msgstr "Hejmo:"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "Kontakto"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "Nova Kontakto…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "Refreŝigi Ĉiujn Adreslibrojn"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "Nova Kontakta Grupo…"
@@ -3141,12 +3143,12 @@ msgstr "Bildpeto estis nuligita"
 msgid "No key"
 msgstr "Neniu ŝlosilo"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "Nova Poŝto…"
 
-#: mail/mailapplication.cpp:29
+#: mail/mailapplication.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Merkuro Mail"
@@ -3173,7 +3175,7 @@ msgstr "Eraro ŝargante transporton"
 msgid "Error queuing message in outbox: %1"
 msgstr "Eraro envicigante mesaĝon en elirkesto: %1"
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"

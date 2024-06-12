@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
 "PO-Revision-Date: 2024-06-09 09:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -111,12 +111,14 @@ msgstr "Vers aujourd'hui"
 msgid "To Date…"
 msgstr "Vers la date..."
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Afficher la barre de menus"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "CRTL + M"
@@ -2234,22 +2236,22 @@ msgstr "Passer en mode « Plein écran »"
 msgid "Home:"
 msgstr "Maison :"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "Contact"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "Nouvel contact..."
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "Mettre à jour tous les carnets d'adresses"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "Nouveau groupe de contacts..."
@@ -3157,12 +3159,12 @@ msgstr "La demande d'image a été annulée."
 msgid "No key"
 msgstr "Aucune clé"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "Nouveau courriel..."
 
-#: mail/mailapplication.cpp:29
+#: mail/mailapplication.cpp:32
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Merkuro Mail"
@@ -3189,7 +3191,7 @@ msgstr "Erreur de chargement de transport"
 msgid "Error queuing message in outbox: %1"
 msgstr "Message d'erreur de mise en file d'attente dans la boîte d'envoi : %1"
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
-"PO-Revision-Date: 2024-06-08 07:22+0200\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
+"PO-Revision-Date: 2024-06-11 07:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -114,12 +114,14 @@ msgstr "Do danes"
 msgid "To Date…"
 msgstr "Do datuma…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Prikaži menijsko vrstico"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -2250,22 +2252,22 @@ msgstr "V celozaslonski način"
 msgid "Home:"
 msgstr "Domov:"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "Stik"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "Nov stik…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "Osveži vse adresarje"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "Nova skupina stikov…"
@@ -3177,17 +3179,15 @@ msgstr "Zahtevek za sliko je bil preklican"
 msgid "No key"
 msgstr "Ni ključa"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "Novo sporočilo…"
 
-#: mail/mailapplication.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#: mail/mailapplication.cpp:32
+#, kde-format
 msgid "Check Mail"
-msgstr "Mercuro pošta"
+msgstr "Preveri pošto"
 
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
@@ -3209,12 +3209,14 @@ msgstr "Napaka pri nalaganju transporta"
 msgid "Error queuing message in outbox: %1"
 msgstr "Napaka pri uvrščanju sporočila v čakalno vrsto za pošiljanje: %1"
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"Vir %1 je pokvarjen.\n"
+"%2"
 
 #: mail/mailmanager.cpp:240
 #, kde-format

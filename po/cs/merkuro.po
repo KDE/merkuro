@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 09:44+0200\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
+"PO-Revision-Date: 2024-06-11 09:29+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -113,12 +113,14 @@ msgstr "Na dnešek"
 msgid "To Date…"
 msgstr "K datu..."
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Zobrazovat hlavní nabídku"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -226,10 +228,9 @@ msgid "Calendar Application"
 msgstr "Aplikace kalendáře"
 
 #: calendar/main.cpp:61 contacts/main.cpp:53 mail/main.cpp:55
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021"
+#, kde-format
 msgid "(c) KDE Community 2021-2024"
-msgstr "(c) Komunita KDE 2021"
+msgstr "(c) Komunita KDE 2021-2024"
 
 #: calendar/main.cpp:63 contacts/main.cpp:55 mail/main.cpp:57
 #, kde-format
@@ -2221,22 +2222,22 @@ msgstr "Přejít do celoobrazovkového režimu"
 msgid "Home:"
 msgstr "Domácí stránka:"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "Kontakt"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "Nový kontakt…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "Obnovit všechny knihy adres"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "Nová skupina kontaktů..."
@@ -3146,17 +3147,15 @@ msgstr ""
 msgid "No key"
 msgstr "Žádný klíč"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "Nový e-mail..."
 
-#: mail/mailapplication.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#: mail/mailapplication.cpp:32
+#, kde-format
 msgid "Check Mail"
-msgstr "Pošta Merkuro"
+msgstr ""
 
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
@@ -3178,7 +3177,7 @@ msgstr "Chyba při načítání transportu"
 msgid "Error queuing message in outbox: %1"
 msgstr ""
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"
@@ -3499,6 +3498,3 @@ msgstr "Vytvořit novou značku…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rychle přidat novou značku."
-
-#~ msgid "Configure Schedule"
-#~ msgstr "Nastavit plán"

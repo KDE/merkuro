@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
-"PO-Revision-Date: 2024-06-08 10:44+0200\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
+"PO-Revision-Date: 2024-06-11 11:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -116,12 +116,14 @@ msgstr "A avui"
 msgid "To Date…"
 msgstr "A la data…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "Mostra la barra de menús"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -2230,22 +2232,22 @@ msgstr "Entra a pantalla completa"
 msgid "Home:"
 msgstr "Casa:"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "Contacte"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "Contacte nou…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "Actualitza totes les llibretes d'adreces"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "Grup de contactes nou…"
@@ -3155,17 +3157,15 @@ msgstr "S'ha cancel·lat la sol·licitud d'imatge"
 msgid "No key"
 msgstr "Sense clau"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "Correu nou…"
 
-#: mail/mailapplication.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#: mail/mailapplication.cpp:32
+#, kde-format
 msgid "Check Mail"
-msgstr "Merkuro Mail"
+msgstr "Comprova el correu"
 
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
@@ -3187,12 +3187,14 @@ msgstr "Error en carregar el transport"
 msgid "Error queuing message in outbox: %1"
 msgstr "Error en enviar el missatge a la cua de la safata de sortida: %1"
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"El recurs %1 està trencat.\n"
+"%2"
 
 #: mail/mailmanager.cpp:240
 #, kde-format

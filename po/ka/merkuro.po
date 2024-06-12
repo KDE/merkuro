@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-11 00:39+0000\n"
-"PO-Revision-Date: 2024-06-08 08:50+0200\n"
+"POT-Creation-Date: 2024-06-12 00:39+0000\n"
+"PO-Revision-Date: 2024-06-11 04:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -114,12 +114,14 @@ msgstr "დღემდე"
 msgid "To Date…"
 msgstr "თარიღამდე…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:206 contacts/contactapplication.cpp:60
+#: mail/mailapplication.cpp:39
 #, kde-format
 msgid "Show Menubar"
 msgstr "მენიუს ზოლის ჩვნება"
 
-#: calendar/calendarapplication.cpp:210
+#: calendar/calendarapplication.cpp:210 contacts/contactapplication.cpp:64
+#: mail/mailapplication.cpp:43
 #, kde-format
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
@@ -2215,22 +2217,22 @@ msgstr "სრული ეკრანი"
 msgid "Home:"
 msgstr "საწყისი:"
 
-#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
+#: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:18
 #, kde-format
 msgid "Contact"
 msgstr "კონტაქტი"
 
-#: contacts/contactapplication.cpp:36
+#: contacts/contactapplication.cpp:37
 #, kde-format
 msgid "New Contact…"
 msgstr "ახალი კონტაქტი…"
 
-#: contacts/contactapplication.cpp:43
+#: contacts/contactapplication.cpp:44
 #, kde-format
 msgid "Refresh All Address Books"
 msgstr "ყველა მისამართების წიგნის განახლება"
 
-#: contacts/contactapplication.cpp:53
+#: contacts/contactapplication.cpp:54
 #, kde-format
 msgid "New Contact Group…"
 msgstr "ახალი კონტაქტების ჯგუფი…"
@@ -3137,17 +3139,15 @@ msgstr "გამოსახულების მოთხოვნა გა�
 msgid "No key"
 msgstr "გასაღების გარეშე"
 
-#: mail/mailapplication.cpp:22
+#: mail/mailapplication.cpp:25
 #, kde-format
 msgid "New Mail…"
 msgstr "ახალი ელ-ფოსტა…"
 
-#: mail/mailapplication.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#: mail/mailapplication.cpp:32
+#, kde-format
 msgid "Check Mail"
-msgstr "Merkuro-ის ფოსტა"
+msgstr "ელფოსტის შემოწმება"
 
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
@@ -3169,12 +3169,14 @@ msgstr "ტრანსპორტის ჩატვირთვის შე�
 msgid "Error queuing message in outbox: %1"
 msgstr "ელფოსტის გამავლების სიაში ჩასმის შეცდომა: %1"
 
-#: mail/mailkernel.cpp:184
+#: mail/mailkernel.cpp:187
 #, kde-format
 msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"რესურსი %1 გაფუჭებულია.\n"
+"%2"
 
 #: mail/mailmanager.cpp:240
 #, kde-format
