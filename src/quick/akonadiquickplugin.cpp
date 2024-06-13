@@ -18,24 +18,24 @@ void AkonadiQuickPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QByteArray("org.kde.akonadi"));
 
-    qmlRegisterSingletonType<Akonadi::Quick::MimeTypes>("org.kde.akonadi", 1, 0, "MimeTypes", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+    qmlRegisterSingletonType<Akonadi::Quick::MimeTypes>(uri, 1, 0, "MimeTypes", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new Akonadi::Quick::MimeTypes;
     });
 
-    qmlRegisterSingletonType<TagManager>("org.kde.akonadi", 1, 0, "TagManager", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+    qmlRegisterSingletonType<TagManager>(uri, 1, 0, "TagManager", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new TagManager;
     });
 
-    qmlRegisterType<AgentConfiguration>("org.kde.akonadi", 1, 0, "AgentConfiguration");
-    qmlRegisterType<Akonadi::Quick::CollectionComboBoxModel>("org.kde.akonadi", 1, 0, "CollectionComboBoxModel");
-    qmlRegisterType<Akonadi::Quick::CollectionPickerModel>("org.kde.akonadi", 1, 0, "CollectionPickerModel");
-    qmlRegisterType<Akonadi::Quick::ProgressModel>("org.kde.akonadi", 1, 0, "ProgressModel");
+    qmlRegisterType<AgentConfiguration>(uri, 1, 0, "AgentConfiguration");
+    qmlRegisterType<Akonadi::Quick::CollectionComboBoxModel>(uri, 1, 0, "CollectionComboBoxModel");
+    qmlRegisterType<Akonadi::Quick::CollectionPickerModel>(uri, 1, 0, "CollectionPickerModel");
+    qmlRegisterType<Akonadi::Quick::ProgressModel>(uri, 1, 0, "ProgressModel");
 
-    qmlRegisterUncreatableType<Akonadi::Quick::Collection>("org.kde.akonadi", 1, 0, "Collection", QStringLiteral("It's just an enum"));
+    qmlRegisterUncreatableType<Akonadi::Quick::Collection>(uri, 1, 0, "Collection", QStringLiteral("It's just an enum"));
 }
 
 #include "moc_akonadiquickplugin.cpp"
