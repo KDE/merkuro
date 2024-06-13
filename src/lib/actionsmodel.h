@@ -44,7 +44,7 @@ public:
      */
     void refresh(const QList<ActionGroup> &actionGroups);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override
+    [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override
     {
         if (parent.isValid()) {
             return 0;
@@ -52,7 +52,7 @@ public:
         return m_rows.size();
     }
 
-    int columnCount(const QModelIndex &parent = QModelIndex()) const override
+    [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override
     {
         Q_UNUSED(parent);
         return 2;
@@ -72,7 +72,7 @@ public:
         return QAbstractTableModel::setData(index, value, role);
     }
 
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     /**
      * action with name @p name was triggered, store it in m_lastTriggered
@@ -92,7 +92,7 @@ public:
      */
     void setLastUsedActions(const QStringList &actionNames);
 
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
 private:
     QList<Item> m_rows;

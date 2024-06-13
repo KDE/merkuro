@@ -20,10 +20,10 @@ public:
     Q_ENUM(Roles)
 
     explicit ColorProxyModel(QObject *parent = nullptr);
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
-    QColor getCollectionColor(Akonadi::Collection collection) const;
+    [[nodiscard]] QColor getCollectionColor(Akonadi::Collection collection) const;
     [[nodiscard]] QColor color(Akonadi::Collection::Id collectionId) const;
     void setColor(Akonadi::Collection::Id collectionId, const QColor &color);
 

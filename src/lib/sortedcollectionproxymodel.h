@@ -13,5 +13,5 @@ public:
     explicit SortedCollectionProxModel(QObject *parent = nullptr);
 
 protected:
-    bool lessThan(const QModelIndex &sourceLeft, const QModelIndex &sourceRight) const override;
+    [[nodiscard]] bool lessThan(const QModelIndex &sourceLeft, const QModelIndex &sourceRight) const override;
 };
