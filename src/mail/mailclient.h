@@ -76,7 +76,6 @@ private:
                       const KMime::Message::Ptr &message);
 
     void handleQueueJobFinished(KJob *job);
-    QList<QByteArray> m_charsets;
 
 Q_SIGNALS:
     void finished(Akonadi::MailClient::Result result, const QString &errorString);

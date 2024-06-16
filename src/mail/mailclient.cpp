@@ -37,7 +37,6 @@ using namespace Akonadi;
 MailClient::MailClient(QObject *parent)
     : QObject(parent)
 {
-    m_charsets << "utf-8";
 }
 
 MailClient::~MailClient() = default;
@@ -113,7 +112,6 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     auto composer = std::make_unique<MessageComposer::Composer>();
     auto *globalPart = composer->globalPart();
     globalPart->setGuiEnabled(false);
-    globalPart->setCharsets(m_charsets);
     globalPart->setMDNRequested(false);
     globalPart->setRequestDeleveryConfirmation(false);
 
