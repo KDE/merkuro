@@ -10,7 +10,7 @@
 #pragma once
 
 #include "mailheadermodel.h"
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <QObject>
 
 namespace KIdentityManagementCore
