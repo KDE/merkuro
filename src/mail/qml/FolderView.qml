@@ -44,6 +44,7 @@ Kirigami.ScrollablePage {
     actions: [
         StatefulApp.Action {
             actionName: "check_mail"
+            application: MailApplication
         },
         Kirigami.Action {
             icon.name: 'mail-send'

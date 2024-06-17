@@ -5,7 +5,14 @@
 
 add_library(merkuro_contact_static STATIC)
 
-target_link_libraries(merkuro_contact_static PUBLIC merkuro_lib KF6::XmlGui)
+target_link_libraries(merkuro_contact_static PUBLIC
+    merkuro_lib
+    KF6::XmlGui
+    KF6::Contacts
+    KPim6::AkonadiWidgets
+    KPim6::AkonadiContactCore
+    MerkuroComponents
+)
 set_target_properties(merkuro_contact_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_sources(merkuro_contact_static PUBLIC
     contactapplication.cpp

@@ -9,15 +9,17 @@ import org.kde.kirigamiaddons.statefulapp as StatefulApp
 QQC2.Menu {
     id: root
 
-    required property var application
+    required property AbstractMerkuroApplication application
 
     title: i18nc("@action:menu", "Help")
 
     StatefulApp.Action {
+        application: root.application
         actionName: "open_about_page"
     }
 
     StatefulApp.Action {
+        application: root.application
         actionName: "open_about_kde_page"
     }
 

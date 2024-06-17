@@ -59,8 +59,15 @@ add_library(merkuro_calendar_static STATIC ${merkuro_calendar_SRCS})
 kconfig_add_kcfg_files(merkuro_calendar_static GENERATE_MOC calendarconfig.kcfgc)
 set_target_properties(merkuro_calendar_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_calendar_static PUBLIC
-    merkuro_lib
+    Qt::DBus
     KF6::WindowSystem
+    KF6::Contacts
+    KPim6::AkonadiCalendar
+    KPim6::AkonadiContactCore
+    KPim6::AkonadiWidgets
+    KPim6::CalendarUtils
+    merkuro_lib
+    MerkuroComponents
 )
 
 

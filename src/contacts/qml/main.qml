@@ -9,7 +9,7 @@ import org.kde.merkuro.contact 1.0 as Contact
 import org.kde.akonadi 1.0 as Akonadi
 import org.kde.kirigami 2.20 as Kirigami
 
-StatefulApplication {
+BaseApplication {
     id: root
 
     application: Contact.ContactApplication

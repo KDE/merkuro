@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "abstractmerkuroapplication.h"
+#include <abstractmerkuroapplication.h>
 
 class MailApplication : public AbstractMerkuroApplication
 {

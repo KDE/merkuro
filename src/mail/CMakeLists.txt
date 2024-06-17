@@ -50,8 +50,7 @@ kconfig_add_kcfg_files(merkuro_mail_static GENERATE_MOC mailconfig.kcfgc)
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
     PUBLIC
-        merkuro_lib
-        KPim6::MessageComposer 
+        KPim6::MessageComposer
         KPim6::MailCommon
         KPim6::MailTransport
         KPim6::AkonadiMime
@@ -64,6 +63,7 @@ target_link_libraries(merkuro_mail_static
         KF6::Codecs
         KF6::XmlGui
         KF6::Notifications
+        MerkuroComponents
 )
 
 ecm_add_qml_module(merkuro_mail_plugin URI "org.kde.merkuro.mail" VERSION 1.0)

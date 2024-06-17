@@ -18,6 +18,7 @@ QQC2.MenuBar {
         title: i18nc("@action:menu", "View")
 
         StatefulApp.Action {
+            application: MailApplication
             actionName: 'open_kcommand_bar'
         }
     }
@@ -26,6 +27,7 @@ QQC2.MenuBar {
         title: i18nc("@action:menu", "Create")
 
         StatefulApp.Action {
+            application: MailApplication
             actionName: "create_mail"
         }
     }

@@ -19,7 +19,7 @@ import org.kde.merkuro.utils 1.0
 import org.kde.merkuro.components 1.0
 import org.kde.merkuro.calendar.private 1.0
 
-StatefulApplication {
+BaseApplication {
     id: root
 
     application: CalendarApplication

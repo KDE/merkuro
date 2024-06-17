@@ -94,6 +94,7 @@ Kirigami.Page {
 
             readonly property list<T.Action> actions: [
                 StatefulApp.Action {
+                    application: Calendar.CalendarApplication
                     actionName: "open_week_view"
                     text: i18nc("@action:inmenu open week view", "Week")
                     checkable: true
@@ -102,6 +103,7 @@ Kirigami.Page {
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
                 StatefulApp.Action {
+                    application: Calendar.CalendarApplication
                     actionName: "open_threeday_view"
                     text: i18nc("@action:inmenu open 3 days view", "3 Days")
                     checkable: true
@@ -109,6 +111,7 @@ Kirigami.Page {
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
                 StatefulApp.Action {
+                    application: Calendar.CalendarApplication
                     actionName: "open_day_view"
                     text: i18nc("@action:inmenu open day view", "Day")
                     checkable: true

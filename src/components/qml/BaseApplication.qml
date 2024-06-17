@@ -12,7 +12,7 @@ import org.kde.merkuro.components
 import org.kde.akonadi as Akonadi
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
-StatefulApp.ManagedWindow {
+StatefulApp.StatefulWindow {
     id: root
 
     required property Component menubarComponent
@@ -21,7 +21,6 @@ StatefulApp.ManagedWindow {
 
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
-    onClosing: root.application.saveWindowGeometry(root)
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
 

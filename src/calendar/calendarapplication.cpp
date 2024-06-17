@@ -211,7 +211,7 @@ void CalendarApplication::setupActions()
 
     actionName = QLatin1StringView("switch_application_language");
     if (KAuthorized::authorizeAction(actionName)) {
-        auto action = KStandardAction::switchApplicationLanguage(this, &CalendarApplication::openLanguageSwitcher, this);
+        auto action = KStandardActions::switchApplicationLanguage(this, &CalendarApplication::openLanguageSwitcher, this);
         mainCollection()->addAction(action->objectName(), action);
     }
 
@@ -224,13 +224,13 @@ void CalendarApplication::setupActions()
 
     actionName = QLatin1StringView("edit_undo");
     if (KAuthorized::authorizeAction(actionName)) {
-        auto action = KStandardAction::undo(this, &CalendarApplication::undo, this);
+        auto action = KStandardActions::undo(this, &CalendarApplication::undo, this);
         action->setEnabled(false);
         mainCollection()->addAction(action->objectName(), action);
     }
     actionName = QLatin1StringView("edit_redo");
     if (KAuthorized::authorizeAction(actionName)) {
-        auto action = KStandardAction::redo(this, &CalendarApplication::redo, this);
+        auto action = KStandardActions::redo(this, &CalendarApplication::redo, this);
         action->setEnabled(false);
         mainCollection()->addAction(action->objectName(), action);
     }

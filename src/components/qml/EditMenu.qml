@@ -8,6 +8,7 @@ import org.kde.merkuro.components 1.0
 
 QQC2.Menu {
     id: editMenu
+
     property Window _window: applicationWindow()
 
     title: i18nc("@action:menu", "Edit")

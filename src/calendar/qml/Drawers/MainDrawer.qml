@@ -164,8 +164,8 @@ Kirigami.OverlayDrawer {
                             enabled: CalendarManager.undoRedoData.undoAvailable
                             onTriggered: CalendarManager.undoAction();
                         },
-                        Kirigami.Action {
-                            icon.name: Helper.iconName(redoAction.icon)
+                        StatefulApp.Action {
+                            icon.name: 'edit-redo'
                             text: CalendarManager.undoRedoData.redoAvailable ?
                                 i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : redoAction.text
                             shortcut: redoAction.shortcut
@@ -173,30 +173,37 @@ Kirigami.OverlayDrawer {
                             onTriggered: CalendarManager.redoAction();
                         },
                         StatefulApp.Action {
+                            application: CalendarApplication
                             actionName: "import_calendar"
                         },
                         StatefulApp.Action {
                             text: i18n("Refresh All Calendars")
                             actionName: "refresh_all"
+                            application: CalendarApplication
                         },
                         StatefulApp.Action {
                             actionName: "toggle_menubar"
+                            application: CalendarApplication
                         },
                         Kirigami.Action {
                             text: i18n("Configure")
                             icon.name: "settings-configure"
                             StatefulApp.Action {
                                 actionName: "open_tag_manager"
+                                application: CalendarApplication
                             }
                             StatefulApp.Action {
                                 actionName: "options_configure_keybinding"
+                                application: CalendarApplication
                             }
                             StatefulApp.Action {
                                 actionName: "options_configure"
+                                application: CalendarApplication
                             }
                         },
                         StatefulApp.Action {
                             actionName: 'file_quit'
+                            application: CalendarApplication
                             visible: !Kirigami.Settings.isMobile
                         }
                     ]
@@ -244,6 +251,7 @@ Kirigami.OverlayDrawer {
                         property list<Kirigami.Action> actions: [
                             StatefulApp.Action {
                                 actionName: "open_month_view"
+                                application: CalendarApplication
                                 checkable: false
                                 onTriggered: {
                                     monthViewAction.trigger()
@@ -252,6 +260,7 @@ Kirigami.OverlayDrawer {
                             },
                             StatefulApp.Action {
                                 actionName: "open_week_view"
+                                application: CalendarApplication
                                 checkable: false
                                 // Override the default checked behaviour as we want this to stay highlighted
                                 // in any of the hourly views, at least in desktop mode
@@ -264,6 +273,7 @@ Kirigami.OverlayDrawer {
                             },
                             StatefulApp.Action {
                                 actionName: "open_schedule_view"
+                                application: CalendarApplication
                                 checkable: false
                                 onTriggered: {
                                     scheduleViewAction.trigger()
@@ -272,6 +282,7 @@ Kirigami.OverlayDrawer {
                             },
                             StatefulApp.Action {
                                 actionName: "open_todo_view"
+                                application: CalendarApplication
                                 checkable: false
                                 onTriggered: {
                                     todoViewAction.trigger()
@@ -281,16 +292,19 @@ Kirigami.OverlayDrawer {
                         ]
                         property list<Kirigami.Action> mobileActions: [
                             StatefulApp.Action {
+                                application: CalendarApplication
                                 text: CalendarManager.undoRedoData.undoAvailable ?
                                     i18n("Undo: ") + CalendarManager.undoRedoData.nextUndoDescription : i18n("Undo")
                                 actionName: "edit_undo"
                             },
                             StatefulApp.Action {
+                                application: CalendarApplication
                                 text: CalendarManager.undoRedoData.redoAvailable ?
                                     i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : i18n("Redo")
                                 actionName: "edit_redo"
                             },
                             StatefulApp.Action {
+                                application: CalendarApplication
                                 actionName: "open_tag_manager"
                                 onTriggered: {
                                     tagManagerAction.trigger()
@@ -298,6 +312,7 @@ Kirigami.OverlayDrawer {
                                 }
                             },
                             StatefulApp.Action {
+                                application: CalendarApplication
                                 text: i18n("Settings")
                                 actionName: "options_configure"
                                 onTriggered: {

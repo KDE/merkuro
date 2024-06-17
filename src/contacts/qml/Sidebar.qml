@@ -95,6 +95,7 @@ Kirigami.OverlayDrawer {
                             id: toogleMenubar
                             action: StatefulApp.Action {
                                 actionName: 'toggle_menubar'
+                                application: Contact.ContactApplication
                             }
                         }
                     }

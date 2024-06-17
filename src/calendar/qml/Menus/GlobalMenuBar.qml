@@ -5,62 +5,72 @@ import Qt.labs.platform as Labs
 
 import QtQuick
 import QtQuick.Window
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.calendar
+import org.kde.merkuro.components
+import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
 
 Labs.MenuBar {
     id: bar
 
     NativeFileMenu {
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("import_calendar")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "import_calendar"
+            application: CalendarApplication
         }
     }
 
     NativeEditMenu {
         id: editMenu
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("edit_undo")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "edit_undo"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("edit_redo")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "edit_redo"
+            application: CalendarApplication
         }
 
-        Labs.MenuSeparator {
-        }
+        Labs.MenuSeparator {}
     }
 
     Labs.Menu {
         title: i18nc("@action:menu", "View")
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_month_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_month_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_week_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_week_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_threeday_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_threeday_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_day_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_day_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_schedule_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_schedule_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_todo_view")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_todo_view"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_kcommand_bar")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_kcommand_bar"
+            application: CalendarApplication
         }
 
         Labs.MenuSeparator {
@@ -70,64 +80,75 @@ Labs.MenuBar {
             title: i18nc("@action:menu", "Sort Tasks")
             enabled: mode === CalendarApplication.Todo
 
-            NativeMenuItemFromAction {
-                action: CalendarApplication.action("todoview_sort_by_due_date")
+            StatefulAppLabs.NativeMenuItem {
+                actionName: "todoview_sort_by_due_date"
+                application: CalendarApplication
             }
 
-            NativeMenuItemFromAction {
-                action: CalendarApplication.action("todoview_sort_by_priority")
+            StatefulAppLabs.NativeMenuItem {
+                actionName: "todoview_sort_by_priority"
+                application: CalendarApplication
             }
 
-            NativeMenuItemFromAction {
-                action: CalendarApplication.action("todoview_sort_alphabetically")
+            StatefulAppLabs.NativeMenuItem {
+                actionName: "todoview_sort_alphabetically"
+                application: CalendarApplication
             }
 
             Labs.MenuSeparator {
             }
 
-            NativeMenuItemFromAction {
-                action: CalendarApplication.action("todoview_order_ascending")
+            StatefulAppLabs.NativeMenuItem {
+                actionName: "todoview_order_ascending"
+                application: CalendarApplication
             }
 
-            NativeMenuItemFromAction {
-                action: CalendarApplication.action("todoview_order_descending")
+            StatefulAppLabs.NativeMenuItem {
+                actionName: "todoview_order_descending"
+                application: CalendarApplication
             }
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("todoview_show_completed")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "todoview_show_completed"
+            application: CalendarApplication
             enabled: mode === CalendarApplication.Todo
         }
 
         Labs.MenuSeparator {
         }
 
-        NativeMenuItemFromAction {
+        StatefulAppLabs.NativeMenuItem {
             text: i18n("Refresh All Calendars")
-            action: CalendarApplication.action("refresh_all")
+            actionName: "refresh_all"
+            application: CalendarApplication
         }
     }
 
     Labs.Menu {
         title: i18nc("@action:menu", "Go")
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("move_view_backwards")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "move_view_backwards"
+            application: CalendarApplication
             enabled: mode & CalendarApplication.Event
         }
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("move_view_forwards")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "move_view_forwards"
+            application: CalendarApplication
             enabled: mode & CalendarApplication.Event
         }
 
         Labs.MenuSeparator {}
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("move_view_to_today")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "move_view_to_today"
+            application: CalendarApplication
             enabled: mode & CalendarApplication.Event
         }
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("open_date_changer")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "open_date_changer"
+            application: CalendarApplication
             enabled: mode & CalendarApplication.Event
         }
     }
@@ -135,12 +156,14 @@ Labs.MenuBar {
     Labs.Menu {
         title: i18nc("@action:menu", "Create")
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("create_event")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "create_event"
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action("create_todo")
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "create_todo"
+            application: CalendarApplication
         }
     }
 
@@ -149,18 +172,21 @@ Labs.MenuBar {
     Labs.Menu {
         title: i18nc("@action:menu", "Settings")
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action('open_tag_manager')
+        StatefulAppLabs.NativeMenuItem {
+            actionName: 'open_tag_manager'
+            application: CalendarApplication
         }
 
         Labs.MenuSeparator {}
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action('options_configure_keybinding')
+        StatefulAppLabs.NativeMenuItem {
+            actionName: 'options_configure_keybinding'
+            application: CalendarApplication
         }
 
-        NativeMenuItemFromAction {
-            action: CalendarApplication.action('options_configure')
+        StatefulAppLabs.NativeMenuItem {
+            actionName: 'options_configure'
+            application: CalendarApplication
         }
     }
 

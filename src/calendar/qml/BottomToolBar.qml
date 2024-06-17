@@ -13,24 +13,29 @@ import org.kde.kirigamiaddons.statefulapp as StatefulApp
 Kirigami.NavigationTabBar {
     actions: [
         StatefulApp.Action {
-            actionName: "open_month_view"
             property string name: "monthView"
+            actionName: "open_month_view"
+            application: Calendar.CalendarApplication
         },
         StatefulApp.Action {
             actionName: "open_threeday_view"
             property string name: "threeDayView"
+            application: Calendar.CalendarApplication
         },
         StatefulApp.Action {
             actionName: "open_day_view"
             property string name: "dayView"
+            application: Calendar.CalendarApplication
         },
         StatefulApp.Action {
             actionName: "open_schedule_view"
             property string name: "scheduleView"
+            application: Calendar.CalendarApplication
         },
         StatefulApp.Action {
             actionName: "open_todo_view"
             property string name: "todoView"
+            application: Calendar.CalendarApplication
         }
     ]
 }

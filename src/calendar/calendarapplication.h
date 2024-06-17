@@ -4,14 +4,14 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 #pragma once
-#include "abstractmerkuroapplication.h"
+
 #include "calendarconfig.h"
 
 #include <Akonadi/ETMCalendar>
-#include <KActionCollection>
 #include <QActionGroup>
 #include <QObject>
 #include <QWindow>
+#include <abstractmerkuroapplication.h>
 
 class QQuickWindow;
 class QSortFilterProxyModel;

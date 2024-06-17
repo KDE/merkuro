@@ -18,10 +18,12 @@ QQC2.MenuBar {
 
         StatefulApp.Action {
             actionName: 'open_kcommand_bar'
+            application: ContactApplication
         }
 
         StatefulApp.Action {
             actionName: "refresh_all"
+            application: ContactApplication
         }
     }
 
@@ -30,9 +32,11 @@ QQC2.MenuBar {
 
         StatefulApp.Action {
             actionName: "create_contact"
+            application: ContactApplication
         }
         StatefulApp.Action {
             actionName: "create_contact_group"
+            application: ContactApplication
         }
     }
 

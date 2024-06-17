@@ -9,9 +9,10 @@ import org.kde.kirigami 2.19 as Kirigami
 
 QQC2.Menu {
     id: fileMenu
-    title: i18nc("@action:menu", "File")
 
     default property list<QtObject> additionalMenuItems
+
+    title: i18nc("@action:menu", "File")
 
     property list<QtObject> _menuItems: [
         QQC2.MenuItem {

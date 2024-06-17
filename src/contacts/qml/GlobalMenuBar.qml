@@ -6,8 +6,9 @@ import Qt.labs.platform as Labs
 
 import QtQuick
 import QtQuick.Window
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.contact 1.0
+import org.kde.merkuro.components
+import org.kde.merkuro.contact
+import org.kde.kirigamiaddons.statefulapp.labs as StatefuleAppLabs
 
 Labs.MenuBar {
     NativeFileMenu {}
@@ -17,23 +18,28 @@ Labs.MenuBar {
     Labs.Menu {
         title: i18nc("@action:menu", "View")
 
-        NativeMenuItemFromAction {
-            action: ContactApplication.action('open_kcommand_bar')
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: 'open_kcommand_bar'
+            application: ContactApplication
         }
 
-        NativeMenuItemFromAction {
-            action: ContactApplication.action("refresh_all")
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: "refresh_all"
+            application: ContactApplication
         }
     }
 
     Labs.Menu {
         title: i18nc("@action:menu", "Create")
 
-        NativeMenuItemFromAction {
-            action: ContactApplication.action("create_contact")
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: "create_contact"
+            application: ContactApplication
         }
-        NativeMenuItemFromAction {
-            action: ContactApplication.action("create_contact_group")
+
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: "create_contact_group"
+            application: ContactApplication
         }
     }
 
@@ -42,17 +48,21 @@ Labs.MenuBar {
     Labs.Menu {
         title: i18nc("@action:menu", "Settings")
 
-        NativeMenuItemFromAction {
-            action: ContactApplication.action('open_tag_manager')
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: 'open_tag_manager'
+            application: ContactApplication
         }
 
         Labs.MenuSeparator {}
 
-        NativeMenuItemFromAction {
-            action: ContactApplication.action('options_configure_keybinding')
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: 'options_configure_keybinding'
+            application: ContactApplication
         }
-        NativeMenuItemFromAction {
-            action: ContactApplication.action('options_configure')
+
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: 'options_configure'
+            application: ContactApplication
         }
     }
 
