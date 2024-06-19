@@ -66,7 +66,6 @@ target_link_libraries(merkuro_calendar_static PUBLIC
     KPim6::AkonadiContactCore
     KPim6::AkonadiWidgets
     KPim6::CalendarUtils
-    merkuro_lib
     MerkuroComponents
 )
 

@@ -6,7 +6,6 @@
 add_library(merkuro_contact_static STATIC)
 
 target_link_libraries(merkuro_contact_static PUBLIC
-    merkuro_lib
     KF6::XmlGui
     KF6::Contacts
     KPim6::AkonadiWidgets

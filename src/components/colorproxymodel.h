@@ -8,8 +8,10 @@
 #include <QColor>
 #include <QSortFilterProxyModel>
 
+#include <merkurocomponents_export.h>
+
 /// Despite the name, this handles the presentation of collections including display text and icons, not just colors.
-class ColorProxyModel : public QSortFilterProxyModel
+class MERKUROCOMPONENTS_EXPORT ColorProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 

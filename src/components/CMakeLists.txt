@@ -16,6 +16,10 @@ ecm_qt_declare_logging_category(merkuro_components_SRCS
 add_library(MerkuroComponents SHARED
     abstractmerkuroapplication.cpp
     abstractmerkuroapplication.h
+    colorproxymodel.cpp
+    colorproxymodel.h
+    sortedcollectionproxymodel.cpp
+    sortedcollectionproxymodel.h
     ${merkuro_components_SRCS}
 )
 
@@ -40,6 +44,9 @@ set_target_properties(MerkuroComponents PROPERTIES
 target_link_libraries(MerkuroComponents PUBLIC
     KirigamiAddonsStatefulApp
     KF6::I18n
+    KF6::CalendarCore
+    KF6::Contacts
+    KPim6::AkonadiCore
 )
 
 target_include_directories(MerkuroComponents

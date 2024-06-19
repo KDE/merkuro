@@ -40,11 +40,11 @@ ecm_qt_declare_logging_category(akonadi_quick_plugin
 )
 
 target_link_libraries(akonadi_quick_plugin PRIVATE
-    merkuro_lib
     KF6::Contacts
     KF6::WindowSystem
     KPim6::AkonadiWidgets
     KPim6::Libkdepim
+    MerkuroComponents
 )
 
 ecm_qt_install_logging_categories(

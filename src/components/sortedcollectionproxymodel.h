@@ -7,7 +7,9 @@
 
 #include <Akonadi/CollectionFilterProxyModel>
 
-class SortedCollectionProxModel : public Akonadi::CollectionFilterProxyModel
+#include <merkurocomponents_export.h>
+
+class MERKUROCOMPONENTS_EXPORT SortedCollectionProxModel : public Akonadi::CollectionFilterProxyModel
 {
 public:
     explicit SortedCollectionProxModel(QObject *parent = nullptr);
