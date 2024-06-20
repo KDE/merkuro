@@ -3,6 +3,6 @@
 
 find_package(Plasma)
 
-if (Plasma_FOUND)
+if(Plasma_FOUND)
     plasma_install_package(package org.kde.merkuro.contact)
 endif()
