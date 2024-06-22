@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-17 00:39+0000\n"
-"PO-Revision-Date: 2023-09-03 09:43+0200\n"
+"PO-Revision-Date: 2024-06-21 12:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -230,10 +230,9 @@ msgid "Calendar Application"
 msgstr "Kalenderprogram"
 
 #: calendar/main.cpp:76 contacts/main.cpp:68 mail/main.cpp:70
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021"
+#, kde-format
 msgid "(c) KDE Community 2021-2024"
-msgstr "© KDE-gemenskapen 2021"
+msgstr "© KDE-gemenskapen 2021-2024"
 
 #: calendar/main.cpp:78 contacts/main.cpp:70 mail/main.cpp:72
 #, kde-format
@@ -494,8 +493,7 @@ msgid "Calendar files (*.ics *.vcs)"
 msgstr "Kalenderfiler (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:99
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Importera kalender"
@@ -514,22 +512,19 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, fuzzy, kde-format
-#| msgid "Merge with existing calendar"
+#, kde-format
 msgctxt "@action:button merge with existing calendar"
 msgid "Merge with Existing"
-msgstr "Sammanfoga med befintlig kalender"
+msgstr "Sammanfoga med befintlig"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create new calendar"
 msgid "Create New"
-msgstr "Skapa"
+msgstr "Skapa ny"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -824,24 +819,21 @@ msgid "Choose an Address Book"
 msgstr "Välj en adressbok"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete calendar"
 msgstr "Ta bort kalender"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete"
 msgstr "Ta bort"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you want to delete the calendar: \"%1\"?"
-msgstr "Vill du verkligen ta bort kalendern: \"%1\"?"
+msgstr "Vill du ta bort kalendern: \"%1\"?"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:48
 #: contacts/qml/private/DeleteContactAction.qml:25
@@ -982,17 +974,17 @@ msgstr "Sammanfattning:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
-msgstr ""
+msgstr "Lägg till en rubrik för uppgiften"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
-msgstr ""
+msgstr "Lägg till en rubrik för händelsen"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr ""
+msgstr "Lägg till en rubrik för journalanteckningen"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
@@ -2351,11 +2343,10 @@ msgstr "Ny kontaktgrupp"
 
 #: contacts/qml/ContactView.qml:57 contacts/qml/ContactView.qml:65
 #: contacts/qml/private/ContactPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
-msgstr "Namn"
+msgstr "Saknar namn"
 
 #: contacts/qml/ContactView.qml:92
 #, kde-format
@@ -2782,25 +2773,22 @@ msgid "protocol:person@example.com"
 msgstr "protokoll:person@exempel.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partners's name"
 msgstr "Partners namn:"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Anniversary:"
+#, kde-format
 msgctxt "@label"
 msgid "Anniversary"
-msgstr "Årsdag:"
+msgstr "Årsdag"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:42
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@label"
 msgid "Birthday"
-msgstr "Födelsedag:"
+msgstr "Födelsedag"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -2904,8 +2892,7 @@ msgid "Update Profile Picture"
 msgstr "Uppdatera profilbild"
 
 #: contacts/qml/private/ContactGroupPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Redigera"
@@ -3070,20 +3057,18 @@ msgstr[1] "E-postadresser"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Bekräfta borttagning av kontakt"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Your name"
+#, kde-format
 msgctxt "Placeholder when no name is set"
 msgid "No name"
-msgstr "Ditt namn"
+msgstr "Saknar namn"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: %1?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Vill du verkligen ta bort kontakten: %1?"
+msgstr "Vill du verkligen ta bort kontakten: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3164,31 +3149,29 @@ msgid "New Mail…"
 msgstr "Nytt brev…"
 
 #: mail/mailapplication.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#, kde-format
 msgid "Check Mail"
-msgstr "Merkuro e-post"
+msgstr "Kontrollera post"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
 msgid "There are no attendees to e-mail"
-msgstr ""
+msgstr "Det finns inga deltagare att skicka e-post till"
 
 #: mail/mailclient.cpp:93
 #, kde-format
 msgid "Error creating transport"
-msgstr ""
+msgstr "Fel när överföring skulle skapas"
 
 #: mail/mailclient.cpp:186
 #, kde-format
 msgid "Error loading transport"
-msgstr ""
+msgstr "Fel när överföring skulle laddas"
 
 #: mail/mailclient.cpp:203
 #, kde-format
 msgid "Error queuing message in outbox: %1"
-msgstr ""
+msgstr "Fel när brev skulle köas i utkorg: %1"
 
 #: mail/mailkernel.cpp:187
 #, kde-format
@@ -3196,6 +3179,8 @@ msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"Resursen %1 är felaktig.\n"
+"%2"
 
 #: mail/mailmanager.cpp:240
 #, kde-format
@@ -3288,27 +3273,24 @@ msgid "Move to trash"
 msgstr "Flytta till papperskorgen"
 
 #: mail/qml/desktopactions/openmbox.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "File"
+#, kde-format
 msgid "Open File"
-msgstr "Arkiv"
+msgstr "Öppna fil"
 
 #: mail/qml/desktopactions/openmbox.qml:21
-#, fuzzy, kde-format
-#| msgid "Choose a Calendar"
+#, kde-format
 msgid "Choose file"
-msgstr "Välj en kalender"
+msgstr "Välj fil"
 
 #: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
-msgstr ""
+msgstr "Spara brev: Merkuro"
 
 #: mail/qml/FolderView.qml:29
 #, kde-format
 msgid "email messages (*.mbox)"
-msgstr ""
+msgstr "e-post (*.mbox)"
 
 #: mail/qml/FolderView.qml:66
 #, kde-format
@@ -3357,11 +3339,10 @@ msgid "Add Followup Reminder"
 msgstr "Lägg till påminnelse om uppföljning"
 
 #: mail/qml/FolderView.qml:103
-#, fuzzy, kde-format
-#| msgid "Manage tags..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
-msgstr "Hantera etiketter..."
+msgstr "Spara som..."
 
 #: mail/qml/FolderView.qml:121
 #, kde-format
@@ -3436,22 +3417,19 @@ msgid "This mail contains an invitation"
 msgstr "Brevet innehåller en inbjudan"
 
 #: mail/qml/private/AttachmentDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "Importera nyckel"
 
 #: mail/settings/AccountSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Identities"
+#, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identiteter"
 
 #: mail/settings/AccountSettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Receiving Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
 "email accounts"
@@ -3498,19 +3476,17 @@ msgstr "Hantera etiketter"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Bekräfta etikettborttagning"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Är du säker på att du vill ta bort etiketten \"%1\"?"
+msgstr "Är du säker på att du vill ta bort etiketten <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Det går inte att ångra åtgärden"
+msgstr "Det går inte att ångra åtgärden."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
