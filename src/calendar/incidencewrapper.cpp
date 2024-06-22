@@ -38,7 +38,6 @@ IncidenceWrapper::IncidenceWrapper(CalendarManager *calendarManager, QObject *pa
     Akonadi::ItemFetchScope scope;
     scope.fetchFullPayload();
     scope.fetchAllAttributes();
-    scope.setFetchRelations(true);
     scope.setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     setFetchScope(scope);
 
