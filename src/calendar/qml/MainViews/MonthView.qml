@@ -82,6 +82,9 @@ Kirigami.Page {
         sourceComponent: BasicMonthGridView {
             anchors.fill: parent
 
+            firstDayOfMonth: Calendar.DateTimeState.firstDayOfMonth
+            startDate: DateUtils.getFirstDayOfWeek(firstDayOfMonth)
+
             dragDropEnabled: root.dragDropEnabled
             openOccurrence: root.openOccurrence
         }
