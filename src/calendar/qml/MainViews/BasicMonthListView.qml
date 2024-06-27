@@ -96,6 +96,7 @@ QQC2.ScrollView {
         highlightRangeMode: ListView.ApplyRange
 
         onCountChanged: if(scrollView.initialMonth) scrollView.moveToSelected()
+        clip: true
 
         model: Calendar.MultiDayIncidenceModel {
            periodLength: 1
