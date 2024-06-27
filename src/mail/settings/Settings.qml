@@ -4,7 +4,7 @@
 import QtQuick
 import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
 
-KirigamiSettings.ConfigurationsView {
+KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"
     modules: [
         KirigamiSettings.ConfigurationModule {

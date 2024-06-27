@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
 import org.kde.merkuro.calendar 1.0
 
-KirigamiSettings.ConfigurationsView {
+KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"
     modules: [
         KirigamiSettings.ConfigurationModule {
