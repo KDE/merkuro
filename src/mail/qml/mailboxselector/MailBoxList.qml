@@ -64,7 +64,7 @@ ListView {
                     }
                 }
 
-                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
+                property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && applicationWindow().wideScreen))
 
                 text: displayName
 
