@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <!--
+  SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
+  SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
+  SPDX-License-Identifier: CC0-1.0
+  -->
+  <id>org.kde.merkuro</id>
+  <name>Merkuro</name>
+  <summary>Manage your tasks, events and contacts with speed and ease</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
+  <description>
+    <p>Merkuro is a calendar and contact application that allows you to manage your tasks, events and contacts. Merkuro supports both local calendars as well as a multitude of online calendars: Nextcloud, Google® Calendar, Outlook®, Caldav, and many more.</p>
+    <p>Merkuro was built with the idea to be usable on desktop, on mobile and everything in between.</p>
+    <p xml:lang="ar">صمم تقويم ميركورو بفكرة أن تكون قابل للاستخدام على سطح المكتب وعلى الهاتف المحمول وكل شيء بينهما.</p>
+    <p xml:lang="ca">El Merkuro s'ha construït amb la idea de ser usable a l'escriptori, al mòbil i tot el que hi ha entre ells.</p>
+    <p xml:lang="ca-valencia">Merkuro s'ha construït amb la idea de ser utilitzable en l'escriptori, en el mòbil i tot el que hi ha entre ells.</p>
+    <p xml:lang="de">Merkuro wurde mit der Idee entworfen, auf jedem Gerät vom Desktop-PC bis zum Mobiltelefon benutzbar zu sein.</p>
+    <p xml:lang="en-GB">Merkuro was built with the idea to be usable on desktop, on mobile and everything in between.</p>
+    <p xml:lang="eo">Merkuro estis konstruita kun la ideo esti uzebla sur labortablo, sur poŝtelefono kaj ĉio intere.</p>
+    <p xml:lang="es">Merkuro se creó con la idea de ser usable en el escritorio, en el móvil y en cualquier otra cosa entre ambos.</p>
+    <p xml:lang="eu">Merkuro, mahaigainean, mugikorrean eta tarteko guztietan erabilia izateko ideiarekin eraiki da.</p>
+    <p xml:lang="fi">Merkuro on luotu olemaan hyödyksi niin työpöydällä, mobiilissa kuin kaikkialla siltä väliltäkin.</p>
+    <p xml:lang="fr">Merkuro a été conçu avec l'idée d'être utilisable sur un ordinateur de bureau, sur un téléphone portable et dans tous les périphériques intermédiaires.</p>
+    <p xml:lang="hi">मेरकुरो को इस विचार के साथ बनाया गया था कि इसे डेस्कटॉप पर, मोबाइल पर, और इन दोनों के बीच सभी जगहों पर उपयोग किया जा सके।</p>
+    <p xml:lang="hu">A Merkurot úgy tervezték, hogy használható legyen mindenféle eszközön, az asztali számítógépektől kezdve a mobiltelefonokig.</p>
+    <p xml:lang="ia">Merkuro esseva construite con le idea a esser usabile sur scriptorio, sur mobile e  toto in le medie.</p>
+    <p xml:lang="it">Merkuro è stato creato con l'idea di essere utilizzabile su desktop, mobile e tutto il resto.</p>
+    <p xml:lang="ka">Merkuro აგებულია იდეით, რომ გამოყენებადი იყოს სამუშაო მაგიდაზე, მობილურზე და ყველაფერზე მათ შუა.</p>
+    <p xml:lang="ko">Merkuro는 데스크톱, 모바일, 그 사이에 있는 모든 것에서 편하게 사용할 수 있도록 개발되었습니다.</p>
+    <p xml:lang="nl">Merkuro is gebouwd met het idee om bruikbaar te zijn op een bureaublad, op een mobiel en alles er tussenin.</p>
+    <p xml:lang="pl">Merkuro został zbudowany z zamiarem bycia użytecznym na urządzeniach biurkowych, przenośnych i wszystkich innych.</p>
+    <p xml:lang="pt">O Merkuro foi criado com a possibilidade de ser usado no computador, nos dispositivos móveis e em tudo o que seja intermédio.</p>
+    <p xml:lang="pt-BR">O Merkuro foi construído com a ideia de ser utilizável em áreas de trabalho, dispositivos móveis e entre eles.</p>
+    <p xml:lang="sl">Merkuro je bil zasnovan tako, da ga lahko uporabljate na namizju, mobilnih napravah in na vsem vmes.</p>
+    <p xml:lang="sv">Merkuro är byggd med idén att vara användbar på skrivbordsdatorer eller mobiler och allting däremellan.</p>
+    <p xml:lang="tr">Merkuro, hem masaüstü hem taşınabilir aygıtlar hem de ikisinin arasındaki her şey dikkate alınarak geliştirilmiştir.</p>
+    <p xml:lang="uk">Merkuro побудовано так, що програмою можна користуватися на звичайному комп'ютері, на мобільному телефоні і на усіх проміжних пристроях.</p>
+    <p xml:lang="x-test">xxMerkuro was built with the idea to be usable on desktop, on mobile and everything in between.xx</p>
+    <p xml:lang="zh-TW">Merkuro 最初便以在桌面、行動裝置和所有其間的裝置上皆可使用為目標。</p>
+  </description>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/merkuro/calendar-month.png</image>
+      <caption>Month View</caption>
+      <caption xml:lang="ar">عرض الشهر</caption>
+      <caption xml:lang="az">Ay görünüşü</caption>
+      <caption xml:lang="ca">Vista mensual</caption>
+      <caption xml:lang="ca-valencia">Vista mensual</caption>
+      <caption xml:lang="cs">Pohled na měsíc</caption>
+      <caption xml:lang="de">Monatsansicht</caption>
+      <caption xml:lang="el">Προβολή μήνα</caption>
+      <caption xml:lang="en-GB">Month View</caption>
+      <caption xml:lang="eo">Monata Vido</caption>
+      <caption xml:lang="es">Vista mensual</caption>
+      <caption xml:lang="eu">Hilabeteko ikuspegia</caption>
+      <caption xml:lang="fi">Kuukausinäkymä</caption>
+      <caption xml:lang="fr">Affichage en mois</caption>
+      <caption xml:lang="hi">महीने का दृश्य</caption>
+      <caption xml:lang="hu">Havi nézet</caption>
+      <caption xml:lang="ia">Vista de mense</caption>
+      <caption xml:lang="id">Tampilan Bulan</caption>
+      <caption xml:lang="it">Vista mensile</caption>
+      <caption xml:lang="ka">თვის ხედი</caption>
+      <caption xml:lang="ko">월간 보기</caption>
+      <caption xml:lang="nl">Maandweergave</caption>
+      <caption xml:lang="pl">Widok miesiąca</caption>
+      <caption xml:lang="pt">Vista Mensal</caption>
+      <caption xml:lang="pt-BR">Visualização do mês</caption>
+      <caption xml:lang="ru">Месяц</caption>
+      <caption xml:lang="sk">Mesačný pohľad</caption>
+      <caption xml:lang="sl">Mesečni pogled</caption>
+      <caption xml:lang="sv">Månadsvy</caption>
+      <caption xml:lang="ta">மாதக்காட்சி</caption>
+      <caption xml:lang="tr">Ay Görünümü</caption>
+      <caption xml:lang="uk">Перегляд місяця</caption>
+      <caption xml:lang="x-test">xxMonth Viewxx</caption>
+      <caption xml:lang="zh-TW">月份檢視</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/merkuro/contact.png</image>
+      <caption>Contact list</caption>
+      <caption xml:lang="ar">قائمة المراسلين</caption>
+      <caption xml:lang="ca">Llista de contactes</caption>
+      <caption xml:lang="ca-valencia">Llista de contactes</caption>
+      <caption xml:lang="cs">Seznam kontaktů</caption>
+      <caption xml:lang="de">Kontaktliste</caption>
+      <caption xml:lang="en-GB">Contact list</caption>
+      <caption xml:lang="eo">Kontaktlisto</caption>
+      <caption xml:lang="es">Lista de contactos</caption>
+      <caption xml:lang="eu">Kontaktu zerrenda</caption>
+      <caption xml:lang="fi">Yhteystietoluettelo</caption>
+      <caption xml:lang="fr">Liste de contacts</caption>
+      <caption xml:lang="gl">Lista de contactos.</caption>
+      <caption xml:lang="hi">संपर्क सूची</caption>
+      <caption xml:lang="hu">Névjegylista</caption>
+      <caption xml:lang="ia">Lista de contacto</caption>
+      <caption xml:lang="it">Elenco dei contatti</caption>
+      <caption xml:lang="ka">კონტაქტების სია</caption>
+      <caption xml:lang="ko">연락처 목록</caption>
+      <caption xml:lang="nl">Contactenlijst</caption>
+      <caption xml:lang="pl">Spis kontaktów</caption>
+      <caption xml:lang="pt-BR">Lista de contatos</caption>
+      <caption xml:lang="ru">Список контактов</caption>
+      <caption xml:lang="sk">Zoznam kontaktov</caption>
+      <caption xml:lang="sl">Seznam stikov</caption>
+      <caption xml:lang="sv">Kontaktlista</caption>
+      <caption xml:lang="tr">Kişi listesi</caption>
+      <caption xml:lang="uk">Список контактів</caption>
+      <caption xml:lang="x-test">xxContact listxx</caption>
+      <caption xml:lang="zh-TW">聯絡人列表</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/merkuro/calendar-week.png</image>
+      <caption>Week View</caption>
+      <caption xml:lang="ar">عرض الأسبوع</caption>
+      <caption xml:lang="az">Həftə görünüşü</caption>
+      <caption xml:lang="ca">Vista setmanal</caption>
+      <caption xml:lang="ca-valencia">Vista setmanal</caption>
+      <caption xml:lang="cs">Týdenní pohled</caption>
+      <caption xml:lang="de">Wochenansicht</caption>
+      <caption xml:lang="el">Προβολή εβδομάδας</caption>
+      <caption xml:lang="en-GB">Week View</caption>
+      <caption xml:lang="eo">Semajna Vido</caption>
+      <caption xml:lang="es">Vista semanal</caption>
+      <caption xml:lang="eu">Astebeteko ikuspegia</caption>
+      <caption xml:lang="fi">Viikkonäkymä</caption>
+      <caption xml:lang="fr">Affichage en semaines</caption>
+      <caption xml:lang="hi">सप्ताह दृश्य</caption>
+      <caption xml:lang="hu">Heti nézet</caption>
+      <caption xml:lang="ia">Vista per septimana</caption>
+      <caption xml:lang="id">Tampilan Pekan</caption>
+      <caption xml:lang="it">Vista settimanale</caption>
+      <caption xml:lang="ka">კვირის ხედი</caption>
+      <caption xml:lang="ko">주간 보기</caption>
+      <caption xml:lang="nl">Weekweergave</caption>
+      <caption xml:lang="pl">Widok tygodnia</caption>
+      <caption xml:lang="pt">Vista da Semana</caption>
+      <caption xml:lang="pt-BR">Visualização da semana</caption>
+      <caption xml:lang="ru">Неделя</caption>
+      <caption xml:lang="sl">Tedenski pogled</caption>
+      <caption xml:lang="sv">Veckovy</caption>
+      <caption xml:lang="ta">வாரக்காட்சி</caption>
+      <caption xml:lang="tr">Hafta Görünümü</caption>
+      <caption xml:lang="uk">Перегляд тижня</caption>
+      <caption xml:lang="x-test">xxWeek Viewxx</caption>
+      <caption xml:lang="zh-TW">單週檢視</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/kalendar/schedule_view.png</image>
+      <caption>Schedule View</caption>
+      <caption xml:lang="ar">عرض الجدولة</caption>
+      <caption xml:lang="az">Gündəlik görünüşü</caption>
+      <caption xml:lang="ca">Vista de la planificació</caption>
+      <caption xml:lang="ca-valencia">Vista de la planificació</caption>
+      <caption xml:lang="cs">Pohled na plánování</caption>
+      <caption xml:lang="de">Terminplanansicht</caption>
+      <caption xml:lang="el">Προβολή χρονοπρογραμματισμού</caption>
+      <caption xml:lang="en-GB">Schedule View</caption>
+      <caption xml:lang="eo">Horaro Vido</caption>
+      <caption xml:lang="es">Vista de planificación</caption>
+      <caption xml:lang="eu">Ordutegi ikuspegia</caption>
+      <caption xml:lang="fi">Aikataulunäkymä</caption>
+      <caption xml:lang="fr">Affichage en calendrier</caption>
+      <caption xml:lang="hi">अनुसूची दृश्य</caption>
+      <caption xml:lang="hu">Ütemezés nézet</caption>
+      <caption xml:lang="ia">Vista de Planification</caption>
+      <caption xml:lang="id">Tampilan Jadwal</caption>
+      <caption xml:lang="it">Vista delle pianificazioni</caption>
+      <caption xml:lang="ka">განრიგის ხედი</caption>
+      <caption xml:lang="ko">일정 보기</caption>
+      <caption xml:lang="nl">Planningsweergave</caption>
+      <caption xml:lang="pl">Widok harmonogramu</caption>
+      <caption xml:lang="pt">Área de Calendarização</caption>
+      <caption xml:lang="pt-BR">Visualização de programação</caption>
+      <caption xml:lang="ru">Расписание</caption>
+      <caption xml:lang="sl">Pogled urnika</caption>
+      <caption xml:lang="sv">Schemaläggningsvy</caption>
+      <caption xml:lang="ta">அட்டவணை காட்சி</caption>
+      <caption xml:lang="tr">Ajanda Görünümü</caption>
+      <caption xml:lang="uk">Перегляд розкладу</caption>
+      <caption xml:lang="x-test">xxSchedule Viewxx</caption>
+      <caption xml:lang="zh-TW">行程檢視</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/kalendar/task_view.png</image>
+      <caption>Task View</caption>
+      <caption xml:lang="ar">عرض المهام</caption>
+      <caption xml:lang="az">Tapşırıq görünüşü</caption>
+      <caption xml:lang="ca">Vista de tasques</caption>
+      <caption xml:lang="ca-valencia">Vista de tasques</caption>
+      <caption xml:lang="cs">Pohled na úlohy</caption>
+      <caption xml:lang="de">Aufgabenansicht</caption>
+      <caption xml:lang="el">Προβολή εργασιών</caption>
+      <caption xml:lang="en-GB">Task View</caption>
+      <caption xml:lang="eo">Taska Vido</caption>
+      <caption xml:lang="es">Vista de tareas</caption>
+      <caption xml:lang="eu">Zeregin ikuspegia</caption>
+      <caption xml:lang="fi">Tehtävänäkymä</caption>
+      <caption xml:lang="fr">Affichage en tâches</caption>
+      <caption xml:lang="hi">कार्य दृश्य</caption>
+      <caption xml:lang="hu">Feladatnézet</caption>
+      <caption xml:lang="ia">Vista de Carga</caption>
+      <caption xml:lang="id">Tampilan Tugas</caption>
+      <caption xml:lang="it">Vista delle attività</caption>
+      <caption xml:lang="ka">დავალების ხედი</caption>
+      <caption xml:lang="ko">작업 보기</caption>
+      <caption xml:lang="nl">Taakweergave</caption>
+      <caption xml:lang="pl">Widok zadań</caption>
+      <caption xml:lang="pt">Vista das Tarefas</caption>
+      <caption xml:lang="pt-BR">Exibição de tarefa</caption>
+      <caption xml:lang="ru">Задачи</caption>
+      <caption xml:lang="sk">Pohľad úloh</caption>
+      <caption xml:lang="sl">Pogled opravil</caption>
+      <caption xml:lang="sv">Uppgiftsvy</caption>
+      <caption xml:lang="ta">பணிக்காட்சி</caption>
+      <caption xml:lang="tr">Görev Görünümü</caption>
+      <caption xml:lang="uk">Перегляд завдання</caption>
+      <caption xml:lang="x-test">xxTask Viewxx</caption>
+      <caption xml:lang="zh-TW">工作檢視</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/kalendar/mobile_view.png</image>
+      <caption>Mobile</caption>
+      <caption xml:lang="ar">المحمول</caption>
+      <caption xml:lang="az">Mobile</caption>
+      <caption xml:lang="ca">Mòbil</caption>
+      <caption xml:lang="ca-valencia">Mòbil</caption>
+      <caption xml:lang="cs">Mobilní</caption>
+      <caption xml:lang="de">Mobil</caption>
+      <caption xml:lang="el">Κινητό</caption>
+      <caption xml:lang="en-GB">Mobile</caption>
+      <caption xml:lang="eo">Poŝtelefono</caption>
+      <caption xml:lang="es">Móvil</caption>
+      <caption xml:lang="eu">Mugikorra</caption>
+      <caption xml:lang="fi">Mobiili</caption>
+      <caption xml:lang="fr">Mobile</caption>
+      <caption xml:lang="hi">मोबाइल</caption>
+      <caption xml:lang="hu">Mobil</caption>
+      <caption xml:lang="ia">Mobile</caption>
+      <caption xml:lang="id">Ponsel</caption>
+      <caption xml:lang="it">Mobile</caption>
+      <caption xml:lang="ka">მობაილი</caption>
+      <caption xml:lang="ko">모바일</caption>
+      <caption xml:lang="nl">Mobiel</caption>
+      <caption xml:lang="pl">Telefon komórkowy</caption>
+      <caption xml:lang="pt">Telemóvel</caption>
+      <caption xml:lang="pt-BR">Celular</caption>
+      <caption xml:lang="ru">Мобильный</caption>
+      <caption xml:lang="sk">Mobil</caption>
+      <caption xml:lang="sl">Mobilni</caption>
+      <caption xml:lang="sv">Mobil</caption>
+      <caption xml:lang="ta">கைபேசியில்</caption>
+      <caption xml:lang="tr">Taşınabilir</caption>
+      <caption xml:lang="uk">Мобільний</caption>
+      <caption xml:lang="x-test">xxMobilexx</caption>
+      <caption xml:lang="zh-TW">行動版</caption>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>merkuro-calendar</binary>
+  </provides>
+  <url type="homepage">https://apps.kde.org/merkuro.calendar/</url>
+  <url type="bugtracker">https://invent.kde.org/pim/merkuro/-/issues</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="24.05.1" date="2024-06-13"/>
+    <release version="24.05.0" date="2024-05-23"/>
+    <release version="24.02.2" date="2024-04-11"/>
+    <release version="24.02.1" date="2024-03-21"/>
+    <release version="24.02.0" date="2024-02-28"/>
+    <release version="23.08.5" date="2024-02-15"/>
+    <release version="23.08.4" date="2023-12-07"/>
+    <release version="23.08.3" date="2023-11-09"/>
+    <release version="23.08.2" date="2023-10-12"/>
+    <release version="23.08.1" date="2023-09-14"/>
+    <release version="23.08.0" date="2023-08-24"/>
+    <release version="23.04.3" date="2023-07-06"/>
+    <release version="23.04.2" date="2023-06-08"/>
+    <release version="23.04.1" date="2023-05-11"/>
+    <release version="23.04.0" date="2023-04-20"/>
+    <release version="22.12.3" date="2023-03-02"/>
+    <release version="22.12.2" date="2023-02-02"/>
+    <release version="22.12.1" date="2023-01-05"/>
+    <release version="22.12.0" date="2022-12-08"/>
+    <release version="22.08.3" date="2022-11-03"/>
+    <release version="22.08.2" date="2022-10-13"/>
+    <release version="22.08.1" date="2022-09-08"/>
+  </releases>
+  <custom>
+    <value key="KDE::matrix">#merkuro:kde.org</value>
+    <value key="KDE::mastodon">https://kde.social/@merkuro</value>
+  </custom>
+  <launchable type="desktop-id">org.kde.merkuro.calendar.desktop</launchable>
+</component>
