@@ -38,7 +38,7 @@ void InfiniteCalendarViewModel::setup()
         break;
     }
     case WeekScale: {
-        QDate firstDay = today.addDays(-today.dayOfWeek() + m_locale.firstDayOfWeek());
+        QDate firstDay = today.addDays(-today.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
         // We create dates before and after where our view will start from (which is today)
         firstDay = firstDay.addDays((-m_datesToAdd * 7) / 2);
 
@@ -234,7 +234,7 @@ void InfiniteCalendarViewModel::addWeekDates(const bool atEnd, const QDate &star
         QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(7) : m_startDates[0].addDays(-7);
 
         if (startDate.dayOfWeek() != m_locale.firstDayOfWeek()) {
-            startDate = startDate.addDays(-startDate.dayOfWeek() + m_locale.firstDayOfWeek());
+            startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
         }
 
         if (atEnd) {
@@ -259,7 +259,7 @@ void InfiniteCalendarViewModel::addMonthDates(const bool atEnd, const QDate &sta
                                                              : m_firstDayOfMonthDates[0].addMonths(-1);
         QDate startDate = firstDay;
 
-        startDate = startDate.addDays(-startDate.dayOfWeek() + m_locale.firstDayOfWeek());
+        startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
         if (startDate >= firstDay) {
             startDate = startDate.addDays(-7);
         }
