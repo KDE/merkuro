@@ -55,7 +55,7 @@ QDateTime DateTimeState::firstDayOfMonth() const
 QDateTime DateTimeState::firstDayOfWeek() const
 {
     int dayOfWeek = m_selectedDate.date().dayOfWeek();
-    return m_selectedDate.addDays(-dayOfWeek + 1);
+    return m_selectedDate.addDays(-dayOfWeek + (m_locale.firstDayOfWeek() % 7));
 }
 
 void DateTimeState::resetTime()
