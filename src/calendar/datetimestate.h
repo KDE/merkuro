@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QDateTime>
+#include <QLocale>
 #include <QObject>
 #include <qdatetime.h>
 
@@ -49,4 +50,5 @@ Q_SIGNALS:
 private:
     QDateTime m_selectedDate;
     QDateTime m_currentDate;
+    QLocale m_locale;
 };
