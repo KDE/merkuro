@@ -136,7 +136,7 @@ endif()
 ki18n_install(po)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
+ecm_set_disabled_deprecation_versions(QT 6.7.2 KF 6.4.0)
 add_definitions(-DQT_STRICT_ITERATORS)
 add_subdirectory(src)
 add_subdirectory(icons)
