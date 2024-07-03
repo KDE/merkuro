@@ -73,7 +73,7 @@ class AddresseeWrapper;
 class ContactEditorBackend : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
+    QML_NAMED_ELEMENT(ContactEditor)
 
     Q_PROPERTY(Mode mode READ mode WRITE setMode NOTIFY modeChanged)
     Q_PROPERTY(AddresseeWrapper *contact READ contact NOTIFY contactChanged NOTIFY modeChanged)

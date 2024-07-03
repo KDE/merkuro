@@ -5,11 +5,12 @@
 
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
-#include <kcontacts/addressee.h>
+#include <qqmlregistration.h>
 
 class EmailModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum ExtraRole {
