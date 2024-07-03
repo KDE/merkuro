@@ -59,24 +59,25 @@ ecm_qt_declare_logging_category(merkuro_contact_static
     EXPORT MERKURO
 )
 
-ecm_add_qml_module(merkuro_contact_plugin URI "org.kde.merkuro.contact" VERSION 1.0)
-
-target_sources(merkuro_contact_plugin PRIVATE
-    contactplugin.cpp
-    contactplugin.h
-    resources.qrc
+ecm_add_qml_module(merkuro_contact_static
+    URI "org.kde.merkuro.contact"
+    GENERATE_PLUGIN_SOURCE
+    RESOURCES
+        resources/fallbackBackground.png
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin SOURCES
+ecm_target_qml_sources(merkuro_contact_static SOURCES
     qml/ContactChooserPage.qml
     qml/AddressBookCollectionHandler.qml
     qml/ContactView.qml
     qml/MenuBar.qml
     qml/Sidebar.qml
     qml/GlobalMenuBar.qml
+    qml/Main.qml
+    qml/Settings.qml
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin
+ecm_target_qml_sources(merkuro_contact_static
     PRIVATE PATH private SOURCES
     qml/private/ContactPage.qml
     qml/private/ContactGroupPage.qml
@@ -89,7 +90,7 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/DeleteContactAction.qml
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin
+ecm_target_qml_sources(merkuro_contact_static
     PRIVATE PATH private/contact_editor SOURCES
     qml/private/contact_editor/AddressBookEditorCard.qml
     qml/private/contact_editor/BusinessEditorCard.qml
@@ -103,8 +104,6 @@ ecm_target_qml_sources(merkuro_contact_plugin
 )
 
 
-target_link_libraries(merkuro_contact_plugin PRIVATE merkuro_contact_static)
-
 ecm_qt_install_logging_categories(
     EXPORT merkuro
     FILE merkuro.contact.categories
@@ -117,13 +116,13 @@ endif()
 
 add_subdirectory(applet)
 
-ecm_finalize_qml_module(merkuro_contact_plugin
+ecm_finalize_qml_module(merkuro_contact_static
     DESTINATION ${KDE_INSTALL_QMLDIR}
     BUILD_SHARED_LIBS OFF)
 
 #### Binary
 
-add_executable(merkuro-contact main.cpp resources.qrc)
+add_executable(merkuro-contact main.cpp)
 target_link_libraries(merkuro-contact
     PRIVATE
         Qt::Widgets
@@ -134,6 +133,8 @@ target_link_libraries(merkuro-contact
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
+        merkuro_contact_static
+        merkuro_contact_staticplugin
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})

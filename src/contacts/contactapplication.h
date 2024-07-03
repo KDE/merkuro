@@ -9,6 +9,8 @@ class QQuickWindow;
 class ContactApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     explicit ContactApplication(QObject *parent = nullptr);

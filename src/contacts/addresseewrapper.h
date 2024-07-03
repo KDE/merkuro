@@ -10,7 +10,7 @@
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemMonitor>
 #include <KContacts/Addressee>
-#include <kcontacts/addressee.h>
+#include <qqmlregistration.h>
 
 #include "addressmodel.h"
 
@@ -22,6 +22,8 @@
 class AddresseeWrapper : public QObject, public Akonadi::ItemMonitor
 {
     Q_OBJECT
+    QML_ELEMENT
+
     // Akonadi properties
     Q_PROPERTY(Akonadi::Item addresseeItem READ addresseeItem WRITE setAddresseeItem NOTIFY addresseeItemChanged)
     Q_PROPERTY(Akonadi::Collection collection READ collection WRITE setCollection NOTIFY collectionChanged)

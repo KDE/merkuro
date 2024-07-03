@@ -8,6 +8,7 @@
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <QObject>
+#include <qqmlregistration.h>
 
 namespace KContacts
 {
@@ -72,6 +73,8 @@ class AddresseeWrapper;
 class ContactEditorBackend : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Mode mode READ mode WRITE setMode NOTIFY modeChanged)
     Q_PROPERTY(AddresseeWrapper *contact READ contact NOTIFY contactChanged NOTIFY modeChanged)
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)

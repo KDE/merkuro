@@ -7,7 +7,7 @@
 #include <Akonadi/Item>
 #include <QObject>
 #include <QSortFilterProxyModel>
-#include <qobjectdefs.h>
+#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -22,6 +22,8 @@ class ColorProxyModel;
 class ContactManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     /// Model for getting the contact collections available for the mainDrawer
     Q_PROPERTY(QAbstractItemModel *contactCollections READ contactCollections CONSTANT)

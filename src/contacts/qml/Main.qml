@@ -33,8 +33,8 @@ BaseApplication {
     Connections {
         target: Contact.ContactApplication
 
-        function onOpenSettings() {
-            const openDialogWindow = pageStack.pushDialogLayer("qrc:/qml/Settings.qml", {
+        function onOpenSettings(): void {
+            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.contact", "Settings"), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,
@@ -42,10 +42,11 @@ BaseApplication {
             });
         }
 
-        function onRefreshAll() {
+        function onRefreshAll(): void {
             Contact.ContactManager.updateAllCollections();
         }
-        function onShowMenubarChanged(state) {
+
+        function onShowMenubarChanged(state: bool): void {
             Config.showMenubar = state;
         }
     }

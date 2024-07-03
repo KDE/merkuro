@@ -7,6 +7,7 @@
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class ContactGroupEditorPrivate;
 class QAbstractItemModel;
@@ -62,6 +63,8 @@ class QAbstractItemModel;
 class ContactGroupEditor : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Mode mode READ mode WRITE setMode NOTIFY modeChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(qint64 collectionId READ collectionId NOTIFY collectionChanged)

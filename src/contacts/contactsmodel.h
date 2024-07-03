@@ -5,11 +5,14 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <QSortFilterProxyModel>
+#include <qqmlregistration.h>
 
 /// Contacts model with an email addreess
 class ContactsModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
 public:
     enum ExtraRoles {
         EmailRole = Akonadi::EntityTreeModel::UserRole + 1,
