@@ -7,10 +7,14 @@
 #include <Akonadi/TagModel>
 #include <QObject>
 #include <QSortFilterProxyModel>
+#include <qqmlregistration.h>
 
 class TagManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QSortFilterProxyModel *tagModel READ tagModel NOTIFY tagModelChanged)
 
 public:

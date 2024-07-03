@@ -5,6 +5,8 @@
 #pragma once
 
 #include <QObject>
+#include <qqmlregistration.h>
+
 namespace Akonadi
 {
 namespace Quick
@@ -12,6 +14,9 @@ namespace Quick
 class MimeTypes : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString calendar READ calendar CONSTANT)
     Q_PROPERTY(QString todo READ todo CONSTANT)
     Q_PROPERTY(QString address READ address CONSTANT)

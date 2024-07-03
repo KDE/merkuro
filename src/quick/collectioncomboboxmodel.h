@@ -6,7 +6,7 @@
 #include <Akonadi/Collection>
 #include <QSortFilterProxyModel>
 #include <memory>
-#include <qobjectdefs.h>
+#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -42,6 +42,8 @@ class CollectionComboBoxModelPrivate;
 class CollectionComboBoxModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QStringList mimeTypeFilter READ mimeTypeFilter WRITE setMimeTypeFilter NOTIFY mimeTypeFilterChanged)
     Q_PROPERTY(int accessRightsFilter READ accessRightsFilter WRITE setAccessRightsFilter NOTIFY accessRightsFilterChanged)
 

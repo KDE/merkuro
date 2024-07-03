@@ -6,19 +6,29 @@
 #include <Libkdepim/ProgressManager>
 #include <QAbstractListModel>
 #include <QObject>
+#include <qqmlregistration.h>
 
 namespace Akonadi::Quick
 {
 class ProgressModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     // Properties useful for progress bar displaying overall progress status
     Q_PROPERTY(bool working READ working NOTIFY workingChanged)
     Q_PROPERTY(bool indeterminate READ indeterminate NOTIFY indeterminateChanged)
     Q_PROPERTY(unsigned int progress READ progress NOTIFY progressChanged)
 
 public:
-    enum Roles { ProgressRole = Qt::UserRole + 1, StatusRole, CanBeCancelledRole, UsesBusyIndicatorRole, CryptoStatusRole, IdRole };
+    enum Roles {
+        ProgressRole = Qt::UserRole + 1,
+        StatusRole,
+        CanBeCancelledRole,
+        UsesBusyIndicatorRole,
+        CryptoStatusRole,
+        IdRole,
+    };
     Q_ENUM(Roles)
 
     explicit ProgressModel(QObject *const parent = nullptr);

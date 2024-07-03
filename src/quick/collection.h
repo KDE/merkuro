@@ -6,6 +6,7 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <QObject>
+#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -14,6 +15,9 @@ namespace Quick
 class Collection : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Expose enum")
+
 public:
     enum Right {
         ReadOnly = 0x0, ///< Can only read items or subcollection of this collection

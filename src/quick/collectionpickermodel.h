@@ -6,7 +6,7 @@
 #include <Akonadi/Collection>
 #include <QSortFilterProxyModel>
 #include <memory>
-#include <qobjectdefs.h>
+#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -27,7 +27,7 @@ class CollectionPickerModelPrivate;
  * @code{.qml}
  *
  * import QtQuick.Controls as QQC2
- * import org.kde.akonadi 1.0 as Akonadi
+ * import org.kde.akonadi as Akonadi
  *
  * QQC2.Picker {
  *     model: AkonadiQuick.PickerModel {
@@ -42,6 +42,8 @@ class CollectionPickerModelPrivate;
 class CollectionPickerModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QStringList mimeTypeFilter READ mimeTypeFilter WRITE setMimeTypeFilter NOTIFY mimeTypeFilterChanged)
     Q_PROPERTY(Akonadi::Collection::Right accessRightsFilter READ accessRightsFilter WRITE setAccessRightsFilter NOTIFY accessRightsFilterChanged)
     Q_PROPERTY(bool excludeVirtualCollections READ excludeVirtualCollections WRITE setExcludeVirtualCollections NOTIFY excludeVirtualCollectionsChanged)

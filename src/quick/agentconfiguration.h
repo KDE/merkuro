@@ -5,10 +5,13 @@
 
 #include <Akonadi/AgentFilterProxyModel>
 #include <Akonadi/AgentInstance>
+#include <qqmlregistration.h>
 
 class AgentConfiguration : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Akonadi::AgentFilterProxyModel *availableAgents READ availableAgents NOTIFY availableAgentsChanged)
     Q_PROPERTY(Akonadi::AgentFilterProxyModel *runningAgents READ runningAgents NOTIFY runningAgentsChanged)
     Q_PROPERTY(QStringList mimetypes READ mimetypes WRITE setMimetypes NOTIFY mimetypesChanged)

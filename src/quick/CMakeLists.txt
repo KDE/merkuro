@@ -2,7 +2,10 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-ecm_add_qml_module(akonadi_quick_plugin URI "org.kde.akonadi" VERSION 1.0)
+ecm_add_qml_module(akonadi_quick_plugin
+    URI "org.kde.akonadi"
+    GENERATE_PLUGIN_SOURCE
+)
 
 target_sources(akonadi_quick_plugin PRIVATE
     collectioncomboboxmodel.cpp
@@ -13,8 +16,6 @@ target_sources(akonadi_quick_plugin PRIVATE
     collection.h
     mimetypes.cpp
     mimetypes.h
-    akonadiquickplugin.cpp
-    akonadiquickplugin.h
     agentconfiguration.cpp
     agentconfiguration.h
     tagmanager.h
