@@ -164,7 +164,7 @@ Kirigami.OverlayDrawer {
                             enabled: CalendarManager.undoRedoData.undoAvailable
                             onTriggered: CalendarManager.undoAction();
                         },
-                        StatefulApp.Action {
+                        Kirigami.Action {
                             icon.name: 'edit-redo'
                             text: CalendarManager.undoRedoData.redoAvailable ?
                                 i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : redoAction.text
