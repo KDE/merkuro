@@ -7,10 +7,12 @@
 #include <Akonadi/Item>
 #include <KMime/Message>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class MessageLoader : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)
     Q_PROPERTY(KMime::Message::Ptr message READ message NOTIFY messageChanged)
 

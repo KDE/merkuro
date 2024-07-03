@@ -2,11 +2,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 File=mailconfig.kcfg
-ClassName=MailConfig
+ClassName=Config
 Mutators=true
 DefaultValueGetters=true
 GenerateProperties=true
 ParentInConstructor=true
 UseEnumTypes=true
 GlobalEnums=true
-
+QmlRegistration=true
+Singleton=true

@@ -5,10 +5,13 @@
 
 #include <Akonadi/Collection>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class MailCollectionHelper : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     Q_INVOKABLE qint64 unreadCount(const Akonadi::Collection &collection);

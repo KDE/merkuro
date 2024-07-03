@@ -35,6 +35,9 @@ set(merkuro_mail_SRCS
     identity/identitycryptographyeditorbackendfactory.cpp
     identity/identitykeylistmodel.h
     identity/identitykeylistmodel.cpp
+
+    messagehandler.cpp
+    messagehandler.h
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -46,6 +49,7 @@ ecm_qt_declare_logging_category(merkuro_mail_SRCS
 )
 
 add_library(merkuro_mail_static STATIC ${merkuro_mail_SRCS})
+target_include_directories(merkuro_mail_static PUBLIC identity)
 kconfig_add_kcfg_files(merkuro_mail_static GENERATE_MOC mailconfig.kcfgc)
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
@@ -59,6 +63,7 @@ target_link_libraries(merkuro_mail_static
         KPim6::Mime
         KPim6::Libkdepim
         KPim6::PimCommonAkonadi
+        KPim6::MimeTreeParserCore
         KF6::XmlGui
         KF6::Codecs
         KF6::XmlGui
@@ -66,65 +71,59 @@ target_link_libraries(merkuro_mail_static
         MerkuroComponents
 )
 
-ecm_add_qml_module(merkuro_mail_plugin URI "org.kde.merkuro.mail" VERSION 1.0)
-
-target_sources(merkuro_mail_plugin PRIVATE
-    mailplugin.cpp
-    mailplugin.h
+ecm_add_qml_module(merkuro_mail_static
+    URI "org.kde.merkuro.mail"
+    GENERATE_PLUGIN_SOURCE
+    DEPENDENCIES
+        QtQuick
+        org.kde.kirigamiaddons.formcard
+        org.kde.kirigamiaddons.delegates
+        org.kde.kirigamiaddons.statefulapp
+        org.kde.akonadi
 )
 
-ecm_target_qml_sources(merkuro_mail_plugin SOURCES
+ecm_target_qml_sources(merkuro_mail_static SOURCES
+    qml/app/Main.qml
+    qml/app/MenuBar.qml
+    qml/desktopactions/OpenMbox.qml
+
     qml/MailSidebar.qml
     qml/FolderView.qml
     qml/MailComposer.qml
     qml/ConversationViewer.qml
 )
-ecm_target_qml_sources(merkuro_mail_plugin
+ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH private SOURCES
     qml/private/AttachmentDelegate.qml
     qml/private/MailDelegate.qml
 )
 
-ecm_target_qml_sources(merkuro_mail_plugin
+ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH actions SOURCES
     qml/actions/NewFolderAction.qml
     qml/actions/DeleteFolderAction.qml
     qml/actions/MailItemMenu.qml
 )
 
-ecm_target_qml_sources(merkuro_mail_plugin
-    PRIVATE PATH desktopactions SOURCES
-    qml/desktopactions/openmbox.qml
-)
-
-ecm_target_qml_sources(merkuro_mail_plugin
+ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH mailboxselector SOURCES
     qml/mailboxselector/MailBoxList.qml
     qml/mailboxselector/MailBoxListPage.qml
 )
 
-ecm_target_qml_sources(merkuro_mail_plugin
+ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH mailpartview SOURCES
     qml/mailpartview/ICalPart.qml
 )
 
-target_link_libraries(merkuro_mail_plugin
-    PUBLIC
-        merkuro_mail_static
-        KPim6::MimeTreeParserCore
-)
-
-ecm_finalize_qml_module(merkuro_mail_plugin
+ecm_finalize_qml_module(merkuro_mail_static
     DESTINATION ${KDE_INSTALL_QMLDIR}
     BUILD_SHARED_LIBS OFF)
 
 #### Binary
 
-add_executable(merkuro-mail 
-    main.cpp 
-    resources.qrc 
-    messagehandler.cpp 
-    messagehandler.h
+add_executable(merkuro-mail
+    main.cpp
 )
 
 target_link_libraries(merkuro-mail
@@ -132,14 +131,13 @@ target_link_libraries(merkuro-mail
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
-        KF6::I18n
         KF6::CoreAddons
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
-        KPim6::Mime
-        KPim6::MimeTreeParserCore
         mail_settingsplugin
+        merkuro_mail_staticplugin
+        merkuro_mail_static
 )
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})

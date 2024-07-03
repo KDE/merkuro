@@ -5,10 +5,14 @@
 
 #include <KIdentityManagementQuick/CryptographyEditorBackend>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class IdentityCryptographyEditorBackendFactory : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(KIdentityManagementQuick::CryptographyEditorBackend *cryptoEditorBackend READ cryptoEditorBackend CONSTANT)
 
 public:

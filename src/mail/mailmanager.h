@@ -7,6 +7,7 @@
 #include <Akonadi/CollectionFilterProxyModel>
 #include <MailCommon/EntityCollectionOrderProxyModel>
 #include <QObject>
+#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -25,6 +26,9 @@ class QItemSelectionModel;
 class MailManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(MailCommon::EntityCollectionOrderProxyModel *foldersModel READ foldersModel CONSTANT)
     Q_PROPERTY(MailModel *folderModel READ folderModel NOTIFY folderModelChanged)

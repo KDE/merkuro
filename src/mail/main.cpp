@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     if (!args.isEmpty()) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
         QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
-        engine.load(QUrl(QStringLiteral("qrc:/qml/desktopactions/openmbox.qml")));
+        engine.loadFromModule("org.kde.merkuro.mail", "OpenMbox");
         const auto rootObjects = engine.rootObjects();
         if (rootObjects.isEmpty()) {
             return -1;
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
             messageHandler->open(file);
         }
     } else {
-        engine.load(QUrl(QStringLiteral("qrc:/qml/app/main.qml")));
+        engine.loadFromModule("org.kde.merkuro.mail", "Main");
 
         QObject::connect(&service,
                          &KDBusService::activateRequested,
