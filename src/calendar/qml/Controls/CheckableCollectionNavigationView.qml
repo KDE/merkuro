@@ -5,13 +5,13 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2.16 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.contact 1.0
-import org.kde.akonadi 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.merkuro.calendar
+import org.kde.merkuro.contact
+import org.kde.akonadi
 import Qt.labs.qmlmodels
-import org.kde.kitemmodels 1.0
+import org.kde.kitemmodels
 
 QQC2.ScrollView {
     id: root

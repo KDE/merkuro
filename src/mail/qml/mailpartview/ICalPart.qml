@@ -6,8 +6,8 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models
-import org.kde.merkuro.mail 1.0
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.merkuro.mail
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
     id: root

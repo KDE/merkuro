@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import QtQuick
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.akonadi 1.0
-import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.akonadi
+import org.kde.merkuro.calendar as Calendar
+import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormCardPage {
     id: freeBusySettingsPage

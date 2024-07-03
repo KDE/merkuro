@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Window
 import Qt.labs.platform as Labs
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.components
 
 Labs.Menu {
     property Window _window: applicationWindow()

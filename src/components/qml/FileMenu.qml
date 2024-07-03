@@ -4,8 +4,8 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Window
-import org.kde.merkuro.components 1.0
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.merkuro.components
+import org.kde.kirigami as Kirigami
 
 QQC2.Menu {
     id: fileMenu

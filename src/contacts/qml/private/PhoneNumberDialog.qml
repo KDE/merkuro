@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 Kirigami.OverlaySheet {

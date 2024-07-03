@@ -6,8 +6,8 @@ import QtQuick
 import QtQml
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.merkuro.contact 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.contact
 import org.kde.prison 1.0 as Prison
 
 Kirigami.Page {

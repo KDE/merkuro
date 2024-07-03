@@ -10,9 +10,9 @@ import QtQuick 2.3
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.merkuro.contact 1.0
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.contact
+import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 

@@ -3,13 +3,13 @@
 
 import QtQuick
 import QtQuick.Layouts
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import Qt.labs.platform
 import QtQuick.Dialogs
-import org.kde.merkuro.mail 1.0
-import org.kde.merkuro.components 1.0
-import org.kde.kitemmodels 1.0 as KItemModels
+import org.kde.merkuro.mail
+import org.kde.merkuro.components
+import org.kde.kitemmodels as KItemModels
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import './private'
 

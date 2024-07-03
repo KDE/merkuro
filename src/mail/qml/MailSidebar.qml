@@ -4,12 +4,12 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami as Kirigami
 import Qt.labs.qmlmodels
-import org.kde.kitemmodels 1.0
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.merkuro.mail 1.0
-import org.kde.merkuro.components 1.0
+import org.kde.kitemmodels
+import org.kde.akonadi as Akonadi
+import org.kde.merkuro.mail
+import org.kde.merkuro.components
 
 import './mailboxselector'
 

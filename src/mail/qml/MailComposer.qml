@@ -4,11 +4,11 @@
 
 import QtQuick
 import QtQuick.Layouts
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
-import org.kde.kitemmodels 1.0 as KItemModels
-import org.kde.merkuro.mail 1.0
-import org.kde.akonadi 1.0 as Akonadi
+import org.kde.kitemmodels as KItemModels
+import org.kde.merkuro.mail
+import org.kde.akonadi as Akonadi
 import org.kde.kidentitymanagement 1.0 as KIdentityManagement
 
 Kirigami.ScrollablePage {

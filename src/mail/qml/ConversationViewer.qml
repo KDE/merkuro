@@ -6,9 +6,9 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
-import org.kde.merkuro.mail 1.0
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kitemmodels 1.0 as KItemModels
+import org.kde.merkuro.mail
+import org.kde.kirigami as Kirigami
+import org.kde.kitemmodels as KItemModels
 import org.kde.pim.mimetreeparser 1.0 as MimeTreeParser
 
 MimeTreeParser.MailViewer {

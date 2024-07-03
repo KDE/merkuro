@@ -6,13 +6,13 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 import Qt.labs.qmlmodels
-import org.kde.kitemmodels 1.0
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kitemmodels
+import org.kde.akonadi as Akonadi
+import org.kde.kirigamiaddons.delegates as Delegates
 
-import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.merkuro.calendar as Calendar
 
 Kirigami.ScrollablePage {
     id: collectionPickerSheet

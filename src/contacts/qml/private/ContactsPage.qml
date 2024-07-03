@@ -11,8 +11,8 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 
-import org.kde.kirigami 2.12 as Kirigami
-import org.kde.merkuro.contact 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.contact
 
 Kirigami.ScrollablePage {
     id: root

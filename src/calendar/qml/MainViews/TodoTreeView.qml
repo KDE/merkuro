@@ -5,12 +5,12 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kitemmodels 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kitemmodels
 
-import org.kde.merkuro.calendar 1.0 as Calendar
-import org.kde.merkuro.utils 1.0
+import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.utils
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
 

@@ -7,8 +7,8 @@ import QtQuick.Layouts
 
 import Qt.labs.qmlmodels
 
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kitemmodels 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kitemmodels
 import org.kde.raven 1.0
 
 Kirigami.ScrollablePage {

@@ -3,7 +3,7 @@
 
 import QtQuick
 import Qt.labs.platform as Labs
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.components
 
 Labs.Menu {
     id: fileMenu

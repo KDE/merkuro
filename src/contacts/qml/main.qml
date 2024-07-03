@@ -4,10 +4,10 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.contact 1.0 as Contact
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.merkuro.components
+import org.kde.merkuro.contact as Contact
+import org.kde.akonadi as Akonadi
+import org.kde.kirigami as Kirigami
 
 BaseApplication {
     id: root

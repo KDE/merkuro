@@ -4,12 +4,12 @@
 pragma Singleton
 
 import QtQuick
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.contact 1.0
+import org.kde.merkuro.calendar
+import org.kde.merkuro.contact
 
 QtObject {
     id: utilsObject

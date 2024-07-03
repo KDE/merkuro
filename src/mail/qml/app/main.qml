@@ -3,10 +3,10 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.merkuro.components 1.0
-import org.kde.merkuro.mail 1.0 as Mail
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.merkuro.components
+import org.kde.merkuro.mail as Mail
+import org.kde.akonadi as Akonadi
+import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail.settings as Settings
 
 BaseApplication {

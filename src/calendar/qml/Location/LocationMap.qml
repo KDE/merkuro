@@ -5,8 +5,8 @@ import QtQuick
 import QtQuick.Controls
 import QtLocation 5.15
 import QtPositioning 5.15
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.merkuro.calendar 1.0 as Calendar
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.calendar as Calendar
 
 Map {
     id: map

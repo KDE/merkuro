@@ -5,8 +5,8 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.akonadi as Akonadi
-import org.kde.kirigami 2.0 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 RowLayout {
     id: root

@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Window
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.components
 
 QQC2.Menu {
     id: editMenu

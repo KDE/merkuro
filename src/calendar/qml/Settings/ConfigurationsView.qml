@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import org.kde.kirigami 2.18 as Kirigami
+import org.kde.kirigami as Kirigami
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
-import org.kde.merkuro.calendar 1.0
+import org.kde.merkuro.calendar
 
 KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"

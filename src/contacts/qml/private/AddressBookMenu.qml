@@ -6,10 +6,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.merkuro 1.0 as Merkuro
-import org.kde.merkuro.contact 1.0
-import org.kde.akonadi 1.0 as Akonadi
+import org.kde.merkuro.contact
+import org.kde.akonadi as Akonadi
 
 QQC2.Menu {
     id: actionsPopup

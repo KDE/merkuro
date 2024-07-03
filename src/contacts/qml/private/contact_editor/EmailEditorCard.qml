@@ -7,10 +7,10 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.platform
 
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.merkuro.contact 1.0
-import org.kde.akonadi 1.0 as Akonadi
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.merkuro.contact
+import org.kde.akonadi as Akonadi
 
 FormCard.FormCard {
     id: root

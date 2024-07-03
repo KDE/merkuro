@@ -5,9 +5,9 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.merkuro.mail 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.akonadi as Akonadi
+import org.kde.merkuro.mail
 
 QQC2.Menu {
     id: mailActionsPopup

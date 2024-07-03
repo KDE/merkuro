@@ -3,8 +3,8 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.akonadi as Akonadi
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
 /**
@@ -28,7 +28,7 @@ QQC2.ComboBox {
      *
      * @property list<string> mimeTypeFilter
      * @code{.qml}
-     * import org.kde.akonadi 1.0 as Akonadi
+     * import org.kde.akonadi as Akonadi
      * 
      * Akonadi.CollectionComboBoxModel {
      *     mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
@@ -43,7 +43,7 @@ QQC2.ComboBox {
      *
      * @property Akonadi::Collection::Rights rights
      * @code{.qml}
-     * import org.kde.akonadi 1.0 as Akonadi
+     * import org.kde.akonadi as Akonadi
      * 
      * Akonadi.CollectionComboBoxModel {
      *     accessRightsFilter: Akonadi.Collection.CanCreateItem

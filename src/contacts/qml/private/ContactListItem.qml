@@ -11,10 +11,10 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import Qt5Compat.GraphicalEffects
 
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.merkuro.contact 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.merkuro.contact
 import org.kde.kirigamiaddons.labs.components 1.0 as KAComponents
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.delegates as Delegates
 
 Delegates.RoundedItemDelegate {
     id: listItem

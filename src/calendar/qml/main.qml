@@ -5,7 +5,7 @@
 
 import QtQuick
 import QtCore 6.5
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models 2.15
@@ -14,9 +14,9 @@ import Qt5Compat.GraphicalEffects
 
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
-import org.kde.merkuro.calendar 1.0
-import org.kde.merkuro.utils 1.0
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.calendar
+import org.kde.merkuro.utils
+import org.kde.merkuro.components
 import org.kde.merkuro.calendar.private 1.0
 
 BaseApplication {

@@ -8,8 +8,8 @@ import QtQuick.Layouts 1.15
 
 import Qt.labs.qmlmodels 1.0
 
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kitemmodels 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kitemmodels
 import org.kde.merkuro 1.0
 
 Kirigami.GlobalDrawer {

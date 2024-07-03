@@ -4,14 +4,14 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import org.kde.merkuro.contact 1.0 as Contact
-import org.kde.akonadi 1.0 as Akonadi
-import org.kde.merkuro.components 1.0
+import org.kde.merkuro.contact as Contact
+import org.kde.akonadi as Akonadi
+import org.kde.merkuro.components
 import Qt.labs.qmlmodels
-import org.kde.kitemmodels 1.0
+import org.kde.kitemmodels
 
 Kirigami.OverlayDrawer {
     id: root

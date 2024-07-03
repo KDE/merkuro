@@ -4,11 +4,11 @@
 import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.merkuro.contact 1.0
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.merkuro.contact
 
 PlasmaComponents3.ScrollView {
     id: root
