@@ -19,25 +19,14 @@ class Identity;
 class IdentityModel;
 }
 
-namespace Kleo
-{
-class KeyResolver;
-}
-
 namespace MessageComposer
 {
 class Composer;
-class ContactPreference;
 }
 
 namespace MailTransport
 {
 class Transport;
-}
-
-namespace GpgME
-{
-class Key;
 }
 
 class KJob;

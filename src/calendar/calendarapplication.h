@@ -14,7 +14,6 @@
 #include <abstractmerkuroapplication.h>
 
 class QQuickWindow;
-class QSortFilterProxyModel;
 
 class CalendarApplication : public AbstractMerkuroApplication
 {
