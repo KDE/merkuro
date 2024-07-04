@@ -27,8 +27,6 @@
 
 #include <PimCommonAkonadi/ProgressManagerAkonadi>
 
-static MailKernel *mySelf = nullptr;
-
 MailKernel &MailKernel::self()
 {
     static MailKernel instance;
