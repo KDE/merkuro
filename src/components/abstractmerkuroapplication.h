@@ -12,7 +12,7 @@ class MERKUROCOMPONENTS_EXPORT AbstractMerkuroApplication : public AbstractKirig
 {
     Q_OBJECT
     QML_ELEMENT
-    QML_UNCREATABLE("Abstract class")
+    // QML_UNCREATABLE("Abstract class")
 
     /// This property holds whether the menubar is visible.
     Q_PROPERTY(bool menubarVisible READ menubarVisible NOTIFY menubarVisibleChanged)
