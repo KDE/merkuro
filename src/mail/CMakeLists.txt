@@ -116,10 +116,6 @@ ecm_target_qml_sources(merkuro_mail_static
     qml/mailpartview/ICalPart.qml
 )
 
-ecm_finalize_qml_module(merkuro_mail_static
-    DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS OFF)
-
 #### Binary
 
 add_executable(merkuro-mail

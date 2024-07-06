@@ -116,10 +116,6 @@ endif()
 
 add_subdirectory(applet)
 
-ecm_finalize_qml_module(merkuro_contact_static
-    DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS OFF)
-
 #### Binary
 
 add_executable(merkuro-contact main.cpp)
