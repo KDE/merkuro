@@ -1,32 +1,19 @@
 # SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-### Contact QML Plugin lib
+### Static lib
 
-add_library(merkuro_contact_plugin SHARED)
+add_library(merkuro_contact_static STATIC)
 
-set(merkuro_contact_plugin_SRCS)
-
-kconfig_add_kcfg_files(merkuro_contact_plugin_SRCS GENERATE_MOC contactconfig.kcfgc)
-
-ecm_qt_declare_logging_category(merkuro_contact_plugin_SRCS
-    HEADER merkuro_contact_debug.h
-    IDENTIFIER MERKURO_LOG
-    CATEGORY_NAME org.kde.merkuro.contact
-    DESCRIPTION "merkuro contact"
-    EXPORT MERKURO
-)
-
-target_link_libraries(merkuro_contact_plugin PUBLIC
+target_link_libraries(merkuro_contact_static PUBLIC
     KF6::XmlGui
     KF6::Contacts
     KPim6::AkonadiWidgets
     KPim6::AkonadiContactCore
     MerkuroComponents
 )
-set_target_properties(merkuro_contact_plugin PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_sources(merkuro_contact_plugin PUBLIC
-    ${merkuro_contact_plugin_SRCS}
+set_target_properties(merkuro_contact_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_sources(merkuro_contact_static PUBLIC
     contactapplication.cpp
     contactapplication.h
     addresseewrapper.cpp
@@ -62,14 +49,24 @@ target_sources(merkuro_contact_plugin PUBLIC
     attributes/attributeregistrar.cpp
 )
 
-ecm_add_qml_module(merkuro_contact_plugin
+kconfig_add_kcfg_files(merkuro_contact_static GENERATE_MOC contactconfig.kcfgc)
+
+ecm_qt_declare_logging_category(merkuro_contact_static
+    HEADER merkuro_contact_debug.h
+    IDENTIFIER MERKURO_LOG
+    CATEGORY_NAME org.kde.merkuro.contact
+    DESCRIPTION "merkuro contact"
+    EXPORT MERKURO
+)
+
+ecm_add_qml_module(merkuro_contact_static
     URI "org.kde.merkuro.contact"
     GENERATE_PLUGIN_SOURCE
     RESOURCES
         resources/fallbackBackground.png
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin SOURCES
+ecm_target_qml_sources(merkuro_contact_static SOURCES
     qml/ContactChooserPage.qml
     qml/AddressBookCollectionHandler.qml
     qml/ContactView.qml
@@ -80,7 +77,7 @@ ecm_target_qml_sources(merkuro_contact_plugin SOURCES
     qml/Settings.qml
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin
+ecm_target_qml_sources(merkuro_contact_static
     PRIVATE PATH private SOURCES
     qml/private/ContactPage.qml
     qml/private/ContactGroupPage.qml
@@ -93,7 +90,7 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/DeleteContactAction.qml
 )
 
-ecm_target_qml_sources(merkuro_contact_plugin
+ecm_target_qml_sources(merkuro_contact_static
     PRIVATE PATH private/contact_editor SOURCES
     qml/private/contact_editor/AddressBookEditorCard.qml
     qml/private/contact_editor/BusinessEditorCard.qml
@@ -119,10 +116,6 @@ endif()
 
 add_subdirectory(applet)
 
-ecm_finalize_qml_module(merkuro_contact_plugin
-    DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS ON)
-
 #### Binary
 
 add_executable(merkuro-contact main.cpp)
@@ -136,7 +129,8 @@ target_link_libraries(merkuro-contact
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
-        merkuro_contact_plugin
+        merkuro_contact_static
+        merkuro_contact_staticplugin
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
