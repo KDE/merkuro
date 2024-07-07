@@ -70,33 +70,27 @@ PlasmaComponents3.ScrollView {
             sourceModel: ContactsModel {}
         }
         boundsBehavior: Flickable.StopAtBounds
-        topMargin: PlasmaCore.Units.smallSpacing * 2
-        bottomMargin: PlasmaCore.Units.smallSpacing * 2
-        leftMargin: PlasmaCore.Units.smallSpacing * 2
-        rightMargin: PlasmaCore.Units.smallSpacing * 2
         spacing: PlasmaCore.Units.smallSpacing
         activeFocusOnTab: true
+        reuseItems: true
 
-        section.property: "display"
-        section.criteria: ViewSection.FirstCharacter
-        section.delegate: PlasmaExtras.Heading {level: 4; text: section}
-        highlight: PlasmaExtras.Highlight { }
-        highlightMoveDuration: 0
-        highlightResizeDuration: 0
+        section {
+            property: "display"
+            criteria: ViewSection.FirstCharacter
+            delegate: Kirigami.ListSectionHeader {
+                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
+            }
+        }
+
+        clip: true
         focus: true
         delegate: ContactListItem {
-            width: contactsList.width - contactsList.leftMargin - contactsList.rightMargin
-            height: Kirigami.Units.gridUnit * 2
-            name: model && model.display
+            width: contactsList.width
+            name: model && model.display && model.display.trim().length > 0 ? model.display : i18nc("Placeholder", "No Name")
             avatarIcon: model && model.decoration
             onClicked: stack.push(Qt.resolvedUrl('./ContactPage.qml'), {
                 itemId: model.itemId,
             })
-            Binding {
-                target: contactsList; when: hovered
-                property: "currentIndex"; value: index
-                restoreMode: Binding.RestoreBinding
-            }
         }
     }
 }

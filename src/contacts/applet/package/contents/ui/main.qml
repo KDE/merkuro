@@ -1,26 +1,26 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <car@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
-import QtQuick 2.2
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.ksvg as KSvg
 import org.kde.merkuro.contact
 
-Item {
+PlasmoidItem {
     id: contactApplet
 
-    Plasmoid.toolTipMainText: i18n("Contact")
-    Plasmoid.icon: 'im-user'
+    Plasmoid.icon: 'im-user-symbolic'
 
-    Plasmoid.switchWidth: Kirigami.Units.gridUnit * 5
-    Plasmoid.switchHeight: Kirigami.Units.gridUnit * 5
+    switchWidth: Kirigami.Units.gridUnit * 5
+    switchHeight: Kirigami.Units.gridUnit * 5
 
-    Plasmoid.fullRepresentation: PlasmaExtras.Representation {
+    fullRepresentation: PlasmaExtras.Representation {
         Layout.minimumWidth: Kirigami.Units.gridUnit * 5
         Layout.minimumHeight: Kirigami.Units.gridUnit * 5
         collapseMarginsHint: true
@@ -34,7 +34,7 @@ Item {
 
         property alias listMargins: listItemSvg.margins
 
-        PlasmaCore.FrameSvgItem {
+        KSvg.FrameSvgItem {
             id : listItemSvg
             imagePath: "widgets/listitem"
             prefix: "normal"

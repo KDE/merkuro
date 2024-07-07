@@ -80,6 +80,7 @@ ecm_target_qml_sources(merkuro_contact_plugin SOURCES
     qml/MenuBar.qml
     qml/Sidebar.qml
     qml/GlobalMenuBar.qml
+    qml/ContactListItem.qml
     qml/Main.qml
     qml/Settings.qml
 )
@@ -89,7 +90,6 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/ContactPage.qml
     qml/private/ContactGroupPage.qml
     qml/private/ContactsPage.qml
-    qml/private/ContactListItem.qml
     qml/private/Header.qml
     qml/private/PhoneNumberDialog.qml
     qml/private/QrCodePage.qml
