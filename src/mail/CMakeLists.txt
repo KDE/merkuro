@@ -138,4 +138,4 @@ target_link_libraries(merkuro-mail
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.mail.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES merkuro-mail.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+install(FILES merkuro.mail.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
