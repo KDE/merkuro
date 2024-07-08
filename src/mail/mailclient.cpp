@@ -129,22 +129,22 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     KMime::Headers::Base::List extras;
 
     auto *header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport");
-    header->fromUnicodeString(QString::number(*transportId), "utf-8");
+    header->fromUnicodeString(QString::number(*transportId));
     extras.push_back(header);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport-Name");
     auto transportName = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::DisplayNameRole).toString();
-    header->fromUnicodeString(transportName, "utf-8");
+    header->fromUnicodeString(transportName);
     infoPart->setExtraHeaders(extras);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Identity");
     auto identity = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::UoidRole).toString();
-    header->fromUnicodeString(identity, "utf-8");
+    header->fromUnicodeString(identity);
     infoPart->setExtraHeaders(extras);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Identity-Name");
     auto identityName = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::IdentityNameRole).toString();
-    header->fromUnicodeString(identityName, "utf-8");
+    header->fromUnicodeString(identityName);
     infoPart->setExtraHeaders(extras);
 
     // Setting Message Body
