@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.components as Components
 import org.kde.akonadi
 
 FormCard.FormCard {
@@ -20,6 +21,48 @@ FormCard.FormCard {
         mimetypes: root.mimetypes
     }
 
+    Components.MessageDialog {
+        id: dialog
+
+        property Item agentDelegate
+
+        title: i18n("Configure %1", agentDelegate?.name)
+        parent: root.QQC2.Overlay.overlay
+        standardButtons: Kirigami.Dialog.NoButton
+        iconName: ''
+
+        QQC2.Label {
+            text: i18n("Modify or delete this account agent.")
+            Layout.fillWidth: true
+        }
+
+        footer: QQC2.DialogButtonBox {
+            leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            bottomPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+            QQC2.Button {
+                text: i18nc("@action:button", "Modify")
+                icon.name: "edit-entry-symbolic"
+                onClicked: {
+                    root._configuration.edit(dialog.agentDelegate.index);
+                    dialog.close();
+                }
+            }
+
+            QQC2.Button {
+                text: i18nc("@action:button", "Delete")
+                icon.name: "delete-symbolic"
+                onClicked: {
+                    root._configuration.remove(dialog.agentDelegate.index);
+                    dialog.close();
+                }
+            }
+        }
+    }
+
+
     Repeater {
         model: root._configuration.runningAgents
         delegate: FormCard.FormButtonDelegate {
@@ -30,35 +73,6 @@ FormCard.FormCard {
             required property string name
             required property string statusMessage
             required property bool online
-
-            Loader {
-                id: dialogLoader
-                sourceComponent: Kirigami.PromptDialog {
-                    id: dialog
-                    title: i18n("Configure %1", agentDelegate.name)
-                    subtitle: i18n("Modify or delete this account agent.")
-                    standardButtons: Kirigami.Dialog.NoButton
-
-                    customFooterActions: [
-                        Kirigami.Action {
-                            text: i18n("Modify")
-                            icon.name: "edit-entry"
-                            onTriggered: {
-                                root._configuration.edit(agentDelegate.index);
-                                dialog.close();
-                            }
-                        },
-                        Kirigami.Action {
-                            text: i18n("Delete")
-                            icon.name: "delete"
-                            onTriggered: {
-                                root._configuration.remove(agentDelegate.index);
-                                dialog.close();
-                            }
-                        }
-                    ]
-                }
-            }
 
             leadingPadding: Kirigami.Units.largeSpacing
             leading: Kirigami.Icon {
@@ -71,8 +85,8 @@ FormCard.FormCard {
             description: statusMessage
 
             onClicked: {
-                dialogLoader.active = true;
-                dialogLoader.item.open();
+                dialog.agentDelegate = agentDelegate;
+                dialog.open();
             }
         }
     }
