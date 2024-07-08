@@ -33,6 +33,7 @@ FormCard.FormCard {
 
         QQC2.Label {
             text: i18n("Modify or delete this account agent.")
+            wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
 
