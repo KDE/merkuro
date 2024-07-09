@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 00:39+0000\n"
+"POT-Creation-Date: 2024-07-09 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -640,7 +640,6 @@ msgstr "编辑"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "删除"
@@ -3373,22 +3372,30 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:29
 #, kde-format
 msgid "Configure %1"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:39
+#: quick/qml/AgentConfigurationForm.qml:35
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:44
+#: quick/qml/AgentConfigurationForm.qml:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Modify"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:84
+#: quick/qml/AgentConfigurationForm.qml:56
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "删除"
+
+#: quick/qml/AgentConfigurationForm.qml:99
 #, kde-format
 msgid "Add Account"
 msgstr ""

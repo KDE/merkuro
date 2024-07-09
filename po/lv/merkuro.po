@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 00:39+0000\n"
+"POT-Creation-Date: 2024-07-09 00:39+0000\n"
 "PO-Revision-Date: 2022-03-30 17:51+0300\n"
 "Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -679,7 +679,6 @@ msgstr "Rediģēt"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "Dzēst"
@@ -3560,23 +3559,31 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Pievienot pielikumu"
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:29
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure %1"
 msgstr "Iestatīt"
 
-#: quick/qml/AgentConfigurationForm.qml:39
+#: quick/qml/AgentConfigurationForm.qml:35
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:44
+#: quick/qml/AgentConfigurationForm.qml:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Modify"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:84
+#: quick/qml/AgentConfigurationForm.qml:56
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Dzēst"
+
+#: quick/qml/AgentConfigurationForm.qml:99
 #, fuzzy, kde-format
 #| msgid "Add Attachment"
 msgid "Add Account"

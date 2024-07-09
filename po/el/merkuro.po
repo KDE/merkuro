@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 00:39+0000\n"
+"POT-Creation-Date: 2024-07-09 00:39+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -678,7 +678,6 @@ msgstr "Επεξεργασία"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "Διαγραφή"
@@ -3597,23 +3596,31 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Λογαριασμοί"
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:29
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure %1"
 msgstr "Διαμόρφωση"
 
-#: quick/qml/AgentConfigurationForm.qml:39
+#: quick/qml/AgentConfigurationForm.qml:35
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:44
+#: quick/qml/AgentConfigurationForm.qml:47
 #, kde-format
+msgctxt "@action:button"
 msgid "Modify"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:84
+#: quick/qml/AgentConfigurationForm.qml:56
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: quick/qml/AgentConfigurationForm.qml:99
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Add Account"

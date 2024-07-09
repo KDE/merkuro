@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 00:39+0000\n"
+"POT-Creation-Date: 2024-07-09 00:39+0000\n"
 "PO-Revision-Date: 2023-04-26 10:18+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -684,7 +684,6 @@ msgstr "Изменить"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -3515,22 +3514,31 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Учётные записи"
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:29
 #, kde-format
 msgid "Configure %1"
 msgstr "Настроить %1"
 
-#: quick/qml/AgentConfigurationForm.qml:39
+#: quick/qml/AgentConfigurationForm.qml:35
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr "Изменить или удалить агент этой учётной записи."
 
-#: quick/qml/AgentConfigurationForm.qml:44
-#, kde-format
+#: quick/qml/AgentConfigurationForm.qml:47
+#, fuzzy, kde-format
+#| msgid "Modify"
+msgctxt "@action:button"
 msgid "Modify"
 msgstr "Изменить"
 
-#: quick/qml/AgentConfigurationForm.qml:84
+#: quick/qml/AgentConfigurationForm.qml:56
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Удалить"
+
+#: quick/qml/AgentConfigurationForm.qml:99
 #, kde-format
 msgid "Add Account"
 msgstr "Добавить учётную запись"

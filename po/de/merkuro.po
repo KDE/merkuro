@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-05 00:39+0000\n"
+"POT-Creation-Date: 2024-07-09 00:39+0000\n"
 "PO-Revision-Date: 2023-08-14 21:52+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -662,7 +662,6 @@ msgstr "Bearbeiten"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
-#: quick/qml/AgentConfigurationForm.qml:52
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
@@ -3453,22 +3452,31 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Konten"
 
-#: quick/qml/AgentConfigurationForm.qml:38
+#: quick/qml/AgentConfigurationForm.qml:29
 #, kde-format
 msgid "Configure %1"
 msgstr "%1 einrichten"
 
-#: quick/qml/AgentConfigurationForm.qml:39
+#: quick/qml/AgentConfigurationForm.qml:35
 #, kde-format
 msgid "Modify or delete this account agent."
 msgstr "Diesen Konto-Agent ändern oder löschen."
 
-#: quick/qml/AgentConfigurationForm.qml:44
-#, kde-format
+#: quick/qml/AgentConfigurationForm.qml:47
+#, fuzzy, kde-format
+#| msgid "Modify"
+msgctxt "@action:button"
 msgid "Modify"
 msgstr "Ändern"
 
-#: quick/qml/AgentConfigurationForm.qml:84
+#: quick/qml/AgentConfigurationForm.qml:56
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Löschen"
+
+#: quick/qml/AgentConfigurationForm.qml:99
 #, kde-format
 msgid "Add Account"
 msgstr "Konto hinzufügen"
