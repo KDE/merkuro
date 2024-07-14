@@ -5,11 +5,11 @@
 
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
-
+#include <qqmlregistration.h>
 class PhoneModel : public QAbstractListModel
 {
     Q_OBJECT
-
+    QML_ELEMENT
 public:
     enum ExtraRole {
         TypeRole = Qt::UserRole + 1,
