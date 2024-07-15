@@ -3,15 +3,14 @@
 
 #pragma once
 
-#include <QObject>
-
-class KJob;
-class QAbstractListModel;
-class ContactGroupModel;
-
 #include <Akonadi/Item>
 #include <Akonadi/ItemMonitor>
 #include <KContacts/ContactGroup>
+#include <QObject>
+#include <qqmlregistration.h>
+class KJob;
+class QAbstractListModel;
+class ContactGroupModel;
 
 class ContactGroupWrapper : public QObject, public Akonadi::ItemMonitor
 {
@@ -19,6 +18,7 @@ class ContactGroupWrapper : public QObject, public Akonadi::ItemMonitor
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY akonadiItemChanged)
     Q_PROPERTY(QAbstractListModel *model READ model CONSTANT)
+    QML_ELEMENT
 
 public:
     explicit ContactGroupWrapper(QObject *parent = nullptr);
