@@ -28,9 +28,11 @@ target_link_libraries(merkuro_contact_plugin PUBLIC
     MerkuroComponents
     merkuro_contact_static
 )
+
+
+
 set_target_properties(merkuro_contact_plugin PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_sources(merkuro_contact_plugin PUBLIC
-    ${merkuro_contact_plugin_SRCS}
     contactapplication.cpp
     contactapplication.h
     addresseewrapper.cpp
@@ -65,6 +67,12 @@ target_sources(merkuro_contact_plugin PUBLIC
     attributes/contactmetadataattribute.cpp
     attributes/attributeregistrar.cpp
 )
+
+target_sources(merkuro_contact_plugin PRIVATE
+    contactplugin.cpp
+    contactplugin.h
+)
+
 
 ecm_add_qml_module(merkuro_contact_plugin
     URI "org.kde.merkuro.contact"
