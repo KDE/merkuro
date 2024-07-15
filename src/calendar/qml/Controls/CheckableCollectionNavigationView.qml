@@ -252,7 +252,7 @@ QQC2.ScrollView {
                             ColoredCheckbox {
                                 id: collectionCheckbox
 
-                                visible: model.checkState != null
+                                visible: model.checkState !== null
                                 color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
                                 checked: model.checkState === 2
                                 onClicked: {
@@ -358,7 +358,7 @@ QQC2.ScrollView {
                                 id: collectionCheckbox
 
                                 Layout.alignment: Qt.AlignVCenter
-                                visible: model.checkState != null
+                                visible: model.checkState !== null
                                 color: collectionItem.collectionColor
                                 checked: model.checkState === 2
                                 onCheckedChanged: root.collectionCheckChanged()

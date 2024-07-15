@@ -28,10 +28,10 @@ MouseArea {
     cursorShape: Qt.PointingHandCursor
 
     onClicked: {
-        if (mouse.button == Qt.LeftButton) {
+        if (mouse.button === Qt.LeftButton) {
             collectionDetails = Calendar.CalendarManager.getCollectionDetails(mouseArea.collectionId)
             viewClicked(incidenceData);
-        } else if (mouse.button == Qt.RightButton) {
+        } else if (mouse.button === Qt.RightButton) {
             clickX = mouseX;
             clickY = mouseY;
             incidenceActions.createObject(mouseArea, {}).open();

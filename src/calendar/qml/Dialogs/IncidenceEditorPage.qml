@@ -12,7 +12,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.dateandtime
-import org.kde.merkuro.calendar
 import org.kde.merkuro.contact
 import org.kde.merkuro.calendar as Calendar
 import org.kde.akonadi as Akonadi

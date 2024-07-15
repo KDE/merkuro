@@ -9,8 +9,6 @@ import QtQuick.Layouts
 import org.kde.merkuro.calendar as Calendar
 import "labelutils.js" as LabelUtils
 
-import org.kde.merkuro.calendar
-
 QQC2.ScrollView {
     id: root
 

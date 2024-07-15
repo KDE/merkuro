@@ -218,7 +218,7 @@ Kirigami.OverlayDrawer {
                                 ColoredCheckbox {
                                     id: collectionCheckbox
 
-                                    visible: model.checkState != null
+                                    visible: model.checkState !== null
                                     color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
                                     checked: model.checkState === 2
                                     onCheckedChanged: root.collectionCheckChanged()
@@ -295,7 +295,7 @@ Kirigami.OverlayDrawer {
                                     id: collectionCheckbox
 
                                     Layout.alignment: Qt.AlignVCenter
-                                    visible: model.checkState != null
+                                    visible: model.checkState !== null
                                     color: collectionItem.collectionColor
                                     checked: model.checkState === 2
                                     onCheckedChanged: root.collectionCheckChanged()

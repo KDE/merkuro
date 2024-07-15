@@ -85,7 +85,7 @@ Kirigami.ScrollablePage {
                     id: actionsPopup
 
                     property var item: null
-                    property var name: ''
+                    property string name: ''
 
                     QQC2.MenuItem {
                         icon.name: "edit-entry"

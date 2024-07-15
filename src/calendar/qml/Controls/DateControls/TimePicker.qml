@@ -30,9 +30,9 @@ Item {
     }
 
     function wheelHandler(parent, wheel) {
-        if(parent.currentIndex == parent.count - 1) {
+        if(parent.currentIndex === parent.count - 1) {
             wheel.angleDelta.y < 0 ? parent.currentIndex = 0 : parent.currentIndex -= 1;
-        } else if(parent.currentIndex == 0) {
+        } else if(parent.currentIndex === 0) {
             wheel.angleDelta.y < 0 ? parent.currentIndex += 1 : parent.currentIndex = parent.count - 1;
         } else {
             wheel.angleDelta.y < 0 ? parent.currentIndex += 1 : parent.currentIndex -= 1;

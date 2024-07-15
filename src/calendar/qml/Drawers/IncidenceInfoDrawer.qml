@@ -23,7 +23,7 @@ Kirigami.OverlayDrawer {
     enabled: true
     interactive: enabled
     edge: Kirigami.Settings.isMobile ? Qt.BottomEdge :
-        Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
+        Qt.application.layoutDirection === Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
 
     topPadding: 0
     leftPadding: 0
