@@ -1,14 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
 #
 # Alexander Yavorsky <kekcuha@gmail.com>, 2022, 2023.
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-28 02:44+0000\n"
-"PO-Revision-Date: 2023-04-26 10:18+0300\n"
+"PO-Revision-Date: 2024-07-15 13:52+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -219,11 +219,10 @@ msgid "Task"
 msgstr "Задача"
 
 #: calendar/main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Calendar"
-msgstr "Календарь"
+msgstr "Календарь Merkuro"
 
 #: calendar/main.cpp:57
 #, kde-format
@@ -495,8 +494,7 @@ msgid "An error occurred importing incidences: %1"
 msgstr "Ошибка при импорте событий: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:59
-#, fuzzy, kde-format
-#| msgid "New calendar  created from imported file successfully."
+#, kde-format
 msgid "New calendar created from imported file successfully."
 msgstr "Из импортированного файла успешно создан новый календарь."
 
@@ -508,11 +506,10 @@ msgstr "Импорт календаря"
 #: calendar/qml/Controls/ImportHandler.qml:87
 #, kde-format
 msgid "Calendar files (*.ics *.vcs)"
-msgstr ""
+msgstr "Файлы календарей (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:99
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Импорт календаря"
@@ -530,22 +527,19 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, fuzzy, kde-format
-#| msgid "Merge with existing calendar"
+#, kde-format
 msgctxt "@action:button merge with existing calendar"
 msgid "Merge with Existing"
-msgstr "Объединить с существующим календарём"
+msgstr "Объединить с существующим"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create new calendar"
 msgid "Create New"
-msgstr "Создать"
+msgstr "Создать новый"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Отмена"
@@ -846,24 +840,19 @@ msgid "Choose an Address Book"
 msgstr "Выберите адресную книгу"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete calendar"
-msgstr ""
-"Удаление календаря\n"
-"удаление календаря"
+msgstr "Удаление календаря"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete"
-msgstr "Удалить"
+msgstr "Удаление"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:42
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you want to delete the calendar: \"%1\"?"
 msgstr "Удалить календарь «%1»?"
 
@@ -1008,17 +997,17 @@ msgstr "Краткое описание:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your task"
-msgstr ""
+msgstr "Добавить название задачи"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your event"
-msgstr ""
+msgstr "Добавить название события"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:191
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr ""
+msgstr "Добавить название записи журнала"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:202
 #, kde-format
@@ -1283,8 +1272,7 @@ msgid "Add Attachment"
 msgstr "Добавить вложение"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1137
-#, fuzzy, kde-format
-#| msgid "Add Attachment"
+#, kde-format
 msgid "Add an attachment"
 msgstr "Добавить вложение"
 
@@ -1329,8 +1317,7 @@ msgid "Mark Complete"
 msgstr "Выполнено"
 
 #: calendar/qml/Drawers/MainDrawer.qml:117
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -1475,10 +1462,9 @@ msgid "Return to Location"
 msgstr "Вернуться к расположению"
 
 #: calendar/qml/main.qml:230
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgid "Configure Schedule"
-msgstr "Настроить %1"
+msgstr "Настроить расписание"
 
 #: calendar/qml/main.qml:291 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
@@ -1666,9 +1652,7 @@ msgid "No tasks left to complete"
 msgstr "Не осталось задач для завершения"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "Please retain parenthesis and space"
-#| msgid " (overdue)"
+#, kde-format
 msgid " , is overdue"
 msgstr " (просрочено)"
 
@@ -1789,23 +1773,20 @@ msgid "Help"
 msgstr "Справка"
 
 #: calendar/qml/Menus/MenuBar.qml:179
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Calendar Handbook"
-msgstr "Руководство пользователя Kalendar"
+msgstr "Руководство пользователя календаря"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgid "Configure Free/Busy"
-msgstr "Настроить %1"
+msgstr "Настроить занятость"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
 #, kde-format
 msgid "Free/Busy Publishing settings"
-msgstr ""
+msgstr "Параметры публикации информации о занятости"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
 #, kde-format
@@ -1815,82 +1796,81 @@ msgid ""
 "that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"Если опубликовать информацию о своей занятости, другие пользователи смогут "
+"принять её во внимание при отправке приглашений на встречи. Раскрывается "
+"информация только о том времени, которое уже отмечено как занятое, без "
+"указания причин недоступности."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
 #, kde-format
 msgid "Publish your free/busy information automatically"
-msgstr ""
+msgstr "Автоматически публиковать информацию о своей занятости"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
-msgstr ""
+msgstr "Минимальный промежуток времени (в минутах) между отправками"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
-msgstr ""
+msgstr "Количество дней с информацией о занятости для публикации: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Personal information"
+#, kde-format
 msgid "Server information"
-msgstr "Личные данные"
+msgstr "Сведения о сервере"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:72
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:175
 #, kde-format
 msgid "Server URL"
-msgstr ""
+msgstr "URL-адрес сервера"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:82
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:185
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:92
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:195
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:102
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:205
 #, kde-format
 msgid "Save password"
-msgstr ""
+msgstr "Сохранить пароль"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
-msgstr ""
+msgstr "Нажмите сюда, чтобы вручную опубликовать информацию о занятости"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Email Address"
-#| msgid_plural "Email Addresses"
+#, kde-format
 msgid "Email Free/Busy"
-msgstr "Адреса электронной почты"
+msgstr "Отправить информацию о занятости по почте"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr ""
+msgstr "Введите адрес электронной почты получателя…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:138
-#, fuzzy, kde-format
-#| msgid "Send SMS"
+#, kde-format
 msgid "Send"
-msgstr "Отправить SMS"
+msgstr "Отправить"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "General settings"
+#, kde-format
 msgid "Free/Busy Retrieval settings"
-msgstr "Основные параметры"
+msgstr "Параметры получения информации о занятости"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
 #, kde-format
@@ -1898,16 +1878,18 @@ msgid ""
 "By retrieving Free/Busy information that others have published, you can take "
 "their calendar into account when inviting them to a meeting."
 msgstr ""
+"Получение информации о занятости других пользователей упрощает планирование "
+"встреч с их участием."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
-msgstr ""
+msgstr "Автоматически получать информацию о занятости других пользователей"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr ""
+msgstr "Использовать полный адрес электронной почты для получения данных"
 
 #: calendar/qml/Settings/SettingsPage.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:14
@@ -1924,7 +1906,7 @@ msgstr "Учётные записи"
 #: calendar/qml/Settings/SettingsPage.qml:28
 #, kde-format
 msgid "Free/Busy"
-msgstr ""
+msgstr "Занятость"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
@@ -2226,15 +2208,13 @@ msgstr "Файл"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Выйти из Merkuro"
 
 #: components/qml/HelpMenu.qml:24 components/qml/NativeHelpMenu.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "Kalendar Handbook"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr "Руководство пользователя Kalendar"
+msgstr "Руководство пользователя Merkuro"
 
 #: components/qml/KQuickCommandBarPage.qml:131
 #, kde-format
@@ -2350,17 +2330,15 @@ msgid "Other:"
 msgstr "Другие:"
 
 #: contacts/main.cpp:46
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
-msgstr "Контакт"
+msgstr "Контакты Merkuro"
 
 #: contacts/main.cpp:49
-#, fuzzy, kde-format
-#| msgid "Address Book:"
+#, kde-format
 msgid "Address Book Application"
-msgstr "Адресная книга:"
+msgstr "Программа с функциями адресной книги"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2385,33 +2363,29 @@ msgid "Contacts"
 msgstr "Контакты"
 
 #: contacts/qml/ContactView.qml:21
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Создать"
 
 #: contacts/qml/ContactView.qml:24
-#, fuzzy, kde-format
-#| msgid "New Contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
-msgstr "Создать контакт…"
+msgstr "Создать контакт"
 
 #: contacts/qml/ContactView.qml:31
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
-msgstr "Создать группу контактов…"
+msgstr "Создать группу контактов"
 
 #: contacts/qml/ContactView.qml:57 contacts/qml/ContactView.qml:65
 #: contacts/qml/private/ContactPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
-msgstr "Имя"
+msgstr "Нет имени"
 
 #: contacts/qml/ContactView.qml:92
 #, kde-format
@@ -2492,7 +2466,7 @@ msgstr "Имя контакта"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Дополнительно"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
@@ -2500,10 +2474,9 @@ msgid "Honorific prefix"
 msgstr "Почтительное обращение (в начале)"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Dr."
-msgstr "Г-н"
+msgstr "Д-р"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2566,10 +2539,9 @@ msgid "Honorific suffix"
 msgstr "Почтительное обращение (в конце)"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
-#, fuzzy, kde-format
-#| msgid "II"
+#, kde-format
 msgid "I"
-msgstr "II"
+msgstr "I"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2612,81 +2584,81 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
-#, fuzzy, kde-format
+#, kde-format
 msgid "Organization"
-msgstr "Организация:"
+msgstr "Организация"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:26
 #, kde-format
 msgctxt "Placeholder value for name of Organization"
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:33
-#, fuzzy, kde-format
+#, kde-format
 msgid "Profession"
-msgstr "Профессия:"
+msgstr "Профессия"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:36
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
-msgstr "Разработчик"
+msgstr "Разработчик программного обеспечения"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Title"
-msgstr "Должность:"
+msgstr "Должность"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:46
 #, kde-format
 msgctxt "Placeholder value for Title"
 msgid "SDE-1"
-msgstr ""
+msgstr "SDE-1"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "Department"
-msgstr "Отдел:"
+msgstr "Отдел"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:56
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Команда Merkuro"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Office"
-msgstr "Место работы:"
+msgstr "Место работы"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:66
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
-msgstr ""
+msgstr "Техническое крыло, 4-й этаж"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
-#, fuzzy, kde-format
+#, kde-format
 msgid "Manager's Name"
-msgstr "Руководитель:"
+msgstr "Руководитель"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:76
 #, kde-format
 msgctxt "Placeholder value for Manager's Name"
 msgid "Bob"
-msgstr ""
+msgstr "Олег"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Assistant's Name"
-msgstr "Помощник:"
+msgstr "Ассистент"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:86
 #, kde-format
 msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
-msgstr ""
+msgstr "Оксана"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:60
 #, kde-format
@@ -2699,7 +2671,7 @@ msgid "Edit Contact"
 msgstr "Изменить контакт"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Personal Information"
 msgstr "Личные данные"
 
@@ -2728,18 +2700,19 @@ msgstr "Мгновенные сообщения"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:191
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "Предупреждение"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:186
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr ""
+"Во время редактирования этот контакт был изменён за пределами программы."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:191
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Какие изменения следует сохранить?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:204
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
@@ -2754,17 +2727,14 @@ msgid "External changes"
 msgstr "Внешние изменения"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
-#, fuzzy, kde-format
-#| msgctxt "%1 is incidence type"
-#| msgid "Edit %1"
+#, kde-format
 msgid "Edit %1"
 msgstr "Изменить %1"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
-#, fuzzy, kde-format
-#| msgid "New Contact Group…"
+#, kde-format
 msgid "Create Contact Group"
-msgstr "Создать группу контактов…"
+msgstr "Создать группу контактов"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:63
 #, kde-format
@@ -2785,11 +2755,14 @@ msgstr "Участники"
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
+"В группу контактов можно добавить только контакты с адресом электронной почты"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr ""
+"Во время редактирования эта группа контактов была изменена за пределами "
+"программы."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:36
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:78
@@ -2843,25 +2816,22 @@ msgid "protocol:person@example.com"
 msgstr "протокол:имя@сайт.рф"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partners's name"
 msgstr "Супруг(а):"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Anniversary:"
+#, kde-format
 msgctxt "@label"
 msgid "Anniversary"
-msgstr "Годовщина свадьбы:"
+msgstr "Годовщина свадьбы"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:42
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@label"
 msgid "Birthday"
-msgstr "День рождения:"
+msgstr "День рождения"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:36
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:84
@@ -2940,33 +2910,32 @@ msgid "+33 7 55 23 68 67"
 msgstr "+7 900 123-45-56"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:28
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select a file"
-msgstr "Выделить все"
+msgstr "Выбор файла"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:29
 #, kde-format
 msgid "Images files (*.png *.jpeg *.jpg)"
-msgstr ""
+msgstr "Файлы изображений (*.png *.jpeg *.jpg)"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:43
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Фотография"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Add Profile Picture"
-msgstr ""
+msgstr "Добавить изображения профиля"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Update Profile Picture"
-msgstr ""
+msgstr "Обновить изображение профиля"
 
 #: contacts/qml/private/ContactGroupPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Изменить"
@@ -2978,8 +2947,7 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: contacts/qml/private/ContactPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Отмена"
@@ -3138,21 +3106,18 @@ msgstr[3] "Адрес электронной почты"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Подтверждение удаления записи контакта"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
+#, kde-format
 msgctxt "Placeholder when no name is set"
 msgid "No name"
-msgstr "Александр Яворский, Олеся Герасименко"
+msgstr "Нет имени"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you want to delete calendar: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Удалить календарь «%1»?"
+msgstr "Действительно удалить запись контакта <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3170,8 +3135,7 @@ msgid "Creating QR code failed"
 msgstr "Не удалось создать QR-код"
 
 #: contacts/qml/Settings.qml:13
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметры"
@@ -3194,13 +3158,12 @@ msgstr "Открыть панель команд"
 #: lib/abstractapplication.cpp:168
 #, kde-format
 msgid "About %1"
-msgstr ""
+msgstr "О %1"
 
 #: lib/abstractapplication.cpp:175
-#, fuzzy, kde-format
-#| msgid "About Kalendar"
+#, kde-format
 msgid "About KDE"
-msgstr "О программе Kalendar"
+msgstr "О KDE"
 
 #: lib/abstractapplication.cpp:188
 #, kde-format
@@ -3225,10 +3188,9 @@ msgid "Image request has been cancelled"
 msgstr "Запрос изображения был отменён"
 
 #: mail/identity/identitykeylistmodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgid "No key"
-msgstr "Импорт ключа"
+msgstr "Нет ключа"
 
 #: mail/mailapplication.cpp:22
 #, kde-format
@@ -3238,29 +3200,28 @@ msgstr "Создать письмо…"
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
 #, kde-format
 msgid "There are no attendees to e-mail"
-msgstr ""
+msgstr "Нет участников, которым следовало бы отправить письмо"
 
 #: mail/mailclient.cpp:94
 #, kde-format
 msgid "Error creating transport"
-msgstr ""
+msgstr "Ошибка при создании транспорта"
 
 #: mail/mailclient.cpp:188
 #, kde-format
 msgid "Error loading transport"
-msgstr ""
+msgstr "Ошибка при загрузке транспорта"
 
 #: mail/mailclient.cpp:205
 #, kde-format
 msgid "Error queuing message in outbox: %1"
-msgstr ""
+msgstr "Ошибка при добавлении сообщения в очередь в папке исходящей почты: %1"
 
 #: mail/mailmanager.cpp:238
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
-msgstr "Учётные записи почты"
+msgstr "Настройка учётной записи: %1"
 
 #: mail/mailmodel.cpp:48
 #, kde-format
@@ -3275,27 +3236,22 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: mail/main.cpp:48
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Mail"
-msgstr "Календарь"
+msgstr "Почта Merkuro"
 
 #: mail/main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Calendar Application"
+#, kde-format
 msgid "Email Client"
-msgstr "Программа с функциями календаря"
+msgstr "Клиент электронной почты"
 
 #: mail/qml/actions/DeleteFolderAction.qml:19
 #: mail/qml/actions/DeleteFolderAction.qml:24
 #: mail/qml/actions/MailItemMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgid "Delete Folder"
-msgstr ""
-"Удаление календаря\n"
-"удаление календаря"
+msgstr "Удалить папку"
 
 #: mail/qml/actions/DeleteFolderAction.qml:39
 #, kde-format
@@ -3304,48 +3260,47 @@ msgid ""
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
 msgstr ""
+"Действительно удалить папку %1, очистив её содержимое? <br /> <b>Обратите "
+"внимание,</b> что стёртые сообщения не сохраняются в папке «Корзина» и будут "
+"удалены без возможности восстановления."
 
 #: mail/qml/actions/MailItemMenu.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Folder"
-msgstr "Добавить напоминание"
+msgstr "Добавить папку"
 
 #: mail/qml/actions/MailItemMenu.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
-msgstr ""
+msgstr "Свойства папки"
 
 #: mail/qml/actions/MailItemMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Restart"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
-msgstr "Перезапустить"
+msgstr "Перезапустить учётную запись"
 
 #: mail/qml/actions/MailItemMenu.qml:55
-#, fuzzy, kde-format
-#| msgid "Month view settings"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
-msgstr "Параметры просмотра месяца"
+msgstr "Параметры учётной записи"
 
 #: mail/qml/actions/NewFolderAction.qml:18
 #, kde-format
 msgid "New Folder"
-msgstr ""
+msgstr "Создать папку"
 
 #: mail/qml/actions/NewFolderAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Create Folder"
-msgstr "Создать"
+msgstr "Создать папку"
 
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr ""
+msgstr "Имя папки..."
 
 #: mail/qml/ConversationViewer.qml:29
 #, kde-format
@@ -3353,44 +3308,40 @@ msgid "Move to trash"
 msgstr "Удалить в корзину"
 
 #: mail/qml/desktopactions/openmbox.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@action:menu"
-#| msgid "File"
+#, kde-format
 msgid "Open File"
-msgstr "Файл"
+msgstr "Открыть файл"
 
 #: mail/qml/desktopactions/openmbox.qml:21
-#, fuzzy, kde-format
-#| msgid "Choose a Calendar"
+#, kde-format
 msgid "Choose file"
-msgstr "Выберите календарь"
+msgstr "Выберите файл"
 
 #: mail/qml/FolderView.qml:27
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
-msgstr ""
+msgstr "Сохранение сообщения - Merkuro-Mail"
 
 #: mail/qml/FolderView.qml:28
 #, kde-format
 msgid "email messages (*.mbox)"
-msgstr ""
+msgstr "письма (*.mbox)"
 
 #: mail/qml/FolderView.qml:60
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr "Мгновенные сообщения"
+msgstr "Отметить сообщение"
 
 #: mail/qml/FolderView.qml:62
 #, kde-format
 msgid "Mark Message as Read"
-msgstr ""
+msgstr "Отметить сообщение как прочитанное"
 
 #: mail/qml/FolderView.qml:65
 #, kde-format
 msgid "Mark Message as Unread"
-msgstr ""
+msgstr "Отметить сообщение как непрочитанное"
 
 #: mail/qml/FolderView.qml:71
 #, kde-format
@@ -3398,39 +3349,35 @@ msgid "Don't Mark as Important"
 msgstr "Не отмечать как важное"
 
 #: mail/qml/FolderView.qml:71
-#, fuzzy, kde-format
-#| msgid "Don't Mark as Important"
+#, kde-format
 msgid "Mark as Important"
-msgstr "Не отмечать как важное"
+msgstr "Отметить как важное"
 
 #: mail/qml/FolderView.qml:77
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgid "Move to Trash"
 msgstr "Удалить в корзину"
 
 #: mail/qml/FolderView.qml:82
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgid "Move Message to..."
-msgstr "Мгновенные сообщения"
+msgstr "Переместить сообщение…"
 
 #: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Copy Message to..."
-msgstr ""
+msgstr "Копировать сообщение…"
 
 #: mail/qml/FolderView.qml:92
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
+#, kde-format
 msgid "Add Followup Reminder"
-msgstr "Добавить напоминание"
+msgstr "Добавить контрольное напоминание"
 
 #: mail/qml/FolderView.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
-msgstr ""
+msgstr "Сохранить как..."
 
 #: mail/qml/FolderView.qml:115
 #, kde-format
@@ -3459,48 +3406,45 @@ msgid "Mail"
 msgstr "Почта"
 
 #: mail/qml/MailComposer.qml:16
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Message"
-msgstr "Мгновенные сообщения"
+msgstr "Новое сообщение"
 
 #: mail/qml/MailComposer.qml:29
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "От:"
 
 #: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Профиль:"
 
 #: mail/qml/MailComposer.qml:66
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "Кому:"
 
 #: mail/qml/MailComposer.qml:67
 #, kde-format
 msgid "CC:"
-msgstr ""
+msgstr "Копия:"
 
 #: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "BCC:"
-msgstr ""
+msgstr "Скрытая копия:"
 
 #: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "Reply-To:"
-msgstr ""
+msgstr "Адрес для ответа:"
 
 #: mail/qml/MailComposer.qml:89
-#, fuzzy, kde-format
-#| msgctxt "displayed as subject when the subject of a mail is empty"
-#| msgid "No Subject"
+#, kde-format
 msgid "Subject:"
-msgstr "Тема отсутствует"
+msgstr "Тема:"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3508,37 +3452,32 @@ msgid "This mail contains an invitation"
 msgstr "Это письмо содержит приглашение"
 
 #: mail/qml/private/AttachmentDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Import key"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import key"
 msgstr "Импорт ключа"
 
 #: mail/qml/settings/AccountSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Add Contact"
+#, kde-format
 msgctxt "@action:group"
 msgid "Identities"
-msgstr "Добавить контакт"
+msgstr "Профили"
 
 #: mail/qml/settings/AccountSettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
 "email accounts"
 msgid "Receiving Accounts"
-msgstr "Учётные записи почты"
+msgstr "Учётные записи для получения почты"
 
 #: mail/qml/settings/AccountSettingsPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Mail Accounts"
+#, kde-format
 msgid "Mail Account Configuration"
-msgstr "Учётные записи почты"
+msgstr "Настройка учётной записи почты"
 
 #: mail/qml/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Учётные записи"
@@ -3572,19 +3511,17 @@ msgstr "Редактор меток"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Подтверждение удаления метки"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Удалить метку «%1»?"
+msgstr "Действительно удалить метку <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Это действие будет нельзя отменить"
+msgstr "Это действие будет нельзя отменить."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
@@ -3616,45 +3553,35 @@ msgstr "Быстро добавить новую метку."
 #~ msgstr "Удалить метку"
 
 #, fuzzy
-#~| msgid "Email Address"
-#~| msgid_plural "Email Addresses"
 #~ msgid "Email address"
 #~ msgstr "Адреса электронной почты"
 
 #, fuzzy
-#~| msgid "Calendar Application"
 #~ msgid "E-mail aliases"
-#~ msgstr "Программа с функциями календаря"
+#~ msgstr "Клиент электронной почты"
 
 #, fuzzy
-#~| msgid "Remove email"
 #~ msgid "Remove email alias"
 #~ msgstr "Удалить адрес электронной почты"
 
 #, fuzzy
-#~| msgid "Add email"
 #~ msgid "Add email alias"
 #~ msgstr "Добавить адрес электронной почты"
 
 #, fuzzy
-#~| msgid "Edit Contact"
 #~ msgctxt "@title"
 #~ msgid "Edit Identity"
-#~ msgstr "Изменить контакт"
+#~ msgstr "Профиль:"
 
 #, fuzzy
-#~| msgid "Edit Contact"
 #~ msgid "Edit Identity"
-#~ msgstr "Изменить контакт"
+#~ msgstr "Профиль:"
 
 #, fuzzy
-#~| msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
-#~| msgid "Delete %1"
 #~ msgid "Delete %1"
 #~ msgstr "Удалить %1"
 
 #, fuzzy
-#~| msgid "Are you sure you want to delete tag \"%1\"?"
 #~ msgid "Are you sure you want to delete this identity?"
 #~ msgstr "Удалить метку «%1»?"
 
@@ -3691,13 +3618,10 @@ msgstr "Быстро добавить новую метку."
 #~ msgid "Loading mail..."
 #~ msgstr "Загрузка почты…"
 
-#, fuzzy
-#~| msgid "Configure %1"
 #~ msgid "Configure Schedule…"
-#~ msgstr "Настроить %1"
+#~ msgstr "Настроить расписание…"
 
 #, fuzzy
-#~| msgid "New Contact Group…"
 #~ msgctxt "@action:inmenu"
 #~ msgid "New Contact Contact"
 #~ msgstr "Создать группу контактов…"
@@ -3746,22 +3670,18 @@ msgstr "Быстро добавить новую метку."
 #~ msgid "Could not decrypt the data."
 #~ msgstr "Не удалось расшифровать данные."
 
-#, fuzzy
-#~| msgid "Send SMS"
 #~ msgid "Sender:"
-#~ msgstr "Отправить SMS"
+#~ msgstr "Отправитель:"
 
 #~ msgid "Save attachment"
 #~ msgstr "Сохранить вложение"
 
 #, fuzzy
-#~| msgid "Mail"
 #~ msgctxt "@title"
 #~ msgid "Mail"
 #~ msgstr "Почта"
 
 #, fuzzy
-#~| msgid "About Kalendar"
 #~ msgid "About Merkuro Calendar"
 #~ msgstr "О программе Kalendar"
 
@@ -3773,7 +3693,6 @@ msgstr "Быстро добавить новую метку."
 #~ msgstr "Закрыть Kalendar"
 
 #, fuzzy
-#~| msgid "Contact"
 #~ msgctxt "@title"
 #~ msgid "Contact"
 #~ msgstr "Контакт"
@@ -3784,7 +3703,6 @@ msgstr "Быстро добавить новую метку."
 #~ msgstr "Kalendar"
 
 #, fuzzy
-#~| msgid "Address Book:"
 #~ msgctxt "@title"
 #~ msgid "Address Book"
 #~ msgstr "Адресная книга:"
@@ -3865,3 +3783,16 @@ msgstr "Быстро добавить новую метку."
 
 #~ msgid "Address Book Sources"
 #~ msgstr "Источники данных адресной книги"
+
+#~ msgid "Configure Availability"
+#~ msgstr "Настроить доступность"
+
+#~ msgid "Spouse's Name"
+#~ msgstr "Имя жены/мужа"
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " – "
+
+#~ msgid "Restart"
+#~ msgstr "Перезапустить"
