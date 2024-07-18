@@ -8,34 +8,28 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.components
 import org.kde.merkuro.calendar as Calendar
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 Kirigami.NavigationTabBar {
     actions: [
-        StatefulApp.Action {
+        Kirigami.Action {
             property string name: "monthView"
-            actionName: "open_month_view"
-            application: Calendar.CalendarApplication
+            fromQAction: Calendar.CalendarApplication.action("open_month_view")
         },
-        StatefulApp.Action {
-            actionName: "open_threeday_view"
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("open_threeday_view")
             property string name: "threeDayView"
-            application: Calendar.CalendarApplication
         },
-        StatefulApp.Action {
-            actionName: "open_day_view"
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("open_day_view")
             property string name: "dayView"
-            application: Calendar.CalendarApplication
         },
-        StatefulApp.Action {
-            actionName: "open_schedule_view"
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("open_schedule_view")
             property string name: "scheduleView"
-            application: Calendar.CalendarApplication
         },
-        StatefulApp.Action {
-            actionName: "open_todo_view"
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("open_todo_view")
             property string name: "todoView"
-            application: Calendar.CalendarApplication
         }
     ]
 }

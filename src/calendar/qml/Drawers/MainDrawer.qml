@@ -172,38 +172,34 @@ Kirigami.OverlayDrawer {
                             enabled: CalendarManager.undoRedoData.redoAvailable
                             onTriggered: CalendarManager.redoAction();
                         },
-                        StatefulApp.Action {
-                            application: CalendarApplication
-                            actionName: "import_calendar"
+                        Kirigami.Action {
+                            fromQAction: CalendarApplication.action("import_calendar")
                         },
-                        StatefulApp.Action {
+                        Kirigami.Action {
                             text: i18n("Refresh All Calendars")
-                            actionName: "refresh_all"
-                            application: CalendarApplication
+                            fromQAction: CalendarManager.action("refresh_all")
                         },
-                        StatefulApp.Action {
-                            actionName: "toggle_menubar"
-                            application: CalendarApplication
+                        Kirigami.Action {
+                            fromQAction: CalendarApplication.action("toggle_menubar")
                         },
                         Kirigami.Action {
                             text: i18n("Configure")
                             icon.name: "settings-configure"
-                            StatefulApp.Action {
-                                actionName: "open_tag_manager"
-                                application: CalendarApplication
+
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action('open_tag_manager')
                             }
-                            StatefulApp.Action {
-                                actionName: "options_configure_keybinding"
-                                application: CalendarApplication
+
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("options_configure_keybinding")
                             }
-                            StatefulApp.Action {
-                                actionName: "options_configure"
-                                application: CalendarApplication
+
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("options_configure")
                             }
                         },
-                        StatefulApp.Action {
-                            actionName: 'file_quit'
-                            application: CalendarApplication
+                        Kirigami.Action {
+                            fromQAction: CalendarApplication.action('file_quit')
                             visible: !Kirigami.Settings.isMobile
                         }
                     ]
@@ -249,18 +245,16 @@ Kirigami.OverlayDrawer {
                     Repeater {
                         id: generalActions
                         property list<Kirigami.Action> actions: [
-                            StatefulApp.Action {
-                                actionName: "open_month_view"
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("open_month_view")
                                 checkable: false
                                 onTriggered: {
                                     monthViewAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            StatefulApp.Action {
-                                actionName: "open_week_view"
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("open_week_view")
                                 checkable: false
                                 // Override the default checked behaviour as we want this to stay highlighted
                                 // in any of the hourly views, at least in desktop mode
@@ -271,18 +265,16 @@ Kirigami.OverlayDrawer {
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            StatefulApp.Action {
-                                actionName: "open_schedule_view"
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("open_schedule_view")
                                 checkable: false
                                 onTriggered: {
                                     scheduleViewAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            StatefulApp.Action {
-                                actionName: "open_todo_view"
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action("open_todo_view")
                                 checkable: false
                                 onTriggered: {
                                     todoViewAction.trigger()
@@ -291,30 +283,26 @@ Kirigami.OverlayDrawer {
                             }
                         ]
                         property list<Kirigami.Action> mobileActions: [
-                            StatefulApp.Action {
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action('edit_undo')
                                 text: CalendarManager.undoRedoData.undoAvailable ?
-                                    i18n("Undo: ") + CalendarManager.undoRedoData.nextUndoDescription : i18n("Undo")
-                                actionName: "edit_undo"
+                                    i18nc("@action:inmenu %1 is the name of the action getting reverted", "Undo: %1", CalendarManager.undoRedoData.nextUndoDescription) : i18n("Undo")
                             },
-                            StatefulApp.Action {
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action('edit_redo')
                                 text: CalendarManager.undoRedoData.redoAvailable ?
-                                    i18n("Redo: ") + CalendarManager.undoRedoData.nextRedoDescription : i18n("Redo")
-                                actionName: "edit_redo"
+                                    i18nc("@action:inmenu %1 is the name of the action getting re-applied", "Redo: %1", CalendarManager.undoRedoData.nextRedoDescription) : i18n("Redo")
                             },
-                            StatefulApp.Action {
-                                application: CalendarApplication
-                                actionName: "open_tag_manager"
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action('open_tag_manager')
                                 onTriggered: {
                                     tagManagerAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()
                                 }
                             },
-                            StatefulApp.Action {
-                                application: CalendarApplication
+                            Kirigami.Action {
+                                fromQAction: CalendarApplication.action('options_configure')
                                 text: i18n("Settings")
-                                actionName: "options_configure"
                                 onTriggered: {
                                     configureAction.trigger()
                                     if (mainDrawer.modal) mainDrawer.close()

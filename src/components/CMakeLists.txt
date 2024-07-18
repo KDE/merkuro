@@ -69,7 +69,6 @@ ecm_target_qml_sources(MerkuroComponents SOURCES
         qml/BaseApplication.qml
 
         # In window-menu components
-        qml/ViewMenu.qml
         qml/EditMenu.qml
         qml/FileMenu.qml
         qml/WindowMenu.qml

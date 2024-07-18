@@ -6,7 +6,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.merkuro.contact as Contact
 import org.kde.akonadi as Akonadi
 import org.kde.merkuro.components
@@ -93,9 +92,8 @@ Kirigami.OverlayDrawer {
                         id: menu
                         QQC2.MenuItem {
                             id: toogleMenubar
-                            action: StatefulApp.Action {
-                                actionName: 'toggle_menubar'
-                                application: Contact.ContactApplication
+                            action: Kirigami.Action {
+                                fromQAction: Contact.ContactApplication.action('toggle_menubar')
                             }
                         }
                     }

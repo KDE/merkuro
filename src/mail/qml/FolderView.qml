@@ -10,7 +10,6 @@ import QtQuick.Dialogs
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import org.kde.kitemmodels as KItemModels
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import './private'
 
 Kirigami.ScrollablePage {
@@ -24,7 +23,7 @@ Kirigami.ScrollablePage {
 
         active: false
         onLoaded: item.open();
-        
+
         sourceComponent: FileDialog {
             title: i18n("Save Message - Merkuro-Mail")
             nameFilters: [i18n("email messages (*.mbox)")]
@@ -42,9 +41,8 @@ Kirigami.ScrollablePage {
     }
 
     actions: [
-        StatefulApp.Action {
-            actionName: "check_mail"
-            application: MailApplication
+        Kirigami.Action {
+            fromQAction: MailApplication.action("check_mail")
         },
         Kirigami.Action {
             icon.name: 'mail-send'

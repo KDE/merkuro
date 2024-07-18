@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.merkuro.mail
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.Kirigami as Kirigami
 
 QQC2.MenuBar {
     id: bar
@@ -17,18 +17,16 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        StatefulApp.Action {
-            application: MailApplication
-            actionName: 'open_kcommand_bar'
+        Kirigami.Action {
+            fromQAction: MailApplication.action('open_kcommand_bar')
         }
     }
 
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        StatefulApp.Action {
-            application: MailApplication
-            actionName: "create_mail"
+        Kirigami.Action {
+            fromQAction: MailApplication.action("create_mail")
         }
     }
 

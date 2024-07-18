@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigami as Kirigami
 
 QQC2.Menu {
     id: root
@@ -13,14 +13,12 @@ QQC2.Menu {
 
     title: i18nc("@action:menu", "Help")
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "open_about_page"
+    Kirigami.Action {
+        fromQAction: root.application.action('open_about_page')
     }
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "open_about_kde_page"
+    Kirigami.Action {
+        fromQAction: root.application.action('open_about_kde_page')
     }
 
     QQC2.MenuItem {

@@ -69,43 +69,37 @@ Kirigami.ScrollablePage {
             text: i18n("Sort")
             icon.name: "view-sort"
 
-            StatefulApp.Action {
-                application: Calendar.CalendarApplication
-                actionName: "todoview_sort_by_due_date"
+            Kirigami.Action {
+                fromQAction: Calendar.CalendarApplication.action("todoview_sort_by_due_date")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.DueDateColumn
                 onCheckedChanged: checked => action.checked = checked // Needed for the actions in the menu bars to be checked on load
             }
-            StatefulApp.Action {
-                application: Calendar.CalendarApplication
-                actionName: "todoview_sort_by_priority"
+            Kirigami.Action {
+                fromQAction: Calendar.CalendarApplication.action("todoview_sort_by_priority")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.PriorityColumn
                 onCheckedChanged: checked => action.checked = checked
             }
-            StatefulApp.Action {
-                application: Calendar.CalendarApplication
-                actionName: "todoview_sort_alphabetically"
+            Kirigami.Action {
+                fromQAction: Calendar.CalendarApplication.action("todoview_sort_alphabetically")
                 checked: root.sortBy === Calendar.TodoSortFilterProxyModel.SummaryColumn
                 onCheckedChanged: checked => action.checked = checked
             }
 
             Kirigami.Action { separator: true }
 
-            StatefulApp.Action {
-                application: Calendar.CalendarApplication
-                actionName: "todoview_order_ascending"
+            Kirigami.Action {
+                fromQAction: Calendar.CalendarApplication.action("todoview_order_ascending")
                 checked: root.ascendingOrder
                 onCheckedChanged: checked => action.checked = checked
             }
-            StatefulApp.Action {
-                application: Calendar.CalendarApplication
-                actionName: "todoview_order_descending"
+            Kirigami.Action {
+                fromQAction: Calendar.CalendarApplication.action("todoview_order_descending")
                 checked: !root.ascendingOrder
                 onCheckedChanged: checked => action.checked = checked
             }
         },
-        StatefulApp.Action {
-            application: Calendar.CalendarApplication
-            actionName: "todoview_show_completed"
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("todoview_show_completed")
             text: i18n("Show Completed")
         }
     ]

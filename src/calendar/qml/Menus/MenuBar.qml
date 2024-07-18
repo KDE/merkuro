@@ -8,69 +8,52 @@ import org.kde.kirigami as Kirigami
 import QtQuick.Window
 import org.kde.merkuro.calendar
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 QQC2.MenuBar {
     id: bar
     FileMenu {
-        QQC2.MenuItem {
-            action: StatefulApp.Action {
-                actionName: "import_calendar"
-                application: CalendarApplication
-            }
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("import_calendar")
         }
     }
 
     EditMenu {
-        QQC2.MenuItem {
-            action: StatefulApp.Action {
-                actionName: "edit_undo"
-                application: CalendarApplication
-            }
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action('edit_undo')
         }
 
-        QQC2.MenuItem {
-            action: StatefulApp.Action {
-                actionName: "edit_redo"
-                application: CalendarApplication
-            }
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action('edit_redo')
         }
 
-        QQC2.MenuSeparator {
-        }
+        QQC2.MenuSeparator {}
     }
 
     QQC2.Menu {
         title: i18nc("@action:menu", "View")
 
-        StatefulApp.Action {
-            actionName: "open_month_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_month_view")
         }
 
-        StatefulApp.Action {
-            actionName: "open_week_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_week_view")
         }
 
-        StatefulApp.Action {
-            actionName: "open_threeday_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_threeday_view")
         }
 
-        StatefulApp.Action {
-            actionName: "open_day_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_day_view")
         }
 
-        StatefulApp.Action {
-            actionName: "open_schedule_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_schedule_view")
         }
 
-        StatefulApp.Action {
-            actionName: "open_todo_view"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_todo_view")
         }
 
         QQC2.MenuSeparator {
@@ -80,81 +63,69 @@ QQC2.MenuBar {
             title: i18n("Sort Tasks")
             enabled: applicationWindow().mode === CalendarApplication.Todo
 
-            StatefulApp.Action {
-                actionName: "todoview_sort_by_due_date"
-                application: CalendarApplication
+            Kirigami.Action {
+                fromQAction: CalendarApplication.action("todoview_sort_by_due_date")
             }
 
-            StatefulApp.Action {
-                actionName: "todoview_sort_by_priority"
-                application: CalendarApplication
+            Kirigami.Action {
+                fromQAction: CalendarApplication.action("todoview_sort_by_priority")
             }
 
-            StatefulApp.Action {
-                actionName: "todoview_sort_alphabetically"
-                application: CalendarApplication
+            Kirigami.Action {
+                fromQAction: CalendarApplication.action("todoview_sort_alphabetically")
             }
 
             QQC2.MenuSeparator {
             }
 
-            StatefulApp.Action {
-                actionName: "todoview_order_ascending"
-                application: CalendarApplication
+            Kirigami.Action {
+                fromQAction: CalendarApplication.action("todoview_order_ascending")
             }
 
-            StatefulApp.Action {
-                actionName: "todoview_order_descending"
-                application: CalendarApplication
+            Kirigami.Action {
+                fromQAction: CalendarApplication.action("todoview_order_descending")
             }
         }
 
-        StatefulApp.Action {
-            actionName: "todoview_show_completed"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("todoview_show_completed")
             enabled: mode === CalendarApplication.Todo
         }
 
         QQC2.MenuSeparator {}
 
-        StatefulApp.Action {
-            actionName: 'open_kcommand_bar'
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action('open_kcommand_bar')
         }
 
-        StatefulApp.Action {
+        Kirigami.Action {
             text: i18n("Refresh All Calendars")
-            actionName: "refresh_all"
-            application: CalendarApplication
+            fromQAction: CalendarApplication.action("refresh_all")
         }
     }
 
     QQC2.Menu {
         title: i18nc("@action:menu", "Go")
 
-        StatefulApp.Action {
-            actionName: "move_view_backwards"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("move_view_backwards")
             enabled: mode & CalendarApplication.Event
         }
 
-        StatefulApp.Action {
-            actionName: "move_view_forwards"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("move_view_forwards")
             enabled: mode & CalendarApplication.Event
         }
 
         QQC2.MenuSeparator {}
 
-        StatefulApp.Action {
-            actionName: "move_view_to_today"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("move_view_to_today")
             enabled: mode & CalendarApplication.Event
         }
 
-        StatefulApp.Action {
-            actionName: "open_date_changer"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_date_changer")
             enabled: mode & CalendarApplication.Event
         }
     }
@@ -162,14 +133,12 @@ QQC2.MenuBar {
     QQC2.Menu {
         title: i18nc("@action:menu", "Create")
 
-        StatefulApp.Action {
-            actionName: "create_event"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("create_event")
         }
 
-        StatefulApp.Action {
-            actionName: "create_todo"
-            application: CalendarApplication
+        Kirigami.Action {
+            fromQAction: CalendarApplication.action("create_todo")
         }
     }
 

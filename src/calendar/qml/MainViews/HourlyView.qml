@@ -93,26 +93,23 @@ Kirigami.Page {
             visible: !Kirigami.Settings.isMobile
 
             readonly property list<T.Action> actions: [
-                StatefulApp.Action {
-                    application: Calendar.CalendarApplication
-                    actionName: "open_week_view"
+                Kirigami.Action {
+                    fromQAction: Calendar.CalendarApplication.action("open_week_view")
                     text: i18nc("@action:inmenu open week view", "Week")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.Week
                     onTriggered: weekViewAction.trigger()
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
-                StatefulApp.Action {
-                    application: Calendar.CalendarApplication
-                    actionName: "open_threeday_view"
+                Kirigami.Action {
+                    fromQAction: Calendar.CalendarApplication.action("open_threeday_view")
                     text: i18nc("@action:inmenu open 3 days view", "3 Days")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.ThreeDay
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
-                StatefulApp.Action {
-                    application: Calendar.CalendarApplication
-                    actionName: "open_day_view"
+                Kirigami.Action {
+                    fromQAction: Calendar.CalendarApplication.action("open_day_view")
                     text: i18nc("@action:inmenu open day view", "Day")
                     checkable: true
                     checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.Day

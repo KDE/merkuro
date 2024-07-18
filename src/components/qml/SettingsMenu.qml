@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigami as Kirigami
 
 QQC2.Menu {
     id: root
@@ -13,25 +13,21 @@ QQC2.Menu {
 
     title: i18nc("@action:menu", "Settings")
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "toggle_menubar"
+    Kirigami.Action {
+        fromQAction: root.application.action("toggle_menubar")
     }
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "open_tag_manager"
+    Kirigami.Action {
+        fromQAction: root.application.action("open_tag_manager")
     }
 
     QQC2.MenuSeparator {}
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "options_configure_keybinding"
+    Kirigami.Action {
+        fromQAction: root.application.action("options_configure_keybinding")
     }
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: "options_configure"
+    Kirigami.Action {
+        fromQAction: root.application.action("options_configure")
     }
 }
