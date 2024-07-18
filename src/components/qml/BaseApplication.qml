@@ -18,6 +18,7 @@ StatefulApp.StatefulWindow {
     required property Component menubarComponent
 
     width: Kirigami.Units.gridUnit * 65
+    windowName: 'Main'
 
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
