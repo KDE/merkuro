@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import QtQuick.Window
 import org.kde.merkuro.components
 import org.kde.kirigami as Kirigami
@@ -26,11 +27,15 @@ QQC2.Menu {
     ]
 
     Component.onCompleted: {
-        for (let i in additionalMenuItems) {
-            fileMenu.addItem(additionalMenuItems[i])
+        for (let menuItem of additionalMenuItems) {
+            if (menuItem instanceof T.Action) {
+                fileMenu.addAction(menuItem)
+            } else {
+                fileMenu.addItem(menuItem)
+            }
         }
-        for (let j in _menuItems) {
-            fileMenu.addItem(_menuItems[j])
+        for (let menuItem of _menuItems) {
+            fileMenu.addItem(menuItem)
         }
     }
 }

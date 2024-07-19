@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import QtQuick.Window
 import org.kde.merkuro.components
 
@@ -24,8 +25,12 @@ QQC2.Menu {
     property Item field: null
 
     Component.onCompleted: {
-        for (let i in additionalMenuItems) {
-            editMenu.addItem(additionalMenuItems[i])
+        for (let menuItem of additionalMenuItems) {
+            if (menuItem instanceof T.Action) {
+                editMenu.addAction(menuItem)
+            } else {
+                editMenu.addItem(menuItem)
+            }
         }
         for (let j in _menuItems) {
             editMenu.addItem(_menuItems[j])
