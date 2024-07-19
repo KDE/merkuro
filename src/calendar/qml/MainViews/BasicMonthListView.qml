@@ -35,19 +35,14 @@ QQC2.ScrollView {
     contentWidth: availableWidth
     QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
-    function addIncidence(type, addDate) {
+    function addIncidence(type, eventDate) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        CalendarUiUtils.setUpAdd(type, addDate);
+        IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, eventDate);
     }
 
     function viewIncidence(modelData, incidenceItem) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
         CalendarUiUtils.setUpView(modelData, incidenceItem);
-    }
-
-    function editIncidence(incidencePtr) {
-        savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        CalendarUiUtils.setUpEdit(incidencePtr);
     }
 
     function deleteIncidence(incidencePtr, deleteDate) {
@@ -58,11 +53,6 @@ QQC2.ScrollView {
     function completeTodo(incidencePtr) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
         CalendarUiUtils.completeTodo(incidencePtr);
-    }
-
-    function addSubTodo(parentWrapper) {
-        savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
-        CalendarUiUtils.setUpAddSubTodo(parentWrapper);
     }
 
     function moveIncidence(startOffset, occurrenceDate, incidenceWrapper, caughtDelegate) {
@@ -491,10 +481,8 @@ QQC2.ScrollView {
                                         onReleased: incidenceCard.Drag.drop()
 
                                         onViewClicked: scrollView.viewIncidence(modelData, incidenceCard)
-                                        onEditClicked: scrollView.editIncidence(incidencePtr)
                                         onDeleteClicked: scrollView.deleteIncidence(incidencePtr, deleteDate)
                                         onTodoCompletedClicked: scrollView.completeTodo(incidencePtr)
-                                        onAddSubTodoClicked: scrollView.addSubTodo(parentWrapper)
                                     }
                                 }
                             }

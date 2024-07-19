@@ -949,10 +949,8 @@ Column {
                                             onReleased: parent.Drag.drop()
 
                                             onViewClicked: CalendarUiUtils.setUpView(modelData, hourlyIncidenceDelegateBackgroundBackground)
-                                            onEditClicked: CalendarUiUtils.setUpEdit(incidencePtr)
                                             onDeleteClicked: CalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
                                             onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
-                                            onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
                                         }
 
                                         ResizerSeparator {

@@ -140,7 +140,7 @@ ListView {
         helpfulAction: Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: CalendarUiUtils.setUpAdd(Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
         }
     }
 
@@ -253,13 +253,11 @@ ListView {
             onReleased: listItem.Drag.drop()
 
             onViewClicked: listItem.clicked()
-            onEditClicked: CalendarUiUtils.setUpEdit(listItem.incidencePtr)
             onDeleteClicked: CalendarUiUtils.setUpDelete(listItem.incidencePtr,
                                                          listItem.endTime ? listItem.endTime :
                                                                          listItem.startTime ? listItem.startTime :
                                                                                            null)
             onTodoCompletedClicked: listItem.model.checked = listItem.model.checked === 0 ? 2 : 0
-            onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
 
             GridLayout {
                 id: todoItemContents

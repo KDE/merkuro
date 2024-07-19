@@ -28,10 +28,8 @@ Item {
         //onReleased: parent.Drag.drop()
 
         onViewClicked: CalendarUiUtils.setUpView(incidenceData, root)
-        onEditClicked: CalendarUiUtils.setUpEdit(incidencePtr)
         onDeleteClicked: CalendarUiUtils.setUpDelete(incidencePtr, deleteDate)
         onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
-        onAddSubTodoClicked: CalendarUiUtils.setUpAddSubTodo(parentWrapper)
     }
 
     IncidenceDelegateBackground {

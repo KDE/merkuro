@@ -20,8 +20,6 @@ import "labelutils.js" as LabelUtils
 Kirigami.ScrollablePage {
     id: root
 
-    signal added(Calendar.IncidenceWrapper incidenceWrapper)
-    signal edited(Calendar.IncidenceWrapper incidenceWrapper)
     signal cancel()
 
     // Setting the incidenceWrapper here and now causes some *really* weird behaviour.
@@ -81,7 +79,7 @@ Kirigami.ScrollablePage {
         shortcut: "Return"
         onTriggered: {
             if (editMode) {
-                edited(incidenceWrapper);
+                Calendar.CalendarManager.editIncidence(incidenceWrapper);
             } else if (root.validDates) {
                 if(root.incidenceWrapper.collectionId < 0) {
                     root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
@@ -90,14 +88,14 @@ Kirigami.ScrollablePage {
                     root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
                 }
 
-                if(root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
+                if(root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
                     Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
                 } else {
                     Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
                 }
-                Config.save();
+                Calendar.Config.save();
 
-                added(incidenceWrapper);
+                Calendar.CalendarManager.addIncidence(incidenceWrapper);
             }
             cancel(); // Easy way to close the editor
         }

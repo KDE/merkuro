@@ -178,11 +178,11 @@ BaseApplication {
         }
 
         function onCreateNewEvent(): void {
-            CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeEvent);
+            IncidenceEditorManager.openNewIncidenceEditorDialog(IncidenceWrapper.TypeEvent);
         }
 
         function onCreateNewTodo(): void {
-            CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeTodo);
+            IncidenceEditorManager.openNewIncidenceEditorDialog(IncidenceWrapper.TypeTodo);
         }
 
         function onUndo(): void {
@@ -498,50 +498,6 @@ BaseApplication {
                     incidenceData = null;
                 }
             }
-        }
-    }
-
-    IncidenceEditorPage {
-        id: incidenceEditorPage
-        onAdded: CalendarManager.addIncidence(incidenceWrapper)
-        onEdited: CalendarManager.editIncidence(incidenceWrapper)
-        onCancel: pageStack.layers.pop()
-    }
-    property alias incidenceEditorPageItem: incidenceEditorPage
-
-    property alias editorWindowedLoaderItem: editorWindowedLoader
-    Loader {
-        id: editorWindowedLoader
-        active: false
-        sourceComponent: Kirigami.ApplicationWindow {
-            id: root
-
-            width: Kirigami.Units.gridUnit * 40
-            height: Kirigami.Units.gridUnit * 32
-
-            flags: Qt.Dialog | Qt.WindowCloseButtonHint
-
-            // Probably a more elegant way of accessing the editor from outside than this.
-            property var incidenceEditorPage: incidenceEditorPageInLoader
-
-            pageStack.initialPage: incidenceEditorPageInLoader
-
-            Loader {
-                active: !Kirigami.Settings.isMobile
-                source: Qt.resolvedUrl("qrc:/GlobalMenuBar.qml")
-                onLoaded: item.parentWindow = root
-            }
-
-            IncidenceEditorPage {
-                id: incidenceEditorPageInLoader
-                onAdded: CalendarManager.addIncidence(incidenceWrapper)
-                onEdited: CalendarManager.editIncidence(incidenceWrapper)
-                onCancel: root.close()
-                Keys.onEscapePressed: root.close()
-            }
-
-            visible: true
-            onClosing: editorWindowedLoader.active = false
         }
     }
 

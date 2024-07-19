@@ -68,9 +68,10 @@ Kirigami.OverlayDrawer {
                                 text: i18n("Add Sub-Task")
                                 visible: incidenceInfoContents.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
                                 onTriggered: {
-                                    CalendarUiUtils.setUpAddSubTodo(incidenceInfoContents.incidenceWrapper);
+                                    IncidenceEditorManager.openNewSubTodoEditorDialog(root.QQC2.ApplicationWindow.window, incidenceInfoContents.incidenceWrapper)
 
-                                    if(Kirigami.Settings.isMobile) {
+
+                                    if (Kirigami.Settings.isMobile) {
                                         root.close();
                                     }
                                 }
@@ -89,7 +90,7 @@ Kirigami.OverlayDrawer {
                                 icon.name: "edit-entry"
                                 text: i18n("Edit")
                                 enabled: incidenceInfoContents.collectionData && !incidenceInfoContents.collectionData.readOnly
-                                onTriggered: CalendarUiUtils.setUpEdit(incidenceInfoContents.incidenceData.incidencePtr)
+                                onTriggered: IncidenceEditorManager.openEditorDialog(root.QQC2.ApplicationWindow.window, incidenceInfoContents.incidenceData.incidencePtr)
                             },
                             Kirigami.Action {
                                 icon.name: "edit-delete"

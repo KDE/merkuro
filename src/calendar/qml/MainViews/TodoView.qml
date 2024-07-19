@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: CalendarUiUtils.setUpAdd(Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
         },
         Kirigami.Action {
             text: i18n("Sort")

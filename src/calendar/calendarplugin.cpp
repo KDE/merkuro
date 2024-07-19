@@ -89,6 +89,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     qmlRegisterType<InfiniteCalendarViewModel>(uri, 1, 0, "InfiniteCalendarViewModel");
 
     qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/CalendarUiUtils.qml")), "org.kde.merkuro.utils", 1, 0, "CalendarUiUtils");
+    qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/IncidenceEditorManager.qml")), "org.kde.merkuro.utils", 1, 0, "IncidenceEditorManager");
 
     qRegisterMetaType<Akonadi::ETMCalendar::Ptr>();
     qRegisterMetaType<QAbstractProxyModel *>("QAbstractProxyModel*");

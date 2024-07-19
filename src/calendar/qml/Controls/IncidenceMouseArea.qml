@@ -6,15 +6,14 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.utils
 
 MouseArea {
     id: mouseArea
 
     signal viewClicked(var incidenceData)
-    signal editClicked(var incidencePtr)
     signal deleteClicked(var incidencePtr, date deleteDate)
     signal todoCompletedClicked(var incidencePtr)
-    signal addSubTodoClicked(var parentWrapper)
 
     property double clickX
     property double clickY
@@ -44,7 +43,7 @@ MouseArea {
     }
     onDoubleClicked: {
         collectionDetails = Calendar.CalendarManager.getCollectionDetails(mouseArea.collectionId)
-        editClicked(incidenceData.incidencePtr);
+        IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
     }
 
     Component {
@@ -58,14 +57,17 @@ MouseArea {
 
             QQC2.MenuItem {
                 icon.name: "dialog-icon-preview"
-                text:i18n("View")
+                text: i18n("View")
                 onClicked: viewClicked(incidenceData);
             }
             QQC2.MenuItem {
                 icon.name: "edit-entry"
-                text:i18n("Edit")
+                text: i18n("Edit")
                 enabled: !mouseArea.collectionDetails["readOnly"]
-                onClicked: editClicked(incidenceData.incidencePtr)
+                onClicked: () => {
+                    IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
+                }
+
             }
             QQC2.MenuItem {
                 icon.name: "edit-delete"
@@ -90,7 +92,8 @@ MouseArea {
                 onClicked: {
                     const parentWrapper = Calendar.CalendarManager.createIncidenceWrapper()
                     parentWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(mouseArea.incidenceData.incidencePtr);
-                    addSubTodoClicked(parentWrapper);
+
+                    IncidenceEditorManager.openNewSubTodoEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, parentWrapper)
                 }
                 visible: incidenceData.incidenceType === Calendar.IncidenceWrapper.TypeTodo
             }
