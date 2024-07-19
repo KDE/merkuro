@@ -177,7 +177,7 @@ Kirigami.OverlayDrawer {
                         },
                         Kirigami.Action {
                             text: i18n("Refresh All Calendars")
-                            fromQAction: CalendarManager.action("refresh_all")
+                            fromQAction: CalendarApplication.action("refresh_all")
                         },
                         Kirigami.Action {
                             fromQAction: CalendarApplication.action("toggle_menubar")
