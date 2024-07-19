@@ -127,114 +127,115 @@ BaseApplication {
 
     Connections {
         target: CalendarApplication
-        function onOpenMonthView() {
+
+        function onOpenMonthView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.Month || root.ignoreCurrentPage) {
                 root.switchView(monthViewComponent);
             }
         }
 
-        function onOpenWeekView() {
+        function onOpenWeekView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
                 root.switchView("qrc:/HourlyView.qml", { createEventAction: createAction} );
             }
         }
 
-        function onOpenThreeDayView() {
+        function onOpenThreeDayView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.ThreeDay || root.ignoreCurrentPage) {
                 root.switchView("qrc:/HourlyView.qml", { daysToShow: 3, createEventAction: createAction });
             }
         }
 
-        function onOpenDayView() {
+        function onOpenDayView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.Day || root.ignoreCurrentPage) {
                 root.switchView("qrc:/HourlyView.qml", { daysToShow: 1, createEventAction: createAction });
             }
         }
 
-        function onOpenScheduleView() {
+        function onOpenScheduleView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.Schedule || root.ignoreCurrentPage) {
                 root.switchView(scheduleViewComponent);
             }
         }
 
-        function onOpenTodoView() {
+        function onOpenTodoView(): void {
             if(pageStack.currentItem.mode !== CalendarApplication.Todo) {
                 filterHeaderBar.active = true;
                 root.switchView("qrc:/TodoView.qml");
             }
         }
 
-        function onMoveViewForwards() {
+        function onMoveViewForwards(): void {
             pageStack.currentItem.nextAction.trigger();
         }
 
-        function onMoveViewBackwards() {
+        function onMoveViewBackwards(): void {
             pageStack.currentItem.previousAction.trigger();
         }
 
-        function onMoveViewToToday() {
+        function onMoveViewToToday(): void {
             pageStack.currentItem.todayAction.trigger();
         }
 
-        function onCreateNewEvent() {
+        function onCreateNewEvent(): void {
             CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeEvent);
         }
 
-        function onCreateNewTodo() {
+        function onCreateNewTodo(): void {
             CalendarUiUtils.setUpAdd(IncidenceWrapper.TypeTodo);
         }
 
-        function onUndo() {
+        function onUndo(): void {
             CalendarManager.undoAction();
         }
 
-        function onRedo() {
+        function onRedo(): void {
             CalendarManager.redoAction();
         }
 
-        function onTodoViewSortAlphabetically() {
+        function onTodoViewSortAlphabetically(): void {
             Config.sort = Config.Alphabetically;
             Config.save();
         }
 
-        function onTodoViewSortByDueDate() {
+        function onTodoViewSortByDueDate(): void {
             Config.sort = Config.DueTime;
             Config.save();
         }
 
-        function onTodoViewSortByPriority() {
+        function onTodoViewSortByPriority(): void {
             Config.sort = Config.Priority;
             Config.save();
         }
 
-        function onTodoViewOrderAscending() {
+        function onTodoViewOrderAscending(): void {
             Config.ascendingOrder = true;
             Config.save();
         }
 
-        function onTodoViewOrderDescending() {
+        function onTodoViewOrderDescending(): void {
             Config.ascendingOrder = false;
             Config.save();
         }
 
-        function onTodoViewShowCompleted() {
+        function onTodoViewShowCompleted(): void {
             const openDialogWindow = pageStack.pushDialogLayer(pageStack.currentItem.completedSheetComponent);
             openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
         }
 
-        function onConfigureSchedule() {
+        function onConfigureSchedule(): void {
             configurationsView.open("freebusy");
         }
 
-        function onOpenSettings() {
+        function onOpenSettings(): void {
             configurationsView.open();
         }
 
-        function onRefreshAll() {
+        function onRefreshAll(): void {
             CalendarManager.updateAllCollections();
         }
 
-        function onOpenIncidence(incidenceData, occurrenceDate) {
+        function onOpenIncidence(incidenceData, occurrenceDate): void {
             // Switch to an event view if the current view is not compatible with the current incidence type
             if (pageStack.currentItem.mode & (CalendarApplication.Todo | CalendarApplication.Event) ||
                 (pageStack.currentItem.mode === CalendarApplication.Todo && incidenceData.incidenceType !== IncidenceWrapper.TypeTodo)) {
