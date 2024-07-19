@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
 
     property bool editMode: false
     property bool validDates: {
-        if(incidenceWrapper && incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
+        if(incidenceWrapper && incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
             return editorLoader.active && editorLoader.item.validEndDate
         } else if (incidenceWrapper) {
             return editorLoader.active && editorLoader.item.validFormDates &&
@@ -91,9 +91,9 @@ Kirigami.ScrollablePage {
                 }
 
                 if(root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
-                    Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
+                    Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
                 } else {
-                    Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
+                    Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
                 }
                 Config.save();
 
@@ -146,8 +146,8 @@ Kirigami.ScrollablePage {
                 id: incidenceForm
 
                 property date todayDate: new Date()
-                property bool isTodo: root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
-                property bool isJournal: root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeJournal
+                property bool isTodo: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
+                property bool isJournal: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeJournal
 
                 Akonadi.CollectionComboBox {
                     id: calendarCombo
@@ -168,9 +168,9 @@ Kirigami.ScrollablePage {
                         return root.incidenceWrapper.collectionId;
                     }
 
-                    mimeTypeFilter: if (root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeEvent) {
+                    mimeTypeFilter: if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeEvent) {
                         return [Akonadi.MimeTypes.calendar]
-                    } else if (root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
+                    } else if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
                         return [Akonadi.MimeTypes.todo]
                     }
                     accessRightsFilter: Akonadi.Collection.CanCreateItem
@@ -182,11 +182,11 @@ Kirigami.ScrollablePage {
 
                     Kirigami.FormData.label: i18n("Summary:")
                     placeholderText: switch (incidenceWrapper.incidenceType) {
-                    case IncidenceWrapper.TypeTodo:
+                    case Calendar.IncidenceWrapper.TypeTodo:
                         return i18n("Add a title for your task")
-                    case IncidenceWrapper.TypeEvent:
+                    case Calendar.IncidenceWrapper.TypeEvent:
                         return i18n("Add a title for your event")
-                    case IncidenceWrapper.TypeJournal:
+                    case Calendar.IncidenceWrapper.TypeJournal:
                         return i18n("Add a title for your journal entry")
                     }
                     text: root.incidenceWrapper.summary
@@ -410,10 +410,10 @@ Kirigami.ScrollablePage {
                     }
                     model: [
                         {key: "never", display: i18n("Never"), interval: -1},
-                        {key: "daily", display: i18n("Daily"), interval: IncidenceWrapper.Daily},
-                        {key: "weekly", display: i18n("Weekly"), interval: IncidenceWrapper.Weekly},
-                        {key: "monthly", display: i18n("Monthly"), interval: IncidenceWrapper.Monthly},
-                        {key: "yearly", display: i18n("Yearly"), interval: IncidenceWrapper.Yearly},
+                        {key: "daily", display: i18n("Daily"), interval: Calendar.IncidenceWrapper.Daily},
+                        {key: "weekly", display: i18n("Weekly"), interval: Calendar.IncidenceWrapper.Weekly},
+                        {key: "monthly", display: i18n("Monthly"), interval: Calendar.IncidenceWrapper.Monthly},
+                        {key: "yearly", display: i18n("Yearly"), interval: Calendar.IncidenceWrapper.Yearly},
                         {key: "custom", display: i18n("Custom"), interval: -1}
                     ]
                     delegate: Delegates.RoundedItemDelegate {
@@ -492,10 +492,10 @@ Kirigami.ScrollablePage {
                             }
 
                             model: [
-                                {key: "day", display: i18np("day", "days", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Daily},
-                                {key: "week", display: i18np("week", "weeks", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Weekly},
-                                {key: "month", display: i18np("month", "months", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Monthly},
-                                {key: "year", display: i18np("year", "years", recurFreqRuleSpinbox.value), interval: IncidenceWrapper.Yearly},
+                                {key: "day", display: i18np("day", "days", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Daily},
+                                {key: "week", display: i18np("week", "weeks", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Weekly},
+                                {key: "month", display: i18np("month", "months", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Monthly},
+                                {key: "year", display: i18np("year", "years", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Yearly},
                             ]
                             delegate: Delegates.RoundedItemDelegate {
                                 text: modelData.display
@@ -795,14 +795,14 @@ Kirigami.ScrollablePage {
                     QQC2.CheckBox {
                         id: mapVisibleCheckBox
                         text: i18n("Show map")
-                        visible: Config.enableMaps
+                        visible: Calendar.Config.enableMaps
                     }
                 }
 
                 ColumnLayout {
                     id: mapLayout
                     Layout.fillWidth: true
-                    visible: Config.enableMaps && mapVisibleCheckBox.checked
+                    visible: Calendar.Config.enableMaps && mapVisibleCheckBox.checked
 
                     Loader {
                         id: mapLoader

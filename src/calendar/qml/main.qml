@@ -527,7 +527,7 @@ BaseApplication {
 
             Loader {
                 active: !Kirigami.Settings.isMobile
-                source: Qt.resolvedUrl("qrc:/GlobalMenu.qml")
+                source: Qt.resolvedUrl("qrc:/GlobalMenuBar.qml")
                 onLoaded: item.parentWindow = root
             }
 
