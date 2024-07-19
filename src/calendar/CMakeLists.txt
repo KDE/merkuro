@@ -112,6 +112,7 @@ add_executable(merkuro-calendar
 target_link_libraries(merkuro-calendar
     PRIVATE
         merkuro_calendar_static
+        merkuro_contact_plugin
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2

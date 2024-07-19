@@ -20,8 +20,8 @@ import "labelutils.js" as LabelUtils
 Kirigami.ScrollablePage {
     id: root
 
-    signal added(IncidenceWrapper incidenceWrapper)
-    signal edited(IncidenceWrapper incidenceWrapper)
+    signal added(Calendar.IncidenceWrapper incidenceWrapper)
+    signal edited(Calendar.IncidenceWrapper incidenceWrapper)
     signal cancel()
 
     // Setting the incidenceWrapper here and now causes some *really* weird behaviour.
@@ -363,7 +363,7 @@ Kirigami.ScrollablePage {
                     Kirigami.FormData.label: i18n("Timezone:")
                     Layout.fillWidth: true
 
-                    model: TimeZoneListModel {
+                    model: Calendar.TimeZoneListModel {
                         id: timeZonesModel
                     }
 
