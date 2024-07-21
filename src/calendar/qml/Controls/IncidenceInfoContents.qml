@@ -27,7 +27,7 @@ QQC2.ScrollView {
 
     property alias contentPadding: infoBody.padding
 
-    readonly property var activeTags : Filter.tags
+    readonly property var activeTags : Calendar.Filter.tags
     readonly property int relatedIncidenceDelegateHeight: Kirigami.Units.gridUnit * 3
     readonly property alias scrollView: root
 
@@ -43,8 +43,8 @@ QQC2.ScrollView {
 
         if(incidenceData) {
             incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper()
-            incidenceWrapper.incidenceItem = CalendarManager.incidenceItem(incidenceData.incidencePtr);
-            collectionData = CalendarManager.getCollectionDetails(incidenceWrapper.collectionId);
+            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(incidenceData.incidencePtr);
+            collectionData = Calendar.CalendarManager.getCollectionDetails(incidenceWrapper.collectionId);
         }
     }
 
@@ -203,7 +203,7 @@ QQC2.ScrollView {
                     implicitWidth: itemLayout.implicitWidth > tagFlow.width ? tagFlow.width : itemLayout.implicitWidth
                     activeFocusOnTab: true
                     backgroundColor: mainDrawer.activeTags.includes(modelData) ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
-                    onClicked: Filter.toggleFilterTag(modelData)
+                    onClicked: Calendar.Filter.toggleFilterTag(modelData)
                 }
             }
         }
@@ -396,7 +396,7 @@ QQC2.ScrollView {
         ColumnLayout {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            visible: Config.enableMaps && (root.incidenceWrapper.location || root.incidenceWrapper.hasGeo)
+            visible: Calendar.Config.enableMaps && (root.incidenceWrapper.location || root.incidenceWrapper.hasGeo)
 
             QQC2.BusyIndicator {
                 id: mapLoadingIndicator
@@ -429,7 +429,7 @@ QQC2.ScrollView {
                 Layout.fillWidth: true
                 height: Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit * 12 : Kirigami.Units.gridUnit * 16
                 asynchronous: true
-                active: Config.enableMaps &&
+                active: Calendar.Config.enableMaps &&
                     root.visible &&
                     (root.incidenceWrapper.location || root.incidenceWrapper.hasGeo) &&
                     !locationLabel.isLink

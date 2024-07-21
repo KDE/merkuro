@@ -156,12 +156,12 @@ Kirigami.ScrollablePage {
                     defaultCollectionId: {
                         if (root.incidenceWrapper.collectionId === -1) {
 
-                            if ((incidenceForm.isTodo && Config.lastUsedTodoCollection === -1) ||
-                                (!incidenceForm.isTodo && Config.lastUsedEventCollection === -1)) {
+                            if ((incidenceForm.isTodo && Calendar.Config.lastUsedTodoCollection === -1) ||
+                                (!incidenceForm.isTodo && Calendar.Config.lastUsedEventCollection === -1)) {
 
                                 return selectedCollectionId;
                             }
-                            return incidenceForm.isTodo ? Config.lastUsedTodoCollection : Config.lastUsedEventCollection;
+                            return incidenceForm.isTodo ? Calendar.Config.lastUsedTodoCollection : Calendar.Config.lastUsedEventCollection;
                         }
                         return root.incidenceWrapper.collectionId;
                     }
