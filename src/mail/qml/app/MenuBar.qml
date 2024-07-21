@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.merkuro.mail
-import org.kde.Kirigami as Kirigami
+import org.kde.kirigami as Kirigami
 
 QQC2.MenuBar {
     id: bar
