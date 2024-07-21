@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
             title: i18n("Save Message - Merkuro-Mail")
             nameFilters: [i18n("email messages (*.mbox)")]
             currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-            fileMode: fileDialog.SaveFile
+            fileMode: FileDialog.SaveFile
 
             onAccepted: {
                 if (fileUrl) {
