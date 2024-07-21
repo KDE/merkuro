@@ -899,7 +899,7 @@ Kirigami.ScrollablePage {
                     }
                     QQC2.Button {
                         text: i18n("Manage tags…")
-                        onClicked: CalendarApplication.action("open_tag_manager").trigger()
+                        onClicked: Calendar.CalendarApplication.action("open_tag_manager").trigger()
                     }
                 }
 
