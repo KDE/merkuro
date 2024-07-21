@@ -52,7 +52,7 @@ QQC2.ScrollView {
         Layout.fillWidth: true
         textFormat: Text.MarkdownText
         text: name ? `[${name}](mailto:${email})` : `[${email}](mailto:${email})`
-        onLinkActivated: Qt.openUrlExternally(link)
+        onLinkActivated: link => Qt.openUrlExternally(link)
         wrapMode: Text.Wrap
         onHoveredLinkChanged: hoveredLink.length > 0 ?
             applicationWindow().hoverLinkIndicator.text = hoveredLink : applicationWindow().hoverLinkIndicator.text = ""
