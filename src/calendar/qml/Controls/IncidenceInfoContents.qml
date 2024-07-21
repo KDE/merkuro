@@ -137,7 +137,7 @@ QQC2.ScrollView {
             id: todoCompletionLayout
 
             Layout.columnSpan: 2
-            visible: root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
+            visible: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
 
             Kirigami.Heading {
                 Layout.alignment: Qt.AlignTop
