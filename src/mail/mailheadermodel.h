@@ -4,11 +4,11 @@
 #pragma once
 
 #include <QAbstractListModel>
-
+#include <qqmlregistration.h>
 class MailHeaderModel : public QAbstractListModel
 {
     Q_OBJECT
-
+    QML_ELEMENT
 public:
     enum Roles {
         NameRole = Qt::UserRole,
