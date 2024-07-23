@@ -329,7 +329,7 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: assistantsName
             visible: description.length > 0
-            text: i18n("Assistants's name:")
+            text: i18n("Assistant's name:")
             description: addressee.assistantsName
         }
     }

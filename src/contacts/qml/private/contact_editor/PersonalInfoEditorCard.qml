@@ -20,7 +20,7 @@ FormCard.FormCard {
 
     FormCard.FormTextFieldDelegate {
         id: partnerDelegate
-        label: i18nc("@label", "Partners's name")
+        label: i18nc("@label", "Partner's name")
         text: root.contactEditor.contact.spousesName
         onTextChanged: root.contactEditor.contact.spousesName = text
     }
