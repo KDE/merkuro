@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:40+0000\n"
+"POT-Creation-Date: 2024-07-24 00:40+0000\n"
 "PO-Revision-Date: 2024-07-20 19:40+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2790,10 +2790,11 @@ msgid "protocol:person@example.com"
 msgstr "protocollo:persona@esempio.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
 msgctxt "@label"
-msgid "Partners's name"
-msgstr "Nome dei collaboratori"
+msgid "Partner's name"
+msgstr "Nome del compagno/a:"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3059,8 +3060,9 @@ msgid "Manager's name:"
 msgstr "Nome del dirigente:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, kde-format
-msgid "Assistants's name:"
+#, fuzzy, kde-format
+#| msgid "Assistants's name:"
+msgid "Assistant's name:"
 msgstr "Nome degli assistenti:"
 
 #: contacts/qml/private/ContactPage.qml:338
@@ -3489,6 +3491,10 @@ msgstr "Crea una nuova etichetta…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Aggiungi rapidamente una nuova etichetta."
+
+#~ msgctxt "@label"
+#~ msgid "Partners's name"
+#~ msgstr "Nome dei collaboratori"
 
 #~ msgid "Ctrl+M"
 #~ msgstr "Ctrl+M"

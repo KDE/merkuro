@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:40+0000\n"
+"POT-Creation-Date: 2024-07-24 00:40+0000\n"
 "PO-Revision-Date: 2024-05-12 15:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2781,10 +2781,11 @@ msgid "protocol:person@example.com"
 msgstr "protokoll:szemely@pelda.hu"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
 msgctxt "@label"
-msgid "Partners's name"
-msgstr "Partner neve"
+msgid "Partner's name"
+msgstr "Partner neve:"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3050,8 +3051,9 @@ msgid "Manager's name:"
 msgstr "Menedzser neve:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, kde-format
-msgid "Assistants's name:"
+#, fuzzy, kde-format
+#| msgid "Assistants's name:"
+msgid "Assistant's name:"
 msgstr "Asszisztens neve:"
 
 #: contacts/qml/private/ContactPage.qml:338
@@ -3482,6 +3484,10 @@ msgstr "Új címke létrehozása…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Új címke gyors hozzáadása."
+
+#~ msgctxt "@label"
+#~ msgid "Partners's name"
+#~ msgstr "Partner neve"
 
 #~ msgid "Ctrl+M"
 #~ msgstr "Ctrl+M"

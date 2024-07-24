@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-20 00:40+0000\n"
-"PO-Revision-Date: 2024-07-14 17:23+0900\n"
+"POT-Creation-Date: 2024-07-24 00:40+0000\n"
+"PO-Revision-Date: 2024-07-23 22:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -993,7 +993,7 @@ msgstr "時區："
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:380
 #, kde-format
 msgid "Repeat:"
-msgstr "重覆："
+msgstr "重複："
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
 #, kde-format
@@ -1281,11 +1281,10 @@ msgid "Configure"
 msgstr "設定"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
-#, fuzzy, kde-format
-#| msgid "Undo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
-msgstr "復原："
+msgstr "復原：%1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
@@ -1293,11 +1292,10 @@ msgid "Undo"
 msgstr "復原"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
-#, fuzzy, kde-format
-#| msgid "Redo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
-msgstr "重做："
+msgstr "重做：%1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
 #, kde-format
@@ -2761,10 +2759,11 @@ msgid "protocol:person@example.com"
 msgstr "protocol:person@example.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Partner's name:"
 msgctxt "@label"
-msgid "Partners's name"
-msgstr "配偶姓名"
+msgid "Partner's name"
+msgstr "配偶姓名："
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3028,8 +3027,9 @@ msgid "Manager's name:"
 msgstr "主管姓名："
 
 #: contacts/qml/private/ContactPage.qml:332
-#, kde-format
-msgid "Assistants's name:"
+#, fuzzy, kde-format
+#| msgid "Assistants's name:"
+msgid "Assistant's name:"
 msgstr "助理姓名："
 
 #: contacts/qml/private/ContactPage.qml:338
@@ -3456,6 +3456,10 @@ msgstr "建立新標籤…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "快速建立新標籤。"
+
+#~ msgctxt "@label"
+#~ msgid "Partners's name"
+#~ msgstr "配偶姓名"
 
 #~ msgid "Ctrl+M"
 #~ msgstr "Ctrl+M"
