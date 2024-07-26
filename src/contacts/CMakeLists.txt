@@ -119,7 +119,7 @@ ecm_target_qml_sources(merkuro_contact_plugin
 
 
 ecm_qt_install_logging_categories(
-    EXPORT merkuro
+    EXPORT MERKURO
     FILE merkuro.contact.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
