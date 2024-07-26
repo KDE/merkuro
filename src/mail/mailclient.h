@@ -37,6 +37,7 @@ namespace Akonadi
 class MailClient : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     struct MessageData {
         QString from;
