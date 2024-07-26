@@ -21,6 +21,10 @@ Kirigami.ScrollablePage {
 
     property MailHeaderModel mailHeaderModel: MailHeaderModel {}
 
+    MailClient {
+        id: mailClient
+    }
+
     GridLayout {
         columns: 2
         anchors.fill: parent
@@ -138,7 +142,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Send")
                 icon.name: 'document-send'
                 onClicked: {
-                    MailClient.send(identity.model, mailComposition.mailHeaderModel, subjectText.text, mailContent.text);  
+                    mailClient.send(identity.model, mailComposition.mailHeaderModel, subjectText.text, mailContent.text);
                     close()
                 }
             }
