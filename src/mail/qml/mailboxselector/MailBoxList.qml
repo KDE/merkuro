@@ -116,6 +116,7 @@ ListView {
                 required property string displayName
                 required property var collection
                 required property var model
+                required property int unreadCount
 
                 property bool chosen: false
 
@@ -160,16 +161,14 @@ ListView {
                     }
 
                     QQC2.Label {
-                        property int unreadCount: MailCollectionHelper.unreadCount(controlRoot.collection)
-
-                        text: unreadCount > 0 ? unreadCount : ''
+                        text: controlRoot.unreadCount > 0 ? controlRoot.unreadCount : ''
                         padding: Kirigami.Units.smallSpacing
                         color: Kirigami.Theme.textColor
                         font: Kirigami.Theme.smallFont
                         Layout.minimumWidth: height
                         horizontalAlignment: Text.AlignHCenter
                         background: Rectangle {
-                            visible: parent.unreadCount > 0
+                            visible: controlRoot.unreadCount > 0
                             Kirigami.Theme.colorSet: Kirigami.Theme.Button
                             color: Kirigami.Theme.disabledTextColor
                             opacity: 0.3
