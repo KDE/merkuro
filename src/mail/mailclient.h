@@ -48,7 +48,14 @@ class MailClient : public QObject
     };
 
 public:
-    enum Result { ResultSuccess, ResultNoAttendees, ResultReallyNoAttendees, ResultErrorCreatingTransport, ResultErrorFetchingTransport, ResultQueueJobError };
+    enum Result {
+        ResultSuccess,
+        ResultNoRecipients,
+        ResultReallyNoRecipients,
+        ResultErrorCreatingTransport,
+        ResultErrorFetchingTransport,
+        ResultQueueJobError
+    };
 
     explicit MailClient(QObject *parent = nullptr);
     ~MailClient() override;

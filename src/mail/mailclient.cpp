@@ -44,8 +44,8 @@ MailClient::~MailClient() = default;
 void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, MailHeaderModel *header, const QString &subject, const QString &body)
 {
     if (!header->rowCount()) {
-        qCWarning(merkuro_MAIL_LOG) << "There are no attendees to e-mail";
-        Q_EMIT finished(ResultNoAttendees, i18n("There are no attendees to e-mail"));
+        qCWarning(merkuro_MAIL_LOG) << "There are no recipients to e-mail";
+        Q_EMIT finished(ResultNoRecipients, i18n("There are no recipients to e-mail"));
         return;
     }
 
@@ -54,24 +54,24 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, Mai
     msg.subject = subject;
     msg.body = body;
 
-    const int numberOfAttendees = header->rowCount();
-    for (int attendee = 0; attendee < numberOfAttendees; attendee++) {
-        const QString email = header->data(header->index(attendee, 0), MailHeaderModel::ValueRole).toString();
-        const MailHeaderModel::Header headerAttendee = header->data(header->index(attendee, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
+    const int numberOfRecipients = header->rowCount();
+    for (int recipient = 0; recipient < numberOfRecipients; recipient++) {
+        const QString email = header->data(header->index(recipient, 0), MailHeaderModel::ValueRole).toString();
+        const MailHeaderModel::Header headerRecipient = header->data(header->index(recipient, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
         if (email.isEmpty()) {
             continue;
-        } else if (headerAttendee == MailHeaderModel::To) {
+        } else if (headerRecipient == MailHeaderModel::To) {
             msg.to.push_back(email);
-        } else if (headerAttendee == MailHeaderModel::CC) {
+        } else if (headerRecipient == MailHeaderModel::CC) {
             msg.cc.push_back(email);
-        } else if (headerAttendee == MailHeaderModel::BCC) {
+        } else if (headerRecipient == MailHeaderModel::BCC) {
             msg.bcc.push_back(email);
         }
     }
 
     if (msg.cc.isEmpty() && msg.to.isEmpty() && msg.bcc.isEmpty()) {
-        qCWarning(merkuro_MAIL_LOG) << "There are really no attendees to e-mail";
-        Q_EMIT finished(ResultReallyNoAttendees, i18n("There are no attendees to e-mail"));
+        qCWarning(merkuro_MAIL_LOG) << "There are really no recipients to e-mail";
+        Q_EMIT finished(ResultReallyNoRecipients, i18n("There are no recipients to e-mail"));
         return;
     }
 
