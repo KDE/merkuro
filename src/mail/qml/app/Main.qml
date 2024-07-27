@@ -38,6 +38,10 @@ BaseApplication {
         function onCheckMail() {
             Mail.MailManager.checkMail();
         }
+
+        function onCreateNewMail(): void {
+            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.mail", "MailComposer"))
+        }
     }
 
     Settings.Settings {
