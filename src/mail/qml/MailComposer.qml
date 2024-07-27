@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
                 textRole: "text"
                 valueRole: "value"
                 Component.onCompleted: currentIndex = Math.min(mailClient.headerModel.rowCount() - 1, 1);
-                onCurrentValueChanged: mailClient.headerModel.updateHeaderType(index, currentValue);
+                onCurrentValueChanged: mailClient.headerModel.setType(index, currentValue);
                 model: [
                     { value: MailHeaderModel.To, text: i18n("To:") },
                     { value: MailHeaderModel.CC, text: i18n("CC:") },
@@ -82,7 +82,7 @@ Kirigami.ScrollablePage {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 wrapMode: Text.Wrap
                 KeyNavigation.priority: KeyNavigation.BeforeItem
-                onTextChanged: mailClient.headerModel.updateModel(index, text);
+                onTextChanged: mailClient.headerModel.setValue(index, text);
             }
         }
 

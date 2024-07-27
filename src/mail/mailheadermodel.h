@@ -5,14 +5,16 @@
 
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
+
 class MailHeaderModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
+
 public:
     enum Roles {
-        NameRole = Qt::UserRole,
-        ValueRole,
+        ValueRole = Qt::DisplayRole,
+        TypeRole,
     };
     Q_ENUM(Roles)
 
@@ -26,17 +28,18 @@ public:
     Q_ENUM(Header)
 
     explicit MailHeaderModel(QObject *parent = nullptr);
-    ~MailHeaderModel() override = default;
 
     QVariant data(const QModelIndex &index, int role) const override;
     Q_INVOKABLE int rowCount(const QModelIndex &parent = {}) const override;
 
-    Q_INVOKABLE void updateModel(const int row, const QString &value);
-    Q_INVOKABLE void updateHeaderType(const int row, const Header headerName);
+    Q_INVOKABLE void setValue(int row, const QString &value);
+    Q_INVOKABLE void setType(int row, const Header type);
+
+    QHash<int, QByteArray> roleNames() const override;
 
 private:
     struct HeaderItem {
-        Header header;
+        Header type;
         QString value;
     };
 

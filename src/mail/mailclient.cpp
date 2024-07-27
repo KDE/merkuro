@@ -57,9 +57,8 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
 
     const int numberOfRecipients = m_headerModel->rowCount();
     for (int recipient = 0; recipient < numberOfRecipients; recipient++) {
-        const QString email = m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::ValueRole).toString();
-        const MailHeaderModel::Header headerRecipient =
-            m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
+        const auto email = m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::ValueRole).toString();
+        const auto headerRecipient = m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::TypeRole).value<MailHeaderModel::Header>();
         if (email.isEmpty()) {
             continue;
         } else if (headerRecipient == MailHeaderModel::To) {

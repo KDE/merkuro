@@ -7,8 +7,7 @@
 MailHeaderModel::MailHeaderModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    HeaderItem newItem{Header::To, QString{}};
-    m_headers.append(newItem);
+    m_headers.append({Header::To, QString{}});
 }
 
 QVariant MailHeaderModel::data(const QModelIndex &index, int role) const
@@ -17,9 +16,8 @@ QVariant MailHeaderModel::data(const QModelIndex &index, int role) const
 
     const auto &item = m_headers[index.row()];
     switch (role) {
-    case Qt::DisplayRole:
-    case NameRole:
-        return item.header;
+    case TypeRole:
+        return item.type;
     case ValueRole:
         return item.value;
     }
@@ -33,7 +31,7 @@ int MailHeaderModel::rowCount(const QModelIndex &parent) const
     return m_headers.size();
 }
 
-void MailHeaderModel::updateModel(const int row, const QString &value)
+void MailHeaderModel::setValue(const int row, const QString &value)
 {
     Q_ASSERT(row >= 0 && row < m_headers.count());
 
@@ -46,8 +44,7 @@ void MailHeaderModel::updateModel(const int row, const QString &value)
         return;
     }
 
-    auto &header = m_headers[row];
-    header.value = text;
+    m_headers[row].value = text;
     Q_EMIT dataChanged(index(row, 0), index(row, 0), {ValueRole});
 
     if (row == rowCount() - 1) {
@@ -57,13 +54,20 @@ void MailHeaderModel::updateModel(const int row, const QString &value)
     }
 }
 
-void MailHeaderModel::updateHeaderType(const int row, const Header headerName)
+void MailHeaderModel::setType(const int row, const Header type)
 {
     Q_ASSERT(row >= 0 && row < m_headers.count());
 
-    auto &header = m_headers[row];
-    header.header = headerName;
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), {NameRole});
+    m_headers[row].type = type;
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {TypeRole});
+}
+
+QHash<int, QByteArray> MailHeaderModel::roleNames() const
+{
+    return {
+        {ValueRole, "value"},
+        {TypeRole, "type"},
+    };
 }
 
 #include "moc_mailheadermodel.cpp"
