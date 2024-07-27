@@ -19,8 +19,6 @@ Kirigami.ScrollablePage {
     bottomPadding: 0
     topPadding: Kirigami.Units.largeSpacing
 
-    property MailHeaderModel mailHeaderModel: MailHeaderModel {}
-
     MailClient {
         id: mailClient
     }
@@ -56,7 +54,7 @@ Kirigami.ScrollablePage {
         }
 
         Repeater {
-            model: mailHeaderModel
+            model: mailClient.headerModel
             QQC2.ComboBox {
                 id: control
                 Layout.row: index + 2
@@ -64,8 +62,8 @@ Kirigami.ScrollablePage {
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 textRole: "text"
                 valueRole: "value"
-                Component.onCompleted: currentIndex = Math.min(mailHeaderModel.rowCount() - 1, 1);
-                onCurrentValueChanged: mailHeaderModel.updateHeaderType(index, currentValue);
+                Component.onCompleted: currentIndex = Math.min(mailClient.headerModel.rowCount() - 1, 1);
+                onCurrentValueChanged: mailClient.headerModel.updateHeaderType(index, currentValue);
                 model: [
                     { value: MailHeaderModel.To, text: i18n("To:") },
                     { value: MailHeaderModel.CC, text: i18n("CC:") },
@@ -75,7 +73,7 @@ Kirigami.ScrollablePage {
             }
         }
         Repeater {
-            model: mailHeaderModel
+            model: mailClient.headerModel
             QQC2.TextField {
                 id: controlsText
                 Layout.row: index + 2
@@ -84,7 +82,7 @@ Kirigami.ScrollablePage {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 wrapMode: Text.Wrap
                 KeyNavigation.priority: KeyNavigation.BeforeItem
-                onTextChanged: mailHeaderModel.updateModel(index, text);
+                onTextChanged: mailClient.headerModel.updateModel(index, text);
             }
         }
 
@@ -142,7 +140,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Send")
                 icon.name: 'document-send'
                 onClicked: {
-                    mailClient.send(identity.model, mailComposition.mailHeaderModel, subjectText.text, mailContent.text);
+                    mailClient.send(identity.model, subjectText.text, mailContent.text);
                     close()
                 }
             }

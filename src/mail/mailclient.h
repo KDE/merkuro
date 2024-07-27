@@ -39,6 +39,8 @@ class MailClient : public QObject
     Q_OBJECT
     QML_ELEMENT
 
+    Q_PROPERTY(MailHeaderModel *headerModel READ headerModel CONSTANT)
+
     struct MessageData {
         QString from;
         QStringList to;
@@ -61,7 +63,9 @@ public:
     explicit MailClient(QObject *parent = nullptr);
     ~MailClient() override;
 
-    Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, MailHeaderModel *header, const QString &subject, const QString &body);
+    MailHeaderModel *headerModel() const;
+
+    Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body);
 
 private:
     std::unique_ptr<MessageComposer::Composer>
@@ -73,6 +77,8 @@ private:
                       const KMime::Message::Ptr &message);
 
     void handleQueueJobFinished(KJob *job);
+
+    std::unique_ptr<MailHeaderModel> m_headerModel;
 
 Q_SIGNALS:
     void finished(Akonadi::MailClient::Result result, const QString &errorString);

@@ -36,14 +36,15 @@ using namespace Akonadi;
 
 MailClient::MailClient(QObject *parent)
     : QObject(parent)
+    , m_headerModel(std::make_unique<MailHeaderModel>())
 {
 }
 
 MailClient::~MailClient() = default;
 
-void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, MailHeaderModel *header, const QString &subject, const QString &body)
+void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body)
 {
-    if (!header->rowCount()) {
+    if (!m_headerModel->rowCount()) {
         qCWarning(merkuro_MAIL_LOG) << "There are no recipients to e-mail";
         Q_EMIT finished(ResultNoRecipients, i18n("There are no recipients to e-mail"));
         return;
@@ -54,10 +55,11 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, Mai
     msg.subject = subject;
     msg.body = body;
 
-    const int numberOfRecipients = header->rowCount();
+    const int numberOfRecipients = m_headerModel->rowCount();
     for (int recipient = 0; recipient < numberOfRecipients; recipient++) {
-        const QString email = header->data(header->index(recipient, 0), MailHeaderModel::ValueRole).toString();
-        const MailHeaderModel::Header headerRecipient = header->data(header->index(recipient, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
+        const QString email = m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::ValueRole).toString();
+        const MailHeaderModel::Header headerRecipient =
+            m_headerModel->data(m_headerModel->index(recipient, 0), MailHeaderModel::NameRole).value<MailHeaderModel::Header>();
         if (email.isEmpty()) {
             continue;
         } else if (headerRecipient == MailHeaderModel::To) {
@@ -205,4 +207,10 @@ void MailClient::handleQueueJobFinished(KJob *job)
         Q_EMIT finished(ResultSuccess, QString());
     }
 }
+
+MailHeaderModel *MailClient::headerModel() const
+{
+    return m_headerModel.get();
+}
+
 #include "moc_mailclient.cpp"
