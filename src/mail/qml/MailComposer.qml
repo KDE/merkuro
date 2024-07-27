@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                 textRole: "text"
                 valueRole: "value"
                 Component.onCompleted: currentIndex = Math.min(mailHeaderModel.rowCount() - 1, 1);
-                onCurrentIndexChanged: mailHeaderModel.updateHeaderType(index, currentValue);
+                onCurrentValueChanged: mailHeaderModel.updateHeaderType(index, currentValue);
                 model: [
                     { value: MailHeaderModel.To, text: i18n("To:") },
                     { value: MailHeaderModel.CC, text: i18n("CC:") },
