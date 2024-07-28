@@ -38,7 +38,6 @@ class MailClient : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-
     Q_PROPERTY(MailHeaderModel *headerModel READ headerModel CONSTANT)
 
     struct MessageData {

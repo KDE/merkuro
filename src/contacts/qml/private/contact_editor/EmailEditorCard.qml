@@ -32,7 +32,7 @@ FormCard.FormCard {
                     model: ListModel {id: emailTypeModel; dynamicRoles: true }
                     Component.onCompleted: {
                         [
-                            { value: EmailModel.Unknown, text: "Unknown" },
+                            { value: EmailModel.Unknown, text: i18n("Unknown") },
                             { value: EmailModel.Home, text: i18n("Home") },
                             { value: EmailModel.Work, text: i18n("Work") },
                             { value: EmailModel.Other, text: i18n("Other") }
