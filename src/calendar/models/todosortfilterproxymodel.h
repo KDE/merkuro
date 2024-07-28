@@ -128,14 +128,11 @@ public Q_SLOTS:
 protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
-private Q_SLOTS:
-    void setColorCache(const QHash<QString, QColor> colorCache);
-
-    void loadColors();
-    void updateDateLabels();
-    void emitDateDataChanged(const QModelIndex &idx);
-
 private:
+    void setColorCache(const QHash<QString, QColor> colorCache);
+    void emitDateDataChanged(const QModelIndex &idx);
+    void updateDateLabels();
+    void loadColors();
     [[nodiscard]] QHash<QString, QColor> colorCache() const;
     [[nodiscard]] QString todoDueDateDisplayString(const KCalendarCore::Todo::Ptr todo, const DueDateDisplayFormat format) const;
 
