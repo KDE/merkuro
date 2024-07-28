@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:40+0000\n"
+"POT-Creation-Date: 2024-07-28 00:41+0000\n"
 "PO-Revision-Date: 2024-07-20 16:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1828,7 +1828,7 @@ msgid "Enter email of recipient..."
 msgstr "Saisir le courriel du destinataire..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:138
+#: mail/qml/MailComposer.qml:140
 #, kde-format
 msgid "Send"
 msgstr "Envoyer"
@@ -3146,22 +3146,23 @@ msgstr "Nouveau courriel..."
 msgid "Check Mail"
 msgstr "Vérifier votre courriel"
 
-#: mail/mailclient.cpp:48 mail/mailclient.cpp:74
-#, kde-format
-msgid "There are no attendees to e-mail"
+#: mail/mailclient.cpp:49 mail/mailclient.cpp:75
+#, fuzzy, kde-format
+#| msgid "There are no attendees to e-mail"
+msgid "There are no recipients to e-mail"
 msgstr "Il n'y a aucun participant à qui envoyer un courriel"
 
-#: mail/mailclient.cpp:93
+#: mail/mailclient.cpp:94
 #, kde-format
 msgid "Error creating transport"
 msgstr "Erreur de création de transport"
 
-#: mail/mailclient.cpp:186
+#: mail/mailclient.cpp:187
 #, kde-format
 msgid "Error loading transport"
 msgstr "Erreur de chargement de transport"
 
-#: mail/mailclient.cpp:203
+#: mail/mailclient.cpp:204
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "Message d'erreur de mise en file d'attente dans la boîte d'envoi : %1"
@@ -3370,37 +3371,37 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nouveau message"
 
-#: mail/qml/MailComposer.qml:29
+#: mail/qml/MailComposer.qml:31
 #, kde-format
 msgid "From:"
 msgstr "De :"
 
-#: mail/qml/MailComposer.qml:40
+#: mail/qml/MailComposer.qml:42
 #, kde-format
 msgid "Identity:"
 msgstr "Identité :"
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "To:"
 msgstr "À :"
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "CC:"
 msgstr "CC :"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "BCC:"
 msgstr "BCC :"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Reply-To:"
 msgstr "Répondre à :"
 
-#: mail/qml/MailComposer.qml:89
+#: mail/qml/MailComposer.qml:91
 #, kde-format
 msgid "Subject:"
 msgstr "Sujet :"

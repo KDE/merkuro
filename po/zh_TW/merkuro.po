@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 00:40+0000\n"
+"POT-Creation-Date: 2024-07-28 00:41+0000\n"
 "PO-Revision-Date: 2024-07-23 22:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1806,7 +1806,7 @@ msgid "Enter email of recipient..."
 msgstr "輸入收件人的電子郵件地址..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:138
+#: mail/qml/MailComposer.qml:140
 #, kde-format
 msgid "Send"
 msgstr "傳送"
@@ -3106,22 +3106,23 @@ msgstr "撰寫郵件…"
 msgid "Check Mail"
 msgstr "查看郵件"
 
-#: mail/mailclient.cpp:48 mail/mailclient.cpp:74
-#, kde-format
-msgid "There are no attendees to e-mail"
+#: mail/mailclient.cpp:49 mail/mailclient.cpp:75
+#, fuzzy, kde-format
+#| msgid "There are no attendees to e-mail"
+msgid "There are no recipients to e-mail"
 msgstr "沒有能夠傳送電子郵件的參加者"
 
-#: mail/mailclient.cpp:93
+#: mail/mailclient.cpp:94
 #, kde-format
 msgid "Error creating transport"
 msgstr "建立傳輸時發生錯誤"
 
-#: mail/mailclient.cpp:186
+#: mail/mailclient.cpp:187
 #, kde-format
 msgid "Error loading transport"
 msgstr "載入傳輸時發生錯誤"
 
-#: mail/mailclient.cpp:203
+#: mail/mailclient.cpp:204
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "將信件放入寄件匣時發生錯誤：%1"
@@ -3328,37 +3329,37 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "新信件"
 
-#: mail/qml/MailComposer.qml:29
+#: mail/qml/MailComposer.qml:31
 #, kde-format
 msgid "From:"
 msgstr "寄件者："
 
-#: mail/qml/MailComposer.qml:40
+#: mail/qml/MailComposer.qml:42
 #, kde-format
 msgid "Identity:"
 msgstr "身分："
 
-#: mail/qml/MailComposer.qml:66
+#: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "To:"
 msgstr "收件者："
 
-#: mail/qml/MailComposer.qml:67
+#: mail/qml/MailComposer.qml:69
 #, kde-format
 msgid "CC:"
 msgstr "副本："
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "BCC:"
 msgstr "密件副本："
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Reply-To:"
 msgstr "回覆地址："
 
-#: mail/qml/MailComposer.qml:89
+#: mail/qml/MailComposer.qml:91
 #, kde-format
 msgid "Subject:"
 msgstr "主旨："
