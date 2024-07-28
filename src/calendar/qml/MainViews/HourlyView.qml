@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import Qt5Compat.GraphicalEffects
 
 import org.kde.merkuro.calendar as Calendar
 import org.kde.merkuro.components

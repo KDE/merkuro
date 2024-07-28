@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQml.Models 2.15
 import Qt.labs.platform
-import Qt5Compat.GraphicalEffects
 
 import "dateutils.js" as DateUtils
 import "labelutils.js" as LabelUtils
