@@ -17,9 +17,9 @@ DateTimeState::DateTimeState(QObject *parent)
         Q_EMIT currentDateChanged();
 
         // Repeat timer
-        timer->start(60 * 1000ms);
+        timer->start(60s);
     });
-    timer->start(60 * 1000ms);
+    timer->start(60s);
 }
 
 void DateTimeState::selectPreviousMonth()
