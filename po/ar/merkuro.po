@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-28 02:34+0000\n"
-"PO-Revision-Date: 2024-06-13 09:11+0400\n"
+"POT-Creation-Date: 2024-07-29 02:34+0000\n"
+"PO-Revision-Date: 2024-07-28 12:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -408,6 +408,7 @@ msgid "Complex recurrence rule"
 msgstr "قاعدة تكرار معقدة"
 
 #: calendar/qml/CalendarUtils/labelutils.js:118
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:35
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"
@@ -1359,11 +1360,10 @@ msgid "Configure"
 msgstr "اضبط"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
-#, fuzzy, kde-format
-#| msgid "Undo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
-msgstr "تراجع: "
+msgstr "تراجع: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
@@ -1371,11 +1371,10 @@ msgid "Undo"
 msgstr "تراجع"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
-#, fuzzy, kde-format
-#| msgid "Redo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
-msgstr "كرّر: "
+msgstr "كرّر: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
 #, kde-format
@@ -3507,15 +3506,13 @@ msgid "Modify or delete this account agent."
 msgstr "عدّل أو احذف وكيل الحساب."
 
 #: quick/qml/AgentConfigurationForm.qml:47
-#, fuzzy, kde-format
-#| msgid "Modify"
+#, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "عدّل"
 
 #: quick/qml/AgentConfigurationForm.qml:56
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "احذف"
