@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-28 00:41+0000\n"
-"PO-Revision-Date: 2024-06-13 09:11+0400\n"
+"POT-Creation-Date: 2024-07-29 00:40+0000\n"
+"PO-Revision-Date: 2024-07-28 12:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -115,13 +115,13 @@ msgid "To Date…"
 msgstr "إلى التاريخ…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayMouseArea.qml:51 calendar/qml/main.qml:270
+#: calendar/qml/Controls/DayMouseArea.qml:51 calendar/qml/main.qml:269
 #, kde-format
 msgid "New Event…"
 msgstr "حدث جديد..."
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayMouseArea.qml:56 calendar/qml/main.qml:276
+#: calendar/qml/Controls/DayMouseArea.qml:56 calendar/qml/main.qml:275
 #, kde-format
 msgid "New Task…"
 msgstr "مهمة جديدة…"
@@ -408,6 +408,7 @@ msgid "Complex recurrence rule"
 msgstr "قاعدة تكرار معقدة"
 
 #: calendar/qml/CalendarUtils/labelutils.js:118
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:35
 #, kde-format
 msgid "Unknown"
 msgstr "مجهول"
@@ -1359,11 +1360,10 @@ msgid "Configure"
 msgstr "اضبط"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
-#, fuzzy, kde-format
-#| msgid "Undo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
-msgstr "تراجع: "
+msgstr "تراجع: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
@@ -1371,11 +1371,10 @@ msgid "Undo"
 msgstr "تراجع"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
-#, fuzzy, kde-format
-#| msgid "Redo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
-msgstr "كرّر: "
+msgstr "كرّر: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
 #, kde-format
@@ -1488,38 +1487,38 @@ msgstr "أزل"
 msgid "Return to Location"
 msgstr "ارجع للموقع"
 
-#: calendar/qml/main.qml:265 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:264 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:64
 #, kde-format
 msgid "Create"
 msgstr "أنشئ"
 
-#: calendar/qml/main.qml:285
+#: calendar/qml/main.qml:284
 #, kde-format
 msgid "Month"
 msgstr "الشهر"
 
-#: calendar/qml/main.qml:288
+#: calendar/qml/main.qml:287
 #, kde-format
 msgid "Week"
 msgstr "الأسبوع"
 
-#: calendar/qml/main.qml:291
+#: calendar/qml/main.qml:290
 #, kde-format
 msgid "3 Days"
 msgstr "3 الأيام"
 
-#: calendar/qml/main.qml:294
+#: calendar/qml/main.qml:293
 #, kde-format
 msgid "Day"
 msgstr "اليوم"
 
-#: calendar/qml/main.qml:297
+#: calendar/qml/main.qml:296
 #, kde-format
 msgid "Schedule"
 msgstr "الجدولة"
 
-#: calendar/qml/main.qml:300 calendar/qml/MainViews/TodoView.qml:52
+#: calendar/qml/main.qml:299 calendar/qml/MainViews/TodoView.qml:52
 #, kde-format
 msgid "Tasks"
 msgstr "المهامّ"
@@ -1593,34 +1592,34 @@ msgstr "شغال بطول اليوم"
 msgid "<b>Today</b>"
 msgstr "<b>اليوم</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:46
+#: calendar/qml/MainViews/HourlyView.qml:45
 #, kde-format
 msgid "Previous Week"
 msgstr "الأسبوع السابق"
 
-#: calendar/qml/MainViews/HourlyView.qml:53
+#: calendar/qml/MainViews/HourlyView.qml:52
 #, kde-format
 msgid "Next Week"
 msgstr "الأسبوع القادم"
 
-#: calendar/qml/MainViews/HourlyView.qml:60
+#: calendar/qml/MainViews/HourlyView.qml:59
 #, kde-format
 msgid "Now"
 msgstr "الآن"
 
-#: calendar/qml/MainViews/HourlyView.qml:98
+#: calendar/qml/MainViews/HourlyView.qml:97
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "الأسبوع"
 
-#: calendar/qml/MainViews/HourlyView.qml:106
+#: calendar/qml/MainViews/HourlyView.qml:105
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 الأيام"
 
-#: calendar/qml/MainViews/HourlyView.qml:113
+#: calendar/qml/MainViews/HourlyView.qml:112
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -1887,7 +1886,7 @@ msgid "Enter email of recipient..."
 msgstr "ادخل البريد الإلكتروني للمستلم..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:144
 #, kde-format
 msgid "Send"
 msgstr "أرسل"
@@ -2613,78 +2612,78 @@ msgstr "تغذية المدوّنة"
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:22
 #, kde-format
 msgid "Organization"
 msgstr "المنظّمة"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:26
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:25
 #, kde-format
 msgctxt "Placeholder value for name of Organization"
 msgid "KDE"
 msgstr "كِيدِي"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:33
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:32
 #, kde-format
 msgid "Profession"
 msgstr "المهنة"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:36
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:35
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
 msgstr "مطور برمجيات"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:43
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:42
 #, kde-format
 msgid "Title"
 msgstr "العنوان"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:46
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:45
 #, kde-format
 msgctxt "Placeholder value for Title"
 msgid "SDE-1"
 msgstr "م. نظم-1"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:53
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:52
 #, kde-format
 msgid "Department"
 msgstr "القسم"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:56
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:55
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
 msgstr "فريق ميركورو"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:63
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:62
 #, kde-format
 msgid "Office"
 msgstr "المكتب"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:66
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:65
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
 msgstr "جناح الأخضر، الطابق الرابع"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:73
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:72
 #, kde-format
 msgid "Manager's Name"
 msgstr "اسم المدير"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:76
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:75
 #, kde-format
 msgctxt "Placeholder value for Manager's Name"
 msgid "Bob"
 msgstr "خزيمة الأنصاري"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:83
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:82
 #, kde-format
 msgid "Assistant's Name"
 msgstr "اسم المساعد"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:86
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:85
 #, kde-format
 msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
@@ -2843,11 +2842,10 @@ msgid "protocol:person@example.com"
 msgstr "protocol:person@example.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partner's name"
-msgstr "اسم الشّريك:"
+msgstr "اسم الشّريك"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3121,8 +3119,7 @@ msgid "Manager's name:"
 msgstr "اسم المدير:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, fuzzy, kde-format
-#| msgid "Assistants's name:"
+#, kde-format
 msgid "Assistant's name:"
 msgstr "اسم المساعد:"
 
@@ -3206,10 +3203,9 @@ msgid "Check Mail"
 msgstr "التمس البريد"
 
 #: mail/mailclient.cpp:49 mail/mailclient.cpp:75
-#, fuzzy, kde-format
-#| msgid "There are no attendees to e-mail"
+#, kde-format
 msgid "There are no recipients to e-mail"
-msgstr "لا حضور للبريد الإلكتروني"
+msgstr "لا يوجد مستلمون لإرسال البريد الإلكتروني إليهم"
 
 #: mail/mailclient.cpp:94
 #, kde-format
@@ -3428,37 +3424,37 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "رسالة جديدة"
 
-#: mail/qml/MailComposer.qml:31
+#: mail/qml/MailComposer.qml:35
 #, kde-format
 msgid "From:"
 msgstr "من:"
 
-#: mail/qml/MailComposer.qml:42
+#: mail/qml/MailComposer.qml:46
 #, kde-format
 msgid "Identity:"
 msgstr "الهويّة:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "To:"
 msgstr "إلى:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "CC:"
 msgstr "ن‌ك:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:74
 #, kde-format
 msgid "BCC:"
 msgstr "ن‌ك‌ع:"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:75
 #, kde-format
 msgid "Reply-To:"
 msgstr "رُد إلى:"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:95
 #, kde-format
 msgid "Subject:"
 msgstr "الموضوع:"
@@ -3510,15 +3506,13 @@ msgid "Modify or delete this account agent."
 msgstr "عدّل أو احذف وكيل الحساب."
 
 #: quick/qml/AgentConfigurationForm.qml:47
-#, fuzzy, kde-format
-#| msgid "Modify"
+#, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "عدّل"
 
 #: quick/qml/AgentConfigurationForm.qml:56
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "احذف"
