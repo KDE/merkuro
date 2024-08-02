@@ -5,7 +5,6 @@
 #include <KAuthorized>
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QDebug>
 #include <QGuiApplication>
 

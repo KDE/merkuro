@@ -9,7 +9,6 @@
 
 #include "mailclient.h"
 #include "../config-merkuro.h"
-#include "mailheadermodel.h"
 #include "merkuro_mail_debug.h"
 
 #include <KEmailAddress>

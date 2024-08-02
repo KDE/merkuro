@@ -29,7 +29,6 @@
 #include <KLocalizedString>
 #include <KMbox/MBox>
 #include <KMime/Message>
-#include <MailCommon/EntityCollectionOrderProxyModel>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
 #include <MailCommon/MailUtil>
