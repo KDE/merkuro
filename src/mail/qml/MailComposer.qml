@@ -23,10 +23,6 @@ Kirigami.ScrollablePage {
         id: mailClient
     }
 
-    MailClient {
-        id: mailClient
-    }
-
     GridLayout {
         columns: 2
         anchors.fill: parent
