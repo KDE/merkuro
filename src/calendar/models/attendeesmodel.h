@@ -5,6 +5,7 @@
 
 #include <KCalendarCore/Calendar>
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 /**
  *
  */
@@ -33,6 +34,7 @@ private:
 class AttendeesModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(KCalendarCore::Incidence::Ptr incidencePtr READ incidencePtr WRITE setIncidencePtr NOTIFY incidencePtrChanged)
     Q_PROPERTY(KCalendarCore::Attendee::List attendees READ attendees NOTIFY attendeesChanged)
     Q_PROPERTY(AttendeeStatusModel *attendeeStatusModel READ attendeeStatusModel NOTIFY attendeeStatusModelChanged)
