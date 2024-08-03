@@ -992,7 +992,7 @@ Kirigami.ScrollablePage {
                                         text: model.name
                                         onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
                                                                                                     text,
-                                                                                                    AttendeesModel.NameRole)
+                                                                                                    Calendar.AttendeesModel.NameRole)
                                     }
 
                                     QQC2.Button {
@@ -1017,7 +1017,7 @@ Kirigami.ScrollablePage {
                                         text: model.email
                                         onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
                                                                                                     text,
-                                                                                                    AttendeesModel.EmailRole)
+                                                                                                    Calendar.AttendeesModel.EmailRole)
                                     }
                                     QQC2.Label {
                                         Layout.row: 2
@@ -1036,7 +1036,7 @@ Kirigami.ScrollablePage {
                                         currentIndex: status // role of parent
                                         onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
                                                                                                             currentValue,
-                                                                                                            AttendeesModel.StatusRole)
+                                                                                                            Calendar.AttendeesModel.StatusRole)
 
                                         popup.z: 1000
                                         visible: root.editMode
@@ -1050,7 +1050,7 @@ Kirigami.ScrollablePage {
                                         checked: model.rsvp
                                         onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
                                                                                                        checked,
-                                                                                                       AttendeesModel.RSVPRole)
+                                                                                                       Calendar.AttendeesModel.RSVPRole)
                                         visible: root.editMode
                                     }
                                 }
