@@ -102,6 +102,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     WindowSystem
     XmlGui
     Notifications
+    Crash
 )
 find_package(KF6KirigamiAddons 1.4.0 REQUIRED)
 find_package(Gpgme REQUIRED)

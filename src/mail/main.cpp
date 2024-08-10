@@ -4,6 +4,7 @@
 #include "../config-merkuro.h"
 #include "messagehandler.h"
 #include <KAboutData>
+#include <KCrash>
 #include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
@@ -78,6 +79,7 @@ int main(int argc, char *argv[])
                         QStringLiteral("claudio.cambra@gmail.com"),
                         QStringLiteral("https://claudiocambra.com"));
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.merkuro.mail")));
 
     QCommandLineParser parser;

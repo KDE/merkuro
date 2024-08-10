@@ -155,6 +155,7 @@ target_link_libraries(merkuro-contact
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
+	KF6::Crash
         merkuro_contact_plugin
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

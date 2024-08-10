@@ -7,6 +7,7 @@
 #include <KAboutData>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KCrash>
 #include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
@@ -88,6 +89,7 @@ int main(int argc, char *argv[])
                         QStringLiteral("kinofhek@gmail.com"),
                         QStringLiteral("https://fhek.gitlab.io"));
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.merkuro.calendar")));
 
     QCommandLineParser parser;

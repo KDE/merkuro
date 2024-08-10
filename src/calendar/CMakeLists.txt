@@ -62,6 +62,7 @@ target_link_libraries(merkuro_calendar_static PUBLIC
     Qt::DBus
     KF6::WindowSystem
     KF6::Contacts
+    KF6::Crash
     KPim6::AkonadiCalendar
     KPim6::AkonadiContactCore
     KPim6::AkonadiWidgets
