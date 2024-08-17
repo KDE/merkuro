@@ -181,10 +181,6 @@ target_include_directories(merkuro_calendar_static PRIVATE ${CMAKE_CURRENT_SOURC
 
 set_source_files_properties(models/todosortfilterproxymodel.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
 
-if(BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()
-
 #### Binary
 
 add_executable(merkuro-calendar
@@ -209,3 +205,9 @@ target_link_libraries(merkuro-calendar
 install(TARGETS merkuro-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.calendar.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+
+# autotests
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()

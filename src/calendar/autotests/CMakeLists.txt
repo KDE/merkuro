@@ -32,3 +32,8 @@ if(UNIX)
     add_akonadi_isolated_test_advanced(incidenceoccurrencemodeltest incidenceoccurrencemodeltest.cpp merkuro_calendar_static Qt::Test)
     add_akonadi_isolated_test_advanced(todosortfilterproxymodeltest todosortfilterproxymodeltest.cpp merkuro_calendar_static Qt::Test)
 endif()
+
+# verify QML code
+if (TARGET merkuro-calendar)
+    add_test(NAME merkuro-calendar-self-text COMMAND merkuro-calendar --self-test)
+endif()
