@@ -123,7 +123,7 @@ public:
      * Loads the @p contact into the editor.
      */
     Q_INVOKABLE void setItem(const Akonadi::Item &contact);
-    Akonadi::Item item() const;
+    [[nodiscard]] Akonadi::Item item() const;
 
     /**
      * Save the contact from the editor back to the storage. And return error.

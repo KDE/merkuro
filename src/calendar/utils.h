@@ -16,7 +16,7 @@ class Utils : public QObject
 public:
     explicit Utils(QObject *parent = nullptr);
 
-    QStringList hourlyViewLocalisedHourLabels() const;
+    [[nodiscard]] QStringList hourlyViewLocalisedHourLabels() const;
 
     Q_INVOKABLE QDateTime addDaysToDate(const QDateTime &date, const int days);
 

@@ -20,7 +20,7 @@ Q_SIGNALS:
     void mouseButtonReleased(Qt::MouseButton button);
 
 protected:
-    bool eventFilter(QObject *watched, QEvent *event) override;
+    [[nodiscard]] bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     explicit MouseTracker(QObject *parent = nullptr);

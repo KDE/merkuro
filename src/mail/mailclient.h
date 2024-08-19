@@ -62,7 +62,7 @@ public:
     explicit MailClient(QObject *parent = nullptr);
     ~MailClient() override;
 
-    MailHeaderModel *headerModel() const;
+    [[nodiscard]] MailHeaderModel *headerModel() const;
 
     Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body);
 

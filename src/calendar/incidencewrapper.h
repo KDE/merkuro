@@ -138,7 +138,7 @@ public:
     void setDescription(const QString &description);
     [[nodiscard]] QString location() const;
     void setLocation(const QString &location);
-    bool hasGeo() const;
+    [[nodiscard]] bool hasGeo() const;
     [[nodiscard]] float geoLatitude() const;
     [[nodiscard]] float geoLongitude() const;
 
@@ -171,7 +171,7 @@ public:
     Q_INVOKABLE void setRecurrenceDataItem(const QString &key, const QVariant &value);
 
     QVariantMap organizer();
-    KCalendarCore::Attendee::List attendees() const;
+    [[nodiscard]] KCalendarCore::Attendee::List attendees() const;
 
     AttendeesModel *attendeesModel();
     RecurrenceExceptionsModel *recurrenceExceptionsModel();

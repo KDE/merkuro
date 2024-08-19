@@ -35,7 +35,7 @@ public:
     Q_INVOKABLE void setValue(int row, const QString &value);
     Q_INVOKABLE void setType(int row, const Header type);
 
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
 private:
     struct HeaderItem {

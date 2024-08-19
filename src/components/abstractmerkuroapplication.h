@@ -21,7 +21,7 @@ public:
     explicit AbstractMerkuroApplication(QObject *parent = nullptr);
     void toggleMenubar();
 
-    bool menubarVisible() const;
+    [[nodiscard]] bool menubarVisible() const;
 
 Q_SIGNALS:
     void openSettings();
