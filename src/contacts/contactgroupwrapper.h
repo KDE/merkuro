@@ -29,7 +29,7 @@ public:
     QAbstractListModel *model() const;
 
 protected:
-    virtual void itemChanged(const Akonadi::Item &item) override;
+    void itemChanged(const Akonadi::Item &item) override;
 
 Q_SIGNALS:
     void nameChanged();
