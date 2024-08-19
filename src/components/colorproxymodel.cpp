@@ -83,7 +83,7 @@ QVariant ColorProxyModel::data(const QModelIndex &index, int role) const
             return i18nc("@item this is the default calendar", "%1 (Default)", collection.displayName());
         }
     } else if (role == Qt::BackgroundRole) {
-        auto color = getCollectionColor(Akonadi::CollectionUtils::fromIndex(index));
+        const auto color = getCollectionColor(Akonadi::CollectionUtils::fromIndex(index));
         // Otherwise QML will get black
         if (color.isValid()) {
             return color;
