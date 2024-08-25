@@ -76,6 +76,7 @@ target_sources(merkuro_contact_plugin PRIVATE
 
 ecm_add_qml_module(merkuro_contact_plugin
     URI "org.kde.merkuro.contact"
+    GENERATE_PLUGIN_SOURCE
     RESOURCES
         resources/fallbackBackground.png
 )
