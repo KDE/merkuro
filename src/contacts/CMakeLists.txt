@@ -75,11 +75,6 @@ ecm_add_qml_module(merkuro_contact_plugin
         resources/fallbackBackground.png
 )
 
-target_sources(merkuro_contact_plugin PRIVATE
-    contactplugin.cpp
-    contactplugin.h
-)
-
 ecm_target_qml_sources(merkuro_contact_plugin SOURCES
     qml/ContactChooserPage.qml
     qml/AddressBookCollectionHandler.qml
@@ -155,7 +150,6 @@ target_link_libraries(merkuro-contact
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
-        merkuro_contact_plugin
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
