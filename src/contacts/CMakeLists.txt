@@ -18,9 +18,9 @@ target_link_libraries(merkuro_contact_static PUBLIC KF6::ConfigGui Qt6::Qml)
 
 ### Contact QML Plugin lib
 
-add_library(merkuro_contact_plugin SHARED)
+add_library(merkuro_contact SHARED)
 
-target_link_libraries(merkuro_contact_plugin PUBLIC
+target_link_libraries(merkuro_contact PUBLIC
     KF6::XmlGui
     KF6::Contacts
     KPim6::AkonadiWidgets
@@ -31,8 +31,8 @@ target_link_libraries(merkuro_contact_plugin PUBLIC
 
 
 
-set_target_properties(merkuro_contact_plugin PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_sources(merkuro_contact_plugin PUBLIC
+set_target_properties(merkuro_contact PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_sources(merkuro_contact PUBLIC
     contactapplication.cpp
     contactapplication.h
     addresseewrapper.cpp
@@ -67,12 +67,6 @@ target_sources(merkuro_contact_plugin PUBLIC
     attributes/contactmetadataattribute.cpp
     attributes/attributeregistrar.cpp
 )
-
-target_sources(merkuro_contact_plugin PRIVATE
-    contactplugin.cpp
-    contactplugin.h
-)
-
 
 ecm_add_qml_module(merkuro_contact_plugin
     URI "org.kde.merkuro.contact"
@@ -118,6 +112,7 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/contact_editor/InstantMessengerEditorCard.qml
 )
 
+target_link_libraries(merkuro_contact_plugin PRIVATE merkuro_contact)
 
 ecm_qt_install_logging_categories(
     EXPORT MERKURO
@@ -132,16 +127,15 @@ endif()
 add_subdirectory(applet)
 
 ecm_finalize_qml_module(merkuro_contact_plugin
-    DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS ON)
+    DESTINATION ${KDE_INSTALL_QMLDIR})
 
-set_target_properties(merkuro_contact_plugin PROPERTIES
+set_target_properties(merkuro_contact PROPERTIES
     VERSION     ${PROJECT_VERSION}
     SOVERSION   6
     EXPORT_NAME "merkuro_contact_plugin"
 )
 
-install(TARGETS merkuro_contact_plugin EXPORT MerkuroComponents ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS merkuro_contact EXPORT MerkuroComponents ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 #### Binary
 
@@ -157,7 +151,6 @@ target_link_libraries(merkuro-contact
         KF6::WindowSystem
         KF6::ConfigGui
 	KF6::Crash
-        merkuro_contact_plugin
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
