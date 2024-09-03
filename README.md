@@ -87,7 +87,7 @@ For the time being, no.
 
 Kontact has an incredibly expansive feature set, which makes it a powerful tool for power users. Merkuro is instead focused on providing an approachable PIM suite for Plasma. You can expect great usability and a visually appealing interface that works on both desktop and mobile.
 
-The intention is for the two suites to co-exist and for you to have the choice of using the one best suited to your needs. If you really need the advanced and expansive feature-set of Kontaxt, you will want to use that. If you want a versatile app set that is nice to use and you can comfortably use on your desktop and on your phone, Merkuro will fill that role well!
+The intention is for the two suites to co-exist and for you to have the choice of using the one best suited to your needs. If you really need the advanced and expansive feature-set of Kontact, you will want to use that. If you want a versatile app set that is nice to use and you can comfortably use on your desktop and on your phone, Merkuro will fill that role well!
 
 #### Will there be a flatpak?
 
