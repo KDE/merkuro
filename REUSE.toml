@@ -1,0 +1,27 @@
+version = 1
+SPDX-PackageName = "Kalendar"
+SPDX-PackageSupplier = "Claudio Cambra <claudio.cambra@gmail.com>"
+
+[[annotations]]
+path = ["logo.png", "org.kde.merkuro.svg", "icons/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021 Áron Kovács <aronkvh@gmail.com>"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = ["src/contacts/resources/fallbackBackground.png", "src/contacts/applet/package/contents/resources/fallbackBackground.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Jonah Brüchert <jbb.prv@gmx.de>"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+[[annotations]]
+path = "src/contacts/qml/qmldir"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Carl Schwan <carl@carlschwan.eu>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["mimetreeparser/autotests/data/**", "src/mail/mimetreeparser/tests/gnupg_home/**", "src/mail/mime/testdata/**", "src/mail/mimetreeparser/testdata/**", "readme-build-ftime.txt", "src/mail/merkuro.mail.notifyrc"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
