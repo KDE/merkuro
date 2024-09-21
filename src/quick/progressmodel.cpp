@@ -180,3 +180,5 @@ void ProgressModel::cancelItem(const QString &itemId)
 
     (*item)->cancel();
 }
+
+#include "moc_progressmodel.cpp"
