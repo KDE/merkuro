@@ -23,7 +23,6 @@ public:
         flatTagModel->setSourceModel(new Akonadi::TagModel(monitor));
         setSourceModel(flatTagModel);
 
-        setDynamicSortFilter(true);
         sort(0);
     }
 

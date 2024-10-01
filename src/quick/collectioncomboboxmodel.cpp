@@ -42,7 +42,6 @@ public:
         // Display color
         auto colorProxy = new ColorProxyModel(mParent);
         colorProxy->setObjectName(QLatin1StringView("Show collection colors"));
-        colorProxy->setDynamicSortFilter(true);
         colorProxy->setSourceModel(entityModel);
 
         // Flatten the tree, e.g.

@@ -47,7 +47,6 @@ ContactManager::ContactManager(QObject *parent)
     , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
 {
     // Sidebar collection model
-    m_collectionTree->setDynamicSortFilter(true);
     m_collectionTree->setSortCaseSensitivity(Qt::CaseInsensitive);
     m_collectionTree->setSourceModel(GlobalContactModel::instance()->model());
     m_collectionTree->addMimeTypeInclusionFilter(Akonadi::Collection::mimeType());
@@ -72,7 +71,6 @@ ContactManager::ContactManager(QObject *parent)
     m_colorProxy = new ColorProxyModel(this);
     m_colorProxy->setSourceModel(sortedModel);
     m_colorProxy->setObjectName(QLatin1StringView("Show contact colors"));
-    m_colorProxy->setDynamicSortFilter(true);
     m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
     connect(contactConfig, &ContactConfig::lastUsedAddressBookCollectionChanged, this, [this, contactConfig]() {
         m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());

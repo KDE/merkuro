@@ -27,7 +27,6 @@ ContactsModel::ContactsModel(QObject *parent)
     addresseeOnlyModel->addMimeTypeInclusionFilter(KContacts::Addressee::mimeType());
 
     setSourceModel(addresseeOnlyModel);
-    setDynamicSortFilter(true);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     sort(0);
 }

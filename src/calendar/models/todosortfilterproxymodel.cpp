@@ -17,7 +17,6 @@ TodoSortFilterProxyModel::TodoSortFilterProxyModel(QObject *parent)
     m_baseTodoModel->setSourceModel(m_todoTreeModel.data());
     setSourceModel(m_baseTodoModel.data());
 
-    setDynamicSortFilter(true);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 

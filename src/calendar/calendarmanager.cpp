@@ -108,7 +108,6 @@ public:
     explicit CollectionFilter(QObject *parent = nullptr)
         : QSortFilterProxyModel(parent)
     {
-        setDynamicSortFilter(true);
     }
 
 protected:
@@ -140,7 +139,6 @@ CalendarManager::CalendarManager(QObject *parent)
 
     auto colorProxy = new ColorProxyModel(this);
     colorProxy->setObjectName(QLatin1StringView("Show calendar colors"));
-    colorProxy->setDynamicSortFilter(true);
     colorProxy->setStandardCollectionId(m_config->lastUsedEventCollection());
 
     connect(m_config, &CalendarConfig::lastUsedEventCollectionChanged, this, [this, colorProxy]() {
