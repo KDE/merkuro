@@ -12,6 +12,8 @@ class EmailModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
 
+    Q_PROPERTY(QStringList emails READ emails NOTIFY emailsChanged)
+
 public:
     enum ExtraRole {
         TypeRole = Qt::UserRole + 1,
@@ -35,7 +37,10 @@ public:
     Q_INVOKABLE void addEmail(const QString &email, EmailModel::Type type);
     Q_INVOKABLE void deleteEmail(int row);
 
+    QStringList emails() const;
+
 Q_SIGNALS:
+    void emailsChanged();
     void changed(const KContacts::Email::List &emails);
 
 private:

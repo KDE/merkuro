@@ -20,6 +20,8 @@
 #include <KIconTheme>
 #endif
 
+#include <Libkleo/KeyCache>
+
 #define HAVE_STYLE_MANAGER __has_include(<KStyleManager>)
 #if HAVE_STYLE_MANAGER
 #include <KStyleManager>
@@ -105,6 +107,9 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
+
+    auto keyCache = Kleo::KeyCache::mutableInstance();
+    keyCache->startKeyListing();
 
     return app.exec();
 }

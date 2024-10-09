@@ -27,9 +27,10 @@ target_link_libraries(merkuro_contact PUBLIC
     KPim6::AkonadiContactCore
     MerkuroComponents
     merkuro_contact_static
+    Gpgmepp
+    QGpgmeQt6
+    KPim6::Libkleo
 )
-
-
 
 set_target_properties(merkuro_contact PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_sources(merkuro_contact PUBLIC
@@ -47,6 +48,8 @@ target_sources(merkuro_contact PUBLIC
     emailmodel.cpp
     globalcontactmodel.cpp
     globalcontactmodel.h
+    certificatesmodel.cpp
+    certificatesmodel.h
     contactmanager.h
     contactmanager.cpp
     contactcollectionmodel.cpp
@@ -112,7 +115,9 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/contact_editor/InstantMessengerEditorCard.qml
 )
 
-target_link_libraries(merkuro_contact_plugin PRIVATE merkuro_contact)
+target_link_libraries(merkuro_contact_plugin PRIVATE
+    merkuro_contact
+)
 
 ecm_qt_install_logging_categories(
     EXPORT MERKURO
@@ -150,7 +155,8 @@ target_link_libraries(merkuro-contact
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
-	KF6::Crash
+        KF6::Crash
+        KPim6::Libkleo
 )
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})

@@ -354,4 +354,84 @@ FormCard.FormCardPage {
             }
         }
     }
+
+    FormCard.FormHeader {
+        visible: certificateRepeater.count > 0
+        title: i18nc("@title:group", "Cryptographic Certificates")
+    }
+
+    FormCard.FormCard {
+        visible: certificateRepeater.count > 0
+        Repeater {
+            id: certificateRepeater
+
+            model: CertificatesModel {
+                id: certificatesModel
+
+                emails: addressee.emailModel.emails
+            }
+            delegate: FormCard.AbstractFormDelegate {
+                id: certificateDelegate
+
+                required property int index
+                required property string displayName
+                required property string fingerprint
+                required property string fingerprintAccess
+                required property var tags
+
+                text: displayName
+                Accessible.description: fingerprintAccess
+
+                onClicked: certificatesModel.openKleopatra(index, QQC2.ApplicationWindow.window)
+
+                contentItem: RowLayout {
+                    spacing: 0
+
+                    ColumnLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: certificateDelegate.text
+                            elide: Text.ElideRight
+                            wrapMode: Text.Wrap
+                            maximumLineCount: 2
+                            Accessible.ignored: true // base class sets this text on root already
+                        }
+
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: certificateDelegate.fingerprint
+                            color: Kirigami.Theme.disabledTextColor
+                            elide: Text.ElideRight
+                            wrapMode: Text.Wrap
+                            Accessible.ignored: true // base class sets this text on root already
+                        }
+
+                        Flow {
+                            Layout.fillWidth: true
+
+                            spacing: Kirigami.Units.smallSpacing
+
+                            Repeater {
+                                model: certificateDelegate.tags
+
+                                Kirigami.Chip {
+                                    text: modelData
+                                    closable: false
+                                }
+                            }
+                        }
+                    }
+
+                    FormCard.FormArrow {
+                        Layout.leftMargin: Kirigami.Units.smallSpacing
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        direction: Qt.RightArrow
+                    }
+                }
+            }
+        }
+    }
 }

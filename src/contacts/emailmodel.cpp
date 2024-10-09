@@ -14,6 +14,8 @@ void EmailModel::loadContact(const KContacts::Addressee &contact)
     beginResetModel();
     m_emails = contact.emailList();
     endResetModel();
+
+    Q_EMIT emailsChanged();
 }
 
 void EmailModel::storeContact(KContacts::Addressee &contact) const
@@ -25,6 +27,15 @@ int EmailModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return m_emails.count();
+}
+
+QStringList EmailModel::emails() const
+{
+    QStringList emails;
+    for (const auto &email : m_emails) {
+        emails << email.mail();
+    }
+    return emails;
 }
 
 QVariant EmailModel::data(const QModelIndex &idx, int role) const
@@ -98,6 +109,8 @@ void EmailModel::addEmail(const QString &email, Type type)
     m_emails.append(emailObject);
     endInsertRows();
     Q_EMIT changed(m_emails);
+
+    Q_EMIT emailsChanged();
 }
 
 void EmailModel::deleteEmail(int row)

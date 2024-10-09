@@ -31,6 +31,7 @@ set(MESSAGECOMPOSER_LIB_VERSION "6.2.40")
 set(KMBOX_LIB_VERSION "6.2.40")
 set(LIBKDEPIM_LIB_VERSION "6.2.40")
 set(PIMCOMMON_LIB_VERSION "6.2.40")
+set(KPIM_LIBKLEO_VERSION "6.2.40")
 
 include(FeatureSummary)
 
@@ -105,9 +106,23 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Crash
 )
 find_package(KF6KirigamiAddons 1.4.0 REQUIRED)
-find_package(Gpgme REQUIRED)
 set_package_properties(KF6QQC2DesktopStyle PROPERTIES
     TYPE RUNTIME
+)
+
+find_package(KPim6Libkleo ${KPIM_LIBKLEO_VERSION} CONFIG)
+set_package_properties(Gpgmepp PROPERTIES
+    DESCRIPTION "LibKleo Library"
+    URL "https://invent.kde.org/pim/libkleo/"
+    TYPE REQUIRED
+)
+
+find_package(Gpgmepp ${GPGME_REQUIRED_VERSION} CONFIG)
+set_package_properties(Gpgmepp PROPERTIES
+    DESCRIPTION "GpgME++ Library"
+    URL "https://www.gnupg.org"
+    TYPE REQUIRED
+    PURPOSE "GpgME++ is required for OpenPGP support"
 )
 
 find_package(KPim6MessageComposer ${MESSAGECOMPOSER_LIB_VERSION} REQUIRED)
