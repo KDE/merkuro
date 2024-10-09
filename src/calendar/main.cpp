@@ -79,7 +79,8 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
                         QStringLiteral("carl@carlschwan.eu"),
-                        QStringLiteral("https://carlschwan.eu"));
+                        QStringLiteral("https://carlschwan.eu"),
+                        QUrl(QStringLiteral("https://carlschwan.eu/avatar.png")));
     aboutData.addAuthor(i18nc("@info:credit", "Clau Cambra"),
                         i18nc("@info:credit", "Maintainer"),
                         QStringLiteral("claudio.cambra@gmail.com"),
