@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-02 00:40+0000\n"
+"POT-Creation-Date: 2024-10-10 00:40+0000\n"
 "PO-Revision-Date: 2024-03-02 18:44+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -216,38 +216,38 @@ msgstr "मेरकुरो कैलेंडर"
 msgid "Calendar Application"
 msgstr "कैलेंडर अनुप्रयोग"
 
-#: calendar/main.cpp:77 contacts/main.cpp:69 mail/main.cpp:71
+#: calendar/main.cpp:77 contacts/main.cpp:71 mail/main.cpp:71
 #, fuzzy, kde-format
 #| msgid "(c) KDE Community 2021"
 msgid "(c) KDE Community 2021-2024"
 msgstr "(c) केडीई समुदाय २०२१"
 
-#: calendar/main.cpp:79 contacts/main.cpp:71 mail/main.cpp:73
+#: calendar/main.cpp:79 contacts/main.cpp:73 mail/main.cpp:73
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल श्वान"
 
-#: calendar/main.cpp:80 calendar/main.cpp:84 contacts/main.cpp:72
-#: contacts/main.cpp:76 mail/main.cpp:74 mail/main.cpp:78
+#: calendar/main.cpp:80 calendar/main.cpp:85 contacts/main.cpp:74
+#: contacts/main.cpp:79 mail/main.cpp:74 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "प्रबंधक"
 
-#: calendar/main.cpp:83 contacts/main.cpp:75 mail/main.cpp:77
+#: calendar/main.cpp:84 contacts/main.cpp:78 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "क्लौ कैम्ब्रा"
 
-#: calendar/main.cpp:87
+#: calendar/main.cpp:88
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "फेलिपे किनोशिता"
 
-#: calendar/main.cpp:88
+#: calendar/main.cpp:89
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -2227,11 +2227,41 @@ msgctxt "@action:menu"
 msgid "Enter Full Screen"
 msgstr "पूर्ण स्क्रीन में प्रवेश करें"
 
-#: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
+#: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
 #: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgid "Home:"
 msgstr "घर :"
+
+#: contacts/certificatesmodel.cpp:84
+#, kde-format
+msgctxt "@info: shorthand for the key is revoked"
+msgid "Revoked"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:87
+#, kde-format
+msgctxt "@info: shorthand for the key is expired"
+msgid "Expired"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:90
+#, kde-format
+msgctxt "@info: shorthand for the key is disabled"
+msgid "Disabled"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:93
+#, kde-format
+msgctxt "@info: shorthand for the key is invalid"
+msgid "Invalid"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:96
+#, kde-format
+msgctxt "@info: shorthand for the key is valid"
+msgid "Valid"
+msgstr ""
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -2286,28 +2316,28 @@ msgctxt "@title:window"
 msgid "Properties of Address Book %1"
 msgstr "पता पुस्तिका %1 का गुण"
 
-#: contacts/emailmodel.cpp:39
+#: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
 msgstr "दोनों :"
 
-#: contacts/emailmodel.cpp:42
+#: contacts/emailmodel.cpp:53
 #, kde-format
 msgid "Work:"
 msgstr "कार्य :"
 
-#: contacts/emailmodel.cpp:47
+#: contacts/emailmodel.cpp:58
 #, kde-format
 msgid "Other:"
 msgstr "अन्य :"
 
-#: contacts/main.cpp:62
+#: contacts/main.cpp:64
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
 msgstr "मेरकुरो संपर्क"
 
-#: contacts/main.cpp:65
+#: contacts/main.cpp:67
 #, kde-format
 msgid "Address Book Application"
 msgstr "पता पुस्तिका अनुप्रयोग"
@@ -3065,6 +3095,12 @@ msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "ईमेल पता"
 msgstr[1] "ईमेल पते"
+
+#: contacts/qml/private/ContactPage.qml:360
+#, kde-format
+msgctxt "@title:group"
+msgid "Cryptographic Certificates"
+msgstr ""
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-02 00:40+0000\n"
+"POT-Creation-Date: 2024-10-10 00:40+0000\n"
 "PO-Revision-Date: 2024-09-07 21:17+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -215,37 +215,37 @@ msgstr "மெற்குரோ நாள்காட்டி"
 msgid "Calendar Application"
 msgstr "நாள்காட்டிச் செயலி"
 
-#: calendar/main.cpp:77 contacts/main.cpp:69 mail/main.cpp:71
+#: calendar/main.cpp:77 contacts/main.cpp:71 mail/main.cpp:71
 #, kde-format
 msgid "(c) KDE Community 2021-2024"
 msgstr "(c) கே.டீ.யீ. சமூகம் 2021-2024"
 
-#: calendar/main.cpp:79 contacts/main.cpp:71 mail/main.cpp:73
+#: calendar/main.cpp:79 contacts/main.cpp:73 mail/main.cpp:73
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "கார்ல் ஷுவான்"
 
-#: calendar/main.cpp:80 calendar/main.cpp:84 contacts/main.cpp:72
-#: contacts/main.cpp:76 mail/main.cpp:74 mail/main.cpp:78
+#: calendar/main.cpp:80 calendar/main.cpp:85 contacts/main.cpp:74
+#: contacts/main.cpp:79 mail/main.cpp:74 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "பராமரிப்பாளர்"
 
-#: calendar/main.cpp:83 contacts/main.cpp:75 mail/main.cpp:77
+#: calendar/main.cpp:84 contacts/main.cpp:78 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "க்லாவ் காம்பிரா"
 
-#: calendar/main.cpp:87
+#: calendar/main.cpp:88
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "ஃபெலிபே கினோஷ்டா"
 
-#: calendar/main.cpp:88
+#: calendar/main.cpp:89
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -2221,11 +2221,41 @@ msgctxt "@action:menu"
 msgid "Enter Full Screen"
 msgstr "முழுத்திரை முறையில் நுழை"
 
-#: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:45
+#: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
 #: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgid "Home:"
 msgstr "வீடு:"
+
+#: contacts/certificatesmodel.cpp:84
+#, kde-format
+msgctxt "@info: shorthand for the key is revoked"
+msgid "Revoked"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:87
+#, kde-format
+msgctxt "@info: shorthand for the key is expired"
+msgid "Expired"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:90
+#, kde-format
+msgctxt "@info: shorthand for the key is disabled"
+msgid "Disabled"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:93
+#, kde-format
+msgctxt "@info: shorthand for the key is invalid"
+msgid "Invalid"
+msgstr ""
+
+#: contacts/certificatesmodel.cpp:96
+#, kde-format
+msgctxt "@info: shorthand for the key is valid"
+msgid "Valid"
+msgstr ""
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -2280,28 +2310,28 @@ msgctxt "@title:window"
 msgid "Properties of Address Book %1"
 msgstr "%1 என்ற முகவரிப்புத்தகத்தின் பண்புகள்"
 
-#: contacts/emailmodel.cpp:39
+#: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
 msgstr "இரண்டும்:"
 
-#: contacts/emailmodel.cpp:42
+#: contacts/emailmodel.cpp:53
 #, kde-format
 msgid "Work:"
 msgstr "வேலை"
 
-#: contacts/emailmodel.cpp:47
+#: contacts/emailmodel.cpp:58
 #, kde-format
 msgid "Other:"
 msgstr "மற்றது:"
 
-#: contacts/main.cpp:62
+#: contacts/main.cpp:64
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Contact"
 msgstr "மெற்குரோ தொடர்பு"
 
-#: contacts/main.cpp:65
+#: contacts/main.cpp:67
 #, kde-format
 msgid "Address Book Application"
 msgstr "முகவரிப்புத்தக செயலி"
@@ -3057,6 +3087,12 @@ msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "மின்னஞ்சல் முகவரி"
 msgstr[1] "மின்னஞ்சல் முகவரிகள்"
+
+#: contacts/qml/private/ContactPage.qml:360
+#, kde-format
+msgctxt "@title:group"
+msgid "Cryptographic Certificates"
+msgstr ""
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format
