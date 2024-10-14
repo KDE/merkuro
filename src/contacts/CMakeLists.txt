@@ -158,6 +158,12 @@ target_link_libraries(merkuro-contact
         KF6::Crash
         KPim6::Libkleo
 )
+if(TARGET KF6::I18nQml)
+target_link_libraries(merkuro-contact PUBLIC
+   KF6::I18nQml
+)
+endif()
+
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.contact.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

@@ -134,6 +134,11 @@ target_link_libraries(merkuro-mail
         merkuro_mail_staticplugin
         merkuro_mail_static
 )
+if(TARGET KF6::I18nQml)
+target_link_libraries(merkuro-mail PRIVATE
+        KF6::I18nQml
+)
+endif()
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.mail.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

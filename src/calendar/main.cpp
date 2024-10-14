@@ -23,6 +23,9 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <KLocalizedQmlContext>
+#endif
 #define HAVE_KICONTHEME __has_include(<KIconTheme>)
 #if HAVE_KICONTHEME
 #include <KIconTheme>
@@ -128,7 +131,11 @@ int main(int argc, char *argv[])
         }
     });
 
+#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+#else
+    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+#endif
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     if (engine.rootObjects().isEmpty()) {

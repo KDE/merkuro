@@ -21,6 +21,9 @@
 #endif
 
 #include <Libkleo/KeyCache>
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#include <KLocalizedQmlContext>
+#endif
 
 #define HAVE_STYLE_MANAGER __has_include(<KStyleManager>)
 #if HAVE_STYLE_MANAGER
@@ -91,7 +94,11 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 
     QQmlApplicationEngine engine;
+#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+#else
+    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+#endif
     engine.loadFromModule("org.kde.merkuro.contact", "Main");
 
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
