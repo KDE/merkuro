@@ -163,7 +163,7 @@ void MailKernel::createFilter(const QByteArray &field, const QString &value)
 void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instance)
 {
     const auto isMailInstance =
-        instance.identifier() == QStringLiteral("akonadi_mailfilter_agent") || MailCommon::Util::agentInstances(true).contains(instance);
+        instance.identifier() == QLatin1StringView("akonadi_mailfilter_agent") || MailCommon::Util::agentInstances(true).contains(instance);
 
     if (!isMailInstance) {
         return;
