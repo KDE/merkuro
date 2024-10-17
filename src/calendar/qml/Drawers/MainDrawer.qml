@@ -146,9 +146,9 @@ Kirigami.OverlayDrawer {
                     id: menu
 
                     Connections {
-                        target: Config
-                        function onShowMenubarChanged() {
-                            if(!Kirigami.Settings.isMobile && !Kirigami.Settings.hasPlatformMenuBar) menu.visible = !Config.showMenubar
+                        target: CalendarApplication
+                        function onMenubarVisibleChanged() {
+                            if (!Kirigami.Settings.isMobile && !Kirigami.Settings.hasPlatformMenuBar) menu.visible = !CalendarApplication.menubarVisible
                         }
                     }
 
@@ -209,7 +209,7 @@ Kirigami.OverlayDrawer {
                             let action = actions[i]
                             action.displayHint = Kirigami.DisplayHint.AlwaysHide
                         }
-                        visible = !Kirigami.Settings.isMobile && !Config.showMenubar && !Kirigami.Settings.hasPlatformMenuBar
+                        visible = !Kirigami.Settings.isMobile && !CalendarApplication.menubarVisible && !Kirigami.Settings.hasPlatformMenuBar
                         //HACK: Otherwise if menubar is open and then hidden hamburger refuses to appear (?)
                     }
                 }
