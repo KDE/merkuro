@@ -8,7 +8,7 @@
 #include <Akonadi/ETMCalendar>
 #include <QLocale>
 
-class InfiniteCalendarViewModel : public QAbstractListModel
+class InfiniteMerkuroCalendarViewModel : public QAbstractListModel
 {
     Q_OBJECT
     // Amount of dates to add each time the model adds more dates
@@ -36,8 +36,8 @@ public:
     };
     Q_ENUM(Roles)
 
-    explicit InfiniteCalendarViewModel(QObject *parent = nullptr);
-    ~InfiniteCalendarViewModel() override = default;
+    explicit InfiniteMerkuroCalendarViewModel(QObject *parent = nullptr);
+    ~InfiniteMerkuroCalendarViewModel() override = default;
 
     void setup();
     QVariant data(const QModelIndex &idx, int role) const override;

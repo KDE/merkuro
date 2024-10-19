@@ -60,15 +60,15 @@ PathView {
         }
     }
 
-    model: Calendar.InfiniteCalendarViewModel {
+    model: Calendar.InfiniteMerkuroCalendarViewModel {
         scale: switch(root.daysToShow) {
         case 1:
-            return Calendar.InfiniteCalendarViewModel.DayScale;
+            return Calendar.InfiniteMerkuroCalendarViewModel.DayScale;
         case 3:
-            return Calendar.InfiniteCalendarViewModel.ThreeDayScale;
+            return Calendar.InfiniteMerkuroCalendarViewModel.ThreeDayScale;
         case 7:
         default:
-            return Calendar.InfiniteCalendarViewModel.WeekScale;
+            return Calendar.InfiniteMerkuroCalendarViewModel.WeekScale;
         }
     }
 
