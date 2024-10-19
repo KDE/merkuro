@@ -30,8 +30,8 @@ PathView {
         }
     }
 
-    model: Calendar.InfiniteCalendarViewModel {
-        scale: Calendar.InfiniteCalendarViewModel.MonthScale
+    model: Calendar.InfiniteMerkuroCalendarViewModel {
+        scale: Calendar.InfiniteMerkuroCalendarViewModel.MonthScale
     }
 
     Component.onCompleted: currentIndex = count / 2;

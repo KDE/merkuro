@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "models/infinitecalendarviewmodel.h"
+#include "models/infinitemerkurocalendarviewmodel.h"
 #include "incidenceoccurrencemodel.h"
 #include "merkuro_calendar_debug.h"
 #include <Akonadi/EntityTreeModel>
@@ -10,12 +10,12 @@
 
 using namespace std::chrono_literals;
 
-InfiniteCalendarViewModel::InfiniteCalendarViewModel(QObject *parent)
+InfiniteMerkuroCalendarViewModel::InfiniteMerkuroCalendarViewModel(QObject *parent)
     : QAbstractListModel(parent)
 {
 }
 
-void InfiniteCalendarViewModel::setup()
+void InfiniteMerkuroCalendarViewModel::setup()
 {
     m_startDates.clear();
     m_firstDayOfMonthDates.clear();
@@ -70,7 +70,7 @@ void InfiniteCalendarViewModel::setup()
     }
 }
 
-QVariant InfiniteCalendarViewModel::data(const QModelIndex &idx, int role) const
+QVariant InfiniteMerkuroCalendarViewModel::data(const QModelIndex &idx, int role) const
 {
     if (!hasIndex(idx.row(), idx.column())) {
         return {};
@@ -111,12 +111,12 @@ QVariant InfiniteCalendarViewModel::data(const QModelIndex &idx, int role) const
     }
 }
 
-int InfiniteCalendarViewModel::rowCount(const QModelIndex &parent) const
+int InfiniteMerkuroCalendarViewModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : m_startDates.length();
 }
 
-QHash<int, QByteArray> InfiniteCalendarViewModel::roleNames() const
+QHash<int, QByteArray> InfiniteMerkuroCalendarViewModel::roleNames() const
 {
     return {
         {StartDateRole, QByteArrayLiteral("startDate")},
@@ -126,7 +126,7 @@ QHash<int, QByteArray> InfiniteCalendarViewModel::roleNames() const
     };
 }
 
-int InfiniteCalendarViewModel::moveToDate(const QDate &selectedDate, const QDate &currentDate, const int currentIndex)
+int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, const QDate &currentDate, const int currentIndex)
 {
     auto newIndex = 0;
     int role = Qt::DisplayRole;
@@ -135,25 +135,25 @@ int InfiniteCalendarViewModel::moveToDate(const QDate &selectedDate, const QDate
     case MonthScale: {
         auto monthDiff = selectedDate.month() - currentDate.month() + (12 * (selectedDate.year() - currentDate.year()));
         newIndex = currentIndex + monthDiff;
-        role = InfiniteCalendarViewModel::FirstDayOfMonthRole;
+        role = InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole;
         break;
     }
     case WeekScale: {
         const int daysTo = currentDate.daysTo(selectedDate) / 7;
         newIndex = currentIndex + daysTo;
-        role = InfiniteCalendarViewModel::StartDateRole;
+        role = InfiniteMerkuroCalendarViewModel::StartDateRole;
         break;
     }
     case ThreeDayScale: {
         const int daysTo = currentDate.daysTo(selectedDate) / 3;
         newIndex = currentIndex + daysTo;
-        role = InfiniteCalendarViewModel::StartDateRole;
+        role = InfiniteMerkuroCalendarViewModel::StartDateRole;
         break;
     }
     case DayScale: {
         const auto daysTo = currentDate.daysTo(selectedDate);
         newIndex = currentIndex + daysTo;
-        role = InfiniteCalendarViewModel::StartDateRole;
+        role = InfiniteMerkuroCalendarViewModel::StartDateRole;
         break;
     }
     default:
@@ -181,7 +181,7 @@ int InfiniteCalendarViewModel::moveToDate(const QDate &selectedDate, const QDate
     return newIndex;
 }
 
-void InfiniteCalendarViewModel::addDates(const bool atEnd, const QDate startFrom)
+void InfiniteMerkuroCalendarViewModel::addDates(const bool atEnd, const QDate startFrom)
 {
     switch (m_scale) {
     case DayScale:
@@ -205,7 +205,7 @@ void InfiniteCalendarViewModel::addDates(const bool atEnd, const QDate startFrom
     }
 }
 
-void InfiniteCalendarViewModel::addDayDates(const bool atEnd, const QDate &startFrom, int amount)
+void InfiniteMerkuroCalendarViewModel::addDayDates(const bool atEnd, const QDate &startFrom, int amount)
 {
     const int newRow = atEnd ? rowCount() : 0;
 
@@ -224,7 +224,7 @@ void InfiniteCalendarViewModel::addDayDates(const bool atEnd, const QDate &start
     endInsertRows();
 }
 
-void InfiniteCalendarViewModel::addWeekDates(const bool atEnd, const QDate &startFrom)
+void InfiniteMerkuroCalendarViewModel::addWeekDates(const bool atEnd, const QDate &startFrom)
 {
     const int newRow = atEnd ? rowCount() : 0;
 
@@ -247,7 +247,7 @@ void InfiniteCalendarViewModel::addWeekDates(const bool atEnd, const QDate &star
     endInsertRows();
 }
 
-void InfiniteCalendarViewModel::addMonthDates(const bool atEnd, const QDate &startFrom)
+void InfiniteMerkuroCalendarViewModel::addMonthDates(const bool atEnd, const QDate &startFrom)
 {
     const int newRow = atEnd ? rowCount() : 0;
 
@@ -276,7 +276,7 @@ void InfiniteCalendarViewModel::addMonthDates(const bool atEnd, const QDate &sta
     endInsertRows();
 }
 
-void InfiniteCalendarViewModel::addYearDates(const bool atEnd, const QDate &startFrom)
+void InfiniteMerkuroCalendarViewModel::addYearDates(const bool atEnd, const QDate &startFrom)
 {
     const int newRow = atEnd ? rowCount() : 0;
 
@@ -295,7 +295,7 @@ void InfiniteCalendarViewModel::addYearDates(const bool atEnd, const QDate &star
     endInsertRows();
 }
 
-void InfiniteCalendarViewModel::addDecadeDates(const bool atEnd, const QDate &startFrom)
+void InfiniteMerkuroCalendarViewModel::addDecadeDates(const bool atEnd, const QDate &startFrom)
 {
     const int newRow = atEnd ? rowCount() : 0;
 
@@ -314,23 +314,23 @@ void InfiniteCalendarViewModel::addDecadeDates(const bool atEnd, const QDate &st
     endInsertRows();
 }
 
-int InfiniteCalendarViewModel::datesToAdd() const
+int InfiniteMerkuroCalendarViewModel::datesToAdd() const
 {
     return m_datesToAdd;
 }
 
-void InfiniteCalendarViewModel::setDatesToAdd(int datesToAdd)
+void InfiniteMerkuroCalendarViewModel::setDatesToAdd(int datesToAdd)
 {
     m_datesToAdd = datesToAdd;
     Q_EMIT datesToAddChanged();
 }
 
-int InfiniteCalendarViewModel::scale() const
+int InfiniteMerkuroCalendarViewModel::scale() const
 {
     return m_scale;
 }
 
-void InfiniteCalendarViewModel::setScale(const int scale)
+void InfiniteMerkuroCalendarViewModel::setScale(const int scale)
 {
     if (m_scale == scale) {
         return;
@@ -345,4 +345,4 @@ void InfiniteCalendarViewModel::setScale(const int scale)
     endResetModel();
 }
 
-#include "moc_infinitecalendarviewmodel.cpp"
+#include "moc_infinitemerkurocalendarviewmodel.cpp"

@@ -10,7 +10,7 @@
 #include "incidencewrapper.h"
 #include "models/hourlyincidencemodel.h"
 #include "models/incidenceoccurrencemodel.h"
-#include "models/infinitecalendarviewmodel.h"
+#include "models/infinitemerkurocalendarviewmodel.h"
 #include "models/itemtagsmodel.h"
 #include "models/monthmodel.h"
 #include "models/multidayincidencemodel.h"
@@ -86,7 +86,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     qmlRegisterType<HourlyIncidenceModel>(uri, 1, 0, "HourlyIncidenceModel");
     qmlRegisterType<TimeZoneListModel>(uri, 1, 0, "TimeZoneListModel");
     qmlRegisterType<MonthModel>(uri, 1, 0, "MonthModel");
-    qmlRegisterType<InfiniteCalendarViewModel>(uri, 1, 0, "InfiniteCalendarViewModel");
+    qmlRegisterType<InfiniteMerkuroCalendarViewModel>(uri, 1, 0, "InfiniteMerkuroCalendarViewModel");
 
     qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/CalendarUiUtils.qml")), "org.kde.merkuro.utils", 1, 0, "CalendarUiUtils");
     qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/IncidenceEditorManager.qml")), "org.kde.merkuro.utils", 1, 0, "IncidenceEditorManager");

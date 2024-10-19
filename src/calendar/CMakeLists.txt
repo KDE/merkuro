@@ -29,8 +29,8 @@ set(merkuro_calendar_SRCS
     models/hourlyincidencemodel.h
     models/incidenceoccurrencemodel.cpp
     models/incidenceoccurrencemodel.h
-    models/infinitecalendarviewmodel.cpp
-    models/infinitecalendarviewmodel.h
+    models/infinitemerkurocalendarviewmodel.cpp
+    models/infinitemerkurocalendarviewmodel.h
     models/itemtagsmodel.cpp
     models/itemtagsmodel.h
     models/monthmodel.cpp
