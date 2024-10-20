@@ -425,7 +425,7 @@ BaseApplication {
 
                 // We need to compensate for the x and y local adjustments used, for instance,
                 // in the day grid view to position the incidence item delegates
-                incidenceItemPosition = openingIncidenceItem.mapToItem(root.pageStack.currentItem,
+                incidenceItemPosition = openingIncidenceItem.mapToItem(parent,
                                                                        openingIncidenceItem.x,
                                                                        openingIncidenceItem.y);
                 incidenceItemPosition.x -= openingIncidenceItem.x;
