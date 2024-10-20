@@ -175,7 +175,7 @@ Item {
                                                 id: backgroundDayMouseArea
                                                 anchors.fill: parent
                                                 addDate: gridItem.date
-                                                onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate)
+                                                onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                                 onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
 
                                                 DropArea {
@@ -391,7 +391,7 @@ Item {
                                             const localPosition = child.mapFromGlobal(globalPosition.x, globalPosition.y);
 
                                             if(child.contains(localPosition) && child.gridSquareDate) {
-                                                CalendarUiUtils.setUpAdd(type, child.gridSquareDate);
+                                                IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, child.gridSquareDate);
                                             } else {
                                                 useGridSquareDate(type, child, globalPosition);
                                             }

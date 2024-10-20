@@ -398,7 +398,7 @@ Column {
                                                     anchors.fill: parent
 
                                                     addDate: parent.date
-                                                    onAddNewIncidence: CalendarUiUtils.setUpAdd(type, addDate)
+                                                    onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                                     onDeselect: applicationWindow().incidenceInfoViewer.close()
 
                                                     DropArea {
@@ -777,7 +777,7 @@ Column {
                                             id: backgroundDayMouseArea
                                             anchors.fill: parent
                                             addDate: new Date(DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
-                                            onAddNewIncidence: (type, addDate) =>  CalendarUiUtils.setUpAdd(type, addDate, null, true)
+                                            onAddNewIncidence: (type, addDate) => IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                             onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
                                     }
