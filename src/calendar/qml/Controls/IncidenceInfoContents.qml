@@ -156,9 +156,9 @@ QQC2.ScrollView {
                 to: 100.0
                 stepSize: 10.0
                 value: root.incidenceWrapper.todoPercentComplete
-                onMoved: if (root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo) {
+                onMoved: if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
                     root.incidenceWrapper.todoPercentComplete = value;
-                    CalendarManager.editIncidence(root.incidenceWrapper);
+                    Calendar.CalendarManager.editIncidence(root.incidenceWrapper);
                 }
             }
         }
