@@ -356,8 +356,9 @@ BaseApplication {
             }
 
             width: Kirigami.Settings.isMobile ? parent.width : actualWidth
-            height: Kirigami.Settings.isMobile ? applicationWindow().height * 0.6 : parent.height
-            bottomPadding: menuLoader.active ? menuLoader.height : 0
+            height: Kirigami.Settings.isMobile 
+                ? applicationWindow().height * 0.6 
+                : (parent.height - (menuBar.active ? menuBar.height : 0)) // Work around incorrect height calculation when menu bar active
 
             modal: !root.wideScreen || !enabled
             onEnabledChanged: drawerOpen = enabled && !modal
