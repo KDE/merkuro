@@ -363,7 +363,7 @@ BaseApplication {
             modal: !root.wideScreen || !enabled
             onEnabledChanged: drawerOpen = enabled && !modal
             onModalChanged: drawerOpen = !modal
-            enabled: incidenceData != undefined && pageStack.currentItem.mode !== CalendarApplication.Contact
+            enabled: incidenceData !== undefined && pageStack.currentItem && pageStack.currentItem.mode !== CalendarApplication.Contact
             handleVisible: enabled
             interactive: Kirigami.Settings.isMobile // Otherwise get weird bug where drawer gets dragged around despite no click
 
