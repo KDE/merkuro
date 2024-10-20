@@ -177,11 +177,11 @@ BaseApplication {
         }
 
         function onCreateNewEvent(): void {
-            IncidenceEditorManager.openNewIncidenceEditorDialog(IncidenceWrapper.TypeEvent);
+            IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, IncidenceWrapper.TypeEvent);
         }
 
         function onCreateNewTodo(): void {
-            IncidenceEditorManager.openNewIncidenceEditorDialog(IncidenceWrapper.TypeTodo);
+            IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, IncidenceWrapper.TypeTodo);
         }
 
         function onUndo(): void {
