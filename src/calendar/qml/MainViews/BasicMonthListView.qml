@@ -77,12 +77,6 @@ QQC2.ScrollView {
     ListView {
         id: scheduleListView
 
-        /* Spacing in this view works thus:
-         * 1. scheduleListView's spacing adds space between each day delegate component (including separators)
-         * 2. Weekly listSectionHeader has spacing of the day delegate column removed from bottom margin
-         * 3. Delegate's Separator's spacing gives same space (minus some adjustment) between it and dayGrid
-         */
-        spacing: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
         highlightRangeMode: ListView.ApplyRange
 
         onCountChanged: if(scrollView.initialMonth) scrollView.moveToSelected()
@@ -101,33 +95,21 @@ QQC2.ScrollView {
            }
        }
 
-        delegate: DayMouseArea {
-            id: dayMouseArea
+        delegate: Rectangle {
+            id: backgroundRectangle
 
             width: dayColumn.width
             height: model.index === scheduleListView.count - 1 ? dayColumn.height + Kirigami.Units.largeSpacing : dayColumn.height
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            color: incidenceDropArea.containsDrag ? Kirigami.Theme.positiveBackgroundColor :
+                dayGrid.isToday ? Kirigami.Theme.activeBackgroundColor :
+                Kirigami.Theme.backgroundColor
 
-            addDate: periodStartDate
-            onAddNewIncidence: addIncidence(type, addDate)
-            onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
-
-            Rectangle {
-                id: backgroundRectangle
-
-                anchors {
-                    top: parent.top
-                    right: parent.right
-                    left: parent.left
-                }
-
-                height: Kirigami.Settings.isMobile ? // Mobile adds extra padding
-                        parent.height + Kirigami.Units.largeSpacing * 2 :
-                        parent.height + Kirigami.Units.largeSpacing
-                Kirigami.Theme.colorSet: Kirigami.Theme.View
-                color: incidenceDropArea.containsDrag ? Kirigami.Theme.positiveBackgroundColor :
-                       dayGrid.isToday ? Kirigami.Theme.activeBackgroundColor :
-                       Kirigami.Theme.backgroundColor
-                z: 0
+            DayMouseArea {
+                id: dayMouseArea
+                addDate: periodStartDate
+                onAddNewIncidence: addIncidence(type, addDate)
+                onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
             }
 
             DropArea {
@@ -187,7 +169,6 @@ QQC2.ScrollView {
                 Kirigami.Separator {
                     id: topSeparator
                     Layout.fillWidth: true
-                    Layout.bottomMargin: scheduleListView.spacing - Kirigami.Units.smallSpacing
                     z: 1
                 }
 
