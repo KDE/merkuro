@@ -173,34 +173,33 @@ Item {
 
                                             DayMouseArea {
                                                 id: backgroundDayMouseArea
-                                                anchors.fill: parent
                                                 addDate: gridItem.date
                                                 onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                                 onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
+                                            }
 
-                                                DropArea {
-                                                    id: incidenceDropArea
-                                                    anchors.fill: parent
-                                                    z: 9999
-                                                    onDropped: if(root.isCurrentView) {
-                                                        if (DateUtils.sameDay(backgroundDayMouseArea.addDate, drop.source.occurrenceDate)) {
-                                                            return;
-                                                        }
-                                                        const pos = mapToItem(root, backgroundRectangle.x, backgroundRectangle.y);
-                                                        drop.source.caughtX = pos.x + root.listViewSpacing;
-                                                        drop.source.caughtY = root.showDayIndicator ?
-                                                            pos.y + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 1.5 :
-                                                            pos.y;
-                                                        drop.source.caught = true;
-
-                                                        const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-                                                        incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
-
-                                                        let sameTimeOnDate = new Date(backgroundDayMouseArea.addDate);
-                                                        sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                                        const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                        CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
+                                            DropArea {
+                                                id: incidenceDropArea
+                                                anchors.fill: parent
+                                                z: 9999
+                                                onDropped: if(root.isCurrentView) {
+                                                    if (DateUtils.sameDay(backgroundDayMouseArea.addDate, drop.source.occurrenceDate)) {
+                                                        return;
                                                     }
+                                                    const pos = mapToItem(root, backgroundRectangle.x, backgroundRectangle.y);
+                                                    drop.source.caughtX = pos.x + root.listViewSpacing;
+                                                    drop.source.caughtY = root.showDayIndicator ?
+                                                        pos.y + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 1.5 :
+                                                        pos.y;
+                                                    drop.source.caught = true;
+
+                                                    const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                    incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+
+                                                    let sameTimeOnDate = new Date(backgroundDayMouseArea.addDate);
+                                                    sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
+                                                    const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                    CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                                 }
                                             }
                                         }
@@ -382,8 +381,6 @@ Item {
 
                                 DayMouseArea {
                                     id: listViewMenu
-                                    anchors.fill: parent
-                                    z: -1
 
                                     function useGridSquareDate(type, root, globalPosition) {
                                         for (const i in root.children) {
