@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import QtLocation
 import Qt.labs.qmlmodels
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
@@ -759,7 +760,7 @@ Kirigami.ScrollablePage {
                             }
                         }
 
-                        model: [] /*GeocodeModel {
+                        model: GeocodeModel {
                             id: locationsModel
                             plugin: Plugin {
                                 name: "osm"
@@ -774,7 +775,7 @@ Kirigami.ScrollablePage {
                             }
                             autoUpdate: true
                             onLocationsChanged: locationField.openOrCloseLocationsPopup()
-                        }*/
+                        }
                         delegate: Delegates.RoundedItemDelegate {
                             text: locationData.address.text
                             onClicked: root.incidenceWrapper.location = locationData.address.text
@@ -784,10 +785,7 @@ Kirigami.ScrollablePage {
                             height: parent.height
                             anchors.right: parent.right
                             anchors.rightMargin: parent.indicator.width
-                            visible: false
-                            // Reactivate when locationsModel will reactivate
-                            /* running: locationsModel.status === GeocodeModel.Loading
-                            visible: locationsModel.status === GeocodeModel.Loading */
+                            visible: locationsModel.status === GeocodeModel.Loading
                         }
                     }
                     QQC2.CheckBox {
@@ -810,13 +808,12 @@ Kirigami.ScrollablePage {
                         asynchronous: true
                         active: visible
 
-                        /* todo kf6
                         sourceComponent: LocationMap {
                             id: map
                             selectMode: true
                             query: root.incidenceWrapper.location
                             onSelectedLocationAddress: root.incidenceWrapper.location = address
-                        } */
+                        }
                     }
                 }
 
