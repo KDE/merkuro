@@ -68,6 +68,9 @@ public:
             Q_UNUSED(parent)
             Q_UNUSED(start)
             Q_UNUSED(end)
+            if (mDefaultCollectionId < 0) { // Once collections load set a non-invalid default
+                mDefaultCollectionId = mRightsFilterModel->data(mRightsFilterModel->index(0, 0), EntityTreeModel::CollectionIdRole).toLongLong();
+            }
             scanSubTree();
         });
     }
