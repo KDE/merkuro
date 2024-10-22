@@ -8,12 +8,20 @@
 #include <KShortcutsDialog>
 #include <KWindowConfig>
 #include <QIcon>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickWindow>
 
 ContactApplication::ContactApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
     , mContactCollection(new KirigamiActionCollection(parent, i18n("Contact")))
 {
+    qmlRegisterSingletonType<ContactConfig>("org.kde.merkuro.contact", 1, 0, "Config", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new ContactConfig(engine);
+    });
+
     mContactCollection->setComponentDisplayName(i18n("Contact"));
     setupActions();
 }
