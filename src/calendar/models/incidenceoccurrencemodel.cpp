@@ -75,7 +75,11 @@ Filter *IncidenceOccurrenceModel::filter() const
 
 void IncidenceOccurrenceModel::setFilter(Filter *filter)
 {
+    disconnect(mFilter, nullptr, this, nullptr);
     mFilter = filter;
+    connect(filter, &Filter::collectionIdChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+    connect(filter, &Filter::nameChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+    connect(filter, &Filter::tagsChanged, this, &IncidenceOccurrenceModel::scheduleReset);
     Q_EMIT filterChanged();
 
     scheduleReset();
