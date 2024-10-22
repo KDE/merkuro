@@ -57,7 +57,7 @@ ContactManager::ContactManager(QObject *parent)
     m_checkableProxyModel->setSelectionModel(m_collectionSelectionModel);
     m_checkableProxyModel->setSourceModel(m_collectionTree);
 
-    auto contactConfig = new ContactConfig(this);
+    auto contactConfig = ContactConfig::self();
     contactConfig->lastUsedAddressBookCollection();
 
     auto sortedModel = new SortedCollectionProxModel(this);
