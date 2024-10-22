@@ -3,8 +3,8 @@
 
 import QtQuick
 import QtQuick.Controls
-import QtLocation 5.15
-import QtPositioning 5.15
+import QtLocation
+import QtPositioning
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
 
@@ -25,13 +25,12 @@ Map {
     property bool selectMode: false
 
     function goToLocation() {
-        fitViewportToGeoShape(geocodeModel.get(0).boundingBox, 0);
+        map.fitViewportToGeoShape(geocodeModel.get(0).boundingShape, 0);
         if (map.zoomLevel > 18.0) {
             map.zoomLevel = 18.0;
         }
     }
 
-    gesture.enabled: true
     plugin: Plugin {
         id: mapPlugin
         name: "osm"
