@@ -105,8 +105,8 @@ QQC2.ScrollView {
                 dayGrid.isToday ? Kirigami.Theme.activeBackgroundColor :
                 Kirigami.Theme.backgroundColor
 
-            DayMouseArea {
-                id: dayMouseArea
+            DayTapHandler {
+                id: dayTapHandler
                 addDate: periodStartDate
                 onAddNewIncidence: addIncidence(type, addDate)
                 onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
@@ -117,7 +117,7 @@ QQC2.ScrollView {
                 anchors.fill: parent
                 z: 9999
                 onDropped: if(scrollView.isCurrentItem) {
-                    if (DateUtils.sameDay(dayMouseArea.addDate, drop.source.occurrenceDate)) {
+                    if (DateUtils.sameDay(dayTapHandler.addDate, drop.source.occurrenceDate)) {
                         return;
                     }
                     scrollView.savedYScrollPos = scrollView.QQC2.ScrollBar.vertical.visualPosition;
@@ -130,7 +130,7 @@ QQC2.ScrollView {
                     const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                     incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                    let sameTimeOnDate = new Date(dayMouseArea.addDate);
+                    let sameTimeOnDate = new Date(dayTapHandler.addDate);
                     sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
                     const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
                     scrollView.moveIncidence(offset, drop.source.occurrenceDate, incidenceWrapper, drop.source);

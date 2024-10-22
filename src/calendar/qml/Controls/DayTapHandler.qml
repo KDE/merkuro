@@ -9,7 +9,7 @@ import org.kde.merkuro.calendar as Calendar
 import org.kde.merkuro.utils
 
 TapHandler {
-    id: dayMouseArea
+    id: dayTapHandler
 
     signal addNewIncidence(int type, date addDate)
     signal deselect
@@ -21,19 +21,19 @@ TapHandler {
     property Component _dayActions: Component {
         QQC2.Menu {
             id: actionsPopup
-            y: dayMouseArea.clickY
-            x: dayMouseArea.clickX
+            y: dayTapHandler.clickY
+            x: dayTapHandler.clickX
 
             // TODO: Add journals
             QQC2.MenuItem {
                 text: i18n("New Event…")
                 icon.name: "resource-calendar-insert"
-                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeEvent, dayMouseArea.addDate)
+                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate)
             }
             QQC2.MenuItem {
                 text: i18n("New Task…")
                 icon.name: "view-task-add"
-                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeTodo, dayMouseArea.addDate)
+                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate)
             }
         }
     }
@@ -47,7 +47,7 @@ TapHandler {
             const position = eventPoint.position;
             clickX = position.x;
             clickY = position.y;
-            _dayActions.createObject(dayMouseArea, {}).open();
+            _dayActions.createObject(dayTapHandler, {}).open();
         }
     }
 
