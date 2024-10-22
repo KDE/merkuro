@@ -176,7 +176,7 @@ Item {
                                                 anchors.fill: parent
                                                 z: 9999
                                                 onDropped: if(root.isCurrentView) {
-                                                    if (DateUtils.sameDay(backgroundDayTapHandler.addDate, drop.source.occurrenceDate)) {
+                                                    if (DateUtils.sameDay(gridItem.date, drop.source.occurrenceDate)) {
                                                         return;
                                                     }
                                                     const pos = mapToItem(root, backgroundRectangle.x, backgroundRectangle.y);
@@ -189,7 +189,7 @@ Item {
                                                     const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                                                     incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                                                    let sameTimeOnDate = new Date(backgroundDayTapHandler.addDate);
+                                                    let sameTimeOnDate = new Date(gridItem.date);
                                                     sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
                                                     const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
                                                     CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
