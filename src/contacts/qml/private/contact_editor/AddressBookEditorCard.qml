@@ -32,7 +32,7 @@ FormCard.FormCard {
         enabled: mode === ContactEditor.CreateMode
 
         defaultCollectionId: if (mode === ContactEditor.CreateMode) {
-            return Config.lastUsedAddressBookCollection;
+            return ContactConfig.lastUsedAddressBookCollection;
         } else {
             return contactEditor.collectionId;
         }

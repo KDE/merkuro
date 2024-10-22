@@ -51,8 +51,8 @@ FormCard.FormCardPage {
                 contactEditor.collectionId = addressBookEditorCard.addressBookComboBoxId
             }
             contactEditor.saveContactInAddressBook()
-            Config.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
-            Config.save();
+            ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
+            ContactConfig.save();
         }
     }
 
@@ -162,8 +162,8 @@ FormCard.FormCardPage {
             }
 
             onRejected: {
-                Config.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.defaultCollectionId;
-                Config.save();
+                ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.defaultCollectionId;
+                ContactConfig.save();
                 root.closeDialog();
             }
             onAccepted: submitAction.trigger();

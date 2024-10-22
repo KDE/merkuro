@@ -41,8 +41,8 @@ FormCard.FormCardPage {
         shortcut: "Return"
         onTriggered: {
             contactGroupEditor.saveContactGroup()
-            Config.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
-            Config.save();
+            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
+            ContactConfig.save();
         }
     }
 
@@ -65,7 +65,7 @@ FormCard.FormCardPage {
             enabled: mode === ContactGroupEditor.CreateMode
 
             defaultCollectionId: if (mode === ContactGroupEditor.CreateMode) {
-                return Config.lastUsedAddressBookCollection;
+                return ContactConfig.lastUsedAddressBookCollection;
             } else {
                 return contactGroupEditor.collectionId;
             }
@@ -178,8 +178,8 @@ FormCard.FormCardPage {
         }
 
         onRejected: {
-            Config.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
-            Config.save();
+            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
+            ContactConfig.save();
             root.closeDialog();
         }
         onAccepted: submitAction.trigger()

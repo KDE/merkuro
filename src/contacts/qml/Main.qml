@@ -47,7 +47,7 @@ BaseApplication {
         }
 
         function onShowMenubarChanged(state: bool): void {
-            Config.showMenubar = state;
+            Contact.ContactConfig.showMenubar = state;
         }
     }
 }
