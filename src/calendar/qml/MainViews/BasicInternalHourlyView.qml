@@ -393,43 +393,42 @@ Column {
                                                 color: multiDayViewIncidenceDropArea.containsDrag ?  Kirigami.Theme.positiveBackgroundColor :
                                                     isToday ? Kirigami.Theme.activeBackgroundColor : Kirigami.Theme.backgroundColor
 
-                                                DayMouseArea {
+                                                DayTapHandler {
                                                     id: listViewMenu
-                                                    anchors.fill: parent
 
                                                     addDate: parent.date
                                                     onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                                     onDeselect: applicationWindow().incidenceInfoViewer.close()
+                                                }
 
-                                                    DropArea {
-                                                        id: multiDayViewIncidenceDropArea
-                                                        anchors.fill: parent
-                                                        z: 9999
-                                                        onDropped: (drop) => {
-                                                            if (!viewColumn.isCurrentItem) {
-                                                                return;
-                                                            }
+                                                DropArea {
+                                                    id: multiDayViewIncidenceDropArea
+                                                    anchors.fill: parent
+                                                    z: 9999
+                                                    onDropped: (drop) => {
+                                                        if (!viewColumn.isCurrentItem) {
+                                                            return;
+                                                        }
 
-                                                            const pos = mapToItem(viewColumn, x, y);
-                                                            drop.source.caughtX = pos.x + viewColumn.incidenceSpacing;
-                                                            drop.source.caughtY = pos.y;
-                                                            drop.source.caught = true;
+                                                        const pos = mapToItem(viewColumn, x, y);
+                                                        drop.source.caughtX = pos.x + viewColumn.incidenceSpacing;
+                                                        drop.source.caughtY = pos.y;
+                                                        drop.source.caught = true;
 
-                                                            const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                        const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                        incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                                                            let sameTimeOnDate = new Date(listViewMenu.addDate);
-                                                            sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                                            const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                            /* There are 2 possibilities here: we move multiday incidence between days or we move hourly incidence
-                                                             * to convert it into multiday incidence
-                                                             */
-                                                            if (drop.source.objectName === 'hourlyIncidenceDelegateBackgroundBackground') {
-                                                                // This is conversion from non-multiday to multiday
-                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
-                                                            } else {
-                                                                CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
-                                                            }
+                                                        let sameTimeOnDate = new Date(listViewMenu.addDate);
+                                                        sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
+                                                        const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                        /* There are 2 possibilities here: we move multiday incidence between days or we move hourly incidence
+                                                         * to convert it into multiday incidence
+                                                         */
+                                                        if (drop.source.objectName === 'hourlyIncidenceDelegateBackgroundBackground') {
+                                                            // This is conversion from non-multiday to multiday
+                                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source, true)
+                                                        } else {
+                                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                                         }
                                                     }
                                                 }
@@ -715,7 +714,7 @@ Column {
                                                             drop.source.caught = true;
 
                                                             // We want the date as if it were "from the top" of the droparea
-                                                            const posDate = new Date(backgroundDayMouseArea.addDate.getFullYear(), backgroundDayMouseArea.addDate.getMonth(), backgroundDayMouseArea.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                            const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
 
                                                             const startOffset = posDate.getTime() - drop.source.occurrenceDate.getTime();
 
@@ -734,9 +733,9 @@ Column {
                                                             drop.source.caught = true;
 
                                                             // We want the date as if it were "from the top" of the droparea
-                                                            const startPosDate = new Date(backgroundDayMouseArea.addDate.getFullYear(), backgroundDayMouseArea.addDate.getMonth(), backgroundDayMouseArea.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                            const startPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
                                                             // In case when incidence is converted to not be all day anymore, lets set it as 1h long
-                                                            const endPosDate = new Date(backgroundDayMouseArea.addDate.getFullYear(), backgroundDayMouseArea.addDate.getMonth(), backgroundDayMouseArea.addDate.getDate(), backgroundRectangle.index + 1, dropAreaRepeater.minutes * index);
+                                                            const endPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index + 1, dropAreaRepeater.minutes * index);
 
                                                             const startOffset = startPosDate.getTime() - drop.source.occurrenceDate.getTime();
                                                             const endOffset = endPosDate.getTime() - drop.source.occurrenceEndDate.getTime();
@@ -755,7 +754,7 @@ Column {
                                                             const isNextHour = minute === 0 && index !== 0;
                                                             const hour = isNextHour ? backgroundRectangle.index + 1 : backgroundRectangle.index;
 
-                                                            const posDate = new Date(backgroundDayMouseArea.addDate.getFullYear(), backgroundDayMouseArea.addDate.getMonth(), backgroundDayMouseArea.addDate.getDate(), hour, minute);
+                                                            const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), hour, minute);
 
                                                             const endOffset = posDate.getTime() - drop.source.resizerSeparator.parent.occurrenceEndDate.getTime();
 
@@ -773,9 +772,8 @@ Column {
                                             }
                                         }
 
-                                        DayMouseArea {
-                                            id: backgroundDayMouseArea
-                                            anchors.fill: parent
+                                        DayTapHandler {
+                                            id: backgroundDayTapHandler
                                             addDate: new Date(DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
                                             onAddNewIncidence: (type, addDate) => IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                             onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
