@@ -388,7 +388,7 @@ Item {
                                         }
                                     }
 
-                                    onAddNewIncidence: useGridSquareDate(type, applicationWindow().contentItem, this.mapToGlobal(clickX, clickY))
+                                    onAddNewIncidence: useGridSquareDate(type, applicationWindow().contentItem, parent.mapToGlobal(clickX, clickY))
                                     onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                 }
 
