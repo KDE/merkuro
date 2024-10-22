@@ -203,6 +203,7 @@ QQC2.ScrollView {
                             Layout.alignment: Qt.AlignVCenter
                             width: dayButton.width
                             horizontalAlignment: Text.AlignRight
+                            verticalAlignment: Text.AlignVCenter
 
                             visible: !cardsColumn.visible
                             wrapMode: Text.Wrap
