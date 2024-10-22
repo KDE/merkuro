@@ -67,7 +67,7 @@ Kirigami.OverlayDrawer {
                                 text: i18n("Add Sub-Task")
                                 visible: incidenceInfoContents.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
                                 onTriggered: {
-                                    IncidenceEditorManager.openNewSubTodoEditorDialog(root.QQC2.ApplicationWindow.window, incidenceInfoContents.incidenceWrapper)
+                                    IncidenceEditorManager.openNewTodoEditorDialog(root.QQC2.ApplicationWindow.window, incidenceInfoContents.incidenceWrapper)
 
 
                                     if (Kirigami.Settings.isMobile) {
