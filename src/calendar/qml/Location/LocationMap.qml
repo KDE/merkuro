@@ -6,7 +6,7 @@ import QtQuick.Controls
 import QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.calendar
 
 Map {
     id: map
@@ -117,10 +117,10 @@ Map {
             }
         }
 
-        delegate: switch(Calendar.Config.locationMarker) {
-            case Calendar.Config.Circle:
+        delegate: switch(Config.locationMarker) {
+            case Config.Circle:
                 return circle;
-            case Calendar.Config.Pin:
+            case Config.Pin:
             default:
                 return pin;
         }
