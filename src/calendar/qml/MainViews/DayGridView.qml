@@ -171,13 +171,6 @@ Item {
                                             Kirigami.Theme.inherit: false
                                             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                                            DayMouseArea {
-                                                id: backgroundDayMouseArea
-                                                addDate: gridItem.date
-                                                onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
-                                                onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
-                                            }
-
                                             DropArea {
                                                 id: incidenceDropArea
                                                 anchors.fill: parent
