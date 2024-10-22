@@ -181,6 +181,7 @@ QQC2.ScrollView {
 
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Layout.rightMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
 
                     property real dayLabelWidth: Kirigami.Units.gridUnit * 4
                     property bool isToday: new Date(periodStartDate).setHours(0,0,0,0) === new Date().setHours(0,0,0,0)
