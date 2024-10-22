@@ -5,7 +5,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-// import QtLocation
+import QtLocation
 import org.kde.merkuro.calendar as Calendar
 import "labelutils.js" as LabelUtils
 
@@ -435,7 +435,6 @@ QQC2.ScrollView {
                     !locationLabel.isLink
                 visible: active && (item.queryHasResults || item.hasCoordinate)
 
-                /* TODO KF6
                 sourceComponent: LocationMap {
                     id: map
                     query: root.incidenceWrapper.location
@@ -448,7 +447,7 @@ QQC2.ScrollView {
                             Qt.openUrlExternally("https://www.openstreetmap.org/#map=17/" + root.incidenceWrapper.geoLatitude + "/" + root.incidenceWrapper.geoLongitude) :
                             Qt.openUrlExternally("https://www.openstreetmap.org/search?query=" + root.incidenceWrapper.location)
                     }
-                }*/
+                }
             }
         }
 
