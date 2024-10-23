@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 02:34+0000\n"
+"POT-Creation-Date: 2024-10-23 02:32+0000\n"
 "PO-Revision-Date: 2023-08-27 01:00+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -114,13 +114,13 @@ msgid "To Date…"
 msgstr "날짜로…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayMouseArea.qml:51 calendar/qml/main.qml:270
+#: calendar/qml/Controls/DayTapHandler.qml:29 calendar/qml/main.qml:270
 #, kde-format
 msgid "New Event…"
 msgstr "새 이벤트…"
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayMouseArea.qml:56 calendar/qml/main.qml:276
+#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/main.qml:276
 #, kde-format
 msgid "New Task…"
 msgstr "새 작업…"
@@ -198,7 +198,7 @@ msgid "An error occurred: %1"
 msgstr "오류 발생: %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:305
+#: calendar/models/incidenceoccurrencemodel.cpp:309
 #: calendar/models/todosortfilterproxymodel.cpp:150
 #, kde-format
 msgid "Task"
@@ -253,7 +253,7 @@ msgid "Developer"
 msgstr "개발자"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:857
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -325,8 +325,8 @@ msgid_plural "Every %1 years on the %2 of %3"
 msgstr[0] "매 %1년마다 %3 %2일"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:611
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
 #, kde-format
 msgid "Never"
 msgstr "하지 않음"
@@ -584,43 +584,43 @@ msgstr "<b>위치:</b>"
 msgid "Unable to find location."
 msgstr ""
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:459
+#: calendar/qml/Controls/IncidenceInfoContents.qml:458
 #, kde-format
 msgid "<b>Description:</b>"
 msgstr "<b>설명:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:474
+#: calendar/qml/Controls/IncidenceInfoContents.qml:473
 #, kde-format
 msgid "<b>Attachment:</b>"
 msgid_plural "<b>Attachments:</b>"
 msgstr[0] "<b>첨부:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:499
+#: calendar/qml/Controls/IncidenceInfoContents.qml:498
 #, kde-format
 msgid "<b>Reminders:</b>"
 msgstr "<b>알림:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:527
+#: calendar/qml/Controls/IncidenceInfoContents.qml:526
 #, kde-format
 msgid "<b>Organizer:</b>"
 msgstr "<b>주최:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:544
+#: calendar/qml/Controls/IncidenceInfoContents.qml:543
 #, kde-format
 msgid "<b>Google Meet:</b>"
 msgstr ""
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:555
+#: calendar/qml/Controls/IncidenceInfoContents.qml:554
 #, kde-format
 msgid "<b>Guests:</b>"
 msgstr "<b>참석자:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:591
+#: calendar/qml/Controls/IncidenceInfoContents.qml:590
 #, kde-format
 msgid "Super-task"
 msgstr ""
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:616
+#: calendar/qml/Controls/IncidenceInfoContents.qml:615
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
@@ -632,7 +632,7 @@ msgid "View"
 msgstr "보기"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:65
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:91
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:90
 #, kde-format
 msgid "Edit"
 msgstr "편집"
@@ -640,7 +640,7 @@ msgstr "편집"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:74
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -656,7 +656,7 @@ msgid "Mark Task as Complete"
 msgstr ""
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:90
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:67
 #, kde-format
 msgid "Add Sub-Task"
 msgstr ""
@@ -890,315 +890,315 @@ msgstr "이것만 삭제"
 msgid "Delete All"
 msgstr "모두 삭제"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:42
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "%1 편집"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "%1 추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:56
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:57
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "잘못된 날짜를 지정했습니다."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "종료 날짜가 시작 날짜보다 빠를 수 없습니다."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "저장"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:153
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:154
 #, kde-format
 msgid "Calendar:"
 msgstr "캘린더:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:181
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:182
 #, kde-format
 msgid "Summary:"
 msgstr "요약:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
 #, kde-format
 msgid "Add a title for your task"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:186
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your event"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:188
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:199
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:200
 #, kde-format
 msgid "Completion:"
 msgstr "자동 완성:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:233
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:234
 #, kde-format
 msgid "All day"
 msgstr "종일"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:265
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:266
 #, kde-format
 msgid "Start:"
 msgstr "시작:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "Due:"
 msgstr "만료일:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "End:"
 msgstr "끝:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:361
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
 #, kde-format
 msgid "Timezone:"
 msgstr "시간대:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:380
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:381
 #, kde-format
 msgid "Repeat:"
 msgstr "반복:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
 #, kde-format
 msgid "Daily"
 msgstr "매일"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
 #, kde-format
 msgid "Weekly"
 msgstr "매주"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Monthly"
 msgstr "매월"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Yearly"
 msgstr "매년"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "사용자 정의"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:446
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:447
 #, kde-format
 msgid "Every:"
 msgstr "매:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "일"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "주"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "개월"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "년"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:566
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:567
 #, kde-format
 msgid "On:"
 msgstr "시간:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:575
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:586
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
 #, kde-format
 msgid "Ends:"
 msgstr "종료:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
 #, kde-format
 msgid "On"
 msgstr "다음 이상"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "After"
 msgstr "다음 초과"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "회"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:657
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
 #, kde-format
 msgid "Exceptions:"
 msgstr "예외:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:664
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:665
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:721
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:722
 #, kde-format
 msgid "Location:"
 msgstr "위치:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:746
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:833
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:991
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:747
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:988
 #, kde-format
 msgid "Optional"
 msgstr "선택 사항"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:795
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:793
 #, kde-format
 msgid "Show map"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:824
 #, kde-format
 msgid "Description:"
 msgstr "설명:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:848
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
 #, kde-format
 msgid "Tags:"
 msgstr "태그:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Tap to set tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Click to set tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Manage tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:909
 #, kde-format
 msgid "Reminders:"
 msgstr "미리 알림:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:935
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:932
 #, kde-format
 msgid "Add Reminder"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:946
 #, kde-format
 msgid "Attendees:"
 msgstr "참석자:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:984
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "이름:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
 #, kde-format
 msgid "Email:"
 msgstr "이메일:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1016
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Required"
 msgstr "필요함"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
 #, kde-format
 msgid "Status:"
 msgstr "상태:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1049
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1046
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP 요청"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1060
 #, kde-format
 msgid "Add Attendee"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1074
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1071
 #, kde-format
 msgid "Choose from Contacts"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1078
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1075
 #, kde-format
 msgid "Fill in Manually"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1092
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
 msgid "Attachments:"
 msgstr "첨부:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1127
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1124
 #, kde-format
 msgid "Add Attachment"
 msgstr "첨부 파일 추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1134
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1131
 #, kde-format
 msgid "Add an attachment"
 msgstr "첨부 파일 추가"
@@ -1234,12 +1234,12 @@ msgstr ""
 msgid "All Occurrences"
 msgstr ""
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Incomplete"
 msgstr ""
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Complete"
 msgstr ""
@@ -1395,7 +1395,7 @@ msgstr ""
 msgid "Remove"
 msgstr "삭제"
 
-#: calendar/qml/Location/LocationMap.qml:59
+#: calendar/qml/Location/LocationMap.qml:58
 #, kde-format
 msgid "Return to Location"
 msgstr ""
@@ -1447,60 +1447,60 @@ msgstr ""
 msgid "All day or Multi day"
 msgstr "종일 또는 여러 날"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:256
+#: calendar/qml/MainViews/BasicMonthListView.qml:239
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "아무것도 없는 날입니다."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Tap"
 msgstr "탭"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Click"
 msgstr "클릭"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:276
+#: calendar/qml/MainViews/BasicMonthListView.qml:259
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "오늘은 아무것도 없습니다. 추가하려면 %1하십시오."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:399
+#: calendar/qml/MainViews/BasicMonthListView.qml:382
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1(%3일 중 %2일)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
+#: calendar/qml/MainViews/BasicMonthListView.qml:438
 #, kde-format
 msgid "Runs all day"
 msgstr "종일 행사"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
+#: calendar/qml/MainViews/BasicMonthListView.qml:442
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:462
+#: calendar/qml/MainViews/BasicMonthListView.qml:445
 #, kde-format
 msgid "Starts at %1"
 msgstr "%1에 시작"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:464
+#: calendar/qml/MainViews/BasicMonthListView.qml:447
 #, kde-format
 msgid "Ends at %1"
 msgstr "%1에 종료"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:466
+#: calendar/qml/MainViews/BasicMonthListView.qml:449
 #, kde-format
 msgid "Runs All Day"
 msgstr ""
 
-#: calendar/qml/MainViews/DayGridView.qml:235
+#: calendar/qml/MainViews/DayGridView.qml:227
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>오늘</b>"

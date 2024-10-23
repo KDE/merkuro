@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 02:34+0000\n"
+"POT-Creation-Date: 2024-10-23 02:32+0000\n"
 "PO-Revision-Date: 2024-07-28 12:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -115,13 +115,13 @@ msgid "To Date…"
 msgstr "إلى التاريخ…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayMouseArea.qml:51 calendar/qml/main.qml:270
+#: calendar/qml/Controls/DayTapHandler.qml:29 calendar/qml/main.qml:270
 #, kde-format
 msgid "New Event…"
 msgstr "حدث جديد..."
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayMouseArea.qml:56 calendar/qml/main.qml:276
+#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/main.qml:276
 #, kde-format
 msgid "New Task…"
 msgstr "مهمة جديدة…"
@@ -199,7 +199,7 @@ msgid "An error occurred: %1"
 msgstr "حدث خطأ: %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:305
+#: calendar/models/incidenceoccurrencemodel.cpp:309
 #: calendar/models/todosortfilterproxymodel.cpp:150
 #, kde-format
 msgid "Task"
@@ -253,7 +253,7 @@ msgid "Developer"
 msgstr "مطوّر"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:857
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -340,8 +340,8 @@ msgstr[4] "كل %1 سنة في %2 من %3"
 msgstr[5] "كل %1 سنة في %2 من %3"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:611
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
 #, kde-format
 msgid "Never"
 msgstr "أبدًا"
@@ -630,12 +630,12 @@ msgstr "<b>المكان:</b>"
 msgid "Unable to find location."
 msgstr "تعذر العثور على الموقع."
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:459
+#: calendar/qml/Controls/IncidenceInfoContents.qml:458
 #, kde-format
 msgid "<b>Description:</b>"
 msgstr "<b>الوصف:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:474
+#: calendar/qml/Controls/IncidenceInfoContents.qml:473
 #, kde-format
 msgid "<b>Attachment:</b>"
 msgid_plural "<b>Attachments:</b>"
@@ -646,32 +646,32 @@ msgstr[3] "<b>المرفقات:</b>"
 msgstr[4] "<b>المرفقات:</b>"
 msgstr[5] "<b>المرفقات:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:499
+#: calendar/qml/Controls/IncidenceInfoContents.qml:498
 #, kde-format
 msgid "<b>Reminders:</b>"
 msgstr "<b>التذكيرات:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:527
+#: calendar/qml/Controls/IncidenceInfoContents.qml:526
 #, kde-format
 msgid "<b>Organizer:</b>"
 msgstr "<b>المنظّم:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:544
+#: calendar/qml/Controls/IncidenceInfoContents.qml:543
 #, kde-format
 msgid "<b>Google Meet:</b>"
 msgstr "<b>غوغل مييت:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:555
+#: calendar/qml/Controls/IncidenceInfoContents.qml:554
 #, kde-format
 msgid "<b>Guests:</b>"
 msgstr "<b>الضيوف:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:591
+#: calendar/qml/Controls/IncidenceInfoContents.qml:590
 #, kde-format
 msgid "Super-task"
 msgstr "المهمة العامة"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:616
+#: calendar/qml/Controls/IncidenceInfoContents.qml:615
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
@@ -688,7 +688,7 @@ msgid "View"
 msgstr "العرض"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:65
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:91
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:90
 #, kde-format
 msgid "Edit"
 msgstr "حرّر"
@@ -696,7 +696,7 @@ msgstr "حرّر"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:74
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #, kde-format
 msgid "Delete"
 msgstr "احذف"
@@ -712,7 +712,7 @@ msgid "Mark Task as Complete"
 msgstr "علّمه المهمة مكتملة"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:90
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:67
 #, kde-format
 msgid "Add Sub-Task"
 msgstr "أضف مهمة فرعية"
@@ -955,134 +955,134 @@ msgstr "احذف هذه فقط"
 msgid "Delete All"
 msgstr "احذف الكل"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:42
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "حرّر %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "أضف %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:56
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:57
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "التواريخ المقدمة غير صحيحة."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "لا يمكن أن يكون تاريخ الانتهاء قبل تاريخ البدء."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "احفظ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "أضف"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:153
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:154
 #, kde-format
 msgid "Calendar:"
 msgstr "التقويم:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:181
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:182
 #, kde-format
 msgid "Summary:"
 msgstr "الملخّص:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
 #, kde-format
 msgid "Add a title for your task"
 msgstr "أضف عنوان لمهمتك"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:186
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your event"
 msgstr "أضف عنوان لحدثك"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:188
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "أضف عنوان لمذكرتك"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:199
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:200
 #, kde-format
 msgid "Completion:"
 msgstr "الاكتمال:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:233
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:234
 #, kde-format
 msgid "All day"
 msgstr "طول اليوم"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:265
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:266
 #, kde-format
 msgid "Start:"
 msgstr "البدء:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "Due:"
 msgstr "الاستحقاق:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "End:"
 msgstr "الانتهاء:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:361
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
 #, kde-format
 msgid "Timezone:"
 msgstr "المنطقة الزمنية:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:380
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:381
 #, kde-format
 msgid "Repeat:"
 msgstr "كرّر:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
 #, kde-format
 msgid "Daily"
 msgstr "يوميّا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
 #, kde-format
 msgid "Weekly"
 msgstr "أسبوعيّا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Monthly"
 msgstr "شهريّا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Yearly"
 msgstr "سنويّا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "مخصّص"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:446
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:447
 #, kde-format
 msgid "Every:"
 msgstr "كلّ:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
 #, kde-format
 msgid "day"
 msgid_plural "days"
@@ -1093,7 +1093,7 @@ msgstr[3] "أيام"
 msgstr[4] "يوماً"
 msgstr[5] "يوم"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
@@ -1104,7 +1104,7 @@ msgstr[3] "أسابيع"
 msgstr[4] "أسبوعًا"
 msgstr[5] "أسبوع"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "month"
 msgid_plural "months"
@@ -1115,7 +1115,7 @@ msgstr[3] "أشهر"
 msgstr[4] "شهرًا"
 msgstr[5] "شهر"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "year"
 msgid_plural "years"
@@ -1126,39 +1126,39 @@ msgstr[3] "سنوات"
 msgstr[4] "سنة"
 msgstr[5] "سنة"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:566
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:567
 #, kde-format
 msgid "On:"
 msgstr "في:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:575
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "الـ%1 من كل شهر"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:586
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%2 ال%1 من كل شهر"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
 #, kde-format
 msgid "Ends:"
 msgstr "ينتهي:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
 #, kde-format
 msgid "On"
 msgstr "في"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "After"
 msgstr "بعد"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
@@ -1169,126 +1169,126 @@ msgstr[3] "تكرارات"
 msgstr[4] "تكراراً"
 msgstr[5] "تكرار"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:657
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
 #, kde-format
 msgid "Exceptions:"
 msgstr "الاستثناءات:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:664
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:665
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "أضف استثناء للتكرار"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:721
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:722
 #, kde-format
 msgid "Location:"
 msgstr "المكان:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:746
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:833
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:991
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:747
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:988
 #, kde-format
 msgid "Optional"
 msgstr "اختياري"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:795
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:793
 #, kde-format
 msgid "Show map"
 msgstr "أظهر الخريطة"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:824
 #, kde-format
 msgid "Description:"
 msgstr "الوصف:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:848
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
 #, kde-format
 msgid "Tags:"
 msgstr "الوسوم:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "اطرق لتعين وسم…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Click to set tags…"
 msgstr "انقر لتعين وسم…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Manage tags…"
 msgstr "أدِر الوسوم…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:909
 #, kde-format
 msgid "Reminders:"
 msgstr "التذكيرات:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:935
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:932
 #, kde-format
 msgid "Add Reminder"
 msgstr "أضف تذكيراً"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:946
 #, kde-format
 msgid "Attendees:"
 msgstr "الحضور:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:984
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "الاسم:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
 #, kde-format
 msgid "Email:"
 msgstr "البريد الإلكترونيّ:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1016
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Required"
 msgstr "مطلوب"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
 #, kde-format
 msgid "Status:"
 msgstr "الحالة:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1049
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1046
 #, kde-format
 msgid "Request RSVP"
 msgstr "اطلب الرجاء الرد"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1060
 #, kde-format
 msgid "Add Attendee"
 msgstr "أضف حضور"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1074
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1071
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "اختر من المتراسلين"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1078
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1075
 #, kde-format
 msgid "Fill in Manually"
 msgstr "اكتب الحضور يدويا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1092
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
 msgid "Attachments:"
 msgstr "المرفقات:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1127
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1124
 #, kde-format
 msgid "Add Attachment"
 msgstr "أضف مرفقًا"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1134
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1131
 #, kde-format
 msgid "Add an attachment"
 msgstr "أضف مرفقًا"
@@ -1323,12 +1323,12 @@ msgstr "العناصر المستقبليّة أيضًا"
 msgid "All Occurrences"
 msgstr "كل التكرارات"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Incomplete"
 msgstr "علّمه غير مكتمل"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Complete"
 msgstr "علّمه مكتمل"
@@ -1482,7 +1482,7 @@ msgstr "بعد بدء الحدث"
 msgid "Remove"
 msgstr "أزل"
 
-#: calendar/qml/Location/LocationMap.qml:59
+#: calendar/qml/Location/LocationMap.qml:58
 #, kde-format
 msgid "Return to Location"
 msgstr "ارجع للموقع"
@@ -1534,60 +1534,60 @@ msgstr "صفّر"
 msgid "All day or Multi day"
 msgstr "كامل اليوم أو عدة أيام"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:256
+#: calendar/qml/MainViews/BasicMonthListView.qml:239
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "امسح اليوم"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Tap"
 msgstr "طَرق"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Click"
 msgstr "نقر"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:276
+#: calendar/qml/MainViews/BasicMonthListView.qml:259
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "لا يوجد شيئا في الدفاتر اليوم. %1 لتضيف شيء."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:399
+#: calendar/qml/MainViews/BasicMonthListView.qml:382
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (اليوم %2 من %3)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
+#: calendar/qml/MainViews/BasicMonthListView.qml:438
 #, kde-format
 msgid "Runs all day"
 msgstr "شغال بطول اليوم"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
+#: calendar/qml/MainViews/BasicMonthListView.qml:442
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:462
+#: calendar/qml/MainViews/BasicMonthListView.qml:445
 #, kde-format
 msgid "Starts at %1"
 msgstr "يبدأ في %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:464
+#: calendar/qml/MainViews/BasicMonthListView.qml:447
 #, kde-format
 msgid "Ends at %1"
 msgstr "ينتهي في %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:466
+#: calendar/qml/MainViews/BasicMonthListView.qml:449
 #, kde-format
 msgid "Runs All Day"
 msgstr "شغال بطول اليوم"
 
-#: calendar/qml/MainViews/DayGridView.qml:235
+#: calendar/qml/MainViews/DayGridView.qml:227
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>اليوم</b>"

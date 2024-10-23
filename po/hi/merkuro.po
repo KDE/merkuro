@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-29 02:34+0000\n"
+"POT-Creation-Date: 2024-10-23 02:32+0000\n"
 "PO-Revision-Date: 2024-03-02 18:44+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -115,13 +115,13 @@ msgid "To Date…"
 msgstr "तारीख..."
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayMouseArea.qml:51 calendar/qml/main.qml:270
+#: calendar/qml/Controls/DayTapHandler.qml:29 calendar/qml/main.qml:270
 #, kde-format
 msgid "New Event…"
 msgstr "नई घटना..."
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayMouseArea.qml:56 calendar/qml/main.qml:276
+#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/main.qml:276
 #, kde-format
 msgid "New Task…"
 msgstr "नया कार्य"
@@ -199,7 +199,7 @@ msgid "An error occurred: %1"
 msgstr "एक त्रुटि हुई : %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:305
+#: calendar/models/incidenceoccurrencemodel.cpp:309
 #: calendar/models/todosortfilterproxymodel.cpp:150
 #, kde-format
 msgid "Task"
@@ -254,7 +254,7 @@ msgid "Developer"
 msgstr "विकासक"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:857
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -329,8 +329,8 @@ msgstr[0] "प्रत्येक वर्ष %2 के %3 पर"
 msgstr[1] "प्रत्येक %1 वर्ष %2 के %3 पर"
 
 #: calendar/qml/CalendarUtils/labelutils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:410
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:611
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
 #, kde-format
 msgid "Never"
 msgstr "कभी नहीं"
@@ -599,44 +599,44 @@ msgstr "<b>स्थान :</b>"
 msgid "Unable to find location."
 msgstr "स्थान ढूंढने में असमर्थ।"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:459
+#: calendar/qml/Controls/IncidenceInfoContents.qml:458
 #, kde-format
 msgid "<b>Description:</b>"
 msgstr "<b>विवरण :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:474
+#: calendar/qml/Controls/IncidenceInfoContents.qml:473
 #, kde-format
 msgid "<b>Attachment:</b>"
 msgid_plural "<b>Attachments:</b>"
 msgstr[0] "<b>संलग्नक :</b>"
 msgstr[1] "<b>संलग्नक :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:499
+#: calendar/qml/Controls/IncidenceInfoContents.qml:498
 #, kde-format
 msgid "<b>Reminders:</b>"
 msgstr "<b>अनुस्मारक :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:527
+#: calendar/qml/Controls/IncidenceInfoContents.qml:526
 #, kde-format
 msgid "<b>Organizer:</b>"
 msgstr "<b>आयोजक :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:544
+#: calendar/qml/Controls/IncidenceInfoContents.qml:543
 #, kde-format
 msgid "<b>Google Meet:</b>"
 msgstr "<b>गूगल मीट :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:555
+#: calendar/qml/Controls/IncidenceInfoContents.qml:554
 #, kde-format
 msgid "<b>Guests:</b>"
 msgstr "<b>अतिथि :</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:591
+#: calendar/qml/Controls/IncidenceInfoContents.qml:590
 #, kde-format
 msgid "Super-task"
 msgstr "महा-कार्य"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:616
+#: calendar/qml/Controls/IncidenceInfoContents.qml:615
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
@@ -649,7 +649,7 @@ msgid "View"
 msgstr "दृश्य"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:65
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:91
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:90
 #, kde-format
 msgid "Edit"
 msgstr "संपादित करें"
@@ -657,7 +657,7 @@ msgstr "संपादित करें"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:74
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:96
 #, kde-format
 msgid "Delete"
 msgstr "हटाएं"
@@ -673,7 +673,7 @@ msgid "Mark Task as Complete"
 msgstr "कार्य को पूर्ण चिह्नित करें"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:90
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:67
 #, kde-format
 msgid "Add Sub-Task"
 msgstr "उपकार्य जोड़ें"
@@ -915,320 +915,320 @@ msgstr "केवल इसे हटाएं"
 msgid "Delete All"
 msgstr "सभी को हटाएं"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:42
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "%1 संपादित करें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "%1 जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:56
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:57
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "अमान्य तिथियाँ प्रदान की गईं।"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "समाप्ति तिथि आरंभ तिथि से पहले नहीं हो सकती ।"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Save"
 msgstr "सहेजें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:67
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:68
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Add"
 msgstr "जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:153
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:154
 #, kde-format
 msgid "Calendar:"
 msgstr "कैलेंडर :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:181
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:182
 #, kde-format
 msgid "Summary:"
 msgstr "संक्षेप :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:184
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:185
 #, kde-format
 msgid "Add a title for your task"
 msgstr "अपने कार्य के लिए एक शीर्षक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:186
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:187
 #, kde-format
 msgid "Add a title for your event"
 msgstr "अपनी घटना के लिए एक शीर्षक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:188
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:189
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "अपने दैनिकी प्रविष्टि के लिए एक शीर्षक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:199
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:200
 #, kde-format
 msgid "Completion:"
 msgstr "समापन :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:233
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:234
 #, kde-format
 msgid "All day"
 msgstr "सारा दिन"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:265
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:266
 #, kde-format
 msgid "Start:"
 msgstr "शुरू करना :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "Due:"
 msgstr "नियत तिथि :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:312
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:313
 #, kde-format
 msgid "End:"
 msgstr "अंत :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:361
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
 #, kde-format
 msgid "Timezone:"
 msgstr "समय क्षेत्र :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:380
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:381
 #, kde-format
 msgid "Repeat:"
 msgstr "दोहराना :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
 #, kde-format
 msgid "Daily"
 msgstr "दैनिक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:412
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
 #, kde-format
 msgid "Weekly"
 msgstr "साप्ताहिक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:413
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
 #, kde-format
 msgid "Monthly"
 msgstr "मासिक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:414
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
 #, kde-format
 msgid "Yearly"
 msgstr "सालाना"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:415
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:82
 #, kde-format
 msgid "Custom"
 msgstr "तदनुकूल"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:446
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:447
 #, kde-format
 msgid "Every:"
 msgstr "प्रत्येक :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:493
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "दिन"
 msgstr[1] "दिन"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:494
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "सप्ताह"
 msgstr[1] "सप्ताह"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:495
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "महीना"
 msgstr[1] "महीने"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:496
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:497
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "साल"
 msgstr[1] "साल"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:566
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:567
 #, kde-format
 msgid "On:"
 msgstr "पर :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:575
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "प्रत्येक माह के %1को"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:586
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "प्रत्येक माह के %1 %2 को"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:597
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:598
 #, kde-format
 msgid "Ends:"
 msgstr "समाप्त होता है :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:612
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
 #, kde-format
 msgid "On"
 msgstr "पर"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:613
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgid "After"
 msgstr "बाद"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:651
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:652
 #, kde-format
 msgid "occurrence"
 msgid_plural "occurrences"
 msgstr[0] "घटना"
 msgstr[1] "घटनाएँ"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:657
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:658
 #, kde-format
 msgid "Exceptions:"
 msgstr "अपवाद :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:664
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:665
 #, kde-format
 msgid "Add Recurrence Exception"
 msgstr "पुनरावृत्ति अपवाद जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:721
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:722
 #, kde-format
 msgid "Location:"
 msgstr "स्थान :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:746
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:833
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:991
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:747
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:830
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:988
 #, kde-format
 msgid "Optional"
 msgstr "वैकल्पिक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:795
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:793
 #, kde-format
 msgid "Show map"
 msgstr "नक्शा दिखाएं"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:827
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:824
 #, kde-format
 msgid "Description:"
 msgstr "विवरण :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:848
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:845
 #, kde-format
 msgid "Tags:"
 msgstr "टैग्स :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "टैग्स नियत करने के लिए टैप करें..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
 #, kde-format
 msgid "Click to set tags…"
 msgstr "टैग्स नियत करने के लिए क्लिक करें..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Manage tags…"
 msgstr "टैग्स प्रबंधित करें..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:909
 #, kde-format
 msgid "Reminders:"
 msgstr "अनुस्मारक :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:935
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:932
 #, kde-format
 msgid "Add Reminder"
 msgstr "अनुस्मारक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:946
 #, kde-format
 msgid "Attendees:"
 msgstr "उपस्थितगण :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:984
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "नाम :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
 #, kde-format
 msgid "Email:"
 msgstr "ईमेल :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1016
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Required"
 msgstr "आवश्यक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1022
 #, kde-format
 msgid "Status:"
 msgstr "स्थिति :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1049
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1046
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP का अनुरोध करें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1060
 #, kde-format
 msgid "Add Attendee"
 msgstr "सहभागी जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1074
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1071
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "संपर्कों में से चुनें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1078
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1075
 #, kde-format
 msgid "Fill in Manually"
 msgstr "आप खुद भरें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1092
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
 msgid "Attachments:"
 msgstr "संलग्नक :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1127
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1124
 #, kde-format
 msgid "Add Attachment"
 msgstr "संलग्नक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1134
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1131
 #, kde-format
 msgid "Add an attachment"
 msgstr "एक संलग्नक जोड़ें"
@@ -1263,12 +1263,12 @@ msgstr "भविष्य के वस्तुओं भी"
 msgid "All Occurrences"
 msgstr "सभी घटनाएँ"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Incomplete"
 msgstr "अपूर्ण चिह्नित करें"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:81
 #, kde-format
 msgid "Mark Complete"
 msgstr "पूर्ण चिह्नित करें"
@@ -1424,7 +1424,7 @@ msgstr "घटना शुरू होने के बाद"
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: calendar/qml/Location/LocationMap.qml:59
+#: calendar/qml/Location/LocationMap.qml:58
 #, kde-format
 msgid "Return to Location"
 msgstr "स्थान पर लौटें"
@@ -1476,60 +1476,60 @@ msgstr "रीसेट"
 msgid "All day or Multi day"
 msgstr "पूरे दिन या बहु दिन"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:256
+#: calendar/qml/MainViews/BasicMonthListView.qml:239
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "साफ़ दिन"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Tap"
 msgstr "टैप"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:275
+#: calendar/qml/MainViews/BasicMonthListView.qml:258
 #, kde-format
 msgid "Click"
 msgstr "क्लिक"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:276
+#: calendar/qml/MainViews/BasicMonthListView.qml:259
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "आज किताबों पर कुछ नहीं। %1 कुछ जोड़ने के लिए।"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:399
+#: calendar/qml/MainViews/BasicMonthListView.qml:382
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (%3 का दिन%2)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
+#: calendar/qml/MainViews/BasicMonthListView.qml:438
 #, kde-format
 msgid "Runs all day"
 msgstr "पूरे दिन चलता है"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
+#: calendar/qml/MainViews/BasicMonthListView.qml:442
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:462
+#: calendar/qml/MainViews/BasicMonthListView.qml:445
 #, kde-format
 msgid "Starts at %1"
 msgstr "%1 पर शुरू होता है"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:464
+#: calendar/qml/MainViews/BasicMonthListView.qml:447
 #, kde-format
 msgid "Ends at %1"
 msgstr "%1 पर समाप्त होता है"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:466
+#: calendar/qml/MainViews/BasicMonthListView.qml:449
 #, kde-format
 msgid "Runs All Day"
 msgstr "पूरे दिन चलता है"
 
-#: calendar/qml/MainViews/DayGridView.qml:235
+#: calendar/qml/MainViews/DayGridView.qml:227
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>आज</b>"
