@@ -18,7 +18,11 @@ class IdentityKeyListModel : public QIdentityProxyModel, public KIdentityManagem
     Q_INTERFACES(KIdentityManagementQuick::KeyListModelInterface)
 
 public:
-    enum class TypeKeys { AnyTypeKeys, OpenPGPTypeKeys, SMimeTypeKeys };
+    enum class TypeKeys {
+        AnyTypeKeys,
+        OpenPGPTypeKeys,
+        SMimeTypeKeys
+    };
     Q_ENUM(TypeKeys)
 
     explicit IdentityKeyListModel(QObject *parent = nullptr, const TypeKeys typeOfKeysToDisplay = TypeKeys::AnyTypeKeys);

@@ -21,7 +21,12 @@ public:
         DefaultRole,
         EmailRole,
     };
-    enum Type { Unknown = 0, Home = 1, Work = 2, Other = 4 };
+    enum Type {
+        Unknown = 0,
+        Home = 1,
+        Work = 2,
+        Other = 4
+    };
     Q_ENUM(Type)
 
     explicit EmailModel(QObject *parent = nullptr);
