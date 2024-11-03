@@ -55,7 +55,6 @@ FormCard.FormComboBoxDelegate {
 
     readonly property var collection: if (currentIndex >= 0) {
         const selectedModelIndex = collectionComboBoxModel.index(currentIndex, 0);
-        console.log(collectionComboBoxModel.data(selectedModelIndex, Akonadi.Collection.CollectionRole))
         return collectionComboBoxModel.data(selectedModelIndex, Akonadi.Collection.CollectionRole);
     } else {
         null
