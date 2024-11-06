@@ -30,4 +30,3 @@ target_link_libraries(merkurolauncher PRIVATE
 endif()
 
 install(TARGETS merkurolauncher ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.merkuro.desktop DESTINATION ${KDE_INSTALL_APPDIR})
