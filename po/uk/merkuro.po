@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:41+0000\n"
+"POT-Creation-Date: 2024-11-07 00:40+0000\n"
 "PO-Revision-Date: 2024-10-10 22:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -17,16 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Юрій Чорноіван"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "yurchor@ukr.net"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -221,14 +211,15 @@ msgstr "Програма-календар"
 msgid "(c) KDE Community 2021-2024"
 msgstr "© Спільнота KDE, 2021–2024"
 
-#: calendar/main.cpp:82 contacts/main.cpp:76 mail/main.cpp:77
+#: calendar/main.cpp:82 contacts/main.cpp:76 launcher/main.cpp:60
+#: mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:83 calendar/main.cpp:88 contacts/main.cpp:77
-#: contacts/main.cpp:82 mail/main.cpp:78 mail/main.cpp:83
+#: contacts/main.cpp:82 launcher/main.cpp:60 mail/main.cpp:78 mail/main.cpp:83
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
@@ -1303,7 +1294,7 @@ msgstr "Позначити як незавершене"
 msgid "Mark Complete"
 msgstr "Позначити як завершене"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:118 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Календар"
@@ -2389,7 +2380,7 @@ msgid "Select Email Address"
 msgstr "Виберіть адресу ел. пошти"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:122
+#: contacts/qml/Sidebar.qml:122 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Контакти"
@@ -3188,6 +3179,43 @@ msgstr "Книги контактів"
 msgid "Add New Address Book Source…"
 msgstr "Додати нове джерело даних адресної книги…"
 
+#: launcher/main.cpp:55
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgctxt "@title"
+msgid "Merkuro Launcher"
+msgstr "Календар Merkuro"
+
+#: launcher/main.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgid "merkuro Launcher"
+msgstr "Календар Merkuro"
+
+#: launcher/main.cpp:59
+#, kde-format
+msgid "(c) 2024"
+msgstr ""
+
+#: launcher/main.cpp:61
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#: launcher/main.cpp:61
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: launcher/Main.qml:58
+#, kde-format
+msgid "Quit"
+msgstr "Вийти"
+
 #: mail/contactimageprovider.cpp:147
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3970,9 +3998,6 @@ msgstr "Швидко додати нову мітку."
 
 #~ msgid "Sorted %1"
 #~ msgstr "Упорядковано %1"
-
-#~ msgid "Quit"
-#~ msgstr "Вийти"
 
 #~ msgid "Add event"
 #~ msgstr "Додати подію"
