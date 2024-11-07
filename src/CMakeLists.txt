@@ -7,5 +7,8 @@ add_subdirectory(contacts)
 add_subdirectory(mail)
 add_subdirectory(calendar)
 add_subdirectory(components)
+if (MERKURO_FLATPAK)
+    add_subdirectory(launcher)
+endif()
 
 install(FILES org.kde.merkuro.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
