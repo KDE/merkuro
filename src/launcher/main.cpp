@@ -12,7 +12,6 @@
 
 #include "../config-merkuro.h"
 #include <KAboutData>
-#include <KCrash>
 #include <KLocalizedString>
 #if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
 #include <KLocalizedQmlContext>
@@ -59,7 +58,6 @@ int main(int argc, char *argv[])
                          i18n("(c) 2024"));
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Maintainer"), u"carl@carlschwan.eu"_s, u"https://carlschwan.eu.com"_s);
     aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
-    KCrash::initialize();
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.merkuro.words"_s));
 
