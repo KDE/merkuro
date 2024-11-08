@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 02:32+0000\n"
+"POT-Creation-Date: 2024-11-08 02:29+0000\n"
 "PO-Revision-Date: 2024-07-28 12:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -17,16 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "زايد السعيدي"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "zayed.alsaidi@gmail.com"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -221,14 +211,15 @@ msgstr "تطبيق التقويم"
 msgid "(c) KDE Community 2021-2024"
 msgstr "(c)  مجتمع كِيدِي 2021-2024"
 
-#: calendar/main.cpp:78 contacts/main.cpp:70 mail/main.cpp:72
+#: calendar/main.cpp:78 contacts/main.cpp:70 launcher/main.cpp:59
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "كارل شوان"
 
 #: calendar/main.cpp:79 calendar/main.cpp:83 contacts/main.cpp:71
-#: contacts/main.cpp:75 mail/main.cpp:73 mail/main.cpp:77
+#: contacts/main.cpp:75 launcher/main.cpp:59 mail/main.cpp:73 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
@@ -1333,7 +1324,7 @@ msgstr "علّمه غير مكتمل"
 msgid "Mark Complete"
 msgstr "علّمه مكتمل"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:118 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "التقويم"
@@ -2386,7 +2377,7 @@ msgid "Select Email Address"
 msgstr "اختر عنوان بريد إلكتروني"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:122
+#: contacts/qml/Sidebar.qml:122 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "المتراسلون"
@@ -3181,6 +3172,43 @@ msgstr "دفاتر المتراسلون"
 #, kde-format
 msgid "Add New Address Book Source…"
 msgstr "أضف مصدر دفتر العناوين جديد…"
+
+#: launcher/main.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgctxt "@title"
+msgid "Merkuro Launcher"
+msgstr "تقويم ميركورو"
+
+#: launcher/main.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgid "merkuro Launcher"
+msgstr "تقويم ميركورو"
+
+#: launcher/main.cpp:58
+#, kde-format
+msgid "(c) 2024"
+msgstr ""
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "زايد السعيدي"
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zayed.alsaidi@gmail.com"
+
+#: launcher/Main.qml:58
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: mail/contactimageprovider.cpp:147
 #, kde-format

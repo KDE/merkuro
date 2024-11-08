@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 02:32+0000\n"
+"POT-Creation-Date: 2024-11-08 02:29+0000\n"
 "PO-Revision-Date: 2024-07-22 19:15+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -16,16 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Adrián Chaves (Gallaecio)"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "adrian@chaves.io"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -222,14 +212,15 @@ msgstr "Aplicación de calendario"
 msgid "(c) KDE Community 2021-2024"
 msgstr "© Comunidade KDE 2021-2024"
 
-#: calendar/main.cpp:78 contacts/main.cpp:70 mail/main.cpp:72
+#: calendar/main.cpp:78 contacts/main.cpp:70 launcher/main.cpp:59
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:79 calendar/main.cpp:83 contacts/main.cpp:71
-#: contacts/main.cpp:75 mail/main.cpp:73 mail/main.cpp:77
+#: contacts/main.cpp:75 launcher/main.cpp:59 mail/main.cpp:73 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
@@ -1269,7 +1260,7 @@ msgstr "Marcar como incompleta"
 msgid "Mark Complete"
 msgstr "Marcar como completada"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:118 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Calendario"
@@ -2324,7 +2315,7 @@ msgid "Select Email Address"
 msgstr "Seleccionar o enderezo de correo electrónico"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:122
+#: contacts/qml/Sidebar.qml:122 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Contactos"
@@ -3108,6 +3099,43 @@ msgstr "Axendas de contactos"
 #, kde-format
 msgid "Add New Address Book Source…"
 msgstr "Engadir unha nova orixe de axenda de enderezos…"
+
+#: launcher/main.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgctxt "@title"
+msgid "Merkuro Launcher"
+msgstr "Merkuro Calendar"
+
+#: launcher/main.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgid "merkuro Launcher"
+msgstr "Merkuro Calendar"
+
+#: launcher/main.cpp:58
+#, kde-format
+msgid "(c) 2024"
+msgstr ""
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Adrián Chaves (Gallaecio)"
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "adrian@chaves.io"
+
+#: launcher/Main.qml:58
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: mail/contactimageprovider.cpp:147
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 02:32+0000\n"
+"POT-Creation-Date: 2024-11-08 02:29+0000\n"
 "PO-Revision-Date: 2024-07-20 10:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -16,16 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Freek de Kruijf - 2022-2024"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "freekdekruijf@kde.nl"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -221,14 +211,15 @@ msgstr "Agendatoepassing"
 msgid "(c) KDE Community 2021-2024"
 msgstr "(c) KDE gemeenschap 2021-2024"
 
-#: calendar/main.cpp:78 contacts/main.cpp:70 mail/main.cpp:72
+#: calendar/main.cpp:78 contacts/main.cpp:70 launcher/main.cpp:59
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:79 calendar/main.cpp:83 contacts/main.cpp:71
-#: contacts/main.cpp:75 mail/main.cpp:73 mail/main.cpp:77
+#: contacts/main.cpp:75 launcher/main.cpp:59 mail/main.cpp:73 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
@@ -1270,7 +1261,7 @@ msgstr "Markeren als onvoltooid"
 msgid "Mark Complete"
 msgstr "Markeren als voltooid"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:118 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Agenda"
@@ -2326,7 +2317,7 @@ msgid "Select Email Address"
 msgstr "E-mailadres selecteren"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:122
+#: contacts/qml/Sidebar.qml:122 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Contactpersonen"
@@ -3111,6 +3102,43 @@ msgstr "Contactpersonenboeken"
 msgid "Add New Address Book Source…"
 msgstr "Nieuw adresboekbron toevoegen…"
 
+#: launcher/main.cpp:54
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgctxt "@title"
+msgid "Merkuro Launcher"
+msgstr "Merkuro-agenda"
+
+#: launcher/main.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Merkuro Calendar"
+msgid "merkuro Launcher"
+msgstr "Merkuro-agenda"
+
+#: launcher/main.cpp:58
+#, kde-format
+msgid "(c) 2024"
+msgstr ""
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf - 2022-2024"
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: launcher/Main.qml:58
+#, kde-format
+msgid "Quit"
+msgstr "Afsluiten"
+
 #: mail/contactimageprovider.cpp:147
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3887,9 +3915,6 @@ msgstr "Snel een nieuwe tag toevoegen."
 
 #~ msgid "Sorted %1"
 #~ msgstr "Gesorteerd %1"
-
-#~ msgid "Quit"
-#~ msgstr "Afsluiten"
 
 #~ msgid "Add event"
 #~ msgstr "Gebeurtenis toevoegen"

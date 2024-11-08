@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 02:32+0000\n"
+"POT-Creation-Date: 2024-11-08 02:29+0000\n"
 "PO-Revision-Date: 2021-11-06 10:26+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -16,16 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Stelios"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "sstavra@gmail.com"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -230,14 +220,15 @@ msgstr "Εφαρμογή ημερολογίου"
 msgid "(c) KDE Community 2021-2024"
 msgstr "(c) KDE Community 2021"
 
-#: calendar/main.cpp:78 contacts/main.cpp:70 mail/main.cpp:72
+#: calendar/main.cpp:78 contacts/main.cpp:70 launcher/main.cpp:59
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
 #: calendar/main.cpp:79 calendar/main.cpp:83 contacts/main.cpp:71
-#: contacts/main.cpp:75 mail/main.cpp:73 mail/main.cpp:77
+#: contacts/main.cpp:75 launcher/main.cpp:59 mail/main.cpp:73 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
@@ -1331,7 +1322,7 @@ msgstr "Να σημειωθεί ως ασυμπλήρωτο"
 msgid "Mark Complete"
 msgstr "Να σημειωθεί ως συμπληρωμένο"
 
-#: calendar/qml/Drawers/MainDrawer.qml:118
+#: calendar/qml/Drawers/MainDrawer.qml:118 launcher/Main.qml:48
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Calendar"
@@ -2440,7 +2431,7 @@ msgid "Select Email Address"
 msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
 
 #: contacts/qml/ContactView.qml:17 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:122
+#: contacts/qml/Sidebar.qml:122 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Επαφές"
@@ -3272,6 +3263,41 @@ msgstr "Επαφές"
 msgid "Add New Address Book Source…"
 msgstr "Προσθήκη νέας πηγής ημερολογίου…"
 
+#: launcher/main.cpp:54
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgctxt "@title"
+msgid "Merkuro Launcher"
+msgstr "Ημερολόγιο"
+
+#: launcher/main.cpp:56
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "merkuro Launcher"
+msgstr "Ημερολόγιο"
+
+#: launcher/main.cpp:58
+#, kde-format
+msgid "(c) 2024"
+msgstr ""
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+#: launcher/main.cpp:60
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: launcher/Main.qml:58
+#, kde-format
+msgid "Quit"
+msgstr "Έξοδος"
+
 #: mail/contactimageprovider.cpp:147
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3997,9 +4023,6 @@ msgstr "Γρήγορη προσθήκη νέας ετικέτας."
 #~| msgid "Priority:"
 #~ msgid "by priority %1"
 #~ msgstr "Προτεραιότητα:"
-
-#~ msgid "Quit"
-#~ msgstr "Έξοδος"
 
 #~ msgid "weeks"
 #~ msgstr "εβδομάδες"
