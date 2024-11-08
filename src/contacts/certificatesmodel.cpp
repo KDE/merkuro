@@ -3,6 +3,7 @@
 
 #include "certificatesmodel.h"
 
+#include <QCoreApplication>
 #include <QProcess>
 #include <QStandardPaths>
 

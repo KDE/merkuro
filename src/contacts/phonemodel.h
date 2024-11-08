@@ -6,7 +6,10 @@
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
-class PhoneModel : public QAbstractListModel
+
+#include "merkuro_contact_export.h"
+
+class MERKURO_CONTACT_EXPORT PhoneModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
