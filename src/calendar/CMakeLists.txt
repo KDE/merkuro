@@ -71,7 +71,13 @@ target_link_libraries(merkuro_calendar_static PUBLIC
 )
 
 
-ecm_add_qml_module(merkuro_calendar_plugin URI "org.kde.merkuro.calendar" VERSION 1.0)
+ecm_add_qml_module(merkuro_calendar_plugin
+    URI "org.kde.merkuro.calendar"
+    VERSION 1.0
+    DEPENDENCIES
+        QtLocation
+        org.kde.merkuro.components
+)
 
 target_sources(merkuro_calendar_plugin PRIVATE
     calendarplugin.cpp
