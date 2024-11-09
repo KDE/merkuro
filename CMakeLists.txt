@@ -86,6 +86,7 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
     Qml
     QuickControls2
     QuickTest
+    Location
 )
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
