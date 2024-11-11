@@ -112,7 +112,7 @@ set_package_properties(KF6QQC2DesktopStyle PROPERTIES
 )
 
 find_package(KPim6Libkleo ${KPIM_LIBKLEO_VERSION} CONFIG)
-set_package_properties(Gpgmepp PROPERTIES
+set_package_properties(KPim6Libkleo PROPERTIES
     DESCRIPTION "LibKleo Library"
     URL "https://invent.kde.org/pim/libkleo/"
     TYPE REQUIRED
