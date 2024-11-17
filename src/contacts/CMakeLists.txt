@@ -133,6 +133,8 @@ target_link_libraries(merkuro_contact_plugin PUBLIC
     merkuro_contact
 )
 
+install(TARGETS merkuro_contact_plugin ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+
 ecm_qt_install_logging_categories(
     EXPORT MERKURO
     FILE merkuro.contact.categories
