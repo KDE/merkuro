@@ -6,9 +6,7 @@
 #include <KContacts/Address>
 #include <QAbstractListModel>
 
-#include "merkuro_contact_export.h"
-
-class MERKURO_CONTACT_EXPORT AddressModel : public QAbstractListModel
+class AddressModel : public QAbstractListModel
 {
     Q_OBJECT
 

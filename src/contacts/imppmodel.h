@@ -3,11 +3,10 @@
 
 #pragma once
 
-#include "merkuro_contact_export.h"
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
 
-class MERKURO_CONTACT_EXPORT ImppModel : public QAbstractListModel
+class ImppModel : public QAbstractListModel
 {
     Q_OBJECT
 
