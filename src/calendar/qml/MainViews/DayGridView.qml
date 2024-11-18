@@ -48,7 +48,6 @@ Item {
     property int spacing: Calendar.Config.monthGridBorderWidth // Between grid squares in background
     property int listViewSpacing: root.dayWidth < (Kirigami.Units.gridUnit * 5 + Kirigami.Units.smallSpacing * 2) ?
         Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing // Between lines of incidences ( ====== <- )
-    readonly property bool isDark: CalendarUiUtils.darkMode
     readonly property int mode: Calendar.CalendarApplication.Event
 
     implicitHeight: (numberOfRows > 1 ? Kirigami.Units.gridUnit * 10 * numberOfRows : (foregroundLoader.item.numberOfLinesShown ?? 0) * Kirigami.Units.gridUnit) + bgLoader.dayLabelsBar.height
@@ -102,7 +101,6 @@ Item {
             listViewSpacing: root.listViewSpacing
             isCurrentView: root.isCurrentView
             showDayIndicator: root.showDayIndicator
-            isDark: root.isDark
             openOccurrence: root.openOccurrence
             dragDropEnabled: root.dragDropEnabled
 

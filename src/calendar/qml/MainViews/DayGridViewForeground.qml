@@ -12,11 +12,12 @@ import org.kde.merkuro.utils
 Column {
     id: root
 
+    readonly property bool isDark: CalendarUiUtils.darkMode
+
     required property date startDate
 
     required property bool isCurrentView
     required property bool showDayIndicator
-    required property bool isDark
     required property bool dragDropEnabled
 
     required property int daysToShow
