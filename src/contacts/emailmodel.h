@@ -7,9 +7,7 @@
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
 
-#include "merkuro_contact_export.h"
-
-class MERKURO_CONTACT_EXPORT EmailModel : public QAbstractListModel
+class EmailModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT

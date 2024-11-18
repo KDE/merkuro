@@ -18,16 +18,7 @@ target_link_libraries(merkuro_contact_static PUBLIC KF6::ConfigGui Qt6::Qml)
 
 ### Contact QML Plugin lib
 
-qt_add_library(merkuro_contact SHARED)
-
-ecm_generate_export_header(merkuro_contact VERSION ${PROJECT_VERSION})
-
-set_target_properties(merkuro_contact PROPERTIES
-    VERSION     ${PROJECT_VERSION}
-    SOVERSION   6
-    EXPORT_NAME "merkuro_contact"
-    POSITION_INDEPENDENT_CODE ON
-)
+add_library(merkuro_contact SHARED)
 
 target_link_libraries(merkuro_contact PUBLIC
     KF6::XmlGui
@@ -41,7 +32,8 @@ target_link_libraries(merkuro_contact PUBLIC
     KPim6::Libkleo
 )
 
-target_sources(merkuro_contact PRIVATE
+set_target_properties(merkuro_contact PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_sources(merkuro_contact PUBLIC
     contactapplication.cpp
     contactapplication.h
     addresseewrapper.cpp
@@ -78,12 +70,6 @@ target_sources(merkuro_contact PRIVATE
     attributes/contactmetadataattribute.cpp
     attributes/attributeregistrar.cpp
 )
-
-install(TARGETS merkuro_contact EXPORT MerkuroContact ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
-
-## QML plugin
-
-qt_add_library(merkuro_contact_plugin SHARED)
 
 ecm_add_qml_module(merkuro_contact_plugin
     URI "org.kde.merkuro.contact"
@@ -129,11 +115,9 @@ ecm_target_qml_sources(merkuro_contact_plugin
     qml/private/contact_editor/InstantMessengerEditorCard.qml
 )
 
-target_link_libraries(merkuro_contact_plugin PUBLIC
+target_link_libraries(merkuro_contact_plugin PRIVATE
     merkuro_contact
 )
-
-install(TARGETS merkuro_contact_plugin ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_qt_install_logging_categories(
     EXPORT MERKURO
@@ -150,9 +134,17 @@ add_subdirectory(applet)
 ecm_finalize_qml_module(merkuro_contact_plugin
     DESTINATION ${KDE_INSTALL_QMLDIR})
 
+set_target_properties(merkuro_contact PROPERTIES
+    VERSION     ${PROJECT_VERSION}
+    SOVERSION   6
+    EXPORT_NAME "merkuro_contact_plugin"
+)
+
+install(TARGETS merkuro_contact EXPORT MerkuroComponents ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+
 #### Binary
 
-qt_add_executable(merkuro-contact main.cpp)
+add_executable(merkuro-contact main.cpp)
 target_link_libraries(merkuro-contact
     PRIVATE
         Qt::Widgets

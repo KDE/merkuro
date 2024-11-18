@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 #pragma once
 
-#include "merkuro_contact_export.h"
 #include <abstractmerkuroapplication.h>
 
 class QQuickWindow;
 
-class MERKURO_CONTACT_EXPORT ContactApplication : public AbstractMerkuroApplication
+class ContactApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
     QML_ELEMENT
