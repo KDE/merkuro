@@ -93,7 +93,6 @@ Item {
 
         sourceComponent: DayGridViewForeground {
             id: rootForegroundColumn
-            parentGridView: root
             startDate: root.startDate
             dayWidth: root.dayWidth
             dayHeight: root.dayHeight

@@ -26,7 +26,6 @@ Column {
     required property int listViewSpacing
 
     required property var openOccurrence
-    required property Item parentGridView
 
     property int numberOfLinesShown: 0
 
