@@ -375,17 +375,10 @@ Item {
                                 DayTapHandler {
                                     id: listViewMenu
 
-                                    function useGridSquareDate(type, root, globalPosition) {
-                                        for (const i in root.children) {
-                                            const child = root.children[i];
-                                            const localPosition = child.mapFromGlobal(globalPosition.x, globalPosition.y);
-
-                                            if(child.contains(localPosition) && child.gridSquareDate) {
-                                                IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, child.gridSquareDate);
-                                            } else {
-                                                useGridSquareDate(type, child, globalPosition);
-                                            }
-                                        }
+                                    addDate: {
+                                        const baseDate = weekDelegate.periodStartDate
+                                        const rowDayIndex = Math.floor(clickX / root.dayWidth)
+                                        return new Date(baseDate.setDate(baseDate.getDate() + rowDayIndex))
                                     }
 
                                     onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
