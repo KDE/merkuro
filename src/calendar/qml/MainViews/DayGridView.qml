@@ -77,6 +77,7 @@ Item {
             dayWidth: root.dayWidth
             dayHeight: root.dayHeight
             daysPerRow: root.daysPerRow
+            daysToShow: root.daysToShow
             numberOfRows: root.numberOfRows
             spacing: root.spacing
             listViewSpacing: root.listViewSpacing

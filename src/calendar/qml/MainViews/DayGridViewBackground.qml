@@ -31,6 +31,7 @@ Column {
 
     required property int dayWidth
     required property int dayHeight
+    required property int daysToShow
     required property int daysPerRow
     required property int numberOfRows
     required property int listViewSpacing
