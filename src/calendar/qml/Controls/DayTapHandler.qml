@@ -11,7 +11,6 @@ import org.kde.merkuro.utils
 TapHandler {
     id: dayTapHandler
 
-    signal addNewIncidence(int type, date addDate)
     signal deselect
 
     property string defaultType: Calendar.IncidenceWrapper.TypeEvent
