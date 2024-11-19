@@ -108,7 +108,6 @@ QQC2.ScrollView {
             DayTapHandler {
                 id: dayTapHandler
                 addDate: periodStartDate
-                onAddNewIncidence: addIncidence(type, addDate)
                 onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
             }
 

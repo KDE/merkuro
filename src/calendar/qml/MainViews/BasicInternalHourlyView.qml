@@ -397,7 +397,6 @@ Column {
                                                     id: listViewMenu
 
                                                     addDate: parent.date
-                                                    onAddNewIncidence: IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                                     onDeselect: applicationWindow().incidenceInfoViewer.close()
                                                 }
 
@@ -775,7 +774,6 @@ Column {
                                         DayTapHandler {
                                             id: backgroundDayTapHandler
                                             addDate: new Date(DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
-                                            onAddNewIncidence: (type, addDate) => IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, addDate)
                                             onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
                                     }
