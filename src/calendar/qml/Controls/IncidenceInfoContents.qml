@@ -609,7 +609,7 @@ QQC2.ScrollView {
             Layout.columnSpan: 2
             Layout.fillWidth: true
             visible: root.incidenceWrapper.childIncidences.length > 0 &&
-                root.incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo
+                root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
 
             Kirigami.Heading {
                 text: i18np("Sub-task", "Sub-tasks", root.incidenceWrapper.childIncidences.length)
