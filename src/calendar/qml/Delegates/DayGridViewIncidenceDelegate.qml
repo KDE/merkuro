@@ -23,6 +23,7 @@ Item {
     required property bool allDay
     required property bool isDark
 
+    property int month: 0
     property real dayWidth: 0
     property real parentViewSpacing: 0
     property int horizontalSpacing: 0 // In between incidence spaces

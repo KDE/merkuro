@@ -20,6 +20,7 @@ Column {
     required property bool showDayIndicator
     required property bool dragDropEnabled
 
+    required property int month
     required property int daysToShow
     required property int dayWidth
     required property int dayHeight
@@ -99,6 +100,7 @@ Column {
 
                             starts: incidenceDelegate.modelData.starts
                             duration: incidenceDelegate.modelData.duration
+                            month: root.month
                             incidenceId: incidenceDelegate.modelData.incidenceId
                             occurrenceDate: incidenceDelegate.modelData.startTime
                             occurrenceEndDate: incidenceDelegate.modelData.endTime

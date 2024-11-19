@@ -94,6 +94,7 @@ Item {
         sourceComponent: DayGridViewForeground {
             id: rootForegroundColumn
             startDate: root.startDate
+            month: root.month
             dayWidth: root.dayWidth
             dayHeight: root.dayHeight
             daysToShow: root.daysToShow
