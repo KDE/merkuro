@@ -148,7 +148,7 @@ Kirigami.Page {
         sourceComponent: BasicInternalHourlyView {
             anchors.fill: parent
 
-            startDate: Calendar.DateTimeState.firstDayOfWeek
+            startDate: root.daysToShow % 7 === 0 ? Calendar.DateTimeState.firstDayOfWeek : Calendar.DateTimeState.selectedDate
             daysToShow: root.daysToShow
             dragDropEnabled: root.dragDropEnabled
             openOccurrence: root.openOccurrence
