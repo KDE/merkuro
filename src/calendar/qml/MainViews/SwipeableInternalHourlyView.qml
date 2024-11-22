@@ -18,7 +18,7 @@ PathView {
     required property bool dragDropEnabled
     property real scrollPosition
 
-    readonly property date selectedDate: if (daysToShow === 7) {
+    readonly property date selectedDate: if (daysToShow % 7 === 0) {
         Calendar.DateTimeState.firstDayOfWeek
     } else {
         Calendar.DateTimeState.selectedDate
