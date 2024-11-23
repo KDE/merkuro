@@ -651,9 +651,9 @@ Column {
                             required property var periodStartDateTime
 
                             readonly property date columnDate: DateUtils.addDaysToDate(viewColumn.startDate, index)
-                            readonly property bool isToday: columnDate.getDate() === viewColumn.currentDay &&
-                                columnDate.getMonth() === viewColumn.currentMonth &&
-                                columnDate.getFullYear() === viewColumn.currentYear
+                            readonly property bool isToday: columnDate.getDate() === viewColumn.currentDate.getDate() &&
+                                columnDate.getMonth() === viewColumn.currentDate.getMonth() &&
+                                columnDate.getFullYear() === viewColumn.currentDate.getFullYear()
 
                             width: viewColumn.dayWidth
                             height: hourlyView.dayHeight
