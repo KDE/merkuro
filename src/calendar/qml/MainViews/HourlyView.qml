@@ -42,14 +42,28 @@ Kirigami.Page {
 
     readonly property Kirigami.Action previousAction: Kirigami.Action {
         icon.name: "go-previous"
-        text: i18n("Previous Week")
+        text: switch (root.daysToShow) {
+            case 1:
+                return i18n("Previous Day")
+            case 3:
+                return i18n("Previous Three Days")
+            case 7:
+                return i18n("Previous Week")
+        }
         shortcut: StandardKey.MoveToPreviousPage
         onTriggered: Calendar.DateTimeState.addDays(-root.daysToShow)
         displayHint: Kirigami.DisplayHint.IconOnly
     }
     readonly property Kirigami.Action nextAction: Kirigami.Action {
         icon.name: "go-next"
-        text: i18n("Next Week")
+        text: switch (root.daysToShow) {
+            case 1:
+                return i18n("Next Day")
+            case 3:
+                return i18n("Next Three Days")
+            case 7:
+                return i18n("Next Week")
+        }
         shortcut: StandardKey.MoveToNextPage
         onTriggered: Calendar.DateTimeState.addDays(root.daysToShow)
         displayHint: Kirigami.DisplayHint.IconOnly
