@@ -13,20 +13,7 @@ import org.kde.merkuro.utils
 PathView {
     id: root
 
-    required property var openOccurrence
-    required property int daysToShow
-    required property bool dragDropEnabled
-    property real scrollPosition
-
-    readonly property date selectedDate: if (daysToShow % 7 === 0) {
-        Calendar.DateTimeState.firstDayOfWeek
-    } else {
-        Calendar.DateTimeState.selectedDate
-    }
-
-    property bool initialWeek: true
-
-    onSelectedDateChanged: {
+    function updateCurrentPosition() {
         if (!root.currentItem) {
             return;
         }
@@ -41,6 +28,21 @@ PathView {
             root.currentItem.item.hourScrollView.setPosition(position);
         }
     }
+
+    required property var openOccurrence
+    required property int daysToShow
+    required property bool dragDropEnabled
+    property real scrollPosition
+
+    readonly property date selectedDate: if (daysToShow % 7 === 0) {
+        Calendar.DateTimeState.firstDayOfWeek
+    } else {
+        Calendar.DateTimeState.selectedDate
+    }
+    onSelectedDateChanged: updateCurrentPosition()
+
+    property bool initialWeek: true
+
 
     flickDeceleration: Kirigami.Units.longDuration
     preferredHighlightBegin: 0.5
