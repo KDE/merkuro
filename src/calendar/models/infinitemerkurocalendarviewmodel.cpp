@@ -160,12 +160,12 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         Q_UNREACHABLE();
     }
 
-    auto firstItemDate = data(index(1, 0), role).toDateTime();
+    auto firstItemDate = data(index(0, 0), role).toDateTime();
     auto lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime();
 
     while (firstItemDate >= selectedDate.startOfDay()) {
         addDates(false);
-        firstItemDate = data(index(1, 0), role).toDateTime();
+        firstItemDate = data(index(0, 0), role).toDateTime();
         newIndex = 0;
     }
 
