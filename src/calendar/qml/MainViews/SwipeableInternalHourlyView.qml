@@ -13,13 +13,14 @@ import org.kde.merkuro.utils
 PathView {
     id: root
 
-    function updateCurrentPosition() {
+    function updateCurrentView() {
         if (!root.currentItem) {
             return;
         }
 
-        let position = root.currentItem.item.hourScrollView.currentPosition();
-        root.currentIndex = root.model.moveToDate(root.selectedDate, root.currentItem.startDate, root.currentIndex);
+        const position = root.currentItem.item.hourScrollView.currentPosition();
+        const newIndex = model.moveToDate(selectedDate, currentItem.startDate, currentIndex);
+        currentIndex = newIndex;
 
         if (initialWeek) {
             root.currentItem.item.hourScrollView.setToCurrentTime(true);
@@ -39,10 +40,9 @@ PathView {
     } else {
         Calendar.DateTimeState.selectedDate
     }
-    onSelectedDateChanged: updateCurrentPosition()
+    onSelectedDateChanged: updateCurrentView()
 
     property bool initialWeek: true
-
 
     flickDeceleration: Kirigami.Units.longDuration
     preferredHighlightBegin: 0.5
@@ -77,7 +77,7 @@ PathView {
     onMovementStarted: scrollPosition = root.currentItem.item.hourScrollView.currentPosition();
     onMovementEnded: root.currentItem.item.hourScrollView.setPosition(scrollPosition);
 
-    Component.onCompleted: currentIndex = count / 2;
+    Component.onCompleted: updateCurrentView()
 
     delegate: Loader {
         id: viewLoader
