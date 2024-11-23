@@ -31,3 +31,5 @@ void Helper::execute(const QString &appId)
     });
     job->start();
 }
+
+#include "moc_helper.cpp"

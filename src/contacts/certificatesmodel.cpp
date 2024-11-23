@@ -135,3 +135,5 @@ void CertificatesModel::openKleopatra(const int row, QWindow *window)
 
     QProcess::startDetached(exec, lst);
 }
+
+#include "moc_certificatesmodel.cpp"
