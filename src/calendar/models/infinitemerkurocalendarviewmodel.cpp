@@ -160,37 +160,37 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         Q_UNREACHABLE();
     }
 
-    auto firstItemDate = data(index(0, 0), role).toDateTime();
-    auto lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime();
+    auto firstItemDateTime = data(index(0, 0), role).toDateTime();
+    auto lastItemDateTime = data(index(rowCount() - 1, 0), role).toDateTime();
 
-    while (firstItemDate >= selectedDate.startOfDay()) {
+    while (firstItemDateTime >= selectedDate.startOfDay()) {
         addDates(false);
-        firstItemDate = data(index(0, 0), role).toDateTime();
+        firstItemDateTime = data(index(0, 0), role).toDateTime();
         newIndex = 0;
     }
 
-    if (firstItemDate < selectedDate.startOfDay() && newIndex == 0) {
+    if (firstItemDateTime < selectedDate.startOfDay() && newIndex == 0) {
         switch (m_scale) {
         case MonthScale:
-            newIndex += selectedDate.month() - firstItemDate.date().month() + (12 * (selectedDate.year() - firstItemDate.date().year()));
+            newIndex += selectedDate.month() - firstItemDateTime.date().month() + (12 * (selectedDate.year() - firstItemDateTime.date().year()));
             break;
         case WeekScale:
-            newIndex += firstItemDate.date().daysTo(selectedDate) / 7;
+            newIndex += firstItemDateTime.date().daysTo(selectedDate) / 7;
             break;
         case ThreeDayScale:
-            newIndex += firstItemDate.date().daysTo(selectedDate) / 3;
+            newIndex += firstItemDateTime.date().daysTo(selectedDate) / 3;
             break;
         case DayScale:
-            newIndex += firstItemDate.date().daysTo(selectedDate);
+            newIndex += firstItemDateTime.date().daysTo(selectedDate);
             break;
         default:
             Q_UNREACHABLE();
         }
     }
 
-    while (lastItemDate <= selectedDate.startOfDay()) {
+    while (lastItemDateTime <= selectedDate.startOfDay()) {
         addDates(true);
-        lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime();
+        lastItemDateTime = data(index(rowCount() - 1, 0), role).toDateTime();
     }
 
     return newIndex;
