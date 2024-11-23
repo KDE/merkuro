@@ -76,11 +76,6 @@ PathView {
     onMovementEnded: root.currentItem.item.hourScrollView.setPosition(scrollPosition);
 
     Component.onCompleted: currentIndex = count / 2;
-    onCurrentIndexChanged: if(currentIndex >= count - 2) {
-        model.addDates(true);
-    } else if (currentIndex <= 2) {
-        model.addDates(false);
-    }
 
     delegate: Loader {
         id: viewLoader
