@@ -133,7 +133,7 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
 
     switch (m_scale) {
     case MonthScale: {
-        auto monthDiff = selectedDate.month() - currentDate.month() + (12 * (selectedDate.year() - currentDate.year()));
+        const auto monthDiff = selectedDate.month() - currentDate.month() + (12 * (selectedDate.year() - currentDate.year()));
         newIndex = currentIndex + monthDiff;
         role = InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole;
         break;
