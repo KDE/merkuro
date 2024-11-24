@@ -193,6 +193,10 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime().date();
     }
 
+    if (m_scale == ThreeDayScale) {
+        newIndex += floor(static_cast<float>(index(newIndex, 0).data(StartDateRole).toDate().daysTo(selectedDate)) / 3);
+    }
+
     return newIndex;
 }
 
