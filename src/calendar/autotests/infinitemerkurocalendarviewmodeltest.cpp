@@ -4,6 +4,7 @@
 #include "models/infinitemerkurocalendarviewmodel.h"
 
 #include <QAbstractItemModelTester>
+#include <QRandomGenerator>
 #include <QSignalSpy>
 #include <QTest>
 #include <akonadi/qtest_akonadi.h>
@@ -165,6 +166,42 @@ private Q_SLOTS:
             const auto expectedStartDate = firstDecadeDate.addYears(i * 10);
             QCOMPARE(startDate, expectedStartDate);
         }
+    }
+
+    void testMoveDay()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+        model.setScale(InfiniteMerkuroCalendarViewModel::DayScale);
+
+        const auto currentRow = m_datesToLeftOfCenter + 1;
+        const auto currentIndex = model.index(currentRow, 0);
+        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+
+        const auto firstModelDate = model.index(0, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+        const auto lastModelDate = model.index(model.rowCount() - 1, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+        const auto rng = QRandomGenerator::global();
+
+        const auto testMoveToDate = [&model](const QDate &selectedDate, const QDate &currentDate, const int currentRow) {
+            const auto newIndex = model.moveToDate(selectedDate, currentDate, currentRow);
+            const auto newDate = model.index(newIndex, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+            return std::pair<int, QDate>{newIndex, newDate};
+        };
+
+        const QDate ungeneratedPastDate(rng->bounded(1500, firstModelDate.year() - 1),
+                                        rng->bounded(firstModelDate.month() - 1, 12),
+                                        rng->bounded(firstModelDate.day() - 1, 31));
+        const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500),
+                                          rng->bounded(lastModelDate.month() + 1, 12),
+                                          rng->bounded(lastModelDate.day() + 1, 31));
+        const QDate generatedDate(rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1), rng->bounded(1, 12), rng->bounded(1, 31));
+
+        const auto move1 = testMoveToDate(ungeneratedPastDate, currentDate, currentRow);
+        QCOMPARE(move1.second, ungeneratedPastDate);
+        const auto move2 = testMoveToDate(ungeneratedFutureDate, ungeneratedPastDate, move1.first);
+        QCOMPARE(move2.second, ungeneratedFutureDate);
+        const auto move3 = testMoveToDate(generatedDate, ungeneratedFutureDate, move2.first);
+        QCOMPARE(move3.second, generatedDate);
     }
 };
 
