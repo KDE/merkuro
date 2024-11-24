@@ -61,7 +61,8 @@ private Q_SLOTS:
 
         const auto locale = QLocale::system();
         const auto generateFirstViewDateForFirstDayOfMonth = [&locale](const QDate &firstDayOfMonth) {
-            return firstDayOfMonth.addDays(-firstDayOfMonth.dayOfWeek() + (locale.firstDayOfWeek() % 7));
+            const auto date = firstDayOfMonth.addDays(-firstDayOfMonth.dayOfWeek() + (locale.firstDayOfWeek() % 7));
+            return date == firstDayOfMonth ? date.addDays(-7) : date;
         };
 
         const QDate firstOfMonth(m_currentDate.year(), m_currentDate.month(), 1);
@@ -70,7 +71,7 @@ private Q_SLOTS:
         const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-monthsToLeftOfCenter);
         const auto firstDateOfFirstMonthView = generateFirstViewDateForFirstDayOfMonth(firstDayOfFirstMonth);
         QCOMPARE(firstDateOfFirstMonthView.dayOfWeek(), locale.firstDayOfWeek());
-        QVERIFY(firstDateOfFirstMonthView <= firstDayOfFirstMonth);
+        QVERIFY(firstDateOfFirstMonthView < firstDayOfFirstMonth);
 
         const auto firstIndex = model.index(0, 0);
         QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate(), firstDayOfFirstMonth);
