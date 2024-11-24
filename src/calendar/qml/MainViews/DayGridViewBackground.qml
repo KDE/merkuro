@@ -29,8 +29,8 @@ Column {
     readonly property int currentMonth: currentDate.getMonth()
     readonly property int currentYear: currentDate.getFullYear()
 
-    required property int dayWidth
-    required property int dayHeight
+    required property real dayWidth
+    required property real dayHeight
     required property int daysToShow
     required property int daysPerRow
     required property int numberOfRows

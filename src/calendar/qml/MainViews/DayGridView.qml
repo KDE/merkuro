@@ -17,7 +17,7 @@ Item {
 
     property int daysToShow: daysPerRow * 6
     property int daysPerRow: 7
-    property double weekHeaderWidth: Calendar.Config.showWeekNumbers ? Kirigami.Units.gridUnit * 1.5 : 0
+    property real weekHeaderWidth: Calendar.Config.showWeekNumbers ? Kirigami.Units.gridUnit * 1.5 : 0
 
     readonly property date currentDate: Calendar.DateTimeState.currentDate
     // Getting the components once makes this faster when we need them repeatedly
@@ -41,10 +41,10 @@ Item {
 
     //Internal
     property int numberOfRows: (daysToShow / daysPerRow)
-    property int dayWidth: Calendar.Config.showWeekNumbers ?
+    property real dayWidth: Calendar.Config.showWeekNumbers ?
         ((width - weekHeaderWidth) / daysPerRow) - spacing : // No spacing on right, spacing in between weekheader and monthgrid
         (width - weekHeaderWidth - (spacing * (daysPerRow - 1))) / daysPerRow // No spacing on left or right of month grid when no week header
-    property int dayHeight: ((height - bgLoader.dayLabelsBar.height) / numberOfRows) - spacing
+    property real dayHeight: ((height - bgLoader.dayLabelsBar.height) / numberOfRows) - spacing
     property int spacing: Calendar.Config.monthGridBorderWidth // Between grid squares in background
     property int listViewSpacing: root.dayWidth < (Kirigami.Units.gridUnit * 5 + Kirigami.Units.smallSpacing * 2) ?
         Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing // Between lines of incidences ( ====== <- )

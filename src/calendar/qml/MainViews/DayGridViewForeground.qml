@@ -22,8 +22,8 @@ Column {
 
     required property int month
     required property int daysToShow
-    required property int dayWidth
-    required property int dayHeight
+    required property real dayWidth
+    required property real dayHeight
     required property int listViewSpacing
 
     required property var openOccurrence
