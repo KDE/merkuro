@@ -21,6 +21,32 @@ private:
     const QDate m_currentDate = QDate::currentDate();
 
 private Q_SLOTS:
+    void testDayDates()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+
+        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
+        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
+        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::DayScale);
+        QCOMPARE(scaleSpy.count(), 1);
+        QCOMPARE(resetSpy.count(), 1);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+
+        // We should dates to add / 2 both before and after the current date
+        constexpr auto daysToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
+        const auto firstDate = QDate::currentDate().addDays(-daysToLeftOfCenter);
+        const auto firstIndex = model.index(0, 0);
+        QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDate);
+
+        for (auto i = 1; i < m_datesToAdd; ++i) {
+            const auto index = model.index(i, 0);
+            const auto startDate = index.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+            const auto expectedStartDate = firstDate.addDays(i);
+            QCOMPARE(startDate, expectedStartDate);
+        }
+    }
+
     void testMonthDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
