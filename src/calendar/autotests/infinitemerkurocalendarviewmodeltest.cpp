@@ -37,6 +37,14 @@ private Q_SLOTS:
         constexpr auto monthsToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
         const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-monthsToLeftOfCenter);
         QCOMPARE(model.index(0, 0).data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate(), firstDayOfFirstMonth);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+
+        for (auto i = 1; i < m_datesToAdd; ++i) {
+            const auto index = model.index(i, 0);
+            const auto firstDayOfMonth = index.data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate();
+            const auto expectedFirstDayOfMonth = firstDayOfFirstMonth.addMonths(i);
+            QCOMPARE(firstDayOfMonth, expectedFirstDayOfMonth);
+        }
     }
 };
 
