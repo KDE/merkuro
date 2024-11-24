@@ -18,6 +18,7 @@ public:
 
 private:
     static constexpr int m_datesToAdd = 9;
+    static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
     const QDate m_currentDate = QDate::currentDate();
 
 private Q_SLOTS:
@@ -34,8 +35,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), m_datesToAdd);
 
         // We should dates to add / 2 both before and after the current date
-        constexpr auto daysToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
-        const auto firstDate = QDate::currentDate().addDays(-daysToLeftOfCenter);
+        const auto firstDate = QDate::currentDate().addDays(-m_datesToLeftOfCenter);
         const auto firstIndex = model.index(0, 0);
         QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDate);
 
@@ -93,8 +93,7 @@ private Q_SLOTS:
 
         const QDate firstOfMonth(m_currentDate.year(), m_currentDate.month(), 1);
         // We should dates to add / 2 both before and after the current months' first date
-        constexpr auto monthsToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
-        const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-monthsToLeftOfCenter);
+        const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-m_datesToLeftOfCenter);
         const auto firstDateOfFirstMonthView = generateFirstViewDateForFirstDayOfMonth(firstDayOfFirstMonth);
         QCOMPARE(firstDateOfFirstMonthView.dayOfWeek(), locale.firstDayOfWeek());
         QVERIFY(firstDateOfFirstMonthView < firstDayOfFirstMonth);
@@ -127,9 +126,8 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), m_datesToAdd);
 
         // We should dates to add / 2 both before and after the current date
-        constexpr auto yearsToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
         const auto currentDate = QDate::currentDate();
-        const auto firstYearDate = QDate(currentDate.year() - yearsToLeftOfCenter, currentDate.month(), 1);
+        const auto firstYearDate = QDate(currentDate.year() - m_datesToLeftOfCenter, currentDate.month(), 1);
         const auto firstIndex = model.index(0, 0);
         QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstYearDate);
 
@@ -154,11 +152,10 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), m_datesToAdd);
 
         // We should dates to add / 2 both before and after the current date
-        constexpr auto decadesToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
         const auto currentDate = QDate::currentDate();
         const auto currentDecadeFloor = (currentDate.year() / 10) * 10 - 1; // 4*4 grid shows the decade as well as -1 & +1 years
         const auto currentDecadeFloorDate = QDate(currentDecadeFloor, currentDate.month(), 1);
-        const auto firstDecadeDate = QDate(currentDecadeFloorDate.year() - decadesToLeftOfCenter * 10, currentDate.month(), 1);
+        const auto firstDecadeDate = QDate(currentDecadeFloorDate.year() - m_datesToLeftOfCenter * 10, currentDate.month(), 1);
         const auto firstIndex = model.index(0, 0);
         QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDecadeDate);
 
