@@ -17,8 +17,15 @@ public:
     ~InfiniteMerkuroCalendarViewModelTest() override = default;
 
 private Q_SLOTS:
-    void initTestCase()
+    void testMonthDates()
     {
+        InfiniteMerkuroCalendarViewModel model(this);
+
+        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
+        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
+        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::MonthScale);
+        QCOMPARE(scaleSpy.count(), 1);
+        QCOMPARE(resetSpy.count(), 1);
     }
 };
 
