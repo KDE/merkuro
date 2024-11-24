@@ -31,19 +31,33 @@ private Q_SLOTS:
         model.setScale(InfiniteMerkuroCalendarViewModel::Scale::MonthScale);
         QCOMPARE(scaleSpy.count(), 1);
         QCOMPARE(resetSpy.count(), 1);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+
+        const auto locale = QLocale::system();
+        const auto generateFirstViewDateForFirstDayOfMonth = [&locale](const QDate &firstDayOfMonth) {
+            return firstDayOfMonth.addDays(-firstDayOfMonth.dayOfWeek() + (locale.firstDayOfWeek() % 7));
+        };
 
         const QDate firstOfMonth(m_currentDate.year(), m_currentDate.month(), 1);
         // We should dates to add / 2 both before and after the current months' first date
         constexpr auto monthsToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
         const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-monthsToLeftOfCenter);
-        QCOMPARE(model.index(0, 0).data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate(), firstDayOfFirstMonth);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        const auto firstDateOfFirstMonthView = generateFirstViewDateForFirstDayOfMonth(firstDayOfFirstMonth);
+        QCOMPARE(firstDateOfFirstMonthView.dayOfWeek(), locale.firstDayOfWeek());
+        QVERIFY(firstDateOfFirstMonthView <= firstDayOfFirstMonth);
+
+        const auto firstIndex = model.index(0, 0);
+        QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate(), firstDayOfFirstMonth);
+        QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDateOfFirstMonthView);
 
         for (auto i = 1; i < m_datesToAdd; ++i) {
             const auto index = model.index(i, 0);
             const auto firstDayOfMonth = index.data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate();
+            const auto firstDayOfMonthView = index.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
             const auto expectedFirstDayOfMonth = firstDayOfFirstMonth.addMonths(i);
+            const auto expectedFirstDateOfMonthView = generateFirstViewDateForFirstDayOfMonth(expectedFirstDayOfMonth);
             QCOMPARE(firstDayOfMonth, expectedFirstDayOfMonth);
+            QCOMPARE(firstDayOfMonthView, expectedFirstDateOfMonthView);
         }
     }
 };
