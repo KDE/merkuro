@@ -189,11 +189,9 @@ private Q_SLOTS:
         };
 
         const QDate ungeneratedPastDate(rng->bounded(1500, firstModelDate.year() - 1),
-                                        rng->bounded(firstModelDate.month() - 1, 12),
-                                        rng->bounded(firstModelDate.day() - 1, 31));
-        const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500),
-                                          rng->bounded(lastModelDate.month() + 1, 12),
-                                          rng->bounded(lastModelDate.day() + 1, 31));
+                                        rng->bounded(std::min(firstModelDate.month() - 1, 1), 12),
+                                        rng->bounded(std::min(firstModelDate.day() - 1, 1), 31));
+        const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500), rng->bounded(1, 12), rng->bounded(1, 31));
         const QDate generatedDate(rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1), rng->bounded(1, 12), rng->bounded(1, 31));
 
         const auto move1 = testMoveToDate(ungeneratedPastDate, currentDate, currentRow);
