@@ -140,6 +140,35 @@ private Q_SLOTS:
             QCOMPARE(startDate, expectedStartDate);
         }
     }
+
+    void testDecadeDates()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+
+        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
+        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
+        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::DecadeScale);
+        QCOMPARE(scaleSpy.count(), 1);
+        QCOMPARE(resetSpy.count(), 1);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+
+        // We should dates to add / 2 both before and after the current date
+        constexpr auto decadesToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
+        const auto currentDate = QDate::currentDate();
+        const auto currentDecadeFloor = (currentDate.year() / 10) * 10 - 1; // 4*4 grid shows the decade as well as -1 & +1 years
+        const auto currentDecadeFloorDate = QDate(currentDecadeFloor, currentDate.month(), 1);
+        const auto firstDecadeDate = QDate(currentDecadeFloorDate.year() - decadesToLeftOfCenter * 10, currentDate.month(), 1);
+        const auto firstIndex = model.index(0, 0);
+        QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDecadeDate);
+
+        for (auto i = 1; i < m_datesToAdd; ++i) {
+            const auto index = model.index(i, 0);
+            const auto startDate = index.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+            const auto expectedStartDate = firstDecadeDate.addYears(i * 10);
+            QCOMPARE(startDate, expectedStartDate);
+        }
+    }
 };
 
 QTEST_MAIN(InfiniteMerkuroCalendarViewModelTest)
