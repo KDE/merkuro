@@ -10,8 +10,8 @@ import "dateutils.js" as DateUtils
 Row {
     id: root
     property date startDate
-    property int dayWidth
-    property int daysToShow
+    property real dayWidth
+    property real daysToShow
     property Component delegate
 
     height: childrenRect.height
