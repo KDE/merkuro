@@ -228,7 +228,6 @@ void InfiniteMerkuroCalendarViewModel::addDayDates(const bool atEnd, const QDate
 
     for (int i = 0; i < m_datesToAdd; i++) {
         QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(amount) : m_startDates[0].addDays(-amount);
-        qDebug() << "addDayDate" << startDate;
 
         if (atEnd) {
             m_startDates.append(startDate);
