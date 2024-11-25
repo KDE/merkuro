@@ -24,7 +24,7 @@ private:
         QDate generated;
     };
 
-    struct MoveTestDates generatedMoveDates(const InfiniteMerkuroCalendarViewModel &model)
+    static struct MoveTestDates generatedMoveDates(const InfiniteMerkuroCalendarViewModel &model)
     {
         const auto firstModelDate = model.index(0, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
         const auto lastModelDate = model.index(model.rowCount() - 1, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
