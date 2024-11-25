@@ -67,6 +67,18 @@ private:
         moveVerifyingFunc(move3, testDates.generated);
     }
 
+    static void setupModel(InfiniteMerkuroCalendarViewModel &model, const InfiniteMerkuroCalendarViewModel::Scale scale)
+    {
+        model.setDatesToAdd(m_datesToAdd);
+
+        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
+        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
+        model.setScale(scale);
+        QCOMPARE(scaleSpy.count(), 1);
+        QCOMPARE(resetSpy.count(), 1);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+    }
+
     static constexpr int m_datesToAdd = 9;
     static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
     const QDate m_currentDate = QDate::currentDate();
@@ -75,14 +87,7 @@ private Q_SLOTS:
     void testDayDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::DayScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::DayScale);
 
         // We should dates to add / 2 both before and after the current date
         const auto firstDate = QDate::currentDate().addDays(-m_datesToLeftOfCenter);
@@ -100,14 +105,7 @@ private Q_SLOTS:
     void testThreeDayDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::ThreeDayScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::ThreeDayScale);
 
         // We should dates to add / 2 both before and after the current date
         constexpr auto daysToLeftOfCenter = static_cast<int>(m_datesToAdd * 3 / 2);
@@ -126,14 +124,7 @@ private Q_SLOTS:
     void testWeekDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::WeekScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::WeekScale);
 
         const auto currentStartOfWeek = firstWeekDayDateForDate(QDate::currentDate());
         constexpr auto weeksToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
@@ -152,14 +143,7 @@ private Q_SLOTS:
     void testMonthDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::MonthScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::MonthScale);
 
         const auto generateFirstViewDateForFirstDayOfMonth = [](const QDate &firstDayOfMonth) {
             const auto date = firstWeekDayDateForDate(firstDayOfMonth);
@@ -191,14 +175,7 @@ private Q_SLOTS:
     void testYearDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::YearScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::YearScale);
 
         // We should dates to add / 2 both before and after the current date
         const auto currentDate = QDate::currentDate();
@@ -217,14 +194,7 @@ private Q_SLOTS:
     void testDecadeDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-
-        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
-        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
-        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::DecadeScale);
-        QCOMPARE(scaleSpy.count(), 1);
-        QCOMPARE(resetSpy.count(), 1);
-        QCOMPARE(model.rowCount(), m_datesToAdd);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::DecadeScale);
 
         // We should dates to add / 2 both before and after the current date
         const auto currentDate = QDate::currentDate();
@@ -245,8 +215,7 @@ private Q_SLOTS:
     void testMoveDay()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::DayScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::DayScale);
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             QCOMPARE(result.second, selectedDate);
@@ -258,8 +227,7 @@ private Q_SLOTS:
     void testMoveThreeDay()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::ThreeDayScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::ThreeDayScale);
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto startDateToSelectedDateDays = result.second.daysTo(selectedDate);
@@ -272,8 +240,7 @@ private Q_SLOTS:
     void testMoveWeek()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::WeekScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::WeekScale);
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto startDate = result.second;
@@ -288,8 +255,7 @@ private Q_SLOTS:
     void testMoveMonth()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::MonthScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::MonthScale);
 
         const auto verifyMovedDate = [&model](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto firstDayOfMonth = model.index(result.first, 0).data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate();
@@ -302,8 +268,7 @@ private Q_SLOTS:
     void testMoveYear()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::YearScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::YearScale);
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             QCOMPARE(result.second.year(), selectedDate.year());
@@ -315,11 +280,11 @@ private Q_SLOTS:
     void testMoveDecade()
     {
         InfiniteMerkuroCalendarViewModel model(this);
-        model.setDatesToAdd(m_datesToAdd);
-        model.setScale(InfiniteMerkuroCalendarViewModel::DecadeScale);
+        setupModel(model, InfiniteMerkuroCalendarViewModel::DecadeScale);
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto firstDecadeYear = selectedDate.year() / 10 * 10;
+            qDebug() << selectedDate << firstDecadeYear << result.second.year();
             QCOMPARE(result.second.year(), firstDecadeYear - 1); // Since we display 12, decade -1 and +1
         };
 
