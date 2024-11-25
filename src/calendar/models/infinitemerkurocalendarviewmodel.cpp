@@ -85,7 +85,7 @@ QVariant InfiniteMerkuroCalendarViewModel::data(const QModelIndex &idx, int role
         case SelectedYearRole:
             return firstDay.year();
         default:
-            qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for startdate:" << QMetaEnum::fromType<Roles>().valueToKey(role);
+            qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for first day:" << QMetaEnum::fromType<Roles>().valueToKey(role);
             return {};
         }
     }
