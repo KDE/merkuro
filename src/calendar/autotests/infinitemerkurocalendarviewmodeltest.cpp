@@ -102,6 +102,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::DayScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         // We should dates to add / 2 both before and after the current date
         const auto firstDate = QDate::currentDate().addDays(-m_datesToLeftOfCenter);
@@ -120,6 +121,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::ThreeDayScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         // We should dates to add / 2 both before and after the current date
         constexpr auto daysToLeftOfCenter = static_cast<int>(m_datesToAdd * 3 / 2);
@@ -139,6 +141,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::WeekScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         const auto currentStartOfWeek = firstWeekDayDateForDate(QDate::currentDate());
         constexpr auto weeksToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
@@ -158,6 +161,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::MonthScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         const auto generateFirstViewDateForFirstDayOfMonth = [](const QDate &firstDayOfMonth) {
             const auto date = firstWeekDayDateForDate(firstDayOfMonth);
@@ -190,6 +194,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::YearScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         // We should dates to add / 2 both before and after the current date
         const auto currentDate = QDate::currentDate();
@@ -209,6 +214,7 @@ private Q_SLOTS:
     {
         InfiniteMerkuroCalendarViewModel model(this);
         setupModel(model, InfiniteMerkuroCalendarViewModel::DecadeScale);
+        const QAbstractItemModelTester modelTester(&model);
 
         // We should dates to add / 2 both before and after the current date
         const auto currentDate = QDate::currentDate();
