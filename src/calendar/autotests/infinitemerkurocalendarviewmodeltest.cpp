@@ -30,11 +30,23 @@ private:
         const auto lastModelDate = model.index(model.rowCount() - 1, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
         const auto rng = QRandomGenerator::global();
 
-        const QDate ungeneratedPastDate(rng->bounded(1500, firstModelDate.year() - 1),
-                                        rng->bounded(std::min(firstModelDate.month() - 1, 1), 12),
-                                        rng->bounded(std::min(firstModelDate.day() - 1, 1), 31));
-        const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500), rng->bounded(1, 12), rng->bounded(1, 31));
-        const QDate generatedDate(rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1), rng->bounded(1, 12), rng->bounded(1, 31));
+        const QCalendar calendar;
+        const auto maximumMonthsInYear = calendar.maximumMonthsInYear();
+
+        const auto pastYear = rng->bounded(m_genDatesLower, firstModelDate.year() - 1);
+        const auto pastMonth = rng->bounded(std::max(firstModelDate.month() - 1, 1), maximumMonthsInYear);
+        const auto pastDay = rng->bounded(std::max(firstModelDate.day() - 1, 1), QDate(pastYear, pastMonth, 1).daysInMonth(calendar));
+        const QDate ungeneratedPastDate(pastYear, pastMonth, pastDay);
+
+        const auto futureYear = rng->bounded(lastModelDate.year() + 1, m_genDatesUpper);
+        const auto futureMonth = rng->bounded(1, maximumMonthsInYear);
+        const auto futureDay = rng->bounded(1, QDate(futureYear, futureMonth, 1).daysInMonth(calendar));
+        const QDate ungeneratedFutureDate(futureYear, futureMonth, futureDay);
+
+        const auto alreadyGeneratedYear = rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1);
+        const auto alreadyGeneratedMonth = rng->bounded(1, maximumMonthsInYear);
+        const auto alreadyGeneratedDay = rng->bounded(1, QDate(alreadyGeneratedYear, alreadyGeneratedMonth, 1).daysInMonth(calendar));
+        const QDate generatedDate(alreadyGeneratedYear, alreadyGeneratedMonth, alreadyGeneratedDay);
 
         return {.ungeneratedPast = ungeneratedPastDate, .ungeneratedFuture = ungeneratedFutureDate, .generated = generatedDate};
     }
@@ -81,6 +93,8 @@ private:
 
     static constexpr int m_datesToAdd = 9;
     static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
+    static constexpr int m_genDatesUpper = 2200;
+    static constexpr int m_genDatesLower = 1800;
     const QDate m_currentDate = QDate::currentDate();
 
 private Q_SLOTS:
