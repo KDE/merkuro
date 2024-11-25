@@ -298,6 +298,19 @@ private Q_SLOTS:
 
         genericMoveTest(model, verifyMovedDate);
     }
+
+    void testMoveYear()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+        model.setScale(InfiniteMerkuroCalendarViewModel::YearScale);
+
+        const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
+            QCOMPARE(result.second.year(), selectedDate.year());
+        };
+
+        genericMoveTest(model, verifyMovedDate);
+    }
 };
 
 QTEST_MAIN(InfiniteMerkuroCalendarViewModelTest)
