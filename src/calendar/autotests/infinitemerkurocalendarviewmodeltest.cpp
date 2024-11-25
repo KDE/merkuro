@@ -18,6 +18,14 @@ public:
     ~InfiniteMerkuroCalendarViewModelTest() override = default;
 
 private:
+    static std::pair<int, QDate>
+    moveToDateResult(InfiniteMerkuroCalendarViewModel &model, const QDate &selectedDate, const QDate &currentDate, const int currentRow)
+    {
+        const auto newIndex = model.moveToDate(selectedDate, currentDate, currentRow);
+        const auto newDate = model.index(newIndex, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+        return {newIndex, newDate};
+    };
+
     static constexpr int m_datesToAdd = 9;
     static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
     const QDate m_currentDate = QDate::currentDate();
@@ -182,23 +190,17 @@ private Q_SLOTS:
         const auto lastModelDate = model.index(model.rowCount() - 1, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
         const auto rng = QRandomGenerator::global();
 
-        const auto testMoveToDate = [&model](const QDate &selectedDate, const QDate &currentDate, const int currentRow) {
-            const auto newIndex = model.moveToDate(selectedDate, currentDate, currentRow);
-            const auto newDate = model.index(newIndex, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-            return std::pair<int, QDate>{newIndex, newDate};
-        };
-
         const QDate ungeneratedPastDate(rng->bounded(1500, firstModelDate.year() - 1),
                                         rng->bounded(std::min(firstModelDate.month() - 1, 1), 12),
                                         rng->bounded(std::min(firstModelDate.day() - 1, 1), 31));
         const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500), rng->bounded(1, 12), rng->bounded(1, 31));
         const QDate generatedDate(rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1), rng->bounded(1, 12), rng->bounded(1, 31));
 
-        const auto move1 = testMoveToDate(ungeneratedPastDate, currentDate, currentRow);
+        const auto move1 = moveToDateResult(model, ungeneratedPastDate, currentDate, currentRow);
         QCOMPARE(move1.second, ungeneratedPastDate);
-        const auto move2 = testMoveToDate(ungeneratedFutureDate, ungeneratedPastDate, move1.first);
+        const auto move2 = moveToDateResult(model, ungeneratedFutureDate, ungeneratedPastDate, move1.first);
         QCOMPARE(move2.second, ungeneratedFutureDate);
-        const auto move3 = testMoveToDate(generatedDate, ungeneratedFutureDate, move2.first);
+        const auto move3 = moveToDateResult(model, generatedDate, ungeneratedFutureDate, move2.first);
         QCOMPARE(move3.second, generatedDate);
     }
 
@@ -216,11 +218,6 @@ private Q_SLOTS:
         const auto lastModelDate = model.index(model.rowCount() - 1, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
         const auto rng = QRandomGenerator::global();
 
-        const auto testMoveToDate = [&model](const QDate &selectedDate, const QDate &currentDate, const int currentRow) {
-            const auto newIndex = model.moveToDate(selectedDate, currentDate, currentRow);
-            const auto newDate = model.index(newIndex, 0).data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-            return std::pair<int, QDate>{newIndex, newDate};
-        };
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto startDateToSelectedDateDays = result.second.daysTo(selectedDate);
             QVERIFY(startDateToSelectedDateDays <= 2 && startDateToSelectedDateDays >= 0); // Should be no further than this
@@ -232,11 +229,11 @@ private Q_SLOTS:
         const QDate ungeneratedFutureDate(rng->bounded(lastModelDate.year() + 1, 2500), rng->bounded(1, 12), rng->bounded(1, 31));
         const QDate generatedDate(rng->bounded(ungeneratedPastDate.year() + 1, ungeneratedFutureDate.year() - 1), rng->bounded(1, 12), rng->bounded(1, 31));
 
-        const auto move1 = testMoveToDate(ungeneratedPastDate, currentDate, currentRow);
+        const auto move1 = moveToDateResult(model, ungeneratedPastDate, currentDate, currentRow);
         verifyMovedDate(move1, ungeneratedPastDate);
-        const auto move2 = testMoveToDate(ungeneratedFutureDate, ungeneratedPastDate, move1.first);
+        const auto move2 = moveToDateResult(model, ungeneratedFutureDate, ungeneratedPastDate, move1.first);
         verifyMovedDate(move2, ungeneratedFutureDate);
-        const auto move3 = testMoveToDate(generatedDate, ungeneratedFutureDate, move2.first);
+        const auto move3 = moveToDateResult(model, generatedDate, ungeneratedFutureDate, move2.first);
         verifyMovedDate(move3, generatedDate);
     }
 };
