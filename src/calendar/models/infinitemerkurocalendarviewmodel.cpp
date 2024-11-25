@@ -129,7 +129,7 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
 
     switch (m_scale) {
     case DecadeScale: {
-        const auto decadeDiff = static_cast<int>((selectedDate.year() - currentDate.year()) / 10);
+        const auto decadeDiff = (selectedDate.year() / 10) - (currentDate.year() / 10);
         newIndex = currentIndex + decadeDiff;
         role = InfiniteMerkuroCalendarViewModel::StartDateRole;
         break;
@@ -180,7 +180,7 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
     if (firstItemDate < selectedDate && newIndex == 0) {
         switch (m_scale) {
         case DecadeScale:
-            newIndex += static_cast<int>((selectedDate.year() - firstItemDate.year()) / 10);
+            newIndex += ((selectedDate.year() / 10) - (firstItemDate.year() / 10)) - 1;
             break;
         case YearScale:
             newIndex += selectedDate.year() - firstItemDate.year();
