@@ -24,16 +24,12 @@ void InfiniteMerkuroCalendarViewModel::setup()
 
     switch (m_scale) {
     case DayScale: {
-        QDate firstDay = today;
-        firstDay = firstDay.addDays(-m_datesToAdd / 2);
-
+        const auto firstDay = today.addDays(-m_datesToAdd / 2);
         addDayDates(true, firstDay);
         break;
     }
     case ThreeDayScale: {
-        QDate firstDay = today;
-        firstDay = firstDay.addDays((-m_datesToAdd * 3) / 2);
-
+        const auto firstDay = today.addDays((-m_datesToAdd * 3) / 2);
         addDayDates(true, firstDay, 3);
         break;
     }
