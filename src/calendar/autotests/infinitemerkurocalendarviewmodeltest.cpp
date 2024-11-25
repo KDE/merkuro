@@ -311,6 +311,20 @@ private Q_SLOTS:
 
         genericMoveTest(model, verifyMovedDate);
     }
+
+    void testMoveDecade()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+        model.setScale(InfiniteMerkuroCalendarViewModel::DecadeScale);
+
+        const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
+            const auto firstDecadeYear = selectedDate.year() / 10 * 10;
+            QCOMPARE(result.second.year(), firstDecadeYear - 1); // Since we display 12, decade -1 and +1
+        };
+
+        genericMoveTest(model, verifyMovedDate);
+    }
 };
 
 QTEST_MAIN(InfiniteMerkuroCalendarViewModelTest)
