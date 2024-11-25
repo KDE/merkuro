@@ -36,7 +36,7 @@ void InfiniteMerkuroCalendarViewModel::setup()
     case WeekScale: {
         QDate firstDay = today.addDays(-today.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
         // We create dates before and after where our view will start from (which is today)
-        firstDay = firstDay.addDays((-m_datesToAdd * 7) / 2);
+        firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
 
         addWeekDates(true, firstDay);
         break;
