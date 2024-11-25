@@ -7,7 +7,6 @@
 #include <QRandomGenerator>
 #include <QSignalSpy>
 #include <QTest>
-#include <akonadi/qtest_akonadi.h>
 
 class InfiniteMerkuroCalendarViewModelTest : public QObject
 {
