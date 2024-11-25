@@ -298,7 +298,6 @@ private Q_SLOTS:
 
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto firstDecadeYear = selectedDate.year() / 10 * 10;
-            qDebug() << selectedDate << firstDecadeYear << result.second.year();
             QCOMPARE(result.second.year(), firstDecadeYear - 1); // Since we display 12, decade -1 and +1
         };
 
