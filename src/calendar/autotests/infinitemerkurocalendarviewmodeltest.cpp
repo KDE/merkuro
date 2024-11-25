@@ -52,6 +52,21 @@ private:
         return date.addDays(-date.dayOfWeek() + (QLocale::system().firstDayOfWeek() % 7));
     }
 
+    static void genericMoveTest(InfiniteMerkuroCalendarViewModel &model, std::function<void(std::pair<int, QDate>, QDate)> moveVerifyingFunc)
+    {
+        const auto currentRow = m_datesToLeftOfCenter + 1;
+        const auto currentIndex = model.index(currentRow, 0);
+        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+        const auto testDates = generatedMoveDates(model);
+
+        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
+        moveVerifyingFunc(move1, testDates.ungeneratedPast);
+        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
+        moveVerifyingFunc(move2, testDates.ungeneratedFuture);
+        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
+        moveVerifyingFunc(move3, testDates.generated);
+    }
+
     static constexpr int m_datesToAdd = 9;
     static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
     const QDate m_currentDate = QDate::currentDate();
@@ -233,17 +248,11 @@ private Q_SLOTS:
         model.setDatesToAdd(m_datesToAdd);
         model.setScale(InfiniteMerkuroCalendarViewModel::DayScale);
 
-        const auto currentRow = m_datesToLeftOfCenter + 1;
-        const auto currentIndex = model.index(currentRow, 0);
-        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-        const auto testDates = generatedMoveDates(model);
+        const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
+            QCOMPARE(result.second, selectedDate);
+        };
 
-        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
-        QCOMPARE(move1.second, testDates.ungeneratedPast);
-        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
-        QCOMPARE(move2.second, testDates.ungeneratedFuture);
-        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
-        QCOMPARE(move3.second, testDates.generated);
+        genericMoveTest(model, verifyMovedDate);
     }
 
     void testMoveThreeDay()
@@ -252,22 +261,12 @@ private Q_SLOTS:
         model.setDatesToAdd(m_datesToAdd);
         model.setScale(InfiniteMerkuroCalendarViewModel::ThreeDayScale);
 
-        const auto currentRow = m_datesToLeftOfCenter + 1;
-        const auto currentIndex = model.index(currentRow, 0);
-        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-        const auto testDates = generatedMoveDates(model);
-
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto startDateToSelectedDateDays = result.second.daysTo(selectedDate);
             QVERIFY(startDateToSelectedDateDays <= 2 && startDateToSelectedDateDays >= 0); // Should be no further than this
         };
 
-        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
-        verifyMovedDate(move1, testDates.ungeneratedPast);
-        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
-        verifyMovedDate(move2, testDates.ungeneratedFuture);
-        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
-        verifyMovedDate(move3, testDates.generated);
+        genericMoveTest(model, verifyMovedDate);
     }
 
     void testMoveWeek()
@@ -276,11 +275,6 @@ private Q_SLOTS:
         model.setDatesToAdd(m_datesToAdd);
         model.setScale(InfiniteMerkuroCalendarViewModel::WeekScale);
 
-        const auto currentRow = m_datesToLeftOfCenter + 1;
-        const auto currentIndex = model.index(currentRow, 0);
-        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-        const auto testDates = generatedMoveDates(model);
-
         const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto startDate = result.second;
             QCOMPARE(startDate.dayOfWeek(), QLocale::system().firstDayOfWeek());
@@ -288,12 +282,7 @@ private Q_SLOTS:
             QVERIFY(startDateToSelectedDateDays <= 6 && startDateToSelectedDateDays >= 0); // Should be no further than this
         };
 
-        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
-        verifyMovedDate(move1, testDates.ungeneratedPast);
-        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
-        verifyMovedDate(move2, testDates.ungeneratedFuture);
-        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
-        verifyMovedDate(move3, testDates.generated);
+        genericMoveTest(model, verifyMovedDate);
     }
 
     void testMoveMonth()
@@ -302,22 +291,12 @@ private Q_SLOTS:
         model.setDatesToAdd(m_datesToAdd);
         model.setScale(InfiniteMerkuroCalendarViewModel::MonthScale);
 
-        const auto currentRow = m_datesToLeftOfCenter + 1;
-        const auto currentIndex = model.index(currentRow, 0);
-        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
-        const auto testDates = generatedMoveDates(model);
-
         const auto verifyMovedDate = [&model](const std::pair<int, QDate> &result, const QDate &selectedDate) {
             const auto firstDayOfMonth = model.index(result.first, 0).data(InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole).toDate();
             QCOMPARE(firstDayOfMonth, QDate(selectedDate.year(), selectedDate.month(), 1));
         };
 
-        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
-        verifyMovedDate(move1, testDates.ungeneratedPast);
-        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
-        verifyMovedDate(move2, testDates.ungeneratedFuture);
-        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
-        verifyMovedDate(move3, testDates.generated);
+        genericMoveTest(model, verifyMovedDate);
     }
 };
 
