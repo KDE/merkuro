@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 02:34+0000\n"
+"POT-Creation-Date: 2024-11-25 02:35+0000\n"
 "PO-Revision-Date: 2024-11-11 17:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1583,34 +1583,56 @@ msgstr "شغال بطول اليوم"
 msgid "<b>Today</b>"
 msgstr "<b>اليوم</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:45
+#: calendar/qml/MainViews/HourlyView.qml:47
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Day"
+msgstr "الأسبوع السابق"
+
+#: calendar/qml/MainViews/HourlyView.qml:49
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Three Days"
+msgstr "الأسبوع السابق"
+
+#: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
 msgid "Previous Week"
 msgstr "الأسبوع السابق"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:61
+#, kde-format
+msgid "Next Day"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:63
+#, kde-format
+msgid "Next Three Days"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
 msgid "Next Week"
 msgstr "الأسبوع القادم"
 
-#: calendar/qml/MainViews/HourlyView.qml:59
+#: calendar/qml/MainViews/HourlyView.qml:73
 #, kde-format
 msgid "Now"
 msgstr "الآن"
 
-#: calendar/qml/MainViews/HourlyView.qml:97
+#: calendar/qml/MainViews/HourlyView.qml:111
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "الأسبوع"
 
-#: calendar/qml/MainViews/HourlyView.qml:105
+#: calendar/qml/MainViews/HourlyView.qml:119
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 الأيام"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:126
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
