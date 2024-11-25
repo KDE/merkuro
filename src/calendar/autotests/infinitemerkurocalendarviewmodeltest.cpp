@@ -108,6 +108,32 @@ private Q_SLOTS:
         }
     }
 
+    void testWeekDates()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+
+        QSignalSpy scaleSpy(&model, &InfiniteMerkuroCalendarViewModel::scaleChanged);
+        QSignalSpy resetSpy(&model, &InfiniteMerkuroCalendarViewModel::modelReset);
+        model.setScale(InfiniteMerkuroCalendarViewModel::Scale::WeekScale);
+        QCOMPARE(scaleSpy.count(), 1);
+        QCOMPARE(resetSpy.count(), 1);
+        QCOMPARE(model.rowCount(), m_datesToAdd);
+
+        const auto currentStartOfWeek = firstWeekDayDateForDate(QDate::currentDate());
+        constexpr auto weeksToLeftOfCenter = static_cast<int>(m_datesToAdd / 2);
+        const auto firstDate = currentStartOfWeek.addDays(-weeksToLeftOfCenter * 7);
+        const auto firstIndex = model.index(0, 0);
+        QCOMPARE(firstIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate(), firstDate);
+
+        for (auto i = 1; i < m_datesToAdd; ++i) {
+            const auto index = model.index(i, 0);
+            const auto startDate = index.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+            const auto expectedStartDate = firstDate.addDays(i * 7);
+            QCOMPARE(startDate, expectedStartDate);
+        }
+    }
+
     void testMonthDates()
     {
         InfiniteMerkuroCalendarViewModel model(this);
