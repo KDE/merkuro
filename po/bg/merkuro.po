@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:41+0000\n"
+"POT-Creation-Date: 2024-11-25 00:41+0000\n"
 "PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1522,34 +1522,56 @@ msgstr "Протича през целия ден"
 msgid "<b>Today</b>"
 msgstr "<b>Днес</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:45
+#: calendar/qml/MainViews/HourlyView.qml:47
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Day"
+msgstr "Предишна седмица"
+
+#: calendar/qml/MainViews/HourlyView.qml:49
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Three Days"
+msgstr "Предишна седмица"
+
+#: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
 msgid "Previous Week"
 msgstr "Предишна седмица"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:61
+#, kde-format
+msgid "Next Day"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:63
+#, kde-format
+msgid "Next Three Days"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
 msgid "Next Week"
 msgstr "Следваща седмица"
 
-#: calendar/qml/MainViews/HourlyView.qml:59
+#: calendar/qml/MainViews/HourlyView.qml:73
 #, kde-format
 msgid "Now"
 msgstr "Сега"
 
-#: calendar/qml/MainViews/HourlyView.qml:97
+#: calendar/qml/MainViews/HourlyView.qml:111
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "Седмица"
 
-#: calendar/qml/MainViews/HourlyView.qml:105
+#: calendar/qml/MainViews/HourlyView.qml:119
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 дни"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:126
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"

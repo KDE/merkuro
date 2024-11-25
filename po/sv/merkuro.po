@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:41+0000\n"
-"PO-Revision-Date: 2024-10-10 16:53+0200\n"
+"POT-Creation-Date: 2024-11-25 00:41+0000\n"
+"PO-Revision-Date: 2024-11-24 18:15+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1522,34 +1522,56 @@ msgstr "Hela dagen"
 msgid "<b>Today</b>"
 msgstr "<b>Idag</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:45
+#: calendar/qml/MainViews/HourlyView.qml:47
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Day"
+msgstr "Föregående vecka"
+
+#: calendar/qml/MainViews/HourlyView.qml:49
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Three Days"
+msgstr "Föregående vecka"
+
+#: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
 msgid "Previous Week"
 msgstr "Föregående vecka"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:61
+#, kde-format
+msgid "Next Day"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:63
+#, kde-format
+msgid "Next Three Days"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
 msgid "Next Week"
 msgstr "Nästa vecka"
 
-#: calendar/qml/MainViews/HourlyView.qml:59
+#: calendar/qml/MainViews/HourlyView.qml:73
 #, kde-format
 msgid "Now"
 msgstr "Nu"
 
-#: calendar/qml/MainViews/HourlyView.qml:97
+#: calendar/qml/MainViews/HourlyView.qml:111
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "Vecka"
 
-#: calendar/qml/MainViews/HourlyView.qml:105
+#: calendar/qml/MainViews/HourlyView.qml:119
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 dagar"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:126
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -3137,24 +3159,20 @@ msgid "Add New Address Book Source…"
 msgstr "Lägg till ny adressbokskälla…"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Launcher"
-msgstr "Merkuro kalender"
+msgstr "Merkuro startprogram"
 
 #: launcher/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgid "merkuro Launcher"
-msgstr "Merkuro kalender"
+msgstr "merkuro startprogram"
 
 #: launcher/main.cpp:59
 #, kde-format
 msgid "(c) 2024"
-msgstr ""
+msgstr "© 2024"
 
 #: launcher/main.cpp:61
 #, kde-format

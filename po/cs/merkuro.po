@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-20 00:41+0000\n"
+"POT-Creation-Date: 2024-11-25 00:41+0000\n"
 "PO-Revision-Date: 2024-10-18 15:55+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1523,34 +1523,56 @@ msgstr "Běží celý den"
 msgid "<b>Today</b>"
 msgstr "<b>Dnes</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:45
+#: calendar/qml/MainViews/HourlyView.qml:47
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Day"
+msgstr "Předchozí týden"
+
+#: calendar/qml/MainViews/HourlyView.qml:49
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Three Days"
+msgstr "Předchozí týden"
+
+#: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
 msgid "Previous Week"
 msgstr "Předchozí týden"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:61
+#, kde-format
+msgid "Next Day"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:63
+#, kde-format
+msgid "Next Three Days"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
 msgid "Next Week"
 msgstr "Příští týden"
 
-#: calendar/qml/MainViews/HourlyView.qml:59
+#: calendar/qml/MainViews/HourlyView.qml:73
 #, kde-format
 msgid "Now"
 msgstr "Nyní"
 
-#: calendar/qml/MainViews/HourlyView.qml:97
+#: calendar/qml/MainViews/HourlyView.qml:111
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "Týden"
 
-#: calendar/qml/MainViews/HourlyView.qml:105
+#: calendar/qml/MainViews/HourlyView.qml:119
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 dny"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:126
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
