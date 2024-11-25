@@ -47,6 +47,11 @@ private:
         return {newIndex, newDate};
     };
 
+    static QDate firstWeekDayDateForDate(const QDate &date)
+    {
+        return date.addDays(-date.dayOfWeek() + (QLocale::system().firstDayOfWeek() % 7));
+    }
+
     static constexpr int m_datesToAdd = 9;
     static constexpr int m_datesToLeftOfCenter = m_datesToAdd / 2;
     const QDate m_currentDate = QDate::currentDate();
@@ -115,9 +120,8 @@ private Q_SLOTS:
         QCOMPARE(resetSpy.count(), 1);
         QCOMPARE(model.rowCount(), m_datesToAdd);
 
-        const auto locale = QLocale::system();
-        const auto generateFirstViewDateForFirstDayOfMonth = [&locale](const QDate &firstDayOfMonth) {
-            const auto date = firstDayOfMonth.addDays(-firstDayOfMonth.dayOfWeek() + (locale.firstDayOfWeek() % 7));
+        const auto generateFirstViewDateForFirstDayOfMonth = [](const QDate &firstDayOfMonth) {
+            const auto date = firstWeekDayDateForDate(firstDayOfMonth);
             return date == firstDayOfMonth ? date.addDays(-7) : date;
         };
 
@@ -125,7 +129,7 @@ private Q_SLOTS:
         // We should dates to add / 2 both before and after the current months' first date
         const auto firstDayOfFirstMonth = firstOfMonth.addMonths(-m_datesToLeftOfCenter);
         const auto firstDateOfFirstMonthView = generateFirstViewDateForFirstDayOfMonth(firstDayOfFirstMonth);
-        QCOMPARE(firstDateOfFirstMonthView.dayOfWeek(), locale.firstDayOfWeek());
+        QCOMPARE(firstDateOfFirstMonthView.dayOfWeek(), QLocale::system().firstDayOfWeek());
         QVERIFY(firstDateOfFirstMonthView < firstDayOfFirstMonth);
 
         const auto firstIndex = model.index(0, 0);
