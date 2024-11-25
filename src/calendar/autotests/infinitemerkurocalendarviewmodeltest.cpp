@@ -269,6 +269,32 @@ private Q_SLOTS:
         const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
         verifyMovedDate(move3, testDates.generated);
     }
+
+    void testMoveWeek()
+    {
+        InfiniteMerkuroCalendarViewModel model(this);
+        model.setDatesToAdd(m_datesToAdd);
+        model.setScale(InfiniteMerkuroCalendarViewModel::WeekScale);
+
+        const auto currentRow = m_datesToLeftOfCenter + 1;
+        const auto currentIndex = model.index(currentRow, 0);
+        const auto currentDate = currentIndex.data(InfiniteMerkuroCalendarViewModel::StartDateRole).toDate();
+        const auto testDates = generatedMoveDates(model);
+
+        const auto verifyMovedDate = [](const std::pair<int, QDate> &result, const QDate &selectedDate) {
+            const auto startDate = result.second;
+            QCOMPARE(startDate.dayOfWeek(), QLocale::system().firstDayOfWeek());
+            const auto startDateToSelectedDateDays = startDate.daysTo(selectedDate);
+            QVERIFY(startDateToSelectedDateDays <= 6 && startDateToSelectedDateDays >= 0); // Should be no further than this
+        };
+
+        const auto move1 = moveToDateResult(model, testDates.ungeneratedPast, currentDate, currentRow);
+        verifyMovedDate(move1, testDates.ungeneratedPast);
+        const auto move2 = moveToDateResult(model, testDates.ungeneratedFuture, testDates.ungeneratedPast, move1.first);
+        verifyMovedDate(move2, testDates.ungeneratedFuture);
+        const auto move3 = moveToDateResult(model, testDates.generated, testDates.ungeneratedFuture, move2.first);
+        verifyMovedDate(move3, testDates.generated);
+    }
 };
 
 QTEST_MAIN(InfiniteMerkuroCalendarViewModelTest)
