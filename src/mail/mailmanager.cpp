@@ -36,6 +36,21 @@
 #include <QLoggingCategory>
 #include <QPointer>
 
+class ThreadedMailModel : public QAbstractItemModel
+{
+    Q_OBJECT
+
+public:
+    explicit ThreadedMailModel(QObject *const object, MailModel *const baseModel)
+        : QAbstractItemModel(object)
+        , m_baseModel(baseModel)
+    {
+    }
+
+private:
+    MailModel *m_baseModel = nullptr;
+};
+
 MailManager::MailManager(QObject *parent)
     : QObject(parent)
     , m_loading(true)
