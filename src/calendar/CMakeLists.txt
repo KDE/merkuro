@@ -126,6 +126,8 @@ target_link_libraries(merkuro-calendar
         KF6::CoreAddons
         KF6::DBusAddons
         KF6::WindowSystem
+	KF6::IconThemes
+	KF6::ConfigWidgets
         KF6::ConfigGui
 )
 if(TARGET KF6::I18nQml)

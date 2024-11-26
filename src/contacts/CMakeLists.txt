@@ -156,6 +156,8 @@ target_link_libraries(merkuro-contact
         KF6::WindowSystem
         KF6::ConfigGui
         KF6::Crash
+	KF6::IconThemes
+	KF6::ConfigWidgets
         KPim6::Libkleo
 )
 if(TARGET KF6::I18nQml)
