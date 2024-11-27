@@ -63,6 +63,22 @@ void ThreadedMailModel::updateThreading()
 
 QModelIndex ThreadedMailModel::index(const int row, const int column, const QModelIndex &parent) const
 {
+    const auto parentItem = parent.isValid() ? static_cast<MailItem *>(parent.internalPointer()) : nullptr;
+
+    if (parentItem != nullptr) {
+        const auto childItemPtr = parentItem->children.at(row);
+        const auto childItem = childItemPtr.lock();
+        return createIndex(row, column, childItem.get());
+    }
+
+    if (row < 0 || row >= m_orderedIds.count()) {
+        return {};
+    }
+
+    const auto id = m_orderedIds.at(row);
+    if (const auto childItem = m_items.value(id)) {
+        return createIndex(row, column, childItem.get());
+    }
     return {};
 }
 
