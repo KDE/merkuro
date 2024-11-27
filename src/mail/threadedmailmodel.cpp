@@ -120,7 +120,15 @@ QModelIndex ThreadedMailModel::parent(const QModelIndex &index) const
 
 int ThreadedMailModel::rowCount(const QModelIndex &index) const
 {
-    return 0;
+    if (index.column() > 0) {
+        return 0;
+    }
+
+    if (index.isValid()) {
+        return static_cast<MailItem *>(index.internalPointer())->children.size();
+    }
+
+    return m_items.count();
 }
 
 int ThreadedMailModel::columnCount(const QModelIndex &index) const
