@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+#include <KMime/Message>
 #include <QAbstractItemModel>
 
 class MailModel;
@@ -20,5 +21,12 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
+    struct MailItem {
+        KMime::Message::Ptr mail;
+        std::weak_ptr<MailItem> parent;
+        QList<std::weak_ptr<MailItem>> children;
+    };
+
     MailModel *m_baseModel = nullptr;
+    QHash<QString, std::shared_ptr<MailItem>> m_items;
 };
