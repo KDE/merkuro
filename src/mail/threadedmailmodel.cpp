@@ -111,7 +111,7 @@ QModelIndex ThreadedMailModel::parent(const QModelIndex &index) const
             return item.lock()->mail->messageID()->asUnicodeString() == parentId;
         });
         if (parentIt != parentSiblings.cend()) {
-            parentFamilyIndex = parentIt - parentSiblings.cend();
+            parentFamilyIndex = parentIt - parentSiblings.cbegin();
         }
     }
 
