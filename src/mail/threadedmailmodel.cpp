@@ -84,7 +84,38 @@ QModelIndex ThreadedMailModel::index(const int row, const int column, const QMod
 
 QModelIndex ThreadedMailModel::parent(const QModelIndex &index) const
 {
-    return {};
+    if (!index.isValid()) {
+        return {};
+    }
+
+    const auto childItem = static_cast<MailItem *>(index.internalPointer());
+    const auto parentItemPtr = childItem->parent;
+    const auto parentItem = parentItemPtr.lock();
+    if (parentItem == nullptr) {
+        return {};
+    }
+
+    const auto parentId = parentItem->mail->messageID()->asUnicodeString();
+    const auto grandParentPtr = parentItem->parent;
+    const auto grandParent = grandParentPtr.lock();
+    auto parentFamilyIndex = -1;
+
+    if (grandParent.get() == nullptr) {
+        const auto parentIt = std::find(m_orderedIds.cbegin(), m_orderedIds.cend(), parentId);
+        if (parentIt != m_orderedIds.cend()) {
+            parentFamilyIndex = parentIt - m_orderedIds.cbegin();
+        }
+    } else {
+        const auto parentSiblings = grandParent->children;
+        const auto parentIt = std::find_if(parentSiblings.cbegin(), parentSiblings.cend(), [&parentId](const std::weak_ptr<MailItem> item) {
+            return item.lock()->mail->messageID()->asUnicodeString() == parentId;
+        });
+        if (parentIt != parentSiblings.cend()) {
+            parentFamilyIndex = parentIt - parentSiblings.cend();
+        }
+    }
+
+    return createIndex(parentFamilyIndex, 0, parentItem.get());
 }
 
 int ThreadedMailModel::rowCount(const QModelIndex &index) const
