@@ -22,6 +22,8 @@ class EntityCollectionOrderProxyModel;
 
 class QItemSelectionModel;
 
+class ThreadedMailModel;
+
 /// Class responsible for exposing the email folder selected by the user
 class MailManager : public QObject
 {
@@ -31,7 +33,7 @@ class MailManager : public QObject
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(MailCommon::EntityCollectionOrderProxyModel *foldersModel READ foldersModel CONSTANT)
-    Q_PROPERTY(MailModel *folderModel READ folderModel NOTIFY folderModelChanged)
+    Q_PROPERTY(ThreadedMailModel *folderModel READ folderModel NOTIFY folderModelChanged)
     Q_PROPERTY(QString selectedFolderName READ selectedFolderName NOTIFY selectedFolderNameChanged)
 
 public:
@@ -43,7 +45,7 @@ public:
 
     [[nodiscard]] bool loading() const;
     MailCommon::EntityCollectionOrderProxyModel *foldersModel() const;
-    MailModel *folderModel() const;
+    ThreadedMailModel *folderModel() const;
     Akonadi::Session *session() const;
     [[nodiscard]] QString selectedFolderName() const;
 
@@ -69,6 +71,6 @@ private:
 
     // folders
     QItemSelectionModel *m_collectionSelectionModel;
-    MailModel *m_folderModel;
+    ThreadedMailModel *m_folderModel;
     QString m_selectedFolderName;
 };

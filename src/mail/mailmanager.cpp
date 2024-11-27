@@ -8,6 +8,7 @@
 
 #include "mailkernel.h"
 #include "sortedcollectionproxymodel.h"
+#include "threadedmailmodel.h"
 
 #include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
@@ -107,8 +108,9 @@ MailManager::MailManager(QObject *parent)
     folderFilterModel->addMimeTypeExclusionFilter(Collection::mimeType());
 
     // Proxy for QML roles
-    m_folderModel = new MailModel(this);
-    m_folderModel->setSourceModel(folderFilterModel);
+    const auto mailModel = new MailModel(this);
+    mailModel->setSourceModel(folderFilterModel);
+    m_folderModel = new ThreadedMailModel(this, mailModel);
 
     if (Akonadi::ServerManager::isRunning()) {
         m_loading = false;
@@ -146,7 +148,7 @@ void MailManager::saveConfig()
 {
 }
 
-MailModel *MailManager::folderModel() const
+ThreadedMailModel *MailManager::folderModel() const
 {
     return m_folderModel;
 }
