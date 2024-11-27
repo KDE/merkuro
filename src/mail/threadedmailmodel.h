@@ -41,7 +41,7 @@ private:
     struct MailItem {
         KMime::Message::Ptr mail;
         std::weak_ptr<MailItem> parent;
-        QList<std::weak_ptr<MailItem>> children;
+        QList<std::shared_ptr<MailItem>> children;
     };
 
     MailModel *m_baseModel = nullptr;

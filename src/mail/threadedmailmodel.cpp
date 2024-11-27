@@ -27,17 +27,15 @@ void ThreadedMailModel::updateThreading()
 
     Q_ASSERT(m_baseModel);
     const auto mailCount = m_baseModel->rowCount();
-    QHash<QString, QList<std::weak_ptr<MailItem>>> pendingChildren;
+    QHash<QString, QList<std::shared_ptr<MailItem>>> pendingChildren;
 
     for (auto i = 0; i < mailCount; ++i) {
         const auto item = m_baseModel->index(i, 0).data(MailModel::ItemRole).value<Akonadi::Item>();
-        if (!item.hasPayload<KMime::Message::Ptr>()) {
-            continue;
-        }
+        Q_ASSERT(item.hasPayload<KMime::Message::Ptr>());
 
         const auto mail = item.payload<KMime::Message::Ptr>();
         const auto mailId = mail->messageID()->asUnicodeString();
-        const auto parentId = mail->inReplyTo()->asUnicodeString();
+        const auto parentId = mail->inReplyTo() ? mail->inReplyTo()->asUnicodeString() : QString();
         const auto parent = m_items.value(parentId);
         const auto children = pendingChildren.take(mailId);
 
@@ -46,8 +44,8 @@ void ThreadedMailModel::updateThreading()
         mailItem->parent = parent;
         mailItem->children = children;
 
-        for (const auto &childPtr : children) {
-            childPtr.lock()->parent = mailItem;
+        for (const auto &child : children) {
+            child->parent = mailItem;
         }
 
         if (parent == nullptr && !parentId.isEmpty()) {
@@ -69,8 +67,7 @@ QModelIndex ThreadedMailModel::index(const int row, const int column, const QMod
     const auto parentItem = parent.isValid() ? static_cast<MailItem *>(parent.internalPointer()) : nullptr;
 
     if (parentItem != nullptr) {
-        const auto childItemPtr = parentItem->children.at(row);
-        const auto childItem = childItemPtr.lock();
+        const auto childItem = parentItem->children.at(row);
         return createIndex(row, column, childItem.get());
     }
 
