@@ -3,8 +3,11 @@
 
 #include "threadedmailmodel.h"
 
-ThreadedMailModel::ThreadedMailModel(QObject *const object)
+#include "mailmodel.h"
+
+ThreadedMailModel::ThreadedMailModel(QObject *const object, MailModel *const mailModel)
     : QAbstractItemModel(object)
+    , m_baseModel(mailModel)
 {
 }
 
