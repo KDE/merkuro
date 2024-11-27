@@ -11,6 +11,20 @@ class ThreadedMailModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
+    enum ExtraRole {
+        TitleRole = Qt::UserRole + 1,
+        SenderRole,
+        FromRole,
+        ToRole,
+        TextColorRole,
+        DateRole,
+        DateTimeRole,
+        BackgroundColorRole,
+        StatusRole,
+        FavoriteRole,
+        ItemRole,
+    };
+
     explicit ThreadedMailModel(QObject *const object, MailModel *const baseModel);
 
     QModelIndex index(int row, int column, const QModelIndex &parent) const override;

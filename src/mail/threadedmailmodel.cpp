@@ -3,6 +3,9 @@
 
 #include "threadedmailmodel.h"
 
+#include <KFormat>
+#include <KLocalizedString>
+
 #include "mailmodel.h"
 
 ThreadedMailModel::ThreadedMailModel(QObject *const object, MailModel *const mailModel)
@@ -142,10 +145,85 @@ QVariant ThreadedMailModel::data(const QModelIndex &index, const int role) const
     if (!checkIndex(index)) {
         return {};
     }
+
+    const auto item = static_cast<MailItem *>(index.internalPointer());
+    if (item == nullptr) {
+        return {};
+    }
+
+    const auto mail = item->mail;
+    // Static for speed reasons
+    static const QString noSubject = i18nc("displayed as subject when the subject of a mail is empty", "No Subject");
+    static const QString unknown(i18nc("displayed when a mail has unknown sender, receiver or date", "Unknown"));
+
+    QString subject = mail->subject()->asUnicodeString();
+    if (subject.isEmpty()) {
+        subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
+    }
+
+    /*
+     *   MessageStatus stat;
+     *   stat.setStatusFromFlags(item.flags());
+     */
+
+    switch (role) {
+    case TitleRole:
+        if (mail->subject()) {
+            return mail->subject()->asUnicodeString();
+        } else {
+            return noSubject;
+        }
+    case FromRole:
+        if (mail->from()) {
+            return mail->from()->asUnicodeString();
+        } else {
+            return QString();
+        }
+    case SenderRole:
+        if (mail->sender()) {
+            return mail->sender()->asUnicodeString();
+        } else {
+            return QString();
+        }
+    case ToRole:
+        if (mail->to()) {
+            return mail->to()->asUnicodeString();
+        } else {
+            return unknown;
+        }
+    case DateRole:
+        if (mail->date()) {
+            return KFormat().formatRelativeDate(mail->date()->dateTime().date(), QLocale::LongFormat);
+        } else {
+            return QString();
+        }
+    case DateTimeRole:
+        if (mail->date()) {
+            return mail->date()->dateTime();
+        } else {
+            return QString();
+        }
+    case StatusRole:
+        return {}; // QVariant::fromValue(stat);
+    case ItemRole:
+        return QVariant::fromValue(item);
+    }
     return {};
 }
 
 QHash<int, QByteArray> ThreadedMailModel::roleNames() const
 {
-    return {};
+    return {
+        {TitleRole, QByteArrayLiteral("title")},
+        {DateRole, QByteArrayLiteral("date")},
+        {DateTimeRole, QByteArrayLiteral("datetime")},
+        {SenderRole, QByteArrayLiteral("sender")},
+        {FromRole, QByteArrayLiteral("from")},
+        {ToRole, QByteArrayLiteral("to")},
+        {StatusRole, QByteArrayLiteral("status")},
+        {FavoriteRole, QByteArrayLiteral("favorite")},
+        {TextColorRole, QByteArrayLiteral("textColor")},
+        {BackgroundColorRole, QByteArrayLiteral("backgroudColor")},
+        {ItemRole, QByteArrayLiteral("item")},
+    };
 }
