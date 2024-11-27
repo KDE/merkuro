@@ -20,6 +20,9 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+public Q_SLOTS:
+    void updateThreading();
+
 private:
     struct MailItem {
         KMime::Message::Ptr mail;
@@ -29,4 +32,5 @@ private:
 
     MailModel *m_baseModel = nullptr;
     QHash<QString, std::shared_ptr<MailItem>> m_items;
+    QList<QString> m_orderedIds;
 };
