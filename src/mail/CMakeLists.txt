@@ -10,6 +10,8 @@ set(merkuro_mail_SRCS
     mailmanager.h
     mailmodel.cpp
     mailmodel.h
+    threadedmailmodel.h
+    threadedmailmodel.cpp
     contactimageprovider.cpp
     contactimageprovider.h
 
