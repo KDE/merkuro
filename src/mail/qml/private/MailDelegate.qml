@@ -36,6 +36,13 @@ QQC2.TreeViewDelegate {
     onClicked: root.openMailRequested()
 
     contentItem: RowLayout {
+        Rectangle {
+            width: Kirigami.Units.gridUnit / 4
+            height: width
+            radius: width / 2
+            color: root.unread ? Kirigami.Theme.highlightColor : "transparent"
+        }
+
         Components.Avatar {
             // Euristic to extract name from "Name <email>" pattern
             name: root.from.replace(/<.*>/, '').replace(/\(.*\)/, '')
