@@ -66,9 +66,12 @@ QModelIndex ThreadedMailModel::index(const int row, const int column, const QMod
 {
     const auto parentItem = parent.isValid() ? static_cast<MailItem *>(parent.internalPointer()) : nullptr;
 
-    if (parentItem != nullptr) {
+    if (parentItem != nullptr && row >= 0 && row < parentItem->children.size()) {
         const auto childItem = parentItem->children.at(row);
         return createIndex(row, column, childItem.get());
+    } else if (parentItem != nullptr) {
+        qWarning() << "Index has parent item but received an invalid row!" << parent << row << parentItem->children.size();
+        return {};
     }
 
     if (row < 0 || row >= m_orderedIds.count()) {
