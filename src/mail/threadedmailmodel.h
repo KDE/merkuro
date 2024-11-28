@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+#include <Akonadi/Item>
 #include <KMime/Message>
 #include <QAbstractItemModel>
 
@@ -39,6 +40,7 @@ public Q_SLOTS:
 
 private:
     struct MailItem {
+        Akonadi::Item item;
         KMime::Message::Ptr mail;
         std::weak_ptr<MailItem> parent;
         QList<std::shared_ptr<MailItem>> children;

@@ -40,6 +40,7 @@ void ThreadedMailModel::updateThreading()
         const auto children = pendingChildren.take(mailId);
 
         const auto mailItem = std::make_shared<MailItem>();
+        mailItem->item = item;
         mailItem->mail = mail;
         mailItem->parent = parent;
         mailItem->children = children;
