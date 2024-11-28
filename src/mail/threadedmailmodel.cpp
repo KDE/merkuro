@@ -162,10 +162,8 @@ QVariant ThreadedMailModel::data(const QModelIndex &index, const int role) const
         subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
     }
 
-    /*
-     *   MessageStatus stat;
-     *   stat.setStatusFromFlags(item.flags());
-     */
+    MessageStatus stat;
+    stat.setStatusFromFlags(item->item.flags());
 
     switch (role) {
     case TitleRole:
@@ -205,7 +203,7 @@ QVariant ThreadedMailModel::data(const QModelIndex &index, const int role) const
             return QString();
         }
     case StatusRole:
-        return {}; // QVariant::fromValue(stat);
+        return QVariant::fromValue(stat);
     case ItemRole:
         return QVariant::fromValue(item);
     }
