@@ -133,33 +133,6 @@ Kirigami.ScrollablePage {
         delegate: MailDelegate {
             id: mailDelegate
 
-            readonly property int indentation: Kirigami.Units.gridUnit
-
-            required property TreeView treeView
-            required property bool isTreeNode
-            required property bool expanded
-            required property int hasChildren
-            required property int depth
-            required property int row
-            required property int column
-            required property bool current
-
-            leftPadding: padding + (depth * indentation)
-
-            QQC2.Button {
-                id: indicator
-                x: padding + (depth * indentation)
-                anchors.verticalCenter: parent.verticalCenter
-                visible: isTreeNode && hasChildren
-                text: "▶"
-
-                onClicked: {
-                    let index = mails.index(row, column)
-                    mails.selectionModel.setCurrentIndex(index, ItemSelectionModel.NoUpdate)
-                    mails.toggleExpanded(row)
-                }
-            }
-
             onOpenMailRequested: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: mailDelegate.item,

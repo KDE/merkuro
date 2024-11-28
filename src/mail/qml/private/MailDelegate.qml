@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
 
-Delegates.IndicatorItemDelegate {
+QQC2.TreeViewDelegate {
     id: root
 
     required property date datetime
@@ -21,8 +21,7 @@ Delegates.IndicatorItemDelegate {
     required property var item
 
     readonly property string datetimeText: datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
-
-    unread: status && !status.isRead
+    readonly property bool unread: status && !status.isRead
 
     signal openMailRequested()
     signal starMailRequested()
