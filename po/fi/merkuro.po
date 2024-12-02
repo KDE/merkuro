@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-25 02:35+0000\n"
-"PO-Revision-Date: 2024-02-14 19:01+0200\n"
+"PO-Revision-Date: 2024-10-17 13:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -206,10 +206,9 @@ msgid "Calendar Application"
 msgstr "Kalenterisovellus"
 
 #: calendar/main.cpp:80 contacts/main.cpp:74 mail/main.cpp:75
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021"
+#, kde-format
 msgid "(c) KDE Community 2021-2024"
-msgstr "© KDE-yhteisö 2021"
+msgstr "© KDE-yhteisö 2021–2024"
 
 #: calendar/main.cpp:82 contacts/main.cpp:76 launcher/main.cpp:60
 #: mail/main.cpp:77
@@ -474,8 +473,7 @@ msgid "Calendar files (*.ics *.vcs)"
 msgstr "Kalenteritiedostot (*.ics *.vcs)"
 
 #: calendar/qml/Controls/ImportHandler.qml:99
-#, fuzzy, kde-format
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Import Calendar"
 msgstr "Tuo kalenteri"
@@ -493,22 +491,19 @@ msgstr ""
 " "
 
 #: calendar/qml/Controls/ImportHandler.qml:116
-#, fuzzy, kde-format
-#| msgid "Merge with existing calendar"
+#, kde-format
 msgctxt "@action:button merge with existing calendar"
 msgid "Merge with Existing"
-msgstr "Yhdistä olemassa olevaan kalenteriin"
+msgstr "Yhdistä olemassa olevaan"
 
 #: calendar/qml/Controls/ImportHandler.qml:134
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button Create new calendar"
 msgid "Create New"
-msgstr "Luo"
+msgstr "Luo uusi"
 
 #: calendar/qml/Controls/ImportHandler.qml:148
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Peru"
@@ -822,7 +817,7 @@ msgstr "Haluatko varmasti poistaa kalenterin: ”%1”?"
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr "Tätä toimintoa ei voi kumota"
+msgstr "Tätä toimenpidettä ei voi kumota"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
@@ -1293,11 +1288,10 @@ msgid "Configure"
 msgstr "Asetukset"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
-#, fuzzy, kde-format
-#| msgid "Undo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
-msgstr "Kumoa:"
+msgstr "Kumoa: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
@@ -1305,11 +1299,10 @@ msgid "Undo"
 msgstr "Kumoa"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
-#, fuzzy, kde-format
-#| msgid "Redo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
-msgstr "Tee uudelleen:"
+msgstr "Tee uudelleen: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
 #, kde-format
@@ -2254,31 +2247,31 @@ msgstr "Koti:"
 #, kde-format
 msgctxt "@info: shorthand for the key is revoked"
 msgid "Revoked"
-msgstr ""
+msgstr "Peruttu"
 
 #: contacts/certificatesmodel.cpp:87
 #, kde-format
 msgctxt "@info: shorthand for the key is expired"
 msgid "Expired"
-msgstr ""
+msgstr "Vanhentunut"
 
 #: contacts/certificatesmodel.cpp:90
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "Ei käytössä"
 
 #: contacts/certificatesmodel.cpp:93
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
-msgstr ""
+msgstr "Virheellinen"
 
 #: contacts/certificatesmodel.cpp:96
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
-msgstr ""
+msgstr "Kelvollinen"
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -2833,11 +2826,10 @@ msgid "protocol:person@example.com"
 msgstr "yhteyskäytäntö:käyttäjä@esimerkki.fi"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partner's name"
-msgstr "Puolison nimi:"
+msgstr "Puolison nimi"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3103,8 +3095,7 @@ msgid "Manager's name:"
 msgstr "Johtajan nimi:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, fuzzy, kde-format
-#| msgid "Assistants's name:"
+#, kde-format
 msgid "Assistant's name:"
 msgstr "Avustajan nimi:"
 
@@ -3119,13 +3110,13 @@ msgstr[1] "Sähköpostiosoitteet"
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
-msgstr ""
+msgstr "Kryptografiset varmenteet"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "Vahvista yhteystiedon poistaminen"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
 #, kde-format
@@ -3134,10 +3125,9 @@ msgid "No name"
 msgstr "Ei nimeä"
 
 #: contacts/qml/private/DeleteContactAction.qml:25
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: \"%1\"?"
+#, kde-format
 msgid "Do you really want to delete your contact: <b>%1</b>?"
-msgstr "Haluatko varmasti poistaa yhteystiedon: %1?"
+msgstr "Haluatko varmasti poistaa yhteystiedon: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactAction.qml:51
 #, kde-format
@@ -3203,7 +3193,8 @@ msgid "Your emails"
 msgstr "translator@legisign.org"
 
 #: launcher/Main.qml:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Quit"
 msgid "Quit"
 msgstr "Lopeta"
 
@@ -3223,17 +3214,14 @@ msgid "New Mail…"
 msgstr "Uusi sähköposti…"
 
 #: mail/mailapplication.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#, kde-format
 msgid "Check Mail"
-msgstr "Merkuro-sähköposti"
+msgstr "Tarkista posti"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
-#, fuzzy, kde-format
-#| msgid "There are no attendees to e-mail"
+#, kde-format
 msgid "There are no recipients to e-mail"
-msgstr "Ei osallistujia, joille lähettää sähköpostia"
+msgstr "Viestissä ei ole vastaanottajia"
 
 #: mail/mailclient.cpp:93
 #, kde-format
@@ -3256,6 +3244,8 @@ msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"Resurssi %1 on rikki.\n"
+"%2"
 
 #: mail/mailmanager.cpp:239
 #, kde-format
@@ -3533,15 +3523,13 @@ msgid "Modify or delete this account agent."
 msgstr "Muuta tätä tiliä tai poista se."
 
 #: quick/qml/AgentConfigurationForm.qml:47
-#, fuzzy, kde-format
-#| msgid "Modify"
+#, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Muuta"
 
 #: quick/qml/AgentConfigurationForm.qml:56
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Poista"
@@ -3560,19 +3548,17 @@ msgstr "Hallitse luokituksia"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "Vahvista luokituksen poistaminen"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
+#, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Haluatko varmasti poistaa luokituksen ”%1”?"
+msgstr "Haluatko varmasti poistaa luokituksen <b>%1</b>?"
 
 #: quick/qml/TagManagerPage.qml:29
-#, fuzzy, kde-format
-#| msgid "You won't be able to revert this action"
+#, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Tätä toimintoa ei voi kumota"
+msgstr "Tätä toimenpidettä ei voi kumota."
 
 #: quick/qml/TagManagerPage.qml:130
 #, kde-format
