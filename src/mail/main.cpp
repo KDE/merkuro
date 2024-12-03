@@ -90,7 +90,6 @@ int main(int argc, char *argv[])
 #endif
     if (!args.isEmpty()) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
-        QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
         engine.loadFromModule("org.kde.merkuro.mail", "OpenMbox");
         const auto rootObjects = engine.rootObjects();
         if (rootObjects.isEmpty()) {
