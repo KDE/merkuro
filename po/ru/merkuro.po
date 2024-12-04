@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-25 02:35+0000\n"
-"PO-Revision-Date: 2024-07-15 13:52+0300\n"
+"PO-Revision-Date: 2024-12-03 11:51+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -210,9 +210,9 @@ msgid "Calendar Application"
 msgstr "Программа с функциями календаря"
 
 #: calendar/main.cpp:80 contacts/main.cpp:74 mail/main.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgid "(c) KDE Community 2021-2024"
-msgstr "© Сообщество KDE, 2021"
+msgstr "© Сообщество KDE, 2021–2024"
 
 #: calendar/main.cpp:82 contacts/main.cpp:76 launcher/main.cpp:60
 #: mail/main.cpp:77
@@ -1324,11 +1324,10 @@ msgid "Configure"
 msgstr "Параметры"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
-#, fuzzy, kde-format
-#| msgid "Undo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
-msgstr "Отменить: "
+msgstr "Отменить: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:289
 #, kde-format
@@ -1336,11 +1335,10 @@ msgid "Undo"
 msgstr "Отменить"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
-#, fuzzy, kde-format
-#| msgid "Redo: "
+#, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
-msgstr "Повторить: "
+msgstr "Повторить: %1"
 
 #: calendar/qml/Drawers/MainDrawer.qml:294
 #, kde-format
@@ -1559,16 +1557,14 @@ msgid "<b>Today</b>"
 msgstr "<b>Сегодня</b>"
 
 #: calendar/qml/MainViews/HourlyView.qml:47
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Day"
-msgstr "Предыдущая неделя"
+msgstr "Предыдущий день"
 
 #: calendar/qml/MainViews/HourlyView.qml:49
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Three Days"
-msgstr "Предыдущая неделя"
+msgstr "Предыдущие три дня"
 
 #: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
@@ -1578,12 +1574,12 @@ msgstr "Предыдущая неделя"
 #: calendar/qml/MainViews/HourlyView.qml:61
 #, kde-format
 msgid "Next Day"
-msgstr ""
+msgstr "Следующий день"
 
 #: calendar/qml/MainViews/HourlyView.qml:63
 #, kde-format
 msgid "Next Three Days"
-msgstr ""
+msgstr "Следующие три дня"
 
 #: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
@@ -2283,31 +2279,31 @@ msgstr "Домашние:"
 #, kde-format
 msgctxt "@info: shorthand for the key is revoked"
 msgid "Revoked"
-msgstr ""
+msgstr "Отозван"
 
 #: contacts/certificatesmodel.cpp:87
 #, kde-format
 msgctxt "@info: shorthand for the key is expired"
 msgid "Expired"
-msgstr ""
+msgstr "Истёк"
 
 #: contacts/certificatesmodel.cpp:90
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "Отключён"
 
 #: contacts/certificatesmodel.cpp:93
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
-msgstr ""
+msgstr "Недействителен"
 
 #: contacts/certificatesmodel.cpp:96
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
-msgstr ""
+msgstr "Действителен"
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -2865,11 +2861,10 @@ msgid "protocol:person@example.com"
 msgstr "протокол:имя@сайт.рф"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partner's name"
-msgstr "Супруг(а):"
+msgstr "Супруг(а)"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3139,8 +3134,7 @@ msgid "Manager's name:"
 msgstr "Руководитель:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, fuzzy, kde-format
-#| msgid "Assistants's name:"
+#, kde-format
 msgid "Assistant's name:"
 msgstr "Помощник:"
 
@@ -3157,7 +3151,7 @@ msgstr[3] "Адрес электронной почты"
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
-msgstr ""
+msgstr "Криптографические сертификаты"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format
@@ -3208,24 +3202,20 @@ msgid "Add New Address Book Source…"
 msgstr "Добавить источник данных адресной книги…"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Launcher"
-msgstr "Календарь Merkuro"
+msgstr "Программа запуска Merkuro"
 
 #: launcher/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgid "merkuro Launcher"
-msgstr "Календарь Merkuro"
+msgstr "Программа запуска Merkuro"
 
 #: launcher/main.cpp:59
 #, kde-format
 msgid "(c) 2024"
-msgstr ""
+msgstr "© 2024"
 
 #: launcher/main.cpp:61
 #, kde-format
@@ -3242,7 +3232,7 @@ msgstr "kekcuha@gmail.com, translation-team@basealt.ru"
 #: launcher/Main.qml:58
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Выход"
 
 #: mail/contactimageprovider.cpp:147
 #, kde-format
@@ -3260,15 +3250,14 @@ msgid "New Mail…"
 msgstr "Создать письмо…"
 
 #: mail/mailapplication.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgid "Check Mail"
-msgstr "Почта Merkuro"
+msgstr "Проверить почту"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
-#, fuzzy, kde-format
-#| msgid "There are no attendees to e-mail"
+#, kde-format
 msgid "There are no recipients to e-mail"
-msgstr "Нет участников, которым следовало бы отправить письмо"
+msgstr "Нет получателей письма"
 
 #: mail/mailclient.cpp:93
 #, kde-format
@@ -3291,6 +3280,8 @@ msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
+"Источник данных %1 повреждён.\n"
+"%2"
 
 #: mail/mailmanager.cpp:239
 #, kde-format
@@ -3568,13 +3559,13 @@ msgid "Modify or delete this account agent."
 msgstr "Изменить или удалить агент этой учётной записи."
 
 #: quick/qml/AgentConfigurationForm.qml:47
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "Изменить"
 
 #: quick/qml/AgentConfigurationForm.qml:56
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Удалить"
