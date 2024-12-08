@@ -7,6 +7,7 @@
 #include <KCrash>
 #include <KDBusService>
 #include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KWindowSystem>
 #include <QApplication>
@@ -17,9 +18,6 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
-#include <KLocalizedQmlContext>
-#endif
 
 #include <KIconTheme>
 
@@ -83,11 +81,7 @@ int main(int argc, char *argv[])
     const auto options = parser.optionNames();
     const auto args = parser.positionalArguments();
     QQmlApplicationEngine engine;
-#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-#else
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
-#endif
     if (!args.isEmpty()) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
         engine.loadFromModule("org.kde.merkuro.mail", "OpenMbox");

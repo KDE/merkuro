@@ -13,12 +13,8 @@
 #include "../config-merkuro.h"
 #include <KAboutData>
 #include <KCrash>
-#include <KLocalizedString>
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
 #include <KLocalizedQmlContext>
-#else
-#include <KLocalizedContext>
-#endif
+#include <KLocalizedString>
 
 #ifdef Q_OS_WINDOWS
 #include <QFont>
@@ -65,11 +61,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-#else
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
-#endif
     engine.loadFromModule("org.kde.merkuro", u"Main");
 
     if (engine.rootObjects().isEmpty()) {

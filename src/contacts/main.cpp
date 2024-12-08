@@ -17,10 +17,8 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 
-#include <Libkleo/KeyCache>
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
 #include <KLocalizedQmlContext>
-#endif
+#include <Libkleo/KeyCache>
 
 #include <KStyleManager>
 static void raiseWindow(QWindow *window)
@@ -80,11 +78,7 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 
     QQmlApplicationEngine engine;
-#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-#else
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
-#endif
     engine.loadFromModule("org.kde.merkuro.contact", "Main");
 
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
