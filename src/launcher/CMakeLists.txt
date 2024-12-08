@@ -23,10 +23,8 @@ target_link_libraries(merkurolauncher PUBLIC
     KF6::KIOWidgets
 )
 
-if(TARGET KF6::I18nQml)
 target_link_libraries(merkurolauncher PRIVATE
         KF6::I18nQml
 )
-endif()
 
 install(TARGETS merkurolauncher ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

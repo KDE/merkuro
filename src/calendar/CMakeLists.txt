@@ -130,11 +130,9 @@ target_link_libraries(merkuro-calendar
 	KF6::ConfigWidgets
         KF6::ConfigGui
 )
-if(TARGET KF6::I18nQml)
 target_link_libraries(merkuro_calendar_static PRIVATE
         KF6::I18nQml
 )
-endif()
 install(TARGETS merkuro-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.calendar.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
