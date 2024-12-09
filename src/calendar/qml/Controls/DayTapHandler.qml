@@ -27,12 +27,16 @@ TapHandler {
             QQC2.MenuItem {
                 text: i18n("New Event…")
                 icon.name: "resource-calendar-insert"
-                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate)
+                onClicked: {
+                    IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
+                }
             }
             QQC2.MenuItem {
                 text: i18n("New Task…")
                 icon.name: "view-task-add"
-                onClicked: addNewIncidence(Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate)
+                onClicked: {
+                    IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
+                }
             }
         }
     }
