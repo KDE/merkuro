@@ -6,15 +6,16 @@
 
 #include <Akonadi/Item>
 
+#include <Akonadi/EntityMimeTypeFilterModel>
+#include <Akonadi/EntityTreeModel>
+#include <QItemSelectionModel>
 #include <QObject>
-#include <QSortFilterProxyModel>
-#include <akonadi/entitytreemodel.h>
-#include <qitemselectionmodel.h>
 #include <qqmlregistration.h>
 
+#include "abstractmailmodel.h"
 #include "messagestatus.h"
 
-class MailModel : public QSortFilterProxyModel
+class MailModel : public Akonadi::EntityMimeTypeFilterModel, AbstractMailModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -23,7 +24,6 @@ class MailModel : public QSortFilterProxyModel
     Q_PROPERTY(
         QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
     Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
-    Q_PROPERTY(QString searchString READ searchString WRITE setSearchString NOTIFY searchStringChanged)
 
 public:
     enum ExtraRole {
@@ -52,16 +52,11 @@ public:
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
     Q_INVOKABLE void updateMessageStatus(int row, MessageStatus messageStatus);
     Q_INVOKABLE MessageStatus copyMessageStatus(MessageStatus messageStatus);
 
-    [[nodiscard]] QString searchString() const;
-    void setSearchString(const QString &searchString);
-
 Q_SIGNALS:
-    void searchStringChanged();
     void collectionSelectionModelChanged();
     void entityTreeModelChanged();
     void folderNameChanged();

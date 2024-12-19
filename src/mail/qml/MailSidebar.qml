@@ -18,6 +18,8 @@ Kirigami.OverlayDrawer {
 
     property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
 
+    signal search(string searchString)
+
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
     onModalChanged: drawerOpen = !modal;
@@ -68,7 +70,7 @@ Kirigami.OverlayDrawer {
                     Layout.fillWidth: true
 
                     opacity: root.collapsed ? 0 : 1
-                    onEditingFinished: MailManager.folderModel.searchString = text
+                    onEditingFinished: root.search(text)
                     Behavior on opacity {
                         OpacityAnimator {
                             duration: Kirigami.Units.longDuration

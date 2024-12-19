@@ -4,12 +4,16 @@
 add_subdirectory(settings)
 
 set(merkuro_mail_SRCS
+    abstractmailmodel.cpp
+    abstractmailmodel.h
     mailapplication.cpp
     mailapplication.h
     mailmanager.cpp
     mailmanager.h
     mailmodel.cpp
     mailmodel.h
+    searchmodel.h
+    searchmodel.cpp
     contactimageprovider.cpp
     contactimageprovider.h
 
@@ -56,6 +60,7 @@ target_link_libraries(merkuro_mail_static
         KPim6::MailCommon
         KPim6::MailTransport
         KPim6::AkonadiMime
+        KPim6::AkonadiSearchPIM
         KPim6::IdentityManagementQuick
         KPim6::Mbox
         KPim6::Mime

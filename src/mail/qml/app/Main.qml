@@ -12,14 +12,22 @@ import org.kde.merkuro.mail.settings as Settings
 BaseApplication {
     id: root
 
+    property string searchString: ''
+
     application: Mail.MailApplication
 
     menubarComponent: MenuBar {}
 
-    pageStack.initialPage: Mail.FolderView {}
+    pageStack.initialPage: Mail.FolderView {
+        searchString: root.searchString
+    }
 
     globalDrawer: Mail.MailSidebar {
         id: sidebar
+
+        onSearch: (searchString) => {
+            root.searchString = searchString;
+        }
     }
 
     //Loader {
@@ -31,11 +39,11 @@ BaseApplication {
     Connections {
         target: Mail.MailApplication
 
-        function onOpenSettings() {
+        function onOpenSettings(): void {
             settings.open();
         }
 
-        function onCheckMail() {
+        function onCheckMail(): void {
             Mail.MailManager.checkMail();
         }
 
