@@ -53,6 +53,13 @@ ThumbnailResponse::ThumbnailResponse(QString email, QSize size, QNetworkAccessMa
         return;
     }
 
+    QFileInfo info(localFile);
+    const auto aWeekAgo = QDate::currentDate().addDays(-7);
+    if (info.exists() && info.birthTime().date() > aWeekAgo) {
+        errorStr = QStringLiteral("No image found last time we tried.");
+        return;
+    }
+
     // Execute a request on the main thread asynchronously
     moveToThread(QApplication::instance()->thread());
     QMetaObject::invokeMethod(this, &ThumbnailResponse::startRequest, Qt::QueuedConnection);
@@ -134,19 +141,22 @@ void ThumbnailResponse::prepareResult()
                 dir.mkpath(localPath);
             }
 
-            m_image.save(localFile);
-
             if (ok) {
+                m_image.save(localFile);
                 errorStr.clear();
                 Q_EMIT finished();
                 return;
-            } else {
-                errorStr = QStringLiteral("No image found");
             }
+            errorStr = QStringLiteral("No image found");
         } else if (job->error() == Akonadi::Job::UserCanceled) {
             errorStr = i18n("Image request has been cancelled");
         } else {
             errorStr = job->errorString();
+        }
+
+        QFile file(localFile);
+        if (file.open(QIODeviceBase::WriteOnly)) {
+            file.write("0");
         }
 
         // No image found in Akonadi, try libravatar
