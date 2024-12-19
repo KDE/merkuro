@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "../config-merkuro.h"
+#include "contactimageprovider.h"
 #include "messagehandler.h"
 #include <KAboutData>
 #include <KCrash>
@@ -81,6 +82,9 @@ int main(int argc, char *argv[])
     const auto options = parser.optionNames();
     const auto args = parser.positionalArguments();
     QQmlApplicationEngine engine;
+
+    engine.addImageProvider(QStringLiteral("contact"), new ContactImageProvider);
+
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
     if (!args.isEmpty()) {
         qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
