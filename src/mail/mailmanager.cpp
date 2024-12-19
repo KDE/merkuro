@@ -61,11 +61,11 @@ MailManager::MailManager(QObject *parent)
     auto folderCollectionMonitor = new MailCommon::FolderCollectionMonitor(m_session, this);
 
     // setup collection model
-    auto treeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);
-    treeModel->setItemPopulationStrategy(Akonadi::EntityTreeModel::LazyPopulation);
+    m_entityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);
+    m_entityTreeModel->setItemPopulationStrategy(Akonadi::EntityTreeModel::LazyPopulation);
 
     auto foldersModel = new Akonadi::CollectionFilterProxyModel(this);
-    foldersModel->setSourceModel(treeModel);
+    foldersModel->setSourceModel(m_entityTreeModel);
     foldersModel->addMimeTypeFilter(KMime::Message::mimeType());
 
     m_foldersModel = new MailCommon::EntityCollectionOrderProxyModel(this);
@@ -77,38 +77,6 @@ MailManager::MailManager(QObject *parent)
 
     // Setup selection model
     m_collectionSelectionModel = new QItemSelectionModel(m_foldersModel);
-    connect(m_collectionSelectionModel, &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &selected, const QItemSelection &deselected) {
-        Q_UNUSED(deselected)
-        const auto indexes = selected.indexes();
-        if (!indexes.isEmpty()) {
-            QString name;
-            QModelIndex index = indexes[0];
-            while (index.isValid()) {
-                if (name.isEmpty()) {
-                    name = index.data(Qt::DisplayRole).toString();
-                } else {
-                    name = index.data(Qt::DisplayRole).toString() + QLatin1StringView(" / ") + name;
-                }
-                index = index.parent();
-            }
-            m_selectedFolderName = name;
-            Q_EMIT selectedFolderNameChanged();
-        }
-    });
-    auto selectionModel = new SelectionProxyModel(m_collectionSelectionModel, this);
-    selectionModel->setSourceModel(treeModel);
-    selectionModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
-
-    // Setup mail model
-    auto folderFilterModel = new EntityMimeTypeFilterModel(this);
-    folderFilterModel->setSourceModel(selectionModel);
-    folderFilterModel->setHeaderGroup(EntityTreeModel::ItemListHeaders);
-    folderFilterModel->addMimeTypeInclusionFilter(KMime::Message::mimeType());
-    folderFilterModel->addMimeTypeExclusionFilter(Collection::mimeType());
-
-    // Proxy for QML roles
-    m_folderModel = new MailModel(this);
-    m_folderModel->setSourceModel(folderFilterModel);
 
     if (Akonadi::ServerManager::isRunning()) {
         m_loading = false;
@@ -146,9 +114,14 @@ void MailManager::saveConfig()
 {
 }
 
-MailModel *MailManager::folderModel() const
+QItemSelectionModel *MailManager::collectionSelectionModel() const
 {
-    return m_folderModel;
+    return m_collectionSelectionModel;
+}
+
+Akonadi::EntityTreeModel *MailManager::entryTreeModel() const
+{
+    return m_entityTreeModel;
 }
 
 void MailManager::loadMailCollection(const QModelIndex &modelIndex)
@@ -173,11 +146,6 @@ MailCommon::EntityCollectionOrderProxyModel *MailManager::foldersModel() const
 Akonadi::Session *MailManager::session() const
 {
     return m_session;
-}
-
-QString MailManager::selectedFolderName() const
-{
-    return m_selectedFolderName;
 }
 
 void MailManager::moveToTrash(Akonadi::Item item)

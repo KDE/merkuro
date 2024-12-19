@@ -31,8 +31,8 @@ class MailManager : public QObject
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(MailCommon::EntityCollectionOrderProxyModel *foldersModel READ foldersModel CONSTANT)
-    Q_PROPERTY(MailModel *folderModel READ folderModel NOTIFY folderModelChanged)
-    Q_PROPERTY(QString selectedFolderName READ selectedFolderName NOTIFY selectedFolderNameChanged)
+    Q_PROPERTY(QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel CONSTANT)
+    Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel CONSTANT)
 
 public:
     explicit MailManager(QObject *parent = nullptr);
@@ -41,11 +41,12 @@ public:
     void loadConfig();
     void saveConfig();
 
+    QItemSelectionModel *collectionSelectionModel() const;
+    Akonadi::EntityTreeModel *entryTreeModel() const;
+
     [[nodiscard]] bool loading() const;
     MailCommon::EntityCollectionOrderProxyModel *foldersModel() const;
-    MailModel *folderModel() const;
     Akonadi::Session *session() const;
-    [[nodiscard]] QString selectedFolderName() const;
 
     Q_INVOKABLE void loadMailCollection(const QModelIndex &index);
     Q_INVOKABLE void moveToTrash(Akonadi::Item item);
@@ -59,8 +60,8 @@ public:
 
 Q_SIGNALS:
     void loadingChanged();
-    void folderModelChanged();
-    void selectedFolderNameChanged();
+    void entityTreeModelChanged();
+    void collectionSelectionModelChanged();
 
 private:
     bool m_loading;
@@ -69,6 +70,5 @@ private:
 
     // folders
     QItemSelectionModel *m_collectionSelectionModel;
-    MailModel *m_folderModel;
-    QString m_selectedFolderName;
+    Akonadi::EntityTreeModel *m_entityTreeModel;
 };

@@ -4,9 +4,11 @@
 
 #include "mailmodel.h"
 
+#include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/MessageStatus>
+#include <Akonadi/SelectionProxyModel>
 #include <KFormat>
 #include <KLocalizedString>
 #include <KMime/Message>
@@ -164,6 +166,91 @@ bool MailModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent)
         return true;
     }
     return false;
+}
+
+Akonadi::EntityTreeModel *MailModel::entryTreeModel() const
+{
+    return m_entityTreeModel;
+}
+
+void MailModel::setEntityTreeModel(Akonadi::EntityTreeModel *entityTreeModel)
+{
+    if (m_entityTreeModel == entityTreeModel) {
+        return;
+    }
+
+    m_entityTreeModel = entityTreeModel;
+    Q_EMIT entityTreeModelChanged();
+
+    if (!m_entityTreeModel) {
+        return;
+    }
+    setupModel();
+}
+
+QItemSelectionModel *MailModel::collectionSelectionModel() const
+{
+    return m_collectionSelectionModel;
+}
+
+void MailModel::setCollectionSelectionModel(QItemSelectionModel *collectionSelectionModel)
+{
+    if (m_collectionSelectionModel == collectionSelectionModel) {
+        return;
+    }
+
+    m_collectionSelectionModel = collectionSelectionModel;
+    Q_EMIT collectionSelectionModelChanged();
+
+    if (!m_collectionSelectionModel) {
+        return;
+    }
+    setupModel();
+
+    connect(m_collectionSelectionModel, &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &selected, const QItemSelection &deselected) {
+        Q_UNUSED(deselected)
+        const auto indexes = selected.indexes();
+        if (indexes.isEmpty()) {
+            return;
+        }
+        QString name;
+        QModelIndex index = indexes[0];
+        while (index.isValid()) {
+            if (name.isEmpty()) {
+                name = index.data(Qt::DisplayRole).toString();
+            } else {
+                name = index.data(Qt::DisplayRole).toString() + QLatin1StringView(" / ") + name;
+            }
+            index = index.parent();
+        }
+        m_folderName = name;
+        Q_EMIT folderNameChanged();
+    });
+}
+
+void MailModel::setupModel()
+{
+    if (!m_collectionSelectionModel || !m_entityTreeModel) {
+        return;
+    }
+
+    auto selectionModel = new Akonadi::SelectionProxyModel(m_collectionSelectionModel, this);
+    selectionModel->setSourceModel(m_entityTreeModel);
+    selectionModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
+
+    // Setup mail model
+    auto folderFilterModel = new Akonadi::EntityMimeTypeFilterModel(this);
+    folderFilterModel->setSourceModel(selectionModel);
+    folderFilterModel->setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
+    folderFilterModel->addMimeTypeInclusionFilter(KMime::Message::mimeType());
+    folderFilterModel->addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
+
+    setSourceModel(folderFilterModel);
+}
+
+QString MailModel::folderName() const
+{
+    return m_folderName;
 }
 
 #include "moc_mailmodel.cpp"
