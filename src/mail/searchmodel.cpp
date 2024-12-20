@@ -52,12 +52,9 @@ void SearchModel::setSearchString(const QString &searchString)
     Akonadi::Search::PIM::ResultIterator it = query.exec();
     QList<Akonadi::Item::Id> itemIds;
     int i = 0;
-    while (it.next()) {
+    while (it.next() && i <= 40) {
         itemIds << it.id();
         i++;
-        if (i > 40) {
-            break;
-        }
     }
 
     m_job = new Akonadi::ItemFetchJob(itemIds, this);
