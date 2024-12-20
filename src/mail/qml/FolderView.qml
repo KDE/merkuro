@@ -18,7 +18,7 @@ Kirigami.ScrollablePage {
     property var collection
     property alias searchString: searchModel.searchString
 
-    title: mailModel.folderName
+    title: searchString.length > 0 ? i18nc("@title", "Search: %1", searchString) : mailModel.folderName
 
     MailModel {
         id: mailModel
