@@ -14,6 +14,7 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.treeview 1.0 as Tree
 import org.kde.kitemmodels
 import org.kde.merkuro.mail
+import org.kde.merkuro.components
 import '../actions'
 
 ListView {
@@ -22,6 +23,12 @@ ListView {
     model: KDescendantsProxyModel {
         id: foldersModel
         model: MailManager.foldersModel
+        expandsByDefault: false
+    }
+
+    ETMTreeViewStateSaver {
+        model: foldersModel
+        configGroup: "mail-sidebar"
     }
 
     onModelChanged: currentIndex = -1
