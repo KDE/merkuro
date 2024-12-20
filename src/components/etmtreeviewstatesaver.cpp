@@ -19,6 +19,27 @@ ETMTreeViewStateSaver::ETMTreeViewStateSaver(QObject *parent)
 {
 }
 
+int ETMTreeViewStateSaver::currentIndex() const
+{
+    return m_currentIndex;
+}
+
+void ETMTreeViewStateSaver::setCurrentIndex(const int currentIndex, bool signal)
+{
+    if (m_currentIndex == currentIndex) {
+        return;
+    }
+    m_currentIndex = currentIndex;
+    if (signal) {
+        Q_EMIT currentIndexChanged();
+    } else {
+        auto config = KSharedConfig::openStateConfig();
+        auto group = config->group(m_configGroup);
+        group.writeEntry(u"CurrentItem"_s, indexToConfigString(m_model->index(m_currentIndex, 0)));
+        config->sync();
+    }
+}
+
 QString ETMTreeViewStateSaver::configGroup() const
 {
     return m_configGroup;
@@ -164,6 +185,15 @@ void ETMTreeViewStateSaver::restoreExpanded()
     }
 }
 
+void ETMTreeViewStateSaver::restoreCurrentItem()
+{
+    QModelIndex currentIndex = indexFromConfigString(m_model->sourceModel(), m_pendingCurrent);
+    if (currentIndex.isValid()) {
+        setCurrentIndex(m_model->mapFromSource(currentIndex).row(), true);
+        m_pendingCurrent.clear();
+    }
+}
+
 void ETMTreeViewStateSaver::saveState()
 {
     if (!m_model) {
@@ -175,7 +205,8 @@ void ETMTreeViewStateSaver::saveState()
     QSet expansionItems = m_pendingExpansions; // not yet applied
     const auto newItems = getExpandedItems({});
     expansionItems.unite(QSet<QString>(newItems.begin(), newItems.end()));
-    group.writeEntry(u"ExpandedItems"_s, QStringList(expansionItems.begin(), expansionItems.end()));
+    group.writeEntry(u"ExpandedItems"_s, expansionItems.values());
+    group.writeEntry(u"CurrentItem"_s, indexToConfigString(m_model->index(m_currentIndex, 0)));
     config->sync();
 }
 
@@ -185,6 +216,7 @@ void ETMTreeViewStateSaver::restoreState()
     auto group = config->group(m_configGroup);
     const auto indexStrings = group.readEntry(u"ExpandedItems"_s, QStringList{});
     m_pendingExpansions.unite(QSet<QString>(indexStrings.begin(), indexStrings.end()));
+    m_pendingCurrent = group.readEntry(u"CurrentItem"_s, QString{});
 
     processPendingChanges();
 }
@@ -192,6 +224,8 @@ void ETMTreeViewStateSaver::restoreState()
 void ETMTreeViewStateSaver::processPendingChanges()
 {
     restoreExpanded();
+    restoreCurrentItem();
+
     if (hasPendingChanges()) {
         listenToPendingChanges();
     }

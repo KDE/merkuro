@@ -17,9 +17,13 @@ class ETMTreeViewStateSaver : public QObject
 
     Q_PROPERTY(KDescendantsProxyModel *model READ model WRITE setModel NOTIFY modelChanged)
     Q_PROPERTY(QString configGroup READ configGroup WRITE setConfigGroup NOTIFY configGroupChanged)
+    Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
 
 public:
     explicit ETMTreeViewStateSaver(QObject *parent = nullptr);
+
+    int currentIndex() const;
+    void setCurrentIndex(int currentIndex, bool signal = false);
 
     QString configGroup() const;
     void setConfigGroup(const QString &configGroup);
@@ -36,10 +40,12 @@ public:
 Q_SIGNALS:
     void modelChanged();
     void configGroupChanged();
+    void currentIndexChanged();
 
 private:
     void processPendingChanges();
     void restoreExpanded();
+    void restoreCurrentItem();
     bool hasPendingChanges() const;
     void listenToPendingChanges();
 
@@ -47,5 +53,7 @@ private:
     KDescendantsProxyModel *m_model;
     QString m_configGroup;
     QSet<QString> m_pendingExpansions;
+    QString m_pendingCurrent;
+    int m_currentIndex = -1;
     QMetaObject::Connection m_rowsInsertedConnection;
 };

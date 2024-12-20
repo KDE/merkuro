@@ -27,10 +27,17 @@ ListView {
     }
 
     ETMTreeViewStateSaver {
+        id: stateSaver
+
         model: foldersModel
         configGroup: "mail-sidebar"
+        onCurrentIndexChanged: {
+            mailList.currentIndex = currentIndex
+            mailList.currentItem.trigger();
+        }
     }
 
+    onCurrentIndexChanged: stateSaver.currentIndex = currentIndex
     onModelChanged: currentIndex = -1
 
     required property var collectionId
@@ -57,6 +64,16 @@ ListView {
                 required property var model
 
                 property bool chosen: false
+
+                function trigger(): void {
+                    model.checkState = model.checkState === 0 ? 2 : 0
+                    const index = foldersModel.index(model.index, 0);
+                    MailManager.loadMailCollection(foldersModel.mapToSource(index));
+
+                    chosen = true;
+                    mailList.folderChosen();
+                    mailList.currentIndex = index;
+                }
 
                 Connections {
                     target: mailList
@@ -96,12 +113,7 @@ ListView {
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
                     onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
-                            categoryHeader.model.checkState = categoryHeader.model.checkState === 0 ? 2 : 0
-                            const index = foldersModel.index(categoryHeader.model.index, 0);
-                            MailManager.loadMailCollection(foldersModel.mapToSource(index));
-
-                            categoryHeader.chosen = true;
-                            mailList.folderChosen();
+                            categoryHeader.trigger();
                         } else if (mouse.button === Qt.RightButton) {
                             mailList.collectionId = foldersModel.mapToSource(foldersModel.index(index, 0));
                             mailList.name = categoryHeader.displayName;
@@ -128,6 +140,15 @@ ListView {
                 property bool chosen: false
 
                 text: displayName
+
+                function trigger(): void {
+                    model.checkState = model.checkState === 0 ? 2 : 0
+                    MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
+
+                    chosen = true;
+                    mailList.folderChosen();
+                    mailList.currentIndex = index;
+                }
 
                 Connections {
                     target: mailList
@@ -188,11 +209,7 @@ ListView {
                     acceptedButtons: Qt.LeftButton | Qt.RightButton
                     onClicked: mouse => {
                         if (mouse.button === Qt.LeftButton) {
-                            controlRoot.model.checkState = controlRoot.model.checkState === 0 ? 2 : 0
-                            MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(controlRoot.model.index, 0)));
-
-                            controlRoot.chosen = true;
-                            mailList.folderChosen();
+                            controlRoot.trigger();
                         }
                         if (mouse.button === Qt.RightButton) {
                             mailList.collectionId = foldersModel.mapToSource(foldersModel.index(controlRoot.model.index, 0));
