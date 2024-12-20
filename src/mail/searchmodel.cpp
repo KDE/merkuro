@@ -17,8 +17,7 @@ SearchModel::SearchModel(QObject *parent)
 
 int SearchModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
-    return m_items.count();
+    return parent.isValid() ? 0 : m_items.count();
 }
 
 QVariant SearchModel::data(const QModelIndex &idx, int role) const
