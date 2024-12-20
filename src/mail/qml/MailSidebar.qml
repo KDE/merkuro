@@ -99,7 +99,7 @@ Kirigami.OverlayDrawer {
                 id: pagePool
             }
 
-            function getPage(name) {
+            function getPage(name: string): Kirigami.Page {
                 switch (name) {
                 case "FolderView":
                     return pagePool.loadPage(Qt.resolvedUrl("./FolderView.qml"))

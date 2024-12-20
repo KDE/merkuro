@@ -169,10 +169,9 @@ ListView {
                         horizontalAlignment: Text.AlignHCenter
                         background: Rectangle {
                             visible: controlRoot.unreadCount > 0
-                            Kirigami.Theme.colorSet: Kirigami.Theme.Button
-                            color: Kirigami.Theme.disabledTextColor
+                            color: Kirigami.Theme.highlightColor
                             opacity: 0.3
-                            radius: height / 2
+                            radius: width
                         }
                     }
                 }
