@@ -25,6 +25,9 @@ Kirigami.ScrollablePage {
 
         collectionSelectionModel: MailManager.collectionSelectionModel
         entryTreeModel: MailManager.entryTreeModel
+        onFolderNameChanged: {
+            mails.currentIndex = -1
+        }
     }
 
     SearchModel {
@@ -119,14 +122,6 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Connections {
-            target: MailManager
-
-            function onFolderModelChanged() {
-                mails.currentIndex = -1;
-            }
-        }
-
         Kirigami.PlaceholderMessage {
             id: mailboxSelected
             anchors.centerIn: parent
@@ -167,14 +162,14 @@ Kirigami.ScrollablePage {
                 if (!mailDelegate.status.isRead) {
                     const status = folderModel.copyMessageStatus(mailDelegate.status);
                     status.isRead = true;
-                    MailManager.folderModel.updateMessageStatus(index, status)
+                    folderModel.updateMessageStatus(index, status)
                 }
             }
 
             onStarMailRequested: {
                 const status = folderModel.copyMessageStatus(mailDelegate.status);
                 status.isImportant = !status.isImportant;
-                MailManager.folderModel.updateMessageStatus(index, status)
+                folderModel.updateMessageStatus(index, status)
             }
 
             onContextMenuRequested: {
