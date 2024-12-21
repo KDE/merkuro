@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-21 00:42+0000\n"
 "PO-Revision-Date: 2024-12-02 17:08+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1701,7 +1701,7 @@ msgstr "跳至"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:49
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3165,6 +3165,18 @@ msgstr "mail@kisaragi-hiu.com"
 msgid "Quit"
 msgstr "離開"
 
+#: mail/abstractmailmodel.cpp:20
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "沒有主題"
+
+#: mail/abstractmailmodel.cpp:21
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "未知"
+
 #: mail/contactimageprovider.cpp:152
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3214,23 +3226,11 @@ msgstr ""
 "資源 %1 已損毀。\n"
 "%2"
 
-#: mail/mailmanager.cpp:239
+#: mail/mailmanager.cpp:207
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
 msgstr "帳號設定：%1"
-
-#: mail/mailmodel.cpp:48
-#, kde-format
-msgctxt "displayed as subject when the subject of a mail is empty"
-msgid "No Subject"
-msgstr "沒有主題"
-
-#: mail/mailmodel.cpp:49
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "未知"
 
 #: mail/main.cpp:53
 #, kde-format
@@ -3313,79 +3313,85 @@ msgstr "開啟檔案"
 msgid "Choose file"
 msgstr "選擇檔案…"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:21
+#, kde-format
+msgctxt "@title"
+msgid "Search: %1"
+msgstr ""
+
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "儲存信件 - Merkuro 郵件"
 
-#: mail/qml/FolderView.qml:29
+#: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "郵件訊息 (*.mbox)"
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "標記信件"
 
-#: mail/qml/FolderView.qml:68
+#: mail/qml/FolderView.qml:84
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "將信件標為已讀"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "將信件標為未讀"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "取消標記為重要"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Mark as Important"
 msgstr "標記為重要"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:99
 #, kde-format
 msgid "Move to Trash"
 msgstr "移到垃圾桶"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:104
 #, kde-format
 msgid "Move Message to..."
 msgstr "將信件移動到…"
 
-#: mail/qml/FolderView.qml:93
+#: mail/qml/FolderView.qml:109
 #, kde-format
 msgid "Copy Message to..."
 msgstr "將信件複製到…"
 
-#: mail/qml/FolderView.qml:98
+#: mail/qml/FolderView.qml:114
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "新增回覆提醒"
 
-#: mail/qml/FolderView.qml:103
+#: mail/qml/FolderView.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "另存為…"
 
-#: mail/qml/FolderView.qml:121
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "No mailbox selected"
 msgstr "未選取信箱"
 
-#: mail/qml/FolderView.qml:122
+#: mail/qml/FolderView.qml:130
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "請從側邊欄裡選取一個郵件。"
 
-#: mail/qml/FolderView.qml:129
+#: mail/qml/FolderView.qml:137
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "信箱是空的"

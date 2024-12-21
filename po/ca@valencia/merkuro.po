@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-21 00:42+0000\n"
 "PO-Revision-Date: 2024-11-25 08:35+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1722,7 +1722,7 @@ msgstr "Ves"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:49
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3204,6 +3204,18 @@ msgstr "antonibella5@yahoo.com"
 msgid "Quit"
 msgstr "Ix"
 
+#: mail/abstractmailmodel.cpp:20
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Sense assumpte"
+
+#: mail/abstractmailmodel.cpp:21
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Desconegut"
+
 #: mail/contactimageprovider.cpp:152
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3255,23 +3267,11 @@ msgstr ""
 "El recurs %1 està trencat.\n"
 "%2"
 
-#: mail/mailmanager.cpp:239
+#: mail/mailmanager.cpp:207
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
 msgstr "Configureu el compte: %1"
-
-#: mail/mailmodel.cpp:48
-#, kde-format
-msgctxt "displayed as subject when the subject of a mail is empty"
-msgid "No Subject"
-msgstr "Sense assumpte"
-
-#: mail/mailmodel.cpp:49
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Desconegut"
 
 #: mail/main.cpp:53
 #, kde-format
@@ -3355,79 +3355,85 @@ msgstr "Obri un fitxer"
 msgid "Choose file"
 msgstr "Seleccioneu un fitxer"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:21
+#, kde-format
+msgctxt "@title"
+msgid "Search: %1"
+msgstr ""
+
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "Guarda el missatge - Merkuro-Mail"
 
-#: mail/qml/FolderView.qml:29
+#: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "Missatges de correu (*.mbox)"
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marca el missatge"
 
-#: mail/qml/FolderView.qml:68
+#: mail/qml/FolderView.qml:84
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Marca el missatge com a llegit"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Marca el missatge com a no llegit"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "No marques com a important"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Mark as Important"
 msgstr "Marca com a important"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:99
 #, kde-format
 msgid "Move to Trash"
 msgstr "Mou cap a dins de la paperera"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:104
 #, kde-format
 msgid "Move Message to..."
 msgstr "Mou el missatge a…"
 
-#: mail/qml/FolderView.qml:93
+#: mail/qml/FolderView.qml:109
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Copia el missatge a…"
 
-#: mail/qml/FolderView.qml:98
+#: mail/qml/FolderView.qml:114
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Afig un recordatori de seguiment"
 
-#: mail/qml/FolderView.qml:103
+#: mail/qml/FolderView.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Anomena i guarda…"
 
-#: mail/qml/FolderView.qml:121
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "No mailbox selected"
 msgstr "No s'ha seleccionat cap bústia"
 
-#: mail/qml/FolderView.qml:122
+#: mail/qml/FolderView.qml:130
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Seleccioneu una bústia des de la barra lateral."
 
-#: mail/qml/FolderView.qml:129
+#: mail/qml/FolderView.qml:137
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "La bústia està buida"

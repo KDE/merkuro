@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-21 00:42+0000\n"
 "PO-Revision-Date: 2024-11-08 14:55+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1720,7 +1720,7 @@ msgstr "Go"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:49
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3191,6 +3191,18 @@ msgstr "steve.allewell@gmail.com"
 msgid "Quit"
 msgstr "Quit"
 
+#: mail/abstractmailmodel.cpp:20
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "No Subject"
+
+#: mail/abstractmailmodel.cpp:21
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Unknown"
+
 #: mail/contactimageprovider.cpp:152
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3240,23 +3252,11 @@ msgstr ""
 "Resource %1 is broken.\n"
 "%2"
 
-#: mail/mailmanager.cpp:239
+#: mail/mailmanager.cpp:207
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
 msgstr "Account Configuration: %1"
-
-#: mail/mailmodel.cpp:48
-#, kde-format
-msgctxt "displayed as subject when the subject of a mail is empty"
-msgid "No Subject"
-msgstr "No Subject"
-
-#: mail/mailmodel.cpp:49
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Unknown"
 
 #: mail/main.cpp:53
 #, kde-format
@@ -3340,79 +3340,85 @@ msgstr "Open File"
 msgid "Choose file"
 msgstr "Choose file"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:21
+#, kde-format
+msgctxt "@title"
+msgid "Search: %1"
+msgstr ""
+
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "Save Message - Merkuro-Mail"
 
-#: mail/qml/FolderView.qml:29
+#: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "email messages (*.mbox)"
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Mark Message"
 
-#: mail/qml/FolderView.qml:68
+#: mail/qml/FolderView.qml:84
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Mark Message as Read"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Mark Message as Unread"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Do not Mark as Important"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Mark as Important"
 msgstr "Mark as Important"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:99
 #, kde-format
 msgid "Move to Trash"
 msgstr "Move to Wastebin"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:104
 #, kde-format
 msgid "Move Message to..."
 msgstr "Move Message to..."
 
-#: mail/qml/FolderView.qml:93
+#: mail/qml/FolderView.qml:109
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Copy Message to..."
 
-#: mail/qml/FolderView.qml:98
+#: mail/qml/FolderView.qml:114
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Add Followup Reminder"
 
-#: mail/qml/FolderView.qml:103
+#: mail/qml/FolderView.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Save as..."
 
-#: mail/qml/FolderView.qml:121
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "No mailbox selected"
 msgstr "No mailbox selected"
 
-#: mail/qml/FolderView.qml:122
+#: mail/qml/FolderView.qml:130
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Select a mailbox from the sidebar."
 
-#: mail/qml/FolderView.qml:129
+#: mail/qml/FolderView.qml:137
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Mailbox is empty"

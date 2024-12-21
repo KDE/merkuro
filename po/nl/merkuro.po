@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-21 00:42+0000\n"
 "PO-Revision-Date: 2024-11-25 11:16+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1716,7 +1716,7 @@ msgstr "Ga naar"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:49
+#: mail/qml/FolderView.qml:65
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3191,6 +3191,18 @@ msgstr "freekdekruijf@kde.nl"
 msgid "Quit"
 msgstr "Afsluiten"
 
+#: mail/abstractmailmodel.cpp:20
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr "Geen onderwerp"
+
+#: mail/abstractmailmodel.cpp:21
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr "Onbekend"
+
 #: mail/contactimageprovider.cpp:152
 #, kde-format
 msgid "Image request has been cancelled"
@@ -3240,23 +3252,11 @@ msgstr ""
 "Hulpbron %1 is gebroken.\n"
 "%2"
 
-#: mail/mailmanager.cpp:239
+#: mail/mailmanager.cpp:207
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
 msgstr "Accountconfiguratie: %1"
-
-#: mail/mailmodel.cpp:48
-#, kde-format
-msgctxt "displayed as subject when the subject of a mail is empty"
-msgid "No Subject"
-msgstr "Geen onderwerp"
-
-#: mail/mailmodel.cpp:49
-#, kde-format
-msgctxt "displayed when a mail has unknown sender, receiver or date"
-msgid "Unknown"
-msgstr "Onbekend"
 
 #: mail/main.cpp:53
 #, kde-format
@@ -3340,79 +3340,85 @@ msgstr "Bestand openen"
 msgid "Choose file"
 msgstr "Kies bestand"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:21
+#, kde-format
+msgctxt "@title"
+msgid "Search: %1"
+msgstr ""
+
+#: mail/qml/FolderView.qml:44
 #, kde-format
 msgid "Save Message - Merkuro-Mail"
 msgstr "Bericht opslaan - Merkuro-e-mail"
 
-#: mail/qml/FolderView.qml:29
+#: mail/qml/FolderView.qml:45
 #, kde-format
 msgid "email messages (*.mbox)"
 msgstr "e-mailbericht (*.mbox)"
 
-#: mail/qml/FolderView.qml:66
+#: mail/qml/FolderView.qml:82
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Bericht markeren"
 
-#: mail/qml/FolderView.qml:68
+#: mail/qml/FolderView.qml:84
 #, kde-format
 msgid "Mark Message as Read"
 msgstr "Bericht markeren als gelezen"
 
-#: mail/qml/FolderView.qml:71
+#: mail/qml/FolderView.qml:87
 #, kde-format
 msgid "Mark Message as Unread"
 msgstr "Bericht markeren als ongelezen"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Don't Mark as Important"
 msgstr "Niet markeren als belangrijk"
 
-#: mail/qml/FolderView.qml:77
+#: mail/qml/FolderView.qml:93
 #, kde-format
 msgid "Mark as Important"
 msgstr "Markeren als belangrijk"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:99
 #, kde-format
 msgid "Move to Trash"
 msgstr "Naar prullenbak verplaatsen"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:104
 #, kde-format
 msgid "Move Message to..."
 msgstr "Bericht verplaatsen naar..."
 
-#: mail/qml/FolderView.qml:93
+#: mail/qml/FolderView.qml:109
 #, kde-format
 msgid "Copy Message to..."
 msgstr "Bericht kopiëren naar..."
 
-#: mail/qml/FolderView.qml:98
+#: mail/qml/FolderView.qml:114
 #, kde-format
 msgid "Add Followup Reminder"
 msgstr "Herinnering aan vervolgactie toevoegen"
 
-#: mail/qml/FolderView.qml:103
+#: mail/qml/FolderView.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as..."
 msgstr "Opslaan als..."
 
-#: mail/qml/FolderView.qml:121
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Geen e-mailvak geselecteerd"
 
-#: mail/qml/FolderView.qml:122
+#: mail/qml/FolderView.qml:130
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Een e-mailvak uit de zijbalk selecteren."
 
-#: mail/qml/FolderView.qml:129
+#: mail/qml/FolderView.qml:137
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "E-mailvak is leeg"
