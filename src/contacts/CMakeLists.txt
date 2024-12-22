@@ -14,7 +14,7 @@ ecm_qt_declare_logging_category(merkuro_contact_static
     EXPORT MERKURO
 )
 
-target_link_libraries(merkuro_contact_static PUBLIC KF6::ConfigGui Qt6::Qml)
+target_link_libraries(merkuro_contact_static PUBLIC KF6::ConfigGui Qt::Qml)
 
 ### Contact QML Plugin lib
 
