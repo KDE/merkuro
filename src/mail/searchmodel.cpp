@@ -80,3 +80,5 @@ void SearchModel::slotItemsFetched(KJob *job)
     m_items = fetchJob->items();
     endResetModel();
 }
+
+#include "moc_searchmodel.cpp"

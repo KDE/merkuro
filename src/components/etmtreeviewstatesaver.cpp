@@ -230,3 +230,5 @@ void ETMTreeViewStateSaver::processPendingChanges()
         listenToPendingChanges();
     }
 }
+
+#include "moc_etmtreeviewstatesaver.cpp"
