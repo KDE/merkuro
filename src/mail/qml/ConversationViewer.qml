@@ -45,6 +45,7 @@ MimeTreeParser.MailViewer {
 
             Layout.fillWidth: true
             padding: root.padding
+            horizontalPadding: Kirigami.Units.gridUnit
 
             contentItem: Kirigami.Heading {
                 text: props.title
@@ -60,6 +61,7 @@ MimeTreeParser.MailViewer {
             Layout.fillWidth: true
 
             padding: root.padding
+            horizontalPadding: Kirigami.Units.gridUnit
             visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0 
 
             Kirigami.Theme.inherit: false
