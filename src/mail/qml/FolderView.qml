@@ -161,22 +161,22 @@ Kirigami.ScrollablePage {
                 });
 
                 if (!mailDelegate.status.isRead) {
-                    const status = folderModel.copyMessageStatus(mailDelegate.status);
+                    const status = mailModel.copyMessageStatus(mailDelegate.status);
                     status.isRead = true;
-                    folderModel.updateMessageStatus(index, status)
+                    mailModel.updateMessageStatus(index, status)
                 }
             }
 
             onStarMailRequested: {
-                const status = folderModel.copyMessageStatus(mailDelegate.status);
+                const status = mailModel.copyMessageStatus(mailDelegate.status);
                 status.isImportant = !status.isImportant;
-                folderModel.updateMessageStatus(index, status)
+                mailModel.updateMessageStatus(index, status)
             }
 
             onContextMenuRequested: {
                 const menu = contextMenu.createObject(folderView, {
                     row: index,
-                    status: folderModel.copyMessageStatus(mailDelegate.status),
+                    status: mailModel.copyMessageStatus(mailDelegate.status),
                 });
                 folderView.collection = mailDelegate.item;
                 menu.popup();
