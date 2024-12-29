@@ -107,6 +107,7 @@ ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH actions SOURCES
     qml/actions/NewFolderAction.qml
     qml/actions/DeleteFolderAction.qml
+    qml/actions/DeleteMailAction.qml
     qml/actions/MailItemMenu.qml
 )
 

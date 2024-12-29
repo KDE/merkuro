@@ -9,7 +9,8 @@ import QtQuick.Controls as QQC2
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels as KItemModels
-import org.kde.pim.mimetreeparser 1.0 as MimeTreeParser
+import org.kde.pim.mimetreeparser as MimeTreeParser
+import './actions' as Actions
 
 MimeTreeParser.MailViewer {
     id: root
@@ -25,13 +26,10 @@ MimeTreeParser.MailViewer {
     icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
 
     actions: [
-        Kirigami.Action {
-            text: i18n("Move to trash")
-            icon.name: "albumfolder-user-trash"
-            onTriggered: {
-                MailManager.moveToTrash(root.emptyItem);
-                applicationWindow().pageStack.pop();
-            }
+        Actions.DeleteMailAction {
+            item: root.emptyItem
+            name: props.title
+            onRemoved: applicationWindow().pageStack.pop()
         }
     ]
 
