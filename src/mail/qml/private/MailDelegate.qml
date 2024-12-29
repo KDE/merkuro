@@ -37,6 +37,8 @@ Delegates.IndicatorItemDelegate {
     onClicked: root.openMailRequested()
 
     contentItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
         Components.Avatar {
             // Euristic to extract name from "Name <email>" pattern
             name: root.from.replace(/<.*>/, '').replace(/\(.*\)/, '')
@@ -54,6 +56,7 @@ Delegates.IndicatorItemDelegate {
             spacing: Kirigami.Units.smallSpacing
 
             RowLayout {
+                spacing: Kirigami.Units.smallSpacing
                 Layout.fillWidth: true
                 QQC2.Label {
                     Layout.fillWidth: true
