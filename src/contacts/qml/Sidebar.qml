@@ -110,6 +110,7 @@ Kirigami.OverlayDrawer {
 
                 activeFocusOnTab: true
                 currentIndex: -1
+                clip: true
                 onActiveFocusChanged: if (currentIndex === -1 && activeFocus) {
                     currentIndex = 0;
                 }
