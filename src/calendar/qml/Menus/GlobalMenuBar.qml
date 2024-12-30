@@ -22,17 +22,17 @@ Labs.MenuBar {
     NativeEditMenu {
         id: editMenu
 
-        StatefulAppLabs.NativeMenuItem {
-            actionName: "edit_undo"
-            application: CalendarApplication
-        }
+        Labs.MenuSeparator {}
 
         StatefulAppLabs.NativeMenuItem {
             actionName: "edit_redo"
             application: CalendarApplication
         }
 
-        Labs.MenuSeparator {}
+        StatefulAppLabs.NativeMenuItem {
+            actionName: "edit_undo"
+            application: CalendarApplication
+        }
     }
 
     Labs.Menu {

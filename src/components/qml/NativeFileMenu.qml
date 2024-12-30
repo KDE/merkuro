@@ -6,26 +6,22 @@ import Qt.labs.platform as Labs
 import org.kde.merkuro.components
 
 Labs.Menu {
-    id: fileMenu
+    id: root
+
     title: i18nc("@action:menu", "File")
 
     default property list<QtObject> additionalMenuItems
 
-    property list<QtObject> _menuItems: [
-        Labs.MenuItem {
-            text: i18nc("@action:menu", "Quit Merkuro")
-            icon.name: "application-exit"
-            shortcut: StandardKey.Quit
-            onTriggered: Qt.quit()
-        }
-    ]
+    Labs.MenuItem {
+        text: i18nc("@action:menu", "Quit Merkuro")
+        icon.name: "application-exit"
+        shortcut: StandardKey.Quit
+        onTriggered: Qt.quit()
+    }
 
     Component.onCompleted: {
-        for (let i in additionalMenuItems) {
-            fileMenu.addItem(additionalMenuItems[i])
-        }
-        for (let j in _menuItems) {
-            fileMenu.addItem(_menuItems[j])
+        for (let menu of additionalMenuItems) {
+            root.insertMenu(0, menu);
         }
     }
 }
