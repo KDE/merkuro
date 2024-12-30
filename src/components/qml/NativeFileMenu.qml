@@ -21,7 +21,7 @@ Labs.Menu {
 
     Component.onCompleted: {
         for (let menu of additionalMenuItems) {
-            root.insertMenu(0, menu);
+            root.insertItem(0, menu);
         }
     }
 }
