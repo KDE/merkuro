@@ -288,6 +288,9 @@ QQC2.ScrollView {
                             collectionDetails: CalendarManager.getCollectionDetails(collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: root.mode !== CalendarApplication.Contact
+                            onCloseParentDrawer: () => {
+                                root.closeParentDrawer()
+                            }
                         }
 
                         DropArea {
@@ -382,7 +385,11 @@ QQC2.ScrollView {
                                     root.closeParentDrawer();
                                 }
                             }
+                            onCloseParentDrawer: () => {
+                                root.closeParentDrawer()
+                            }
                         }
+
 
                         DropArea {
                             id: incidenceDropArea

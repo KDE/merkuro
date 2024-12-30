@@ -340,7 +340,9 @@ Kirigami.OverlayDrawer {
 
         CheckableCollectionNavigationView {
             onCollectionCheckChanged: mainDrawer.collectionCheckChanged()
-            onCloseParentDrawer: mainDrawer.close()
+            onCloseParentDrawer: {
+                mainDrawer.close()
+            }
 
             mode: mainDrawer.mode
             parentDrawerModal: mainDrawer.modal

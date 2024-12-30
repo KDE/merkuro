@@ -17,6 +17,7 @@ TapHandler {
     property Akonadi.AgentConfiguration agentConfiguration
 
     signal leftClicked
+    signal closeParentDrawer
 
     acceptedButtons: Qt.LeftButton | Qt.RightButton
 
@@ -34,6 +35,7 @@ TapHandler {
 
     onLongPressed: if (Kirigami.Settings.tabletMode) {
         calendarActions.createObject(calendarTapHandler, {}).popup();
+        calendarTapHandler.closeParentDrawer()
     }
 
     property Loader colorDialogLoader: Loader {
