@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:43+0000\n"
 "PO-Revision-Date: 2024-12-03 11:51+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3330,6 +3330,42 @@ msgstr ""
 "внимание,</b> что стёртые сообщения не сохраняются в папке «Корзина» и будут "
 "удалены без возможности восстановления."
 
+#: mail/qml/actions/DeleteMailAction.qml:20
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgctxt "@action"
+msgid "Move to trash"
+msgstr "Удалить в корзину"
+
+#: mail/qml/actions/DeleteMailAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@title:dialog"
+msgid "Delete Email"
+msgstr "Удалить все"
+
+#: mail/qml/actions/DeleteMailAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action:button"
+msgid "Delete Email"
+msgstr "Удалить все"
+
+#: mail/qml/actions/DeleteMailAction.qml:48
+#, fuzzy, kde-format
+#| msgid ""
+#| "Are you sure you want to delete the folder %1, discarding its contents? "
+#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
+#| "Trash folder and are permanently deleted."
+msgid ""
+"Are you sure you want to delete the email \"%1\", discarding its contents? "
+"<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
+"folder and are permanently deleted."
+msgstr ""
+"Действительно удалить папку %1, очистив её содержимое? <br /> <b>Обратите "
+"внимание,</b> что стёртые сообщения не сохраняются в папке «Корзина» и будут "
+"удалены без возможности восстановления."
+
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
 msgid "Add Folder"
@@ -3367,11 +3403,6 @@ msgstr "Создать папку"
 #, kde-format
 msgid "Folder Name..."
 msgstr "Имя папки..."
-
-#: mail/qml/ConversationViewer.qml:29
-#, kde-format
-msgid "Move to trash"
-msgstr "Удалить в корзину"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:43+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -3281,6 +3281,42 @@ msgstr ""
 "<b>सावधानं भवतु</b> यत् परित्यक्ताः सन्देशाः भवतः Trash समुच्चय मध्ये न रक्षिताः भवन्ति "
 "तथा च स्थायिरूपेण विलोपिताः भवन्ति ।"
 
+#: mail/qml/actions/DeleteMailAction.qml:20
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgctxt "@action"
+msgid "Move to trash"
+msgstr "कचरायां गच्छन्तु"
+
+#: mail/qml/actions/DeleteMailAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@title:dialog"
+msgid "Delete Email"
+msgstr "सर्वं विलोपयतु"
+
+#: mail/qml/actions/DeleteMailAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action:button"
+msgid "Delete Email"
+msgstr "सर्वं विलोपयतु"
+
+#: mail/qml/actions/DeleteMailAction.qml:48
+#, fuzzy, kde-format
+#| msgid ""
+#| "Are you sure you want to delete the folder %1, discarding its contents? "
+#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
+#| "Trash folder and are permanently deleted."
+msgid ""
+"Are you sure you want to delete the email \"%1\", discarding its contents? "
+"<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
+"folder and are permanently deleted."
+msgstr ""
+"किं भवान् निश्चितः यत् भवान् %1 पुटं विलोपयितुम् इच्छति, तस्य सामग्रीं परित्यजति?<br /> "
+"<b>सावधानं भवतु</b> यत् परित्यक्ताः सन्देशाः भवतः Trash समुच्चय मध्ये न रक्षिताः भवन्ति "
+"तथा च स्थायिरूपेण विलोपिताः भवन्ति ।"
+
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
 msgid "Add Folder"
@@ -3318,11 +3354,6 @@ msgstr "Folder रचयन्तु"
 #, kde-format
 msgid "Folder Name..."
 msgstr "पुटस्य नाम..."
-
-#: mail/qml/ConversationViewer.qml:29
-#, kde-format
-msgid "Move to trash"
-msgstr "कचरायां गच्छन्तु"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format

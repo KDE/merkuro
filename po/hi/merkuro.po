@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -3299,6 +3299,42 @@ msgstr ""
 "<b>सावधान</b> छोड़े गए संदेश आपके कूडे फ़ोल्डर में सहेजे नहीं जाते हैं और स्थायी रूप से हटा दिए "
 "जाते हैं।"
 
+#: mail/qml/actions/DeleteMailAction.qml:20
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgctxt "@action"
+msgid "Move to trash"
+msgstr "कूडेदान में ले जाएं"
+
+#: mail/qml/actions/DeleteMailAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@title:dialog"
+msgid "Delete Email"
+msgstr "सभी को हटाएं"
+
+#: mail/qml/actions/DeleteMailAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action:button"
+msgid "Delete Email"
+msgstr "सभी को हटाएं"
+
+#: mail/qml/actions/DeleteMailAction.qml:48
+#, fuzzy, kde-format
+#| msgid ""
+#| "Are you sure you want to delete the folder %1, discarding its contents? "
+#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
+#| "Trash folder and are permanently deleted."
+msgid ""
+"Are you sure you want to delete the email \"%1\", discarding its contents? "
+"<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
+"folder and are permanently deleted."
+msgstr ""
+"क्या आप वाकई फ़ोल्डर %1 को मिटाना चाहते हैं, इसकी सामग्री को त्यागना चाहते हैं? <br /> "
+"<b>सावधान</b> छोड़े गए संदेश आपके कूडे फ़ोल्डर में सहेजे नहीं जाते हैं और स्थायी रूप से हटा दिए "
+"जाते हैं।"
+
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
 msgid "Add Folder"
@@ -3336,11 +3372,6 @@ msgstr "फोल्डर बनाएं"
 #, kde-format
 msgid "Folder Name..."
 msgstr "फोल्डर का नाम..."
-
-#: mail/qml/ConversationViewer.qml:29
-#, kde-format
-msgid "Move to trash"
-msgstr "कूडेदान में ले जाएं"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format

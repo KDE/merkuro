@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-24 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:43+0000\n"
 "PO-Revision-Date: 2024-07-29 10:32-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3303,6 +3303,42 @@ msgstr ""
 "><b>Tenha cuidado</b>, pois as mensagens descartadas não são salvas na sua "
 "pasta Lixeira e serão excluídas permanentemente."
 
+#: mail/qml/actions/DeleteMailAction.qml:20
+#, fuzzy, kde-format
+#| msgid "Move to trash"
+msgctxt "@action"
+msgid "Move to trash"
+msgstr "Mover para a Lixeira"
+
+#: mail/qml/actions/DeleteMailAction.qml:29
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@title:dialog"
+msgid "Delete Email"
+msgstr "Excluir tudo"
+
+#: mail/qml/actions/DeleteMailAction.qml:43
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action:button"
+msgid "Delete Email"
+msgstr "Excluir tudo"
+
+#: mail/qml/actions/DeleteMailAction.qml:48
+#, fuzzy, kde-format
+#| msgid ""
+#| "Are you sure you want to delete the folder %1, discarding its contents? "
+#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
+#| "Trash folder and are permanently deleted."
+msgid ""
+"Are you sure you want to delete the email \"%1\", discarding its contents? "
+"<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
+"folder and are permanently deleted."
+msgstr ""
+"Deseja realmente excluir a pasta %1, descartando o seu conteúdo? <br /"
+"><b>Tenha cuidado</b>, pois as mensagens descartadas não são salvas na sua "
+"pasta Lixeira e serão excluídas permanentemente."
+
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
 msgid "Add Folder"
@@ -3340,11 +3376,6 @@ msgstr "Criar pasta"
 #, kde-format
 msgid "Folder Name..."
 msgstr "Nome da pasta..."
-
-#: mail/qml/ConversationViewer.qml:29
-#, kde-format
-msgid "Move to trash"
-msgstr "Mover para a Lixeira"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
