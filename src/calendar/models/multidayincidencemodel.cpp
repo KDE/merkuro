@@ -322,10 +322,10 @@ int MultiDayIncidenceModel::periodLength() const
 
 void MultiDayIncidenceModel::setPeriodLength(int periodLength)
 {
-    beginResetModel();
     if (mPeriodLength == periodLength) {
         return;
     }
+    beginResetModel();
     mPeriodLength = periodLength;
     Q_EMIT periodLengthChanged();
     endResetModel();
