@@ -34,7 +34,6 @@ set(LIBKDEPIM_LIB_VERSION "6.3.40")
 set(PIMCOMMON_LIB_VERSION "6.3.40")
 set(KPIM_LIBKLEO_VERSION "6.3.40")
 
-include(FeatureSummary)
 
 ################# set KDE specific information #################
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
