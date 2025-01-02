@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import Qt.labs.platform
@@ -10,32 +12,29 @@ import org.kde.merkuro.calendar as Calendar
 import org.kde.akonadi as Akonadi
 
 TapHandler {
-    id: calendarTapHandler
+    id: root
 
+    required property var checkState
     property var collectionId
     property var collectionDetails
     property Akonadi.AgentConfiguration agentConfiguration
 
     signal leftClicked
     signal closeParentDrawer
+    signal toggled
 
     acceptedButtons: Qt.LeftButton | Qt.RightButton
 
     onTapped: (eventPoint, button) => {
-        // TODO Qt6 remove
-        if (!button) {
-            button = eventPoint.event.button
+        if (button === Qt.LeftButton && !Kirigami.Settings.isMobile) {
+            root.leftClicked();
+        } else {
+            if (Kirigami.Settings.isMobile) {
+                root.closeParentDrawer();
+            }
+            const item = calendarActions.createObject(applicationWindow(), {});
+            item.popup(applicationWindow());
         }
-        if (button === Qt.LeftButton) {
-            calendarTapHandler.leftClicked();
-        } else if (!Kirigami.Settings.isMobile) {
-            calendarActions.createObject(calendarTapHandler, {}).popup();
-        }
-    }
-
-    onLongPressed: if (Kirigami.Settings.tabletMode) {
-        calendarActions.createObject(calendarTapHandler, {}).popup();
-        calendarTapHandler.closeParentDrawer()
     }
 
     property Loader colorDialogLoader: Loader {
@@ -44,8 +43,8 @@ TapHandler {
         sourceComponent: ColorDialog {
             id: colorDialog
             title: i18nc("@title:window", "Choose Calendar Color")
-            color: calendarTapHandler.collectionDetails.color
-            onAccepted: Calendar.CalendarManager.setCollectionColor(calendarTapHandler.collectionId, color)
+            color: root.collectionDetails.color
+            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collectionId, color)
             onRejected: {
                 close();
                 colorDialogLoader.active = false;
@@ -53,17 +52,17 @@ TapHandler {
         }
     }
 
-    property Component calendarActions: Component {
-        CalendarItemMenu {
-            parent: calendarTapHandler.parent
+    property Component calendarActions: CalendarItemMenu {
+        parent: root.parent
 
-            collectionId: calendarTapHandler.collectionId
-            collectionDetails: calendarTapHandler.collectionDetails
-            agentConfiguration: calendarTapHandler.agentConfiguration
+        checkState: root.checkState
+        collectionId: root.collectionId
+        collectionDetails: root.collectionDetails
+        agentConfiguration: root.agentConfiguration
+        onToggled: root.toggled();
 
-            Component.onCompleted: if(calendarTapHandler.collectionId && !calendarTapHandler.collectionDetails) {
-                calendarTapHandler.collectionDetails = Calendar.CalendarManager.getCollectionDetails(calendarTapHandler.collectionId)
-            }
+        Component.onCompleted: if(root.collectionId && !root.collectionDetails) {
+            root.collectionDetails = Calendar.CalendarManager.getCollectionDetails(root.collectionId)
         }
     }
 }

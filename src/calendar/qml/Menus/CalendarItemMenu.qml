@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Dialogs
@@ -10,30 +12,63 @@ import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar as Calendar
 import org.kde.akonadi as Akonadi
 
-Components.ContextMenu {
-    id: actionsPopup
-    z: 1000
+Components.ConvergentContextMenu {
+    id: root
 
+    required property var checkState
     required property var collectionId
     required property var collectionDetails
     required property Akonadi.AgentConfiguration agentConfiguration
 
+    signal toggled
+
+    headerContentItem: RowLayout {
+        Kirigami.Heading {
+            level: 2
+            text: root.collectionDetails.displayName
+            elide: Text.ElideRight
+            Layout.fillWidth: true
+        }
+
+        ColoredCheckbox {
+            id: collectionCheckbox
+
+            implicitWidth: Kirigami.Units.gridUnit * 2
+            implicitHeight: Kirigami.Units.gridUnit * 2
+
+            visible: root.checkState !== undefined
+            color: root.collectionDetails.color
+            checked: root.checkState === 2
+            onToggled: root.toggled();
+
+            Layout.alignment: Qt.AlignVCenter
+        }
+    }
+
+    Kirigami.Action {
+        checkable: true
+        checked: root.collectionDetails.isFiltered
+        text: i18nc("@action:inmenu", "Display Events")
+        visible: Kirigami.Settings.isMobile
+        onTriggered: root.toggle()
+    }
+
     QQC2.Action {
         icon.name: "edit-entry"
-        text: i18nc("@action:inmenu", "Edit calendar…")
-        onTriggered: Calendar.CalendarManager.editCollection(actionsPopup.collectionId);
+        text: i18nc("@action:inmenu", "Edit Calendar…")
+        onTriggered: Calendar.CalendarManager.editCollection(root.collectionId);
     }
 
     QQC2.Action {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Update calendar")
-        onTriggered: Calendar.CalendarManager.updateCollection(actionsPopup.collectionId);
+        text: i18nc("@action:inmenu", "Update Calendar")
+        onTriggered: Calendar.CalendarManager.updateCollection(root.collectionId);
     }
 
     QQC2.Action {
         icon.name: "edit-delete"
-        text: i18nc("@action:inmenu", "Delete calendar")
-        enabled: actionsPopup.collectionDetails["canDelete"]
+        text: i18nc("@action:inmenu", "Delete Calendar")
+        enabled: root.collectionDetails["canDelete"]
         onTriggered: () => {
             const dialogComponent = Qt.createComponent("qrc:/DeleteCalendarDialog.qml");
             if (dialogComponent.status !== Component.Ready) {
@@ -42,8 +77,8 @@ Components.ContextMenu {
             }
 
             const dialog = dialogComponent.createObject(applicationWindow(), {
-                collectionId: actionsPopup.collectionId,
-                collectionDetails: actionsPopup.collectionDetails
+                collectionId: root.collectionId,
+                collectionDetails: root.collectionDetails
             });
 
             dialog.open();
@@ -71,21 +106,21 @@ Components.ContextMenu {
     Kirigami.Action {
         icon.name: "settings-configure"
         text: i18nc("@action:inmenu", "Calendar source settings…")
-        onTriggered: actionsPopup.agentConfiguration.editIdentifier(collectionDetails.resource)
+        onTriggered: root.agentConfiguration.editIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }
 
     Kirigami.Action {
         icon.name: "view-refresh"
         text: i18nc("@action:inmenu", "Update calendar source")
-        onTriggered: actionsPopup.agentConfiguration.restartIdentifier(collectionDetails.resource)
+        onTriggered: root.agentConfiguration.restartIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }
 
     Kirigami.Action {
         icon.name: "edit-delete"
         text: i18nc("@action:inmenu", "Delete calendar source")
-        onTriggered: actionsPopup.agentConfiguration.removeIdentifier(collectionDetails.resource)
+        onTriggered: root.agentConfiguration.removeIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }
 }

@@ -252,7 +252,7 @@ QQC2.ScrollView {
                             ColoredCheckbox {
                                 id: collectionCheckbox
 
-                                visible: model.checkState !== null
+                                visible: model.checkState !== undefined
                                 color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
                                 checked: model.checkState === 2
                                 onClicked: {
@@ -266,14 +266,12 @@ QQC2.ScrollView {
 
                         Connections {
                             target: root.agentConfiguration
-                            property var collectionDetails: CalendarManager.getCollectionDetails(collectionSourceItem.collectionId)
-
-                            function onAgentProgressChanged(agentData) {
-                                if(agentData.instanceId === collectionDetails.resource &&
+                            function onAgentProgressChanged(agentData: var): void {
+                                if(agentData.instanceId === tapHandler.collectionDetails.resource &&
                                     agentData.status === AgentConfiguration.Running) {
 
                                     loadingIndicator.visible = true;
-                                } else if (agentData.instanceId === collectionDetails.resource) {
+                                } else if (agentData.instanceId === tapHandler.collectionDetails.resource) {
                                     loadingIndicator.visible = false;
                                 }
                             }
@@ -284,10 +282,15 @@ QQC2.ScrollView {
 
                             onLeftClicked: collectionList.model.toggleChildren(index)
 
+                            checkState: model.checkState
                             collectionId: model.collectionId
-                            collectionDetails: CalendarManager.getCollectionDetails(collectionId)
+                            collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: root.mode !== CalendarApplication.Contact
+                            onToggled: {
+                                model.checkState = model.checkState === 0 ? 2 : 0
+                                root.collectionCheckChanged()
+                            }
                             onCloseParentDrawer: () => {
                                 root.closeParentDrawer()
                             }
@@ -295,10 +298,9 @@ QQC2.ScrollView {
 
                         DropArea {
                             id: incidenceDropArea
-                            property var collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
                             anchors.fill: parent
                             z: 9999
-                            enabled: collectionDetails.canCreate
+                            enabled: tapHandler.collectionDetails.canCreate
                             onDropped: if(drop.source.objectName === "taskDelegate") {
                                 CalendarManager.changeIncidenceCollection(drop.source.incidencePtr, model.collectionId);
 
@@ -374,8 +376,11 @@ QQC2.ScrollView {
                         }
 
                         CalendarItemTapHandler {
+                            id: tapHandler
+
+                            checkState: model.checkState
                             collectionId: model.collectionId
-                            collectionDetails: CalendarManager.getCollectionDetails(collectionId)
+                            collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: mode !== CalendarApplication.Contact
                             onLeftClicked: {
@@ -385,6 +390,10 @@ QQC2.ScrollView {
                                     root.closeParentDrawer();
                                 }
                             }
+                            onToggled: {
+                                model.checkState = model.checkState === 0 ? 2 : 0
+                                root.collectionCheckChanged()
+                            }
                             onCloseParentDrawer: () => {
                                 root.closeParentDrawer()
                             }
@@ -393,10 +402,9 @@ QQC2.ScrollView {
 
                         DropArea {
                             id: incidenceDropArea
-                            property var collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
                             anchors.fill: parent
                             z: 9999
-                            enabled: collectionDetails.canCreate
+                            enabled: tapHandler.collectionDetails.canCreate
                             onDropped: if(drop.source.objectName === "taskDelegate") {
                                 CalendarManager.changeIncidenceCollection(drop.source.incidencePtr, model.collectionId);
 

@@ -3,12 +3,17 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
+import org.kde.kirigami as Kirigami
 
-QQC2.CheckBox {
+T.CheckBox {
     id: checkbox
 
     property color color: Kirigami.Theme.highlightColor
     property real radius: 3
+
+    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+    implicitHeight: Kirigami.Units.iconSizes.smallMedium
 
     indicator: Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
