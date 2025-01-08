@@ -74,7 +74,7 @@ Item {
                     Layout.row: 1
                     Layout.column: 0
                     icon.name: "go-up"
-                    enabled: hourView.currentIndex != 0
+                    enabled: hourView.currentIndex !== 0
                     onClicked: hourView.currentIndex -= 1
                     autoRepeat: true
                 }
@@ -83,7 +83,7 @@ Item {
                     Layout.row: 1
                     Layout.column: 2
                     icon.name: "go-up"
-                    enabled: minuteView.currentIndex != 0
+                    enabled: minuteView.currentIndex !== 0
                     onClicked: minuteView.currentIndex -= 1
                     autoRepeat: true
                 }
@@ -92,7 +92,7 @@ Item {
                     Layout.row: 1
                     Layout.column: 4
                     icon.name: "go-up"
-                    enabled: secondsView.currentIndex != 0
+                    enabled: secondsView.currentIndex !== 0
                     onClicked: secondsView.currentIndex -= 1
                     visible: timePicker.secondsPicker
                     autoRepeat: true
@@ -111,8 +111,8 @@ Item {
 
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        opacity: hourView.currentIndex == thisIndex ? 1 : 0.7
-                        font.bold: hourView.currentIndex == thisIndex
+                        opacity: hourView.currentIndex === thisIndex ? 1 : 0.7
+                        font.bold: hourView.currentIndex === thisIndex
                         text: modelData < 10 ? String(modelData).padStart(2, "0") : modelData
 
                         MouseArea {
@@ -159,8 +159,8 @@ Item {
 
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        opacity: minuteView.currentIndex == thisIndex ? 1 : 0.7
-                        font.bold: minuteView.currentIndex == thisIndex
+                        opacity: minuteView.currentIndex === thisIndex ? 1 : 0.7
+                        font.bold: minuteView.currentIndex === thisIndex
                         text: minuteToDisplay < 10 ? String(minuteToDisplay).padStart(2, "0") : minuteToDisplay
 
                         MouseArea {
@@ -218,8 +218,8 @@ Item {
 
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
-                        opacity: secondsView.currentIndex == thisIndex ? 1 : 0.7
-                        font.bold: secondsView.currentIndex == thisIndex
+                        opacity: secondsView.currentIndex === thisIndex ? 1 : 0.7
+                        font.bold: secondsView.currentIndex === thisIndex
                         text: modelData < 10 ? String(modelData).padStart(2, "0") : modelData
 
                         MouseArea {
