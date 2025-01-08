@@ -82,7 +82,30 @@ Kirigami.ScrollablePage {
                 text: i18ncp("Number of selected emails", "%1 selected", "%1 selected", mailSelectionModel.selectedIndexes.length)
                 level: 2
                 elide: Text.ElideRight
+            }
+
+            Kirigami.ActionToolBar {
                 Layout.fillWidth: true
+                actions: [
+                    QQC2.Action {
+                        text: i18nc("@action:intoolbar", "Delete")
+                        icon.name: 'edit-delete-symbolic'
+                    },
+                    QQC2.Action {
+                        text: i18nc("@action:intoolbar", "Mark read")
+                        icon.name: 'mail-mark-read-symbolic'
+                        onTriggered: mailActions.setReadState(true)
+                    },
+                    QQC2.Action {
+                        text: i18nc("@action:intoolbar", "Mark unread")
+                        icon.name: 'mail-mark-unread-symbolic'
+                        onTriggered: mailActions.setReadState(false)
+                    },
+                    QQC2.Action {
+                        text: i18nc("@action:intoolbar", "Forward as attachment")
+                        icon.name: 'mail-forwarded-symbolic'
+                    }
+                ]
             }
 
             QQC2.ToolButton {

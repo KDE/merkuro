@@ -6,6 +6,10 @@
 #include <QItemSelectionModel>
 #include <QObject>
 #include <qqmlregistration.h>
+namespace Akonadi
+{
+class MessageStatus;
+}
 
 // TODO this should interact with MailApplications
 class MailActions : public QObject
@@ -27,5 +31,6 @@ Q_SIGNALS:
     void selectionModelChanged();
 
 private:
+    void modifyStatus(const QModelIndexList &indexes, std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f);
     QItemSelectionModel *m_selectionModel = nullptr;
 };
