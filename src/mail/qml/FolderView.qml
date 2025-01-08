@@ -3,10 +3,10 @@
 
 import QtQuick
 import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
-import Qt.labs.platform
 import QtQuick.Dialogs
+import QtQml.Models
+import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import org.kde.kitemmodels as KItemModels
@@ -68,30 +68,81 @@ Kirigami.ScrollablePage {
         }
     ]
 
+    header: QQC2.Pane {
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+
+        visible: mailSelectionModel.hasSelection
+        height: visible ? implicitHeight: 0
+
+        contentItem: RowLayout {
+            spacing: 0
+
+            Kirigami.Heading {
+                text: i18ncp("Number of selected emails", "%1 selected", "%1 selected", mailSelectionModel.selectedIndexes.length)
+                level: 2
+                elide: Text.ElideRight
+                Layout.fillWidth: true
+            }
+
+            QQC2.ToolButton {
+                text: i18nc("@action:button", "Cancel")
+                icon.name: 'edit-select-none-symbolic'
+                onClicked: mailSelectionModel.clear()
+            }
+        }
+
+        background: Rectangle {
+            color: Kirigami.Theme.backgroundColor
+
+            Kirigami.Separator {
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+            }
+        }
+    }
+
     ListView {
         id: mails
         model: root.searchString.length > 0 ? searchModel : mailModel
         currentIndex: -1
+        clip: true
+
+        ItemSelectionModel {
+            id: mailSelectionModel
+            model: mails.model
+        }
+
+        MailActions {
+            id: mailActions
+            selectionModel: mailSelectionModel
+        }
 
         Component {
             id: contextMenu
             QQC2.Menu {
-                property int row
-                property var status
-
                 QQC2.Menu {
                     title: i18nc("@action:menu", "Mark Message")
                     QQC2.MenuItem {
-                        text: i18n("Mark Message as Read")
+                        text: i18ncp("@action:inmenu", "Mark Message as Read", "Mark Messages as Read", mailSelectionModel.selectedIndexes.length)
+                        onClicked: mailActions.setReadState(true)
                     }
                     QQC2.MenuItem {
-                        text: i18n("Mark Message as Unread")
+                        text: i18ncp("@action:inmenu", "Mark Message as Unread", "Mark Messages as Unread", mailSelectionModel.selectedIndexes.length)
+                        onClicked: mailActions.setReadState(false)
                     }
 
                     QQC2.MenuSeparator {}
 
                     QQC2.MenuItem {
-                        text: status.isImportant ? i18n("Don't Mark as Important") : i18n("Mark as Important")
+                        text: i18ncp("@action:inmenu", "Mark Message as Important", "Mark Messages as Important", mailSelectionModel.selectedIndexes.length)
+                        onClicked: mailActions.setImportantState(true)
+                    }
+
+                    QQC2.MenuItem {
+                        text: i18ncp("@action:inmenu", "Mark Message as Unimportant", "Mark Messages as Uninportant", mailSelectionModel.selectedIndexes.length)
+                        onClicked: mailActions.setImportantState(false)
                     }
                 }
 
@@ -148,7 +199,12 @@ Kirigami.ScrollablePage {
         delegate: MailDelegate {
             id: mailDelegate
 
+            selectionModel: mailSelectionModel
+
             onOpenMailRequested: {
+                mails.currentIndex = index;
+                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: mailDelegate.item,
                     props: {
@@ -157,27 +213,22 @@ Kirigami.ScrollablePage {
                         sender: mailDelegate.sender,
                         item: mailDelegate.item,
                         title: mailDelegate.title,
-                    }
+                    },
                 });
 
                 if (!mailDelegate.status.isRead) {
-                    const status = mailModel.copyMessageStatus(mailDelegate.status);
-                    status.isRead = true;
-                    mailModel.updateMessageStatus(index, status)
+                    mailActions.setReadState(true);
                 }
+
             }
 
             onStarMailRequested: {
-                const status = mailModel.copyMessageStatus(mailDelegate.status);
-                status.isImportant = !status.isImportant;
-                mailModel.updateMessageStatus(index, status)
+                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                mailActions.setImportantState(!status.isImportant);
             }
 
             onContextMenuRequested: {
-                const menu = contextMenu.createObject(folderView, {
-                    row: index,
-                    status: mailModel.copyMessageStatus(mailDelegate.status),
-                });
+                const menu = contextMenu.createObject(folderView);
                 folderView.collection = mailDelegate.item;
                 menu.popup();
             }

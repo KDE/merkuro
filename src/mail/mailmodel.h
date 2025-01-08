@@ -13,9 +13,8 @@
 #include <qqmlregistration.h>
 
 #include "abstractmailmodel.h"
-#include "messagestatus.h"
 
-class MailModel : public Akonadi::EntityMimeTypeFilterModel, AbstractMailModel
+class MailModel : public Akonadi::EntityMimeTypeFilterModel, public AbstractMailModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -26,20 +25,6 @@ class MailModel : public Akonadi::EntityMimeTypeFilterModel, AbstractMailModel
     Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
 
 public:
-    enum ExtraRole {
-        TitleRole = Qt::UserRole + 1,
-        SenderRole,
-        FromRole,
-        ToRole,
-        TextColorRole,
-        DateRole,
-        DateTimeRole,
-        BackgroundColorRole,
-        StatusRole,
-        FavoriteRole,
-        ItemRole,
-    };
-
     explicit MailModel(QObject *parent = nullptr);
 
     [[nodiscard]] QItemSelectionModel *collectionSelectionModel() const;
@@ -52,9 +37,6 @@ public:
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
-
-    Q_INVOKABLE void updateMessageStatus(int row, MessageStatus messageStatus);
-    Q_INVOKABLE MessageStatus copyMessageStatus(MessageStatus messageStatus);
 
 Q_SIGNALS:
     void collectionSelectionModelChanged();

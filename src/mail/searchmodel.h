@@ -15,7 +15,7 @@ class ItemFetchJob;
 }
 class KJob;
 
-class SearchModel : public QAbstractListModel, AbstractMailModel
+class SearchModel : public QAbstractListModel, public AbstractMailModel
 {
     Q_OBJECT
     QML_ELEMENT

@@ -27,33 +27,14 @@ QHash<int, QByteArray> MailModel::roleNames() const
 
 QVariant MailModel::data(const QModelIndex &index, int role) const
 {
-    QVariant itemVariant = sourceModel()->data(mapToSource(index), Akonadi::EntityTreeModel::ItemRole);
-
-    Akonadi::Item item = itemVariant.value<Akonadi::Item>();
+    const QVariant itemVariant = sourceModel()->data(mapToSource(index), Akonadi::EntityTreeModel::ItemRole);
+    const Akonadi::Item item = itemVariant.value<Akonadi::Item>();
     return AbstractMailModel::dataFromItem(item, role);
 }
 
 Akonadi::Item MailModel::itemForRow(int row) const
 {
     return data(index(row, 0), ItemRole).value<Akonadi::Item>();
-}
-
-void MailModel::updateMessageStatus(int row, MessageStatus messageStatus)
-{
-    Akonadi::Item item = itemForRow(row);
-    item.setFlags(messageStatus.statusFlags());
-    auto job = new Akonadi::ItemModifyJob(item, this);
-    job->disableRevisionCheck();
-    job->setIgnorePayload(true);
-
-    Q_EMIT dataChanged(index(row, 0), index(row, 0), {StatusRole});
-}
-
-MessageStatus MailModel::copyMessageStatus(MessageStatus messageStatus)
-{
-    MessageStatus newStatus;
-    newStatus.set(messageStatus);
-    return messageStatus;
 }
 
 Akonadi::EntityTreeModel *MailModel::entryTreeModel() const

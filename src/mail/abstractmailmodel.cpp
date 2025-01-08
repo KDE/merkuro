@@ -3,6 +3,7 @@
 
 #include "abstractmailmodel.h"
 
+#include <Akonadi/EntityTreeModel>
 #include <Akonadi/Item>
 #include <Akonadi/MessageStatus>
 #include <KFormat>
@@ -11,6 +12,9 @@
 
 QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) const
 {
+    if (role == Akonadi::EntityTreeModel::ItemRole) {
+        return QVariant::fromValue(item);
+    }
     if (!item.hasPayload<KMime::Message::Ptr>()) {
         return {};
     }

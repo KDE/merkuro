@@ -6,6 +6,8 @@ add_subdirectory(settings)
 set(merkuro_mail_SRCS
     abstractmailmodel.cpp
     abstractmailmodel.h
+    mailactions.cpp
+    mailactions.h
     mailapplication.cpp
     mailapplication.h
     mailmanager.cpp
@@ -17,8 +19,6 @@ set(merkuro_mail_SRCS
     contactimageprovider.cpp
     contactimageprovider.h
 
-    messagestatus.h
-    messagestatus.cpp
     messageloader.h
     messageloader.cpp
 

@@ -65,11 +65,8 @@ MimeTreeParser.MailViewer {
             Kirigami.Theme.inherit: false
             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-            background: Item {
-                Rectangle {
-                    anchors.fill: parent
-                    color: Kirigami.Theme.alternateBackgroundColor
-                }
+            background: Rectangle {
+                color: Kirigami.Theme.alternateBackgroundColor
 
                 Kirigami.Separator {
                     anchors.top: parent.top
