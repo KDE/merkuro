@@ -65,8 +65,8 @@ void MailHeaderModel::setType(const int row, const Header type)
 QHash<int, QByteArray> MailHeaderModel::roleNames() const
 {
     return {
-        {ValueRole, "value"},
-        {TypeRole, "type"},
+        {ValueRole, QByteArrayLiteral("value")},
+        {TypeRole, QByteArrayLiteral("type")},
     };
 }
 

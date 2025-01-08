@@ -268,10 +268,10 @@ QVariant ContactGroupModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ContactGroupModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArray("display")},
-        {EmailRole, QByteArray("email")},
-        {DisplayNameRole, QByteArray("displayName")},
-        {IconNameRole, QByteArray("iconName")},
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {EmailRole, QByteArrayLiteral("email")},
+        {DisplayNameRole, QByteArrayLiteral("displayName")},
+        {IconNameRole, QByteArrayLiteral("iconName")},
     };
 }
 

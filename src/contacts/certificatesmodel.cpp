@@ -108,10 +108,10 @@ QVariant CertificatesModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> CertificatesModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, "displayName"},
-        {FingerprintRole, "fingerprint"},
-        {FingerprintAccessRole, "fingerprintAccess"},
-        {TagsRole, "tags"},
+        {Qt::DisplayRole, QByteArrayLiteral("displayName")},
+        {FingerprintRole, QByteArrayLiteral("fingerprint")},
+        {FingerprintAccessRole, QByteArrayLiteral("fingerprintAccess")},
+        {TagsRole, QByteArrayLiteral("tags")},
     };
 }
 

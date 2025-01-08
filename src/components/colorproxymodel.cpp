@@ -105,16 +105,16 @@ Qt::ItemFlags ColorProxyModel::flags(const QModelIndex &index) const
 QHash<int, QByteArray> ColorProxyModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames = QSortFilterProxyModel::roleNames();
-    roleNames[Qt::CheckStateRole] = "checkState";
-    roleNames[Qt::BackgroundRole] = "collectionColor";
-    roleNames[isResource] = "isResource";
+    roleNames[Qt::CheckStateRole] = QByteArrayLiteral("checkState");
+    roleNames[Qt::BackgroundRole] = QByteArrayLiteral("collectionColor");
+    roleNames[isResource] = QByteArrayLiteral("isResource");
     return roleNames;
 }
 
 QColor ColorProxyModel::getCollectionColor(Akonadi::Collection collection) const
 {
     const auto id = collection.id();
-    auto supportsMimeType = collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.event"))
+    const auto supportsMimeType = collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.event"))
         || collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.todo"))
         || collection.contentMimeTypes().contains(QLatin1StringView("application/x-vnd.akonadi.calendar.journal"))
         || collection.contentMimeTypes().contains(KContacts::Addressee::mimeType())
