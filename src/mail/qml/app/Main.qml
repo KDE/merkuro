@@ -48,8 +48,12 @@ BaseApplication {
         }
 
         function onCreateNewMail(): void {
-            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.mail", "MailComposer"))
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.mail", "MailComposer"))
         }
+        function onErrorOccurred(error: string): void {
+            root.showPassiveNotification(error)
+        }
+
     }
 
     Settings.Settings {

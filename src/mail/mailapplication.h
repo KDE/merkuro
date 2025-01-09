@@ -19,6 +19,8 @@ Q_SIGNALS:
     void createNewMail();
     void checkMail();
 
+    void errorOccurred(const QString &error);
+
 private:
     void setupActions() override;
 };

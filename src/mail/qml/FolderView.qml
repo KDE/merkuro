@@ -1,19 +1,22 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtQml.Models
+import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import org.kde.kitemmodels as KItemModels
 import './private'
 
 Kirigami.ScrollablePage {
-    id: folderView
+    id: root
 
     property var collection
     property alias searchString: searchModel.searchString
@@ -34,28 +37,6 @@ Kirigami.ScrollablePage {
         id: searchModel
     }
 
-    Loader {
-        id: mailSaveLoader
-
-        active: false
-        onLoaded: item.open();
-
-        sourceComponent: FileDialog {
-            title: i18n("Save Message - Merkuro-Mail")
-            nameFilters: [i18n("email messages (*.mbox)")]
-            currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-            fileMode: FileDialog.SaveFile
-
-            onAccepted: {
-                if (fileUrl) {
-                    MailManager.saveMail(fileUrl, folderView.collection);
-                }
-                mailSaveLoader.active = false;
-            }
-            onRejected: mailSaveLoader.active = false;
-        }
-    }
-
     actions: [
         Kirigami.Action {
             icon.name: 'mail-send'
@@ -64,7 +45,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             fromQAction: MailApplication.action("check_mail")
-            visible: folderView.searchString.length === 0
+            visible: root.searchString.length === 0
         }
     ]
 
@@ -84,29 +65,22 @@ Kirigami.ScrollablePage {
                 elide: Text.ElideRight
             }
 
-            Kirigami.ActionToolBar {
-                Layout.fillWidth: true
-                actions: [
-                    QQC2.Action {
-                        text: i18nc("@action:intoolbar", "Delete")
-                        icon.name: 'edit-delete-symbolic'
-                    },
-                    QQC2.Action {
-                        text: i18nc("@action:intoolbar", "Mark read")
-                        icon.name: 'mail-mark-read-symbolic'
-                        onTriggered: mailActions.setReadState(true)
-                    },
-                    QQC2.Action {
-                        text: i18nc("@action:intoolbar", "Mark unread")
-                        icon.name: 'mail-mark-unread-symbolic'
-                        onTriggered: mailActions.setReadState(false)
-                    },
-                    QQC2.Action {
-                        text: i18nc("@action:intoolbar", "Forward as attachment")
-                        icon.name: 'mail-forwarded-symbolic'
-                    }
-                ]
+            QQC2.Action {
+                text: i18nc("@action:intoolbar", "Delete")
+                icon.name: 'edit-delete-symbolic'
             }
+            //Kirigami.Action {
+            //    fromQAction: MailApplication.action('mark_read')
+            //    text: i18nc("@action:intoolbar", "Mark as Read")
+            //},
+            //Kirigami.Action {
+            //    fromQAction: MailApplication.action('mark_unread')
+            //    text: i18nc("@action:intoolbar", "Mark as Unread")
+            //},
+            //QQC2.Action {
+            //    text: i18nc("@action:intoolbar", "Forward as attachment")
+            //    icon.name: 'mail-forwarded-symbolic'
+            //}
 
             QQC2.ToolButton {
                 text: i18nc("@action:button", "Cancel")
@@ -140,59 +114,96 @@ Kirigami.ScrollablePage {
         MailActions {
             id: mailActions
             selectionModel: mailSelectionModel
+            mailApplication: MailApplication
+
+            onMailSaveAs: (item) => {
+                const component = Qt.createComponent("QtQuick.Dialogs", "FileDialog");
+                const dialog = component.createObject(root.QQC2.Overlay.overlay, {
+                    title: i18n("Save Message - Merkuro Mail"),
+                    nameFilters: [i18n("Email messages (*.mbox)")],
+                    currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation),
+                    fileMode: FileDialog.SaveFile,
+                });
+
+                dialog.accepted.connect(() => {
+                    if (dialog.selectedFile) {
+                        MailManager.saveMail(dialog.selectedFile, item);
+                    }
+                });
+                dialog.open();
+            }
+
+            onMoveToRequested: (items) => {
+                const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
+                const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                    configGroup: 'mail-collection-chooser-move',
+                    title: i18nc("@title:dialog", "Move Selection To:"),
+                    mimeTypeFilter: [Akonadi.MimeTypes.mail],
+                });
+
+                page.selected.connect((collection) => {
+                    mailActions.moveTo(items, collection);
+                    page.closeDialog();
+                });
+                page.rejected.connect(() => {
+                    page.closeDialog();
+                });
+            }
+
+            onCopyToRequested: (items) => {
+                const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
+                const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                    configGroup: 'mail-collection-chooser-move',
+                    title: i18nc("@title:dialog", "Copy Selection To:"),
+                    mimeTypeFilter: [Akonadi.MimeTypes.mail],
+                });
+                page.selected.connect((collection) => {
+                    mailActions.copyTo(items, collection);
+                    page.closeDialog();
+                });
+                page.rejected.connect(() => {
+                    page.closeDialog();
+                });
+            }
         }
 
         Component {
             id: contextMenu
-            QQC2.Menu {
-                QQC2.Menu {
-                    title: i18nc("@action:menu", "Mark Message")
-                    QQC2.MenuItem {
-                        text: i18ncp("@action:inmenu", "Mark Message as Read", "Mark Messages as Read", mailSelectionModel.selectedIndexes.length)
-                        onClicked: mailActions.setReadState(true)
-                    }
-                    QQC2.MenuItem {
-                        text: i18ncp("@action:inmenu", "Mark Message as Unread", "Mark Messages as Unread", mailSelectionModel.selectedIndexes.length)
-                        onClicked: mailActions.setReadState(false)
+            Components.ConvergentContextMenu {
+                Kirigami.Action {
+                    text: i18nc("@action:menu", "Mark Message")
+
+                    Kirigami.Action {
+                        fromQAction: MailApplication.action('mark_read')
                     }
 
-                    QQC2.MenuSeparator {}
-
-                    QQC2.MenuItem {
-                        text: i18ncp("@action:inmenu", "Mark Message as Important", "Mark Messages as Important", mailSelectionModel.selectedIndexes.length)
-                        onClicked: mailActions.setImportantState(true)
+                    Kirigami.Action {
+                        fromQAction: MailApplication.action('mark_unread')
                     }
 
-                    QQC2.MenuItem {
-                        text: i18ncp("@action:inmenu", "Mark Message as Unimportant", "Mark Messages as Uninportant", mailSelectionModel.selectedIndexes.length)
-                        onClicked: mailActions.setImportantState(false)
+                    Kirigami.Action {
+                        separator: true
+                    }
+
+                    Kirigami.Action {
+                        fromQAction: MailApplication.action('mark_important')
                     }
                 }
 
-                QQC2.MenuItem {
-                    icon.name: 'delete'
-                    text: i18n("Move to Trash")
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_trash')
                 }
 
-                QQC2.MenuItem {
-                    icon.name: 'edit-move'
-                    text: i18n("Move Message to...")
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_move_to')
                 }
 
-                QQC2.MenuItem {
-                    icon.name: 'edit-copy'
-                    text: i18n("Copy Message to...")
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_copy_to')
                 }
 
-                QQC2.MenuItem {
-                    icon.name: 'view-calendar'
-                    text: i18n("Add Followup Reminder")
-                }
-
-                QQC2.MenuItem {
-                    icon.name: 'document-save-as'
-                    text: i18nc("@action:button", "Save as...")
-                    onClicked: mailSaveLoader.active = true 
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_save_as')
                 }
             }
         }
@@ -225,8 +236,8 @@ Kirigami.ScrollablePage {
             selectionModel: mailSelectionModel
 
             onOpenMailRequested: {
-                mails.currentIndex = index;
                 mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                mails.currentIndex = index;
 
                 applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: mailDelegate.item,
@@ -242,7 +253,6 @@ Kirigami.ScrollablePage {
                 if (!mailDelegate.status.isRead) {
                     mailActions.setReadState(true);
                 }
-
             }
 
             onStarMailRequested: {
@@ -251,9 +261,16 @@ Kirigami.ScrollablePage {
             }
 
             onContextMenuRequested: {
-                const menu = contextMenu.createObject(folderView);
-                folderView.collection = mailDelegate.item;
+                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                mailActions.setActionState();
+
+                const menu = contextMenu.createObject(root);
+                root.collection = mailDelegate.item;
                 menu.popup();
+
+                menu.closed.connect(() => {
+                    mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mails.currentIndex, 0), ItemSelectionModel.Current);
+                })
             }
         }
     }

@@ -105,6 +105,7 @@ ListView {
                         font.weight: Font.DemiBold
                         text: categoryHeader.displayName
                         Layout.fillWidth: true
+                        Accessible.ignored: true
                     }
                 }
 

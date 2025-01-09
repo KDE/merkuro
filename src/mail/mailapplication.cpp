@@ -6,6 +6,8 @@
 #include <KLocalizedString>
 #include <QIcon>
 
+using namespace Qt::StringLiterals;
+
 MailApplication::MailApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
 {
@@ -31,6 +33,31 @@ void MailApplication::setupActions()
         action->setText(i18n("Check Mail"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("mail-receive")));
     }
+
+    auto action = new QAction(this);
+    action->setIcon(QIcon::fromTheme(u"mail-mark-read-symbolic"_s));
+    mainCollection()->addAction(u"mark_read"_s, action);
+
+    action = new QAction(this);
+    action->setIcon(QIcon::fromTheme(u"mail-mark-unread-symbolic"_s));
+    mainCollection()->addAction("mark_unread"_L1, action);
+
+    action = new QAction(this);
+    action->setCheckable(true);
+    action->setIcon(QIcon::fromTheme(u"mail-mark-important-symbolic"_s));
+    mainCollection()->addAction("mark_important"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"user-trash-symbolic"_s), i18nc("@action", "Move to Trash"), this);
+    mainCollection()->addAction("mail_trash"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18nc("@action", "Save as..."), this);
+    mainCollection()->addAction("mail_save_as"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"edit-move-symbolic"_s), i18nc("@action", "Move to..."), this);
+    mainCollection()->addAction("mail_move_to"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"edit-copy-symbolic"_s), i18nc("@action", "Copy to..."), this);
+    mainCollection()->addAction("mail_copy_to"_L1, action);
 
     readSettings();
 }
