@@ -44,7 +44,7 @@ set(merkuro_mail_SRCS
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
     HEADER merkuro_mail_debug.h
-    IDENTIFIER "merkuro_MAIL_LOG"
+    IDENTIFIER "MERKURO_MAIL_LOG"
     CATEGORY_NAME org.kde.merkuro.mail
     DESCRIPTION "merkuro mail"
     EXPORT merkuro
@@ -70,8 +70,8 @@ target_link_libraries(merkuro_mail_static
         KF6::XmlGui
         KF6::Codecs
         KF6::XmlGui
-	KF6::Crash
-	KF6::IconThemes
+        KF6::Crash
+        KF6::IconThemes
         KF6::Notifications
         MerkuroComponents
 )

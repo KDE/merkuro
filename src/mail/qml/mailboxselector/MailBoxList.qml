@@ -49,7 +49,7 @@ ListView {
         resourceIdentifier: mailList.resourceIdentifier
     }
 
-    signal folderChosen()
+    signal folderChosen
 
     delegate: DelegateChooser {
         role: 'kDescendantExpandable'
@@ -64,9 +64,10 @@ ListView {
                 required property var model
 
                 property bool chosen: false
+                property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && applicationWindow().wideScreen))
 
                 function trigger(): void {
-                    model.checkState = model.checkState === 0 ? 2 : 0
+                    model.checkState = model.checkState === 0 ? 2 : 0;
                     const index = foldersModel.index(model.index, 0);
                     MailManager.loadMailCollection(foldersModel.mapToSource(index));
 
@@ -75,29 +76,16 @@ ListView {
                     mailList.currentIndex = index;
                 }
 
-                Connections {
-                    target: mailList
-
-                    function onFolderChosen() {
-                        if (categoryHeader.chosen) {
-                            categoryHeader.chosen = false;
-                            categoryHeader.highlighted = true;
-                        } else {
-                            categoryHeader.highlighted = false;
-                        }
-                    }
-                }
-
-                property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && applicationWindow().wideScreen))
-
                 text: displayName
+                dropAreaHovered: dropArea.containsDrag
 
                 contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Kirigami.Icon {
                         implicitWidth: Kirigami.Units.iconSizes.smallMedium
                         implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                        isMask: true
-                        source: "folder-symbolic"
+                        source: categoryHeader.model.decoration
                     }
 
                     QQC2.Label {
@@ -106,6 +94,19 @@ ListView {
                         text: categoryHeader.displayName
                         Layout.fillWidth: true
                         Accessible.ignored: true
+                    }
+                }
+
+                Connections {
+                    target: mailList
+
+                    function onFolderChosen(): void {
+                        if (categoryHeader.chosen) {
+                            categoryHeader.chosen = false;
+                            categoryHeader.highlighted = true;
+                        } else {
+                            categoryHeader.highlighted = false;
+                        }
                     }
                 }
 
@@ -124,6 +125,15 @@ ListView {
                         }
                     }
                 }
+
+                DropArea {
+                    id: dropArea
+
+                    anchors.fill: parent
+                    onDropped: (drop) => {
+                        drop.source.moveToCollection(controlRoot.collection);
+                    }
+                }
             }
         }
 
@@ -139,11 +149,13 @@ ListView {
                 required property int unreadCount
 
                 property bool chosen: false
+                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
 
                 text: displayName
+                dropAreaHovered: dropArea.containsDrag
 
                 function trigger(): void {
-                    model.checkState = model.checkState === 0 ? 2 : 0
+                    model.checkState = model.checkState === 0 ? 2 : 0;
                     MailManager.loadMailCollection(foldersModel.mapToSource(foldersModel.index(model.index, 0)));
 
                     chosen = true;
@@ -154,7 +166,7 @@ ListView {
                 Connections {
                     target: mailList
 
-                    function onFolderChosen() {
+                    function onFolderChosen(): void {
                         if (controlRoot.chosen) {
                             controlRoot.chosen = false;
                             controlRoot.highlighted = true;
@@ -164,7 +176,6 @@ ListView {
                     }
                 }
 
-                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
 
                 contentItem: RowLayout {
                     Kirigami.Icon {
@@ -219,6 +230,15 @@ ListView {
 
                             mailActionsPopup.popup();
                         }
+                    }
+                }
+
+                DropArea {
+                    id: dropArea
+
+                    anchors.fill: parent
+                    onDropped: (drop) => {
+                        drop.source.moveToCollection(controlRoot.collection);
                     }
                 }
             }

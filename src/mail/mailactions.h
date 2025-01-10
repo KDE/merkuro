@@ -44,6 +44,8 @@ public:
     Q_INVOKABLE void moveTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
     Q_INVOKABLE void copyTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
 
+    Q_INVOKABLE Akonadi::Item::List selectionToItems() const;
+
 Q_SIGNALS:
     void selectionModelChanged();
     void mailApplicationChanged();
@@ -56,8 +58,6 @@ Q_SIGNALS:
 private:
     void modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f);
     void slotTrash();
-
-    Akonadi::Item::List selectionToItems() const;
 
     QItemSelectionModel *m_selectionModel = nullptr;
     MailApplication *m_mailApplication = nullptr;

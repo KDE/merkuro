@@ -4,6 +4,7 @@
 #include "mailactions.h"
 #include "abstractmailmodel.h"
 #include "mailkernel.h"
+#include "merkuro_mail_debug.h"
 
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemCopyJob>
@@ -251,6 +252,11 @@ void MailActions::slotTrash()
 
 void MailActions::moveTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination)
 {
+    if (!(destination.rights() & Akonadi::Collection::CanCreateItem)) {
+        qCWarning(MERKURO_MAIL_LOG) << "Unable to move items to unwritable location" << destination;
+        return;
+    }
+
     auto job = new Akonadi::ItemMoveJob(items, destination);
     connect(job, &KJob::result, this, [this](KJob *job) {
         if (job->error()) {
@@ -258,8 +264,14 @@ void MailActions::moveTo(const Akonadi::Item::List &items, const Akonadi::Collec
         }
     });
 }
+
 void MailActions::copyTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination)
 {
+    if (!(destination.rights() & Akonadi::Collection::CanCreateItem)) {
+        qCWarning(MERKURO_MAIL_LOG) << "Unable to copy items to unwritable location" << destination;
+        return;
+    }
+
     auto job = new Akonadi::ItemCopyJob(items, destination);
     connect(job, &KJob::result, this, [this](KJob *job) {
         if (job->error()) {

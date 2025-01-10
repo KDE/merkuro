@@ -44,7 +44,7 @@ MailClient::~MailClient() = default;
 void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body)
 {
     if (!m_headerModel->rowCount()) {
-        qCWarning(merkuro_MAIL_LOG) << "There are no recipients to e-mail";
+        qCWarning(MERKURO_MAIL_LOG) << "There are no recipients to e-mail";
         Q_EMIT finished(ResultNoRecipients, i18n("There are no recipients to e-mail"));
         return;
     }
@@ -70,7 +70,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
     }
 
     if (msg.cc.isEmpty() && msg.to.isEmpty() && msg.bcc.isEmpty()) {
-        qCWarning(merkuro_MAIL_LOG) << "There are really no recipients to e-mail";
+        qCWarning(MERKURO_MAIL_LOG) << "There are really no recipients to e-mail";
         Q_EMIT finished(ResultReallyNoRecipients, i18n("There are no recipients to e-mail"));
         return;
     }
@@ -82,7 +82,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
     if (!identity.transport().isEmpty()) {
         transportId = identity.transport().toInt();
     } else {
-        qWarning(merkuro_MAIL_LOG) << "Error while loading transport, using default tranport instead";
+        qWarning(MERKURO_MAIL_LOG) << "Error while loading transport, using default tranport instead";
         transportId = transportMgr->defaultTransportId();
     }
 

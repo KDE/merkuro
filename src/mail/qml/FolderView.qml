@@ -271,31 +271,86 @@ Kirigami.ScrollablePage {
             }
         }
 
-        delegate: MailDelegate {
-            id: mailDelegate
+        delegate: Item {
+            id: parentDelegate
 
-            selectionModel: mailSelectionModel
+            required property date datetime
+            required property string from
+            required property string to
+            required property string sender
+            required property string title
+            required property var status
+            required property var item
+            required property int index
 
-            onOpenMailRequested: {
-                mails.currentIndex = index;
-            }
+            height: mailDelegate.implicitHeight
 
-            onStarMailRequested: {
-                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
-                mailActions.setImportantState(!status.isImportant);
-            }
+            MailDelegate {
+                id: mailDelegate
 
-            onContextMenuRequested: {
-                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
-                mailActions.setActionState();
+                // Called from the sidebar when dropping
+                function moveToCollection(collection: var): void {
+                    const items = mailActions.selectionToItems();
+                    mailActions.moveTo(items, collection);
+                }
 
-                const menu = contextMenu.createObject(root);
-                root.collection = mailDelegate.item;
-                menu.popup();
+                listView: parentDelegate.ListView.view
 
-                menu.closed.connect(() => {
-                    mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mails.currentIndex, 0), ItemSelectionModel.Current);
-                })
+                datetime: parentDelegate.datetime
+                from: parentDelegate.from
+                to: parentDelegate.to
+                sender: parentDelegate.sender
+                title: parentDelegate.title
+                status: parentDelegate.status
+                item: parentDelegate.item
+                index: parentDelegate.index
+                selectionModel: mailSelectionModel
+
+                onOpenMailRequested: {
+                    mails.currentIndex = index;
+                }
+
+                onStarMailRequested: {
+                    mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                    mailActions.setImportantState(!status.isImportant);
+                }
+
+                onContextMenuRequested: {
+                    mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                    mailActions.setActionState();
+
+                    const menu = contextMenu.createObject(root);
+                    root.collection = mailDelegate.item;
+                    menu.popup();
+
+                    menu.closed.connect(() => {
+                        mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mails.currentIndex, 0), ItemSelectionModel.Current);
+                    })
+                }
+
+                states: State {
+                    when: mailDelegate.Drag.active
+                    ParentChange {
+                        target: mailDelegate
+                        parent: root.QQC2.Overlay.overlay
+                    }
+                }
+
+                DragHandler {
+                    id: dragHandler
+
+                    enabled: !Kirigami.Settings.isMobile
+                    cursorShape: Qt.DragMoveCursor
+                    onActiveChanged: if (!active) {
+                        mailDelegate.Drag.drop();
+                    } else {
+                        mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
+                    }
+                }
+
+                Drag.active: dragHandler.active
+                Drag.hotSpot.x: mailDelegate.width / 2
+                Drag.hotSpot.y: mailDelegate.height / 2
             }
         }
     }

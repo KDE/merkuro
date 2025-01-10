@@ -187,7 +187,7 @@ void MailManager::deleteCollection(const QModelIndex &index)
         const auto job = new Akonadi::CollectionDeleteJob(collection);
         connect(job, &Akonadi::CollectionDeleteJob::result, this, [](KJob *job) {
             if (job->error()) {
-                qCWarning(merkuro_MAIL_LOG) << "Error occured deleting collection: " << job->errorString();
+                qCWarning(MERKURO_MAIL_LOG) << "Error occured deleting collection: " << job->errorString();
             }
         });
         return;
@@ -229,19 +229,19 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
         }
         const auto item = items.at(0);
         if (!item.hasPayload()) {
-            qCCritical(merkuro_MAIL_LOG) << "Error occured: error parsing mail";
+            qCCritical(MERKURO_MAIL_LOG) << "Error occured: error parsing mail";
             return;
         }
 
         const auto message = item.payload<KMime::Message::Ptr>();
         KMBox::MBox mbox;
         if (!mbox.load(filename)) {
-            qCWarning(merkuro_MAIL_LOG) << "Error occured: error creating file";
+            qCWarning(MERKURO_MAIL_LOG) << "Error occured: error creating file";
         }
         mbox.appendMessage(message);
 
         if (!mbox.save()) {
-            qCWarning(merkuro_MAIL_LOG) << "Error occured: error saving mail";
+            qCWarning(MERKURO_MAIL_LOG) << "Error occured: error saving mail";
         }
     });
 }
