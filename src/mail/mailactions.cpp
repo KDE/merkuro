@@ -158,9 +158,6 @@ void MailActions::setActionState()
         return;
     }
 
-    auto indexes = m_selectionModel->selectedIndexes();
-    indexes << m_selectionModel->currentIndex();
-
     bool allRead = true;
     bool allUnread = true;
     bool allImportant = true;
@@ -180,7 +177,7 @@ void MailActions::setActionState()
     m_markUnreadAction->setEnabled(!allUnread);
     m_markImportantAction->setChecked(allImportant);
 
-    m_mailSaveAsAction->setVisible(indexes.size() == 1);
+    m_mailSaveAsAction->setVisible(items.size() == 1);
 }
 
 void MailActions::modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f)
