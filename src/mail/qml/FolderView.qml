@@ -57,35 +57,37 @@ Kirigami.ScrollablePage {
         height: visible ? implicitHeight: 0
 
         contentItem: RowLayout {
-            spacing: 0
+            spacing: Kirigami.Units.smallSpacing
+
+            ColoredCheckbox {
+                id: checkbox
+                checked: true
+                onToggled: if (!checked) {
+                    mailSelectionModel.clear()
+                }
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                indicator {
+                    implicitWidth: Kirigami.Units.gridUnit
+                    implicitHeight: Kirigami.Units.gridUnit
+                }
+                leftPadding: Kirigami.Units.largeSpacing
+                rightPadding: Kirigami.Units.largeSpacing
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+            }
 
             Kirigami.Heading {
                 text: i18ncp("Number of selected emails", "%1 selected", "%1 selected", mailSelectionModel.selectedIndexes.length)
                 level: 2
                 elide: Text.ElideRight
+                Layout.fillWidth: true
             }
-
-            QQC2.Action {
-                text: i18nc("@action:intoolbar", "Delete")
-                icon.name: 'edit-delete-symbolic'
-            }
-            //Kirigami.Action {
-            //    fromQAction: MailApplication.action('mark_read')
-            //    text: i18nc("@action:intoolbar", "Mark as Read")
-            //},
-            //Kirigami.Action {
-            //    fromQAction: MailApplication.action('mark_unread')
-            //    text: i18nc("@action:intoolbar", "Mark as Unread")
-            //},
-            //QQC2.Action {
-            //    text: i18nc("@action:intoolbar", "Forward as attachment")
-            //    icon.name: 'mail-forwarded-symbolic'
-            //}
 
             QQC2.ToolButton {
-                text: i18nc("@action:button", "Cancel")
-                icon.name: 'edit-select-none-symbolic'
-                onClicked: mailSelectionModel.clear()
+                action: Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_trash')
+                }
             }
         }
 
@@ -104,6 +106,9 @@ Kirigami.ScrollablePage {
         id: mails
         model: root.searchString.length > 0 ? searchModel : mailModel
         currentIndex: -1
+        onCountChanged: if (currentIndex === -1 && count > 0) {
+            currentIndex = 0;
+        }
         clip: true
 
         ItemSelectionModel {
@@ -230,29 +235,49 @@ Kirigami.ScrollablePage {
         }
         section.property: "date"
 
+        onCurrentItemChanged: if (currentIndex !== -1 && currentItem) {
+            mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(currentIndex, 0), ItemSelectionModel.Current);
+
+            let page;
+            const pageStack = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack;
+
+            if (pageStack.depth === 2) {
+                pageStack.lastItem.emptyItem = currentItem.item;
+                pageStack.lastItem.mailActions = mailActions,
+                pageStack.lastItem.props = {
+                    from: currentItem.from,
+                    to: currentItem.to,
+                    sender: currentItem.sender,
+                    item: currentItem.item,
+                    title: currentItem.title,
+                };
+            } else {
+                pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
+                    emptyItem: currentItem.item,
+                    mailActions: mailActions,
+                    props: {
+                        from: currentItem.from,
+                        to: currentItem.to,
+                        sender: currentItem.sender,
+                        item: currentItem.item,
+                        title: currentItem.title,
+                    },
+                });
+                mails.forceActiveFocus();
+            }
+
+            if (!currentItem.status.isRead) {
+                mailActions.setReadState(true);
+            }
+        }
+
         delegate: MailDelegate {
             id: mailDelegate
 
             selectionModel: mailSelectionModel
 
             onOpenMailRequested: {
-                mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
                 mails.currentIndex = index;
-
-                applicationWindow().pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
-                    emptyItem: mailDelegate.item,
-                    props: {
-                        from: mailDelegate.from,
-                        to: mailDelegate.to,
-                        sender: mailDelegate.sender,
-                        item: mailDelegate.item,
-                        title: mailDelegate.title,
-                    },
-                });
-
-                if (!mailDelegate.status.isRead) {
-                    mailActions.setReadState(true);
-                }
             }
 
             onStarMailRequested: {

@@ -22,6 +22,7 @@ class MailActions : public QObject
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(QItemSelectionModel *selectionModel READ selectionModel WRITE setSelectionModel NOTIFY selectionModelChanged)
+    Q_PROPERTY(Akonadi::Item item READ item WRITE setItem RESET unsetItem NOTIFY itemChanged)
     Q_PROPERTY(MailApplication *mailApplication READ mailApplication WRITE setMailApplication NOTIFY mailApplicationChanged)
 
 public:
@@ -29,6 +30,10 @@ public:
 
     QItemSelectionModel *selectionModel() const;
     void setSelectionModel(QItemSelectionModel *selectionModel);
+
+    Akonadi::Item item() const;
+    void setItem(const Akonadi::Item &item);
+    void unsetItem();
 
     MailApplication *mailApplication() const;
     void setMailApplication(MailApplication *mailApplication);
@@ -42,6 +47,7 @@ public:
 Q_SIGNALS:
     void selectionModelChanged();
     void mailApplicationChanged();
+    void itemChanged();
 
     void mailSaveAs(const Akonadi::Item &item);
     void moveToRequested(const Akonadi::Item::List &items);
@@ -51,8 +57,11 @@ private:
     void modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f);
     void slotTrash();
 
+    Akonadi::Item::List selectionToItems() const;
+
     QItemSelectionModel *m_selectionModel = nullptr;
     MailApplication *m_mailApplication = nullptr;
+    Akonadi::Item m_item;
 
     QAction *m_markReadAction = nullptr;
     QAction *m_markUnreadAction = nullptr;

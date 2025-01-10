@@ -6,7 +6,6 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemModifyJob>
-#include <Akonadi/MessageStatus>
 #include <Akonadi/SelectionProxyModel>
 #include <KFormat>
 #include <KLocalizedString>

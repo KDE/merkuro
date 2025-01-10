@@ -17,6 +17,7 @@ MimeTreeParser.MailViewer {
 
     required property var emptyItem
     required property var props
+    required property MailActions mailActions
 
     leftPadding: 0
     rightPadding: 0
@@ -26,10 +27,14 @@ MimeTreeParser.MailViewer {
     icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
 
     actions: [
-        Actions.DeleteMailAction {
-            item: root.emptyItem
-            name: props.title
-            onRemoved: applicationWindow().pageStack.pop()
+        Kirigami.Action {
+            text: i18nc("@action", "Move to Trash")
+            icon.name: "albumfolder-user-trash-symbolic"
+            onTriggered: {
+                mailActions.item = root.item
+                MailApplication.action('mail_trash').trigger();
+                mailActions.item = undefined;
+            }
         }
     ]
 

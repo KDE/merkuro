@@ -17,7 +17,7 @@ Controls.Action {
 
     signal removed
 
-    text: i18nc("@action", "Move to trash")
+    text: i18nc("@action", "Move to Trash")
     icon.name: "albumfolder-user-trash-symbolic"
 
 

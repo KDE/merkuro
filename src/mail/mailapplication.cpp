@@ -36,15 +36,18 @@ void MailApplication::setupActions()
 
     auto action = new QAction(this);
     action->setIcon(QIcon::fromTheme(u"mail-mark-read-symbolic"_s));
+    action->setText(i18nc("@action", "Mark as Read"));
     mainCollection()->addAction(u"mark_read"_s, action);
 
     action = new QAction(this);
     action->setIcon(QIcon::fromTheme(u"mail-mark-unread-symbolic"_s));
+    action->setText(i18nc("@action", "Mark as Unread"));
     mainCollection()->addAction("mark_unread"_L1, action);
 
     action = new QAction(this);
     action->setCheckable(true);
     action->setIcon(QIcon::fromTheme(u"mail-mark-important-symbolic"_s));
+    action->setText(i18nc("@action", "Mark as Important"));
     mainCollection()->addAction("mark_important"_L1, action);
 
     action = new QAction(QIcon::fromTheme(u"user-trash-symbolic"_s), i18nc("@action", "Move to Trash"), this);

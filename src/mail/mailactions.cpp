@@ -57,15 +57,39 @@ void MailActions::setSelectionModel(QItemSelectionModel *selectionModel)
     }
 }
 
+Akonadi::Item MailActions::item() const
+{
+    return m_item;
+}
+
+void MailActions::setItem(const Akonadi::Item &item)
+{
+    if (m_item == item) {
+        return;
+    }
+    m_item = item;
+    Q_EMIT itemChanged();
+}
+
+void MailActions::unsetItem()
+{
+    m_item = {};
+    Q_EMIT itemChanged();
+}
+
 MailApplication *MailActions::mailApplication() const
 {
     return m_mailApplication;
 }
 
-static Akonadi::Item::List selectionToItems(QItemSelectionModel *selectionModel)
+Akonadi::Item::List MailActions::selectionToItems() const
 {
-    auto indexes = selectionModel->selectedIndexes();
-    indexes << selectionModel->currentIndex();
+    if (m_item.isValid()) {
+        return {m_item};
+    }
+
+    auto indexes = m_selectionModel->selectedIndexes();
+    indexes << m_selectionModel->currentIndex();
     Akonadi::Item::List items;
     for (const auto &index : std::as_const(indexes)) {
         if (!index.isValid()) {
@@ -117,12 +141,12 @@ void MailActions::setMailApplication(MailApplication *mailApplication)
 
     m_mailMoveToAction = mailApplication->action("mail_move_to"_L1);
     connect(m_mailMoveToAction, &QAction::triggered, this, [this] {
-        Q_EMIT moveToRequested(selectionToItems(m_selectionModel));
+        Q_EMIT moveToRequested(selectionToItems());
     });
 
     m_mailCopyToAction = mailApplication->action("mail_copy_to"_L1);
     connect(m_mailCopyToAction, &QAction::triggered, this, [this] {
-        Q_EMIT copyToRequested(selectionToItems(m_selectionModel));
+        Q_EMIT copyToRequested(selectionToItems());
     });
 
     setActionState();
@@ -142,32 +166,18 @@ void MailActions::setActionState()
     bool allImportant = true;
     bool allUnimportant = true;
 
-    const AbstractMailModel *mailModel = nullptr;
-    for (const auto &index : indexes) {
-        if (!index.isValid()) {
-            return;
-        }
-        if (!mailModel) {
-            mailModel = dynamic_cast<const AbstractMailModel *>(index.model());
-            Q_ASSERT(mailModel);
-        }
-
-        auto item = index.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
-        auto state = mailModel->dataFromItem(item, AbstractMailModel::StatusRole).value<Akonadi::MessageStatus>();
+    const auto items = selectionToItems();
+    for (const auto &item : items) {
+        Akonadi::MessageStatus state;
+        state.setStatusFromFlags(item.flags());
 
         allRead = allRead && state.isRead();
         allUnread = allUnread && !state.isRead();
         allImportant = allImportant && state.isImportant();
         allUnimportant = allUnimportant && !state.isImportant();
     }
-
-    m_markReadAction->setText(i18ncp("@action:inmenu", "Mark Message as Read", "Mark Messages as Read", indexes.size()));
     m_markReadAction->setEnabled(!allRead);
-
-    m_markUnreadAction->setText(i18ncp("@action:inmenu", "Mark Message as Unread", "Mark Messages as Unread", indexes.size()));
     m_markUnreadAction->setEnabled(!allUnread);
-
-    m_markImportantAction->setText(i18ncp("@action:inmenu", "Mark Message as Important", "Mark Messages as Important", indexes.size()));
     m_markImportantAction->setChecked(allImportant);
 
     m_mailSaveAsAction->setVisible(indexes.size() == 1);
@@ -177,27 +187,17 @@ void MailActions::modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::Mes
 {
     Q_ASSERT(m_selectionModel);
 
-    auto indexes = m_selectionModel->selectedIndexes();
-    indexes << m_selectionModel->currentIndex();
-
-    const AbstractMailModel *mailModel = nullptr;
-    for (const auto &index : indexes) {
-        if (!index.isValid()) {
-            return;
-        }
-        if (!mailModel) {
-            mailModel = dynamic_cast<const AbstractMailModel *>(index.model());
-            Q_ASSERT(mailModel);
-        }
-
-        auto item = index.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
-        const auto state = mailModel->dataFromItem(item, AbstractMailModel::StatusRole).value<Akonadi::MessageStatus>();
+    const auto items = selectionToItems();
+    for (const auto &item : items) {
+        Akonadi::MessageStatus state;
+        state.setStatusFromFlags(item.flags());
 
         const auto newState = f(state);
 
         if (state != newState) {
-            item.setFlags(newState.statusFlags());
-            auto job = new Akonadi::ItemModifyJob(item, this);
+            auto newItem = item;
+            newItem.setFlags(newState.statusFlags());
+            auto job = new Akonadi::ItemModifyJob(newItem, this);
             job->disableRevisionCheck();
             job->setIgnorePayload(true);
             connect(job, &Akonadi::ItemModifyJob::result, this, [this](KJob *job) {
@@ -228,22 +228,10 @@ void MailActions::setImportantState(bool isImportant)
 
 void MailActions::slotTrash()
 {
-    auto indexes = m_selectionModel->selectedIndexes();
-    indexes << m_selectionModel->currentIndex();
+    const auto items = selectionToItems();
 
-    const AbstractMailModel *mailModel = nullptr;
     QHash<Akonadi::Collection, Akonadi::Item::List> itemCollections;
-    for (const auto &index : indexes) {
-        if (!index.isValid()) {
-            return;
-        }
-        if (!mailModel) {
-            mailModel = dynamic_cast<const AbstractMailModel *>(index.model());
-            Q_ASSERT(mailModel);
-        }
-
-        const auto item = index.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
-
+    for (const auto &item : items) {
         const auto collection = item.parentCollection();
         auto trash = CommonKernel->trashCollectionFromResource(collection);
         if (!trash.isValid()) {
