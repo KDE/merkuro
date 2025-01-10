@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-10-18 15:55+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1524,10 +1524,9 @@ msgid "<b>Today</b>"
 msgstr "<b>Dnes</b>"
 
 #: calendar/qml/MainViews/HourlyView.qml:47
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Day"
-msgstr "Předchozí týden"
+msgstr "Předchozí den"
 
 #: calendar/qml/MainViews/HourlyView.qml:49
 #, fuzzy, kde-format
@@ -1732,7 +1731,7 @@ msgstr "Přejít"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3208,15 +3207,15 @@ msgstr "vit@pelcak.org"
 #: launcher/Main.qml:58
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Ukončit"
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Žádný předmět"
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3232,15 +3231,66 @@ msgstr ""
 msgid "No key"
 msgstr "Žádný klíč"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "Nový e-mail..."
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, kde-format
 msgid "Check Mail"
 msgstr "Zkontrolovat poštu"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Označit zprávu jako přečtenou"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Označit zprávu jako nepřečtenou"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Označit jako důležité"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "Přesunout do koše"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Uložit jako..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Přesunout zprávu do..."
+
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "Kopírovat zprávu do..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3304,13 +3354,6 @@ msgid ""
 msgstr ""
 "Opravdu si přejete smazat složku %1 a zrušit tak její obsah? <br /><b>Pozor</"
 "b>, zrušené zprávy nejsou přesunuty do koše, nýbrž trvale smazány"
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, fuzzy, kde-format
-#| msgid "Move to trash"
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "Přesunout do koše"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, fuzzy, kde-format
@@ -3388,85 +3431,63 @@ msgstr "Otevřít soubor"
 msgid "Choose file"
 msgstr "Vyberte soubor"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr ""
 
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:81
 #, kde-format
-msgid "Save Message - Merkuro-Mail"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
 msgstr "Uložit zprávu - Merkuro-Mail"
 
-#: mail/qml/FolderView.qml:45
-#, kde-format
-msgid "email messages (*.mbox)"
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
 msgstr "e-mailové zprávy (*.mbox)"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Dokončení:"
+
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Označit zprávu"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "Označit zprávu jako přečtenou"
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "Označit zprávu jako nepřečtenou"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr ""
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "Označit jako důležité"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "Přesunout do koše"
-
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "Přesunout zprávu do..."
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "Kopírovat zprávu do..."
-
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "Přidat následnou upomínku"
-
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Uložit jako..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr ""
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr ""
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Schránka je prázdná"
@@ -3616,6 +3637,15 @@ msgstr "Vytvořit novou značku…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rychle přidat novou značku."
+
+#, fuzzy
+#~| msgid "Move to trash"
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "Přesunout do koše"
+
+#~ msgid "Add Followup Reminder"
+#~ msgstr "Přidat následnou upomínku"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"

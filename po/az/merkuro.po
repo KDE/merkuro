@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -1751,7 +1751,7 @@ msgstr "İrəli"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3263,13 +3263,13 @@ msgstr "xxmn77@gmail.com"
 msgid "Quit"
 msgstr ""
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr ""
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
@@ -3287,17 +3287,65 @@ msgstr ""
 msgid "No key"
 msgstr "Təqvim idxal edin"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgid "New Mail…"
 msgstr "Yeni tapşırıq..."
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Check Mail"
 msgstr "Təqvim"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Tapşırığı tamamlanmamış kimi işarələ"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Tapşırığı tamamlanmamış kimi işarələ"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Tapşırığı tamamlanmamış kimi işarələ"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, kde-format
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr ""
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgid "Save password"
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Şifrəni saxlamaq"
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Ani ismarıc mübadiləsi"
+
+#: mail/mailapplication.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Copy to..."
+msgstr ""
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3360,12 +3408,6 @@ msgid ""
 "Are you sure you want to delete the folder %1, discarding its contents? <br /"
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
-msgstr ""
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
 msgstr ""
 
 #: mail/qml/actions/DeleteMailAction.qml:29
@@ -3445,91 +3487,64 @@ msgstr "Fayl"
 msgid "Choose file"
 msgstr "Təqvim seçin"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr ""
 
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No address book selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "Heç bir ünvan kitabçası seçilməyib"
+msgstr[1] "Heç bir ünvan kitabçası seçilməyib"
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "Save Message - Merkuro Mail"
+msgstr "Təqvim"
+
+#: mail/qml/FolderView.qml:128
 #, kde-format
-msgid "Save Message - Merkuro-Mail"
+msgid "Email messages (*.mbox)"
 msgstr ""
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:145
 #, kde-format
-msgid "email messages (*.mbox)"
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
 msgstr ""
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Tamamlanma:"
+
+#: mail/qml/FolderView.qml:179
 #, fuzzy, kde-format
 #| msgid "Messaging"
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Ani ismarıc mübadiləsi"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr ""
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr ""
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr ""
-
-#: mail/qml/FolderView.qml:94
-#, fuzzy, kde-format
-#| msgid "Mark Task as Incomplete"
-msgid "Mark as Important"
-msgstr "Tapşırığı tamamlanmamış kimi işarələ"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr ""
-
-#: mail/qml/FolderView.qml:105
-#, fuzzy, kde-format
-#| msgid "Messaging"
-msgid "Move Message to..."
-msgstr "Ani ismarıc mübadiləsi"
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr ""
-
-#: mail/qml/FolderView.qml:115
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
-msgid "Add Followup Reminder"
-msgstr "Xatırlatma əlavə et"
-
-#: mail/qml/FolderView.qml:120
-#, fuzzy, kde-format
-#| msgid "Save password"
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Şifrəni saxlamaq"
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, fuzzy, kde-format
 #| msgid "No address book selected"
 msgid "No mailbox selected"
 msgstr "Heç bir ünvan kitabçası seçilməyib"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr ""
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, fuzzy, kde-format
 #| msgid "Mailbox"
 msgid "Mailbox is empty"
@@ -3692,6 +3707,11 @@ msgstr "Yeni yarlıq yaradın..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Cəld yeni yarlıq əlavə edin."
+
+#, fuzzy
+#~| msgid "Add Reminder"
+#~ msgid "Add Followup Reminder"
+#~ msgstr "Xatırlatma əlavə et"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"

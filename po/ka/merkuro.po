@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-04 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1720,7 +1720,7 @@ msgstr "Go"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3191,13 +3191,13 @@ msgstr "Temuri.doghonadze@gmail.com"
 msgid "Quit"
 msgstr "გასვლა"
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "სათაურის გარეშე"
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3213,15 +3213,66 @@ msgstr "გამოსახულების მოთხოვნა გა�
 msgid "No key"
 msgstr "გასაღების გარეშე"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "ახალი ელ-ფოსტა…"
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, kde-format
 msgid "Check Mail"
 msgstr "ელფოსტის შემოწმება"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "შეტყობინების წაკითხულად &მონიშვნა"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "შეტყობინების წაუკითხავად მონიშვნა"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "მნიშვნელოვნად მონიშვნა"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "ნაგვის ყუთში გადატანა"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "შენახვა, როგორც..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "შეტყობინების გადატანა..."
+
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "შეტყობინების კოპირება..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3287,12 +3338,6 @@ msgstr ""
 "შემცველობასაც ზედ მიაყოლებთ? <br /> <br>გაითვალისწინეთ</b>, რომ მოცილებული "
 "შეტყობინებები ნაგვის ყუთის საქაღალდეში შენახული არ იქნება და სამუდამოდ "
 "წაიშლება."
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "ნაგვის ყუთში გადატანა"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, kde-format
@@ -3366,85 +3411,63 @@ msgstr "ფაილის გახსნა"
 msgid "Choose file"
 msgstr "ფაილის არჩევა"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "ძებნა: %1"
 
-#: mail/qml/FolderView.qml:44
-#, kde-format
-msgid "Save Message - Merkuro-Mail"
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "საფოსტო ყუთი არჩეული არაა"
+msgstr[1] "საფოსტო ყუთი არჩეული არაა"
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
 msgstr "შეტყობინების შენახვა - Merkuro-ის ფოსტა"
 
-#: mail/qml/FolderView.qml:45
-#, kde-format
-msgid "email messages (*.mbox)"
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
 msgstr "ელფოსტის შეტყობინებები (*.mbox)"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "დასრულება:"
+
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "შეტყობინების დანიშვნა"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "შეტყობინების წაკითხულად &მონიშვნა"
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "შეტყობინების წაუკითხავად მონიშვნა"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr "არ მონიშნო, როგორც მნიშვნელოვანი"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "მნიშვნელოვნად მონიშვნა"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "ნაგვის ყუთში გადატანა"
-
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "შეტყობინების გადატანა..."
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "შეტყობინების კოპირება..."
-
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "შემხსენებელი აგენტი"
-
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "შენახვა, როგორც..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr "საფოსტო ყუთი არჩეული არაა"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "გვერდითი პანელიდან საფოსტო ყუთის არჩევა."
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "საფოსტო ყუთი ცარიელია"
@@ -3594,6 +3617,16 @@ msgstr "ახალი ჭდის შექმნა…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "ახალი ჭდის სწრაფი დამატება."
+
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "ნაგვის ყუთში გადატანა"
+
+#~ msgid "Don't Mark as Important"
+#~ msgstr "არ მონიშნო, როგორც მნიშვნელოვანი"
+
+#~ msgid "Add Followup Reminder"
+#~ msgstr "შემხსენებელი აგენტი"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"

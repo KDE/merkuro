@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-05 01:13+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1727,7 +1727,7 @@ msgstr "Ir"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3206,13 +3206,13 @@ msgstr "ecuadra@eloihr.net"
 msgid "Quit"
 msgstr "Salir"
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Sin asunto"
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3228,15 +3228,66 @@ msgstr "Se ha cancelado la solicitud de la imagen"
 msgid "No key"
 msgstr "No hay claves"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "Nuevo mensaje de correo..."
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, kde-format
 msgid "Check Mail"
 msgstr "Comprobar correo"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Marcar mensaje como leído"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Marcar mensaje como no leído"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Marcar como importante"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "Mover a la papelera"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Guardar como..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Mover mensaje a..."
+
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "Copiar mensaje a..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3302,12 +3353,6 @@ msgstr ""
 "¿Seguro que quiere borrar la carpeta %1 y descartar su contenido?<br /"
 "><b>Tenga en cuenta</b> que los mensajes descartados no se guardan en la "
 "carpeta de la Papelera y se eliminan permanentemente."
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "Mover a la papelera"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, kde-format
@@ -3380,85 +3425,63 @@ msgstr "Abrir archivo"
 msgid "Choose file"
 msgstr "Escoger archivo"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Buscar: %1"
 
-#: mail/qml/FolderView.qml:44
-#, kde-format
-msgid "Save Message - Merkuro-Mail"
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "No se ha seleccionado ningún buzón"
+msgstr[1] "No se ha seleccionado ningún buzón"
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
 msgstr "Guardar mensaje - Correo de Merkuro"
 
-#: mail/qml/FolderView.qml:45
-#, kde-format
-msgid "email messages (*.mbox)"
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
 msgstr "Mensajes de correo electrónico (*.mbox)"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Completación:"
+
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marcar mensaje"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "Marcar mensaje como leído"
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "Marcar mensaje como no leído"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr "No marcar como importante"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "Marcar como importante"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "Mover a la papelera"
-
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "Mover mensaje a..."
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "Copiar mensaje a..."
-
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "Añadir recordatorio de seguimiento"
-
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Guardar como..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr "No se ha seleccionado ningún buzón"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Seleccione un buzón en la barra lateral."
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "El buzón está vacío"
@@ -3608,6 +3631,16 @@ msgstr "Crear una nueva etiqueta..."
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Añadir rápidamente una nueva etiqueta."
+
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "Mover a la papelera"
+
+#~ msgid "Don't Mark as Important"
+#~ msgstr "No marcar como importante"
+
+#~ msgid "Add Followup Reminder"
+#~ msgstr "Añadir recordatorio de seguimiento"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"

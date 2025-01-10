@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-04 09:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1754,7 +1754,7 @@ msgstr "Pojdi"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3231,13 +3231,13 @@ msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 msgid "Quit"
 msgstr "Zapusti"
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Ni predmeta"
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3253,15 +3253,66 @@ msgstr "Zahtevek za sliko je bil preklican"
 msgid "No key"
 msgstr "Ni ključa"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "Novo sporočilo…"
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, kde-format
 msgid "Check Mail"
 msgstr "Preveri pošto"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Označi sporočilo kot prebrano"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Označi sporočilo kot neprebrano"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Označi kot pomembno"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "Prenesi v smeti"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Shrani kot..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Premakni sporočilo v..."
+
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "Kopiraj sporočilo v..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3326,12 +3377,6 @@ msgstr ""
 "Ali ste prepričani, da želite izbrisati mapo %1 in zavreči njeno vsebino? "
 "<br /> <b>Upoštevajte</b>, da se zavržena sporočila ne shranijo v mapo Smeti "
 "in so trajno izbrisana."
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "Prenesi v smeti"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, kde-format
@@ -3404,85 +3449,65 @@ msgstr "Odpri datoteko"
 msgid "Choose file"
 msgstr "Izberi datoteko"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Išči: %1"
 
-#: mail/qml/FolderView.qml:44
-#, kde-format
-msgid "Save Message - Merkuro-Mail"
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "Ni izbranega poštnega nabiralnika"
+msgstr[1] "Ni izbranega poštnega nabiralnika"
+msgstr[2] "Ni izbranega poštnega nabiralnika"
+msgstr[3] "Ni izbranega poštnega nabiralnika"
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
 msgstr "Shrani sporočilo - Merkuro-Mail"
 
-#: mail/qml/FolderView.qml:45
-#, kde-format
-msgid "email messages (*.mbox)"
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
 msgstr "e-poštna sporočila (*.mbox)"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Zaključek:"
+
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Označi sporočilo"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "Označi sporočilo kot prebrano"
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "Označi sporočilo kot neprebrano"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr "Ne označi kot pomembno"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "Označi kot pomembno"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "Prenesi v smeti"
-
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "Premakni sporočilo v..."
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "Kopiraj sporočilo v..."
-
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "Dodaj opomnik za spremljanje"
-
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Shrani kot..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Ni izbranega poštnega nabiralnika"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Izberi poštni nabiralnik iz stranske vrstice."
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Poštni nabiralnik je prazen"
@@ -3632,6 +3657,16 @@ msgstr "Ustvari novo oznako…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Hitro dodaj novo oznako."
+
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "Prenesi v smeti"
+
+#~ msgid "Don't Mark as Important"
+#~ msgstr "Ne označi kot pomembno"
+
+#~ msgid "Add Followup Reminder"
+#~ msgstr "Dodaj opomnik za spremljanje"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"

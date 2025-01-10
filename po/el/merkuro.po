@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1779,7 +1779,7 @@ msgstr "Μετάβαση"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3310,13 +3310,13 @@ msgstr "sstavra@gmail.com"
 msgid "Quit"
 msgstr "Έξοδος"
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr ""
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3333,17 +3333,66 @@ msgstr ""
 msgid "No key"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgid "New Mail…"
 msgstr "Νέα εργασία…"
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Check Mail"
 msgstr "Ημερολόγιο"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "Να σημειωθεί η εργασία ως ελλιπής"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "Να σημειωθεί η εργασία ως ελλιπής"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark Task as Incomplete"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "Να σημειωθεί η εργασία ως ελλιπής"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "Μετακίνηση στα απορρίμματα"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgid "Manage tags..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "Διαχείριση ετικετών..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "New event"
+msgctxt "@action"
+msgid "Move to..."
+msgstr "Νέο γεγονός"
+
+#: mail/mailapplication.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Copy to..."
+msgstr ""
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3407,12 +3456,6 @@ msgid ""
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
 msgstr ""
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, kde-format
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "Μετακίνηση στα απορρίμματα"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, fuzzy, kde-format
@@ -3492,90 +3535,62 @@ msgstr "Αρχείο"
 msgid "Choose file"
 msgstr "Επιλογή ημερολογίου"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr ""
 
-#: mail/qml/FolderView.qml:44
+#: mail/qml/FolderView.qml:81
 #, kde-format
-msgid "Save Message - Merkuro-Mail"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgid "Save Message - Merkuro Mail"
+msgstr "Ημερολόγιο"
+
+#: mail/qml/FolderView.qml:128
+#, kde-format
+msgid "Email messages (*.mbox)"
 msgstr ""
 
-#: mail/qml/FolderView.qml:45
+#: mail/qml/FolderView.qml:145
 #, kde-format
-msgid "email messages (*.mbox)"
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
 msgstr ""
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "Συμπλήρωση:"
+
+#: mail/qml/FolderView.qml:179
 #, fuzzy, kde-format
 #| msgid "New event"
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Νέο γεγονός"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr ""
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr ""
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr ""
-
-#: mail/qml/FolderView.qml:94
-#, fuzzy, kde-format
-#| msgid "Mark Task as Incomplete"
-msgid "Mark as Important"
-msgstr "Να σημειωθεί η εργασία ως ελλιπής"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "Μετακίνηση στα απορρίμματα"
-
-#: mail/qml/FolderView.qml:105
-#, fuzzy, kde-format
-#| msgid "New event"
-msgid "Move Message to..."
-msgstr "Νέο γεγονός"
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr ""
-
-#: mail/qml/FolderView.qml:115
-#, fuzzy, kde-format
-#| msgid "Add Reminder"
-msgid "Add Followup Reminder"
-msgstr "Προσθήκη υπενθύμισης"
-
-#: mail/qml/FolderView.qml:120
-#, fuzzy, kde-format
-#| msgid "Manage tags..."
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "Διαχείριση ετικετών..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr ""
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr ""
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr ""
@@ -3734,6 +3749,15 @@ msgstr "Δημιουργία νέας ετικέτας…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Γρήγορη προσθήκη νέας ετικέτας."
+
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "Μετακίνηση στα απορρίμματα"
+
+#, fuzzy
+#~| msgid "Add Reminder"
+#~ msgid "Add Followup Reminder"
+#~ msgstr "Προσθήκη υπενθύμισης"
 
 #, fuzzy
 #~| msgid "Create new calendar"

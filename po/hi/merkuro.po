@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:42+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1734,7 +1734,7 @@ msgstr "जाए"
 #: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:62
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -3213,13 +3213,13 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
-#: mail/abstractmailmodel.cpp:20
+#: mail/abstractmailmodel.cpp:24
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "कोई विषय नहीं"
 
-#: mail/abstractmailmodel.cpp:21
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3235,17 +3235,68 @@ msgstr "छवि अनुरोध रद्द कर दिया गया 
 msgid "No key"
 msgstr "कुंजी नहीं है"
 
-#: mail/mailapplication.cpp:24
+#: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
 msgstr "नया मेल…"
 
-#: mail/mailapplication.cpp:31
+#: mail/mailapplication.cpp:33
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Merkuro Mail"
 msgid "Check Mail"
 msgstr "मेरकुरो मेल"
+
+#: mail/mailapplication.cpp:39
+#, fuzzy, kde-format
+#| msgid "Mark Message as Read"
+msgctxt "@action"
+msgid "Mark as Read"
+msgstr "संदेश को पढ़ा गया के रूप में चिह्नित करें"
+
+#: mail/mailapplication.cpp:44
+#, fuzzy, kde-format
+#| msgid "Mark Message as Unread"
+msgctxt "@action"
+msgid "Mark as Unread"
+msgstr "संदेश को अपठित के रूप में चिह्नित करें"
+
+#: mail/mailapplication.cpp:50
+#, fuzzy, kde-format
+#| msgid "Mark as Important"
+msgctxt "@action"
+msgid "Mark as Important"
+msgstr "महत्वपूर्ण के रूप में चिह्नित करें"
+
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
+#: mail/qml/ConversationViewer.qml:31
+#, fuzzy, kde-format
+#| msgid "Move to Trash"
+msgctxt "@action"
+msgid "Move to Trash"
+msgstr "कूडेदान में ले जाएं"
+
+#: mail/mailapplication.cpp:56
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save as..."
+msgctxt "@action"
+msgid "Save as..."
+msgstr "ऐसे सहेजें..."
+
+#: mail/mailapplication.cpp:59
+#, fuzzy, kde-format
+#| msgid "Move Message to..."
+msgctxt "@action"
+msgid "Move to..."
+msgstr "संदेश को ले जाएं..."
+
+#: mail/mailapplication.cpp:62
+#, fuzzy, kde-format
+#| msgid "Copy Message to..."
+msgctxt "@action"
+msgid "Copy to..."
+msgstr "संदेश की प्रति बनाएँ..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, fuzzy, kde-format
@@ -3309,13 +3360,6 @@ msgstr ""
 "क्या आप वाकई फ़ोल्डर %1 को मिटाना चाहते हैं, इसकी सामग्री को त्यागना चाहते हैं? <br /> "
 "<b>सावधान</b> छोड़े गए संदेश आपके कूडे फ़ोल्डर में सहेजे नहीं जाते हैं और स्थायी रूप से हटा दिए "
 "जाते हैं।"
-
-#: mail/qml/actions/DeleteMailAction.qml:20
-#, fuzzy, kde-format
-#| msgid "Move to trash"
-msgctxt "@action"
-msgid "Move to trash"
-msgstr "कूडेदान में ले जाएं"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
 #, fuzzy, kde-format
@@ -3394,85 +3438,63 @@ msgstr "फ़ाइल खोलें"
 msgid "Choose file"
 msgstr "फ़ाइल चुनें"
 
-#: mail/qml/FolderView.qml:21
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr ""
 
-#: mail/qml/FolderView.qml:44
-#, kde-format
-msgid "Save Message - Merkuro-Mail"
+#: mail/qml/FolderView.qml:81
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgctxt "Number of selected emails"
+msgid "%1 selected"
+msgid_plural "%1 selected"
+msgstr[0] "कोई मेलबॉक्स चयनित नहीं है।"
+msgstr[1] "कोई मेलबॉक्स चयनित नहीं है।"
+
+#: mail/qml/FolderView.qml:127
+#, fuzzy, kde-format
+#| msgid "Save Message - Merkuro-Mail"
+msgid "Save Message - Merkuro Mail"
 msgstr "संदेश सहेजें - मेरकुरो-मेल"
 
-#: mail/qml/FolderView.qml:45
-#, kde-format
-msgid "email messages (*.mbox)"
+#: mail/qml/FolderView.qml:128
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox)"
+msgid "Email messages (*.mbox)"
 msgstr "ईमेल संदेश (*.mbox)"
 
-#: mail/qml/FolderView.qml:83
+#: mail/qml/FolderView.qml:145
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Move Selection To:"
+msgstr ""
+
+#: mail/qml/FolderView.qml:162
+#, fuzzy, kde-format
+#| msgid "Completion:"
+msgctxt "@title:dialog"
+msgid "Copy Selection To:"
+msgstr "समापन :"
+
+#: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "संदेश चिह्नित करें"
 
-#: mail/qml/FolderView.qml:85
-#, kde-format
-msgid "Mark Message as Read"
-msgstr "संदेश को पढ़ा गया के रूप में चिह्नित करें"
-
-#: mail/qml/FolderView.qml:88
-#, kde-format
-msgid "Mark Message as Unread"
-msgstr "संदेश को अपठित के रूप में चिह्नित करें"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Don't Mark as Important"
-msgstr "महत्वपूर्ण के रूप में चिह्नित न करें"
-
-#: mail/qml/FolderView.qml:94
-#, kde-format
-msgid "Mark as Important"
-msgstr "महत्वपूर्ण के रूप में चिह्नित करें"
-
-#: mail/qml/FolderView.qml:100
-#, kde-format
-msgid "Move to Trash"
-msgstr "कूडेदान में ले जाएं"
-
-#: mail/qml/FolderView.qml:105
-#, kde-format
-msgid "Move Message to..."
-msgstr "संदेश को ले जाएं..."
-
-#: mail/qml/FolderView.qml:110
-#, kde-format
-msgid "Copy Message to..."
-msgstr "संदेश की प्रति बनाएँ..."
-
-#: mail/qml/FolderView.qml:115
-#, kde-format
-msgid "Add Followup Reminder"
-msgstr "फॉलोअप याद दिलाने का समय जोड़ें"
-
-#: mail/qml/FolderView.qml:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Save as..."
-msgstr "ऐसे सहेजें..."
-
-#: mail/qml/FolderView.qml:130
+#: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
 msgstr "कोई मेलबॉक्स चयनित नहीं है।"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "साइडबार से एक मेलबॉक्स चुनें।"
 
-#: mail/qml/FolderView.qml:138
+#: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "मेलबॉक्स खाली है।"
@@ -3626,6 +3648,18 @@ msgstr "एक नया टैग बनाएं…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "जलदी से एक नया टैग जोड़ें।"
+
+#, fuzzy
+#~| msgid "Move to trash"
+#~ msgctxt "@action"
+#~ msgid "Move to trash"
+#~ msgstr "कूडेदान में ले जाएं"
+
+#~ msgid "Don't Mark as Important"
+#~ msgstr "महत्वपूर्ण के रूप में चिह्नित न करें"
+
+#~ msgid "Add Followup Reminder"
+#~ msgstr "फॉलोअप याद दिलाने का समय जोड़ें"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Delete calendar"
