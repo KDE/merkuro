@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2024-11-25 18:31+0100\n"
+"PO-Revision-Date: 2025-01-11 21:23+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1657,27 +1657,22 @@ msgstr "Lägg snabbt till en ny uppgift."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Visa händelser"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Redigera kalender…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Uppdatera kalender"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Ta bort kalender"
@@ -3233,55 +3228,47 @@ msgid "Check Mail"
 msgstr "Kontrollera post"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "Markera brev som läst"
+msgstr "Markera som läst"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr "Markera brev som oläst"
+msgstr "Markera som oläst"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Markera som viktigt"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as..."
 msgstr "Spara som..."
 
 #: mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to..."
-msgstr "Flytta brev till..."
+msgstr "Flytta till..."
 
 #: mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to..."
-msgstr "Kopiera brev till..."
+msgstr "Kopiera till..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3348,32 +3335,26 @@ msgstr ""
 "tas bort permanent."
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Ta bort alla"
+msgstr "Ta bort e-post"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Ta bort alla"
+msgstr "Ta bort e-post"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete the folder %1, discarding its contents? "
-#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
-#| "Trash folder and are permanently deleted."
+#, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
-"Är du säker på att du vill ta bort korgen %1 och kasta innehållet? <br /> "
-"<b>Varning</b> för att breven som kastas inte sparas i papperskorgen utan "
+"Är du säker på att du vill ta bort brevet \"%1\" och kasta innehållet? <br /"
+"> <b>Varning</b> för att breven som kastas inte sparas i papperskorgen utan "
 "tas bort permanent."
 
 #: mail/qml/actions/MailItemMenu.qml:25
@@ -3428,41 +3409,37 @@ msgstr "Välj fil"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Sök: %1"
 
 #: mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Ingen brevlåda vald"
-msgstr[1] "Ingen brevlåda vald"
+msgstr[0] "%1 vald"
+msgstr[1] "%1 valda"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Spara brev: Merkuro"
+msgstr "Spara brev: Merkuro e-post"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
-msgstr "e-post (*.mbox)"
+msgstr "E-post (*.mbox)"
 
 #: mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Flytta markering till:"
 
 #: mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Färdiggörande:"
+msgstr "Kopiera markering till:"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format

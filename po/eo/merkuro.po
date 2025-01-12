@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2025-01-06 18:58+0100\n"
+"PO-Revision-Date: 2025-01-11 22:49+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3228,55 +3228,47 @@ msgid "Check Mail"
 msgstr "Kontroli Poŝton"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "Marki Mesaĝon kiel Legita"
+msgstr "Marki kiel Legita"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr "Marki Mesaĝon kiel Nelegita"
+msgstr "Marki kiel Nelegita"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Marki kiel Grava"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Movi al Rubujo"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as..."
 msgstr "Konservi kiel..."
 
 #: mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to..."
-msgstr "Movi Mesaĝon al..."
+msgstr "Movi al..."
 
 #: mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to..."
-msgstr "Kopii mesaĝon al..."
+msgstr "Kopii al..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3420,38 +3412,34 @@ msgid "Search: %1"
 msgstr "Serĉi: %1"
 
 #: mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Neniu leterkesto elektita"
-msgstr[1] "Neniu leterkesto elektita"
+msgstr[0] "%1 elektita"
+msgstr[1] "%1 elektitaj"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Konservi Mesaĝon - Merkuro-Mail"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
-msgstr "retpoŝtaj mesaĝoj (*.mbox)"
+msgstr "Retpoŝtaj mesaĝoj (*.mbox)"
 
 #: mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Move Elekton Al:"
 
 #: mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Kompletigo:"
+msgstr "Kopii Elekton Al:"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
@@ -3619,13 +3607,3 @@ msgstr "Krei novan etikedon…"
 #, kde-format
 msgid "Quickly Add a New Tag."
 msgstr "Rapide Aldoni Novan Etikedon."
-
-#~ msgctxt "@action"
-#~ msgid "Move to trash"
-#~ msgstr "Movi al rubujo"
-
-#~ msgid "Don't Mark as Important"
-#~ msgstr "Ne Marki kiel Grava"
-
-#~ msgid "Add Followup Reminder"
-#~ msgstr "Aldoni Sekvan Rememorigilon"
