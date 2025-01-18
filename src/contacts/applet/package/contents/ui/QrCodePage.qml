@@ -5,7 +5,6 @@
 import QtQuick
 import QtQml
 import QtQuick.Layouts
-import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.plasmoid
@@ -13,6 +12,7 @@ import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kquickcontrolsaddons
 import org.kde.merkuro.contact
 import org.kde.prison as Prison
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
     id: barcodeView
@@ -83,7 +83,7 @@ ColumnLayout {
     Item {
         Layout.fillWidth: parent
         Layout.fillHeight: parent
-        Layout.topMargin: PlasmaCore.Units.smallSpacing
+        Layout.topMargin: Kirigami.Units.smallSpacing
 
         Prison.Barcode {
             id: barcodeItem

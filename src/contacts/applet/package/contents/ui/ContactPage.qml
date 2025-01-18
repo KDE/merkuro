@@ -5,7 +5,6 @@ import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Layouts 1.15
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.merkuro.contact
@@ -157,15 +156,15 @@ PlasmaComponents3.ScrollView {
             PlasmaComponents3.Label {
                 visible: addressee.nickName !== ""
                 text: i18n("Nickname: %1", addressee.nickName)
-                Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                Layout.rightMargin: PlasmaCore.Units.smallSpacing
-                Layout.topMargin: PlasmaCore.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
             }
 
             PlasmaComponents3.Label {
-                Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                Layout.rightMargin: PlasmaCore.Units.smallSpacing
-                Layout.topMargin: PlasmaCore.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
                 visible: text !== i18n("Birthday:") + ' '
                 text: if (addressee.birthday.getFullYear() === 0) {
                     return Qt.formatDate(addressee.birthday, i18nc("Day month format", "dd.MM."))
@@ -175,9 +174,9 @@ PlasmaComponents3.ScrollView {
             }
 
             PlasmaExtras.Heading {
-                Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                Layout.rightMargin: PlasmaCore.Units.smallSpacing
-                Layout.topMargin: PlasmaCore.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
                 visible: addressesRepeater.count > 0
                 text: i18np("Address", "Addresses", addressesRepeater.count)
                 level: 4
@@ -187,17 +186,17 @@ PlasmaComponents3.ScrollView {
                 id: addressesRepeater
                 model: addressee.addressesModel
                 PlasmaComponents3.Label {
-                    Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                    Layout.rightMargin: PlasmaCore.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     visible: text.lenght !== 0
                     text: (model.typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", model.typeLabel) : '') + ' ' + model.formattedAddress
                 }
             }
 
             PlasmaExtras.Heading {
-                Layout.topMargin: PlasmaCore.Units.smallSpacing
-                Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                Layout.rightMargin: PlasmaCore.Units.smallSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
                 visible: emailRepeater.count > 0
                 text: i18np("Email Address", "Email Addresses", emailRepeater.count)
                 level: 4
@@ -209,8 +208,8 @@ PlasmaComponents3.ScrollView {
                 PlasmaComponents3.Label {
                     visible: text !== ""
                     text: `${model.type} <a href="mailto:${model.display}">${model.display}</a>`
-                    Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                    Layout.rightMargin: PlasmaCore.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     PlasmaComponents3.ToolTip { text: i18n("Send Email") }
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
@@ -224,9 +223,9 @@ PlasmaComponents3.ScrollView {
             }
 
             PlasmaExtras.Heading {
-                Layout.topMargin: PlasmaCore.Units.smallSpacing
-                Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                Layout.rightMargin: PlasmaCore.Units.smallSpacing
+                Layout.topMargin: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
                 visible: phoneRepeater.count > 0
                 text: i18np("Phone number", "Phone numbers", phoneRepeater.count)
                 level: 4
@@ -238,8 +237,8 @@ PlasmaComponents3.ScrollView {
                 PlasmaComponents3.Label {
                     visible: text !== ""
                     text: i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
-                    Layout.leftMargin: PlasmaCore.Units.smallSpacing
-                    Layout.rightMargin: PlasmaCore.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     PlasmaComponents3.ToolTip { text: i18n("Call") }
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
