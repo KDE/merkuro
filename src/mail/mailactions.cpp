@@ -279,3 +279,5 @@ void MailActions::copyTo(const Akonadi::Item::List &items, const Akonadi::Collec
         }
     });
 }
+
+#include "moc_mailactions.cpp"
