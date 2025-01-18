@@ -21,7 +21,7 @@
 
 #include <KMime/Headers>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/ItipPart>
@@ -97,7 +97,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
 
     auto composerPtr = populateComposer(msg, identityModel, &transportId);
     auto *composer = composerPtr.release();
-    QObject::connect(composer, &MessageComposer::Composer::result, this, [this, transportId, composer, identity, msg]() {
+    QObject::connect(composer, &MessageComposer::ComposerJob::result, this, [this, transportId, composer, identity, msg]() {
         for (const auto &message : composer->resultMessages()) {
             queueMessage(transportId, composer, identity, message);
         }
@@ -106,10 +106,10 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
     composer->start();
 }
 
-std::unique_ptr<MessageComposer::Composer>
+std::unique_ptr<MessageComposer::ComposerJob>
 MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId)
 {
-    auto composer = std::make_unique<MessageComposer::Composer>();
+    auto composer = std::make_unique<MessageComposer::ComposerJob>();
     auto *globalPart = composer->globalPart();
     globalPart->setGuiEnabled(false);
     globalPart->setMDNRequested(false);
@@ -156,7 +156,7 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
 }
 
 void MailClient::queueMessage(const int transportId,
-                              const MessageComposer::Composer *composer,
+                              const MessageComposer::ComposerJob *composer,
                               const KIdentityManagementCore::Identity &identity,
                               const KMime::Message::Ptr &message)
 {

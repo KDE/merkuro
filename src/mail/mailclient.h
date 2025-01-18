@@ -21,7 +21,7 @@ class IdentityModel;
 
 namespace MessageComposer
 {
-class Composer;
+class ComposerJob;
 }
 
 namespace MailTransport
@@ -67,11 +67,11 @@ public:
     Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body);
 
 private:
-    std::unique_ptr<MessageComposer::Composer>
+    std::unique_ptr<MessageComposer::ComposerJob>
     populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId);
 
     void queueMessage(const int transport,
-                      const MessageComposer::Composer *composer,
+                      const MessageComposer::ComposerJob *composer,
                       const KIdentityManagementCore::Identity &identity,
                       const KMime::Message::Ptr &message);
 
