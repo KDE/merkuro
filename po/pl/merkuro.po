@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2024-11-30 09:50+0100\n"
+"PO-Revision-Date: 2025-01-25 12:40+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1674,30 +1674,25 @@ msgstr "Szybko dodaj nowe zadanie."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Wyświetl wydarzenia"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
-msgstr "Edytuj kalendarz..."
+msgstr "Edytuj kalendarz…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Uaktualnij kalendarz"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
-msgstr "Usuń kalendarz"
+msgstr "Usunąć kalendarz"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:94
 #, kde-format
@@ -3252,55 +3247,47 @@ msgid "Check Mail"
 msgstr "Sprawdź pocztę"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "Oznacz wiadomość jako przeczytaną"
+msgstr "Oznacz jako przeczytaną"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr "Oznacz wiadomość jako nieprzeczytaną"
+msgstr "Oznacz jako przeczytaną"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Oznacz jako ważną"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Wyrzuć do kosza"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as..."
 msgstr "Zapisz jako..."
 
 #: mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to..."
-msgstr "Przenieś wiadomość do..."
+msgstr "Przenieś do..."
 
 #: mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to..."
-msgstr "Skopiuj wiadomość do..."
+msgstr "Skopiuj do…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3367,33 +3354,27 @@ msgstr ""
 "stracone."
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Usuń wszystko"
+msgstr "Usuń wiadomość"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Usuń wszystko"
+msgstr "Usuń wiadomość"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete the folder %1, discarding its contents? "
-#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
-#| "Trash folder and are permanently deleted."
+#, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
-"Czy na pewno usunąć katalog %1 wraz z zawartością?<br /><b>Uwaga:</b> "
-"usunięte w ten sposób wiadomości nie są przenoszone do Kosza i są na zawsze "
-"stracone."
+"Czy na pewno usunąć wiadomość \"%1\", porzucając jej treść?<br /><b>Uwaga:</"
+"b> porzucone w ten sposób wiadomości nie są przenoszone do Kosza i są trwale "
+"usuwane."
 
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
@@ -3431,7 +3412,7 @@ msgstr "Utwórz katalog"
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr "Nazwa katalogu..."
+msgstr "Nazwa katalogu…"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
@@ -3447,42 +3428,38 @@ msgstr "Wybierz plik"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Poszukaj: %1"
 
 #: mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Nie wybrano żadnej skrzynki pocztowej"
-msgstr[1] "Nie wybrano żadnej skrzynki pocztowej"
-msgstr[2] "Nie wybrano żadnej skrzynki pocztowej"
+msgstr[0] "%1 zaznaczona"
+msgstr[1] "%1 zaznaczone"
+msgstr[2] "%1 zaznaczonych"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Zapisz wiadomość - Merkuro-Mail"
+msgstr "Zapisz wiadomość - Merkuro Mail"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
-msgstr "wiadomości pocztowe (*.mbox)"
+msgstr "Wiadomości pocztowe (*.mbox)"
 
 #: mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Przenieś zaznaczenie do:"
 
 #: mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Ukończenie:"
+msgstr "Skopiuj zaznaczenie do:"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
