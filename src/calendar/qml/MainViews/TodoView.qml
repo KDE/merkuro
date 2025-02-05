@@ -101,6 +101,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             fromQAction: Calendar.CalendarApplication.action("todoview_show_completed")
             text: i18n("Show Completed")
+        },
+
+        Kirigami.Action {
+            fromQAction: Calendar.CalendarApplication.action("todoview_show_current_day_only")
+
+            onTriggered: {
+                Calendar.Filter.showCurrentDayOnly = !Calendar.Filter.showCurrentDayOnly
+            }
         }
     ]
 

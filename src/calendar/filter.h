@@ -12,16 +12,19 @@ class Filter : public QObject
     Q_PROPERTY(qint64 collectionId READ collectionId WRITE setCollectionId NOTIFY collectionIdChanged)
     Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY tagsChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(bool showCurrentDayOnly READ showCurrentDayOnly WRITE setShowCurrentDayOnly NOTIFY showCurrentDayOnlyChanged)
 
 public:
     [[nodiscard]] qint64 collectionId() const;
     [[nodiscard]] QStringList tags() const;
     [[nodiscard]] QString name() const;
+    bool showCurrentDayOnly() const;
 
 public Q_SLOTS:
     void setCollectionId(const qint64 collectionId);
     void setTags(const QStringList &tags);
     void setName(const QString &name);
+    void setShowCurrentDayOnly(bool show);
 
     void toggleFilterTag(const QString tagName);
     void reset();
@@ -31,9 +34,11 @@ Q_SIGNALS:
     void collectionIdChanged();
     void tagsChanged();
     void nameChanged();
+    void showCurrentDayOnlyChanged();
 
 private:
     qint64 m_collectionId = -1;
     QStringList m_tags;
     QString m_name;
+    bool m_showCurrentDayOnly = false;
 };

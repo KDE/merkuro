@@ -330,8 +330,29 @@ bool TodoSortFilterProxyModel::filterAcceptsRowCheck(int row, const QModelIndex 
 
     bool acceptRow = true;
 
+    const auto todoItem = sourceIndex.data(Akonadi::TodoModel::TodoRole).value<Akonadi::Item>();
+
+    if (!todoItem.isValid()) {
+        return {};
+    }
+
+    if (m_filterObject->showCurrentDayOnly()) {
+        const auto todoPtr = Akonadi::CalendarUtils::todo(todoItem);
+        const auto todo = sourceIndex.data(Akonadi::TodoModel::TodoPtrRole).value<KCalendarCore::Todo::Ptr>();
+
+        if (!todo->hasDueDate()) {
+            return {};
+        }
+
+        if (todoPtr && todoPtr->dtDue().isValid()) {
+            const auto dueDate = todoPtr->dtDue().date();
+            const auto today = QDate::currentDate();
+            acceptRow = acceptRow && (dueDate == today);
+        }
+    }
+
     if (m_filterObject->collectionId() > -1) {
-        const auto collectionId = sourceIndex.data(Akonadi::TodoModel::TodoRole).value<Akonadi::Item>().parentCollection().id();
+        const auto collectionId = todoItem.parentCollection().id();
         acceptRow = acceptRow && collectionId == m_filterObject->collectionId();
     }
 
@@ -484,6 +505,7 @@ void TodoSortFilterProxyModel::setFilterObject(Filter *filterObject)
     connect(m_filterObject, &Filter::nameChanged, this, handleFilterNameChange);
     connect(m_filterObject, &Filter::tagsChanged, this, handleFilterObjectChange);
     connect(m_filterObject, &Filter::collectionIdChanged, this, handleFilterObjectChange);
+    connect(m_filterObject, &Filter::showCurrentDayOnlyChanged, this, handleFilterObjectChange);
 
     if (!nameFilter.isEmpty()) {
         setFilterFixedString(nameFilter);

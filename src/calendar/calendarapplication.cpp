@@ -329,6 +329,20 @@ void CalendarApplication::setupActions()
         }
     }
 
+    actionName = QLatin1StringView("todoview_show_current_day_only");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto todoViewShowCurrentDayOnlyAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewShowCurrentDayOnly);
+        todoViewShowCurrentDayOnlyAction->setText(i18n("Show Today Only"));
+        todoViewShowCurrentDayOnlyAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-symbolic")));
+        mSortCollection->addAction(todoViewShowCurrentDayOnlyAction->objectName(), todoViewShowCurrentDayOnlyAction);
+        if (openTodoAction) {
+            connect(openTodoAction, &QAction::changed, this, [todoViewShowCurrentDayOnlyAction, openTodoAction]() {
+                todoViewShowCurrentDayOnlyAction->setEnabled(openTodoAction->isChecked());
+            });
+            todoViewShowCurrentDayOnlyAction->setEnabled(openTodoAction->isChecked());
+        }
+    }
+
     actionName = QLatin1StringView("refresh_all");
     if (KAuthorized::authorizeAction(actionName)) {
         auto refreshAllAction = mainCollection()->addAction(actionName, this, &CalendarApplication::refreshAll);

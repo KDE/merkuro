@@ -45,6 +45,20 @@ void Filter::setName(const QString &name)
     Q_EMIT nameChanged();
 }
 
+bool Filter::showCurrentDayOnly() const
+{
+    return m_showCurrentDayOnly;
+}
+
+void Filter::setShowCurrentDayOnly(bool show)
+{
+    if (m_showCurrentDayOnly == show) {
+        return;
+    }
+    m_showCurrentDayOnly = show;
+    Q_EMIT showCurrentDayOnlyChanged();
+}
+
 void Filter::toggleFilterTag(const QString tagName)
 {
     if (!m_tags.contains(tagName)) {

@@ -70,6 +70,7 @@ Q_SIGNALS:
     void todoViewOrderAscending();
     void todoViewOrderDescending();
     void todoViewShowCompleted();
+    void todoViewShowCurrentDayOnly();
     void refreshAll();
     void openIncidence(const QVariantMap incidenceData, const QDateTime occurrence);
     void calendarChanged();
