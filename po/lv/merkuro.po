@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2025-01-03 16:19+0200\n"
+"PO-Revision-Date: 2025-02-05 11:01+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1674,27 +1674,22 @@ msgstr "Ātri pievienot jaunu uzdevumu."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Rādīt notikumus"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Rediģēt kalendāru…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Atjaunināt kalendāru"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Dzēst kalendāru"
@@ -3252,55 +3247,47 @@ msgid "Check Mail"
 msgstr "Pārbaudīt pastu"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "Atzīmēt vēstuli kā lasītu"
+msgstr "Atzīmēt kā izlasītu"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
 msgstr "Atzīmēt vēstuli kā nelasītu"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Atzīmēt kā svarīgu"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Pārvietot uz atkritni"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as..."
-msgstr "Saglabāt kā..."
+msgstr "Saglabāt kā…"
 
 #: mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to..."
-msgstr "Pārvietoto vēstuli uz..."
+msgstr "Pārvietoto uz..."
 
 #: mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to..."
-msgstr "Kopēt vēstuli uz..."
+msgstr "Kopēt uz..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3310,7 +3297,7 @@ msgstr "E-pasta vēstulei nav saņēmēju"
 #: mail/mailclient.cpp:93
 #, kde-format
 msgid "Error creating transport"
-msgstr "Kļūda, izveidojot transportu"
+msgstr "Kļūda, veidojot transportu"
 
 #: mail/mailclient.cpp:186
 #, kde-format
@@ -3444,39 +3431,35 @@ msgid "Search: %1"
 msgstr "Meklēt: %1"
 
 #: mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Nav atlasīta pasta kastīte"
-msgstr[1] "Nav atlasīta pasta kastīte"
-msgstr[2] "Nav atlasīta pasta kastīte"
+msgstr[0] "%1 atlasīta"
+msgstr[1] "%1 atlasītas"
+msgstr[2] "%1 atlasītu"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Vēstules saglabāšana — „Merkuro“ pasts"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
-msgstr "e-pasta vēstules (*.mbox)"
+msgstr "E-pasta vēstules (*.mbox)"
 
 #: mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Pārvietot atlasi ar:"
 
 #: mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Pabeigšana:"
+msgstr "Kopēt atlasi uz:"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
