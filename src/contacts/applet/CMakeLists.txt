@@ -4,5 +4,5 @@
 find_package(Plasma)
 
 if(Plasma_FOUND)
-    plasma_install_package(package org.kde.merkuro.contact)
+    plasma_install_package(package org.kde.merkuro.contact.applet)
 endif()
