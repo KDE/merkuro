@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the kalendar package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2022, 2023.
-# SPDX-FileCopyrightText: 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-25 02:35+0000\n"
-"PO-Revision-Date: 2024-07-29 10:32-0300\n"
+"PO-Revision-Date: 2025-02-14 00:39-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1525,16 +1525,14 @@ msgid "<b>Today</b>"
 msgstr "<b>Hoje</b>"
 
 #: calendar/qml/MainViews/HourlyView.qml:47
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Day"
-msgstr "Semana anterior"
+msgstr "Dia anterior"
 
 #: calendar/qml/MainViews/HourlyView.qml:49
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Three Days"
-msgstr "Semana anterior"
+msgstr "Três dias  anteriores"
 
 #: calendar/qml/MainViews/HourlyView.qml:51
 #, kde-format
@@ -1544,12 +1542,12 @@ msgstr "Semana anterior"
 #: calendar/qml/MainViews/HourlyView.qml:61
 #, kde-format
 msgid "Next Day"
-msgstr ""
+msgstr "Dia seguinte"
 
 #: calendar/qml/MainViews/HourlyView.qml:63
 #, kde-format
 msgid "Next Three Days"
-msgstr ""
+msgstr "Próximos  três dias"
 
 #: calendar/qml/MainViews/HourlyView.qml:65
 #, kde-format
@@ -2252,31 +2250,31 @@ msgstr "Casa:"
 #, kde-format
 msgctxt "@info: shorthand for the key is revoked"
 msgid "Revoked"
-msgstr ""
+msgstr "Revogada"
 
 #: contacts/certificatesmodel.cpp:87
 #, kde-format
 msgctxt "@info: shorthand for the key is expired"
 msgid "Expired"
-msgstr ""
+msgstr "Expirado"
 
 #: contacts/certificatesmodel.cpp:90
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "Desabilitado"
 
 #: contacts/certificatesmodel.cpp:93
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
-msgstr ""
+msgstr "Inválido"
 
 #: contacts/certificatesmodel.cpp:96
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
-msgstr ""
+msgstr "Válido"
 
 #: contacts/contactapplication.cpp:15 contacts/contactapplication.cpp:17
 #, kde-format
@@ -2831,11 +2829,10 @@ msgid "protocol:person@example.com"
 msgstr "protocolo:pessoa@exemplo.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partner's name"
-msgstr "Nome do parceiro:"
+msgstr "Nome do parceiro"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3101,8 +3098,7 @@ msgid "Manager's name:"
 msgstr "Nome do gerente:"
 
 #: contacts/qml/private/ContactPage.qml:332
-#, fuzzy, kde-format
-#| msgid "Assistants's name:"
+#, kde-format
 msgid "Assistant's name:"
 msgstr "Nome do assistente:"
 
@@ -3117,7 +3113,7 @@ msgstr[1] "Endereços de e-mail"
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
-msgstr ""
+msgstr "Certificados de criptografia"
 
 #: contacts/qml/private/DeleteContactAction.qml:20
 #, kde-format
@@ -3168,24 +3164,20 @@ msgid "Add New Address Book Source…"
 msgstr "Adicionar nova origem do livro de endereços…"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Launcher"
-msgstr "Merkuro Calendar"
+msgstr "Lançador Merkuro"
 
 #: launcher/main.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgid "merkuro Launcher"
-msgstr "Merkuro Calendar"
+msgstr "Lançador Merkuro"
 
 #: launcher/main.cpp:59
 #, kde-format
 msgid "(c) 2024"
-msgstr ""
+msgstr "(c) 2024"
 
 #: launcher/main.cpp:61
 #, kde-format
@@ -3227,10 +3219,9 @@ msgid "Check Mail"
 msgstr "Verificar e-mails"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
-#, fuzzy, kde-format
-#| msgid "There are no attendees to e-mail"
+#, kde-format
 msgid "There are no recipients to e-mail"
-msgstr "Não há nenhum participante para o e-mail"
+msgstr "Não há nenhum destinatário para o e-mail"
 
 #: mail/mailclient.cpp:93
 #, kde-format
