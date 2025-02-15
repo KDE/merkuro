@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2024-12-01 14:58+0200\n"
+"POT-Creation-Date: 2025-02-15 00:43+0000\n"
+"PO-Revision-Date: 2025-01-28 10:18+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -151,6 +151,12 @@ msgid "Show Completed Tasks"
 msgstr "Näytä valmistuneet tehtävät"
 
 #: calendar/calendarapplication.cpp:335
+#, fuzzy, kde-format
+#| msgid "To Today"
+msgid "Show Today Only"
+msgstr "Tänään"
+
+#: calendar/calendarapplication.cpp:349
 #, kde-format
 msgid "Refresh All"
 msgstr "Virkistä kaikki"
@@ -1633,23 +1639,23 @@ msgid "Show Completed"
 msgstr "Näytä valmistuneet"
 
 # ***TARKISTA: ID moniselitteinen, voisi olla myös ’%1 valmistuneet tehtävät’
-#: calendar/qml/MainViews/TodoView.qml:110
+#: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "Valmistuneet tehtävät – %1"
 
-#: calendar/qml/MainViews/TodoView.qml:110
+#: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks"
 msgstr "Valmistuneet tehtävät"
 
-#: calendar/qml/MainViews/TodoView.qml:158
+#: calendar/qml/MainViews/TodoView.qml:166
 #, kde-format
 msgid "Create a New Task…"
 msgstr "Luo uusi tehtävä…"
 
-#: calendar/qml/MainViews/TodoView.qml:198
-#: calendar/qml/MainViews/TodoView.qml:199
+#: calendar/qml/MainViews/TodoView.qml:206
+#: calendar/qml/MainViews/TodoView.qml:207
 #, kde-format
 msgid "Quickly Add a New Task."
 msgstr "Lisää pikaisesti uusi tehtävä."
@@ -1658,27 +1664,22 @@ msgstr "Lisää pikaisesti uusi tehtävä."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Näytä tapahtumat"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Muokkaa kalenteria…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Virkistä kalenteri"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Poista kalenteri"
@@ -3350,32 +3351,26 @@ msgstr ""
 "pysyvästi."
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Poista kaikki"
+msgstr "Poista viesti"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Poista kaikki"
+msgstr "Poista viesti"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete the folder %1, discarding its contents? "
-#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
-#| "Trash folder and are permanently deleted."
+#, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
-"Haluatko varmasti poistaa kansion %1 kaikkine sisältöineen?<br /><b>Huomaa</"
-"b>, ettei poistettuja viestejä tallenneta roskakoriin vaan ne poistetaan "
+"Haluatko varmasti poistaa viestin ”%1” sisältöineen?<br /><b>Huomaa</b>, "
+"ettei poistettuja viestejä tallenneta roskakoriin vaan ne poistetaan "
 "pysyvästi."
 
 #: mail/qml/actions/MailItemMenu.qml:25
@@ -3430,7 +3425,7 @@ msgstr "Valitse tiedosto"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Etsi: %1"
 
 #: mail/qml/FolderView.qml:81
 #, fuzzy, kde-format
