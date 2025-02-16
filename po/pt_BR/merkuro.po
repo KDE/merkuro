@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
+"POT-Creation-Date: 2025-02-15 00:43+0000\n"
 "PO-Revision-Date: 2025-02-14 00:39-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -152,6 +152,12 @@ msgid "Show Completed Tasks"
 msgstr "Mostrar tarefas concluídas"
 
 #: calendar/calendarapplication.cpp:335
+#, fuzzy, kde-format
+#| msgid "To Today"
+msgid "Show Today Only"
+msgstr "Para hoje"
+
+#: calendar/calendarapplication.cpp:349
 #, kde-format
 msgid "Refresh All"
 msgstr "Atualizar tudo"
@@ -1526,13 +1532,11 @@ msgstr "<b>Hoje</b>"
 
 #: calendar/qml/MainViews/HourlyView.qml:47
 #, kde-format
-#| msgid "Previous Week"
 msgid "Previous Day"
 msgstr "Dia anterior"
 
 #: calendar/qml/MainViews/HourlyView.qml:49
 #, kde-format
-#| msgid "Previous Week"
 msgid "Previous Three Days"
 msgstr "Três dias  anteriores"
 
@@ -1636,23 +1640,23 @@ msgstr " , está atrasado"
 msgid "Show Completed"
 msgstr "Mostrar concluído"
 
-#: calendar/qml/MainViews/TodoView.qml:110
+#: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "Tarefas concluídas em %1"
 
-#: calendar/qml/MainViews/TodoView.qml:110
+#: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks"
 msgstr "Tarefas concluídas"
 
-#: calendar/qml/MainViews/TodoView.qml:158
+#: calendar/qml/MainViews/TodoView.qml:166
 #, kde-format
 msgid "Create a New Task…"
 msgstr "Criar uma nova tarefa..."
 
-#: calendar/qml/MainViews/TodoView.qml:198
-#: calendar/qml/MainViews/TodoView.qml:199
+#: calendar/qml/MainViews/TodoView.qml:206
+#: calendar/qml/MainViews/TodoView.qml:207
 #, kde-format
 msgid "Quickly Add a New Task."
 msgstr "Adicione rapidamente uma nova tarefa."
@@ -2843,7 +2847,6 @@ msgstr "protocolo:pessoa@exemplo.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
 #, kde-format
-#| msgid "Partner's name:"
 msgctxt "@label"
 msgid "Partner's name"
 msgstr "Nome do parceiro"
@@ -3113,7 +3116,6 @@ msgstr "Nome do gerente:"
 
 #: contacts/qml/private/ContactPage.qml:332
 #, kde-format
-#| msgid "Assistants's name:"
 msgid "Assistant's name:"
 msgstr "Nome do assistente:"
 
@@ -3180,16 +3182,12 @@ msgstr "Adicionar nova origem do livro de endereços…"
 
 #: launcher/main.cpp:51
 #, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
 msgctxt "@title"
 msgid "Merkuro Launcher"
 msgstr "Lançador Merkuro"
 
 #: launcher/main.cpp:53
 #, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
 msgid "merkuro Launcher"
 msgstr "Lançador Merkuro"
 
@@ -3302,7 +3300,6 @@ msgstr "Copiar mensagem para..."
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
-#| msgid "There are no attendees to e-mail"
 msgid "There are no recipients to e-mail"
 msgstr "Não há nenhum destinatário para o e-mail"
 
