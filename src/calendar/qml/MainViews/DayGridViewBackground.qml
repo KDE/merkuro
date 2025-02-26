@@ -39,6 +39,10 @@ Column {
     required property bool isCurrentView
     required property bool showDayIndicator
 
+    Component.onCompleted: {
+        Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+    }
+
     anchors.fill: parent
 
     DayLabelsBar {
@@ -118,6 +122,11 @@ Column {
                                 readonly property int year: date.getFullYear()
                                 readonly property bool isToday: day === root.currentDay && month === root.currentMonth && year === root.currentYear
                                 readonly property bool isCurrentMonth: month === root.month
+                                readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(gridItem.date).length > 0
+                                readonly property string holidayText: {
+                                    const holidays = Calendar.HolidayModel.getHolidays(date);
+                                    return holidays.join("\n");
+                                }
 
                                 height: root.dayHeight
                                 width: root.dayWidth
@@ -125,9 +134,12 @@ Column {
                                 Rectangle {
                                     id: backgroundRectangle
                                     anchors.fill: parent
-                                    color: incidenceDropArea.containsDrag ?  Kirigami.Theme.positiveBackgroundColor :
+                                    color: gridItem.isHoliday ? Kirigami.Theme.negativeBackgroundColor :
+                                        incidenceDropArea.containsDrag ?  Kirigami.Theme.positiveBackgroundColor :
                                         gridItem.isToday ? Kirigami.Theme.activeBackgroundColor :
-                                        gridItem.isCurrentMonth ? Kirigami.Theme.backgroundColor : Kirigami.Theme.alternateBackgroundColor
+                                        gridItem.isCurrentMonth ? Kirigami.Theme.backgroundColor :
+                                        Kirigami.Theme.alternateBackgroundColor
+
 
                                     Kirigami.Theme.inherit: false
                                     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -189,6 +201,16 @@ Column {
                                             renderType: Text.QtRendering
                                             color: Kirigami.Theme.highlightColor
                                             visible: gridItem.isToday && gridItem.width > Kirigami.Units.gridUnit * 5
+                                        }
+                                        QQC2.Label {
+                                            id: holidayLabel
+
+                                            Layout.fillWidth: true
+                                            text: gridItem.holidayText
+                                            color: Kirigami.Theme.negativeTextColor
+                                            font.bold: true
+                                            elide: Text.ElideRight
+                                            padding: Kirigami.Units.smallSpacing
                                         }
                                         QQC2.Label {
                                             id: dateLabel

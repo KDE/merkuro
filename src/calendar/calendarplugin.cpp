@@ -8,6 +8,7 @@
 #include "datetimestate.h"
 #include "filter.h"
 #include "incidencewrapper.h"
+#include "models/holidaymodel.h"
 #include "models/hourlyincidencemodel.h"
 #include "models/incidenceoccurrencemodel.h"
 #include "models/infinitemerkurocalendarviewmodel.h"
@@ -75,6 +76,12 @@ void CalendarPlugin::registerTypes(const char *uri)
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new Filter;
+    });
+
+    qmlRegisterSingletonType<HolidayModel>(uri, 1, 0, "HolidayModel", [](QQmlEngine *engine, QJSEngine *scriptEngine) {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new HolidayModel;
     });
 
     qmlRegisterUncreatableType<IncidenceWrapper>(uri, 1, 0, "IncidenceWrapper", QStringLiteral("Only returned from apis"));

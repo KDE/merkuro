@@ -27,6 +27,8 @@ set(merkuro_calendar_SRCS
     models/attendeesmodel.h
     models/hourlyincidencemodel.cpp
     models/hourlyincidencemodel.h
+    models/holidaymodel.h
+    models/holidaymodel.cpp
     models/incidenceoccurrencemodel.cpp
     models/incidenceoccurrencemodel.h
     models/infinitemerkurocalendarviewmodel.cpp
@@ -63,6 +65,7 @@ target_link_libraries(merkuro_calendar_static PUBLIC
     KF6::WindowSystem
     KF6::Contacts
     KF6::Crash
+    KF6::Holidays
     KPim6::AkonadiCalendar
     KPim6::AkonadiContactCore
     KPim6::AkonadiWidgets
