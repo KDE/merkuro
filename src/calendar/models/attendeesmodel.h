@@ -64,7 +64,7 @@ public:
     [[nodiscard]] KCalendarCore::Attendee::List attendees() const;
     void updateAkonadiContactIds();
     AttendeeStatusModel *attendeeStatusModel();
-    QList<qint64> attendeesAkonadiIds() const;
+    [[nodiscard]] QList<qint64> attendeesAkonadiIds() const;
 
     QVariant data(const QModelIndex &idx, int role) const override;
     bool setData(const QModelIndex &idx, const QVariant &value, int role) override;

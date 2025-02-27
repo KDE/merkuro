@@ -18,7 +18,7 @@ public:
     [[nodiscard]] qint64 collectionId() const;
     [[nodiscard]] QStringList tags() const;
     [[nodiscard]] QString name() const;
-    bool showCurrentDayOnly() const;
+    [[nodiscard]] bool showCurrentDayOnly() const;
 
 public Q_SLOTS:
     void setCollectionId(const qint64 collectionId);

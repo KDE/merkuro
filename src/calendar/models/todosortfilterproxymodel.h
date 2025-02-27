@@ -97,7 +97,7 @@ public:
 
     Akonadi::ETMCalendar::Ptr calendar() const;
     Akonadi::IncidenceChanger *incidenceChanger() const;
-    int showCompleted() const;
+    [[nodiscard]] int showCompleted() const;
     Filter *filterObject() const;
     [[nodiscard]] int sortBy() const;
     [[nodiscard]] bool sortAscending() const;

@@ -155,7 +155,7 @@ public:
     [[nodiscard]] QString incidenceEndDateDisplay() const;
     [[nodiscard]] QString incidenceEndTimeDisplay() const;
     Q_INVOKABLE void setIncidenceTimeToNearestQuarterHour(bool setStartTime = true, bool setEndTime = true);
-    QByteArray timeZone() const;
+    [[nodiscard]] QByteArray timeZone() const;
     void setTimeZone(const QByteArray &timeZone);
     [[nodiscard]] int startTimeZoneUTCOffsetMins();
     [[nodiscard]] int endTimeZoneUTCOffsetMins();

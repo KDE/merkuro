@@ -31,8 +31,8 @@ public:
 
     KCalendarCore::Incidence::Ptr incidencePtr();
     void setIncidencePtr(KCalendarCore::Incidence::Ptr incidence);
-    KCalendarCore::Attachment::List attachments();
-    QVariantMap dataroles();
+    [[nodiscard]] KCalendarCore::Attachment::List attachments() const;
+    [[nodiscard]] QVariantMap dataroles() const;
 
     QVariant data(const QModelIndex &idx, int role) const override;
     QHash<int, QByteArray> roleNames() const override;

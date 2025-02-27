@@ -80,8 +80,8 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
 
     Akonadi::ETMCalendar::Ptr calendar() const;
-    QDate start() const;
-    int length() const;
+    [[nodiscard]] QDate start() const;
+    [[nodiscard]] int length() const;
     Filter *filter() const;
     [[nodiscard]] bool loading() const;
     int resetThrottleInterval() const;

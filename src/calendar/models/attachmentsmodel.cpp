@@ -32,12 +32,12 @@ void AttachmentsModel::setIncidencePtr(KCalendarCore::Incidence::Ptr incidence)
     Q_EMIT layoutChanged();
 }
 
-KCalendarCore::Attachment::List AttachmentsModel::attachments()
+KCalendarCore::Attachment::List AttachmentsModel::attachments() const
 {
     return m_incidence->attachments();
 }
 
-QVariantMap AttachmentsModel::dataroles()
+QVariantMap AttachmentsModel::dataroles() const
 {
     return m_dataRoles;
 }

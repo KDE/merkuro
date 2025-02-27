@@ -19,7 +19,7 @@ public:
     Q_INVOKABLE void setDateRange(const QDate &start, const QDate &end);
     Q_INVOKABLE QStringList getHolidays(const QDate &date) const;
     Q_INVOKABLE QDate addDaysToDate(const QDate &date, int days) const;
-    QString regionCode() const;
+    [[nodiscard]] QString regionCode() const;
     void setRegionCode(const QString &regionCode);
 
 Q_SIGNALS:
