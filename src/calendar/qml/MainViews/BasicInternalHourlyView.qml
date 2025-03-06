@@ -56,7 +56,11 @@ Column {
         }
     }
 
-    Component.onCompleted: hourScrollView.setToCurrentTime();
+    Component.onCompleted: {
+        Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+        holidayRow.checkHolidays()
+        hourScrollView.setToCurrentTime();
+    }
 
     FontMetrics {
         id: hourLabelMetrics
@@ -148,6 +152,15 @@ Column {
             height: parent.height
             width: viewColumn.scrollbarWidth
         }
+    }
+
+    WeekViewHolidayRow {
+        id: holidayRow
+        startDate: viewColumn.startDate
+        daysToShow: viewColumn.daysToShow
+        dayWidth: viewColumn.dayWidth
+        hourLabelWidth: viewColumn.hourLabelWidth
+        scrollbarWidth: viewColumn.scrollbarWidth
     }
 
     Kirigami.Separator {
@@ -387,11 +400,21 @@ Column {
 
                                                 readonly property date date: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
                                                 readonly property bool isToday: Calendar.DateTimeState.isToday(date)
+                                                readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(date).length > 0
+                                                readonly property color bgColor: {
+                                                    if (isHoliday) {
+                                                        return Kirigami.Theme.negativeBackgroundColor
+                                                    } else if (multiDayViewIncidenceDropArea.containsDrag) {
+                                                        return Kirigami.Theme.positiveBackgroundColor
+                                                    } else if (isToday) {
+                                                        return Kirigami.Theme.activeBackgroundColor
+                                                    }
+                                                    return Kirigami.Theme.backgroundColor
+                                                }
 
                                                 width: viewColumn.dayWidth
                                                 height: linesListViewScrollView.height
-                                                color: multiDayViewIncidenceDropArea.containsDrag ?  Kirigami.Theme.positiveBackgroundColor :
-                                                    isToday ? Kirigami.Theme.activeBackgroundColor : Kirigami.Theme.backgroundColor
+                                                color: multiDayViewBackground.bgColor
 
                                                 DayTapHandler {
                                                     id: listViewMenu
@@ -651,6 +674,7 @@ Column {
                             required property var periodStartDateTime
 
                             readonly property date columnDate: DateUtils.addDaysToDate(viewColumn.startDate, index)
+                            readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(columnDate).length > 0
                             readonly property bool isToday: columnDate.getDate() === viewColumn.currentDate.getDate() &&
                                 columnDate.getMonth() === viewColumn.currentDate.getMonth() &&
                                 columnDate.getFullYear() === viewColumn.currentDate.getFullYear()
@@ -675,11 +699,18 @@ Column {
                                         id: backgroundRectangle
 
                                         required property int index
+                                        readonly property color bgColor: {
+                                            if (dayColumn.isHoliday) {
+                                                return Kirigami.Theme.negativeBackgroundColor
+                                            } else if (dayColumn.isToday) {
+                                                return Kirigami.Theme.activeBackgroundColor
+                                            }
+                                            return Kirigami.Theme.backgroundColor;
+                                        }
 
                                         width: parent.width
                                         height: hourlyView.hourHeight
-                                        color: dayColumn.isToday ? Kirigami.Theme.activeBackgroundColor : Kirigami.Theme.backgroundColor
-
+                                        color: backgroundRectangle.bgColor
 
                                         ColumnLayout {
                                             anchors.fill: parent
