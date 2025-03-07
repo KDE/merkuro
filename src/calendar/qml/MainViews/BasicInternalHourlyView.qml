@@ -57,9 +57,21 @@ Column {
     }
 
     Component.onCompleted: {
-        Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
-        holidayRow.checkHolidays()
+        if (Calendar.Config.showHolidaysInCalendarViews) {
+            Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+            holidayRow.checkHolidays()
+        }
         hourScrollView.setToCurrentTime();
+    }
+
+    Connections {
+        target: Calendar.Config
+        function onShowHolidaysInCalendarViewsChanged(): void {
+            if (Calendar.Config.showHolidaysInCalendarViews) {
+                Calendar.HolidayModel.setDateRange(viewColumn.startDate, Calendar.HolidayModel.addDaysToDate(viewColumn.startDate, viewColumn.daysToShow))
+                holidayRow.checkHolidays()
+            }
+        }
     }
 
     FontMetrics {
@@ -161,6 +173,7 @@ Column {
         dayWidth: viewColumn.dayWidth
         hourLabelWidth: viewColumn.hourLabelWidth
         scrollbarWidth: viewColumn.scrollbarWidth
+        showHolidaysConfig: Calendar.Config.showHolidaysInCalendarViews
     }
 
     Kirigami.Separator {
@@ -402,7 +415,7 @@ Column {
                                                 readonly property bool isToday: Calendar.DateTimeState.isToday(date)
                                                 readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(date).length > 0
                                                 readonly property color bgColor: {
-                                                    if (isHoliday) {
+                                                    if (Calendar.Config.showHolidaysInCalendarViews && isHoliday) {
                                                         return Kirigami.Theme.negativeBackgroundColor
                                                     } else if (multiDayViewIncidenceDropArea.containsDrag) {
                                                         return Kirigami.Theme.positiveBackgroundColor
@@ -700,12 +713,12 @@ Column {
 
                                         required property int index
                                         readonly property color bgColor: {
-                                            if (dayColumn.isHoliday) {
+                                            if (Calendar.Config.showHolidaysInCalendarViews && dayColumn.isHoliday) {
                                                 return Kirigami.Theme.negativeBackgroundColor
                                             } else if (dayColumn.isToday) {
                                                 return Kirigami.Theme.activeBackgroundColor
                                             }
-                                            return Kirigami.Theme.backgroundColor;
+                                            return Kirigami.Theme.backgroundColor
                                         }
 
                                         width: parent.width

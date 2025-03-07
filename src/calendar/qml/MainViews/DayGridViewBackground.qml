@@ -40,7 +40,18 @@ Column {
     required property bool showDayIndicator
 
     Component.onCompleted: {
-        Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+        if (Calendar.Config.showHolidaysInCalendarViews) {
+            Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+        }
+    }
+
+    Connections {
+        target: Calendar.Config
+        function onShowHolidaysInCalendarViewsChanged(): void {
+            if (Calendar.Config.showHolidaysInCalendarViews) {
+                Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+            }
+        }
     }
 
     anchors.fill: parent
@@ -120,6 +131,20 @@ Column {
                                 readonly property int day: date.getDate()
                                 readonly property int month: date.getMonth()
                                 readonly property int year: date.getFullYear()
+                                readonly property color bgColor: {
+                                    if (Calendar.Config.showHolidaysInCalendarViews && gridItem.isHoliday) {
+                                        Kirigami.Theme.negativeBackgroundColor
+                                    } else if (incidenceDropArea.containsDrag) {
+                                        Kirigami.Theme.positiveBackgroundColor
+                                    } else if (gridItem.isToday) {
+                                        Kirigami.Theme.activeBackgroundColor
+                                    } else if (gridItem.isCurrentMonth) {
+                                        Kirigami.Theme.backgroundColor
+                                    } else {
+                                        Kirigami.Theme.alternateBackgroundColor
+                                    }
+                                }
+
                                 readonly property bool isToday: day === root.currentDay && month === root.currentMonth && year === root.currentYear
                                 readonly property bool isCurrentMonth: month === root.month
                                 readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(gridItem.date).length > 0
@@ -134,12 +159,7 @@ Column {
                                 Rectangle {
                                     id: backgroundRectangle
                                     anchors.fill: parent
-                                    color: gridItem.isHoliday ? Kirigami.Theme.negativeBackgroundColor :
-                                        incidenceDropArea.containsDrag ?  Kirigami.Theme.positiveBackgroundColor :
-                                        gridItem.isToday ? Kirigami.Theme.activeBackgroundColor :
-                                        gridItem.isCurrentMonth ? Kirigami.Theme.backgroundColor :
-                                        Kirigami.Theme.alternateBackgroundColor
-
+                                    color: gridItem.bgColor
 
                                     Kirigami.Theme.inherit: false
                                     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -206,6 +226,7 @@ Column {
                                             id: holidayLabel
 
                                             Layout.fillWidth: true
+                                            visible: Calendar.Config.showHolidaysInCalendarViews
                                             text: gridItem.holidayText
                                             color: Kirigami.Theme.negativeTextColor
                                             font.bold: true

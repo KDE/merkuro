@@ -31,6 +31,16 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormSwitchDelegate {
+            text: i18n("Show holidays in calendar views")
+            checked: Config.showHolidaysInCalendarViews
+            enabled: !Config.isShowHolidaysInCalendarViewsImmutable
+            onClicked: {
+                Config.showHolidaysInCalendarViews = !Config.showHolidaysInCalendarViews;
+                Config.save();
+            }
+        }
+
+        FormCard.FormSwitchDelegate {
             text: i18n("Show tasks in calendar views")
             checked: Config.showTodosInCalendarViews
             enabled: !Config.isShowTodosInCalendarViewsImmutable

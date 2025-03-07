@@ -11,6 +11,7 @@ Row {
     
     required property date startDate
     required property int daysToShow
+    required property bool showHolidaysConfig
     property bool hasHolidayInWeek: false
     
     property real dayWidth: 0
@@ -19,7 +20,7 @@ Row {
     
     width: parent.width
     spacing: 1
-    visible: root.hasHolidayInWeek
+    visible: root.hasHolidayInWeek && root.showHolidaysConfig
 
     function checkHolidays() {
         let hasHoliday = false;
@@ -48,7 +49,7 @@ Row {
     }
 
     Repeater {
-        model: root.daysToShow
+        model: root.visible ? root.daysToShow : 0
 
         delegate: Rectangle {
             required property int index
