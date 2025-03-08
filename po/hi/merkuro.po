@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:43+0000\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1462,13 +1462,13 @@ msgstr "अनुसूची"
 msgid "Tasks"
 msgstr "कार्य"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:253
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:266
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "रीसेट"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:266
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:279
 #, kde-format
 msgid "All day or Multi day"
 msgstr "पूरे दिन या बहु दिन"
@@ -1526,7 +1526,7 @@ msgstr "%1 पर समाप्त होता है"
 msgid "Runs All Day"
 msgstr "पूरे दिन चलता है"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:200
+#: calendar/qml/MainViews/DayGridViewBackground.qml:220
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>आज</b>"
@@ -1664,7 +1664,7 @@ msgstr "नया कार्य बनाएँ…"
 msgid "Quickly Add a New Task."
 msgstr "जलदी से एक नया कार्य जोड़ें ।"
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:43
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
 #, fuzzy, kde-format
 #| msgid "days"
 msgid "Holidays"
@@ -1910,186 +1910,192 @@ msgid "Use popup to show incidence information"
 msgstr "घटना की जानकारी दिखाने के लिए पॉपअप का उपयोग करें"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:34
-#, kde-format
-msgid "Show tasks in calendar views"
+#, fuzzy, kde-format
+#| msgid "Show tasks in calendar views"
+msgid "Show holidays in calendar views"
 msgstr "कैलेंडर दृश्यों में कार्य दिखाएं"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:44
 #, kde-format
+msgid "Show tasks in calendar views"
+msgstr "कैलेंडर दृश्यों में कार्य दिखाएं"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "कैलेंडर दृश्यों में उप-कार्य दिखाएँ"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:58
+#: calendar/qml/Settings/ViewSettingsPage.qml:68
 #, kde-format
 msgid "Past event transparency"
 msgstr "पिछली घटना की पारदर्शिता"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:77
+#: calendar/qml/Settings/ViewSettingsPage.qml:87
 #, kde-format
 msgid "Month view settings"
 msgstr "माह दृश्य सेटिंग्स"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:108
+#: calendar/qml/Settings/ViewSettingsPage.qml:118
 #, kde-format
 msgid "Month view mode"
 msgstr "माह दृश्य मोड"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:115
+#: calendar/qml/Settings/ViewSettingsPage.qml:125
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "स्वाइप करने योग्य माह ग्रिड"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:122
+#: calendar/qml/Settings/ViewSettingsPage.qml:132
 #, kde-format
 msgid "Basic month grid"
 msgstr "मूलभूत माह ग्रिड"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:128
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "स्वाइप करने योग्य माह ग्रिड के लिए उच्च तंत्र क्षमता की आवश्यकता होती है।"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:135
+#: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "कार्यदिवस लेबल संरेखण"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:142
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Left"
 msgstr "बाएं"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:149
+#: calendar/qml/Settings/ViewSettingsPage.qml:159
 #, kde-format
 msgid "Center"
 msgstr "केंद्र"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:156
+#: calendar/qml/Settings/ViewSettingsPage.qml:166
 #, kde-format
 msgid "Right"
 msgstr "दाएं"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:176
 #, kde-format
 msgid "Weekday label length:"
 msgstr "कार्यदिवस लेबल की लंबाई :"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:171
+#: calendar/qml/Settings/ViewSettingsPage.qml:181
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "पूरा नाम (सोमवार)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:178
+#: calendar/qml/Settings/ViewSettingsPage.qml:188
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "संक्षिप्त (सोम)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:186
+#: calendar/qml/Settings/ViewSettingsPage.qml:196
 #, kde-format
 msgid "Letter only (M)"
 msgstr "केवल अक्षर (सो)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:195
+#: calendar/qml/Settings/ViewSettingsPage.qml:205
 #, kde-format
 msgid "Show week numbers"
 msgstr "सप्ताह संख्या दिखाएँ"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:209
+#: calendar/qml/Settings/ViewSettingsPage.qml:219
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "ग्रिड सीमा चौड़ाई (पिक्सेल) :"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:233
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Week view settings"
 msgstr "सप्ताह दृश्य सेटिंग"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:246
+#: calendar/qml/Settings/ViewSettingsPage.qml:256
 #, kde-format
 msgid "Week view mode"
 msgstr "सप्ताह दृश्य मोड"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:253
+#: calendar/qml/Settings/ViewSettingsPage.qml:263
 #, kde-format
 msgid "Swipeable week view"
 msgstr "स्वाइप करने योग्य सप्ताह दृश्य"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:260
+#: calendar/qml/Settings/ViewSettingsPage.qml:270
 #, kde-format
 msgid "Basic week view"
 msgstr "मूल सप्ताह दृश्य"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:266
+#: calendar/qml/Settings/ViewSettingsPage.qml:276
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "स्वाइप करने योग्य सप्ताह दृश्य के लिए उच्च तंत्र क्षमता की आवश्यकता होती है।"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:273
+#: calendar/qml/Settings/ViewSettingsPage.qml:283
 #, kde-format
 msgid "Schedule View settings"
 msgstr "अनुसूची दृश्य सेटिंग"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:286
+#: calendar/qml/Settings/ViewSettingsPage.qml:296
 #, kde-format
 msgid "Schedule view mode"
 msgstr "अनुसूची व्यू मोड"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:293
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "स्वाइप करने योग्य अनुसूची दृश्य"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:300
+#: calendar/qml/Settings/ViewSettingsPage.qml:310
 #, kde-format
 msgid "Basic schedule view"
 msgstr "मूल अनुसूची दृश्य"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:306
+#: calendar/qml/Settings/ViewSettingsPage.qml:316
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr "स्वाइप करने योग्य अनुसूची दृश्य के लिए उच्च तंत्र क्षमता की आवश्यकता होती है।"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:315
+#: calendar/qml/Settings/ViewSettingsPage.qml:325
 #, kde-format
 msgid "Show week headers"
 msgstr "सप्ताह शीर्षलेख दिखाएँ"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:326
+#: calendar/qml/Settings/ViewSettingsPage.qml:336
 #, kde-format
 msgid "Tasks View settings"
 msgstr "कार्य सेटिंग देखें"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:331
+#: calendar/qml/Settings/ViewSettingsPage.qml:341
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "पूर्ण उप-कार्य दिखाएँ"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:342
+#: calendar/qml/Settings/ViewSettingsPage.qml:352
 #, kde-format
 msgid "Maps"
 msgstr "नक्शे"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:348
+#: calendar/qml/Settings/ViewSettingsPage.qml:358
 #, kde-format
 msgid "Enable maps"
 msgstr "नक्शे सक्षम करें"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:355
+#: calendar/qml/Settings/ViewSettingsPage.qml:365
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "कुछ तंत्र पर खराबी का कारण बन सकता है।"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:362
+#: calendar/qml/Settings/ViewSettingsPage.qml:372
 #, kde-format
 msgid "Location marker"
 msgstr "स्थान चिह्न"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:368
+#: calendar/qml/Settings/ViewSettingsPage.qml:378
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "वृत्त (स्थान का क्षेत्रफल दर्शाता है)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:375
+#: calendar/qml/Settings/ViewSettingsPage.qml:385
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "पिन (सटीक स्थान दिखाता है)"

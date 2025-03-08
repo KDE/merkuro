@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-07 00:43+0000\n"
-"PO-Revision-Date: 2025-02-15 14:08+0200\n"
+"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"PO-Revision-Date: 2025-03-07 10:11+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: calendar/calendarapplication.cpp:28 calendar/calendarapplication.cpp:32
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1484,13 +1484,13 @@ msgstr "לו״ז"
 msgid "Tasks"
 msgstr "משימות"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:253
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:266
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "איפוס"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:266
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:279
 #, kde-format
 msgid "All day or Multi day"
 msgstr "כל היום או על פני כמה ימים"
@@ -1548,7 +1548,7 @@ msgstr "מסתיים ב־%1"
 msgid "Runs All Day"
 msgstr "תופס יום שלם"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:200
+#: calendar/qml/MainViews/DayGridViewBackground.qml:220
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>היום</b>"
@@ -1684,11 +1684,10 @@ msgstr "יצירת משימה חדשה…"
 msgid "Quickly Add a New Task."
 msgstr "הוספת משימה חדשה בזריזות."
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:43
-#, fuzzy, kde-format
-#| msgid "days"
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
+#, kde-format
 msgid "Holidays"
-msgstr "ימים"
+msgstr "חגים"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
@@ -1924,186 +1923,192 @@ msgid "Use popup to show incidence information"
 msgstr "להשתמש בחלונית צצה כדי להציג פרטים על החזרה"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:34
-#, kde-format
-msgid "Show tasks in calendar views"
+#, fuzzy, kde-format
+#| msgid "Show tasks in calendar views"
+msgid "Show holidays in calendar views"
 msgstr "הצגת משימות בתצוגות לוח השנה"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:44
 #, kde-format
+msgid "Show tasks in calendar views"
+msgstr "הצגת משימות בתצוגות לוח השנה"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "הצגת תת־משימות בתצוגות לוח השנה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:58
+#: calendar/qml/Settings/ViewSettingsPage.qml:68
 #, kde-format
 msgid "Past event transparency"
 msgstr "שקיפות אירועי עבר"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:77
+#: calendar/qml/Settings/ViewSettingsPage.qml:87
 #, kde-format
 msgid "Month view settings"
 msgstr "הגדרות תצוגת חודש"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:108
+#: calendar/qml/Settings/ViewSettingsPage.qml:118
 #, kde-format
 msgid "Month view mode"
 msgstr "מצב תצוגת חודש"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:115
+#: calendar/qml/Settings/ViewSettingsPage.qml:125
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "טבלת חודשים להחלקה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:122
+#: calendar/qml/Settings/ViewSettingsPage.qml:132
 #, kde-format
 msgid "Basic month grid"
 msgstr "טבלת חודשים בסיסית"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:128
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "טבלת חודשים להחלקה דורשת יותר משאבים מהמערכת."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:135
+#: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "יישור תווית היום בשבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:142
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Left"
 msgstr "שמאל"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:149
+#: calendar/qml/Settings/ViewSettingsPage.qml:159
 #, kde-format
 msgid "Center"
 msgstr "אמצע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:156
+#: calendar/qml/Settings/ViewSettingsPage.qml:166
 #, kde-format
 msgid "Right"
 msgstr "ימין"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:176
 #, kde-format
 msgid "Weekday label length:"
 msgstr "אורך תווית היום בשבוע:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:171
+#: calendar/qml/Settings/ViewSettingsPage.qml:181
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "שם מלא (יום שני)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:178
+#: calendar/qml/Settings/ViewSettingsPage.qml:188
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "מקוצר (יום ב׳)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:186
+#: calendar/qml/Settings/ViewSettingsPage.qml:196
 #, kde-format
 msgid "Letter only (M)"
 msgstr "אות בלבד (ב׳)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:195
+#: calendar/qml/Settings/ViewSettingsPage.qml:205
 #, kde-format
 msgid "Show week numbers"
 msgstr "הצגת מספרי השבועות"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:209
+#: calendar/qml/Settings/ViewSettingsPage.qml:219
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "עובי מסגרת הטבלה (פיקסלים):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:233
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Week view settings"
 msgstr "הגדרות תצוגת שבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:246
+#: calendar/qml/Settings/ViewSettingsPage.qml:256
 #, kde-format
 msgid "Week view mode"
 msgstr "מצב תצוגת שבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:253
+#: calendar/qml/Settings/ViewSettingsPage.qml:263
 #, kde-format
 msgid "Swipeable week view"
 msgstr "תצוגת שבוע להחלקה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:260
+#: calendar/qml/Settings/ViewSettingsPage.qml:270
 #, kde-format
 msgid "Basic week view"
 msgstr "תצוגת שבוע בסיסית"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:266
+#: calendar/qml/Settings/ViewSettingsPage.qml:276
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "תצוגת שבוע להחלקה דורשת יותר משאבים מהמערכת."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:273
+#: calendar/qml/Settings/ViewSettingsPage.qml:283
 #, kde-format
 msgid "Schedule View settings"
 msgstr "הגדרת תצוגת לו״ז"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:286
+#: calendar/qml/Settings/ViewSettingsPage.qml:296
 #, kde-format
 msgid "Schedule view mode"
 msgstr "מצב תצוגת לו״ז"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:293
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "תצוגת לו״ז להחלקה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:300
+#: calendar/qml/Settings/ViewSettingsPage.qml:310
 #, kde-format
 msgid "Basic schedule view"
 msgstr "תצוגת לו״ז בסיסית"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:306
+#: calendar/qml/Settings/ViewSettingsPage.qml:316
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr "תצוגת לו״ז להחלקה דורשת יותר משאבים מהמערכת."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:315
+#: calendar/qml/Settings/ViewSettingsPage.qml:325
 #, kde-format
 msgid "Show week headers"
 msgstr "הצגת כותרות שבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:326
+#: calendar/qml/Settings/ViewSettingsPage.qml:336
 #, kde-format
 msgid "Tasks View settings"
 msgstr "הגדרות תצוגת משימות"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:331
+#: calendar/qml/Settings/ViewSettingsPage.qml:341
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "הצגת תת־משימות שהושלמו"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:342
+#: calendar/qml/Settings/ViewSettingsPage.qml:352
 #, kde-format
 msgid "Maps"
 msgstr "מפות"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:348
+#: calendar/qml/Settings/ViewSettingsPage.qml:358
 #, kde-format
 msgid "Enable maps"
 msgstr "הפעלת מפות"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:355
+#: calendar/qml/Settings/ViewSettingsPage.qml:365
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "יכול לגרום לקריסה בחלק מהמערכות."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:362
+#: calendar/qml/Settings/ViewSettingsPage.qml:372
 #, kde-format
 msgid "Location marker"
 msgstr "סמן מקום"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:368
+#: calendar/qml/Settings/ViewSettingsPage.qml:378
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "עיגול (הצגת אזור המקום)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:375
+#: calendar/qml/Settings/ViewSettingsPage.qml:385
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "נעץ (הצגת המקום במדויק)"
