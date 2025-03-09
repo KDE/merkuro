@@ -77,6 +77,8 @@ BaseApplication {
         CalendarApplication.calendar = CalendarManager.calendar
         CalendarUiUtils.appMain = root; // Most of our util functions use things defined here in main
 
+        HolidayModel.holidayRegions = Config.holidayRegions;
+
         if (Config.lastOpenedView === -1) {
             Kirigami.Settings.isMobile ? scheduleViewAction.trigger() : monthViewAction.trigger();
             return;
@@ -106,6 +108,14 @@ BaseApplication {
                 break;
         }
         ignoreCurrentPage = false;
+    }
+
+    Connections {
+        target: Config
+
+        function onHolidayRegionsChanged(): void {
+            HolidayModel.holidayRegions = Config.holidayRegions;
+        }
     }
 
     QQC2.Action {

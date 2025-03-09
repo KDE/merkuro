@@ -41,15 +41,16 @@ Column {
 
     Component.onCompleted: {
         if (Calendar.Config.showHolidaysInCalendarViews) {
-            Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+            Calendar.HolidayModel.loadDateRange(startDate, daysToShow)
         }
     }
 
     Connections {
         target: Calendar.Config
+
         function onShowHolidaysInCalendarViewsChanged(): void {
             if (Calendar.Config.showHolidaysInCalendarViews) {
-                Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+                Calendar.HolidayModel.loadDateRange(startDate, daysToShow)
             }
         }
     }
@@ -147,9 +148,13 @@ Column {
 
                                 readonly property bool isToday: day === root.currentDay && month === root.currentMonth && year === root.currentYear
                                 readonly property bool isCurrentMonth: month === root.month
-                                readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(gridItem.date).length > 0
+                                readonly property string formatedDate: Qt.formatDate(gridItem.date, 'yyyy-MM-dd')
+                                readonly property bool isHoliday: Calendar.Config.showHolidaysInCalendarViews && formatedDate in Calendar.HolidayModel.holidays
                                 readonly property string holidayText: {
-                                    const holidays = Calendar.HolidayModel.getHolidays(date);
+                                    if (!isHoliday) {
+                                        return '';
+                                    }
+                                    const holidays = Calendar.HolidayModel.holidays[formatedDate];
                                     return holidays.join("\n");
                                 }
 
