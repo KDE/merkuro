@@ -19,6 +19,7 @@ FormCard.FormCard {
 
     readonly property AgentConfiguration _configuration: AgentConfiguration {
         mimetypes: root.mimetypes
+        onErrorOccured: (error) => root.QQC2.ApplicationWindow.window.showPassiveNotification(error)
     }
 
     Components.MessageDialog {
