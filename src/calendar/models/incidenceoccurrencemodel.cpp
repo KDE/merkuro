@@ -75,11 +75,18 @@ Filter *IncidenceOccurrenceModel::filter() const
 
 void IncidenceOccurrenceModel::setFilter(Filter *filter)
 {
-    disconnect(mFilter, nullptr, this, nullptr);
+    if (mFilter == filter) {
+        return;
+    }
+    if (mFilter) {
+        disconnect(mFilter, nullptr, this, nullptr);
+    }
     mFilter = filter;
-    connect(filter, &Filter::collectionIdChanged, this, &IncidenceOccurrenceModel::scheduleReset);
-    connect(filter, &Filter::nameChanged, this, &IncidenceOccurrenceModel::scheduleReset);
-    connect(filter, &Filter::tagsChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+    if (mFilter) {
+        connect(mFilter, &Filter::collectionIdChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+        connect(mFilter, &Filter::nameChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+        connect(mFilter, &Filter::tagsChanged, this, &IncidenceOccurrenceModel::scheduleReset);
+    }
     Q_EMIT filterChanged();
 
     scheduleReset();

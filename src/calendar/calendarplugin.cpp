@@ -9,6 +9,7 @@
 #include "filter.h"
 #include "incidencewrapper.h"
 #include "models/holidaymodel.h"
+#include "models/holidayregionmodel.h"
 #include "models/hourlyincidencemodel.h"
 #include "models/incidenceoccurrencemodel.h"
 #include "models/infinitemerkurocalendarviewmodel.h"
@@ -94,6 +95,7 @@ void CalendarPlugin::registerTypes(const char *uri)
     qmlRegisterType<TimeZoneListModel>(uri, 1, 0, "TimeZoneListModel");
     qmlRegisterType<MonthModel>(uri, 1, 0, "MonthModel");
     qmlRegisterType<InfiniteMerkuroCalendarViewModel>(uri, 1, 0, "InfiniteMerkuroCalendarViewModel");
+    qmlRegisterType<HolidayRegionModel>(uri, 1, 0, "HolidayRegionModel");
 
     qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/CalendarUiUtils.qml")), "org.kde.merkuro.utils", 1, 0, "CalendarUiUtils");
     qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/IncidenceEditorManager.qml")), "org.kde.merkuro.utils", 1, 0, "IncidenceEditorManager");

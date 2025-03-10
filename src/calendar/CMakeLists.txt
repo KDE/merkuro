@@ -29,6 +29,8 @@ set(merkuro_calendar_SRCS
     models/hourlyincidencemodel.h
     models/holidaymodel.h
     models/holidaymodel.cpp
+    models/holidayregionmodel.cpp
+    models/holidayregionmodel.h
     models/incidenceoccurrencemodel.cpp
     models/incidenceoccurrencemodel.h
     models/infinitemerkurocalendarviewmodel.cpp

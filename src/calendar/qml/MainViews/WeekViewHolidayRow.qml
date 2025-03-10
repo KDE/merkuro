@@ -8,25 +8,26 @@ import org.kde.merkuro.calendar as Calendar
 
 Row {
     id: root
-    
+
     required property date startDate
     required property int daysToShow
     required property bool showHolidaysConfig
     property bool hasHolidayInWeek: false
-    
+
     property real dayWidth: 0
     property real hourLabelWidth: 0
     property real scrollbarWidth: 0
-    
+
     width: parent.width
     spacing: 1
     visible: root.hasHolidayInWeek && root.showHolidaysConfig
 
-    function checkHolidays() {
+    function checkHolidays(): void {
         let hasHoliday = false;
         for (let i = 0; i < root.daysToShow; ++i) {
-            let date = Calendar.Utils.addDaysToDate(root.startDate, i);
-            if (Calendar.HolidayModel.getHolidays(date).length > 0) {
+            const date = Calendar.Utils.addDaysToDate(root.startDate, i);
+            const formatedDate = Qt.formatDate(date, 'yyyy-MM-dd')
+            if (formatedDate in Calendar.HolidayModel.holidays) {
                 hasHoliday = true
                 break;
             }
@@ -54,7 +55,8 @@ Row {
         delegate: Rectangle {
             required property int index
             readonly property date date: Calendar.Utils.addDaysToDate(root.startDate, index)
-            readonly property var holidays: Calendar.HolidayModel.getHolidays(date)
+            readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
+            readonly property var holidays: Calendar.HolidayModel.holidays[formatedDate]
 
             width: root.dayWidth
             implicitHeight: holidayLabel.implicitHeight

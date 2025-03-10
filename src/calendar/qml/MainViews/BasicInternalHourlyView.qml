@@ -58,7 +58,7 @@ Column {
 
     Component.onCompleted: {
         if (Calendar.Config.showHolidaysInCalendarViews) {
-            Calendar.HolidayModel.setDateRange(startDate, Calendar.HolidayModel.addDaysToDate(startDate, daysToShow))
+            Calendar.HolidayModel.loadDateRange(startDate, daysToShow)
             holidayRow.checkHolidays()
         }
         hourScrollView.setToCurrentTime();
@@ -68,7 +68,7 @@ Column {
         target: Calendar.Config
         function onShowHolidaysInCalendarViewsChanged(): void {
             if (Calendar.Config.showHolidaysInCalendarViews) {
-                Calendar.HolidayModel.setDateRange(viewColumn.startDate, Calendar.HolidayModel.addDaysToDate(viewColumn.startDate, viewColumn.daysToShow))
+                Calendar.HolidayModel.loadDateRange(viewColumn.startDate, viewColumn.daysToShow)
                 holidayRow.checkHolidays()
             }
         }
@@ -413,7 +413,8 @@ Column {
 
                                                 readonly property date date: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
                                                 readonly property bool isToday: Calendar.DateTimeState.isToday(date)
-                                                readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(date).length > 0
+                                                readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
+                                                readonly property bool isHoliday: formatedDate in Calendar.HolidayModel.holidays
                                                 readonly property color bgColor: {
                                                     if (Calendar.Config.showHolidaysInCalendarViews && isHoliday) {
                                                         return Kirigami.Theme.negativeBackgroundColor
@@ -687,7 +688,8 @@ Column {
                             required property var periodStartDateTime
 
                             readonly property date columnDate: DateUtils.addDaysToDate(viewColumn.startDate, index)
-                            readonly property bool isHoliday: Calendar.HolidayModel.getHolidays(columnDate).length > 0
+                            readonly property string formatedDate: Qt.formatDate(columnDate, 'yyyy-MM-dd')
+                            readonly property bool isHoliday: formatedDate in Calendar.HolidayModel.holidays
                             readonly property bool isToday: columnDate.getDate() === viewColumn.currentDate.getDate() &&
                                 columnDate.getMonth() === viewColumn.currentDate.getMonth() &&
                                 columnDate.getFullYear() === viewColumn.currentDate.getFullYear()

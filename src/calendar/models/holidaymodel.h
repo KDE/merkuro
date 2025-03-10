@@ -11,23 +11,27 @@
 class HolidayModel : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString regionCode READ regionCode WRITE setRegionCode NOTIFY regionCodeChanged)
+    Q_PROPERTY(QStringList holidayRegions READ holidayRegions WRITE setHolidayRegions NOTIFY holidayRegionsChanged)
+    Q_PROPERTY(QVariantMap holidays READ holidays NOTIFY holidaysChanged)
 
 public:
     explicit HolidayModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void setDateRange(const QDate &start, const QDate &end);
-    Q_INVOKABLE QStringList getHolidays(const QDate &date) const;
-    Q_INVOKABLE QDate addDaysToDate(const QDate &date, int days) const;
-    [[nodiscard]] QString regionCode() const;
-    void setRegionCode(const QString &regionCode);
+    Q_INVOKABLE void loadDateRange(const QDate &start, int days);
+
+    [[nodiscard]] QStringList holidayRegions() const;
+    void setHolidayRegions(const QStringList &holidayRegions);
+
+    [[nodiscard]] QVariantMap holidays() const;
 
 Q_SIGNALS:
-    void regionCodeChanged();
+    void holidayRegionsChanged();
+    void holidaysChanged();
 
 private:
-    QString m_regionCode;
-    QHash<QDate, QStringList> m_holidays;
-
-    void loadSystemRegionCode();
+    QDate m_start;
+    int m_days = 0;
+    QStringList m_holidayRegions;
+    QVariantMap m_holidays;
+    std::vector<std::pair<QDate, int>> m_fetchedIntervals;
 };

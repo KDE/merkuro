@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.merkuro.calendar
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.delegates as Delegates
 
 FormCard.FormCardPage {
     id: root
@@ -37,6 +38,89 @@ FormCard.FormCardPage {
             onClicked: {
                 Config.showHolidaysInCalendarViews = !Config.showHolidaysInCalendarViews;
                 Config.save();
+            }
+        }
+
+        FormCard.FormComboBoxDelegate {
+            text: i18nc("@label:listbox", "Select Holiday Regions")
+            checked: Config.showHolidaysInCalendarViews
+            enabled: !Config.isShowHolidaysInCalendarViewsImmutable && Config.showHolidaysInCalendarViews
+            model: HolidayRegionModel {
+                id: holidayRegionModel
+            }
+            currentIndex: Config.holidayRegions.length === 0 ? 0 : -1
+            displayText: if (Config.holidayRegions.length === 0) {
+                return currentText;
+            } else {
+                return Config.holidayRegions.map((regionCode) => holidayRegionModel.regionLanguage(regionCode)).join(', ')
+            }
+            textRole: 'displayName'
+            comboBoxDelegate: Delegates.RoundedItemDelegate {
+                id: delegate
+
+                required property string displayName
+                required property string regionCode
+                required property int index
+
+                text: displayName
+
+                checkable: true
+                checked: Config.holidayRegions.includes(regionCode) || (Config.holidayRegions.length === 0 && regionCode.length === 0)
+                onToggled: if (checked) {
+                    const regions = Config.holidayRegions;
+                    regions.push(regionCode);
+                    Config.holidayRegions = regions;
+                    Config.save();
+                } else {
+                    const regions = Config.holidayRegions;
+                    const index = regions.indexOf(regionCode);
+                    if (index !== -1) {
+                        regions.splice(index, 1);
+                        Config.holidayRegions = regions;
+                        Config.save();
+                    }
+                }
+
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.mediumSpacing
+
+                    QQC2.CheckBox {
+                        id: checkBoxItem
+                        focusPolicy: Qt.NoFocus // provided by delegate
+
+                        checkState: delegate.checkState
+                        nextCheckState: delegate.nextCheckState
+                        tristate: delegate.tristate
+
+                        topPadding: 0
+                        leftPadding: 0
+                        rightPadding: 0
+                        bottomPadding: 0
+
+                        onToggled: {
+                            delegate.toggle();
+                            delegate.toggled();
+                        }
+                        onClicked: delegate.clicked()
+                        onPressAndHold: delegate.pressAndHold()
+                        onDoubleClicked: delegate.doubleClicked()
+
+                        contentItem: null // Remove right margin
+                        spacing: 0
+
+                        enabled: delegate.enabled
+                        checked: delegate.checked
+
+                        Accessible.ignored: true
+                    }
+
+                    QQC2.Label {
+                        text: delegate.text
+                        elide: Text.ElideRight
+                        Accessible.ignored: true
+                        Layout.fillWidth: true
+                    }
+                }
             }
         }
 
