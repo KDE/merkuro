@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:42+0000\n"
 "PO-Revision-Date: 2024-12-03 11:51+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -106,13 +106,13 @@ msgid "To Date…"
 msgstr "К заданной дате…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:269
+#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:279
 #, kde-format
 msgid "New Event…"
 msgstr "Создать событие…"
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:275
+#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:285
 #, kde-format
 msgid "New Task…"
 msgstr "Создать задачу…"
@@ -198,7 +198,7 @@ msgid "An error occurred: %1"
 msgstr "Произошла ошибка: %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:309
+#: calendar/models/incidenceoccurrencemodel.cpp:316
 #: calendar/models/todosortfilterproxymodel.cpp:149
 #, kde-format
 msgid "Task"
@@ -251,6 +251,18 @@ msgstr "Felipe Kinoshita"
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Разработчик"
+
+#: calendar/models/holidayregionmodel.cpp:23
+#, kde-format
+msgctxt "@item:inlistbox Holiday region, region language"
+msgid "%1 (%2)"
+msgstr ""
+
+#: calendar/models/holidayregionmodel.cpp:31
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Default from locale"
+msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
@@ -1457,38 +1469,38 @@ msgstr "Удалить"
 msgid "Return to Location"
 msgstr "Вернуться к расположению"
 
-#: calendar/qml/main.qml:264 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:274 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:64
 #, kde-format
 msgid "Create"
 msgstr "Создать"
 
-#: calendar/qml/main.qml:284
+#: calendar/qml/main.qml:294
 #, kde-format
 msgid "Month"
 msgstr "Месяц"
 
-#: calendar/qml/main.qml:287
+#: calendar/qml/main.qml:297
 #, kde-format
 msgid "Week"
 msgstr "Неделя"
 
-#: calendar/qml/main.qml:290
+#: calendar/qml/main.qml:300
 #, kde-format
 msgid "3 Days"
 msgstr "3 дня"
 
-#: calendar/qml/main.qml:293
+#: calendar/qml/main.qml:303
 #, kde-format
 msgid "Day"
 msgstr "День"
 
-#: calendar/qml/main.qml:296
+#: calendar/qml/main.qml:306
 #, kde-format
 msgid "Schedule"
 msgstr "Расписание"
 
-#: calendar/qml/main.qml:299 calendar/qml/MainViews/TodoView.qml:52
+#: calendar/qml/main.qml:309 calendar/qml/MainViews/TodoView.qml:52
 #, kde-format
 msgid "Tasks"
 msgstr "Задачи"
@@ -1557,7 +1569,7 @@ msgstr "Завершается в %1"
 msgid "Runs All Day"
 msgstr "Продолжается весь день"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:220
+#: calendar/qml/MainViews/DayGridViewBackground.qml:225
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Сегодня</b>"
@@ -1693,7 +1705,7 @@ msgstr "Создать задачу…"
 msgid "Quickly Add a New Task."
 msgstr "Быстро добавить новую задачу."
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:45
 #, fuzzy, kde-format
 #| msgid "days"
 msgid "Holidays"
@@ -1796,7 +1808,7 @@ msgid "Sort Tasks"
 msgstr "Сортировать задачи"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#: calendar/qml/Settings/ViewSettingsPage.qml:15
 #, kde-format
 msgid "Appearance"
 msgstr "Внешний вид"
@@ -1930,203 +1942,209 @@ msgstr "Использовать полный адрес электронной 
 msgid "Add New Calendar Source…"
 msgstr "Добавить источник данных календаря…"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:17
+#: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "General settings"
 msgstr "Основные параметры"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:23
+#: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr "Использовать всплывающее окно для показа сведений о событии"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:34
+#: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Show tasks in calendar views"
 msgid "Show holidays in calendar views"
 msgstr "Показывать задачи в календаре"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:44
+#: calendar/qml/Settings/ViewSettingsPage.qml:45
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select Holiday Regions"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Показывать задачи в календаре"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Показывать вложенные задачи в календаре"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:68
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
 msgstr "Прозрачность прошедших событий"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:87
+#: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Month view settings"
 msgstr "Параметры просмотра месяца"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:118
+#: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
 msgstr "Режим просмотра месяца"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:125
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Прокручиваемая таблица месяца"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:132
+#: calendar/qml/Settings/ViewSettingsPage.qml:216
 #, kde-format
 msgid "Basic month grid"
 msgstr "Базовая таблица месяца"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:138
+#: calendar/qml/Settings/ViewSettingsPage.qml:222
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "Прокручиваемая таблица месяца задействует больше ресурсов системы."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:145
+#: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Выравнивание подписей дней недели"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:152
+#: calendar/qml/Settings/ViewSettingsPage.qml:236
 #, kde-format
 msgid "Left"
 msgstr "Слева"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:159
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Center"
 msgstr "По центру"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:250
 #, kde-format
 msgid "Right"
 msgstr "Справа"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:176
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Длина подписей дней недели:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:181
+#: calendar/qml/Settings/ViewSettingsPage.qml:265
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Полное название (Понедельник)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:188
+#: calendar/qml/Settings/ViewSettingsPage.qml:272
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Сокращённое название (Пн)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:196
+#: calendar/qml/Settings/ViewSettingsPage.qml:280
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Только первая буква (П)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:205
+#: calendar/qml/Settings/ViewSettingsPage.qml:289
 #, kde-format
 msgid "Show week numbers"
 msgstr "Показывать номера недель"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:219
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Ширина рамки (в пикселах):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:243
+#: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
 msgid "Week view settings"
 msgstr "Параметры просмотра недели"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:256
+#: calendar/qml/Settings/ViewSettingsPage.qml:340
 #, kde-format
 msgid "Week view mode"
 msgstr "Режим просмотра недели"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:263
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Прокручиваемая панель недели"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:270
+#: calendar/qml/Settings/ViewSettingsPage.qml:354
 #, kde-format
 msgid "Basic week view"
 msgstr "Базовая панель недели"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:276
+#: calendar/qml/Settings/ViewSettingsPage.qml:360
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "Прокручиваемая панель недели задействует больше ресурсов системы."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:283
+#: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Параметры просмотра расписания"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:296
+#: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Режим просмотра расписания"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:303
+#: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Прокручиваемая панель расписания"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:310
+#: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Базовая панель расписания"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:316
+#: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr "Прокручиваемая панель расписания задействует больше ресурсов системы."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:325
+#: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format
 msgid "Show week headers"
 msgstr "Показывать заголовки недель"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:336
+#: calendar/qml/Settings/ViewSettingsPage.qml:420
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Параметры просмотра задач"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:341
+#: calendar/qml/Settings/ViewSettingsPage.qml:425
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Показывать завершённые подзадачи"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:352
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Maps"
 msgstr "Карты"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:358
+#: calendar/qml/Settings/ViewSettingsPage.qml:442
 #, kde-format
 msgid "Enable maps"
 msgstr "Включить карты"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:365
+#: calendar/qml/Settings/ViewSettingsPage.qml:449
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "На некоторых системах может приводить к аварийному завершению."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:372
+#: calendar/qml/Settings/ViewSettingsPage.qml:456
 #, kde-format
 msgid "Location marker"
 msgstr "Указатель местоположения"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:378
+#: calendar/qml/Settings/ViewSettingsPage.qml:462
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Круг (область местоположения)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:385
+#: calendar/qml/Settings/ViewSettingsPage.qml:469
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Булавка (точное местоположение)"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 00:42+0000\n"
 "PO-Revision-Date: 2025-03-08 10:29+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -107,13 +107,13 @@ msgid "To Date…"
 msgstr "A la data…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:269
+#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:279
 #, kde-format
 msgid "New Event…"
 msgstr "Esdeveniment nou…"
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:275
+#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:285
 #, kde-format
 msgid "New Task…"
 msgstr "Tasca nova…"
@@ -197,7 +197,7 @@ msgid "An error occurred: %1"
 msgstr "S'ha produït un error: %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:309
+#: calendar/models/incidenceoccurrencemodel.cpp:316
 #: calendar/models/todosortfilterproxymodel.cpp:149
 #, kde-format
 msgid "Task"
@@ -250,6 +250,18 @@ msgstr "Felipe Kinoshita"
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Desenvolupador"
+
+#: calendar/models/holidayregionmodel.cpp:23
+#, kde-format
+msgctxt "@item:inlistbox Holiday region, region language"
+msgid "%1 (%2)"
+msgstr ""
+
+#: calendar/models/holidayregionmodel.cpp:31
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Default from locale"
+msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
@@ -1425,38 +1437,38 @@ msgstr "Elimina"
 msgid "Return to Location"
 msgstr "Retorna a la ubicació"
 
-#: calendar/qml/main.qml:264 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:274 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:64
 #, kde-format
 msgid "Create"
 msgstr "Crea"
 
-#: calendar/qml/main.qml:284
+#: calendar/qml/main.qml:294
 #, kde-format
 msgid "Month"
 msgstr "Mes"
 
-#: calendar/qml/main.qml:287
+#: calendar/qml/main.qml:297
 #, kde-format
 msgid "Week"
 msgstr "Setmana"
 
-#: calendar/qml/main.qml:290
+#: calendar/qml/main.qml:300
 #, kde-format
 msgid "3 Days"
 msgstr "3 dies"
 
-#: calendar/qml/main.qml:293
+#: calendar/qml/main.qml:303
 #, kde-format
 msgid "Day"
 msgstr "Dia"
 
-#: calendar/qml/main.qml:296
+#: calendar/qml/main.qml:306
 #, kde-format
 msgid "Schedule"
 msgstr "Planificació"
 
-#: calendar/qml/main.qml:299 calendar/qml/MainViews/TodoView.qml:52
+#: calendar/qml/main.qml:309 calendar/qml/MainViews/TodoView.qml:52
 #, kde-format
 msgid "Tasks"
 msgstr "Tasques"
@@ -1525,7 +1537,7 @@ msgstr "Finalitza a les %1"
 msgid "Runs All Day"
 msgstr "Funciona tot el dia"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:220
+#: calendar/qml/MainViews/DayGridViewBackground.qml:225
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Hui</b>"
@@ -1662,7 +1674,7 @@ msgstr "Crea una tasca nova…"
 msgid "Quickly Add a New Task."
 msgstr "Afig ràpidament una tasca nova."
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:45
 #, kde-format
 msgid "Holidays"
 msgstr "Dies festius"
@@ -1757,7 +1769,7 @@ msgid "Sort Tasks"
 msgstr "Ordena les tasques"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#: calendar/qml/Settings/ViewSettingsPage.qml:15
 #, kde-format
 msgid "Appearance"
 msgstr "Aparença"
@@ -1891,209 +1903,215 @@ msgstr "Utilitza l'adreça de correu completa per a la recuperació"
 msgid "Add New Calendar Source…"
 msgstr "Afig una font nova de calendari…"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:17
+#: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "General settings"
 msgstr "Configuració general"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:23
+#: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr ""
 "Utilitza una finestra emergent per a mostrar informació de la incidència"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:34
+#: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, kde-format
 msgid "Show holidays in calendar views"
 msgstr "Mostra els festius en les vistes de calendari"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:44
+#: calendar/qml/Settings/ViewSettingsPage.qml:45
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select Holiday Regions"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Mostra les tasques en les vistes de calendari"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Mostra les subtasques en les vistes de calendari"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:68
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
 msgstr "Transparència dels esdeveniments passats"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:87
+#: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Month view settings"
 msgstr "Configureu la vista mensual"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:118
+#: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
 msgstr "Mode de vista mensual"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:125
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Quadrícula de mes que es pot lliscar"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:132
+#: calendar/qml/Settings/ViewSettingsPage.qml:216
 #, kde-format
 msgid "Basic month grid"
 msgstr "Quadrícula bàsica de mes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:138
+#: calendar/qml/Settings/ViewSettingsPage.qml:222
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr ""
 "La quadrícula de mes que es pot lliscar requerix un rendiment més gran del "
 "sistema."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:145
+#: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Alineació de les etiquetes del dia de la setmana"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:152
+#: calendar/qml/Settings/ViewSettingsPage.qml:236
 #, kde-format
 msgid "Left"
 msgstr "Esquerra"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:159
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Center"
 msgstr "Centre"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:250
 #, kde-format
 msgid "Right"
 msgstr "Dreta"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:176
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Llargària de les etiquetes del dia de la setmana:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:181
+#: calendar/qml/Settings/ViewSettingsPage.qml:265
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Nom complet (dilluns)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:188
+#: calendar/qml/Settings/ViewSettingsPage.qml:272
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Abreujat (dil)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:196
+#: calendar/qml/Settings/ViewSettingsPage.qml:280
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Només una lletra (l)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:205
+#: calendar/qml/Settings/ViewSettingsPage.qml:289
 #, kde-format
 msgid "Show week numbers"
 msgstr "Mostra els números de les setmanes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:219
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Amplària de la vora de la quadrícula (píxels):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:243
+#: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
 msgid "Week view settings"
 msgstr "Configureu la vista de setmana"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:256
+#: calendar/qml/Settings/ViewSettingsPage.qml:340
 #, kde-format
 msgid "Week view mode"
 msgstr "Mode de vista de setmana"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:263
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Vista de setmana que es pot lliscar"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:270
+#: calendar/qml/Settings/ViewSettingsPage.qml:354
 #, kde-format
 msgid "Basic week view"
 msgstr "Vista bàsica de setmana"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:276
+#: calendar/qml/Settings/ViewSettingsPage.qml:360
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr ""
 "La vista de setmana que es pot lliscar requerix un rendiment més gran del "
 "sistema."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:283
+#: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Configureu la vista de planificació"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:296
+#: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Mode de vista de planificació"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:303
+#: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Vista de planificació que es pot lliscar"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:310
+#: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Vista bàsica de planificació"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:316
+#: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
 "La vista de planificació que es pot lliscar requerix un rendiment més gran "
 "del sistema."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:325
+#: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format
 msgid "Show week headers"
 msgstr "Mostra les capçaleres de la setmana"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:336
+#: calendar/qml/Settings/ViewSettingsPage.qml:420
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Configureu la vista tasques"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:341
+#: calendar/qml/Settings/ViewSettingsPage.qml:425
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Mostra les subtasques completades"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:352
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Maps"
 msgstr "Mapes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:358
+#: calendar/qml/Settings/ViewSettingsPage.qml:442
 #, kde-format
 msgid "Enable maps"
 msgstr "Activa els mapes"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:365
+#: calendar/qml/Settings/ViewSettingsPage.qml:449
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "En alguns sistemes pot causar petades."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:372
+#: calendar/qml/Settings/ViewSettingsPage.qml:456
 #, kde-format
 msgid "Location marker"
 msgstr "Marcador d'ubicació"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:378
+#: calendar/qml/Settings/ViewSettingsPage.qml:462
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Cercle (mostra l'àrea de la ubicació)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:385
+#: calendar/qml/Settings/ViewSettingsPage.qml:469
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Pin (mostra la ubicació exacta)"
