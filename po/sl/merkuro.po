@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 02:35+0000\n"
 "PO-Revision-Date: 2025-03-08 07:17+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -105,13 +105,13 @@ msgid "To Date…"
 msgstr "Do datuma…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:269
+#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:279
 #, kde-format
 msgid "New Event…"
 msgstr "Nov dogodek…"
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:275
+#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:285
 #, kde-format
 msgid "New Task…"
 msgstr "Nova naloga…"
@@ -194,7 +194,7 @@ msgid "An error occurred: %1"
 msgstr "Prišlo je do napake: %1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:309
+#: calendar/models/incidenceoccurrencemodel.cpp:316
 #: calendar/models/todosortfilterproxymodel.cpp:149
 #, kde-format
 msgid "Task"
@@ -247,6 +247,18 @@ msgstr "Felipe Kinoshita"
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Razvijalec"
+
+#: calendar/models/holidayregionmodel.cpp:23
+#, kde-format
+msgctxt "@item:inlistbox Holiday region, region language"
+msgid "%1 (%2)"
+msgstr ""
+
+#: calendar/models/holidayregionmodel.cpp:31
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Default from locale"
+msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
@@ -1452,38 +1464,38 @@ msgstr "Odstrani"
 msgid "Return to Location"
 msgstr "Vrni se na lokacijo"
 
-#: calendar/qml/main.qml:264 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:274 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:64
 #, kde-format
 msgid "Create"
 msgstr "Ustvari"
 
-#: calendar/qml/main.qml:284
+#: calendar/qml/main.qml:294
 #, kde-format
 msgid "Month"
 msgstr "Mesec"
 
-#: calendar/qml/main.qml:287
+#: calendar/qml/main.qml:297
 #, kde-format
 msgid "Week"
 msgstr "Teden"
 
-#: calendar/qml/main.qml:290
+#: calendar/qml/main.qml:300
 #, kde-format
 msgid "3 Days"
 msgstr "3 dni"
 
-#: calendar/qml/main.qml:293
+#: calendar/qml/main.qml:303
 #, kde-format
 msgid "Day"
 msgstr "Dan"
 
-#: calendar/qml/main.qml:296
+#: calendar/qml/main.qml:306
 #, kde-format
 msgid "Schedule"
 msgstr "Časovnica"
 
-#: calendar/qml/main.qml:299 calendar/qml/MainViews/TodoView.qml:52
+#: calendar/qml/main.qml:309 calendar/qml/MainViews/TodoView.qml:52
 #, kde-format
 msgid "Tasks"
 msgstr "Naloge"
@@ -1552,7 +1564,7 @@ msgstr "Se konča ob %1"
 msgid "Runs All Day"
 msgstr "Se odvija cel dan"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:220
+#: calendar/qml/MainViews/DayGridViewBackground.qml:225
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Danes</b>"
@@ -1688,7 +1700,7 @@ msgstr "Ustvari novo nalogo…"
 msgid "Quickly Add a New Task."
 msgstr "Hitro dodaj novo nalogo."
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:45
 #, kde-format
 msgid "Holidays"
 msgstr "Dopusti"
@@ -1783,7 +1795,7 @@ msgid "Sort Tasks"
 msgstr "Razvrsti naloge"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#: calendar/qml/Settings/ViewSettingsPage.qml:15
 #, kde-format
 msgid "Appearance"
 msgstr "Videz"
@@ -1917,202 +1929,208 @@ msgstr "Uporabi polni naslov e-pošte za pridobivanje"
 msgid "Add New Calendar Source…"
 msgstr "Dodaj nov vir koledarja…"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:17
+#: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "General settings"
 msgstr "Splošne nastavitve"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:23
+#: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr "Uporabi pojavno okno za prikaz informacij o pogostosti"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:34
+#: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, kde-format
 msgid "Show holidays in calendar views"
 msgstr "Prikaži praznike v pogledih koledarja"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:44
+#: calendar/qml/Settings/ViewSettingsPage.qml:45
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select Holiday Regions"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Prikaži naloge v pogledih koledarja"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Prikaži pod-naloge v pogledih koledarja"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:68
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
 msgstr "Transparentnost preteklega dogodka"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:87
+#: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Month view settings"
 msgstr "Nastavitve mesečnega pogleda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:118
+#: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
 msgstr "Način mesečnega pregleda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:125
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Odstranljiva mreža mesecev"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:132
+#: calendar/qml/Settings/ViewSettingsPage.qml:216
 #, kde-format
 msgid "Basic month grid"
 msgstr "Osnovna mreža mesecev"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:138
+#: calendar/qml/Settings/ViewSettingsPage.qml:222
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "Odstranljiva mreža mesecev zahteva zmogljivejši sistem."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:145
+#: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Poravnava oznake dneva v tednu"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:152
+#: calendar/qml/Settings/ViewSettingsPage.qml:236
 #, kde-format
 msgid "Left"
 msgstr "Levo"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:159
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Center"
 msgstr "Centralno"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:250
 #, kde-format
 msgid "Right"
 msgstr "Desno"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:176
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Dolžina oznake dneva v tednu:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:181
+#: calendar/qml/Settings/ViewSettingsPage.qml:265
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Polno ime (Ponedeljek)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:188
+#: calendar/qml/Settings/ViewSettingsPage.qml:272
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Okrajšava (Pon)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:196
+#: calendar/qml/Settings/ViewSettingsPage.qml:280
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Samo črka (P)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:205
+#: calendar/qml/Settings/ViewSettingsPage.qml:289
 #, kde-format
 msgid "Show week numbers"
 msgstr "Prikazuj številke tednov"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:219
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Širina roba mreže (v pikslih):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:243
+#: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
 msgid "Week view settings"
 msgstr "Nastavitve pogleda tednov"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:256
+#: calendar/qml/Settings/ViewSettingsPage.qml:340
 #, kde-format
 msgid "Week view mode"
 msgstr "Način tedenskega pogleda"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:263
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Odstranljiv tedenski pogled"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:270
+#: calendar/qml/Settings/ViewSettingsPage.qml:354
 #, kde-format
 msgid "Basic week view"
 msgstr "Osnovni tedenski pogled"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:276
+#: calendar/qml/Settings/ViewSettingsPage.qml:360
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "Odstranljiv tedenski pogled zahteva zmogljivejši sistem."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:283
+#: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Nastavitve pregleda časovnice"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:296
+#: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Način pogleda časovnice"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:303
+#: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Odstranljivi pogled časovnice"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:310
+#: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Osnovni pogled časovnice"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:316
+#: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr "Odstranljivi pogled časovnice zahteva zmogljivejši sistem."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:325
+#: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format
 msgid "Show week headers"
 msgstr "Prikazuj glave tednov"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:336
+#: calendar/qml/Settings/ViewSettingsPage.qml:420
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Nastavitve pogleda nalog"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:341
+#: calendar/qml/Settings/ViewSettingsPage.qml:425
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Prikaži dokončane pod-naloge"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:352
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Maps"
 msgstr "Zemljevidi"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:358
+#: calendar/qml/Settings/ViewSettingsPage.qml:442
 #, kde-format
 msgid "Enable maps"
 msgstr "Omogoči zemljevide"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:365
+#: calendar/qml/Settings/ViewSettingsPage.qml:449
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "Lahko povzroči izpad na nekaterih sistemih."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:372
+#: calendar/qml/Settings/ViewSettingsPage.qml:456
 #, kde-format
 msgid "Location marker"
 msgstr "Označevalnik lokacije"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:378
+#: calendar/qml/Settings/ViewSettingsPage.qml:462
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Krog (prikazuje območje lokacije)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:385
+#: calendar/qml/Settings/ViewSettingsPage.qml:469
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Bucika (prikazuje natančno lokacijo)"

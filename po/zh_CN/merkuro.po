@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:44+0000\n"
+"POT-Creation-Date: 2025-03-11 02:35+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -104,13 +104,13 @@ msgid "To Date…"
 msgstr "转到日期…"
 
 #: calendar/calendarapplication.cpp:201
-#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:269
+#: calendar/qml/Controls/DayTapHandler.qml:28 calendar/qml/main.qml:279
 #, kde-format
 msgid "New Event…"
 msgstr "新建事件..."
 
 #: calendar/calendarapplication.cpp:208
-#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:275
+#: calendar/qml/Controls/DayTapHandler.qml:35 calendar/qml/main.qml:285
 #, kde-format
 msgid "New Task…"
 msgstr "新建任务..."
@@ -193,7 +193,7 @@ msgid "An error occurred: %1"
 msgstr "发生错误：%1"
 
 #: calendar/incidencewrapper.cpp:136
-#: calendar/models/incidenceoccurrencemodel.cpp:309
+#: calendar/models/incidenceoccurrencemodel.cpp:316
 #: calendar/models/todosortfilterproxymodel.cpp:149
 #, kde-format
 msgid "Task"
@@ -246,6 +246,18 @@ msgstr "Felipe Kinoshita"
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "开发者"
+
+#: calendar/models/holidayregionmodel.cpp:23
+#, kde-format
+msgctxt "@item:inlistbox Holiday region, region language"
+msgid "%1 (%2)"
+msgstr ""
+
+#: calendar/models/holidayregionmodel.cpp:31
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Default from locale"
+msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:854
@@ -1396,38 +1408,38 @@ msgstr "删除"
 msgid "Return to Location"
 msgstr "复位"
 
-#: calendar/qml/main.qml:264 calendar/qml/MainViews/TodoTreeView.qml:141
+#: calendar/qml/main.qml:274 calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:64
 #, kde-format
 msgid "Create"
 msgstr "创建"
 
-#: calendar/qml/main.qml:284
+#: calendar/qml/main.qml:294
 #, kde-format
 msgid "Month"
 msgstr "月"
 
-#: calendar/qml/main.qml:287
+#: calendar/qml/main.qml:297
 #, kde-format
 msgid "Week"
 msgstr "周"
 
-#: calendar/qml/main.qml:290
+#: calendar/qml/main.qml:300
 #, kde-format
 msgid "3 Days"
 msgstr "三日"
 
-#: calendar/qml/main.qml:293
+#: calendar/qml/main.qml:303
 #, kde-format
 msgid "Day"
 msgstr "一日"
 
-#: calendar/qml/main.qml:296
+#: calendar/qml/main.qml:306
 #, kde-format
 msgid "Schedule"
 msgstr "日程"
 
-#: calendar/qml/main.qml:299 calendar/qml/MainViews/TodoView.qml:52
+#: calendar/qml/main.qml:309 calendar/qml/MainViews/TodoView.qml:52
 #, kde-format
 msgid "Tasks"
 msgstr "任务"
@@ -1496,7 +1508,7 @@ msgstr "终于%1"
 msgid "Runs All Day"
 msgstr "持续全天"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:220
+#: calendar/qml/MainViews/DayGridViewBackground.qml:225
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>今日</b>"
@@ -1632,7 +1644,7 @@ msgstr "创建新任务…"
 msgid "Quickly Add a New Task."
 msgstr "快速添加新任务。"
 
-#: calendar/qml/MainViews/WeekViewHolidayRow.qml:44
+#: calendar/qml/MainViews/WeekViewHolidayRow.qml:45
 #, kde-format
 msgid "Holidays"
 msgstr ""
@@ -1727,7 +1739,7 @@ msgid "Sort Tasks"
 msgstr "任务排序"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
-#: calendar/qml/Settings/ViewSettingsPage.qml:14
+#: calendar/qml/Settings/ViewSettingsPage.qml:15
 #, kde-format
 msgid "Appearance"
 msgstr "外观"
@@ -1855,202 +1867,208 @@ msgstr ""
 msgid "Add New Calendar Source…"
 msgstr "添加新日历源..."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:17
+#: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "General settings"
 msgstr "通用设置"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:23
+#: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
 msgid "Use popup to show incidence information"
 msgstr "使用弹出窗口显示事件信息"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:34
+#: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, kde-format
 msgid "Show holidays in calendar views"
 msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:44
+#: calendar/qml/Settings/ViewSettingsPage.qml:45
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select Holiday Regions"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "在日历视图中显示任务"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:54
+#: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "在日历视图中显示子任务"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:68
+#: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
 msgstr "过去事件透明度"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:87
+#: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Month view settings"
 msgstr "月视图设置"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:118
+#: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
 msgstr "月视图模式"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:125
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "可滑动月份网格"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:132
+#: calendar/qml/Settings/ViewSettingsPage.qml:216
 #, kde-format
 msgid "Basic month grid"
 msgstr "基本月份网格"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:138
+#: calendar/qml/Settings/ViewSettingsPage.qml:222
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr "可滑动月份网格需要更高的系统性能。"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:145
+#: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "每周日期标签对齐"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:152
+#: calendar/qml/Settings/ViewSettingsPage.qml:236
 #, kde-format
 msgid "Left"
 msgstr "左对齐"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:159
+#: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Center"
 msgstr "居中对齐"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:166
+#: calendar/qml/Settings/ViewSettingsPage.qml:250
 #, kde-format
 msgid "Right"
 msgstr "右对齐"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:176
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Weekday label length:"
 msgstr "每周日期标签长度"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:181
+#: calendar/qml/Settings/ViewSettingsPage.qml:265
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "全称 (Monday)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:188
+#: calendar/qml/Settings/ViewSettingsPage.qml:272
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "缩略名 (Mon)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:196
+#: calendar/qml/Settings/ViewSettingsPage.qml:280
 #, kde-format
 msgid "Letter only (M)"
 msgstr "一个字 (M)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:205
+#: calendar/qml/Settings/ViewSettingsPage.qml:289
 #, kde-format
 msgid "Show week numbers"
 msgstr "显示周数"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:219
+#: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "网格线宽度 (像素)："
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:243
+#: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
 msgid "Week view settings"
 msgstr "周视图设置"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:256
+#: calendar/qml/Settings/ViewSettingsPage.qml:340
 #, kde-format
 msgid "Week view mode"
 msgstr "周视图模式"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:263
+#: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Swipeable week view"
 msgstr "可滑动的周视图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:270
+#: calendar/qml/Settings/ViewSettingsPage.qml:354
 #, kde-format
 msgid "Basic week view"
 msgstr "基本树视图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:276
+#: calendar/qml/Settings/ViewSettingsPage.qml:360
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr "可滑动周视图需要更高的系统性能。"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:283
+#: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
 msgstr "计划视图设置"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:296
+#: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
 msgstr "计划视图模式"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:303
+#: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "可滑动日历视图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:310
+#: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
 msgstr "基本日历视图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:316
+#: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr "可滑动日历视图需要更高的系统性能。"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:325
+#: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format
 msgid "Show week headers"
 msgstr "显示周标题"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:336
+#: calendar/qml/Settings/ViewSettingsPage.qml:420
 #, kde-format
 msgid "Tasks View settings"
 msgstr "任务视图设置"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:341
+#: calendar/qml/Settings/ViewSettingsPage.qml:425
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "显示已完成的子任务"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:352
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Maps"
 msgstr "地图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:358
+#: calendar/qml/Settings/ViewSettingsPage.qml:442
 #, kde-format
 msgid "Enable maps"
 msgstr "启用地图"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:365
+#: calendar/qml/Settings/ViewSettingsPage.qml:449
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "在某些系统上可能会导致崩溃。"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:372
+#: calendar/qml/Settings/ViewSettingsPage.qml:456
 #, kde-format
 msgid "Location marker"
 msgstr "位置标记"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:378
+#: calendar/qml/Settings/ViewSettingsPage.qml:462
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "圆 (显示位置区域)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:385
+#: calendar/qml/Settings/ViewSettingsPage.qml:469
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "点 (显示确切位置)"
