@@ -30,6 +30,21 @@ class QAbstractProxyModel;
 class QAbstractItemModel;
 class ColorProxyModel;
 
+class UndoRedoData
+{
+    Q_GADGET
+    Q_PROPERTY(bool undoAvailable MEMBER undoAvailable)
+    Q_PROPERTY(bool redoAvailable MEMBER redoAvailable)
+    Q_PROPERTY(QString nextUndoDescription MEMBER nextUndoDescription)
+    Q_PROPERTY(QString nextRedoDescription MEMBER nextRedoDescription)
+
+public:
+    bool undoAvailable;
+    bool redoAvailable;
+    QString nextUndoDescription;
+    QString nextRedoDescription;
+};
+
 class CalendarManager : public QObject
 {
     Q_OBJECT
@@ -44,7 +59,7 @@ class CalendarManager : public QObject
     Q_PROPERTY(Akonadi::CollectionFilterProxyModel *allCalendars READ allCalendars CONSTANT)
     Q_PROPERTY(Akonadi::ETMCalendar::Ptr calendar READ calendar CONSTANT)
     Q_PROPERTY(Akonadi::IncidenceChanger *incidenceChanger READ incidenceChanger CONSTANT)
-    Q_PROPERTY(QVariantMap undoRedoData READ undoRedoData NOTIFY undoRedoDataChanged)
+    Q_PROPERTY(UndoRedoData undoRedoData READ undoRedoData NOTIFY undoRedoDataChanged)
 
 public:
     explicit CalendarManager(QObject *parent = nullptr);
@@ -67,7 +82,7 @@ public:
     Akonadi::IncidenceChanger *incidenceChanger() const;
     Akonadi::CollectionFilterProxyModel *allCalendars();
     Q_INVOKABLE qint64 defaultCalendarId(IncidenceWrapper *incidenceWrapper);
-    [[nodiscard]] QVariantMap undoRedoData();
+    [[nodiscard]] UndoRedoData undoRedoData();
 
     Q_INVOKABLE Akonadi::Item incidenceItem(KCalendarCore::Incidence::Ptr incidence) const;
     Akonadi::Item incidenceItem(const QString &uid) const;
