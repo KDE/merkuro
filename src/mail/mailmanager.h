@@ -62,6 +62,7 @@ Q_SIGNALS:
     void loadingChanged();
     void entityTreeModelChanged();
     void collectionSelectionModelChanged();
+    void errorOccurred(const QString &error);
 
 private:
     bool m_loading;

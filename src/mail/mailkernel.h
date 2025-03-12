@@ -66,6 +66,9 @@ public:
 public Q_SLOTS:
     void slotInstanceStatusChanged(const Akonadi::AgentInstance &instance);
 
+Q_SIGNALS:
+    void errorOccurred(const QString &error);
+
 private:
     explicit MailKernel(QObject *parent = nullptr);
     ~MailKernel() override;

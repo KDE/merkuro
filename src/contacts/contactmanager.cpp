@@ -46,9 +46,12 @@ ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
     , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
 {
+    const auto contactModel = GlobalContactModel::instance()->model();
+    connect(contactModel, &Akonadi::EntityTreeModel::errorOccurred, this, &ContactManager::errorOccurred);
+
     // Sidebar collection model
     m_collectionTree->setSortCaseSensitivity(Qt::CaseInsensitive);
-    m_collectionTree->setSourceModel(GlobalContactModel::instance()->model());
+    m_collectionTree->setSourceModel(contactModel);
     m_collectionTree->addMimeTypeInclusionFilter(Akonadi::Collection::mimeType());
     m_collectionTree->setHeaderGroup(Akonadi::EntityTreeModel::CollectionTreeHeaders);
 

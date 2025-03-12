@@ -50,4 +50,12 @@ BaseApplication {
             Contact.ContactConfig.showMenubar = state;
         }
     }
+
+    Connections {
+        target: Contact.ContactManager
+
+        function onErrorOccurred(error: string): void {
+            root.showPassiveNotification(error);
+        }
+    }
 }

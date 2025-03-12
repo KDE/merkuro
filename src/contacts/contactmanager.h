@@ -47,6 +47,9 @@ public:
     Q_INVOKABLE void editCollection(const Akonadi::Collection &collection);
     Q_INVOKABLE QVariantMap getCollectionDetails(const Akonadi::Collection &collection);
 
+Q_SIGNALS:
+    void errorOccurred(const QString &errorOccurred);
+
 private:
     void saveState() const;
 

@@ -44,6 +44,8 @@ MailManager::MailManager(QObject *parent)
 
     MailKernel::self();
 
+    connect(&MailKernel::self(), &MailKernel::errorOccurred, this, &MailManager::errorOccurred);
+
     //                              mailModel
     //                                  ^
     //                                  |
@@ -63,6 +65,7 @@ MailManager::MailManager(QObject *parent)
     // setup collection model
     m_entityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);
     m_entityTreeModel->setItemPopulationStrategy(Akonadi::EntityTreeModel::LazyPopulation);
+    connect(m_entityTreeModel, &Akonadi::EntityTreeModel::errorOccurred, this, &MailManager::errorOccurred);
 
     auto foldersModel = new Akonadi::CollectionFilterProxyModel(this);
     foldersModel->setSourceModel(m_entityTreeModel);

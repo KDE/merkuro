@@ -53,7 +53,14 @@ BaseApplication {
         function onErrorOccurred(error: string): void {
             root.showPassiveNotification(error)
         }
+    }
 
+    Connections {
+        target: Mail.MailManager
+
+        function onErrorOccurred(error: string): void {
+            root.showPassiveNotification(error);
+        }
     }
 
     Settings.Settings {

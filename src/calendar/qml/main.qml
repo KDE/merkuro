@@ -264,6 +264,10 @@ BaseApplication {
             undoAction.enabled = CalendarManager.undoRedoData.undoAvailable;
             redoAction.enabled = CalendarManager.undoRedoData.redoAvailable;
         }
+
+        function onErrorOccurred(error: string): void {
+            root.showPassiveNotification(error);
+        }
     }
 
     ConfigurationsView {

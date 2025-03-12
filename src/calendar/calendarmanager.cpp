@@ -154,6 +154,8 @@ CalendarManager::CalendarManager(QObject *parent)
     setCollectionSelectionProxyModel(m_calendar->checkableProxyModel());
     connect(m_calendar->checkableProxyModel(), &KCheckableProxyModel::dataChanged, this, &CalendarManager::refreshEnabledTodoCollections);
 
+    connect(m_calendar->entityTreeModel(), &Akonadi::EntityTreeModel::errorOccurred, this, &CalendarManager::errorOccurred);
+
     m_changer = m_calendar->incidenceChanger();
     m_changer->setHistoryEnabled(true);
     connect(m_changer->history(), &Akonadi::History::changed, this, &CalendarManager::undoRedoDataChanged);

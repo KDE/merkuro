@@ -103,6 +103,7 @@ Q_SIGNALS:
     void updateIncidenceDatesCompleted();
     void collectionColorsChanged();
     void incidenceAdded();
+    void errorOccurred(const QString &errorOccurred);
 
 private:
     Akonadi::ETMCalendar::Ptr m_calendar = nullptr;
