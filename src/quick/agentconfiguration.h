@@ -48,6 +48,7 @@ Q_SIGNALS:
     void mimetypesChanged();
     void runningAgentsChanged();
     void availableAgentsChanged();
+    void errorOccurred(const QString &error);
 
 private:
     void setupEdit(Akonadi::AgentInstance instance);

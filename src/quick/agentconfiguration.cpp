@@ -63,7 +63,18 @@ void AgentConfiguration::createNew(int index)
 
     if (agentType.isValid()) {
         auto job = new Akonadi::AgentInstanceCreateJob(agentType, this);
-        job->configure(nullptr);
+        connect(job, &Akonadi::AgentInstanceCreateJob::result, this, [this, job](KJob *) {
+            if (job->error()) {
+                Q_EMIT errorOccurred(job->errorText());
+                return;
+            }
+            auto configureDialog = new Akonadi::AgentConfigurationDialog(job->instance(), nullptr);
+            configureDialog->setAttribute(Qt::WA_DeleteOnClose);
+            connect(configureDialog, &QDialog::rejected, this, [instance = job->instance()] {
+                Akonadi::AgentManager::self()->removeInstance(instance);
+            });
+            configureDialog->show();
+        });
         job->start();
     }
 }
