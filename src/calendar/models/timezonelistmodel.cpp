@@ -45,7 +45,7 @@ QVariant TimeZoneListModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> TimeZoneListModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {Qt::DisplayRole, QByteArrayLiteral("displayName")},
         {IdRole, QByteArrayLiteral("id")},
     };
 }

@@ -57,12 +57,12 @@ Kirigami.Page {
             actions: [
                 QQC2.Action {
                     icon.name: "deletecell"
-                    enabled: incidenceWrapper !== undefined
+                    enabled: recurringIncidenceChangePage.incidenceWrapper !== undefined
                     shortcut: "Return"
                     text: i18n("Only This Item")
                     onTriggered: {
                         recurringIncidenceChangePage.setAllDay();
-                        changeThis();
+                        recurringIncidenceChangePage.changeThis();
                     }
                 },
                 QQC2.Action {
@@ -70,7 +70,7 @@ Kirigami.Page {
                     text: i18n("Also Future Items")
                     onTriggered: {
                         recurringIncidenceChangePage.setAllDay();
-                        changeThisAndFuture();
+                        recurringIncidenceChangePage.changeThisAndFuture();
                     }
                 },
                 QQC2.Action {
@@ -78,13 +78,13 @@ Kirigami.Page {
                     text: i18n("All Occurrences")
                     onTriggered: {
                         recurringIncidenceChangePage.setAllDay();
-                        changeAll();
+                        recurringIncidenceChangePage.changeAll();
                     }
                 },
                 QQC2.Action {
                     icon.name: "dialog-cancel"
                     text: i18n("Cancel")
-                    onTriggered: cancel()
+                    onTriggered: recurringIncidenceChangePage.cancel()
                 }
             ]
         }

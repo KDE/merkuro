@@ -656,7 +656,6 @@ QVariantMap CalendarManager::getCollectionDetails(QVariant collectionId)
     collectionDetails[QLatin1StringView("resource")] = collection.resource();
     collectionDetails[QLatin1StringView("readOnly")] = collection.rights().testFlag(Collection::ReadOnly);
     collectionDetails[QLatin1StringView("canChange")] = collection.rights().testFlag(Collection::CanChangeCollection);
-    collectionDetails[QLatin1StringView("canCreate")] = collection.rights().testFlag(Collection::CanCreateCollection);
     collectionDetails[QLatin1StringView("canDelete")] =
         collection.rights().testFlag(Collection::CanDeleteCollection) && !Akonadi::CollectionUtils::isResource(collection);
     collectionDetails[QLatin1StringView("isFiltered")] = isFiltered;

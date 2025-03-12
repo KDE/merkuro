@@ -7,10 +7,13 @@
 #include <Akonadi/ETMCalendar>
 #include <QAction>
 #include <QObject>
+#include <qqmlintegration.h>
 
 class Importer : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool calendarImportInProgress MEMBER m_calendarImportInProgress NOTIFY calendarImportInProgressChanged)
     Q_PROPERTY(QList<QUrl> calendarFilesToImport MEMBER m_calendarFilesToImport NOTIFY calendarFilesToImportChanged)
     Q_PROPERTY(QUrl currentFile MEMBER m_currentFile NOTIFY currentFileChanged)

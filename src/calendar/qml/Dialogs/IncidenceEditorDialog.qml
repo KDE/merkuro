@@ -3,11 +3,12 @@
 
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.merkuro.calendar as Calendar
 
 Kirigami.ApplicationWindow {
     id: root
 
-    readonly property IncidenceEditorPage incidenceEditorPage: incidenceEditorPageInLoader
+    readonly property Calendar.IncidenceEditorPage incidenceEditorPage: incidenceEditorPageInLoader
 
     width: Kirigami.Units.gridUnit * 40
     height: Kirigami.Units.gridUnit * 32
@@ -16,10 +17,10 @@ Kirigami.ApplicationWindow {
 
     Loader {
         active: !Kirigami.Settings.isMobile
-        source: Qt.resolvedUrl("qrc:/GlobalMenuBar.qml")
+        sourceComponent: Qt.createComponent("org.kde.merkuro.calendar", "GlobalMenuBar")
     }
 
-    pageStack.initialPage: IncidenceEditorPage {
+    pageStack.initialPage: Calendar.IncidenceEditorPage {
         id: incidenceEditorPageInLoader
 
         onCancel: root.close()

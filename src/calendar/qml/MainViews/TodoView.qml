@@ -3,6 +3,8 @@
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -12,10 +14,7 @@ import org.kde.kitemmodels
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
 import org.kde.merkuro.components
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
 
 Kirigami.ScrollablePage {
     id: root
@@ -38,7 +37,7 @@ Kirigami.ScrollablePage {
     property bool ascendingOrder: Calendar.Config.ascendingOrder
 
     readonly property color standardTextColor: Kirigami.Theme.textColor
-    readonly property bool isDark: CalendarUiUtils.darkMode
+    readonly property bool isDark: Calendar.CalendarUiUtils.darkMode
 
     readonly property alias incompleteView: incompleteView
 
@@ -47,7 +46,7 @@ Kirigami.ScrollablePage {
 
     titleDelegate: RowLayout {
         spacing: 0
-        MainDrawerToggleButton {}
+        Calendar.MainDrawerToggleButton {}
         Kirigami.Heading {
             text: i18n("Tasks")
         }
@@ -63,9 +62,10 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
         },
         Kirigami.Action {
+            id: action
             text: i18n("Sort")
             icon.name: "view-sort"
 
@@ -132,7 +132,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: collectionPickerSheetComponent
-        CollectionPickerPage {
+        Calendar.CollectionPickerPage {
             id: collectionPickerSheet
             property var incidenceWrapper
 

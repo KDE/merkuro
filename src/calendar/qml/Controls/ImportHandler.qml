@@ -9,9 +9,8 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.calendar.private
 
-Importer {
+Calendar.Importer {
     id: root
 
     calendar: Calendar.CalendarManager.calendar
@@ -68,7 +67,7 @@ Importer {
     }
 
     property var importMergeCollectionPickerComponent: Component {
-        CollectionPickerPage {
+        Calendar.CollectionPickerPage {
             onCollectionPicked: {
                 root.importCalendarFromUrl(root.currentFile, true, collectionId);
                 root.calendarImportInProgress = false;

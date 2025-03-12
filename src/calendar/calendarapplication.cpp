@@ -17,10 +17,8 @@
 #include <QMenu>
 #include <QQuickWindow>
 #include <QSortFilterProxyModel>
-#include <vector>
 
 #include "calendaradaptor.h"
-#include "merkuro_calendar_debug.h"
 #include "mousetracker.h"
 
 CalendarApplication::CalendarApplication(QObject *parent)
@@ -403,33 +401,32 @@ void CalendarApplication::showIncidenceByUid(const QString &uid, const QDateTime
         }
     }
 
-    auto incidenceData = QVariantMap{
-        {QStringLiteral("text"), incidence->summary()},
-        {QStringLiteral("description"), incidence->description()},
-        {QStringLiteral("location"), incidence->location()},
-        {QStringLiteral("startTime"), occurrence},
-        {QStringLiteral("endTime"), incidenceEnd},
-        {QStringLiteral("allDay"), incidence->allDay()},
-        {QStringLiteral("todoCompleted"), false},
-        {QStringLiteral("priority"), incidence->priority()},
-        {QStringLiteral("durationString"), duration.asSeconds() > 0 ? format.formatSpelloutDuration(duration.asSeconds() * 1000) : QString()},
-        {QStringLiteral("recurs"), incidence->recurs()},
-        {QStringLiteral("hasReminders"), incidence->alarms().length() > 0},
-        {QStringLiteral("isOverdue"), false},
-        {QStringLiteral("isReadOnly"), collection.rights().testFlag(Akonadi::Collection::ReadOnly)},
-        {QStringLiteral("color"), QVariant::fromValue(incidenceColor)},
-        {QStringLiteral("collectionId"), collection.id()},
-        {QStringLiteral("incidenceId"), uid},
-        {QStringLiteral("incidenceType"), incidence->type()},
-        {QStringLiteral("incidenceTypeStr"), incidence->typeStr()},
-        {QStringLiteral("incidenceTypeIcon"), incidence->iconName()},
-        {QStringLiteral("incidencePtr"), QVariant::fromValue(incidence)},
-    };
+    IncidenceData incidenceData;
+    incidenceData.text = incidence->summary();
+    incidenceData.description = incidence->description();
+    incidenceData.location = incidence->location();
+    incidenceData.startTime = occurrence;
+    incidenceData.endTime = incidenceEnd;
+    incidenceData.allDay = incidence->allDay();
+    incidenceData.todoCompleted = false;
+    incidenceData.priority = incidence->priority();
+    incidenceData.durationString = duration.asSeconds() > 0 ? format.formatSpelloutDuration(duration.asSeconds() * 1000) : QString();
+    incidenceData.recurs = incidence->recurs();
+    incidenceData.hasReminders = incidence->alarms().length() > 0;
+    incidenceData.isOverdue = false;
+    incidenceData.isReadOnly = collection.rights().testFlag(Akonadi::Collection::ReadOnly);
+    incidenceData.color = incidenceColor;
+    incidenceData.collectionId = collection.id();
+    incidenceData.incidenceId = uid;
+    incidenceData.incidenceType = incidence->type();
+    incidenceData.incidenceTypeStr = QString::fromUtf8(incidence->typeStr());
+    incidenceData.incidenceTypeIcon = incidence->iconName();
+    incidenceData.incidencePtr = incidence;
 
     if (incidence->type() == KCalendarCore::Incidence::TypeTodo) {
         const auto todo = incidence.staticCast<KCalendarCore::Todo>();
-        incidenceData[QStringLiteral("todoCompleted")] = todo->isCompleted();
-        incidenceData[QStringLiteral("isOverdue")] = todo->isOverdue();
+        incidenceData.todoCompleted = todo->isCompleted();
+        incidenceData.isOverdue = todo->isOverdue();
     }
 
     Q_EMIT openIncidence(incidenceData, occurrence);

@@ -5,10 +5,13 @@
 #include <Akonadi/Item>
 #include <QAbstractListModel>
 #include <QObject>
+#include <qqmlintegration.h>
 
 class ItemTagsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)
 
 public:

@@ -11,7 +11,7 @@ import org.kde.akonadi
 import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormCardPage {
-    id: sourcesSettingsPage
+    id: root
 
     title: i18n("Accounts")
 

@@ -7,6 +7,15 @@
 #include <Akonadi/AgentInstance>
 #include <qqmlregistration.h>
 
+struct AgentDataChange {
+    Q_GADGET
+    Q_PROPERTY(QString instanceId MEMBER instanceId)
+    Q_PROPERTY(int status MEMBER status)
+
+    QString instanceId;
+    int status;
+};
+
 class AgentConfiguration : public QObject
 {
     Q_OBJECT
@@ -40,11 +49,8 @@ public:
     Q_INVOKABLE void restart(int index);
     Q_INVOKABLE void restartIdentifier(const QString &resourceIdentifier);
 
-public Q_SLOTS:
-    void processInstanceProgressChanged(const Akonadi::AgentInstance &instance);
-
 Q_SIGNALS:
-    void agentProgressChanged(const QVariantMap agentData);
+    void agentProgressChanged(const Akonadi::AgentInstance &instance);
     void mimetypesChanged();
     void runningAgentsChanged();
     void availableAgentsChanged();

@@ -7,9 +7,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
 
 Item {
     id: incidenceDelegate
@@ -124,11 +121,11 @@ Item {
         readonly property bool spaceRestricted: parent.width < Kirigami.Units.gridUnit * 5
 
         readonly property color textColor: incidenceDelegateBackground.opacity > 0 ?
-            LabelUtils.getIncidenceLabelColor(modelData.color, incidenceDelegate.isDark) : Kirigami.Theme.textColor
+            Calendar.LabelUtils.getIncidenceLabelColor(modelData.color, incidenceDelegate.isDark) : Kirigami.Theme.textColor
         readonly property color otherMonthTextColor: {
             if(incidenceDelegateBackground.visible && incidenceDelegateBackground.opacity > 0) {
                 if (incidenceDelegate.isDark) {
-                    return LabelUtils.getDarkness(modelData.color) >= 0.5 ?
+                    return Calendar.LabelUtils.getDarkness(modelData.color) >= 0.5 ?
                         Qt.lighter(modelData.color, 2) : Qt.lighter(modelData.color, 1.5);
                 }
 
@@ -137,7 +134,7 @@ Item {
 
             return Kirigami.Theme.textColor;
         }
-        readonly property color selectedContentColor: LabelUtils.isDarkColor(modelData.color) ? "white" : "black"
+        readonly property color selectedContentColor: Calendar.LabelUtils.isDarkColor(modelData.color) ? "white" : "black"
         readonly property color contentColor: incidenceDelegate.isOpenOccurrence ?
             selectedContentColor : incidenceDelegate.isInCurrentMonth ?
             textColor : otherMonthTextColor
@@ -206,7 +203,7 @@ Item {
         }
     }
 
-    IncidenceMouseArea {
+    Calendar.IncidenceMouseArea {
         id: mouseArea
         incidenceData: modelData
         collectionId: modelData.collectionId
@@ -215,8 +212,8 @@ Item {
         drag.target: !Kirigami.Settings.isMobile && !modelData.isReadOnly && incidenceDelegate.dragDropEnabled ? parent : undefined
         onReleased: parent.Drag.drop()
 
-        onViewClicked: CalendarUiUtils.setUpView(modelData, incidenceDelegate)
-        onDeleteClicked: CalendarUiUtils.setUpDelete(modelData.incidencePtr, deleteDate)
-        onTodoCompletedClicked: CalendarUiUtils.completeTodo(incidencePtr)
+        onViewClicked: Calendar.CalendarUiUtils.setUpView(modelData, incidenceDelegate)
+        onDeleteClicked: Calendar.CalendarUiUtils.setUpDelete(incidenceDelegate.incidencePtr, deleteDate)
+        onTodoCompletedClicked: Calendar.CalendarUiUtils.completeTodo(incidenceDelegate.incidencePtr)
     }
 }

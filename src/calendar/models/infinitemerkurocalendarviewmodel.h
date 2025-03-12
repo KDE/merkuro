@@ -7,10 +7,13 @@
 #include "multidayincidencemodel.h"
 #include <Akonadi/ETMCalendar>
 #include <QLocale>
+#include <qqmlintegration.h>
 
 class InfiniteMerkuroCalendarViewModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     // Amount of dates to add each time the model adds more dates
     Q_PROPERTY(int datesToAdd READ datesToAdd WRITE setDatesToAdd NOTIFY datesToAddChanged)
     Q_PROPERTY(int scale READ scale WRITE setScale NOTIFY scaleChanged)

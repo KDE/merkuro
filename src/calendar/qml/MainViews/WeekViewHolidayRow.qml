@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Shubham Shinde <shubshinde8381@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -53,6 +55,8 @@ Row {
         model: root.visible ? root.daysToShow : 0
 
         delegate: Rectangle {
+            id: delegate
+
             required property int index
             readonly property date date: Calendar.Utils.addDaysToDate(root.startDate, index)
             readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
@@ -69,7 +73,7 @@ Row {
                 padding: Kirigami.Units.smallSpacing
                 font.bold: true
                 color: Kirigami.Theme.negativeTextColor
-                text: holidays.join("\n")
+                text: delegate.holidays.join("\n")
             }
         }
     }

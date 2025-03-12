@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "multidayincidencemodel.h"
+#include "hourlyincidencemodel.h"
 #include <QBitArray>
 
 using namespace std::chrono_literals;
@@ -147,34 +148,34 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
 
         // qCWarning(MERKURO_CALENDAR_LOG) << "First of line " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() << duration <<
         // srcIdx.data(IncidenceOccurrenceModel::Summary).toString();
-        QVariantList currentLine;
+        QList<IncidenceData> currentLine;
 
         auto addToLine = [&currentLine](const QModelIndex &idx, int start, int duration) {
-            currentLine.append(QVariantMap{
-                {QStringLiteral("text"), idx.data(IncidenceOccurrenceModel::Summary)},
-                {QStringLiteral("description"), idx.data(IncidenceOccurrenceModel::Description)},
-                {QStringLiteral("location"), idx.data(IncidenceOccurrenceModel::Location)},
-                {QStringLiteral("startTime"), idx.data(IncidenceOccurrenceModel::StartTime)},
-                {QStringLiteral("endTime"), idx.data(IncidenceOccurrenceModel::EndTime)},
-                {QStringLiteral("allDay"), idx.data(IncidenceOccurrenceModel::AllDay)},
-                {QStringLiteral("todoCompleted"), idx.data(IncidenceOccurrenceModel::TodoCompleted)},
-                {QStringLiteral("priority"), idx.data(IncidenceOccurrenceModel::Priority)},
-                {QStringLiteral("starts"), start},
-                {QStringLiteral("duration"), duration},
-                {QStringLiteral("durationString"), idx.data(IncidenceOccurrenceModel::DurationString)},
-                {QStringLiteral("recurs"), idx.data(IncidenceOccurrenceModel::Recurs)},
-                {QStringLiteral("hasReminders"), idx.data(IncidenceOccurrenceModel::HasReminders)},
-                {QStringLiteral("isOverdue"), idx.data(IncidenceOccurrenceModel::IsOverdue)},
-                {QStringLiteral("isReadOnly"), idx.data(IncidenceOccurrenceModel::IsReadOnly)},
-                {QStringLiteral("color"), idx.data(IncidenceOccurrenceModel::Color)},
-                {QStringLiteral("collectionId"), idx.data(IncidenceOccurrenceModel::CollectionId)},
-                {QStringLiteral("incidenceId"), idx.data(IncidenceOccurrenceModel::IncidenceId)},
-                {QStringLiteral("incidenceType"), idx.data(IncidenceOccurrenceModel::IncidenceType)},
-                {QStringLiteral("incidenceTypeStr"), idx.data(IncidenceOccurrenceModel::IncidenceTypeStr)},
-                {QStringLiteral("incidenceTypeIcon"), idx.data(IncidenceOccurrenceModel::IncidenceTypeIcon)},
-                {QStringLiteral("incidencePtr"), idx.data(IncidenceOccurrenceModel::IncidencePtr)},
-                {QStringLiteral("incidenceOccurrence"), idx.data(IncidenceOccurrenceModel::IncidenceOccurrence)},
-            });
+            IncidenceData incidenceData;
+            incidenceData.text = idx.data(IncidenceOccurrenceModel::Summary).toString();
+            incidenceData.description = idx.data(IncidenceOccurrenceModel::Description).toString();
+            incidenceData.location = idx.data(IncidenceOccurrenceModel::Location).toString();
+            incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime();
+            incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime();
+            incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool();
+            incidenceData.todoCompleted = idx.data(IncidenceOccurrenceModel::TodoCompleted).toBool();
+            incidenceData.priority = idx.data(IncidenceOccurrenceModel::Priority).toInt();
+            incidenceData.starts = start;
+            incidenceData.duration = duration;
+            incidenceData.durationString = idx.data(IncidenceOccurrenceModel::DurationString).toString();
+            incidenceData.recurs = idx.data(IncidenceOccurrenceModel::Recurs).toBool();
+            incidenceData.hasReminders = idx.data(IncidenceOccurrenceModel::HasReminders).toBool();
+            incidenceData.isOverdue = idx.data(IncidenceOccurrenceModel::IsOverdue).toBool();
+            incidenceData.isReadOnly = idx.data(IncidenceOccurrenceModel::IsReadOnly).toBool();
+            incidenceData.color = idx.data(IncidenceOccurrenceModel::Color).value<QColor>();
+            incidenceData.collectionId = idx.data(IncidenceOccurrenceModel::CollectionId).value<Akonadi::Collection::Id>();
+            incidenceData.incidenceId = idx.data(IncidenceOccurrenceModel::IncidenceId).toString();
+            incidenceData.incidenceType = idx.data(IncidenceOccurrenceModel::IncidenceType).value<KCalendarCore::IncidenceBase::IncidenceType>();
+            incidenceData.incidenceTypeStr = idx.data(IncidenceOccurrenceModel::IncidenceTypeStr).toString();
+            incidenceData.incidenceTypeIcon = idx.data(IncidenceOccurrenceModel::IncidenceTypeIcon).toString();
+            incidenceData.incidencePtr = idx.data(IncidenceOccurrenceModel::IncidencePtr).value<KCalendarCore::Incidence::Ptr>();
+            incidenceData.incidenceOccurrence = idx.data(IncidenceOccurrenceModel::IncidenceOccurrence);
+            currentLine.append(incidenceData);
         };
 
         if (start >= mPeriodLength) {

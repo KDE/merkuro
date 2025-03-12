@@ -20,6 +20,8 @@ set(merkuro_calendar_SRCS
     incidencewrapper.h
     mousetracker.cpp
     mousetracker.h
+    importer.h
+    importer.cpp
 
     models/attachmentsmodel.cpp
     models/attachmentsmodel.h
@@ -47,6 +49,8 @@ set(merkuro_calendar_SRCS
     models/timezonelistmodel.h
     models/todosortfilterproxymodel.cpp
     models/todosortfilterproxymodel.h
+
+    foreigntypes.h
 )
 
 ecm_qt_declare_logging_category(merkuro_calendar_SRCS
@@ -73,41 +77,109 @@ target_link_libraries(merkuro_calendar_static PUBLIC
     KPim6::AkonadiWidgets
     KPim6::CalendarUtils
     MerkuroComponents
-)
-
-
-ecm_add_qml_module(merkuro_calendar_plugin
-    URI "org.kde.merkuro.calendar"
-    VERSION 1.0
-    DEPENDENCIES
-        QtLocation
-        org.kde.merkuro.components
-)
-
-target_sources(merkuro_calendar_plugin PRIVATE
-    calendarplugin.cpp
-    calendarplugin.h
-)
-
-set_source_files_properties(models/todosortfilterproxymodel.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
-
-ecm_target_qml_sources(merkuro_calendar_plugin SOURCES
-    qml/incidenceeditor/ReminderDelegate.qml
-    qml/incidenceeditor/PriorityComboBox.qml
-    qml/BottomToolBar.qml
-    qml/Menus/MenuBar.qml
-    qml/Controls/DatePopupSingleton.qml
+    PRIVATE KF6::I18nQml
 )
 
 set_source_files_properties(qml/Controls/DatePopupSingleton.qml PROPERTIES
     QT_QML_SINGLETON_TYPE TRUE
 )
 
-target_link_libraries(merkuro_calendar_plugin PUBLIC merkuro_calendar_static)
+set_source_files_properties(qml/CalendarUtils/CalendarUiUtils.qml PROPERTIES
+    QT_QML_SINGLETON_TYPE TRUE
+)
 
-ecm_finalize_qml_module(merkuro_calendar_plugin
-    DESTINATION ${KDE_INSTALL_QMLDIR}
-    BUILD_SHARED_LIBS ON)
+set_source_files_properties(qml/IncidenceEditorManager.qml PROPERTIES
+    QT_QML_SINGLETON_TYPE TRUE
+)
+
+ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
+    URI "org.kde.merkuro.calendar"
+    DEPENDENCIES
+        QtLocation
+        org.kde.merkuro.components
+        org.kde.akonadi
+        QtCore
+        QtGui
+    QML_FILES
+        qml/incidenceeditor/ReminderDelegate.qml
+        qml/incidenceeditor/PriorityComboBox.qml
+        qml/BottomToolBar.qml
+        qml/Menus/MenuBar.qml
+        qml/Controls/DatePopupSingleton.qml
+        qml/Main.qml
+
+        qml/Menus/GlobalMenuBar.qml
+        qml/Drawers/MainDrawer.qml
+        qml/Drawers/IncidenceInfoDrawer.qml
+
+        qml/Bars/FilterHeaderBar.qml
+        qml/Bars/DayLabelsBar.qml
+
+        qml/Delegates/IncidenceDelegateBackground.qml
+        qml/Delegates/DayGridViewIncidenceDelegate.qml
+        qml/Delegates/ViewTitleDelegate.qml
+        qml/Delegates/RelatedIncidenceDelegate.qml
+
+        qml/MainViews/DayGridViewBackground.qml
+        qml/MainViews/DayGridViewForeground.qml
+        qml/MainViews/DayGridView.qml
+        qml/MainViews/SwipeableMonthGridView.qml
+        qml/MainViews/BasicMonthGridView.qml
+        qml/MainViews/MonthView.qml
+        qml/MainViews/SwipeableMonthListView.qml
+        qml/MainViews/BasicMonthListView.qml
+        qml/MainViews/ScheduleView.qml
+        qml/MainViews/TodoTreeView.qml
+        qml/MainViews/TodoView.qml
+        qml/MainViews/SwipeableInternalHourlyView.qml
+        qml/MainViews/BasicInternalHourlyView.qml
+        qml/MainViews/WeekViewHolidayRow.qml
+        qml/MainViews/HourlyView.qml
+
+        qml/CalendarUtils/DateUtils.js
+        qml/CalendarUtils/LabelUtils.js
+        qml/CalendarUtils/CalendarUiUtils.qml
+
+        qml/IncidenceEditorManager.qml
+        qml/Dialogs/IncidenceEditorPage.qml
+        qml/Dialogs/IncidenceEditorDialog.qml
+        qml/Dialogs/DeleteIncidenceDialog.qml
+        qml/Dialogs/DeleteCalendarDialog.qml
+        qml/Dialogs/CollectionPickerPage.qml
+        qml/Dialogs/RecurringIncidenceChangePage.qml
+
+        qml/Controls/DateControls/TimePicker.qml
+        qml/Controls/DateControls/TimeCombo.qml
+        qml/Controls/DateControls/DateCombo.qml
+
+        qml/Controls/TitleDateButton.qml
+        qml/Controls/IncidenceMouseArea.qml
+        qml/Controls/KBMNavigationMouseArea.qml
+        qml/Controls/DayTapHandler.qml
+        qml/Controls/ColoredCheckbox.qml
+        qml/Controls/Tag.qml
+        qml/Controls/ResizerSeparator.qml
+        qml/Controls/CalendarItemTapHandler.qml
+        qml/Controls/TodoCheckBox.qml
+        qml/Controls/IncidenceInfoContents.qml
+        qml/Controls/IncidenceInfoPopup.qml
+        qml/Controls/CheckableCollectionNavigationView.qml
+        qml/Controls/MainDrawerToggleButton.qml
+        qml/Controls/ImportHandler.qml
+
+        qml/Location/LocationMap.qml
+
+        qml/Settings/ConfigurationsView.qml
+        qml/Settings/FreeBusySettingsPage.qml
+        qml/Settings/ViewSettingsPage.qml
+        qml/Settings/SourceSettingsPage.qml
+
+        qml/Menus/CalendarItemMenu.qml
+)
+
+target_include_directories(merkuro_calendar_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/models)
+
+set_source_files_properties(models/todosortfilterproxymodel.cpp PROPERTIES SKIP_UNITY_BUILD_INCLUSION ON)
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
@@ -117,12 +189,10 @@ endif()
 
 add_executable(merkuro-calendar
     main.cpp
-    importer.h
-    importer.cpp
-    resources.qrc
 )
 target_link_libraries(merkuro-calendar
     PRIVATE
+        merkuro_calendar_staticplugin
         merkuro_calendar_static
         Qt::Widgets
         Qt::Quick
@@ -131,13 +201,11 @@ target_link_libraries(merkuro-calendar
         KF6::CoreAddons
         KF6::DBusAddons
         KF6::WindowSystem
-	KF6::IconThemes
-	KF6::ConfigWidgets
+        KF6::IconThemes
+        KF6::ConfigWidgets
         KF6::ConfigGui
 )
-target_link_libraries(merkuro_calendar_static PRIVATE
-        KF6::I18nQml
-)
+
 install(TARGETS merkuro-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.calendar.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.calendar.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

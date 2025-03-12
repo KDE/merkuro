@@ -5,10 +5,12 @@
 
 #include <QAbstractListModel>
 #include <QList>
+#include <qqmlintegration.h>
 
 class TimeZoneListModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum Roles {

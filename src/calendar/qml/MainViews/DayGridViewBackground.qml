@@ -1,16 +1,14 @@
 // SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
-
 
 Column {
     id: root
@@ -39,6 +37,8 @@ Column {
     required property bool isCurrentView
     required property bool showDayIndicator
 
+    required property double weekHeaderWidth
+
     Component.onCompleted: {
         if (Calendar.Config.showHolidaysInCalendarViews) {
             Calendar.HolidayModel.loadDateRange(startDate, daysToShow)
@@ -50,14 +50,14 @@ Column {
 
         function onShowHolidaysInCalendarViewsChanged(): void {
             if (Calendar.Config.showHolidaysInCalendarViews) {
-                Calendar.HolidayModel.loadDateRange(startDate, daysToShow)
+                Calendar.HolidayModel.loadDateRange(root.startDate, root.daysToShow)
             }
         }
     }
 
     anchors.fill: parent
 
-    DayLabelsBar {
+    Calendar.DayLabelsBar {
         id: dayLabelsBarComponent
 
         delegate: root.dayHeaderDelegate
@@ -67,7 +67,7 @@ Column {
         spacing: root.spacing
 
         anchors {
-            leftMargin: Calendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
+            leftMargin: Calendar.Config.showWeekNumbers ? root.weekHeaderWidth + root.spacing : 0
             left: parent.left
             right: parent.right
         }
@@ -94,20 +94,20 @@ Column {
                 Loader {
                     id: weekHeader
 
-                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, index * 7)
+                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, weekRow.index * 7)
 
                     sourceComponent: root.weekHeaderDelegate
                     active: Calendar.Config.showWeekNumbers
                     visible: Calendar.Config.showWeekNumbers
 
-                    Layout.preferredWidth: weekHeaderWidth
+                    Layout.preferredWidth: root.weekHeaderWidth
                     Layout.fillHeight: true
                 }
 
                 Item {
                     id: dayDelegate
 
-                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, index * 7)
+                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, weekRow.index * 7)
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
@@ -125,10 +125,12 @@ Column {
                             Item {
                                 id: gridItem
 
+                                Kirigami.Theme.colorSet: Kirigami.Theme.View
+
                                 required property var modelData
 
                                 readonly property date gridSquareDate: date
-                                readonly property date date: DateUtils.addDaysToDate(dayDelegate.startDate, modelData)
+                                readonly property date date: Calendar.DateUtils.addDaysToDate(dayDelegate.startDate, modelData)
                                 readonly property int day: date.getDate()
                                 readonly property int month: date.getMonth()
                                 readonly property int year: date.getFullYear()
@@ -173,24 +175,26 @@ Column {
                                         id: incidenceDropArea
                                         anchors.fill: parent
                                         z: 9999
-                                        onDropped: if (root.isCurrentView) {
-                                            if (DateUtils.sameDay(gridItem.date, drop.source.occurrenceDate)) {
-                                                return;
+                                        onDropped: drop => {
+                                            if (root.isCurrentView) {
+                                                if (Calendar.DateUtils.sameDay(gridItem.date, drop.source.occurrenceDate)) {
+                                                    return;
+                                                }
+                                                const pos = mapToItem(parentGridView, backgroundRectangle.x, backgroundRectangle.y);
+                                                drop.source.caughtX = pos.x + root.listViewSpacing;
+                                                drop.source.caughtY = root.showDayIndicator ?
+                                                    pos.y + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 1.5 :
+                                                    pos.y;
+                                                drop.source.caught = true;
+
+                                                const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+
+                                                let sameTimeOnDate = new Date(gridItem.date);
+                                                sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
+                                                const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                             }
-                                            const pos = mapToItem(parentGridView, backgroundRectangle.x, backgroundRectangle.y);
-                                            drop.source.caughtX = pos.x + root.listViewSpacing;
-                                            drop.source.caughtY = root.showDayIndicator ?
-                                                pos.y + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 1.5 :
-                                                pos.y;
-                                            drop.source.caught = true;
-
-                                            const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
-
-                                            let sameTimeOnDate = new Date(gridItem.date);
-                                            sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                            const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
-                                            CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                         }
                                     }
                                 }
@@ -202,8 +206,8 @@ Column {
                                     flat: true
                                     visible: root.showDayIndicator
                                     enabled: root.daysToShow > 1
-                                    onClicked: CalendarUiUtils.openDayLayer(gridItem.date)
-                                    activeFocusOnTab: isCurrentView
+                                    onClicked: Calendar.CalendarUiUtils.openDayLayer(gridItem.date)
+                                    activeFocusOnTab: root.isCurrentView
 
                                     anchors {
                                         top: parent.top

@@ -6,6 +6,8 @@
 #include <KCalendarCore/Calendar>
 #include <QAbstractItemModel>
 
+#include <qqmlintegration.h>
+
 /**
  * This class provides a QAbstractItemModel for an incidences' reminders/alarms.
  * This can be useful for letting users add, modify, or delete incidences on new or pre-existing incidences.
@@ -20,6 +22,8 @@
 class RemindersModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(KCalendarCore::Incidence::Ptr incidence READ incidence WRITE setIncidence NOTIFY incidenceChanged)
     Q_PROPERTY(KCalendarCore::Alarm::List alarms READ alarms NOTIFY alarmsChanged)
 

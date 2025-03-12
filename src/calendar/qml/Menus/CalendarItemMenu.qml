@@ -30,7 +30,7 @@ Components.ConvergentContextMenu {
             Layout.fillWidth: true
         }
 
-        ColoredCheckbox {
+        Calendar.ColoredCheckbox {
             id: collectionCheckbox
 
             implicitWidth: Kirigami.Units.gridUnit * 2
@@ -100,27 +100,27 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-        visible: collectionDetails.isResource
+        visible: root.collectionDetails.isResource
     }
 
     Kirigami.Action {
         icon.name: "settings-configure"
         text: i18nc("@action:inmenu", "Calendar source settings…")
-        onTriggered: root.agentConfiguration.editIdentifier(collectionDetails.resource)
-        visible: collectionDetails.isResource
+        onTriggered: root.agentConfiguration.editIdentifier(root.collectionDetails.resource)
+        visible: root.collectionDetails.isResource
     }
 
     Kirigami.Action {
         icon.name: "view-refresh"
         text: i18nc("@action:inmenu", "Update calendar source")
-        onTriggered: root.agentConfiguration.restartIdentifier(collectionDetails.resource)
-        visible: collectionDetails.isResource
+        onTriggered: root.agentConfiguration.restartIdentifier(root.collectionDetails.resource)
+        visible: root.collectionDetails.isResource
     }
 
     Kirigami.Action {
         icon.name: "edit-delete"
         text: i18nc("@action:inmenu", "Delete calendar source")
-        onTriggered: root.agentConfiguration.removeIdentifier(collectionDetails.resource)
-        visible: collectionDetails.isResource
+        onTriggered: root.agentConfiguration.removeIdentifier(root.collectionDetails.resource)
+        visible: root.collectionDetails.isResource
     }
 }

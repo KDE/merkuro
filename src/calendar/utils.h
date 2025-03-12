@@ -6,10 +6,13 @@
 #include <KCalendarCore/Duration>
 #include <KFormat>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class Utils : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QStringList hourlyViewLocalisedHourLabels READ hourlyViewLocalisedHourLabels CONSTANT)
 

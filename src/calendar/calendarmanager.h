@@ -14,6 +14,8 @@
 #include <Akonadi/SearchCollectionHelper>
 #include <KConfigWatcher>
 
+#include <qqmlintegration.h>
+
 class IncidenceWrapper;
 
 namespace Akonadi
@@ -31,6 +33,9 @@ class ColorProxyModel;
 class CalendarManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(QAbstractProxyModel *collections READ collections CONSTANT)
     Q_PROPERTY(QAbstractItemModel *todoCollections READ todoCollections CONSTANT)

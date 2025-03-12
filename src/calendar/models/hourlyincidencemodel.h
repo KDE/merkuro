@@ -9,11 +9,74 @@
 #include <QList>
 #include <QSharedPointer>
 #include <QTimer>
+#include <qqmlintegration.h>
 
 namespace KCalendarCore
 {
 class Incidence;
 }
+
+class IncidenceData
+{
+    Q_GADGET
+    QML_VALUE_TYPE(incidenceData)
+
+    Q_PROPERTY(QString text MEMBER text)
+    Q_PROPERTY(QString description MEMBER description)
+    Q_PROPERTY(QString location MEMBER location)
+    Q_PROPERTY(QDateTime startTime MEMBER startTime)
+    Q_PROPERTY(QDateTime endTime MEMBER endTime)
+    Q_PROPERTY(bool allDay MEMBER allDay)
+    Q_PROPERTY(bool todoCompleted MEMBER todoCompleted)
+    Q_PROPERTY(int priority MEMBER priority)
+    Q_PROPERTY(double starts MEMBER starts)
+    Q_PROPERTY(double duration MEMBER duration)
+    Q_PROPERTY(QString durationString MEMBER durationString)
+    Q_PROPERTY(bool recurs MEMBER recurs)
+    Q_PROPERTY(bool hasReminders MEMBER hasReminders)
+    Q_PROPERTY(bool isOverdue MEMBER isOverdue)
+    Q_PROPERTY(bool isReadOnly MEMBER isReadOnly)
+    Q_PROPERTY(QColor color MEMBER color)
+    Q_PROPERTY(Akonadi::Collection::Id collectionId MEMBER collectionId)
+    Q_PROPERTY(QString incidenceId MEMBER incidenceId)
+    Q_PROPERTY(KCalendarCore::IncidenceBase::IncidenceType incidenceType MEMBER incidenceType)
+    Q_PROPERTY(QString incidenceTypeStr MEMBER incidenceTypeStr)
+    Q_PROPERTY(QString incidenceTypeIcon MEMBER incidenceTypeIcon)
+    Q_PROPERTY(KCalendarCore::Incidence::Ptr incidencePtr MEMBER incidencePtr)
+    Q_PROPERTY(QVariant incidenceOccurrence MEMBER incidenceOccurrence)
+    Q_PROPERTY(int maxConcurrentIncidences MEMBER maxConcurrentIncidences)
+    Q_PROPERTY(int maxConcurrentIncidences MEMBER maxConcurrentIncidences)
+    Q_PROPERTY(double widthShare MEMBER widthShare)
+    Q_PROPERTY(double priorTakenWidthShare MEMBER priorTakenWidthShare)
+
+public:
+    QString text;
+    QString description;
+    QString location;
+    QDateTime startTime;
+    QDateTime endTime;
+    bool allDay;
+    bool todoCompleted;
+    int priority;
+    double starts;
+    double duration;
+    QString durationString;
+    bool recurs;
+    bool hasReminders;
+    bool isOverdue;
+    bool isReadOnly;
+    QColor color;
+    Akonadi::Collection::Id collectionId;
+    QString incidenceId;
+    KCalendarCore::IncidenceBase::IncidenceType incidenceType;
+    QString incidenceTypeStr;
+    QString incidenceTypeIcon;
+    KCalendarCore::Incidence::Ptr incidencePtr;
+    QVariant incidenceOccurrence;
+    int maxConcurrentIncidences;
+    double widthShare;
+    double priorTakenWidthShare;
+};
 
 /**
  * Each toplevel index represents a day.
@@ -23,6 +86,8 @@ class Incidence;
 class HourlyIncidenceModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(int periodLength READ periodLength WRITE setPeriodLength NOTIFY periodLengthChanged)
     Q_PROPERTY(HourlyIncidenceModel::Filters filters READ filters WRITE setFilters NOTIFY filtersChanged)
     Q_PROPERTY(IncidenceOccurrenceModel *model READ model WRITE setModel NOTIFY modelChanged)
@@ -79,7 +144,7 @@ private Q_SLOTS:
 
 private:
     [[nodiscard]] QList<QModelIndex> sortedIncidencesFromSourceModel(const QDateTime &rowStart) const;
-    [[nodiscard]] QVariantList layoutLines(const QDateTime &rowStart) const;
+    [[nodiscard]] QList<IncidenceData> layoutLines(const QDateTime &rowStart) const;
 
     QTimer mRefreshTimer;
     IncidenceOccurrenceModel *mSourceModel{nullptr};

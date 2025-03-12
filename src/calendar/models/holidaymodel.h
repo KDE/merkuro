@@ -7,10 +7,14 @@
 #include <QDate>
 #include <QHash>
 #include <QObject>
+#include <qqmlintegration.h>
 
 class HolidayModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QStringList holidayRegions READ holidayRegions WRITE setHolidayRegions NOTIFY holidayRegionsChanged)
     Q_PROPERTY(QVariantMap holidays READ holidays NOTIFY holidaysChanged)
 

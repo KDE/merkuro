@@ -17,8 +17,8 @@ using namespace Akonadi;
 AgentConfiguration::AgentConfiguration(QObject *parent)
     : QObject(parent)
 {
-    connect(Akonadi::AgentManager::self(), &Akonadi::AgentManager::instanceProgressChanged, this, &AgentConfiguration::processInstanceProgressChanged);
-    connect(Akonadi::AgentManager::self(), &Akonadi::AgentManager::instanceStatusChanged, this, &AgentConfiguration::processInstanceProgressChanged);
+    connect(Akonadi::AgentManager::self(), &Akonadi::AgentManager::instanceProgressChanged, this, &AgentConfiguration::agentProgressChanged);
+    connect(Akonadi::AgentManager::self(), &Akonadi::AgentManager::instanceStatusChanged, this, &AgentConfiguration::agentProgressChanged);
 }
 
 AgentConfiguration::~AgentConfiguration() = default;
@@ -142,17 +142,6 @@ void AgentConfiguration::setupRemove(const Akonadi::AgentInstance &instance)
     if (instance.isValid()) {
         Akonadi::AgentManager::self()->removeInstance(instance);
     }
-}
-
-void AgentConfiguration::processInstanceProgressChanged(const Akonadi::AgentInstance &instance)
-{
-    const QVariantMap instanceData = {
-        {QStringLiteral("instanceId"), instance.identifier()},
-        {QStringLiteral("progress"), instance.progress()}, // Not very reliable so beware
-        {QStringLiteral("status"), instance.status()},
-    };
-
-    Q_EMIT agentProgressChanged(instanceData);
 }
 
 QStringList AgentConfiguration::mimetypes() const

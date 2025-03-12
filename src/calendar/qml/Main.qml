@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtCore 6.5
 import org.kde.kirigami as Kirigami
@@ -11,12 +13,8 @@ import QtQuick.Layouts
 import QtQml.Models 2.15
 import Qt.labs.platform
 
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
 import org.kde.merkuro.calendar
-import org.kde.merkuro.utils
 import org.kde.merkuro.components
-import org.kde.merkuro.calendar.private 1.0
 
 BaseApplication {
     id: root
@@ -138,52 +136,52 @@ BaseApplication {
         target: CalendarApplication
 
         function onOpenMonthView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.Month || root.ignoreCurrentPage) {
+            if(root.pageStack.currentItem.mode !== CalendarApplication.Month || root.ignoreCurrentPage) {
                 root.switchView(monthViewComponent);
             }
         }
 
         function onOpenWeekView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml", { createEventAction: createAction} );
+            if(root.pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
+                root.switchView(hourlyViewComponent, { createEventAction: createAction} );
             }
         }
 
         function onOpenThreeDayView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.ThreeDay || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml", { daysToShow: 3, createEventAction: createAction });
+            if(root.pageStack.currentItem.mode !== CalendarApplication.ThreeDay || root.ignoreCurrentPage) {
+                root.switchView(hourlyViewComponent, { daysToShow: 3, createEventAction: createAction });
             }
         }
 
         function onOpenDayView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.Day || root.ignoreCurrentPage) {
-                root.switchView("qrc:/HourlyView.qml", { daysToShow: 1, createEventAction: createAction });
+            if(root.pageStack.currentItem.mode !== CalendarApplication.Day || root.ignoreCurrentPage) {
+                root.switchView(hourlyViewComponent, { daysToShow: 1, createEventAction: createAction });
             }
         }
 
         function onOpenScheduleView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.Schedule || root.ignoreCurrentPage) {
+            if(root.pageStack.currentItem.mode !== CalendarApplication.Schedule || root.ignoreCurrentPage) {
                 root.switchView(scheduleViewComponent);
             }
         }
 
         function onOpenTodoView(): void {
-            if(pageStack.currentItem.mode !== CalendarApplication.Todo) {
+            if(root.pageStack.currentItem.mode !== CalendarApplication.Todo) {
                 filterHeaderBar.active = true;
-                root.switchView("qrc:/TodoView.qml");
+                root.switchView(todoViewComponent);
             }
         }
 
         function onMoveViewForwards(): void {
-            pageStack.currentItem.nextAction.trigger();
+            root.pageStack.currentItem.nextAction.trigger();
         }
 
         function onMoveViewBackwards(): void {
-            pageStack.currentItem.previousAction.trigger();
+            root.pageStack.currentItem.previousAction.trigger();
         }
 
         function onMoveViewToToday(): void {
-            pageStack.currentItem.todayAction.trigger();
+            root.pageStack.currentItem.todayAction.trigger();
         }
 
         function onCreateNewEvent(): void {
@@ -228,7 +226,7 @@ BaseApplication {
         }
 
         function onTodoViewShowCompleted(): void {
-            const openDialogWindow = pageStack.pushDialogLayer(pageStack.currentItem.completedSheetComponent);
+            const openDialogWindow = root.pageStack.pushDialogLayer(root.pageStack.currentItem.completedSheetComponent);
             openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
         }
 
@@ -246,8 +244,8 @@ BaseApplication {
 
         function onOpenIncidence(incidenceData, occurrenceDate): void {
             // Switch to an event view if the current view is not compatible with the current incidence type
-            if (pageStack.currentItem.mode & (CalendarApplication.Todo | CalendarApplication.Event) ||
-                (pageStack.currentItem.mode === CalendarApplication.Todo && incidenceData.incidenceType !== IncidenceWrapper.TypeTodo)) {
+            if (root.pageStack.currentItem.mode & (CalendarApplication.Todo | CalendarApplication.Event) ||
+                (root.pageStack.currentItem.mode === CalendarApplication.Todo && incidenceData.incidenceType !== IncidenceWrapper.TypeTodo)) {
 
                 Kirigami.Settings.isMobile ? dayViewAction.trigger() : weekViewAction.trigger();
             }
@@ -261,7 +259,7 @@ BaseApplication {
         target: CalendarManager
 
         function onUndoRedoDataChanged() {
-            undoAction.enabled = CalendarManager.undoRedoData.undoAvailable;
+            root.undoAction.enabled = CalendarManager.undoRedoData.undoAvailable;
             redoAction.enabled = CalendarManager.undoRedoData.redoAvailable;
         }
     }
@@ -278,13 +276,13 @@ BaseApplication {
             id: newEventAction
             text: i18n("New Event…")
             icon.name: "resource-calendar-insert"
-            onTriggered: createEventAction.trigger()
+            onTriggered: root.createEventAction.trigger()
         }
         Kirigami.Action {
             id: newTodoAction
             text: i18n("New Task…")
             icon.name: "view-task-add"
-            onTriggered: createTodoAction.trigger()
+            onTriggered: root.createTodoAction.trigger()
         }
     }
 
@@ -328,7 +326,7 @@ BaseApplication {
     footer: Loader {
         id: bottomLoader
         active: Kirigami.Settings.isMobile
-        visible: pageStack.currentItem && pageStack.layers.currentItem.objectName !== "settingsPage"
+        visible: root.pageStack.currentItem && root.pageStack.layers.currentItem.objectName !== "settingsPage"
 
         sourceComponent: BottomToolBar {}
     }
@@ -336,10 +334,10 @@ BaseApplication {
     property alias mainDrawer: mainDrawer
     globalDrawer: MainDrawer {
         id: mainDrawer
-        mode: pageStack.currentItem ? pageStack.currentItem.mode : CalendarApplication.Event
+        mode: root.pageStack.currentItem ? root.pageStack.currentItem.mode : CalendarApplication.Event
     }
 
-    contextDrawer: incidenceInfoDrawerEnabled ? incidenceInfoDrawer : null
+    contextDrawer: root.incidenceInfoDrawerEnabled ? incidenceInfoDrawer : null
 
     readonly property var incidenceInfoViewer: incidenceInfoDrawerEnabled ? incidenceInfoDrawer :
         incidenceInfoPopupEnabled ? incidenceInfoPopup :
@@ -372,7 +370,7 @@ BaseApplication {
             modal: !root.wideScreen || !enabled
             onEnabledChanged: drawerOpen = enabled && !modal
             onModalChanged: drawerOpen = !modal
-            enabled: incidenceData !== undefined && pageStack.currentItem && pageStack.currentItem.mode !== CalendarApplication.Contact
+            enabled: incidenceData !== undefined && root.pageStack.currentItem && root.pageStack.currentItem.mode !== CalendarApplication.Contact
             handleVisible: enabled
             interactive: Kirigami.Settings.isMobile // Otherwise get weird bug where drawer gets dragged around despite no click
 
@@ -413,7 +411,7 @@ BaseApplication {
     readonly property alias incidenceInfoPopup: incidenceInfoPopupLoader.item
     Loader {
         id: incidenceInfoPopupLoader
-        active: incidenceInfoPopupEnabled
+        active: root.incidenceInfoPopupEnabled
         sourceComponent: IncidenceInfoPopup {
             id: incidenceInfoPopup
 
@@ -493,7 +491,7 @@ BaseApplication {
             // Make sure not to cover up the incidence item
             y: positionBelowIncidenceItem && openingIncidenceItem ? incidenceItemPosition.y + openingIncidenceItem.height : incidenceItemPosition.y - height;
 
-            width: Math.min(pageStack.currentItem.width, Kirigami.Units.gridUnit * 30)
+            width: Math.min(root.pageStack.currentItem.width, Kirigami.Units.gridUnit * 30)
             height: Math.min(Kirigami.Units.gridUnit * 16, implicitHeight)
 
             onIncidenceDataChanged: root.openOccurrence = incidenceData
@@ -555,7 +553,7 @@ BaseApplication {
                     id: header
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    mode: pageStack.currentItem ? pageStack.currentItem.mode : CalendarApplication.Event
+                    mode: root.pageStack.currentItem ? root.pageStack.currentItem.mode : CalendarApplication.Event
                     isDark: CalendarUiUtils.darkMode
                     clip: true
                 }
@@ -663,9 +661,21 @@ BaseApplication {
             objectName: "monthView"
 
             openOccurrence: root.openOccurrence
-            createEventAction: createAction
+            createEventAction: root.createAction
         }
     }
+
+    Component {
+        id: hourlyViewComponent
+
+        HourlyView {
+            id: monthView
+            objectName: "hourlyView"
+
+            createEventAction: root.createAction
+        }
+    }
+
 
     Component {
         id: scheduleViewComponent
@@ -675,7 +685,16 @@ BaseApplication {
             objectName: "scheduleView"
 
             openOccurrence: root.openOccurrence
-            createEventAction: createAction
+            createEventAction: root.createAction
+        }
+    }
+
+    Component {
+        id: todoViewComponent
+
+        TodoView {
+            id: todoView
+            objectName: "todoView"
         }
     }
 
@@ -684,7 +703,7 @@ BaseApplication {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
-        parent: overlay.parent
+        parent: root.overlay.parent
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
 

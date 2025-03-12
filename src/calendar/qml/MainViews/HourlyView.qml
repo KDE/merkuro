@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -10,7 +12,6 @@ import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.merkuro.calendar as Calendar
 import org.kde.merkuro.components
-import org.kde.merkuro.utils
 
 Kirigami.Page {
     id: root
@@ -91,7 +92,7 @@ Kirigami.Page {
 
     padding: 0
 
-    titleDelegate: ViewTitleDelegate {
+    titleDelegate: Calendar.ViewTitleDelegate {
         titleDateButton {
             range: true
             lastDate: Calendar.Utils.addDaysToDate(Calendar.DateTimeState.selectedDate, root.daysToShow - 1)
@@ -132,7 +133,7 @@ Kirigami.Page {
 
             model: actions
 
-            QQC2.ToolButton {
+            delegate: QQC2.ToolButton {
                 action: modelData
             }
         }

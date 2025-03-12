@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2022 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import "labelutils.js" as LabelUtils
 
 import org.kde.merkuro.calendar
 
