@@ -107,7 +107,7 @@ QList<QModelIndex> HourlyIncidenceModel::sortedIncidencesFromSourceModel(const Q
  * and tries to add more to the same line.
  *
  */
-QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
+QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
 {
     QList<QModelIndex> sorted = sortedIncidencesFromSourceModel(rowStart);
     const auto rowEnd = rowStart.date().endOfDay();
@@ -118,36 +118,35 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
     //     srcIdx.data(IncidenceOccurrenceModel::Summary).toString()
     //     << srcIdx.data(IncidenceOccurrenceModel::AllDay).toBool();
     // }
-    QVariantList result;
+    QList<IncidenceData> result;
 
     auto addToResults = [&result](const QModelIndex &idx, double start, double duration) {
-        auto incidenceMap = QVariantMap{
-            {QStringLiteral("text"), idx.data(IncidenceOccurrenceModel::Summary)},
-            {QStringLiteral("description"), idx.data(IncidenceOccurrenceModel::Description)},
-            {QStringLiteral("location"), idx.data(IncidenceOccurrenceModel::Location)},
-            {QStringLiteral("startTime"), idx.data(IncidenceOccurrenceModel::StartTime)},
-            {QStringLiteral("endTime"), idx.data(IncidenceOccurrenceModel::EndTime)},
-            {QStringLiteral("allDay"), idx.data(IncidenceOccurrenceModel::AllDay)},
-            {QStringLiteral("todoCompleted"), idx.data(IncidenceOccurrenceModel::TodoCompleted)},
-            {QStringLiteral("priority"), idx.data(IncidenceOccurrenceModel::Priority)},
-            {QStringLiteral("starts"), start},
-            {QStringLiteral("duration"), duration},
-            {QStringLiteral("durationString"), idx.data(IncidenceOccurrenceModel::DurationString)},
-            {QStringLiteral("recurs"), idx.data(IncidenceOccurrenceModel::Recurs)},
-            {QStringLiteral("hasReminders"), idx.data(IncidenceOccurrenceModel::HasReminders)},
-            {QStringLiteral("isOverdue"), idx.data(IncidenceOccurrenceModel::IsOverdue)},
-            {QStringLiteral("isReadOnly"), idx.data(IncidenceOccurrenceModel::IsReadOnly)},
-            {QStringLiteral("color"), idx.data(IncidenceOccurrenceModel::Color)},
-            {QStringLiteral("collectionId"), idx.data(IncidenceOccurrenceModel::CollectionId)},
-            {QStringLiteral("incidenceId"), idx.data(IncidenceOccurrenceModel::IncidenceId)},
-            {QStringLiteral("incidenceType"), idx.data(IncidenceOccurrenceModel::IncidenceType)},
-            {QStringLiteral("incidenceTypeStr"), idx.data(IncidenceOccurrenceModel::IncidenceTypeStr)},
-            {QStringLiteral("incidenceTypeIcon"), idx.data(IncidenceOccurrenceModel::IncidenceTypeIcon)},
-            {QStringLiteral("incidencePtr"), idx.data(IncidenceOccurrenceModel::IncidencePtr)},
-            {QStringLiteral("incidenceOccurrence"), idx.data(IncidenceOccurrenceModel::IncidenceOccurrence)},
-        };
+        IncidenceData incidenceData;
+        incidenceData.text = idx.data(IncidenceOccurrenceModel::Summary).toString();
 
-        result.append(incidenceMap);
+        incidenceData.description = idx.data(IncidenceOccurrenceModel::Description).toString();
+        incidenceData.location = idx.data(IncidenceOccurrenceModel::Location).toString();
+        incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime();
+        incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime();
+        incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool(),
+        incidenceData.todoCompleted = idx.data(IncidenceOccurrenceModel::TodoCompleted).toBool();
+        incidenceData.priority = idx.data(IncidenceOccurrenceModel::Priority).toInt();
+        incidenceData.starts = start, incidenceData.duration = duration,
+        incidenceData.durationString = idx.data(IncidenceOccurrenceModel::DurationString).toString();
+        incidenceData.recurs = idx.data(IncidenceOccurrenceModel::Recurs).toBool();
+        incidenceData.hasReminders = idx.data(IncidenceOccurrenceModel::HasReminders).toBool();
+        incidenceData.isOverdue = idx.data(IncidenceOccurrenceModel::IsOverdue).toBool();
+        incidenceData.isReadOnly = idx.data(IncidenceOccurrenceModel::IsReadOnly).toBool();
+        incidenceData.color = idx.data(IncidenceOccurrenceModel::Color).value<QColor>();
+        incidenceData.collectionId = idx.data(IncidenceOccurrenceModel::CollectionId).value<qint64>();
+        incidenceData.incidenceId = idx.data(IncidenceOccurrenceModel::IncidenceId).toString();
+        incidenceData.incidenceType = idx.data(IncidenceOccurrenceModel::IncidenceType).value<KCalendarCore::IncidenceBase::IncidenceType>();
+        incidenceData.incidenceTypeStr = idx.data(IncidenceOccurrenceModel::IncidenceTypeStr).toString();
+        incidenceData.incidenceTypeIcon = idx.data(IncidenceOccurrenceModel::IncidenceTypeIcon).toString();
+        incidenceData.incidencePtr = idx.data(IncidenceOccurrenceModel::IncidencePtr).value<KCalendarCore::Incidence::Ptr>();
+        incidenceData.incidenceOccurrence = idx.data(IncidenceOccurrenceModel::IncidenceOccurrence);
+
+        result.append(incidenceData);
     };
 
     // Since our hourly view displays by the minute, we need to know how many incidences there are in each minute.
@@ -199,7 +198,7 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
     // the left of them. Rather than loop more than once over our incidences, we create a record of these and then deal with them
     // later, storing the needed data in a struct.
     struct PotentialMover {
-        QVariantMap incidenceMap;
+        IncidenceData incidenceData;
         int resultIterator;
         int startMinutesFromDayStart;
         int endMinutesFromDayStart;
@@ -208,16 +207,14 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
 
     // Calculate the width and x position of each incidence rectangle
     for (int i = 0; i < result.length(); i++) {
-        auto incidence = result[i].value<QVariantMap>();
+        auto incidence = result[i];
         int concurrentIncidences = 1;
 
-        const auto startDT = incidence[QLatin1StringView("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
-            ? incidence[QLatin1StringView("startTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
-            : rowStart;
-        const auto endDT = incidence[QLatin1StringView("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
-            ? incidence[QLatin1StringView("endTime")].toDateTime().toTimeZone(QTimeZone::systemTimeZone())
-            : rowEnd;
-        const auto duration = incidence[QLatin1StringView("duration")].toDouble();
+        const auto startDT =
+            incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) > rowStart ? incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) : rowStart;
+        const auto endDT =
+            incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) < rowEnd ? incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) : rowEnd;
+        const auto duration = incidence.duration;
 
         // We need a "real" and "displayed" end time for two reasons:
         // 1. We need the real end minutes to give a fake start time to todos which do not have a start time
@@ -235,9 +232,9 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
             concurrentIncidences = qMax(concurrentIncidences, takenSpaces[i]);
         }
 
-        incidence[QLatin1StringView("maxConcurrentIncidences")] = concurrentIncidences;
+        incidence.maxConcurrentIncidences = concurrentIncidences;
         double widthShare = 1.0 / (concurrentIncidences * 1.0); // Width as a fraction of the whole day column width
-        incidence[QLatin1StringView("widthShare")] = widthShare;
+        incidence.widthShare = widthShare;
 
         // This is the value that the QML view will use to position the incidence rectangle on the day column's X axis.
         double priorTakenWidthShare = 0.0;
@@ -271,7 +268,7 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
             }
         }
 
-        incidence[QLatin1StringView("priorTakenWidthShare")] = priorTakenWidthShare;
+        incidence.priorTakenWidthShare = priorTakenWidthShare;
 
         if (takenSpaces[startMinutesFromDayStart] < takenSpaces[displayedEndMinutesFromDayStart - 1] && priorTakenWidthShare > 0) {
             potentialMovers.append(PotentialMover{incidence, i, startMinutesFromDayStart, displayedEndMinutesFromDayStart});
@@ -287,10 +284,10 @@ QVariantList HourlyIncidenceModel::layoutLines(const QDateTime &rowStart) const
         }
 
         if (maxTakenWidth < 0.98) {
-            potentialMover.incidenceMap[QLatin1StringView("priorTakenWidthShare")] =
-                potentialMover.incidenceMap[QLatin1StringView("widthShare")].toDouble() * (takenSpaces[potentialMover.endMinutesFromDayStart - 1] - 1);
+            potentialMover.incidenceData.priorTakenWidthShare =
+                potentialMover.incidenceData.widthShare * (takenSpaces[potentialMover.endMinutesFromDayStart - 1] - 1);
 
-            result[potentialMover.resultIterator] = potentialMover.incidenceMap;
+            result[potentialMover.resultIterator] = potentialMover.incidenceData;
         }
     }
 
@@ -306,9 +303,9 @@ QVariant HourlyIncidenceModel::data(const QModelIndex &idx, int role) const
     case PeriodStartDateTimeRole:
         return rowStart;
     case IncidencesRole:
-        return layoutLines(rowStart);
+        return QVariant::fromValue(layoutLines(rowStart));
     default:
-        Q_UNREACHABLE();
+        return {};
     }
 }
 

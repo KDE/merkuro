@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import "dateutils.js" as DateUtils
+import org.kde.merkuro.calendar as Calendar
 
 QQC2.ComboBox {
     id: root
@@ -54,7 +54,7 @@ QQC2.ComboBox {
                     if(!popupTimePicker.visible) {
                         // JS for some insane reason always tries to give you a datetime in the local timezone, even though
                         // we want the hours in the datetime's timezone, not our local timezone
-                        const adjusted = DateUtils.adjustDateTimeToLocalTimeZone(root.dateTime, root.timeZoneOffset)
+                        const adjusted = Calendar.DateUtils.adjustDateTimeToLocalTimeZone(root.dateTime, root.timeZoneOffset)
 
                         popupTimePicker.hours = adjusted.getHours();
                         popupTimePicker.minutes = adjusted.getMinutes();

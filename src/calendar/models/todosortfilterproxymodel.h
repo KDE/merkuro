@@ -13,12 +13,15 @@
 #include <QObject>
 #include <QSortFilterProxyModel>
 #include <QTimer>
+#include <qqmlintegration.h>
 
 class Filter;
 
 class TodoSortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Akonadi::IncidenceChanger *incidenceChanger READ incidenceChanger WRITE setIncidenceChanger NOTIFY incidenceChangerChanged)
     Q_PROPERTY(Akonadi::ETMCalendar::Ptr calendar READ calendar WRITE setCalendar NOTIFY calendarChanged)
     Q_PROPERTY(Filter *filterObject READ filterObject WRITE setFilterObject NOTIFY filterObjectChanged)
@@ -103,6 +106,7 @@ public:
     [[nodiscard]] bool sortAscending() const;
     [[nodiscard]] bool showCompletedSubtodosInIncomplete() const;
 
+    void setCalendar(Akonadi::ETMCalendar::Ptr &calendar);
 Q_SIGNALS:
     void calendarChanged();
     void filterObjectAboutToChange();
@@ -114,7 +118,6 @@ Q_SIGNALS:
     void incidenceChangerChanged();
 
 public Q_SLOTS:
-    void setCalendar(Akonadi::ETMCalendar::Ptr &calendar);
     void setIncidenceChanger(Akonadi::IncidenceChanger *changer);
     void setFilterObject(Filter *filterObject);
     void setShowCompleted(const int showCompleted);

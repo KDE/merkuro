@@ -7,10 +7,13 @@
 #include <QLocale>
 #include <QObject>
 #include <qdatetime.h>
+#include <qqmlintegration.h>
 
 class DateTimeState : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     /// This property holds the current selected date by the user
     Q_PROPERTY(QDateTime selectedDate MEMBER m_selectedDate NOTIFY selectedDateChanged)

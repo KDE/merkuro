@@ -6,6 +6,7 @@
 #pragma once
 
 #include "calendarconfig.h"
+#include "hourlyincidencemodel.h"
 
 #include <Akonadi/ETMCalendar>
 #include <QActionGroup>
@@ -13,11 +14,15 @@
 #include <QWindow>
 #include <abstractmerkuroapplication.h>
 
+#include <qqmlintegration.h>
+
 class QQuickWindow;
 
 class CalendarApplication : public AbstractMerkuroApplication
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QWindow *window READ window WRITE setWindow NOTIFY windowChanged)
     Q_PROPERTY(Akonadi::ETMCalendar::Ptr calendar MEMBER m_calendar NOTIFY calendarChanged)
@@ -72,7 +77,7 @@ Q_SIGNALS:
     void todoViewShowCompleted();
     void todoViewShowCurrentDayOnly();
     void refreshAll();
-    void openIncidence(const QVariantMap incidenceData, const QDateTime occurrence);
+    void openIncidence(const IncidenceData incidenceData, const QDateTime occurrence);
     void calendarChanged();
     void showMenubarChanged(bool state);
 

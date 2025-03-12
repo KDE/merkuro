@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
-import "labelutils.js" as LabelUtils
 
 RowLayout {
     id: headerLayout
@@ -70,7 +69,7 @@ RowLayout {
             id: tagRepeater
             model: Calendar.Filter ? Calendar.Filter.tags : {}
 
-            Tag {
+            Calendar.Tag {
                 id: filterTag
 
                 text: modelData

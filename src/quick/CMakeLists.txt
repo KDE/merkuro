@@ -8,6 +8,8 @@ ecm_add_qml_module(akonadi_quick_plugin
 )
 
 target_sources(akonadi_quick_plugin PRIVATE
+    agentinstance.cpp
+    agentinstance.h
     collectioncomboboxmodel.cpp
     collectioncomboboxmodel.h
     collectionpickermodel.cpp

@@ -6,7 +6,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
 
 TapHandler {
     id: dayTapHandler
@@ -28,14 +27,14 @@ TapHandler {
                 text: i18n("New Event…")
                 icon.name: "resource-calendar-insert"
                 onClicked: {
-                    IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
                 }
             }
             QQC2.MenuItem {
                 text: i18n("New Task…")
                 icon.name: "view-task-add"
                 onClicked: {
-                    IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
                 }
             }
         }

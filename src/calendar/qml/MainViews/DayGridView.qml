@@ -3,12 +3,12 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
-import "dateutils.js" as DateUtils
 
 Item {
     id: root
@@ -25,8 +25,8 @@ Item {
     readonly property int currentMonth: currentDate.getMonth()
     readonly property int currentYear:currentDate.getFullYear()
 
-    property date firstDayOfMonth: DateUtils.getFirstDayOfMonth(currentDate)
-    property date startDate: DateUtils.getFirstDayOfWeek(firstDayOfMonth)
+    property date firstDayOfMonth: Calendar.DateUtils.getFirstDayOfMonth(currentDate)
+    property date startDate: Calendar.DateUtils.getFirstDayOfWeek(firstDayOfMonth)
     readonly property int month: firstDayOfMonth.getMonth()
 
     property bool paintGrid: true
@@ -83,6 +83,7 @@ Item {
             listViewSpacing: root.listViewSpacing
             isCurrentView: root.isCurrentView
             showDayIndicator: root.showDayIndicator
+            weekHeaderWidth: root.weekHeaderWidth
         }
     }
 
@@ -108,7 +109,7 @@ Item {
             anchors {
                 fill: parent
                 topMargin: root.bgLoader.dayLabelsBar.height + root.spacing
-                leftMargin: Calendar.Config.showWeekNumbers ? weekHeaderWidth + root.spacing : 0
+                leftMargin: Calendar.Config.showWeekNumbers ? root.weekHeaderWidth + root.spacing : 0
             }
         }
     }

@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
 
 MouseArea {
     id: mouseArea
@@ -44,7 +43,7 @@ MouseArea {
     }
     onDoubleClicked: {
         collectionDetails = Calendar.CalendarManager.getCollectionDetails(mouseArea.collectionId)
-        IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
+        Calendar.IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
     }
 
     Component {
@@ -67,7 +66,7 @@ MouseArea {
                 text: i18n("Edit")
                 enabled: !mouseArea.collectionDetails["readOnly"]
                 onTriggered: () => {
-                    IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
+                    Calendar.IncidenceEditorManager.openEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, incidenceData.incidencePtr)
                 }
             }
 

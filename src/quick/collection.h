@@ -6,6 +6,7 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <QObject>
+#include <qqmlintegration.h>
 #include <qqmlregistration.h>
 
 namespace Akonadi
@@ -39,6 +40,13 @@ public:
         CollectionColorRole = Qt::BackgroundRole,
     };
     Q_ENUM(Role)
+};
+
+class CollectionForeign
+{
+    Q_GADGET
+    QML_FOREIGN(Akonadi::Collection)
+    QML_VALUE_TYPE(collection)
 };
 }
 }

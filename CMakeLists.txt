@@ -144,7 +144,7 @@ find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF6Holidays REQUIRED)
 
-qt_policy(SET QTP0001 NEW)
+# qt_policy(SET QTP0004 NEW)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 

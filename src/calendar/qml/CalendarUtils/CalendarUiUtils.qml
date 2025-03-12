@@ -6,8 +6,6 @@ pragma Singleton
 import QtQuick
 import org.kde.kirigami as Kirigami
 
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
 import org.kde.merkuro.calendar
 import org.kde.merkuro.contact
 

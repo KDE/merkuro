@@ -10,6 +10,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 import org.kde.akonadi
+import org.kde.merkuro.calendar
 
 FormCard.FormCard {
     id: root
@@ -19,7 +20,7 @@ FormCard.FormCard {
 
     readonly property AgentConfiguration _configuration: AgentConfiguration {
         mimetypes: root.mimetypes
-        onErrorOccured: (error) => root.QQC2.ApplicationWindow.window.showPassiveNotification(error)
+        onErrorOccurred: (error) => root.QQC2.ApplicationWindow.window.showPassiveNotification(error)
     }
 
     Components.MessageDialog {

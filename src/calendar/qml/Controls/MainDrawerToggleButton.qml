@@ -4,11 +4,10 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.calendar
-import org.kde.merkuro.utils
+import org.kde.merkuro.calendar as Calendar
 
 QQC2.ToolButton {
-    property var mainDrawer: CalendarUiUtils.appMain.mainDrawer
+    property var mainDrawer: Calendar.CalendarUiUtils.appMain.mainDrawer
 
     visible: !Kirigami.Settings.isMobile
     icon.name: mainDrawer.collapsed ? "sidebar-expand" : "sidebar-collapse"

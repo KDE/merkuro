@@ -1,18 +1,19 @@
 // SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
 
 Column {
     id: root
 
-    readonly property bool isDark: CalendarUiUtils.darkMode
+    readonly property bool isDark: Calendar.CalendarUiUtils.darkMode
 
     required property date startDate
 
@@ -93,7 +94,7 @@ Column {
                         id: incidencesRepeater
 
                         model: line.modelData
-                        delegate: DayGridViewIncidenceDelegate {
+                        delegate: Calendar.DayGridViewIncidenceDelegate {
                             id: incidenceDelegate
 
                             required property var modelData
@@ -118,14 +119,14 @@ Column {
                     }
                 }
 
-                DayTapHandler {
+                Calendar.DayTapHandler {
                     id: listViewMenu
                     addDate: {
                         const baseDate = weekDelegate.periodStartDate
                         const rowDayIndex = Math.floor(clickX / root.dayWidth)
                         return new Date(baseDate.setDate(baseDate.getDate() + rowDayIndex))
                     }
-                    onDeselect: CalendarUiUtils.appMain.incidenceInfoViewer.close()
+                    onDeselect: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
                 }
             }
         }

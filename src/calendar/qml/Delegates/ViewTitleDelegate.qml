@@ -15,9 +15,9 @@ RowLayout {
 
     spacing: 0
 
-    MainDrawerToggleButton {}
+    Calendar.MainDrawerToggleButton {}
 
-    TitleDateButton {
+    Calendar.TitleDateButton {
         id: titleDateButton
 
         onClicked: if (Calendar.DatePopupSingleton.visible) {

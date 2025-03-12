@@ -86,11 +86,8 @@ int main(int argc, char *argv[])
     aboutData.processCommandLine(&parser);
 
     const auto mouseTracker = MouseTracker::instance();
-    qmlRegisterSingletonInstance("org.kde.merkuro.calendar.private", 1, 0, "MouseTracker", mouseTracker);
 
     KDBusService service(KDBusService::Unique);
-
-    qmlRegisterType<Importer>("org.kde.merkuro.calendar.private", 1, 0, "Importer");
 
     QQmlApplicationEngine engine;
 
@@ -116,7 +113,7 @@ int main(int argc, char *argv[])
     });
 
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.loadFromModule("org.kde.merkuro.calendar", "Main");
 
     if (engine.rootObjects().isEmpty()) {
         return -1;

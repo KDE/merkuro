@@ -39,6 +39,7 @@ RowLayout {
     Layout.fillWidth: true
 
     QQC2.ComboBox {
+        id: combo
         // There is also a chance here to add a feature for the user to pick
         // reminder type.
 
@@ -55,10 +56,10 @@ RowLayout {
         onCurrentValueChanged: if (currentValue === "Custom") {
             root.customReminder = true;
         } else {
-            setReminder(currentValue);
+            root.setReminder(currentValue);
         }
-        onCountChanged: selectedIndex = currentIndex // Gets called *just* before modelChanged
-        onModelChanged: currentIndex = selectedIndex
+        onCountChanged: root.selectedIndex = currentIndex // Gets called *just* before modelChanged
+        onModelChanged: currentIndex = root.selectedIndex
 
         // All these times are in seconds.
         model: [

@@ -11,7 +11,7 @@ QQC2.ComboBox {
 
     required property bool isTodo
 
-    visible: incidenceForm.isTodo
+    visible: root.isTodo
     textRole: "display"
     valueRole: "value"
 

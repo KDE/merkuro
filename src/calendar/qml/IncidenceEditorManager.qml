@@ -17,7 +17,7 @@ QtObject {
 
     function getEditor(window) {
         if (Kirigami.Settings.isMobile) {
-            const component = Qt.createComponent(Qt.resolvedUrl('./IncidenceEditorPage.qml'));
+            const component = Qt.createComponent("org.kde.merkuro.calendar", "IncidenceEditorPage");
             if (component.status === Component.Error) {
                 console.error(component.errorString());
                 return null;
@@ -26,11 +26,12 @@ QtObject {
             return window.pageStack.layers.push(component);
         }
 
-        const component = Qt.createComponent(Qt.resolvedUrl('./IncidenceEditorDialog.qml'));
+        const component = Qt.createComponent("org.kde.merkuro.calendar", "IncidenceEditorDialog");
         if (component.status === Component.Error) {
             console.error(component.errorString());
             return null;
         }
+
         return component.createObject(window).incidenceEditorPage;
     }
 

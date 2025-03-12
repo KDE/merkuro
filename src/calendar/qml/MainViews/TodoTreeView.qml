@@ -2,6 +2,8 @@
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -10,9 +12,6 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kitemmodels
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.utils
-import "dateutils.js" as DateUtils
-import "labelutils.js" as LabelUtils
 
 ListView {
     id: root
@@ -43,7 +42,7 @@ ListView {
     property bool ascendingOrder: false
     property bool dragDropEnabled: true
 
-    readonly property bool isDark: CalendarUiUtils.darkMode
+    readonly property bool isDark: Calendar.CalendarUiUtils.darkMode
 
     currentIndex: -1
     clip: true
@@ -93,7 +92,7 @@ ListView {
                     elide: Text.ElideRight
 
                     font.weight: Font.Bold
-                    color: isOverdue ? Kirigami.Theme.negativeTextColor : isToday ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                    color: listSection.isOverdue ? Kirigami.Theme.negativeTextColor : listSection.isToday ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                 }
 
                 Kirigami.Separator {
@@ -109,7 +108,7 @@ ListView {
         anchors.fill: parent
         enabled: !Kirigami.Settings.isMobile
         parent: background
-        onClicked: CalendarUiUtils.appMain.incidenceInfoViewer.close()
+        onClicked: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
         propagateComposedEvents: true
     }
 
@@ -140,7 +139,7 @@ ListView {
         helpfulAction: Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
         }
     }
 
@@ -192,10 +191,10 @@ ListView {
 
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
-        Kirigami.Theme.highlightColor: LabelUtils.getIncidenceDelegateBackgroundColor(color, root.isDark)
+        Kirigami.Theme.highlightColor: Calendar.LabelUtils.getIncidenceDelegateBackgroundColor(color, root.isDark)
 
         Behavior on x {
-            enabled: repositionAnimationEnabled
+            enabled: listItem.repositionAnimationEnabled
             NumberAnimation {
                 duration: Kirigami.Units.shortDuration
                 easing.type: Easing.OutCubic
@@ -203,7 +202,7 @@ ListView {
         }
 
         Behavior on y {
-            enabled: repositionAnimationEnabled
+            enabled: listItem.repositionAnimationEnabled
             NumberAnimation {
                 duration: Kirigami.Units.shortDuration
                 easing.type: Easing.OutCubic
@@ -238,7 +237,7 @@ ListView {
             ''
         }
 
-        contentItem: IncidenceMouseArea {
+        contentItem: Calendar.IncidenceMouseArea {
             id: mouseArea
 
             implicitHeight: todoItemContents.implicitHeight + (Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing)
@@ -253,7 +252,7 @@ ListView {
             onReleased: listItem.Drag.drop()
 
             onViewClicked: listItem.clicked()
-            onDeleteClicked: CalendarUiUtils.setUpDelete(listItem.incidencePtr,
+            onDeleteClicked: Calendar.CalendarUiUtils.setUpDelete(listItem.incidencePtr,
                                                          listItem.endTime ? listItem.endTime :
                                                                          listItem.startTime ? listItem.startTime :
                                                                                            null)
@@ -273,7 +272,7 @@ ListView {
                 rows: 2
                 columnSpacing: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
 
-                TodoCheckBox {
+                Calendar.TodoCheckBox {
                     Layout.row: 0
                     Layout.column: 0
                     Layout.rowSpan: root.width < Kirigami.Units.gridUnit * 28 || recurIcon.visible || dateLabel.visible ? 1 : 2
@@ -315,7 +314,7 @@ ListView {
                         id: tagsRepeater
                         model: listItem.todoCategories // From todoModel
 
-                        Tag {
+                        delegate: Calendar.Tag {
                             width: implicitWidth > tagFlow.width ? tagFlow.width : implicitWidth
                             text: modelData
                             showAction: false

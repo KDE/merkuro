@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Claudio Cambra <claudio.cambra@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls
 import QtLocation
@@ -43,14 +45,12 @@ Map {
             value: "https://autoconfig.kde.org/qtlocation/"
         }
     }
-    onCopyrightLinkActivated: {
-        Qt.openUrlExternally(link)
-    }
+    onCopyrightLinkActivated: link => Qt.openUrlExternally(link)
 
     BusyIndicator {
         anchors.centerIn: parent
         running: map.queryStatus === GeocodeModel.Loading
-        visible: queryStatus === GeocodeModel.Loading
+        visible: map.queryStatus === GeocodeModel.Loading
     }
 
     Button {
@@ -75,14 +75,14 @@ Map {
                 id: clickGeocodeModel
                 plugin: map.pluginComponent
                 limit: 1
-                onLocationsChanged: if(count) { selectedLocationAddress(get(0).address.text) }
+                onLocationsChanged: if(count) { map.selectedLocationAddress(get(0).address.text) }
             }
         }
 
         model: GeocodeModel {
             id: geocodeModel
             plugin: map.pluginComponent
-            query: hasCoordinate ? undefined : map.query
+            query: map.hasCoordinate ? undefined : map.query
             autoUpdate: true
             limit: 1
             onLocationsChanged: {

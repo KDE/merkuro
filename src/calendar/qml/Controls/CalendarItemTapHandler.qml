@@ -52,7 +52,7 @@ TapHandler {
         }
     }
 
-    property Component calendarActions: CalendarItemMenu {
+    property Component calendarActions: Calendar.CalendarItemMenu {
         parent: root.parent
 
         checkState: root.checkState

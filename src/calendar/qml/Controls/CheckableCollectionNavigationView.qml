@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.calendar
 import org.kde.merkuro.contact
-import org.kde.akonadi
+import org.kde.akonadi as Akonadi
 import Qt.labs.qmlmodels
 import org.kde.kitemmodels
 
@@ -19,7 +19,7 @@ QQC2.ScrollView {
     signal collectionCheckChanged
     signal closeParentDrawer
 
-    readonly property AgentConfiguration agentConfiguration: AgentConfiguration {}
+    readonly property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
     readonly property var activeTags: Filter.tags
 
     property var mode: CalendarApplication.Event
@@ -42,7 +42,7 @@ QQC2.ScrollView {
 
             Layout.topMargin: Kirigami.Units.largeSpacing
             hoverEnabled: false
-            visible: TagManager.tagModel.rowCount() > 0 && mode !== CalendarApplication.Contact
+            visible: Akonadi.TagManager.tagModel.rowCount() > 0 && mode !== CalendarApplication.Contact
             Accessible.name: tagsHeadingItem.expanded ? i18nc('Accessible description of dropdown menu', 'Tags, Expanded') : i18nc('Accessible description of dropdown menu', 'Tags, Collapsed')
 
             Kirigami.Heading {
@@ -98,12 +98,12 @@ QQC2.ScrollView {
             Layout.rightMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
             spacing: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing
-            visible: TagManager.tagModel.rowCount() > 0 && tagsHeadingItem.expanded && mode !== CalendarApplication.Contact
+            visible: Akonadi.TagManager.tagModel.rowCount() > 0 && tagsHeadingItem.expanded && mode !== CalendarApplication.Contact
 
             Repeater {
                 id: tagList
 
-                model: parent.visible ? TagManager.tagModel : []
+                model: parent.visible ? Akonadi.TagManager.tagModel : []
 
                 delegate: Tag {
                     implicitWidth: itemLayout.implicitWidth > tagFlow.width ? tagFlow.width : itemLayout.implicitWidth
@@ -191,6 +191,7 @@ QQC2.ScrollView {
                         required property var model
                         required property var decoration
                         required property var collectionId
+                        required property Akonadi.collection collection
                         required property bool kDescendantExpanded
                         required property int kDescendantLevel
                         required property color collectionColor
@@ -266,14 +267,13 @@ QQC2.ScrollView {
 
                         Connections {
                             target: root.agentConfiguration
-                            function onAgentProgressChanged(agentData: var): void {
-                                if(agentData.instanceId === tapHandler.collectionDetails.resource &&
-                                    agentData.status === AgentConfiguration.Running) {
 
-                                    loadingIndicator.visible = true;
-                                } else if (agentData.instanceId === tapHandler.collectionDetails.resource) {
-                                    loadingIndicator.visible = false;
+                            function onAgentProgressChanged(agentInstance: Akonadi.agentInstance): void {
+                                if (!agentInstance.identifier === collectionSourceItem.collection.resource) {
+                                    return;
                                 }
+
+                                loadingIndicator.visible = agentInstance.status === agentInstance.Running;
                             }
                         }
 
@@ -300,7 +300,7 @@ QQC2.ScrollView {
                             id: incidenceDropArea
                             anchors.fill: parent
                             z: 9999
-                            enabled: tapHandler.collectionDetails.canCreate
+                            enabled: collectionSourceItem.collection.rights & Akonadi.Collection.CanCreateCollection
                             onDropped: if(drop.source.objectName === "taskDelegate") {
                                 CalendarManager.changeIncidenceCollection(drop.source.incidencePtr, model.collectionId);
 
@@ -323,6 +323,7 @@ QQC2.ScrollView {
                         required property var model
                         required property var decoration
                         required property var collectionId
+                        required property Akonadi.collection collection
                         required property bool kDescendantExpanded
                         required property int kDescendantLevel
                         required property color collectionColor
@@ -404,7 +405,7 @@ QQC2.ScrollView {
                             id: incidenceDropArea
                             anchors.fill: parent
                             z: 9999
-                            enabled: tapHandler.collectionDetails.canCreate
+                            enabled: collectionItem.collection.rights & Akonadi.Collection.CanCreateCollection
                             onDropped: if(drop.source.objectName === "taskDelegate") {
                                 CalendarManager.changeIncidenceCollection(drop.source.incidencePtr, model.collectionId);
 

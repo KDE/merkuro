@@ -7,7 +7,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtLocation
 import org.kde.merkuro.calendar as Calendar
-import "labelutils.js" as LabelUtils
 
 QQC2.ScrollView {
     id: root
@@ -284,7 +283,7 @@ QQC2.ScrollView {
         QQC2.Label {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
-            text: LabelUtils.priorityString(root.incidenceWrapper.priority)
+            text: Calendar.LabelUtils.priorityString(root.incidenceWrapper.priority)
             visible: root.incidenceWrapper.priority
         }
 
@@ -321,7 +320,7 @@ QQC2.ScrollView {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
-                text: LabelUtils.recurrenceToString(root.incidenceWrapper.recurrenceData)
+                text: Calendar.LabelUtils.recurrenceToString(root.incidenceWrapper.recurrenceData)
                 wrapMode: Text.Wrap
             }
 
@@ -356,7 +355,7 @@ QQC2.ScrollView {
                 Layout.fillWidth: true
                 visible: root.incidenceWrapper.recurrenceData.duration > -1
 
-                text: LabelUtils.recurrenceEndToString(root.incidenceWrapper.recurrenceData)
+                text: Calendar.LabelUtils.recurrenceEndToString(root.incidenceWrapper.recurrenceData)
                 wrapMode: Text.Wrap
             }
         }
@@ -379,8 +378,8 @@ QQC2.ScrollView {
             wrapMode: Text.Wrap
             textFormat: Text.RichText
             color: Kirigami.Theme.textColor
-            text: root.incidenceWrapper.location.replace(LabelUtils.urlRegexp, (match) => `<a style="color: "${Kirigami.Theme.linkColor}"; text-decoration: none;" href="${match}">${match}</a>`)
-            onTextChanged: isLink = LabelUtils.urlRegexp.test(root.incidenceWrapper.location);
+            text: root.incidenceWrapper.location.replace(Calendar.LabelUtils.urlRegexp, (match) => `<a style="color: "${Kirigami.Theme.linkColor}"; text-decoration: none;" href="${match}">${match}</a>`)
+            onTextChanged: isLink = Calendar.LabelUtils.urlRegexp.test(root.incidenceWrapper.location);
             onLinkActivated: Qt.openUrlExternally(link)
             visible: root.incidenceWrapper.location
             onHoveredLinkChanged: if (hoveredLink.length > 0) {
@@ -435,7 +434,7 @@ QQC2.ScrollView {
                     !locationLabel.isLink
                 visible: active && (item.queryHasResults || item.hasCoordinate)
 
-                sourceComponent: LocationMap {
+                sourceComponent: Calendar.LocationMap {
                     id: map
                     query: root.incidenceWrapper.location
                     selectedLatitude: root.incidenceWrapper.hasGeo ? root.incidenceWrapper.geoLatitude : NaN
@@ -464,7 +463,7 @@ QQC2.ScrollView {
             Layout.fillWidth: true
 
             textFormat: Text.MarkdownText
-            text: root.incidenceWrapper.description.replace(LabelUtils.urlRegexp, (match) => `[${match}](${match})`)
+            text: root.incidenceWrapper.description.replace(Calendar.LabelUtils.urlRegexp, (match) => `[${match}](${match})`)
             visible: root.incidenceWrapper.description
         }
 
@@ -597,7 +596,7 @@ QQC2.ScrollView {
                 height: root.relatedIncidenceDelegateHeight
 
                 active: root.incidenceWrapper.parent !== ""
-                sourceComponent: RelatedIncidenceDelegate {
+                sourceComponent: Calendar.RelatedIncidenceDelegate {
                     incidenceWrapper: root.incidenceWrapper.parentIncidence
                 }
             }
@@ -619,7 +618,7 @@ QQC2.ScrollView {
 
             Repeater {
                 model: subTaskColumn.visible ? root.incidenceWrapper.childIncidences : []
-                delegate: RelatedIncidenceDelegate {
+                delegate: Calendar.RelatedIncidenceDelegate {
                     implicitHeight: root.relatedIncidenceDelegateHeight
                     incidenceWrapper: modelData
                 }

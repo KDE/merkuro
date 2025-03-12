@@ -32,23 +32,23 @@ Components.MessageDialog {
         onTriggered: root.accepted();
     }
 
-    contentItem: RowLayout {
-        ColumnLayout {
+    ColumnLayout {
+        spacing: Kirigami.Units.smallSpacing
+
+        Layout.fillWidth: true
+
+        QQC2.Label {
             Layout.fillWidth: true
-
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: if (collectionDetails) {
-                    i18n("Do you want to delete the calendar: \"%1\"?", collectionDetails.displayName)
-                }
-                wrapMode: Text.WordWrap
+            text: if (collectionDetails) {
+                i18n("Do you want to delete the calendar: \"%1\"?", collectionDetails.displayName)
             }
+            wrapMode: Text.WordWrap
+        }
 
-            QQC2.Label {
-                text: i18n("You won't be able to revert this action")
-                wrapMode: Text.WordWrap
-                Layout.fillWidth: true
-            }
+        QQC2.Label {
+            text: i18n("You won't be able to revert this action")
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
     }
 

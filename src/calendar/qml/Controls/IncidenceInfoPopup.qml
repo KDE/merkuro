@@ -5,7 +5,6 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import "labelutils.js" as LabelUtils
 
 import org.kde.merkuro.calendar
 

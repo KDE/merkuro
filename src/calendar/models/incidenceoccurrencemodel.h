@@ -18,6 +18,7 @@
 #include <QList>
 #include <QSharedPointer>
 #include <QTimer>
+#include <qqmlintegration.h>
 
 class Filter;
 namespace KCalendarCore
@@ -39,6 +40,8 @@ using namespace KCalendarCore;
 class IncidenceOccurrenceModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QDate start READ start WRITE setStart NOTIFY startChanged)
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(Filter *filter READ filter WRITE setFilter NOTIFY filterChanged)

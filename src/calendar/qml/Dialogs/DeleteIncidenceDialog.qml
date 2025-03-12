@@ -42,7 +42,7 @@ Components.MessageDialog {
         }
     }
 
-    contentItem: Controls.Label {
+    Controls.Label {
         Layout.fillWidth: true
         horizontalAlignment: Qt.AlignHCenter
         text: if(incidenceWrapper.recurrenceData.type === 0 && !deletePage.incidenceHasChildren) {

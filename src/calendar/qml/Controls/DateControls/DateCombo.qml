@@ -8,8 +8,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime
 import org.kde.merkuro.calendar as Calendar
 
-import "dateutils.js" as DateUtils
-
 QQC2.ComboBox {
     id: root
 
@@ -18,7 +16,7 @@ QQC2.ComboBox {
     property int timeZoneOffset: 0
     property string display: dateTime.toLocaleDateString(Qt.locale(), Locale.NarrowFormat) // Can override for better C++ time strings
     property date dateTime: new Date()
-    property date dateFromText: DateUtils.parseDateString(editText)
+    property date dateFromText: Calendar.DateUtils.parseDateString(editText)
     property bool validDate: !isNaN(dateFromText.getTime())
 
     editable: true
@@ -35,7 +33,7 @@ QQC2.ComboBox {
         // Set date from text here because it otherwise updates after this handler
         // Also make sure to only update after we switch from this field's focus to something else
         if(!activeFocus) {
-            dateFromText = DateUtils.parseDateString(editText);
+            dateFromText = Calendar.DateUtils.parseDateString(editText);
 
             if (validDate) {
                 newDateChosen(dateFromText.getDate(), dateFromText.getMonth() + 1, dateFromText.getFullYear());
