@@ -45,3 +45,10 @@ public:
         return new CalendarConfig;
     }
 };
+
+struct ETMCalendarForeign {
+    Q_GADGET
+    QML_UNCREATABLE("")
+    QML_FOREIGN(Akonadi::ETMCalendar::Ptr)
+    QML_NAMED_ELEMENT(ETMCalendarPtr)
+};

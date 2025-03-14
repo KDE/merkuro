@@ -273,18 +273,18 @@ BaseApplication {
     }
 
     property Kirigami.Action createAction: Kirigami.Action {
-        text: i18n("Create")
+        text: i18nc("@action:button", "Create")
         icon.name: "list-add"
 
         Kirigami.Action {
             id: newEventAction
-            text: i18n("New Event…")
+            text: i18nc("@action:button", "New Event…")
             icon.name: "resource-calendar-insert"
             onTriggered: root.createEventAction.trigger()
         }
         Kirigami.Action {
             id: newTodoAction
-            text: i18n("New Task…")
+            text: i18nc("@action:button", "New Task…")
             icon.name: "view-task-add"
             onTriggered: root.createTodoAction.trigger()
         }
@@ -293,22 +293,22 @@ BaseApplication {
     title: if(pageStack.currentItem) {
         switch (pageStack.currentItem.mode) {
             case CalendarApplication.Month:
-                return i18n("Month");
+                return i18nc("@title", "Month");
 
             case CalendarApplication.Week:
-                return i18n("Week");
+                return i18nc("@title", "Week");
 
             case CalendarApplication.ThreeDay:
-                return i18n("3 Days");
+                return i18nc("@title", "3 Days");
 
             case CalendarApplication.Day:
-                return i18n("Day");
+                return i18nc("@title", "Day");
 
             case CalendarApplication.Schedule:
-                return i18n("Schedule");
+                return i18nc("@title", "Schedule");
 
             case CalendarApplication.Todo:
-                return i18n("Tasks");
+                return i18nc("@title", "Tasks");
 
             default:
                 // Should not happen
