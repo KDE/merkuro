@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-15 00:43+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -109,13 +109,13 @@ msgid "To Date…"
 msgstr "Έως ημερομηνία…"
 
 #: calendar/calendarapplication.cpp:199
-#: calendar/qml/Controls/DayTapHandler.qml:27 calendar/qml/Main.qml:281
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Νέο γεγονός…"
 
 #: calendar/calendarapplication.cpp:206
-#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/Main.qml:287
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Νέα εργασία…"
@@ -1468,44 +1468,66 @@ msgstr "Αφαίρεση"
 msgid "Return to Location"
 msgstr "Επιστροφή στην τοποθεσία"
 
-#: calendar/qml/Main.qml:276 calendar/qml/MainViews/TodoTreeView.qml:140
-#: calendar/qml/MainViews/TodoView.qml:63
-#, kde-format
+#: calendar/qml/Main.qml:276
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button"
 msgid "Create"
 msgstr "Δημιουργία"
+
+#: calendar/qml/Main.qml:281
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:button"
+msgid "New Event…"
+msgstr "Νέο γεγονός…"
+
+#: calendar/qml/Main.qml:287
+#, fuzzy, kde-format
+#| msgid "New Task…"
+msgctxt "@action:button"
+msgid "New Task…"
+msgstr "Νέα εργασία…"
 
 #: calendar/qml/Main.qml:296
 #, fuzzy, kde-format
 #| msgid "Months"
+msgctxt "@title"
 msgid "Month"
 msgstr "Μήνες"
 
 #: calendar/qml/Main.qml:299
 #, fuzzy, kde-format
 #| msgid "Weekly"
+msgctxt "@title"
 msgid "Week"
 msgstr "Εβδομαδιαίο"
 
 #: calendar/qml/Main.qml:302
 #, fuzzy, kde-format
 #| msgid "Days"
+msgctxt "@title"
 msgid "3 Days"
 msgstr "Ημέρες"
 
 #: calendar/qml/Main.qml:305
 #, fuzzy, kde-format
 #| msgid "Days"
+msgctxt "@title"
 msgid "Day"
 msgstr "Ημέρες"
 
 #: calendar/qml/Main.qml:308
 #, fuzzy, kde-format
 #| msgid "Schedule View"
+msgctxt "@title"
 msgid "Schedule"
 msgstr "Προβολή χρονοπρογραμματισμού"
 
-#: calendar/qml/Main.qml:311 calendar/qml/MainViews/TodoView.qml:51
-#, kde-format
+#: calendar/qml/Main.qml:311
+#, fuzzy, kde-format
+#| msgid "Tasks"
+msgctxt "@title"
 msgid "Tasks"
 msgstr "Εργασίες"
 
@@ -1687,11 +1709,22 @@ msgstr "Καμιά εργασία συμπληρωμένη"
 msgid "No tasks left to complete"
 msgstr "Δεν απέμειναν εργασίες για συμπλήρωση"
 
+#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoView.qml:63
+#, kde-format
+msgid "Create"
+msgstr "Δημιουργία"
+
 #: calendar/qml/MainViews/TodoTreeView.qml:235
 #, fuzzy, kde-format
 #| msgid "(overdue)"
 msgid " , is overdue"
 msgstr "(εκπρόθεσμο)"
+
+#: calendar/qml/MainViews/TodoView.qml:51
+#, kde-format
+msgid "Tasks"
+msgstr "Εργασίες"
 
 #: calendar/qml/MainViews/TodoView.qml:103
 #, kde-format

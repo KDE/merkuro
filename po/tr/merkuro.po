@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
-"PO-Revision-Date: 2025-03-11 12:25+0300\n"
+"POT-Creation-Date: 2025-03-15 00:43+0000\n"
+"PO-Revision-Date: 2025-03-14 20:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -67,7 +67,7 @@ msgstr "Kontrol+4"
 #: calendar/calendarapplication.cpp:115
 #, kde-format
 msgid "Schedule View"
-msgstr "Ajanda Görünümü"
+msgstr "Program Görünümü"
 
 #: calendar/calendarapplication.cpp:125
 #, kde-format
@@ -105,13 +105,13 @@ msgid "To Date…"
 msgstr "Tarihe…"
 
 #: calendar/calendarapplication.cpp:199
-#: calendar/qml/Controls/DayTapHandler.qml:27 calendar/qml/Main.qml:281
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Yeni Etkinlik…"
 
 #: calendar/calendarapplication.cpp:206
-#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/Main.qml:287
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Yeni Görev…"
@@ -1434,39 +1434,66 @@ msgstr "Kaldır"
 msgid "Return to Location"
 msgstr "Konuma Dön"
 
-#: calendar/qml/Main.qml:276 calendar/qml/MainViews/TodoTreeView.qml:140
-#: calendar/qml/MainViews/TodoView.qml:63
-#, kde-format
+#: calendar/qml/Main.qml:276
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button"
 msgid "Create"
 msgstr "Oluştur"
 
+#: calendar/qml/Main.qml:281
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:button"
+msgid "New Event…"
+msgstr "Yeni Etkinlik…"
+
+#: calendar/qml/Main.qml:287
+#, fuzzy, kde-format
+#| msgid "New Task…"
+msgctxt "@action:button"
+msgid "New Task…"
+msgstr "Yeni Görev…"
+
 #: calendar/qml/Main.qml:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Month"
+msgctxt "@title"
 msgid "Month"
 msgstr "Ay"
 
 #: calendar/qml/Main.qml:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Week"
+msgctxt "@title"
 msgid "Week"
 msgstr "Hafta"
 
 #: calendar/qml/Main.qml:302
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "3 Days"
+msgctxt "@title"
 msgid "3 Days"
 msgstr "3 Gün"
 
 #: calendar/qml/Main.qml:305
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Day"
+msgctxt "@title"
 msgid "Day"
 msgstr "Gün"
 
 #: calendar/qml/Main.qml:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Schedule"
+msgctxt "@title"
 msgid "Schedule"
-msgstr "Ajanda Görünümü"
+msgstr "Program Görünümü"
 
-#: calendar/qml/Main.qml:311 calendar/qml/MainViews/TodoView.qml:51
-#, kde-format
+#: calendar/qml/Main.qml:311
+#, fuzzy, kde-format
+#| msgid "Tasks"
+msgctxt "@title"
 msgid "Tasks"
 msgstr "Görevler"
 
@@ -1639,10 +1666,21 @@ msgstr "Tamamlanan görev yok"
 msgid "No tasks left to complete"
 msgstr "Tamamlanacak görev yok"
 
+#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoView.qml:63
+#, kde-format
+msgid "Create"
+msgstr "Oluştur"
+
 #: calendar/qml/MainViews/TodoTreeView.qml:235
 #, kde-format
 msgid " , is overdue"
 msgstr " , süresi geçmiş"
+
+#: calendar/qml/MainViews/TodoView.qml:51
+#, kde-format
+msgid "Tasks"
+msgstr "Görevler"
 
 #: calendar/qml/MainViews/TodoView.qml:103
 #, kde-format
@@ -2038,27 +2076,28 @@ msgstr "Kaydırılabilir hafta görünümü daha yüksek sistem başarımı gere
 #: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
-msgstr "Ajanda Görünümü ayarları"
+msgstr "Program Görünümü ayarları"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
-msgstr "Ajanda görünümü kipi"
+msgstr "Program görünümü kipi"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
-msgstr "Kaydırılabilir ajanda görünümü"
+msgstr "Kaydırılabilir program görünümü"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
-msgstr "Temel ajanda görünümü"
+msgstr "Temel program görünümü"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
-msgstr "Kaydırılabilir ajanda görünümü daha yüksek sistem başarımı gerektirir."
+msgstr ""
+"Kaydırılabilir program görünümü daha yüksek sistem başarımı gerektirir."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format

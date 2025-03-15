@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-15 00:43+0000\n"
 "PO-Revision-Date: 2025-03-12 08:45+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -102,13 +102,13 @@ msgid "To Date…"
 msgstr "Vers la date..."
 
 #: calendar/calendarapplication.cpp:199
-#: calendar/qml/Controls/DayTapHandler.qml:27 calendar/qml/Main.qml:281
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Nouvel évènement..."
 
 #: calendar/calendarapplication.cpp:206
-#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/Main.qml:287
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Nouvelle tâche..."
@@ -1433,39 +1433,66 @@ msgstr "Supprimer"
 msgid "Return to Location"
 msgstr "Revenir à l'emplacement"
 
-#: calendar/qml/Main.qml:276 calendar/qml/MainViews/TodoTreeView.qml:140
-#: calendar/qml/MainViews/TodoView.qml:63
-#, kde-format
+#: calendar/qml/Main.qml:276
+#, fuzzy, kde-format
+#| msgid "Create"
+msgctxt "@action:button"
 msgid "Create"
 msgstr "Créer"
 
+#: calendar/qml/Main.qml:281
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:button"
+msgid "New Event…"
+msgstr "Nouvel évènement..."
+
+#: calendar/qml/Main.qml:287
+#, fuzzy, kde-format
+#| msgid "New Task…"
+msgctxt "@action:button"
+msgid "New Task…"
+msgstr "Nouvelle tâche..."
+
 #: calendar/qml/Main.qml:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Month"
+msgctxt "@title"
 msgid "Month"
 msgstr "Mois"
 
 #: calendar/qml/Main.qml:299
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Week"
+msgctxt "@title"
 msgid "Week"
 msgstr "Semaine"
 
 #: calendar/qml/Main.qml:302
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "3 Days"
+msgctxt "@title"
 msgid "3 Days"
 msgstr "3 jours"
 
 #: calendar/qml/Main.qml:305
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Day"
+msgctxt "@title"
 msgid "Day"
 msgstr "Jour"
 
 #: calendar/qml/Main.qml:308
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Schedule"
+msgctxt "@title"
 msgid "Schedule"
 msgstr "Planning"
 
-#: calendar/qml/Main.qml:311 calendar/qml/MainViews/TodoView.qml:51
-#, kde-format
+#: calendar/qml/Main.qml:311
+#, fuzzy, kde-format
+#| msgid "Tasks"
+msgctxt "@title"
 msgid "Tasks"
 msgstr "Tâches"
 
@@ -1638,10 +1665,21 @@ msgstr "Aucune tâche terminée"
 msgid "No tasks left to complete"
 msgstr "Aucune tâche restant à terminer"
 
+#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoView.qml:63
+#, kde-format
+msgid "Create"
+msgstr "Créer"
+
 #: calendar/qml/MainViews/TodoTreeView.qml:235
 #, kde-format
 msgid " , is overdue"
 msgstr " , es en retard"
+
+#: calendar/qml/MainViews/TodoView.qml:51
+#, kde-format
+msgid "Tasks"
+msgstr "Tâches"
 
 #: calendar/qml/MainViews/TodoView.qml:103
 #, kde-format

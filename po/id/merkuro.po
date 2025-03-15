@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-15 00:43+0000\n"
 "PO-Revision-Date: 2023-03-22 00:50+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -104,13 +104,13 @@ msgid "To Date…"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:199
-#: calendar/qml/Controls/DayTapHandler.qml:27 calendar/qml/Main.qml:281
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Acara Baru…"
 
 #: calendar/calendarapplication.cpp:206
-#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/Main.qml:287
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Tugas Baru…"
@@ -1444,41 +1444,67 @@ msgstr "Hapus"
 msgid "Return to Location"
 msgstr ""
 
-#: calendar/qml/Main.qml:276 calendar/qml/MainViews/TodoTreeView.qml:140
-#: calendar/qml/MainViews/TodoView.qml:63
-#, kde-format
+#: calendar/qml/Main.qml:276
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "Create"
+msgctxt "@action:button"
 msgid "Create"
-msgstr ""
+msgstr "Buat"
+
+#: calendar/qml/Main.qml:281
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:button"
+msgid "New Event…"
+msgstr "Acara Baru…"
+
+#: calendar/qml/Main.qml:287
+#, fuzzy, kde-format
+#| msgid "New Task…"
+msgctxt "@action:button"
+msgid "New Task…"
+msgstr "Tugas Baru…"
 
 #: calendar/qml/Main.qml:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Months"
+msgctxt "@title"
 msgid "Month"
-msgstr ""
+msgstr "Bulan"
 
 #: calendar/qml/Main.qml:299
 #, kde-format
+msgctxt "@title"
 msgid "Week"
 msgstr ""
 
 #: calendar/qml/Main.qml:302
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "@title"
 msgid "3 Days"
-msgstr ""
+msgstr "Hari"
 
 #: calendar/qml/Main.qml:305
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "@title"
 msgid "Day"
-msgstr ""
+msgstr "Hari"
 
 #: calendar/qml/Main.qml:308
 #, kde-format
+msgctxt "@title"
 msgid "Schedule"
 msgstr ""
 
-#: calendar/qml/Main.qml:311 calendar/qml/MainViews/TodoView.qml:51
-#, kde-format
+#: calendar/qml/Main.qml:311
+#, fuzzy, kde-format
+#| msgid "Task"
+msgctxt "@title"
 msgid "Tasks"
-msgstr ""
+msgstr "Tugas"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:263
 #, kde-format
@@ -1649,9 +1675,20 @@ msgstr ""
 msgid "No tasks left to complete"
 msgstr ""
 
+#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoView.qml:63
+#, kde-format
+msgid "Create"
+msgstr ""
+
 #: calendar/qml/MainViews/TodoTreeView.qml:235
 #, kde-format
 msgid " , is overdue"
+msgstr ""
+
+#: calendar/qml/MainViews/TodoView.qml:51
+#, kde-format
+msgid "Tasks"
 msgstr ""
 
 #: calendar/qml/MainViews/TodoView.qml:103
@@ -3720,12 +3757,6 @@ msgstr ""
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"
 #~ msgstr "%1 %2"
-
-#~ msgid "Days"
-#~ msgstr "Hari"
-
-#~ msgid "Months"
-#~ msgstr "Bulan"
 
 #~ msgid "Years"
 #~ msgstr "Tahun"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-03-15 00:43+0000\n"
 "PO-Revision-Date: 2021-06-24 17:34-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -101,13 +101,13 @@ msgid "To Date…"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:199
-#: calendar/qml/Controls/DayTapHandler.qml:27 calendar/qml/Main.qml:281
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:206
-#: calendar/qml/Controls/DayTapHandler.qml:34 calendar/qml/Main.qml:287
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr ""
@@ -1395,39 +1395,57 @@ msgstr ""
 msgid "Return to Location"
 msgstr ""
 
-#: calendar/qml/Main.qml:276 calendar/qml/MainViews/TodoTreeView.qml:140
-#: calendar/qml/MainViews/TodoView.qml:63
+#: calendar/qml/Main.qml:276
 #, kde-format
+msgctxt "@action:button"
 msgid "Create"
+msgstr ""
+
+#: calendar/qml/Main.qml:281
+#, kde-format
+msgctxt "@action:button"
+msgid "New Event…"
+msgstr ""
+
+#: calendar/qml/Main.qml:287
+#, kde-format
+msgctxt "@action:button"
+msgid "New Task…"
 msgstr ""
 
 #: calendar/qml/Main.qml:296
 #, kde-format
+msgctxt "@title"
 msgid "Month"
 msgstr ""
 
 #: calendar/qml/Main.qml:299
 #, kde-format
+msgctxt "@title"
 msgid "Week"
 msgstr ""
 
 #: calendar/qml/Main.qml:302
 #, kde-format
+msgctxt "@title"
 msgid "3 Days"
 msgstr ""
 
 #: calendar/qml/Main.qml:305
 #, kde-format
+msgctxt "@title"
 msgid "Day"
 msgstr ""
 
 #: calendar/qml/Main.qml:308
 #, kde-format
+msgctxt "@title"
 msgid "Schedule"
 msgstr ""
 
-#: calendar/qml/Main.qml:311 calendar/qml/MainViews/TodoView.qml:51
+#: calendar/qml/Main.qml:311
 #, kde-format
+msgctxt "@title"
 msgid "Tasks"
 msgstr ""
 
@@ -1600,9 +1618,20 @@ msgstr ""
 msgid "No tasks left to complete"
 msgstr ""
 
+#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoView.qml:63
+#, kde-format
+msgid "Create"
+msgstr ""
+
 #: calendar/qml/MainViews/TodoTreeView.qml:235
 #, kde-format
 msgid " , is overdue"
+msgstr ""
+
+#: calendar/qml/MainViews/TodoView.qml:51
+#, kde-format
+msgid "Tasks"
 msgstr ""
 
 #: calendar/qml/MainViews/TodoView.qml:103
