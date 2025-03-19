@@ -16,8 +16,8 @@ QQC2.ToolButton {
             // We don't want to write to config as when narrow the button will only open the modal drawer
             mainDrawer.collapsed = !mainDrawer.collapsed;
         } else {
-            Config.forceCollapsedMainDrawer = !Config.forceCollapsedMainDrawer;
-            Config.save()
+            Calendar.Config.forceCollapsedMainDrawer = !Calendar.Config.forceCollapsedMainDrawer;
+            Calendar.Config.save()
         }
     }
 
