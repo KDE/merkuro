@@ -57,7 +57,7 @@ PathView {
         asynchronous: !isCurrentItem
         visible: status === Loader.Ready
 
-        sourceComponent: BasicMonthGridView {
+        sourceComponent: DayGridView {
             width: root.width
             height: root.height
 

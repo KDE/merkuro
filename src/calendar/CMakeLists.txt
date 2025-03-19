@@ -124,7 +124,6 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/MainViews/DayGridViewForeground.qml
         qml/MainViews/DayGridView.qml
         qml/MainViews/SwipeableMonthGridView.qml
-        qml/MainViews/BasicMonthGridView.qml
         qml/MainViews/MonthView.qml
         qml/MainViews/SwipeableMonthListView.qml
         qml/MainViews/BasicMonthListView.qml

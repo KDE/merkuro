@@ -79,7 +79,7 @@ Kirigami.Page {
         id: basicViewLoader
         anchors.fill: parent
         active: Calendar.Config.monthGridMode === Calendar.Config.BasicMonthGrid
-        sourceComponent: BasicMonthGridView {
+        sourceComponent: DayGridView {
             anchors.fill: parent
 
             firstDayOfMonth: Calendar.DateTimeState.firstDayOfMonth

@@ -13,6 +13,8 @@ import org.kde.merkuro.calendar as Calendar
 Item {
     id: root
 
+    objectName: "monthView"
+
     property var openOccurrence
 
     property int daysToShow: daysPerRow * 6
