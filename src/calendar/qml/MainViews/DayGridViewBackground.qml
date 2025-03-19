@@ -14,7 +14,6 @@ Column {
     id: root
 
     readonly property alias dayLabelsBar: dayLabelsBarComponent
-    required property Component weekHeaderDelegate
     required property Item parentGridView
 
     required property date startDate
@@ -94,12 +93,23 @@ Column {
 
                     property date startDate: Calendar.Utils.addDaysToDate(root.startDate, weekRow.index * 7)
 
-                    sourceComponent: root.weekHeaderDelegate
                     active: Calendar.Config.showWeekNumbers
                     visible: Calendar.Config.showWeekNumbers
 
                     Layout.preferredWidth: root.weekHeaderWidth
                     Layout.fillHeight: true
+
+                    sourceComponent: QQC2.Label {
+                        padding: Kirigami.Units.smallSpacing
+                        verticalAlignment: Qt.AlignTop
+                        horizontalAlignment: Qt.AlignHCenter
+                        text: Calendar.Utils.weekNumber(weekHeader.startDate)
+                        background: Rectangle {
+                            Kirigami.Theme.inherit: false
+                            Kirigami.Theme.colorSet: Kirigami.Theme.View
+                            color: Kirigami.Theme.backgroundColor
+                        }
+                    }
                 }
 
                 Item {

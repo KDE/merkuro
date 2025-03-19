@@ -11,16 +11,4 @@ DayGridView {
     id: dayView
 
     objectName: "monthView"
-
-    weekHeaderDelegate: QQC2.Label {
-        padding: Kirigami.Units.smallSpacing
-        verticalAlignment: Qt.AlignTop
-        horizontalAlignment: Qt.AlignHCenter
-        text: Calendar.Utils.weekNumber(startDate)
-        background: Rectangle {
-            Kirigami.Theme.inherit: false
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            color: Kirigami.Theme.backgroundColor
-        }
-    }
 }
