@@ -10,46 +10,7 @@ import org.kde.merkuro.calendar as Calendar
 DayGridView {
     id: dayView
 
-    readonly property bool isLarge: width > Kirigami.Units.gridUnit * 40
-    readonly property bool isTiny: width < Kirigami.Units.gridUnit * 18
-
     objectName: "monthView"
-
-    dayHeaderDelegate: QQC2.Control {
-        Layout.maximumHeight: Kirigami.Units.gridUnit * 2
-        contentItem: Kirigami.Heading {
-            text: {
-                const longText = day.toLocaleString(Qt.locale(), "dddd");
-                const midText = day.toLocaleString(Qt.locale(), "ddd");
-                const shortText = Qt.locale().name.startsWith("zh_") ? midText.slice(-1) : midText.slice(0, 1);
-                switch(Calendar.Config.weekdayLabelLength) {
-                    case Calendar.Config.Full:
-                        let chosenFormat = "dddd"
-                        return dayView.isLarge ? longText : dayView.isTiny ? shortText : midText;
-                    case Calendar.Config.Abbreviated:
-                        return dayView.isTiny ? shortText : midText;
-                    case Calendar.Config.Letter:
-                    default:
-                        return shortText;
-                }
-            }
-            level: 2
-            leftPadding: Kirigami.Units.smallSpacing
-            rightPadding: Kirigami.Units.smallSpacing
-            horizontalAlignment: {
-                switch(Calendar.Config.weekdayLabelAlignment) {
-                    case Calendar.Config.Left:
-                        return Text.AlignLeft;
-                    case Calendar.Config.Center:
-                        return Text.AlignHCenter;
-                    case Calendar.Config.Right:
-                        return Text.AlignRight;
-                    default:
-                        return Text.AlignHCenter;
-                }
-            }
-        }
-    }
 
     weekHeaderDelegate: QQC2.Label {
         padding: Kirigami.Units.smallSpacing

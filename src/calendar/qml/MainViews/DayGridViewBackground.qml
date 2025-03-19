@@ -15,7 +15,6 @@ Column {
 
     readonly property alias dayLabelsBar: dayLabelsBarComponent
     required property Component weekHeaderDelegate
-    required property Component dayHeaderDelegate
     required property Item parentGridView
 
     required property date startDate
@@ -60,7 +59,6 @@ Column {
     Calendar.DayLabelsBar {
         id: dayLabelsBarComponent
 
-        delegate: root.dayHeaderDelegate
         startDate: root.startDate
         dayWidth: root.dayWidth
         daysToShow: root.daysPerRow

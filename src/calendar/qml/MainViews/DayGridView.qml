@@ -31,7 +31,6 @@ Item {
 
     property bool paintGrid: true
     property bool showDayIndicator: true
-    property Component dayHeaderDelegate
     property Component weekHeaderDelegate
     property alias bgLoader: backgroundLoader.item
     property bool isCurrentView: true
@@ -71,7 +70,6 @@ Item {
             id: rootBackgroundColumn
             parentGridView: root
             weekHeaderDelegate: root.weekHeaderDelegate
-            dayHeaderDelegate: root.dayHeaderDelegate
             startDate: root.startDate
             month: root.month
             dayWidth: root.dayWidth
