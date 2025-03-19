@@ -91,7 +91,7 @@ Components.ConvergentContextMenu {
 
     QQC2.Action {
         icon.name: "color-picker"
-        text: i18nc("@action:inmenu", "Set calendar colour…")
+        text: i18nc("@action:inmenu", "Set calendar color…")
         onTriggered: {
             colorDialogLoader.active = true;
             colorDialogLoader.item.open();
