@@ -109,7 +109,7 @@ QQC2.Control {
                     visible: source
 
                     layer {
-                        enabled: imageIcon.visible
+                        enabled: GraphicsInfo.api !== GraphicsInfo.Software && imageIcon.visible
                         effect: OpacityMask {
                             maskSource: Rectangle {
                                 width: imageIcon.width
