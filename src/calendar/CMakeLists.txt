@@ -146,6 +146,7 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/Dialogs/DeleteCalendarDialog.qml
         qml/Dialogs/CollectionPickerPage.qml
         qml/Dialogs/RecurringIncidenceChangePage.qml
+        qml/Dialogs/EditCalendarPage.qml
 
         qml/Controls/DateControls/TimePicker.qml
         qml/Controls/DateControls/TimeCombo.qml

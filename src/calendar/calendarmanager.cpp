@@ -18,6 +18,7 @@
 #include <Akonadi/AgentInstanceModel>
 #include <Akonadi/AgentManager>
 #include <Akonadi/AttributeFactory>
+#include <Akonadi/CachePolicy>
 #include <Akonadi/Collection>
 #include <Akonadi/CollectionColorAttribute>
 #include <Akonadi/CollectionDeleteJob>
@@ -654,6 +655,7 @@ QVariantMap CalendarManager::getCollectionDetails(QVariant collectionId)
     collectionDetails[QLatin1StringView("displayName")] = collection.displayName();
     collectionDetails[QLatin1StringView("color")] = m_baseModel->color(collection.id());
     collectionDetails[QLatin1StringView("count")] = collection.statistics().count();
+    collectionDetails[QLatin1StringView("size")] = collection.statistics().size();
     collectionDetails[QLatin1StringView("isResource")] = Akonadi::CollectionUtils::isResource(collection);
     collectionDetails[QLatin1StringView("resource")] = collection.resource();
     collectionDetails[QLatin1StringView("readOnly")] = collection.rights().testFlag(Collection::ReadOnly);
@@ -727,14 +729,6 @@ void CalendarManager::deleteCollection(qint64 collectionId)
     }
 }
 
-void CalendarManager::editCollection(qint64 collectionId)
-{ // TODO: Reimplement this dialog in QML
-    auto collection = m_calendar->collection(collectionId);
-    QPointer<Akonadi::CollectionPropertiesDialog> dlg = new Akonadi::CollectionPropertiesDialog(collection);
-    dlg->setWindowTitle(i18nc("@title:window", "Properties of Calendar %1", collection.name()));
-    dlg->show();
-}
-
 void CalendarManager::toggleCollection(qint64 collectionId)
 {
     const auto matches = m_calendar->checkableProxyModel()->match(m_calendar->checkableProxyModel()->index(0, 0),
@@ -754,6 +748,12 @@ IncidenceWrapper *CalendarManager::createIncidenceWrapper()
 {
     // Ownership is transfered to the qml engine
     return new IncidenceWrapper(this, nullptr);
+}
+
+Akonadi::Collection CalendarManager::getCollection(qint64 collectionId)
+{
+    qWarning() << "getting" << collectionId;
+    return m_calendar->collection(collectionId);
 }
 
 #ifndef UNITY_CMAKE_SUPPORT

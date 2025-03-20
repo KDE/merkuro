@@ -56,7 +56,12 @@ Components.ConvergentContextMenu {
     QQC2.Action {
         icon.name: "edit-entry"
         text: i18nc("@action:inmenu", "Edit Calendar…")
-        onTriggered: Calendar.CalendarManager.editCollection(root.collectionId);
+        onTriggered: {
+            let component = Qt.createComponent("org.kde.merkuro.calendar", "EditCalendarPage");
+            pageStack.pushDialogLayer(component, {
+                collectionId: root.collectionId
+            }, {});
+        }
     }
 
     QQC2.Action {
