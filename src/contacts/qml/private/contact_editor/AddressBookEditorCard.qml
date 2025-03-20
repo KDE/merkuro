@@ -16,7 +16,7 @@ FormCard.FormCard {
     id: root
 
     required property ContactEditor contactEditor
-    required property bool mode
+    required property int mode
 
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
