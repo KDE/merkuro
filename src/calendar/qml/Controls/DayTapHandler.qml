@@ -27,14 +27,14 @@ TapHandler {
                 text: i18n("New Event…")
                 icon.name: "resource-calendar-insert"
                 onClicked: {
-                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
                 }
             }
             QQC2.MenuItem {
                 text: i18n("New Task…")
                 icon.name: "view-task-add"
                 onClicked: {
-                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
                 }
             }
         }
@@ -58,7 +58,7 @@ TapHandler {
             const position = eventPoint.position;
             clickX = position.x;
             clickY = position.y;
-            IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, defaultType, addDate, 0, false);
+            Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, defaultType, addDate, 0, false);
         }
     }
 }
