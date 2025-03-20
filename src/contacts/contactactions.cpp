@@ -125,7 +125,6 @@ void ContactActions::setContactApplication(ContactApplication *ContactApplicatio
     m_contactEditAction = ContactApplication->action("contact_edit"_L1);
     connect(m_contactEditAction, &QAction::triggered, this, [this] {
         const auto items = selectionToItems();
-        qWarning() << items.size();
         if (items.isEmpty()) {
             return;
         }
