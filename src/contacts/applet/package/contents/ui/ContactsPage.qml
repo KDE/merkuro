@@ -62,6 +62,11 @@ PlasmaComponents3.ScrollView {
 
     contentWidth: availableWidth - contentItem.leftMargin - contentItem.rightMargin
 
+    ItemSelectionModel {
+        id: contactSelectionModel
+        model: contactsList.model
+    }
+
     contentItem: ListView {
         id: contactsList
         model: KSortFilterProxyModel {
@@ -77,6 +82,7 @@ PlasmaComponents3.ScrollView {
             property: "display"
             criteria: ViewSection.FirstCharacter
             delegate: Kirigami.ListSectionHeader {
+                required property string section
                 text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
             }
         }
@@ -84,9 +90,7 @@ PlasmaComponents3.ScrollView {
         clip: true
         focus: true
         delegate: ContactListItem {
-            width: contactsList.width
-            name: model && model.display && model.display.trim().length > 0 ? model.display : i18nc("Placeholder", "No Name")
-            avatarIcon: model && model.decoration
+            selectionModel: contactSelectionModel
             onClicked: stack.push(Qt.resolvedUrl('./ContactPage.qml'), {
                 itemId: model.itemId,
             })

@@ -36,7 +36,6 @@ public:
     QAbstractItemModel *contactCollections() const;
     QAbstractItemModel *filteredContacts() const;
 
-    Q_INVOKABLE QUrl decorationToUrl(QVariant decoration);
     Q_INVOKABLE Akonadi::Item getItem(qint64 itemId);
 
     Q_INVOKABLE void setCollectionColor(Akonadi::Collection collection, const QColor &color);

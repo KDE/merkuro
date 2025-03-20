@@ -61,6 +61,8 @@ target_sources(merkuro_contact PRIVATE
     globalcontactmodel.h
     certificatesmodel.cpp
     certificatesmodel.h
+    contactactions.cpp
+    contactactions.h
     contactmanager.h
     contactmanager.cpp
     contactcollectionmodel.cpp
@@ -111,7 +113,7 @@ ecm_target_qml_sources(merkuro_contact
     qml/private/PhoneNumberDialog.qml
     qml/private/QrCodePage.qml
     qml/private/AddressBookMenu.qml
-    qml/private/DeleteContactAction.qml
+    qml/private/DeleteContactDialog.qml
 )
 
 ecm_target_qml_sources(merkuro_contact

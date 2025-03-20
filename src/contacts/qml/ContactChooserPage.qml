@@ -17,31 +17,39 @@ ContactsPage {
 
     property var attendeeAkonadiIds
 
+    ItemSelectionModel {
+        id: contactSelectionModel
+        model: root.model
+    }
+
     actions: Kirigami.Action {
         icon.name: "object-select-symbolic"
         text: i18n("Done")
         onTriggered: pageStack.pop()
     }
+
     contactDelegate: ContactListItem {
         height: Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit * 3 : Kirigami.Units.gridUnit * 2
         name: model && model.display
         avatarIcon: model && model.decoration
-        added: root.attendeeAkonadiIds.includes(model.itemId)
+        //added: root.attendeeAkonadiIds.includes(model.itemId)
 
-        onClicked: if (added) {
-            removeAttendee(itemId);
-        } else {
-            const allEmail = root.model.data(root.model.index(index, 0), ContactsModel.AllEmailsRole);
-            if (allEmail.length > 1) {
-                emailsView.model = allEmail;
-                emailsView.itemId = model.itemId;
-                emailPickerSheet.open();
-            } else if(allEmail.length === 1) {
-                addAttendee(model.itemId, allEmail[0])
-            } else {
-                addAttendee(model.itemId, undefined)
-            }
-        }
+        onClicked: contactSelectionModel.select(root.selectionModel.model.index(root.index, 0), ItemSelectionModel.Toggle);
+
+        //if (added) {
+        //    removeAttendee(itemId);
+        //} else {
+        //    const allEmail = root.model.data(root.model.index(index, 0), ContactsModel.AllEmailsRole);
+        //    if (allEmail.length > 1) {
+        //        emailsView.model = allEmail;
+        //        emailsView.itemId = model.itemId;
+        //        emailPickerSheet.open();
+        //    } else if(allEmail.length === 1) {
+        //        addAttendee(model.itemId, allEmail[0])
+        //    } else {
+        //        addAttendee(model.itemId, undefined)
+        //    }
+        //}
     }
 
     Kirigami.OverlaySheet {

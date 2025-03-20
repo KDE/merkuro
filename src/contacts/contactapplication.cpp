@@ -10,6 +10,8 @@
 #include <QIcon>
 #include <QQuickWindow>
 
+using namespace Qt::StringLiterals;
+
 ContactApplication::ContactApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
     , mContactCollection(new KirigamiActionCollection(parent, i18n("Contact")))
@@ -53,6 +55,18 @@ void ContactApplication::setupActions()
         action->setText(i18n("New Contact Group…"));
         action->setIcon(QIcon::fromTheme(QStringLiteral("contact-new-symbolic")));
     }
+
+    auto action = new QAction(QIcon::fromTheme(u"edit-entry-symbolic"_s), i18nc("@action", "Edit contact…"), this);
+    mainCollection()->addAction("contact_edit"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"delete-symbolic"_s), i18nc("@action", "Delete contact"), this);
+    mainCollection()->addAction("contact_delete"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"edit-move-symbolic"_s), i18nc("@action", "Move to…"), this);
+    mainCollection()->addAction("contact_move_to"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"edit-copy-symbolic"_s), i18nc("@action", "Copy to…"), this);
+    mainCollection()->addAction("contact_copy_to"_L1, action);
 
     readSettings();
 }
