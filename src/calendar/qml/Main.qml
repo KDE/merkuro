@@ -60,7 +60,7 @@ BaseApplication {
         }
         root.pageStack.replace(view, viewSettings);
 
-        if (root.filterHeaderBarLoaderItem.active && root.pageStack.currentItem.mode !== CalendarApplication.Contact) {
+        if (root.filterHeaderBarLoaderItem.active) {
             root.pageStack.currentItem.header = root.filterHeaderBarLoaderItem.item;
         }
     }
