@@ -13,7 +13,11 @@ import org.kde.merkuro.calendar as Calendar
 Calendar.Importer {
     id: root
 
-    calendar: Calendar.CalendarManager.calendar
+    // Work around: Unable to assign [undefined] to QSharedPointer<Akonadi::ETMCalendar>
+    // calendar: Calendar.CalendarManager.calendar
+    Component.onCompleted: {
+        calendar = Calendar.CalendarManager.calendar;
+    }
     importAction: Calendar.CalendarApplication.action("import_calendar")
 
     property var _connectionApplication: Connections {

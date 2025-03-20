@@ -41,8 +41,12 @@ Column {
             model: Calendar.IncidenceOccurrenceModel {
                 start: root.startDate
                 length: root.daysToShow
-                calendar: Calendar.CalendarManager.calendar
                 filter: Calendar.Filter
+                // Work around: Unable to assign [undefined] to QSharedPointer<Akonadi::ETMCalendar>
+                // calendar: Calendar.CalendarManager.calendar
+                Component.onCompleted: {
+                    calendar = Calendar.CalendarManager.calendar;
+                }
             }
         }
 

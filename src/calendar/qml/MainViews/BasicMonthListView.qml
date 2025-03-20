@@ -89,7 +89,7 @@ QQC2.ScrollView {
            model: Calendar.IncidenceOccurrenceModel {
                start: scrollView.startDate
                length: scrollView.daysInMonth
-               calendar: Calendar.CalendarManager.calendar
+               Component.onCompleted: calendar = Calendar.CalendarManager.calendar
                filter: Calendar.Filter
            }
        }

@@ -293,6 +293,8 @@ Column {
 
                 Repeater {
                     model: Calendar.MultiDayIncidenceModel {
+                        id: multiDayIncidenceModel
+
                         periodLength: viewColumn.daysToShow
                         filters: Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
                         showTodos: Calendar.Config.showTodosInCalendarViews
@@ -301,8 +303,13 @@ Column {
                         model: Calendar.IncidenceOccurrenceModel {
                             start: viewColumn.startDate
                             length: viewColumn.daysToShow
-                            calendar: Calendar.CalendarManager.calendar
                             filter: Calendar.Filter
+                            // Work around: Unable to assign [undefined] to QSharedPointer<Akonadi::ETMCalendar>
+                            // calendar: Calendar.CalendarManager.calendar
+                            Component.onCompleted: {
+                                calendar = Calendar.CalendarManager.calendar;
+                                multiDayIncidenceModel.filters = Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
+                            }
                         }
                     }
 
@@ -662,6 +669,7 @@ Column {
                     Repeater {
                         id: dayColumnRepeater
                         model: Calendar.HourlyIncidenceModel {
+                           id: hourlyIncidenceModel
                            periodLength: viewColumn.periodLength
                            filters: Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
                            showTodos: Calendar.Config.showTodosInCalendarViews
@@ -670,7 +678,12 @@ Column {
                            model: Calendar.IncidenceOccurrenceModel {
                                start: viewColumn.startDate
                                length: viewColumn.daysToShow
-                               calendar: Calendar.CalendarManager.calendar
+                               // Work around: Unable to assign [undefined] to QSharedPointer<Akonadi::ETMCalendar>
+                               // calendar: Calendar.CalendarManager.calendar
+                               Component.onCompleted: {
+                                   calendar = Calendar.CalendarManager.calendar;
+                                   hourlyIncidenceModel.filters = Calendar.MultiDayIncidenceModel.AllDayOnly | Calendar.MultiDayIncidenceModel.MultiDayOnly
+                               }
                                filter: Calendar.Filter
                            }
                         }
