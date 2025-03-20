@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-15 00:43+0000\n"
+"POT-Creation-Date: 2025-03-20 00:43+0000\n"
 "PO-Revision-Date: 2024-10-18 15:55+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -252,7 +252,7 @@ msgstr "Vývojář"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
@@ -1437,8 +1437,7 @@ msgid "Return to Location"
 msgstr "Vrátit na pozici"
 
 #: calendar/qml/Main.qml:276
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Vytvořit"
@@ -1486,15 +1485,13 @@ msgid "Day"
 msgstr "Den"
 
 #: calendar/qml/Main.qml:308
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
-msgstr "Rozvrh"
+msgstr "Naplánovat"
 
 #: calendar/qml/Main.qml:311
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Úlohy"
@@ -1563,7 +1560,7 @@ msgstr "Končí v %1"
 msgid "Runs All Day"
 msgstr "Běží celý den"
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:229
+#: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Dnes</b>"
@@ -1711,10 +1708,9 @@ msgid "Quickly Add a New Task."
 msgstr "Rychle přidat nový úkol."
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "dnů"
+msgstr "Svátky"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
@@ -1741,9 +1737,11 @@ msgid "Delete Calendar"
 msgstr ""
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set calendar colour…"
 msgctxt "@action:inmenu"
-msgid "Set calendar colour…"
+msgid "Set calendar color…"
 msgstr "Nastavit barvu kalendáře..."
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:108
