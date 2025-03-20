@@ -53,7 +53,7 @@ void MailApplication::setupActions()
     action = new QAction(QIcon::fromTheme(u"user-trash-symbolic"_s), i18nc("@action", "Move to Trash"), this);
     mainCollection()->addAction("mail_trash"_L1, action);
 
-    action = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18nc("@action", "Save as..."), this);
+    action = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18nc("@action", "Save as…"), this);
     mainCollection()->addAction("mail_save_as"_L1, action);
 
     action = new QAction(QIcon::fromTheme(u"edit-move-symbolic"_s), i18nc("@action", "Move to..."), this);

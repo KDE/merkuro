@@ -36,9 +36,8 @@ FormCard.FormCardPage {
             text: i18nc("@action:inmenu", "Edit")
             onTriggered: openEditor()
         },
-        DeleteContactAction {
-            name: page.addressee.formattedName
-            item: page.addressee.addresseeItem
+        Kirigami.Action {
+            fromQAction: ContactApplication.action('contact_delete')
         },
         Kirigami.Action {
             text: i18nc("@action:inmenu", "Cancel")

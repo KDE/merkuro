@@ -139,21 +139,6 @@ Akonadi::Item ContactManager::getItem(qint64 itemId)
     return item;
 }
 
-QUrl ContactManager::decorationToUrl(QVariant decoration)
-{
-    if (!decoration.canConvert<QImage>()) {
-        return {};
-    }
-
-    auto imgDecoration = decoration.value<QImage>();
-    QByteArray byteArray;
-    QBuffer buffer(&byteArray);
-    buffer.open(QIODevice::WriteOnly);
-    imgDecoration.save(&buffer, "png");
-    const QString base64 = QString::fromUtf8(byteArray.toBase64());
-    return QUrl(QLatin1StringView("data:image/png;base64,") + base64);
-}
-
 void ContactManager::deleteItem(const Akonadi::Item &item)
 {
     new Akonadi::ItemDeleteJob(item);

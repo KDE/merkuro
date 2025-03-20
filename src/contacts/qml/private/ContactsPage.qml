@@ -21,6 +21,7 @@ Kirigami.ScrollablePage {
 
     property var attendeeAkonadiIds
     property alias contactDelegate: contactsList.delegate
+    property alias selectionModel: contactSelectionModel
 
     header: Controls.Control {
         contentItem: Kirigami.SearchField {
@@ -30,14 +31,25 @@ Kirigami.ScrollablePage {
     }
     property alias model: contactsList.model
 
+    ItemSelectionModel {
+        id: contactSelectionModel
+        model: contactsList.model
+    }
+
     ListView {
         id: contactsList
 
         reuseItems: true
 
-        section.property: "display"
-        section.criteria: ViewSection.FirstCharacter
-        section.delegate: Kirigami.ListSectionHeader {text: section}
+        section {
+            property: "display"
+            criteria: ViewSection.FirstCharacter
+            delegate: Kirigami.ListSectionHeader {
+                required property string section
+                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
+            }
+        }
+
         clip: true
         model: ContactsModel {}
 
