@@ -140,7 +140,7 @@ Kirigami.ScrollablePage {
             QQC2.ToolButton {
                 id: addTagButton
                 icon.name: "tag-new"
-                text: i18n("Quickly Add a New Tag.")
+                text: i18nc("@action:button", "Add Tag")
                 display: QQC2.ToolButton.IconOnly
 
                 onClicked: if (newTagField.text.length > 0) {
