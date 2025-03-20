@@ -20,6 +20,8 @@ add_library(MerkuroComponents SHARED
     colorproxymodel.h
     sortedcollectionproxymodel.cpp
     sortedcollectionproxymodel.h
+    utils.cpp
+    utils.h
     ${merkuro_components_SRCS}
 )
 
