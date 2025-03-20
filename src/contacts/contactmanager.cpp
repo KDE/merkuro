@@ -167,7 +167,7 @@ void ContactManager::deleteCollection(const Akonadi::Collection &collection)
         auto job = new Akonadi::CollectionDeleteJob(collection, this);
         connect(job, &Akonadi::CollectionDeleteJob::result, this, [](KJob *job) {
             if (job->error()) {
-                qCWarning(MERKURO_LOG) << "Error occurred deleting collection: " << job->errorString();
+                qCWarning(MERKURO_CONTACT_LOG) << "Error occurred deleting collection: " << job->errorString();
             }
         });
         return;
@@ -214,7 +214,7 @@ void ContactManager::setCollectionColor(Akonadi::Collection collection, const QC
     auto modifyJob = new Akonadi::CollectionModifyJob(collection);
     connect(modifyJob, &Akonadi::CollectionModifyJob::result, this, [this, collection, color](KJob *job) {
         if (job->error()) {
-            qCWarning(MERKURO_LOG) << "Error occurred modifying collection color: " << job->errorString();
+            qCWarning(MERKURO_CONTACT_LOG) << "Error occurred modifying collection color: " << job->errorString();
         } else {
             m_colorProxy->setColor(collection.id(), color);
         }

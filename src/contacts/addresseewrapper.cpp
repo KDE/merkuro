@@ -97,7 +97,7 @@ void AddresseeWrapper::setAddresseeItem(const Akonadi::Item &addresseeItem)
                 Q_EMIT addresseeItemChanged();
                 Q_EMIT collectionChanged();
             } else {
-                qCWarning(MERKURO_LOG) << "This is not an addressee item.";
+                qCWarning(MERKURO_CONTACT_LOG) << "This is not an addressee item.";
             }
         });
     }

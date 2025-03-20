@@ -3,11 +3,12 @@
 
 #pragma once
 
+#include "merkuro_contact_export.h"
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
 
-class EmailModel : public QAbstractListModel
+class MERKURO_CONTACT_EXPORT EmailModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
