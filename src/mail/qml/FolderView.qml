@@ -229,16 +229,17 @@ Kirigami.ScrollablePage {
             icon.name: "mail-folder-inbox"
         }
 
-        section.delegate: Kirigami.ListSectionHeader {
-            required property string section
-            label: section
+        section {
+            delegate: Kirigami.ListSectionHeader {
+                required property string section
+                label: section
+            }
+            property: "date"
         }
-        section.property: "date"
 
         onCurrentItemChanged: if (currentIndex !== -1 && currentItem) {
             mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(currentIndex, 0), ItemSelectionModel.Current);
 
-            let page;
             const pageStack = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack;
 
             if (pageStack.depth === 2) {

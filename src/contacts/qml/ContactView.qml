@@ -58,7 +58,7 @@ Kirigami.ScrollablePage {
         Kirigami.Theme.inherit: false
 
         visible: contactSelectionModel.hasSelection
-        height: visible ? implicitHeight: 0
+        height: visible ? implicitHeight : 0
 
         contentItem: RowLayout {
             spacing: Kirigami.Units.smallSpacing
@@ -110,7 +110,7 @@ Kirigami.ScrollablePage {
         selectionModel: contactSelectionModel
         contactApplication: ContactApplication
 
-        onMoveToRequested: (items) => {
+        onMoveToRequested: items => {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
             const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',
@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
             });
 
-            page.selected.connect((collection) => {
+            page.selected.connect(collection => {
                 contactActions.moveTo(items, collection);
                 page.closeDialog();
             });
@@ -127,7 +127,7 @@ Kirigami.ScrollablePage {
             });
         }
 
-        onCopyToRequested: (items) => {
+        onCopyToRequested: items => {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
             const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',

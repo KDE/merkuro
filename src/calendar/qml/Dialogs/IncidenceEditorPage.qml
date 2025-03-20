@@ -123,7 +123,7 @@ Kirigami.ScrollablePage {
                 root.incidenceWrapper.attendeesModel.addAttendee(itemId, email);
                 root.flickable.contentY = editorLoader.item.attendeesColumnY;
             }
-            onRemoveAttendee: (itemId) => {
+            onRemoveAttendee: itemId => {
                 root.incidenceWrapper.attendeesModel.deleteAttendeeFromAkonadiId(itemId)
                 root.flickable.contentY = editorLoader.item.attendeesColumnY;
             }
