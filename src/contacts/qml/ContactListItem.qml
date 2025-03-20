@@ -46,8 +46,7 @@ Delegates.RoundedItemDelegate {
         }
 
         Kirigami.Icon {
-            height: parent.height
-            width: height
+            Layout.fillHeight: true
             source: "checkmark"
             visible: added
         }
