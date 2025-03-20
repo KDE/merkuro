@@ -28,7 +28,7 @@ Components.MessageDialog {
     }
 
     QQC2.Label {
-        text: i18n("Do you really want to delete your contact: <b>%1</b>?", names.join(',') + " " + i18n("You won't be able to revert this action")
+        text: i18n("Do you really want to delete your contact: <b>%1</b>?") + names.join(',') + " " + i18n("You won't be able to revert this action")
         wrapMode: Text.WordWrap
         Layout.fillWidth: true
     }

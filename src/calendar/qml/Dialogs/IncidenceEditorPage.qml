@@ -105,14 +105,25 @@ Kirigami.ScrollablePage {
 
     Component {
         id: contactsPage
+
         ContactChooserPage {
+            id: contactChooserPage
+
+            Connections {
+                target: root.incidenceWrapper.attendeesModel
+
+                function onAttendeeDeleted(itemId: int): void {
+                    contactChooserPage.removeAttendeeByItemId(itemId);
+                }
+            }
+
             attendeeAkonadiIds: root.incidenceWrapper.attendeesModel.attendeesAkonadiIds
 
-            onAddAttendee: {
+            onAddAttendee: (itemId, email) => {
                 root.incidenceWrapper.attendeesModel.addAttendee(itemId, email);
                 root.flickable.contentY = editorLoader.item.attendeesColumnY;
             }
-            onRemoveAttendee: {
+            onRemoveAttendee: (itemId) => {
                 root.incidenceWrapper.attendeesModel.deleteAttendeeFromAkonadiId(itemId)
                 root.flickable.contentY = editorLoader.item.attendeesColumnY;
             }
@@ -981,11 +992,11 @@ Kirigami.ScrollablePage {
                         delegate: Kirigami.AbstractCard {
                             id: attendeeDelegate
 
-                            required property string name
-                            required property string email
-                            required property var status
-                            required property bool rsvp
                             required property int index
+                            required property string email
+                            required property string name
+                            required property bool rsvp
+                            required property int status
 
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing

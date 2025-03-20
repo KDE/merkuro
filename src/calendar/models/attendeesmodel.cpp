@@ -317,11 +317,25 @@ void AttendeesModel::deleteAttendee(int row)
     }
 
     KCalendarCore::Attendee::List currentAttendees(m_incidence->attendees());
+    KCalendarCore::Attendee deletedAttendee(currentAttendees.at(row));
+
     currentAttendees.removeAt(row);
     m_incidence->setAttendees(currentAttendees);
 
     Q_EMIT attendeesChanged();
     Q_EMIT layoutChanged();
+
+    auto job = new Akonadi::ContactSearchJob();
+    job->setQuery(Akonadi::ContactSearchJob::Email, deletedAttendee.email());
+
+    connect(job, &Akonadi::ContactSearchJob::result, this, [this](KJob *job) {
+        auto searchJob = qobject_cast<Akonadi::ContactSearchJob *>(job);
+
+        const auto items = searchJob->items();
+        for (const auto &item : items) {
+            Q_EMIT attendeeDeleted(item.id());
+        }
+    });
 }
 
 void AttendeesModel::deleteAttendeeFromAkonadiId(qint64 itemId)

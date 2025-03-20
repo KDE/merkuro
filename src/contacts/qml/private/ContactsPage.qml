@@ -19,9 +19,8 @@ Kirigami.ScrollablePage {
 
     title: i18n("Contacts")
 
-    property var attendeeAkonadiIds
     property alias contactDelegate: contactsList.delegate
-    property alias selectionModel: contactSelectionModel
+    readonly property alias selectionModel: contactSelectionModel
 
     header: Controls.Control {
         contentItem: Kirigami.SearchField {
@@ -40,6 +39,7 @@ Kirigami.ScrollablePage {
         id: contactsList
 
         reuseItems: true
+        currentIndex: -1
 
         section {
             property: "display"

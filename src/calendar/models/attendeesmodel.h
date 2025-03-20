@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <Akonadi/Item>
 #include <KCalendarCore/Calendar>
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
@@ -78,6 +79,7 @@ public:
 Q_SIGNALS:
     void incidencePtrChanged();
     void attendeesChanged();
+    void attendeeDeleted(Akonadi::Item::Id id);
     void attendeeStatusModelChanged();
     void attendeesAkonadiIdsChanged();
 
