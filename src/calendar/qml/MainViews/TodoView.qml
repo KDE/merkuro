@@ -203,8 +203,8 @@ Kirigami.ScrollablePage {
 
         rightActions: Kirigami.Action {
             icon.name: "list-add"
-            text: i18n("Quickly Add a New Task.")
-            tooltip: i18n("Quickly Add a New Task.")
+            text: i18nc("@action:button", "Add Task")
+            tooltip: text
             enabled: addField.text !== ""
             onTriggered: addField.addTodo()
         }
