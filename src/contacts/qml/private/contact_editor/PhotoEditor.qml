@@ -56,7 +56,7 @@ ColumnLayout {
                 }
 
                 layer {
-                    enabled: true
+                    enabled: GraphicsInfo.api !== GraphicsInfo.Software
                     effect: OpacityMask {
                         maskSource: mask
                     }
