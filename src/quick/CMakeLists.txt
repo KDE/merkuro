@@ -14,6 +14,8 @@ target_sources(akonadi_quick_plugin PRIVATE
     collectioncomboboxmodel.h
     collectionpickermodel.cpp
     collectionpickermodel.h
+    collectioneditorcontroller.cpp
+    collectioneditorcontroller.h
     collection.cpp
     collection.h
     mimetypes.cpp

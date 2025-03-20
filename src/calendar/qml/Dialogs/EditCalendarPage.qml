@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Tobias Fella <tobias.fella@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 
@@ -18,8 +20,12 @@ FormCard.FormCardPage {
     title: i18nc("@title", "Edit Calendar")
 
     property int collectionId
-    property Akonadi.collection collection: Calendar.CalendarManager.getCollection(collectionId)
-    onCollectionChanged: console.warn("colle change")
+    property var collection: Calendar.CalendarManager.getCollection(collectionId)
+
+    Akonadi.CollectionEditorController {
+        id: editor
+        collectionId: root.collectionId
+    }
 
     FormCard.FormHeader {
         title: i18nc("@title", "General")
@@ -27,21 +33,21 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormTextFieldDelegate {
             id: displayNameField
-            text: root.collection.displayName
+            text: editor.displayName
+            onEditingFinished: if (editor.displayName !== displayName) {
+                editor.displayName = text;
+                editor.save();
+            }
             label: i18nc("@label:textbox", "Name")
         }
+        FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
             id: iconField
             text: i18nc("@label:textbox", "Icon")
-            iconName: root.collection.iconName
-        }
-        FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Save")
-            onClicked: {
-                root.collection.displayName = displayNameField.text;
-                root.collection.iconName = iconField.text;
-                root.collection.saveChanges();
-                console.warn("collection:", root.collection)
+            iconName: editor.iconName
+            onIconNameChanged: if (editor.iconName !== iconName) {
+                editor.iconName = iconName;
+                editor.save();
             }
         }
     }
@@ -53,6 +59,7 @@ FormCard.FormCardPage {
             description: i18ncp("@info", "%1 entry", "%1 entries", root.collection.statistics.count)
             text: i18nc("@label", "Content")
         }
+        FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             description: Format.formatByteSize(root.collection.statistics.size)
             text: i18nc("@label", "Size")
@@ -65,24 +72,26 @@ FormCard.FormCardPage {
         FormCard.FormCheckDelegate {
             id: useParent
             text: i18nc("@option:check", "Use options from parent folder or account")
-            checked: root.collection.cachePolicy.inheritFromParent
-            onCheckedChanged: {
-                root.collection.cachePolicy.inheritFromParent = checked;
-                root.collection.saveChanges();
+            checked: editor.cachePolicy.inheritFromParent
+            onToggled: {
+                editor.cachePolicy.inheritFromParent = checked;
+                editor.save();
             }
         }
+        FormCard.FormDelegateSeparator {}
         FormCard.FormCheckDelegate {
             text: i18nc("@option:check", "Synchronize when selecting this folder")
-            checked: root.collection.cachePolicy.syncOnDemand
-            onCheckedChanged: {
-                root.collection.cachePolicy.syncOnDemany = checked;
-                root.collection.saveChanges();
+            checked: editor.cachePolicy.syncOnDemand
+            onToggled: {
+                editor.cachePolicy.syncOnDemand = checked;
+                editor.save();
             }
             enabled: !useParent.checked
         }
+        FormCard.FormDelegateSeparator {}
         FormCard.FormSpinBoxDelegate {
             label: i18nc("@label:spinbox", "Synchronize after")
-            value: root.collection.cachePolicy.intervalCheckTime
+            value: editor.cachePolicy.intervalCheckTime
             enabled: !useParent.checked
             textFromValue: function(value, locale) {
                 if (value === 0) {
@@ -95,12 +104,13 @@ FormCard.FormCardPage {
                 return parseInt(text)
             }
             onValueChanged: {
-                if (value === 0) {
-                    root.collection.cachePolicy.intervalCheckTime = -1
-                } else {
-                    root.collection.cachePolicy.intervalCheckTime = value
+                if (value === 0 && editor.cachePolicy.intervalCheckTime !== -1) {
+                    editor.cachePolicy.intervalCheckTime = -1
+                    editor.save();
+                } else if (editor.cachePolicy.intervalCheckTime !== value) {
+                    editor.cachePolicy.intervalCheckTime = value
+                    editor.save();
                 }
-                root.collection.saveChanges();
             }
             stepSize: 1
             from: 0
