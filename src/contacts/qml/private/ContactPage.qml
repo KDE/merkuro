@@ -23,7 +23,7 @@ FormCard.FormCardPage {
 
     title: addressee.formattedName
 
-    function openEditor() {
+    function openEditor(): void {
         pageStack.pushDialogLayer(Qt.resolvedUrl("./contact_editor/ContactEditorPage.qml"), {
             mode: ContactEditor.EditMode,
             item: page.addressee.addresseeItem,

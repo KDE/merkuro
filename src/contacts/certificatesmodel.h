@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "merkuro_contact_export.h"
 #include <QAbstractListModel>
 #include <QWindow>
 #include <qqmlregistration.h>
@@ -12,7 +13,7 @@ namespace GpgME
 class Key;
 }
 
-class CertificatesModel : public QAbstractListModel
+class MERKURO_CONTACT_EXPORT CertificatesModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT

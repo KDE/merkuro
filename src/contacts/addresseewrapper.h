@@ -13,13 +13,14 @@
 #include <qqmlregistration.h>
 
 #include "addressmodel.h"
+#include "merkuro_contact_export.h"
 
 #include "emailmodel.h"
 #include "imppmodel.h"
 #include "phonemodel.h"
 
 /// This class is a QObject wrapper for a KContact::Adressee
-class AddresseeWrapper : public QObject, public Akonadi::ItemMonitor
+class MERKURO_CONTACT_EXPORT AddresseeWrapper : public QObject, public Akonadi::ItemMonitor
 {
     Q_OBJECT
     QML_ELEMENT
