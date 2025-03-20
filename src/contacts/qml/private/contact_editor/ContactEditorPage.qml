@@ -25,7 +25,7 @@ FormCard.FormCardPage {
         id: contactEditor
         mode: ContactEditor.CreateMode
         onFinished: root.closeDialog()
-        onErrorOccured: (errorMsg) => {
+        onErrorOccured: errorMsg => {
             errorContainer.errorMessage = errorMsg;
             errorContainer.contentItem.visible = true;
         }
