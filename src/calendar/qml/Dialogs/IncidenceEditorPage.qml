@@ -305,7 +305,7 @@ Kirigami.ScrollablePage {
                         timeZoneOffset: root.incidenceWrapper.startTimeZoneUTCOffsetMins
                         display: root.incidenceWrapper.incidenceEndTimeDisplay
                         dateTime: root.incidenceWrapper.incidenceStart
-                        onNewTimeChosen: root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
+                        onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
                         enabled: !allDayCheckBox.checked && (!incidenceForm.isTodo || incidenceStartCheckBox.checked)
                         visible: !allDayCheckBox.checked
                     }
@@ -354,7 +354,7 @@ Kirigami.ScrollablePage {
                         timeZoneOffset: root.incidenceWrapper.endTimeZoneUTCOffsetMins
                         display: root.incidenceWrapper.incidenceEndTimeDisplay
                         dateTime: root.incidenceWrapper.incidenceEnd
-                        onNewTimeChosen: root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
+                        onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
                         enabled: (!incidenceForm.isTodo && !allDayCheckBox.checked) || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                         visible: !allDayCheckBox.checked
                     }
@@ -837,7 +837,7 @@ Kirigami.ScrollablePage {
                             id: map
                             selectMode: true
                             query: root.incidenceWrapper.location
-                            onSelectedLocationAddress: root.incidenceWrapper.location = address
+                            onSelectedLocationAddress: address => root.incidenceWrapper.location = address
                         }
                     }
                 }
@@ -856,7 +856,7 @@ Kirigami.ScrollablePage {
                         text: root.incidenceWrapper.description
                         wrapMode: TextEdit.Wrap
                         onTextChanged: root.incidenceWrapper.description = text
-                        Keys.onReturnPressed: {
+                        Keys.onReturnPressed: event => {
                             if (event.modifiers & Qt.ShiftModifier) {
                                 submitAction.trigger();
                             } else {
@@ -979,6 +979,13 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
 
                         delegate: Kirigami.AbstractCard {
+                            id: attendeeDelegate
+
+                            required property string name
+                            required property string email
+                            required property var status
+                            required property bool rsvp
+                            required property int index
 
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing
@@ -1011,8 +1018,8 @@ Kirigami.ScrollablePage {
                                         Layout.column: 1
                                         Layout.columnSpan: 4
                                         placeholderText: i18n("Optional")
-                                        text: model.name
-                                        onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
+                                        text: attendeeDelegate.name
+                                        onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                     text,
                                                                                                     Calendar.AttendeesModel.NameRole)
                                     }
@@ -1022,7 +1029,7 @@ Kirigami.ScrollablePage {
                                         Layout.column: 5
                                         Layout.row: 0
                                         icon.name: "edit-delete-remove"
-                                        onClicked: root.incidenceWrapper.attendeesModel.deleteAttendee(index);
+                                        onClicked: root.incidenceWrapper.attendeesModel.deleteAttendee(attendeeDelegate.index);
                                     }
 
                                     QQC2.Label {
@@ -1036,8 +1043,8 @@ Kirigami.ScrollablePage {
                                         Layout.column: 1
                                         Layout.columnSpan: 4
                                         placeholderText: i18n("Required")
-                                        text: model.email
-                                        onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
+                                        text: attendeeDelegate.email
+                                        onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                     text,
                                                                                                     Calendar.AttendeesModel.EmailRole)
                                     }
@@ -1055,8 +1062,8 @@ Kirigami.ScrollablePage {
                                         model: root.incidenceWrapper.attendeesModel.attendeeStatusModel
                                         textRole: "display"
                                         valueRole: "value"
-                                        currentIndex: status // role of parent
-                                        onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
+                                        currentIndex: attendeeDelegate.status // role of parent
+                                        onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                             currentValue,
                                                                                                             Calendar.AttendeesModel.StatusRole)
 
@@ -1069,8 +1076,8 @@ Kirigami.ScrollablePage {
                                         Layout.column: 3
                                         Layout.columnSpan: 2
                                         text: i18n("Request RSVP")
-                                        checked: model.rsvp
-                                        onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(index, 0),
+                                        checked: attendeeDelegate.rsvp
+                                        onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                        checked,
                                                                                                        Calendar.AttendeesModel.RSVPRole)
                                         visible: root.editMode

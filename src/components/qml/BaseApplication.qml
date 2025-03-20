@@ -36,7 +36,7 @@ StatefulApp.StatefulWindow {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
-        parent: overlay.parent
+        parent: root.overlay.parent
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
 
@@ -56,12 +56,12 @@ StatefulApp.StatefulWindow {
         id: closeOverlayAction
         shortcut: "Escape"
         onTriggered: {
-            if(pageStack.layers.depth > 1) {
-                pageStack.layers.pop();
+            if(root.pageStack.layers.depth > 1) {
+                root.pageStack.layers.pop();
                 return;
             }
-            if(contextDrawer && contextDrawer.visible) {
-                contextDrawer.close();
+            if(root.contextDrawer?.visible) {
+                root.contextDrawer.close();
                 return;
             }
         }
@@ -71,7 +71,7 @@ StatefulApp.StatefulWindow {
         target: root.application
 
         function onOpenTagManager() {
-            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent('org.kde.akonadi', 'TagManagerPage'), {
+            const openDialogWindow = root.pageStack.pushDialogLayer(Qt.createComponent('org.kde.akonadi', 'TagManagerPage'), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,
