@@ -45,7 +45,6 @@ class IncidenceData
     Q_PROPERTY(KCalendarCore::Incidence::Ptr incidencePtr MEMBER incidencePtr)
     Q_PROPERTY(QVariant incidenceOccurrence MEMBER incidenceOccurrence)
     Q_PROPERTY(int maxConcurrentIncidences MEMBER maxConcurrentIncidences)
-    Q_PROPERTY(int maxConcurrentIncidences MEMBER maxConcurrentIncidences)
     Q_PROPERTY(double widthShare MEMBER widthShare)
     Q_PROPERTY(double priorTakenWidthShare MEMBER priorTakenWidthShare)
 
