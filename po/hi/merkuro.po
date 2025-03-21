@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1135,7 +1135,7 @@ msgstr "स्थान :"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Optional"
 msgstr "वैकल्पिक"
@@ -1185,59 +1185,59 @@ msgstr "अनुस्मारक जोड़ें"
 msgid "Attendees:"
 msgstr "उपस्थितगण :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "नाम :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1038
 #, kde-format
 msgid "Email:"
 msgstr "ईमेल :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1038
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Required"
 msgstr "आवश्यक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1054
 #, kde-format
 msgid "Status:"
 msgstr "स्थिति :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1071
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1078
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP का अनुरोध करें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1085
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1092
 #, kde-format
 msgid "Add Attendee"
 msgstr "सहभागी जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1096
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1103
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "संपर्कों में से चुनें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1100
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1107
 #, kde-format
 msgid "Fill in Manually"
 msgstr "आप खुद भरें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1114
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1121
 #, kde-format
 msgid "Attachments:"
 msgstr "संलग्नक :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1149
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1156
 #, kde-format
 msgid "Add Attachment"
 msgstr "संलग्नक जोड़ें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1156
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1163
 #, kde-format
 msgid "Add an attachment"
 msgstr "एक संलग्नक जोड़ें"
@@ -1709,10 +1709,11 @@ msgid "Create a New Task…"
 msgstr "नया कार्य बनाएँ…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#: calendar/qml/MainViews/TodoView.qml:207
-#, kde-format
-msgid "Quickly Add a New Task."
-msgstr "जलदी से एक नया कार्य जोड़ें ।"
+#, fuzzy, kde-format
+#| msgid "Add Sub-Task"
+msgctxt "@action:button"
+msgid "Add Task"
+msgstr "उपकार्य जोड़ें"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, fuzzy, kde-format
@@ -3692,38 +3693,46 @@ msgstr "हटाएं"
 msgid "Add Account"
 msgstr "खाता जोड़ें"
 
-#: quick/qml/TagManagerPage.qml:15
+#: quick/qml/TagManagerPage.qml:17
 #, kde-format
 msgid "Manage Tags"
 msgstr "टैग्स प्रबंधित करें"
 
-#: quick/qml/TagManagerPage.qml:25
+#: quick/qml/TagManagerPage.qml:27
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
 msgstr ""
 
-#: quick/qml/TagManagerPage.qml:29
+#: quick/qml/TagManagerPage.qml:31
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete tag \"%1\"?"
 msgid "Are you sure you want to delete tag <b>%1</b>?"
 msgstr "क्या आप वाकई टैग \"%1\" मिटाना चाहते हैं?"
 
-#: quick/qml/TagManagerPage.qml:29
+#: quick/qml/TagManagerPage.qml:31
 #, fuzzy, kde-format
 #| msgid "You won't be able to revert this action"
 msgid "You won't be able to revert this action."
 msgstr "आप इस क्रिया को पूर्ववत नहीं कर पाएंगे"
 
-#: quick/qml/TagManagerPage.qml:130
+#: quick/qml/TagManagerPage.qml:132
 #, kde-format
 msgid "Create a New Tag…"
 msgstr "एक नया टैग बनाएं…"
 
-#: quick/qml/TagManagerPage.qml:141
-#, kde-format
-msgid "Quickly Add a New Tag."
-msgstr "जलदी से एक नया टैग जोड़ें।"
+#: quick/qml/TagManagerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "Add Sub-Task"
+msgctxt "@action:button"
+msgid "Add Tag"
+msgstr "उपकार्य जोड़ें"
+
+#~ msgid "Quickly Add a New Task."
+#~ msgstr "जलदी से एक नया कार्य जोड़ें ।"
+
+#~ msgid "Quickly Add a New Tag."
+#~ msgstr "जलदी से एक नया टैग जोड़ें।"
 
 #, fuzzy
 #~| msgid "Move to trash"

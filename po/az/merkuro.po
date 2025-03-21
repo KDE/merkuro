@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -1149,7 +1149,7 @@ msgstr "Məkan:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:855
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Optional"
 msgstr "İstəyə bağlı"
@@ -1199,59 +1199,59 @@ msgstr "Xatırlatma əlavə et"
 msgid "Attendees:"
 msgstr "İştirakçılar:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:133
 #, kde-format
 msgid "Name:"
 msgstr "Adı:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1038
 #, kde-format
 msgid "Email:"
 msgstr "E-Poçt:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1038
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Required"
 msgstr "Tələb olunur"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1047
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1054
 #, kde-format
 msgid "Status:"
 msgstr "Vəziyyət:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1071
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1078
 #, kde-format
 msgid "Request RSVP"
 msgstr "Cavab tələb et"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1085
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1092
 #, kde-format
 msgid "Add Attendee"
 msgstr "İştirakçə əlavə et"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1096
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1103
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Əlaqələrdən seç"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1100
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1107
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Əl ilə doldur"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1114
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1121
 #, kde-format
 msgid "Attachments:"
 msgstr "Əlavə qoşmalar:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1149
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1156
 #, kde-format
 msgid "Add Attachment"
 msgstr "Qoşma əlavə et"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1156
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1163
 #, kde-format
 msgid "Add an attachment"
 msgstr "Qoşma əlavə edin"
@@ -1726,10 +1726,11 @@ msgid "Create a New Task…"
 msgstr "Yeni tapşırıq yaradın..."
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#: calendar/qml/MainViews/TodoView.qml:207
-#, kde-format
-msgid "Quickly Add a New Task."
-msgstr "Cəld yeni tapşırıq yaradın."
+#, fuzzy, kde-format
+#| msgid "Add Sub-Task"
+msgctxt "@action:button"
+msgid "Add Task"
+msgstr "Alt tapşırıq əlavə et"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, fuzzy, kde-format
@@ -3751,38 +3752,46 @@ msgstr "Silmək"
 msgid "Add Account"
 msgstr "Qoşma əlavə et"
 
-#: quick/qml/TagManagerPage.qml:15
+#: quick/qml/TagManagerPage.qml:17
 #, kde-format
 msgid "Manage Tags"
 msgstr "Yarlıqları idarı edin"
 
-#: quick/qml/TagManagerPage.qml:25
+#: quick/qml/TagManagerPage.qml:27
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
 msgstr ""
 
-#: quick/qml/TagManagerPage.qml:29
+#: quick/qml/TagManagerPage.qml:31
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete tag \"%1\"?"
 msgid "Are you sure you want to delete tag <b>%1</b>?"
 msgstr "\"%1\" yarlığını silmək istədiyinizə əminsiniz?"
 
-#: quick/qml/TagManagerPage.qml:29
+#: quick/qml/TagManagerPage.qml:31
 #, fuzzy, kde-format
 #| msgid "You won't be able to revert this action"
 msgid "You won't be able to revert this action."
 msgstr "Bu əməliyyatı geri qaytara bilməyəcəksiniz"
 
-#: quick/qml/TagManagerPage.qml:130
+#: quick/qml/TagManagerPage.qml:132
 #, kde-format
 msgid "Create a New Tag…"
 msgstr "Yeni yarlıq yaradın..."
 
-#: quick/qml/TagManagerPage.qml:141
-#, kde-format
-msgid "Quickly Add a New Tag."
-msgstr "Cəld yeni yarlıq əlavə edin."
+#: quick/qml/TagManagerPage.qml:143
+#, fuzzy, kde-format
+#| msgid "Add Sub-Task"
+msgctxt "@action:button"
+msgid "Add Tag"
+msgstr "Alt tapşırıq əlavə et"
+
+#~ msgid "Quickly Add a New Task."
+#~ msgstr "Cəld yeni tapşırıq yaradın."
+
+#~ msgid "Quickly Add a New Tag."
+#~ msgstr "Cəld yeni yarlıq əlavə edin."
 
 #, fuzzy
 #~| msgid "Add Reminder"
