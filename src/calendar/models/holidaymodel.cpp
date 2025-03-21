@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "holidaymodel.h"
-#include <KHolidays/HolidayRegion>
 #include <QLocale>
 
 using namespace Qt::StringLiterals;

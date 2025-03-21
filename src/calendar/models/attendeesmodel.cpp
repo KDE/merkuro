@@ -9,7 +9,6 @@
 #include <QModelIndex>
 #include <QRegularExpression>
 
-#include <Akonadi/Item>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/SearchQuery>
