@@ -101,8 +101,7 @@ public:
         NoMultiDay = 0x2,
     };
     Q_DECLARE_FLAGS(Filters, Filter)
-    Q_FLAGS(Filters)
-    Q_ENUM(Filter)
+    Q_FLAG(Filters)
 
     enum Roles {
         IncidencesRole = IncidenceOccurrenceModel::LastRole,
