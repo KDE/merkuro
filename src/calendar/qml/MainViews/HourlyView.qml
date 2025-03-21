@@ -134,6 +134,7 @@ Kirigami.Page {
             model: actions
 
             delegate: QQC2.ToolButton {
+                required property T.Action modelData
                 action: modelData
             }
         }
