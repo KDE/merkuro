@@ -62,6 +62,7 @@ ListView {
         delegate: Kirigami.ListSectionHeader {
             id: listSection
 
+            required property string section
             readonly property bool dateSort: root.sortBy === Calendar.TodoSortFilterProxyModel.DueDateColumn
             readonly property bool isOverdue: dateSort && section === i18n("Overdue")
             readonly property bool isToday: dateSort && section === i18n("Today")
