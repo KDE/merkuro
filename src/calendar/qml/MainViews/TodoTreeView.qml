@@ -28,7 +28,7 @@ ListView {
             allDay: todoData.allDay,
             durationString: todoData.durationString
         };
-        CalendarUiUtils.setUpView(retainedTodoData, incidenceItem);
+        Calendar.CalendarUiUtils.setUpView(retainedTodoData, incidenceItem);
     }
 
     property var retainedTodoData: ({})
