@@ -48,6 +48,7 @@ public:
     Q_INVOKABLE void removeIdentifier(const QString &resourceIdentifier);
     Q_INVOKABLE void restart(int index);
     Q_INVOKABLE void restartIdentifier(const QString &resourceIdentifier);
+    Q_INVOKABLE bool isRemovable(int index);
 
 Q_SIGNALS:
     void agentProgressChanged(const Akonadi::AgentInstance &instance);
