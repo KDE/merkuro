@@ -14,6 +14,8 @@ target_sources(akonadi_quick_plugin PRIVATE
     collectioncomboboxmodel.h
     collectionpickermodel.cpp
     collectionpickermodel.h
+    collectionutils.cpp
+    collectionutils.h
     collection.cpp
     collection.h
     mimetypes.cpp
@@ -51,6 +53,7 @@ target_link_libraries(akonadi_quick_plugin PRIVATE
     KF6::WindowSystem
     KPim6::AkonadiWidgets
     KPim6::Libkdepim
+    KPim6::AkonadiMime
     MerkuroComponents
 )
 
