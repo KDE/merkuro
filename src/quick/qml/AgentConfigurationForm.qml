@@ -61,6 +61,7 @@ FormCard.FormCard {
                     root._configuration.remove(dialog.agentDelegate.index);
                     dialog.close();
                 }
+                enabled: root._configuration.isRemovable(dialog.agentDelegate?.index)
             }
         }
     }

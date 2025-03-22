@@ -56,6 +56,7 @@ target_link_libraries(akonadi_quick_plugin PRIVATE
     KPim6::AkonadiWidgets
     KPim6::Libkdepim
     KPim6::AkonadiMime
+    KPim6::MailCommon
     MerkuroComponents
 )
 
