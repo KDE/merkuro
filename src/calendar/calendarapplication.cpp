@@ -332,6 +332,7 @@ void CalendarApplication::setupActions()
         auto todoViewShowCurrentDayOnlyAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewShowCurrentDayOnly);
         todoViewShowCurrentDayOnlyAction->setText(i18n("Show Today Only"));
         todoViewShowCurrentDayOnlyAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-symbolic")));
+        todoViewShowCurrentDayOnlyAction->setCheckable(true);
         mSortCollection->addAction(todoViewShowCurrentDayOnlyAction->objectName(), todoViewShowCurrentDayOnlyAction);
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [todoViewShowCurrentDayOnlyAction, openTodoAction]() {
