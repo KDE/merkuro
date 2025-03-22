@@ -73,7 +73,7 @@ ListView {
 
                     chosen = true;
                     mailList.folderChosen();
-                    mailList.currentIndex = index;
+                    mailList.currentIndex = model.index;
                 }
 
                 text: displayName
