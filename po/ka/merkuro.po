@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:42+0000\n"
-"PO-Revision-Date: 2025-03-21 04:37+0100\n"
+"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"PO-Revision-Date: 2025-03-22 03:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -156,7 +156,7 @@ msgstr "დასრულებული ამოცანების ჩვ�
 msgid "Show Today Only"
 msgstr "მხოლოდ დღევანდელი დღის ჩვენება"
 
-#: calendar/calendarapplication.cpp:347
+#: calendar/calendarapplication.cpp:348
 #, kde-format
 msgid "Refresh All"
 msgstr "ყველას განახლება"
@@ -267,7 +267,7 @@ msgid "No set date"
 msgstr "თარიღი დაყენებული არაა"
 
 #: calendar/models/todosortfilterproxymodel.cpp:183
-#: calendar/qml/MainViews/TodoTreeView.qml:66
+#: calendar/qml/MainViews/TodoTreeView.qml:67
 #, kde-format
 msgid "Overdue"
 msgstr "ვადაგადაცილებული"
@@ -275,7 +275,7 @@ msgstr "ვადაგადაცილებული"
 #: calendar/models/todosortfilterproxymodel.cpp:189
 #: calendar/qml/MainViews/MonthView.qml:44
 #: calendar/qml/MainViews/ScheduleView.qml:40
-#: calendar/qml/MainViews/TodoTreeView.qml:67
+#: calendar/qml/MainViews/TodoTreeView.qml:68
 #, kde-format
 msgid "Today"
 msgstr "დღეს"
@@ -911,23 +911,19 @@ msgid "Delete All"
 msgstr "ყველას წაშლა"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "კალენდრის ჩასწორება…"
+msgstr "კალენდარის ჩასწორება"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "ზოგადი"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "სახელი"
@@ -936,69 +932,66 @@ msgstr "სახელი"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "ხატულა"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "სტატისტიკა"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ჩანაწერი"
+msgstr[1] "%1 ჩანაწერი"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "კონტაქტი"
+msgstr "შემცველობა"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "ზომა"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "მიღება"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "მშობელი საქაღალდის ან ანგარიშის პარამეტრების გამოყენება"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "სინქრონიზაცია ამ საქაღალდის მონიშვნისას"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "სინქრონიზაცია შემდეგ"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "არასდროს"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -1705,48 +1698,48 @@ msgstr "წინა თვე"
 msgid "Next Month"
 msgstr "ბოლო თვე"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "Priority %1"
 msgstr "პრიორიტეტი %1"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "No set priority"
 msgstr "პრიორიტეტი დაყენებული არაა"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:119
+#: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task calendars enabled."
 msgstr "ამოცანის კალენდარები ჩართული არაა."
 
-#: calendar/qml/MainViews/TodoTreeView.qml:126
+#: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
 msgid "Calendar is not enabled"
 msgstr "კალენდარი ჩართული არაა"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:129
+#: calendar/qml/MainViews/TodoTreeView.qml:130
 #, kde-format
 msgid "Enable"
 msgstr "ჩართვა"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
 msgstr "ამოცანები დასრულებული არაა"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "დასასრულებელი ამოცანების გარშემო"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "შექმნა"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:235
+#: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
 msgstr " , გადაცილებულია"
@@ -2428,11 +2421,9 @@ msgid "No name"
 msgstr "უსახელო"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "არასწორი"
+msgstr "არასწორი ელემენტი"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2455,35 +2446,28 @@ msgid "New Contact Group…"
 msgstr "ახალი კონტაქტების ჯგუფი…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "კონტაქტის ჩასწორება…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "კონტაქტის წაშლა"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "გადატანა..."
+msgstr "გადატანა…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr "კოპირება..."
+msgstr "კოპირება…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2561,9 +2545,7 @@ msgid "Select Email Address"
 msgstr "აირჩიეთ ელფოსტის მისამართები"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "უსახელო"
@@ -2593,10 +2575,7 @@ msgid "New Contact Group"
 msgstr "ახალი კონტაქტების ჯგუფი"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
@@ -3328,8 +3307,7 @@ msgid "Confirm Contact Deletion"
 msgstr "კონტაქტის წაშლის დადასტურება"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
@@ -3337,13 +3315,12 @@ msgstr[0] "კონტაქტის წაშლა"
 msgstr[1] "კონტაქტის წაშლა"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი: <b>%1</b>?"
-msgstr[1] "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი: <b>%1</b>?"
+msgstr[0] "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტი:"
+msgstr[1] "მართლა გნებავთ, წაშალოთ თქვენი კონტაქტები:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3468,12 +3445,10 @@ msgid "Move to Trash"
 msgstr "ნაგვის ყუთში გადატანა"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "შენახვა როგორც..."
+msgstr "შენახვა, როგორც…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3569,19 +3544,19 @@ msgstr ""
 msgid "Add Folder"
 msgstr "საქაღალდის დამატება"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
 msgstr "საქაღალდის თვისებები"
 
-#: mail/qml/actions/MailItemMenu.qml:49
+#: mail/qml/actions/MailItemMenu.qml:50
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "ანგარიშის გადატვირთვა"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3767,7 +3742,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: quick/qml/AgentConfigurationForm.qml:101
+#: quick/qml/AgentConfigurationForm.qml:102
 #, kde-format
 msgid "Add Account"
 msgstr "ანგარიშის დამატება"

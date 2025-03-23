@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:42+0000\n"
-"PO-Revision-Date: 2025-03-21 06:38+0100\n"
+"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"PO-Revision-Date: 2025-03-22 13:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -156,7 +156,7 @@ msgstr "Prikaži dokončane naloge"
 msgid "Show Today Only"
 msgstr "Prikaži samo današnje"
 
-#: calendar/calendarapplication.cpp:347
+#: calendar/calendarapplication.cpp:348
 #, kde-format
 msgid "Refresh All"
 msgstr "Osveži vse"
@@ -267,7 +267,7 @@ msgid "No set date"
 msgstr "NI določenega datuma"
 
 #: calendar/models/todosortfilterproxymodel.cpp:183
-#: calendar/qml/MainViews/TodoTreeView.qml:66
+#: calendar/qml/MainViews/TodoTreeView.qml:67
 #, kde-format
 msgid "Overdue"
 msgstr "Preteklo"
@@ -275,7 +275,7 @@ msgstr "Preteklo"
 #: calendar/models/todosortfilterproxymodel.cpp:189
 #: calendar/qml/MainViews/MonthView.qml:44
 #: calendar/qml/MainViews/ScheduleView.qml:40
-#: calendar/qml/MainViews/TodoTreeView.qml:67
+#: calendar/qml/MainViews/TodoTreeView.qml:68
 #, kde-format
 msgid "Today"
 msgstr "Danes"
@@ -934,23 +934,19 @@ msgid "Delete All"
 msgstr "Zbriši vse"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Uredi koledar…"
+msgstr "Uredi koledar"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Splošno"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Ime"
@@ -959,78 +955,75 @@ msgstr "Ime"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Statistika"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 vnosov"
+msgstr[1] "%1 vnos"
+msgstr[2] "%1 vnosa"
+msgstr[3] "%1 vnosi"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Stik"
+msgstr "Vsebina"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Pridobivanje"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Uporabi možnosti iz nadrejene mape ali računa"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Sinhroniziraj ob izbiri te mape"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Sinhroniziraj po"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Nikoli"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minut"
-msgstr[1] "%1 minut"
-msgstr[2] "%1 minut"
-msgstr[3] "%1 minut"
+msgstr[0] "%1 minutah"
+msgstr[1] "%1 minuti"
+msgstr[2] "%1 minutah"
+msgstr[3] "%1 minutah"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1743,48 +1736,48 @@ msgstr "Prejšnji mesec"
 msgid "Next Month"
 msgstr "Naslednji mesec"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "Priority %1"
 msgstr "Prednost %1"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "No set priority"
 msgstr "Ni določena raven prednosti"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:119
+#: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task calendars enabled."
 msgstr "Koledar ne omogoča nalog."
 
-#: calendar/qml/MainViews/TodoTreeView.qml:126
+#: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
 msgid "Calendar is not enabled"
 msgstr "Koledar ni omogočen"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:129
+#: calendar/qml/MainViews/TodoTreeView.qml:130
 #, kde-format
 msgid "Enable"
 msgstr "Omogoči"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
 msgstr "Nobena nalogo ni dokončana"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "Nobene naloge ni več za dokončati"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Ustvari"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:235
+#: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
 msgstr " , je preteklo"
@@ -2467,11 +2460,9 @@ msgid "No name"
 msgstr "Brez imena"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Neveljaven"
+msgstr "Neveljavna postavka"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2494,35 +2485,28 @@ msgid "New Contact Group…"
 msgstr "Nova skupina stikov…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Uredi stik…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Zbriši stik"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "Premakni v..."
+msgstr "Premakni v…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr "Kopiraj v..."
+msgstr "Kopiraj v…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2600,9 +2584,7 @@ msgid "Select Email Address"
 msgstr "Izberite naslov e-pošte"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Brez imena"
@@ -2632,10 +2614,7 @@ msgid "New Contact Group"
 msgstr "Nova skupina stikov"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
@@ -3374,26 +3353,24 @@ msgid "Confirm Contact Deletion"
 msgstr "Potrdi brisanje stika"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
-msgstr[0] "Zbriši stik"
+msgstr[0] "Zbriši stike"
 msgstr[1] "Zbriši stik"
-msgstr[2] "Zbriši stik"
-msgstr[3] "Zbriši stik"
+msgstr[2] "Zbriši stika"
+msgstr[3] "Zbriši stike"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Ali zares želite zbrisati vaš stik: <b>%1</b>?"
-msgstr[1] "Ali zares želite zbrisati vaš stik: <b>%1</b>?"
-msgstr[2] "Ali zares želite zbrisati vaš stik: <b>%1</b>?"
-msgstr[3] "Ali zares želite zbrisati vaš stik: <b>%1</b>?"
+msgstr[0] "Ali zares želite zbrisati vaše stike:"
+msgstr[1] "Ali zares želite zbrisati vaš stik:"
+msgstr[2] "Ali zares želite zbrisati vaša stika:"
+msgstr[3] "Ali zares želite zbrisati vaše stike:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3518,12 +3495,10 @@ msgid "Move to Trash"
 msgstr "Prenesi v smeti"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "Shrani kot..."
+msgstr "Shrani kot…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3617,19 +3592,19 @@ msgstr ""
 msgid "Add Folder"
 msgstr "Dodaj mapo"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
 msgstr "Lastnosti mape"
 
-#: mail/qml/actions/MailItemMenu.qml:49
+#: mail/qml/actions/MailItemMenu.qml:50
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Ponovno zaženi račun"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3817,7 +3792,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Zbriši"
 
-#: quick/qml/AgentConfigurationForm.qml:101
+#: quick/qml/AgentConfigurationForm.qml:102
 #, kde-format
 msgid "Add Account"
 msgstr "Dodaj račun"

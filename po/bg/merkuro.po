@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-22 00:42+0000\n"
-"PO-Revision-Date: 2025-03-08 17:47+0100\n"
+"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"PO-Revision-Date: 2025-03-22 17:23+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -113,12 +113,12 @@ msgstr "Ново събитие…"
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
-msgstr "Нова задача..."
+msgstr "Нова задача…"
 
 #: calendar/calendarapplication.cpp:219
 #, kde-format
 msgid "Import Calendar…"
-msgstr "Импортиране на календар..."
+msgstr "Импортиране на календар…"
 
 #: calendar/calendarapplication.cpp:239
 #, kde-format
@@ -155,7 +155,7 @@ msgstr "Показване на изпълнените задачи"
 msgid "Show Today Only"
 msgstr "Показване само на днешна дата"
 
-#: calendar/calendarapplication.cpp:347
+#: calendar/calendarapplication.cpp:348
 #, kde-format
 msgid "Refresh All"
 msgstr "Опресни всички"
@@ -247,13 +247,13 @@ msgstr "Разработка"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "По подразбиране от регионалните настройки"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -268,7 +268,7 @@ msgid "No set date"
 msgstr "Няма определена дата"
 
 #: calendar/models/todosortfilterproxymodel.cpp:183
-#: calendar/qml/MainViews/TodoTreeView.qml:66
+#: calendar/qml/MainViews/TodoTreeView.qml:67
 #, kde-format
 msgid "Overdue"
 msgstr "Просрочени"
@@ -276,7 +276,7 @@ msgstr "Просрочени"
 #: calendar/models/todosortfilterproxymodel.cpp:189
 #: calendar/qml/MainViews/MonthView.qml:44
 #: calendar/qml/MainViews/ScheduleView.qml:40
-#: calendar/qml/MainViews/TodoTreeView.qml:67
+#: calendar/qml/MainViews/TodoTreeView.qml:68
 #, kde-format
 msgid "Today"
 msgstr "Днес"
@@ -680,7 +680,7 @@ msgstr "Добавяне на подзадача"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:108
 #, kde-format
 msgid "Set priority..."
-msgstr "Задаване на приоритет..."
+msgstr "Задаване на приоритет…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:120
 #: calendar/qml/Controls/IncidenceMouseArea.qml:201
@@ -736,7 +736,7 @@ msgstr "9 (най-нисък приоритет)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
 #, kde-format
 msgid "Set due date..."
-msgstr "Задаване на краен срок..."
+msgstr "Задаване на краен срок…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:209
 #, kde-format
@@ -914,23 +914,19 @@ msgid "Delete All"
 msgstr "Изтриване на всички"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Редактиране на календара..."
+msgstr "Редактиране на календар"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General settings"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Общи настройки"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Име"
@@ -939,73 +935,70 @@ msgstr "Име"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Икона"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Статистика"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 запис"
+msgstr[1] "%1 записа"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Контакт"
+msgstr "Съдържание"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Извличане"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Използване на опции от родителска папка или профил"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Синхронизиране при избор на тази папка"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Синхронизиране след"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Никога"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 минути"
+msgstr[0] "%1 минута"
 msgstr[1] "%1 минути"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
@@ -1242,17 +1235,17 @@ msgstr "Тагове:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Tap to set tags…"
-msgstr "Докоснете, за да зададете тагове..."
+msgstr "Докоснете, за да зададете тагове…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Click to set tags…"
-msgstr "Кликнете, за да зададете тагове..."
+msgstr "Кликнете, за да зададете тагове…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:934
 #, kde-format
 msgid "Manage tags…"
-msgstr "Управление на тагове..."
+msgstr "Управление на тагове…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
@@ -1522,64 +1515,55 @@ msgid "Return to Location"
 msgstr "Върнете се към местоположението"
 
 #: calendar/qml/Main.qml:276
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Създаване"
 
 #: calendar/qml/Main.qml:281
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Ново събитие…"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
-msgstr "Нова задача..."
+msgstr "Нова задача…"
 
 #: calendar/qml/Main.qml:296
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Месец"
 
 #: calendar/qml/Main.qml:299
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Седмица"
 
 #: calendar/qml/Main.qml:302
-#, fuzzy, kde-format
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 дни"
 
 #: calendar/qml/Main.qml:305
-#, fuzzy, kde-format
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Ден"
 
 #: calendar/qml/Main.qml:308
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Планиране"
 
 #: calendar/qml/Main.qml:311
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Задачи"
@@ -1718,48 +1702,48 @@ msgstr "Предишен месец"
 msgid "Next Month"
 msgstr "Следващ месец"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "Priority %1"
 msgstr "Приоритет %1"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:72
+#: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "No set priority"
 msgstr "Без зададен приоритет"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:119
+#: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task calendars enabled."
 msgstr "Няма активирани календари със задачи."
 
-#: calendar/qml/MainViews/TodoTreeView.qml:126
+#: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
 msgid "Calendar is not enabled"
 msgstr "Календарът не е активиран"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:129
+#: calendar/qml/MainViews/TodoTreeView.qml:130
 #, kde-format
 msgid "Enable"
 msgstr "Включване"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
 msgstr "Няма завършени задачи"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:138
+#: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
 msgstr "Няма останали задачи за изпълнение"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:140
+#: calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
 msgstr "Създаване"
 
-#: calendar/qml/MainViews/TodoTreeView.qml:235
+#: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
 msgstr ", е просрочен"
@@ -1787,14 +1771,13 @@ msgstr "Изпълнени задачи"
 #: calendar/qml/MainViews/TodoView.qml:166
 #, kde-format
 msgid "Create a New Task…"
-msgstr "Създаване на нова задача..."
+msgstr "Създаване на нова задача…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Добавяне на подзадача"
+msgstr "Добавяне на задача"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1811,7 +1794,7 @@ msgstr "Показване на събития"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
-msgstr "Редактиране на календара..."
+msgstr "Редактиране на календара…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:69
 #, kde-format
@@ -1826,18 +1809,16 @@ msgid "Delete Calendar"
 msgstr "Изтриване на календара"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
-msgstr "Задаване на цвят на календара..."
+msgstr "Задаване на цвят на календара…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
-msgstr "Настройки на източника на календара..."
+msgstr "Настройки на източника на календара…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:120
 #, kde-format
@@ -1990,7 +1971,7 @@ msgstr "Имейл Заетост"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr "Въведете имейл на получателя..."
+msgstr "Въведете имейл на получателя…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:140
@@ -2025,7 +2006,7 @@ msgstr "Използване на пълен имейл адрес за извл
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
 msgid "Add New Calendar Source…"
-msgstr "Добавяне на нов източник на календар..."
+msgstr "Добавяне на нов източник на календар…"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
@@ -2046,7 +2027,7 @@ msgstr "Показване на почивните дни в календара"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Избиране на регионални празнични дни"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2282,7 +2263,7 @@ msgstr "В началото на събитието"
 #: components/abstractmerkuroapplication.cpp:32
 #, kde-format
 msgid "Manage Tags…"
-msgstr "Управление на етикети..."
+msgstr "Управление на етикети…"
 
 #: components/abstractmerkuroapplication.cpp:39
 #, kde-format
@@ -2449,11 +2430,9 @@ msgid "No name"
 msgstr "Без име"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Невалидно"
+msgstr "Невалиден елемент"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2473,38 +2452,31 @@ msgstr "Опресняване на всички адресни книги"
 #: contacts/contactapplication.cpp:55
 #, kde-format
 msgid "New Contact Group…"
-msgstr "Нова група за контакти..."
+msgstr "Нова група за контакти…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Редактиране на контакт…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Изтриване на контакт"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "Преместване в..."
+msgstr "Преместване в…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr "Копиране в..."
+msgstr "Копиране в…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2582,9 +2554,7 @@ msgid "Select Email Address"
 msgstr "Избиране на имейл адрес"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Без име"
@@ -2614,14 +2584,11 @@ msgid "New Contact Group"
 msgstr "Нова група за контакти"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "%1 избран"
+msgstr[0] "%1 избрани"
 msgstr[1] "%1 избрани"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
@@ -2652,7 +2619,7 @@ msgstr "Няма контакти"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit address book…"
-msgstr "Редактиране на адресната книга..."
+msgstr "Редактиране на адресната книга…"
 
 #: contacts/qml/private/AddressBookMenu.qml:29
 #, kde-format
@@ -2670,7 +2637,7 @@ msgstr "Изтриване на адресната книга"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book colour…"
-msgstr "Задаване на цвят на адресната книга..."
+msgstr "Задаване на цвят на адресната книга…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
@@ -3348,8 +3315,7 @@ msgid "Confirm Contact Deletion"
 msgstr "Потвърдете изтриването на контакта"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
@@ -3357,13 +3323,12 @@ msgstr[0] "Изтриване на контакт"
 msgstr[1] "Изтриване на контакт"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Наистина ли искате да изтриете своя контакт: <b>%1</b>?"
-msgstr[1] "Наистина ли искате да изтриете своя контакт: <b>%1</b>?"
+msgstr[0] "Наистина ли искате да изтриете вашия контакт:"
+msgstr[1] "Наистина ли искате да изтриете вашите контакти:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3395,7 +3360,7 @@ msgstr "Бележник с контакти"
 #: contacts/qml/Settings.qml:21
 #, kde-format
 msgid "Add New Address Book Source…"
-msgstr "Добавяне на нов източник на адресна книга..."
+msgstr "Добавяне на нов източник на адресна книга…"
 
 #: launcher/main.cpp:51
 #, kde-format
@@ -3488,12 +3453,10 @@ msgid "Move to Trash"
 msgstr "Преместване в кошчето"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "Запазване като..."
+msgstr "Запазване като…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3587,19 +3550,19 @@ msgstr ""
 msgid "Add Folder"
 msgstr "Добавяне на папка"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Folder Properties"
 msgstr "Свойства на папка"
 
-#: mail/qml/actions/MailItemMenu.qml:49
+#: mail/qml/actions/MailItemMenu.qml:50
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Рестартиране на акаунт"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3618,7 +3581,7 @@ msgstr "Създаване на папка"
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr "директория..."
+msgstr "директория…"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
@@ -3785,7 +3748,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Изтриване"
 
-#: quick/qml/AgentConfigurationForm.qml:101
+#: quick/qml/AgentConfigurationForm.qml:102
 #, kde-format
 msgid "Add Account"
 msgstr "Добавяне на акаунт"
@@ -3809,14 +3772,13 @@ msgstr "Сигурни ли сте, че искате да изтриете ма
 #: quick/qml/TagManagerPage.qml:132
 #, kde-format
 msgid "Create a New Tag…"
-msgstr "Създаване на нов етикет..."
+msgstr "Създаване на нов етикет…"
 
 #: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Tag"
-msgstr "Добавяне на подзадача"
+msgstr "Добавяне на етикет"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
