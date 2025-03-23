@@ -32,7 +32,7 @@ class MailManager : public QObject
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(MailCommon::EntityCollectionOrderProxyModel *foldersModel READ foldersModel CONSTANT)
     Q_PROPERTY(QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel CONSTANT)
-    Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel CONSTANT)
+    Q_PROPERTY(QAbstractItemModel *entryTreeModel READ entryTreeModel CONSTANT)
 
 public:
     explicit MailManager(QObject *parent = nullptr);
