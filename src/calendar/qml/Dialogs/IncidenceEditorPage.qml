@@ -24,6 +24,10 @@ Kirigami.ScrollablePage {
 
     signal cancel
 
+    onCancel: if (Kirigami.Settings.isMobile){
+        QQC2.ApplicationWindow.window.pageStack.layers.pop()
+    }
+
     // Setting the incidenceWrapper here and now causes some *really* weird behaviour.
     // Set it after this component has already been instantiated.
     property var incidenceWrapper
