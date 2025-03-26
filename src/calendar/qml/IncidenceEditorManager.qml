@@ -23,16 +23,17 @@ QtObject {
                 return null;
             }
 
-            return window.pageStack.layers.push(component);
+            const editor = window.pageStack.layers.push(component);
+            editor.cancel.connect(() => editor.Window.window.pageStack.layers.pop());
+            return editor;
+        } else {
+            const component = Qt.createComponent("org.kde.merkuro.calendar", "IncidenceEditorDialog");
+            if (component.status === Component.Error) {
+                console.error(component.errorString());
+                return null;
+            }
+            return component.createObject(window).incidenceEditorPage;
         }
-
-        const component = Qt.createComponent("org.kde.merkuro.calendar", "IncidenceEditorDialog");
-        if (component.status === Component.Error) {
-            console.error(component.errorString());
-            return null;
-        }
-
-        return component.createObject(window).incidenceEditorPage;
     }
 
     function openEditorDialog(window, incidencePtr) {
