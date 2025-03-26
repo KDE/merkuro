@@ -122,8 +122,9 @@ Column {
                 Calendar.DayTapHandler {
                     id: listViewMenu
                     addDate: {
-                        const baseDate = weekDelegate.periodStartDate
+                        const baseDateRaw = weekDelegate.periodStartDate
                         const rowDayIndex = Math.floor(clickX / root.dayWidth)
+                        const baseDate = new Date(baseDateRaw);
                         return new Date(baseDate.setDate(baseDate.getDate() + rowDayIndex))
                     }
                     onDeselect: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
