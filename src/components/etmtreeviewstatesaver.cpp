@@ -72,10 +72,12 @@ void ETMTreeViewStateSaver::setModel(KDescendantsProxyModel *model)
     }
 
     connect(m_model, &KDescendantsProxyModel::sourceIndexCollapsed, this, [this](const QModelIndex &index) {
+        Q_UNUSED(index);
         saveState();
     });
 
     connect(m_model, &KDescendantsProxyModel::sourceIndexExpanded, this, [this](const QModelIndex &index) {
+        Q_UNUSED(index);
         saveState();
     });
 
@@ -161,6 +163,9 @@ void ETMTreeViewStateSaver::listenToPendingChanges()
     if (model) {
         disconnect(m_rowsInsertedConnection);
         m_rowsInsertedConnection = connect(model, &QAbstractItemModel::rowsInserted, this, [this](const QModelIndex &parent, int first, int last) {
+            Q_UNUSED(parent);
+            Q_UNUSED(first);
+            Q_UNUSED(last);
             processPendingChanges();
 
             if (!hasPendingChanges()) {
