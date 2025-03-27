@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-23 02:33+0000\n"
-"PO-Revision-Date: 2025-02-15 08:08+0100\n"
+"PO-Revision-Date: 2025-03-26 17:34+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -253,13 +253,13 @@ msgstr "Utvecklare"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Förval från landsinställning"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -1670,10 +1670,9 @@ msgid "Quickly Add a New Task."
 msgstr "Lägg snabbt till en ny uppgift."
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "dagar"
+msgstr "Helger"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
@@ -1910,16 +1909,15 @@ msgid "Use popup to show incidence information"
 msgstr "Använd meddelanderuta för att visa omfattningsinformation"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show tasks in calendar views"
+#, kde-format
 msgid "Show holidays in calendar views"
-msgstr "Visa uppgifter i kalendervisning"
+msgstr "Visa helger i kalendervisning"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Välj helgområden"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2320,11 +2318,9 @@ msgid "No Name"
 msgstr "Saknar namn"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Ogiltig"
+msgstr "Ogiltigt objekt"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2347,9 +2343,7 @@ msgid "New Contact Group…"
 msgstr "Ny kontaktgrupp…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Redigera kontakt…"
@@ -3196,13 +3190,12 @@ msgid "Confirm Contact Deletion"
 msgstr "Bekräfta borttagning av kontakt"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Ta bort kontakt"
-msgstr[1] "Ta bort kontakt"
+msgstr[1] "Ta bort kontakter"
 
 #: contacts/qml/private/DeleteContactDialog.qml:31
 #, kde-format
@@ -3326,12 +3319,10 @@ msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "Spara som..."
+msgstr "Spara som…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
