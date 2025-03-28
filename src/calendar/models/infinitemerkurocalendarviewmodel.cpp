@@ -253,7 +253,16 @@ void InfiniteMerkuroCalendarViewModel::addDayDates(const bool atEnd, const QDate
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(amount) : m_startDates[0].addDays(-amount);
+        QDate startDate;
+        if (startFrom.isValid() && i == 0) {
+            startDate = startFrom;
+        } else {
+            if (atEnd) {
+                startDate = m_startDates[rowCount() - 1].addDays(amount);
+            } else {
+                startDate = m_startDates[0].addDays(-amount);
+            }
+        }
 
         if (atEnd) {
             m_startDates.append(startDate);
@@ -272,7 +281,16 @@ void InfiniteMerkuroCalendarViewModel::addWeekDates(const bool atEnd, const QDat
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(7) : m_startDates[0].addDays(-7);
+        QDate startDate;
+        if (startFrom.isValid() && i == 0) {
+            startDate = startFrom;
+        } else {
+            if (atEnd) {
+                startDate = m_startDates[rowCount() - 1].addDays(7);
+            } else {
+                startDate = m_startDates[0].addDays(-7);
+            }
+        }
 
         if (startDate.dayOfWeek() != m_locale.firstDayOfWeek()) {
             startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
@@ -295,9 +313,16 @@ void InfiniteMerkuroCalendarViewModel::addMonthDates(const bool atEnd, const QDa
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        const QDate firstDay = startFrom.isValid() && i == 0 ? startFrom
-            : atEnd                                          ? m_firstDayOfMonthDates[rowCount() - 1].addMonths(1)
-                                                             : m_firstDayOfMonthDates[0].addMonths(-1);
+        QDate firstDay;
+        if (startFrom.isValid() && i == 0) {
+            firstDay = startFrom;
+        } else {
+            if (atEnd) {
+                firstDay = m_firstDayOfMonthDates[rowCount() - 1].addMonths(1);
+            } else {
+                firstDay = m_firstDayOfMonthDates[0].addMonths(-1);
+            }
+        }
         QDate startDate = firstDay;
 
         startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
@@ -324,7 +349,16 @@ void InfiniteMerkuroCalendarViewModel::addYearDates(const bool atEnd, const QDat
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addYears(1) : m_startDates[0].addYears(-1);
+        QDate startDate;
+        if (startFrom.isValid() && i == 0) {
+            startDate = startFrom;
+        } else {
+            if (atEnd) {
+                startDate = m_startDates[rowCount() - 1].addYears(1);
+            } else {
+                startDate = m_startDates[0].addYears(-1);
+            }
+        }
 
         if (atEnd) {
             m_startDates.append(startDate);
@@ -343,7 +377,16 @@ void InfiniteMerkuroCalendarViewModel::addDecadeDates(const bool atEnd, const QD
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addYears(10) : m_startDates[0].addYears(-10);
+        QDate startDate;
+        if (startFrom.isValid() && i == 0) {
+            startDate = startFrom;
+        } else {
+            if (atEnd) {
+                startDate = m_startDates[rowCount() - 1].addYears(10);
+            } else {
+                startDate = m_startDates[0].addYears(-10);
+            }
+        }
 
         if (atEnd) {
             m_startDates.append(startDate);
