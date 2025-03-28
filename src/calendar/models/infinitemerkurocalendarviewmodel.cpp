@@ -326,7 +326,16 @@ void InfiniteMerkuroCalendarViewModel::addWorkWeekDates(const bool atEnd, const 
     beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
 
     for (int i = 0; i < m_datesToAdd; i++) {
-        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(7) : m_startDates[0].addDays(-7);
+        QDate startDate;
+        if (startFrom.isValid() && i == 0) {
+            startDate = startFrom;
+        } else {
+            if (atEnd) {
+                startDate = m_startDates[rowCount() - 1].addDays(7);
+            } else {
+                startDate = m_startDates[0].addDays(-7);
+            }
+        }
 
         if (startDate.dayOfWeek() != Qt::Monday) {
             startDate = startDate.addDays(1 - startDate.dayOfWeek());
