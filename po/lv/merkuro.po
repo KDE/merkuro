@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-23 00:42+0000\n"
-"PO-Revision-Date: 2025-03-04 16:58+0200\n"
+"PO-Revision-Date: 2025-03-26 16:01+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -250,13 +250,13 @@ msgstr "Izstrādātājs"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Noklusējums no lokāles"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -927,113 +927,106 @@ msgid "Delete All"
 msgstr "Dzēst visu"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Rediģēt kalendāru…"
+msgstr "Rediģēt kalendāru"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
-msgstr "Vispārīgi"
+msgstr "Pamata"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
-msgstr "Vārds"
+msgstr "Nosaukums"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Statistika"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 ieraksts"
+msgstr[1] "%1 ieraksti"
+msgstr[2] "%1 ierakstu"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Kontakts"
+msgstr "Saturs"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Izmērs"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Izgūšana"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Izmantot pamatmapes vai konta opcijas"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Sinhronizēt, atlasot šo mapi"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Sinhronizēt pēc"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Nekad"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minūtes"
-msgstr[1] "%1 minūtes"
-msgstr[2] "%1 minūtes"
+msgstr[1] "%1 minūtēm"
+msgstr[2] "%1 minūtēm"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
-msgstr "Rediģēt %1"
+msgstr "Rediģēt „%1“"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:45
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
-msgstr "Pievienot %1"
+msgstr "Pievienot „%1“"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:58
 #, kde-format
@@ -1541,64 +1534,55 @@ msgid "Return to Location"
 msgstr "Atgriezties uz vietu"
 
 #: calendar/qml/Main.qml:276
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Izveidot"
 
 #: calendar/qml/Main.qml:281
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Jauns notikums…"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Jauns uzdevums…"
 
 #: calendar/qml/Main.qml:296
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Mēnesis"
 
 #: calendar/qml/Main.qml:299
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Nedēļa"
 
 #: calendar/qml/Main.qml:302
-#, fuzzy, kde-format
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "Trīs dienas"
 
 #: calendar/qml/Main.qml:305
-#, fuzzy, kde-format
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Diena"
 
 #: calendar/qml/Main.qml:308
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
-msgstr "Plānotājs"
+msgstr "Ieplānot"
 
 #: calendar/qml/Main.qml:311
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Uzdevumi"
@@ -1809,17 +1793,15 @@ msgid "Create a New Task…"
 msgstr "Izveidot jaunu uzdevumu…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Pievienot apakšuzdevumu"
+msgstr "Pievienot uzdevumu"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "dienas"
+msgstr "Brīvdienas"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
@@ -1846,9 +1828,7 @@ msgid "Delete Calendar"
 msgstr "Dzēst kalendāru"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Mainīt kalendāra krāsu…"
@@ -2057,8 +2037,7 @@ msgid "Use popup to show incidence information"
 msgstr "Notikuma informāciju rādīt uzlecošā logā"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show tasks in calendar views"
+#, kde-format
 msgid "Show holidays in calendar views"
 msgstr "Kalendāra skatos rādīt uzdevumus"
 
@@ -2066,7 +2045,7 @@ msgstr "Kalendāra skatos rādīt uzdevumus"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Atlasīt brīvdienu reģionus"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2465,11 +2444,9 @@ msgid "No name"
 msgstr "Bez vārda"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Nederīga"
+msgstr "Nederīgs vienums"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2492,32 +2469,25 @@ msgid "New Contact Group…"
 msgstr "Jauna kontaktu grupa…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Rediģēt kontaktu…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Dzēst kontaktu"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Pārvietoto uz..."
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
 msgstr "Kopēt uz..."
@@ -2598,9 +2568,7 @@ msgid "Select Email Address"
 msgstr "Atlasiet e-pasta adresi"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Bez nosaukuma"
@@ -2630,22 +2598,19 @@ msgid "New Contact Group"
 msgstr "Jauna kontaktu grupa"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "%1 atlasīta"
-msgstr[1] "%1 atlasītas"
+msgstr[0] "%1 atlasīts"
+msgstr[1] "%1 atlasīti"
 msgstr[2] "%1 atlasītu"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr "Pārvietot atlasi ar:"
+msgstr "Pārvietot atlasi uz:"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:162
 #, kde-format
@@ -3368,24 +3333,22 @@ msgid "Confirm Contact Deletion"
 msgstr "Apstiprināt kontakta dzēšanu"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Dzēst kontaktu"
-msgstr[1] "Dzēst kontaktu"
-msgstr[2] "Dzēst kontaktu"
+msgstr[1] "Dzēst kontaktus"
+msgstr[2] "Dzēst kontaktus"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Vai tiešām vēlaties dzēst kontaktu: <b>%1</b>?"
-msgstr[1] "Vai tiešām vēlaties dzēst kontaktu: <b>%1</b>?"
-msgstr[2] "Vai tiešām vēlaties dzēst kontaktu: <b>%1</b>?"
+msgstr[0] "Vai tiešām vēlaties dzēst kontaktu:"
+msgstr[1] "Vai tiešām vēlaties dzēst kontaktus:"
+msgstr[2] "Vai tiešām vēlaties dzēst kontaktus:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3510,9 +3473,7 @@ msgid "Move to Trash"
 msgstr "Pārvietot uz atkritni"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Saglabāt kā…"
@@ -3835,11 +3796,10 @@ msgid "Create a New Tag…"
 msgstr "Izveidot jaunu birku…"
 
 #: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Tag"
-msgstr "Pievienot apakšuzdevumu"
+msgstr "Pievienot birku"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
