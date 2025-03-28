@@ -41,6 +41,12 @@ void InfiniteMerkuroCalendarViewModel::setup()
         addWeekDates(true, firstDay);
         break;
     }
+    case WorkWeekScale: {
+        QDate firstDay = today.addDays(1 - today.dayOfWeek());
+        firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
+        addWorkWeekDates(true, firstDay);
+        break;
+    }
     case MonthScale: {
         QDate firstDay(today.year(), today.month(), 1);
         firstDay = firstDay.addMonths(-m_datesToAdd / 2);
@@ -146,6 +152,8 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         role = InfiniteMerkuroCalendarViewModel::FirstDayOfMonthRole;
         break;
     }
+    // WorkWeekScale behaves like WeekScale for navigation
+    case WorkWeekScale:
     case WeekScale: {
         const int daysTo = currentDate.daysTo(selectedDate) / 7;
         newIndex = currentIndex + daysTo;
@@ -188,6 +196,8 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         case MonthScale:
             newIndex += selectedDate.month() - firstItemDate.month() + (12 * (selectedDate.year() - firstItemDate.year()));
             break;
+        // WorkWeekScale behaves like WeekScale for navigation
+        case WorkWeekScale:
         case WeekScale:
             newIndex += firstItemDate.daysTo(selectedDate) / 7;
             break;
@@ -207,14 +217,14 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime().date();
     }
 
-    if (m_scale == ThreeDayScale || m_scale == WeekScale) {
+    if (m_scale == ThreeDayScale || m_scale == WeekScale || m_scale == WorkWeekScale) {
         const auto newIndexStartDate = index(newIndex, 0).data(StartDateRole).toDate();
         const auto startDateToSelectedDateDays = newIndexStartDate.daysTo(selectedDate);
         const auto dayDiffFloat = static_cast<float>(startDateToSelectedDateDays);
 
         if (m_scale == ThreeDayScale) {
             newIndex += floor(dayDiffFloat / 3);
-        } else if (m_scale == WeekScale) {
+        } else if (m_scale == WeekScale || m_scale == WorkWeekScale) {
             newIndex += floor(dayDiffFloat / 7);
         }
     }
@@ -233,6 +243,9 @@ void InfiniteMerkuroCalendarViewModel::addDates(const bool atEnd, const QDate st
         break;
     case WeekScale:
         addWeekDates(atEnd, startFrom);
+        break;
+    case WorkWeekScale:
+        addWorkWeekDates(atEnd, startFrom);
         break;
     case MonthScale:
         addMonthDates(atEnd, startFrom);
@@ -294,6 +307,29 @@ void InfiniteMerkuroCalendarViewModel::addWeekDates(const bool atEnd, const QDat
 
         if (startDate.dayOfWeek() != m_locale.firstDayOfWeek()) {
             startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
+        }
+
+        if (atEnd) {
+            m_startDates.append(startDate);
+        } else {
+            m_startDates.insert(0, startDate);
+        }
+    }
+
+    endInsertRows();
+}
+
+void InfiniteMerkuroCalendarViewModel::addWorkWeekDates(const bool atEnd, const QDate &startFrom)
+{
+    const int newRow = atEnd ? rowCount() : 0;
+
+    beginInsertRows(QModelIndex(), newRow, newRow + m_datesToAdd - 1);
+
+    for (int i = 0; i < m_datesToAdd; i++) {
+        QDate startDate = startFrom.isValid() && i == 0 ? startFrom : atEnd ? m_startDates[rowCount() - 1].addDays(7) : m_startDates[0].addDays(-7);
+
+        if (startDate.dayOfWeek() != Qt::Monday) {
+            startDate = startDate.addDays(1 - startDate.dayOfWeek());
         }
 
         if (atEnd) {

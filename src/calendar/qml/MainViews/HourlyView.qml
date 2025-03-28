@@ -20,6 +20,8 @@ Kirigami.Page {
             return "dayView";
         case 3:
             return "threeDayView";
+        case 5:
+            return "workWeekView";
         case 7:
         default:
             return "weekView";
@@ -34,6 +36,8 @@ Kirigami.Page {
             return Calendar.CalendarApplication.Day;
         case 3:
             return Calendar.CalendarApplication.ThreeDay;
+        case 5:
+            return Calendar.CalendarApplication.WorkWeek;
         case 7:
         default:
             return Calendar.CalendarApplication.Week;
@@ -48,6 +52,8 @@ Kirigami.Page {
                 return i18n("Previous Day")
             case 3:
                 return i18n("Previous Three Days")
+            case 5:
+                return i18n("Previous Work Week")
             case 7:
                 return i18n("Previous Week")
         }
@@ -62,6 +68,8 @@ Kirigami.Page {
                 return i18n("Next Day")
             case 3:
                 return i18n("Next Three Days")
+            case 5:
+                return i18n("Next Work Week")
             case 7:
                 return i18n("Next Week")
         }
@@ -116,6 +124,14 @@ Kirigami.Page {
                     displayHint: Kirigami.DisplayHint.KeepVisible
                 },
                 Kirigami.Action {
+                    fromQAction: Calendar.CalendarApplication.action("open_workweek_view")
+                    text: i18nc("@action:inmenu open work week view", "Work Week")
+                    checkable: true
+                    checked: pageStack.currentItem && pageStack.currentItem.mode === Calendar.CalendarApplication.WorkWeek
+                    onTriggered: workWeekViewAction.trigger()
+                    displayHint: Kirigami.DisplayHint.KeepVisible
+                },
+                Kirigami.Action {
                     fromQAction: Calendar.CalendarApplication.action("open_threeday_view")
                     text: i18nc("@action:inmenu open 3 days view", "3 Days")
                     checkable: true
@@ -164,7 +180,10 @@ Kirigami.Page {
         sourceComponent: BasicInternalHourlyView {
             anchors.fill: parent
 
-            startDate: root.daysToShow % 7 === 0 ? Calendar.DateTimeState.firstDayOfWeek : Calendar.DateTimeState.selectedDate
+            startDate: root.daysToShow === 7 ? Calendar.DateTimeState.firstDayOfWeek
+                       : root.daysToShow === 5 ? (Qt.locale().firstDayOfWeek === Qt.Monday ? Calendar.DateTimeState.firstDayOfWeek
+                                                  : Calendar.Utils.addDaysToDate(Calendar.DateTimeState.firstDayOfWeek, 1))
+                       : Calendar.DateTimeState.selectedDate
             daysToShow: root.daysToShow
             dragDropEnabled: root.dragDropEnabled
             openOccurrence: root.openOccurrence

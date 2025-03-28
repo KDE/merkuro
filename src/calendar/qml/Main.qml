@@ -25,6 +25,7 @@ BaseApplication {
 
     readonly property var monthViewAction: CalendarApplication.action("open_month_view")
     readonly property var weekViewAction: CalendarApplication.action("open_week_view")
+    readonly property var workWeekViewAction: CalendarApplication.action("open_workweek_view")
     readonly property var threeDayViewAction: CalendarApplication.action("open_threeday_view")
     readonly property var dayViewAction: CalendarApplication.action("open_day_view")
     readonly property var scheduleViewAction: CalendarApplication.action("open_schedule_view")
@@ -89,6 +90,9 @@ BaseApplication {
             case Config.WeekView:
                 weekViewAction.trigger();
                 break;
+            case Config.WorkWeekView:
+                workWeekViewAction.trigger();
+                break;
             case Config.ThreeDayView:
                 threeDayViewAction.trigger();
                 break;
@@ -144,6 +148,13 @@ BaseApplication {
         function onOpenWeekView(): void {
             if(root.pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
                 root.switchView(hourlyViewComponent, { createEventAction: createAction} );
+            }
+        }
+
+        function onOpenWorkWeekView(): void {
+            // Assuming WorkWeek uses HourlyView with 5 days
+            if(root.pageStack.currentItem.mode !== CalendarApplication.WorkWeek || root.ignoreCurrentPage) {
+                root.switchView(hourlyViewComponent, { daysToShow: 5, createEventAction: createAction });
             }
         }
 
@@ -297,6 +308,9 @@ BaseApplication {
 
             case CalendarApplication.Week:
                 return i18nc("@title", "Week");
+
+            case CalendarApplication.WorkWeek:
+                return i18nc("@title", "Work Week");
 
             case CalendarApplication.ThreeDay:
                 return i18nc("@title", "3 Days");

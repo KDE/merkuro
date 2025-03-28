@@ -69,6 +69,8 @@ PathView {
             return Calendar.InfiniteMerkuroCalendarViewModel.DayScale;
         case 3:
             return Calendar.InfiniteMerkuroCalendarViewModel.ThreeDayScale;
+        case 5:
+            return Calendar.InfiniteMerkuroCalendarViewModel.WorkWeekScale;
         case 7:
         default:
             return Calendar.InfiniteMerkuroCalendarViewModel.WeekScale;
@@ -108,3 +110,4 @@ PathView {
         }
     }
 }
+

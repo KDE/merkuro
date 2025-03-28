@@ -49,6 +49,11 @@ Labs.MenuBar {
         }
 
         StatefulAppLabs.NativeMenuItem {
+            actionName: "open_workweek_view"
+            application: CalendarApplication
+        }
+
+        StatefulAppLabs.NativeMenuItem {
             actionName: "open_threeday_view"
             application: CalendarApplication
         }

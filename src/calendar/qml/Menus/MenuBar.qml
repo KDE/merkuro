@@ -41,6 +41,10 @@ QQC2.MenuBar {
         }
 
         Kirigami.Action {
+            fromQAction: CalendarApplication.action("open_workweek_view")
+        }
+
+        Kirigami.Action {
             fromQAction: CalendarApplication.action("open_threeday_view")
         }
 

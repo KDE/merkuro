@@ -24,6 +24,7 @@ public:
         DayScale,
         ThreeDayScale,
         WeekScale,
+        WorkWeekScale,
         MonthScale,
         YearScale,
         DecadeScale,
@@ -51,6 +52,7 @@ public:
     Q_INVOKABLE void addDates(const bool atEnd, const QDate startFrom = QDate());
     void addDayDates(const bool atEnd, const QDate &startFrom, int amount = 1);
     void addWeekDates(const bool atEnd, const QDate &startFrom);
+    void addWorkWeekDates(const bool atEnd, const QDate &startFrom);
     void addMonthDates(const bool atEnd, const QDate &startFrom);
     void addYearDates(const bool atEnd, const QDate &startFrom);
     void addDecadeDates(const bool atEnd, const QDate &startFrom);

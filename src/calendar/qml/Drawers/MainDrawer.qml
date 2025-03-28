@@ -256,6 +256,15 @@ Kirigami.OverlayDrawer {
                                 }
                             },
                             Kirigami.Action {
+                                fromQAction: CalendarApplication.action("open_workweek_view")
+                                checkable: false
+                                checked: pageStack.currentItem && pageStack.currentItem.mode === CalendarApplication.WorkWeek
+                                onTriggered: {
+                                    workWeekViewAction.trigger()
+                                    if (mainDrawer.modal) mainDrawer.close()
+                                }
+                            },
+                            Kirigami.Action {
                                 fromQAction: CalendarApplication.action("open_week_view")
                                 checkable: false
                                 // Override the default checked behaviour as we want this to stay highlighted

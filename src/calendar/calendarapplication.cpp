@@ -77,6 +77,22 @@ void CalendarApplication::setupActions()
         mainCollection()->setDefaultShortcut(openWeekAction, QKeySequence(i18n("Ctrl+2")));
     }
 
+    actionName = QLatin1StringView("open_workweek_view");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto openWorkWeekAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openWorkWeekView);
+        openWorkWeekAction->setText(i18n("Work Week View"));
+        openWorkWeekAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-workweek")));
+        openWorkWeekAction->setCheckable(true);
+        openWorkWeekAction->setActionGroup(m_viewGroup);
+        connect(openWorkWeekAction, &QAction::toggled, this, [this](bool checked) {
+            if (checked) {
+                m_config->setLastOpenedView(CalendarConfig::WorkWeekView);
+                m_config->save();
+            }
+        });
+        mainCollection()->setDefaultShortcut(openWorkWeekAction, QKeySequence(i18n("Ctrl+2")));
+    }
+
     actionName = QLatin1StringView("open_threeday_view");
     if (KAuthorized::authorizeAction(actionName)) {
         auto openThreeDayAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openThreeDayView);

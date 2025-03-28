@@ -34,8 +34,9 @@ public:
         ThreeDay = 4,
         Day = 8,
         Schedule = 16,
-        Event = Month | Week | ThreeDay | Day | Schedule,
         Todo = 32,
+        WorkWeek = 64,
+        Event = Month | Week | ThreeDay | Day | Schedule | WorkWeek,
     };
     Q_ENUM(Mode)
 
@@ -53,6 +54,7 @@ public:
 Q_SIGNALS:
     void openMonthView();
     void openWeekView();
+    void openWorkWeekView();
     void openThreeDayView();
     void openDayView();
     void openScheduleView();
