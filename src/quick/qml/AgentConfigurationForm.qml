@@ -45,6 +45,10 @@ FormCard.FormCard {
             bottomPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
 
+            standardButtons: QQC2.Dialog.Cancel
+
+            onRejected: dialog.close()
+
             QQC2.Button {
                 text: i18nc("@action:button", "Modify")
                 icon.name: "edit-entry-symbolic"
