@@ -12,3 +12,5 @@ QModelIndexList Utils::indexesFromSelection(const QItemSelection &selection)
 {
     return selection.indexes();
 }
+
+#include "moc_utils.cpp"

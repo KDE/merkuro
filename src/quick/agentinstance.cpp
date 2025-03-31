@@ -2,3 +2,5 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "agentinstance.h"
+
+#include "moc_agentinstance.cpp"

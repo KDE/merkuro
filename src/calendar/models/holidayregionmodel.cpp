@@ -71,3 +71,5 @@ QHash<int, QByteArray> HolidayRegionModel::roleNames() const
         {RegionCodeRole, "regionCode"},
     };
 }
+
+#include "moc_holidayregionmodel.cpp"

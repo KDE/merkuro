@@ -129,3 +129,5 @@ void CollectionEditorController::save()
         });
     }
 }
+
+#include "moc_collectioneditorcontroller.cpp"

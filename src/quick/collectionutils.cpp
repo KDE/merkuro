@@ -22,3 +22,5 @@ bool CollectionUtils::isRemovable(const QModelIndex &collectionId) const
                            || collection == SpecialMailCollections::self()->defaultCollection(SpecialMailCollections::Spam));
     return (collection.rights() & Akonadi::Collection::CanDeleteItem) && !isSystemFolder;
 }
+
+#include "moc_collectionutils.cpp"
