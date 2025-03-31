@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"POT-Creation-Date: 2025-03-31 00:42+0000\n"
 "PO-Revision-Date: 2023-03-22 00:50+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -38,124 +38,129 @@ msgstr ""
 msgid "Week View"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:77
+#: calendar/calendarapplication.cpp:77 calendar/calendarapplication.cpp:93
 #, kde-format
 msgid "Ctrl+2"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:83
 #, kde-format
-msgid "3 Day View"
-msgstr ""
-
-#: calendar/calendarapplication.cpp:93
-#, kde-format
-msgid "Ctrl+3"
+msgid "Work Week View"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
-msgid "Day View"
+msgid "3 Day View"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:109
 #, kde-format
-msgid "Ctrl+4"
+msgid "Ctrl+3"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:115
 #, kde-format
-msgid "Schedule View"
+msgid "Day View"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:125
 #, kde-format
-msgid "Ctrl+5"
+msgid "Ctrl+4"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:131
 #, kde-format
-msgid "Month View"
+msgid "Schedule View"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:141
 #, kde-format
-msgid "Ctrl+1"
+msgid "Ctrl+5"
 msgstr ""
 
 #: calendar/calendarapplication.cpp:147
 #, kde-format
+msgid "Month View"
+msgstr ""
+
+#: calendar/calendarapplication.cpp:157
+#, kde-format
+msgid "Ctrl+1"
+msgstr ""
+
+#: calendar/calendarapplication.cpp:163
+#, kde-format
 msgid "Backwards"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:160
+#: calendar/calendarapplication.cpp:176
 #, kde-format
 msgid "Forwards"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:173
+#: calendar/calendarapplication.cpp:189
 #, kde-format
 msgid "To Today"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:186
+#: calendar/calendarapplication.cpp:202
 #, kde-format
 msgid "To Date…"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:199
+#: calendar/calendarapplication.cpp:215
 #: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Acara Baru…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:222
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Tugas Baru…"
 
-#: calendar/calendarapplication.cpp:219
+#: calendar/calendarapplication.cpp:235
 #, kde-format
 msgid "Import Calendar…"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:239
+#: calendar/calendarapplication.cpp:255
 #, kde-format
 msgid "Alphabetically"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:255
+#: calendar/calendarapplication.cpp:271
 #, kde-format
 msgid "By Due Date"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:271
+#: calendar/calendarapplication.cpp:287
 #, kde-format
 msgid "By Priority Level"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:287
+#: calendar/calendarapplication.cpp:303
 #, kde-format
 msgid "Ascending order"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:303
+#: calendar/calendarapplication.cpp:319
 #, kde-format
 msgid "Descending Order"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:319
+#: calendar/calendarapplication.cpp:335
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:333
+#: calendar/calendarapplication.cpp:349
 #, kde-format
 msgid "Show Today Only"
 msgstr ""
 
-#: calendar/calendarapplication.cpp:348
+#: calendar/calendarapplication.cpp:364
 #, kde-format
 msgid "Refresh All"
 msgstr ""
@@ -1389,7 +1394,7 @@ msgid "Redo: "
 msgstr "Ulangi:"
 
 #: calendar/qml/Drawers/MainDrawer.qml:181
-#: calendar/qml/Menus/GlobalMenuBar.qml:122 calendar/qml/Menus/MenuBar.qml:102
+#: calendar/qml/Menus/GlobalMenuBar.qml:127 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Muat Ulang Semua Kalender"
@@ -1399,36 +1404,36 @@ msgstr "Muat Ulang Semua Kalender"
 msgid "Configure"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, fuzzy, kde-format
 #| msgid "Undo: "
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "Urungkan:"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgid "Undo"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, fuzzy, kde-format
 #| msgid "Redo: "
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "Ulangi:"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgid "Redo"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:307
+#: calendar/qml/Drawers/MainDrawer.qml:316
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:383
+#: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
 msgstr ""
@@ -1529,7 +1534,7 @@ msgstr "Hapus"
 msgid "Return to Location"
 msgstr ""
 
-#: calendar/qml/Main.qml:276
+#: calendar/qml/Main.qml:287
 #, fuzzy, kde-format
 #| msgctxt "@action:menu"
 #| msgid "Create"
@@ -1537,54 +1542,61 @@ msgctxt "@action:button"
 msgid "Create"
 msgstr "Buat"
 
-#: calendar/qml/Main.qml:281
+#: calendar/qml/Main.qml:292
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Acara Baru…"
 
-#: calendar/qml/Main.qml:287
+#: calendar/qml/Main.qml:298
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Tugas Baru…"
 
-#: calendar/qml/Main.qml:296
+#: calendar/qml/Main.qml:307
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@title"
 msgid "Month"
 msgstr "Bulan"
 
-#: calendar/qml/Main.qml:299
+#: calendar/qml/Main.qml:310
 #, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr ""
 
-#: calendar/qml/Main.qml:302
+#: calendar/qml/Main.qml:313
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@title"
+msgid "Work Week"
+msgstr "Kerja"
+
+#: calendar/qml/Main.qml:316
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@title"
 msgid "3 Days"
 msgstr "Hari"
 
-#: calendar/qml/Main.qml:305
+#: calendar/qml/Main.qml:319
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@title"
 msgid "Day"
 msgstr "Hari"
 
-#: calendar/qml/Main.qml:308
+#: calendar/qml/Main.qml:322
 #, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr ""
 
-#: calendar/qml/Main.qml:311
+#: calendar/qml/Main.qml:325
 #, fuzzy, kde-format
 #| msgid "Task"
 msgctxt "@title"
@@ -1660,54 +1672,71 @@ msgstr ""
 msgid "<b>Today</b>"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:48
+#: calendar/qml/MainViews/HourlyView.qml:52
 #, kde-format
 msgid "Previous Day"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:50
+#: calendar/qml/MainViews/HourlyView.qml:54
 #, kde-format
 msgid "Previous Three Days"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:56
+#, kde-format
+msgid "Previous Work Week"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
 msgid "Previous Week"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:62
+#: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:64
+#: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:66
+#: calendar/qml/MainViews/HourlyView.qml:72
 #, kde-format
-msgid "Next Week"
+msgid "Next Work Week"
 msgstr ""
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
+msgid "Next Week"
+msgstr ""
+
+#: calendar/qml/MainViews/HourlyView.qml:82
+#, kde-format
 msgid "Now"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:120
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:120
+#: calendar/qml/MainViews/HourlyView.qml:128
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@action:inmenu open work week view"
+msgid "Work Week"
+msgstr "Kerja"
+
+#: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:127
+#: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -1872,19 +1901,19 @@ msgctxt "@action:menu"
 msgid "View"
 msgstr "Tampilan"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:80
+#: calendar/qml/Menus/GlobalMenuBar.qml:85
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
 msgstr "Urutkan Tugas"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:129 calendar/qml/Menus/MenuBar.qml:108
+#: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
 msgstr "Pergi"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
+#: calendar/qml/Menus/GlobalMenuBar.qml:162 calendar/qml/Menus/MenuBar.qml:138
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
 #: mail/qml/FolderView.qml:43
@@ -1893,14 +1922,14 @@ msgctxt "@action:menu"
 msgid "Create"
 msgstr "Buat"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:173 components/qml/SettingsMenu.qml:14
+#: calendar/qml/Menus/GlobalMenuBar.qml:178 components/qml/SettingsMenu.qml:14
 #: contacts/qml/GlobalMenuBar.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: calendar/qml/Menus/MenuBar.qml:63
+#: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
 msgstr "Urutkan Tugas"
@@ -3814,13 +3843,13 @@ msgstr ""
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:49
+#: quick/qml/AgentConfigurationForm.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:58
+#: quick/qml/AgentConfigurationForm.qml:62
 #, fuzzy, kde-format
 #| msgctxt "text editing menu action"
 #| msgid "Delete"
@@ -3828,7 +3857,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Hapus"
 
-#: quick/qml/AgentConfigurationForm.qml:102
+#: quick/qml/AgentConfigurationForm.qml:106
 #, kde-format
 msgid "Add Account"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"POT-Creation-Date: 2025-03-31 00:42+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -40,125 +40,131 @@ msgstr "Ctrl+6 इति"
 msgid "Week View"
 msgstr "सप्ताहदृश्यम्"
 
-#: calendar/calendarapplication.cpp:77
+#: calendar/calendarapplication.cpp:77 calendar/calendarapplication.cpp:93
 #, kde-format
 msgid "Ctrl+2"
 msgstr "Ctrl+2 इति"
 
 #: calendar/calendarapplication.cpp:83
+#, fuzzy, kde-format
+#| msgid "Week View"
+msgid "Work Week View"
+msgstr "सप्ताहदृश्यम्"
+
+#: calendar/calendarapplication.cpp:99
 #, kde-format
 msgid "3 Day View"
 msgstr "३ दिवसीयं दृश्यम्"
 
-#: calendar/calendarapplication.cpp:93
+#: calendar/calendarapplication.cpp:109
 #, kde-format
 msgid "Ctrl+3"
 msgstr "Ctrl+3 इति"
 
-#: calendar/calendarapplication.cpp:99
+#: calendar/calendarapplication.cpp:115
 #, kde-format
 msgid "Day View"
 msgstr "दिवसदृश्यम्"
 
-#: calendar/calendarapplication.cpp:109
+#: calendar/calendarapplication.cpp:125
 #, kde-format
 msgid "Ctrl+4"
 msgstr "Ctrl+4 इति"
 
-#: calendar/calendarapplication.cpp:115
+#: calendar/calendarapplication.cpp:131
 #, kde-format
 msgid "Schedule View"
 msgstr "अनुसूची दृश्यम्"
 
-#: calendar/calendarapplication.cpp:125
+#: calendar/calendarapplication.cpp:141
 #, kde-format
 msgid "Ctrl+5"
 msgstr "Ctrl+5 इति"
 
-#: calendar/calendarapplication.cpp:131
+#: calendar/calendarapplication.cpp:147
 #, kde-format
 msgid "Month View"
 msgstr "मासदृश्यम्"
 
-#: calendar/calendarapplication.cpp:141
+#: calendar/calendarapplication.cpp:157
 #, kde-format
 msgid "Ctrl+1"
 msgstr "Ctrl+1 इति"
 
-#: calendar/calendarapplication.cpp:147
+#: calendar/calendarapplication.cpp:163
 #, kde-format
 msgid "Backwards"
 msgstr "पश्चात्तापम्"
 
-#: calendar/calendarapplication.cpp:160
+#: calendar/calendarapplication.cpp:176
 #, kde-format
 msgid "Forwards"
 msgstr "अग्रे"
 
-#: calendar/calendarapplication.cpp:173
+#: calendar/calendarapplication.cpp:189
 #, kde-format
 msgid "To Today"
 msgstr "To Today इति"
 
-#: calendar/calendarapplication.cpp:186
+#: calendar/calendarapplication.cpp:202
 #, kde-format
 msgid "To Date…"
 msgstr "अद्यपर्यन्तं..."
 
-#: calendar/calendarapplication.cpp:199
+#: calendar/calendarapplication.cpp:215
 #: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "नवीनः कार्यक्रमः..."
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:222
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "नवीनं कार्यम्..."
 
-#: calendar/calendarapplication.cpp:219
+#: calendar/calendarapplication.cpp:235
 #, kde-format
 msgid "Import Calendar…"
 msgstr "आयात पञ्चाङ्गम्..."
 
-#: calendar/calendarapplication.cpp:239
+#: calendar/calendarapplication.cpp:255
 #, kde-format
 msgid "Alphabetically"
 msgstr "वर्णमालानुसारम्"
 
-#: calendar/calendarapplication.cpp:255
+#: calendar/calendarapplication.cpp:271
 #, kde-format
 msgid "By Due Date"
 msgstr "नियततिथितः"
 
-#: calendar/calendarapplication.cpp:271
+#: calendar/calendarapplication.cpp:287
 #, kde-format
 msgid "By Priority Level"
 msgstr "प्राथमिकता स्तर के अनुसार"
 
-#: calendar/calendarapplication.cpp:287
+#: calendar/calendarapplication.cpp:303
 #, kde-format
 msgid "Ascending order"
 msgstr "आरोहणक्रमः"
 
-#: calendar/calendarapplication.cpp:303
+#: calendar/calendarapplication.cpp:319
 #, kde-format
 msgid "Descending Order"
 msgstr "अवरोही क्रम"
 
-#: calendar/calendarapplication.cpp:319
+#: calendar/calendarapplication.cpp:335
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr "सम्पन्नकार्यं दर्शयतु"
 
-#: calendar/calendarapplication.cpp:333
+#: calendar/calendarapplication.cpp:349
 #, fuzzy, kde-format
 #| msgid "To Today"
 msgid "Show Today Only"
 msgstr "To Today इति"
 
-#: calendar/calendarapplication.cpp:348
+#: calendar/calendarapplication.cpp:364
 #, kde-format
 msgid "Refresh All"
 msgstr "सर्वाणि ताजगी कुर्वन्तु"
@@ -1381,7 +1387,7 @@ msgid "Redo: "
 msgstr "पुनः करोः : "
 
 #: calendar/qml/Drawers/MainDrawer.qml:181
-#: calendar/qml/Menus/GlobalMenuBar.qml:122 calendar/qml/Menus/MenuBar.qml:102
+#: calendar/qml/Menus/GlobalMenuBar.qml:127 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "सर्वाणि कैलेण्डराणि ताजगी कुर्वन्तु"
@@ -1391,34 +1397,34 @@ msgstr "सर्वाणि कैलेण्डराणि ताजगी 
 msgid "Configure"
 msgstr "विन्यस्तं कुर्वन्तु"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "पूर्ववतं कुर्वन्तु: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgid "Undo"
 msgstr "पूर्ववत"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "पुनः करोतु: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgid "Redo"
 msgstr "पुनः करो"
 
-#: calendar/qml/Drawers/MainDrawer.qml:307
+#: calendar/qml/Drawers/MainDrawer.qml:316
 #, kde-format
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: calendar/qml/Drawers/MainDrawer.qml:383
+#: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
 msgstr "सर्वाणि कार्याणि पश्यन्तु"
@@ -1519,63 +1525,70 @@ msgstr "अपाकरोति"
 msgid "Return to Location"
 msgstr "स्थानं प्रति प्रत्यागच्छन्तु"
 
-#: calendar/qml/Main.qml:276
+#: calendar/qml/Main.qml:287
 #, fuzzy, kde-format
 #| msgid "Create"
 msgctxt "@action:button"
 msgid "Create"
 msgstr "निर्मियताम्"
 
-#: calendar/qml/Main.qml:281
+#: calendar/qml/Main.qml:292
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "नवीनः कार्यक्रमः..."
 
-#: calendar/qml/Main.qml:287
+#: calendar/qml/Main.qml:298
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "नवीनं कार्यम्..."
 
-#: calendar/qml/Main.qml:296
+#: calendar/qml/Main.qml:307
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@title"
 msgid "Month"
 msgstr "माह"
 
-#: calendar/qml/Main.qml:299
+#: calendar/qml/Main.qml:310
 #, fuzzy, kde-format
 #| msgid "Week"
 msgctxt "@title"
 msgid "Week"
 msgstr "सप्ताहः"
 
-#: calendar/qml/Main.qml:302
+#: calendar/qml/Main.qml:313
+#, fuzzy, kde-format
+#| msgid "Week"
+msgctxt "@title"
+msgid "Work Week"
+msgstr "सप्ताहः"
+
+#: calendar/qml/Main.qml:316
 #, fuzzy, kde-format
 #| msgid "3 Days"
 msgctxt "@title"
 msgid "3 Days"
 msgstr "३ दिवसाः"
 
-#: calendar/qml/Main.qml:305
+#: calendar/qml/Main.qml:319
 #, fuzzy, kde-format
 #| msgid "Day"
 msgctxt "@title"
 msgid "Day"
 msgstr "दिनं"
 
-#: calendar/qml/Main.qml:308
+#: calendar/qml/Main.qml:322
 #, fuzzy, kde-format
 #| msgid "Schedule"
 msgctxt "@title"
 msgid "Schedule"
 msgstr "कार्यक्रमः"
 
-#: calendar/qml/Main.qml:311
+#: calendar/qml/Main.qml:325
 #, fuzzy, kde-format
 #| msgid "Tasks"
 msgctxt "@title"
@@ -1651,54 +1664,73 @@ msgstr "सर्वं दिवसं चालयति"
 msgid "<b>Today</b>"
 msgstr "<b>अद्य</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:48
+#: calendar/qml/MainViews/HourlyView.qml:52
 #, kde-format
 msgid "Previous Day"
 msgstr "पूर्वदिवसः"
 
-#: calendar/qml/MainViews/HourlyView.qml:50
+#: calendar/qml/MainViews/HourlyView.qml:54
 #, kde-format
 msgid "Previous Three Days"
 msgstr "पूर्वत्रिदिनम्"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:56
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Work Week"
+msgstr "पूर्वसप्ताहः"
+
+#: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
 msgid "Previous Week"
 msgstr "पूर्वसप्ताहः"
 
-#: calendar/qml/MainViews/HourlyView.qml:62
+#: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
 msgstr "अग्रिमदिने"
 
-#: calendar/qml/MainViews/HourlyView.qml:64
+#: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
 msgstr "अग्रिमाः त्रयः दिवसाः"
 
-#: calendar/qml/MainViews/HourlyView.qml:66
-#, kde-format
-msgid "Next Week"
+#: calendar/qml/MainViews/HourlyView.qml:72
+#, fuzzy, kde-format
+#| msgid "Next Week"
+msgid "Next Work Week"
 msgstr "अग्रिमे सप्ताहे"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
+msgid "Next Week"
+msgstr "अग्रिमे सप्ताहे"
+
+#: calendar/qml/MainViews/HourlyView.qml:82
+#, kde-format
 msgid "Now"
 msgstr "अधुना"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:120
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "सप्ताहः"
 
-#: calendar/qml/MainViews/HourlyView.qml:120
+#: calendar/qml/MainViews/HourlyView.qml:128
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@action:inmenu open work week view"
+msgid "Work Week"
+msgstr "कार्यम्‌"
+
+#: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "३ दिवसाः"
 
-#: calendar/qml/MainViews/HourlyView.qml:127
+#: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -1863,19 +1895,19 @@ msgctxt "@action:menu"
 msgid "View"
 msgstr "दृश्यं"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:80
+#: calendar/qml/Menus/GlobalMenuBar.qml:85
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
 msgstr "कार्याणि क्रमयन्तु"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:129 calendar/qml/Menus/MenuBar.qml:108
+#: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
 msgstr "गच्छ"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
+#: calendar/qml/Menus/GlobalMenuBar.qml:162 calendar/qml/Menus/MenuBar.qml:138
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
 #: mail/qml/FolderView.qml:43
@@ -1884,14 +1916,14 @@ msgctxt "@action:menu"
 msgid "Create"
 msgstr "निर्मियताम्"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:173 components/qml/SettingsMenu.qml:14
+#: calendar/qml/Menus/GlobalMenuBar.qml:178 components/qml/SettingsMenu.qml:14
 #: contacts/qml/GlobalMenuBar.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: calendar/qml/Menus/MenuBar.qml:63
+#: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
 msgstr "कार्याणि क्रमयन्तु"
@@ -3783,19 +3815,19 @@ msgstr "%1 विन्यस्यताम्"
 msgid "Modify or delete this account agent."
 msgstr "एतत् खाता एजेण्टं परिवर्तयन्तु अथवा विलोपयन्तु।"
 
-#: quick/qml/AgentConfigurationForm.qml:49
+#: quick/qml/AgentConfigurationForm.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "परिवर्तनं कुर्वन्तु"
 
-#: quick/qml/AgentConfigurationForm.qml:58
+#: quick/qml/AgentConfigurationForm.qml:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "लुप्"
 
-#: quick/qml/AgentConfigurationForm.qml:102
+#: quick/qml/AgentConfigurationForm.qml:106
 #, kde-format
 msgid "Add Account"
 msgstr "खाता योजयतु"

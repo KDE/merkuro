@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"POT-Creation-Date: 2025-03-31 00:42+0000\n"
 "PO-Revision-Date: 2024-12-24 23:09+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -38,125 +38,131 @@ msgstr "Ctrl+6"
 msgid "Week View"
 msgstr "주간 보기"
 
-#: calendar/calendarapplication.cpp:77
+#: calendar/calendarapplication.cpp:77 calendar/calendarapplication.cpp:93
 #, kde-format
 msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
+#, fuzzy, kde-format
+#| msgid "Week View"
+msgid "Work Week View"
+msgstr "주간 보기"
+
+#: calendar/calendarapplication.cpp:99
 #, kde-format
 msgid "3 Day View"
 msgstr "3일간 보기"
 
-#: calendar/calendarapplication.cpp:93
+#: calendar/calendarapplication.cpp:109
 #, kde-format
 msgid "Ctrl+3"
 msgstr "Ctrl+3"
 
-#: calendar/calendarapplication.cpp:99
+#: calendar/calendarapplication.cpp:115
 #, kde-format
 msgid "Day View"
 msgstr "일간 보기"
 
-#: calendar/calendarapplication.cpp:109
+#: calendar/calendarapplication.cpp:125
 #, kde-format
 msgid "Ctrl+4"
 msgstr "Ctrl+4"
 
-#: calendar/calendarapplication.cpp:115
+#: calendar/calendarapplication.cpp:131
 #, kde-format
 msgid "Schedule View"
 msgstr "일정 보기"
 
-#: calendar/calendarapplication.cpp:125
+#: calendar/calendarapplication.cpp:141
 #, kde-format
 msgid "Ctrl+5"
 msgstr "Ctrl+5"
 
-#: calendar/calendarapplication.cpp:131
+#: calendar/calendarapplication.cpp:147
 #, kde-format
 msgid "Month View"
 msgstr "월간 보기"
 
-#: calendar/calendarapplication.cpp:141
+#: calendar/calendarapplication.cpp:157
 #, kde-format
 msgid "Ctrl+1"
 msgstr "Ctrl+1"
 
-#: calendar/calendarapplication.cpp:147
+#: calendar/calendarapplication.cpp:163
 #, kde-format
 msgid "Backwards"
 msgstr "뒤로"
 
-#: calendar/calendarapplication.cpp:160
+#: calendar/calendarapplication.cpp:176
 #, kde-format
 msgid "Forwards"
 msgstr "앞으로"
 
-#: calendar/calendarapplication.cpp:173
+#: calendar/calendarapplication.cpp:189
 #, kde-format
 msgid "To Today"
 msgstr "오늘로"
 
-#: calendar/calendarapplication.cpp:186
+#: calendar/calendarapplication.cpp:202
 #, kde-format
 msgid "To Date…"
 msgstr "날짜로…"
 
-#: calendar/calendarapplication.cpp:199
+#: calendar/calendarapplication.cpp:215
 #: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "새 이벤트…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:222
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "새 작업…"
 
-#: calendar/calendarapplication.cpp:219
+#: calendar/calendarapplication.cpp:235
 #, kde-format
 msgid "Import Calendar…"
 msgstr "캘린더 가져오기…"
 
-#: calendar/calendarapplication.cpp:239
+#: calendar/calendarapplication.cpp:255
 #, kde-format
 msgid "Alphabetically"
 msgstr "가나다순"
 
-#: calendar/calendarapplication.cpp:255
+#: calendar/calendarapplication.cpp:271
 #, kde-format
 msgid "By Due Date"
 msgstr "만료 기한순"
 
-#: calendar/calendarapplication.cpp:271
+#: calendar/calendarapplication.cpp:287
 #, kde-format
 msgid "By Priority Level"
 msgstr "우선 순위순"
 
-#: calendar/calendarapplication.cpp:287
+#: calendar/calendarapplication.cpp:303
 #, kde-format
 msgid "Ascending order"
 msgstr "오름차순"
 
-#: calendar/calendarapplication.cpp:303
+#: calendar/calendarapplication.cpp:319
 #, kde-format
 msgid "Descending Order"
 msgstr "내림차순"
 
-#: calendar/calendarapplication.cpp:319
+#: calendar/calendarapplication.cpp:335
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr "완료된 작업 표시"
 
-#: calendar/calendarapplication.cpp:333
+#: calendar/calendarapplication.cpp:349
 #, fuzzy, kde-format
 #| msgid "To Today"
 msgid "Show Today Only"
 msgstr "오늘로"
 
-#: calendar/calendarapplication.cpp:348
+#: calendar/calendarapplication.cpp:364
 #, kde-format
 msgid "Refresh All"
 msgstr "모두 새로 고침"
@@ -1350,7 +1356,7 @@ msgid "Redo: "
 msgstr "다시 실행: "
 
 #: calendar/qml/Drawers/MainDrawer.qml:181
-#: calendar/qml/Menus/GlobalMenuBar.qml:122 calendar/qml/Menus/MenuBar.qml:102
+#: calendar/qml/Menus/GlobalMenuBar.qml:127 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr ""
@@ -1360,34 +1366,34 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "실행 취소: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgid "Undo"
 msgstr "실행 취소"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "다시 실행: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgid "Redo"
 msgstr "다시 실행"
 
-#: calendar/qml/Drawers/MainDrawer.qml:307
+#: calendar/qml/Drawers/MainDrawer.qml:316
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: calendar/qml/Drawers/MainDrawer.qml:383
+#: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
 msgstr ""
@@ -1488,7 +1494,7 @@ msgstr "삭제"
 msgid "Return to Location"
 msgstr ""
 
-#: calendar/qml/Main.qml:276
+#: calendar/qml/Main.qml:287
 #, fuzzy, kde-format
 #| msgctxt "@action:button Create new calendar"
 #| msgid "Create New"
@@ -1496,56 +1502,63 @@ msgctxt "@action:button"
 msgid "Create"
 msgstr "새로 만들기"
 
-#: calendar/qml/Main.qml:281
+#: calendar/qml/Main.qml:292
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "새 이벤트…"
 
-#: calendar/qml/Main.qml:287
+#: calendar/qml/Main.qml:298
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "새 작업…"
 
-#: calendar/qml/Main.qml:296
+#: calendar/qml/Main.qml:307
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@title"
 msgid "Month"
 msgstr "월"
 
-#: calendar/qml/Main.qml:299
+#: calendar/qml/Main.qml:310
 #, fuzzy, kde-format
 #| msgid "Weekly"
 msgctxt "@title"
 msgid "Week"
 msgstr "매주"
 
-#: calendar/qml/Main.qml:302
+#: calendar/qml/Main.qml:313
+#, fuzzy, kde-format
+#| msgid "Weekly"
+msgctxt "@title"
+msgid "Work Week"
+msgstr "매주"
+
+#: calendar/qml/Main.qml:316
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@title"
 msgid "3 Days"
 msgstr "일"
 
-#: calendar/qml/Main.qml:305
+#: calendar/qml/Main.qml:319
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@title"
 msgid "Day"
 msgstr "일"
 
-#: calendar/qml/Main.qml:308
+#: calendar/qml/Main.qml:322
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgctxt "@title"
 msgid "Schedule"
 msgstr "일정 보기"
 
-#: calendar/qml/Main.qml:311
+#: calendar/qml/Main.qml:325
 #, fuzzy, kde-format
 #| msgid "Task"
 msgctxt "@title"
@@ -1621,56 +1634,75 @@ msgstr ""
 msgid "<b>Today</b>"
 msgstr "<b>오늘</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:48
+#: calendar/qml/MainViews/HourlyView.qml:52
 #, fuzzy, kde-format
 #| msgid "Previous Week"
 msgid "Previous Day"
 msgstr "지난 주"
 
-#: calendar/qml/MainViews/HourlyView.qml:50
+#: calendar/qml/MainViews/HourlyView.qml:54
 #, fuzzy, kde-format
 #| msgid "Previous Week"
 msgid "Previous Three Days"
 msgstr "지난 주"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:56
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Work Week"
+msgstr "지난 주"
+
+#: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
 msgid "Previous Week"
 msgstr "지난 주"
 
-#: calendar/qml/MainViews/HourlyView.qml:62
+#: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:64
+#: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:66
-#, kde-format
-msgid "Next Week"
+#: calendar/qml/MainViews/HourlyView.qml:72
+#, fuzzy, kde-format
+#| msgid "Next Week"
+msgid "Next Work Week"
 msgstr "다음 주"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
+msgid "Next Week"
+msgstr "다음 주"
+
+#: calendar/qml/MainViews/HourlyView.qml:82
+#, kde-format
 msgid "Now"
 msgstr "현재"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:120
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:120
+#: calendar/qml/MainViews/HourlyView.qml:128
+#, fuzzy, kde-format
+#| msgid "Weekly"
+msgctxt "@action:inmenu open work week view"
+msgid "Work Week"
+msgstr "매주"
+
+#: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr ""
 
-#: calendar/qml/MainViews/HourlyView.qml:127
+#: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -1834,19 +1866,19 @@ msgctxt "@action:menu"
 msgid "View"
 msgstr "보기"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:80
+#: calendar/qml/Menus/GlobalMenuBar.qml:85
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
 msgstr ""
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:129 calendar/qml/Menus/MenuBar.qml:108
+#: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
 msgstr ""
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
+#: calendar/qml/Menus/GlobalMenuBar.qml:162 calendar/qml/Menus/MenuBar.qml:138
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
 #: mail/qml/FolderView.qml:43
@@ -1855,14 +1887,14 @@ msgctxt "@action:menu"
 msgid "Create"
 msgstr ""
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:173 components/qml/SettingsMenu.qml:14
+#: calendar/qml/Menus/GlobalMenuBar.qml:178 components/qml/SettingsMenu.qml:14
 #: contacts/qml/GlobalMenuBar.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Settings"
 msgstr "설정"
 
-#: calendar/qml/Menus/MenuBar.qml:63
+#: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
 msgstr ""
@@ -3735,20 +3767,20 @@ msgstr "%1 설정"
 msgid "Modify or delete this account agent."
 msgstr ""
 
-#: quick/qml/AgentConfigurationForm.qml:49
+#: quick/qml/AgentConfigurationForm.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "수정"
 
-#: quick/qml/AgentConfigurationForm.qml:58
+#: quick/qml/AgentConfigurationForm.qml:62
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
 
-#: quick/qml/AgentConfigurationForm.qml:102
+#: quick/qml/AgentConfigurationForm.qml:106
 #, kde-format
 msgid "Add Account"
 msgstr "계정 추가"

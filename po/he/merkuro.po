@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-23 00:42+0000\n"
+"POT-Creation-Date: 2025-03-31 00:42+0000\n"
 "PO-Revision-Date: 2025-03-22 19:23+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -39,124 +39,130 @@ msgstr "Ctrl+6"
 msgid "Week View"
 msgstr "תצוגת שבוע"
 
-#: calendar/calendarapplication.cpp:77
+#: calendar/calendarapplication.cpp:77 calendar/calendarapplication.cpp:93
 #, kde-format
 msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
+#, fuzzy, kde-format
+#| msgid "Week View"
+msgid "Work Week View"
+msgstr "תצוגת שבוע"
+
+#: calendar/calendarapplication.cpp:99
 #, kde-format
 msgid "3 Day View"
 msgstr "תצוגת 3 ימים"
 
-#: calendar/calendarapplication.cpp:93
+#: calendar/calendarapplication.cpp:109
 #, kde-format
 msgid "Ctrl+3"
 msgstr "Ctrl+3"
 
-#: calendar/calendarapplication.cpp:99
+#: calendar/calendarapplication.cpp:115
 #, kde-format
 msgid "Day View"
 msgstr "תצוגת יום"
 
-#: calendar/calendarapplication.cpp:109
+#: calendar/calendarapplication.cpp:125
 #, kde-format
 msgid "Ctrl+4"
 msgstr "Ctrl+4"
 
-#: calendar/calendarapplication.cpp:115
+#: calendar/calendarapplication.cpp:131
 #, kde-format
 msgid "Schedule View"
 msgstr "תצוגת לו״ז"
 
-#: calendar/calendarapplication.cpp:125
+#: calendar/calendarapplication.cpp:141
 #, kde-format
 msgid "Ctrl+5"
 msgstr "Ctrl+5"
 
-#: calendar/calendarapplication.cpp:131
+#: calendar/calendarapplication.cpp:147
 #, kde-format
 msgid "Month View"
 msgstr "תצוגת חודש"
 
-#: calendar/calendarapplication.cpp:141
+#: calendar/calendarapplication.cpp:157
 #, kde-format
 msgid "Ctrl+1"
 msgstr "Ctrl+1"
 
-#: calendar/calendarapplication.cpp:147
+#: calendar/calendarapplication.cpp:163
 #, kde-format
 msgid "Backwards"
 msgstr "אחורה"
 
-#: calendar/calendarapplication.cpp:160
+#: calendar/calendarapplication.cpp:176
 #, kde-format
 msgid "Forwards"
 msgstr "קדימה"
 
-#: calendar/calendarapplication.cpp:173
+#: calendar/calendarapplication.cpp:189
 #, kde-format
 msgid "To Today"
 msgstr "להיום"
 
-#: calendar/calendarapplication.cpp:186
+#: calendar/calendarapplication.cpp:202
 #, kde-format
 msgid "To Date…"
 msgstr "לתאריך…"
 
-#: calendar/calendarapplication.cpp:199
+#: calendar/calendarapplication.cpp:215
 #: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "אירוע חדש…"
 
-#: calendar/calendarapplication.cpp:206
+#: calendar/calendarapplication.cpp:222
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "משימה חדשה…"
 
-#: calendar/calendarapplication.cpp:219
+#: calendar/calendarapplication.cpp:235
 #, kde-format
 msgid "Import Calendar…"
 msgstr "ייבוא לוח שנה…"
 
-#: calendar/calendarapplication.cpp:239
+#: calendar/calendarapplication.cpp:255
 #, kde-format
 msgid "Alphabetically"
 msgstr "לפי האלפבית"
 
-#: calendar/calendarapplication.cpp:255
+#: calendar/calendarapplication.cpp:271
 #, kde-format
 msgid "By Due Date"
 msgstr "לפי מועד הסיום"
 
-#: calendar/calendarapplication.cpp:271
+#: calendar/calendarapplication.cpp:287
 #, kde-format
 msgid "By Priority Level"
 msgstr "לפי רמת העדיפות"
 
-#: calendar/calendarapplication.cpp:287
+#: calendar/calendarapplication.cpp:303
 #, kde-format
 msgid "Ascending order"
 msgstr "בסדר עולה"
 
-#: calendar/calendarapplication.cpp:303
+#: calendar/calendarapplication.cpp:319
 #, kde-format
 msgid "Descending Order"
 msgstr "בסדר יורד"
 
-#: calendar/calendarapplication.cpp:319
+#: calendar/calendarapplication.cpp:335
 #, kde-format
 msgid "Show Completed Tasks"
 msgstr "הצגת משימות שהושלמו"
 
-#: calendar/calendarapplication.cpp:333
+#: calendar/calendarapplication.cpp:349
 #, kde-format
 msgid "Show Today Only"
 msgstr "להציג רק את היום"
 
-#: calendar/calendarapplication.cpp:348
+#: calendar/calendarapplication.cpp:364
 #, kde-format
 msgid "Refresh All"
 msgstr "לרענן הכול"
@@ -1406,7 +1412,7 @@ msgid "Redo: "
 msgstr "ביצוע מחדש: "
 
 #: calendar/qml/Drawers/MainDrawer.qml:181
-#: calendar/qml/Menus/GlobalMenuBar.qml:122 calendar/qml/Menus/MenuBar.qml:102
+#: calendar/qml/Menus/GlobalMenuBar.qml:127 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "ריענון כל לוחות השנה"
@@ -1416,34 +1422,34 @@ msgstr "ריענון כל לוחות השנה"
 msgid "Configure"
 msgstr "הגדרה"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "הסגה: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:291
+#: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
 msgid "Undo"
 msgstr "הסגה"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "ביצוע מחדש: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:296
+#: calendar/qml/Drawers/MainDrawer.qml:305
 #, kde-format
 msgid "Redo"
 msgstr "ביצוע מחדש"
 
-#: calendar/qml/Drawers/MainDrawer.qml:307
+#: calendar/qml/Drawers/MainDrawer.qml:316
 #, kde-format
 msgid "Settings"
 msgstr "הגדרות"
 
-#: calendar/qml/Drawers/MainDrawer.qml:383
+#: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
 msgstr "הצגת כל המשימות"
@@ -1544,55 +1550,63 @@ msgstr "הסרה"
 msgid "Return to Location"
 msgstr "חזרה למקום"
 
-#: calendar/qml/Main.qml:276
+#: calendar/qml/Main.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "יצירה"
 
-#: calendar/qml/Main.qml:281
+#: calendar/qml/Main.qml:292
 #, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "אירוע חדש…"
 
-#: calendar/qml/Main.qml:287
+#: calendar/qml/Main.qml:298
 #, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "משימה חדשה…"
 
-#: calendar/qml/Main.qml:296
+#: calendar/qml/Main.qml:307
 #, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "חודש"
 
-#: calendar/qml/Main.qml:299
+#: calendar/qml/Main.qml:310
 #, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "שבוע"
 
-#: calendar/qml/Main.qml:302
+#: calendar/qml/Main.qml:313
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Week"
+msgctxt "@title"
+msgid "Work Week"
+msgstr "שבוע"
+
+#: calendar/qml/Main.qml:316
 #, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 ימים"
 
-#: calendar/qml/Main.qml:305
+#: calendar/qml/Main.qml:319
 #, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "יום"
 
-#: calendar/qml/Main.qml:308
+#: calendar/qml/Main.qml:322
 #, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "לו״ז"
 
-#: calendar/qml/Main.qml:311
+#: calendar/qml/Main.qml:325
 #, kde-format
 msgctxt "@title"
 msgid "Tasks"
@@ -1667,54 +1681,73 @@ msgstr "תופס יום שלם"
 msgid "<b>Today</b>"
 msgstr "<b>היום</b>"
 
-#: calendar/qml/MainViews/HourlyView.qml:48
+#: calendar/qml/MainViews/HourlyView.qml:52
 #, kde-format
 msgid "Previous Day"
 msgstr "היום הקודם"
 
-#: calendar/qml/MainViews/HourlyView.qml:50
+#: calendar/qml/MainViews/HourlyView.qml:54
 #, kde-format
 msgid "Previous Three Days"
 msgstr "שלושת הימים הקודמים"
 
-#: calendar/qml/MainViews/HourlyView.qml:52
+#: calendar/qml/MainViews/HourlyView.qml:56
+#, fuzzy, kde-format
+#| msgid "Previous Week"
+msgid "Previous Work Week"
+msgstr "השבוע הקודם"
+
+#: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
 msgid "Previous Week"
 msgstr "השבוע הקודם"
 
-#: calendar/qml/MainViews/HourlyView.qml:62
+#: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
 msgstr "היום הבא"
 
-#: calendar/qml/MainViews/HourlyView.qml:64
+#: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
 msgstr "שלושת הימים הבאים"
 
-#: calendar/qml/MainViews/HourlyView.qml:66
-#, kde-format
-msgid "Next Week"
+#: calendar/qml/MainViews/HourlyView.qml:72
+#, fuzzy, kde-format
+#| msgid "Next Week"
+msgid "Next Work Week"
 msgstr "השבוע הבא"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
+msgid "Next Week"
+msgstr "השבוע הבא"
+
+#: calendar/qml/MainViews/HourlyView.qml:82
+#, kde-format
 msgid "Now"
 msgstr "עכשיו"
 
-#: calendar/qml/MainViews/HourlyView.qml:112
+#: calendar/qml/MainViews/HourlyView.qml:120
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
 msgstr "שבוע"
 
-#: calendar/qml/MainViews/HourlyView.qml:120
+#: calendar/qml/MainViews/HourlyView.qml:128
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@action:inmenu open work week view"
+msgid "Work Week"
+msgstr "עבודה"
+
+#: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
 msgstr "3 ימים"
 
-#: calendar/qml/MainViews/HourlyView.qml:127
+#: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
@@ -1870,19 +1903,19 @@ msgctxt "@action:menu"
 msgid "View"
 msgstr "תצוגה"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:80
+#: calendar/qml/Menus/GlobalMenuBar.qml:85
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
 msgstr "מיון משימות"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:129 calendar/qml/Menus/MenuBar.qml:108
+#: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
 msgstr "קדימה"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:157 calendar/qml/Menus/MenuBar.qml:134
+#: calendar/qml/Menus/GlobalMenuBar.qml:162 calendar/qml/Menus/MenuBar.qml:138
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:55 mail/qml/app/MenuBar.qml:26
 #: mail/qml/FolderView.qml:43
@@ -1891,14 +1924,14 @@ msgctxt "@action:menu"
 msgid "Create"
 msgstr "יצירה"
 
-#: calendar/qml/Menus/GlobalMenuBar.qml:173 components/qml/SettingsMenu.qml:14
+#: calendar/qml/Menus/GlobalMenuBar.qml:178 components/qml/SettingsMenu.qml:14
 #: contacts/qml/GlobalMenuBar.qml:49
 #, kde-format
 msgctxt "@action:menu"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: calendar/qml/Menus/MenuBar.qml:63
+#: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
 msgstr "מיון משימות"
@@ -3775,19 +3808,19 @@ msgstr "הגדרת %1"
 msgid "Modify or delete this account agent."
 msgstr "שינוי או מחיקת סוכן החשבון הזה."
 
-#: quick/qml/AgentConfigurationForm.qml:49
+#: quick/qml/AgentConfigurationForm.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "שינוי"
 
-#: quick/qml/AgentConfigurationForm.qml:58
+#: quick/qml/AgentConfigurationForm.qml:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: quick/qml/AgentConfigurationForm.qml:102
+#: quick/qml/AgentConfigurationForm.qml:106
 #, kde-format
 msgid "Add Account"
 msgstr "הוספת חשבון"
