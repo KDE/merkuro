@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the kalendar package.
 #
 # Alexander Yavorsky <kekcuha@gmail.com>, 2022, 2023.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-31 02:33+0000\n"
-"PO-Revision-Date: 2024-12-03 11:51+0300\n"
+"PO-Revision-Date: 2025-04-02 17:14+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -153,10 +153,9 @@ msgid "Show Completed Tasks"
 msgstr "Показывать завершённые задачи"
 
 #: calendar/calendarapplication.cpp:333
-#, fuzzy, kde-format
-#| msgid "To Today"
+#, kde-format
 msgid "Show Today Only"
-msgstr "К сегодняшней дате"
+msgstr "Показывать только сегодняшнюю дату"
 
 #: calendar/calendarapplication.cpp:348
 #, kde-format
@@ -225,7 +224,7 @@ msgstr "© Сообщество KDE, 2021–2024"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr "Carl Schwa"
+msgstr "Carl Schwan"
 
 #: calendar/main.cpp:67 calendar/main.cpp:72 contacts/main.cpp:61
 #: contacts/main.cpp:66 launcher/main.cpp:56 mail/main.cpp:63 mail/main.cpp:68
@@ -256,13 +255,13 @@ msgstr "Разработчик"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Значение по умолчанию на основе локали"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -1705,41 +1704,33 @@ msgid "Quickly Add a New Task."
 msgstr "Быстро добавить новую задачу."
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "дн."
+msgstr "Праздничные дни"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Показать события"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Редактировать календарь…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Обновить календарь"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
-msgstr ""
-"Удаление календаря\n"
-"удаление календаря"
+msgstr "Удалить календарь"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:94
 #, kde-format
@@ -1952,16 +1943,15 @@ msgid "Use popup to show incidence information"
 msgstr "Использовать всплывающее окно для показа сведений о событии"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show tasks in calendar views"
+#, kde-format
 msgid "Show holidays in calendar views"
-msgstr "Показывать задачи в календаре"
+msgstr "Показывать праздничные дни в календаре"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Регионы для учёта праздников"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2362,11 +2352,9 @@ msgid "No Name"
 msgstr "Нет имени"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Недействителен"
+msgstr "Недействительная запись"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2389,9 +2377,7 @@ msgid "New Contact Group…"
 msgstr "Создать группу контактов…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Изменить контакт…"
@@ -2403,18 +2389,16 @@ msgid "Delete contact"
 msgstr "Удалить контакт"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to..."
-msgstr "Переместить сообщение…"
+msgstr "Переместить в…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to..."
-msgstr "Копировать сообщение…"
+msgstr "Копировать в…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2517,28 +2501,26 @@ msgid "New Contact Group"
 msgstr "Создать группу контактов"
 
 #: contacts/qml/ContactView.qml:85 mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Не выбрано ни одного почтового ящика"
-msgstr[1] "Не выбрано ни одного почтового ящика"
-msgstr[2] "Не выбрано ни одного почтового ящика"
-msgstr[3] "Не выбрано ни одного почтового ящика"
+msgstr[0] "Выбрано: %1"
+msgstr[1] "Выбрано: %1"
+msgstr[2] "Выбрано: %1"
+msgstr[3] "Выбрано: %1"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Перемещение выбранного по указанному адресу"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Завершено:"
+msgstr "Копирование выбранного по указанному адресу"
 
 #: contacts/qml/ContactView.qml:244 contacts/qml/private/ContactsPage.qml:58
 #, kde-format
@@ -3255,14 +3237,13 @@ msgid "Confirm Contact Deletion"
 msgstr "Подтверждение удаления записи контакта"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
-msgstr[0] "Удалить контакт"
-msgstr[1] "Удалить контакт"
-msgstr[2] "Удалить контакт"
+msgstr[0] "Удалить контакты"
+msgstr[1] "Удалить контакты"
+msgstr[2] "Удалить контакты"
 msgstr[3] "Удалить контакт"
 
 #: contacts/qml/private/DeleteContactDialog.qml:31
@@ -3362,41 +3343,35 @@ msgid "Check Mail"
 msgstr "Проверить почту"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "Отметить сообщение как прочитанное"
+msgstr "Отметить как прочитанное"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr "Отметить сообщение как непрочитанное"
+msgstr "Отметить как непрочитанное"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Отметить как важное"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Удалить в корзину"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "Сохранить как..."
+msgstr "Сохранить как…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
@@ -3463,33 +3438,27 @@ msgstr ""
 "удалены без возможности восстановления."
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Удалить все"
+msgstr "Удаление письма"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Удалить все"
+msgstr "Удалить письмо"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete the folder %1, discarding its contents? "
-#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
-#| "Trash folder and are permanently deleted."
+#, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
-"Действительно удалить папку %1, очистив её содержимое? <br /> <b>Обратите "
-"внимание,</b> что стёртые сообщения не сохраняются в папке «Корзина» и будут "
-"удалены без возможности восстановления."
+"Действительно удалить письмо «%1», очистив его содержимое? <br /> "
+"<b>Обратите внимание,</b> что стёртые сообщения не сохраняются в папке "
+"«Корзина» и будут удалены без возможности восстановления."
 
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
@@ -3543,19 +3512,17 @@ msgstr "Выберите файл"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Поиск: %1"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Сохранение сообщения - Merkuro-Mail"
+msgstr "Сохранение сообщения - Почта Merkuro"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
-msgstr "письма (*.mbox)"
+msgstr "Письма (*.mbox)"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
