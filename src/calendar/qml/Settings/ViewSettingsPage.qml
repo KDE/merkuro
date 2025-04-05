@@ -414,6 +414,17 @@ FormCard.FormCardPage {
                 Config.save();
             }
         }
+
+        FormCard.FormDelegateSeparator { above: hideEmptyDays }
+        FormCard.FormCheckDelegate {
+            id: hideEmptyDays
+            text: i18n("Hide empty days")
+            checked: Config.hideEmptyDays
+            onCheckedChanged: {
+                Config.hideEmptyDays = checked;
+                Config.save();
+            }
+        }
     }
 
     FormCard.FormHeader {

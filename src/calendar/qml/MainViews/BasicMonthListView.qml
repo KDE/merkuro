@@ -182,6 +182,7 @@ QQC2.ScrollView {
 
                     columns: 2
                     rows: 2
+                    visible: incidences.length > 0 || !Calendar.Config.hideEmptyDays
 
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Layout.rightMargin: Kirigami.Units.largeSpacing
