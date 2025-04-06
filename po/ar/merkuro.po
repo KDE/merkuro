@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-31 00:42+0000\n"
-"PO-Revision-Date: 2025-03-23 09:53+0400\n"
+"POT-Creation-Date: 2025-04-06 00:43+0000\n"
+"PO-Revision-Date: 2025-04-05 15:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -45,10 +45,9 @@ msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "عرض الأسبوع"
+msgstr "عرض أسبوع العمل"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -962,23 +961,19 @@ msgid "Delete All"
 msgstr "احذف الكل"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "حرر التّقويم…"
+msgstr "حرر التّقويم"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "عامّ"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "الاسم"
@@ -987,80 +982,77 @@ msgstr "الاسم"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "الأيقونة"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "الإحصائيّات"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يوجد أي مُدخَلة"
+msgstr[1] "مُدخَلة واحدة"
+msgstr[2] "مُدخَلتين"
+msgstr[3] "%1 مدخلات"
+msgstr[4] "%1 مدخلة"
+msgstr[5] "%1 مدخلة"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "المتراسل"
+msgstr "المحتوى"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "الحجم"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "الجلب"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "استخدم الخيارات من المجلد أو الحساب الأب"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "زامِن عند اختيار هذا المجلد"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "زامِن بعد"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
-msgstr "أبدًا"
+msgstr "البتة"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 دقيقة"
-msgstr[1] "%1 دقيقة"
-msgstr[2] "%1 دقيقة"
-msgstr[3] "%1 دقيقة"
+msgstr[0] "أقل من دقيقة"
+msgstr[1] "دقيقة واحدة"
+msgstr[2] "دقيقتان"
+msgstr[3] "%1 دقائق"
 msgstr[4] "%1 دقيقة"
 msgstr[5] "%1 دقيقة"
 
@@ -1627,12 +1619,10 @@ msgid "Week"
 msgstr "الأسبوع"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "الأسبوع"
+msgstr "أسبوع العمل"
 
 #: calendar/qml/Main.qml:316
 #, kde-format
@@ -1669,55 +1659,55 @@ msgstr "صفّر"
 msgid "All day or Multi day"
 msgstr "كامل اليوم أو عدة أيام"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:243
+#: calendar/qml/MainViews/BasicMonthListView.qml:244
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "امسح اليوم"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:262
+#: calendar/qml/MainViews/BasicMonthListView.qml:263
 #, kde-format
 msgid "Tap"
 msgstr "طَرق"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:262
+#: calendar/qml/MainViews/BasicMonthListView.qml:263
 #, kde-format
 msgid "Click"
 msgstr "نقر"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:264
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "لا يوجد شيئا في الدفاتر اليوم. %1 لتضيف شيء."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:391
+#: calendar/qml/MainViews/BasicMonthListView.qml:392
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (اليوم %2 من %3)"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:447
+#: calendar/qml/MainViews/BasicMonthListView.qml:448
 #, kde-format
 msgid "Runs all day"
 msgstr "شغال بطول اليوم"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:451
+#: calendar/qml/MainViews/BasicMonthListView.qml:452
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:454
+#: calendar/qml/MainViews/BasicMonthListView.qml:455
 #, kde-format
 msgid "Starts at %1"
 msgstr "يبدأ في %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:456
+#: calendar/qml/MainViews/BasicMonthListView.qml:457
 #, kde-format
 msgid "Ends at %1"
 msgstr "ينتهي في %1"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:458
+#: calendar/qml/MainViews/BasicMonthListView.qml:459
 #, kde-format
 msgid "Runs All Day"
 msgstr "شغال بطول اليوم"
@@ -1738,10 +1728,9 @@ msgid "Previous Three Days"
 msgstr "الأيام الثلاثة الماضية"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "الأسبوع السابق"
+msgstr "أسبوع العمل السابق"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1759,10 +1748,9 @@ msgid "Next Three Days"
 msgstr "الأيام الثلاثة القادمة"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "الأسبوع القادم"
+msgstr "أسبوع العمل القادم"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1781,11 +1769,10 @@ msgid "Week"
 msgstr "الأسبوع"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "العمل"
+msgstr "أسبوع العمل"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -2282,42 +2269,47 @@ msgstr "يحتاج عرض الجدولة القابل للتمرير إلى أد
 msgid "Show week headers"
 msgstr "اعرض ترويسات الأسبوع"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:420
+#: calendar/qml/Settings/ViewSettingsPage.qml:421
+#, kde-format
+msgid "Hide empty days"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
 msgid "Tasks View settings"
 msgstr "إعدادات عرض المهام"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:425
+#: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "اعرض المهامّ الفرعية المكتملة"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:436
+#: calendar/qml/Settings/ViewSettingsPage.qml:447
 #, kde-format
 msgid "Maps"
 msgstr "الخرائط"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:442
+#: calendar/qml/Settings/ViewSettingsPage.qml:453
 #, kde-format
 msgid "Enable maps"
 msgstr "مكن الخرائط"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:449
+#: calendar/qml/Settings/ViewSettingsPage.qml:460
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "قد يتسبب في تعطل بعض الأنظمة."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:456
+#: calendar/qml/Settings/ViewSettingsPage.qml:467
 #, kde-format
 msgid "Location marker"
 msgstr "مُعَلِم الموقع"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:462
+#: calendar/qml/Settings/ViewSettingsPage.qml:473
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "دائرة (تعرض مساحة الموقع)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:469
+#: calendar/qml/Settings/ViewSettingsPage.qml:480
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "دبوس (تعرض الموقع بالضبط)"
@@ -2534,11 +2526,9 @@ msgid "No name"
 msgstr "بلا اسم"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "غير صالح"
+msgstr "عنصر غير صالح"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2561,35 +2551,28 @@ msgid "New Contact Group…"
 msgstr "مجموعة متراسلين جديدة…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "حرّر المتراسل..."
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "احذف المتراسل"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "انقل إلى..."
+msgstr "انقل إلى…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr "انسخ إلى..."
+msgstr "انسخ إلى…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2667,9 +2650,7 @@ msgid "Select Email Address"
 msgstr "اختر عنوان بريد إلكتروني"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "بلا اسم"
@@ -2699,19 +2680,16 @@ msgid "New Contact Group"
 msgstr "مجموعة متراسلين جديدة"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "لم يُحدّد شيء"
-msgstr[1] "رسالة واحدة مُحددة"
-msgstr[2] "رسالتان مُحددتان"
-msgstr[3] "%1 رسائل مُحددة"
-msgstr[4] "%1 رسالة مُحددة"
-msgstr[5] "%1 رسالة مُحددة"
+msgstr[0] "لم يحدد شيء"
+msgstr[1] "واحد محدّد"
+msgstr[2] "محدّدان"
+msgstr[3] "%1 محدّدون"
+msgstr[4] "%1 محدّدًا"
+msgstr[5] "%1 محدّد"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
@@ -3450,8 +3428,7 @@ msgid "Confirm Contact Deletion"
 msgstr "تأكيد حذف المتراسل"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
@@ -3463,17 +3440,16 @@ msgstr[4] "احذف المتراسل"
 msgstr[5] "احذف المتراسل"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
-msgstr[1] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
-msgstr[2] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
-msgstr[3] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
-msgstr[4] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
-msgstr[5] "أمتأكّد من حذف المتراسل: <b>%1</b>؟"
+msgstr[0] "أمتأكّد من حذف المتراسل:"
+msgstr[1] "أمتأكّد من حذف المتراسل:"
+msgstr[2] "أمتأكّد من حذف المتراسلين:"
+msgstr[3] "أمتأكّد من حذف المتراسِلين:"
+msgstr[4] "أمتأكّد من حذف المتراسِلين:"
+msgstr[5] "أمتأكّد من حذف المتراسِلين:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3598,12 +3574,10 @@ msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "احفظ كَ‍..."
+msgstr "احفظ كَ‍…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
