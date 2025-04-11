@@ -33,7 +33,7 @@ class ColorProxyModel;
 class UndoRedoData
 {
     Q_GADGET
-    QML_ELEMENT
+    QML_VALUE_TYPE(undoRedoData)
     QML_UNCREATABLE("")
 
     Q_PROPERTY(bool undoAvailable MEMBER undoAvailable)
