@@ -223,7 +223,7 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
 
     auto job = new Akonadi::ItemFetchJob(item);
     job->fetchScope().fetchFullPayload();
-    connect(job, &Akonadi::ItemFetchJob::result, this, [this, filename](KJob *job) {
+    connect(job, &Akonadi::ItemFetchJob::result, this, [filename](KJob *job) {
         const auto *fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
         const auto items = fetchJob->items();
         if (items.isEmpty()) {
