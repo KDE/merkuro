@@ -20,7 +20,7 @@
 #include <qobject.h>
 
 ContactImageProvider::ContactImageProvider()
-    : QQuickAsyncImageProvider()
+
 {
     qnam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
 

@@ -7,7 +7,7 @@
 struct MonthModel::Private {
     int year;
     int month;
-    QCalendar calendar = QCalendar();
+    QCalendar calendar;
     QDate selected;
 };
 

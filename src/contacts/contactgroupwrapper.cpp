@@ -14,7 +14,6 @@ using namespace Akonadi;
 
 ContactGroupWrapper::ContactGroupWrapper(QObject *parent)
     : QObject(parent)
-    , Akonadi::ItemMonitor()
     , m_model(new ContactGroupModel(false, this))
 {
     Akonadi::ItemFetchScope scope;

@@ -12,7 +12,6 @@ using namespace Qt::StringLiterals;
 
 IncidenceWrapper::IncidenceWrapper(CalendarManager *calendarManager, QObject *parent)
     : QObject(parent)
-    , Akonadi::ItemMonitor()
     , m_calendarManager(calendarManager)
 {
     connect(this, &IncidenceWrapper::incidencePtrChanged, &m_attendeesModel, [this](KCalendarCore::Incidence::Ptr incidencePtr) {

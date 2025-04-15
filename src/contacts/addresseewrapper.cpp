@@ -8,7 +8,6 @@
 
 AddresseeWrapper::AddresseeWrapper(QObject *parent)
     : QObject(parent)
-    , Akonadi::ItemMonitor()
     , m_addressesModel(new AddressModel(this))
     , m_emailModel(new EmailModel(this))
     , m_imppModel(new ImppModel(this))
