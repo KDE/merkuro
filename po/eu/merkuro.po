@@ -1,7 +1,7 @@
 # Translation for merkuro.po to Euskara/Basque (eu).
 # Copyright (C) 2022-2025 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024, 2025.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-16 00:42+0000\n"
-"PO-Revision-Date: 2025-03-05 19:00+0100\n"
+"PO-Revision-Date: 2025-04-20 23:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -47,10 +47,9 @@ msgid "Ctrl+2"
 msgstr "Ktrl+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "Astebeteko ikuspegia"
+msgstr "Lan astearen ikuspegia"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -255,13 +254,13 @@ msgstr "Garatzailea"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Toki-ezarpenetako lehenespena"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -923,23 +922,19 @@ msgid "Delete All"
 msgstr "Ezabatuta dena"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Editatu egutegia…"
+msgstr "Editatu egutegia"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Orokorra"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Izena"
@@ -948,73 +943,70 @@ msgstr "Izena"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Ikonoa"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Estatistika"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sarrera %1"
+msgstr[1] "%1 sarrera"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Kontaktua"
+msgstr "Edukia"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Neurria"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Eskuratzea"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Erabili guraso karpetako edo kontuko aukerak"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Sinkronizatu karpeta hau hautatzean"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Sinkronizatu hau igarotakoan:"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Inoiz ez"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minutu"
+msgstr[0] "minutu %1"
 msgstr[1] "%1 minutu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
@@ -1531,71 +1523,61 @@ msgid "Return to Location"
 msgstr "Itzuli kokalekura"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Sortu"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Ekitaldi berria..."
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Zeregin berria..."
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Hilabetea"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Astea"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "Astea"
+msgstr "Lan-astea"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 egun"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Eguna"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Ordutegia"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Zereginak"
@@ -1680,10 +1662,9 @@ msgid "Previous Three Days"
 msgstr "Aurreko hiru egunak"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "Aurreko astea"
+msgstr "Aurreko lan-astea"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1701,10 +1682,9 @@ msgid "Next Three Days"
 msgstr "Hurrengo hiru egunak"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "Hurrengo astea"
+msgstr "Hurrengo lan-astea"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1723,11 +1703,10 @@ msgid "Week"
 msgstr "Astea"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "Lanekoa"
+msgstr "Lan-astea"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -1825,17 +1804,15 @@ msgid "Create a New Task…"
 msgstr "Sortu zeregin berria..."
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Gehitu azpi-zeregina"
+msgstr "Gehitu zeregina"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "egun"
+msgstr "Jaiegunak"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
@@ -1862,9 +1839,7 @@ msgid "Delete Calendar"
 msgstr "Ezabatu egutegia"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Ezarri egutegiaren kolorea..."
@@ -2074,16 +2049,15 @@ msgid "Use popup to show incidence information"
 msgstr "Erabili gainerakorra intzidentziaren informazioa erakusteko"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show tasks in calendar views"
+#, kde-format
 msgid "Show holidays in calendar views"
-msgstr "Erakutsi zereginak egutegi ikuspegietan"
+msgstr "Erakutsi jaiegunak egutegi ikuspegietan"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Aukeratu Jaiegun-eskualdeak"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2239,7 +2213,7 @@ msgstr "Erakutsi hilabete goiburuak"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "Ezkutatu egun hutsak"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2493,11 +2467,9 @@ msgid "No name"
 msgstr "Izenik gabe"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Baliogabea"
+msgstr "Elementu baliogabea"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2520,32 +2492,25 @@ msgid "New Contact Group…"
 msgstr "Kontaktu-talde berria..."
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Editatu kontaktua..."
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Ezabatu kontaktua"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Eraman hona..."
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
 msgstr "Kopiatu hona..."
@@ -2626,12 +2591,10 @@ msgid "Select Email Address"
 msgstr "Hautatu e-posta helbidea"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
-msgstr "Izenik gabe"
+msgstr "Izenik ez"
 
 #: contacts/qml/ContactView.qml:23 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:123 launcher/Main.qml:53
@@ -2658,10 +2621,7 @@ msgid "New Contact Group"
 msgstr "Kontaktu-talde berria"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
@@ -3394,22 +3354,20 @@ msgid "Confirm Contact Deletion"
 msgstr "Baieztatu kontaktua ezabatzea"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Ezabatu kontaktua"
-msgstr[1] "Ezabatu kontaktua"
+msgstr[1] "Ezabatu kontaktuak"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Benetan ezabatu nahi duzu zure kontaktua: <b>%1</b>?"
-msgstr[1] "Benetan ezabatu nahi duzu zure kontaktua: <b>%1</b>?"
+msgstr[0] "Zure kontaktua benetan ezabatu nahi duzu:"
+msgstr[1] "Zure kontaktuak benetan ezabatu nahi dituzu:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3534,9 +3492,7 @@ msgid "Move to Trash"
 msgstr "Eraman zakarrontzira"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Gorde honela..."
@@ -3858,11 +3814,10 @@ msgid "Create a New Tag…"
 msgstr "Sortu etiketa berria..."
 
 #: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Tag"
-msgstr "Gehitu azpi-zeregina"
+msgstr "Gehitu etiketa"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
