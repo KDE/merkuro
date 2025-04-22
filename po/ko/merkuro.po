@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2021, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2021, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-16 00:42+0000\n"
-"PO-Revision-Date: 2024-12-24 23:09+0100\n"
+"PO-Revision-Date: 2025-04-21 15:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -44,10 +44,9 @@ msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "주간 보기"
+msgstr "업무 주간 보기"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -157,10 +156,9 @@ msgid "Show Completed Tasks"
 msgstr "완료된 작업 표시"
 
 #: calendar/calendarapplication.cpp:349
-#, fuzzy, kde-format
-#| msgid "To Today"
+#, kde-format
 msgid "Show Today Only"
-msgstr "오늘로"
+msgstr "오늘만 표시"
 
 #: calendar/calendarapplication.cpp:364
 #, kde-format
@@ -252,13 +250,13 @@ msgstr "개발자"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1(%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "로캘 기본값"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -494,12 +492,15 @@ msgid ""
 "file?\n"
 " "
 msgstr ""
+"이 캘린더 파일의 이벤트와 작업을 기존 캘린더에 합차시겠습니까, 아니면 이 파일"
+"에서 새로운 캘린더를 생성하시겠습니까?\n"
+" "
 
 #: calendar/qml/Controls/ImportHandler.qml:115
 #, kde-format
 msgctxt "@action:button merge with existing calendar"
 msgid "Merge with Existing"
-msgstr ""
+msgstr "기존 항목과 합치기"
 
 #: calendar/qml/Controls/ImportHandler.qml:133
 #, kde-format
@@ -516,13 +517,13 @@ msgstr "취소"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:112
 #, kde-format
 msgid "This event is recurring"
-msgstr ""
+msgstr "이 이벤트가 반복됨"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:123
 #, kde-format
 msgid "This event has reminder"
 msgid_plural "This event has reminders"
-msgstr[0] ""
+msgstr[0] "이 이벤트에 알림이 있음"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:145
 #, kde-format
@@ -538,7 +539,7 @@ msgstr "<b>캘린더:</b>"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:187
 #, kde-format
 msgid "<b>Tags:</b>"
-msgstr ""
+msgstr "<b>태그:</b>"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:200
 #, kde-format
@@ -624,13 +625,13 @@ msgstr "<b>참석자:</b>"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:589
 #, kde-format
 msgid "Super-task"
-msgstr ""
+msgstr "상위 작업"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:614
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
-msgstr[0] ""
+msgstr[0] "하위 작업"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:60
 #, kde-format
@@ -681,82 +682,82 @@ msgstr "없음"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:126
 #, kde-format
 msgid "1 (highest priority)"
-msgstr "1(가장 높음)"
+msgstr "1(가장 높은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:132
 #, kde-format
 msgid "2 (mid-high priority)"
-msgstr ""
+msgstr "2(높은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:138
 #, kde-format
 msgid "3 (mid-high priority)"
-msgstr ""
+msgstr "3(높은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:144
 #, kde-format
 msgid "4 (mid-high priority)"
-msgstr ""
+msgstr "4(높은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:150
 #, kde-format
 msgid "5 (medium priority)"
-msgstr ""
+msgstr "5(중간 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:156
 #, kde-format
 msgid "6 (mid-low priority)"
-msgstr ""
+msgstr "6(낮은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:162
 #, kde-format
 msgid "7 (mid-low priority)"
-msgstr ""
+msgstr "7(낮은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:168
 #, kde-format
 msgid "8 (mid-low priority)"
-msgstr ""
+msgstr "8(낮은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:174
 #, kde-format
 msgid "9 (lowest priority)"
-msgstr ""
+msgstr "9(가장 낮은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
 #, kde-format
 msgid "Set due date..."
-msgstr ""
+msgstr "만료 기한 설정..."
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:209
 #, kde-format
 msgid "Today (%1)"
-msgstr ""
+msgstr "오늘(%1)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:221
 #, kde-format
 msgid "Tomorrow (%1)"
-msgstr ""
+msgstr "내일(%1)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:232
 #, kde-format
 msgid "In a week (%1)"
-msgstr ""
+msgstr "이번 주 내(%1)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:244
 #, kde-format
 msgid "In a month (%1)"
-msgstr ""
+msgstr "이번 달 내(%1)"
 
 #: calendar/qml/Controls/MainDrawerToggleButton.qml:24
 #, kde-format
 msgid "Expand Main Drawer"
-msgstr ""
+msgstr "주 서랍 펼치기"
 
 #: calendar/qml/Controls/MainDrawerToggleButton.qml:24
 #, kde-format
 msgid "Collapse Main Drawer"
-msgstr ""
+msgstr "주 서랍 접기"
 
 #: calendar/qml/Controls/Tag.qml:111
 #, kde-format
@@ -768,46 +769,44 @@ msgstr "태그 삭제"
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "<b>%1</b> %2"
-msgstr ""
+msgstr "%2년 <b>%1</b>"
 
 #: calendar/qml/Controls/TitleDateButton.qml:39
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> - %2"
-msgstr ""
+msgstr "<b>%1</b> - %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
-msgstr ""
+msgstr "할 일 캘린더 선택"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:23
 #, kde-format
 msgid "Choose a Calendar"
-msgstr ""
+msgstr "캘린더 선택"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:25
 #, kde-format
 msgid "Choose an Address Book"
-msgstr ""
+msgstr "주소록 선택"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete calendar"
-msgstr "모두 삭제"
+msgstr "캘린더 삭제"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete"
 msgstr "삭제"
@@ -815,12 +814,12 @@ msgstr "삭제"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:43
 #, kde-format
 msgid "Do you want to delete the calendar: \"%1\"?"
-msgstr ""
+msgstr "다음 캘린더를 삭제하시겠습니까: \"%1\"?"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:49
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr ""
+msgstr "이 작업은 되돌릴 수 없습니다"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
@@ -834,7 +833,7 @@ msgstr "취소"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
 msgid "Delete calendar"
-msgstr ""
+msgstr "캘린더 삭제"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:31
 #, kde-format
@@ -845,7 +844,7 @@ msgstr "%1 삭제"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:49
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
-msgstr ""
+msgstr "다음 항목을 삭제하시겠습니까: \"%1\"?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:51
 #, kde-format
@@ -853,6 +852,8 @@ msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
 "the currently selected item?"
 msgstr ""
+"\"%1\" 항목에는 하위 항목이 있습니다. 모든 관련된 항목을 삭제하시겠습니까, 아"
+"니면 현재 선택한 항목만 삭제하시겠습니까?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:53
 #, kde-format
@@ -865,6 +866,13 @@ msgid ""
 "\n"
 "Deleting all will also delete sub-items!"
 msgstr ""
+"\"%1\" 캘린더 항목이 여러 날짜에 걸쳐 반복되고 있습니다. 또한 하위 항목을 포"
+"함합니다.\n"
+"\n"
+"%2의 선택한 반복 항목만 삭제하거나, 이를 포함하여 미래 항목을 삭제하거나, 모"
+"든 반복 항목을 삭제하시겠습니까?\n"
+"\n"
+"모든 반복 항목을 삭제하면 하위 항목도 삭제합니다!"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:55
 #, kde-format
@@ -873,16 +881,19 @@ msgid ""
 "the selected occurrence on %2, also future occurrences, or all of its "
 "occurrences?"
 msgstr ""
+"\"%1\" 캘린더 항목이 여러 날짜에 걸쳐 반복되고 있습니다. %2의 선택한 항목만 "
+"삭제하거나, 이를 포함하여 미래 항목을 삭제하거나, 모든 반복 항목을 삭제하시겠"
+"습니까?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:70
 #, kde-format
 msgid "Only Delete Current"
-msgstr ""
+msgstr "현재 항목만 삭제"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:80
 #, kde-format
 msgid "Also Delete Future"
-msgstr ""
+msgstr "미래의 모든 항목 삭제"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:97
 #, kde-format
@@ -895,22 +906,19 @@ msgid "Delete All"
 msgstr "모두 삭제"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "캘린더 가져오기…"
+msgstr "캘린더 편집"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General settings"
+#, kde-format
 msgctxt "@title"
 msgid "General"
-msgstr "일반 설정"
+msgstr "일반"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "이름"
@@ -919,68 +927,65 @@ msgstr "이름"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "아이콘"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "통계"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
+msgstr[0] "항목 %1개"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contacts"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "연락처"
+msgstr "내용"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "크기"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "가져오기"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "부모 폴더나 계정 설정 사용"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "이 폴더를 선택할 때 동기화"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "다음 이후 동기화"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "하지 않음"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -1035,17 +1040,17 @@ msgstr "요약:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:197
 #, kde-format
 msgid "Add a title for your task"
-msgstr ""
+msgstr "할 일의 제목 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:199
 #, kde-format
 msgid "Add a title for your event"
-msgstr ""
+msgstr "이벤트의 제목 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:201
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr ""
+msgstr "저널 항목의 제목 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:212
 #, kde-format
@@ -1146,13 +1151,13 @@ msgstr "시간:"
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
-msgstr ""
+msgstr "매월 %1일"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:614
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
-msgstr ""
+msgstr "매월 %1주 %2"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:625
 #, kde-format
@@ -1183,7 +1188,7 @@ msgstr "예외:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
 #, kde-format
 msgid "Add Recurrence Exception"
-msgstr ""
+msgstr "반복에 예외 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:757
 #, kde-format
@@ -1200,7 +1205,7 @@ msgstr "선택 사항"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
 #, kde-format
 msgid "Show map"
-msgstr ""
+msgstr "지도 표시"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:860
 #, kde-format
@@ -1215,17 +1220,17 @@ msgstr "태그:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Tap to set tags…"
-msgstr ""
+msgstr "탭하여 태그 설정…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Click to set tags…"
-msgstr ""
+msgstr "클릭하여 태그 설정…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:934
 #, kde-format
 msgid "Manage tags…"
-msgstr ""
+msgstr "태그 관리…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
@@ -1235,7 +1240,7 @@ msgstr "미리 알림:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:968
 #, kde-format
 msgid "Add Reminder"
-msgstr ""
+msgstr "미리 알림 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:982
 #, kde-format
@@ -1272,17 +1277,17 @@ msgstr "RSVP 요청"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1103
 #, kde-format
 msgid "Add Attendee"
-msgstr ""
+msgstr "참석자 추가"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1114
 #, kde-format
 msgid "Choose from Contacts"
-msgstr ""
+msgstr "연락처에서 선택"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1118
 #, kde-format
 msgid "Fill in Manually"
-msgstr ""
+msgstr "직접 입력"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1132
 #, kde-format
@@ -1302,7 +1307,7 @@ msgstr "첨부 파일 추가"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:29
 #, kde-format
 msgid "Change incidence date"
-msgstr ""
+msgstr "반복 날짜 변경"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:47
 #, kde-format
@@ -1318,27 +1323,27 @@ msgstr ""
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:62
 #, kde-format
 msgid "Only This Item"
-msgstr ""
+msgstr "이 항목만"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:70
 #, kde-format
 msgid "Also Future Items"
-msgstr ""
+msgstr "미래 항목에도 적용"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:78
 #, kde-format
 msgid "All Occurrences"
-msgstr ""
+msgstr "모든 반복 항목"
 
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
 #, kde-format
 msgid "Mark Incomplete"
-msgstr ""
+msgstr "완료되지 않은 것으로 표시"
 
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
 #, kde-format
 msgid "Mark Complete"
-msgstr ""
+msgstr "완료된 것으로 표시"
 
 #: calendar/qml/Drawers/MainDrawer.qml:120 launcher/Main.qml:48
 #, kde-format
@@ -1359,12 +1364,12 @@ msgstr "다시 실행: "
 #: calendar/qml/Menus/GlobalMenuBar.qml:127 calendar/qml/Menus/MenuBar.qml:106
 #, kde-format
 msgid "Refresh All Calendars"
-msgstr ""
+msgstr "모든 캘린더 새로 고침"
 
 #: calendar/qml/Drawers/MainDrawer.qml:188
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "설정"
 
 #: calendar/qml/Drawers/MainDrawer.qml:300
 #, kde-format
@@ -1396,7 +1401,7 @@ msgstr "설정"
 #: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
-msgstr ""
+msgstr "모든 할 일 보기"
 
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:18
 #, kde-format
@@ -1411,7 +1416,7 @@ msgstr "할당되지 않음"
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
 #, kde-format
 msgid "1 (Highest Priority)"
-msgstr ""
+msgstr "1(가장 높은 우선 순위)"
 
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:23
 #, kde-format
@@ -1431,7 +1436,7 @@ msgstr "4"
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:26
 #, kde-format
 msgid "5 (Medium Priority)"
-msgstr ""
+msgstr "5(중간 우선 순위)"
 
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:27
 #, kde-format
@@ -1451,13 +1456,13 @@ msgstr "8"
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:30
 #, kde-format
 msgid "9 (Lowest Priority)"
-msgstr ""
+msgstr "9(가장 낮은 우선 순위)"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:51
 #, kde-format
 msgctxt "Custom reminder"
 msgid "Custom"
-msgstr ""
+msgstr "사용자 정의"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:146
 #, kde-format
@@ -1477,12 +1482,12 @@ msgstr "일"
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:160
 #, kde-format
 msgid "before start of event"
-msgstr ""
+msgstr "이벤트 시작 전"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:161
 #, kde-format
 msgid "after start of event"
-msgstr ""
+msgstr "이벤트 시작 후"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:171
 #, kde-format
@@ -1492,84 +1497,73 @@ msgstr "삭제"
 #: calendar/qml/Location/LocationMap.qml:58
 #, kde-format
 msgid "Return to Location"
-msgstr ""
+msgstr "위치로 복귀"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgctxt "@action:button Create new calendar"
-#| msgid "Create New"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
-msgstr "새로 만들기"
+msgstr "만들기"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "새 이벤트…"
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
-msgstr "새 작업…"
+msgstr "새 할 일…"
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
-msgstr "월"
+msgstr "월간"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
-#| msgid "Weekly"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
-msgstr "매주"
+msgstr "주간"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgid "Weekly"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "매주"
+msgstr "업무 주간"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
-msgstr "일"
+msgstr "3일간"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
-msgstr "일"
+msgstr "일간"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
-msgstr "일정 보기"
+msgstr "일정"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
-msgstr "작업"
+msgstr "할 일"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:263
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:276
 #, kde-format
@@ -1627,7 +1621,7 @@ msgstr "%1에 종료"
 #: calendar/qml/MainViews/BasicMonthListView.qml:459
 #, kde-format
 msgid "Runs All Day"
-msgstr ""
+msgstr "종일 행사"
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -1635,22 +1629,19 @@ msgid "<b>Today</b>"
 msgstr "<b>오늘</b>"
 
 #: calendar/qml/MainViews/HourlyView.qml:52
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Day"
-msgstr "지난 주"
+msgstr "전날"
 
 #: calendar/qml/MainViews/HourlyView.qml:54
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Three Days"
 msgstr "지난 주"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "지난 주"
+msgstr "지난 업무 주간"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1660,18 +1651,17 @@ msgstr "지난 주"
 #: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
-msgstr ""
+msgstr "다음날"
 
 #: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
-msgstr ""
+msgstr "다음 3일"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "다음 주"
+msgstr "다음 업무 주간"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1687,26 +1677,25 @@ msgstr "현재"
 #, kde-format
 msgctxt "@action:inmenu open week view"
 msgid "Week"
-msgstr ""
+msgstr "주간"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgid "Weekly"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "매주"
+msgstr "업무 주간"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
-msgstr ""
+msgstr "3일간"
 
 #: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
 msgctxt "@action:inmenu open day view"
 msgid "Day"
-msgstr ""
+msgstr "일간"
 
 #: calendar/qml/MainViews/MonthView.qml:28
 #: calendar/qml/MainViews/ScheduleView.qml:26
@@ -1723,53 +1712,53 @@ msgstr "다음 달"
 #: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "Priority %1"
-msgstr ""
+msgstr "우선 순위 %1"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:73
 #, kde-format
 msgid "No set priority"
-msgstr ""
+msgstr "설정한 우선 순위 없음"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task calendars enabled."
-msgstr ""
+msgstr "활성화된 할 일 캘린더가 없습니다."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
 msgid "Calendar is not enabled"
-msgstr ""
+msgstr "캘린더가 활성화되지 않았음"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:130
 #, kde-format
 msgid "Enable"
-msgstr ""
+msgstr "활성화"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
-msgstr ""
+msgstr "완료된 할 일 없음"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
-msgstr ""
+msgstr "완료해야 할 할 일 없음"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
 #, kde-format
 msgid "Create"
-msgstr ""
+msgstr "만들기"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
-msgstr ""
+msgstr " , 만료 기한이 지남"
 
 #: calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
-msgstr ""
+msgstr "할 일"
 
 #: calendar/qml/MainViews/TodoView.qml:103
 #, kde-format
@@ -1779,84 +1768,76 @@ msgstr "완료된 항목 표시"
 #: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks in %1"
-msgstr ""
+msgstr "%1의 완료된 할 일"
 
 #: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks"
-msgstr ""
+msgstr "완료된 할 일"
 
 #: calendar/qml/MainViews/TodoView.qml:166
 #, kde-format
 msgid "Create a New Task…"
-msgstr ""
+msgstr "새 할 일 만들기…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "하위 작업 추가"
+msgstr "할 일 추가"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "일"
+msgstr "공휴일"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "이벤트 표시"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
-msgstr "캘린더 가져오기…"
+msgstr "캘린더 편집…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Import Calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
-msgstr "캘린더 가져오기"
+msgstr "캘린더 업데이트"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:75
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
-msgstr "모두 삭제"
+msgstr "캘린더 삭제"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Choose Calendar Color"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
-msgstr "캘린더 색상 선택"
+msgstr "캘린더 색상 설정…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:113
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
-msgstr ""
+msgstr "캘린더 원본 설정…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:120
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
-msgstr ""
+msgstr "캘린더 원본 업데이트"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:127
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
-msgstr ""
+msgstr "캘린더 원본 삭제"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -1870,13 +1851,13 @@ msgstr "보기"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
-msgstr ""
+msgstr "할 일 정렬"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
 msgctxt "@action:menu"
 msgid "Go"
-msgstr ""
+msgstr "이동"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:162 calendar/qml/Menus/MenuBar.qml:138
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
@@ -1885,7 +1866,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
-msgstr ""
+msgstr "만들기"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:178 components/qml/SettingsMenu.qml:14
 #: contacts/qml/GlobalMenuBar.qml:49
@@ -1897,7 +1878,7 @@ msgstr "설정"
 #: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
-msgstr ""
+msgstr "할 일 정렬"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:15
@@ -1919,12 +1900,12 @@ msgstr "바쁨/한가함"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Free/Busy"
-msgstr ""
+msgstr "바쁨/한가함 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
 #, kde-format
 msgid "Free/Busy Publishing settings"
-msgstr ""
+msgstr "바쁨/한가함 게시 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
 #, kde-format
@@ -1934,27 +1915,30 @@ msgid ""
 "that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"바쁨/한가함 정보를 게시하면 다른 사람들이 이벤트에 초대할 때 캘린더 일정 사"
+"용 가능 여부를 고려할 수 있습니다. 바쁨으로 표시한 시간만 공개되며, 왜 바쁨으"
+"로 표시했는지는 공개하지 않습니다."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
 #, kde-format
 msgid "Publish your free/busy information automatically"
-msgstr ""
+msgstr "자동으로 바쁨/한가함 정보 게시"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
 msgid "Minimum time (in minutes) between uploads"
-msgstr ""
+msgstr "최소 업로드 시간 간격(분 단위)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
 #, kde-format
 msgid "Number of days of free/busy info to publish: "
-msgstr ""
+msgstr "바쁨/한가함 정보를 게시할 일자 수:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
 #, kde-format
 msgid "Server information"
-msgstr ""
+msgstr "서버 정보"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:72
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:175
@@ -1983,28 +1967,28 @@ msgstr "암호 저장"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
 msgid "Click here to publish Free/Busy information manually"
-msgstr ""
+msgstr "바쁨/한가함 정보를 수동으로 게시하려면 클릭하십시오"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
 #, kde-format
 msgid "Email Free/Busy"
-msgstr ""
+msgstr "바쁨/한가함 이메일 전송"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient..."
-msgstr ""
+msgstr "수신자 이메일 주소 입력..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:140
 #, kde-format
 msgid "Send"
-msgstr ""
+msgstr "보내기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
 #, kde-format
 msgid "Free/Busy Retrieval settings"
-msgstr ""
+msgstr "바쁨/한가함 가져오기 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
 #, kde-format
@@ -2018,17 +2002,17 @@ msgstr ""
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
 #, kde-format
 msgid "Retrieve others' free/busy information automatically"
-msgstr ""
+msgstr "자동으로 다른 사람의 바쁨/한가함 정보 가져오기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
 msgid "Use full email address for retrieval"
-msgstr "가져올 때 전체 주소 사용하기"
+msgstr "가져올 때 전체 이메일 주소 사용하기"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:27
 #, kde-format
 msgid "Add New Calendar Source…"
-msgstr ""
+msgstr "새 캘린더 원본 추가…"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
@@ -2038,98 +2022,98 @@ msgstr "일반 설정"
 #: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
 msgid "Use popup to show incidence information"
-msgstr ""
+msgstr "항목 정보 표시 팝업 사용"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, kde-format
 msgid "Show holidays in calendar views"
-msgstr ""
+msgstr "캘린더 보기에 공휴일 표시"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "공휴일 지역 선택"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
-msgstr ""
+msgstr "캘린더 보기에 할 일 표시"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
-msgstr ""
+msgstr "캘린더 보기에 하위 할 일 표시"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
-msgstr ""
+msgstr "과거 이벤트 투명도"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
 msgid "Month view settings"
-msgstr ""
+msgstr "월간 보기 설정"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
-msgstr ""
+msgstr "월간 보기 모드"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
 msgid "Swipeable month grid"
-msgstr ""
+msgstr "월간 그리드 스와이프 가능"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:216
 #, kde-format
 msgid "Basic month grid"
-msgstr ""
+msgstr "기본 월간 그리드"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:222
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
-msgstr ""
+msgstr "월간 그리드 스와이프 가능 설정에는 고사양 시스템이 필요합니다."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Weekday label alignment"
-msgstr ""
+msgstr "요일 레이블 정렬"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:236
 #, kde-format
 msgid "Left"
-msgstr ""
+msgstr "왼쪽"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:243
 #, kde-format
 msgid "Center"
-msgstr ""
+msgstr "가운데"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:250
 #, kde-format
 msgid "Right"
-msgstr ""
+msgstr "오른쪽"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
 msgid "Weekday label length:"
-msgstr ""
+msgstr "요일 레이블 길이:"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:265
 #, kde-format
 msgid "Full name (Monday)"
-msgstr ""
+msgstr "전체 이름(월요일)"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:272
 #, kde-format
 msgid "Abbreviated (Mon)"
-msgstr ""
+msgstr "축약 이름(월)"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:280
 #, kde-format
 msgid "Letter only (M)"
-msgstr ""
+msgstr "첫 글자만(월)"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:289
 #, kde-format
@@ -2139,107 +2123,107 @@ msgstr "주 번호 표시"
 #: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
-msgstr ""
+msgstr "격자 경계선 두께(픽셀):"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
 msgid "Week view settings"
-msgstr ""
+msgstr "주간 보기 설정"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:340
 #, kde-format
 msgid "Week view mode"
-msgstr ""
+msgstr "주간 보기 모드"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:347
 #, kde-format
 msgid "Swipeable week view"
-msgstr ""
+msgstr "주간 보기 스와이프 가능"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:354
 #, kde-format
 msgid "Basic week view"
-msgstr ""
+msgstr "기본 주간 보기"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:360
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
-msgstr ""
+msgstr "주간 그리드 스와이프 가능 설정에는 고사양 시스템이 필요합니다."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:367
 #, kde-format
 msgid "Schedule View settings"
-msgstr ""
+msgstr "일정 보기 설정"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
-msgstr ""
+msgstr "일정 보기 모드"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
 msgid "Swipeable schedule view"
-msgstr ""
+msgstr "일정 보기 스와이프 가능"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:394
 #, kde-format
 msgid "Basic schedule view"
-msgstr ""
+msgstr "기본 일정 보기"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:400
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
-msgstr ""
+msgstr "일정 보기 스와이프 가능 설정에는 고사양 시스템이 필요합니다."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:409
 #, kde-format
 msgid "Show week headers"
-msgstr ""
+msgstr "주 머리글 표시"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "빈 날 숨기기"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
 msgid "Tasks View settings"
-msgstr ""
+msgstr "할 일 보기 설정"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Show completed sub-tasks"
-msgstr ""
+msgstr "완료된 하위 할 일 표시"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:447
 #, kde-format
 msgid "Maps"
-msgstr ""
+msgstr "지도"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:453
 #, kde-format
 msgid "Enable maps"
-msgstr ""
+msgstr "지도 활성화"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:460
 #, kde-format
 msgid "May cause crashing on some systems."
-msgstr ""
+msgstr "일부 시스템에서는 충돌할 수 있습니다."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:467
 #, kde-format
 msgid "Location marker"
-msgstr ""
+msgstr "위치 마커"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:473
 #, kde-format
 msgid "Circle (shows area of location)"
-msgstr ""
+msgstr "원형(위치 지역 표시)"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:480
 #, kde-format
 msgid "Pin (shows exact location)"
-msgstr ""
+msgstr "핀(정확한 위치 표시)"
 
 #: calendar/utils.cpp:21
 #, kde-format
@@ -2286,7 +2270,7 @@ msgstr "이벤트 시작 시"
 #: components/abstractmerkuroapplication.cpp:32
 #, kde-format
 msgid "Manage Tags…"
-msgstr ""
+msgstr "태그 관리…"
 
 #: components/abstractmerkuroapplication.cpp:39
 #, kde-format
@@ -2309,19 +2293,19 @@ msgstr "%1(기본값)"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Edit"
-msgstr ""
+msgstr "편집"
 
 #: components/qml/EditMenu.qml:45
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Undo Text"
-msgstr ""
+msgstr "실행 취소 텍스트"
 
 #: components/qml/EditMenu.qml:54
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Redo Text"
-msgstr ""
+msgstr "다시 실행 텍스트"
 
 #: components/qml/EditMenu.qml:66 components/qml/NativeEditMenu.qml:59
 #, kde-format
@@ -2345,13 +2329,13 @@ msgstr "붙여넣기"
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Delete"
-msgstr ""
+msgstr "삭제"
 
 #: components/qml/EditMenu.qml:105 components/qml/NativeEditMenu.qml:102
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Select All"
-msgstr ""
+msgstr "모두 선택"
 
 #: components/qml/FileMenu.qml:16 components/qml/NativeFileMenu.qml:11
 #, kde-format
@@ -2363,7 +2347,7 @@ msgstr "파일"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Quit Merkuro"
-msgstr ""
+msgstr "Merkuro 끝내기"
 
 #: components/qml/HelpMenu.qml:14 components/qml/NativeHelpMenu.qml:13
 #, kde-format
@@ -2375,19 +2359,19 @@ msgstr "도움말"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Merkuro Handbook"
-msgstr ""
+msgstr "Merkuro 도움말"
 
 #: components/qml/NativeEditMenu.qml:36
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Undo"
-msgstr ""
+msgstr "실행 취소"
 
 #: components/qml/NativeEditMenu.qml:46
 #, kde-format
 msgctxt "text editing menu action"
 msgid "Redo"
-msgstr ""
+msgstr "다시 실행"
 
 #: components/qml/NativeWindowMenu.qml:12 components/qml/WindowMenu.qml:12
 #: mail/qml/app/GlobalMenuBar.qml:62
@@ -2408,13 +2392,13 @@ msgstr "전체 화면 나가기"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Enter Full Screen"
-msgstr ""
+msgstr "전체 화면으로 전환"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
 #: contacts/qml/private/ContactPage.qml:233
 #, kde-format
 msgid "Home:"
-msgstr ""
+msgstr "집:"
 
 #: contacts/certificatesmodel.cpp:84
 #, kde-format
@@ -2432,19 +2416,19 @@ msgstr "만료됨"
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "사용 안 함"
 
 #: contacts/certificatesmodel.cpp:93
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
-msgstr ""
+msgstr "잘못됨"
 
 #: contacts/certificatesmodel.cpp:96
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
-msgstr ""
+msgstr "유효함"
 
 #: contacts/contactactions.cpp:153
 #, kde-format
@@ -2455,60 +2439,56 @@ msgstr "이름 없음"
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
-msgstr ""
+msgstr "잘못된 항목"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
 msgid "Contact"
-msgstr ""
+msgstr "연락처"
 
 #: contacts/contactapplication.cpp:38
 #, kde-format
 msgid "New Contact…"
-msgstr ""
+msgstr "새 연락처…"
 
 #: contacts/contactapplication.cpp:45
 #, kde-format
 msgid "Refresh All Address Books"
-msgstr ""
+msgstr "모든 주소록 새로 고침"
 
 #: contacts/contactapplication.cpp:55
 #, kde-format
 msgid "New Contact Group…"
-msgstr ""
+msgstr "새 연락처 그룹…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "연락처 편집…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
-msgstr "모두 삭제"
+msgstr "연락처 삭제"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "휴지통으로 이동"
+msgstr "다음으로 이동…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr ""
+msgstr "다음으로 복사…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
 msgid "No address book selected"
-msgstr ""
+msgstr "선택한 주소록 없음"
 
 #: contacts/contactgroupmodel.cpp:185
 #, kde-format
@@ -2536,12 +2516,12 @@ msgstr "이메일"
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
-msgstr ""
+msgstr "%1 주소록 속성"
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
-msgstr ""
+msgstr "둘 다:"
 
 #: contacts/emailmodel.cpp:53
 #, kde-format
@@ -2551,7 +2531,7 @@ msgstr "직장:"
 #: contacts/emailmodel.cpp:58
 #, kde-format
 msgid "Other:"
-msgstr ""
+msgstr "기타:"
 
 #: contacts/main.cpp:51
 #, kde-format
@@ -2562,13 +2542,13 @@ msgstr "Merkuro 연락처"
 #: contacts/main.cpp:54
 #, kde-format
 msgid "Address Book Application"
-msgstr ""
+msgstr "주소록 앱"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Address Book Color"
-msgstr ""
+msgstr "주소록 색상 선택"
 
 #: contacts/qml/ContactChooserPage.qml:37
 #, kde-format
@@ -2578,12 +2558,10 @@ msgstr "완료"
 #: contacts/qml/ContactChooserPage.qml:90
 #, kde-format
 msgid "Select Email Address"
-msgstr ""
+msgstr "이메일 주소 선택"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "이름 없음"
@@ -2598,7 +2576,7 @@ msgstr "연락처"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
-msgstr ""
+msgstr "만들기"
 
 #: contacts/qml/ContactView.qml:30
 #, kde-format
@@ -2617,20 +2595,19 @@ msgstr "새 연락처 그룹"
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] ""
+msgstr[0] "%1개 선택됨"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "다음으로 선택 이동:"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "자동 완성:"
+msgstr "다음으로 선택 복사:"
 
 #: contacts/qml/ContactView.qml:205 contacts/qml/private/ContactPage.qml:62
 #: contacts/qml/private/ContactsPage.qml:49
@@ -2648,48 +2625,48 @@ msgstr "연락처 없음"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit address book…"
-msgstr ""
+msgstr "주소록 편집…"
 
 #: contacts/qml/private/AddressBookMenu.qml:29
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update address book"
-msgstr ""
+msgstr "주소록 업데이트"
 
 #: contacts/qml/private/AddressBookMenu.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete address book"
-msgstr ""
+msgstr "주소록 삭제"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book colour…"
-msgstr ""
+msgstr "주소록 색상 설정…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Address book source settings…"
-msgstr ""
+msgstr "주소록 원본 설정…"
 
 #: contacts/qml/private/AddressBookMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update address book source"
-msgstr ""
+msgstr "주소록 원본 업데이트"
 
 #: contacts/qml/private/AddressBookMenu.qml:66
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete address source"
-msgstr ""
+msgstr "주소록 원본 삭제"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
 #, kde-format
 msgid "Address book:"
-msgstr ""
+msgstr "주소록:"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:55
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:62
@@ -2700,40 +2677,44 @@ msgstr "이름"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
-msgstr ""
+msgstr "연락처 이름"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:72
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "고급"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
-msgstr ""
+msgstr "존칭 접두사"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Dr."
-msgstr ""
+msgstr "박사"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Miss"
 msgid "Miss"
 msgstr "Miss"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mr."
 msgid "Mr."
 msgstr "Mr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mrs."
 msgid "Mrs."
 msgstr "Mrs."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ms."
 msgid "Ms."
 msgstr "Ms."
 
@@ -2750,37 +2731,37 @@ msgstr "이름"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:100
 #, kde-format
 msgid "First name or chosen name"
-msgstr ""
+msgstr "이름이나 선호하는 이름"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
 #, kde-format
 msgid "Additional name"
-msgstr ""
+msgstr "추가 이름"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:109
 #, kde-format
 msgid "Middle name or other name"
-msgstr ""
+msgstr "가운데 이름이나 기타 이름"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
 #, kde-format
 msgid "Family name:"
-msgstr ""
+msgstr "성"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:118
 #, kde-format
 msgid "Surname or last name"
-msgstr ""
+msgstr "성"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:124
 #, kde-format
 msgid "Honorific suffix"
-msgstr ""
+msgstr "존칭 접미사"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "I"
-msgstr ""
+msgstr "1세"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2795,22 +2776,22 @@ msgstr "3세"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "Jr."
-msgstr ""
+msgstr "주니어"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
 msgid "Sr."
-msgstr "Sr."
+msgstr "시니어"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
 #, kde-format
 msgid "Nickname"
-msgstr ""
+msgstr "별명"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
 #, kde-format
 msgid "Alternative name"
-msgstr ""
+msgstr "대체 이름"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
 #, kde-format
@@ -2820,18 +2801,18 @@ msgstr "블로그 피드"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:149
 #, kde-format
 msgid "https://planet.kde.org/"
-msgstr ""
+msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:22
 #, kde-format
 msgid "Organization"
-msgstr ""
+msgstr "조직"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:25
 #, kde-format
 msgctxt "Placeholder value for name of Organization"
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:32
 #, kde-format
@@ -2842,18 +2823,18 @@ msgstr "직업"
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
-msgstr ""
+msgstr "소프트웨어 개발자"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:42
 #, kde-format
 msgid "Title"
-msgstr ""
+msgstr "직위"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:45
 #, kde-format
 msgctxt "Placeholder value for Title"
 msgid "SDE-1"
-msgstr ""
+msgstr "SDE-1"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:52
 #, kde-format
@@ -2864,18 +2845,18 @@ msgstr "부서"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Merkuro-팀"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:62
 #, kde-format
 msgid "Office"
-msgstr ""
+msgstr "사무실"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:65
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
-msgstr ""
+msgstr "기술동 4층"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:72
 #, kde-format
@@ -2886,7 +2867,7 @@ msgstr "관리자 이름"
 #, kde-format
 msgctxt "Placeholder value for Manager's Name"
 msgid "Bob"
-msgstr "영희"
+msgstr "철수"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:82
 #, kde-format
@@ -2897,12 +2878,12 @@ msgstr "비서 이름"
 #, kde-format
 msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
-msgstr ""
+msgstr "영희"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:60
 #, kde-format
 msgid "Add Contact"
-msgstr "대화 상대 추가"
+msgstr "연락처 추가"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:62
 #, kde-format
@@ -2918,12 +2899,12 @@ msgstr "개인 정보"
 #: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgid "Business Information"
-msgstr ""
+msgstr "비즈니스 정보"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:119
 #, kde-format
 msgid "Phone"
-msgstr ""
+msgstr "전화"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:128
 #, kde-format
@@ -2944,25 +2925,25 @@ msgstr "경고"
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:186
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "이 연락처를 편집하는 중 다른 곳에서 변경되었습니다."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:191
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "어떤 변경 사항을 유지하시겠습니까?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:204
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
 #, kde-format
 msgid "Current changes"
-msgstr ""
+msgstr "현재 변경 사항"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:209
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:224
 #, kde-format
 msgid "External changes"
-msgstr ""
+msgstr "외부 변경 사항"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
 #, kde-format
@@ -2972,17 +2953,17 @@ msgstr "%1 편집"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
 #, kde-format
 msgid "Create Contact Group"
-msgstr ""
+msgstr "연락처 그룹 만들기"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:63
 #, kde-format
 msgid "Address Book:"
-msgstr ""
+msgstr "주소록:"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
 #, kde-format
 msgid "Contact group name"
-msgstr ""
+msgstr "연락처 그룹 이름"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:89
 #, kde-format
@@ -2992,12 +2973,12 @@ msgstr "구성원"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:166
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
-msgstr ""
+msgstr "이메일 주소가 있는 연락처만 연락처 그룹에 포함할 수 있음"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "이 연락처 그룹을 편집하는 중 다른 곳에서 변경되었습니다."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:36
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:78
@@ -3005,7 +2986,7 @@ msgstr ""
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:82
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "집"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:37
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:79
@@ -3013,7 +2994,7 @@ msgstr ""
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:83
 #, kde-format
 msgid "Work"
-msgstr ""
+msgstr "직장"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:38
 #, kde-format
@@ -3023,17 +3004,17 @@ msgstr "기타"
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:59
 #, kde-format
 msgid "Remove email"
-msgstr ""
+msgstr "이메일 삭제"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:80
 #, kde-format
 msgid "Both"
-msgstr ""
+msgstr "둘 다"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:81
 #, kde-format
 msgid "Other…"
-msgstr ""
+msgstr "기타…"
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:90
 #, kde-format
@@ -3051,11 +3032,10 @@ msgid "protocol:person@example.com"
 msgstr "protocol:person@example.com"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:23
-#, fuzzy, kde-format
-#| msgid "Partner's name:"
+#, kde-format
 msgctxt "@label"
 msgid "Partner's name"
-msgstr "배우자 이름:"
+msgstr "배우자 이름"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:32
 #, kde-format
@@ -3091,13 +3071,13 @@ msgstr "팩스"
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:87
 #, kde-format
 msgid "Cell"
-msgstr "셀"
+msgstr "휴대폰"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:40
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:88
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "비디오"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:41
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:89
@@ -3115,7 +3095,7 @@ msgstr "모뎀"
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:91
 #, kde-format
 msgid "Car"
-msgstr ""
+msgstr "자동차"
 
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:44
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:92
@@ -3143,7 +3123,7 @@ msgstr "정의되지 않음"
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:106
 #, kde-format
 msgid "+33 7 55 23 68 67"
-msgstr ""
+msgstr "+82 10-1234-5678"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:28
 #, kde-format
@@ -3153,26 +3133,25 @@ msgstr "파일 선택"
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:29
 #, kde-format
 msgid "Images files (*.png *.jpeg *.jpg)"
-msgstr ""
+msgstr "그림 파일 (*.png *.jpeg *.jpg)"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:43
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "사진"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Add Profile Picture"
-msgstr ""
+msgstr "프로필 사진 추가"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Update Profile Picture"
-msgstr ""
+msgstr "프로필 사진 업데이트"
 
 #: contacts/qml/private/ContactGroupPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "편집"
@@ -3181,7 +3160,7 @@ msgstr "편집"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
-msgstr ""
+msgstr "편집"
 
 #: contacts/qml/private/ContactPage.qml:43
 #, kde-format
@@ -3192,7 +3171,7 @@ msgstr "취소"
 #: contacts/qml/private/ContactPage.qml:65
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "통화"
 
 #: contacts/qml/private/ContactPage.qml:76
 #, kde-format
@@ -3202,7 +3181,7 @@ msgstr "전화를 걸 번호 선택"
 #: contacts/qml/private/ContactPage.qml:84
 #, kde-format
 msgid "Send SMS"
-msgstr ""
+msgstr "SMS 보내기"
 
 #: contacts/qml/private/ContactPage.qml:95
 #, kde-format
@@ -3212,7 +3191,7 @@ msgstr "메시지를 보낼 번호 선택"
 #: contacts/qml/private/ContactPage.qml:103
 #, kde-format
 msgid "Send email"
-msgstr ""
+msgstr "이메일 보내기"
 
 #: contacts/qml/private/ContactPage.qml:109
 #, kde-format
@@ -3222,7 +3201,7 @@ msgstr "QR 코드 표시"
 #: contacts/qml/private/ContactPage.qml:125
 #, kde-format
 msgid "Contact information"
-msgstr ""
+msgstr "연락처 정보"
 
 #: contacts/qml/private/ContactPage.qml:138
 #, kde-format
@@ -3232,12 +3211,12 @@ msgstr "별명:"
 #: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Blog Feed:"
-msgstr ""
+msgstr "블로그 피드:"
 
 #: contacts/qml/private/ContactPage.qml:152
 #, kde-format
 msgid "Personal information"
-msgstr ""
+msgstr "개인 정보"
 
 #: contacts/qml/private/ContactPage.qml:162
 #, kde-format
@@ -3264,7 +3243,7 @@ msgstr[0] "전화번호"
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:216
 #, kde-format
@@ -3276,18 +3255,18 @@ msgstr[0] "주소"
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgid "Instant Messaging"
-msgstr ""
+msgstr "인스턴트 메시징"
 
 #: contacts/qml/private/ContactPage.qml:261
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:289
 #, kde-format
@@ -3302,7 +3281,7 @@ msgstr "직업:"
 #: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Title:"
-msgstr ""
+msgstr "직위:"
 
 #: contacts/qml/private/ContactPage.qml:310
 #, kde-format
@@ -3334,34 +3313,33 @@ msgstr[0] "이메일 주소"
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
-msgstr ""
+msgstr "암호학적 인증서"
 
 #: contacts/qml/private/DeleteContactDialog.qml:20
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
-msgstr ""
+msgstr "연락처 삭제 확인"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
-msgstr[0] "모두 삭제"
+msgstr[0] "연락처 삭제"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] ""
+msgstr[0] "다음 연락처를 삭제하시겠습니까:연락처"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
-msgstr ""
+msgstr "이 작업은 되돌릴 수 없습니다."
 
 #: contacts/qml/private/QrCodePage.qml:15
 #, kde-format
@@ -3382,32 +3360,28 @@ msgstr "설정"
 #: contacts/qml/Settings.qml:16
 #, kde-format
 msgid "Contact Books"
-msgstr ""
+msgstr "연락처 모음"
 
 #: contacts/qml/Settings.qml:21
 #, kde-format
 msgid "Add New Address Book Source…"
-msgstr ""
+msgstr "새 주소록 원본 추가…"
 
 #: launcher/main.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Merkuro Launcher"
-msgstr "Merkuro 캘린더"
+msgstr "Merkuro 실행기"
 
 #: launcher/main.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Calendar"
+#, kde-format
 msgid "merkuro Launcher"
-msgstr "Merkuro 캘린더"
+msgstr "merkuro 실행기"
 
 #: launcher/main.cpp:55
 #, kde-format
 msgid "(c) 2024"
-msgstr ""
+msgstr "(c) 2024"
 
 #: launcher/main.cpp:57
 #, kde-format
@@ -3436,7 +3410,7 @@ msgstr "제목 없음"
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 #: mail/contactimageprovider.cpp:152
 #, kde-format
@@ -3451,7 +3425,7 @@ msgstr "키 없음"
 #: mail/mailapplication.cpp:26
 #, kde-format
 msgid "New Mail…"
-msgstr ""
+msgstr "새 메일…"
 
 #: mail/mailapplication.cpp:33
 #, kde-format
@@ -3459,56 +3433,50 @@ msgid "Check Mail"
 msgstr "메일 확인"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
-msgstr "중요한 것으로 표시"
+msgstr "읽은 상태로 표시"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr "중요한 것으로 표시"
+msgstr "읽지 않은 상태로 표시"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "중요한 것으로 표시"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "휴지통으로 이동"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "다른 이름으로 저장..."
+msgstr "다른 이름으로 저장…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
 msgid "There are no recipients to e-mail"
-msgstr ""
+msgstr "이메일 받는 사람이 없음"
 
 #: mail/mailclient.cpp:93
 #, kde-format
 msgid "Error creating transport"
-msgstr ""
+msgstr "전송 방식 생성 오류"
 
 #: mail/mailclient.cpp:186
 #, kde-format
 msgid "Error loading transport"
-msgstr ""
+msgstr "전송 방식 불러오기 오류"
 
 #: mail/mailclient.cpp:203
 #, kde-format
@@ -3521,14 +3489,14 @@ msgid ""
 "Resource %1 is broken.\n"
 "%2"
 msgstr ""
-"자원 %1이(가) 깨졌습니다.\n"
+"리소스 %1이(가) 깨졌습니다.\n"
 "%2"
 
 #: mail/mailmanager.cpp:210
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Configuration: %1"
-msgstr ""
+msgstr "계정 설정: %1"
 
 #: mail/main.cpp:53
 #, kde-format
@@ -3555,20 +3523,20 @@ msgid ""
 "> <b>Beware</b> that discarded messages are not saved into your Trash folder "
 "and are permanently deleted."
 msgstr ""
+"%1 폴더와 그 내용을 같이 삭제하시겠습니까?<br />삭제된 메시지는 휴지통으로 이"
+"동되지 않고 즉시 삭제된다는 사실을 <b>유의하십시오.</b>"
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "모두 삭제"
+msgstr "이메일 삭제"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "모두 삭제"
+msgstr "이메일 삭제"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
 #, kde-format
@@ -3577,6 +3545,8 @@ msgid ""
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
+"\"%1\" 이메일을 삭제하시겠습니까?<br />삭제된 메시지는 휴지통으로 이동되지 않"
+"고 즉시 삭제된다는 사실을 <b>유의하십시오.</b>"
 
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
@@ -3614,7 +3584,7 @@ msgstr "폴더 만들기"
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name..."
-msgstr ""
+msgstr "폴더 이름..."
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
@@ -3630,58 +3600,56 @@ msgstr "파일 선택"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "검색: %1"
 
 #: mail/qml/FolderView.qml:81
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] ""
+msgstr[0] "%1개 선택됨"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Merkuro 메일"
+msgstr "메시지 저장 - Merkuro 메일"
 
 #: mail/qml/FolderView.qml:128
 #, kde-format
 msgid "Email messages (*.mbox)"
-msgstr ""
+msgstr "이메일 메시지 (*.mbox)"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
-msgstr ""
+msgstr "메시지 표시"
 
 #: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
-msgstr ""
+msgstr "선택한 편지함 없음"
 
 #: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
-msgstr ""
+msgstr "사이드바에서 편지함을 선택하십시오."
 
 #: mail/qml/FolderView.qml:228
 #, kde-format
 msgid "Mailbox is empty"
-msgstr ""
+msgstr "편지함이 비어 있음"
 
 #: mail/qml/mailboxselector/MailBoxListPage.qml:16
 #, kde-format
 msgid "Mailboxes"
-msgstr ""
+msgstr "편지함"
 
 #: mail/qml/mailboxselector/MailBoxListSidebar.qml:17
 #: mail/qml/mailboxselector/MailBoxListSidebar.qml:39
 #, kde-format
 msgid "Mail"
-msgstr ""
+msgstr "메일"
 
 #: mail/qml/MailComposer.qml:16
 #, kde-format
@@ -3692,7 +3660,7 @@ msgstr "새 메시지"
 #: mail/qml/MailComposer.qml:31
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "보내는 사람:"
 
 #: mail/qml/MailComposer.qml:42
 #, kde-format
@@ -3702,7 +3670,7 @@ msgstr "프로필:"
 #: mail/qml/MailComposer.qml:68
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "받는 사람:"
 
 #: mail/qml/MailComposer.qml:69
 #, kde-format
@@ -3722,7 +3690,7 @@ msgstr "답장 주소:"
 #: mail/qml/MailComposer.qml:91
 #, kde-format
 msgid "Subject:"
-msgstr ""
+msgstr "제목:"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3742,22 +3710,20 @@ msgid "Identities"
 msgstr "프로필"
 
 #: mail/settings/AccountSettingsPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
 "email accounts"
 msgid "Receiving Accounts"
-msgstr "계정"
+msgstr "수신 계정"
 
 #: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgid "Mail Account Configuration"
-msgstr ""
+msgstr "메일 계정 설정"
 
 #: mail/settings/Settings.qml:12
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "계정"
@@ -3770,7 +3736,7 @@ msgstr "%1 설정"
 #: quick/qml/AgentConfigurationForm.qml:37
 #, kde-format
 msgid "Modify or delete this account agent."
-msgstr ""
+msgstr "이 계정의 에이전트를 수정하거나 삭제합니다."
 
 #: quick/qml/AgentConfigurationForm.qml:53
 #, kde-format
@@ -3779,8 +3745,7 @@ msgid "Modify"
 msgstr "수정"
 
 #: quick/qml/AgentConfigurationForm.qml:62
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
@@ -3799,24 +3764,23 @@ msgstr "태그 관리"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Tag Deletion"
-msgstr ""
+msgstr "태그 삭제 확인"
 
 #: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr ""
+msgstr "<b>%1</b> 태그를 삭제하시겠습니까?"
 
 #: quick/qml/TagManagerPage.qml:132
 #, kde-format
 msgid "Create a New Tag…"
-msgstr ""
+msgstr "새 태그 만들기…"
 
 #: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Tag"
-msgstr "하위 작업 추가"
+msgstr "태그 추가"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
