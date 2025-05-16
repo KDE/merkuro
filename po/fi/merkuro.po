@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-31 02:33+0000\n"
-"PO-Revision-Date: 2025-03-15 09:24+0200\n"
+"PO-Revision-Date: 2025-04-21 11:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -251,13 +251,13 @@ msgstr "Kehittäjä"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Maa-asetuksen oletus"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -1917,7 +1917,7 @@ msgstr "Näytä kalenterinäkymissä vapaapäivät"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Valitse vapaapäiväalue"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2318,11 +2318,9 @@ msgid "No Name"
 msgstr "Ei nimeä"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Virheellinen"
+msgstr "Virheellinen tietue"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2345,9 +2343,7 @@ msgid "New Contact Group…"
 msgstr "Uusi yhteystietoryhmä…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Muokkaa yhteystietoa…"
@@ -3196,13 +3192,12 @@ msgid "Confirm Contact Deletion"
 msgstr "Vahvista yhteystiedon poistaminen"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Poista yhteystieto"
-msgstr[1] "Poista yhteystieto"
+msgstr[1] "Poista yhteystiedot"
 
 #: contacts/qml/private/DeleteContactDialog.qml:31
 #, kde-format
@@ -3326,9 +3321,7 @@ msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Tallenna nimellä…"
