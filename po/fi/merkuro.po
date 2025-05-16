@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-16 00:42+0000\n"
-"PO-Revision-Date: 2025-03-15 09:24+0200\n"
+"PO-Revision-Date: 2025-04-21 11:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -44,10 +44,9 @@ msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "Viikkonäkymä"
+msgstr "Työviikkonäkymä"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -251,13 +250,13 @@ msgstr "Kehittäjä"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Maa-asetuksen oletus"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -919,23 +918,19 @@ msgid "Delete All"
 msgstr "Poista kaikki"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Muokkaa kalenteria…"
+msgstr "Muokkaa kalenteria"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
-msgstr "Perusasetukset"
+msgstr "Yleisasetukset"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Nimi"
@@ -944,73 +939,70 @@ msgstr "Nimi"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Kuvake"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Tilastot"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 tietue"
+msgstr[1] "%1 tietuetta"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Yhteystieto"
+msgstr "Sisältö"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Koko"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Nouto"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Käytä ylemmän kansion tai tilin asetuksia"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Tahdista valittaessa tämä kansio"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Tahdista ajassa"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Ei koskaan"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minuuttia"
+msgstr[0] "%1 minuutti"
 msgstr[1] "%1 minuuttia"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
@@ -1526,71 +1518,61 @@ msgid "Return to Location"
 msgstr "Palaa sijaintiin"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Luo"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Uusi tapahtuma…"
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Uusi tehtävä…"
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Kuukausi"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Viikko"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "Viikko"
+msgstr "Työviikko"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 päivää"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Päivä"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Aikataulu"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Tehtävät"
@@ -1677,10 +1659,9 @@ msgid "Previous Three Days"
 msgstr "Kolme edellistä päivää"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "Edellinen viikko"
+msgstr "Edellinen työviikko"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1698,10 +1679,9 @@ msgid "Next Three Days"
 msgstr "Seuraavat kolme päivää"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "Ensi viikko"
+msgstr "Seuraava työviikko"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1720,11 +1700,10 @@ msgid "Week"
 msgstr "Viikko"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "Työ"
+msgstr "Työviikko"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -1823,11 +1802,10 @@ msgid "Create a New Task…"
 msgstr "Luo uusi tehtävä…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Lisää alitehtävä"
+msgstr "Lisää tehtävä"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1859,9 +1837,7 @@ msgid "Delete Calendar"
 msgstr "Poista kalenteri"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Aseta kalenteriväri…"
@@ -2078,7 +2054,7 @@ msgstr "Näytä kalenterinäkymissä vapaapäivät"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Valitse vapaapäiväalue"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2228,7 +2204,7 @@ msgstr "Näytä viikko-otsakkeet"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "Piilota tyhjät päivät"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2482,11 +2458,9 @@ msgid "No name"
 msgstr "Ei nimeä"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Virheellinen"
+msgstr "Virheellinen tietue"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2509,32 +2483,25 @@ msgid "New Contact Group…"
 msgstr "Uusi yhteystietoryhmä…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Muokkaa yhteystietoa…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Poista yhteystieto"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Move to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Siirrä kohteeseen…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
 msgstr "Kopioi kohteeseen…"
@@ -2615,9 +2582,7 @@ msgid "Select Email Address"
 msgstr "Valitse sähköpostiosoite"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Ei nimeä"
@@ -2647,10 +2612,7 @@ msgid "New Contact Group"
 msgstr "Uusi yhteystietoryhmä"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Number of selected emails"
-#| msgid "%1 selected"
-#| msgid_plural "%1 selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
@@ -3383,22 +3345,20 @@ msgid "Confirm Contact Deletion"
 msgstr "Vahvista yhteystiedon poistaminen"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Poista yhteystieto"
-msgstr[1] "Poista yhteystieto"
+msgstr[1] "Poista yhteystiedot"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Haluatko varmasti poistaa yhteystiedon: <b>%1</b>?"
-msgstr[1] "Haluatko varmasti poistaa yhteystiedon: <b>%1</b>?"
+msgstr[0] "Haluatko varmasti poistaa yhteystiedon:"
+msgstr[1] "Haluatko varmasti poistaa yhteystiedot:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #: quick/qml/TagManagerPage.qml:31
@@ -3523,9 +3483,7 @@ msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Tallenna nimellä…"
@@ -3847,11 +3805,10 @@ msgid "Create a New Tag…"
 msgstr "Luo uusi luokitus…"
 
 #: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Tag"
-msgstr "Lisää alitehtävä"
+msgstr "Lisää luokitus"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
