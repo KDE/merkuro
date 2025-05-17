@@ -25,7 +25,7 @@ KirigamiSettings.ConfigurationView {
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "freebusy"
-            text: i18n("Free/Busy")
+            text: i18n("Availability")
             icon.name: "view-calendar-month"
             page: () => Qt.createComponent("FreeBusySettingsPage.qml")
         }

@@ -12,10 +12,10 @@ import org.kde.kirigamiaddons.formcard as FormCard
 FormCard.FormCardPage {
     id: freeBusySettingsPage
 
-    title: i18n("Configure Free/Busy")
+    title: i18n("Configure Availability")
 
     FormCard.FormHeader {
-        title: i18n("Free/Busy Publishing settings")
+        title: i18n("Availability Publishing settings")
     }
 
     FormCard.FormCard {
@@ -23,12 +23,12 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             id: freeBusyPublishInfo
-            description: i18n("When you publish your free/busy information, it enables others to consider your calendar availability when inviting you to a meeting. Only the times that are already marked as busy are disclosed, without revealing the specific reasons for your availability.")
+            description: i18n("When you publish your availability information, it enables others to consider your calendar availability when inviting you to a meeting. Only the times that are already marked as busy are disclosed, without revealing the specific reasons for your availability.")
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormCheckDelegate {
             id: autoPublishDelegate
-            text: i18n("Publish your free/busy information automatically")
+            text: i18n("Publish your availability information automatically")
             checked: Calendar.CalendarSettings.freeBusyPublishAuto
             onCheckedChanged: {
                 Calendar.CalendarSettings.freeBusyPublishAuto = checked;
@@ -53,7 +53,7 @@ FormCard.FormCardPage {
         FormCard.FormSpinBoxDelegate {
             id: publishDaysDelegate
             Layout.fillWidth: true
-            label: i18n("Number of days of free/busy info to publish: ")
+            label: i18n("Number of days of availability info to publish: ")
             value: Calendar.CalendarSettings.freeBusyPublishDays
             from: 1
             to: 365
@@ -109,7 +109,7 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
         FormCard.FormButtonDelegate {
             id: freeBusyPublishButton
-            text: i18n("Click here to publish Free/Busy information manually")
+            text: i18n("Click here to publish availability information manually")
             onClicked: Calendar.FreeBusyManager.publishFreeBusy();
         }
         FormCard.FormDelegateSeparator {}
@@ -120,7 +120,7 @@ FormCard.FormCardPage {
             contentItem: RowLayout {
                 Layout.fillWidth: true
                 QQC2.Label {
-                    text: i18n("Email Free/Busy")
+                    text: i18n("Email availability")
                 }
                 QQC2.TextField {
                     id: freeBusyMailAddress
@@ -136,7 +136,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Free/Busy Retrieval settings")
+        title: i18n("Availability Retrieval settings")
     }
 
     FormCard.FormCard {
@@ -144,12 +144,12 @@ FormCard.FormCardPage {
 
         FormCard.FormTextDelegate {
             id: freeBusyRetrieveInfo
-            description: i18n("By retrieving Free/Busy information that others have published, you can take their calendar into account when inviting them to a meeting.")
+            description: i18n("By retrieving Availability information that others have published, you can take their calendar into account when inviting them to a meeting.")
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormCheckDelegate {
             id: autoRetrieveDelegate
-            text: i18n("Retrieve others' free/busy information automatically")
+            text: i18n("Retrieve others' availability information automatically")
             checked: Calendar.CalendarSettings.freeBusyRetrieveAuto
             onCheckedChanged: {
                 Calendar.CalendarSettings.freeBusyRetrieveAuto = checked;
