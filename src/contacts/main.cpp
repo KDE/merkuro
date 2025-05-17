@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
         // The license this code is released under.
         KAboutLicense::GPL_V3,
         // Copyright Statement.
-        i18n("(c) KDE Community 2021-2024"));
+        i18n("© KDE Community 2021-2024"));
     aboutData.setBugAddress("https://bugs.kde.org/enter_bug.cgi?format=guided&product=merkuro&version=" + QStringLiteral(MERKURO_VERSION_STRING).toUtf8());
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),

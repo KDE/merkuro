@@ -39,7 +39,7 @@ QQC2.Menu {
     }
     QQC2.MenuItem {
         icon.name: "color-picker"
-        text: i18nc("@action:inmenu", "Set address book colour…")
+        text: i18nc("@action:inmenu", "Set address book color…")
         onClicked: {
             colorDialogLoader.active = true;
             colorDialogLoader.item.open();

@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(MERKURO_VERSION_STRING),
                          i18n("merkuro Launcher"),
                          KAboutLicense::GPL,
-                         i18n("(c) 2024"));
+                         i18n("© 2024"));
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Maintainer"), u"carl@carlschwan.eu"_s, u"https://carlschwan.eu.com"_s);
     aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     KCrash::initialize();

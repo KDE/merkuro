@@ -22,7 +22,7 @@ QString numAndUnit(const qint64 seconds)
     } else if (secs >= 24h) {
         return i18n("1 day");
     } else if (secs >= (2h)) {
-        return i18nc("%1 is 2 or mores", "%1 hours", std::chrono::round<std::chrono::hours>(secs).count()); // 2 hours +
+        return i18nc("%1 is 2 or more", "%1 hours", std::chrono::round<std::chrono::hours>(secs).count()); // 2 hours +
     } else if (secs >= (1h)) {
         return i18n("1 hour");
     } else {
