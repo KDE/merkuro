@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-16 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2023-07-14 22:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -214,7 +214,7 @@ msgstr "Aplicação de Calendário"
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
 #, fuzzy, kde-format
 #| msgid "(c) KDE Community 2021"
-msgid "(c) KDE Community 2021-2024"
+msgid "© KDE Community 2021-2024"
 msgstr "(c) Comunidade do KDE 2021"
 
 #: calendar/main.cpp:66 contacts/main.cpp:60 launcher/main.cpp:56
@@ -795,13 +795,15 @@ msgstr "<b>%1</b> de %2"
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
-msgid "%1 - %2"
-msgstr "%1 - %2"
+msgid "%1 – %2"
+msgstr ""
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "%1 is month of range start, %2 is month + year of range end"
+#| msgid "<b>%1</b> - %2"
 msgctxt "%1 is month of range start, %2 is month + year of range end"
-msgid "<b>%1</b> - %2"
+msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> - %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
@@ -2305,8 +2307,10 @@ msgid "1 day"
 msgstr "1 dia"
 
 #: calendar/utils.cpp:25
-#, kde-format
-msgctxt "%1 is 2 or mores"
+#, fuzzy, kde-format
+#| msgctxt "%1 is 2 or mores"
+#| msgid "%1 hours"
+msgctxt "%1 is 2 or more"
 msgid "%1 hours"
 msgstr "%1 horas"
 
@@ -2723,9 +2727,11 @@ msgid "Delete address book"
 msgstr "Remover o livro de endereços"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set address book colour…"
 msgctxt "@action:inmenu"
-msgid "Set address book colour…"
+msgid "Set address book color…"
 msgstr "Modificar a cor do livro de endereços…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
@@ -3481,7 +3487,7 @@ msgstr "Calendário do Merkuro"
 
 #: launcher/main.cpp:55
 #, kde-format
-msgid "(c) 2024"
+msgid "© 2024"
 msgstr ""
 
 #: launcher/main.cpp:57
@@ -3911,6 +3917,11 @@ msgstr "Criar uma Nova Marca…"
 msgctxt "@action:button"
 msgid "Add Tag"
 msgstr "Adicionar uma Sub-Tarefa"
+
+#~ msgctxt ""
+#~ "%1 is the month and year of the range start, %2 is the same for range end"
+#~ msgid "%1 - %2"
+#~ msgstr "%1 - %2"
 
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
