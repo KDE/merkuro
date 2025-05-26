@@ -117,7 +117,7 @@ Kirigami.OverlayDrawer {
                 Layout.fillWidth: true
             }
 
-            Akonadi.ProgressStatusBar {
+            ProgressStatusBar {
                 id: progressStatusBar
                 Layout.fillWidth: true
             }

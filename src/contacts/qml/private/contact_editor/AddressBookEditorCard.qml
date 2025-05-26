@@ -24,7 +24,7 @@ FormCard.FormCard {
     property alias addressBookComboBoxId: addressBookComboBox.defaultCollectionId;
     property alias addressBookComboBox: addressBookComboBox
 
-    Akonadi.MobileCollectionComboBox {
+    Akonadi.FormCollectionComboBox {
         id: addressBookComboBox
 
         text: i18n("Address book:")

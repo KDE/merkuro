@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_subdirectory(quick)
 add_subdirectory(contacts)
 add_subdirectory(mail)
 add_subdirectory(calendar)

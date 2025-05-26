@@ -57,7 +57,7 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
-        Akonadi.MobileCollectionComboBox {
+        Akonadi.FormCollectionComboBox {
             id: addressBookComboBox
 
             text: i18n("Address Book:")

@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.merkuro.mail as Mail
 
 RowLayout {
     id: root
@@ -18,7 +19,7 @@ RowLayout {
 
     onVisibleChanged: if (!visible) popupLoader.active = false
 
-    Akonadi.ProgressModel {
+    Mail.ProgressModel {
         id: progressModel
         onShowProgressView: popupLoader.active = true
     }

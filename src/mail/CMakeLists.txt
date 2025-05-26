@@ -6,6 +6,8 @@ add_subdirectory(settings)
 set(merkuro_mail_SRCS
     abstractmailmodel.cpp
     abstractmailmodel.h
+    collectionutils.cpp
+    collectionutils.h
     mailactions.cpp
     mailactions.h
     mailapplication.cpp
@@ -18,6 +20,8 @@ set(merkuro_mail_SRCS
     searchmodel.cpp
     contactimageprovider.cpp
     contactimageprovider.h
+    progressmodel.cpp
+    progressmodel.h
 
     messageloader.h
     messageloader.cpp
@@ -96,6 +100,7 @@ ecm_target_qml_sources(merkuro_mail_static SOURCES
     qml/FolderView.qml
     qml/MailComposer.qml
     qml/ConversationViewer.qml
+    qml/ProgressStatusBar.qml
 )
 ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH private SOURCES

@@ -34,7 +34,7 @@ QQC2.Menu {
             index: mailActionsPopup.collectionId
             name: mailActionsPopup.name
         }
-        enabled: mailActionsPopup.collectionId ? Akonadi.CollectionUtils.isRemovable(mailActionsPopup.collectionId) : false
+        enabled: mailActionsPopup.collectionId ? CollectionUtils.isRemovable(mailActionsPopup.collectionId) : false
     }
     QQC2.MenuItem {
         icon.name: "settings-configure"
