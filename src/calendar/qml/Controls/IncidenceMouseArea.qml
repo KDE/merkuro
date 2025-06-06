@@ -105,7 +105,7 @@ MouseArea {
 
             Kirigami.Action {
                 id: setPriorityMenu
-                text: i18n("Set priority...")
+                text: i18n("Set priority…")
                 visible: incidenceData.incidenceType === Calendar.IncidenceWrapper.TypeTodo
 
                 function setPriority(level) {
@@ -178,7 +178,7 @@ MouseArea {
 
             Kirigami.Action {
                 id: setDueDateMenu
-                text: i18n("Set due date...")
+                text: i18n("Set due date…")
                 visible: incidenceData.incidenceType === Calendar.IncidenceWrapper.TypeTodo
 
                 function setDate(date) {

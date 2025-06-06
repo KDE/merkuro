@@ -36,7 +36,7 @@ Kirigami.Action {
 
             QQC2.TextField {
                 id: newFolderName
-                placeholderText: i18n("Folder Name...")
+                placeholderText: i18n("Folder Name…")
             }
         }
     }

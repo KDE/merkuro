@@ -125,7 +125,7 @@ FormCard.FormCardPage {
                 QQC2.TextField {
                     id: freeBusyMailAddress
                     Layout.fillWidth: true
-                    placeholderText: i18n("Enter email of recipient...")
+                    placeholderText: i18n("Enter email of recipient…")
                 }
                 QQC2.Button {
                     text: i18n("Send")
