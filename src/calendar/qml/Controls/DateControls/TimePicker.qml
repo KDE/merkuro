@@ -265,16 +265,22 @@ Item {
             }
 
             Rectangle {
+                id: currentTimeHighlight
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.verticalCenter: tumblerLayout.verticalCenter
-                height: hourView.currentItem.implicitHeight
+                height: 0
                 z: -1
 
                 color: Kirigami.Theme.alternateBackgroundColor
 
                 border.width: 1
                 border.color: Kirigami.ColorUtils.tintWithAlpha(color, Kirigami.Theme.textColor, 0.2)
+
+                Component.onCompleted: {
+                    // TODO: This is a bit hacky... seems like hourView.currentItem gets initialized too late, so it's null when the height of this Rectangle gets set.
+                    currentTimeHighlight.height = hourView.currentItem.implicitHeight
+                }
             }
         }
     }
