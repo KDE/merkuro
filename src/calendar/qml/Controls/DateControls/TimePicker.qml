@@ -128,7 +128,7 @@ Item {
 
                     MouseArea {
                         anchors.fill: parent
-                        onWheel: timePicker.wheelHandler(parent, wheel)
+                        onWheel: (wheel) => timePicker.wheelHandler(parent, wheel)
                     }
                 }
 
