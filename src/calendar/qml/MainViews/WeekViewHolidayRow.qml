@@ -60,7 +60,7 @@ Row {
             required property int index
             readonly property date date: Calendar.Utils.addDaysToDate(root.startDate, index)
             readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
-            readonly property var holidays: Calendar.HolidayModel.holidays[formatedDate]
+            readonly property var holidays: Calendar.HolidayModel.holidays[formatedDate] ?? []
 
             width: root.dayWidth
             implicitHeight: holidayLabel.implicitHeight
