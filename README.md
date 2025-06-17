@@ -10,7 +10,7 @@ Merkuro is a application suite designed to make handling your emails, calendars,
 
 Merkuro was formerly known as Kalendar.
 
-**Get involved and join our Matrix channel: [#merkuro:kde.org](https://matrix.to/#/#merkuro:kde.org=)**
+**Get involved and join our Matrix channel: [#merkuro:kde.org](https://matrix.to/#/#merkuro:kde.org)**
 
 ## Screenshots
 
