@@ -739,66 +739,68 @@ Column {
                                                     Layout.fillWidth: true
                                                     Layout.fillHeight: true
                                                     z: 9999
-                                                    onDropped: if(viewColumn.isCurrentItem) {
-                                                        let incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-                                                        /* So when we drop the entire incidence card somewhere, we are dropping the delegate with object name "hourlyIncidenceDelegateBackgroundBackground" or "multiDayIncidenceDelegateBackgroundBackground" in case when all day event is converted to the hour incidence.
-                                                         * However, when we are simply resizing, we are actually dropping the specific mouseArea within the delegate that handles
-                                                         * the dragging for the incidence's bottom edge which has name "endDtResizeMouseArea". Hence why we check the object names
-                                                         */
-                                                        if(drop.source.objectName === "hourlyIncidenceDelegateBackgroundBackground") {
-                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+                                                    onDropped: (drop) => {
+                                                        if(viewColumn.isCurrentItem) {
+                                                            let incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
+                                                            /* So when we drop the entire incidence card somewhere, we are dropping the delegate with object name "hourlyIncidenceDelegateBackgroundBackground" or "multiDayIncidenceDelegateBackgroundBackground" in case when all day event is converted to the hour incidence.
+                                                             * However, when we are simply resizing, we are actually dropping the specific mouseArea within the delegate that handles
+                                                             * the dragging for the incidence's bottom edge which has name "endDtResizeMouseArea". Hence why we check the object names
+                                                             */
+                                                            if(drop.source.objectName === "hourlyIncidenceDelegateBackgroundBackground") {
+                                                                incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                                                            const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
-                                                            drop.source.caughtX = pos.x + incidenceSpacing;
-                                                            drop.source.caughtY = pos.y + incidenceSpacing;
-                                                            drop.source.caught = true;
+                                                                const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
+                                                                drop.source.caughtX = pos.x + incidenceSpacing;
+                                                                drop.source.caughtY = pos.y + incidenceSpacing;
+                                                                drop.source.caught = true;
 
-                                                            // We want the date as if it were "from the top" of the droparea
-                                                            const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                                // We want the date as if it were "from the top" of the droparea
+                                                                const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
 
-                                                            const startOffset = posDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                                const startOffset = posDate.getTime() - drop.source.occurrenceDate.getTime();
 
-                                                            if (DateUtils.sameDay(drop.source.occurrenceDate, posDate)
-                                                                && DateUtils.sameTime(drop.source.occurrenceDate, posDate)) {
-                                                                return;
+                                                                if (Calendar.DateUtils.sameDay(drop.source.occurrenceDate, posDate)
+                                                                    && Calendar.DateUtils.sameTime(drop.source.occurrenceDate, posDate)) {
+                                                                    return;
+                                                                }
+
+                                                                Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, drop.source.occurrenceDate, drop.source);
+                                                            } else if(drop.source.objectName === "multiDayIncidenceDelegateBackgroundBackground") {
+                                                                incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
+
+                                                                const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
+                                                                drop.source.caughtX = pos.x + incidenceSpacing;
+                                                                drop.source.caughtY = pos.y + incidenceSpacing;
+                                                                drop.source.caught = true;
+
+                                                                // We want the date as if it were "from the top" of the droparea
+                                                                const startPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                                // In case when incidence is converted to not be all day anymore, lets set it as 1h long
+                                                                const endPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index + 1, dropAreaRepeater.minutes * index);
+
+                                                                const startOffset = startPosDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                                const endOffset = endPosDate.getTime() - drop.source.occurrenceEndDate.getTime();
+
+                                                                Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, drop.source.occurrenceDate, drop.source);
+
+                                                            } else { // The resize affects the end time
+                                                                incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.resizerSeparator.parent.incidencePtr);
+
+                                                                const pos = mapToItem(drop.source.resizerSeparator.parent, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
+                                                                drop.source.resizerSeparator.parent.caughtHeight = (pos.y + dropAreaHighlightRectangle.height - incidenceSpacing)
+                                                                drop.source.resizerSeparator.parent.caught = true;
+
+                                                                // We want the date as if it were "from the bottom" of the droparea
+                                                                const minute = (dropAreaRepeater.minutes * (index + 1)) % 60;
+                                                                const isNextHour = minute === 0 && index !== 0;
+                                                                const hour = isNextHour ? backgroundRectangle.index + 1 : backgroundRectangle.index;
+
+                                                                const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), hour, minute);
+
+                                                                const endOffset = posDate.getTime() - drop.source.resizerSeparator.parent.occurrenceEndDate.getTime();
+
+                                                                Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, 0, endOffset, drop.source.resizerSeparator.parent.occurrenceDate, drop.source.resizerSeparator.parent);
                                                             }
-
-                                                            Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, startOffset, drop.source.occurrenceDate, drop.source);
-                                                        } else if(drop.source.objectName === "multiDayIncidenceDelegateBackgroundBackground") {
-                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
-
-                                                            const pos = mapToItem(viewColumn, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
-                                                            drop.source.caughtX = pos.x + incidenceSpacing;
-                                                            drop.source.caughtY = pos.y + incidenceSpacing;
-                                                            drop.source.caught = true;
-
-                                                            // We want the date as if it were "from the top" of the droparea
-                                                            const startPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
-                                                            // In case when incidence is converted to not be all day anymore, lets set it as 1h long
-                                                            const endPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index + 1, dropAreaRepeater.minutes * index);
-
-                                                            const startOffset = startPosDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                            const endOffset = endPosDate.getTime() - drop.source.occurrenceEndDate.getTime();
-
-                                                            Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, drop.source.occurrenceDate, drop.source);
-
-                                                        } else { // The resize affects the end time
-                                                            incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.resizerSeparator.parent.incidencePtr);
-
-                                                            const pos = mapToItem(drop.source.resizerSeparator.parent, dropAreaHighlightRectangle.x, dropAreaHighlightRectangle.y);
-                                                            drop.source.resizerSeparator.parent.caughtHeight = (pos.y + dropAreaHighlightRectangle.height - incidenceSpacing)
-                                                            drop.source.resizerSeparator.parent.caught = true;
-
-                                                            // We want the date as if it were "from the bottom" of the droparea
-                                                            const minute = (dropAreaRepeater.minutes * (index + 1)) % 60;
-                                                            const isNextHour = minute === 0 && index !== 0;
-                                                            const hour = isNextHour ? backgroundRectangle.index + 1 : backgroundRectangle.index;
-
-                                                            const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), hour, minute);
-
-                                                            const endOffset = posDate.getTime() - drop.source.resizerSeparator.parent.occurrenceEndDate.getTime();
-
-                                                            Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, 0, endOffset, drop.source.resizerSeparator.parent.occurrenceDate, drop.source.resizerSeparator.parent);
                                                         }
                                                     }
 
