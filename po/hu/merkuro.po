@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-18 00:43+0000\n"
-"PO-Revision-Date: 2025-02-01 21:53+0100\n"
+"PO-Revision-Date: 2025-06-21 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -157,10 +157,9 @@ msgid "Show Completed Tasks"
 msgstr "Befejezett feladatok megjelenítése"
 
 #: calendar/calendarapplication.cpp:349
-#, fuzzy, kde-format
-#| msgid "To Today"
+#, kde-format
 msgid "Show Today Only"
-msgstr "A mai napra"
+msgstr "Csak a mai megjelenítése"
 
 #: calendar/calendarapplication.cpp:364
 #, kde-format
@@ -253,13 +252,13 @@ msgstr "Fejlesztő"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Területi beállítások alapértelmezése"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -650,7 +649,7 @@ msgstr[1] "Részfeladatok"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:60
 #, kde-format
 msgid "View"
-msgstr "Nézet"
+msgstr "Megnyitás"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:66
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:91
@@ -1831,36 +1830,30 @@ msgid "Add Task"
 msgstr "Részfeladat hozzáadása"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
-#, fuzzy, kde-format
-#| msgid "days"
+#, kde-format
 msgid "Holidays"
-msgstr "nap"
+msgstr "Ünnepek"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Események megjelenítése"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Naptár szerkesztése…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Naptár frissítése"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:75
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Naptár törlése"
@@ -2077,16 +2070,15 @@ msgid "Use popup to show incidence information"
 msgstr "Felugró használata az esemény információinak megjelenítéséhez"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show tasks in calendar views"
+#, kde-format
 msgid "Show holidays in calendar views"
-msgstr "Feladatok megjelenítése naptár nézetben"
+msgstr "Ünnepnapok megjelenítése naptár nézetben"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Munkaszüneti területek kiválasztása"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
@@ -2492,11 +2484,9 @@ msgid "No name"
 msgstr "Nincs név"
 
 #: contacts/contactactions.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@info: shorthand for the key is invalid"
-#| msgid "Invalid"
+#, kde-format
 msgid "Invalid item"
-msgstr "Érvénytelen"
+msgstr "Érvénytelen elem"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2519,9 +2509,7 @@ msgid "New Contact Group…"
 msgstr "Új névjegycsoport…"
 
 #: contacts/contactapplication.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
 msgstr "Névjegy szerkesztése…"
@@ -2667,14 +2655,13 @@ msgstr[1] "Nincs kiválasztva postafiók"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Kijelölés áthelyezése ide:"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:162
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Befejezettség:"
+msgstr "Kijelölés másolása ide:"
 
 #: contacts/qml/ContactView.qml:205 contacts/qml/private/ContactPage.qml:62
 #: contacts/qml/private/ContactsPage.qml:49
@@ -3391,13 +3378,12 @@ msgid "Confirm Contact Deletion"
 msgstr "Névjegy törlésének megerősítése"
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Névjegy törlése"
-msgstr[1] "Névjegy törlése"
+msgstr[1] "Névjegyek törlése"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
 #, fuzzy, kde-format
@@ -3507,38 +3493,32 @@ msgid "Check Mail"
 msgstr "Üzenetek letöltése"
 
 #: mail/mailapplication.cpp:39
-#, fuzzy, kde-format
-#| msgid "Mark Message as Read"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Read"
 msgstr "Megjelölés olvasottként"
 
 #: mail/mailapplication.cpp:44
-#, fuzzy, kde-format
-#| msgid "Mark Message as Unread"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
 msgstr "Megjelölés olvasatlanként"
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark as Important"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Megjelölés fontosként"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Áthelyezés a Kukába"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Mentés másként…"
@@ -3608,31 +3588,25 @@ msgstr ""
 "véglegesen törlődnek."
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Összes törlése"
+msgstr "E-mail törlése"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Összes törlése"
+msgstr "E-mail törlése"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
-#, fuzzy, kde-format
-#| msgid ""
-#| "Are you sure you want to delete the folder %1, discarding its contents? "
-#| "<br /> <b>Beware</b> that discarded messages are not saved into your "
-#| "Trash folder and are permanently deleted."
+#, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
-"Biztosan törölni szeretné a(z) %1 mappát, eldobva ezzel a tartalmát?<br /"
+"Biztosan törölni szeretné a(z) „%1” e-mailt, eldobva ezzel a tartalmát?<br /"
 "><b>Vigyázat</b>, az eldobott üzenetek nem kerülnek a Kuka mappába, és "
 "véglegesen törlődnek."
 
@@ -3688,26 +3662,23 @@ msgstr "Fájl kiválasztása"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Keresés: %1"
 
 #: mail/qml/FolderView.qml:81
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Nincs kiválasztva postafiók"
-msgstr[1] "Nincs kiválasztva postafiók"
+msgstr[0] "%1 kijelölve"
+msgstr[1] "%1 kijelölve"
 
 #: mail/qml/FolderView.qml:127
-#, fuzzy, kde-format
-#| msgid "Save Message - Merkuro-Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Üzenet mentése - Merkuro Mail"
 
 #: mail/qml/FolderView.qml:128
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox)"
+#, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "E-mail üzenetek (*.mbox)"
 
