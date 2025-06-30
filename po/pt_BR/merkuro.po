@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-02-27 20:15-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -846,7 +846,7 @@ msgstr "Você não poderá reverter esta ação"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -3419,7 +3419,6 @@ msgstr[0] "Deseja realmente excluir o contanto: <b>%1</b>?"
 msgstr[1] "Deseja realmente excluir o contanto: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Você não poderá reverter esta ação"
@@ -3807,13 +3806,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Importar chave"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identidades"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3821,7 +3820,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Recebendo contas"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configuração de conta de e-mail"
@@ -3832,60 +3831,41 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Contas"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, kde-format
-msgid "Configure %1"
-msgstr "Configurar %1"
+#~ msgid "Configure %1"
+#~ msgstr "Configurar %1"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr "Modificar ou excluir esse agente de conta."
+#~ msgid "Modify or delete this account agent."
+#~ msgstr "Modificar ou excluir esse agente de conta."
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr "Modificar"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Modificar"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "Excluir"
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "Excluir"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, kde-format
-msgid "Add Account"
-msgstr "Adicionar conta"
+#~ msgid "Add Account"
+#~ msgstr "Adicionar conta"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "Gerenciar etiquetas"
+#~ msgid "Manage Tags"
+#~ msgstr "Gerenciar etiquetas"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr "Confirmar exclusão de etiqueta"
+#~ msgctxt "@title:dialog"
+#~ msgid "Confirm Tag Deletion"
+#~ msgstr "Confirmar exclusão de etiqueta"
 
-#: quick/qml/TagManagerPage.qml:31
-#, kde-format
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Tem certeza de que deseja excluir a etiqueta <b>%1</b>?"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "Tem certeza de que deseja excluir a etiqueta <b>%1</b>?"
 
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "Criar uma nova etiqueta…"
+#~ msgid "Create a New Tag…"
+#~ msgstr "Criar uma nova etiqueta…"
 
-#: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "Adicionar sub-tarefa"
+#, fuzzy
+#~| msgid "Add Sub-Task"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "Adicionar sub-tarefa"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"

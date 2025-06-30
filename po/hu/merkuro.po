@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-06-21 22:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -840,7 +840,7 @@ msgstr "Ez a művelet nem vonható vissza"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "Mégse"
@@ -3395,7 +3395,6 @@ msgstr[0] "Biztosan törölni szeretné ezt a névjegyet: <b>%1</b>?"
 msgstr[1] "Biztosan törölni szeretné ezt a névjegyet: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Ez a művelet nem vonható vissza."
@@ -3766,13 +3765,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Kulcs importálása"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Azonosítók"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3780,7 +3779,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Fogadó fiókok"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Levelezési fiók beállítása"
@@ -3791,60 +3790,41 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Fiókok"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, kde-format
-msgid "Configure %1"
-msgstr "%1 beállítása"
+#~ msgid "Configure %1"
+#~ msgstr "%1 beállítása"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr "Fiókügynök módosítása vagy törlése."
+#~ msgid "Modify or delete this account agent."
+#~ msgstr "Fiókügynök módosítása vagy törlése."
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr "Módosítás"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Módosítás"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "Törlés"
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "Törlés"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, kde-format
-msgid "Add Account"
-msgstr "Fiók hozzáadása"
+#~ msgid "Add Account"
+#~ msgstr "Fiók hozzáadása"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "Címkék kezelése"
+#~ msgid "Manage Tags"
+#~ msgstr "Címkék kezelése"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr "Címke törlésének megerősítése"
+#~ msgctxt "@title:dialog"
+#~ msgid "Confirm Tag Deletion"
+#~ msgstr "Címke törlésének megerősítése"
 
-#: quick/qml/TagManagerPage.qml:31
-#, kde-format
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Biztosan törölni szeretné a(z) <b>%1</b> címkét?"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "Biztosan törölni szeretné a(z) <b>%1</b> címkét?"
 
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "Új címke létrehozása…"
+#~ msgid "Create a New Tag…"
+#~ msgstr "Új címke létrehozása…"
 
-#: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "Részfeladat hozzáadása"
+#, fuzzy
+#~| msgid "Add Sub-Task"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "Részfeladat hozzáadása"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"

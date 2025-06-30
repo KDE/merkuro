@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-05-22 14:00+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -830,7 +830,7 @@ msgstr "您將無法復原這個動作"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -3330,7 +3330,6 @@ msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "您確定要刪除您這些聯絡人嗎："
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "您將無法復原這個動作。"
@@ -3697,13 +3696,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "匯入金鑰"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "身分"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3711,7 +3710,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "收件帳號"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "郵件帳號設定"
@@ -3722,59 +3721,39 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "帳號"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, kde-format
-msgid "Configure %1"
-msgstr "設定 %1"
+#~ msgid "Configure %1"
+#~ msgstr "設定 %1"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr "修改或刪除這個帳號代理。"
+#~ msgid "Modify or delete this account agent."
+#~ msgstr "修改或刪除這個帳號代理。"
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr "修改"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "修改"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "刪除"
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "刪除"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, kde-format
-msgid "Add Account"
-msgstr "新增帳號"
+#~ msgid "Add Account"
+#~ msgstr "新增帳號"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "管理標籤"
+#~ msgid "Manage Tags"
+#~ msgstr "管理標籤"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr "確認刪除標籤"
+#~ msgctxt "@title:dialog"
+#~ msgid "Confirm Tag Deletion"
+#~ msgstr "確認刪除標籤"
 
-#: quick/qml/TagManagerPage.qml:31
-#, kde-format
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "您確定要刪除標籤 <b>%1</b> 嗎？"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "您確定要刪除標籤 <b>%1</b> 嗎？"
 
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "建立新標籤…"
+#~ msgid "Create a New Tag…"
+#~ msgstr "建立新標籤…"
 
-#: quick/qml/TagManagerPage.qml:143
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "新增標籤"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "新增標籤"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"

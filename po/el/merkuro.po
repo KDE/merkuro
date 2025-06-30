@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -863,7 +863,7 @@ msgstr ""
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -3495,7 +3495,6 @@ msgstr[0] "Θέλετε να διαγράψετε το αντικείμενο: �
 msgstr[1] "Θέλετε να διαγράψετε το αντικείμενο: «%1»;"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr ""
@@ -3887,14 +3886,14 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Add event"
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Προσθήκη γεγονότος"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt ""
@@ -3903,7 +3902,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Λογαριασμοί"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Mail Account Configuration"
@@ -3915,63 +3914,36 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Λογαριασμοί"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgid "Configure %1"
-msgstr "Διαμόρφωση"
+#, fuzzy
+#~| msgid "Configure"
+#~ msgid "Configure %1"
+#~ msgstr "Διαμόρφωση"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr ""
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr ""
+#, fuzzy
+#~| msgid "Accounts"
+#~ msgid "Add Account"
+#~ msgstr "Λογαριασμοί"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "Διαγραφή"
+#~ msgid "Manage Tags"
+#~ msgstr "Διαχείριση ετικετών"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, fuzzy, kde-format
-#| msgid "Accounts"
-msgid "Add Account"
-msgstr "Λογαριασμοί"
+#, fuzzy
+#~| msgid "Are you sure you want to delete tag \"%1\"?"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "Θέλετε πράγματι να διαγράψετε την ετικέτα «%1»;"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "Διαχείριση ετικετών"
+#~ msgid "Create a New Tag…"
+#~ msgstr "Δημιουργία νέας ετικέτας…"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr ""
-
-#: quick/qml/TagManagerPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Are you sure you want to delete tag \"%1\"?"
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Θέλετε πράγματι να διαγράψετε την ετικέτα «%1»;"
-
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "Δημιουργία νέας ετικέτας…"
-
-#: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "Προσθήκη υπο-εργασίας"
+#, fuzzy
+#~| msgid "Add Sub-Task"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "Προσθήκη υπο-εργασίας"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-05-18 17:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -838,7 +838,7 @@ msgstr "U kunt deze actie niet terugdraaien"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
@@ -3361,7 +3361,6 @@ msgstr[0] "Wilt u uw contactpersoon verwijderen:"
 msgstr[1] "Wilt u uw contactpersonen verwijderen:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "U kunt deze actie niet terugdraaien."
@@ -3731,13 +3730,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Sleutel importeren"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identiteiten"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3745,7 +3744,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Accounts worden ontvangen"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Configuratie van e-mailaccount"
@@ -3756,59 +3755,39 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Accounts"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, kde-format
-msgid "Configure %1"
-msgstr "%1 configureren"
+#~ msgid "Configure %1"
+#~ msgstr "%1 configureren"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr "Deze accountagent wijzigen of verwijderen."
+#~ msgid "Modify or delete this account agent."
+#~ msgstr "Deze accountagent wijzigen of verwijderen."
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr "Wijzigen"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Wijzigen"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "Verwijderen"
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, kde-format
-msgid "Add Account"
-msgstr "Account toevoegen"
+#~ msgid "Add Account"
+#~ msgstr "Account toevoegen"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "Tags beheren"
+#~ msgid "Manage Tags"
+#~ msgstr "Tags beheren"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr "Verwijderen van tag bevestigen"
+#~ msgctxt "@title:dialog"
+#~ msgid "Confirm Tag Deletion"
+#~ msgstr "Verwijderen van tag bevestigen"
 
-#: quick/qml/TagManagerPage.qml:31
-#, kde-format
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Wilt u tag <b>%1</b> verwijderen?"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "Wilt u tag <b>%1</b> verwijderen?"
 
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "Een nieuwe tag aanmaken…"
+#~ msgid "Create a New Tag…"
+#~ msgstr "Een nieuwe tag aanmaken…"
 
-#: quick/qml/TagManagerPage.qml:143
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "Tag toevoegen"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "Tag toevoegen"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-30 00:42+0000\n"
 "PO-Revision-Date: 2025-02-23 12:27+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -853,7 +853,7 @@ msgstr "Nie będzie można wycofać tego działania"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:32
-#: mail/qml/actions/NewFolderAction.qml:31 quick/qml/ProgressStatusBar.qml:105
+#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:106
 #, kde-format
 msgid "Cancel"
 msgstr "Anuluj"
@@ -3431,7 +3431,6 @@ msgstr[1] "Czy na pewno usunąć swój kontakt: <b>%1</b>?"
 msgstr[2] "Czy na pewno usunąć swój kontakt: <b>%1</b>?"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
-#: quick/qml/TagManagerPage.qml:31
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Nie będzie można wycofać tego działania."
@@ -3805,13 +3804,13 @@ msgctxt "@action:button"
 msgid "Import key"
 msgstr "Zaimportuj klucz"
 
-#: mail/settings/AccountSettingsPage.qml:17
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Tożsamości"
 
-#: mail/settings/AccountSettingsPage.qml:27
+#: mail/settings/AccountSettingsPage.qml:28
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3819,7 +3818,7 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Konta odbiorcze"
 
-#: mail/settings/AccountSettingsPage.qml:32
+#: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Ustawienia kont pocztowych"
@@ -3830,60 +3829,41 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Konta"
 
-#: quick/qml/AgentConfigurationForm.qml:31
-#, kde-format
-msgid "Configure %1"
-msgstr "%1 - Ustawienia"
+#~ msgid "Configure %1"
+#~ msgstr "%1 - Ustawienia"
 
-#: quick/qml/AgentConfigurationForm.qml:37
-#, kde-format
-msgid "Modify or delete this account agent."
-msgstr "Dostosuj lub usuń tę usługę konta."
+#~ msgid "Modify or delete this account agent."
+#~ msgstr "Dostosuj lub usuń tę usługę konta."
 
-#: quick/qml/AgentConfigurationForm.qml:53
-#, kde-format
-msgctxt "@action:button"
-msgid "Modify"
-msgstr "Zmień"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Zmień"
 
-#: quick/qml/AgentConfigurationForm.qml:62
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete"
-msgstr "Usuń"
+#~ msgctxt "@action:button"
+#~ msgid "Delete"
+#~ msgstr "Usuń"
 
-#: quick/qml/AgentConfigurationForm.qml:106
-#, kde-format
-msgid "Add Account"
-msgstr "Dodaj konto"
+#~ msgid "Add Account"
+#~ msgstr "Dodaj konto"
 
-#: quick/qml/TagManagerPage.qml:17
-#, kde-format
-msgid "Manage Tags"
-msgstr "Zarządzanie znacznikami"
+#~ msgid "Manage Tags"
+#~ msgstr "Zarządzanie znacznikami"
 
-#: quick/qml/TagManagerPage.qml:27
-#, kde-format
-msgctxt "@title:dialog"
-msgid "Confirm Tag Deletion"
-msgstr "Potwierdzenie usunięcia znacznika"
+#~ msgctxt "@title:dialog"
+#~ msgid "Confirm Tag Deletion"
+#~ msgstr "Potwierdzenie usunięcia znacznika"
 
-#: quick/qml/TagManagerPage.qml:31
-#, kde-format
-msgid "Are you sure you want to delete tag <b>%1</b>?"
-msgstr "Czy na pewno usunąć znacznik <b>%1</b>?"
+#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
+#~ msgstr "Czy na pewno usunąć znacznik <b>%1</b>?"
 
-#: quick/qml/TagManagerPage.qml:132
-#, kde-format
-msgid "Create a New Tag…"
-msgstr "Utwórz nowy znacznik..."
+#~ msgid "Create a New Tag…"
+#~ msgstr "Utwórz nowy znacznik..."
 
-#: quick/qml/TagManagerPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
-msgctxt "@action:button"
-msgid "Add Tag"
-msgstr "Dodaj pod-zadanie"
+#, fuzzy
+#~| msgid "Add Sub-Task"
+#~ msgctxt "@action:button"
+#~ msgid "Add Tag"
+#~ msgstr "Dodaj pod-zadanie"
 
 #~ msgctxt ""
 #~ "%1 is the month and year of the range start, %2 is the same for range end"
