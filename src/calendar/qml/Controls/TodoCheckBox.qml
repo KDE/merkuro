@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.merkuro.calendar as Calendar
 
 ColoredCheckbox {
     id: todoCheckbox
@@ -17,7 +18,7 @@ ColoredCheckbox {
     color: incidenceColor
     radius: 100
     checked: todoCompleted || todoCompletion === 100
-    onClicked: CalendarUiUtils.completeTodo(todoPtr)
+    onClicked: Calendar.CalendarUiUtils.completeTodo(todoPtr)
 
     indicator: Item {
         height: parent.height
