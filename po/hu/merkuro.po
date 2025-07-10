@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:42+0000\n"
-"PO-Revision-Date: 2025-06-21 22:56+0200\n"
+"PO-Revision-Date: 2025-07-09 22:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -44,10 +44,9 @@ msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "Heti nézet"
+msgstr "Munkahét-nézet"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -211,8 +210,7 @@ msgid "Calendar Application"
 msgstr "Naptáralkalmazás"
 
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021-2024"
 msgstr "© A KDE közösség, 2021-2024."
 
@@ -789,15 +787,13 @@ msgstr "%2 <b>%1</b>"
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 – %2"
-msgstr ""
+msgstr "%1 – %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, fuzzy, kde-format
-#| msgctxt "%1 is month of range start, %2 is month + year of range end"
-#| msgid "<b>%1</b> - %2"
+#, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
-msgstr "<b>%1</b> - %2"
+msgstr "<b>%1</b> – %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -921,23 +917,19 @@ msgid "Delete All"
 msgstr "Összes törlése"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Naptár szerkesztése…"
+msgstr "Naptár szerkesztése"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Általános"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Név"
@@ -946,74 +938,71 @@ msgstr "Név"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Statisztikák"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 bejegyzés"
+msgstr[1] "%1 bejegyzés"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Névjegy"
+msgstr "Tartalom"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Méret"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Letöltés"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Beállítások használata a szülő mappából vagy fiókból"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Szinkronizálás a mappa kiválasztásakor"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Szinkronizálási időköz"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Soha"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
-#| msgid "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 perccel"
-msgstr[1] "%1 perccel"
+msgstr[0] "%1 perc"
+msgstr[1] "%1 perc"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1529,71 +1518,61 @@ msgid "Return to Location"
 msgstr "Vissza a helyhez"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Létrehozás"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Új esemény…"
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Új feladat…"
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Hónap"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Hét"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "Hét"
+msgstr "Munkahét"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 nap"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Nap"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Ütemezés"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
-#| msgid "Tasks"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Feladatok"
@@ -1678,10 +1657,9 @@ msgid "Previous Three Days"
 msgstr "Előző három nap"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "Előző hét"
+msgstr "Előző munkahét"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1699,10 +1677,9 @@ msgid "Next Three Days"
 msgstr "Következő három nap"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "Következő hét"
+msgstr "Következő munkahét"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1721,11 +1698,10 @@ msgid "Week"
 msgstr "Hét"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "Munkahelyi"
+msgstr "Munkahét"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -1823,11 +1799,10 @@ msgid "Create a New Task…"
 msgstr "Új feladat létrehozása…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "Add Sub-Task"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Részfeladat hozzáadása"
+msgstr "Feladat hozzáadása"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1859,9 +1834,7 @@ msgid "Delete Calendar"
 msgstr "Naptár törlése"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Naptárszín beállítása…"
@@ -2228,7 +2201,7 @@ msgstr "Heti fejléc megjelenítése"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "Üres napok elrejtése"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2282,9 +2255,7 @@ msgid "1 day"
 msgstr "1 nappal"
 
 #: calendar/utils.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is 2 or mores"
-#| msgid "%1 hours"
+#, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
 msgstr "%1 órával"
@@ -2515,25 +2486,22 @@ msgid "Edit contact…"
 msgstr "Névjegy szerkesztése…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Névjegy törlése"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "Üzenet áthelyezése ide…"
+msgstr "Áthelyezés ide…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Copy Message to..."
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr "Üzenet másolása ide…"
+msgstr "Másolás ide…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2611,9 +2579,7 @@ msgid "Select Email Address"
 msgstr "Válasszon e-mail-címet"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
-#| msgctxt "Placeholder"
-#| msgid "No Name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Nincs név"
@@ -2643,13 +2609,12 @@ msgid "New Contact Group"
 msgstr "Új névjegycsoport"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "Nincs kiválasztva postafiók"
-msgstr[1] "Nincs kiválasztva postafiók"
+msgstr[0] "%1 kijelölve"
+msgstr[1] "%1 kijelölve"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
@@ -2694,9 +2659,7 @@ msgid "Delete address book"
 msgstr "Címjegyzék törlése"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set address book colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
 msgstr "Címjegyzékszín beállítása…"
@@ -3386,13 +3349,12 @@ msgstr[0] "Névjegy törlése"
 msgstr[1] "Névjegyek törlése"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Biztosan törölni szeretné ezt a névjegyet: <b>%1</b>?"
-msgstr[1] "Biztosan törölni szeretné ezt a névjegyet: <b>%1</b>?"
+msgstr[0] "Biztosan törölni szeretné ezt a névjegyet:"
+msgstr[1] "Biztosan törölni szeretné ezt a névjegyeit:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #, kde-format
@@ -3437,10 +3399,9 @@ msgid "merkuro Launcher"
 msgstr "Merkuro indító"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgid "(c) 2024"
+#, kde-format
 msgid "© 2024"
-msgstr "(c) 2024"
+msgstr "© 2024"
 
 #: launcher/main.cpp:57
 #, kde-format
