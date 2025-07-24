@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:42+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 03:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1909,26 +1909,33 @@ msgid "Accounts"
 msgstr "ანგარიშები"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "თავისუფალი/დაკავებული"
+#, fuzzy, kde-format
+#| msgid "Configure Availability"
+msgid "Availability"
+msgstr "წვდომადობის მორგება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
-msgid "Configure Free/Busy"
-msgstr "თავისუფალი/დაკავებულის მორგება"
+msgid "Configure Availability"
+msgstr "წვდომადობის მორგება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, kde-format
-msgid "Free/Busy Publishing settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Publishing settings"
+msgid "Availability Publishing settings"
 msgstr "თავისუფალი/დაკავებულის გამოქვეყნების მორგება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you publish your free/busy information, it enables others to "
+#| "consider your calendar availability when inviting you to a meeting. Only "
+#| "the times that are already marked as busy are disclosed, without "
+#| "revealing the specific reasons for your availability."
 msgid ""
-"When you publish your free/busy information, it enables others to consider "
-"your calendar availability when inviting you to a meeting. Only the times "
-"that are already marked as busy are disclosed, without revealing the "
+"When you publish your availability information, it enables others to "
+"consider your calendar availability when inviting you to a meeting. Only the "
+"times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
 "როცა თქვენს გეგმაზე ინფორმაციას აქვეყნებთ, ამით სხვებს საშუალებას აძლევთ, "
@@ -1936,8 +1943,9 @@ msgstr ""
 "მონიშნულია, როგორც დაკავებული, გამოქვეყნდება, ამის მიზეზის მითითების გარეშე."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, kde-format
-msgid "Publish your free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Publish your free/busy information automatically"
+msgid "Publish your availability information automatically"
 msgstr "თქვენი თავისუფალი/დაკავებულობის ინფორმაციის ავტომატური გამოქვეყნება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
@@ -1946,8 +1954,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "მინიმალური დრო ატვირთვებს შორის, წუთებში"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, kde-format
-msgid "Number of days of free/busy info to publish: "
+#, fuzzy, kde-format
+#| msgid "Number of days of free/busy info to publish: "
+msgid "Number of days of availability info to publish: "
 msgstr "გამოსაქვეყნებელი თავისუფალი/დაკავებულობის დღეების რაოდენობა: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
@@ -1981,14 +1990,16 @@ msgid "Save password"
 msgstr "პაროლის შენახვა"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, kde-format
-msgid "Click here to publish Free/Busy information manually"
+#, fuzzy, kde-format
+#| msgid "Click here to publish Free/Busy information manually"
+msgid "Click here to publish availability information manually"
 msgstr "დააწკაპუნეთ თავისუფალ/დაკავებულობის ხელით გამოსაქვეყნებლად"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, kde-format
-msgid "Email Free/Busy"
-msgstr "თავისუფალი/დაკავებული ელფოსტა"
+#, fuzzy, kde-format
+#| msgid "Configure Availability"
+msgid "Email availability"
+msgstr "წვდომადობის მორგება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2002,22 +2013,27 @@ msgid "Send"
 msgstr "გაგზავნა"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, kde-format
-msgid "Free/Busy Retrieval settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Retrieval settings"
+msgid "Availability Retrieval settings"
 msgstr "თავისუფალი/დაკავებულის მიღების მორგება"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "By retrieving Free/Busy information that others have published, you can "
+#| "take their calendar into account when inviting them to a meeting."
 msgid ""
-"By retrieving Free/Busy information that others have published, you can take "
-"their calendar into account when inviting them to a meeting."
+"By retrieving Availability information that others have published, you can "
+"take their calendar into account when inviting them to a meeting."
 msgstr ""
 "სხვების განრიგის ინფორმაციის მიღებით თქვენ შეგიძლიათ, შეხვედრის დანიშვნისას "
 "მათი კალენდარი მხედველობაში მიიღოთ."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, kde-format
-msgid "Retrieve others' free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Retrieve others' free/busy information automatically"
+msgid "Retrieve others' availability information automatically"
 msgstr "სხვების თავისუფალი/დაკავებულობის ინფორმაციის ავტომატური გამოთხოვა"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
@@ -3751,6 +3767,15 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "ანგარიშები"
 
+#~ msgid "Free/Busy"
+#~ msgstr "თავისუფალი/დაკავებული"
+
+#~ msgid "Configure Free/Busy"
+#~ msgstr "თავისუფალი/დაკავებულის მორგება"
+
+#~ msgid "Email Free/Busy"
+#~ msgstr "თავისუფალი/დაკავებული ელფოსტა"
+
 #~ msgid "Configure %1"
 #~ msgstr "%1-ის მორგება"
 
@@ -3940,9 +3965,6 @@ msgstr "ანგარიშები"
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "გეგმის მორგება…"
-
-#~ msgid "Configure Availability"
-#~ msgstr "წვდომადობის მორგება"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "New Contact Contact"

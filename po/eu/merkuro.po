@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:42+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-07-13 15:31+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1917,25 +1917,31 @@ msgstr "Kontuak"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
-msgid "Free/Busy"
-msgstr "Libre/Lanpetua"
+msgid "Availability"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
-msgid "Configure Free/Busy"
-msgstr "Konfiguratu libre/lanpetua"
+msgid "Configure Availability"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, kde-format
-msgid "Free/Busy Publishing settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Publishing settings"
+msgid "Availability Publishing settings"
 msgstr "Libre/Lanpetua argitaratzeko ezarpenak"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you publish your free/busy information, it enables others to "
+#| "consider your calendar availability when inviting you to a meeting. Only "
+#| "the times that are already marked as busy are disclosed, without "
+#| "revealing the specific reasons for your availability."
 msgid ""
-"When you publish your free/busy information, it enables others to consider "
-"your calendar availability when inviting you to a meeting. Only the times "
-"that are already marked as busy are disclosed, without revealing the "
+"When you publish your availability information, it enables others to "
+"consider your calendar availability when inviting you to a meeting. Only the "
+"times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
 "Zure libre/lanpetua informazioa argitaratzen duzunean, zu bilera batera "
@@ -1944,8 +1950,9 @@ msgstr ""
 "ezagutarazten dira, zure eskuragarritasunaren arrazoi zehatzik agertu gabe."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, kde-format
-msgid "Publish your free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Publish your free/busy information automatically"
+msgid "Publish your availability information automatically"
 msgstr "Argitaratu zure libre/lanpetua informazioa automatikoki"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
@@ -1954,8 +1961,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "Zama-igoeren arteko gutxieneko denbora (minututan)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, kde-format
-msgid "Number of days of free/busy info to publish: "
+#, fuzzy, kde-format
+#| msgid "Number of days of free/busy info to publish: "
+msgid "Number of days of availability info to publish: "
 msgstr "Libre/lanpetu informazioa argitaratzeko egun kopurua:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
@@ -1989,14 +1997,16 @@ msgid "Save password"
 msgstr "Gogoratu pasahitza"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, kde-format
-msgid "Click here to publish Free/Busy information manually"
+#, fuzzy, kde-format
+#| msgid "Click here to publish Free/Busy information manually"
+msgid "Click here to publish availability information manually"
 msgstr "Egin klik hemen Libre/lanpetua informazioa eskuz argitaratzeko"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, kde-format
-msgid "Email Free/Busy"
-msgstr "Bidali e-posta bidez libre/lanpetua"
+#, fuzzy, kde-format
+#| msgid "Email Client"
+msgid "Email availability"
+msgstr "E-posta-bezeroa"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2010,22 +2020,27 @@ msgid "Send"
 msgstr "Bidali"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, kde-format
-msgid "Free/Busy Retrieval settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Retrieval settings"
+msgid "Availability Retrieval settings"
 msgstr "Libre/lanpetua eskuratzeko ezarpenak"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "By retrieving Free/Busy information that others have published, you can "
+#| "take their calendar into account when inviting them to a meeting."
 msgid ""
-"By retrieving Free/Busy information that others have published, you can take "
-"their calendar into account when inviting them to a meeting."
+"By retrieving Availability information that others have published, you can "
+"take their calendar into account when inviting them to a meeting."
 msgstr ""
 "Besteek argitaratu duten libre/lanpetua informazioa eskuratuz, beren "
 "egutegiak kontuan har ditzakezu bilera batera gonbidatzerakoan."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, kde-format
-msgid "Retrieve others' free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Retrieve others' free/busy information automatically"
+msgid "Retrieve others' availability information automatically"
 msgstr "Eskuratu besteen libre/lanpetua informazioa automatikoki"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
@@ -3763,6 +3778,15 @@ msgstr "Posta kontua konfiguratzea"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Kontuak"
+
+#~ msgid "Free/Busy"
+#~ msgstr "Libre/Lanpetua"
+
+#~ msgid "Configure Free/Busy"
+#~ msgstr "Konfiguratu libre/lanpetua"
+
+#~ msgid "Email Free/Busy"
+#~ msgstr "Bidali e-posta bidez libre/lanpetua"
 
 #~ msgid "Configure %1"
 #~ msgstr "Konfiguratu %1"

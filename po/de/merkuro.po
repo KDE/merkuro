@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:42+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-07-02 12:08+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1918,26 +1918,33 @@ msgid "Accounts"
 msgstr "Konten"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
-#, kde-format
-msgid "Free/Busy"
-msgstr "Frei/Beschäftigt"
+#, fuzzy, kde-format
+#| msgid "Configure Availability"
+msgid "Availability"
+msgstr "Verfügbarkeit einrichten"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
-msgid "Configure Free/Busy"
-msgstr "Frei/Beschäftigt einrichten"
+msgid "Configure Availability"
+msgstr "Verfügbarkeit einrichten"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, kde-format
-msgid "Free/Busy Publishing settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Publishing settings"
+msgid "Availability Publishing settings"
 msgstr "Frei/Beschäftigt Veröffentlichungseinstellungen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you publish your free/busy information, it enables others to "
+#| "consider your calendar availability when inviting you to a meeting. Only "
+#| "the times that are already marked as busy are disclosed, without "
+#| "revealing the specific reasons for your availability."
 msgid ""
-"When you publish your free/busy information, it enables others to consider "
-"your calendar availability when inviting you to a meeting. Only the times "
-"that are already marked as busy are disclosed, without revealing the "
+"When you publish your availability information, it enables others to "
+"consider your calendar availability when inviting you to a meeting. Only the "
+"times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
 "Wenn Sie Ihre Frei/Beschäftigt-Zeiten veröffentlichen, ermöglicht das "
@@ -1946,8 +1953,9 @@ msgstr ""
 "sind. Die genauen Gründe für Ihre Verfügbarkeit werden nicht veröffentlicht."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, kde-format
-msgid "Publish your free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Publish your free/busy information automatically"
+msgid "Publish your availability information automatically"
 msgstr "Frei/Beschäftigt-Informationen automatisch veröffentlichen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
@@ -1956,8 +1964,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "Minimale Zeit (in Minuten) zwischen Veröffentlichungen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, kde-format
-msgid "Number of days of free/busy info to publish: "
+#, fuzzy, kde-format
+#| msgid "Number of days of free/busy info to publish: "
+msgid "Number of days of availability info to publish: "
 msgstr ""
 "Anzahl der Tage, an denen Frei/Beschäftigt-Informationen veröffentlicht "
 "werden: "
@@ -1993,15 +2002,17 @@ msgid "Save password"
 msgstr "Passwort speichern"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, kde-format
-msgid "Click here to publish Free/Busy information manually"
+#, fuzzy, kde-format
+#| msgid "Click here to publish Free/Busy information manually"
+msgid "Click here to publish availability information manually"
 msgstr ""
 "Hier klicken, um Frei/Beschäftigt-Informationen manuell zu veröffentlichen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, kde-format
-msgid "Email Free/Busy"
-msgstr "Frei/Beschäftigt per E-Mail senden"
+#, fuzzy, kde-format
+#| msgid "Configure Availability"
+msgid "Email availability"
+msgstr "Verfügbarkeit einrichten"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2015,23 +2026,28 @@ msgid "Send"
 msgstr "Senden"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, kde-format
-msgid "Free/Busy Retrieval settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Retrieval settings"
+msgid "Availability Retrieval settings"
 msgstr "Frei/Beschäftigt Abrufeinstellungen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "By retrieving Free/Busy information that others have published, you can "
+#| "take their calendar into account when inviting them to a meeting."
 msgid ""
-"By retrieving Free/Busy information that others have published, you can take "
-"their calendar into account when inviting them to a meeting."
+"By retrieving Availability information that others have published, you can "
+"take their calendar into account when inviting them to a meeting."
 msgstr ""
 "Durch Abrufen der Frei/Beschäftigt-Informationen, die andere veröffentlicht "
 "haben, können Sie deren Kalender berücksichtigen, wenn Sie eine Einladung zu "
 "einer Besprechung versenden."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, kde-format
-msgid "Retrieve others' free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Retrieve others' free/busy information automatically"
+msgid "Retrieve others' availability information automatically"
 msgstr "Frei/Beschäftigt-Informationen Anderer automatisch abrufen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
@@ -3764,6 +3780,15 @@ msgctxt "@title"
 msgid "Accounts"
 msgstr "Konten"
 
+#~ msgid "Free/Busy"
+#~ msgstr "Frei/Beschäftigt"
+
+#~ msgid "Configure Free/Busy"
+#~ msgstr "Frei/Beschäftigt einrichten"
+
+#~ msgid "Email Free/Busy"
+#~ msgstr "Frei/Beschäftigt per E-Mail senden"
+
 #~ msgid "Configure %1"
 #~ msgstr "%1 einrichten"
 
@@ -3962,9 +3987,6 @@ msgstr "Konten"
 
 #~ msgid "Configure Schedule…"
 #~ msgstr "Terminplan einrichten ..."
-
-#~ msgid "Configure Availability"
-#~ msgstr "Verfügbarkeit einrichten"
 
 #, fuzzy
 #~| msgid "New Contact Group…"

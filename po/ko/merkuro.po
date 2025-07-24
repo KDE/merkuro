@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-30 00:42+0000\n"
+"POT-Creation-Date: 2025-07-24 00:43+0000\n"
 "PO-Revision-Date: 2025-06-10 22:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1894,25 +1894,31 @@ msgstr "계정"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
-msgid "Free/Busy"
-msgstr "바쁨/한가함"
+msgid "Availability"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
-msgid "Configure Free/Busy"
-msgstr "바쁨/한가함 설정"
+msgid "Configure Availability"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, kde-format
-msgid "Free/Busy Publishing settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Publishing settings"
+msgid "Availability Publishing settings"
 msgstr "바쁨/한가함 게시 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you publish your free/busy information, it enables others to "
+#| "consider your calendar availability when inviting you to a meeting. Only "
+#| "the times that are already marked as busy are disclosed, without "
+#| "revealing the specific reasons for your availability."
 msgid ""
-"When you publish your free/busy information, it enables others to consider "
-"your calendar availability when inviting you to a meeting. Only the times "
-"that are already marked as busy are disclosed, without revealing the "
+"When you publish your availability information, it enables others to "
+"consider your calendar availability when inviting you to a meeting. Only the "
+"times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
 "바쁨/한가함 정보를 게시하면 다른 사람들이 이벤트에 초대할 때 캘린더 일정 사"
@@ -1920,8 +1926,9 @@ msgstr ""
 "로 표시했는지는 공개하지 않습니다."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, kde-format
-msgid "Publish your free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Publish your free/busy information automatically"
+msgid "Publish your availability information automatically"
 msgstr "자동으로 바쁨/한가함 정보 게시"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
@@ -1930,8 +1937,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "최소 업로드 시간 간격(분 단위)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, kde-format
-msgid "Number of days of free/busy info to publish: "
+#, fuzzy, kde-format
+#| msgid "Number of days of free/busy info to publish: "
+msgid "Number of days of availability info to publish: "
 msgstr "바쁨/한가함 정보를 게시할 일자 수:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
@@ -1965,14 +1973,16 @@ msgid "Save password"
 msgstr "암호 저장"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, kde-format
-msgid "Click here to publish Free/Busy information manually"
+#, fuzzy, kde-format
+#| msgid "Click here to publish Free/Busy information manually"
+msgid "Click here to publish availability information manually"
 msgstr "바쁨/한가함 정보를 수동으로 게시하려면 클릭하십시오"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, kde-format
-msgid "Email Free/Busy"
-msgstr "바쁨/한가함 이메일 전송"
+#, fuzzy, kde-format
+#| msgid "Email Client"
+msgid "Email availability"
+msgstr "이메일 클라이언트"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -1986,22 +1996,27 @@ msgid "Send"
 msgstr "보내기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, kde-format
-msgid "Free/Busy Retrieval settings"
+#, fuzzy, kde-format
+#| msgid "Free/Busy Retrieval settings"
+msgid "Availability Retrieval settings"
 msgstr "바쁨/한가함 가져오기 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "By retrieving Free/Busy information that others have published, you can "
+#| "take their calendar into account when inviting them to a meeting."
 msgid ""
-"By retrieving Free/Busy information that others have published, you can take "
-"their calendar into account when inviting them to a meeting."
+"By retrieving Availability information that others have published, you can "
+"take their calendar into account when inviting them to a meeting."
 msgstr ""
 "다른 사람의 바쁨/한가함 정보를 가져오면 미팅에 초대할 때 캘린더 정보를 참조"
 "할 수 있습니다."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, kde-format
-msgid "Retrieve others' free/busy information automatically"
+#, fuzzy, kde-format
+#| msgid "Retrieve others' free/busy information automatically"
+msgid "Retrieve others' availability information automatically"
 msgstr "자동으로 다른 사람의 바쁨/한가함 정보 가져오기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
@@ -3726,6 +3741,15 @@ msgstr "메일 계정 설정"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "계정"
+
+#~ msgid "Free/Busy"
+#~ msgstr "바쁨/한가함"
+
+#~ msgid "Configure Free/Busy"
+#~ msgstr "바쁨/한가함 설정"
+
+#~ msgid "Email Free/Busy"
+#~ msgstr "바쁨/한가함 이메일 전송"
 
 #~ msgid "Configure %1"
 #~ msgstr "%1 설정"
