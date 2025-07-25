@@ -117,7 +117,7 @@ ListView {
         id: allTasksPlaceholderMessage
         anchors.centerIn: parent
         visible: (!Calendar.Filter.collectionId || Calendar.Filter.collectionId < 0) && Calendar.CalendarManager.enabledTodoCollections.length === 0 && parent.count === 0
-        text: i18n("No task calendars enabled.")
+        text: i18n("No task sets enabled.")
     }
 
     Kirigami.PlaceholderMessage {
