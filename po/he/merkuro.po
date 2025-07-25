@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-24 00:43+0000\n"
-"PO-Revision-Date: 2025-05-18 17:06+0300\n"
+"PO-Revision-Date: 2025-07-24 10:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1945,41 +1945,34 @@ msgstr "חשבונות"
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
 msgid "Availability"
-msgstr ""
+msgstr "זמינות"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Availability"
-msgstr ""
+msgstr "הגדרת זמינות"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Free/Busy Publishing settings"
+#, kde-format
 msgid "Availability Publishing settings"
-msgstr "הגדרות פרסום פנוי/עסוק"
+msgstr "הגדרות פרסום זמינות"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"פרסום פרטי הפנוי/עסוק שלך מאפשר לאחרים להתחשב בזמינות לוח השנה שלך בעת "
-"הזמנתך לפגישה. רק הזמנים שכבר סומנו כעסוקים חשופים, מבלי לחשוף את הסיבה "
-"המסוימת להעדר הזמינות."
+"פרסום פרטי הזמינות שלך מאפשר לאחרים להתחשב בזמינות לוח השנה שלך בעת הזמנתך "
+"לפגישה. רק הזמנים שכבר סומנו כעסוקים חשופים, מבלי לחשוף את הסיבה המסוימת "
+"להעדר הזמינות."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "פרסום מידע לגבי מועדי פנוי/עסוק"
+msgstr "פרסום מידע לגבי מועדי זמינות אוטומטית"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -1987,10 +1980,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "זמן מזערי (בדקות) בין ההעלאות"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Number of days of free/busy info to publish: "
+#, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr "מספר ימי פרטי פנוי/עסוק לפרסום: "
+msgstr "מספר ימי פרטי זמינות לפרסום: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -2023,16 +2015,14 @@ msgid "Save password"
 msgstr "שמירת סיסמה"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Click here to publish Free/Busy information manually"
+#, kde-format
 msgid "Click here to publish availability information manually"
-msgstr "נא ללחוץ כאן כדי לפרסם פרטי פנוי/עסוק ידנית"
+msgstr "נא ללחוץ כאן כדי לפרסם פרטי זמינות ידנית"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Email Client"
+#, kde-format
 msgid "Email availability"
-msgstr "לקוח דוא״ל"
+msgstr "שליחת זמינות בדוא״ל"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2046,28 +2036,23 @@ msgid "Send"
 msgstr "שליחה"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "הגדרות משיכת פנוי/עסוק"
+msgstr "הגדרות משיכת זמינות"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"משיכה של פרטי פנוי/עסוק שפורסמו על ידי אחרים, אפשר לקחת את לוח השנה שלהם "
-"בחשבון בהזמנתם לפגישה."
+"משיכה של פרטי זמינות שפורסמו על ידי אחרים, אפשר לקחת את לוח השנה שלהם בחשבון "
+"בהזמנתם לפגישה."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Retrieve others' free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "משיכת פרטי פנוי/עסוק של אחרים אוטומטית"
+msgstr "משיכת פרטי זמינות של אחרים אוטומטית"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format

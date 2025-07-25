@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-24 00:43+0000\n"
-"PO-Revision-Date: 2025-05-18 17:00+0200\n"
+"PO-Revision-Date: 2025-07-24 13:51+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -1911,10 +1911,9 @@ msgid "Accounts"
 msgstr "Accounts"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
-#, fuzzy, kde-format
-#| msgid "Configure Availability"
+#, kde-format
 msgid "Availability"
-msgstr "Beschikbaarheid configureren"
+msgstr "Beschikbaarheid"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1922,34 +1921,27 @@ msgid "Configure Availability"
 msgstr "Beschikbaarheid configureren"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Free/Busy Publishing settings"
+#, kde-format
 msgid "Availability Publishing settings"
-msgstr "Vrij/bezet instellingen voor publiceren"
+msgstr "Beschikbaarheidsinstellingen voor publiceren"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"Wanneer u uw informatie over vrij/bezet publiceert, maakt het anderen in "
-"staat beschikbaarheid in uw agenda te zien bij het u uitnodigen voor een "
+"Wanneer u uw informatie over beschikbaarheid publiceert, maakt het anderen "
+"in staat beschikbaarheid in uw agenda te zien bij het u uitnodigen voor een "
 "bijeenkomst. Alleen de tijden die al gemarkeerd zijn als bezet worden "
 "getoond, zonder de specifieke reden voor uw beschikbaarheid."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "Uw informatie over vrij/bezet automatisch publiceren"
+msgstr "Uw informatie over beschikbaarheid automatisch publiceren"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -1957,11 +1949,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "Minimale tijdsduur (in minuten) tussen uploads"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Number of days of free/busy info to publish: "
+#, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr ""
-"Aantal te publiceren dagen voor te publiceren informatie over vrij/bezet: "
+msgstr "Aantal te publiceren dagen over informatie over beschikbaarheid: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -1994,16 +1984,14 @@ msgid "Save password"
 msgstr "Wachtwoord opslaan"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Click here to publish Free/Busy information manually"
+#, kde-format
 msgid "Click here to publish availability information manually"
-msgstr "Klik hier om informatie over vrij/bezet handmatig te publiceren"
+msgstr "Klik hier om informatie over beschikbaarheid handmatig te publiceren"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Configure Availability"
+#, kde-format
 msgid "Email availability"
-msgstr "Beschikbaarheid configureren"
+msgstr "Beschikbaarheid per e-mail versturen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2017,28 +2005,23 @@ msgid "Send"
 msgstr "Verzonden"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "Instellingen voor ophalen van vrij/bezet"
+msgstr "Instellingen voor ophalen van beschikbaarheid"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"Als u vrij/bezetinformatie van anderen ophaalt, kunt u met hun "
+"Als u informatie over beschikbaarheid van anderen ophaalt, kunt u met hun "
 "agendagegevens rekening houden als u hen uitnodigt voor een ontmoeting."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Retrieve others' free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "Informatie over vrij/bezet van anderen automatisch ophalen"
+msgstr "Informatie over beschikbaarheid van anderen automatisch ophalen"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
