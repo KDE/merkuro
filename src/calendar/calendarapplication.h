@@ -67,7 +67,6 @@ Q_SIGNALS:
     void createNewTodo();
     void windowChanged();
     void importCalendar();
-    void configureSchedule();
     void openLanguageSwitcher();
     void undo();
     void redo();
