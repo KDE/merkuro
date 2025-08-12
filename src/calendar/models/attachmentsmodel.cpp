@@ -4,7 +4,7 @@
 #include "attachmentsmodel.h"
 #include "merkuro_calendar_debug.h"
 #include <QMetaEnum>
-
+using namespace Qt::Literals::StringLiterals;
 AttachmentsModel::AttachmentsModel(QObject *parent, KCalendarCore::Incidence::Ptr incidencePtr)
     : QAbstractListModel(parent)
     , m_incidence(incidencePtr)
@@ -75,13 +75,13 @@ QVariant AttachmentsModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> AttachmentsModel::roleNames() const
 {
     return {
-        {AttachmentRole, QByteArrayLiteral("attachment")},
-        {LabelRole, QByteArrayLiteral("attachmentLabel")},
-        {MimeTypeRole, QByteArrayLiteral("mimetype")},
-        {IconNameRole, QByteArrayLiteral("iconName")},
-        {DataRole, QByteArrayLiteral("data")},
-        {SizeRole, QByteArrayLiteral("size")},
-        {URIRole, QByteArrayLiteral("uri")},
+        {AttachmentRole, "attachment"_ba},
+        {LabelRole, "attachmentLabel"_ba},
+        {MimeTypeRole, "mimetype"_ba},
+        {IconNameRole, "iconName"_ba},
+        {DataRole, "data"_ba},
+        {SizeRole, "size"_ba},
+        {URIRole, "uri"_ba},
     };
 }
 

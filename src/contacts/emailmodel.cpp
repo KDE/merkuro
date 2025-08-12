@@ -3,7 +3,7 @@
 
 #include "emailmodel.h"
 #include <KLocalizedString>
-
+using namespace Qt::Literals::StringLiterals;
 EmailModel::EmailModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -93,11 +93,11 @@ bool EmailModel::setData(const QModelIndex &index, const QVariant &value, int ro
 QHash<int, QByteArray> EmailModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {EmailRole, QByteArrayLiteral("email")},
-        {TypeRole, QByteArrayLiteral("type")},
-        {TypeValueRole, QByteArrayLiteral("typeValue")},
-        {DefaultRole, QByteArrayLiteral("default")},
+        {Qt::DisplayRole, "display"_ba},
+        {EmailRole, "email"_ba},
+        {TypeRole, "type"_ba},
+        {TypeValueRole, "typeValue"_ba},
+        {DefaultRole, "default"_ba},
     };
 }
 

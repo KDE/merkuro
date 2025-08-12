@@ -5,7 +5,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
-
+using namespace Qt::Literals::StringLiterals;
 class CalendarUtilsTest : public QObject
 {
     Q_OBJECT
@@ -24,15 +24,15 @@ private Q_SLOTS:
 
     void testRemindersLabel()
     {
-        QCOMPARE(utils.secondsToReminderLabel(0), QStringLiteral("On event start"));
+        QCOMPARE(utils.secondsToReminderLabel(0), u"On event start"_s);
 
-        QCOMPARE(utils.secondsToReminderLabel(300), QStringLiteral("5 minutes after start of event"));
-        QCOMPARE(utils.secondsToReminderLabel(7200), QStringLiteral("2 hours after start of event"));
-        QCOMPARE(utils.secondsToReminderLabel(259200), QStringLiteral("3 days after start of event"));
+        QCOMPARE(utils.secondsToReminderLabel(300), u"5 minutes after start of event"_s);
+        QCOMPARE(utils.secondsToReminderLabel(7200), u"2 hours after start of event"_s);
+        QCOMPARE(utils.secondsToReminderLabel(259200), u"3 days after start of event"_s);
 
-        QCOMPARE(utils.secondsToReminderLabel(-300), QStringLiteral("5 minutes before start of event"));
-        QCOMPARE(utils.secondsToReminderLabel(-7200), QStringLiteral("2 hours before start of event"));
-        QCOMPARE(utils.secondsToReminderLabel(-259200), QStringLiteral("3 days before start of event"));
+        QCOMPARE(utils.secondsToReminderLabel(-300), u"5 minutes before start of event"_s);
+        QCOMPARE(utils.secondsToReminderLabel(-7200), u"2 hours before start of event"_s);
+        QCOMPARE(utils.secondsToReminderLabel(-259200), u"3 days before start of event"_s);
     }
 };
 

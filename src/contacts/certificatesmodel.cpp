@@ -12,7 +12,7 @@
 #include <Libkleo/KeyCache>
 
 #include <gpgme++/key.h>
-
+using namespace Qt::Literals::StringLiterals;
 CertificatesModel::CertificatesModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -108,10 +108,10 @@ QVariant CertificatesModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> CertificatesModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("displayName")},
-        {FingerprintRole, QByteArrayLiteral("fingerprint")},
-        {FingerprintAccessRole, QByteArrayLiteral("fingerprintAccess")},
-        {TagsRole, QByteArrayLiteral("tags")},
+        {Qt::DisplayRole, "displayName"_ba},
+        {FingerprintRole, "fingerprint"_ba},
+        {FingerprintAccessRole, "fingerprintAccess"_ba},
+        {TagsRole, "tags"_ba},
     };
 }
 
@@ -122,15 +122,15 @@ void CertificatesModel::openKleopatra(const int row, QWindow *window)
     const auto &key = m_keys[row];
 
     QStringList lst;
-    lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(window->winId())) << QStringLiteral("--query")
+    lst << u"--parent-windowid"_s << QString::number(static_cast<qlonglong>(window->winId())) << u"--query"_s
         << QString::fromStdString(key.primaryFingerprint());
 #ifdef Q_OS_WIN
-    QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"), {QCoreApplication::applicationDirPath()});
+    QString exec = QStandardPaths::findExecutable(u"kleopatra.exe"_s, {QCoreApplication::applicationDirPath()});
     if (exec.isEmpty()) {
-        exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra.exe"));
+        exec = QStandardPaths::findExecutable(u"kleopatra.exe"_s);
     }
 #else
-    const QString exec = QStandardPaths::findExecutable(QStringLiteral("kleopatra"));
+    const QString exec = QStandardPaths::findExecutable(u"kleopatra"_s);
 #endif
 
     QProcess::startDetached(exec, lst);

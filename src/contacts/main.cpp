@@ -21,6 +21,7 @@
 #include <Libkleo/KeyCache>
 
 #include <KStyleManager>
+using namespace Qt::Literals::StringLiterals;
 static void raiseWindow(QWindow *window)
 {
     KWindowSystem::updateStartupId(window);
@@ -32,21 +33,21 @@ int main(int argc, char *argv[])
     KIconTheme::initTheme();
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain(QByteArrayLiteral("merkuro"));
-    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
-    QCoreApplication::setApplicationName(QStringLiteral("Merkuro Contact"));
+    KLocalizedString::setApplicationDomain("merkuro"_ba);
+    QCoreApplication::setOrganizationName(u"KDE"_s);
+    QCoreApplication::setApplicationName(u"Merkuro Contact"_s);
     QCoreApplication::setQuitLockEnabled(false);
 
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+        QQuickStyle::setStyle(u"org.kde.desktop"_s);
     }
 
     KStyleManager::initStyle();
 
     KAboutData aboutData(
         // The program name used internally.
-        QStringLiteral("merkuro.contact"),
+        u"merkuro.contact"_s,
         // A displayable program name string.
         i18nc("@title", "Merkuro Contact"),
         QStringLiteral(MERKURO_VERSION_STRING),
@@ -59,16 +60,16 @@ int main(int argc, char *argv[])
     aboutData.setBugAddress("https://bugs.kde.org/enter_bug.cgi?format=guided&product=merkuro&version=" + QStringLiteral(MERKURO_VERSION_STRING).toUtf8());
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
-                        QStringLiteral("carl@carlschwan.eu"),
-                        QStringLiteral("https://carlschwan.eu"),
-                        QUrl(QStringLiteral("https://carlschwan.eu/avatar.png")));
+                        u"carl@carlschwan.eu"_s,
+                        u"https://carlschwan.eu"_s,
+                        QUrl(u"https://carlschwan.eu/avatar.png"_s));
     aboutData.addAuthor(i18nc("@info:credit", "Clau Cambra"),
                         i18nc("@info:credit", "Maintainer"),
-                        QStringLiteral("claudio.cambra@gmail.com"),
-                        QStringLiteral("https://claudiocambra.com"));
+                        u"claudio.cambra@gmail.com"_s,
+                        u"https://claudiocambra.com"_s);
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.merkuro.contact")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.merkuro.contact"_s));
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);

@@ -5,7 +5,7 @@
 
 using namespace Akonadi::Quick;
 using namespace KPIM;
-
+using namespace Qt::Literals::StringLiterals;
 ProgressModel::ProgressModel(QObject *const parent)
     : QAbstractListModel(parent)
 {
@@ -118,12 +118,12 @@ QHash<int, QByteArray> ProgressModel::roleNames() const
 {
     auto rolenames = QAbstractListModel::roleNames();
     rolenames.insert({
-        {ProgressRole, QByteArrayLiteral("progress")},
-        {StatusRole, QByteArrayLiteral("status")},
-        {CanBeCancelledRole, QByteArrayLiteral("canBeCancelled")},
-        {UsesBusyIndicatorRole, QByteArrayLiteral("usesBusyIndicator")},
-        {CryptoStatusRole, QByteArrayLiteral("cryptoStatus")},
-        {IdRole, QByteArrayLiteral("id")},
+        {ProgressRole, "progress"_ba},
+        {StatusRole, "status"_ba},
+        {CanBeCancelledRole, "canBeCancelled"_ba},
+        {UsesBusyIndicatorRole, "usesBusyIndicator"_ba},
+        {CryptoStatusRole, "cryptoStatus"_ba},
+        {IdRole, "id"_ba},
     });
     return rolenames;
 }

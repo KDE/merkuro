@@ -35,7 +35,7 @@
 #include <QApplication>
 #include <QLoggingCategory>
 #include <QPointer>
-
+using namespace Qt::Literals::StringLiterals;
 MailManager::MailManager(QObject *parent)
     : QObject(parent)
     , m_loading(true)
@@ -59,7 +59,7 @@ MailManager::MailManager(QObject *parent)
     //  collectionFilter                |
     //            \__________________treemodel
 
-    m_session = new Session(QByteArrayLiteral("KMailManager Kernel ETM"), this);
+    m_session = new Session("KMailManager Kernel ETM"_ba, this);
     auto folderCollectionMonitor = new MailCommon::FolderCollectionMonitor(m_session, this);
 
     // setup collection model
@@ -74,7 +74,7 @@ MailManager::MailManager(QObject *parent)
     m_foldersModel = new MailCommon::EntityCollectionOrderProxyModel(this);
     m_foldersModel->setSourceModel(foldersModel);
     m_foldersModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
-    KConfigGroup grp(KernelIf->config(), QStringLiteral("CollectionTreeOrder"));
+    KConfigGroup grp(KernelIf->config(), u"CollectionTreeOrder"_s);
     m_foldersModel->setOrderConfig(grp);
     m_foldersModel->sort(0, Qt::AscendingOrder);
 
@@ -105,7 +105,7 @@ MailManager::MailManager(QObject *parent)
 
 void MailManager::loadConfig()
 {
-    KConfigGroup readerConfig(KernelIf->config(), QStringLiteral("AccountOrder"));
+    KConfigGroup readerConfig(KernelIf->config(), u"AccountOrder"_s);
     QStringList listOrder;
     if (readerConfig.readEntry("EnableAccountOrder", true)) {
         listOrder = readerConfig.readEntry("order", QStringList());
@@ -174,7 +174,7 @@ void MailManager::addCollection(const QModelIndex &index, const QVariant &name)
     const auto collection = new Akonadi::Collection();
     collection->setParentCollection(parentCollection);
     collection->setName(name.toString());
-    collection->setContentMimeTypes({QStringLiteral("message/rfc822")});
+    collection->setContentMimeTypes({u"message/rfc822"_s});
 
     const auto job = new Akonadi::CollectionCreateJob(*collection);
     connect(job, SIGNAL(result(KJob *)), job, SLOT(slotResult(KJob *)));

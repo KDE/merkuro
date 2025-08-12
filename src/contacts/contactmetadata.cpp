@@ -8,7 +8,7 @@
 #include <Akonadi/Item>
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 ContactMetaData::ContactMetaData() = default;
 
 ContactMetaData::~ContactMetaData() = default;
@@ -32,20 +32,20 @@ void ContactMetaData::store(Akonadi::Item &contact)
 
 void ContactMetaData::loadMetaData(const QVariantMap &metaData)
 {
-    m_displayNameMode = metaData.value(QStringLiteral("DisplayNameMode"), -1).toInt();
+    m_displayNameMode = metaData.value(u"DisplayNameMode"_s, -1).toInt();
 
-    m_customFieldDescriptions = metaData.value(QStringLiteral("CustomFieldDescriptions")).toList();
+    m_customFieldDescriptions = metaData.value(u"CustomFieldDescriptions"_s).toList();
 }
 
 QVariantMap ContactMetaData::storeMetaData() const
 {
     QVariantMap metaData;
     if (m_displayNameMode != -1) {
-        metaData.insert(QStringLiteral("DisplayNameMode"), QVariant(m_displayNameMode));
+        metaData.insert(u"DisplayNameMode"_s, QVariant(m_displayNameMode));
     }
 
     if (m_customFieldDescriptions.isEmpty()) {
-        metaData.insert(QStringLiteral("CustomFieldDescriptions"), m_customFieldDescriptions);
+        metaData.insert(u"CustomFieldDescriptions"_s, m_customFieldDescriptions);
     }
     return metaData;
 }

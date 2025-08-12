@@ -18,7 +18,7 @@
 #include <KLocalizedString>
 #include <kjob.h>
 #include <qobject.h>
-
+using namespace Qt::Literals::StringLiterals;
 ContactImageProvider::ContactImageProvider()
 
 {
@@ -40,9 +40,9 @@ QQuickImageResponse *ContactImageProvider::requestImageResponse(const QString &e
 ThumbnailResponse::ThumbnailResponse(QString email, QSize size, QNetworkAccessManager *qnam)
     : m_email(std::move(email))
     , requestedSize(size)
-    , localFile(QStringLiteral("%1/contact_picture_provider/%2.png").arg(QStandardPaths::writableLocation(QStandardPaths::CacheLocation), m_email))
+    , localFile(u"%1/contact_picture_provider/%2.png"_s.arg(QStandardPaths::writableLocation(QStandardPaths::CacheLocation), m_email))
     , m_qnam(qnam)
-    , errorStr(QStringLiteral("Image request hasn't started"))
+    , errorStr(u"Image request hasn't started"_s)
 {
     m_email = m_email.trimmed().toLower();
     QImage cachedImage;
@@ -56,7 +56,7 @@ ThumbnailResponse::ThumbnailResponse(QString email, QSize size, QNetworkAccessMa
     QFileInfo info(localFile);
     const auto aWeekAgo = QDate::currentDate().addDays(-7);
     if (info.exists() && info.birthTime().date() > aWeekAgo) {
-        errorStr = QStringLiteral("No image found last time we tried.");
+        errorStr = u"No image found last time we tried."_s;
         return;
     }
 
@@ -147,7 +147,7 @@ void ThumbnailResponse::prepareResult()
                 Q_EMIT finished();
                 return;
             }
-            errorStr = QStringLiteral("No image found");
+            errorStr = u"No image found"_s;
         } else if (job->error() == Akonadi::Job::UserCanceled) {
             errorStr = i18n("Image request has been cancelled");
         } else {
@@ -172,7 +172,7 @@ void ThumbnailResponse::prepareResult()
         const auto domain = split[1];
 
         dns->setType(QDnsLookup::SRV);
-        dns->setName(QStringLiteral("_avatars._tcp.") + domain);
+        dns->setName(u"_avatars._tcp."_s + domain);
         dns->lookup();
         job = nullptr;
     }
@@ -201,9 +201,9 @@ void ThumbnailResponse::dnsLookupFinished(QDnsLookup *dns)
     }
 
     if (record.port() == 443) {
-        queryImage(QStringLiteral("https://") + hostname + QStringLiteral("/avatar/"));
+        queryImage(u"https://"_s + hostname + u"/avatar/"_s);
     } else {
-        queryImage(QStringLiteral("http://") + hostname + QLatin1Char(':') + QString::number(record.port()) + QStringLiteral("/avatar/"));
+        queryImage(u"http://"_s + hostname + QLatin1Char(':') + QString::number(record.port()) + u"/avatar/"_s);
     }
 
     dns->deleteLater();
@@ -214,7 +214,7 @@ void ThumbnailResponse::queryImage(const QString &hostname)
     QCryptographicHash hash(QCryptographicHash::Md5);
     hash.addData(m_email.toUtf8());
 
-    const QUrl url(hostname + QString::fromUtf8(hash.result().toHex()) + QStringLiteral("?d=404"));
+    const QUrl url(hostname + QString::fromUtf8(hash.result().toHex()) + u"?d=404"_s);
 
     QByteArray imageData;
     auto reply = m_qnam->get(QNetworkRequest(url));

@@ -21,7 +21,7 @@
 #include <KSharedConfig>
 #include <QFont>
 #include <QRandomGenerator>
-
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static bool hasCompatibleMimeTypes(const Akonadi::Collection &collection)
@@ -29,8 +29,8 @@ static bool hasCompatibleMimeTypes(const Akonadi::Collection &collection)
     static QStringList goodMimeTypes;
 
     if (goodMimeTypes.isEmpty()) {
-        goodMimeTypes << QStringLiteral("text/calendar") << KCalendarCore::Event::eventMimeType() << KCalendarCore::Todo::todoMimeType()
-                      << KContacts::Addressee::mimeType() << KContacts::ContactGroup::mimeType() << KCalendarCore::Journal::journalMimeType();
+        goodMimeTypes << u"text/calendar"_s << KCalendarCore::Event::eventMimeType() << KCalendarCore::Todo::todoMimeType() << KContacts::Addressee::mimeType()
+                      << KContacts::ContactGroup::mimeType() << KCalendarCore::Journal::journalMimeType();
     }
 
     for (int i = 0; i < goodMimeTypes.count(); ++i) {
@@ -105,9 +105,9 @@ Qt::ItemFlags ColorProxyModel::flags(const QModelIndex &index) const
 QHash<int, QByteArray> ColorProxyModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames = QSortFilterProxyModel::roleNames();
-    roleNames[Qt::CheckStateRole] = QByteArrayLiteral("checkState");
-    roleNames[Qt::BackgroundRole] = QByteArrayLiteral("collectionColor");
-    roleNames[isResource] = QByteArrayLiteral("isResource");
+    roleNames[Qt::CheckStateRole] = "checkState"_ba;
+    roleNames[Qt::BackgroundRole] = "collectionColor"_ba;
+    roleNames[isResource] = "isResource"_ba;
     return roleNames;
 }
 
@@ -137,7 +137,7 @@ QColor ColorProxyModel::getCollectionColor(Akonadi::Collection collection) const
     }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup resourcesColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup resourcesColorsConfig(config, u"Resources Colors"_s);
     const QStringList colorKeyList = resourcesColorsConfig.keyList();
 
     QColor color;

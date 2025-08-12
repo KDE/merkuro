@@ -24,14 +24,14 @@ void MailApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mainCollection()->addAction(actionName, this, &MailApplication::createNewMail);
         action->setText(i18n("New Mail…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("mail-message-new")));
+        action->setIcon(QIcon::fromTheme(u"mail-message-new"_s));
     }
 
     const auto checkMailActionName = QLatin1StringView("check_mail");
     if (KAuthorized::authorizeAction(checkMailActionName)) {
         const auto action = mainCollection()->addAction(checkMailActionName, this, &MailApplication::checkMail);
         action->setText(i18n("Check Mail"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("mail-receive")));
+        action->setIcon(QIcon::fromTheme(u"mail-receive"_s));
     }
 
     auto action = new QAction(this);

@@ -13,7 +13,7 @@
 #include <KSharedConfig>
 
 using namespace Qt::StringLiterals;
-
+using namespace Qt::Literals::StringLiterals;
 ETMTreeViewStateSaver::ETMTreeViewStateSaver(QObject *parent)
     : QObject(parent)
 {

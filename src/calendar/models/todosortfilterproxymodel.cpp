@@ -6,11 +6,11 @@
 #include <Akonadi/CollectionColorAttribute>
 
 #include "../filter.h"
-
+using namespace Qt::Literals::StringLiterals;
 TodoSortFilterProxyModel::TodoSortFilterProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-    const QString todoMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.todo");
+    const QString todoMimeType = u"application/x-vnd.akonadi.calendar.todo"_s;
     m_todoTreeModel.reset(new Akonadi::IncidenceTreeModel(QStringList() << todoMimeType, this));
 
     m_baseTodoModel.reset(new Akonadi::TodoModel(this));
@@ -21,7 +21,7 @@ TodoSortFilterProxyModel::TodoSortFilterProxyModel(QObject *parent)
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     m_colorWatcher = KConfigWatcher::create(config);
     QObject::connect(m_colorWatcher.data(), &KConfigWatcher::configChanged, this, &TodoSortFilterProxyModel::loadColors);
 
@@ -40,33 +40,33 @@ int TodoSortFilterProxyModel::columnCount(const QModelIndex &) const
 QHash<int, QByteArray> TodoSortFilterProxyModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames = QSortFilterProxyModel::roleNames();
-    roleNames[Akonadi::TodoModel::SummaryRole] = QByteArrayLiteral("text");
-    roleNames[Roles::StartTimeRole] = QByteArrayLiteral("startTime");
-    roleNames[Roles::EndTimeRole] = QByteArrayLiteral("endTime");
-    roleNames[Roles::DisplayDueDateRole] = QByteArrayLiteral("displayDueDate");
-    roleNames[Roles::LocationRole] = QByteArrayLiteral("location");
-    roleNames[Roles::AllDayRole] = QByteArrayLiteral("allDay");
-    roleNames[Roles::ColorRole] = QByteArrayLiteral("color");
-    roleNames[Roles::CompletedRole] = QByteArrayLiteral("todoCompleted");
-    roleNames[Roles::PriorityRole] = QByteArrayLiteral("priority");
-    roleNames[Roles::CollectionIdRole] = QByteArrayLiteral("collectionId");
-    roleNames[Roles::DurationStringRole] = QByteArrayLiteral("durationString");
-    roleNames[Roles::RecursRole] = QByteArrayLiteral("recurs");
-    roleNames[Roles::IsReadOnly] = QByteArrayLiteral("isReadOnly");
-    roleNames[Roles::IsOverdueRole] = QByteArrayLiteral("isOverdue");
-    roleNames[Roles::IncidenceIdRole] = QByteArrayLiteral("incidenceId");
-    roleNames[Roles::IncidenceTypeRole] = QByteArrayLiteral("incidenceType");
-    roleNames[Roles::IncidenceTypeStrRole] = QByteArrayLiteral("incidenceTypeStr");
-    roleNames[Roles::IncidenceTypeIconRole] = QByteArrayLiteral("incidenceTypeIcon");
-    roleNames[Roles::IncidencePtrRole] = QByteArrayLiteral("incidencePtr");
-    roleNames[Roles::TagsRole] = QByteArrayLiteral("tags");
-    roleNames[Roles::ItemRole] = QByteArrayLiteral("item");
-    roleNames[Roles::CategoriesRole] = QByteArrayLiteral("todoCategories"); // Simply 'categories' causes issues
-    roleNames[Roles::CategoriesDisplayRole] = QByteArrayLiteral("categoriesDisplay");
-    roleNames[Roles::TreeDepthRole] = QByteArrayLiteral("treeDepth");
-    roleNames[Roles::TopMostParentDueDateRole] = QByteArrayLiteral("topMostParentDueDate");
-    roleNames[Roles::TopMostParentSummaryRole] = QByteArrayLiteral("topMostParentSummary");
-    roleNames[Roles::TopMostParentPriorityRole] = QByteArrayLiteral("topMostParentPriority");
+    roleNames[Akonadi::TodoModel::SummaryRole] = "text"_ba;
+    roleNames[Roles::StartTimeRole] = "startTime"_ba;
+    roleNames[Roles::EndTimeRole] = "endTime"_ba;
+    roleNames[Roles::DisplayDueDateRole] = "displayDueDate"_ba;
+    roleNames[Roles::LocationRole] = "location"_ba;
+    roleNames[Roles::AllDayRole] = "allDay"_ba;
+    roleNames[Roles::ColorRole] = "color"_ba;
+    roleNames[Roles::CompletedRole] = "todoCompleted"_ba;
+    roleNames[Roles::PriorityRole] = "priority"_ba;
+    roleNames[Roles::CollectionIdRole] = "collectionId"_ba;
+    roleNames[Roles::DurationStringRole] = "durationString"_ba;
+    roleNames[Roles::RecursRole] = "recurs"_ba;
+    roleNames[Roles::IsReadOnly] = "isReadOnly"_ba;
+    roleNames[Roles::IsOverdueRole] = "isOverdue"_ba;
+    roleNames[Roles::IncidenceIdRole] = "incidenceId"_ba;
+    roleNames[Roles::IncidenceTypeRole] = "incidenceType"_ba;
+    roleNames[Roles::IncidenceTypeStrRole] = "incidenceTypeStr"_ba;
+    roleNames[Roles::IncidenceTypeIconRole] = "incidenceTypeIcon"_ba;
+    roleNames[Roles::IncidencePtrRole] = "incidencePtr"_ba;
+    roleNames[Roles::TagsRole] = "tags"_ba;
+    roleNames[Roles::ItemRole] = "item"_ba;
+    roleNames[Roles::CategoriesRole] = "todoCategories"_ba; // Simply 'categories' causes issues
+    roleNames[Roles::CategoriesDisplayRole] = "categoriesDisplay"_ba;
+    roleNames[Roles::TreeDepthRole] = "treeDepth"_ba;
+    roleNames[Roles::TopMostParentDueDateRole] = "topMostParentDueDate"_ba;
+    roleNames[Roles::TopMostParentSummaryRole] = "topMostParentSummary"_ba;
+    roleNames[Roles::TopMostParentPriorityRole] = "topMostParentPriority"_ba;
 
     return roleNames;
 }
@@ -209,11 +209,11 @@ QString TodoSortFilterProxyModel::todoDueDateDisplayString(const KCalendarCore::
     const auto todoDateTimeDue = todo->dtDue().toLocalTime();
     const auto todoDateDue = todoDateTimeDue.date();
     const auto todoTimeDueString =
-        includeTime ? i18nc("Please retain space", " at %1", systemLocale.toString(todoDateTimeDue.time(), QLocale::NarrowFormat)) : QStringLiteral(" ");
+        includeTime ? i18nc("Please retain space", " at %1", systemLocale.toString(todoDateTimeDue.time(), QLocale::NarrowFormat)) : u" "_s;
     const auto todoOverdueString = includeOverdue ? i18nc("Please retain parenthesis and space", " (overdue)") : QString();
 
     const auto currentDate = QDate::currentDate();
-    const auto dateFormat = todoDateDue.year() == currentDate.year() ? QStringLiteral("dddd dd MMMM") : QStringLiteral("dddd dd MMMM yyyy");
+    const auto dateFormat = todoDateDue.year() == currentDate.year() ? u"dddd dd MMMM"_s : u"dddd dd MMMM yyyy"_s;
 
     static constexpr char translationExplainer[] =
         "No spaces -- the (optional) %1 string, which includes the time, includes this space"
@@ -441,7 +441,7 @@ void TodoSortFilterProxyModel::loadColors()
 {
     Q_EMIT layoutAboutToBeChanged();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     for (const QString &key : colorKeyList) {

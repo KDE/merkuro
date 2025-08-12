@@ -17,7 +17,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QMetaEnum>
-
+using namespace Qt::Literals::StringLiterals;
 IncidenceOccurrenceModel::IncidenceOccurrenceModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_coreCalendar(nullptr)
@@ -26,7 +26,7 @@ IncidenceOccurrenceModel::IncidenceOccurrenceModel(QObject *parent)
     QObject::connect(&m_resetThrottlingTimer, &QTimer::timeout, this, &IncidenceOccurrenceModel::resetFromSource);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     m_colorWatcher = KConfigWatcher::create(config);
 
     // This is quite slow; would be nice to find a quicker way
@@ -252,11 +252,11 @@ QVariant IncidenceOccurrenceModel::data(const QModelIndex &idx, int role) const
     case Qt::DecorationRole:
         switch (incidence->type()) {
         case KCalendarCore::IncidenceBase::TypeTodo:
-            return QIcon::fromTheme(QStringLiteral("view-pim-tasks"));
+            return QIcon::fromTheme(u"view-pim-tasks"_s);
         case KCalendarCore::IncidenceBase::TypeEvent:
-            return QIcon::fromTheme(QStringLiteral("view-pim-calendar"));
+            return QIcon::fromTheme(u"view-pim-calendar"_s);
         case KCalendarCore::IncidenceBase::TypeJournal:
-            return QIcon::fromTheme(QStringLiteral("view-pim-journal"));
+            return QIcon::fromTheme(u"view-pim-journal"_s);
         default:
             Q_UNREACHABLE();
         }
@@ -353,7 +353,7 @@ Akonadi::ETMCalendar::Ptr IncidenceOccurrenceModel::calendar() const
 void IncidenceOccurrenceModel::loadColors()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     for (const QString &key : colorKeyList) {

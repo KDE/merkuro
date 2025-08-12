@@ -3,7 +3,7 @@
 
 #include "mailheadermodel.h"
 #include <QList>
-
+using namespace Qt::Literals::StringLiterals;
 MailHeaderModel::MailHeaderModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -65,8 +65,8 @@ void MailHeaderModel::setType(const int row, const Header type)
 QHash<int, QByteArray> MailHeaderModel::roleNames() const
 {
     return {
-        {ValueRole, QByteArrayLiteral("value")},
-        {TypeRole, QByteArrayLiteral("type")},
+        {ValueRole, "value"_ba},
+        {TypeRole, "type"_ba},
     };
 }
 

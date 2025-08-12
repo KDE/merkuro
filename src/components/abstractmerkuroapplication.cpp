@@ -30,14 +30,14 @@ void AbstractMerkuroApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openTagManagerAction = mainCollection()->addAction(actionName, this, &AbstractMerkuroApplication::openTagManager);
         openTagManagerAction->setText(i18n("Manage Tags…"));
-        openTagManagerAction->setIcon(QIcon::fromTheme(QStringLiteral("action-rss_tag")));
+        openTagManagerAction->setIcon(QIcon::fromTheme(u"action-rss_tag"_s));
     }
 
     actionName = QLatin1StringView("toggle_menubar");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mainCollection()->addAction(actionName, this, &AbstractMerkuroApplication::toggleMenubar);
         action->setText(i18n("Show Menubar"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("show-menu")));
+        action->setIcon(QIcon::fromTheme(u"show-menu"_s));
         action->setCheckable(true);
         KConfigGroup config(m_shared, u"General"_s);
         action->setChecked(config.readEntry(u"showMenubar"_s, true));

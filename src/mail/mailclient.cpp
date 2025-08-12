@@ -32,7 +32,7 @@
 #include <KLocalizedString>
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 MailClient::MailClient(QObject *parent)
     : QObject(parent)
     , m_headerModel(std::make_unique<MailHeaderModel>())
@@ -123,7 +123,7 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     infoPart->setSubject(msg.subject);
     infoPart->setTransportId(*transportId);
     infoPart->setUrgent(true);
-    infoPart->setUserAgent(QStringLiteral("Merkuro-Mail"));
+    infoPart->setUserAgent(u"Merkuro-Mail"_s);
 
     // Setting Headers
     KMime::Headers::Base::List extras;

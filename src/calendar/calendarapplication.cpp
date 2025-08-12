@@ -20,7 +20,7 @@
 
 #include "calendaradaptor.h"
 #include "mousetracker.h"
-
+using namespace Qt::Literals::StringLiterals;
 CalendarApplication::CalendarApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
     , mSortCollection(new KirigamiActionCollection(parent, i18n("Sort")))
@@ -31,11 +31,11 @@ CalendarApplication::CalendarApplication(QObject *parent)
     setupActions();
 
     new CalendarAdaptor(this);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Calendar"), this);
+    QDBusConnection::sessionBus().registerObject(u"/Calendar"_s, this);
 
-    KConfig cfg(QStringLiteral("defaultcalendarrc"));
-    KConfigGroup grp(&cfg, QStringLiteral("General"));
-    grp.writeEntry(QStringLiteral("ApplicationId"), QStringLiteral("org.kde.merkuro"));
+    KConfig cfg(u"defaultcalendarrc"_s);
+    KConfigGroup grp(&cfg, u"General"_s);
+    grp.writeEntry(u"ApplicationId"_s, u"org.kde.merkuro"_s);
 
     connect(MouseTracker::instance(), &MouseTracker::mouseButtonReleased, this, &CalendarApplication::handleMouseViewNavButtons);
 }
@@ -49,7 +49,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         openTodoAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openTodoView);
         openTodoAction->setText(i18n("Tasks View"));
-        openTodoAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-tasks")));
+        openTodoAction->setIcon(QIcon::fromTheme(u"view-calendar-tasks"_s));
         openTodoAction->setCheckable(true);
         openTodoAction->setActionGroup(m_viewGroup);
         connect(openTodoAction, &QAction::toggled, this, [this](bool checked) {
@@ -65,7 +65,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openWeekAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openWeekView);
         openWeekAction->setText(i18n("Week View"));
-        openWeekAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-week")));
+        openWeekAction->setIcon(QIcon::fromTheme(u"view-calendar-week"_s));
         openWeekAction->setCheckable(true);
         openWeekAction->setActionGroup(m_viewGroup);
         connect(openWeekAction, &QAction::toggled, this, [this](bool checked) {
@@ -81,7 +81,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openWorkWeekAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openWorkWeekView);
         openWorkWeekAction->setText(i18n("Work Week View"));
-        openWorkWeekAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-workweek")));
+        openWorkWeekAction->setIcon(QIcon::fromTheme(u"view-calendar-workweek"_s));
         openWorkWeekAction->setCheckable(true);
         openWorkWeekAction->setActionGroup(m_viewGroup);
         connect(openWorkWeekAction, &QAction::toggled, this, [this](bool checked) {
@@ -97,7 +97,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openThreeDayAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openThreeDayView);
         openThreeDayAction->setText(i18n("3 Day View"));
-        openThreeDayAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-workweek")));
+        openThreeDayAction->setIcon(QIcon::fromTheme(u"view-calendar-workweek"_s));
         openThreeDayAction->setCheckable(true);
         openThreeDayAction->setActionGroup(m_viewGroup);
         connect(openThreeDayAction, &QAction::toggled, this, [this](bool checked) {
@@ -113,7 +113,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openDayAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openDayView);
         openDayAction->setText(i18n("Day View"));
-        openDayAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-day")));
+        openDayAction->setIcon(QIcon::fromTheme(u"view-calendar-day"_s));
         openDayAction->setCheckable(true);
         openDayAction->setActionGroup(m_viewGroup);
         connect(openDayAction, &QAction::toggled, this, [this](bool checked) {
@@ -129,7 +129,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openScheduleAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openScheduleView);
         openScheduleAction->setText(i18n("Schedule View"));
-        openScheduleAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-list")));
+        openScheduleAction->setIcon(QIcon::fromTheme(u"view-calendar-list"_s));
         openScheduleAction->setCheckable(true);
         openScheduleAction->setActionGroup(m_viewGroup);
         connect(openScheduleAction, &QAction::toggled, this, [this](bool checked) {
@@ -145,7 +145,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openMonthAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openMonthView);
         openMonthAction->setText(i18n("Month View"));
-        openMonthAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-month")));
+        openMonthAction->setIcon(QIcon::fromTheme(u"view-calendar-month"_s));
         openMonthAction->setCheckable(true);
         openMonthAction->setActionGroup(m_viewGroup);
         connect(openMonthAction, &QAction::toggled, this, [this](bool checked) {
@@ -161,7 +161,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewBackwardsAction = mainCollection()->addAction(actionName, this, &CalendarApplication::moveViewBackwards);
         moveViewBackwardsAction->setText(i18n("Backwards"));
-        moveViewBackwardsAction->setIcon(QIcon::fromTheme(QStringLiteral("go-previous")));
+        moveViewBackwardsAction->setIcon(QIcon::fromTheme(u"go-previous"_s));
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [moveViewBackwardsAction, openTodoAction]() {
                 moveViewBackwardsAction->setEnabled(!openTodoAction->isChecked());
@@ -174,7 +174,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewForwardsAction = mainCollection()->addAction(actionName, this, &CalendarApplication::moveViewForwards);
         moveViewForwardsAction->setText(i18n("Forwards"));
-        moveViewForwardsAction->setIcon(QIcon::fromTheme(QStringLiteral("go-next")));
+        moveViewForwardsAction->setIcon(QIcon::fromTheme(u"go-next"_s));
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [moveViewForwardsAction, openTodoAction]() {
                 moveViewForwardsAction->setEnabled(!openTodoAction->isChecked());
@@ -187,7 +187,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto moveViewToTodayAction = mainCollection()->addAction(actionName, this, &CalendarApplication::moveViewToToday);
         moveViewToTodayAction->setText(i18n("To Today"));
-        moveViewToTodayAction->setIcon(QIcon::fromTheme(QStringLiteral("go-jump-today")));
+        moveViewToTodayAction->setIcon(QIcon::fromTheme(u"go-jump-today"_s));
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [moveViewToTodayAction, openTodoAction]() {
                 moveViewToTodayAction->setEnabled(!openTodoAction->isChecked());
@@ -200,7 +200,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto openDateChangerAction = mainCollection()->addAction(actionName, this, &CalendarApplication::openDateChanger);
         openDateChangerAction->setText(i18n("To Date…"));
-        openDateChangerAction->setIcon(QIcon::fromTheme(QStringLiteral("change-date-symbolic")));
+        openDateChangerAction->setIcon(QIcon::fromTheme(u"change-date-symbolic"_s));
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [openDateChangerAction, openTodoAction]() {
                 openDateChangerAction->setEnabled(!openTodoAction->isChecked());
@@ -213,14 +213,14 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mainCollection()->addAction(actionName, this, &CalendarApplication::createNewEvent);
         action->setText(i18n("New Event…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("resource-calendar-insert")));
+        action->setIcon(QIcon::fromTheme(u"resource-calendar-insert"_s));
     }
 
     actionName = QLatin1StringView("create_todo");
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mainCollection()->addAction(actionName, this, &CalendarApplication::createNewTodo);
         action->setText(i18n("New Task…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("view-task-add")));
+        action->setIcon(QIcon::fromTheme(u"view-task-add"_s));
     }
 
     actionName = QLatin1StringView("switch_application_language");
@@ -233,7 +233,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto importIcalAction = mainCollection()->addAction(actionName, this, &CalendarApplication::importCalendar);
         importIcalAction->setText(i18n("Import Calendar…"));
-        importIcalAction->setIcon(QIcon::fromTheme(QStringLiteral("document-import-ocal")));
+        importIcalAction->setIcon(QIcon::fromTheme(u"document-import-ocal"_s));
     }
 
     actionName = QLatin1StringView("edit_undo");
@@ -253,7 +253,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewAlphabeticallyAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortAlphabetically);
         sortTodoViewAlphabeticallyAction->setText(i18n("Alphabetically"));
-        sortTodoViewAlphabeticallyAction->setIcon(QIcon::fromTheme(QStringLiteral("font")));
+        sortTodoViewAlphabeticallyAction->setIcon(QIcon::fromTheme(u"font"_s));
         sortTodoViewAlphabeticallyAction->setCheckable(true);
         sortTodoViewAlphabeticallyAction->setActionGroup(m_todoViewSortGroup);
         mSortCollection->addAction(sortTodoViewAlphabeticallyAction->objectName(), sortTodoViewAlphabeticallyAction);
@@ -269,7 +269,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewByDueDateAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortByDueDate);
         sortTodoViewByDueDateAction->setText(i18n("By Due Date"));
-        sortTodoViewByDueDateAction->setIcon(QIcon::fromTheme(QStringLiteral("change-date-symbolic")));
+        sortTodoViewByDueDateAction->setIcon(QIcon::fromTheme(u"change-date-symbolic"_s));
         sortTodoViewByDueDateAction->setCheckable(true);
         sortTodoViewByDueDateAction->setActionGroup(m_todoViewSortGroup);
         mSortCollection->addAction(sortTodoViewByDueDateAction->objectName(), sortTodoViewByDueDateAction);
@@ -285,7 +285,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto sortTodoViewByPriorityAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewSortByPriority);
         sortTodoViewByPriorityAction->setText(i18n("By Priority Level"));
-        sortTodoViewByPriorityAction->setIcon(QIcon::fromTheme(QStringLiteral("emblem-important-symbolic")));
+        sortTodoViewByPriorityAction->setIcon(QIcon::fromTheme(u"emblem-important-symbolic"_s));
         sortTodoViewByPriorityAction->setCheckable(true);
         sortTodoViewByPriorityAction->setActionGroup(m_todoViewSortGroup);
         mSortCollection->addAction(sortTodoViewByPriorityAction->objectName(), sortTodoViewByPriorityAction);
@@ -301,7 +301,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto orderTodoViewAscendingAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewOrderAscending);
         orderTodoViewAscendingAction->setText(i18n("Ascending order"));
-        orderTodoViewAscendingAction->setIcon(QIcon::fromTheme(QStringLiteral("view-sort-ascending")));
+        orderTodoViewAscendingAction->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
         orderTodoViewAscendingAction->setCheckable(true);
         orderTodoViewAscendingAction->setActionGroup(m_todoViewOrderGroup);
         mSortCollection->addAction(orderTodoViewAscendingAction->objectName(), orderTodoViewAscendingAction);
@@ -317,7 +317,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto orderTodoViewDescendingAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewOrderDescending);
         orderTodoViewDescendingAction->setText(i18n("Descending Order"));
-        orderTodoViewDescendingAction->setIcon(QIcon::fromTheme(QStringLiteral("view-sort-descending")));
+        orderTodoViewDescendingAction->setIcon(QIcon::fromTheme(u"view-sort-descending"_s));
         orderTodoViewDescendingAction->setCheckable(true);
         orderTodoViewDescendingAction->setActionGroup(m_todoViewOrderGroup);
         mSortCollection->addAction(orderTodoViewDescendingAction->objectName(), orderTodoViewDescendingAction);
@@ -333,7 +333,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto todoViewShowCompletedAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewShowCompleted);
         todoViewShowCompletedAction->setText(i18n("Show Completed Tasks"));
-        todoViewShowCompletedAction->setIcon(QIcon::fromTheme(QStringLiteral("task-complete")));
+        todoViewShowCompletedAction->setIcon(QIcon::fromTheme(u"task-complete"_s));
         mSortCollection->addAction(todoViewShowCompletedAction->objectName(), todoViewShowCompletedAction);
         if (openTodoAction) {
             connect(openTodoAction, &QAction::changed, this, [todoViewShowCompletedAction, openTodoAction]() {
@@ -347,7 +347,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto todoViewShowCurrentDayOnlyAction = mSortCollection->addAction(actionName, this, &CalendarApplication::todoViewShowCurrentDayOnly);
         todoViewShowCurrentDayOnlyAction->setText(i18n("Show Today Only"));
-        todoViewShowCurrentDayOnlyAction->setIcon(QIcon::fromTheme(QStringLiteral("view-calendar-symbolic")));
+        todoViewShowCurrentDayOnlyAction->setIcon(QIcon::fromTheme(u"view-calendar-symbolic"_s));
         todoViewShowCurrentDayOnlyAction->setCheckable(true);
         mSortCollection->addAction(todoViewShowCurrentDayOnlyAction->objectName(), todoViewShowCurrentDayOnlyAction);
         if (openTodoAction) {
@@ -362,7 +362,7 @@ void CalendarApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto refreshAllAction = mainCollection()->addAction(actionName, this, &CalendarApplication::refreshAll);
         refreshAllAction->setText(i18n("Refresh All"));
-        refreshAllAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+        refreshAllAction->setIcon(QIcon::fromTheme(u"view-refresh"_s));
 
         mainCollection()->addAction(refreshAllAction->objectName(), refreshAllAction);
         mainCollection()->setDefaultShortcut(refreshAllAction, QKeySequence(QKeySequence::Refresh));
@@ -387,8 +387,8 @@ QWindow *CalendarApplication::window() const
 
 void CalendarApplication::saveWindowGeometry(QQuickWindow *window)
 {
-    KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, QStringLiteral("Window"));
+    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+    KConfigGroup windowGroup(&dataResource, u"Window"_s);
     KWindowConfig::saveWindowPosition(window, windowGroup);
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();
@@ -407,7 +407,7 @@ void CalendarApplication::showIncidenceByUid(const QString &uid, const QDateTime
     KCalendarCore::Duration duration(occurrence, incidenceEnd);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     const QStringList colorKeyList = rColorsConfig.keyList();
 
     QColor incidenceColor;
@@ -460,10 +460,10 @@ void CalendarApplication::handleMouseViewNavButtons(const Qt::MouseButton presse
 {
     switch (pressedButton) {
     case Qt::MouseButton::BackButton:
-        mainCollection()->action(QStringLiteral("move_view_backwards"))->trigger();
+        mainCollection()->action(u"move_view_backwards"_s)->trigger();
         break;
     case Qt::MouseButton::ForwardButton:
-        mainCollection()->action(QStringLiteral("move_view_forwards"))->trigger();
+        mainCollection()->action(u"move_view_forwards"_s)->trigger();
         break;
     default:
         break;

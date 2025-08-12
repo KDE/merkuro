@@ -9,7 +9,7 @@
 #include <cmath>
 
 using namespace std::chrono_literals;
-
+using namespace Qt::Literals::StringLiterals;
 InfiniteMerkuroCalendarViewModel::InfiniteMerkuroCalendarViewModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -121,10 +121,10 @@ int InfiniteMerkuroCalendarViewModel::rowCount(const QModelIndex &parent) const
 QHash<int, QByteArray> InfiniteMerkuroCalendarViewModel::roleNames() const
 {
     return {
-        {StartDateRole, QByteArrayLiteral("startDate")},
-        {FirstDayOfMonthRole, QByteArrayLiteral("firstDayOfMonth")},
-        {SelectedMonthRole, QByteArrayLiteral("selectedMonth")},
-        {SelectedYearRole, QByteArrayLiteral("selectedYear")},
+        {StartDateRole, "startDate"_ba},
+        {FirstDayOfMonthRole, "firstDayOfMonth"_ba},
+        {SelectedMonthRole, "selectedMonth"_ba},
+        {SelectedYearRole, "selectedYear"_ba},
     };
 }
 

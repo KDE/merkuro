@@ -36,14 +36,14 @@ void ContactApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mContactCollection->addAction(actionName, this, &ContactApplication::createNewContact);
         action->setText(i18n("New Contact…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("contact-new-symbolic")));
+        action->setIcon(QIcon::fromTheme(u"contact-new-symbolic"_s));
     }
 
     actionName = QLatin1StringView("refresh_all");
     if (KAuthorized::authorizeAction(actionName)) {
         auto refreshAllAction = mContactCollection->addAction(actionName, this, &ContactApplication::refreshAll);
         refreshAllAction->setText(i18n("Refresh All Address Books"));
-        refreshAllAction->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+        refreshAllAction->setIcon(QIcon::fromTheme(u"view-refresh"_s));
 
         mContactCollection->addAction(refreshAllAction->objectName(), refreshAllAction);
         mContactCollection->setDefaultShortcut(refreshAllAction, QKeySequence(QKeySequence::Refresh));
@@ -53,7 +53,7 @@ void ContactApplication::setupActions()
     if (KAuthorized::authorizeAction(actionName)) {
         auto action = mContactCollection->addAction(actionName, this, &ContactApplication::createNewContactGroup);
         action->setText(i18n("New Contact Group…"));
-        action->setIcon(QIcon::fromTheme(QStringLiteral("contact-new-symbolic")));
+        action->setIcon(QIcon::fromTheme(u"contact-new-symbolic"_s));
     }
 
     auto action = new QAction(QIcon::fromTheme(u"edit-entry-symbolic"_s), i18nc("@action", "Edit contact…"), this);
@@ -73,8 +73,8 @@ void ContactApplication::setupActions()
 
 void ContactApplication::saveWindowGeometry(QQuickWindow *window)
 {
-    KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-    KConfigGroup windowGroup(&dataResource, QStringLiteral("Window"));
+    KConfig dataResource(u"data"_s, KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+    KConfigGroup windowGroup(&dataResource, u"Window"_s);
     KWindowConfig::saveWindowPosition(window, windowGroup);
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();

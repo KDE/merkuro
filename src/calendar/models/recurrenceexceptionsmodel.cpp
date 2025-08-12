@@ -4,7 +4,7 @@
 #include "recurrenceexceptionsmodel.h"
 #include "merkuro_calendar_debug.h"
 #include <QMetaEnum>
-
+using namespace Qt::Literals::StringLiterals;
 RecurrenceExceptionsModel::RecurrenceExceptionsModel(QObject *parent, KCalendarCore::Incidence::Ptr incidencePtr)
     : QAbstractListModel(parent)
     , m_incidence(incidencePtr)
@@ -78,7 +78,7 @@ QVariant RecurrenceExceptionsModel::data(const QModelIndex &idx, int role) const
 
 QHash<int, QByteArray> RecurrenceExceptionsModel::roleNames() const
 {
-    return {{DateRole, QByteArrayLiteral("date")}};
+    return {{DateRole, "date"_ba}};
 }
 
 int RecurrenceExceptionsModel::rowCount(const QModelIndex &) const

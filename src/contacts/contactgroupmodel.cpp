@@ -11,7 +11,7 @@
 #include <KLocalizedString>
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 struct GroupMember {
     KContacts::ContactGroup::ContactReference reference;
     KContacts::ContactGroup::Data data;
@@ -248,7 +248,7 @@ QVariant ContactGroupModel::data(const QModelIndex &index, int role) const
 
     case IconNameRole:
         if (member.loadingError) {
-            return QStringLiteral("emblem-important");
+            return u"emblem-important"_s;
         }
         return {};
     case IsReferenceRole:
@@ -268,10 +268,10 @@ QVariant ContactGroupModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ContactGroupModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {EmailRole, QByteArrayLiteral("email")},
-        {DisplayNameRole, QByteArrayLiteral("displayName")},
-        {IconNameRole, QByteArrayLiteral("iconName")},
+        {Qt::DisplayRole, "display"_ba},
+        {EmailRole, "email"_ba},
+        {DisplayNameRole, "displayName"_ba},
+        {IconNameRole, "iconName"_ba},
     };
 }
 

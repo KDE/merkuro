@@ -14,12 +14,12 @@
 #include <Akonadi/SearchQuery>
 
 #include <Akonadi/ContactSearchJob>
-
+using namespace Qt::Literals::StringLiterals;
 AttendeeStatusModel::AttendeeStatusModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    QRegularExpression lowerToCapitalSep(QStringLiteral("([a-z])([A-Z])"));
-    QRegularExpression capitalToCapitalSep(QStringLiteral("([A-Z])([A-Z])"));
+    QRegularExpression lowerToCapitalSep(u"([a-z])([A-Z])"_s);
+    QRegularExpression capitalToCapitalSep(u"([A-Z])([A-Z])"_s);
 
     for (int i = 0; i < QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().keyCount(); i++) {
         int value = QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().value(i);
@@ -29,9 +29,9 @@ AttendeeStatusModel::AttendeeStatusModel(QObject *parent)
         // for capitalised letters together, e.g. ThisIsATest. Not a problem right now, but best to be safe.
         const QLatin1StringView enumName = QLatin1StringView(QMetaEnum::fromType<KCalendarCore::Attendee::PartStat>().key(i));
         QString displayName = enumName;
-        displayName.replace(lowerToCapitalSep, QStringLiteral("\\1 \\2"));
-        displayName.replace(capitalToCapitalSep, QStringLiteral("\\1 \\2"));
-        displayName.replace(lowerToCapitalSep, QStringLiteral("\\1 \\2"));
+        displayName.replace(lowerToCapitalSep, u"\\1 \\2"_s);
+        displayName.replace(capitalToCapitalSep, u"\\1 \\2"_s);
+        displayName.replace(lowerToCapitalSep, u"\\1 \\2"_s);
 
         m_status[value] = i18n(displayName.toStdString().c_str());
     }
@@ -59,8 +59,8 @@ QVariant AttendeeStatusModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> AttendeeStatusModel::roleNames() const
 {
     return {
-        {DisplayNameRole, QByteArrayLiteral("display")},
-        {ValueRole, QByteArrayLiteral("value")},
+        {DisplayNameRole, "display"_ba},
+        {ValueRole, "value"_ba},
     };
 }
 
@@ -244,17 +244,17 @@ bool AttendeesModel::setData(const QModelIndex &idx, const QVariant &value, int 
 QHash<int, QByteArray> AttendeesModel::roleNames() const
 {
     return {
-        {CuTypeRole, QByteArrayLiteral("cuType")},
-        {DelegateRole, QByteArrayLiteral("delegate")},
-        {DelegatorRole, QByteArrayLiteral("delegator")},
-        {EmailRole, QByteArrayLiteral("email")},
-        {FullNameRole, QByteArrayLiteral("fullName")},
-        {IsNullRole, QByteArrayLiteral("isNull")},
-        {NameRole, QByteArrayLiteral("name")},
-        {RoleRole, QByteArrayLiteral("role")},
-        {RSVPRole, QByteArrayLiteral("rsvp")},
-        {StatusRole, QByteArrayLiteral("status")},
-        {UidRole, QByteArrayLiteral("uid")},
+        {CuTypeRole, "cuType"_ba},
+        {DelegateRole, "delegate"_ba},
+        {DelegatorRole, "delegator"_ba},
+        {EmailRole, "email"_ba},
+        {FullNameRole, "fullName"_ba},
+        {IsNullRole, "isNull"_ba},
+        {NameRole, "name"_ba},
+        {RoleRole, "role"_ba},
+        {RSVPRole, "rsvp"_ba},
+        {StatusRole, "status"_ba},
+        {UidRole, "uid"_ba},
     };
 }
 

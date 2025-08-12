@@ -7,7 +7,7 @@
 #include <QByteArray>
 #include <QMetaEnum>
 #include <QTimeZone>
-
+using namespace Qt::Literals::StringLiterals;
 TimeZoneListModel::TimeZoneListModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -45,8 +45,8 @@ QVariant TimeZoneListModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> TimeZoneListModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("displayName")},
-        {IdRole, QByteArrayLiteral("id")},
+        {Qt::DisplayRole, "displayName"_ba},
+        {IdRole, "id"_ba},
     };
 }
 

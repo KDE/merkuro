@@ -4,7 +4,7 @@
 #include "remindersmodel.h"
 #include "merkuro_calendar_debug.h"
 #include <QMetaEnum>
-
+using namespace Qt::Literals::StringLiterals;
 RemindersModel::RemindersModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -100,10 +100,10 @@ bool RemindersModel::setData(const QModelIndex &idx, const QVariant &value, int 
 QHash<int, QByteArray> RemindersModel::roleNames() const
 {
     return {
-        {TypeRole, QByteArrayLiteral("type")},
-        {TimeRole, QByteArrayLiteral("time")},
-        {StartOffsetRole, QByteArrayLiteral("startOffset")},
-        {EndOffsetRole, QByteArrayLiteral("endOffset")},
+        {TypeRole, "type"_ba},
+        {TimeRole, "time"_ba},
+        {StartOffsetRole, "startOffset"_ba},
+        {EndOffsetRole, "endOffset"_ba},
     };
 }
 

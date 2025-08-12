@@ -5,7 +5,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
-
+using namespace Qt::Literals::StringLiterals;
 class FilterTest : public QObject
 {
     Q_OBJECT
@@ -16,8 +16,8 @@ public:
 
 private:
     static constexpr qint64 m_testCollectionId = 1;
-    const QString m_testName = QStringLiteral("name");
-    const QStringList m_testTags{QStringLiteral("tag-1"), QStringLiteral("tag-2"), QStringLiteral("tag-3")};
+    const QString m_testName = u"name"_s;
+    const QStringList m_testTags{u"tag-1"_s, u"tag-2"_s, u"tag-3"_s};
 
 private Q_SLOTS:
     void initTestCase()

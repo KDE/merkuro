@@ -3,7 +3,7 @@
 
 #include "phonemodel.h"
 #include <KContacts/PhoneNumber>
-
+using namespace Qt::Literals::StringLiterals;
 PhoneModel::PhoneModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -68,11 +68,11 @@ bool PhoneModel::setData(const QModelIndex &index, const QVariant &value, int ro
 QHash<int, QByteArray> PhoneModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {PhoneNumberRole, QByteArrayLiteral("phoneNumber")},
-        {TypeRole, QByteArrayLiteral("type")},
-        {TypeValueRole, QByteArrayLiteral("typeValue")},
-        {DefaultRole, QByteArrayLiteral("default")},
+        {Qt::DisplayRole, "display"_ba},
+        {PhoneNumberRole, "phoneNumber"_ba},
+        {TypeRole, "type"_ba},
+        {TypeValueRole, "typeValue"_ba},
+        {DefaultRole, "default"_ba},
     };
 }
 

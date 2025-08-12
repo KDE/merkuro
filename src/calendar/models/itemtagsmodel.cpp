@@ -6,7 +6,7 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <QMetaEnum>
-
+using namespace Qt::Literals::StringLiterals;
 ItemTagsModel::ItemTagsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -56,8 +56,8 @@ QVariant ItemTagsModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> ItemTagsModel::roleNames() const
 {
     return {
-        {NameRole, QByteArrayLiteral("name")},
-        {IdRole, QByteArrayLiteral("id")},
+        {NameRole, "name"_ba},
+        {IdRole, "id"_ba},
     };
 }
 

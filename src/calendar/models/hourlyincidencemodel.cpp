@@ -6,7 +6,7 @@
 #include <cmath>
 
 using namespace std::chrono_literals;
-
+using namespace Qt::Literals::StringLiterals;
 HourlyIncidenceModel::HourlyIncidenceModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -430,8 +430,8 @@ void HourlyIncidenceModel::setActive(const bool active)
 QHash<int, QByteArray> HourlyIncidenceModel::roleNames() const
 {
     return {
-        {IncidencesRole, QByteArrayLiteral("incidences")},
-        {PeriodStartDateTimeRole, QByteArrayLiteral("periodStartDateTime")},
+        {IncidencesRole, "incidences"_ba},
+        {PeriodStartDateTimeRole, "periodStartDateTime"_ba},
     };
 }
 

@@ -4,7 +4,7 @@
 #include "imppmodel.h"
 #include <KContacts/Impp>
 #include <KLocalizedString>
-
+using namespace Qt::Literals::StringLiterals;
 ImppModel::ImppModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -62,10 +62,10 @@ bool ImppModel::setData(const QModelIndex &index, const QVariant &value, int rol
 QHash<int, QByteArray> ImppModel::roleNames() const
 {
     return {
-        {UrlRole, QByteArrayLiteral("url")},
-        {TypeRole, QByteArrayLiteral("type")},
-        {TypeLabelRole, QByteArrayLiteral("typeLabel")},
-        {TypeIconRole, QByteArrayLiteral("typeIcon")},
+        {UrlRole, "url"_ba},
+        {TypeRole, "type"_ba},
+        {TypeLabelRole, "typeLabel"_ba},
+        {TypeIconRole, "typeIcon"_ba},
     };
 }
 

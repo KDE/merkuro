@@ -26,7 +26,7 @@
 #include <MessageComposer/AkonadiSender>
 
 #include <PimCommonAkonadi/ProgressManagerAkonadi>
-
+using namespace Qt::Literals::StringLiterals;
 MailKernel &MailKernel::self()
 {
     static MailKernel instance;
@@ -35,7 +35,7 @@ MailKernel &MailKernel::self()
 
 MailKernel::MailKernel(QObject *parent)
     : QObject(parent)
-    , mConfig(KSharedConfig::openConfig(QStringLiteral("merkuromailrc")))
+    , mConfig(KSharedConfig::openConfig(u"merkuromailrc"_s))
     , mIdentityManager(new KIdentityManagementCore::IdentityManager(true, this))
     , mMessageSender(new MessageComposer::AkonadiSender(this))
 {
@@ -183,7 +183,7 @@ void MailKernel::slotInstanceStatusChanged(const Akonadi::AgentInstance &instanc
         progress->setProperty("AgentIdentifier", instance.identifier());
     } else if (instance.status() == Akonadi::AgentInstance::Broken) {
         const QString summary = i18n("Resource %1 is broken.\n%2", instance.name(), instance.statusMessage());
-        KNotification::event(QStringLiteral("akonadi-resource-broken"), {}, summary, QStringLiteral("merkuro-mail"), KNotification::CloseOnTimeout);
+        KNotification::event(u"akonadi-resource-broken"_s, {}, summary, u"merkuro-mail"_s, KNotification::CloseOnTimeout);
     }
 }
 

@@ -13,7 +13,7 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <akonadi/qtest_akonadi.h>
-
+using namespace Qt::Literals::StringLiterals;
 class IncidenceOccurrenceModelTest : public QObject
 {
     Q_OBJECT
@@ -75,7 +75,7 @@ private:
     Akonadi::Collection m_testCollection;
     Filter m_testFilter;
 
-    const QString m_testTag = QStringLiteral("Tag 2");
+    const QString m_testTag = u"Tag 2"_s;
     const QDateTime m_now = QDate(2022, 01, 10).startOfDay();
     static constexpr auto m_testModelLength = 7;
 
@@ -110,13 +110,13 @@ private Q_SLOTS:
         QVERIFY(m_testCollection.isValid());
 
         m_testTodo.reset(new KCalendarCore::Todo);
-        m_testTodo->setSummary(QStringLiteral("Test todo"));
+        m_testTodo->setSummary(u"Test todo"_s);
         m_testTodo->setCompleted(true);
         m_testTodo->setDtStart(m_now.addDays(1));
         m_testTodo->setDtDue(m_now.addDays(1));
         m_testTodo->setPriority(1);
         m_testTodo->setCategories(m_testTag);
-        m_testTodo->setUid(QStringLiteral("__test_todo__"));
+        m_testTodo->setUid(u"__test_todo__"_s);
 
         m_testFilter.setTags({m_testTag});
     }
@@ -214,9 +214,9 @@ private Q_SLOTS:
 
         // Test that the data function gives us the event info we have in our calendar file
         const auto index = model.index(0, 0);
-        QCOMPARE(index.data(IncidenceOccurrenceModel::Summary).toString(), QStringLiteral("Test event"));
-        QCOMPARE(index.data(IncidenceOccurrenceModel::Description).toString(), QStringLiteral("Big testing description"));
-        QCOMPARE(index.data(IncidenceOccurrenceModel::Location).toString(), QStringLiteral("Testing land"));
+        QCOMPARE(index.data(IncidenceOccurrenceModel::Summary).toString(), u"Test event"_s);
+        QCOMPARE(index.data(IncidenceOccurrenceModel::Description).toString(), u"Big testing description"_s);
+        QCOMPARE(index.data(IncidenceOccurrenceModel::Location).toString(), u"Testing land"_s);
 
         // It's an all day event
         QDateTime eventStartTimeToday(m_now.date().startOfDay());
@@ -243,7 +243,7 @@ private Q_SLOTS:
 
         QVERIFY(!index.data(IncidenceOccurrenceModel::IncidenceId).toString().isNull());
         QCOMPARE(index.data(IncidenceOccurrenceModel::IncidenceType).toInt(), KCalendarCore::Incidence::TypeEvent);
-        QCOMPARE(index.data(IncidenceOccurrenceModel::IncidenceTypeStr).toString(), QStringLiteral("Event"));
+        QCOMPARE(index.data(IncidenceOccurrenceModel::IncidenceTypeStr).toString(), u"Event"_s);
 
         QVERIFY(index.data(IncidenceOccurrenceModel::IncidencePtr).canConvert<KCalendarCore::Incidence::Ptr>());
         QVERIFY(index.data(IncidenceOccurrenceModel::IncidenceOccurrence).canConvert<IncidenceOccurrenceModel::Occurrence>());
@@ -315,7 +315,7 @@ private Q_SLOTS:
 
         // Now let's create a copy and modify it
         const KCalendarCore::Todo::Ptr todoClone(m_testTodo->clone());
-        const auto newSummary = QStringLiteral("New summary!");
+        const auto newSummary = u"New summary!"_s;
         todoClone->setSummary(newSummary);
 
         // Then try modifying it

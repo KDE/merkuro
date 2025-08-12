@@ -12,7 +12,7 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <akonadi/qtest_akonadi.h>
-
+using namespace Qt::Literals::StringLiterals;
 class TodoSortFilterProxyModelTest : public QObject
 {
     Q_OBJECT
@@ -51,7 +51,7 @@ private:
     Akonadi::Collection m_testCollection;
     Filter m_testFilter;
 
-    const QString m_testTag = QStringLiteral("Tag 2");
+    const QString m_testTag = u"Tag 2"_s;
     const QDateTime m_now = QDate(2022, 01, 10).startOfDay();
 
     // Our test calendar file has two todos, with sub-todos
@@ -80,13 +80,13 @@ private Q_SLOTS:
         QVERIFY(m_testCollection.isValid());
 
         m_testTodo.reset(new KCalendarCore::Todo);
-        m_testTodo->setSummary(QStringLiteral("Test todo"));
+        m_testTodo->setSummary(u"Test todo"_s);
         m_testTodo->setCompleted(true);
         m_testTodo->setDtStart(m_now.addDays(1));
         m_testTodo->setDtDue(m_now.addDays(1));
         m_testTodo->setPriority(1);
         m_testTodo->setCategories(m_testTag);
-        m_testTodo->setUid(QStringLiteral("__test_todo__"));
+        m_testTodo->setUid(u"__test_todo__"_s);
 
         m_testFilter.setTags({m_testTag});
 

@@ -6,7 +6,7 @@
 #include <KLocalizedString>
 #include <QObject>
 #include <QTest>
-
+using namespace Qt::Literals::StringLiterals;
 class EmailModelTest : public QObject
 {
     Q_OBJECT
@@ -20,9 +20,9 @@ private Q_SLOTS:
     {
         KContacts::Addressee addressee;
         KContacts::Email::List emails;
-        emails.append(KContacts::Email(QStringLiteral("carl@carlschwan.eu")));
-        emails.append(KContacts::Email(QStringLiteral("carl1@carlschwan.eu")));
-        KContacts::Email email(QStringLiteral("carl2@carlschwan.eu"));
+        emails.append(KContacts::Email(u"carl@carlschwan.eu"_s));
+        emails.append(KContacts::Email(u"carl1@carlschwan.eu"_s));
+        KContacts::Email email(u"carl2@carlschwan.eu"_s);
         email.setPreferred(true);
         email.setType(KContacts::Email::Home);
         emails.append(email);
@@ -31,7 +31,7 @@ private Q_SLOTS:
         emailModel.loadContact(addressee);
 
         QCOMPARE(emailModel.rowCount(), 3);
-        QCOMPARE(emailModel.data(emailModel.index(2, 0), Qt::DisplayRole).toString(), QStringLiteral("carl2@carlschwan.eu"));
+        QCOMPARE(emailModel.data(emailModel.index(2, 0), Qt::DisplayRole).toString(), u"carl2@carlschwan.eu"_s);
         QCOMPARE(emailModel.data(emailModel.index(2, 0), EmailModel::DefaultRole).toBool(), true);
         QCOMPARE(emailModel.data(emailModel.index(2, 0), EmailModel::TypeRole).toString(), i18n("Home:"));
     }

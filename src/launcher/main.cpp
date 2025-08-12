@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
         freopen("CONOUT$", "w", stderr);
     }
 
-    QApplication::setStyle(QStringLiteral("breeze"));
+    QApplication::setStyle(u"breeze"_s);
     auto font = app.font();
     font.setPointSize(10);
     app.setFont(font);

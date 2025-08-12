@@ -3,7 +3,7 @@
 
 #include "monthmodel.h"
 #include <QCalendar>
-
+using namespace Qt::Literals::StringLiterals;
 struct MonthModel::Private {
     int year;
     int month;
@@ -191,12 +191,12 @@ int MonthModel::rowCount(const QModelIndex &parent) const
 QHash<int, QByteArray> MonthModel::roleNames() const
 {
     return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {Roles::DayNumber, QByteArrayLiteral("dayNumber")},
-        {Roles::SameMonth, QByteArrayLiteral("sameMonth")},
-        {Roles::Date, QByteArrayLiteral("date")},
-        {Roles::IsSelected, QByteArrayLiteral("isSelected")},
-        {Roles::IsToday, QByteArrayLiteral("isToday")},
+        {Qt::DisplayRole, "display"_ba},
+        {Roles::DayNumber, "dayNumber"_ba},
+        {Roles::SameMonth, "sameMonth"_ba},
+        {Roles::Date, "date"_ba},
+        {Roles::IsSelected, "isSelected"_ba},
+        {Roles::IsToday, "isToday"_ba},
     };
 }
 

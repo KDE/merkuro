@@ -9,7 +9,7 @@
 #include <KFormat>
 #include <KLocalizedString>
 #include <KMime/Message>
-
+using namespace Qt::Literals::StringLiterals;
 QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) const
 {
     if (role == Akonadi::EntityTreeModel::ItemRole) {
@@ -83,16 +83,16 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
 QHash<int, QByteArray> AbstractMailModel::roleNames() const
 {
     return {
-        {TitleRole, QByteArrayLiteral("title")},
-        {DateRole, QByteArrayLiteral("date")},
-        {DateTimeRole, QByteArrayLiteral("datetime")},
-        {SenderRole, QByteArrayLiteral("sender")},
-        {FromRole, QByteArrayLiteral("from")},
-        {ToRole, QByteArrayLiteral("to")},
-        {StatusRole, QByteArrayLiteral("status")},
-        {FavoriteRole, QByteArrayLiteral("favorite")},
-        {TextColorRole, QByteArrayLiteral("textColor")},
-        {BackgroundColorRole, QByteArrayLiteral("backgroudColor")},
-        {ItemRole, QByteArrayLiteral("item")},
+        {TitleRole, "title"_ba},
+        {DateRole, "date"_ba},
+        {DateTimeRole, "datetime"_ba},
+        {SenderRole, "sender"_ba},
+        {FromRole, "from"_ba},
+        {ToRole, "to"_ba},
+        {StatusRole, "status"_ba},
+        {FavoriteRole, "favorite"_ba},
+        {TextColorRole, "textColor"_ba},
+        {BackgroundColorRole, "backgroudColor"_ba},
+        {ItemRole, "item"_ba},
     };
 }

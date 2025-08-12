@@ -10,7 +10,7 @@
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <KContacts/Addressee>
 #include <KDescendantsProxyModel>
-
+using namespace Qt::Literals::StringLiterals;
 ContactsModel::ContactsModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
@@ -85,8 +85,8 @@ QVariant ContactsModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> ContactsModel::roleNames() const
 {
     auto roles = QSortFilterProxyModel::roleNames();
-    roles[EmailRole] = QByteArrayLiteral("email");
-    roles[GidRole] = QByteArrayLiteral("gid");
+    roles[EmailRole] = "email"_ba;
+    roles[GidRole] = "gid"_ba;
     return roles;
 }
 

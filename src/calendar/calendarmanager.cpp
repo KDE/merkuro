@@ -46,7 +46,7 @@
 #include "sortedcollectionproxymodel.h"
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 static Akonadi::EntityTreeModel *findEtm(QAbstractItemModel *model)
 {
     QAbstractProxyModel *proxyModel = nullptr;
@@ -163,7 +163,7 @@ CalendarManager::CalendarManager(QObject *parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     mCollectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver(); // not a leak
-    KConfigGroup selectionGroup = config->group(QStringLiteral("GlobalCollectionSelection"));
+    KConfigGroup selectionGroup = config->group(u"GlobalCollectionSelection"_s);
     mCollectionSelectionModelStateSaver->setView(nullptr);
     mCollectionSelectionModelStateSaver->setSelectionModel(m_calendar->checkableProxyModel()->selectionModel());
     mCollectionSelectionModelStateSaver->restoreState(selectionGroup);
@@ -176,12 +176,12 @@ CalendarManager::CalendarManager(QObject *parent)
     // Kolab / Inbox / Calendar
     m_eventMimeTypeFilterModel = new Akonadi::CollectionFilterProxyModel(this);
     m_eventMimeTypeFilterModel->setSourceModel(collectionFilter);
-    m_eventMimeTypeFilterModel->addMimeTypeFilter(QStringLiteral("application/x-vnd.akonadi.calendar.event"));
+    m_eventMimeTypeFilterModel->addMimeTypeFilter(u"application/x-vnd.akonadi.calendar.event"_s);
 
     // text/calendar mimetype includes todo cals
     m_todoMimeTypeFilterModel = new Akonadi::CollectionFilterProxyModel(this);
     m_todoMimeTypeFilterModel->setSourceModel(collectionFilter);
-    m_todoMimeTypeFilterModel->addMimeTypeFilter(QStringLiteral("application/x-vnd.akonadi.calendar.todo"));
+    m_todoMimeTypeFilterModel->addMimeTypeFilter(u"application/x-vnd.akonadi.calendar.todo"_s);
     m_todoMimeTypeFilterModel->setExcludeVirtualCollections(true);
 
     // Filter by access rights
@@ -200,7 +200,7 @@ CalendarManager::CalendarManager(QObject *parent)
     // Model for todo via collection picker
     m_todoViewCollectionModel = new SortedCollectionProxModel(this);
     m_todoViewCollectionModel->setSourceModel(collectionFilter);
-    m_todoViewCollectionModel->addMimeTypeFilter(QStringLiteral("application/x-vnd.akonadi.calendar.todo"));
+    m_todoViewCollectionModel->addMimeTypeFilter(u"application/x-vnd.akonadi.calendar.todo"_s);
     m_todoViewCollectionModel->setExcludeVirtualCollections(true);
     m_todoViewCollectionModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     m_todoViewCollectionModel->sort(0, Qt::AscendingOrder);
@@ -208,8 +208,8 @@ CalendarManager::CalendarManager(QObject *parent)
     // Model for the mainDrawer
     m_viewCollectionModel = new SortedCollectionProxModel(this);
     m_viewCollectionModel->setSourceModel(collectionFilter);
-    m_viewCollectionModel->addMimeTypeFilter(QStringLiteral("application/x-vnd.akonadi.calendar.event"));
-    m_viewCollectionModel->addMimeTypeFilter(QStringLiteral("application/x-vnd.akonadi.calendar.todo"));
+    m_viewCollectionModel->addMimeTypeFilter(u"application/x-vnd.akonadi.calendar.event"_s);
+    m_viewCollectionModel->addMimeTypeFilter(u"application/x-vnd.akonadi.calendar.todo"_s);
     m_viewCollectionModel->setSortCaseSensitivity(Qt::CaseInsensitive);
     m_viewCollectionModel->sort(0, Qt::AscendingOrder);
 
@@ -225,7 +225,7 @@ CalendarManager::CalendarManager(QObject *parent)
     };
     connect(m_flatCollectionTreeModel, &QSortFilterProxyModel::rowsInserted, this, refreshColors);
 
-    KConfigGroup rColorsConfig(config, QStringLiteral("Resources Colors"));
+    KConfigGroup rColorsConfig(config, u"Resources Colors"_s);
     m_colorWatcher = KConfigWatcher::create(config);
     connect(m_colorWatcher.data(), &KConfigWatcher::configChanged, this, &CalendarManager::collectionColorsChanged);
 
@@ -242,7 +242,7 @@ void CalendarManager::save()
 {
     Akonadi::ETMViewStateSaver treeStateSaver;
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(QStringLiteral("GlobalCollectionSelection"));
+    KConfigGroup group = config->group(u"GlobalCollectionSelection"_s);
     treeStateSaver.setView(nullptr);
     treeStateSaver.setSelectionModel(m_calendar->checkableProxyModel()->selectionModel());
     treeStateSaver.saveState(group);
@@ -281,7 +281,7 @@ void CalendarManager::refreshEnabledTodoCollections()
     const auto selectedIndexes = m_calendar->checkableProxyModel()->selectionModel()->selectedIndexes();
     for (auto selectedIndex : selectedIndexes) {
         auto collection = selectedIndex.data(Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
-        if (collection.contentMimeTypes().contains(QStringLiteral("application/x-vnd.akonadi.calendar.todo"))) {
+        if (collection.contentMimeTypes().contains(u"application/x-vnd.akonadi.calendar.todo"_s)) {
             m_enabledTodoCollections.append(collection.id());
         }
     }
@@ -411,11 +411,10 @@ void CalendarManager::addIncidence(IncidenceWrapper *incidenceWrapper)
 {
     if (incidenceWrapper->collectionId() < 0) {
         const auto sharedConfig = KSharedConfig::openConfig();
-        const auto editorConfigSection = sharedConfig->group(QStringLiteral("Editor"));
+        const auto editorConfigSection = sharedConfig->group(u"Editor"_s);
 
-        const auto lastUsedCollectionType = incidenceWrapper->incidenceType() == KCalendarCore::IncidenceBase::TypeTodo
-            ? QStringLiteral("lastUsedTodoCollection")
-            : QStringLiteral("lastUsedEventCollection");
+        const auto lastUsedCollectionType =
+            incidenceWrapper->incidenceType() == KCalendarCore::IncidenceBase::TypeTodo ? u"lastUsedTodoCollection"_s : u"lastUsedEventCollection"_s;
         const auto lastUsedCollectionId = editorConfigSection.readEntry(lastUsedCollectionType, -1);
 
         if (lastUsedCollectionId > -1) {

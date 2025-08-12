@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "addressmodel.h"
-
+using namespace Qt::Literals::StringLiterals;
 AddressModel::AddressModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -56,21 +56,21 @@ QVariant AddressModel::data(const QModelIndex &idx, int role) const
 QHash<int, QByteArray> AddressModel::roleNames() const
 {
     return {
-        {CountryRole, QByteArrayLiteral("country")},
-        {ExtendedRole, QByteArrayLiteral("extended")},
-        {FormattedAddressRole, QByteArrayLiteral("formattedAddress")},
-        {HasGeoRole, QByteArrayLiteral("hasGeo")},
-        {LatitudeRole, QByteArrayLiteral("latitude")},
-        {LongitudeRole, QByteArrayLiteral("longitude")},
-        {IdRole, QByteArrayLiteral("id")},
-        {IsEmptyRole, QByteArrayLiteral("isEmpty")},
-        {LabelRole, QByteArrayLiteral("label")},
-        {PostalCodeRole, QByteArrayLiteral("postalCode")},
-        {PostOfficeBoxRole, QByteArrayLiteral("postOfficeBox")},
-        {RegionRole, QByteArrayLiteral("region")},
-        {StreetRole, QByteArrayLiteral("street")},
-        {TypeRole, QByteArrayLiteral("type")},
-        {TypeLabelRole, QByteArrayLiteral("typeLabel")},
+        {CountryRole, "country"_ba},
+        {ExtendedRole, "extended"_ba},
+        {FormattedAddressRole, "formattedAddress"_ba},
+        {HasGeoRole, "hasGeo"_ba},
+        {LatitudeRole, "latitude"_ba},
+        {LongitudeRole, "longitude"_ba},
+        {IdRole, "id"_ba},
+        {IsEmptyRole, "isEmpty"_ba},
+        {LabelRole, "label"_ba},
+        {PostalCodeRole, "postalCode"_ba},
+        {PostOfficeBoxRole, "postOfficeBox"_ba},
+        {RegionRole, "region"_ba},
+        {StreetRole, "street"_ba},
+        {TypeRole, "type"_ba},
+        {TypeLabelRole, "typeLabel"_ba},
     };
 }
 

@@ -8,7 +8,7 @@
 #include <KContacts/Addressee>
 #include <QNetworkAccessManager>
 #include <QReadWriteLock>
-
+using namespace Qt::Literals::StringLiterals;
 namespace Akonadi
 {
 class ContactSearchJob;
@@ -30,7 +30,7 @@ private Q_SLOTS:
 
 private:
     [[nodiscard]] bool searchPhoto(const KContacts::AddresseeList &list);
-    void queryImage(const QString &hostame = QStringLiteral("https://seccdn.libravatar.org/avatar/"));
+    void queryImage(const QString &hostame = u"https://seccdn.libravatar.org/avatar/"_s);
     void imageQueried(QNetworkReply *reply);
     void dnsLookupFinished(QDnsLookup *dns);
     QString m_email;

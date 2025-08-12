@@ -4,7 +4,7 @@
 #include "../remindersmodel.h"
 #include <QObject>
 #include <QTest>
-
+using namespace Qt::Literals::StringLiterals;
 class RemindersModelTest : public QObject
 {
     Q_OBJECT
@@ -31,7 +31,7 @@ private Q_SLOTS:
 
         QCOMPARE(model.data(model.index(0), RemindersModel::TypeRole).toInt(), KCalendarCore::Alarm::Display);
 
-        QCOMPARE(model.data(model.index(0), RemindersModel::SummaryRole).toString(), QStringLiteral("LOREM"));
+        QCOMPARE(model.data(model.index(0), RemindersModel::SummaryRole).toString(), u"LOREM"_s);
 
         QCOMPARE(model.data(model.index(0), RemindersModel::StartOffsetRole).toInt(), 0);
 

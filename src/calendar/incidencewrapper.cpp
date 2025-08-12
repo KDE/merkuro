@@ -9,7 +9,7 @@
 #include <QJSValue>
 
 using namespace Qt::StringLiterals;
-
+using namespace Qt::Literals::StringLiterals;
 IncidenceWrapper::IncidenceWrapper(CalendarManager *calendarManager, QObject *parent)
     : QObject(parent)
     , m_calendarManager(calendarManager)
@@ -606,9 +606,7 @@ QString IncidenceWrapper::googleConferenceUrl()
 QVariantMap IncidenceWrapper::organizer()
 {
     auto organizerPerson = m_incidence->organizer();
-    return QVariantMap{{QStringLiteral("name"), organizerPerson.name()},
-                       {QStringLiteral("email"), organizerPerson.email()},
-                       {QStringLiteral("fullName"), organizerPerson.fullName()}};
+    return QVariantMap{{u"name"_s, organizerPerson.name()}, {u"email"_s, organizerPerson.email()}, {u"fullName"_s, organizerPerson.fullName()}};
 }
 
 KCalendarCore::Attendee::List IncidenceWrapper::attendees() const

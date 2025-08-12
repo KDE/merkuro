@@ -8,7 +8,7 @@
 #include "multidayincidencemodel.h"
 #include "hourlyincidencemodel.h"
 #include <QBitArray>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 
 MultiDayIncidenceModel::MultiDayIncidenceModel(QObject *parent)
@@ -474,8 +474,8 @@ void MultiDayIncidenceModel::setActive(const bool active)
 QHash<int, QByteArray> MultiDayIncidenceModel::roleNames() const
 {
     return {
-        {IncidencesRole, QByteArrayLiteral("incidences")},
-        {PeriodStartDateRole, QByteArrayLiteral("periodStartDate")},
+        {IncidencesRole, "incidences"_ba},
+        {PeriodStartDateRole, "periodStartDate"_ba},
     };
 }
 
