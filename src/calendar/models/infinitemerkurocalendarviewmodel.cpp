@@ -185,7 +185,7 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         newIndex = 0;
     }
 
-    if (firstItemDate < selectedDate && newIndex == 0) {
+    if (newIndex == 0) {
         switch (m_scale) {
         case DecadeScale:
             newIndex += ((selectedDate.year() / 10) - (firstItemDate.year() / 10)) - 1;

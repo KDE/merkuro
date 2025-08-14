@@ -38,6 +38,6 @@ private:
     void slotItemsFetched(KJob *job);
 
     QString m_searchString;
-    Akonadi::ItemFetchJob *m_job;
+    Akonadi::ItemFetchJob *m_job = nullptr;
     Akonadi::Item::List m_items;
 };

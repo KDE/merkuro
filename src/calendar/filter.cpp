@@ -59,7 +59,7 @@ void Filter::setShowCurrentDayOnly(bool show)
     Q_EMIT showCurrentDayOnlyChanged();
 }
 
-void Filter::toggleFilterTag(const QString tagName)
+void Filter::toggleFilterTag(const QString &tagName)
 {
     if (!m_tags.contains(tagName)) {
         m_tags.append(tagName);

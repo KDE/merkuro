@@ -432,7 +432,7 @@ void TodoSortFilterProxyModel::setIncidenceChanger(Akonadi::IncidenceChanger *ch
     Q_EMIT incidenceChangerChanged();
 }
 
-void TodoSortFilterProxyModel::setColorCache(const QHash<QString, QColor> colorCache)
+void TodoSortFilterProxyModel::setColorCache(const QHash<QString, QColor> &colorCache)
 {
     m_colors = colorCache;
 }

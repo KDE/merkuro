@@ -24,7 +24,7 @@ using namespace Akonadi;
 class ContactGroupEditorPrivate
 {
 public:
-    ContactGroupEditorPrivate(ContactGroupEditor *parent);
+    explicit ContactGroupEditorPrivate(ContactGroupEditor *parent);
     ~ContactGroupEditorPrivate();
 
     void itemFetchDone(KJob *job);

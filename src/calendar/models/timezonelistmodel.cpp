@@ -59,9 +59,9 @@ int TimeZoneListModel::getTimeZoneRow(const QByteArray &timeZone)
 {
     for (int i = 0; i < rowCount(); i++) {
         QModelIndex idx = index(i, 0);
-        QVariant data = idx.data(IdRole).toByteArray();
+        QVariant idRoleValue = idx.data(IdRole).toByteArray();
 
-        if (data == timeZone)
+        if (idRoleValue == timeZone)
             return i;
     }
 

@@ -216,7 +216,6 @@ void ThumbnailResponse::queryImage(const QString &hostname)
 
     const QUrl url(hostname + QString::fromUtf8(hash.result().toHex()) + u"?d=404"_s);
 
-    QByteArray imageData;
     auto reply = m_qnam->get(QNetworkRequest(url));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         imageQueried(reply);

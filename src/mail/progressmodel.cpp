@@ -70,7 +70,7 @@ void ProgressModel::slotProgressItemUsesBusyIndicator(KPIM::ProgressItem *const 
     slotItemProgressDataChanged(item, {UsesBusyIndicatorRole});
 }
 
-void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles)
+void ProgressModel::slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> &roles)
 {
     const auto row = m_items.indexOf(item);
     if (row == -1) {

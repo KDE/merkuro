@@ -31,7 +31,7 @@ public Q_SLOTS:
     void setName(const QString &name);
     void setShowCurrentDayOnly(bool show);
 
-    void toggleFilterTag(const QString tagName);
+    void toggleFilterTag(const QString &tagName);
     void reset();
     void removeTag(const QString &tagName);
 

@@ -132,7 +132,7 @@ protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
-    void setColorCache(const QHash<QString, QColor> colorCache);
+    void setColorCache(const QHash<QString, QColor> &colorCache);
     void emitDateDataChanged(const QModelIndex &idx);
     void updateDateLabels();
     void loadColors();

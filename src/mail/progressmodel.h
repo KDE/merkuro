@@ -59,7 +59,7 @@ public Q_SLOTS:
     void slotProgressItemUsesBusyIndicator(KPIM::ProgressItem *const item, const bool usesBusyIndicator);
 
 private Q_SLOTS:
-    void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> roles);
+    void slotItemProgressDataChanged(KPIM::ProgressItem *const item, const QList<int> &roles);
 
 private:
     void updateOverallProperties();
