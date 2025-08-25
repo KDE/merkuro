@@ -1,0 +1,1063 @@
+{
+    "id": "org.kde.merkuro",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.9",
+    "base": "io.qt.qtwebengine.BaseApp",
+    "base-version": "6.9",
+    "sdk": "org.kde.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "tags": [
+        "nightly"
+    ],
+    "desktop-file-name-suffix": " (Nightly)",
+    "command": "run_merkuro.sh",
+    "finish-args": [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--socket=gpg-agent",
+        "--device=dri",
+        "--filesystem=~/.gnupg:create",
+        "--own-name=org.freedesktop.Akonadi",
+        "--own-name=org.freedesktop.Akonadi.*",
+        "--own-name=org.freedesktop.Akonadi.Control.*",
+        "--own-name=org.freedesktop.Akonadi.Agent.*",
+        "--own-name=org.freedesktop.Akonadi.Resource.*",
+        "--own-name=org.kde.kalendarac",
+        "--own-name=org.kde.kalendarr",
+        "--own-name=org.kde.accountwizard",
+        "--own-name=org.kde.pimsettingsexporter",
+        "--own-name=org.kde.pim.*",
+        "--talk-name=org.kde.Solid.PowerManagement",
+        "--talk-name=org.kde.kded5",
+        "--talk-name=org.kde.kded6",
+        "--talk-name=org.kde.kglobalaccel",
+        "--talk-name=org.kde.JobViewServer",
+        "--talk-name=org.kde.klauncher5",
+        "--talk-name=org.kde.knotify",
+        "--talk-name=org.kde.kwalletd5",
+        "--talk-name=org.kde.kwalletd6",
+        "--talk-name=org.kde.kcookiejar5",
+        "--system-talk-name=org.freedesktop.NetworkManager",
+        "--env=SASL_PATH=/app/lib/sasl2"
+    ],
+    "cleanup": [
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/lib/plugins/designer",
+        "/include",
+        "/docs",
+        "/mkspecs",
+        "/share/man",
+        "/bin/afmtodit",
+        "/usr/bin/xsd",
+        "/lib/libKF5*.so",
+        "/lib/libboost_*.so",
+        "*.a",
+        "*.la"
+    ],
+    "copy-icon": true,
+    "modules": [
+        {
+            "name": "libetebase",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir .cargo",
+                "cp cargo/config .cargo/",
+                "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
+                "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
+                "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
+                "PREFIX=/app make V=1 VERBOSE=1 install",
+                "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
+                "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
+            ],
+            "build-options": {
+                "append-path": "/usr/lib/sdk/rust-stable/bin"
+            },
+            "sources": [
+                "flatpak/libetebase-dependencies-cargo-generator.json",
+                {
+                    "type": "archive",
+                    "url": "https://github.com/etesync/libetebase/archive/v0.5.8/libetebase-0.5.8.tar.gz",
+                    "sha256": "4f2623a6e194aa3df69307d13ad00c42ec853a1af02ca329e35cd829ff472145",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 235050,
+                        "stable-only": true,
+                        "url-template": "https://github.com/etesync/libetebase/archive/v$version/libetebase-$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cyrus-sasl2",
+            "config-opts": [
+                "--with-dblib=berkeley",
+                "--without-pam",
+                "--without-opie",
+                "--without-des",
+                "--disable-gssapi",
+                "--enable-cram",
+                "--enable-digest",
+                "--enable-otp",
+                "--enable-plain",
+                "--enable-login",
+                "--with-plugindir=/app/lib/sasl2"
+            ],
+            "build-options": {
+                "env": {
+                    "CFLAGS": "-Wno-implicit-function-declaration"
+                }
+            },
+            "no-parallel-make": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/cyrusimap/cyrus-sasl/archive/cyrus-sasl-2.1.28.tar.gz",
+                    "sha256": "3e38933a30b9ce183a5488b4f6a5937a702549cde0d3287903d80968ad4ec341",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 13280,
+                        "stable-only": true,
+                        "url-template": "https://github.com/cyrusimap/cyrus-sasl/archive/cyrus-sasl-$version.tar.gz"
+                    }
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "boost",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./bootstrap.sh --prefix=/app --with-libraries=system",
+                "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
+            ],
+            "cleanup": [
+                "*.a"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
+                    "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 6845,
+                        "stable-only": true,
+                        "url-template": "https://archives.boost.io/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "gpgme",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-1.24.3.tar.bz2",
+                    "sha256": "bfc17f5bd1b178c8649fdd918956d277080f33df006a2dc40acdecdce68c50dd",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1239,
+                        "stable-only": true,
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libsecret",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dmanpage=false",
+                "-Dvapi=false",
+                "-Dgtk_doc=false",
+                "-Dintrospection=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz",
+                    "sha256": "6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libsecret",
+                        "stable-only": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_INSTALL_LIBDIR=lib",
+                "-DLIB_INSTALL_DIR=lib",
+                "-DBUILD_WITH_QT6=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.15.0.tar.gz",
+                    "sha256": "f4254dc8f0933b06d90672d683eab08ef770acd8336e44dfa030ce041dc2ca22",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4138,
+                        "stable-only": true,
+                        "url-template": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "akonadi",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_TOOLS=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DDATABASE_BACKEND=SQLITE"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-25.04.3.tar.xz",
+                    "sha256": "042cd3319eadfb82547773e52ce7d41d361d58c4e92fe75a5179c1574ed4f5df",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kmime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmime-25.04.3.tar.xz",
+                    "sha256": "23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmime-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "akonadi-mime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-mime-25.04.3.tar.xz",
+                    "sha256": "29588a629e6f961ee48b2825c980840311f1207f7ea1d62d454addadf195c6be",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-mime-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ktextaddons",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DQT_MAJOR_VERSION=6"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/ktextaddons/ktextaddons-1.6.0.tar.xz",
+                    "sha256": "d9846505a52f97bda64ead193032bc29573ec31481f473be3c586f5b8321ecdc",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 351168,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/ktextaddons/ktextaddons-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kpimtextedit",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz",
+                    "sha256": "4a107ca02a4535fdc08f7b65886cc99cdf9da642a67363bcbab4cba338bc6c32",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libkleo",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkleo-25.04.3.tar.xz",
+                    "sha256": "7c9b334b226c990d5193b2e66a3ce8de1c5ea6c2afc9175280e6f44d02a7caa8",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkleo-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ktexttemplate",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/frameworks/6.13/ktexttemplate-6.13.0.tar.xz",
+                    "sha256": "4050ce76de38acb8104d8c0b6e7ecb38bf28ff4d65499ec911fb316f383f92d9",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8762,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/ktexttemplate-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "grantleetheme",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/grantleetheme-25.04.3.tar.xz",
+                    "sha256": "e25e79c71383f538814b827d7bfaf6ab3fb45c4f78c69aa4101dff6025f4a073",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/grantleetheme-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "akonadi-contacts",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-contacts-25.04.3.tar.xz",
+                    "sha256": "6443bb3c86997f42d7fcda559a7a88973ff02eb0f17976d622fbb150b4d85c46",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-contacts-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libkgapi",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkgapi-25.04.3.tar.xz",
+                    "sha256": "cf895f01d1967c029c15239c53e39ab11613b7700ed1afa8e61c6278bd8fbcf8",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkgapi-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ksmtp",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/ksmtp-25.04.3.tar.xz",
+                    "sha256": "18944f9804328c09cc82b1c30f9d7c5812555c45c44199bb9caa37dbd83f4c86",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksmtp-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kmailtransport",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmailtransport-25.04.3.tar.xz",
+                    "sha256": "364e4e7068be53efb994539a273dcc0e17a45d60a63164307a45cdb3e2df5879",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmailtransport-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kirigami-addons",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.9.0.tar.xz",
+                    "sha256": "21314a91f26b1c962def3fd7ff2e762d3358b075f63f4d7e0144fb2c63b7ebc7",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 242933,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kidentitymanagement",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kidentitymanagement-25.04.3.tar.xz",
+                    "sha256": "13a022e5ea845b4b65982c533d705888282805e0ce44517eccd6e24b8d5e3e7f",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "xapian",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://oligarchy.co.uk/xapian/1.4.29/xapian-core-1.4.29.tar.xz",
+                    "sha256": "c55c9bc8613ad3ec2c218eafca088c218ab7cddcba7ef08f3af0e542f4e521bc",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 15919,
+                        "stable-only": true,
+                        "url-template": "https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz"
+                    }
+                }
+            ],
+            "cleanup": [
+                "/share/doc/xapian-core",
+                "/bin/xapian-*",
+                "/bin/copydatabase",
+                "/bin/quest",
+                "/bin/simpleexpand",
+                "/bin/simpleindex",
+                "/bin/simplesearch"
+            ]
+        },
+        {
+            "name": "kldap",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kldap-25.04.3.tar.xz",
+                    "sha256": "f08f4a72efe1bcd197b3e63323aa4fa7a09272d408b8a07db4b61c4792e20b7f",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kldap-$version.tar.xz"
+                    }
+                }
+            ],
+            "modules": [
+                {
+                    "name": "openldap",
+                    "config-opts": [
+                        "--disable-backends",
+                        "--disable-debug",
+                        "--disable-overlays",
+                        "--disable-slapd",
+                        "--disable-syslog",
+                        "--enable-dynamic",
+                        "--enable-ipv6",
+                        "--with-cyrus-sasl",
+                        "--with-threads",
+                        "--with-tls=gnutls"
+                    ],
+                    "rm-configure": true,
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz",
+                            "sha256": "c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516",
+                            "x-checker-data": {
+                                "type": "html",
+                                "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/",
+                                "version-pattern": "openldap-([\\d\\.-]+).tgz",
+                                "url-template": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-$version.tgz"
+                            }
+                        },
+                        {
+                            "type": "script",
+                            "dest-filename": "autogen.sh",
+                            "commands": [
+                                "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
+                            ]
+                        },
+                        {
+                            "type": "shell",
+                            "commands": [
+                                "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                            ]
+                        }
+                    ],
+                    "cleanup": [
+                        "/bin/ldap*",
+                        "/sbin"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "akonadi-search",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DAKONADISEARCH_ENABLE_KRUNNER_RUNNER=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-search-25.04.3.tar.xz",
+                    "sha256": "5c4af0b6a58993900618c9e9f1291b3cd12a7097c7a700e00e578a500fcc601a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-search-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kmbox",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmbox-25.04.3.tar.xz",
+                    "sha256": "8f604bdc87587b3bc4d944ad82c17587c8db1930d6435fdbc4e5f8fb17f6727e",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmbox-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libkdepim",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkdepim-25.04.3.tar.xz",
+                    "sha256": "6d9c78063db5234539e5f3fddbecbca61948b79e60073ec215a7ffdad62418fa",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkdepim-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kimap",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kimap-25.04.3.tar.xz",
+                    "sha256": "2adc1a8928d0705f31afd6050dc2840690ae0b6250f55b1bc952579f440331ee",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kimap-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "pimcommon",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/pimcommon-25.04.3.tar.xz",
+                    "sha256": "7e6cb554ce25450f2d9b98805d6404e8d610fda411003eb4a61726c710444855",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/pimcommon-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "libgravatar",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libgravatar-25.04.3.tar.xz",
+                    "sha256": "24e8be07bb69aae682c30e2c6fc056664f97d74c0ef5b3c6f2ebe25f16d00647",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libgravatar-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "messagelib",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/messagelib-25.04.3.tar.xz",
+                    "sha256": "87048febcbad9827b8ec1d894aa73996d5c48d7840273a04dafb7de00991c0eb",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/messagelib-$version.tar.xz"
+                    }
+                }
+            ],
+            "modules": [
+                {
+                    "name": "qca",
+                    "config-opts": [
+                        "-DBUILD_TESTING=OFF",
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                        "-DBUILD_WITH_QT6=ON"
+                    ],
+                    "buildsystem": "cmake-ninja",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.kde.org/stable/qca/2.3.9/qca-2.3.9.tar.xz",
+                            "sha256": "c555d5298cdd7b6bafe2b1f96106f30cfa543a23d459d50c8a91eac33c476e4e",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 13606,
+                                "stable-only": true,
+                                "url-template": "https://download.kde.org/stable/qca/$version/qca-$version.tar.xz"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "kcalutils",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kcalutils-25.04.3.tar.xz",
+                    "sha256": "3a0e29a35ddbc68b546ac94ff5afc9381c4af4c5f6cc855876ae4a2c5219454d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kcalutils-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "akonadi-calendar",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-calendar-25.04.3.tar.xz",
+                    "sha256": "9433cec8f629f5dd1aadb7af39d4b62d6047624b1d1be5282eef5e460f486e5c",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-calendar-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mailimporter",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mailimporter-25.04.3.tar.xz",
+                    "sha256": "7e026f46b6a974b5ad82cd74b44fff6026228b28d8ba89e4af9eaa08fe0b367e",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mailimporter-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mailcommon",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mailcommon-25.04.3.tar.xz",
+                    "sha256": "2525aa778a922f6735f571a32a896fdfafa1aadfcc4aebd6619306a98f213521",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mailcommon-$version.tar.xz"
+                    }
+                }
+            ],
+            "modules": [
+                {
+                    "name": "ffmpeg",
+                    "config-opts": [
+                        "--enable-pic",
+                        "--enable-shared",
+                        "--disable-doc",
+                        "--disable-static",
+                        "--enable-gpl",
+                        "--enable-libvpx",
+                        "--enable-libmp3lame",
+                        "--enable-libvorbis",
+                        "--enable-libopus"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://ffmpeg.org/releases/ffmpeg-4.4.5.tar.xz",
+                            "sha256": "f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07"
+                        }
+                    ]
+                },
+                {
+                    "name": "phonon",
+                    "config-opts": [
+                        "-DBUILD_TESTING=OFF",
+                        "-DPHONON_BUILD_QT5=OFF",
+                        "-DPHONON_BUILD_QT6=ON"
+                    ],
+                    "buildsystem": "cmake-ninja",
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.kde.org/stable/phonon/4.12.0/phonon-4.12.0.tar.xz",
+                            "sha256": "3287ffe0fbcc2d4aa1363f9e15747302d0b080090fe76e5f211d809ecb43f39a",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 229047,
+                                "stable-only": true,
+                                "url-template": "https://download.kde.org/stable/phonon/$version/phonon-$version.tar.xz"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "libvlc",
+                    "config-opts": [
+                        "BUILDCC=gcc",
+                        "--disable-lua",
+                        "--disable-a52",
+                        "--disable-qt",
+                        "--disable-ncurses",
+                        "--disable-udev"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://get.videolan.org/vlc/3.0.21/vlc-3.0.21.tar.xz",
+                            "sha256": "24dbbe1d7dfaeea0994d5def0bbde200177347136dbfe573f5b6a4cee25afbb0",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6504,
+                                "stable-only": true,
+                                "url-template": "https://get.videolan.org/vlc/$version/vlc-$version.tar.xz"
+                            }
+                        },
+                        {
+                            "type": "patch",
+                            "path": "flatpak/vlc-taglib-2.patch"
+                        }
+                    ]
+                },
+                {
+                    "name": "phonon-vlc",
+                    "buildsystem": "cmake-ninja",
+                    "config-opts": [
+                        "-DPHONON_BUILD_QT5=OFF"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.kde.org/stable/phonon/phonon-backend-vlc/0.12.0/phonon-backend-vlc-0.12.0.tar.xz",
+                            "sha256": "338479dc451e4b94b3ca5b578def741dcf82f5c626a2807d36235be2dce7c9a5",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 229046,
+                                "stable-only": true,
+                                "url-template": "https://download.kde.org/stable/phonon/phonon-backend-vlc/$version/phonon-backend-vlc-$version.tar.xz"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "libksieve",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz",
+                    "sha256": "07f6d97362e408dabcfb191b0bfd728edfd5996ee37a84074e928cb2e9c13a9d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libksieve-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kdepim-runtime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kdepim-runtime-25.04.3.tar.xz",
+                    "sha256": "133dcf8c314c36ecc8b4775d9eb6d929bbbbd5355dddf29441abaf00fe9a1a89",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kdepim-runtime-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ktnef",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/ktnef-25.04.3.tar.xz",
+                    "sha256": "5119f03d17cc1f567c0d429af6506335a1e8c0bd43b539b1b6444ecc3bd6b36a",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ktnef-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mimetreeparser",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mimetreeparser-25.04.3.tar.xz",
+                    "sha256": "26a4440d50ca62db1f154794557d5a216acc44ae96347e072200255a267c4ac4",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 8763,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mimetreeparser-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "merkuro",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DBUILD_FLATPAK=ON"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                },
+                {
+                    "type": "file",
+                    "path": "flatpak/run_merkuro.sh"
+                }
+            ],
+            "post-install": [
+                "install run_merkuro.sh /app/bin/run_merkuro.sh"
+            ]
+        }
+    ]
+}
+
