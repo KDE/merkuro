@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-04-08 19:22+0300\n"
+"PO-Revision-Date: 2025-08-21 13:12+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -215,10 +215,9 @@ msgid "Calendar Application"
 msgstr "Kalendāra programma"
 
 #: calendar/main.cpp:65 contacts/main.cpp:59 mail/main.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021-2024"
-msgstr "(c) KDE Community 2021—2024"
+msgstr "© KDE kopiena 2021—2024"
 
 #: calendar/main.cpp:67 contacts/main.cpp:61 launcher/main.cpp:56
 #: mail/main.cpp:63
@@ -804,12 +803,10 @@ msgstr "%2. gada <b>%1</b>"
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 – %2"
-msgstr ""
+msgstr "%1 — %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, fuzzy, kde-format
-#| msgctxt "%1 is month of range start, %2 is month + year of range end"
-#| msgid "<b>%1</b> - %2"
+#, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> — %2"
@@ -1937,41 +1934,34 @@ msgstr "Konti"
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
 msgid "Availability"
-msgstr ""
+msgstr "Pieejamība"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Availability"
-msgstr ""
+msgstr "Konfigurēt pieejamību"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Free/Busy Publishing settings"
+#, kde-format
 msgid "Availability Publishing settings"
-msgstr "Brīvs/aizņemts publicēšanas iestatījumi"
+msgstr "Pieejamības publicēšanas iestatījumi"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"Ja publicējat brīvs/aizņemts informāciju, tas ļauj citiem, kuri vēlas jūs "
+"Ja publicējat pieejamības informāciju, tas ļauj citiem, kuri vēlas jūs "
 "aicināt uz sapulci, redzēt jūsu pieejamību. Citi redzēs tikai laiku, kas ir "
 "norādīts kā aizņemts, neatklājot neko vairāk."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "Automātiski publicēt jūsu brīvs/aizņemts informāciju"
+msgstr "Automātiski publicēt jūsu pieejamības informāciju"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -1979,10 +1969,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "Minimālais laiks (minūtēs) starp augšupielādēm"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Number of days of free/busy info to publish: "
+#, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr "Dienu skaits, par kuru publicēt brīvs/aizņemts informāciju: "
+msgstr "Dienu skaits, par kuru publicēt pieejamības informāciju: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -2015,16 +2004,14 @@ msgid "Save password"
 msgstr "Saglabāt paroli"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Click here to publish Free/Busy information manually"
+#, kde-format
 msgid "Click here to publish availability information manually"
-msgstr "Klikšķiniet te, lai manuāli publicētu brīvs/aizņemts informāciju"
+msgstr "Klikšķiniet te, lai manuāli publicētu pieejamības informāciju"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Email Client"
+#, kde-format
 msgid "Email availability"
-msgstr "E-pasta klients"
+msgstr "E-pasta pieejamība"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2038,28 +2025,23 @@ msgid "Send"
 msgstr "Nosūtīt"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "Brīvs/aizņemts izgūšanas iestatījumi"
+msgstr "Pieejamības izgūšanas iestatījumi"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"Izgūstot citu publicētu brīvs/aizņemts informāciju, varat pirms aicināšanas "
-"uz sapulci apsvērt otras personas brīvos laikus."
+"Izgūstot citu publicētu aizņemtības informāciju, varat pirms aicināšanas uz "
+"sapulci apsvērt otras personas brīvos laikus."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Retrieve others' free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "Automātiski izgūt citu personu brīvs/aizņemts informāciju"
+msgstr "Automātiski izgūt citu personu aizņemtības informāciju"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
@@ -2294,9 +2276,7 @@ msgid "1 day"
 msgstr "Vienu dienu"
 
 #: calendar/utils.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is 2 or mores"
-#| msgid "%1 hours"
+#, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
 msgstr "%1 stundas"
@@ -2701,12 +2681,10 @@ msgid "Delete address book"
 msgstr "Dzēst adrešu grāmatu"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set address book colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
-msgstr "Mainīt adrešu grāmatas krāsu…"
+msgstr "Noteikt adrešu grāmatas krāsu…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
@@ -3447,10 +3425,9 @@ msgid "merkuro Launcher"
 msgstr "„merkuro“ palaidējs"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgid "(c) 2024"
+#, kde-format
 msgid "© 2024"
-msgstr "(c) 2024"
+msgstr "© 2024"
 
 #: launcher/main.cpp:57
 #, kde-format
