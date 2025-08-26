@@ -164,7 +164,7 @@ void ThumbnailResponse::prepareResult()
         connect(dns, &QDnsLookup::finished, this, [this, dns]() {
             dnsLookupFinished(dns);
         });
-        const auto split = m_email.split(QLatin1Char('@'));
+        const auto split = m_email.split(u'@');
         if (split.length() < 2) {
             Q_EMIT finished();
             return;
@@ -196,14 +196,14 @@ void ThumbnailResponse::dnsLookupFinished(QDnsLookup *dns)
     const auto record = records[0];
 
     QString hostname = record.target();
-    if (hostname.endsWith(QLatin1Char('.'))) {
+    if (hostname.endsWith(u'.')) {
         hostname.chop(1);
     }
 
     if (record.port() == 443) {
         queryImage(u"https://"_s + hostname + u"/avatar/"_s);
     } else {
-        queryImage(u"http://"_s + hostname + QLatin1Char(':') + QString::number(record.port()) + u"/avatar/"_s);
+        queryImage(u"http://"_s + hostname + u':' + QString::number(record.port()) + u"/avatar/"_s);
     }
 
     dns->deleteLater();

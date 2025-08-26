@@ -93,7 +93,7 @@ void ETMTreeViewStateSaver::setModel(KDescendantsProxyModel *model)
 
 QModelIndex ETMTreeViewStateSaver::indexFromConfigString(const QAbstractItemModel *model, const QString &key) const
 {
-    if (key.startsWith(QLatin1Char('x'))) {
+    if (key.startsWith(u'x')) {
         return QModelIndex();
     }
 
@@ -102,10 +102,10 @@ QModelIndex ETMTreeViewStateSaver::indexFromConfigString(const QAbstractItemMode
         return QModelIndex();
     }
 
-    if (key.startsWith(QLatin1Char('c'))) {
+    if (key.startsWith(u'c')) {
         const QModelIndex idx = Akonadi::EntityTreeModel::modelIndexForCollection(model, Akonadi::Collection(id));
         return idx;
-    } else if (key.startsWith(QLatin1Char('i'))) {
+    } else if (key.startsWith(u'i')) {
         const QModelIndexList list = Akonadi::EntityTreeModel::modelIndexesForItem(model, Akonadi::Item(id));
         if (list.isEmpty()) {
             return QModelIndex();

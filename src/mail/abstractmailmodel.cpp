@@ -26,7 +26,7 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
 
     QString subject = mail->subject()->asUnicodeString();
     if (subject.isEmpty()) {
-        subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
+        subject = u'(' + noSubject + u')';
     }
 
     Akonadi::MessageStatus stat;
