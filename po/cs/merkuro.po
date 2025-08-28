@@ -210,10 +210,9 @@ msgid "Calendar Application"
 msgstr "Aplikace kalendáře"
 
 #: calendar/main.cpp:65 contacts/main.cpp:59 mail/main.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021-2024"
-msgstr "(c) Komunita KDE 2021-2024"
+msgstr ""
 
 #: calendar/main.cpp:67 contacts/main.cpp:61 launcher/main.cpp:56
 #: mail/main.cpp:63
@@ -800,12 +799,10 @@ msgid "%1 – %2"
 msgstr ""
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, fuzzy, kde-format
-#| msgctxt "%1 is month of range start, %2 is month + year of range end"
-#| msgid "<b>%1</b> - %2"
+#, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
-msgstr "<b>%1</b> - %2"
+msgstr ""
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -1921,7 +1918,7 @@ msgstr "Účty"
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
 msgid "Availability"
-msgstr ""
+msgstr "Dostupnost"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1934,27 +1931,18 @@ msgid "Availability Publishing settings"
 msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"Publikováním informací o aktivitě dovolíte ostatním vzít v úvahu vaši "
-"dostupnost v kalendáři, pokud vás zvou na setkání. Publikují se pouze časy, "
-"kdy jste zaneprázdněni, ne proč jste zaneprázdněni."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "Publikovat informace o vaší aktivitě automaticky"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -2002,10 +1990,9 @@ msgid "Click here to publish availability information manually"
 msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Email Client"
+#, kde-format
 msgid "Email availability"
-msgstr "Poštovní klient"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
@@ -2019,28 +2006,21 @@ msgid "Send"
 msgstr "Odeslat"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "Nastavení získání informací o aktivitě"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"Obdržením informací o zaneprázdněnosti, které ostatní publikovali, můžete "
-"vzít v úvahu jejich kalendář, pokud je zvete na setkání."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "Publikovat informace o vaší aktivitě automaticky"
+msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
@@ -2275,12 +2255,10 @@ msgid "1 day"
 msgstr "1 den"
 
 #: calendar/utils.cpp:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is 2 or mores"
-#| msgid "%1 hours"
+#, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
-msgstr "%1 hodin"
+msgstr ""
 
 #: calendar/utils.cpp:27
 #, kde-format
@@ -2682,12 +2660,10 @@ msgid "Delete address book"
 msgstr "Smazat knihu adres"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set address book colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
-msgstr "Nastavit barvu knihy adres..."
+msgstr ""
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
@@ -3777,41 +3753,3 @@ msgstr "Nastavení účtu pošty"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Účty"
-
-#~ msgid "Free/Busy"
-#~ msgstr "Zaneprázdněnost"
-
-#~ msgid "Configure Free/Busy"
-#~ msgstr "Nastavit zaneprázdněnost"
-
-#~ msgid "Configure %1"
-#~ msgstr "Nastavit '%1'"
-
-#~ msgctxt "@action:button"
-#~ msgid "Modify"
-#~ msgstr "Změnit"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgid "Add Account"
-#~ msgstr "Přidat účet"
-
-#~ msgid "Manage Tags"
-#~ msgstr "Spravovat značky"
-
-#~ msgctxt "@title:dialog"
-#~ msgid "Confirm Tag Deletion"
-#~ msgstr "Potvrdit smazání značky"
-
-#~ msgid "Are you sure you want to delete tag <b>%1</b>?"
-#~ msgstr "Opravdu si přejete smazat značku <b>%1</b>?"
-
-#~ msgid "Create a New Tag…"
-#~ msgstr "Vytvořit novou značku…"
-
-#~ msgctxt ""
-#~ "%1 is the month and year of the range start, %2 is the same for range end"
-#~ msgid "%1 - %2"
-#~ msgstr "%1 - %2"
