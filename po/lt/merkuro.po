@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-30 00:42+0000\n"
-"PO-Revision-Date: 2024-12-07 00:36+0200\n"
+"PO-Revision-Date: 2025-09-01 23:42+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: calendar/calendarapplication.cpp:26 calendar/calendarapplication.cpp:30
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -46,10 +46,9 @@ msgid "Ctrl+2"
 msgstr "Vald+2"
 
 #: calendar/calendarapplication.cpp:83
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Work Week View"
-msgstr "Savaitės rodinys"
+msgstr "Darbo savaitės rodinys"
 
 #: calendar/calendarapplication.cpp:99
 #, kde-format
@@ -213,10 +212,9 @@ msgid "Calendar Application"
 msgstr "Kalendoriaus programa"
 
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021-2024"
-msgstr "(c) KDE bendruomenė 2021–2024"
+msgstr "© KDE bendruomenė 2021–2024"
 
 #: calendar/main.cpp:66 contacts/main.cpp:60 launcher/main.cpp:56
 #: mail/main.cpp:62
@@ -813,9 +811,7 @@ msgid "%1 – %2"
 msgstr ""
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, fuzzy, kde-format
-#| msgctxt "%1 is month of range start, %2 is month + year of range end"
-#| msgid "<b>%1</b> - %2"
+#, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> – %2"
@@ -930,12 +926,10 @@ msgid "Delete All"
 msgstr ""
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Taisyti kalendorių…"
+msgstr "Taisyti kalendorių"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
 #, fuzzy, kde-format
@@ -1012,8 +1006,7 @@ msgid "Synchronize after"
 msgstr ""
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Niekada"
@@ -1551,78 +1544,64 @@ msgid "Return to Location"
 msgstr ""
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Sukurti"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
-#| msgid "New Event…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Naujas įvykis…"
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
-#| msgid "New Task…"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Nauja užduotis…"
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
-#| msgid "Monthly"
+#, kde-format
 msgctxt "@title"
 msgid "Month"
-msgstr "Kas mėnesį"
+msgstr "Mėnuo"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu open week view"
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Savaitė"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu open week view"
-#| msgid "Week"
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "Savaitė"
+msgstr "Darbo savaitė"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu open 3 days view"
-#| msgid "3 Days"
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 dienos"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu open day view"
-#| msgid "Day"
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Diena"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
-msgstr "Tvarkaraščio rodinys"
+msgstr "Tvarkaraštis"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
-msgstr "Užduotis"
+msgstr "Užduotys"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:263
 #, kde-format
@@ -1704,10 +1683,9 @@ msgid "Previous Three Days"
 msgstr "Ankstesnės trys dienos"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
-#| msgid "Previous Week"
+#, kde-format
 msgid "Previous Work Week"
-msgstr "Ankstesnė savaitė"
+msgstr "Ankstesnė darbo savaitė"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1725,10 +1703,9 @@ msgid "Next Three Days"
 msgstr ""
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
-#| msgid "Next Week"
+#, kde-format
 msgid "Next Work Week"
-msgstr "Kita savaitė"
+msgstr "Kita darbo savaitė"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1747,12 +1724,10 @@ msgid "Week"
 msgstr "Savaitė"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu open week view"
-#| msgid "Week"
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "Savaitė"
+msgstr "Darbo savaitė"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -1850,11 +1825,10 @@ msgid "Create a New Task…"
 msgstr ""
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
-#| msgid "All Tasks"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Visos užduotys"
+msgstr "Pridėti užduotį"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1868,32 +1842,25 @@ msgid "Display Events"
 msgstr ""
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Taisyti kalendorių…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Update calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Atnaujinti kalendorių"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:75
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Ištrinti kalendorių"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Nustatyti kalendoriaus spalvą…"
@@ -2550,17 +2517,16 @@ msgid "Delete contact"
 msgstr "Ištrinti adresatą"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
-#| msgid "Move to trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr "Perkelti į šiukšlinę"
+msgstr "Perkelti į…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr ""
+msgstr "Kopijuoti į…"
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2722,12 +2688,10 @@ msgid "Delete address book"
 msgstr ""
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
-msgstr "Nustatyti kalendoriaus spalvą…"
+msgstr "Nustatyti adresų knygos spalvą…"
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
@@ -2750,7 +2714,7 @@ msgstr ""
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
 #, kde-format
 msgid "Address book:"
-msgstr ""
+msgstr "Adresų knyga:"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:55
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:62
@@ -3038,7 +3002,7 @@ msgstr ""
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:63
 #, kde-format
 msgid "Address Book:"
-msgstr ""
+msgstr "Adresų knyga:"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
 #, kde-format
@@ -3411,26 +3375,24 @@ msgid "Confirm Contact Deletion"
 msgstr ""
 
 #: contacts/qml/private/DeleteContactDialog.qml:26
-#, fuzzy, kde-format
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "Ištrinti adresatą"
-msgstr[1] "Ištrinti adresatą"
-msgstr[2] "Ištrinti adresatą"
-msgstr[3] "Ištrinti adresatą"
+msgstr[1] "Ištrinti adresatus"
+msgstr[2] "Ištrinti adresatus"
+msgstr[3] "Ištrinti adresatus"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete your contact: <b>%1</b>?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Ar tikrai norite ištrinti adresatą: <b>%1</b>?"
-msgstr[1] "Ar tikrai norite ištrinti adresatą: <b>%1</b>?"
-msgstr[2] "Ar tikrai norite ištrinti adresatą: <b>%1</b>?"
-msgstr[3] "Ar tikrai norite ištrinti adresatą: <b>%1</b>?"
+msgstr[0] "Ar tikrai norite ištrinti adresatą:"
+msgstr[1] "Ar tikrai norite ištrinti adresatus:"
+msgstr[2] "Ar tikrai norite ištrinti adresatus:"
+msgstr[3] "Ar tikrai norite ištrinti adresatus:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #, kde-format
@@ -3475,10 +3437,9 @@ msgid "merkuro Launcher"
 msgstr "merkuro paleidyklė"
 
 #: launcher/main.cpp:55
-#, fuzzy, kde-format
-#| msgid "(c) 2024"
+#, kde-format
 msgid "© 2024"
-msgstr "(c) 2024"
+msgstr "© 2024"
 
 #: launcher/main.cpp:57
 #, kde-format
@@ -3542,27 +3503,23 @@ msgid "Mark as Unread"
 msgstr ""
 
 #: mail/mailapplication.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mark Task as Incomplete"
+#, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
-msgstr "Žymėti užduotį kaip neužbaigtą"
+msgstr "Žymėti kaip svarbų"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Perkelti į šiukšlinę"
 
 #: mail/mailapplication.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save as..."
+#, kde-format
 msgctxt "@action"
 msgid "Save as…"
-msgstr "Įrašyti kaip..."
+msgstr "Įrašyti kaip…"
 
 #: mail/mailclient.cpp:48 mail/mailclient.cpp:74
 #, kde-format
