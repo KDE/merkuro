@@ -82,7 +82,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
     if (!identity.transport().isEmpty()) {
         transportId = identity.transport().toInt();
     } else {
-        qWarning(MERKURO_MAIL_LOG) << "Error while loading transport, using default tranport instead";
+        qWarning(MERKURO_MAIL_LOG) << "Error while loading transport, using default transport instead";
         transportId = transportMgr->defaultTransportId();
     }
 

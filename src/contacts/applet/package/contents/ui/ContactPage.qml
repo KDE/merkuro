@@ -188,7 +188,7 @@ PlasmaComponents3.ScrollView {
                 PlasmaComponents3.Label {
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
-                    visible: text.lenght !== 0
+                    visible: text.length !== 0
                     text: (model.typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", model.typeLabel) : '') + ' ' + model.formattedAddress
                 }
             }
