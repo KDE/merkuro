@@ -78,7 +78,7 @@ Delegates.IndicatorItemDelegate {
         }
 
         Components.Avatar {
-            // Euristic to extract name from "Name <email>" pattern
+            // Heuristic to extract name from "Name <email>" pattern
             name: root.from.replace(/<.*>/, '').replace(/\(.*\)/, '')
             visible: !root.selectionModel.hasSelection
             // Extract and use email address as unique identifier for image provider

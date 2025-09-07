@@ -7,7 +7,7 @@
 #include <QSortFilterProxyModel>
 #include <qqmlregistration.h>
 
-/// Contacts model with an email addreess
+/// Contacts model with an email address
 class ContactsModel : public QSortFilterProxyModel
 {
     Q_OBJECT

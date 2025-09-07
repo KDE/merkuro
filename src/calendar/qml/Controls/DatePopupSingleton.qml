@@ -7,7 +7,7 @@ import QtQuick
 import org.kde.kirigamiaddons.dateandtime
 import org.kde.kirigami as Kirigami
 
-/// A sinple singleton to share the instance of this popup accross the whole app.
+/// A sinple singleton to share the instance of this popup across the whole app.
 QtObject {
     id: root
 

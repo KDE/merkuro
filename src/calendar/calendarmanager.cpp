@@ -745,7 +745,7 @@ void CalendarManager::toggleCollection(qint64 collectionId)
 
 IncidenceWrapper *CalendarManager::createIncidenceWrapper()
 {
-    // Ownership is transfered to the qml engine
+    // Ownership is transferred to the qml engine
     return new IncidenceWrapper(this, nullptr);
 }
 
