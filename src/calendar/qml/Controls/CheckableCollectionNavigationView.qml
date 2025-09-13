@@ -287,6 +287,7 @@ QQC2.ScrollView {
                             collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
                             agentConfiguration: root.agentConfiguration
                             enabled: root.mode !== CalendarApplication.Contact
+                            allCollectionsChecked: areAllCollectionsChecked()
                             onToggled: {
                                 model.checkState = model.checkState === 0 ? 2 : 0
                                 root.collectionCheckChanged()
@@ -294,6 +295,36 @@ QQC2.ScrollView {
                             onCloseParentDrawer: () => {
                                 root.closeParentDrawer()
                             }
+
+                            onShowAllCollections: (shown) => setAllCheckStatus(shown)
+
+                            function areAllCollectionsChecked() {
+                                let allChecked = true;
+	                            // TODO: This is a bit of a hack, maybe this can be rewritten with QAbstractItemModel::match?
+                                for (let i = 0; i < collectionList.model.rowCount(); ++i) {
+                                    const index = collectionList.model.index(i, 0);
+                                    const checkState = collectionList.model.data(index, Qt.CheckStateRole);
+                                    if (checkState === undefined)
+                                        continue;
+                                    if (checkState !== Qt.Checked)
+                                        allChecked = false;
+                                }
+                                return allChecked;
+                            }
+
+                            function setAllCheckStatus(checked) {
+                                for (let i = 0; i < collectionList.model.rowCount(); ++i) {
+                                    const index = collectionList.model.index(i, 0);
+                                    const checkState = collectionList.model.data(index, Qt.CheckStateRole);
+                                    if (checkState === undefined)
+                                        continue;
+                                    collectionList.model.setData(index, checked ? Qt.Checked : Qt.Unchecked, Qt.CheckStateRole);
+                                }
+                            }
+
+                            Component.onCompleted: collectionList.model.dataChanged.connect(() => {
+                                tapHandler.allCollectionsChecked = tapHandler.areAllCollectionsChecked()
+                            });
                         }
 
                         DropArea {

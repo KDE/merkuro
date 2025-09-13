@@ -18,10 +18,12 @@ TapHandler {
     property var collectionId
     property var collectionDetails
     property Akonadi.AgentConfiguration agentConfiguration
+    property bool allCollectionsChecked
 
     signal leftClicked
     signal closeParentDrawer
     signal toggled
+    signal showAllCollections(bool shown)
 
     acceptedButtons: Qt.LeftButton | Qt.RightButton
 
@@ -59,7 +61,9 @@ TapHandler {
         collectionId: root.collectionId
         collectionDetails: root.collectionDetails
         agentConfiguration: root.agentConfiguration
-        onToggled: root.toggled();
+        allCollectionsChecked: root.allCollectionsChecked
+        onToggled: root.toggled()
+        onShowAllCollections: (shown) => root.showAllCollections(shown)
 
         Component.onCompleted: if(root.collectionId && !root.collectionDetails) {
             root.collectionDetails = Calendar.CalendarManager.getCollectionDetails(root.collectionId)

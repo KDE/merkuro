@@ -19,8 +19,10 @@ Components.ConvergentContextMenu {
     required property var collectionId
     required property var collectionDetails
     required property Akonadi.AgentConfiguration agentConfiguration
+	property bool allCollectionsChecked
 
     signal toggled
+    signal showAllCollections(bool shown)
 
     headerContentItem: RowLayout {
         Kirigami.Heading {
@@ -127,5 +129,23 @@ Components.ConvergentContextMenu {
         text: i18nc("@action:inmenu", "Delete calendar source")
         onTriggered: root.agentConfiguration.removeIdentifier(root.collectionDetails.resource)
         visible: root.collectionDetails.isResource
+    }
+
+    Kirigami.Action {
+        separator: true
+    }
+
+    Kirigami.Action {
+        icon.name: "view-visible"
+        text: i18nc("@action:inmenu", "Show all")
+        onTriggered: root.showAllCollections(true)
+        visible: root.collectionDetails.isResource && !allCollectionsChecked
+    }
+
+    Kirigami.Action {
+        icon.name: "view-hidden"
+        text: i18nc("@action:inmenu", "Hide all")
+        onTriggered: root.showAllCollections(false)
+        visible: root.collectionDetails.isResource && allCollectionsChecked
     }
 }
