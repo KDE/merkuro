@@ -66,10 +66,11 @@ Components.ConvergentContextMenu {
         }
     }
 
-    QQC2.Action {
+    Kirigami.Action {
         icon.name: "view-refresh"
         text: i18nc("@action:inmenu", "Update Calendar")
         onTriggered: Calendar.CalendarManager.updateCollection(root.collectionId);
+        visible: !root.collectionDetails.isResource
     }
 
     QQC2.Action {
