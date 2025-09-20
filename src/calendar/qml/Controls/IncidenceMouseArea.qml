@@ -98,7 +98,7 @@ MouseArea {
                     const parentWrapper = Calendar.CalendarManager.createIncidenceWrapper()
                     parentWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(mouseArea.incidenceData.incidencePtr);
 
-                    IncidenceEditorManager.openNewTodoEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, parentWrapper)
+                    Calendar.IncidenceEditorManager.openNewTodoEditorDialog(QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow, parentWrapper)
                 }
                 visible: incidenceData.incidenceType === Calendar.IncidenceWrapper.TypeTodo
             }
