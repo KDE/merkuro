@@ -6,7 +6,6 @@
 #include <KLocalizedString>
 #include <QDate>
 #include <QLocale>
-#include <QtMath>
 #include <chrono>
 
 using namespace std::chrono_literals;

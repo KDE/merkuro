@@ -39,7 +39,6 @@
 #include <KDescendantsProxyModel>
 #include <KLocalizedString>
 #include <QApplication>
-#include <QPointer>
 
 #include "colorproxymodel.h"
 #include "incidencewrapper.h"

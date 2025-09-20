@@ -7,7 +7,6 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KDBusService>
-#include <KLocalizedContext>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KWindowSystem>

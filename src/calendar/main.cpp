@@ -10,7 +10,6 @@
 #include <KCrash>
 #include <KDBusService>
 #include <KIconTheme>
-#include <KLocalizedContext>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KWindowConfig>

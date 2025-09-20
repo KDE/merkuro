@@ -5,8 +5,6 @@
 #include <KAuthorized>
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <QDebug>
-#include <QGuiApplication>
 
 using namespace Qt::StringLiterals;
 

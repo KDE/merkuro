@@ -6,7 +6,6 @@
 
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/SelectionProxyModel>
-#include <KFormat>
 #include <KLocalizedString>
 #include <KMime/Message>
 

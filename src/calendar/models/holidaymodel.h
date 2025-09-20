@@ -5,7 +5,6 @@
 
 #include <KHolidays/HolidayRegion>
 #include <QDate>
-#include <QHash>
 #include <QObject>
 #include <qqmlintegration.h>
 

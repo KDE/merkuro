@@ -4,9 +4,6 @@
 #include "helper.h"
 
 #include <KIO/CommandLauncherJob>
-#include <KIO/JobUiDelegateFactory>
-#include <KJobUiDelegate>
-#include <KService>
 #include <QApplication>
 
 using namespace Qt::StringLiterals;

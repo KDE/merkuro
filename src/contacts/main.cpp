@@ -6,7 +6,6 @@
 #include <KCrash>
 #include <KDBusService>
 #include <KIconTheme>
-#include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KWindowSystem>
 #include <QApplication>

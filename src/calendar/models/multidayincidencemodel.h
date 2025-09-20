@@ -8,7 +8,6 @@
 #pragma once
 
 #include "incidenceoccurrencemodel.h"
-#include <QAbstractItemModel>
 #include <QList>
 #include <QQmlParserStatus>
 #include <QSharedPointer>

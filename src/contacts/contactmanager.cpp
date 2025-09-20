@@ -38,7 +38,6 @@
 #include <KLocalizedString>
 #include <KSelectionProxyModel>
 #include <KSharedConfig>
-#include <QBuffer>
 #include <QItemSelectionModel>
 #include <QPointer>
 using namespace Qt::Literals::StringLiterals;

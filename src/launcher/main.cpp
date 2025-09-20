@@ -2,13 +2,11 @@
 // SPDX-FileCopyrightText: 2024 Carl Schwan <carl@carlschwan.eu>
 
 #include <QApplication>
-#include <QtGlobal>
 
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
-#include <QUrl>
 
 #include "../config-merkuro.h"
 #include <KAboutData>
@@ -17,7 +15,6 @@
 #include <KLocalizedString>
 
 #ifdef Q_OS_WINDOWS
-#include <QFont>
 #include <Windows.h>
 #endif
 

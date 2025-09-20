@@ -5,7 +5,6 @@
 #include <AbstractKirigamiApplication>
 #include <KSharedConfig>
 #include <QObject>
-#include <QSortFilterProxyModel>
 #include <merkurocomponents_export.h>
 
 class MERKUROCOMPONENTS_EXPORT AbstractMerkuroApplication : public AbstractKirigamiApplication

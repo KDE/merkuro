@@ -3,7 +3,6 @@
 
 #include "../utils.h"
 
-#include <QSignalSpy>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;
 class CalendarUtilsTest : public QObject

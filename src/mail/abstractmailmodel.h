@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include <QModelIndex>
 #include <QVariant>
 
 namespace Akonadi

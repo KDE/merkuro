@@ -25,7 +25,6 @@
 #include <Akonadi/ServerManager>
 #include <Akonadi/Session>
 #include <KConfigGroup>
-#include <KDescendantsProxyModel>
 #include <KLocalizedString>
 #include <KMbox/MBox>
 #include <KMime/Message>

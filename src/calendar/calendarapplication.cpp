@@ -14,9 +14,7 @@
 #include <KWindowConfig>
 #include <KWindowSystem>
 #include <QGuiApplication>
-#include <QMenu>
 #include <QQuickWindow>
-#include <QSortFilterProxyModel>
 
 #include "calendaradaptor.h"
 #include "mousetracker.h"
