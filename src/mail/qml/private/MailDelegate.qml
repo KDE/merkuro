@@ -26,6 +26,27 @@ Delegates.IndicatorItemDelegate {
 
     readonly property string datetimeText: datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
 
+    // Expected format for `from` is
+    //     Some Name <email@domain.test>
+    // The two properties bellow are for extracting the "name" and "email" part of the `from` field
+    // while doing minor validation & sanity checks to avoid errors
+    readonly property string fromEmail: {
+        // If there are no `<>`s, it's likely that the email is in the following format instead:
+        //     email@domain.test
+        if (!(from.includes("<") && from.includes(">")))
+            return from
+
+        return /<(.*)>/.exec(root.from)[1]
+    }
+    readonly property string fromName: {
+        // If there are no `<>`s, it's likely that the email is in the following format instead:
+        //     email@domain.test
+        if (!(from.includes("<") && from.includes(">")))
+            return from
+
+        return root.from.replace(/ <.*>/, "")
+    }
+
     unread: status && !status.isRead
 
     signal openMailRequested()
@@ -78,11 +99,10 @@ Delegates.IndicatorItemDelegate {
         }
 
         Components.Avatar {
-            // Heuristic to extract name from "Name <email>" pattern
-            name: root.from.replace(/<.*>/, '').replace(/\(.*\)/, '')
+            name: root.fromName
             visible: !root.selectionModel.hasSelection
-            // Extract and use email address as unique identifier for image provider
-            source: 'image://contact/' + new RegExp("<(.*)>").exec(root.from)[1] ?? ''
+            // Use email address as unique identifier for image provider
+            source: 'image://contact/' + root.fromEmail
             Layout.rightMargin: Kirigami.Units.largeSpacing
             sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
             sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
