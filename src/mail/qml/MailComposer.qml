@@ -48,9 +48,11 @@ Kirigami.ScrollablePage {
             model: KIdentityManagement.IdentityModel {}
             textRole: "display"
             valueRole: "uoid"
-            onCurrentIndexChanged: from.text = model.email(currentValue)
+            onActivated: from.text = model.email(currentValue)
             Layout.rightMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+
+            Component.onCompleted: from.text = model.email(currentValue)
         }
 
         Repeater {
