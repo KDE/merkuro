@@ -147,26 +147,26 @@ BaseApplication {
 
         function onOpenWeekView(): void {
             if(root.pageStack.currentItem.mode !== CalendarApplication.Week || root.ignoreCurrentPage) {
-                root.switchView(hourlyViewComponent, { createEventAction: createAction} );
+                root.switchView(hourlyViewComponent, { createEventAction: root.createAction} );
             }
         }
 
         function onOpenWorkWeekView(): void {
             // Assuming WorkWeek uses HourlyView with 5 days
             if(root.pageStack.currentItem.mode !== CalendarApplication.WorkWeek || root.ignoreCurrentPage) {
-                root.switchView(hourlyViewComponent, { daysToShow: 5, createEventAction: createAction });
+                root.switchView(hourlyViewComponent, { daysToShow: 5, createEventAction: root.createAction });
             }
         }
 
         function onOpenThreeDayView(): void {
             if(root.pageStack.currentItem.mode !== CalendarApplication.ThreeDay || root.ignoreCurrentPage) {
-                root.switchView(hourlyViewComponent, { daysToShow: 3, createEventAction: createAction });
+                root.switchView(hourlyViewComponent, { daysToShow: 3, createEventAction: root.createAction });
             }
         }
 
         function onOpenDayView(): void {
             if(root.pageStack.currentItem.mode !== CalendarApplication.Day || root.ignoreCurrentPage) {
-                root.switchView(hourlyViewComponent, { daysToShow: 1, createEventAction: createAction });
+                root.switchView(hourlyViewComponent, { daysToShow: 1, createEventAction: root.createAction });
             }
         }
 
@@ -258,7 +258,7 @@ BaseApplication {
             if (root.pageStack.currentItem.mode & (CalendarApplication.Todo | CalendarApplication.Event) ||
                 (root.pageStack.currentItem.mode === CalendarApplication.Todo && incidenceData.incidenceType !== IncidenceWrapper.TypeTodo)) {
 
-                Kirigami.Settings.isMobile ? dayViewAction.trigger() : weekViewAction.trigger();
+                Kirigami.Settings.isMobile ? root.dayViewAction.trigger() : root.weekViewAction.trigger();
             }
 
             CalendarUiUtils.setUpView(incidenceData);
@@ -271,7 +271,7 @@ BaseApplication {
 
         function onUndoRedoDataChanged() {
             root.undoAction.enabled = CalendarManager.undoRedoData.undoAvailable;
-            redoAction.enabled = CalendarManager.undoRedoData.redoAvailable;
+            root.redoAction.enabled = CalendarManager.undoRedoData.redoAvailable;
         }
 
         function onErrorOccurred(error: string): void {
@@ -383,7 +383,7 @@ BaseApplication {
             width: Kirigami.Settings.isMobile ? parent.width : actualWidth
             height: Kirigami.Settings.isMobile 
                 ? root.QQC2.ApplicationWindow.window.height * 0.6
-                : (parent.height - (menuBar.active ? menuBar.height : 0)) // Work around incorrect height calculation when menu bar active
+                : (parent.height - (root.menuBar.active ? root.menuBar.height : 0)) // Work around incorrect height calculation when menu bar active
 
             modal: !root.wideScreen || !enabled
             onEnabledChanged: drawerOpen = enabled && !modal
@@ -396,12 +396,12 @@ BaseApplication {
             onVisibleChanged: visible ? root.openOccurrence = incidenceData : root.openOccurrence = null
 
             ResizerSeparator {
-                anchors.left: if(Qt.application.layoutDirection !== Qt.RightToLeft) parent.left
-                anchors.leftMargin: if(Qt.application.layoutDirection !== Qt.RightToLeft) -1 // Cover up the natural separator on the drawer
+                anchors.left: if(Application.layoutDirection !== Qt.RightToLeft) parent.left
+                anchors.leftMargin: if(Application.layoutDirection !== Qt.RightToLeft) -1 // Cover up the natural separator on the drawer
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                anchors.right: if(Qt.application.layoutDirection === Qt.RightToLeft) parent.right
-                anchors.rightMargin: if(Qt.application.layoutDirection === Qt.RightToLeft) -1
+                anchors.right: if(Application.layoutDirection === Qt.RightToLeft) parent.right
+                anchors.rightMargin: if(Application.layoutDirection === Qt.RightToLeft) -1
                 width: 1
                 oversizeMouseAreaHorizontal: 5
                 z: 500
@@ -414,8 +414,8 @@ BaseApplication {
                 onDragBegin: savePos()
                 onDragReleased: savePos()
 
-                onDragPositionChanged: {
-                    if (Qt.application.layoutDirection === Qt.RightToLeft) {
+                onDragPositionChanged: (changeX, changeY) => {
+                    if (Application.layoutDirection === Qt.RightToLeft) {
                         incidenceInfoDrawer.actualWidth = Math.min(incidenceInfoDrawer.maxWidth, Math.max(incidenceInfoDrawer.minWidth, Config.incidenceInfoDrawerDrawerWidth + changeX));
                     } else {
                         incidenceInfoDrawer.actualWidth = Math.min(incidenceInfoDrawer.maxWidth, Math.max(incidenceInfoDrawer.minWidth, Config.incidenceInfoDrawerDrawerWidth - changeX));
