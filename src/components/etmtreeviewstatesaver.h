@@ -50,7 +50,7 @@ private:
     void listenToPendingChanges();
 
     QStringList getExpandedItems(const QModelIndex &index) const;
-    KDescendantsProxyModel *m_model;
+    KDescendantsProxyModel *m_model = nullptr;
     QString m_configGroup;
     QSet<QString> m_pendingExpansions;
     QString m_pendingCurrent;
