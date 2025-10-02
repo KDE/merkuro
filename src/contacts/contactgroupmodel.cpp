@@ -127,7 +127,7 @@ public:
     QList<GroupMember> mMembers;
     KContacts::ContactGroup mGroup;
     QString mLastErrorMessage;
-    bool mIsEditing;
+    bool mIsEditing = false;
 };
 
 ContactGroupModel::ContactGroupModel(bool isEditing, QObject *parent)

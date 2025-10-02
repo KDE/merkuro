@@ -71,7 +71,9 @@ public:
         : QObject(model)
         , mCheckableProxy(model)
     {
-        connect(model, &QAbstractItemModel::rowsInserted, this, &NewCalendarChecker::onSourceRowsInserted);
+        if (model) {
+            connect(model, &QAbstractItemModel::rowsInserted, this, &NewCalendarChecker::onSourceRowsInserted);
+        }
         qRegisterMetaType<QPersistentModelIndex>("QPersistentModelIndex");
     }
 
