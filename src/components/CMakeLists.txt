@@ -65,11 +65,6 @@ ecm_add_qml_module(MerkuroComponents
     DEPENDENCIES org.kde.kirigamiaddons.statefulapp
 )
 
-target_sources(MerkuroComponents PRIVATE
-    etmtreeviewstatesaver.cpp
-    etmtreeviewstatesaver.h
-)
-
 ecm_target_qml_sources(MerkuroComponents SOURCES
     QML_FILES
         # Shell components
