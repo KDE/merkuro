@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2025-09-19 12:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -441,7 +441,7 @@ msgstr "%1 (prioritat més baixa)"
 msgid "No set priority level"
 msgstr "No hi ha establit cap nivell de prioritat"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1743,8 +1743,9 @@ msgid "No set priority"
 msgstr "No hi ha establida cap prioritat"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, kde-format
-msgid "No task calendars enabled."
+#, fuzzy, kde-format
+#| msgid "No task calendars enabled."
+msgid "No task sets enabled."
 msgstr "No s'ha habilitat cap calendari amb tasques."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
@@ -1815,53 +1816,66 @@ msgstr "Afig una tasca"
 msgid "Holidays"
 msgstr "Dies festius"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr "Mostra els esdeveniments"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Edita el calendari…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Actualitza el calendari"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Suprimix el calendari"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Establix el color del calendari…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Configureu la font de calendari…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Actualitza la font de calendari"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Suprimix la font de calendari"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "Mostra el mapa"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr ""
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2006,7 +2020,7 @@ msgid "Enter email of recipient…"
 msgstr "Introduïu el correu electrònic del destinatari…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr "Envia"
@@ -3710,27 +3724,27 @@ msgstr "De:"
 msgid "Identity:"
 msgstr "Identitat:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr "Respon a:"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr "Assumpte:"

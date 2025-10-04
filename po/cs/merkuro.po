@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2024-10-18 15:55+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -445,7 +445,7 @@ msgstr "%1 (Nejnižší priorita)"
 msgid "No set priority level"
 msgstr "Nastavit úroveň priorita"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1743,8 +1743,9 @@ msgid "No set priority"
 msgstr "Žádná nastavená priorita"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, kde-format
-msgid "No task calendars enabled."
+#, fuzzy, kde-format
+#| msgid "No task calendars enabled."
+msgid "No task sets enabled."
 msgstr "Kalendář s úlohami není povolen."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
@@ -1814,53 +1815,66 @@ msgstr ""
 msgid "Holidays"
 msgstr "Svátky"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Nastavení zdroje kalendáře..."
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Aktualizovat zdroj kalendáře"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Smazat zdroj kalendáře"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "Ukázat zobrazení"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr ""
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2000,7 +2014,7 @@ msgid "Enter email of recipient…"
 msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr "Odeslat"
@@ -3693,27 +3707,27 @@ msgstr "Od:"
 msgid "Identity:"
 msgstr "Identita:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr "Do:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr "Kopie: "
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr "Skrytá kopie:"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr "Odpovědět komu:"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr "Předmět:"

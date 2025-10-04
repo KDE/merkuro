@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 10:14+0200\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
+"PO-Revision-Date: 2025-10-04 08:19+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -454,7 +454,7 @@ msgstr "%1 (Najnižja prednost)"
 msgid "No set priority level"
 msgstr "Ni določena raven prednosti"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1775,8 +1775,8 @@ msgstr "Ni določena raven prednosti"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
-msgid "No task calendars enabled."
-msgstr "Koledar ne omogoča nalog."
+msgid "No task sets enabled."
+msgstr "Ni omogočenih naborov opravil."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
@@ -1845,53 +1845,65 @@ msgstr "Dodaj nalogo"
 msgid "Holidays"
 msgstr "Dopusti"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr "Prikaži dogodke"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Uredi koledar…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Posodobi koledar"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Zbriši koledar"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Nastavi barvo koledarja…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Nastavitve virov koledarjev…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Posodobi vir koledarja"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Zbriši vir koledarja"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "Prikaži vse"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr "Skrij vse"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2035,7 +2047,7 @@ msgid "Enter email of recipient…"
 msgstr "Vnesite e-naslov prejemnika…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
@@ -3740,27 +3752,27 @@ msgstr "Od:"
 msgid "Identity:"
 msgstr "Identiteta:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr "Za:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr "Kp:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr "Skp:"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr "Odgovor-na:"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr "Predmet:"

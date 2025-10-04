@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2025-09-19 09:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -438,7 +438,7 @@ msgstr "%1 (En düşük öncelik)"
 msgid "No set priority level"
 msgstr "Öncelik düzeyi ayarlanmamış"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1740,8 +1740,9 @@ msgid "No set priority"
 msgstr "Öncelik ayarlanmamış"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, kde-format
-msgid "No task calendars enabled."
+#, fuzzy, kde-format
+#| msgid "No task calendars enabled."
+msgid "No task sets enabled."
 msgstr "Görev takvimleri etkinleştirilmemiş."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
@@ -1811,53 +1812,66 @@ msgstr "Görev Ekle"
 msgid "Holidays"
 msgstr "Tatiller"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr "Etkinlikleri Görüntüle"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Takvimi Düzenle…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Takvimi Güncelle"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Takvimi Sil"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Takvim Rengini Ayarla…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Takvim Kaynağı Ayarları…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Takvim Kaynağını Güncelle"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Takvim Kaynağını Sil"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "Haritayı göster"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr ""
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2001,7 +2015,7 @@ msgid "Enter email of recipient…"
 msgstr "Alıcının e-posta adresini gir…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
@@ -3693,27 +3707,27 @@ msgstr "Kimden:"
 msgid "Identity:"
 msgstr "Kimlik:"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr "Kime:"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr "Kopya:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr "Gizli kopya:"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr "Yanıt adresi:"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr "Konu:"

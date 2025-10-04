@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -450,7 +450,7 @@ msgstr "%1 (Η χαμηλότερη προτεραιότητα)"
 msgid "No set priority level"
 msgstr "Δεν ρυθμίστηκε επίπεδο προτεραιότητας"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1804,8 +1804,9 @@ msgid "No set priority"
 msgstr "Δεν ρυθμίστηκε επίπεδο προτεραιότητας"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, kde-format
-msgid "No task calendars enabled."
+#, fuzzy, kde-format
+#| msgid "No task calendars enabled."
+msgid "No task sets enabled."
 msgstr "Ημερολόγια εργασιών δεν έχουν ενεργοποιηθεί."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
@@ -1878,60 +1879,73 @@ msgstr "Προσθήκη υπο-εργασίας"
 msgid "Holidays"
 msgstr "ημέρες"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, fuzzy, kde-format
 #| msgid "Import Calendar…"
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "Εισαγωγή ημερολογίου…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, fuzzy, kde-format
 #| msgid "Create new calendar"
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "Δημιουργία νέου ημερολογίου"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, fuzzy, kde-format
 #| msgid "Create new calendar"
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Δημιουργία νέου ημερολογίου"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, fuzzy, kde-format
 #| msgid "Change Calendar Color…"
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "Αλλαγή χρώματος ημερολογίου…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, fuzzy, kde-format
 #| msgid "Calendar sources"
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Πηγές ημερολογίων"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, fuzzy, kde-format
 #| msgid "Create new calendar"
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Δημιουργία νέου ημερολογίου"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, fuzzy, kde-format
 #| msgid "Create new calendar"
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Δημιουργία νέου ημερολογίου"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "Εμφάνιση χάρτη"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr ""
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2072,7 +2086,7 @@ msgid "Enter email of recipient…"
 msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr ""
@@ -3848,27 +3862,27 @@ msgstr ""
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr ""

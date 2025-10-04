@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-03 00:45+0000\n"
+"POT-Creation-Date: 2025-10-04 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -441,7 +441,7 @@ msgstr "%1 (न्यूनतम प्राथमिकता)"
 msgid "No set priority level"
 msgstr "कोई प्राथमिकता स्तर निर्धारित नहीं"
 
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:45
+#: calendar/qml/Controls/CalendarItemTapHandler.qml:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose Calendar Color"
@@ -1771,8 +1771,9 @@ msgid "No set priority"
 msgstr "कोई प्राथमिकता तय नहीं"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, kde-format
-msgid "No task calendars enabled."
+#, fuzzy, kde-format
+#| msgid "No task calendars enabled."
+msgid "No task sets enabled."
 msgstr "कोई कार्य कैलेंडर सक्षम नहीं है।"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
@@ -1844,13 +1845,13 @@ msgstr "उपकार्य जोड़ें"
 msgid "Holidays"
 msgstr "दिन"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:51
+#: calendar/qml/Menus/CalendarItemMenu.qml:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
 msgstr ""
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:58
+#: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Edit calendar…"
@@ -1858,7 +1859,7 @@ msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
 msgstr "कैलेंडर संपादित करें…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:69
+#: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Update calendar"
@@ -1866,14 +1867,14 @@ msgctxt "@action:inmenu"
 msgid "Update Calendar"
 msgstr "कैलेंडर अद्यतन करें"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:75
+#: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, fuzzy, kde-format
 #| msgid "Delete calendar"
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "कैलेंडर हटाएं"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:99
+#: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Set calendar colour…"
@@ -1881,23 +1882,36 @@ msgctxt "@action:inmenu"
 msgid "Set calendar color…"
 msgstr "कैलेंडर का रंग नियत करें…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:113
+#: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "कैलेंडर स्रोत सेटिंग…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:120
+#: calendar/qml/Menus/CalendarItemMenu.qml:123
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "कैलेंडर स्रोत अद्यतन करें"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:127
+#: calendar/qml/Menus/CalendarItemMenu.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "कैलेंडर स्रोत मिटाएँ"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:141
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:inmenu"
+msgid "Show all"
+msgstr "नक्शा दिखाएं"
+
+#: calendar/qml/Menus/CalendarItemMenu.qml:148
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Hide all"
+msgstr ""
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2052,7 +2066,7 @@ msgid "Enter email of recipient…"
 msgstr "प्राप्तकर्ता का ईमेल दर्ज करें..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:140
+#: mail/qml/MailComposer.qml:142
 #, kde-format
 msgid "Send"
 msgstr "भेजें"
@@ -3789,27 +3803,27 @@ msgstr "से :"
 msgid "Identity:"
 msgstr "पहचान :"
 
-#: mail/qml/MailComposer.qml:68
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
 msgstr "प्रेषिती :"
 
-#: mail/qml/MailComposer.qml:69
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "CC:"
 msgstr "CC :"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:72
 #, kde-format
 msgid "BCC:"
 msgstr "BCC :"
 
-#: mail/qml/MailComposer.qml:71
+#: mail/qml/MailComposer.qml:73
 #, kde-format
 msgid "Reply-To:"
 msgstr "को उत्तर :"
 
-#: mail/qml/MailComposer.qml:91
+#: mail/qml/MailComposer.qml:93
 #, kde-format
 msgid "Subject:"
 msgstr "विषय :"
