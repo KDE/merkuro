@@ -260,15 +260,8 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/ktextaddons/ktextaddons-1.6.0.tar.xz",
-                    "sha256": "d9846505a52f97bda64ead193032bc29573ec31481f473be3c586f5b8321ecdc",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 351168,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/ktextaddons/ktextaddons-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/ktextaddons.git"
                 }
             ]
         },
@@ -294,15 +287,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/frameworks/6.13/ktexttemplate-6.13.0.tar.xz",
-                    "sha256": "4050ce76de38acb8104d8c0b6e7ecb38bf28ff4d65499ec911fb316f383f92d9",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8762,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/ktexttemplate-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/frameworks/ktexttemplate.git"
                 }
             ]
         },
@@ -665,15 +651,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mailimporter-25.04.3.tar.xz",
-                    "sha256": "7e026f46b6a974b5ad82cd74b44fff6026228b28d8ba89e4af9eaa08fe0b367e",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mailimporter-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/mailimporter.git"
                 }
             ]
         },
@@ -686,15 +665,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mailcommon-25.04.3.tar.xz",
-                    "sha256": "2525aa778a922f6735f571a32a896fdfafa1aadfcc4aebd6619306a98f213521",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mailcommon-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/mailcommon.git"
                 }
             ],
             "modules": [
@@ -779,15 +751,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz",
-                    "sha256": "07f6d97362e408dabcfb191b0bfd728edfd5996ee37a84074e928cb2e9c13a9d",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libksieve-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libksieve.git"
                 }
             ]
         },
@@ -800,15 +765,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kdepim-runtime-25.04.3.tar.xz",
-                    "sha256": "133dcf8c314c36ecc8b4775d9eb6d929bbbbd5355dddf29441abaf00fe9a1a89",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kdepim-runtime-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kdepim-runtime.git"
                 }
             ]
         },
@@ -821,15 +779,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/ktnef-25.04.3.tar.xz",
-                    "sha256": "5119f03d17cc1f567c0d429af6506335a1e8c0bd43b539b1b6444ecc3bd6b36a",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ktnef-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/ktnef.git"
                 }
             ]
         },
@@ -838,15 +789,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/mimetreeparser-25.04.3.tar.xz",
-                    "sha256": "26a4440d50ca62db1f154794557d5a216acc44ae96347e072200255a267c4ac4",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/mimetreeparser-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/mimetreeparser.git"
                 }
             ]
         },
