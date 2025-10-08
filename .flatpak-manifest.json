@@ -60,6 +60,17 @@
         "*.la"
     ],
     "copy-icon": true,
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "version": "24.08",
+            "add-ld-path": ".",
+            "no-autodownload": false
+        }
+    },
+    "cleanup-commands": [
+        "mkdir -p /app/lib/ffmpeg"
+    ],
     "modules": [
         {
             "name": "libetebase",
@@ -207,15 +218,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-25.04.3.tar.xz",
-                    "sha256": "042cd3319eadfb82547773e52ce7d41d361d58c4e92fe75a5179c1574ed4f5df",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi.git"
                 }
             ]
         },
@@ -228,15 +232,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmime-25.04.3.tar.xz",
-                    "sha256": "23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmime-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmime.git"
                 }
             ]
         },
@@ -249,15 +246,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-mime-25.04.3.tar.xz",
-                    "sha256": "29588a629e6f961ee48b2825c980840311f1207f7ea1d62d454addadf195c6be",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-mime-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-mime.git"
                 }
             ]
         },
@@ -283,27 +273,6 @@
             ]
         },
         {
-            "name": "kpimtextedit",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-            ],
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz",
-                    "sha256": "4a107ca02a4535fdc08f7b65886cc99cdf9da642a67363bcbab4cba338bc6c32",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kpimtextedit-$version.tar.xz"
-                    }
-                }
-            ]
-        },
-        {
             "name": "libkleo",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
@@ -312,15 +281,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkleo-25.04.3.tar.xz",
-                    "sha256": "7c9b334b226c990d5193b2e66a3ce8de1c5ea6c2afc9175280e6f44d02a7caa8",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkleo-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kleo.git"
                 }
             ]
         },
@@ -353,15 +315,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/grantleetheme-25.04.3.tar.xz",
-                    "sha256": "e25e79c71383f538814b827d7bfaf6ab3fb45c4f78c69aa4101dff6025f4a073",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/grantleetheme-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/grantleetheme.git"
                 }
             ]
         },
@@ -374,15 +329,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-contacts-25.04.3.tar.xz",
-                    "sha256": "6443bb3c86997f42d7fcda559a7a88973ff02eb0f17976d622fbb150b4d85c46",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-contacts-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-contacts.git"
                 }
             ]
         },
@@ -395,15 +343,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkgapi-25.04.3.tar.xz",
-                    "sha256": "cf895f01d1967c029c15239c53e39ab11613b7700ed1afa8e61c6278bd8fbcf8",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkgapi-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kgapi.git"
                 }
             ]
         },
@@ -416,15 +357,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/ksmtp-25.04.3.tar.xz",
-                    "sha256": "18944f9804328c09cc82b1c30f9d7c5812555c45c44199bb9caa37dbd83f4c86",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksmtp-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/ksmtp.git"
                 }
             ]
         },
@@ -437,15 +371,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmailtransport-25.04.3.tar.xz",
-                    "sha256": "364e4e7068be53efb994539a273dcc0e17a45d60a63164307a45cdb3e2df5879",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmailtransport-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmailtransport.git"
                 }
             ]
         },
@@ -479,15 +406,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kidentitymanagement-25.04.3.tar.xz",
-                    "sha256": "13a022e5ea845b4b65982c533d705888282805e0ce44517eccd6e24b8d5e3e7f",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kidentitymanagement-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kidentitymanagement.git"
                 }
             ]
         },
@@ -525,15 +445,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kldap-25.04.3.tar.xz",
-                    "sha256": "f08f4a72efe1bcd197b3e63323aa4fa7a09272d408b8a07db4b61c4792e20b7f",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kldap-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kldap.git"
                 }
             ],
             "modules": [
@@ -595,15 +508,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-search-25.04.3.tar.xz",
-                    "sha256": "5c4af0b6a58993900618c9e9f1291b3cd12a7097c7a700e00e578a500fcc601a",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-search-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-search.git"
                 }
             ]
         },
@@ -616,15 +522,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kmbox-25.04.3.tar.xz",
-                    "sha256": "8f604bdc87587b3bc4d944ad82c17587c8db1930d6435fdbc4e5f8fb17f6727e",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kmbox-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmbox.git"
                 }
             ]
         },
@@ -637,15 +536,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libkdepim-25.04.3.tar.xz",
-                    "sha256": "6d9c78063db5234539e5f3fddbecbca61948b79e60073ec215a7ffdad62418fa",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libkdepim-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kdepim.git"
                 }
             ]
         },
@@ -658,15 +550,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kimap-25.04.3.tar.xz",
-                    "sha256": "2adc1a8928d0705f31afd6050dc2840690ae0b6250f55b1bc952579f440331ee",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kimap-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kimap.git"
                 }
             ]
         },
@@ -679,15 +564,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/pimcommon-25.04.3.tar.xz",
-                    "sha256": "7e6cb554ce25450f2d9b98805d6404e8d610fda411003eb4a61726c710444855",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/pimcommon-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/pimcommon.git"
                 }
             ]
         },
@@ -700,15 +578,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/libgravatar-25.04.3.tar.xz",
-                    "sha256": "24e8be07bb69aae682c30e2c6fc056664f97d74c0ef5b3c6f2ebe25f16d00647",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/libgravatar-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/libgravatar.git"
                 }
             ]
         },
@@ -721,15 +592,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/messagelib-25.04.3.tar.xz",
-                    "sha256": "87048febcbad9827b8ec1d894aa73996d5c48d7840273a04dafb7de00991c0eb",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/messagelib-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/messagelib.git"
                 }
             ],
             "modules": [
@@ -766,15 +630,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/kcalutils-25.04.3.tar.xz",
-                    "sha256": "3a0e29a35ddbc68b546ac94ff5afc9381c4af4c5f6cc855876ae4a2c5219454d",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/kcalutils-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kcalutils.git"
                 }
             ]
         },
@@ -841,27 +698,6 @@
                 }
             ],
             "modules": [
-                {
-                    "name": "ffmpeg",
-                    "config-opts": [
-                        "--enable-pic",
-                        "--enable-shared",
-                        "--disable-doc",
-                        "--disable-static",
-                        "--enable-gpl",
-                        "--enable-libvpx",
-                        "--enable-libmp3lame",
-                        "--enable-libvorbis",
-                        "--enable-libopus"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://ffmpeg.org/releases/ffmpeg-4.4.5.tar.xz",
-                            "sha256": "f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07"
-                        }
-                    ]
-                },
                 {
                     "name": "phonon",
                     "config-opts": [
