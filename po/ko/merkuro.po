@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-04 00:43+0000\n"
-"PO-Revision-Date: 2025-06-10 22:41+0200\n"
+"PO-Revision-Date: 2025-10-09 02:01+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -210,10 +210,9 @@ msgid "Calendar Application"
 msgstr "캘린더 앱"
 
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
-#, fuzzy, kde-format
-#| msgid "© KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021–2024"
-msgstr "© KDE Community 2021-2024"
+msgstr "© KDE Community 2021–2024"
 
 #: calendar/main.cpp:66 contacts/main.cpp:60 launcher/main.cpp:53
 #: mail/main.cpp:62
@@ -670,8 +669,7 @@ msgid "Add Sub-Task"
 msgstr "하위 작업 추가"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:108
-#, fuzzy, kde-format
-#| msgid "Set priority..."
+#, kde-format
 msgid "Set priority…"
 msgstr "우선 순위 설정..."
 
@@ -727,10 +725,9 @@ msgid "9 (lowest priority)"
 msgstr "9(가장 낮은 우선 순위)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
-#, fuzzy, kde-format
-#| msgid "Set due date..."
+#, kde-format
 msgid "Set due date…"
-msgstr "만료 기한 설정..."
+msgstr "만료 기한 설정…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:209
 #, kde-format
@@ -1723,10 +1720,9 @@ msgid "No set priority"
 msgstr "설정한 우선 순위 없음"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, fuzzy, kde-format
-#| msgid "No task calendars enabled."
+#, kde-format
 msgid "No task sets enabled."
-msgstr "활성화된 할 일 캘린더가 없습니다."
+msgstr "활성화된 할 일 모음이 없습니다."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
@@ -1844,17 +1840,16 @@ msgid "Delete calendar source"
 msgstr "캘린더 원본 삭제"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:141
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
-msgstr "지도 표시"
+msgstr "모두 표시"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:148
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
-msgstr ""
+msgstr "모두 숨기기"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -1912,41 +1907,34 @@ msgstr "계정"
 #: calendar/qml/Settings/ConfigurationsView.qml:28
 #, kde-format
 msgid "Availability"
-msgstr ""
+msgstr "사용 가능"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Availability"
-msgstr ""
+msgstr "사용 가능 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Free/Busy Publishing settings"
+#, kde-format
 msgid "Availability Publishing settings"
-msgstr "바쁨/한가함 게시 설정"
+msgstr "사용 가능 여부 게시 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"바쁨/한가함 정보를 게시하면 다른 사람들이 이벤트에 초대할 때 캘린더 일정 사"
-"용 가능 여부를 고려할 수 있습니다. 바쁨으로 표시한 시간만 공개되며, 왜 바쁨으"
-"로 표시했는지는 공개하지 않습니다."
+"사용 가능 정보를 게시하면 다른 사람들이 이벤트에 초대할 때 캘린더 일정 사용 "
+"가능 여부를 고려할 수 있습니다. 바쁨으로 표시한 시간만 공개되며, 왜 바쁨으로 "
+"표시했는지는 공개하지 않습니다."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "자동으로 바쁨/한가함 정보 게시"
+msgstr "자동으로 사용 가능 정보 게시"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -1954,10 +1942,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "최소 업로드 시간 간격(분 단위)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Number of days of free/busy info to publish: "
+#, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr "바쁨/한가함 정보를 게시할 일자 수:"
+msgstr "사용 가능 정보를 게시할 일자 수:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -1990,22 +1977,19 @@ msgid "Save password"
 msgstr "암호 저장"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Click here to publish Free/Busy information manually"
+#, kde-format
 msgid "Click here to publish availability information manually"
-msgstr "바쁨/한가함 정보를 수동으로 게시하려면 클릭하십시오"
+msgstr "사용 가능 정보를 수동으로 게시하려면 클릭하십시오"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Email Client"
+#, kde-format
 msgid "Email availability"
-msgstr "이메일 클라이언트"
+msgstr "사용 가능 이메일 전송"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Enter email of recipient..."
+#, kde-format
 msgid "Enter email of recipient…"
-msgstr "수신자 이메일 주소 입력..."
+msgstr "수신자 이메일 주소 입력…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:142
@@ -2014,28 +1998,23 @@ msgid "Send"
 msgstr "보내기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "바쁨/한가함 가져오기 설정"
+msgstr "사용 가능 여부 가져오기 설정"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"다른 사람의 바쁨/한가함 정보를 가져오면 미팅에 초대할 때 캘린더 정보를 참조"
-"할 수 있습니다."
+"다른 사람의 사용 가능 정보를 가져오면 미팅에 초대할 때 캘린더 정보를 참조할 "
+"수 있습니다."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Retrieve others' free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "자동으로 다른 사람의 바쁨/한가함 정보 가져오기"
+msgstr "자동으로 다른 사람의 사용 가능 정보 가져오기"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
@@ -2728,26 +2707,22 @@ msgid "Dr."
 msgstr "박사"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Miss"
+#, kde-format
 msgid "Miss"
 msgstr "Miss"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mr."
+#, kde-format
 msgid "Mr."
 msgstr "Mr."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Mrs."
+#, kde-format
 msgid "Mrs."
 msgstr "Mrs."
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
-#, fuzzy, kde-format
-#| msgid "Ms."
+#, kde-format
 msgid "Ms."
 msgstr "Ms."
 
@@ -3614,10 +3589,9 @@ msgid "Create Folder"
 msgstr "폴더 만들기"
 
 #: mail/qml/actions/NewFolderAction.qml:39
-#, fuzzy, kde-format
-#| msgid "Folder Name..."
+#, kde-format
 msgid "Folder Name…"
-msgstr "폴더 이름..."
+msgstr "폴더 이름…"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
