@@ -66,7 +66,7 @@ QQC2.ScrollView {
         }
 
         const currentDate = Calendar.DateTimeState.currentDate;
-        if (currentDate.getDate() > 1 && currentDate.getMonth() === month && currentDate.getFullYear() === year) {
+        if (currentDate.getDate() > 1 && currentDate.getMonth() === startDate.getMonth() && currentDate.getFullYear() === startDate.getFullYear()) {
             scheduleListView.positionViewAtIndex(currentDate.getDate() - 1, ListView.Beginning);
         } else {
             scheduleListView.positionViewAtBeginning()
@@ -82,17 +82,17 @@ QQC2.ScrollView {
         clip: true
 
         model: Calendar.MultiDayIncidenceModel {
-           periodLength: 1
-           showTodos: Calendar.Config.showTodosInCalendarViews
-           showSubTodos: Calendar.Config.showSubtodosInCalendarViews
-           active: scrollView.isCurrentItem
-           model: Calendar.IncidenceOccurrenceModel {
-               start: scrollView.startDate
-               length: scrollView.daysInMonth
-               calendar: Calendar.CalendarManager.calendar
-               filter: Calendar.Filter
-           }
-       }
+            periodLength: 1
+            showTodos: Calendar.Config.showTodosInCalendarViews
+            showSubTodos: Calendar.Config.showSubtodosInCalendarViews
+            active: scrollView.isCurrentItem
+            model: Calendar.IncidenceOccurrenceModel {
+                start: scrollView.startDate
+                length: scrollView.daysInMonth
+                calendar: Calendar.CalendarManager.calendar
+                filter: Calendar.Filter
+            }
+        }
 
         delegate: Rectangle {
             id: backgroundRectangle
