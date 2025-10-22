@@ -170,6 +170,7 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/Settings/FreeBusySettingsPage.qml
         qml/Settings/ViewSettingsPage.qml
         qml/Settings/SourceSettingsPage.qml
+        qml/Settings/SystemAccountsForm.qml
 
         qml/Menus/CalendarItemMenu.qml
 )

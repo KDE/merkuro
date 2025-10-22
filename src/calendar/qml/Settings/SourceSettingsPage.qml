@@ -23,4 +23,22 @@ FormCard.FormCardPage {
         mimetypes: [MimeTypes.calendar, MimeTypes.todo]
         addPageTitle: i18n("Add New Calendar Source…")
     }
+
+    FormCard.FormHeader {
+        title: i18n("System Accounts")
+
+        visible: systemAccountsForm.available
+
+        Layout.fillWidth: true
+        Layout.topMargin: Kirigami.Units.largeSpacing
+    }
+
+    SystemAccountsForm {
+        id: systemAccountsForm
+
+        visible: available
+
+        Layout.fillWidth: true
+        types: ["caldav"]
+    }
 }
