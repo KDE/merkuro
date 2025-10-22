@@ -28,4 +28,15 @@ FormCard.FormCardPage {
 
         Layout.fillWidth: true
     }
+
+    FormCard.FormHeader {
+        title: "System Accounts"
+
+        Layout.fillWidth: true
+        Layout.topMargin: Kirigami.Units.largeSpacing
+    }
+
+    SystemAccountsForm {
+        Layout.fillWidth: true
+    }
 }
