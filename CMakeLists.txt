@@ -143,7 +143,7 @@ find_package(KPim6Mbox ${KMBOX_LIB_VERSION} REQUIRED)
 find_package(KPim6Mime ${KMIME_LIB_VERSION} REQUIRED)
 find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
-find_package(KF6Holidays REQUIRED)
+find_package(KF6Holidays ${KF_MIN_VERSION} REQUIRED)
 
 # qt_policy(SET QTP0004 NEW)
 
