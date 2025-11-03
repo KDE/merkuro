@@ -280,19 +280,6 @@
             ]
         },
         {
-            "name": "ktexttemplate",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/frameworks/ktexttemplate.git"
-                }
-            ]
-        },
-        {
             "name": "grantleetheme",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
@@ -380,6 +367,20 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz"
                     }
+                }
+            ]
+        },
+        {
+            "name": "kpimtextedit",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kpimtextedit.git"
                 }
             ]
         },
@@ -714,6 +715,10 @@
                                 "url-template": "https://get.videolan.org/vlc/$version/vlc-$version.tar.xz"
                             }
                         },
+	                {
+	                    "type": "patch",
+	                    "path": "vlc-ignore-time-for-cache.patch"
+	                },
                         {
                             "type": "patch",
                             "path": "flatpak/vlc-taglib-2.patch"
