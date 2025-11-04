@@ -101,7 +101,7 @@ QQC2.ScrollView {
             required property var periodStartDate
             required property int index
 
-            width: dayColumn.width
+            width: scheduleListView.width
             height: index === scheduleListView.count - 1 ? dayColumn.height + Kirigami.Units.largeSpacing : dayColumn.height
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             color: incidenceDropArea.containsDrag ? Kirigami.Theme.positiveBackgroundColor :
@@ -146,7 +146,10 @@ QQC2.ScrollView {
                 // This will very much screw up use of positionViewAtIndex.
 
                 id: dayColumn
-                width: scheduleListView.width
+                // TODO: 700 is an arbitrary value. The goal is just to have it not take up the entire width of the screen.
+                //       Maybe there's a better value?
+                width: Math.min(parent.width, 700)
+                anchors.centerIn: parent
 
                 Kirigami.ListSectionHeader {
                     id: weekHeading
@@ -155,19 +158,82 @@ QQC2.ScrollView {
                     Layout.bottomMargin: -dayColumn.spacing // Remove default spacing, bring week header right down to day square
 
                     text: {
-                        const daysToWeekEnd = 6;
-
-                        const nextDayMaxDiff = (backgroundRectangle.periodStartDate.getDate() - (backgroundRectangle.index + 1)) + daysToWeekEnd;
-                        const nextDayMaxDate = backgroundRectangle.periodStartDate.getDate() + nextDayMaxDiff;
-                        const nextDayDate = Math.min(nextDayMaxDate, scrollView.daysInMonth);
-
-                        const nextDay = new Date(backgroundRectangle.periodStartDate.getFullYear(), backgroundRectangle.periodStartDate.getMonth(), nextDayDate);
-                        return backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), "dddd <b>dd</b>") + "–" + nextDay.toLocaleDateString(Qt.locale(), "dddd <b>dd</b> MMMM");
+                        if (!weekHeading.visible)
+                            return "";
+                        const range = getDateRange();
+                        const format = i18nc("Represents a date format. This should be adapted to locale conventions. " +
+                                             "This will be used in a header, specifying the start & end day of a week. " +
+                                             "The month & year are specified above this in the UI, and may be ommited.",
+                                             "ddd d");
+                        return i18nc(
+                            "%1 & %2 are two localised short dates indicating the start & end of a week using the format"+
+                                " specified earlier. %1 is the start, %2 the end.",
+                            "%1–%2",
+                            range.startDate.toLocaleDateString(Qt.locale(), format),
+                            range.endDate.toLocaleDateString(Qt.locale(), format)
+                        );
                     }
-                    Accessible.name: text.replace(/<\/?b>/g, '')
+                    Accessible.name: {
+                        if (!weekHeading.visible)
+                            return "";
+                        const range = getDateRange();
+                        const format = i18nc("Represents a date format. This should be adapted to locale conventions. " +
+                                             "This will be used in a header, specifying the start & end day of a week. " +
+                                             "The month & year are specified above this in the UI, and may be ommited. " +
+                                             "The formated date will be read aloud by screen readers.",
+                                             "dddd d");
+                        return i18nc(
+                            "%1 & %2 are two localised dates indicating the start & end of a week using the format specified above." +
+                                " %1 is the start, %2 the end. This string is intended to be read by a screen reader.",
+                            "From %1 to %2",
+                            range.startDate.toLocaleDateString(Qt.locale(), format),
+                            range.endDate.toLocaleDateString(Qt.locale(), format)
+                        );
+                    }
                     visible: Calendar.Config.showWeekHeaders &&
                         backgroundRectangle.periodStartDate !== undefined &&
-                        (backgroundRectangle.periodStartDate.getDay() === Qt.locale().firstDayOfWeek || backgroundRectangle.index === 0)
+                        (backgroundRectangle.periodStartDate.getDay() === Qt.locale().firstDayOfWeek ||
+                         backgroundRectangle.index === 0)
+
+                    // This function computes the date range for this
+                    // section, to be shown as a header. It is usually
+                    // 7 days, but may be less than that for the first
+                    // section (as the month may start in the middle
+                    // of a week), and the last one, for similar
+                    // reasons.
+                    function getDateRange() {
+                        // Get the Day Of Week that corresponds to the first day in a week for the current locale.
+                        const LOCALE_START_DOW = Qt.locale().firstDayOfWeek;
+                        const LOCALE_END_DOW = LOCALE_START_DOW === 1 ? 7 : LOCALE_START_DOW - 1
+
+                        const currentDOW = backgroundRectangle.periodStartDate.getDay()
+                        const startDate = backgroundRectangle.periodStartDate;
+
+                        // If the current DOW is the start DOW, the calculation to get to the end of the week are quite simple!
+                        if (currentDOW === LOCALE_START_DOW) {
+                            // Let's add 6 days to the start date, while making sure not to overflow the current month
+                            let endDate = new Date(startDate);
+                            endDate.setDate(Math.min(endDate.getDate() + 6, scrollView.daysInMonth));
+                            // This will give us a date fairly easily!
+                            return { startDate, endDate };
+                        }
+
+                        // Now, if our start date is not alligned with the start of the week, we have to do some math
+                        // to figure out how many days we need to skip to get to the end of the week.
+                        // In case the current DOW is past the end of week DOW for the current locale (i.e. we're on a
+                        // Sunday and the week ends on Fridays), we need to shift the end of week DOW by 7 days (i.e.
+                        // going over to the next week) to calculate the number of days to skip.
+                        // Otherwise, we can just get the number of day to skip by substraction.
+                        let distanceToEndDOW = (currentDOW > LOCALE_END_DOW) ?
+                            LOCALE_END_DOW + 7 - currentDOW :
+                            LOCALE_END_DOW - currentDOW;
+
+                        // Then, let's just find the end date by adding the number of days to skip to the current date
+                        let endDate = new Date(startDate);
+                        endDate.setDate(endDate.getDate() + distanceToEndDOW);
+
+                        return { startDate, endDate };
+                    }
                 }
 
                 Kirigami.Separator {
@@ -194,36 +260,50 @@ QQC2.ScrollView {
                     QQC2.Button {
                         id: dayButton
                         Layout.fillHeight: true
-                        Layout.maximumWidth: dayGrid.dayLabelWidth
-                        Layout.minimumWidth: dayGrid.dayLabelWidth
+
                         padding: Kirigami.Units.smallSpacing
                         rightPadding: Kirigami.Units.largeSpacing
+
+                        Layout.preferredWidth: metrics.width
 
                         flat: true
                         onClicked: Calendar.CalendarUiUtils.openDayLayer(backgroundRectangle.periodStartDate)
 
+                        // The goal is to measure how long a string of ~4 characters, in the current default font,
+                        // using the maximum font size a dayButton label can be, is.
+                        // This is used to size the dayButton accordingly, to make sure all buttons have the same
+                        // size, regardless of their actual content.
+                        // Note: There is possibly a smarter way to do this in QML!
+                        property TextMetrics metrics: TextMetrics {
+                            font.family: Kirigami.Theme.defaultFont.family
+                            // Level 3 Kirigami.Heading uses Kirigami.Theme.defaultFont.pointSize * 1.15 font size.
+                            // Note: maybe this could be done in a different, smarter way?
+                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                            elide: Text.ElideNone
+                            text: "WWWW"
+                        }
+
                         property Item smallDayLabel: QQC2.Label {
                             id: smallDayLabel
 
-                            Layout.alignment: Qt.AlignVCenter
-                            width: dayButton.width
                             horizontalAlignment: Text.AlignRight
                             verticalAlignment: Text.AlignVCenter
+                            Layout.fillWidth: true
 
                             visible: !cardsColumn.visible
                             wrapMode: Text.Wrap
-                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), "ddd <b>dd</b>")
+                            textFormat: Text.StyledText
                             color: Kirigami.Theme.disabledTextColor
+                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), "ddd <b>dd</b>")
                         }
 
 
                         property Item largeDayLabel: Kirigami.Heading {
                             id: largeDayLabel
 
-                            width: dayButton.width
-                            Layout.alignment: Qt.AlignTop
                             horizontalAlignment: Text.AlignRight
                             verticalAlignment: Text.AlignTop
+                            Layout.fillWidth: true
 
                             level: dayGrid.isToday ? 1 : 3
                             textFormat: Text.StyledText
@@ -233,7 +313,7 @@ QQC2.ScrollView {
                         }
 
 
-                        contentItem: backgroundRectangle.incidences.length || dayGrid.isToday ? largeDayLabel : smallDayLabel
+                        contentItem: (backgroundRectangle.incidences.length > 0 || dayGrid.isToday) ? largeDayLabel : smallDayLabel
                     }
 
                     QQC2.Label {
@@ -352,36 +432,31 @@ QQC2.ScrollView {
                                         }
                                     ]
 
-                                    contentItem: GridLayout {
+                                    contentItem: RowLayout {
                                         id: cardContents
-
-                                        columns: scrollView.isLarge ? 3 : 2
-                                        rows: scrollView.isLarge ? 1 : 2
 
                                         property color textColor: Calendar.LabelUtils.getIncidenceLabelColor(incidenceCard.modelData.color, scrollView.isDark)
 
-                                        RowLayout {
-                                            Kirigami.Icon {
-                                                Layout.fillHeight: true
-                                                source: incidenceCard.modelData.incidenceTypeIcon
-                                                isMask: true
-                                                Layout.preferredHeight: Kirigami.Units.iconSizes.medium
-                                                Layout.preferredWidth: Kirigami.Units.iconSizes.medium
-                                                Layout.maximumWidth: Kirigami.Units.iconSizes.medium
-                                                Layout.maximumHeight: Kirigami.Units.iconSizes.medium
+                                        Kirigami.Icon {
+                                            Layout.fillHeight: true
+                                            source: incidenceCard.modelData.incidenceTypeIcon
+                                            isMask: true
+                                            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                                            Layout.maximumWidth: Kirigami.Units.iconSizes.small
+                                            Layout.maximumHeight: Kirigami.Units.iconSizes.small
 
-                                                color: incidenceCard.isOpenOccurrence ?
-                                                    (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
-                                                    cardContents.textColor
-                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
-                                            }
+                                            color: incidenceCard.isOpenOccurrence ?
+                                                (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
+                                                cardContents.textColor
+                                            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                        }
+
+                                        ColumnLayout {
+                                            Layout.fillWidth: true
 
                                             QQC2.Label {
                                                 Layout.fillWidth: true
-                                                Layout.fillHeight: true
-                                                Layout.column: 0
-                                                Layout.row: 0
-                                                Layout.columnSpan: scrollView.isLarge ? 2 : 1
 
                                                 color: incidenceCard.isOpenOccurrence ?
                                                     (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
@@ -398,19 +473,46 @@ QQC2.ScrollView {
                                                 font.weight: Font.Medium
                                                 font.strikeout: incidenceCard.modelData.todoCompleted
                                             }
+
+                                            QQC2.Label {
+                                                horizontalAlignment: scrollView.isLarge ? Text.AlignRight : Text.AlignLeft
+                                                color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
+                                                    cardContents.textColor
+                                                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                                                text: {
+                                                    if (incidenceCard.modelData.allDay) {
+                                                        i18n("Runs all day")
+                                                    } else if (modelData.startTime.getTime() === modelData.endTime.getTime()) {
+                                                        modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat);
+                                                    } else if (!incidenceCard.multiday) {
+                                                        i18nc("Displays times between incidence start and end", "%1 - %2",
+                                                              modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat), modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                                                    } else if (incidenceCard.dayOfMultidayIncidence === 1) {
+                                                        i18n("Starts at %1", modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                                                    } else if (incidenceCard.dayOfMultidayIncidence === incidenceCard.incidenceDays) {
+                                                        i18n("Ends at %1", modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                                                    } else { // In between multiday start/finish
+                                                        i18n("Runs All Day")
+                                                    }
+                                                }
+                                                Component.onCompleted: if(implicitWidth > scrollView.maxTimeLabelWidth) scrollView.maxTimeLabelWidth = implicitWidth
+                                                visible: !incidenceCard.modelData.allDay && !incidenceCard.modelData.todoCompleted
+                                            }
                                         }
 
                                         RowLayout {
                                             id: additionalIcons
 
-                                            Layout.column: 1
-                                            Layout.row: 0
+                                            Layout.alignment: Qt.AlignTop
 
                                             visible: incidenceCard.modelData.hasReminders || modelData.recurs
 
                                             Kirigami.Icon {
                                                 id: recurringIcon
-                                                Layout.fillHeight: true
+                                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                                                Layout.maximumWidth: Kirigami.Units.iconSizes.small
+                                                Layout.maximumHeight: Kirigami.Units.iconSizes.small
                                                 source: "appointment-recurring"
                                                 isMask: true
                                                 color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
@@ -420,6 +522,10 @@ QQC2.ScrollView {
                                             }
                                             Kirigami.Icon {
                                                 id: reminderIcon
+                                                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                                                Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                                                Layout.maximumWidth: Kirigami.Units.iconSizes.small
+                                                Layout.maximumHeight: Kirigami.Units.iconSizes.small
                                                 Layout.fillHeight: true
                                                 source: "appointment-reminder"
                                                 isMask: true
@@ -428,38 +534,6 @@ QQC2.ScrollView {
                                                 Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
                                                 visible: incidenceCard.modelData.hasReminders
                                             }
-                                        }
-
-
-                                        QQC2.Label {
-                                            Layout.fillHeight: true
-                                            // This way all the icons are aligned
-                                            Layout.maximumWidth: scrollView.maxTimeLabelWidth
-                                            Layout.minimumWidth: scrollView.maxTimeLabelWidth
-                                            Layout.column: scrollView.isLarge ? 2 : 0
-                                            Layout.row: scrollView.isLarge ? 0 : 1
-
-                                            horizontalAlignment: scrollView.isLarge ? Text.AlignRight : Text.AlignLeft
-                                            color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
-                                                cardContents.textColor
-                                            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
-                                            text: {
-                                                if (incidenceCard.modelData.allDay) {
-                                                    i18n("Runs all day")
-                                                } else if (modelData.startTime.getTime() === modelData.endTime.getTime()) {
-                                                    modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat);
-                                                } else if (!incidenceCard.multiday) {
-                                                    i18nc("Displays times between incidence start and end", "%1 - %2",
-                                                          modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat), modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
-                                                } else if (incidenceCard.dayOfMultidayIncidence === 1) {
-                                                    i18n("Starts at %1", modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
-                                                } else if (incidenceCard.dayOfMultidayIncidence === incidenceCard.incidenceDays) {
-                                                    i18n("Ends at %1", modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
-                                                } else { // In between multiday start/finish
-                                                    i18n("Runs All Day")
-                                                }
-                                            }
-                                            Component.onCompleted: if(implicitWidth > scrollView.maxTimeLabelWidth) scrollView.maxTimeLabelWidth = implicitWidth
                                         }
                                     }
 
