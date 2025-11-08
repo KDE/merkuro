@@ -26,7 +26,7 @@ ListView {
         expandsByDefault: false
     }
 
-    ETMTreeViewStateSaver {
+    Akonadi.ETMTreeViewStateSaver {
         id: stateSaver
 
         model: foldersModel
