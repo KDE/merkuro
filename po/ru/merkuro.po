@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-04 00:43+0000\n"
-"PO-Revision-Date: 2025-04-02 17:14+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"PO-Revision-Date: 2025-11-10 12:21+0300\n"
+"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -46,14 +46,14 @@ msgid "Ctrl+2"
 msgstr "Ctrl+2"
 
 #: calendar/calendarapplication.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "Work Week View"
-msgstr "Неделя"
+msgstr "Рабочая неделя"
 
 #: calendar/calendarapplication.cpp:97
 #, kde-format
 msgid "3 Day View"
-msgstr "Режим просмотра «3 дня»"
+msgstr "Три дня"
 
 #: calendar/calendarapplication.cpp:107
 #, kde-format
@@ -214,8 +214,7 @@ msgid "Calendar Application"
 msgstr "Программа с функциями календаря"
 
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
+#, kde-format
 msgid "© KDE Community 2021–2024"
 msgstr "© Сообщество KDE, 2021–2024"
 
@@ -707,8 +706,7 @@ msgid "Add Sub-Task"
 msgstr "Добавить подзадачу"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:108
-#, fuzzy, kde-format
-#| msgid "Set priority..."
+#, kde-format
 msgid "Set priority…"
 msgstr "Приоритет…"
 
@@ -764,8 +762,7 @@ msgid "9 (lowest priority)"
 msgstr "9 (минимальный)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
-#, fuzzy, kde-format
-#| msgid "Set due date..."
+#, kde-format
 msgid "Set due date…"
 msgstr "Задать крайний срок…"
 
@@ -816,15 +813,13 @@ msgstr "<b>%1</b> %2"
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 – %2"
-msgstr ""
+msgstr "%1 – %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
-#, fuzzy, kde-format
-#| msgctxt "%1 is month of range start, %2 is month + year of range end"
-#| msgid "<b>%1</b> - %2"
+#, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
-msgstr "<b>%1</b> - %2"
+msgstr "<b>%1</b> – %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -949,89 +944,89 @@ msgid "Delete All"
 msgstr "Удалить все"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:20
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr "Редактировать календарь…"
+msgstr "Редактирование календаря"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Общие"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Значок"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:55
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Статистика"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:59
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 запись"
+msgstr[1] "%1 записи"
+msgstr[2] "%1 записей"
+msgstr[3] "%1 запись"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Контакт"
+msgstr "Содержимое"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:65
 #, kde-format
 msgctxt "@label"
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:69
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Синхронизация"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:74
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Использовать параметры родительской папки или учётной записи"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:83
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Синхронизировать при выборе этой папки"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:93
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Синхронизировать через"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:98
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Никогда"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -1563,61 +1558,61 @@ msgid "Return to Location"
 msgstr "Вернуться к расположению"
 
 #: calendar/qml/Main.qml:287
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Создать"
 
 #: calendar/qml/Main.qml:292
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Создать событие…"
 
 #: calendar/qml/Main.qml:298
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Создать задачу…"
 
 #: calendar/qml/Main.qml:307
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Месяц"
 
 #: calendar/qml/Main.qml:310
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Неделя"
 
 #: calendar/qml/Main.qml:313
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr "Неделя"
+msgstr "Рабочая неделя"
 
 #: calendar/qml/Main.qml:316
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "3 Days"
-msgstr "3 дня"
+msgstr "Три дня"
 
 #: calendar/qml/Main.qml:319
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "День"
 
 #: calendar/qml/Main.qml:322
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Расписание"
 
 #: calendar/qml/Main.qml:325
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Tasks"
 msgstr "Задачи"
@@ -1702,9 +1697,9 @@ msgid "Previous Three Days"
 msgstr "Предыдущие три дня"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
-#, fuzzy, kde-format
+#, kde-format
 msgid "Previous Work Week"
-msgstr "Предыдущая неделя"
+msgstr "Предыдущая рабочая неделя"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1722,9 +1717,9 @@ msgid "Next Three Days"
 msgstr "Следующие три дня"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
-#, fuzzy, kde-format
+#, kde-format
 msgid "Next Work Week"
-msgstr "Следующая неделя"
+msgstr "Следующая рабочая неделя"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1743,16 +1738,16 @@ msgid "Week"
 msgstr "Неделя"
 
 #: calendar/qml/MainViews/HourlyView.qml:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr "Неделя"
+msgstr "Рабочая неделя"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
 msgctxt "@action:inmenu open 3 days view"
 msgid "3 Days"
-msgstr "3 дня"
+msgstr "Три дня"
 
 #: calendar/qml/MainViews/HourlyView.qml:143
 #, kde-format
@@ -1783,10 +1778,9 @@ msgid "No set priority"
 msgstr "Приоритет не задан"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:120
-#, fuzzy, kde-format
-#| msgid "No task calendars enabled."
+#, kde-format
 msgid "No task sets enabled."
-msgstr "Нет включённых календарей задач."
+msgstr "Нет включённых наборов задач."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
@@ -1845,10 +1839,10 @@ msgid "Create a New Task…"
 msgstr "Создать задачу…"
 
 #: calendar/qml/MainViews/TodoView.qml:206
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr "Добавить подзадачу"
+msgstr "Добавить задачу"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1880,10 +1874,10 @@ msgid "Delete Calendar"
 msgstr "Удалить календарь"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:102
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
-msgstr "Установить цвет календаря…"
+msgstr "Задать цвет календаря…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
@@ -1904,17 +1898,16 @@ msgid "Delete calendar source"
 msgstr "Удалить источник данных календаря"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:141
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
-msgstr "Показать карту"
+msgstr "Показать все"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:148
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
-msgstr ""
+msgstr "Скрыть все"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -1970,10 +1963,9 @@ msgid "Accounts"
 msgstr "Учётные записи"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:28
-#, fuzzy, kde-format
-#| msgid "Configure Availability"
+#, kde-format
 msgid "Availability"
-msgstr "Настроить доступность"
+msgstr "Доступность"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
@@ -1981,34 +1973,27 @@ msgid "Configure Availability"
 msgstr "Настроить доступность"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Free/Busy Publishing settings"
+#, kde-format
 msgid "Availability Publishing settings"
-msgstr "Параметры публикации информации о занятости"
+msgstr "Параметры публикации информации о доступности"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you publish your free/busy information, it enables others to "
-#| "consider your calendar availability when inviting you to a meeting. Only "
-#| "the times that are already marked as busy are disclosed, without "
-#| "revealing the specific reasons for your availability."
+#, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
 "consider your calendar availability when inviting you to a meeting. Only the "
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
-"Если опубликовать информацию о своей занятости, другие пользователи смогут "
+"Если опубликовать информацию о своей доступности, другие пользователи смогут "
 "принять её во внимание при отправке приглашений на встречи. Раскрывается "
 "информация только о том времени, которое уже отмечено как занятое, без "
 "указания причин недоступности."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Publish your free/busy information automatically"
+#, kde-format
 msgid "Publish your availability information automatically"
-msgstr "Автоматически публиковать информацию о своей занятости"
+msgstr "Автоматически публиковать информацию о своей доступности"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -2016,10 +2001,9 @@ msgid "Minimum time (in minutes) between uploads"
 msgstr "Минимальный промежуток времени (в минутах) между отправками"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Number of days of free/busy info to publish: "
+#, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr "Количество дней с информацией о занятости для публикации: "
+msgstr "Количество дней с информацией о доступности для публикации: "
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -2052,20 +2036,17 @@ msgid "Save password"
 msgstr "Сохранить пароль"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Click here to publish Free/Busy information manually"
+#, kde-format
 msgid "Click here to publish availability information manually"
-msgstr "Нажмите сюда, чтобы вручную опубликовать информацию о занятости"
+msgstr "Нажмите сюда, чтобы вручную опубликовать информацию о доступности"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Configure Availability"
+#, kde-format
 msgid "Email availability"
-msgstr "Настроить доступность"
+msgstr "Отправка информации о доступности по электронной почте"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Enter email of recipient..."
+#, kde-format
 msgid "Enter email of recipient…"
 msgstr "Введите адрес электронной почты получателя…"
 
@@ -2076,28 +2057,23 @@ msgid "Send"
 msgstr "Отправить"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Free/Busy Retrieval settings"
+#, kde-format
 msgid "Availability Retrieval settings"
-msgstr "Параметры получения информации о занятости"
+msgstr "Параметры получения информации о доступности"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "By retrieving Free/Busy information that others have published, you can "
-#| "take their calendar into account when inviting them to a meeting."
+#, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
-"Получение информации о занятости других пользователей упрощает планирование "
-"встреч с их участием."
+"Получение информации о доступности других пользователей упрощает "
+"планирование встреч с их участием."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Retrieve others' free/busy information automatically"
+#, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr "Автоматически получать информацию о занятости других пользователей"
+msgstr "Автоматически получать информацию о доступности других пользователей"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
@@ -2278,7 +2254,7 @@ msgstr "Показывать заголовки недель"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "Скрыть пустые дни"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2332,9 +2308,7 @@ msgid "1 day"
 msgstr "1 день"
 
 #: calendar/utils.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "%1 is 2 or mores"
-#| msgid "%1 hours"
+#, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
 msgstr "%1 ч."
@@ -2565,19 +2539,19 @@ msgid "Edit contact…"
 msgstr "Изменить контакт…"
 
 #: contacts/contactapplication.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Delete contact"
 msgstr "Удалить контакт"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Переместить в…"
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Copy to…"
 msgstr "Копировать в…"
@@ -2659,7 +2633,7 @@ msgid "Select Email Address"
 msgstr "Выберите адрес эл. почты"
 
 #: contacts/qml/ContactListItem.qml:39
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Нет имени"
@@ -2689,7 +2663,7 @@ msgid "New Contact Group"
 msgstr "Создать группу контактов"
 
 #: contacts/qml/ContactView.qml:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
@@ -2741,9 +2715,7 @@ msgid "Delete address book"
 msgstr "Удалить адресную книгу"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set address book colour…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
 msgstr "Задать цвет адресной книги…"
@@ -3444,14 +3416,14 @@ msgstr[2] "Удалить контакты"
 msgstr[3] "Удалить контакт"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] "Действительно удалить запись контакта <b>%1</b>?"
-msgstr[1] "Действительно удалить запись контакта <b>%1</b>?"
-msgstr[2] "Действительно удалить запись контакта <b>%1</b>?"
-msgstr[3] "Действительно удалить запись контакта <b>%1</b>?"
+msgstr[0] "Действительно удалить записи контактов:"
+msgstr[1] "Действительно удалить записи контактов:"
+msgstr[2] "Действительно удалить записи контактов:"
+msgstr[3] "Действительно удалить запись контакта:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #, kde-format
@@ -3496,8 +3468,7 @@ msgid "merkuro Launcher"
 msgstr "Программа запуска Merkuro"
 
 #: launcher/main.cpp:52
-#, fuzzy, kde-format
-#| msgid "(c) 2024"
+#, kde-format
 msgid "© 2024"
 msgstr "© 2024"
 
@@ -3702,10 +3673,9 @@ msgid "Create Folder"
 msgstr "Создать папку"
 
 #: mail/qml/actions/NewFolderAction.qml:39
-#, fuzzy, kde-format
-#| msgid "Folder Name..."
+#, kde-format
 msgid "Folder Name…"
-msgstr "Имя папки..."
+msgstr "Имя папки…"
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
