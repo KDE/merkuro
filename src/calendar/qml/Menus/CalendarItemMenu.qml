@@ -134,6 +134,7 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
+        visible: root.collectionDetails.isResource && !allCollectionsChecked
     }
 
     Kirigami.Action {
