@@ -39,6 +39,7 @@ FormCard.FormCardPage {
                 editor.save();
             }
             label: i18nc("@label:textbox", "Name")
+            enabled: root.collection.rights & Akonadi.collection.Right.CanChangeCollection
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
