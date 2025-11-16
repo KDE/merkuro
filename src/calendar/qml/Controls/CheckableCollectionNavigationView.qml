@@ -283,8 +283,7 @@ QQC2.ScrollView {
                             onLeftClicked: collectionList.model.toggleChildren(index)
 
                             checkState: model.checkState
-                            collectionId: model.collectionId
-                            collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
+                            collection: model.collection
                             agentConfiguration: root.agentConfiguration
                             enabled: root.mode !== CalendarApplication.Contact
                             allCollectionsChecked: areAllCollectionsChecked()
@@ -411,8 +410,7 @@ QQC2.ScrollView {
                             id: tapHandler
 
                             checkState: model.checkState
-                            collectionId: model.collectionId
-                            collectionDetails: CalendarManager.getCollectionDetails(model.collectionId)
+                            collection: model.collection
                             agentConfiguration: root.agentConfiguration
                             enabled: mode !== CalendarApplication.Contact
                             onLeftClicked: {

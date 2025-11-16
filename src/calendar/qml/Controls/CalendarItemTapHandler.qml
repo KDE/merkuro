@@ -15,8 +15,7 @@ TapHandler {
     id: root
 
     required property var checkState
-    property var collectionId
-    property var collectionDetails
+    required property Akonadi.collection collection
     property Akonadi.AgentConfiguration agentConfiguration
     property bool allCollectionsChecked
 
@@ -45,8 +44,8 @@ TapHandler {
         sourceComponent: ColorDialog {
             id: colorDialog
             title: i18nc("@title:window", "Choose Calendar Color")
-            color: root.collectionDetails.color
-            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collectionId, color)
+            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color
+            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collection.id, color)
             onRejected: {
                 close();
                 colorDialogLoader.active = false;
@@ -58,15 +57,11 @@ TapHandler {
         parent: root.parent
 
         checkState: root.checkState
-        collectionId: root.collectionId
-        collectionDetails: root.collectionDetails
+        collectionId: root.collection.id
+        collectionDetails: Calendar.CalendarManager.getCollectionDetails(root.collection.id)
         agentConfiguration: root.agentConfiguration
         allCollectionsChecked: root.allCollectionsChecked
         onToggled: root.toggled()
         onShowAllCollections: (shown) => root.showAllCollections(shown)
-
-        Component.onCompleted: if(root.collectionId && !root.collectionDetails) {
-            root.collectionDetails = Calendar.CalendarManager.getCollectionDetails(root.collectionId)
-        }
     }
 }
