@@ -34,7 +34,7 @@ FormCard.FormCardPage {
         FormCard.FormTextFieldDelegate {
             id: displayNameField
             text: editor.displayName
-            onEditingFinished: if (editor.displayName !== displayName) {
+            onEditingFinished: if (editor.displayName !== text) {
                 editor.displayName = text;
                 editor.save();
             }
