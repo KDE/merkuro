@@ -114,7 +114,7 @@ void RecurrenceExceptionsModel::deleteExceptionDateTime(QDateTime date)
         m_incidence->recurrence()->setExDateTimes(dateTimes);
     } else {
         auto dates = m_incidence->recurrence()->exDates();
-        int removeIndex = dates.indexOf(date.date());
+        const int removeIndex = dates.indexOf(date.date());
 
         if (removeIndex >= 0) {
             dates.removeAt(dates.indexOf(date.date()));
