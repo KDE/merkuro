@@ -497,7 +497,12 @@ void TodoSortFilterProxyModel::setFilterObject(Filter *filterObject)
     };
     const auto handleFilterObjectChange = [this] {
         Q_EMIT filterObjectAboutToChange();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
         Q_EMIT layoutChanged();
         Q_EMIT filterObjectChanged();
     };
@@ -511,7 +516,12 @@ void TodoSortFilterProxyModel::setFilterObject(Filter *filterObject)
         setFilterFixedString(nameFilter);
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    beginFilterChange();
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
     invalidateFilter();
+#endif
 
     Q_EMIT layoutChanged();
 
@@ -533,7 +543,12 @@ void TodoSortFilterProxyModel::filterTodoName(const QString &name, const int sho
     } else {
         setShowCompleted(m_showCompletedStore);
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    beginFilterChange();
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
     invalidateFilter();
+#endif
     Q_EMIT layoutChanged();
 
     sortTodoModel();
@@ -814,10 +829,16 @@ bool TodoSortFilterProxyModel::showCompletedSubtodosInIncomplete() const
 
 void TodoSortFilterProxyModel::setShowCompletedSubtodosInIncomplete(bool showCompletedSubtodosInIncomplete)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    beginFilterChange();
+#endif
     m_showCompletedSubtodosInIncomplete = showCompletedSubtodosInIncomplete;
     Q_EMIT showCompletedSubtodosInIncompleteChanged();
-
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
     invalidateFilter();
+#endif
 }
 
 Q_DECLARE_METATYPE(KCalendarCore::Incidence::Ptr)
