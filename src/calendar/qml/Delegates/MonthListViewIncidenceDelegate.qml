@@ -127,7 +127,8 @@ Kirigami.AbstractCard {
             }
 
             QQC2.Label {
-                horizontalAlignment: scrollView.isLarge ? Text.AlignRight : Text.AlignLeft
+                Layout.fillWidth: true
+
                 color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
                     cardContents.textColor
                 Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
@@ -143,12 +144,37 @@ Kirigami.AbstractCard {
                         i18n("Starts at %1", modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
                     } else if (incidenceCard.dayOfMultidayIncidence === incidenceCard.incidenceDays) {
                         i18n("Ends at %1", modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
-                    } else { // In between multiday start/finish
-                        i18n("Runs All Day")
+                    } else {
+                        i18nc("Label for incidence in between multiday start/finish", "Runs All Day")
                     }
                 }
                 Component.onCompleted: if(implicitWidth > scrollView.maxTimeLabelWidth) scrollView.maxTimeLabelWidth = implicitWidth
                 visible: !incidenceCard.modelData.allDay && !incidenceCard.modelData.todoCompleted
+            }
+
+            QQC2.Label {
+                Layout.fillWidth: true
+
+                color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
+                    cardContents.textColor
+                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                text: i18nc("Location indicator for incidence. %1 is the location", "<b>Location</b>: %1", incidenceCard.modelData.location)
+                visible: incidenceCard.modelData.location && !incidenceCard.modelData.todoCompleted
+            }
+            
+            Text {
+                Layout.fillWidth: true
+
+                color: incidenceCard.isOpenOccurrence ? (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
+                    cardContents.textColor
+                Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
+                
+                text: modelData.description
+                wrapMode: Text.WordWrap
+                elide: Text.ElideRight
+                maximumLineCount: 3
+                
+                visible: modelData.description && !incidenceCard.modelData.todoCompleted
             }
         }
 
