@@ -119,6 +119,7 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/Delegates/DayGridViewIncidenceDelegate.qml
         qml/Delegates/ViewTitleDelegate.qml
         qml/Delegates/RelatedIncidenceDelegate.qml
+        qml/Delegates/MonthListViewIncidenceDelegate.qml
 
         qml/MainViews/DayGridViewBackground.qml
         qml/MainViews/DayGridViewForeground.qml
