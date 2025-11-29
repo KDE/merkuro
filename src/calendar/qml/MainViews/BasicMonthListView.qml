@@ -269,6 +269,14 @@ QQC2.ScrollView {
                         flat: true
                         onClicked: Calendar.CalendarUiUtils.openDayLayer(backgroundRectangle.periodStartDate)
 
+                        property string dateFormatScreenReader: i18nc(
+                            "Short date format, indicating name of day of week and number of day of month. " +
+                                "To be read by screen readers. " +
+                                "Name of month and year is shown in the section title. " +
+                                "This should be adapted to locale convention.",
+                            "dddd d")
+                        Accessible.name: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormatScreenReader)
+
                         // The goal is to measure how long a string of ~4 characters, in the current default font,
                         // using the maximum font size a dayButton label can be, is.
                         // This is used to size the dayButton accordingly, to make sure all buttons have the same
@@ -284,6 +292,13 @@ QQC2.ScrollView {
                         }
 
                         property Item smallDayLabel: QQC2.Label {
+                            property string dateFormat: i18nc(
+                                "Short date format, showing name of day of week and number of day of month. " +
+                                    "Name of month and year is shown in the section title. " +
+                                    "This should be adapted to locale convention. " +
+                                    "Text between <b> and </b> will be bolded.",
+                                "ddd <b>dd</b>")
+
                             id: smallDayLabel
 
                             horizontalAlignment: Text.AlignRight
@@ -294,11 +309,19 @@ QQC2.ScrollView {
                             wrapMode: Text.Wrap
                             textFormat: Text.StyledText
                             color: Kirigami.Theme.disabledTextColor
-                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), "ddd <b>dd</b>")
+                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormat)
                         }
 
 
                         property Item largeDayLabel: Kirigami.Heading {
+                            property string dateFormat: i18nc(
+                                "Short date format, showing name of day of week and emphasising the number of day of month. " +
+                                    "Name of month and year is shown in the section title. " +
+                                    "This should be adapted to locale convention. " +
+                                    "Text between <b> and </b> will be bolded." +
+                                    "<br> indicates a line break",
+                                "ddd<br><b>dd</b>")
+
                             id: largeDayLabel
 
                             horizontalAlignment: Text.AlignRight
@@ -309,7 +332,7 @@ QQC2.ScrollView {
                             textFormat: Text.StyledText
                             wrapMode: Text.Wrap
                             color: dayGrid.isToday ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), "ddd<br><b>dd</b>")
+                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormat)
                         }
 
 
