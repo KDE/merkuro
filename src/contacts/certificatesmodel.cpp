@@ -46,12 +46,12 @@ void CertificatesModel::refresh()
 
     beginResetModel();
     m_keys.clear();
-    for (const auto &email : m_emails) {
+    for (const auto &email : std::as_const(m_emails)) {
         const auto keys = keyCache->findByEMailAddress(email.toStdString());
         m_keys.insert(m_keys.end(), keys.begin(), keys.end());
     }
 
-    auto last = std::unique(m_keys.begin(), m_keys.end(), [](GpgME::Key a, GpgME::Key b) {
+    auto last = std::unique(m_keys.begin(), m_keys.end(), [](const GpgME::Key &a, const GpgME::Key &b) {
         return a.primaryFingerprint() == b.primaryFingerprint();
     });
     m_keys.erase(last, m_keys.end());

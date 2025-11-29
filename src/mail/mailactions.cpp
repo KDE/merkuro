@@ -181,7 +181,7 @@ void MailActions::setActionState()
     m_mailSaveAsAction->setVisible(items.size() == 1);
 }
 
-void MailActions::modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f)
+void MailActions::modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f)
 {
     Q_ASSERT(m_selectionModel);
 
@@ -200,7 +200,7 @@ void MailActions::modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::Mes
             job->setIgnorePayload(true);
             connect(job, &Akonadi::ItemModifyJob::result, this, [this](KJob *job) {
                 if (job->error()) {
-                    m_mailApplication->errorOccurred(job->errorText());
+                    Q_EMIT m_mailApplication->errorOccurred(job->errorText());
                 }
             });
             job->start();
@@ -244,7 +244,7 @@ void MailActions::slotTrash()
         auto job = new Akonadi::ItemMoveJob(items, trash);
         connect(job, &KJob::result, this, [this](KJob *job) {
             if (job->error()) {
-                m_mailApplication->errorOccurred(job->errorText());
+                Q_EMIT m_mailApplication->errorOccurred(job->errorText());
             }
         });
     }
@@ -260,7 +260,7 @@ void MailActions::moveTo(const Akonadi::Item::List &items, const Akonadi::Collec
     auto job = new Akonadi::ItemMoveJob(items, destination);
     connect(job, &KJob::result, this, [this](KJob *job) {
         if (job->error()) {
-            m_mailApplication->errorOccurred(job->errorText());
+            Q_EMIT m_mailApplication->errorOccurred(job->errorText());
         }
     });
 }
@@ -275,7 +275,7 @@ void MailActions::copyTo(const Akonadi::Item::List &items, const Akonadi::Collec
     auto job = new Akonadi::ItemCopyJob(items, destination);
     connect(job, &KJob::result, this, [this](KJob *job) {
         if (job->error()) {
-            m_mailApplication->errorOccurred(job->errorText());
+            Q_EMIT m_mailApplication->errorOccurred(job->errorText());
         }
     });
 }

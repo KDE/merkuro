@@ -56,7 +56,7 @@ Q_SIGNALS:
     void copyToRequested(const Akonadi::Item::List &items);
 
 private:
-    void modifyStatus(std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> f);
+    void modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f);
     void slotTrash();
 
     QItemSelectionModel *m_selectionModel = nullptr;

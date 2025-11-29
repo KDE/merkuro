@@ -193,17 +193,17 @@ QVariantMap ContactManager::getCollectionDetails(const Akonadi::Collection &coll
 {
     QVariantMap collectionDetails;
 
-    collectionDetails[QLatin1StringView("id")] = collection.id();
-    collectionDetails[QLatin1StringView("name")] = collection.name();
-    collectionDetails[QLatin1StringView("displayName")] = collection.displayName();
-    collectionDetails[QLatin1StringView("color")] = m_colorProxy->color(collection.id());
-    collectionDetails[QLatin1StringView("count")] = collection.statistics().count();
-    collectionDetails[QLatin1StringView("isResource")] = Akonadi::CollectionUtils::isResource(collection);
-    collectionDetails[QLatin1StringView("resource")] = collection.resource();
-    collectionDetails[QLatin1StringView("readOnly")] = collection.rights().testFlag(Akonadi::Collection::ReadOnly);
-    collectionDetails[QLatin1StringView("canChange")] = collection.rights().testFlag(Akonadi::Collection::CanChangeCollection);
-    collectionDetails[QLatin1StringView("canCreate")] = collection.rights().testFlag(Akonadi::Collection::CanCreateCollection);
-    collectionDetails[QLatin1StringView("canDelete")] =
+    collectionDetails[QStringLiteral("id")] = collection.id();
+    collectionDetails[QStringLiteral("name")] = collection.name();
+    collectionDetails[QStringLiteral("displayName")] = collection.displayName();
+    collectionDetails[QStringLiteral("color")] = m_colorProxy->color(collection.id());
+    collectionDetails[QStringLiteral("count")] = collection.statistics().count();
+    collectionDetails[QStringLiteral("isResource")] = Akonadi::CollectionUtils::isResource(collection);
+    collectionDetails[QStringLiteral("resource")] = collection.resource();
+    collectionDetails[QStringLiteral("readOnly")] = collection.rights().testFlag(Akonadi::Collection::ReadOnly);
+    collectionDetails[QStringLiteral("canChange")] = collection.rights().testFlag(Akonadi::Collection::CanChangeCollection);
+    collectionDetails[QStringLiteral("canCreate")] = collection.rights().testFlag(Akonadi::Collection::CanCreateCollection);
+    collectionDetails[QStringLiteral("canDelete")] =
         collection.rights().testFlag(Akonadi::Collection::CanDeleteCollection) && !Akonadi::CollectionUtils::isResource(collection);
 
     return collectionDetails;

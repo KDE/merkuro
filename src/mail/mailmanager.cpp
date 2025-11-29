@@ -150,7 +150,7 @@ Akonadi::Session *MailManager::session() const
     return m_session;
 }
 
-void MailManager::moveToTrash(Akonadi::Item item)
+void MailManager::moveToTrash(const Akonadi::Item &item)
 {
     auto collection = qvariant_cast<Akonadi::Collection>(
         foldersModel()->data(m_collectionSelectionModel->selection().indexes()[0], Akonadi::EntityTreeModel::CollectionRole));

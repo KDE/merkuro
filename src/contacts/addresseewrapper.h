@@ -98,7 +98,7 @@ public:
 
     [[nodiscard]] Akonadi::Collection collection() const;
     [[nodiscard]] qint64 collectionId() const;
-    void setCollection(Akonadi::Collection collection);
+    void setCollection(const Akonadi::Collection &collection);
 
     [[nodiscard]] DisplayType displayType() const;
     void setDisplayType(DisplayType displayType);

@@ -158,7 +158,7 @@ void ProgressModel::updateOverallProperties()
     }
 
     if (working && !indeterminate) {
-        const auto item = m_items.first();
+        const auto item = m_items.constFirst();
         const auto progress = item != nullptr ? item->progress() : 0;
         if (m_progress != progress) {
             m_progress = progress;

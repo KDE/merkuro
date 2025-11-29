@@ -137,7 +137,7 @@ qint64 AddresseeWrapper::collectionId() const
     return collection().id();
 }
 
-void AddresseeWrapper::setCollection(Akonadi::Collection collection)
+void AddresseeWrapper::setCollection(const Akonadi::Collection &collection)
 {
     m_collection = collection;
     Q_EMIT collectionChanged();

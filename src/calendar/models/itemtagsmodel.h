@@ -29,7 +29,7 @@ public:
     int rowCount(const QModelIndex &parent = {}) const override;
 
     [[nodiscard]] Akonadi::Item item() const;
-    void setItem(Akonadi::Item item);
+    void setItem(const Akonadi::Item &item);
 
 Q_SIGNALS:
     void itemChanged();

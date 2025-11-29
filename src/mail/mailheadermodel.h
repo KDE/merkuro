@@ -33,7 +33,7 @@ public:
     Q_INVOKABLE int rowCount(const QModelIndex &parent = {}) const override;
 
     Q_INVOKABLE void setValue(int row, const QString &value);
-    Q_INVOKABLE void setType(int row, const Header type);
+    Q_INVOKABLE void setType(int row, const MailHeaderModel::Header type);
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 

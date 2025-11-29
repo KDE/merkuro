@@ -17,7 +17,7 @@ Akonadi::Item ItemTagsModel::item() const
     return m_item;
 }
 
-void ItemTagsModel::setItem(Akonadi::Item item)
+void ItemTagsModel::setItem(const Akonadi::Item &item)
 {
     Q_EMIT layoutAboutToBeChanged();
     m_item = item;
