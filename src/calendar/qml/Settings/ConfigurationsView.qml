@@ -5,7 +5,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
-import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
+import org.kde.kirigamiaddons.settings as KirigamiSettings
 import org.kde.merkuro.calendar
 
 KirigamiSettings.ConfigurationView {

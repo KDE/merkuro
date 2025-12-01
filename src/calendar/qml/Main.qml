@@ -6,11 +6,11 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtCore 6.5
+import QtCore
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import QtQml.Models 2.15
+import QtQml.Models
 import Qt.labs.platform
 
 import org.kde.merkuro.calendar

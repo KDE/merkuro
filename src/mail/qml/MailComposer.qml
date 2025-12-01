@@ -9,7 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kitemmodels as KItemModels
 import org.kde.merkuro.mail
 import org.kde.akonadi as Akonadi
-import org.kde.kidentitymanagement 1.0 as KIdentityManagement
+import org.kde.kidentitymanagement as KIdentityManagement
 
 Kirigami.ScrollablePage {
     id: mailComposition

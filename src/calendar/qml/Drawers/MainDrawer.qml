@@ -7,7 +7,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Templates 2.15 as T
+import QtQuick.Templates as T
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
 import Qt5Compat.GraphicalEffects

@@ -11,7 +11,7 @@ import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 import org.kde.akonadi as Akonadi
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.treeview 1.0 as Tree
+import org.kde.kirigamiaddons.treeview as Tree
 import org.kde.kitemmodels
 import org.kde.merkuro.mail
 import org.kde.merkuro.components

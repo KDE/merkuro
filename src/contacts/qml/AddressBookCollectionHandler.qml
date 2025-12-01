@@ -7,7 +7,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro 1.0 as Merkuro
+import org.kde.merkuro as Merkuro
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
 import './private'

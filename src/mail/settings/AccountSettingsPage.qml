@@ -5,10 +5,10 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.akonadi as Akonadi
 import org.kde.akonadi.mime as AkonadiMime
-import org.kde.kidentitymanagement 1 as KIdentityManagement
+import org.kde.kidentitymanagement as KIdentityManagement
 import org.kde.merkuro.mail
 
 FormCard.FormCardPage {

@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.contact
-import org.kde.prison 1.0 as Prison
+import org.kde.prison as Prison
 
 Kirigami.Page {
     property string qrCodeData

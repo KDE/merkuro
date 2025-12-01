@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carson Black <uhhadd@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import Qt.labs.platform 1.1 as Labs
+import Qt.labs.platform as Labs
 
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import org.kde.merkuro 1.0
+import QtQuick
+import QtQuick.Window
+import org.kde.merkuro
 import org.kde.merkuro.components
 
 Labs.MenuBar {

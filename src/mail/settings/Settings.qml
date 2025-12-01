@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
+import org.kde.kirigamiaddons.settings as KirigamiSettings
 
 KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"
