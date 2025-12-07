@@ -4,5 +4,17 @@
 find_package(Plasma)
 
 if(Plasma_FOUND)
-    plasma_install_package(package org.kde.merkuro.contact.applet)
+    plasma_add_applet(org.kde.merkuro.contact.applet
+        QML_SOURCES
+            qml/CompactRepresentation.qml
+            qml/ContactPage.qml
+            qml/ContactsPage.qml
+            qml/Header.qml
+            qml/main.qml
+            qml/QrCodePage.qml
+        RESOURCES
+            main.xml
+            fallbackBackground.png
+        GENERATE_APPLET_CLASS
+    )
 endif()

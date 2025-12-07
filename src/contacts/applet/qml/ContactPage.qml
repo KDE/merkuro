@@ -144,7 +144,7 @@ PlasmaComponents3.ScrollView {
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 8
 
                 source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
-                backgroundSource: Qt.resolvedUrl("../resources/fallbackBackground.png")
+                backgroundSource: "qrc:/qt/qml/plasma/applet/org/kde/merkuro/contact/applet/fallbackBackground.png"
 
                 contentItems: PlasmaExtras.Heading {
                     text: addressee.formattedName
