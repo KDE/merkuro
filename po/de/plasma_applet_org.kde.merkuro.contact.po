@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.merkuro.contact\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-08 00:44+0000\n"
 "PO-Revision-Date: 2025-05-17 19:09+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -19,140 +19,132 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: package/contents/ui/ContactPage.qml:48
+#: qml/ContactPage.qml:48
 #, kde-format
 msgid "Return to Contact List"
 msgstr "Zurück zur Kontaktliste"
 
-#: package/contents/ui/ContactPage.qml:55
-#: package/contents/ui/ContactPage.qml:56
-#: package/contents/ui/ContactPage.qml:242
+#: qml/ContactPage.qml:55 qml/ContactPage.qml:56 qml/ContactPage.qml:242
 #, kde-format
 msgid "Call"
 msgstr "Anrufen"
 
-#: package/contents/ui/ContactPage.qml:68
-#: package/contents/ui/ContactPage.qml:100
+#: qml/ContactPage.qml:68 qml/ContactPage.qml:100
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: package/contents/ui/ContactPage.qml:87
-#: package/contents/ui/ContactPage.qml:88
+#: qml/ContactPage.qml:87 qml/ContactPage.qml:88
 #, kde-format
 msgid "Send SMS"
 msgstr "SMS senden"
 
-#: package/contents/ui/ContactPage.qml:118
-#: package/contents/ui/ContactPage.qml:119
-#: package/contents/ui/ContactPage.qml:213
+#: qml/ContactPage.qml:118 qml/ContactPage.qml:119 qml/ContactPage.qml:213
 #, kde-format
 msgid "Send Email"
 msgstr "E-Mail senden"
 
-#: package/contents/ui/ContactPage.qml:127
-#: package/contents/ui/ContactPage.qml:128
+#: qml/ContactPage.qml:127 qml/ContactPage.qml:128
 #, kde-format
 msgid "Show QR Code"
 msgstr "QR-Code anzeigen"
 
-#: package/contents/ui/ContactPage.qml:158
+#: qml/ContactPage.qml:158
 #, kde-format
 msgid "Nickname: %1"
 msgstr "Spitzname: %1"
 
-#: package/contents/ui/ContactPage.qml:168
-#: package/contents/ui/ContactPage.qml:172
+#: qml/ContactPage.qml:168 qml/ContactPage.qml:172
 #, kde-format
 msgid "Birthday:"
 msgstr "Geburtstag:"
 
-#: package/contents/ui/ContactPage.qml:170
+#: qml/ContactPage.qml:170
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
 msgstr "dd.MM."
 
-#: package/contents/ui/ContactPage.qml:181
+#: qml/ContactPage.qml:181
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adresse"
 msgstr[1] "Adressen"
 
-#: package/contents/ui/ContactPage.qml:192
+#: qml/ContactPage.qml:192
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: package/contents/ui/ContactPage.qml:201
+#: qml/ContactPage.qml:201
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "E-Mail-Adresse"
 msgstr[1] "E-Mail-Adressen"
 
-#: package/contents/ui/ContactPage.qml:230
+#: qml/ContactPage.qml:230
 #, kde-format
 msgid "Phone number"
 msgid_plural "Phone numbers"
 msgstr[0] "Telefonnummer"
 msgstr[1] "Telefonnummern"
 
-#: package/contents/ui/ContactPage.qml:239
+#: qml/ContactPage.qml:239
 #, kde-format
 msgid "%1:"
 msgstr "%1:"
 
-#: package/contents/ui/ContactsPage.qml:17
+#: qml/ContactsPage.qml:17
 #, kde-format
 msgid "Contacts"
 msgstr "Kontakte"
 
-#: package/contents/ui/ContactsPage.qml:86
+#: qml/ContactsPage.qml:86
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Kein Name"
 
-#: package/contents/ui/main.qml:32
+#: qml/main.qml:32
 #, kde-format
 msgid "Contact"
 msgstr "Kontakt"
 
-#: package/contents/ui/QrCodePage.qml:21 package/contents/ui/QrCodePage.qml:52
+#: qml/QrCodePage.qml:21 qml/QrCodePage.qml:52
 #, kde-format
 msgid "QR Code"
 msgstr "QR-Code"
 
-#: package/contents/ui/QrCodePage.qml:35
+#: qml/QrCodePage.qml:35
 #, kde-format
 msgid "Return to Contact"
 msgstr "Zurück zum Kontakt"
 
-#: package/contents/ui/QrCodePage.qml:53
+#: qml/QrCodePage.qml:53
 #, kde-format
 msgid "Data Matrix"
 msgstr "Datenmatrix"
 
-#: package/contents/ui/QrCodePage.qml:54
+#: qml/QrCodePage.qml:54
 #, kde-format
 msgctxt "Aztec barcode"
 msgid "Aztec"
 msgstr "Aztec"
 
-#: package/contents/ui/QrCodePage.qml:78
+#: qml/QrCodePage.qml:78
 #, kde-format
 msgid "Change the QR code type"
 msgstr "Den QR-Code-Typ ändern"
 
-#: package/contents/ui/QrCodePage.qml:102
+#: qml/QrCodePage.qml:102
 #, kde-format
 msgid "Creating QR code failed"
 msgstr "Das Erstellen des QR-Codes ist fehlgeschlagen"
 
-#: package/contents/ui/QrCodePage.qml:111
+#: qml/QrCodePage.qml:111
 #, kde-format
 msgid "The QR code is too large to be displayed"
 msgstr "Der QR-Code ist zu groß, um angezeigt zu werden"
