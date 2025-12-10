@@ -4,6 +4,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import Qt.labs.platform
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
@@ -40,6 +41,15 @@ FormCard.FormCardPage {
             }
             label: i18nc("@label:textbox", "Name")
             enabled: root.collection.rights & Akonadi.collection.Right.CanChangeCollection
+        }
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Set calendar color…")
+            icon.name: "color-management"
+            onClicked: {
+                colorDialogLoader.active = true;
+                colorDialogLoader.item.open();
+            }
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
@@ -115,6 +125,21 @@ FormCard.FormCardPage {
             }
             stepSize: 1
             from: 0
+        }
+    }
+
+    Loader {
+        id: colorDialogLoader
+        active: false
+        sourceComponent: ColorDialog {
+            id: colorDialog
+            title: i18nc("@title:window", "Choose Calendar Color")
+            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color
+            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collection.id, color)
+            onRejected: {
+                close();
+                colorDialogLoader.active = false;
+            }
         }
     }
 }

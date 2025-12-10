@@ -95,19 +95,6 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-    }
-
-    QQC2.Action {
-        icon.name: "color-picker"
-        text: i18nc("@action:inmenu", "Set calendar color…")
-        onTriggered: {
-            colorDialogLoader.active = true;
-            colorDialogLoader.item.open();
-        }
-    }
-
-    Kirigami.Action {
-        separator: true
         visible: root.collectionDetails.isResource
     }
 

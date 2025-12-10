@@ -5,7 +5,6 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
-import Qt.labs.platform
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
@@ -35,21 +34,6 @@ TapHandler {
             }
             const item = calendarActions.createObject(applicationWindow(), {});
             item.popup(applicationWindow());
-        }
-    }
-
-    property Loader colorDialogLoader: Loader {
-        id: colorDialogLoader
-        active: false
-        sourceComponent: ColorDialog {
-            id: colorDialog
-            title: i18nc("@title:window", "Choose Calendar Color")
-            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color
-            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collection.id, color)
-            onRejected: {
-                close();
-                colorDialogLoader.active = false;
-            }
         }
     }
 
