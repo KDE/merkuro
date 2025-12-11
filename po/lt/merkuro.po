@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-11 00:45+0000\n"
 "PO-Revision-Date: 2025-09-01 23:42+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -455,12 +455,6 @@ msgstr ""
 #, kde-format
 msgid "No set priority level"
 msgstr ""
-
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Calendar Color"
-msgstr "Pasirinkite kalendoriaus spalvą"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:55
 #, kde-format
@@ -927,20 +921,20 @@ msgstr ""
 msgid "Delete All"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:20
+#: calendar/qml/Dialogs/EditCalendarPage.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
 msgstr "Taisyti kalendorių"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:31
+#: calendar/qml/Dialogs/EditCalendarPage.qml:32
 #, fuzzy, kde-format
 #| msgid "General settings"
 msgctxt "@title"
 msgid "General"
 msgstr "Bendrosios nuostatos"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:41
+#: calendar/qml/Dialogs/EditCalendarPage.qml:42
 #, fuzzy, kde-format
 #| msgctxt "contact's name"
 #| msgid "Name"
@@ -949,18 +943,26 @@ msgid "Name"
 msgstr "Vardas"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set calendar color…"
+msgctxt "@action:button"
+msgid "Set calendar color…"
+msgstr "Nustatyti kalendoriaus spalvą…"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:56
+#: calendar/qml/Dialogs/EditCalendarPage.qml:66
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:60
+#: calendar/qml/Dialogs/EditCalendarPage.qml:70
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
@@ -970,50 +972,50 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:61
+#: calendar/qml/Dialogs/EditCalendarPage.qml:71
 #, fuzzy, kde-format
 #| msgid "Contact"
 msgctxt "@label"
 msgid "Content"
 msgstr "Adresatas"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:66
+#: calendar/qml/Dialogs/EditCalendarPage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:70
+#: calendar/qml/Dialogs/EditCalendarPage.qml:80
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:75
+#: calendar/qml/Dialogs/EditCalendarPage.qml:85
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:84
+#: calendar/qml/Dialogs/EditCalendarPage.qml:94
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:94
+#: calendar/qml/Dialogs/EditCalendarPage.qml:104
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
 msgstr ""
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:99
+#: calendar/qml/Dialogs/EditCalendarPage.qml:109
 #, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Niekada"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:101
+#: calendar/qml/Dialogs/EditCalendarPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Every minute"
 #| msgid_plural "Every %1 minutes"
@@ -1024,6 +1026,12 @@ msgstr[0] "Kas minutę"
 msgstr[1] "Kas %1 minutes"
 msgstr[2] "Kas %1 minučių"
 msgstr[3] "Kas %1 minutę"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:136
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Calendar Color"
+msgstr "Pasirinkite kalendoriaus spalvą"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1862,38 +1870,32 @@ msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Ištrinti kalendorių"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Set calendar color…"
-msgstr "Nustatyti kalendoriaus spalvą…"
-
-#: calendar/qml/Menus/CalendarItemMenu.qml:116
+#: calendar/qml/Menus/CalendarItemMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Kalendoriaus šaltinio nuostatos…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:123
+#: calendar/qml/Menus/CalendarItemMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Atnaujinti kalendoriaus šaltinį"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:130
+#: calendar/qml/Menus/CalendarItemMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Ištrinti kalendoriaus šaltinį"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:142
+#: calendar/qml/Menus/CalendarItemMenu.qml:129
 #, fuzzy, kde-format
 #| msgid "Show map"
 msgctxt "@action:inmenu"
 msgid "Show all"
 msgstr "Rodyti žemėlapį"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:149
+#: calendar/qml/Menus/CalendarItemMenu.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"

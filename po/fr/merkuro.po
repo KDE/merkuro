@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-11 00:45+0000\n"
 "PO-Revision-Date: 2025-10-05 14:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -436,12 +436,6 @@ msgstr "%1 (Priorité la plus faible)"
 #, kde-format
 msgid "No set priority level"
 msgstr "Aucun niveau de priorité défini"
-
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Calendar Color"
-msgstr "Sélectionnez une couleur d'agenda"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:55
 #, kde-format
@@ -917,37 +911,45 @@ msgstr "Supprimer cet élément uniquement"
 msgid "Delete All"
 msgstr "Tout supprimer"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:20
+#: calendar/qml/Dialogs/EditCalendarPage.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
 msgstr "Modifier un agenda"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:31
+#: calendar/qml/Dialogs/EditCalendarPage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Général"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:41
+#: calendar/qml/Dialogs/EditCalendarPage.qml:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "Nom"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set calendar color…"
+msgctxt "@action:button"
+msgid "Set calendar color…"
+msgstr "Définir la couleur de l'agenda..."
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
 msgstr "Icône"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:56
+#: calendar/qml/Dialogs/EditCalendarPage.qml:66
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
 msgstr "Statistiques"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:60
+#: calendar/qml/Dialogs/EditCalendarPage.qml:70
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
@@ -955,55 +957,61 @@ msgid_plural "%1 entries"
 msgstr[0] "Entrée %1"
 msgstr[1] "%1 entrées"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:61
+#: calendar/qml/Dialogs/EditCalendarPage.qml:71
 #, kde-format
 msgctxt "@label"
 msgid "Content"
 msgstr "Contenu"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:66
+#: calendar/qml/Dialogs/EditCalendarPage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr "Taille"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:70
+#: calendar/qml/Dialogs/EditCalendarPage.qml:80
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
 msgstr "Extraction"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:75
+#: calendar/qml/Dialogs/EditCalendarPage.qml:85
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
 msgstr "Utiliser les options du dossier ou du compte parent"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:84
+#: calendar/qml/Dialogs/EditCalendarPage.qml:94
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
 msgstr "Synchroniser lors de la sélection de ce dossier"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:94
+#: calendar/qml/Dialogs/EditCalendarPage.qml:104
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
 msgstr "Synchroniser après"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:99
+#: calendar/qml/Dialogs/EditCalendarPage.qml:109
 #, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "Jamais"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:101
+#: calendar/qml/Dialogs/EditCalendarPage.qml:111
 #, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minutes"
 msgstr[1] "%1 minutes"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:136
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Calendar Color"
+msgstr "Sélectionnez une couleur d'agenda"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1834,37 +1842,31 @@ msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "Supprimer un agenda"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Set calendar color…"
-msgstr "Définir la couleur de l'agenda..."
-
-#: calendar/qml/Menus/CalendarItemMenu.qml:116
+#: calendar/qml/Menus/CalendarItemMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "Paramètres des sources de calendriers..."
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:123
+#: calendar/qml/Menus/CalendarItemMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "Mettre à jour une source d'agenda"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:130
+#: calendar/qml/Menus/CalendarItemMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "Supprimer une source d'agenda"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:142
+#: calendar/qml/Menus/CalendarItemMenu.qml:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
 msgstr "Tout afficher"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:149
+#: calendar/qml/Menus/CalendarItemMenu.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"

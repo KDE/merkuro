@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-11 00:45+0000\n"
 "PO-Revision-Date: 2025-10-09 02:01+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -428,12 +428,6 @@ msgstr "%1(가장 낮음)"
 #, kde-format
 msgid "No set priority level"
 msgstr "설정한 우선 순위 없음"
-
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Calendar Color"
-msgstr "캘린더 색상 선택"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:55
 #, kde-format
@@ -905,91 +899,105 @@ msgstr "이것만 삭제"
 msgid "Delete All"
 msgstr "모두 삭제"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:20
+#: calendar/qml/Dialogs/EditCalendarPage.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
 msgstr "캘린더 편집"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:31
+#: calendar/qml/Dialogs/EditCalendarPage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "일반"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:41
+#: calendar/qml/Dialogs/EditCalendarPage.qml:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "이름"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set calendar color…"
+msgctxt "@action:button"
+msgid "Set calendar color…"
+msgstr "캘린더 색상 설정…"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
 msgstr "아이콘"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:56
+#: calendar/qml/Dialogs/EditCalendarPage.qml:66
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
 msgstr "통계"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:60
+#: calendar/qml/Dialogs/EditCalendarPage.qml:70
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
 msgstr[0] "항목 %1개"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:61
+#: calendar/qml/Dialogs/EditCalendarPage.qml:71
 #, kde-format
 msgctxt "@label"
 msgid "Content"
 msgstr "내용"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:66
+#: calendar/qml/Dialogs/EditCalendarPage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr "크기"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:70
+#: calendar/qml/Dialogs/EditCalendarPage.qml:80
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
 msgstr "가져오기"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:75
+#: calendar/qml/Dialogs/EditCalendarPage.qml:85
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
 msgstr "부모 폴더나 계정 설정 사용"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:84
+#: calendar/qml/Dialogs/EditCalendarPage.qml:94
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
 msgstr "이 폴더를 선택할 때 동기화"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:94
+#: calendar/qml/Dialogs/EditCalendarPage.qml:104
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
 msgstr "다음 이후 동기화"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:99
+#: calendar/qml/Dialogs/EditCalendarPage.qml:109
 #, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "하지 않음"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:101
+#: calendar/qml/Dialogs/EditCalendarPage.qml:111
 #, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1분"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:136
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Calendar Color"
+msgstr "캘린더 색상 선택"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1815,37 +1823,31 @@ msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "캘린더 삭제"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Set calendar color…"
-msgstr "캘린더 색상 설정…"
-
-#: calendar/qml/Menus/CalendarItemMenu.qml:116
+#: calendar/qml/Menus/CalendarItemMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "캘린더 원본 설정…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:123
+#: calendar/qml/Menus/CalendarItemMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "캘린더 원본 업데이트"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:130
+#: calendar/qml/Menus/CalendarItemMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "캘린더 원본 삭제"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:142
+#: calendar/qml/Menus/CalendarItemMenu.qml:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
 msgstr "모두 표시"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:149
+#: calendar/qml/Menus/CalendarItemMenu.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"

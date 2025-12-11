@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-11 00:45+0000\n"
 "PO-Revision-Date: 2025-09-21 13:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -436,12 +436,6 @@ msgstr "%1 (குறைவான முக்கியத்துவம்)"
 #, kde-format
 msgid "No set priority level"
 msgstr "முக்கியத்துவம் அமைக்கப்படவில்லை"
-
-#: calendar/qml/Controls/CalendarItemTapHandler.qml:46
-#, kde-format
-msgctxt "@title:window"
-msgid "Choose Calendar Color"
-msgstr "நாள்காட்டிக்கான நிறத்தை தேர்ந்தெடுப்பது"
 
 #: calendar/qml/Controls/CheckableCollectionNavigationView.qml:55
 #, kde-format
@@ -916,37 +910,45 @@ msgstr "இதை மட்டும் நீக்கு"
 msgid "Delete All"
 msgstr "அனைத்தையும் நீக்கு"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:20
+#: calendar/qml/Dialogs/EditCalendarPage.qml:21
 #, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
 msgstr "நாள்காட்டியை திருத்து…"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:31
+#: calendar/qml/Dialogs/EditCalendarPage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "பொதுவானவை"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:41
+#: calendar/qml/Dialogs/EditCalendarPage.qml:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "பெயர்"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Set calendar color…"
+msgctxt "@action:button"
+msgid "Set calendar color…"
+msgstr "நாள்காட்டிக்கான நிறத்தை அமை…"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
 msgstr "சின்னம்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:56
+#: calendar/qml/Dialogs/EditCalendarPage.qml:66
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
 msgstr "புள்ளிவிவரங்கள்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:60
+#: calendar/qml/Dialogs/EditCalendarPage.qml:70
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
@@ -954,55 +956,61 @@ msgid_plural "%1 entries"
 msgstr[0] "%1 பதிவு"
 msgstr[1] "%1 பதிவுகள்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:61
+#: calendar/qml/Dialogs/EditCalendarPage.qml:71
 #, kde-format
 msgctxt "@label"
 msgid "Content"
 msgstr "உள்ளடக்கம்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:66
+#: calendar/qml/Dialogs/EditCalendarPage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr "அளவு"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:70
+#: calendar/qml/Dialogs/EditCalendarPage.qml:80
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
 msgstr "மீட்பு"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:75
+#: calendar/qml/Dialogs/EditCalendarPage.qml:85
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
 msgstr "தாய் அடைவின் அல்லது கணக்கின் அமைப்புகளைப் பயன்படுத்து"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:84
+#: calendar/qml/Dialogs/EditCalendarPage.qml:94
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
 msgstr "இவ்வடைவைத் திறக்கும்போது ஒத்திசையச்செய்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:94
+#: calendar/qml/Dialogs/EditCalendarPage.qml:104
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
 msgstr "இதன்பின் ஒத்திசையசெய்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:99
+#: calendar/qml/Dialogs/EditCalendarPage.qml:109
 #, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
 msgstr "ஒருபோதும் வேண்டாம்"
 
-#: calendar/qml/Dialogs/EditCalendarPage.qml:101
+#: calendar/qml/Dialogs/EditCalendarPage.qml:111
 #, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 நிமிடம்"
 msgstr[1] "%1 நிமிடம்"
+
+#: calendar/qml/Dialogs/EditCalendarPage.qml:136
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose Calendar Color"
+msgstr "நாள்காட்டிக்கான நிறத்தை தேர்ந்தெடுப்பது"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1834,38 +1842,32 @@ msgctxt "@action:inmenu"
 msgid "Delete Calendar"
 msgstr "நாள்காட்டியை நீக்கு"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:102
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Set calendar color…"
-msgstr "நாள்காட்டிக்கான நிறத்தை அமை…"
-
-#: calendar/qml/Menus/CalendarItemMenu.qml:116
+#: calendar/qml/Menus/CalendarItemMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Calendar source settings…"
 msgstr "நாள்காட்டியின் மூலம் குறித்த அமைப்புகள்…"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:123
+#: calendar/qml/Menus/CalendarItemMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update calendar source"
 msgstr "நாள்காட்டியின் மூலத்தை புதுப்பி"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:130
+#: calendar/qml/Menus/CalendarItemMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete calendar source"
 msgstr "நாள்காட்டியின் மூலத்தை நீக்கு"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:142
+#: calendar/qml/Menus/CalendarItemMenu.qml:129
 #, fuzzy, kde-format
 #| msgid "Show map"
 msgctxt "@action:inmenu"
 msgid "Show all"
 msgstr "நிலப்படத்தை காட்டு"
 
-#: calendar/qml/Menus/CalendarItemMenu.qml:149
+#: calendar/qml/Menus/CalendarItemMenu.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
