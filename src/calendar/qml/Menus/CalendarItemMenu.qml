@@ -5,7 +5,6 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
@@ -59,12 +58,9 @@ Components.ConvergentContextMenu {
     QQC2.Action {
         icon.name: "edit-entry"
         text: i18nc("@action:inmenu", "Edit Calendar…")
-        onTriggered: {
-            let component = Qt.createComponent("org.kde.merkuro.calendar", "EditCalendarPage");
-            pageStack.pushDialogLayer(component, {
-                collectionId: root.collectionId
-            }, {});
-        }
+        onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.calendar", "EditCalendarPage"), {
+            collection: Calendar.CalendarManager.getCollection(root.collectionId)
+        }, {})
     }
 
     Kirigami.Action {
@@ -122,20 +118,20 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-        visible: root.collectionDetails.isResource && !allCollectionsChecked
+        visible: root.collectionDetails.isResource && !root.allCollectionsChecked
     }
 
     Kirigami.Action {
         icon.name: "view-visible"
         text: i18nc("@action:inmenu", "Show all")
         onTriggered: root.showAllCollections(true)
-        visible: root.collectionDetails.isResource && !allCollectionsChecked
+        visible: root.collectionDetails.isResource && !root.allCollectionsChecked
     }
 
     Kirigami.Action {
         icon.name: "view-hidden"
         text: i18nc("@action:inmenu", "Hide all")
         onTriggered: root.showAllCollections(false)
-        visible: root.collectionDetails.isResource && allCollectionsChecked
+        visible: root.collectionDetails.isResource && root.allCollectionsChecked
     }
 }

@@ -18,12 +18,11 @@ FormCard.FormCardPage {
 
     title: i18nc("@title", "Edit Calendar")
 
-    property int collectionId
-    property var collection: Calendar.CalendarManager.getCollection(collectionId)
+    required property Akonadi.collection collection
 
     Akonadi.CollectionEditorController {
         id: editor
-        collectionId: root.collectionId
+        collectionId: root.collection.id
     }
 
     FormCard.FormHeader {
