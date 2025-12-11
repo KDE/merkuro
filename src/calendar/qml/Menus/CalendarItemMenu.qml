@@ -125,21 +125,21 @@ Components.ConvergentContextMenu {
 
     Kirigami.Action {
         separator: true
-        visible: root.collectionDetails.isResource && !allCollectionsChecked
+        visible: root.collectionDetails.isResource && !root.allCollectionsChecked
     }
 
     Kirigami.Action {
         icon.name: "view-visible"
         text: i18nc("@action:inmenu", "Show all")
         onTriggered: root.showAllCollections(true)
-        visible: root.collectionDetails.isResource && !allCollectionsChecked
+        visible: root.collectionDetails.isResource && !root.allCollectionsChecked
     }
 
     Kirigami.Action {
         icon.name: "view-hidden"
         text: i18nc("@action:inmenu", "Hide all")
         onTriggered: root.showAllCollections(false)
-        visible: root.collectionDetails.isResource && allCollectionsChecked
+        visible: root.collectionDetails.isResource && root.allCollectionsChecked
     }
 
     property Kirigami.Action setColorAction: Kirigami.Action {
