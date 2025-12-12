@@ -17,15 +17,10 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: root.title
-
-        Layout.fillWidth: true
-        Layout.topMargin: Kirigami.Units.largeSpacing
     }
 
     AgentConfigurationForm {
         mimetypes: [MimeTypes.calendar, MimeTypes.todo]
         addPageTitle: i18n("Add New Calendar Source…")
-
-        Layout.fillWidth: true
     }
 }
