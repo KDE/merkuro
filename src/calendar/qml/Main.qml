@@ -281,6 +281,7 @@ BaseApplication {
 
     ConfigurationsView {
         id: configurationsView
+        window: root
     }
 
     property Kirigami.Action createAction: Kirigami.Action {
