@@ -51,6 +51,7 @@ void MailApplication::setupActions()
     mainCollection()->addAction("mark_important"_L1, action);
 
     action = new QAction(QIcon::fromTheme(u"user-trash-symbolic"_s), i18nc("@action", "Move to Trash"), this);
+    action->setShortcut(u"Del"_s);
     mainCollection()->addAction("mail_trash"_L1, action);
 
     action = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18nc("@action", "Save as…"), this);
