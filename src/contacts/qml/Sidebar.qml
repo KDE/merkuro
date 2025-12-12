@@ -213,21 +213,6 @@ Kirigami.OverlayDrawer {
                                     source: collectionSourceItem.kDescendantExpanded ? 'arrow-up' : 'arrow-down'
                                     isMask: true
                                 }
-
-                                ColoredCheckbox {
-                                    id: collectionCheckbox
-
-                                    visible: model.checkState !== null
-                                    color: collectionSourceItem.collectionColor ?? Kirigami.Theme.highlightedTextColor
-                                    checked: model.checkState === 2
-                                    onCheckedChanged: root.collectionCheckChanged()
-                                    onClicked: {
-                                        model.checkState = model.checkState === 0 ? 2 : 0
-                                        root.collectionCheckChanged()
-                                    }
-
-                                    Layout.alignment: Qt.AlignVCenter
-                                }
                             }
 
                             Connections {
