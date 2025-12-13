@@ -15,9 +15,10 @@ import org.kde.kirigamiaddons.components as Components
 QQC2.Control {
     id: root
 
-    required property var source
     required property string name
     property alias actions: toolbar.actions
+
+    required property string photoUrl
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
     readonly property color shadowColor: Qt.rgba(0, 0, 0, 0.2)
@@ -37,7 +38,7 @@ QQC2.Control {
                 scale: 1.8
                 anchors.fill: parent
 
-                source: root.source
+                source: root.photoUrl
 
                 implicitWidth: 512
                 implicitHeight: 512
@@ -94,32 +95,9 @@ QQC2.Control {
 
                     anchors.fill: parent
 
-                    visible: !imageIcon.visible
                     name: root.name
                     imageMode: Components.Avatar.ImageMode.AdaptiveImageOrInitals
-                }
-
-                Kirigami.Icon {
-                    id: imageIcon
-
-                    anchors.fill: parent
-
-                    source: root.source
-                    roundToIconSize: false
-                    visible: source
-
-                    layer {
-                        enabled: GraphicsInfo.api !== GraphicsInfo.Software && imageIcon.visible
-                        effect: OpacityMask {
-                            maskSource: Rectangle {
-                                width: imageIcon.width
-                                height: imageIcon.width
-                                radius: imageIcon.width
-                                color: "black"
-                                visible: false
-                            }
-                        }
-                    }
+                    source: root.photoUrl
                 }
             }
 

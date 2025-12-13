@@ -6,6 +6,8 @@
 #include <KContacts/VCardConverter>
 #include <QGuiApplication>
 
+using namespace Qt::Literals::StringLiterals;
+
 AddresseeWrapper::AddresseeWrapper(QObject *parent)
     : QObject(parent)
     , m_addressesModel(new AddressModel(this))
@@ -484,6 +486,17 @@ void AddresseeWrapper::setSuffix(const QString &name)
     m_addressee.setSuffix(name);
     setFormattedName(m_addressee.assembledName());
     Q_EMIT suffixChanged();
+}
+
+QString AddresseeWrapper::photoUrl() const
+{
+    if (photo().isEmpty()) {
+        return {};
+    }
+    if (photo().isIntern()) {
+        return u"image://avatar/%1"_s.arg(item().id());
+    }
+    return photo().url();
 }
 
 #include "moc_addresseewrapper.cpp"

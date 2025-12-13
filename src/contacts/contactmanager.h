@@ -6,8 +6,8 @@
 #include <Akonadi/CollectionFilterProxyModel>
 #include <Akonadi/Item>
 #include <QObject>
+#include <QQmlEngine>
 #include <QSortFilterProxyModel>
-#include <qqmlregistration.h>
 
 namespace Akonadi
 {
@@ -31,6 +31,11 @@ class ContactManager : public QObject
     /// Model containing the contacts from the selected collection
     Q_PROPERTY(QAbstractItemModel *filteredContacts READ filteredContacts CONSTANT)
 public:
+    static ContactManager *create(QQmlEngine *, QJSEngine *)
+    {
+        static ContactManager instance;
+        return &instance;
+    }
     explicit ContactManager(QObject *parent = nullptr);
     ~ContactManager() override;
     QAbstractItemModel *contactCollections() const;

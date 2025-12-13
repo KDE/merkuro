@@ -10,6 +10,7 @@ import QtQuick.Layouts
 
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
+import org.kde.kirigamiaddons.components
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
@@ -18,7 +19,8 @@ Control {
     clip: true
     default property alias contentItems: content.children
 
-    property var source
+    required property string photoUrl
+    required property string name
     property var backgroundSource
 
     background: Item {
@@ -65,9 +67,9 @@ Control {
             Layout.topMargin: Kirigami.Units.gridUnit
             Layout.bottomMargin: Kirigami.Units.gridUnit
 
-            Kirigami.Icon {
-                id: img
-                source: root.source
+            Avatar {
+                name: root.name
+                source: root.photoUrl
                 Layout.fillHeight: true
                 Layout.preferredWidth: height
             }

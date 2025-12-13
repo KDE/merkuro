@@ -69,6 +69,7 @@ class MERKURO_CONTACT_EXPORT AddresseeWrapper : public QObject, public Akonadi::
     // Other information
     Q_PROPERTY(QString note READ note WRITE setNote NOTIFY noteChanged)
     Q_PROPERTY(KContacts::Picture photo READ photo NOTIFY photoChanged)
+    Q_PROPERTY(QString photoUrl READ photoUrl NOTIFY photoChanged)
 
     Q_PROPERTY(DisplayType displayType READ displayType WRITE setDisplayType NOTIFY displayTypeChanged)
 public:
@@ -169,6 +170,8 @@ public:
 
     [[nodiscard]] QString suffix() const;
     void setSuffix(const QString &suffix);
+
+    [[nodiscard]] QString photoUrl() const;
 
     // Invocable since we don't want expensive data bindings when any of the
     // fields change, instead generate it on demand

@@ -58,7 +58,7 @@ FormCard.FormCardPage {
 
     Header {
         Layout.fillWidth: true
-        source: addressee.photo.isIntern ? addressee.photo.data : addressee.photo.url
+        photoUrl: addressee.photoUrl
         name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : i18nc("Placeholder", "No Name")
         actions: [
             Kirigami.Action {

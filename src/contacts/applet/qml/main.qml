@@ -19,6 +19,8 @@ PlasmoidItem {
     switchWidth: Kirigami.Units.gridUnit * 5
     switchHeight: Kirigami.Units.gridUnit * 5
 
+    Component.onCompleted: AvatarImageProvider.init()
+
     fullRepresentation: PlasmaExtras.Representation {
         Layout.minimumWidth: Kirigami.Units.gridUnit * 5
         Layout.minimumHeight: Kirigami.Units.gridUnit * 5

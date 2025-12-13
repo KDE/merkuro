@@ -30,6 +30,8 @@ BaseApplication {
         sourceComponent: Contact.GlobalMenuBar {}
     }
 
+    Component.onCompleted: Contact.AvatarImageProvider.init()
+
     Connections {
         target: Contact.ContactApplication
 

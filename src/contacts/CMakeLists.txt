@@ -15,6 +15,7 @@ ecm_qt_declare_logging_category(merkuro_contact_SRCS
 
 target_link_libraries(merkuro_contact PUBLIC
     Qt::Qml
+    Qt::Quick
     KF6::XmlGui
     KF6::Contacts
     KF6::ConfigGui
@@ -82,6 +83,8 @@ target_sources(merkuro_contact PRIVATE
     attributes/contactmetadataattribute_p.h
     attributes/contactmetadataattribute.cpp
     attributes/attributeregistrar.cpp
+    avatarimageprovider.cpp
+    avatarimageprovider.h
     ${merkuro_contact_SRCS}
 )
 

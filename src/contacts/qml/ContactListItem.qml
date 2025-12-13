@@ -77,33 +77,10 @@ Delegates.RoundedItemDelegate {
             Layout.preferredWidth: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
             Layout.preferredHeight: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
 
-            Kirigami.Icon {
-                id: imageIcon
+            source: root.addressee.photo ?
+                (root.addressee.photo.url.toString().length > 0 ? root.addressee.photo.url.toString() : "image://avatar/" + root.itemId)
+                : null
 
-                anchors.fill: parent
-
-                source: if (root.addressee.photo) {
-                    return root.addressee.photo.isIntern ? root.addressee.photo.data : root.addressee.photo.url;
-                } else {
-                    return null;
-                }
-                roundToIconSize: false
-                visible: source
-
-                layer {
-                    enabled: imageIcon.visible
-                    effect: OpacityMask {
-                        maskSource: Rectangle {
-                            width: imageIcon.width
-                            height: imageIcon.width
-                            radius: imageIcon.width
-                            color: "black"
-                            visible: false
-                        }
-                    }
-                }
-                Accessible.ignored: true
-            }
             Accessible.ignored: true // same as name
         }
 
