@@ -315,10 +315,11 @@ ListView {
                         id: tagsRepeater
                         model: listItem.todoCategories // From todoModel
 
-                        delegate: Calendar.Tag {
+                        delegate: Kirigami.Chip {
+                            required property string modelData
                             width: implicitWidth > tagFlow.width ? tagFlow.width : implicitWidth
                             text: modelData
-                            showAction: false
+                            closable: false
                         }
                     }
                 }

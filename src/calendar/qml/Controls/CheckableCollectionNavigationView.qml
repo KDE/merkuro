@@ -105,12 +105,10 @@ QQC2.ScrollView {
 
                 model: parent.visible ? Akonadi.TagManager.tagModel : []
 
-                delegate: Tag {
-                    implicitWidth: itemLayout.implicitWidth > tagFlow.width ? tagFlow.width : itemLayout.implicitWidth
+                delegate: Kirigami.Chip {
                     text: model.display
-                    showAction: false
+                    closable: false
                     activeFocusOnTab: true
-                    backgroundColor: root.activeTags.includes(model.display) ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
                     enabled: !root.parentDrawerCollapsed
                     onClicked: Filter.toggleFilterTag(model.display)
                 }

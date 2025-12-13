@@ -194,14 +194,13 @@ QQC2.ScrollView {
             spacing: Kirigami.Units.largeSpacing
             Repeater {
                 model: root.incidenceWrapper.categories
-                Tag {
+                delegate: Kirigami.Chip {
+                    required property string modelData
                     text: modelData
-                    icon.name: "edit-delete-remove"
-                    actionText: i18n("Remove %1 tag", modelData)
-                    showAction: false
-                    implicitWidth: itemLayout.implicitWidth > tagFlow.width ? tagFlow.width : itemLayout.implicitWidth
+
+                    //TODO test
+                    closable: false
                     activeFocusOnTab: true
-                    backgroundColor: mainDrawer.activeTags.includes(modelData) ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
                     onClicked: Calendar.Filter.toggleFilterTag(modelData)
                 }
             }

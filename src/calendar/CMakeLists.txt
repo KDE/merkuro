@@ -156,7 +156,6 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/Controls/IncidenceMouseArea.qml
         qml/Controls/KBMNavigationMouseArea.qml
         qml/Controls/DayTapHandler.qml
-        qml/Controls/Tag.qml
         qml/Controls/ResizerSeparator.qml
         qml/Controls/CalendarItemTapHandler.qml
         qml/Controls/TodoCheckBox.qml

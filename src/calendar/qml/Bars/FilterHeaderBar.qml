@@ -69,20 +69,11 @@ RowLayout {
             id: tagRepeater
             model: Calendar.Filter ? Calendar.Filter.tags : {}
 
-            Calendar.Tag {
-                id: filterTag
-
+            delegate: Kirigami.Chip {
+                required property string modelData
+                closable: false
                 text: modelData
-
-                implicitWidth: itemLayout.implicitWidth > tagFlow.width ?
-                    tagFlow.width : itemLayout.implicitWidth
-                isHeading: true
-                headingItem.color: headerLayout.mode === Calendar.CalendarApplication.Todo && headerLayout.filterCollectionDetails ?
-                    headerLayout.filterCollectionDetails.color : Kirigami.Theme.textColor
-
                 onClicked: Calendar.Filter.removeTag(modelData)
-                actionIcon.name: "edit-delete-remove"
-                actionText: i18n("Remove filtering tag")
             }
         }
     }
