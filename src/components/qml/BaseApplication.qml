@@ -5,11 +5,8 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.components
-import org.kde.akonadi as Akonadi
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 StatefulApp.StatefulWindow {

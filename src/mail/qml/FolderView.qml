@@ -12,7 +12,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
-import org.kde.kitemmodels as KItemModels
 import './private'
 
 Kirigami.ScrollablePage {
@@ -138,7 +137,7 @@ Kirigami.ScrollablePage {
                 dialog.open();
             }
 
-            onMoveToRequested: (items) => {
+            onMoveToRequested: items => {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
                 const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',
@@ -155,7 +154,7 @@ Kirigami.ScrollablePage {
                 });
             }
 
-            onCopyToRequested: (items) => {
+            onCopyToRequested: items => {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
                 const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',

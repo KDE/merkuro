@@ -31,7 +31,7 @@ Components.MessageDialog {
         text: {
             let msg = i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", items.length) + '<ul>';
 
-            for (let name of names) {
+            for (let name of root.names) {
                 msg += '<li><b>' + name + '</b></li>';
             }
 

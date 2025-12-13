@@ -6,11 +6,9 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtCore
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import QtQml.Models
 import Qt.labs.platform
 
 import org.kde.merkuro.calendar
@@ -21,7 +19,7 @@ BaseApplication {
 
     application: CalendarApplication
 
-    property var openOccurrence: {}
+    property var openOccurrence: ({})
 
     readonly property var monthViewAction: CalendarApplication.action("open_month_view")
     readonly property var weekViewAction: CalendarApplication.action("open_week_view")

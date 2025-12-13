@@ -155,8 +155,8 @@ FormCard.FormCardPage {
             standardButtons: QQC2.DialogButtonBox.Cancel
 
             QQC2.Button {
-                icon.name: mode === ContactEditor.EditMode ? "document-save" : "list-add"
-                text: mode === ContactEditor.EditMode ? i18n("Save") : i18n("Add")
+                icon.name: root.mode === ContactEditor.EditMode ? "document-save" : "list-add"
+                text: root.mode === ContactEditor.EditMode ? i18n("Save") : i18n("Add")
                 enabled: contactEditor.contact.formattedName.length > 0
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }

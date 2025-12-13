@@ -9,16 +9,10 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import QtQuick.Layouts
-import Qt.labs.qmlmodels
-import Qt5Compat.GraphicalEffects
 
-import org.kde.akonadi
 import org.kde.merkuro.calendar
-import org.kde.merkuro.components
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import org.kde.kitemmodels
 
 Kirigami.OverlayDrawer {
     id: mainDrawer

@@ -5,7 +5,6 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import Qt.labs.platform
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -29,19 +28,19 @@ FormCard.FormCard {
 
         text: i18n("Address book:")
         Layout.fillWidth: true
-        enabled: mode === ContactEditor.CreateMode
+        enabled: root.mode === ContactEditor.CreateMode
 
-        defaultCollectionId: if (mode === ContactEditor.CreateMode) {
+        defaultCollectionId: if (root.mode === ContactEditor.CreateMode) {
             return ContactConfig.lastUsedAddressBookCollection;
         } else {
-            return contactEditor.collectionId;
+            return root.contactEditor.collectionId;
         }
 
         mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
         accessRightsFilter: Akonadi.Collection.CanCreateItem
-        onUserSelectedCollection: collection => contactEditor.setDefaultAddressBook(collection)
+        onUserSelectedCollection: collection => root.contactEditor.setDefaultAddressBook(collection)
         onCollectionChanged: if (collection) {
-            contactEditor.setDefaultAddressBook(collection)
+            root.contactEditor.setDefaultAddressBook(collection)
         }
     }
 
@@ -61,8 +60,8 @@ FormCard.FormCard {
                     id: textField
                     Accessible.description: i18n("Name")
                     Layout.fillWidth: true
-                    text: contactEditor.contact.formattedName
-                    onTextEdited: contactEditor.contact.formattedName = text
+                    text: root.contactEditor.contact.formattedName
+                    onTextEdited: root.contactEditor.contact.formattedName = text
                     placeholderText: i18n("Contact name")
                 }
                 QQC2.Button {
@@ -87,16 +86,16 @@ FormCard.FormCard {
             editable: true
             model: [i18n("Dr."), i18n("Miss"), i18n("Mr."), i18n("Mrs."), i18n("Ms."), i18n("Prof.")]
             currentIndex: -1
-            editText: contactEditor.contact.prefix
-            onCurrentValueChanged: contactEditor.contact.prefix = currentValue
+            editText: root.contactEditor.contact.prefix
+            onCurrentValueChanged: root.contactEditor.contact.prefix = currentValue
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             label: i18n("Given name")
-            onTextChanged: contactEditor.contact.givenName = text
-            text: contactEditor.contact.givenName
+            onTextChanged: root.contactEditor.contact.givenName = text
+            text: root.contactEditor.contact.givenName
             placeholderText: i18n("First name or chosen name")
         }
 
@@ -104,8 +103,8 @@ FormCard.FormCard {
 
         FormCard.FormTextFieldDelegate {
             label: i18n("Additional name")
-            onTextChanged: contactEditor.contact.additionalName = text
-            text: contactEditor.contact.additionalName
+            onTextChanged: root.contactEditor.contact.additionalName = text
+            text: root.contactEditor.contact.additionalName
             placeholderText: i18n("Middle name or other name")
         }
 
@@ -113,8 +112,8 @@ FormCard.FormCard {
 
         FormCard.FormTextFieldDelegate {
             label: i18n("Family name:")
-            onTextChanged: contactEditor.contact.familyName = text
-            text: contactEditor.contact.familyName
+            onTextChanged: root.contactEditor.contact.familyName = text
+            text: root.contactEditor.contact.familyName
             placeholderText: i18n("Surname or last name")
         }
 
@@ -122,9 +121,9 @@ FormCard.FormCard {
 
         FormCard.FormComboBoxDelegate {
             text: i18n("Honorific suffix")
-            onCurrentValueChanged: contactEditor.contact.suffix = currentValue
+            onCurrentValueChanged: root.contactEditor.contact.suffix = currentValue
             editable: true
-            editText: contactEditor.contact.suffix
+            editText: root.contactEditor.contact.suffix
             model: [i18n("I"), i18n("II"), i18n("III"), i18n("Jr."), i18n("Sr.")]
             currentIndex: -1
         }
@@ -133,8 +132,8 @@ FormCard.FormCard {
 
         FormCard.FormTextFieldDelegate {
             label: i18n("Nickname")
-            onTextChanged: contactEditor.contact.nickName = text
-            text: contactEditor.contact.nickName
+            onTextChanged: root.contactEditor.contact.nickName = text
+            text: root.contactEditor.contact.nickName
             placeholderText: i18n("Alternative name")
         }
     }
@@ -144,8 +143,8 @@ FormCard.FormCard {
     FormCard.FormTextFieldDelegate {
         id: blogFeedUrl
         label: i18n("Blog Feed")
-        text: contactEditor.contact.blogFeed
-        onTextChanged: contactEditor.contact.blogFeed = text
+        text: root.contactEditor.contact.blogFeed
+        onTextChanged: root.contactEditor.contact.blogFeed = text
         placeholderText: i18n("https://planet.kde.org/")
     }
 }

@@ -3,9 +3,6 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.dateandtime
 import org.kde.merkuro.calendar as Calendar
 
 QQC2.ComboBox {

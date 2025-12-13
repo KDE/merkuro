@@ -5,7 +5,6 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import QtQuick.Window
-import org.kde.merkuro.components
 
 QQC2.Menu {
     id: editMenu
@@ -15,10 +14,10 @@ QQC2.Menu {
     title: i18nc("@action:menu", "Edit")
 
     property Connections _textInputConnection: Connections {
-        target: _window
+        target: editMenu._window
         function onActiveFocusItemChanged() {
-            if (_window.activeFocusItem instanceof TextEdit || _window.activeFocusItem instanceof TextInput) {
-                editMenu.field = _window.activeFocusItem;
+            if (editMenu._window.activeFocusItem instanceof TextEdit || editMenu._window.activeFocusItem instanceof TextInput) {
+                editMenu.field = editMenu._window.activeFocusItem;
             }
         }
     }

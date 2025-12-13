@@ -8,9 +8,7 @@ import QtQuick.Controls as QQC2
 
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
-import org.kde.kitemmodels as KItemModels
 import org.kde.pim.mimetreeparser as MimeTreeParser
-import './actions' as Actions
 
 MimeTreeParser.MailViewer {
     id: root

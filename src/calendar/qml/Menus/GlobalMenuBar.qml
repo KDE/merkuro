@@ -4,7 +4,6 @@
 import Qt.labs.platform as Labs
 
 import QtQuick
-import QtQuick.Window
 import org.kde.merkuro.calendar
 import org.kde.merkuro.components
 import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs

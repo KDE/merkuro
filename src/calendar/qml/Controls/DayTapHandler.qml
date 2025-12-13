@@ -3,8 +3,6 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
 
 TapHandler {
@@ -49,7 +47,7 @@ TapHandler {
             const position = eventPoint.position;
             clickX = position.x;
             clickY = position.y;
-            _dayActions.createObject(dayTapHandler, {}).open();
+            (_dayActions.createObject(dayTapHandler, {}) as QQC2.Menu).open();
         }
     }
 

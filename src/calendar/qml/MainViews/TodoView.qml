@@ -9,12 +9,8 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import Qt.labs.qmlmodels
-import org.kde.kitemmodels
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.merkuro.calendar as Calendar
-import org.kde.merkuro.components
 
 Kirigami.ScrollablePage {
     id: root

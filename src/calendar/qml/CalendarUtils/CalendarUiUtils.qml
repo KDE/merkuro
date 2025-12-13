@@ -7,7 +7,6 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar
-import org.kde.merkuro.contact
 
 QtObject {
     id: utilsObject
