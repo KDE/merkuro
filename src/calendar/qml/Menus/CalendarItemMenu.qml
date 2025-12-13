@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components
 import org.kde.akonadi as Akonadi
 
 Components.ConvergentContextMenu {
@@ -32,7 +33,7 @@ Components.ConvergentContextMenu {
             Layout.fillWidth: true
         }
 
-        Calendar.ColoredCheckbox {
+        ColoredCheckbox {
             id: collectionCheckbox
 
             implicitWidth: Kirigami.Units.gridUnit * 2
