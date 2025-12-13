@@ -17,7 +17,6 @@ ContactsModel::ContactsModel(QObject *parent)
     auto sourceModel = new Akonadi::EmailAddressSelectionModel(this);
     auto filterModel = new Akonadi::ContactsFilterProxyModel(this);
     filterModel->setSourceModel(sourceModel->model());
-    filterModel->setFilterFlags(Akonadi::ContactsFilterProxyModel::HasEmail);
 
     auto flatModel = new KDescendantsProxyModel(this);
     flatModel->setSourceModel(filterModel);
