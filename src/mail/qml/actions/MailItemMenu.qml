@@ -36,8 +36,14 @@ QQC2.Menu {
     }
     QQC2.MenuItem {
         icon.name: "settings-configure"
-        text: i18nc("@action:inmenu", "Folder Properties")
-        onClicked: MailManager.editCollection(mailActionsPopup.collectionId);
+        text: i18nc("@action:inmenu", "Edit Folder…")
+        onClicked: {
+            let component = Qt.createComponent("org.kde.merkuro.components", "EditCollectionPage");
+            pageStack.pushDialogLayer(component, {
+                title: i18nc("@title", "Edit Folder"),
+                collection: MailManager.getCollection(mailActionsPopup.collectionId),
+            }, {});
+        }
     }
 
     QQC2.MenuSeparator {

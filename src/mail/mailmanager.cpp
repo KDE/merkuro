@@ -202,14 +202,6 @@ void MailManager::deleteCollection(const QModelIndex &index)
     }
 }
 
-void MailManager::editCollection(const QModelIndex &index)
-{
-    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
-    QPointer<Akonadi::CollectionPropertiesDialog> dialog = new Akonadi::CollectionPropertiesDialog(collection);
-    dialog->setWindowTitle(i18nc("@title:window", "Account Configuration: %1", collection.name()));
-    dialog->show();
-}
-
 QString MailManager::resourceIdentifier(const QModelIndex &index)
 {
     const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
@@ -257,6 +249,11 @@ void MailManager::checkMail()
         }
         agent.synchronize();
     }
+}
+
+Akonadi::Collection MailManager::getCollection(const QModelIndex &index)
+{
+    return foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
 }
 
 #include "moc_mailmanager.cpp"
