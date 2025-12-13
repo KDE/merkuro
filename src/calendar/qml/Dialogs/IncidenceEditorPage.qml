@@ -59,38 +59,48 @@ FormCard.FormCardPage {
         }
     }
 
-    footer: QQC2.DialogButtonBox {
-        standardButtons: QQC2.DialogButtonBox.Cancel
+    footer: ColumnLayout {
+        spacing: 0
 
-        QQC2.Button {
-            icon.name: root.editMode ? "document-save" : "list-add"
-            text: root.editMode ? i18n("Save") : i18n("Add")
-            enabled: root.validDates && root.incidenceWrapper.summary && root.incidenceWrapper.collectionId
-            QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
+        Kirigami.Separator {
+            Layout.fillWidth: true
         }
 
-        onRejected: root.cancel()
-        onAccepted: {
-            if (root.editMode) {
-                Calendar.CalendarManager.editIncidence(root.incidenceWrapper);
-            } else if (root.validDates) {
-                if(root.incidenceWrapper.collectionId < 0) {
-                    root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
-                }
-                if (root.incidenceWrapper.collectionId < 0) {
-                    root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
-                }
+        QQC2.DialogButtonBox {
+            Layout.fillWidth: true
 
-                if(root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
-                    Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
-                } else {
-                    Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
-                }
-                Calendar.Config.save();
+            standardButtons: QQC2.DialogButtonBox.Cancel
 
-                Calendar.CalendarManager.addIncidence(root.incidenceWrapper);
+            QQC2.Button {
+                icon.name: root.editMode ? "document-save" : "list-add"
+                text: root.editMode ? i18n("Save") : i18n("Add")
+                enabled: root.validDates && root.incidenceWrapper.summary && root.incidenceWrapper.collectionId
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
-            root.cancel();
+
+            onRejected: root.cancel()
+            onAccepted: {
+                if (root.editMode) {
+                    Calendar.CalendarManager.editIncidence(root.incidenceWrapper);
+                } else if (root.validDates) {
+                    if(root.incidenceWrapper.collectionId < 0) {
+                        root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
+                    }
+                    if (root.incidenceWrapper.collectionId < 0) {
+                        root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
+                    }
+
+                    if(root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
+                        Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
+                    } else {
+                        Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
+                    }
+                    Calendar.Config.save();
+
+                    Calendar.CalendarManager.addIncidence(root.incidenceWrapper);
+                }
+                root.cancel();
+            }
         }
     }
 
@@ -117,23 +127,6 @@ FormCard.FormCardPage {
                 property bool isJournal: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeJournal
 
                 Layout.topMargin: Kirigami.Units.gridUnit
-
-                // Connections {
-                //     target: root.incidenceWrapper
-                //     function onIncidenceStartChanged() {
-                //         incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                //         incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                //         incidenceStartDateCombo.display = root.incidenceWrapper.incidenceStartDateDisplay;
-                //         incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStartTimeDisplay;
-                //     }
-                //
-                //     function onIncidenceEndChanged() {
-                //         incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                //         incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                //         incidenceEndDateCombo.display = root.incidenceWrapper.incidenceEndDateDisplay;
-                //         incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEndTimeDisplay;
-                //     }
-                // }
 
                 FormCard.FormTextFieldDelegate {
                     id: summaryField
@@ -232,42 +225,35 @@ FormCard.FormCardPage {
 
                 FormCard.FormDelegateSeparator {}
 
-                FormCard.FormComboBoxDelegate {
+                Akonadi.FormCollectionComboBox {
                     id: calendarCombo
 
                     text: i18nc("@label", "Calendar")
 
-                    textRole: "display"
-                    valueRole: "collectionId"
-
-                    currentIndex: 0
-
-                    model: Akonadi.CollectionComboBoxModel {
-                        id: collectionComboBoxModel
-                        onCurrentIndexChanged: root.currentIndex = currentIndex
-                        defaultCollectionId: {
-                            if (root.incidenceWrapper.collectionId === -1) {
-                                if ((incidenceForm.isTodo && Calendar.Config.lastUsedTodoCollection === -1) ||
-                                    (!incidenceForm.isTodo && Calendar.Config.lastUsedEventCollection === -1)) {
-                                    return collectionComboBoxModel.data(index(calendarCombo.currentIndex, 0), Akonadi.EntityTreeModel.CollectionIdRole);
-                                }
-                                return incidenceForm.isTodo ? Calendar.Config.lastUsedTodoCollection : Calendar.Config.lastUsedEventCollection;
-                            }
-                            return root.incidenceWrapper.collectionId;
-                        }
-                        mimeTypeFilter: if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeEvent) {
-                            return [Akonadi.MimeTypes.calendar]
-                        } else if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
-                            return [Akonadi.MimeTypes.todo]
-                        }
-                        accessRightsFilter: Akonadi.Collection.CanCreateItem
+                    mimeTypeFilter: if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeEvent) {
+                        return [Akonadi.MimeTypes.calendar]
+                    } else if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
+                        return [Akonadi.MimeTypes.todo]
                     }
+                    accessRightsFilter: Akonadi.Collection.CanCreateItem
+
+                    defaultCollectionId: {
+                        if (root.incidenceWrapper.collectionId === -1) {
+                            if ((incidenceForm.isTodo && Calendar.Config.lastUsedTodoCollection === -1) ||
+                                (!incidenceForm.isTodo && Calendar.Config.lastUsedEventCollection === -1)) {
+                                return calendarCombo.model.data(index(calendarCombo.currentIndex, 0), Akonadi.EntityTreeModel.CollectionIdRole);
+                            }
+                            return incidenceForm.isTodo ? Calendar.Config.lastUsedTodoCollection : Calendar.Config.lastUsedEventCollection;
+                        }
+                        return root.incidenceWrapper.collectionId;
+                    }
+
                     onCurrentIndexChanged: {
-                        if (collectionComboBoxModel.rowCount() === 0) {
+                        if (calendarCombo.model.rowCount() === 0) {
                             return;
                         }
-                        let selectedModelIndex = collectionComboBoxModel.index(currentIndex, 0);
-                        let selectedCollection = collectionComboBoxModel.data(selectedModelIndex, Akonadi.EntityTreeModel.CollectionRole);
+                        let selectedModelIndex = calendarCombo.model.index(currentIndex, 0);
+                        let selectedCollection = calendarCombo.model.data(selectedModelIndex, Akonadi.EntityTreeModel.CollectionRole);
                         root.incidenceWrapper.setCollection(selectedCollection)
                     }
                 }
@@ -380,6 +366,18 @@ FormCard.FormCardPage {
                     // visible: !allDayCheckBox.checked
                     // display: root.incidenceWrapper.incidenceEndTimeDisplay
                     // dateTime: root.incidenceWrapper.incidenceStart
+                    //
+
+                    Connections {
+                        target: root.incidenceWrapper
+
+                        function onIncidenceStartChanged(): void {
+                            incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart;
+                            incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart;
+                            incidenceStartDateCombo.display = root.incidenceWrapper.incidenceStartDateDisplay;
+                            incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStartTimeDisplay;
+                        }
+                    }
                 }
             }
 
@@ -414,7 +412,7 @@ FormCard.FormCardPage {
 
                     dateTimeDisplay: incidenceStartDateCombo.dateTimeDisplay
 
-                    // dateTime: root.incidenceWrapper.incidenceEnd
+                    initialValue: root.incidenceWrapper.incidenceEnd
                     // onNewDateChosen: (day, month, year) => {
                         // root.incidenceWrapper.setIncidenceEndDate(day, month, year)
                     // }
@@ -424,6 +422,17 @@ FormCard.FormCardPage {
                     // onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
                     // enabled: (!incidenceForm.isTodo && !allDayCheckBox.checked) || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                     // visible: !allDayCheckBox.checked
+                    //
+                    Connections {
+                        target: root.incidenceWrapper
+
+                        function onIncidenceEndChanged(): void {
+                            incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd;
+                            incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd;
+                            incidenceEndDateCombo.display = root.incidenceWrapper.incidenceEndDateDisplay;
+                            incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEndTimeDisplay;
+                        }
+                    }
                 }
 
                 FormCard.FormDelegateSeparator {}
@@ -756,6 +765,7 @@ FormCard.FormCardPage {
                     id: attendeesButton
 
                     text: i18n("Add Attendee")
+                    icon.name: 'list-add-symbolic'
 
                     onClicked: attendeeAddChoices.open()
 
@@ -777,8 +787,14 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                FormCard.FormPlaceholderMessageDelegate {
+                    text: i18nc("@info:placeholder", "There are no attendees")
+                    visible: attendeesRepeater.count === 0
+                }
+
                 Repeater {
                     id: attendeesRepeater
+
                     model: root.incidenceWrapper.attendeesModel
                     // All of the alarms are handled within the delegates.
                     Layout.fillWidth: true
@@ -795,6 +811,7 @@ FormCard.FormCardPage {
                         topPadding: Kirigami.Units.smallSpacing
                         bottomPadding: Kirigami.Units.smallSpacing
 
+                        background: null
                         contentItem: Item {
                             implicitWidth: attendeeCardContent.implicitWidth
                             implicitHeight: attendeeCardContent.implicitHeight
@@ -892,6 +909,181 @@ FormCard.FormCardPage {
                     }
                 }
             }
+
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Reminders")
+                trailing: QQC2.ToolButton {
+                    text: i18n("Add Reminder")
+                    icon.name: 'list-add-symbolic'
+                    onClicked: remindersModel.addAlarm()
+                }
+            }
+
+            FormCard.FormCard {
+                FormCard.FormPlaceholderMessageDelegate {
+                    text: i18nc("@info:placeholder", "There are no attendees")
+                    visible: remindersRepeater.count === 0
+                }
+
+                Repeater {
+                    id: remindersRepeater
+
+                    model: Calendar.RemindersModel {
+                        id: remindersModel
+                        incidence: root.incidenceWrapper.incidencePtr
+                    }
+
+                    delegate: Calendar.ReminderDelegate {
+                        isTodo: incidenceForm.isTodo
+                        remindersModel: remindersRepeater.model
+                    }
+                }
+            }
+
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Tags")
+                trailing: QQC2.ToolButton {
+                    text: i18n("Manage tags…")
+                    icon.name: 'tag-symbolic'
+                    onClicked: Calendar.CalendarApplication.action("open_tag_manager").trigger()
+                }
+            }
+
+            FormCard.FormCard {
+                FormCard.AbstractFormDelegate {
+                    background: null
+                    contentItem: QQC2.ComboBox {
+                        enabled: count > 0
+                        model: Akonadi.TagManager.tagModel
+                        displayText: root.incidenceWrapper.categories.length > 0 ?
+                            root.incidenceWrapper.categories.join(i18nc("List separator", ", ")) :
+                            Kirigami.Settings.tabletMode ? i18n("Tap to set tags…") : i18n("Click to set tags…")
+
+                        delegate: Delegates.RoundedItemDelegate {
+                            id: delegate
+
+                            required property int index
+                            required property string name
+
+                            text: name
+
+                            checkable: true
+                            checked: root.incidenceWrapper.categories.includes(name)
+                            highlighted: false
+
+                            topInset: index === 0 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
+                            bottomInset: index === ListView.view.count - 1 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
+
+                            contentItem: RowLayout {
+                                QQC2.CheckBox {
+                                    id: checkBox
+                                    activeFocusOnTab: false
+
+                                    checked: delegate.checked
+                                    onCheckedChanged: if (delegate.checked !== checked) {
+                                        delegate.checked = checked;
+                                    }
+                                }
+
+                                Delegates.DefaultContentItem {
+                                    itemDelegate: delegate
+                                }
+                            }
+
+                            onCheckedChanged: {
+                                root.incidenceWrapper.categories.includes(name) ?
+                                    root.incidenceWrapper.categories = root.incidenceWrapper.categories.filter(tag => tag !== name) :
+                                    root.incidenceWrapper.categories = [...root.incidenceWrapper.categories, name]
+                                checkBox.checked = delegate.checked;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Attachments")
+                trailing: QQC2.ToolButton {
+                    text: i18n("Add Attachment")
+                    icon.name: "list-add-symbolic"
+                    onClicked: attachmentFileDialog.open();
+
+                    FileDialog {
+                        id: attachmentFileDialog
+
+                        title: i18n("Add an attachment")
+                        currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
+                        onAccepted: root.incidenceWrapper.attachmentsModel.addAttachment(selectedFile)
+                    }
+                }
+            }
+
+            FormCard.FormCard {
+                FormCard.FormPlaceholderMessageDelegate {
+                    text: i18nc("@info:placeholder", "There are no attachments")
+                    visible: attachmentsRepeater.count === 0
+                }
+
+                Repeater {
+                    id: attachmentsRepeater
+                    model: root.incidenceWrapper.attachmentsModel
+                    delegate: FormCard.AbstractFormDelegate {
+                        id: attachmentDelegate
+     
+                        required property string iconName
+                        required property string attachmentLabel
+                        required property string uri
+     
+                        icon.name: iconName
+                        text: attachmentLabel
+     
+                        onClicked: Qt.openUrlExternally(uri)
+     
+                        contentItem: RowLayout {
+                            QQC2.Label {
+                                text: attachmentDelegate.attachmentLabel
+                            }
+     
+                            QQC2.Button {
+                                icon.name: "edit-delete-remove"
+                                onClicked: root.incidenceWrapper.attachmentsModel.deleteAttachment(attachmentDelegate.uri)
+                            }
+                        }
+                    }
+                }
+            }
+
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Note")
+            }
+
+            FormCard.FormCard {
+                QQC2.TextArea {
+                    text: root.incidenceWrapper.description
+                    wrapMode: TextEdit.Wrap
+                    onTextChanged: root.incidenceWrapper.description = text
+                    background.visible: activeFocus
+
+                    leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                    rightPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                    topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                    bottomPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 6
+
+                    Keys.onTabPressed: nextItemInFocusChain().forceActiveFocus()
+
+                    Keys.onReturnPressed: event => {
+                        if (event.modifiers & Qt.ShiftModifier) {
+                            submitAction.trigger();
+                        } else {
+                            event.accepted = false;
+                        }
+                    }
+                    Layout.fillWidth: true
+                }
+            }
         }
     }
 
@@ -922,190 +1114,3 @@ FormCard.FormCardPage {
         }
     }
 }
-
-// ColumnLayout {
-//     property alias attendeesColumnY: attendeesColumn.y
-//     Kirigami.FormLayout {
-//         id: incidenceForm
-//
-//         // Restrain the descriptionTextArea from getting too chonky
-//         ColumnLayout {
-//             Layout.fillWidth: true
-//             Layout.maximumWidth: incidenceForm.wideMode ? Kirigami.Units.gridUnit * 25 : -1
-//             Kirigami.FormData.label: i18n("Description:")
-//
-//             QQC2.TextArea {
-//                 id: descriptionTextArea
-//
-//                 Layout.fillWidth: true
-//                 placeholderText: i18n("Optional")
-//                 text: root.incidenceWrapper.description
-//                 wrapMode: TextEdit.Wrap
-//                 onTextChanged: root.incidenceWrapper.description = text
-//                 Keys.onReturnPressed: event => {
-//                     if (event.modifiers & Qt.ShiftModifier) {
-//                         submitAction.trigger();
-//                     } else {
-//                         event.accepted = false;
-//                     }
-//                 }
-//             }
-//         }
-//
-//         RowLayout {
-//             Kirigami.FormData.label: i18n("Tags:")
-//             Layout.fillWidth: true
-//
-//             QQC2.ComboBox {
-//                 Layout.fillWidth: true
-//
-//                 enabled: count > 0
-//                 model: Akonadi.TagManager.tagModel
-//                 displayText: root.incidenceWrapper.categories.length > 0 ?
-//                     root.incidenceWrapper.categories.join(i18nc("List separator", ", ")) :
-//                     Kirigami.Settings.tabletMode ? i18n("Tap to set tags…") : i18n("Click to set tags…")
-//
-//                 delegate: Delegates.RoundedItemDelegate {
-//                     id: delegate
-//
-//                     required property int index
-//                     required property string name
-//
-//                     text: name
-//
-//                     checkable: true
-//                     checked: root.incidenceWrapper.categories.includes(name)
-//                     highlighted: false
-//
-//                     topInset: index === 0 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
-//                     bottomInset: index === ListView.view.count - 1 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
-//
-//                     contentItem: RowLayout {
-//                         QQC2.CheckBox {
-//                             id: checkBox
-//                             activeFocusOnTab: false
-//
-//                             checked: delegate.checked
-//                             onCheckedChanged: if (delegate.checked !== checked) {
-//                                 delegate.checked = checked;
-//                             }
-//                         }
-//
-//                         Delegates.DefaultContentItem {
-//                             itemDelegate: delegate
-//                         }
-//                     }
-//
-//                     onCheckedChanged: {
-//                         root.incidenceWrapper.categories.includes(name) ?
-//                             root.incidenceWrapper.categories = root.incidenceWrapper.categories.filter(tag => tag !== name) :
-//                             root.incidenceWrapper.categories = [...root.incidenceWrapper.categories, name]
-//                         checkBox.checked = delegate.checked;
-//
-//                     }
-//                 }
-//             }
-//             QQC2.Button {
-//                 text: i18n("Manage tags…")
-//                 onClicked: Calendar.CalendarApplication.action("open_tag_manager").trigger()
-//             }
-//         }
-//
-//         Kirigami.Separator {
-//             Kirigami.FormData.isSection: true
-//         }
-//         ColumnLayout {
-//             id: remindersColumn
-//
-//             Kirigami.FormData.label: i18n("Reminders:")
-//             Kirigami.FormData.labelAlignment: remindersRepeater.count ? Qt.AlignTop : Qt.AlignVCenter
-//             Layout.fillWidth: true
-//
-//             Repeater {
-//                 id: remindersRepeater
-//
-//                 Layout.fillWidth: true
-//
-//                 model: Calendar.RemindersModel {
-//                     id: remindersModel
-//                     incidence: root.incidenceWrapper.incidencePtr
-//                 }
-//
-//                 delegate: Calendar.ReminderDelegate {
-//                     isTodo: incidenceForm.isTodo
-//                     remindersModel: remindersRepeater.model
-//                 }
-//             }
-//
-//             QQC2.Button {
-//                 id: remindersButton
-//
-//                 text: i18n("Add Reminder")
-//                 Layout.fillWidth: true
-//
-//                 onClicked: remindersModel.addAlarm();
-//             }
-//         }
-//
-//         Kirigami.Separator {
-//             Kirigami.FormData.isSection: true
-//         }
-//
-//
-//         Kirigami.Separator {
-//             Kirigami.FormData.isSection: true
-//         }
-//
-//         ColumnLayout {
-//             id: attachmentsColumn
-//
-//             Kirigami.FormData.label: i18n("Attachments:")
-//             Kirigami.FormData.labelAlignment: attachmentsRepeater.count ? Qt.AlignTop : Qt.AlignVCenter
-//             Layout.fillWidth: true
-//
-//             Repeater {
-//                 id: attachmentsRepeater
-//                 model: root.incidenceWrapper.attachmentsModel
-//                 delegate: Delegates.RoundedItemDelegate {
-//                     id: attachmentDelegate
-//
-//                     required property string iconName
-//                     required property string attachmentLabel
-//                     required property string uri
-//
-//                     icon.name: iconName
-//                     text: attachmentLabel
-//
-//                     onClicked: Qt.openUrlExternally(uri)
-//
-//                     contentItem: RowLayout {
-//                         Delegates.DefaultContentItem {
-//                             itemDelegate: attachmentDelegate
-//                             Layout.fillWidth: true
-//                         }
-//
-//                         QQC2.Button {
-//                             icon.name: "edit-delete-remove"
-//                             onClicked: root.incidenceWrapper.attachmentsModel.deleteAttachment(attachmentDelegate.uri)
-//                         }
-//                     }
-//                 }
-//             }
-//
-//             QQC2.Button {
-//                 id: attachmentsButton
-//                 text: i18n("Add Attachment")
-//                 Layout.fillWidth: true
-//                 onClicked: attachmentFileDialog.open();
-//
-//                 FileDialog {
-//                     id: attachmentFileDialog
-//
-//                     title: i18n("Add an attachment")
-//                     currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
-//                     onAccepted: root.incidenceWrapper.attachmentsModel.addAttachment(selectedFile)
-//                 }
-//             }
-//         }
-//     }
-// }
