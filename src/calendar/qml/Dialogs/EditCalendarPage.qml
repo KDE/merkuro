@@ -18,12 +18,11 @@ FormCard.FormCardPage {
 
     title: i18nc("@title", "Edit Calendar")
 
-    property int collectionId
-    property var collection: Calendar.CalendarManager.getCollection(collectionId)
+    required property var collection
 
     Akonadi.CollectionEditorController {
         id: editor
-        collectionId: root.collectionId
+        collectionId: root.collection.id
     }
 
     FormCard.FormHeader {
@@ -132,7 +131,7 @@ FormCard.FormCardPage {
         sourceComponent: ColorDialog {
             id: colorDialog
             title: i18nc("@title:window", "Choose Calendar Color")
-            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color
+            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color //TODO
             onAccepted: Calendar.CalendarManager.setCollectionColor(root.collection.id, color)
             onRejected: {
                 close();

@@ -62,7 +62,7 @@ Components.ConvergentContextMenu {
         onTriggered: {
             let component = Qt.createComponent("org.kde.merkuro.calendar", "EditCalendarPage");
             pageStack.pushDialogLayer(component, {
-                collectionId: root.collectionId
+                collection: Calendar.CalendarManager.getCollection(root.collectionId)
             }, {});
         }
     }
