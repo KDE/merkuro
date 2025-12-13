@@ -16,23 +16,19 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: i18nc("@action:group", "Identities")
-        Layout.fillWidth: true
     }
 
     KIdentityManagement.IdentityConfigurationForm {
-        Layout.fillWidth: true
         cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
     }
 
     FormCard.FormHeader {
         title: i18nc("@title:group Title for the list of receiving accounts which are imap or pop3 email accounts", "Receiving Accounts")
-        Layout.fillWidth: true
     }
 
     Akonadi.AgentConfigurationForm {
         addPageTitle: i18n("Mail Account Configuration")
         mimetypes: Akonadi.MimeTypes.mail
         specialCollections: AkonadiMime.SpecialMailCollections
-        Layout.fillWidth: true
     }
 }
