@@ -97,7 +97,6 @@ ecm_add_qml_module(merkuro_contact
 
 ecm_target_qml_sources(merkuro_contact SOURCES
     qml/ContactChooserPage.qml
-    qml/AddressBookCollectionHandler.qml
     qml/ContactView.qml
     qml/MenuBar.qml
     qml/Sidebar.qml
