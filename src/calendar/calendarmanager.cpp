@@ -752,7 +752,6 @@ IncidenceWrapper *CalendarManager::createIncidenceWrapper()
 
 Akonadi::Collection CalendarManager::getCollection(qint64 collectionId)
 {
-    qWarning() << "getting" << collectionId;
     return m_calendar->collection(collectionId);
 }
 
