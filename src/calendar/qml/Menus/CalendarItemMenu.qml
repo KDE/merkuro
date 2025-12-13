@@ -5,6 +5,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
+import Qt.labs.platform as Platform
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -60,9 +61,11 @@ Components.ConvergentContextMenu {
         icon.name: "edit-entry"
         text: i18nc("@action:inmenu", "Edit Calendar…")
         onTriggered: {
-            let component = Qt.createComponent("org.kde.merkuro.calendar", "EditCalendarPage");
+            let component = Qt.createComponent("org.kde.merkuro.components", "EditCollectionPage");
             pageStack.pushDialogLayer(component, {
-                collection: Calendar.CalendarManager.getCollection(root.collectionId)
+                title: i18nc("@title", "Edit Calendar"),
+                collection: Calendar.CalendarManager.getCollection(root.collectionId),
+                extraActions: [root.setColorAction]
             }, {});
         }
     }
@@ -137,5 +140,17 @@ Components.ConvergentContextMenu {
         text: i18nc("@action:inmenu", "Hide all")
         onTriggered: root.showAllCollections(false)
         visible: root.collectionDetails.isResource && allCollectionsChecked
+    }
+
+    property Kirigami.Action setColorAction: Kirigami.Action {
+        text: i18nc("@action:button", "Set calendar color…")
+        icon.name: "color-management"
+        onTriggered: {
+            let colorDialog = Qt.createComponent("Qt.labs.platform", "ColorDialog").createObject(root) as Platform.ColorDialog;
+            colorDialog.title = i18nc("@title:window", "Choose Calendar Color");
+            colorDialog.color = Calendar.CalendarManager.getCollectionDetails(root.collectionId).color;
+            colorDialog.accepted.connect(() => {Calendar.CalendarManager.setCollectionColor(root.collectionId, colorDialog.color)});
+            colorDialog.open();
+        }
     }
 }

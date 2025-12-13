@@ -88,6 +88,8 @@ ecm_target_qml_sources(MerkuroComponents SOURCES
 
         # Small controls
         qml/ColoredCheckbox.qml
+
+        qml/EditCollectionPage.qml
 )
 
 ecm_finalize_qml_module(MerkuroComponents

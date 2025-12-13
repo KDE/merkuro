@@ -8,17 +8,16 @@ import Qt.labs.platform
 
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.coreaddons
+import org.kde.kirigami as Kirigami
 
 import org.kde.akonadi as Akonadi
-
-import org.kde.merkuro.calendar as Calendar
 
 FormCard.FormCardPage {
     id: root
 
-    title: i18nc("@title", "Edit Calendar")
-
     required property var collection
+    required title
+    property list<Kirigami.Action> extraActions: []
 
     Akonadi.CollectionEditorController {
         id: editor
@@ -40,15 +39,6 @@ FormCard.FormCardPage {
             enabled: root.collection.rights & Akonadi.collection.Right.CanChangeCollection
         }
         FormCard.FormDelegateSeparator {}
-        FormCard.FormButtonDelegate {
-            text: i18nc("@action:button", "Set calendar color…")
-            icon.name: "color-management"
-            onClicked: {
-                colorDialogLoader.active = true;
-                colorDialogLoader.item.open();
-            }
-        }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
             id: iconField
             text: i18nc("@label:textbox", "Icon")
@@ -56,6 +46,17 @@ FormCard.FormCardPage {
             onIconNameChanged: if (editor.iconName !== iconName) {
                 editor.iconName = iconName;
                 editor.save();
+            }
+        }
+        FormCard.FormDelegateSeparator {}
+
+        Repeater {
+            model: root.extraActions
+            delegate: FormCard.FormButtonDelegate {
+                required property Kirigami.Action modelData
+                text: modelData.text
+                icon.name: modelData.icon.name
+                onClicked: modelData.triggered()
             }
         }
     }
@@ -103,9 +104,9 @@ FormCard.FormCardPage {
             enabled: !useParent.checked
             textFromValue: function(value, locale) {
                 if (value === 0) {
-                    return i18nc("As in 'Never synchronize this calendar'", "Never")
+                    return i18nc("As in 'Never synchronize this account'", "Never")
                 }
-                return i18ncp("Interval for updating a calendar", "%1 minute", "%1 minutes", value)
+                return i18ncp("Interval for updating an account", "%1 minute", "%1 minutes", value)
             }
 
             valueFromText: function(text, locale) {
@@ -122,21 +123,6 @@ FormCard.FormCardPage {
             }
             stepSize: 1
             from: 0
-        }
-    }
-
-    Loader {
-        id: colorDialogLoader
-        active: false
-        sourceComponent: ColorDialog {
-            id: colorDialog
-            title: i18nc("@title:window", "Choose Calendar Color")
-            color: Calendar.CalendarManager.getCollectionDetails(root.collection.id).color //TODO
-            onAccepted: Calendar.CalendarManager.setCollectionColor(root.collection.id, color)
-            onRejected: {
-                close();
-                colorDialogLoader.active = false;
-            }
         }
     }
 }
