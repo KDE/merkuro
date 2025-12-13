@@ -99,8 +99,11 @@ FormCard.FormCardPage {
         active: root.incidenceWrapper !== undefined
         Layout.fillWidth: true
         sourceComponent: ColumnLayout {
+	        spacing: 0
+
             FormCard.FormCard {
                 id: incidenceForm
+
                 property bool validStartDate: incidenceForm.isTodo ?
                     incidenceStartDateCombo.validDate || !incidenceStartCheckBox.checked :
                     incidenceStartDateCombo.validDate
@@ -112,6 +115,8 @@ FormCard.FormCardPage {
                 property date todayDate: new Date()
                 property bool isTodo: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
                 property bool isJournal: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeJournal
+
+                Layout.topMargin: Kirigami.Units.gridUnit
 
                 // Connections {
                 //     target: root.incidenceWrapper
@@ -130,8 +135,106 @@ FormCard.FormCardPage {
                 //     }
                 // }
 
+                FormCard.FormTextFieldDelegate {
+                    id: summaryField
+
+                    label: i18n("Summary")
+                    placeholderText: switch (root.incidenceWrapper.incidenceType) {
+                    case Calendar.IncidenceWrapper.TypeTodo:
+                        return i18n("Add a title for your task")
+                    case Calendar.IncidenceWrapper.TypeEvent:
+                        return i18n("Add a title for your event")
+                    case Calendar.IncidenceWrapper.TypeJournal:
+                        return i18n("Add a title for your journal entry")
+                    }
+                    text: root.incidenceWrapper.summary
+                    onTextChanged: root.incidenceWrapper.summary = text
+                }
+
+                FormCard.FormDelegateSeparator {}
+
+                FormCard.FormComboBoxDelegate {
+                    id: locationField
+
+                    text: i18nc("@label", "Location")
+                    editable: true
+
+                    function openOrCloseLocationsPopup() {
+                        if (locationsModel.count > 0 && locationTextField.text !== ""){
+                            popup.open();
+                        } else {
+                            popup.close();
+                        }
+                    }
+
+                    valueRole: "locationData"
+                    displayText: currentValue.address.text
+                    // placeholderText: i18n("Optional")
+
+                    onEditTextChanged: {
+                        root.incidenceWrapper.location = text;
+                        queryUpdateTimer.restart();
+                    }
+
+                    Timer {
+                        id: queryUpdateTimer
+                        interval: 300
+                        onTriggered: {
+                            locationsModel.query = root.incidenceWrapper.location;
+                        }
+                    }
+
+                    model: GeocodeModel {
+                        id: locationsModel
+                        plugin: Plugin {
+                            name: "osm"
+                            PluginParameter {
+                                name: "osm.useragent"
+                                value: Application.name + "/" + Application.version + " (kde-pim@kde.org)"
+                            }
+                            PluginParameter {
+                                name: "osm.mapping.providersrepository.address"
+                                value: "https://autoconfig.kde.org/qtlocation/"
+                            }
+                        }
+                        autoUpdate: true
+                        onLocationsChanged: locationField.openOrCloseLocationsPopup()
+                    }
+                    onCurrentValueChanged: root.incidenceWrapper.location = currentValue.address.text
+                    Keys.onPressed: locationField.openOrCloseLocationsPopup()
+
+                    QQC2.BusyIndicator {
+                        height: parent.height
+                        anchors.right: parent.right
+                        anchors.rightMargin: parent.indicator.width
+                        visible: locationsModel.status === GeocodeModel.Loading
+                    }
+                }
+
+                FormCard.AbstractFormDelegate {
+                    id: mapDelegate
+                    visible: Calendar.Config.enableMaps
+
+                    contentItem: Loader {
+                        id: mapLoader
+
+                        active: mapDelegate.visible
+                        asynchronous: true
+
+                        sourceComponent: Calendar.LocationMap {
+                            id: map
+                            selectMode: true
+                            query: root.incidenceWrapper.location
+                            onSelectedLocationAddress: address => root.incidenceWrapper.location = address
+                        }
+                    }
+                }
+
+                FormCard.FormDelegateSeparator {}
+
                 FormCard.FormComboBoxDelegate {
                     id: calendarCombo
+
                     text: i18nc("@label", "Calendar")
 
                     textRole: "display"
@@ -168,29 +271,23 @@ FormCard.FormCardPage {
                         root.incidenceWrapper.setCollection(selectedCollection)
                     }
                 }
+            }
 
-                FormCard.FormTextFieldDelegate {
-                    id: summaryField
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Task")
+                visible: incidenceForm.isTodo
+            }
 
-                    label: i18n("Summary")
-                    placeholderText: switch (root.incidenceWrapper.incidenceType) {
-                    case Calendar.IncidenceWrapper.TypeTodo:
-                        return i18n("Add a title for your task")
-                    case Calendar.IncidenceWrapper.TypeEvent:
-                        return i18n("Add a title for your event")
-                    case Calendar.IncidenceWrapper.TypeJournal:
-                        return i18n("Add a title for your journal entry")
-                    }
-                    text: root.incidenceWrapper.summary
-                    onTextChanged: root.incidenceWrapper.summary = text
-                }
-                FormCard.FormDelegateSeparator {}
+            FormCard.FormCard {
+                visible: incidenceForm.isTodo
 
                 FormCard.AbstractFormDelegate {
-                    visible: incidenceForm.isTodo
                     contentItem: ColumnLayout {
                         spacing: Kirigami.Units.smallSpacing
+
                         RowLayout {
+                            spacing: Kirigami.Units.smallSpacing
+
                             QQC2.Label {
                                 Layout.fillWidth: true
                                 text: i18n("Completion")
@@ -200,6 +297,7 @@ FormCard.FormCardPage {
                                 maximumLineCount: 2
                                 Accessible.ignored: true
                             }
+
                             QQC2.Label {
                                 Layout.alignment: Qt.AlignRight
                                 text: i18n("%1%", slider.value)
@@ -218,6 +316,9 @@ FormCard.FormCardPage {
                         }
                     }
                 }
+
+                FormCard.FormDelegateSeparator {}
+
                 FormCard.FormComboBoxDelegate {
                     text: i18n("Priority")
                     model: [
@@ -240,12 +341,12 @@ FormCard.FormCardPage {
                     textRole: "display"
                     valueRole: "value"
                 }
+            }
 
-                FormCard.FormDelegateSeparator {
-                    visible: incidenceForm.isTodo
-                }
+            FormCard.FormHeader {
+                title: i18nc("@title:group", "Start")
 
-                FormCard.FormCheckDelegate {
+                trailing: QQC2.CheckBox {
                     id: allDayCheckBox
 
                     text: i18n("All day")
@@ -253,19 +354,20 @@ FormCard.FormCardPage {
                     enabled: !incidenceForm.isTodo || !isNaN(root.incidenceWrapper.incidenceStart.getTime()) || !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
                     onEnabledChanged: if (!enabled) root.incidenceWrapper.allDay = false
                     checked: root.incidenceWrapper.allDay
-                    onClicked: {
+                    onToggled: {
                         if (!checked) {
                             root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour();
                         }
                         root.incidenceWrapper.allDay = checked;
                     }
                 }
+            }
 
+            FormCard.FormCard {
                 // TODO: Start for todos?
                 FormCard.FormDateTimeDelegate {
                     id: incidenceStartDateCombo
                     visible: !incidenceForm.isTodo || (incidenceForm.isTodo && !isNaN(root.incidenceWrapper.incidenceStart.getTime()))
-                    text: i18n("Start")
                     dateTimeDisplay: allDayCheckBox.checked ? FormCard.FormDateTimeDelegate.Date : FormCard.FormDateTimeDelegate.DateTime
                     // display: root.incidenceWrapper.incidenceStartDateDisplay
                     // dateTime: root.incidenceWrapper.incidenceStart
@@ -279,7 +381,12 @@ FormCard.FormCardPage {
                     // display: root.incidenceWrapper.incidenceEndTimeDisplay
                     // dateTime: root.incidenceWrapper.incidenceStart
                 }
-                FormCard.FormCheckDelegate {
+            }
+
+            FormCard.FormHeader {
+                title: incidenceForm.isTodo ? i18n("Due:") : i18n("End:")
+
+                trailing: QQC2.CheckBox {
                     id: incidenceEndCheckBox
 
                     property var oldDate
@@ -297,14 +404,16 @@ FormCard.FormCardPage {
                     }
                     visible: incidenceForm.isTodo
                 }
+            }
 
+            FormCard.FormCard {
                 FormCard.FormDateTimeDelegate {
                     id: incidenceEndDateCombo
-                    text: incidenceForm.isTodo ? i18n("Due:") : i18n("End:")
                     visible: !incidenceForm.isJournal || incidenceForm.isTodo
                     enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
 
-                    display: root.incidenceWrapper.incidenceEndDateDisplay
+                    dateTimeDisplay: incidenceStartDateCombo.dateTimeDisplay
+
                     // dateTime: root.incidenceWrapper.incidenceEnd
                     // onNewDateChosen: (day, month, year) => {
                         // root.incidenceWrapper.setIncidenceEndDate(day, month, year)
@@ -316,6 +425,8 @@ FormCard.FormCardPage {
                     // enabled: (!incidenceForm.isTodo && !allDayCheckBox.checked) || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                     // visible: !allDayCheckBox.checked
                 }
+
+                FormCard.FormDelegateSeparator {}
 
                 FormCard.FormComboBoxDelegate {
                     id: timeZoneComboBox
@@ -330,8 +441,8 @@ FormCard.FormCardPage {
                     onCurrentValueChanged: root.incidenceWrapper.timeZone = currentValue
                     enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                 }
-
             }
+
             FormCard.FormHeader {
                 title: i18nc("@title", "Repeat")
             }
@@ -640,80 +751,143 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormHeader {
-                title: i18nc("@title", "Location")
-            }
-            FormCard.FormCard {
-                FormCard.FormTextFieldDelegate {
-                    id: locationField
+                title: i18nc("@title:group", "Attendees")
+                trailing: QQC2.ToolButton {
+                    id: attendeesButton
 
-                    editable: true
+                    text: i18n("Add Attendee")
 
-                    function openOrCloseLocationsPopup() {
-                        if (locationsModel.count > 0 && locationTextField.text !== ""){
-                            popup.open();
-                        } else {
-                            popup.close();
+                    onClicked: attendeeAddChoices.open()
+
+                    QQC2.Menu {
+                        id: attendeeAddChoices
+                        width: attendeesButton.width
+                        y: parent.height // Y is relative to parent
+
+                        QQC2.MenuItem {
+                            text: i18n("Choose from Contacts")
+                            onClicked: pageStack.push(contactsPage)
                         }
-                    }
-
-                    valueRole: "locationData"
-                    displayText: currentValue.address.text
-                    // placeholderText: i18n("Optional")
-
-                    onEditTextChanged: {
-                        root.incidenceWrapper.location = text;
-                        queryUpdateTimer.restart();
-                    }
-
-                    Timer {
-                        id: queryUpdateTimer
-                        interval: 300
-                        onTriggered: {
-                            locationsModel.query = root.incidenceWrapper.location;
+                        QQC2.MenuItem {
+                            text: i18n("Fill in Manually")
+                            onClicked: root.incidenceWrapper.attendeesModel.addAttendee();
                         }
-                    }
-
-                    model: GeocodeModel {
-                        id: locationsModel
-                        plugin: Plugin {
-                            name: "osm"
-                            PluginParameter {
-                                name: "osm.useragent"
-                                value: Application.name + "/" + Application.version + " (kde-pim@kde.org)"
-                            }
-                            PluginParameter {
-                                name: "osm.mapping.providersrepository.address"
-                                value: "https://autoconfig.kde.org/qtlocation/"
-                            }
-                        }
-                        autoUpdate: true
-                        onLocationsChanged: locationField.openOrCloseLocationsPopup()
-                    }
-                    onCurrentValueChanged: root.incidenceWrapper.location = currentValue.address.text
-                    Keys.onPressed: locationField.openOrCloseLocationsPopup()
-
-                    QQC2.BusyIndicator {
-                        height: parent.height
-                        anchors.right: parent.right
-                        anchors.rightMargin: parent.indicator.width
-                        visible: locationsModel.status === GeocodeModel.Loading
                     }
                 }
-                FormCard.AbstractFormDelegate {
-                    id: mapDelegate
-                    visible: Calendar.Config.enableMaps
+            }
 
-                    contentItem: Loader {
-                        id: mapLoader
+            FormCard.FormCard {
+                Repeater {
+                    id: attendeesRepeater
+                    model: root.incidenceWrapper.attendeesModel
+                    // All of the alarms are handled within the delegates.
+                    Layout.fillWidth: true
 
-                        active: mapDelegate.visible
-                        asynchronous: true
+                    delegate: FormCard.AbstractFormDelegate {
+                        id: attendeeDelegate
 
-                        sourceComponent: Calendar.LocationMap {
-                            id: map
-                            selectMode: true
-                            query: root.incidenceWrapper.location
-                            onSelectedLocationAddress: address => root.incidenceWrapper.location = address
+                        required property int index
+                        required property string email
+                        required property string name
+                        required property bool rsvp
+                        required property int status
+
+                        topPadding: Kirigami.Units.smallSpacing
+                        bottomPadding: Kirigami.Units.smallSpacing
+
+                        contentItem: Item {
+                            implicitWidth: attendeeCardContent.implicitWidth
+                            implicitHeight: attendeeCardContent.implicitHeight
+
+                            GridLayout {
+                                id: attendeeCardContent
+
+                                anchors {
+                                    left: parent.left
+                                    top: parent.top
+                                    right: parent.right
+                                    //IMPORTANT: never put the bottom margin
+                                }
+
+                                columns: 6
+                                rows: 4
+
+                                QQC2.Label{
+                                    Layout.row: 0
+                                    Layout.column: 0
+                                    text: i18n("Name:")
+                                }
+                                QQC2.TextField {
+                                    Layout.fillWidth: true
+                                    Layout.row: 0
+                                    Layout.column: 1
+                                    Layout.columnSpan: 4
+                                    placeholderText: i18n("Optional")
+                                    text: attendeeDelegate.name
+                                    onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                                text,
+                                                                                                Calendar.AttendeesModel.NameRole)
+                                }
+
+                                QQC2.Button {
+                                    Layout.alignment: Qt.AlignTop
+                                    Layout.column: 5
+                                    Layout.row: 0
+                                    icon.name: "edit-delete-remove"
+                                    onClicked: root.incidenceWrapper.attendeesModel.deleteAttendee(attendeeDelegate.index);
+                                }
+
+                                QQC2.Label {
+                                    Layout.row: 1
+                                    Layout.column: 0
+                                    text: i18n("Email:")
+                                }
+                                QQC2.TextField {
+                                    Layout.fillWidth: true
+                                    Layout.row: 1
+                                    Layout.column: 1
+                                    Layout.columnSpan: 4
+                                    placeholderText: i18n("Required")
+                                    text: attendeeDelegate.email
+                                    onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                                text,
+                                                                                                Calendar.AttendeesModel.EmailRole)
+                                }
+                                QQC2.Label {
+                                    Layout.row: 2
+                                    Layout.column: 0
+                                    text: i18n("Status:")
+                                    visible: root.editMode
+                                }
+                                QQC2.ComboBox {
+                                    Layout.fillWidth: true
+                                    Layout.row: 2
+                                    Layout.column: 1
+                                    Layout.columnSpan: 2
+                                    model: root.incidenceWrapper.attendeesModel.attendeeStatusModel
+                                    textRole: "display"
+                                    valueRole: "value"
+                                    currentIndex: attendeeDelegate.status // role of parent
+                                    onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                                        currentValue,
+                                                                                                        Calendar.AttendeesModel.StatusRole)
+
+                                    popup.z: 1000
+                                    visible: root.editMode
+                                }
+                                QQC2.CheckBox {
+                                    Layout.fillWidth: true
+                                    Layout.row: 2
+                                    Layout.column: 3
+                                    Layout.columnSpan: 2
+                                    text: i18n("Request RSVP")
+                                    checked: attendeeDelegate.rsvp
+                                    onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                                    checked,
+                                                                                                    Calendar.AttendeesModel.RSVPRole)
+                                    visible: root.editMode
+                                }
+                            }
                         }
                     }
                 }
@@ -877,151 +1051,6 @@ FormCard.FormCardPage {
 //             Kirigami.FormData.isSection: true
 //         }
 //
-//         ColumnLayout {
-//             id: attendeesColumn
-//
-//             Kirigami.FormData.label: i18n("Attendees:")
-//             Kirigami.FormData.labelAlignment: attendeesRepeater.count ? Qt.AlignTop : Qt.AlignVCenter
-//             Layout.fillWidth: true
-//
-//             Repeater {
-//                 id: attendeesRepeater
-//                 model: root.incidenceWrapper.attendeesModel
-//                 // All of the alarms are handled within the delegates.
-//                 Layout.fillWidth: true
-//
-//                 delegate: Kirigami.AbstractCard {
-//                     id: attendeeDelegate
-//
-//                     required property int index
-//                     required property string email
-//                     required property string name
-//                     required property bool rsvp
-//                     required property int status
-//
-//                     topPadding: Kirigami.Units.smallSpacing
-//                     bottomPadding: Kirigami.Units.smallSpacing
-//
-//                     contentItem: Item {
-//                         implicitWidth: attendeeCardContent.implicitWidth
-//                         implicitHeight: attendeeCardContent.implicitHeight
-//
-//                         GridLayout {
-//                             id: attendeeCardContent
-//
-//                             anchors {
-//                                 left: parent.left
-//                                 top: parent.top
-//                                 right: parent.right
-//                                 //IMPORTANT: never put the bottom margin
-//                             }
-//
-//                             columns: 6
-//                             rows: 4
-//
-//                             QQC2.Label{
-//                                 Layout.row: 0
-//                                 Layout.column: 0
-//                                 text: i18n("Name:")
-//                             }
-//                             QQC2.TextField {
-//                                 Layout.fillWidth: true
-//                                 Layout.row: 0
-//                                 Layout.column: 1
-//                                 Layout.columnSpan: 4
-//                                 placeholderText: i18n("Optional")
-//                                 text: attendeeDelegate.name
-//                                 onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
-//                                                                                             text,
-//                                                                                             Calendar.AttendeesModel.NameRole)
-//                             }
-//
-//                             QQC2.Button {
-//                                 Layout.alignment: Qt.AlignTop
-//                                 Layout.column: 5
-//                                 Layout.row: 0
-//                                 icon.name: "edit-delete-remove"
-//                                 onClicked: root.incidenceWrapper.attendeesModel.deleteAttendee(attendeeDelegate.index);
-//                             }
-//
-//                             QQC2.Label {
-//                                 Layout.row: 1
-//                                 Layout.column: 0
-//                                 text: i18n("Email:")
-//                             }
-//                             QQC2.TextField {
-//                                 Layout.fillWidth: true
-//                                 Layout.row: 1
-//                                 Layout.column: 1
-//                                 Layout.columnSpan: 4
-//                                 placeholderText: i18n("Required")
-//                                 text: attendeeDelegate.email
-//                                 onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
-//                                                                                             text,
-//                                                                                             Calendar.AttendeesModel.EmailRole)
-//                             }
-//                             QQC2.Label {
-//                                 Layout.row: 2
-//                                 Layout.column: 0
-//                                 text: i18n("Status:")
-//                                 visible: root.editMode
-//                             }
-//                             QQC2.ComboBox {
-//                                 Layout.fillWidth: true
-//                                 Layout.row: 2
-//                                 Layout.column: 1
-//                                 Layout.columnSpan: 2
-//                                 model: root.incidenceWrapper.attendeesModel.attendeeStatusModel
-//                                 textRole: "display"
-//                                 valueRole: "value"
-//                                 currentIndex: attendeeDelegate.status // role of parent
-//                                 onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
-//                                                                                                     currentValue,
-//                                                                                                     Calendar.AttendeesModel.StatusRole)
-//
-//                                 popup.z: 1000
-//                                 visible: root.editMode
-//                             }
-//                             QQC2.CheckBox {
-//                                 Layout.fillWidth: true
-//                                 Layout.row: 2
-//                                 Layout.column: 3
-//                                 Layout.columnSpan: 2
-//                                 text: i18n("Request RSVP")
-//                                 checked: attendeeDelegate.rsvp
-//                                 onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
-//                                                                                                 checked,
-//                                                                                                 Calendar.AttendeesModel.RSVPRole)
-//                                 visible: root.editMode
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//
-//             QQC2.Button {
-//                 id: attendeesButton
-//                 text: i18n("Add Attendee")
-//                 Layout.fillWidth: true
-//
-//                 onClicked: attendeeAddChoices.open()
-//
-//                 QQC2.Menu {
-//                     id: attendeeAddChoices
-//                     width: attendeesButton.width
-//                     y: parent.height // Y is relative to parent
-//
-//                     QQC2.MenuItem {
-//                         text: i18n("Choose from Contacts")
-//                         onClicked: pageStack.push(contactsPage)
-//                     }
-//                     QQC2.MenuItem {
-//                         text: i18n("Fill in Manually")
-//                         onClicked: root.incidenceWrapper.attendeesModel.addAttendee();
-//                     }
-//                 }
-//             }
-//         }
 //
 //         Kirigami.Separator {
 //             Kirigami.FormData.isSection: true
