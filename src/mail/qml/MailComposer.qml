@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
 import QtQuick
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
@@ -123,27 +124,56 @@ Kirigami.ScrollablePage {
     }
 
     footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            QQC2.ToolButton {
-                id: attachment
-                icon.name: 'document-import'
-                KeyNavigation.priority: KeyNavigation.BeforeItem
-                KeyNavigation.tab: discardDraft
+        contentItem: ColumnLayout {
+            Flow {
+                visible: attachments.count > 0
+                spacing: Kirigami.Units.smallSpacing
+                Repeater {
+                    id: attachments
+                    model: mailClient.attachmentModel
+                    delegate: Kirigami.Chip {
+                        required property string fileName
+                        required property int index
+                        required property url url
+                        text: fileName
+
+                        onRemoved: mailClient.attachmentModel.remove(index)
+                        onClicked: Qt.openUrlExternally(url)
+                    }
+                }
             }
-            QQC2.ToolButton {
-                id: discardDraft
-                icon.name: 'user-trash'
-            }
-            Item {
-                Layout.fillWidth: true
-            }
-            QQC2.ToolButton {
-                id: sendButton
-                text: i18n("Send")
-                icon.name: 'document-send'
-                onClicked: {
-                    mailClient.send(identity.model, subjectText.text, mailContent.text);
-                    close()
+            RowLayout {
+                QQC2.ToolButton {
+                    id: attachment
+                    icon.name: 'document-import'
+                    KeyNavigation.priority: KeyNavigation.BeforeItem
+                    KeyNavigation.tab: discardDraft
+
+                    text: i18nc("@action:button", "Attach Document")
+                    onClicked: {
+                        let dialog = Qt.createComponent("QtQuick.Dialogs", "FileDialog").createObject() as FileDialog;
+                        dialog.accepted.connect(() => {
+                            mailClient.attachmentModel.addAttachment(dialog.selectedFile)
+                        });
+                        dialog.open();
+                    }
+                }
+                QQC2.ToolButton {
+                    id: discardDraft
+                    icon.name: 'user-trash'
+                    text: i18nc("@action:button", "Discard Draft")
+                }
+                Item {
+                    Layout.fillWidth: true
+                }
+                QQC2.ToolButton {
+                    id: sendButton
+                    text: i18n("Send")
+                    icon.name: 'document-send'
+                    onClicked: {
+                        mailClient.send(identity.model, subjectText.text, mailContent.text);
+                        close()
+                    }
                 }
             }
         }

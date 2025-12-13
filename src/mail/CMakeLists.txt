@@ -44,6 +44,9 @@ set(merkuro_mail_SRCS
 
     messagehandler.cpp
     messagehandler.h
+
+    attachmentmodel.cpp
+    attachmentmodel.h
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -104,7 +107,6 @@ ecm_target_qml_sources(merkuro_mail_static SOURCES
 )
 ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH private SOURCES
-    qml/private/AttachmentDelegate.qml
     qml/private/MailDelegate.qml
 )
 

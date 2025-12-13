@@ -9,8 +9,10 @@
 
 #pragma once
 
+#include "attachmentmodel.h"
 #include "mailheadermodel.h"
 #include <KMime/Message>
+#include <MessageComposer/ComposerViewBase>
 #include <QObject>
 
 namespace KIdentityManagementCore
@@ -39,6 +41,7 @@ class MailClient : public QObject
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(MailHeaderModel *headerModel READ headerModel CONSTANT)
+    Q_PROPERTY(AttachmentModel *attachmentModel READ attachmentModel CONSTANT)
 
     struct MessageData {
         QString from;
@@ -63,6 +66,7 @@ public:
     ~MailClient() override;
 
     [[nodiscard]] MailHeaderModel *headerModel() const;
+    [[nodiscard]] AttachmentModel *attachmentModel() const;
 
     Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body);
 
@@ -78,6 +82,7 @@ private:
     void handleQueueJobFinished(KJob *job);
 
     std::unique_ptr<MailHeaderModel> m_headerModel;
+    AttachmentModel *m_attachmentModel;
 
 Q_SIGNALS:
     void finished(Akonadi::MailClient::Result result, const QString &errorString);

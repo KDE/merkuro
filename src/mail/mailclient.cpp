@@ -21,6 +21,8 @@
 
 #include <KMime/Headers>
 
+#include <MessageComposer/AttachmentControllerBase>
+#include <MessageComposer/AttachmentModel>
 #include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
@@ -30,12 +32,14 @@
 
 #include <KJob>
 #include <KLocalizedString>
+#include <messagecore/attachmentpart.h>
 
 using namespace Akonadi;
 using namespace Qt::Literals::StringLiterals;
 MailClient::MailClient(QObject *parent)
     : QObject(parent)
     , m_headerModel(std::make_unique<MailHeaderModel>())
+    , m_attachmentModel(new AttachmentModel(this))
 {
 }
 
@@ -125,6 +129,8 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     infoPart->setUrgent(true);
     infoPart->setUserAgent(u"Merkuro-Mail"_s);
 
+    composer->addAttachmentParts(m_attachmentModel->attachments());
+
     // Setting Headers
     KMime::Headers::Base::List extras;
 
@@ -209,6 +215,11 @@ void MailClient::handleQueueJobFinished(KJob *job)
 MailHeaderModel *MailClient::headerModel() const
 {
     return m_headerModel.get();
+}
+
+AttachmentModel *MailClient::attachmentModel() const
+{
+    return m_attachmentModel;
 }
 
 #include "moc_mailclient.cpp"
