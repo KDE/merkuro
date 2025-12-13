@@ -6,10 +6,12 @@
 #include <KMime/Message>
 #include <QObject>
 #include <QUrl>
+#include <qqmlintegration.h>
 
 class MessageHandler : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     Q_INVOKABLE void open(const QUrl &file);

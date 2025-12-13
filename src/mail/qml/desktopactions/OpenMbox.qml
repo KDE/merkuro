@@ -6,7 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.pim.mimetreeparser
-import org.kde.merkuro.mail.desktop
+import org.kde.merkuro.mail
 
 Kirigami.ApplicationWindow {
     id: root

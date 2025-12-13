@@ -87,7 +87,6 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
     if (!args.isEmpty()) {
-        qmlRegisterType<MessageHandler>("org.kde.merkuro.mail.desktop", 1, 0, "MessageHandler");
         engine.loadFromModule("org.kde.merkuro.mail", "OpenMbox");
         const auto rootObjects = engine.rootObjects();
         if (rootObjects.isEmpty()) {
