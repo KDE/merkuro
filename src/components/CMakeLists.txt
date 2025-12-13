@@ -22,6 +22,8 @@ add_library(MerkuroComponents SHARED
     sortedcollectionproxymodel.h
     utils.cpp
     utils.h
+    collectionutils.cpp
+    collectionutils.h
     ${merkuro_components_SRCS}
 )
 
@@ -49,6 +51,7 @@ target_link_libraries(MerkuroComponents PUBLIC
     KF6::CalendarCore
     KF6::Contacts
     KPim6::AkonadiCore
+    KPim6::AkonadiMime
 )
 
 target_include_directories(MerkuroComponents

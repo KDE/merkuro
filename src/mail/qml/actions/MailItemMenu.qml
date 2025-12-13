@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.akonadi as Akonadi
 import org.kde.merkuro.mail
+import org.kde.merkuro.components
 
 QQC2.Menu {
     id: mailActionsPopup

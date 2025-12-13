@@ -6,8 +6,6 @@ add_subdirectory(settings)
 set(merkuro_mail_SRCS
     abstractmailmodel.cpp
     abstractmailmodel.h
-    collectionutils.cpp
-    collectionutils.h
     mailactions.cpp
     mailactions.h
     mailapplication.cpp
