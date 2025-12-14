@@ -53,3 +53,5 @@ QQuickTextureFactory *AvatarResponse::textureFactory() const
 {
     return QQuickTextureFactory::textureFactoryForImage(m_image);
 }
+
+#include "moc_avatarimageprovider.cpp"

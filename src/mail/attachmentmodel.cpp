@@ -64,3 +64,5 @@ int AttachmentModel::rowCount(const QModelIndex &parent) const
     }
     return m_attachments.size();
 }
+
+#include "moc_attachmentmodel.cpp"
