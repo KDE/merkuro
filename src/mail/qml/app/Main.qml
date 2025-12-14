@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import QtQuick
+import org.kde.kirigami as Kirigami
 import org.kde.merkuro.components
 import org.kde.merkuro.mail as Mail
 import org.kde.merkuro.mail.settings as Settings
@@ -27,11 +28,13 @@ BaseApplication {
         }
     }
 
-    //Loader {
-    //    id: globalMenuLoader
-    //    active: !Kirigami.Settings.isMobile
-    //    sourceComponent: Contact.GlobalMenuBar {}
-    //}
+    Loader {
+       id: globalMenuLoader
+       active: !Kirigami.Settings.isMobile
+       sourceComponent: GlobalMenuBar {
+           application: root.application
+        }
+    }
 
     Connections {
         target: Mail.MailApplication

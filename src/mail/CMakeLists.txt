@@ -95,6 +95,7 @@ ecm_add_qml_module(merkuro_mail_static
 ecm_target_qml_sources(merkuro_mail_static SOURCES
     qml/app/Main.qml
     qml/app/MenuBar.qml
+    qml/app/GlobalMenuBar.qml
     qml/desktopactions/OpenMbox.qml
 
     qml/MailSidebar.qml
