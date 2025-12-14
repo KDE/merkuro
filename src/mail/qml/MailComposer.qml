@@ -147,7 +147,7 @@ Kirigami.ScrollablePage {
                     id: attachment
                     icon.name: 'document-import'
                     KeyNavigation.priority: KeyNavigation.BeforeItem
-                    KeyNavigation.tab: discardDraft
+                    KeyNavigation.tab: sendButton
 
                     text: i18nc("@action:button", "Attach Document")
                     onClicked: {
@@ -157,11 +157,6 @@ Kirigami.ScrollablePage {
                         });
                         dialog.open();
                     }
-                }
-                QQC2.ToolButton {
-                    id: discardDraft
-                    icon.name: 'user-trash'
-                    text: i18nc("@action:button", "Discard Draft")
                 }
                 Item {
                     Layout.fillWidth: true
