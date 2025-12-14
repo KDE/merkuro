@@ -26,6 +26,7 @@
 #include <Akonadi/CollectionModifyJob>
 #include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/CollectionUtils>
+#include <Akonadi/ColorProxyModel>
 #include <Akonadi/Control>
 #include <Akonadi/ETMViewStateSaver>
 #include <Akonadi/EntityDisplayAttribute>
@@ -40,7 +41,6 @@
 #include <KLocalizedString>
 #include <QApplication>
 
-#include "colorproxymodel.h"
 #include "incidencewrapper.h"
 #include "sortedcollectionproxymodel.h"
 
@@ -142,6 +142,15 @@ CalendarManager::CalendarManager(QObject *parent)
     auto colorProxy = new ColorProxyModel(this);
     colorProxy->setObjectName(QLatin1StringView("Show calendar colors"));
     colorProxy->setStandardCollectionId(m_config->lastUsedEventCollection());
+    colorProxy->addMimeTypeFilters({
+        "text/calendar"_L1,
+        "application/x-vnd.akonadi.calendar.event"_L1,
+        "application/x-vnd.akonadi.calendar.todo"_L1,
+        "text/directory"_L1,
+        "inode/directory"_L1,
+        "application/x-vnd.kde.contactgroup"_L1,
+        "application/x-vnd.akonadi.calendar.journal"_L1,
+    });
 
     connect(m_config, &CalendarConfig::lastUsedEventCollectionChanged, this, [this, colorProxy]() {
         colorProxy->setStandardCollectionId(m_config->lastUsedEventCollection());

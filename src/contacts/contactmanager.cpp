@@ -5,7 +5,6 @@
 
 #include "contactmanager.h"
 
-#include "colorproxymodel.h"
 #include "contactcollectionmodel.h"
 #include "contactconfig.h"
 #include "globalcontactmodel.h"
@@ -19,6 +18,7 @@
 #include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/CollectionStatistics>
 #include <Akonadi/CollectionUtils>
+#include <Akonadi/ColorProxyModel>
 #include <Akonadi/ContactsFilterProxyModel>
 #include <Akonadi/ContactsTreeModel>
 #include <Akonadi/ETMViewStateSaver>
@@ -71,6 +71,15 @@ ContactManager::ContactManager(QObject *parent)
     sortedModel->sort(0, Qt::AscendingOrder);
 
     m_colorProxy = new ColorProxyModel(this);
+    m_colorProxy->addMimeTypeFilters({
+        "text/calendar"_L1,
+        "application/x-vnd.akonadi.calendar.event"_L1,
+        "application/x-vnd.akonadi.calendar.todo"_L1,
+        "text/directory"_L1,
+        "inode/directory"_L1,
+        "application/x-vnd.kde.contactgroup"_L1,
+        "application/x-vnd.akonadi.calendar.journal"_L1,
+    });
     m_colorProxy->setSourceModel(sortedModel);
     m_colorProxy->setObjectName(QLatin1StringView("Show contact colors"));
     m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());

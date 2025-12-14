@@ -16,8 +16,6 @@ ecm_qt_declare_logging_category(merkuro_components_SRCS
 add_library(MerkuroComponents SHARED
     abstractmerkuroapplication.cpp
     abstractmerkuroapplication.h
-    colorproxymodel.cpp
-    colorproxymodel.h
     sortedcollectionproxymodel.cpp
     sortedcollectionproxymodel.h
     utils.cpp
