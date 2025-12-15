@@ -115,11 +115,11 @@ FormCard.FormCardPage {
                 id: incidenceForm
 
                 property bool validStartDate: incidenceForm.isTodo ?
-                    incidenceStartDateCombo.validDate || !incidenceStartCheckBox.checked :
-                    incidenceStartDateCombo.validDate
+                    incidenceStartDate.validDate || !incidenceStartCheckBox.checked :
+                    incidenceStartDate.validDate
                 property bool validEndDate: incidenceForm.isTodo ?
-                    incidenceEndDateCombo.validDate || !incidenceEndCheckBox.checked :
-                    incidenceEndDateCombo.validDate
+                    incidenceEndDate.validDate || !incidenceEndCheckBox.checked :
+                    incidenceEndDate.validDate
                 property bool validFormDates: validStartDate && (validEndDate || root.incidenceWrapper.allDay)
 
                 property date todayDate: new Date()
@@ -199,7 +199,6 @@ FormCard.FormCardPage {
                     QQC2.BusyIndicator {
                         height: parent.height
                         anchors.right: parent.right
-                        anchors.rightMargin: parent.indicator.width
                         visible: locationsModel.status === GeocodeModel.Loading
                     }
                 }
@@ -352,9 +351,16 @@ FormCard.FormCardPage {
             FormCard.FormCard {
                 // TODO: Start for todos?
                 FormCard.FormDateTimeDelegate {
-                    id: incidenceStartDateCombo
+                    id: incidenceStartDate
+
+                    readonly property bool validDate: !isNaN(value.getTime())
+
                     visible: !incidenceForm.isTodo || (incidenceForm.isTodo && !isNaN(root.incidenceWrapper.incidenceStart.getTime()))
                     dateTimeDisplay: allDayCheckBox.checked ? FormCard.FormDateTimeDelegate.Date : FormCard.FormDateTimeDelegate.DateTime
+                    initialValue: root.incidenceWrapper.incidenceStart
+                    onValueChanged: () => {
+                        root.incidenceWrapper.setIncidenceStartDate(value.getDate(), value.getMonth(), value.getFullYear())
+                    }
                     // display: root.incidenceWrapper.incidenceStartDateDisplay
                     // dateTime: root.incidenceWrapper.incidenceStart
                     // onNewDateChosen: (day, month, year) => {
@@ -363,7 +369,6 @@ FormCard.FormCardPage {
                     // onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
                     // timeZoneOffset: root.incidenceWrapper.startTimeZoneUTCOffsetMins
                     // enabled: !allDay    CheckBox.checked && (!incidenceForm.isTodo || incidenceStartCheckBox.checked)
-                    // visible: !allDayCheckBox.checked
                     // display: root.incidenceWrapper.incidenceEndTimeDisplay
                     // dateTime: root.incidenceWrapper.incidenceStart
                     //
@@ -372,17 +377,16 @@ FormCard.FormCardPage {
                         target: root.incidenceWrapper
 
                         function onIncidenceStartChanged(): void {
-                            incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                            incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                            incidenceStartDateCombo.display = root.incidenceWrapper.incidenceStartDateDisplay;
-                            incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStartTimeDisplay;
+                            if (!isNaN(root.incidenceWrapper.incidenceStart.getTime())) {
+                                incidenceStartDate.value = root.incidenceWrapper.incidenceStart;
+                            }
                         }
                     }
                 }
             }
 
             FormCard.FormHeader {
-                title: incidenceForm.isTodo ? i18n("Due:") : i18n("End:")
+                title: incidenceForm.isTodo ? i18nc("@title:group", "Due") : i18nc("@title:group", "End")
 
                 trailing: QQC2.CheckBox {
                     id: incidenceEndCheckBox
@@ -406,11 +410,14 @@ FormCard.FormCardPage {
 
             FormCard.FormCard {
                 FormCard.FormDateTimeDelegate {
-                    id: incidenceEndDateCombo
+                    id: incidenceEndDate
+
+                    readonly property bool validDate: !isNaN(value.getTime())
+
                     visible: !incidenceForm.isJournal || incidenceForm.isTodo
                     enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
 
-                    dateTimeDisplay: incidenceStartDateCombo.dateTimeDisplay
+                    dateTimeDisplay: incidenceStartDate.dateTimeDisplay
 
                     initialValue: root.incidenceWrapper.incidenceEnd
                     // onNewDateChosen: (day, month, year) => {
@@ -427,10 +434,9 @@ FormCard.FormCardPage {
                         target: root.incidenceWrapper
 
                         function onIncidenceEndChanged(): void {
-                            incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                            incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                            incidenceEndDateCombo.display = root.incidenceWrapper.incidenceEndDateDisplay;
-                            incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEndTimeDisplay;
+                            if (!isNaN(root.incidenceWrapper.incidenceEnd.getTime())) {
+                                incidenceEndDate.value = root.incidenceWrapper.incidenceEnd;
+                            }
                         }
                     }
                 }
@@ -636,7 +642,7 @@ FormCard.FormCardPage {
                         Layout.fillWidth: true
 
                         QQC2.RadioButton {
-                            property int dateOfMonth: incidenceStartDateCombo.value.getDate()
+                            property int dateOfMonth: incidenceStartDate.value.getDate()
 
                             text: i18nc("%1 is the day number of month", "The %1 of each month", Calendar.LabelUtils.numberToString(dateOfMonth))
 
@@ -644,11 +650,11 @@ FormCard.FormCardPage {
                             onClicked: customRecurrenceLayout.setOccurrence()
                         }
                         QQC2.RadioButton {
-                            property int dayOfWeek: incidenceStartDateCombo.value.getDay() > 0 ?
-                                                    incidenceStartDateCombo.value.getDay() - 1 :
+                            property int dayOfWeek: incidenceStartDate.value.getDay() > 0 ?
+                                                    incidenceStartDate.value.getDay() - 1 :
                                                     7 // C++ Qt day of week index goes Mon-Sun, 0-7
-                            property int weekOfMonth: Math.ceil((incidenceStartDateCombo.value.getDate() + 6 - incidenceStartDateCombo.value.getDay()) / 7);
-                            property string dayOfWeekString: Qt.locale().dayName(incidenceStartDateCombo.value.getDay())
+                            property int weekOfMonth: Math.ceil((incidenceStartDate.value.getDate() + 6 - incidenceStartDate.value.getDay()) / 7);
+                            property string dayOfWeekString: Qt.locale().dayName(incidenceStartDate.value.getDay())
 
                             text: i18nc("the weekOfMonth dayOfWeekString of each month", "The %1 %2 of each month", Calendar.LabelUtils.numberToString(weekOfMonth), dayOfWeekString)
                             checked: root.incidenceWrapper.recurrenceData.type === 5 // Monthly on position
