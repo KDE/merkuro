@@ -35,8 +35,8 @@ void MessageLoader::setItem(const Akonadi::Item &item)
             return;
         }
         const auto item = items.at(0);
-        if (item.hasPayload<KMime::Message::Ptr>()) {
-            m_message = item.payload<KMime::Message::Ptr>();
+        if (item.hasPayload<std::shared_ptr<KMime::Message>>()) {
+            m_message = item.payload<std::shared_ptr<KMime::Message>>();
             Q_EMIT messageChanged();
         } else {
             qWarning() << "This is not a mime item.";
@@ -44,7 +44,7 @@ void MessageLoader::setItem(const Akonadi::Item &item)
     });
 }
 
-KMime::Message::Ptr MessageLoader::message() const
+std::shared_ptr<KMime::Message> MessageLoader::message() const
 {
     return m_message;
 }

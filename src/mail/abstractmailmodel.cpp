@@ -15,10 +15,10 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
     if (role == Akonadi::EntityTreeModel::ItemRole) {
         return QVariant::fromValue(item);
     }
-    if (!item.hasPayload<KMime::Message::Ptr>()) {
+    if (!item.hasPayload<std::shared_ptr<KMime::Message>>()) {
         return {};
     }
-    const KMime::Message::Ptr mail = item.payload<KMime::Message::Ptr>();
+    const std::shared_ptr<KMime::Message> mail = item.payload<std::shared_ptr<KMime::Message>>();
 
     // Static for speed reasons
     static const QString noSubject = i18nc("displayed as subject when the subject of a mail is empty", "No Subject");

@@ -164,7 +164,7 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
 void MailClient::queueMessage(const int transportId,
                               const MessageComposer::ComposerJob *composer,
                               const KIdentityManagementCore::Identity &identity,
-                              const KMime::Message::Ptr &message)
+                              const std::shared_ptr<KMime::Message> &message)
 {
     Akonadi::MessageQueueJob *qjob = new Akonadi::MessageQueueJob(this);
     message->assemble();

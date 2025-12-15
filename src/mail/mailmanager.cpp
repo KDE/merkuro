@@ -227,7 +227,7 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
             return;
         }
 
-        const auto message = item.payload<KMime::Message::Ptr>();
+        const auto message = item.payload<std::shared_ptr<KMime::Message>>();
         KMBox::MBox mbox;
         if (!mbox.load(filename)) {
             qCWarning(MERKURO_MAIL_LOG) << "Error occurred: error creating file";

@@ -77,7 +77,7 @@ private:
     void queueMessage(const int transport,
                       const MessageComposer::ComposerJob *composer,
                       const KIdentityManagementCore::Identity &identity,
-                      const KMime::Message::Ptr &message);
+                      const std::shared_ptr<KMime::Message> &message);
 
     void handleQueueJobFinished(KJob *job);
 
