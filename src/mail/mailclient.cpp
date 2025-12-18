@@ -132,7 +132,7 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     composer->addAttachmentParts(m_attachmentModel->attachments());
 
     // Setting Headers
-    KMime::Headers::Base::List extras;
+    QList<KMime::Headers::Base *> extras;
 
     auto *header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport");
     header->fromUnicodeString(QString::number(*transportId));
