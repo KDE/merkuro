@@ -19,7 +19,7 @@ public:
         FileNameRole = Qt::DisplayRole,
         UrlRole,
     };
-    Q_ENUM(RoleNames);
+    Q_ENUM(RoleNames)
     explicit AttachmentModel(QObject *parent);
     MessageCore::AttachmentPart::List attachments() const;
 
