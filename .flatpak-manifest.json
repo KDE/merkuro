@@ -45,19 +45,19 @@
         "--env=SASL_PATH=/app/lib/sasl2"
     ],
     "cleanup": [
-        "/lib/cmake",
-        "/lib/pkgconfig",
-        "/lib/plugins/designer",
-        "/include",
-        "/docs",
-        "/mkspecs",
-        "/share/man",
+        "*.a",
+        "*.la",
         "/bin/afmtodit",
-        "/usr/bin/xsd",
+        "/docs",
+        "/include",
+        "/lib/cmake",
         "/lib/libKF5*.so",
         "/lib/libboost_*.so",
-        "*.a",
-        "*.la"
+        "/lib/pkgconfig",
+        "/lib/plugins/designer",
+        "/mkspecs",
+        "/share/man",
+        "/usr/bin/xsd"
     ],
     "copy-icon": true,
     "add-extensions": {
