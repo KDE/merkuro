@@ -169,7 +169,10 @@
                         "type": "anitya",
                         "project-id": 1239,
                         "stable-only": true,
-                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2"
+                        "url-template": "https://gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2",
+                        "versions": {
+                            "<": "2.0.0"
+                        }
                     }
                 }
             ]
