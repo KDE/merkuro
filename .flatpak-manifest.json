@@ -146,8 +146,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
-                    "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b",
+                    "url": "https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.bz2",
+                    "sha256": "49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6845,
@@ -351,8 +351,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.9.0.tar.xz",
-                    "sha256": "21314a91f26b1c962def3fd7ff2e762d3358b075f63f4d7e0144fb2c63b7ebc7",
+                    "url": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.10.0.tar.xz",
+                    "sha256": "c98f92bf7c452e12f6dc403404215413db3959fe904ad830ead0db6bb09b3d11",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 242933,
@@ -395,8 +395,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://oligarchy.co.uk/xapian/1.4.29/xapian-core-1.4.29.tar.xz",
-                    "sha256": "c55c9bc8613ad3ec2c218eafca088c218ab7cddcba7ef08f3af0e542f4e521bc",
+                    "url": "https://oligarchy.co.uk/xapian/1.4.30/xapian-core-1.4.30.tar.xz",
+                    "sha256": "4edf9989499e8bc95085c9f7108ed41d69546c34c6eea81da0fa22d95043bf72",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 15919,
@@ -587,8 +587,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/qca/2.3.9/qca-2.3.9.tar.xz",
-                            "sha256": "c555d5298cdd7b6bafe2b1f96106f30cfa543a23d459d50c8a91eac33c476e4e",
+                            "url": "https://download.kde.org/stable/qca/2.3.10/qca-2.3.10.tar.xz",
+                            "sha256": "1c5b722da93d559365719226bb121c726ec3c0dc4c67dea34f1e50e4e0d14a02",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 13606,
@@ -623,15 +623,8 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/release-service/25.04.3/src/akonadi-calendar-25.04.3.tar.xz",
-                    "sha256": "9433cec8f629f5dd1aadb7af39d4b62d6047624b1d1be5282eef5e460f486e5c",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 8763,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-calendar-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/akonadi-calendar.git"
                 }
             ]
         },
