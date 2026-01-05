@@ -34,7 +34,7 @@ private:
 
         const auto pastYear = rng->bounded(m_genDatesLower, firstModelDate.year() - 1);
         const auto pastMonth = rng->bounded(std::max(firstModelDate.month() - 1, 1), maximumMonthsInYear);
-        const auto pastDay = rng->bounded(std::max(firstModelDate.day() - 1, 1), QDate(pastYear, pastMonth, 1).daysInMonth(calendar));
+        const auto pastDay = rng->bounded(std::max(firstModelDate.day() - 1, 1), firstModelDate.daysInMonth(calendar));
         const QDate ungeneratedPastDate(pastYear, pastMonth, pastDay);
 
         const auto futureYear = rng->bounded(lastModelDate.year() + 1, m_genDatesUpper);
