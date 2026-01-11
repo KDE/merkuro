@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.27)
 
 # KDE Applications version, managed by release script.
 set(RELEASE_SERVICE_VERSION_MAJOR "26")
