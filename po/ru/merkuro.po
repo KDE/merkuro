@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-02 00:45+0000\n"
-"PO-Revision-Date: 2025-12-11 19:08+0300\n"
+"PO-Revision-Date: 2025-12-23 19:54+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.11.90\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -2331,24 +2331,20 @@ msgid "Synchronize after"
 msgstr "Синхронизировать через"
 
 #: components/qml/EditCollectionPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this account'"
 msgid "Never"
 msgstr "Никогда"
 
 #: components/qml/EditCollectionPage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "Interval for updating a calendar"
-#| msgid "%1 minute"
-#| msgid_plural "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating an account"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 мин."
-msgstr[1] "%1 мин."
-msgstr[2] "%1 мин."
-msgstr[3] "%1 мин."
+msgstr[0] "%1 минута"
+msgstr[1] "%1 минуты"
+msgstr[2] "%1 минут"
+msgstr[3] "%1 минута"
 
 #: components/qml/EditMenu.qml:14 components/qml/NativeEditMenu.qml:11
 #, kde-format
@@ -3623,19 +3619,16 @@ msgid "Add Folder"
 msgstr "Добавить папку"
 
 #: mail/qml/actions/MailItemMenu.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Folder…"
-msgstr "Редактировать календарь…"
+msgstr "Редактировать папку…"
 
 #: mail/qml/actions/MailItemMenu.qml:43
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Folder"
-msgstr "Добавить папку"
+msgstr "Редактирование папки"
 
 #: mail/qml/actions/MailItemMenu.qml:54
 #, kde-format
@@ -3768,11 +3761,10 @@ msgid "Subject:"
 msgstr "Тема:"
 
 #: mail/qml/MailComposer.qml:152
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
-msgstr "Вложения:"
+msgstr "Прикрепить документ"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
