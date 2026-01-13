@@ -108,9 +108,7 @@
                 "--with-plugindir=/app/lib/sasl2"
             ],
             "build-options": {
-                "env": {
-                    "CFLAGS": "-Wno-implicit-function-declaration"
-                }
+                "cflags": "-Wno-implicit-function-declaration -Wno-incompatible-pointer-types"
             },
             "no-parallel-make": true,
             "sources": [
@@ -124,6 +122,10 @@
                         "stable-only": true,
                         "url-template": "https://github.com/cyrusimap/cyrus-sasl/archive/cyrus-sasl-$version.tar.gz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/cyrus-sasl/1.patch"
                 },
                 {
                     "type": "shell",
