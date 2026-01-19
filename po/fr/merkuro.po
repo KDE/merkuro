@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-01-19 00:44+0000\n"
 "PO-Revision-Date: 2026-01-03 09:50+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -163,12 +163,12 @@ msgstr "N'afficher qu'aujourd'hui"
 msgid "Refresh All"
 msgstr "Tout rafraîchir"
 
-#: calendar/calendarmanager.cpp:526
+#: calendar/calendarmanager.cpp:535
 #, kde-format
 msgid "Move occurrence(s)"
 msgstr "Déplacer la (les) récurrence(s)"
 
-#: calendar/calendarmanager.cpp:531
+#: calendar/calendarmanager.cpp:540
 #, kde-format
 msgid ""
 "Unable to add the exception item to the calendar. No change will be done."
@@ -176,12 +176,12 @@ msgstr ""
 "Impossible d'ajouter un élément d'exception au calendrier. Aucun changement "
 "ne sera fait."
 
-#: calendar/calendarmanager.cpp:571
+#: calendar/calendarmanager.cpp:580
 #, kde-format
 msgid "Delete task and its sub-tasks"
 msgstr "Supprimer la tâche et ses sous-tâches"
 
-#: calendar/calendarmanager.cpp:574
+#: calendar/calendarmanager.cpp:583
 #, kde-format
 msgid "Delete task and make sub-tasks independent"
 msgstr "Supprimer la tâche et rendre indépendante ses sous-tâches"
@@ -2225,18 +2225,6 @@ msgstr "Gérer les étiquettes…"
 msgid "Show Menubar"
 msgstr "Afficher la barre de menus"
 
-#: components/colorproxymodel.cpp:80
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Offline)"
-msgstr "%1 (Déconnecté)"
-
-#: components/colorproxymodel.cpp:83
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Default)"
-msgstr "%1 (Par défaut)"
-
 #: components/qml/EditCollectionPage.qml:28
 #, kde-format
 msgctxt "@title"
@@ -2542,7 +2530,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "Adresse de courriel"
 
-#: contacts/contactmanager.cpp:188
+#: contacts/contactmanager.cpp:197
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -3753,6 +3741,14 @@ msgstr "Configuration des comptes de messagerie"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Comptes"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Offline)"
+#~ msgstr "%1 (Déconnecté)"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (Par défaut)"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Supprimer le filtrage des étiquettes"

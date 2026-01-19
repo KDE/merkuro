@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-01-19 00:44+0000\n"
 "PO-Revision-Date: 2026-01-02 04:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -166,23 +166,23 @@ msgstr "მხოლოდ დღევანდელი დღის ჩვე
 msgid "Refresh All"
 msgstr "ყველას განახლება"
 
-#: calendar/calendarmanager.cpp:526
+#: calendar/calendarmanager.cpp:535
 #, kde-format
 msgid "Move occurrence(s)"
 msgstr "აღმოჩენების გადაადგილება"
 
-#: calendar/calendarmanager.cpp:531
+#: calendar/calendarmanager.cpp:540
 #, kde-format
 msgid ""
 "Unable to add the exception item to the calendar. No change will be done."
 msgstr "კალენდარში გამონაკლისის ჩამატების შეცდომა. ცვლილებები არ შეტანილა."
 
-#: calendar/calendarmanager.cpp:571
+#: calendar/calendarmanager.cpp:580
 #, kde-format
 msgid "Delete task and its sub-tasks"
 msgstr "ამოცანისა და მისი ქვეამოცანების წაშლა"
 
-#: calendar/calendarmanager.cpp:574
+#: calendar/calendarmanager.cpp:583
 #, kde-format
 msgid "Delete task and make sub-tasks independent"
 msgstr "ამოცანის წაშლა და მისი ქვეამოცანების დამოუკიდებელ ამოცანებად გარდაქმნა"
@@ -2209,18 +2209,6 @@ msgstr "ჭდეების მართვა…"
 msgid "Show Menubar"
 msgstr "მენიუს ზოლის ჩვნება"
 
-#: components/colorproxymodel.cpp:80
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Offline)"
-msgstr "%1 (გათიშულია)"
-
-#: components/colorproxymodel.cpp:83
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Default)"
-msgstr "%1 (ნაგულისხმევი)"
-
 #: components/qml/EditCollectionPage.qml:28
 #, kde-format
 msgctxt "@title"
@@ -2526,7 +2514,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "ელფოსტა"
 
-#: contacts/contactmanager.cpp:188
+#: contacts/contactmanager.cpp:197
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -3736,6 +3724,14 @@ msgstr "ელფოსტის ანგარიშების მორგ�
 msgctxt "@title"
 msgid "Accounts"
 msgstr "ანგარიშები"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Offline)"
+#~ msgstr "%1 (გათიშულია)"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (ნაგულისხმევი)"
 
 #~ msgctxt "@action:button"
 #~ msgid "Discard Draft"

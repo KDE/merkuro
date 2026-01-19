@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-01-19 00:44+0000\n"
 "PO-Revision-Date: 2024-11-05 12:16+0100\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -167,12 +167,12 @@ msgstr "Til i dag"
 msgid "Refresh All"
 msgstr "Genopfrisk alle"
 
-#: calendar/calendarmanager.cpp:526
+#: calendar/calendarmanager.cpp:535
 #, kde-format
 msgid "Move occurrence(s)"
 msgstr "Flyt forekomster"
 
-#: calendar/calendarmanager.cpp:531
+#: calendar/calendarmanager.cpp:540
 #, kde-format
 msgid ""
 "Unable to add the exception item to the calendar. No change will be done."
@@ -180,12 +180,12 @@ msgstr ""
 "Kan ikke føje undtagelseselement til kalenderen. Ingen ændring vil blive "
 "udført."
 
-#: calendar/calendarmanager.cpp:571
+#: calendar/calendarmanager.cpp:580
 #, kde-format
 msgid "Delete task and its sub-tasks"
 msgstr "Slet opgave og dens underopgaver"
 
-#: calendar/calendarmanager.cpp:574
+#: calendar/calendarmanager.cpp:583
 #, kde-format
 msgid "Delete task and make sub-tasks independent"
 msgstr "Slet opgave og gør underopgaver selvstændige"
@@ -2267,18 +2267,6 @@ msgstr "Håndtér mærker…"
 msgid "Show Menubar"
 msgstr "Vis menulinje"
 
-#: components/colorproxymodel.cpp:80
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Offline)"
-msgstr "%1 (offline)"
-
-#: components/colorproxymodel.cpp:83
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Default)"
-msgstr "%1 (standard)"
-
 #: components/qml/EditCollectionPage.qml:28
 #, fuzzy, kde-format
 #| msgid "General settings"
@@ -2596,7 +2584,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "E-mail"
 
-#: contacts/contactmanager.cpp:188
+#: contacts/contactmanager.cpp:197
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -3835,6 +3823,14 @@ msgstr "Mailkonto-konfiguration"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Konti"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Offline)"
+#~ msgstr "%1 (offline)"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (standard)"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Fjern filtreringsmærke"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-02 00:45+0000\n"
+"POT-Creation-Date: 2026-01-19 00:44+0000\n"
 "PO-Revision-Date: 2025-12-23 19:54+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -167,12 +167,12 @@ msgstr "Показывать только сегодняшнюю дату"
 msgid "Refresh All"
 msgstr "Обновить все"
 
-#: calendar/calendarmanager.cpp:526
+#: calendar/calendarmanager.cpp:535
 #, kde-format
 msgid "Move occurrence(s)"
 msgstr "Перемещение повторений"
 
-#: calendar/calendarmanager.cpp:531
+#: calendar/calendarmanager.cpp:540
 #, kde-format
 msgid ""
 "Unable to add the exception item to the calendar. No change will be done."
@@ -180,12 +180,12 @@ msgstr ""
 "Невозможно добавить элемент исключения в календарь. Изменения не будут "
 "выполнены."
 
-#: calendar/calendarmanager.cpp:571
+#: calendar/calendarmanager.cpp:580
 #, kde-format
 msgid "Delete task and its sub-tasks"
 msgstr "Удалить задачу и её вложенные подзадачи"
 
-#: calendar/calendarmanager.cpp:574
+#: calendar/calendarmanager.cpp:583
 #, kde-format
 msgid "Delete task and make sub-tasks independent"
 msgstr "Удалить задачу, но сохранить её вложенные подзадачи"
@@ -2248,18 +2248,6 @@ msgstr "Редактор меток…"
 msgid "Show Menubar"
 msgstr "Показывать строку меню"
 
-#: components/colorproxymodel.cpp:80
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Offline)"
-msgstr "%1 (не в сети)"
-
-#: components/colorproxymodel.cpp:83
-#, kde-format
-msgctxt "@item this is the default calendar"
-msgid "%1 (Default)"
-msgstr "%1 (по умолчанию)"
-
 #: components/qml/EditCollectionPage.qml:28
 #, kde-format
 msgctxt "@title"
@@ -2570,7 +2558,7 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "Адрес эл. почты"
 
-#: contacts/contactmanager.cpp:188
+#: contacts/contactmanager.cpp:197
 #, kde-format
 msgctxt "@title:window"
 msgid "Properties of Address Book %1"
@@ -3795,6 +3783,14 @@ msgstr "Настройка учётной записи почты"
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Учётные записи"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Offline)"
+#~ msgstr "%1 (не в сети)"
+
+#~ msgctxt "@item this is the default calendar"
+#~ msgid "%1 (Default)"
+#~ msgstr "%1 (по умолчанию)"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Удалить метку фильтра"
