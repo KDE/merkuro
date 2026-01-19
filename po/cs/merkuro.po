@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 02:37+0000\n"
-"PO-Revision-Date: 2024-10-18 15:55+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-01-15 13:20+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -46,7 +46,7 @@ msgstr "Ctrl+2"
 #: calendar/calendarapplication.cpp:81
 #, kde-format
 msgid "Work Week View"
-msgstr ""
+msgstr "Pohled pracovního týdne"
 
 #: calendar/calendarapplication.cpp:97
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "Nová událost..."
 #: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
-msgstr "Nová úloha…"
+msgstr "Nový úkol…"
 
 #: calendar/calendarapplication.cpp:233
 #, kde-format
@@ -153,12 +153,12 @@ msgstr "Sestupně"
 #: calendar/calendarapplication.cpp:333
 #, kde-format
 msgid "Show Completed Tasks"
-msgstr "Zobrazit dokončené úlohy"
+msgstr "Zobrazit dokončené úkoly"
 
 #: calendar/calendarapplication.cpp:347
 #, kde-format
 msgid "Show Today Only"
-msgstr ""
+msgstr "Zobrazit pouze dnešní"
 
 #: calendar/calendarapplication.cpp:362
 #, kde-format
@@ -196,7 +196,7 @@ msgstr "Vyskytla se chyba: %1"
 #: calendar/models/todosortfilterproxymodel.cpp:149
 #, kde-format
 msgid "Task"
-msgstr "Úloha"
+msgstr "Úkol"
 
 #: calendar/main.cpp:57
 #, kde-format
@@ -212,7 +212,7 @@ msgstr "Aplikace kalendáře"
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
 #, kde-format
 msgid "© KDE Community 2021–2024"
-msgstr ""
+msgstr "© 2021–2024 Komunita KDE"
 
 #: calendar/main.cpp:66 contacts/main.cpp:60 launcher/main.cpp:53
 #: mail/main.cpp:62
@@ -256,7 +256,7 @@ msgstr "%1 (%2)"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Default from locale"
-msgstr ""
+msgstr "Výchozí ze systému"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:890
@@ -304,7 +304,7 @@ msgstr "Filtrovat podle značek"
 #: calendar/qml/Bars/FilterHeaderBar.qml:41
 #, kde-format
 msgid "All Tasks"
-msgstr "Všechny úlohy"
+msgstr "Všechny úkoly"
 
 #: calendar/qml/Bars/FilterHeaderBar.qml:85
 #, kde-format
@@ -323,9 +323,9 @@ msgstr[2] "Každých %1 týdnů"
 #, kde-format
 msgid "Every week on"
 msgid_plural "Every %1 weeks on"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Každý týden v"
+msgstr[1] "Každé %1 týdny v"
+msgstr[2] "Každých %1 týdnů v"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:66
 #: calendar/qml/CalendarUtils/LabelUtils.js:105
@@ -372,17 +372,17 @@ msgstr[2] "Každých %1 dní"
 #, kde-format
 msgid "Every month on the %2"
 msgid_plural "Every %1 months on the %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Každý měsíc v %2"
+msgstr[1] "Každé %1 měsíce v %2"
+msgstr[2] "Každých %1 měsíců v %2"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:109
 #, kde-format
 msgid "Every year on the %2 day of the year"
 msgid_plural "Every %1 years on the %2 day of the year"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Každý rok %2 den v roce"
+msgstr[1] "Každé %1 roky %2 den v roce"
+msgstr[2] "Každých %1 let %2 den v roce"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:115
 #, kde-format
@@ -470,19 +470,19 @@ msgstr "Min. interval:"
 #, kde-format
 msgctxt "%1 is a number"
 msgid "%1 incidences were imported successfully."
-msgstr ""
+msgstr "%1 položek bylo úspěšně importováno."
 
 #: calendar/qml/Controls/ImportHandler.qml:49
 #: calendar/qml/Controls/ImportHandler.qml:63
 #, kde-format
 msgctxt "%1 is the error message"
 msgid "An error occurred importing incidences: %1"
-msgstr ""
+msgstr "Při importu položek došlo k chybě: %1"
 
 #: calendar/qml/Controls/ImportHandler.qml:58
 #, kde-format
 msgid "New calendar created from imported file successfully."
-msgstr ""
+msgstr "Nový kalendář z importovaného souboru byl úspěšně vytvořen."
 
 #: calendar/qml/Controls/ImportHandler.qml:84
 #, kde-format
@@ -508,6 +508,10 @@ msgid ""
 "file?\n"
 " "
 msgstr ""
+"Chcete sloučit události a úkoly tohoto kalendářového souboru do jednoho ze "
+"svých stávajících kalendářů, nebo chcete z tohoto souboru vytvořit nový "
+"kalendář?\n"
+" "
 
 #: calendar/qml/Controls/ImportHandler.qml:115
 #, kde-format
@@ -648,9 +652,9 @@ msgstr "Super-úloha"
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
-msgstr[0] "Podúloha"
-msgstr[1] "Podúlohy"
-msgstr[2] "Podúlohy"
+msgstr[0] "Podúkol"
+msgstr[1] "Podúkoly"
+msgstr[2] "Podúkoly"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:60
 #, kde-format
@@ -674,23 +678,23 @@ msgstr "Smazat"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:87
 #, kde-format
 msgid "Mark Task as Incomplete"
-msgstr "Označit úlohu jako nedokončenou"
+msgstr "Označit úkol jako nedokončený"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:87
 #, kde-format
 msgid "Mark Task as Complete"
-msgstr "Označit úlohu jako dokončenou"
+msgstr "Označit úkol jako dokončený"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:95
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
 #, kde-format
 msgid "Add Sub-Task"
-msgstr "Přidat podúlohu"
+msgstr "Přidat podúkol"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:108
 #, kde-format
 msgid "Set priority…"
-msgstr ""
+msgstr "Nastavit prioritu..."
 
 # žádné parametry funkce v inspektoru funkcí
 #: calendar/qml/Controls/IncidenceMouseArea.qml:120
@@ -747,7 +751,7 @@ msgstr "9 (nejnižší priorita)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
 #, kde-format
 msgid "Set due date…"
-msgstr ""
+msgstr "Nastavit datum platnosti…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:209
 #, kde-format
@@ -796,18 +800,18 @@ msgstr "<b>%1</b> %2"
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 – %2"
-msgstr ""
+msgstr "%1 – %2"
 
 #: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
-msgstr ""
+msgstr "<b>%1</b> – %2"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
-msgstr "Vyberte kalendář s úlohami"
+msgstr "Vyberte kalendář s úkoly"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:23
 #, kde-format
@@ -886,6 +890,13 @@ msgid ""
 "\n"
 "Deleting all will also delete sub-items!"
 msgstr ""
+"Kalendářová položka \"%1\" se opakuje v několika termínech. Tato položka má "
+"také podřízené položky.\n"
+"\n"
+"Chcete smazat vybraný výskyt v termínu %2 a také budoucí výskyty nebo "
+"všechny jeho výskyty?\n"
+"\n"
+"Smazáním všech se smažou také podřízené položky!"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:55
 #, kde-format
@@ -921,7 +932,7 @@ msgstr "Smazat vše"
 #, kde-format
 msgctxt "@title"
 msgid "Edit Calendar"
-msgstr ""
+msgstr "Upravit kalendář"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:31
 #, kde-format
@@ -939,22 +950,22 @@ msgstr "Jméno"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:56
 #, kde-format
 msgctxt "@title"
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiky"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:60
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
 msgid_plural "%1 entries"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 záznam"
+msgstr[1] "%1 záznamy"
+msgstr[2] "%1 záznamů"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:61
 #, kde-format
@@ -972,40 +983,40 @@ msgstr "Velikost"
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr ""
+msgstr "Vyhledávání"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:75
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
-msgstr ""
+msgstr "Použít možnosti z nadřazené složky nebo účtu"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:84
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
-msgstr ""
+msgstr "Synchronizovat při výběru této složky"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:94
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
-msgstr ""
+msgstr "Synchronizovat po"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:99
 #, kde-format
 msgctxt "As in 'Never synchronize this calendar'"
 msgid "Never"
-msgstr ""
+msgstr "Nikdy"
 
 #: calendar/qml/Dialogs/EditCalendarPage.qml:101
 #, kde-format
 msgctxt "Interval for updating a calendar"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 minuta"
+msgstr[1] "%1 minuty"
+msgstr[2] "%1 minut"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:44
 #, kde-format
@@ -1027,7 +1038,7 @@ msgstr "Neplatná poskytnutá data"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:60
 #, kde-format
 msgid "End date cannot be before start date."
-msgstr ""
+msgstr "Datum ukončení nesmí být dřívější než datum zahájení."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:69
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
@@ -1066,7 +1077,7 @@ msgstr "Přidejte název vaší události"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:201
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr ""
+msgstr "Přidejte název pro svůj záznam do deníku"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:212
 #, kde-format
@@ -1116,7 +1127,7 @@ msgstr "Týdně"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:432
 #, kde-format
 msgid "Monthly"
-msgstr "Každý měsíc"
+msgstr "Měsíčně"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:433
 #, kde-format
@@ -1246,12 +1257,12 @@ msgstr "Značky:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Tap to set tags…"
-msgstr ""
+msgstr "Klepnutím nastavte značky…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:891
 #, kde-format
 msgid "Click to set tags…"
-msgstr ""
+msgstr "Kliknutím nastavte značky…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:934
 #, kde-format
@@ -1298,7 +1309,7 @@ msgstr "Stav:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
 msgid "Request RSVP"
-msgstr ""
+msgstr "Žádost o potvrzení účasti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1103
 #, kde-format
@@ -1333,7 +1344,7 @@ msgstr "Přidat přílohu"
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:29
 #, kde-format
 msgid "Change incidence date"
-msgstr ""
+msgstr "Změnit datum položky"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:47
 #, kde-format
@@ -1342,6 +1353,9 @@ msgid ""
 "applied only to this single occurrence, also to future items, or to all "
 "items in the recurrence?"
 msgstr ""
+"Položka, kterou se pokoušíte změnit, je opakující se položka. Mají se změny "
+"uplatnit pouze na tento jediný výskyt a na budoucí položky, nebo na všechny "
+"opakované položky?"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:62
 #, kde-format
@@ -1424,7 +1438,7 @@ msgstr "Nastavení"
 #: calendar/qml/Drawers/MainDrawer.qml:392
 #, kde-format
 msgid "View all tasks"
-msgstr "Zobrazit všechny úlohy"
+msgstr "Zobrazit všechny úkoly"
 
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:18
 #, kde-format
@@ -1532,43 +1546,43 @@ msgstr "Vytvořit"
 #, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
-msgstr ""
+msgstr "Nová událost"
 
 #: calendar/qml/Main.qml:299
 #, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
-msgstr ""
+msgstr "Nový úkol"
 
 #: calendar/qml/Main.qml:308
 #, kde-format
 msgctxt "@title"
 msgid "Month"
-msgstr ""
+msgstr "Měsíc"
 
 #: calendar/qml/Main.qml:311
 #, kde-format
 msgctxt "@title"
 msgid "Week"
-msgstr ""
+msgstr "Týden"
 
 #: calendar/qml/Main.qml:314
 #, kde-format
 msgctxt "@title"
 msgid "Work Week"
-msgstr ""
+msgstr "Pracovní týden"
 
 #: calendar/qml/Main.qml:317
 #, kde-format
 msgctxt "@title"
 msgid "3 Days"
-msgstr ""
+msgstr "3 dny"
 
 #: calendar/qml/Main.qml:320
 #, kde-format
 msgctxt "@title"
 msgid "Day"
-msgstr ""
+msgstr "Den"
 
 #: calendar/qml/Main.qml:323
 #, kde-format
@@ -1580,7 +1594,7 @@ msgstr "Naplánovat"
 #, kde-format
 msgctxt "@title"
 msgid "Tasks"
-msgstr "Úlohy"
+msgstr "Úkoly"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:263
 #, kde-format
@@ -1591,7 +1605,7 @@ msgstr "Obnovit"
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:276
 #, kde-format
 msgid "All day or Multi day"
-msgstr ""
+msgstr "Celý den nebo více dní"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:244
 #, kde-format
@@ -1602,17 +1616,17 @@ msgstr "Vyprázdnit den."
 #: calendar/qml/MainViews/BasicMonthListView.qml:263
 #, kde-format
 msgid "Tap"
-msgstr "TAP"
+msgstr "Klepněte"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:263
 #, kde-format
 msgid "Click"
-msgstr "Kliknutí"
+msgstr "Klikněte"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:264
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
-msgstr ""
+msgstr "Dnes není nic v plánu. %1 a přidejte něco."
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:392
 #, kde-format
@@ -1659,12 +1673,12 @@ msgstr "Předchozí den"
 #: calendar/qml/MainViews/HourlyView.qml:54
 #, kde-format
 msgid "Previous Three Days"
-msgstr ""
+msgstr "Předchozí 3 dny"
 
 #: calendar/qml/MainViews/HourlyView.qml:56
 #, kde-format
 msgid "Previous Work Week"
-msgstr ""
+msgstr "Předchozí pracovní týden"
 
 #: calendar/qml/MainViews/HourlyView.qml:58
 #, kde-format
@@ -1674,17 +1688,17 @@ msgstr "Předchozí týden"
 #: calendar/qml/MainViews/HourlyView.qml:68
 #, kde-format
 msgid "Next Day"
-msgstr ""
+msgstr "Příští den"
 
 #: calendar/qml/MainViews/HourlyView.qml:70
 #, kde-format
 msgid "Next Three Days"
-msgstr ""
+msgstr "Příští 3 dny"
 
 #: calendar/qml/MainViews/HourlyView.qml:72
 #, kde-format
 msgid "Next Work Week"
-msgstr ""
+msgstr "Příští pracovní týden"
 
 #: calendar/qml/MainViews/HourlyView.qml:74
 #, kde-format
@@ -1706,7 +1720,7 @@ msgstr "Týden"
 #, kde-format
 msgctxt "@action:inmenu open work week view"
 msgid "Work Week"
-msgstr ""
+msgstr "Pracovní týden"
 
 #: calendar/qml/MainViews/HourlyView.qml:136
 #, kde-format
@@ -1745,7 +1759,7 @@ msgstr "Žádná nastavená priorita"
 #: calendar/qml/MainViews/TodoTreeView.qml:120
 #, kde-format
 msgid "No task sets enabled."
-msgstr ""
+msgstr "Nejsou povoleny žádné sady úkolů."
 
 #: calendar/qml/MainViews/TodoTreeView.qml:127
 #, kde-format
@@ -1760,12 +1774,12 @@ msgstr "Povolit"
 #: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks completed"
-msgstr "Nebyla dokončena žádná úloha"
+msgstr "Nebyl dokončen žádný úkol"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:139
 #, kde-format
 msgid "No tasks left to complete"
-msgstr "Žádné úlohy není třeba dokončit"
+msgstr "Žádné úkoly k dokončení"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:141
 #: calendar/qml/MainViews/TodoView.qml:63
@@ -1776,12 +1790,12 @@ msgstr "Vytvořit"
 #: calendar/qml/MainViews/TodoTreeView.qml:236
 #, kde-format
 msgid " , is overdue"
-msgstr ""
+msgstr " je po termínu"
 
 #: calendar/qml/MainViews/TodoView.qml:51
 #, kde-format
 msgid "Tasks"
-msgstr "Úlohy"
+msgstr "Úkoly"
 
 #: calendar/qml/MainViews/TodoView.qml:103
 #, kde-format
@@ -1791,23 +1805,23 @@ msgstr "Zobrazit dokončené"
 #: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks in %1"
-msgstr "Dokončené úlohy v %1"
+msgstr "Dokončené úkoly v %1"
 
 #: calendar/qml/MainViews/TodoView.qml:118
 #, kde-format
 msgid "Completed Tasks"
-msgstr "Dokončené úlohy"
+msgstr "Dokončené úkoly"
 
 #: calendar/qml/MainViews/TodoView.qml:166
 #, kde-format
 msgid "Create a New Task…"
-msgstr "Vytvořit novou úlohu..."
+msgstr "Vytvořit nový úkol..."
 
 #: calendar/qml/MainViews/TodoView.qml:206
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
-msgstr ""
+msgstr "Přidat úkol"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
 #, kde-format
@@ -1818,31 +1832,31 @@ msgstr "Svátky"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Display Events"
-msgstr ""
+msgstr "Zobrazit události"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Calendar…"
-msgstr ""
+msgstr "Upravit kalendář…"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:71
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Calendar"
-msgstr ""
+msgstr "Aktualizovat kalendář"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Calendar"
-msgstr ""
+msgstr "Smazat kalendář"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set calendar color…"
-msgstr ""
+msgstr "Nastavit barvu kalendáře"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:116
 #, kde-format
@@ -1866,13 +1880,13 @@ msgstr "Smazat zdroj kalendáře"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
-msgstr ""
+msgstr "Zobrazit vše"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:149
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
-msgstr ""
+msgstr "Skrýt vše"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -1886,7 +1900,7 @@ msgstr "Pohled"
 #, kde-format
 msgctxt "@action:menu"
 msgid "Sort Tasks"
-msgstr "Seřadit úlohy"
+msgstr "Seřadit úkoly"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:134 calendar/qml/Menus/MenuBar.qml:112
 #, kde-format
@@ -1913,7 +1927,7 @@ msgstr "Nastavení"
 #: calendar/qml/Menus/MenuBar.qml:67
 #, kde-format
 msgid "Sort Tasks"
-msgstr "Seřadit úlohy"
+msgstr "Seřadit úkoly"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:16
 #: calendar/qml/Settings/ViewSettingsPage.qml:15
@@ -1935,12 +1949,12 @@ msgstr "Dostupnost"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:15
 #, kde-format
 msgid "Configure Availability"
-msgstr ""
+msgstr "Nastavit dostupnost"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:18
 #, kde-format
 msgid "Availability Publishing settings"
-msgstr ""
+msgstr "Nastavení zveřejňování dostupnosti"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:26
 #, kde-format
@@ -1950,11 +1964,15 @@ msgid ""
 "times that are already marked as busy are disclosed, without revealing the "
 "specific reasons for your availability."
 msgstr ""
+"Když zveřejníte informace o své dostupnosti, ostatní uživatelé mohou při "
+"pozvání na schůzku zohlednit dostupnost ve vašem kalendáři. Zveřejněny jsou "
+"pouze časy, které jsou již označeny jako obsazené, aniž by byly odhaleny "
+"konkrétní důvody vaší dostupnosti."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:31
 #, kde-format
 msgid "Publish your availability information automatically"
-msgstr ""
+msgstr "Automaticky zveřejňujte informace o své dostupnosti"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:43
 #, kde-format
@@ -1964,7 +1982,7 @@ msgstr "Minimální čas (v minutách) mezi aktualizacemi"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:56
 #, kde-format
 msgid "Number of days of availability info to publish: "
-msgstr ""
+msgstr "Informace o počtu dní dostupnosti ke zveřejnění:"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:68
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:171
@@ -1999,17 +2017,17 @@ msgstr "Uložit heslo"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
 msgid "Click here to publish availability information manually"
-msgstr ""
+msgstr "Klikněte zde pro ruční zveřejnění informací o dostupnosti"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:123
 #, kde-format
 msgid "Email availability"
-msgstr ""
+msgstr "Odeslat dostupnost e-mailem"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
 #, kde-format
 msgid "Enter email of recipient…"
-msgstr ""
+msgstr "Zadat e-mail příjemce…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
 #: mail/qml/MailComposer.qml:142
@@ -2020,7 +2038,7 @@ msgstr "Odeslat"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:139
 #, kde-format
 msgid "Availability Retrieval settings"
-msgstr ""
+msgstr "Nastavení načítání dostupnosti"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:147
 #, kde-format
@@ -2028,11 +2046,13 @@ msgid ""
 "By retrieving Availability information that others have published, you can "
 "take their calendar into account when inviting them to a meeting."
 msgstr ""
+"Na základě informací o dostupnosti, které ostatní zveřejnili, můžete při "
+"pozvání na schůzku zohlednit jejich kalendář."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:152
 #, kde-format
 msgid "Retrieve others' availability information automatically"
-msgstr ""
+msgstr "Automaticky načítat informace o dostupnosti ostatních"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:161
 #, kde-format
@@ -2057,28 +2077,30 @@ msgstr "Použít vyskakovací okno pro zobrazení informací o výskytu"
 #: calendar/qml/Settings/ViewSettingsPage.qml:35
 #, kde-format
 msgid "Show holidays in calendar views"
-msgstr ""
+msgstr "Zobrazit svátky v kalendáři"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:45
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
-msgstr ""
+msgstr "Vybrat oblast pro svátky"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, kde-format
 msgid "Show tasks in calendar views"
-msgstr "Zobrazit úlohy v pohledech kalendáře"
+msgstr "Zobrazit úkoly v pohledech kalendáře"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:138
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Zobrazit podúkoly v pohledech kalendáře"
 
+# Přechod sklouznutí má posunovače, kde vlevo (žádný výběr) znamená průhlednost a vpravo (výběr 100 %) znamená neprůhlednost.
+# Opačně to nedává smysl.
 #: calendar/qml/Settings/ViewSettingsPage.qml:152
 #, kde-format
 msgid "Past event transparency"
-msgstr ""
+msgstr "Transparentnost minulých událostí"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:171
 #, kde-format
@@ -2088,7 +2110,7 @@ msgstr "Nastavení měsíčního přehledu"
 #: calendar/qml/Settings/ViewSettingsPage.qml:202
 #, kde-format
 msgid "Month view mode"
-msgstr ""
+msgstr "Režim měsíčního pohledu"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
@@ -2153,7 +2175,7 @@ msgstr "Zobrazovat čísla týdnů"
 #: calendar/qml/Settings/ViewSettingsPage.qml:303
 #, kde-format
 msgid "Grid border width (pixels):"
-msgstr ""
+msgstr "Šířka okraje mřížky (pixely):"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:327
 #, kde-format
@@ -2188,7 +2210,7 @@ msgstr "Nastavení přehledu plánu"
 #: calendar/qml/Settings/ViewSettingsPage.qml:380
 #, kde-format
 msgid "Schedule view mode"
-msgstr ""
+msgstr "Režim zobrazení plánu"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:387
 #, kde-format
@@ -2213,7 +2235,7 @@ msgstr "Ukázat záhlaví týdne"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr ""
+msgstr "Skrýt prázdné dny"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2223,7 +2245,7 @@ msgstr "Nastavení pohledu úkolů"
 #: calendar/qml/Settings/ViewSettingsPage.qml:436
 #, kde-format
 msgid "Show completed sub-tasks"
-msgstr "Zobrazit dokončené podúlohy"
+msgstr "Zobrazit dokončené podúkoly"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:447
 #, kde-format
@@ -2270,7 +2292,7 @@ msgstr "1 den"
 #, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
-msgstr ""
+msgstr "%1 hodiny"
 
 #: calendar/utils.cpp:26
 #, kde-format
@@ -2469,7 +2491,7 @@ msgstr "Beze jména"
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
-msgstr ""
+msgstr "Neplatná položka"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2495,25 +2517,25 @@ msgstr "Nová skupina kontaktů..."
 #, kde-format
 msgctxt "@action"
 msgid "Edit contact…"
-msgstr ""
+msgstr "Upravit kontakt..."
 
 #: contacts/contactapplication.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Delete contact"
-msgstr ""
+msgstr "Smazat kontakt"
 
 #: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "Move to…"
-msgstr ""
+msgstr "Přesunout do..."
 
 #: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
-msgstr ""
+msgstr "Kopírovat do..."
 
 #: contacts/contactgroupeditor.cpp:231
 #, kde-format
@@ -2523,7 +2545,7 @@ msgstr "Nebyla vybrána žádná kniha adres"
 #: contacts/contactgroupmodel.cpp:185
 #, kde-format
 msgid "The member with name <b>%1</b> is missing an email address"
-msgstr ""
+msgstr "Členovi se jménem <b>%1</b> chybí e-mailová adresa."
 
 #: contacts/contactgroupmodel.cpp:228
 #, kde-format
@@ -2540,7 +2562,7 @@ msgstr "Jméno"
 #, kde-format
 msgctxt "contact's email address"
 msgid "EMail"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: contacts/contactmanager.cpp:188
 #, kde-format
@@ -2572,7 +2594,7 @@ msgstr "Kontakt Merkuro"
 #: contacts/main.cpp:54
 #, kde-format
 msgid "Address Book Application"
-msgstr ""
+msgstr "Aplikace knihy adres"
 
 #: contacts/qml/AddressBookCollectionHandler.qml:34
 #, kde-format
@@ -2594,7 +2616,7 @@ msgstr "Vybrat e-mailovou adresu"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
-msgstr ""
+msgstr "Bez jména"
 
 #: contacts/qml/ContactView.qml:23 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:123 launcher/Main.qml:53
@@ -2625,28 +2647,28 @@ msgstr "Nová skupina kontaktů"
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 vybraný"
+msgstr[1] "%1 vybraní"
+msgstr[2] "%1 vybraných"
 
 #: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:145
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr ""
+msgstr "Přesunout výběr do:"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:162
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr ""
+msgstr "Zkopírovat výběr do:"
 
 #: contacts/qml/ContactView.qml:205 contacts/qml/private/ContactPage.qml:62
 #: contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
-msgstr "Bez názvu"
+msgstr "Bez jména"
 
 #: contacts/qml/ContactView.qml:244 contacts/qml/private/ContactsPage.qml:58
 #, kde-format
@@ -2675,7 +2697,7 @@ msgstr "Smazat knihu adres"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Set address book color…"
-msgstr ""
+msgstr "Nastavit barvu knihy adres..."
 
 #: contacts/qml/private/AddressBookMenu.qml:54
 #, kde-format
@@ -2705,7 +2727,7 @@ msgstr "Kniha adres:"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:62
 #, kde-format
 msgid "Name"
-msgstr "Název"
+msgstr "Jméno"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
@@ -2720,7 +2742,7 @@ msgstr "Pokročilé"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
 #, kde-format
 msgid "Honorific prefix"
-msgstr "Čestný titul před jménem"
+msgstr "Akademický titul před jménem"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
@@ -2785,7 +2807,7 @@ msgstr "Příjmení nebo poslední jméno"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:124
 #, kde-format
 msgid "Honorific suffix"
-msgstr "Čestný titul za jménem"
+msgstr "Akademický titul za jménem"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
 #, kde-format
@@ -2874,7 +2896,7 @@ msgstr "Oddělení"
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
-msgstr ""
+msgstr "Tým Merkuro"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:62
 #, kde-format
@@ -2885,7 +2907,7 @@ msgstr "Kancelář"
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
-msgstr ""
+msgstr "Technické křídlo, 4. patro"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:72
 #, kde-format
@@ -2954,13 +2976,13 @@ msgstr "Varování"
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:186
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
+msgstr "Tento kontakt byl jinde během úprav změněn."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:191
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Which changes should be kept?"
-msgstr ""
+msgstr "Které změny by měly být zachovány?"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:204
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:219
@@ -2982,7 +3004,7 @@ msgstr "Upravit %1"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:30
 #, kde-format
 msgid "Create Contact Group"
-msgstr ""
+msgstr "Vytvořit skupinu kontaktů"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:63
 #, kde-format
@@ -3002,12 +3024,12 @@ msgstr "Členové"
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:166
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
-msgstr ""
+msgstr "Do skupiny kontaktů lze přidat pouze kontakty s e-mailovou adresou"
 
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:201
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
-msgstr ""
+msgstr "Tato skupina kontaktů byla jinde během úprav změněna."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:36
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:78
@@ -3172,12 +3194,12 @@ msgstr "Fotka"
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Add Profile Picture"
-msgstr "Přidat profil obrázků"
+msgstr "Přidat profilový obrázek"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Update Profile Picture"
-msgstr "Aktualizovat profil obrázků"
+msgstr "Aktualizovat profilový obrázek"
 
 #: contacts/qml/private/ContactGroupPage.qml:35
 #, kde-format
@@ -3361,18 +3383,18 @@ msgstr "Potvrdit smazání kontaktu"
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Smazat kontakt"
+msgstr[1] "Smazat kontakty"
+msgstr[2] "Smazat kontakty"
 
 #: contacts/qml/private/DeleteContactDialog.qml:32
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Opravdu chcete smazat svůj kontakt:"
+msgstr[1] "Opravdu chcete smazat své kontakty:"
+msgstr[2] "Opravdu chcete smazat své kontakty:"
 
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #, kde-format
@@ -3409,17 +3431,17 @@ msgstr "Přidat nový zdroj knihy adres..."
 #, kde-format
 msgctxt "@title"
 msgid "Merkuro Launcher"
-msgstr ""
+msgstr "Spouštěč aplikace Merkuro"
 
 #: launcher/main.cpp:50
 #, kde-format
 msgid "merkuro Launcher"
-msgstr ""
+msgstr "Spouštěč aplikace Merkuro"
 
 #: launcher/main.cpp:52
 #, kde-format
 msgid "© 2024"
-msgstr ""
+msgstr "© 2024"
 
 #: launcher/main.cpp:54
 #, kde-format
@@ -3453,7 +3475,7 @@ msgstr "Neznámý"
 #: mail/contactimageprovider.cpp:152
 #, kde-format
 msgid "Image request has been cancelled"
-msgstr ""
+msgstr "Žádost o obrázek byla zrušena"
 
 #: mail/identity/identitykeylistmodel.cpp:33
 #, kde-format
@@ -3480,13 +3502,13 @@ msgstr "Označit jako přečtený"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Označit jako nepřečtený"
 
 #: mail/mailapplication.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Important"
-msgstr ""
+msgstr "Označit jako důležitý"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
 #: mail/qml/ConversationViewer.qml:31
@@ -3519,7 +3541,7 @@ msgstr "Chyba při načítání transportu"
 #: mail/mailclient.cpp:203
 #, kde-format
 msgid "Error queuing message in outbox: %1"
-msgstr ""
+msgstr "Chyba při zařazování zprávy do odeslané pošty: %1"
 
 #: mail/mailkernel.cpp:185
 #, kde-format
@@ -3568,13 +3590,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr ""
+msgstr "Smazat e-mail"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr ""
+msgstr "Smazat e-mail"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
 #, kde-format
@@ -3583,6 +3605,9 @@ msgid ""
 "<br /> <b>Beware</b> that discarded messages are not saved into your Trash "
 "folder and are permanently deleted."
 msgstr ""
+"Opravdu chcete smazat e-mail \"%1\" a zbavit se jeho obsahu? <br /> "
+"<b>Upozorňujeme</b> že smazané zprávy se neukládají do složky Koš a jsou "
+"trvale odstraněny."
 
 #: mail/qml/actions/MailItemMenu.qml:25
 #, kde-format
@@ -3620,7 +3645,7 @@ msgstr "Vytvořit složku"
 #: mail/qml/actions/NewFolderAction.qml:39
 #, kde-format
 msgid "Folder Name…"
-msgstr ""
+msgstr "Název složky..."
 
 #: mail/qml/desktopactions/OpenMbox.qml:15
 #, kde-format
@@ -3636,26 +3661,26 @@ msgstr "Vyberte soubor"
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
-msgstr ""
+msgstr "Hledat: %1"
 
 #: mail/qml/FolderView.qml:81
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 vybraný"
+msgstr[1] "%1 vybraní"
+msgstr[2] "%1 vybraných"
 
 #: mail/qml/FolderView.qml:127
 #, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr ""
+msgstr "Uložit zprávu – Merkuro Mail"
 
 #: mail/qml/FolderView.qml:128
 #, kde-format
 msgid "Email messages (*.mbox)"
-msgstr ""
+msgstr "E-mailové zprávy (*.mbox)"
 
 #: mail/qml/FolderView.qml:179
 #, kde-format
@@ -3666,12 +3691,12 @@ msgstr "Označit zprávu"
 #: mail/qml/FolderView.qml:220
 #, kde-format
 msgid "No mailbox selected"
-msgstr ""
+msgstr "Není vybrána žádná poštovní schránka"
 
 #: mail/qml/FolderView.qml:221
 #, kde-format
 msgid "Select a mailbox from the sidebar."
-msgstr ""
+msgstr "Vyberte poštovní schránku z postranního panelu."
 
 #: mail/qml/FolderView.qml:228
 #, kde-format
@@ -3708,7 +3733,7 @@ msgstr "Identita:"
 #: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "To:"
-msgstr "Do:"
+msgstr "Pro:"
 
 #: mail/qml/MailComposer.qml:71
 #, kde-format
@@ -3733,7 +3758,7 @@ msgstr "Předmět:"
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
-msgstr ""
+msgstr "Tento e-mail obsahuje pozvánku"
 
 #: mail/qml/private/AttachmentDelegate.qml:57
 #, kde-format
@@ -3753,7 +3778,7 @@ msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
 "email accounts"
 msgid "Receiving Accounts"
-msgstr ""
+msgstr "Přijímání účtů"
 
 #: mail/settings/AccountSettingsPage.qml:33
 #, kde-format
