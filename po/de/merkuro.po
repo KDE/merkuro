@@ -1,5 +1,5 @@
 # #-#-#-#-#  kalendar.po (kalendar)  #-#-#-#-#
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 # SPDX-FileCopyrightText: 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2021 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-19 00:44+0000\n"
-"PO-Revision-Date: 2025-08-01 15:16+0200\n"
+"PO-Revision-Date: 2026-01-16 14:15+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -215,10 +215,9 @@ msgid "Calendar Application"
 msgstr "Kalender-Anwendung"
 
 #: calendar/main.cpp:64 contacts/main.cpp:58 mail/main.cpp:60
-#, fuzzy, kde-format
-#| msgid "© KDE Community 2021–2024"
+#, kde-format
 msgid "© KDE Community 2021–2026"
-msgstr "© KDE-Gemeinschaft 2021–2024"
+msgstr "© KDE-Gemeinschaft 2021–2026"
 
 #: calendar/main.cpp:66 contacts/main.cpp:60 launcher/main.cpp:53
 #: mail/main.cpp:62
@@ -672,10 +671,9 @@ msgid "Add Sub-Task"
 msgstr "Unteraufgabe hinzufügen"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:107
-#, fuzzy, kde-format
-#| msgid "Set priority..."
+#, kde-format
 msgid "Set priority…"
-msgstr "Priorität setzen …"
+msgstr "Priorität festlegen …"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:119
 #: calendar/qml/Controls/IncidenceMouseArea.qml:200
@@ -729,8 +727,7 @@ msgid "9 (lowest priority)"
 msgstr "9 (Niedrigste Priorität)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:180
-#, fuzzy, kde-format
-#| msgid "Set due date..."
+#, kde-format
 msgid "Set due date…"
 msgstr "Fälligkeitsdatum festlegen …"
 
@@ -1760,25 +1757,22 @@ msgid "Delete calendar source"
 msgstr "Kalenderquelle löschen"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:133
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
-msgstr "Karte anzeigen"
+msgstr "Alles anzeigen"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:140
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
-msgstr ""
+msgstr "Alles ausblenden"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Set calendar color…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Set calendar color…"
-msgstr "Kalenderfarbe ändern …"
+msgstr "Kalenderfarbe festlegen …"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:150
 #, kde-format
@@ -1925,8 +1919,7 @@ msgid "Email availability"
 msgstr "Verfügbarkeit per E-Mail versenden"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Enter email of recipient..."
+#, kde-format
 msgid "Enter email of recipient…"
 msgstr "E-Mailadresse des Empfängers eingeben …"
 
@@ -2298,17 +2291,13 @@ msgid "Synchronize after"
 msgstr "Abgleichen nach"
 
 #: components/qml/EditCollectionPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Never"
+#, kde-format
 msgctxt "As in 'Never synchronize this account'"
 msgid "Never"
 msgstr "Niemals"
 
 #: components/qml/EditCollectionPage.qml:109
-#, fuzzy, kde-format
-#| msgctxt "Interval for updating a calendar"
-#| msgid "%1 minute"
-#| msgid_plural "%1 minutes"
+#, kde-format
 msgctxt "Interval for updating an account"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -3573,19 +3562,16 @@ msgid "Add Folder"
 msgstr "Ordner hinzufügen"
 
 #: mail/qml/actions/MailItemMenu.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Folder…"
-msgstr "Kalender bearbeiten …"
+msgstr "Ordner bearbeiten …"
 
 #: mail/qml/actions/MailItemMenu.qml:43
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Folder"
-msgstr "Ordner hinzufügen"
+msgstr "Ordner bearbeiten"
 
 #: mail/qml/actions/MailItemMenu.qml:54
 #, kde-format
@@ -3610,8 +3596,7 @@ msgid "Create Folder"
 msgstr "Ordner erstellen"
 
 #: mail/qml/actions/NewFolderAction.qml:38
-#, fuzzy, kde-format
-#| msgid "Folder Name..."
+#, kde-format
 msgid "Folder Name…"
 msgstr "Ordnername …"
 
@@ -3717,11 +3702,10 @@ msgid "Subject:"
 msgstr "Betreff:"
 
 #: mail/qml/MailComposer.qml:152
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
-msgstr "Anhänge:"
+msgstr "Dokument anhängen"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
