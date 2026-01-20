@@ -1,5 +1,5 @@
 # #-#-#-#-#  kalendar.po (kalendar)  #-#-#-#-#
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 # SPDX-FileCopyrightText: 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2021 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-13 02:37+0000\n"
-"PO-Revision-Date: 2025-08-01 15:16+0200\n"
+"PO-Revision-Date: 2026-01-16 14:15+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:69
@@ -687,10 +687,9 @@ msgid "Add Sub-Task"
 msgstr "Unteraufgabe hinzufügen"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:108
-#, fuzzy, kde-format
-#| msgid "Set priority..."
+#, kde-format
 msgid "Set priority…"
-msgstr "Priorität setzen …"
+msgstr "Priorität festlegen …"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:120
 #: calendar/qml/Controls/IncidenceMouseArea.qml:201
@@ -744,8 +743,7 @@ msgid "9 (lowest priority)"
 msgstr "9 (Niedrigste Priorität)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:181
-#, fuzzy, kde-format
-#| msgid "Set due date..."
+#, kde-format
 msgid "Set due date…"
 msgstr "Fälligkeitsdatum festlegen …"
 
@@ -1868,17 +1866,16 @@ msgid "Delete calendar source"
 msgstr "Kalenderquelle löschen"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:142
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show all"
-msgstr "Karte anzeigen"
+msgstr "Alles anzeigen"
 
 #: calendar/qml/Menus/CalendarItemMenu.qml:149
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Hide all"
-msgstr ""
+msgstr "Alles ausblenden"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:39 calendar/qml/Menus/MenuBar.qml:33
 #: contacts/qml/GlobalMenuBar.qml:19 contacts/qml/MenuBar.qml:17
@@ -2019,8 +2016,7 @@ msgid "Email availability"
 msgstr "Verfügbarkeit per E-Mail versenden"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Enter email of recipient..."
+#, kde-format
 msgid "Enter email of recipient…"
 msgstr "E-Mailadresse des Empfängers eingeben …"
 
@@ -3633,8 +3629,7 @@ msgid "Create Folder"
 msgstr "Ordner erstellen"
 
 #: mail/qml/actions/NewFolderAction.qml:39
-#, fuzzy, kde-format
-#| msgid "Folder Name..."
+#, kde-format
 msgid "Folder Name…"
 msgstr "Ordnername …"
 
