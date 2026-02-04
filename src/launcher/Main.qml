@@ -52,7 +52,7 @@ Controls.ApplicationWindow {
                 {
                     name: i18n("Contacts"),
                     icon: "org.kde.merkuro.contact",
-                    desktopId: "merkuro-contac"
+                    desktopId: "merkuro-contact"
                 },
                 {
                     name: i18n("Quit"),
