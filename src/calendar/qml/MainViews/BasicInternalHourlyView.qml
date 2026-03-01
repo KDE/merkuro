@@ -379,7 +379,7 @@ Column {
                                                     height: viewColumn.allDayViewDelegateHeight
                                                     parentViewSpacing: viewColumn.gridLineWidth
                                                     horizontalSpacing: linesRepeater.spacing
-                                                    openOccurrenceId: viewColumn.openOccurrence ? viewColumn.openOccurrence.incidenceId : ""
+                                                    openOccurrenceId: viewColumn.openOccurrence?.incidenceId ?? ""
                                                     isDark: viewColumn.isDark
                                                     reactToCurrentMonth: false
                                                     dragDropEnabled: viewColumn.dragDropEnabled
