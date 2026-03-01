@@ -399,7 +399,6 @@ Kirigami.ScrollablePage {
                     enabled: !incidenceForm.isTodo || !isNaN(root.incidenceWrapper.incidenceStart.getTime()) || !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
                     textRole: "displayName"
                     valueRole: "interval"
-                    onCurrentIndexChanged: if(currentIndex === 0) { root.incidenceWrapper.clearRecurrences() }
                     currentIndex: {
                         switch(root.incidenceWrapper.recurrenceData.type) {
                             case 0:

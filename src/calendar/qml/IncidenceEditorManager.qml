@@ -42,10 +42,13 @@ QtObject {
             return;
         }
 
-        editor.incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-        editor.incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(incidencePtr);
-        editor.incidenceWrapper.triggerEditMode();
-        editor.editMode = true;
+        let wrapper = Calendar.CalendarManager.createIncidenceWrapper();
+        wrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(incidencePtr);
+        wrapper.triggerEditMode();
+        Qt.callLater(function() {
+            editor.incidenceWrapper = wrapper;
+            editor.editMode = true;
+        });
     }
 
     function openNewTodoEditorDialog(window: Kirigami.ApplicationWindow, parentWrapper: Calendar.IncidenceWrapper): void {
@@ -54,13 +57,16 @@ QtObject {
             return;
         }
 
-        editor.incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-        editor.editMode = false;
-        editor.incidenceWrapper.setNewTodo();
-        editor.incidenceWrapper.parent = parentWrapper.uid;
-        editor.incidenceWrapper.collectionId = parentWrapper.collectionId;
-        editor.incidenceWrapper.incidenceStart = parentWrapper.incidenceStart;
-        editor.incidenceWrapper.incidenceEnd = parentWrapper.incidenceEnd;
+        let wrapper = Calendar.CalendarManager.createIncidenceWrapper();
+        wrapper.setNewTodo();
+        wrapper.parent = parentWrapper.uid;
+        wrapper.collectionId = parentWrapper.collectionId;
+        wrapper.incidenceStart = parentWrapper.incidenceStart;
+        wrapper.incidenceEnd = parentWrapper.incidenceEnd;
+        Qt.callLater(function() {
+            editor.incidenceWrapper = wrapper;
+            editor.editMode = false;
+        });
     }
 
     function openNewIncidenceEditorDialog(window: Kirigami.ApplicationWindow, type: int, eventDate: date, collectionId: int, includeTime: bool): void {
@@ -69,49 +75,51 @@ QtObject {
             return;
         }
 
-        editor.incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
-        editor.editMode = false;
-
+        let wrapper = Calendar.CalendarManager.createIncidenceWrapper();
         if(type === Calendar.IncidenceWrapper.TypeEvent) {
-            editor.incidenceWrapper.setNewEvent();
+            wrapper.setNewEvent();
         } else if (type === Calendar.IncidenceWrapper.TypeTodo) {
-            editor.incidenceWrapper.setNewTodo();
+            wrapper.setNewTodo();
         } else {
             console.error("Trying to open editor with an unsupported type", type);
             return;
         }
 
         if(eventDate !== undefined && !isNaN(eventDate.getTime())) {
-            let existingStart = editor.incidenceWrapper.incidenceStart;
-            let existingEnd = editor.incidenceWrapper.incidenceEnd;
+            let existingStart = wrapper.incidenceStart;
+            let existingEnd = wrapper.incidenceEnd;
 
             let newStart = eventDate;
             let newEnd = new Date(newStart.getFullYear(), newStart.getMonth(), newStart.getDate(), newStart.getHours() + 1, newStart.getMinutes());
 
             if(!includeTime) {
-                newStart = new Date(eventDate.setHours(existingStart.getHours(), existingStart.getMinutes()));
-                newEnd = new Date(eventDate.setHours(existingStart.getHours() + 1, existingStart.getMinutes()));
+                if (!isNaN(existingStart.getTime())) {
+                    newStart = new Date(eventDate.setHours(existingStart.getHours(), existingStart.getMinutes()));
+                    newEnd = new Date(eventDate.setHours(existingStart.getHours() + 1, existingStart.getMinutes()));
+                }
             }
 
             if(type === Calendar.IncidenceWrapper.TypeEvent) {
-                editor.incidenceWrapper.incidenceStart = newStart;
-                editor.incidenceWrapper.incidenceEnd = newEnd;
+                wrapper.incidenceStart = newStart;
+                wrapper.incidenceEnd = newEnd;
             } else if (type === Calendar.IncidenceWrapper.TypeTodo) {
-                editor.incidenceWrapper.incidenceEnd = newStart;
+                wrapper.incidenceEnd = newStart;
             }
         }
 
         if(collectionId && collectionId >= 0) {
-            editor.incidenceWrapper.collectionId = collectionId;
-            return;
+            wrapper.collectionId = collectionId;
+        } else if(type === Calendar.IncidenceWrapper.TypeEvent && Calendar.Config.lastUsedEventCollection > -1) {
+            wrapper.collectionId = Calendar.Config.lastUsedEventCollection;
+        } else if (type === Calendar.IncidenceWrapper.TypeTodo && Calendar.Config.lastUsedTodoCollection > -1) {
+            wrapper.collectionId = Calendar.Config.lastUsedTodoCollection;
+        } else {
+            wrapper.collectionId = Calendar.CalendarManager.defaultCalendarId(wrapper);
         }
 
-        if(type === Calendar.IncidenceWrapper.TypeEvent && Calendar.Config.lastUsedEventCollection > -1) {
-            editor.incidenceWrapper.collectionId = Calendar.Config.lastUsedEventCollection;
-        } else if (type === Calendar.IncidenceWrapper.TypeTodo && Calendar.Config.lastUsedTodoCollection > -1) {
-            editor.incidenceWrapper.collectionId = Calendar.Config.lastUsedTodoCollection;
-        } else {
-            editor.incidenceWrapper.collectionId = Calendar.CalendarManager.defaultCalendarId(editor.incidenceWrapper);
-        }
+        Qt.callLater(function() {
+            editor.incidenceWrapper = wrapper;
+            editor.editMode = false;
+        });
     }
 }
