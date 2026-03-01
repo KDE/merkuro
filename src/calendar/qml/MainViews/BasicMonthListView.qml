@@ -204,9 +204,9 @@ QQC2.ScrollView {
                     function getDateRange() {
                         // Get the Day Of Week that corresponds to the first day in a week for the current locale.
                         const LOCALE_START_DOW = Qt.locale().firstDayOfWeek;
-                        const LOCALE_END_DOW = LOCALE_START_DOW === 1 ? 7 : LOCALE_START_DOW - 1
+                        const LOCALE_END_DOW = LOCALE_START_DOW === 1 ? 7 : LOCALE_START_DOW - 1;
 
-                        const currentDOW = backgroundRectangle.periodStartDate.getDay()
+                        const currentDOW = backgroundRectangle.periodStartDate.getDay();
                         const startDate = backgroundRectangle.periodStartDate;
 
                         // If the current DOW is the start DOW, the calculation to get to the end of the week are quite simple!
