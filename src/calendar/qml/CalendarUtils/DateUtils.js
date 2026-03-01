@@ -132,7 +132,7 @@ function parseDateString(dateString) {
     }
 
     const dateStringDelimiterMatches = dateString.match(/\D/);
-    if(dateStringDelimiterMatches.length === 0) { // Let the date method figure out this weirdness
+    if(!dateStringDelimiterMatches) { // Let the date method figure out this weirdness
         return defaultParse();
     }
 
