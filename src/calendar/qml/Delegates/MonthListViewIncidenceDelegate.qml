@@ -97,6 +97,10 @@ Kirigami.AbstractCard {
             Layout.preferredWidth: Kirigami.Units.iconSizes.small
             Layout.maximumWidth: Kirigami.Units.iconSizes.small
             Layout.maximumHeight: Kirigami.Units.iconSizes.small
+            Layout.alignment: Qt.AlignTop
+            // TODO: This is quite arbitrary and may need some tweaking!
+            Layout.topMargin: Kirigami.Units.smallSpacing / 2
+
 
             color: incidenceCard.isOpenOccurrence ?
                 (Calendar.LabelUtils.isDarkColor(incidenceCard.modelData.color) ? "white" : "black") :
