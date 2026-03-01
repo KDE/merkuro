@@ -241,12 +241,14 @@ Kirigami.ScrollablePage {
                     id: allDayCheckBox
 
                     text: i18n("All day")
-                    enabled: !incidenceForm.isTodo || !isNaN(root.incidenceWrapper.incidenceStart.getTime()) || !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
                     onEnabledChanged: if (!enabled) root.incidenceWrapper.allDay = false
                     checked: root.incidenceWrapper.allDay
                     onClicked: {
                         if (!checked) {
-                            root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour();
+                            root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(
+                                !isNaN(root.incidenceWrapper.incidenceStart),
+                                !isNaN(root.incidenceWrapper.incidenceEnd),
+                            );
                         }
                         root.incidenceWrapper.allDay = checked;
                     }
@@ -274,7 +276,6 @@ Kirigami.ScrollablePage {
 
                     Kirigami.FormData.label: i18n("Start:")
                     Layout.fillWidth: true
-                    visible: !incidenceForm.isTodo || (incidenceForm.isTodo && !isNaN(root.incidenceWrapper.incidenceStart.getTime()))
 
                     QQC2.CheckBox {
                         id: incidenceStartCheckBox
@@ -289,7 +290,7 @@ Kirigami.ScrollablePage {
                             } else if(incidenceForm.isTodo && oldDate) {
                                 root.incidenceWrapper.incidenceStart = oldDate
                             } else if(incidenceForm.isTodo) {
-                                root.incidenceWrapper.incidenceEnd = new Date()
+                                root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(true, false);
                             }
                         }
                         visible: incidenceForm.isTodo
@@ -305,6 +306,8 @@ Kirigami.ScrollablePage {
                         onNewDateChosen: (day, month, year) => {
                             root.incidenceWrapper.setIncidenceStartDate(day, month, year)
                         }
+
+                        enabled: incidenceStartCheckBox.checked
                     }
                     Calendar.TimeCombo {
                         id: incidenceStartTimeCombo
@@ -314,7 +317,7 @@ Kirigami.ScrollablePage {
                         display: root.incidenceWrapper.incidenceEndTimeDisplay
                         dateTime: root.incidenceWrapper.incidenceStart
                         onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
-                        enabled: !allDayCheckBox.checked && (!incidenceForm.isTodo || incidenceStartCheckBox.checked)
+                        enabled: !allDayCheckBox.checked && incidenceStartDateCombo.enabled
                         visible: !allDayCheckBox.checked
                     }
                 }
@@ -338,7 +341,7 @@ Kirigami.ScrollablePage {
                             } else if(incidenceForm.isTodo && oldDate) {
                                 root.incidenceWrapper.incidenceEnd = oldDate
                             } else if(incidenceForm.isTodo) {
-                                root.incidenceWrapper.incidenceEnd = root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(false, true);
+                                root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(false, true);
                             }
                         }
                         visible: incidenceForm.isTodo
@@ -353,7 +356,7 @@ Kirigami.ScrollablePage {
                         onNewDateChosen: (day, month, year) => {
                             root.incidenceWrapper.setIncidenceEndDate(day, month, year)
                         }
-                        enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
+                        enabled: incidenceEndCheckBox.checked
                     }
                     Calendar.TimeCombo {
                         id: incidenceEndTimeCombo
@@ -363,7 +366,7 @@ Kirigami.ScrollablePage {
                         display: root.incidenceWrapper.incidenceEndTimeDisplay
                         dateTime: root.incidenceWrapper.incidenceEnd
                         onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
-                        enabled: (!incidenceForm.isTodo && !allDayCheckBox.checked) || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
+                        enabled: !allDayCheckBox.checked && incidenceEndDateCombo.enabled
                         visible: !allDayCheckBox.checked
                     }
                 }
