@@ -274,9 +274,14 @@ void IncidenceWrapper::setIncidenceStart(const QDateTime &incidenceStart, bool r
         m_incidence->setDtStart(start);
     }
 
-    auto oldStartEndDifference = oldStart.secsTo(incidenceEnd());
-    auto newEnd = this->incidenceStart().addSecs(oldStartEndDifference);
-    setIncidenceEnd(newEnd);
+    // Do not update the incidence end
+    //  - either if the current end is unset
+    //  - or if it is set, but we are unsetting the start
+    if (!incidenceEnd().isNull() && !incidenceStart.isNull()) {
+        auto oldStartEndDifference = oldStart.secsTo(incidenceEnd());
+        auto newEnd = this->incidenceStart().addSecs(oldStartEndDifference);
+        setIncidenceEnd(newEnd);
+    }
 
     Q_EMIT incidenceStartChanged();
     Q_EMIT incidenceStartDateDisplayChanged();
