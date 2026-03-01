@@ -297,10 +297,13 @@ QQC2.ScrollView {
 
                             function areAllCollectionsChecked() {
                                 let allChecked = true;
-	                            // TODO: This is a bit of a hack, maybe this can be rewritten with QAbstractItemModel::match?
+                                // TODO: This is a bit of a hack, maybe this can be rewritten with QAbstractItemModel::match?
                                 for (let i = 0; i < collectionList.model.rowCount(); ++i) {
                                     const index = collectionList.model.index(i, 0);
                                     const checkState = collectionList.model.data(index, Qt.CheckStateRole);
+                                    const currentItemParentCollection = collectionList.model.data(index, Akonadi.EntityTreeModel.ParentCollectionRole);
+                                    if (currentItemParentCollection !== collection)
+                                        continue;
                                     if (checkState === undefined)
                                         continue;
                                     if (checkState !== Qt.Checked)
@@ -313,6 +316,9 @@ QQC2.ScrollView {
                                 for (let i = 0; i < collectionList.model.rowCount(); ++i) {
                                     const index = collectionList.model.index(i, 0);
                                     const checkState = collectionList.model.data(index, Qt.CheckStateRole);
+                                    const currentItemParentCollection = collectionList.model.data(index, Akonadi.EntityTreeModel.ParentCollectionRole);
+                                    if (currentItemParentCollection !== collection)
+                                        continue;
                                     if (checkState === undefined)
                                         continue;
                                     collectionList.model.setData(index, checked ? Qt.Checked : Qt.Unchecked, Qt.CheckStateRole);
