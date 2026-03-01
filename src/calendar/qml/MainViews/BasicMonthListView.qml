@@ -146,9 +146,9 @@ QQC2.ScrollView {
                 // This will very much screw up use of positionViewAtIndex.
 
                 id: dayColumn
-                // TODO: 700 is an arbitrary value. The goal is just to have it not take up the entire width of the screen.
-                //       Maybe there's a better value?
-                width: Math.min(parent.width, 700)
+
+                property int maxWidth: Kirigami.Units.gridUnit * 40;
+                width: Math.min(parent.width, maxWidth)
                 anchors.centerIn: parent
 
                 Kirigami.ListSectionHeader {
