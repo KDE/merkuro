@@ -204,9 +204,11 @@ FormCard.FormCardPage {
                 required property string type
 
                 visible: text.length > 0
-                trailingLogo.source: "edit-copy-symbolic"
-                trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
-                trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
+                trailingLogo {
+                    source: "edit-copy-symbolic"
+                    implicitWidth: Kirigami.Units.iconSizes.small
+                    implicitHeight: Kirigami.Units.iconSizes.small
+                }
                 text: i18nc("Label for a phone number type", "%1:", type)
                 description: phoneNumber
                 onClicked: {
