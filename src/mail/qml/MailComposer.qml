@@ -167,7 +167,7 @@ Kirigami.ScrollablePage {
                     icon.name: 'document-send'
                     onClicked: {
                         mailClient.send(identity.model, subjectText.text, mailContent.text);
-                        close()
+                        mailComposition.closeDialog();
                     }
                 }
             }
