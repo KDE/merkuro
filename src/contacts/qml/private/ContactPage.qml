@@ -142,7 +142,6 @@ FormCard.FormCardPage {
             id: blogFeed
             visible: addressee.blogFeed + '' !== ''
             text: i18n("Blog Feed:")
-            // We do not always have the year
             description: `<a href="${addressee.blogFeed}">${addressee.blogFeed}</a>`
             onClicked: Qt.openUrlExternally(addressee.blogFeed)
         }
