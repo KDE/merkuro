@@ -204,9 +204,15 @@ FormCard.FormCardPage {
                 required property string type
 
                 visible: text.length > 0
+                trailingLogo.source: "edit-copy-symbolic"
+                trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
+                trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
                 text: i18nc("Label for a phone number type", "%1:", type)
                 description: phoneNumber
-                onClicked: Qt.openUrlExternally(link)
+                onClicked: {
+                    addressee.phoneModel.copyToClipboard(phoneRepeater.index);
+                    applicationWindow().showPassiveNotification(i18n("Phone number copied to clipboard"));
+                }
             }
         }
     }

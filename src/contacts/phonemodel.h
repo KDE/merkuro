@@ -54,6 +54,11 @@ public:
     Q_INVOKABLE void addPhoneNumber(const QString &phoneNumber, PhoneModel::Type type);
     Q_INVOKABLE void deletePhoneNumber(int row);
 
+    /**
+     * Copies the phone number at `index` to the system clipboard
+     */
+    Q_INVOKABLE void copyToClipboard(int index) const;
+
 Q_SIGNALS:
     void changed(const KContacts::PhoneNumber::List &phoneNumbers);
 
