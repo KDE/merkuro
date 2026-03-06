@@ -45,7 +45,7 @@ MailClient::MailClient(QObject *parent)
 
 MailClient::~MailClient() = default;
 
-void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body)
+void MailClient::send(uint uoid, const QString &subject, const QString &body)
 {
     if (!m_headerModel->rowCount()) {
         qCWarning(MERKURO_MAIL_LOG) << "There are no recipients to e-mail";
@@ -53,8 +53,10 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
         return;
     }
 
+    auto const &identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(uoid);
+
     MessageData msg;
-    msg.from = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::EmailRole).toString();
+    msg.from = identity.primaryEmailAddress();
     msg.subject = subject;
     msg.body = body;
 
@@ -79,8 +81,6 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
         return;
     }
 
-    const auto uoid = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::UoidRole).toInt();
-    const auto identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(uoid);
     const auto transportMgr = MailTransport::TransportManager::self();
     int transportId = -1;
     if (!identity.transport().isEmpty()) {
@@ -99,7 +99,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
         transportId = transportMgr->defaultTransportId();
     }
 
-    auto composerPtr = populateComposer(msg, identityModel, &transportId);
+    auto composerPtr = populateComposer(msg, identity, &transportId);
     auto *composer = composerPtr.release();
     QObject::connect(composer, &MessageComposer::ComposerJob::result, this, [this, transportId, composer, identity, msg]() {
         for (const auto &message : composer->resultMessages()) {
@@ -111,7 +111,7 @@ void MailClient::send(KIdentityManagementCore::IdentityModel *identityModel, con
 }
 
 std::unique_ptr<MessageComposer::ComposerJob>
-MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId)
+MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Identity const &identity, int *transportId)
 {
     auto composer = std::make_unique<MessageComposer::ComposerJob>();
     auto *globalPart = composer->globalPart();
@@ -139,17 +139,18 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     extras.push_back(header);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport-Name");
-    auto transportName = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::DisplayNameRole).toString();
+    // Taken from KIdentityManagement, src/core/identitymodel.cpp
+    auto transportName = QString(identity.identityName() + i18nc("Separator between identity name and email address", " - ") + identity.fullEmailAddr());
     header->fromUnicodeString(transportName);
     infoPart->setExtraHeaders(extras);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Identity");
-    auto identity = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::UoidRole).toString();
-    header->fromUnicodeString(identity);
+    auto uoid = QString::number(identity.uoid());
+    header->fromUnicodeString(uoid);
     infoPart->setExtraHeaders(extras);
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Identity-Name");
-    auto identityName = identityModel->data(identityModel->index(0, 0), KIdentityManagementCore::IdentityModel::IdentityNameRole).toString();
+    auto identityName = identity.identityName();
     header->fromUnicodeString(identityName);
     infoPart->setExtraHeaders(extras);
 
