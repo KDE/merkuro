@@ -166,7 +166,7 @@ Kirigami.ScrollablePage {
                     text: i18n("Send")
                     icon.name: 'document-send'
                     onClicked: {
-                        mailClient.send(identity.model, subjectText.text, mailContent.text);
+                        mailClient.send(identity.currentValue, subjectText.text, mailContent.text);
                         mailComposition.closeDialog();
                     }
                 }

@@ -68,11 +68,10 @@ public:
     [[nodiscard]] MailHeaderModel *headerModel() const;
     [[nodiscard]] AttachmentModel *attachmentModel() const;
 
-    Q_INVOKABLE void send(KIdentityManagementCore::IdentityModel *identityModel, const QString &subject, const QString &body);
+    Q_INVOKABLE void send(uint senderUoid, const QString &subject, const QString &body);
 
 private:
-    std::unique_ptr<MessageComposer::ComposerJob>
-    populateComposer(const MessageData &msg, KIdentityManagementCore::IdentityModel *identityModel, int *transportId);
+    std::unique_ptr<MessageComposer::ComposerJob> populateComposer(const MessageData &msg, KIdentityManagementCore::Identity const &identity, int *transportId);
 
     void queueMessage(const int transport,
                       const MessageComposer::ComposerJob *composer,
