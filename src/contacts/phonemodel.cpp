@@ -2,7 +2,12 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "phonemodel.h"
+
 #include <KContacts/PhoneNumber>
+
+#include <QApplication>
+#include <QClipboard>
+
 using namespace Qt::Literals::StringLiterals;
 PhoneModel::PhoneModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -93,6 +98,11 @@ void PhoneModel::deletePhoneNumber(int row)
     m_phoneNumbers.removeAt(row);
     endRemoveRows();
     Q_EMIT changed(m_phoneNumbers);
+}
+
+void PhoneModel::copyToClipboard(int row) const
+{
+    QApplication::clipboard()->setText(m_phoneNumbers[row].number());
 }
 
 #include "moc_phonemodel.cpp"
