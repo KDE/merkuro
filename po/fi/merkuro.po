@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:45+0000\n"
 "PO-Revision-Date: 2026-01-12 14:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -777,6 +777,47 @@ msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> – %2"
 
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:123
+#, kde-format
+msgctxt "%1 is the name of the event"
+msgid "%1 (Day %2 of %3)"
+msgstr "%1 (päivä %2/%3)"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:141
+#, kde-format
+msgid "Runs all day"
+msgstr "Koko päivän"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:145
+#, kde-format
+msgctxt "Displays times between incidence start and end"
+msgid "%1 - %2"
+msgstr "%1–%2"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:148
+#, kde-format
+msgid "Starts at %1"
+msgstr "Alkaa %1"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:150
+#, kde-format
+msgid "Ends at %1"
+msgstr "Päättyy %1"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
+#, fuzzy, kde-format
+#| msgid "Runs All Day"
+msgctxt "Label for incidence in between multiday start/finish"
+msgid "Runs All Day"
+msgstr "Koko päivä"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
+#, fuzzy, kde-format
+#| msgid "<b>Location:</b>"
+msgctxt "Location indicator for incidence. %1 is the location"
+msgid "<b>Location</b>: %1"
+msgstr "<b>Sijainti:</b>"
+
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
@@ -1480,60 +1521,82 @@ msgstr "Alusta"
 msgid "All day or Multi day"
 msgstr "Koko päivä tai useampi päivä"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:244
+#: calendar/qml/MainViews/BasicMonthListView.qml:167
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "ddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:171
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised short dates indicating the start & end of a week "
+"using the format"
+msgid "%1–%2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:184
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:188
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised dates indicating the start & end of a week using "
+"the format specified above."
+msgid "From %1 to %2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:277
+#, kde-format
+msgctxt ""
+"Short date format, indicating name of day of week and number of day of "
+"month. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:300
+#, fuzzy, kde-format
+#| msgid "<b>Today</b>"
+msgctxt ""
+"Short date format, showing name of day of week and number of day of month. "
+msgid "ddd <b>dd</b>"
+msgstr "<b>Tänään</b>"
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:323
+#, kde-format
+msgctxt ""
+"Short date format, showing name of day of week and emphasising the number of "
+"day of month. "
+msgid "ddd<br><b>dd</b>"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "Tyhjennä päivä."
 
 # *** TARKISTA: Oletus, että on %1 jonossa ”%1 to add something”.
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Tap"
 msgstr "napauttamalla"
 
 # *** TARKISTA: Oletus, että on %1 jonossa ”%1 to add something”.
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Click"
 msgstr "napsauttamalla"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:367
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "Ei mitään tiedossa tänään. Lisää jotakin %1."
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:392
-#, kde-format
-msgctxt "%1 is the name of the event"
-msgid "%1 (Day %2 of %3)"
-msgstr "%1 (päivä %2/%3)"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:448
-#, kde-format
-msgid "Runs all day"
-msgstr "Koko päivän"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:452
-#, kde-format
-msgctxt "Displays times between incidence start and end"
-msgid "%1 - %2"
-msgstr "%1–%2"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
-#, kde-format
-msgid "Starts at %1"
-msgstr "Alkaa %1"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:457
-#, kde-format
-msgid "Ends at %1"
-msgstr "Päättyy %1"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
-#, kde-format
-msgid "Runs All Day"
-msgstr "Koko päivä"
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -1672,28 +1735,28 @@ msgstr " , on myöhässä"
 msgid "Tasks"
 msgstr "Tehtävät"
 
-#: calendar/qml/MainViews/TodoView.qml:99
+#: calendar/qml/MainViews/TodoView.qml:94
 #, kde-format
 msgid "Show Completed"
 msgstr "Näytä valmistuneet"
 
 # ***TARKISTA: ID moniselitteinen, voisi olla myös ’%1 valmistuneet tehtävät’
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "Valmistuneet tehtävät – %1"
 
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks"
 msgstr "Valmistuneet tehtävät"
 
-#: calendar/qml/MainViews/TodoView.qml:162
+#: calendar/qml/MainViews/TodoView.qml:157
 #, kde-format
 msgid "Create a New Task…"
 msgstr "Luo uusi tehtävä…"
 
-#: calendar/qml/MainViews/TodoView.qml:202
+#: calendar/qml/MainViews/TodoView.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
@@ -2415,7 +2478,7 @@ msgid "Enter Full Screen"
 msgstr "Siirry koko näytölle"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgid "Home:"
 msgstr "Koti:"
@@ -2908,7 +2971,7 @@ msgid "Personal Information"
 msgstr "Henkilökohtaiset tiedot"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:270
+#: contacts/qml/private/ContactPage.qml:277
 #, kde-format
 msgid "Business Information"
 msgstr "Yritystiedot"
@@ -3226,106 +3289,112 @@ msgstr "Kutsumanimi:"
 msgid "Blog Feed:"
 msgstr "Blogisyöte:"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:151
 #, kde-format
 msgid "Personal information"
 msgstr "Henkilökohtaiset tiedot"
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:161
 #, kde-format
 msgid "Birthday:"
 msgstr "Syntymäpäivä:"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:179
 #, kde-format
 msgid "Anniversary:"
 msgstr "Vuosipäivä:"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:186
 #, kde-format
 msgid "Partner's name:"
 msgstr "Puolison nimi:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:191
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Puhelinnumero"
 msgstr[1] "Puhelinnumerot"
 
-#: contacts/qml/private/ContactPage.qml:208
+#: contacts/qml/private/ContactPage.qml:212
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:216
+#, fuzzy, kde-format
+#| msgid "Location copied to clipboard"
+msgid "Phone number copied to clipboard"
+msgstr "Sijainti kopioitu leikepöydälle"
+
+#: contacts/qml/private/ContactPage.qml:223
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Osoite"
 msgstr[1] "Osoitteet"
 
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:240
+#: contacts/qml/private/ContactPage.qml:247
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Pikaviestintä"
 
-#: contacts/qml/private/ContactPage.qml:261
+#: contacts/qml/private/ContactPage.qml:268
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:289
+#: contacts/qml/private/ContactPage.qml:296
 #, kde-format
 msgid "Organization:"
 msgstr "Organisaatio:"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Profession:"
 msgstr "Ammatti:"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Title:"
 msgstr "Virkanimike:"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Department:"
 msgstr "Osasto:"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Office:"
 msgstr "Työhuone:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Manager's name:"
 msgstr "Johtajan nimi:"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Avustajan nimi:"
 
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:344
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Sähköpostiosoite"
 msgstr[1] "Sähköpostiosoitteet"
 
-#: contacts/qml/private/ContactPage.qml:359
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3480,7 +3549,7 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Tallenna nimellä…"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:78
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "Viestissä ei ole vastaanottajia"
@@ -3490,12 +3559,18 @@ msgstr "Viestissä ei ole vastaanottajia"
 msgid "Error creating transport"
 msgstr "Virhe luotaessa postinvälitystä"
 
-#: mail/mailclient.cpp:192
+#: mail/mailclient.cpp:143
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " – "
+
+#: mail/mailclient.cpp:193
 #, kde-format
 msgid "Error loading transport"
 msgstr "Virhe ladattaessa postinvälitystä"
 
-#: mail/mailclient.cpp:209
+#: mail/mailclient.cpp:210
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "Virhe vietäessä viestiä lähteneiden jonoon: %1"
@@ -3909,10 +3984,6 @@ msgstr "Tilit"
 #~ msgid "Spouse's Name"
 #~ msgstr "Puolison nimi"
 
-#~ msgctxt "Separator between identity name and email address"
-#~ msgid " - "
-#~ msgstr " – "
-
 #, fuzzy
 #~| msgid "Identity:"
 #~ msgid "Identity"
@@ -4229,9 +4300,6 @@ msgstr "Tilit"
 #~| msgid "All day"
 #~ msgid "Multi / All day"
 #~ msgstr "Koko päivä"
-
-#~ msgid "Location copied to clipboard"
-#~ msgstr "Sijainti kopioitu leikepöydälle"
 
 #~ msgid "<b>Summary:</b>"
 #~ msgstr "<b>Yhteenveto:</b>"
