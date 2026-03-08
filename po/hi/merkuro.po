@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -786,6 +786,47 @@ msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> - %2"
 
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:123
+#, kde-format
+msgctxt "%1 is the name of the event"
+msgid "%1 (Day %2 of %3)"
+msgstr "%1 (%3 का दिन%2)"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:141
+#, kde-format
+msgid "Runs all day"
+msgstr "पूरे दिन चलता है"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:145
+#, kde-format
+msgctxt "Displays times between incidence start and end"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:148
+#, kde-format
+msgid "Starts at %1"
+msgstr "%1 पर शुरू होता है"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:150
+#, kde-format
+msgid "Ends at %1"
+msgstr "%1 पर समाप्त होता है"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
+#, fuzzy, kde-format
+#| msgid "Runs All Day"
+msgctxt "Label for incidence in between multiday start/finish"
+msgid "Runs All Day"
+msgstr "पूरे दिन चलता है"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
+#, fuzzy, kde-format
+#| msgid "<b>Location:</b>"
+msgctxt "Location indicator for incidence. %1 is the location"
+msgid "<b>Location</b>: %1"
+msgstr "<b>स्थान :</b>"
+
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
@@ -1500,58 +1541,80 @@ msgstr "रीसेट"
 msgid "All day or Multi day"
 msgstr "पूरे दिन या बहु दिन"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:244
+#: calendar/qml/MainViews/BasicMonthListView.qml:167
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "ddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:171
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised short dates indicating the start & end of a week "
+"using the format"
+msgid "%1–%2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:184
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:188
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised dates indicating the start & end of a week using "
+"the format specified above."
+msgid "From %1 to %2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:277
+#, kde-format
+msgctxt ""
+"Short date format, indicating name of day of week and number of day of "
+"month. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:300
+#, fuzzy, kde-format
+#| msgid "<b>Today</b>"
+msgctxt ""
+"Short date format, showing name of day of week and number of day of month. "
+msgid "ddd <b>dd</b>"
+msgstr "<b>आज</b>"
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:323
+#, kde-format
+msgctxt ""
+"Short date format, showing name of day of week and emphasising the number of "
+"day of month. "
+msgid "ddd<br><b>dd</b>"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "साफ़ दिन"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Tap"
 msgstr "टैप"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Click"
 msgstr "क्लिक"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:367
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "आज किताबों पर कुछ नहीं। %1 कुछ जोड़ने के लिए।"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:392
-#, kde-format
-msgctxt "%1 is the name of the event"
-msgid "%1 (Day %2 of %3)"
-msgstr "%1 (%3 का दिन%2)"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:448
-#, kde-format
-msgid "Runs all day"
-msgstr "पूरे दिन चलता है"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:452
-#, kde-format
-msgctxt "Displays times between incidence start and end"
-msgid "%1 - %2"
-msgstr "%1 - %2"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
-#, kde-format
-msgid "Starts at %1"
-msgstr "%1 पर शुरू होता है"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:457
-#, kde-format
-msgid "Ends at %1"
-msgstr "%1 पर समाप्त होता है"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
-#, kde-format
-msgid "Runs All Day"
-msgstr "पूरे दिन चलता है"
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -1696,27 +1759,27 @@ msgstr ", विलंबित है"
 msgid "Tasks"
 msgstr "कार्य"
 
-#: calendar/qml/MainViews/TodoView.qml:99
+#: calendar/qml/MainViews/TodoView.qml:94
 #, kde-format
 msgid "Show Completed"
 msgstr "पूरा कार्य दिखाएं"
 
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "%1 में कार्य पूरा करें"
 
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks"
 msgstr "कार्यों को पूरा करें"
 
-#: calendar/qml/MainViews/TodoView.qml:162
+#: calendar/qml/MainViews/TodoView.qml:157
 #, kde-format
 msgid "Create a New Task…"
 msgstr "नया कार्य बनाएँ…"
 
-#: calendar/qml/MainViews/TodoView.qml:202
+#: calendar/qml/MainViews/TodoView.qml:197
 #, fuzzy, kde-format
 #| msgid "Add Sub-Task"
 msgctxt "@action:button"
@@ -2475,7 +2538,7 @@ msgid "Enter Full Screen"
 msgstr "पूर्ण स्क्रीन में प्रवेश करें"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgid "Home:"
 msgstr "घर :"
@@ -2978,7 +3041,7 @@ msgid "Personal Information"
 msgstr "व्यक्तिगत जानकारी"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:270
+#: contacts/qml/private/ContactPage.qml:277
 #, kde-format
 msgid "Business Information"
 msgstr "व्यावसायिक जानकारी"
@@ -3296,34 +3359,34 @@ msgstr "उपनाम :"
 msgid "Blog Feed:"
 msgstr "ब्लॉग फ़ीड :"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:151
 #, kde-format
 msgid "Personal information"
 msgstr "व्यक्तिगत जानकारी"
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:161
 #, kde-format
 msgid "Birthday:"
 msgstr "जन्मदिन :"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:179
 #, kde-format
 msgid "Anniversary:"
 msgstr "वार्षिकोत्सव :"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:186
 #, kde-format
 msgid "Partner's name:"
 msgstr "साथी का नाम:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:191
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "दूरभाष संख्या"
 msgstr[1] "दूरभाष संख्या"
 
-#: contacts/qml/private/ContactPage.qml:208
+#: contacts/qml/private/ContactPage.qml:212
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
@@ -3331,72 +3394,77 @@ msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:216
 #, kde-format
+msgid "Phone number copied to clipboard"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:223
+#, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "पता"
 msgstr[1] "पते"
 
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:240
+#: contacts/qml/private/ContactPage.qml:247
 #, kde-format
 msgid "Instant Messaging"
 msgstr "तात्कालिक संदेशन"
 
-#: contacts/qml/private/ContactPage.qml:261
+#: contacts/qml/private/ContactPage.qml:268
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:289
+#: contacts/qml/private/ContactPage.qml:296
 #, kde-format
 msgid "Organization:"
 msgstr "संगठन :"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Profession:"
 msgstr "पेशा :"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Title:"
 msgstr "शीर्षक :"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Department:"
 msgstr "विभाग :"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Office:"
 msgstr "कार्यालय :"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Manager's name:"
 msgstr "प्रबंधक का नाम :"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, fuzzy, kde-format
 #| msgid "Assistants's name:"
 msgid "Assistant's name:"
 msgstr "सहायक का नाम :"
 
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:344
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "ईमेल पता"
 msgstr[1] "ईमेल पते"
 
-#: contacts/qml/private/ContactPage.qml:359
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3567,7 +3635,7 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "ऐसे सहेजें..."
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:78
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, fuzzy, kde-format
 #| msgid "There are no attendees to e-mail"
 msgid "There are no recipients to e-mail"
@@ -3578,12 +3646,18 @@ msgstr "ई-मेल भेजने के लिए कोई उपस्थ
 msgid "Error creating transport"
 msgstr "परिवहन बनाने में त्रुटि"
 
-#: mail/mailclient.cpp:192
+#: mail/mailclient.cpp:143
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr ""
+
+#: mail/mailclient.cpp:193
 #, kde-format
 msgid "Error loading transport"
 msgstr "परिवहन लोड करने में त्रुटि"
 
-#: mail/mailclient.cpp:209
+#: mail/mailclient.cpp:210
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "आउटबॉक्स में संदेश पंक्तिबद्ध करने में त्रुटि: %1"

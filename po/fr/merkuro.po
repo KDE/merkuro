@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:45+0000\n"
 "PO-Revision-Date: 2026-02-04 12:34+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -775,6 +775,47 @@ msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> – %2"
 
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:123
+#, kde-format
+msgctxt "%1 is the name of the event"
+msgid "%1 (Day %2 of %3)"
+msgstr "%1 (Jour %2 parmi %3)"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:141
+#, kde-format
+msgid "Runs all day"
+msgstr "Se déroule toute la journée"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:145
+#, kde-format
+msgctxt "Displays times between incidence start and end"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:148
+#, kde-format
+msgid "Starts at %1"
+msgstr "Commence à %1"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:150
+#, kde-format
+msgid "Ends at %1"
+msgstr "Se termine à %1"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
+#, fuzzy, kde-format
+#| msgid "Runs All Day"
+msgctxt "Label for incidence in between multiday start/finish"
+msgid "Runs All Day"
+msgstr "Se déroule sur toute la journée"
+
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
+#, fuzzy, kde-format
+#| msgid "<b>Location:</b>"
+msgctxt "Location indicator for incidence. %1 is the location"
+msgid "<b>Location</b>: %1"
+msgstr "<b>Emplacement : </b>"
+
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
 msgid "Choose a Task Calendar"
@@ -1480,58 +1521,80 @@ msgstr "Réinitialiser"
 msgid "All day or Multi day"
 msgstr "Jour complet ou sur plusieurs jours"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:244
+#: calendar/qml/MainViews/BasicMonthListView.qml:167
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "ddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:171
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised short dates indicating the start & end of a week "
+"using the format"
+msgid "%1–%2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:184
+#, kde-format
+msgctxt ""
+"Represents a date format. This should be adapted to locale conventions. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:188
+#, kde-format
+msgctxt ""
+"%1 & %2 are two localised dates indicating the start & end of a week using "
+"the format specified above."
+msgid "From %1 to %2"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:277
+#, kde-format
+msgctxt ""
+"Short date format, indicating name of day of week and number of day of "
+"month. "
+msgid "dddd d"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:300
+#, fuzzy, kde-format
+#| msgid "<b>Today</b>"
+msgctxt ""
+"Short date format, showing name of day of week and number of day of month. "
+msgid "ddd <b>dd</b>"
+msgstr "<b>Aujourd'hui</b>"
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:323
+#, kde-format
+msgctxt ""
+"Short date format, showing name of day of week and emphasising the number of "
+"day of month. "
+msgid "ddd<br><b>dd</b>"
+msgstr ""
+
+#: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "Effacer le jour."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Tap"
 msgstr "Tapotage"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:263
+#: calendar/qml/MainViews/BasicMonthListView.qml:366
 #, kde-format
 msgid "Click"
 msgstr "Clic"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:264
+#: calendar/qml/MainViews/BasicMonthListView.qml:367
 #, kde-format
 msgid "Nothing on the books today. %1 to add something."
 msgstr "Rien aujourd'hui dans les calendriers. %1 pour ajouter quelque chose."
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:392
-#, kde-format
-msgctxt "%1 is the name of the event"
-msgid "%1 (Day %2 of %3)"
-msgstr "%1 (Jour %2 parmi %3)"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:448
-#, kde-format
-msgid "Runs all day"
-msgstr "Se déroule toute la journée"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:452
-#, kde-format
-msgctxt "Displays times between incidence start and end"
-msgid "%1 - %2"
-msgstr "%1 - %2"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:455
-#, kde-format
-msgid "Starts at %1"
-msgstr "Commence à %1"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:457
-#, kde-format
-msgid "Ends at %1"
-msgstr "Se termine à %1"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:459
-#, kde-format
-msgid "Runs All Day"
-msgstr "Se déroule sur toute la journée"
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -1670,27 +1733,27 @@ msgstr " , es en retard"
 msgid "Tasks"
 msgstr "Tâches"
 
-#: calendar/qml/MainViews/TodoView.qml:99
+#: calendar/qml/MainViews/TodoView.qml:94
 #, kde-format
 msgid "Show Completed"
 msgstr "Afficher les tâches terminées"
 
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "Tâches terminées le %1"
 
-#: calendar/qml/MainViews/TodoView.qml:114
+#: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
 msgid "Completed Tasks"
 msgstr "Tâches terminées"
 
-#: calendar/qml/MainViews/TodoView.qml:162
+#: calendar/qml/MainViews/TodoView.qml:157
 #, kde-format
 msgid "Create a New Task…"
 msgstr "Créer une nouvelle tâche..."
 
-#: calendar/qml/MainViews/TodoView.qml:202
+#: calendar/qml/MainViews/TodoView.qml:197
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
@@ -2424,7 +2487,7 @@ msgid "Enter Full Screen"
 msgstr "Passer en mode « Plein écran »"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgid "Home:"
 msgstr "Maison :"
@@ -2916,7 +2979,7 @@ msgid "Personal Information"
 msgstr "Informations personnelles "
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:270
+#: contacts/qml/private/ContactPage.qml:277
 #, kde-format
 msgid "Business Information"
 msgstr "Informations professionnelles"
@@ -3235,106 +3298,112 @@ msgstr "Pseudonyme :"
 msgid "Blog Feed:"
 msgstr "Flux de blogue :"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:151
 #, kde-format
 msgid "Personal information"
 msgstr "Informations personnelles "
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:161
 #, kde-format
 msgid "Birthday:"
 msgstr "Anniversaire :"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:179
 #, kde-format
 msgid "Anniversary:"
 msgstr "Anniversaire :"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:186
 #, kde-format
 msgid "Partner's name:"
 msgstr "Nom de l'associé :"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:191
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Numéro de téléphone"
 msgstr[1] "Numéros de téléphone"
 
-#: contacts/qml/private/ContactPage.qml:208
+#: contacts/qml/private/ContactPage.qml:212
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1 :"
 
 #: contacts/qml/private/ContactPage.qml:216
+#, fuzzy, kde-format
+#| msgid "Location copied to clipboard"
+msgid "Phone number copied to clipboard"
+msgstr "Emplacement copié dans le presse-papier"
+
+#: contacts/qml/private/ContactPage.qml:223
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adresse"
 msgstr[1] "Adresses"
 
-#: contacts/qml/private/ContactPage.qml:233
+#: contacts/qml/private/ContactPage.qml:240
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1 :"
 
-#: contacts/qml/private/ContactPage.qml:240
+#: contacts/qml/private/ContactPage.qml:247
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Messagerie instantanée"
 
-#: contacts/qml/private/ContactPage.qml:261
+#: contacts/qml/private/ContactPage.qml:268
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1 :"
 
-#: contacts/qml/private/ContactPage.qml:289
+#: contacts/qml/private/ContactPage.qml:296
 #, kde-format
 msgid "Organization:"
 msgstr "Organisation :"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Profession:"
 msgstr "Profession :"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Title:"
 msgstr "Titre :"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Department:"
 msgstr "Service :"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Office:"
 msgstr "Bureau :"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Manager's name:"
 msgstr "Nom du responsable :"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Noms des assistants"
 
-#: contacts/qml/private/ContactPage.qml:337
+#: contacts/qml/private/ContactPage.qml:344
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Adresse de courriel"
 msgstr[1] "Adresses de courriel"
 
-#: contacts/qml/private/ContactPage.qml:359
+#: contacts/qml/private/ContactPage.qml:366
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3489,7 +3558,7 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Enregistrer sous…"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:78
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "Il n'y a aucun participant à qui envoyer un courriel"
@@ -3499,12 +3568,18 @@ msgstr "Il n'y a aucun participant à qui envoyer un courriel"
 msgid "Error creating transport"
 msgstr "Erreur de création de transport"
 
-#: mail/mailclient.cpp:192
+#: mail/mailclient.cpp:143
+#, kde-format
+msgctxt "Separator between identity name and email address"
+msgid " - "
+msgstr " - "
+
+#: mail/mailclient.cpp:193
 #, kde-format
 msgid "Error loading transport"
 msgstr "Erreur de chargement de transport"
 
-#: mail/mailclient.cpp:209
+#: mail/mailclient.cpp:210
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "Message d'erreur de mise en file d'attente dans la boite d'envoi : %1"
@@ -3918,10 +3993,6 @@ msgstr "Comptes"
 #~ msgid "Spouse's Name"
 #~ msgstr "Nom du conjoint"
 
-#~ msgctxt "Separator between identity name and email address"
-#~ msgid " - "
-#~ msgstr " - "
-
 #~ msgid "Identity"
 #~ msgstr "Identité"
 
@@ -4236,9 +4307,6 @@ msgstr "Comptes"
 
 #~ msgid "Multi / All day"
 #~ msgstr "Multi / Toute la journée"
-
-#~ msgid "Location copied to clipboard"
-#~ msgstr "Emplacement copié dans le presse-papier"
 
 #~ msgid "<b>Summary:</b>"
 #~ msgstr "<b>Résumé : </b>"
