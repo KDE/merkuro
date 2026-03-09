@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:45+0000\n"
-"PO-Revision-Date: 2026-02-04 12:34+0100\n"
+"PO-Revision-Date: 2026-03-07 20:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -803,18 +803,16 @@ msgid "Ends at %1"
 msgstr "Se termine à %1"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
-#, fuzzy, kde-format
-#| msgid "Runs All Day"
+#, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
 msgstr "Se déroule sur toute la journée"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
-#, fuzzy, kde-format
-#| msgid "<b>Location:</b>"
+#, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Emplacement : </b>"
+msgstr "<b>Emplacement : </b> %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -1526,7 +1524,7 @@ msgstr "Jour complet ou sur plusieurs jours"
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "ddd d"
-msgstr ""
+msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:171
 #, kde-format
@@ -1534,14 +1532,14 @@ msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "using the format"
 msgid "%1–%2"
-msgstr ""
+msgstr "%1 – %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:184
 #, kde-format
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:188
 #, kde-format
@@ -1549,7 +1547,7 @@ msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week using "
 "the format specified above."
 msgid "From %1 to %2"
-msgstr ""
+msgstr "De %1 à %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:277
 #, kde-format
@@ -1557,15 +1555,14 @@ msgctxt ""
 "Short date format, indicating name of day of week and number of day of "
 "month. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:300
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, showing name of day of week and number of day of month. "
 msgid "ddd <b>dd</b>"
-msgstr "<b>Aujourd'hui</b>"
+msgstr "ddd <b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:323
 #, kde-format
@@ -1573,7 +1570,7 @@ msgctxt ""
 "Short date format, showing name of day of week and emphasising the number of "
 "day of month. "
 msgid "ddd<br><b>dd</b>"
-msgstr ""
+msgstr "ddd<br><b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
@@ -3332,10 +3329,9 @@ msgid "%1:"
 msgstr "%1 :"
 
 #: contacts/qml/private/ContactPage.qml:216
-#, fuzzy, kde-format
-#| msgid "Location copied to clipboard"
+#, kde-format
 msgid "Phone number copied to clipboard"
-msgstr "Emplacement copié dans le presse-papier"
+msgstr "Numéro de téléphone copié dans le presse-papier"
 
 #: contacts/qml/private/ContactPage.qml:223
 #, kde-format
