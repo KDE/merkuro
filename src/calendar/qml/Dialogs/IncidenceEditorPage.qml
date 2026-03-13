@@ -500,7 +500,7 @@ FormCard.FormCardPage {
 
                 FormCard.FormComboBoxDelegate {
                     id: timeZoneComboBox
-                    text: i18n("Timezone:")
+                    text: i18n("Timezone")
 
                     model: Calendar.TimeZoneListModel {
                         id: timeZonesModel
