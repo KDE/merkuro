@@ -32,6 +32,13 @@ public:
     Q_INVOKABLE void addImpp(const QUrl &address);
     Q_INVOKABLE void deleteImpp(const int row);
 
+    /**
+     * Copies the IMPP at `index` to the system clipboard
+     *
+     * Returns true on success, false on failure.
+     */
+    Q_INVOKABLE bool copyToClipboard(int index) const;
+
 Q_SIGNALS:
     void changed(const KContacts::Impp::List &impps);
 
