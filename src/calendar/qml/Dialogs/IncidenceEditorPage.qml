@@ -1002,7 +1002,7 @@ FormCard.FormCardPage {
 
             FormCard.FormCard {
                 FormCard.FormPlaceholderMessageDelegate {
-                    text: i18nc("@info:placeholder", "There are no attendees")
+                    text: i18nc("@info:placeholder", "There are no reminders")
                     visible: remindersRepeater.count === 0
                 }
 
