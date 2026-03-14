@@ -68,18 +68,4 @@ FormCard.FormCard {
             }
         }
     }
-
-    //KirigamiDateTime.DateInput {
-    //    id: birthday
-    //    Kirigami.FormData.label: i18n("Birthday:")
-
-    //    selectedDate: addressee.birthday
-
-    //    Connections {
-    //        target: root
-    //        function onSave() {
-    //            addressee.birthday = birthday.selectedDate // TODO birthday is not writable
-    //        }
-    //    }
-    //}
 }
