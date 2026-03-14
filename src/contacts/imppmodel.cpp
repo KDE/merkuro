@@ -4,6 +4,10 @@
 #include "imppmodel.h"
 #include <KContacts/Impp>
 #include <KLocalizedString>
+
+#include <QApplication>
+#include <QClipboard>
+
 using namespace Qt::Literals::StringLiterals;
 ImppModel::ImppModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -86,6 +90,18 @@ void ImppModel::deleteImpp(const int row)
     m_impps.removeAt(row);
     endRemoveRows();
     Q_EMIT changed(m_impps);
+}
+
+bool ImppModel::copyToClipboard(int row) const
+{
+    auto const &address = m_impps[row].address();
+    auto const &addressParts = address.url().split(u':');
+    if (addressParts.length() < 2) {
+        return false;
+    }
+    auto const &user = addressParts[1];
+    QApplication::clipboard()->setText(user);
+    return true;
 }
 
 #include "moc_imppmodel.cpp"

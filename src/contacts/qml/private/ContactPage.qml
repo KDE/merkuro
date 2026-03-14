@@ -144,6 +144,9 @@ FormCard.FormCardPage {
             text: i18n("Blog Feed:")
             description: `<a href="${addressee.blogFeed}">${addressee.blogFeed}</a>`
             onClicked: Qt.openUrlExternally(addressee.blogFeed)
+            trailingLogo.source: LayoutMirroring.enabled ? "open-link-symbolic-rtl" : "open-link-symbolic"
+            trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
+            trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
         }
     }
 
@@ -268,7 +271,14 @@ FormCard.FormCardPage {
                 text: i18nc("Label for a messaging protocol", "%1:", isMatrix ? 'Matrix' : protocol)
                 description: address
 
-                onClicked: Qt.openUrlExternally(parent.url)
+                trailingLogo.source: "edit-copy-symbolic"
+                trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
+                trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
+
+                onClicked: {
+                    addressee.imppModel.copyToClipboard(imppRepeater.index);
+                    applicationWindow().showPassiveNotification(i18n("Instant Messaging ID copied to clipboard"));
+                }
             }
         }
     }
