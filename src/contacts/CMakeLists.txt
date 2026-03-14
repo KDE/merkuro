@@ -85,6 +85,8 @@ target_sources(merkuro_contact PRIVATE
     attributes/attributeregistrar.cpp
     avatarimageprovider.cpp
     avatarimageprovider.h
+    imppservicelistmodel.cpp
+    imppservicelistmodel.h
     ${merkuro_contact_SRCS}
 )
 

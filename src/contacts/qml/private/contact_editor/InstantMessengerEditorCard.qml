@@ -49,10 +49,18 @@ FormCard.FormCard {
         background: null
         Layout.fillWidth: true
         contentItem: RowLayout {
+            QQC2.ComboBox {
+                id: newService
+                editable: true
+                model: ImppServiceListModel {}
+                textRole: "display"
+                valueRole: "serviceType"
+            }
+
             QQC2.TextField {
-                id: toAddImpp
+                id: newUsername
                 Layout.fillWidth: true
-                placeholderText: i18n("protocol:person@example.com")
+                placeholderText: i18n("@person:example.com")
                 inputMethodHints: Qt.ImhEmailCharactersOnly
             }
 
@@ -60,10 +68,15 @@ FormCard.FormCard {
             QQC2.Button {
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
-                enabled: isNotEmptyStr(toAddImpp.text)
+                enabled: isNotEmptyStr(newUsername.text)
                 onClicked: {
-                    root.contactEditor.contact.imppModel.addImpp(toAddImpp.text);
-                    toAddImpp.text = "";
+                    // Hack-y: The goal is to get the current value of the model if the user has not
+                    //         edited the display text, otherwise use the value the user inputed.
+                    const serviceType =
+                          (newService.currentText === newService.editText) ?
+                          newService.currentValue : newService.editText;
+                    root.contactEditor.contact.imppModel.addImpp(`${serviceType}:${newUsername.text}`);
+                    newUsername.text = "";
                 }
             }
         }
