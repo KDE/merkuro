@@ -17,6 +17,7 @@ public:
         TypeRole,
         TypeLabelRole,
         TypeIconRole,
+        UsernameRole,
     };
 
     explicit ImppModel(QObject *parent = nullptr);
@@ -34,10 +35,8 @@ public:
 
     /**
      * Copies the IMPP at `index` to the system clipboard
-     *
-     * Returns true on success, false on failure.
      */
-    Q_INVOKABLE bool copyToClipboard(int index) const;
+    Q_INVOKABLE void copyToClipboard(int index) const;
 
 Q_SIGNALS:
     void changed(const KContacts::Impp::List &impps);

@@ -7,6 +7,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QIcon>
 
 using namespace Qt::Literals::StringLiterals;
 ImppModel::ImppModel(QObject *parent)
@@ -44,7 +45,9 @@ QVariant ImppModel::data(const QModelIndex &idx, int role) const
     case TypeLabelRole:
         return impp.serviceLabel();
     case TypeIconRole:
-        return impp.serviceIcon();
+        return QIcon(impp.serviceIcon());
+    case UsernameRole:
+        return impp.username();
     }
 
     return {};
@@ -70,6 +73,7 @@ QHash<int, QByteArray> ImppModel::roleNames() const
         {TypeRole, "type"_ba},
         {TypeLabelRole, "typeLabel"_ba},
         {TypeIconRole, "typeIcon"_ba},
+        {UsernameRole, "username"_ba},
     };
 }
 
@@ -92,16 +96,9 @@ void ImppModel::deleteImpp(const int row)
     Q_EMIT changed(m_impps);
 }
 
-bool ImppModel::copyToClipboard(int row) const
+void ImppModel::copyToClipboard(int row) const
 {
-    auto const &address = m_impps[row].address();
-    auto const &addressParts = address.url().split(u':');
-    if (addressParts.length() < 2) {
-        return false;
-    }
-    auto const &user = addressParts[1];
-    QApplication::clipboard()->setText(user);
-    return true;
+    QApplication::clipboard()->setText(m_impps[row].username());
 }
 
 #include "moc_imppmodel.cpp"

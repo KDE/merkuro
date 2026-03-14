@@ -258,19 +258,19 @@ FormCard.FormCardPage {
             delegate: FormCard.FormButtonDelegate {
                 id: imppDelegate
 
-                required property string url
-                readonly property var parts: url.split(':')
-                readonly property string protocol: parts.length > 0 ? parts[0] : ''
-                readonly property string address: parts.length > 0 ? parts.slice(1, parts.length).join(':') : ''
-                readonly property bool isMatrix: protocol === 'matrix'
+                required property string username
+                required property string typeLabel
+                required property string typeIcon
 
                 visible: text !== ""
-                text: i18nc("Label for a messaging protocol", "%1:", isMatrix ? 'Matrix' : protocol)
-                description: address
+                text: i18nc("Label for a messaging protocol", "%1:", typeLabel)
+                description: username
 
                 trailingLogo.source: "edit-copy-symbolic"
                 trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
                 trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
+
+                icon.name: typeIcon
 
                 onClicked: {
                     addressee.imppModel.copyToClipboard(imppRepeater.index);
