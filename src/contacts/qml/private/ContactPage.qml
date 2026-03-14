@@ -138,15 +138,12 @@ FormCard.FormCardPage {
             text: i18n("Nickname:")
         }
 
-        FormCard.FormButtonDelegate {
+        FormCard.FormLinkDelegate {
             id: blogFeed
             visible: addressee.blogFeed + '' !== ''
             text: i18n("Blog Feed:")
-            description: `<a href="${addressee.blogFeed}">${addressee.blogFeed}</a>`
-            onClicked: Qt.openUrlExternally(addressee.blogFeed)
-            trailingLogo.source: LayoutMirroring.enabled ? "open-link-symbolic-rtl" : "open-link-symbolic"
-            trailingLogo.implicitWidth: Kirigami.Units.iconSizes.small
-            trailingLogo.implicitHeight: Kirigami.Units.iconSizes.small
+            description: addressee.blogFeed
+            url: addressee.blogFeed
         }
     }
 
