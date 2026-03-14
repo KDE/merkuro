@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 02:39+0000\n"
+"POT-Creation-Date: 2026-03-14 02:41+0000\n"
 "PO-Revision-Date: 2026-03-07 20:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -973,7 +973,8 @@ msgid "Add"
 msgstr "Ajouter"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Summary"
 msgid "Summary"
 msgstr "Résumé"
 
@@ -1027,7 +1028,8 @@ msgid "%1%"
 msgstr "%1 %2"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Priority"
 msgid "Priority"
 msgstr "Priorité"
 
@@ -1276,7 +1278,6 @@ msgid "Fill in Manually"
 msgstr "Remplissez manuellement"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:872
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
@@ -1325,6 +1326,13 @@ msgstr "Rappels :"
 #, kde-format
 msgid "Add Reminder"
 msgstr "Ajouter un rappel"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
+#, fuzzy, kde-format
+#| msgid "Add an attachment"
+msgctxt "@info:placeholder"
+msgid "There are no reminders"
+msgstr "Ajouter une pièce jointe"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
 #, fuzzy, kde-format
