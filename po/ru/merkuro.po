@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:45+0000\n"
+"POT-Creation-Date: 2026-03-15 00:46+0000\n"
 "PO-Revision-Date: 2026-03-08 08:42+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -3090,7 +3090,7 @@ msgid "Personal Information"
 msgstr "Личные данные"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:277
+#: contacts/qml/private/ContactPage.qml:284
 #, kde-format
 msgid "Business Information"
 msgstr "Рабочая информация"
@@ -3477,42 +3477,48 @@ msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:277
+#, fuzzy, kde-format
+#| msgid "Phone number copied to clipboard"
+msgid "Instant Messaging ID copied to clipboard"
+msgstr "Номер телефона скопирован в буфер обмена"
+
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Organization:"
 msgstr "Организация:"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Profession:"
 msgstr "Профессия:"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Title:"
 msgstr "Должность:"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Department:"
 msgstr "Отдел:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Office:"
 msgstr "Место работы:"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Manager's name:"
 msgstr "Руководитель:"
 
-#: contacts/qml/private/ContactPage.qml:338
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Помощник:"
 
-#: contacts/qml/private/ContactPage.qml:344
+#: contacts/qml/private/ContactPage.qml:351
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -3521,7 +3527,7 @@ msgstr[1] "Адреса электронной почты"
 msgstr[2] "Адреса электронной почты"
 msgstr[3] "Адрес электронной почты"
 
-#: contacts/qml/private/ContactPage.qml:366
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
