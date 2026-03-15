@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 02:41+0000\n"
-"PO-Revision-Date: 2026-03-13 13:00+0100\n"
+"POT-Creation-Date: 2026-03-15 02:43+0000\n"
+"PO-Revision-Date: 2026-03-14 08:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1341,12 +1341,10 @@ msgid "Add Reminder"
 msgstr "Dodaj opomnik"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "There are no attendees"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Ni udeležencev"
+msgstr "Ni opomnikov"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
 #, kde-format
@@ -3063,7 +3061,7 @@ msgid "Personal Information"
 msgstr "Informacije o osebi"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:277
+#: contacts/qml/private/ContactPage.qml:284
 #, kde-format
 msgid "Business Information"
 msgstr "Poslovne informacije"
@@ -3446,42 +3444,48 @@ msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:277
+#, fuzzy, kde-format
+#| msgid "Phone number copied to clipboard"
+msgid "Instant Messaging ID copied to clipboard"
+msgstr "Telefonska številka prekopirana na odložišče"
+
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Organization:"
 msgstr "Organizacija:"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Profession:"
 msgstr "Poklic:"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Title:"
 msgstr "Naslov:"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Department:"
 msgstr "Oddelek:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Office:"
 msgstr "Pisarna:"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Manager's name:"
 msgstr "Ime nadrejene(ga):"
 
-#: contacts/qml/private/ContactPage.qml:338
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Ime pomočnika(ce):"
 
-#: contacts/qml/private/ContactPage.qml:344
+#: contacts/qml/private/ContactPage.qml:351
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -3490,7 +3494,7 @@ msgstr[1] "Naslova e-pošte"
 msgstr[2] "Naslovi e-pošte"
 msgstr[3] "Naslovi e-pošte"
 
-#: contacts/qml/private/ContactPage.qml:366
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"

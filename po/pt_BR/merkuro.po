@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 02:41+0000\n"
-"PO-Revision-Date: 2026-03-13 08:49-0300\n"
+"POT-Creation-Date: 2026-03-15 02:43+0000\n"
+"PO-Revision-Date: 2026-03-14 09:49-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1315,12 +1315,10 @@ msgid "Add Reminder"
 msgstr "Adicionar lembrete"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "There are no attendees"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Não há participantes"
+msgstr "Não há nenhum lembrete"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
 #, kde-format
@@ -3034,7 +3032,7 @@ msgid "Personal Information"
 msgstr "Informações pessoais"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:111
-#: contacts/qml/private/ContactPage.qml:277
+#: contacts/qml/private/ContactPage.qml:284
 #, kde-format
 msgid "Business Information"
 msgstr "Informações de negócios"
@@ -3415,49 +3413,55 @@ msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:296
+#: contacts/qml/private/ContactPage.qml:277
+#, fuzzy, kde-format
+#| msgid "Phone number copied to clipboard"
+msgid "Instant Messaging ID copied to clipboard"
+msgstr "Número de telefone copiado para a área de transferência"
+
+#: contacts/qml/private/ContactPage.qml:303
 #, kde-format
 msgid "Organization:"
 msgstr "Organização:"
 
-#: contacts/qml/private/ContactPage.qml:303
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgid "Profession:"
 msgstr "Profissão:"
 
-#: contacts/qml/private/ContactPage.qml:310
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Title:"
 msgstr "Cargo:"
 
-#: contacts/qml/private/ContactPage.qml:317
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Department:"
 msgstr "Departamento:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Office:"
 msgstr "Escritório:"
 
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/ContactPage.qml:338
 #, kde-format
 msgid "Manager's name:"
 msgstr "Nome do gerente:"
 
-#: contacts/qml/private/ContactPage.qml:338
+#: contacts/qml/private/ContactPage.qml:345
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Nome do assistente:"
 
-#: contacts/qml/private/ContactPage.qml:344
+#: contacts/qml/private/ContactPage.qml:351
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "Endereço de e-mail "
 msgstr[1] "Endereços de e-mail"
 
-#: contacts/qml/private/ContactPage.qml:366
+#: contacts/qml/private/ContactPage.qml:373
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
