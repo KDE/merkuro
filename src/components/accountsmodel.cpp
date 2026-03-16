@@ -129,7 +129,11 @@ void AccountsModel::requestNew()
 
     m.setArguments({m_types});
 
-    QDBusConnection::sessionBus().asyncCall(m);
+    QDBusReply<void> reply = QDBusConnection::sessionBus().call(m);
+
+    if (!reply.isValid()) {
+        qCWarning(merkuro_components_LOG) << "Failed to request new account" << reply.error().message();
+    }
 }
 
 void AccountsModel::slotAccountCreationFinished(const QDBusObjectPath &path, const QString & /*xdgActivationToken*/)
