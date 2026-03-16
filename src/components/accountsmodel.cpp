@@ -156,6 +156,19 @@ void AccountsModel::requestNew(QWindow *context)
     }
 }
 
+void AccountsModel::configure(QWindow *context, const QString &path)
+{
+    KWaylandExtras::xdgActivationToken(context, KWaylandExtras::lastInputSerial(context), QString()).then(this, [path](const QString &token) {
+        QDBusMessage m = QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, path, u"org.kde.KOnlineAccounts.Account"_s, u"configure"_s);
+        m.setArguments({token});
+        QDBusReply<void> reply = QDBusConnection::sessionBus().call(m);
+
+        if (!reply.isValid()) {
+            qCWarning(merkuro_components_LOG) << "Failed to configure account" << reply.error().message();
+        }
+    });
+}
+
 void AccountsModel::slotAccountCreationFinished(const QDBusObjectPath &path, const QString & /*xdgActivationToken*/)
 {
     beginInsertRows({}, m_accounts.size(), m_accounts.size());

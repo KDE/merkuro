@@ -33,6 +33,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
 
     Q_INVOKABLE void requestNew(QWindow *context);
+    Q_INVOKABLE void configure(QWindow *context, const QString &path);
 
     Q_SLOT void slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken);
 

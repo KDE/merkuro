@@ -32,6 +32,7 @@ FormCard.FormCard {
             required property int index
             required property string iconName
             required property string name
+            required property string path
 
             leadingPadding: Kirigami.Units.largeSpacing
             leading: Kirigami.Icon {
@@ -41,6 +42,8 @@ FormCard.FormCard {
             }
 
             text: name
+
+            onClicked: accountsModel.configure(Window.window, path)
         }
     }
 
