@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-15 02:43+0000\n"
-"PO-Revision-Date: 2026-03-07 20:17+0100\n"
+"PO-Revision-Date: 2026-03-14 10:21+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -993,38 +993,32 @@ msgid "Add a title for your journal entry"
 msgstr "Ajouter un titre pour votre entrée de journal"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Emplacement :"
+msgstr "Emplacement"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Agenda"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:280
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Tâche"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgid "Completion"
-msgstr "Achèvement :"
+msgstr "Achèvement"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:306
-#, fuzzy, kde-format
-#| msgctxt "%1 is month name, %2 is year"
-#| msgid "%1 %2"
+#, kde-format
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1 %"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
 #, kde-format
@@ -1092,11 +1086,10 @@ msgid "9 (Lowest Priority)"
 msgstr "9 (Priorité la plus faible)"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Date de début :"
+msgstr "Début"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
 #, kde-format
@@ -1104,18 +1097,16 @@ msgid "All day"
 msgstr "Toute la journée"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Échéance :"
+msgstr "Échéance"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Date de fin :"
+msgstr "Fin"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
 #, kde-format
@@ -1123,11 +1114,10 @@ msgid "Timezone:"
 msgstr "Fuseau horaire :"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Répétition :"
+msgstr "Répéter"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
 #, kde-format
@@ -1226,20 +1216,17 @@ msgid "After"
 msgstr "Après"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "Se termine à %1"
+msgstr "Se termine après :"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, fuzzy, kde-format
-#| msgid "occurrence"
-#| msgid_plural "occurrences"
+#, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
-msgstr[0] "occurrence"
-msgstr[1] "occurrences"
+msgstr[0] "%1 occurrence"
+msgstr[1] "%1 occurrences"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
 #, kde-format
@@ -1247,18 +1234,16 @@ msgid "Exceptions:"
 msgstr "Exceptions :"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Ajouter"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Participants :"
+msgstr "Participants"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
@@ -1279,7 +1264,7 @@ msgstr "Remplissez manuellement"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Il n'y a aucune personne participante"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
@@ -1314,11 +1299,10 @@ msgid "Request RSVP"
 msgstr "Requête « RSVP »"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
-#, fuzzy, kde-format
-#| msgid "Reminders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
-msgstr "Rappels :"
+msgstr "Rappels"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
@@ -1326,15 +1310,13 @@ msgid "Add Reminder"
 msgstr "Ajouter un rappel"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Ajouter une pièce jointe"
+msgstr "Il n'y a aucun rappel"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Étiquettes"
@@ -1355,11 +1337,10 @@ msgid "Click to set tags…"
 msgstr "Cliquez pour définir des étiquettes..."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Pièces jointes :"
+msgstr "Pièces jointes"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
@@ -1372,17 +1353,16 @@ msgid "Add an attachment"
 msgstr "Ajouter une pièce jointe"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Ajouter une pièce jointe"
+msgstr "Il n'y a aucune pièce jointe"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:28
 #, kde-format
