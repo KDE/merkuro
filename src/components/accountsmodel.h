@@ -9,6 +9,7 @@
 #include <QAbstractListModel>
 #include <QDBusObjectPath>
 #include <QHash>
+#include <QWindow>
 #include <qqmlregistration.h>
 
 class AccountsModel : public QAbstractListModel
@@ -31,7 +32,7 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    Q_INVOKABLE void requestNew();
+    Q_INVOKABLE void requestNew(QWindow *context);
 
     Q_SLOT void slotAccountCreationFinished(const QDBusObjectPath &path, const QString &xdgActivationToken);
 

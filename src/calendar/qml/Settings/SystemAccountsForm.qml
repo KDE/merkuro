@@ -53,6 +53,6 @@ FormCard.FormCard {
         id: addAccountDelegate
         text: i18nc("@action:button", "Add Account…")
         icon.name: "list-add-symbolic"
-        onClicked: accountsModel.requestNew()
+        onClicked: accountsModel.requestNew(Window.window)
     }
 }

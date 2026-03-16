@@ -50,6 +50,7 @@ target_link_libraries(MerkuroComponents PUBLIC
     KF6::I18n
     KF6::CalendarCore
     KF6::Contacts
+    KF6::WindowSystem
     KPim6::AkonadiCore
     KPim6::AkonadiMime
 )
