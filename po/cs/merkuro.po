@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-15 02:43+0000\n"
-"PO-Revision-Date: 2026-02-25 17:00+0100\n"
+"PO-Revision-Date: 2026-03-16 15:42+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -815,18 +815,16 @@ msgid "Ends at %1"
 msgstr "Končí v %1"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
-#, fuzzy, kde-format
-#| msgid "Runs All Day"
+#, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
 msgstr "Běží celý den"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
-#, fuzzy, kde-format
-#| msgid "<b>Location:</b>"
+#, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Umístění:</b>"
+msgstr "<b>Umístění</b>: %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -1012,8 +1010,7 @@ msgid "Location"
 msgstr "Umístění"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Kalendář"
@@ -1100,11 +1097,10 @@ msgid "9 (Lowest Priority)"
 msgstr "9 (Nejnižší priorita)"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Zahájení:"
+msgstr "Začátek"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
 #, kde-format
@@ -1112,18 +1108,16 @@ msgid "All day"
 msgstr "Celý den"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Do:"
+msgstr "Termín"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Konec:"
+msgstr "Konec"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
 #, kde-format
@@ -1131,11 +1125,10 @@ msgid "Timezone:"
 msgstr "Časové pásmo:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Opakovat:"
+msgstr "Opakovat"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
 #, kde-format
@@ -1238,21 +1231,18 @@ msgid "After"
 msgstr "Po"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "Končí v %1"
+msgstr "Končí po:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, fuzzy, kde-format
-#| msgid "occurrence"
-#| msgid_plural "occurrences"
+#, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
-msgstr[0] "výskyt"
-msgstr[1] "výskyty"
-msgstr[2] "výskytů"
+msgstr[0] "%1 výskyt"
+msgstr[1] "%1 výskyty"
+msgstr[2] "%1 výskytů"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
 #, kde-format
@@ -1266,11 +1256,10 @@ msgid "Add"
 msgstr "Přidat"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Účastníci:"
+msgstr "Účastníci"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
@@ -1291,7 +1280,7 @@ msgstr "Vyplnit ručně"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Nejsou zde žádní účastníci"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
@@ -1337,11 +1326,10 @@ msgid "Add Reminder"
 msgstr "Přidat upomínku"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Přidat přílohu"
+msgstr "Nejsou zde žádné upomínky"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
 #, kde-format
@@ -1365,11 +1353,10 @@ msgid "Click to set tags…"
 msgstr "Kliknutím nastavte značky…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Přílohy:"
+msgstr "Přílohy"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
@@ -1382,17 +1369,16 @@ msgid "Add an attachment"
 msgstr "Přidat přílohu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Přidat přílohu"
+msgstr "Nejsou zde žádné přílohy"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
-msgstr ""
+msgstr "Poznámka"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:28
 #, kde-format
@@ -1615,7 +1601,7 @@ msgstr "Celý den nebo více dní"
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "ddd d"
-msgstr ""
+msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:171
 #, kde-format
@@ -1623,14 +1609,14 @@ msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "using the format"
 msgid "%1–%2"
-msgstr ""
+msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:184
 #, kde-format
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:188
 #, kde-format
@@ -1638,7 +1624,7 @@ msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week using "
 "the format specified above."
 msgid "From %1 to %2"
-msgstr ""
+msgstr "Od %1 do %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:277
 #, kde-format
@@ -1646,15 +1632,14 @@ msgctxt ""
 "Short date format, indicating name of day of week and number of day of "
 "month. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:300
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, showing name of day of week and number of day of month. "
 msgid "ddd <b>dd</b>"
-msgstr "<b>Dnes</b>"
+msgstr "ddd <b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:323
 #, kde-format
@@ -1662,7 +1647,7 @@ msgctxt ""
 "Short date format, showing name of day of week and emphasising the number of "
 "day of month. "
 msgid "ddd<br><b>dd</b>"
-msgstr ""
+msgstr "ddd<br><b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
@@ -3415,7 +3400,7 @@ msgstr "%1:"
 #: contacts/qml/private/ContactPage.qml:216
 #, kde-format
 msgid "Phone number copied to clipboard"
-msgstr ""
+msgstr "Telefonní číslo zkopírováno do schránky"
 
 #: contacts/qml/private/ContactPage.qml:223
 #, kde-format
