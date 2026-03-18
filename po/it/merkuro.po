@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-15 00:46+0000\n"
-"PO-Revision-Date: 2026-02-03 15:20+0100\n"
+"PO-Revision-Date: 2026-03-16 10:37+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -805,18 +805,16 @@ msgid "Ends at %1"
 msgstr "Finisce alle %1"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
-#, fuzzy, kde-format
-#| msgid "Runs All Day"
+#, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
 msgstr "Dura tutto il giorno"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
-#, fuzzy, kde-format
-#| msgid "<b>Location:</b>"
+#, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Località:</b>"
+msgstr "<b>Località:</b> %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -997,38 +995,32 @@ msgid "Add a title for your journal entry"
 msgstr "Aggiungi un titolo per la voce del tuo diario"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Località:"
+msgstr "Posizione"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Calendario"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:280
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Attività"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgid "Completion"
-msgstr "Completamento:"
+msgstr "Completamento"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:306
-#, fuzzy, kde-format
-#| msgctxt "%1 is month name, %2 is year"
-#| msgid "%1 %2"
+#, kde-format
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
 #, kde-format
@@ -1096,11 +1088,10 @@ msgid "9 (Lowest Priority)"
 msgstr "9 (Priorità più bassa)"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Inizio:"
+msgstr "Inizio"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
 #, kde-format
@@ -1108,31 +1099,27 @@ msgid "All day"
 msgstr "Tutto il giorno"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Scadenza:"
+msgstr "Scaduta"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Fine:"
+msgstr "Fine"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
-#, fuzzy, kde-format
-#| msgid "Timezone:"
+#, kde-format
 msgid "Timezone"
-msgstr "Fuso orario:"
+msgstr "Fuso orario"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Ripeti:"
+msgstr "Ripeti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
 #, kde-format
@@ -1231,20 +1218,17 @@ msgid "After"
 msgstr "Dopo"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "Finisce alle %1"
+msgstr "Termina dopo:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, fuzzy, kde-format
-#| msgid "occurrence"
-#| msgid_plural "occurrences"
+#, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
-msgstr[0] "occorrenza"
-msgstr[1] "occorrenze"
+msgstr[0] "%1 occorrenza"
+msgstr[1] "%1 occorrenze"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
 #, kde-format
@@ -1252,18 +1236,16 @@ msgid "Exceptions:"
 msgstr "Eccezioni:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Aggiungi"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Partecipanti:"
+msgstr "Partecipanti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
@@ -1284,7 +1266,7 @@ msgstr "Inserisci manualmente"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Non ci sono partecipanti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
@@ -1319,11 +1301,10 @@ msgid "Request RSVP"
 msgstr "Richiesto RSVP"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
-#, fuzzy, kde-format
-#| msgid "Reminders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
-msgstr "Promemoria:"
+msgstr "Promemoria"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
@@ -1331,16 +1312,13 @@ msgid "Add Reminder"
 msgstr "Aggiungi promemoria"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgid "This event has reminder"
-#| msgid_plural "This event has reminders"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Questo evento ha promemoria"
+msgstr "Non ci sono promemoria"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Etichette"
@@ -1361,11 +1339,10 @@ msgid "Click to set tags…"
 msgstr "Clic per impostare le etichette…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Allegati:"
+msgstr "Allegati"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
@@ -1378,17 +1355,16 @@ msgid "Add an attachment"
 msgstr "Aggiungi un allegato"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Aggiungi un allegato"
+msgstr "Non ci sono allegati"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:28
 #, kde-format
@@ -1611,7 +1587,7 @@ msgstr "Tutto il giorno o più giorni"
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "ddd d"
-msgstr ""
+msgstr "ggg g"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:171
 #, kde-format
@@ -1619,14 +1595,14 @@ msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "using the format"
 msgid "%1–%2"
-msgstr ""
+msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:184
 #, kde-format
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "dddd d"
-msgstr ""
+msgstr "gggg g"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:188
 #, kde-format
@@ -1634,7 +1610,7 @@ msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week using "
 "the format specified above."
 msgid "From %1 to %2"
-msgstr ""
+msgstr "Da %1 a %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:277
 #, kde-format
@@ -1642,15 +1618,14 @@ msgctxt ""
 "Short date format, indicating name of day of week and number of day of "
 "month. "
 msgid "dddd d"
-msgstr ""
+msgstr "gggg g"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:300
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, showing name of day of week and number of day of month. "
 msgid "ddd <b>dd</b>"
-msgstr "<b>Oggi</b>"
+msgstr "ggg <b>gg</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:323
 #, kde-format
@@ -1658,7 +1633,7 @@ msgctxt ""
 "Short date format, showing name of day of week and emphasising the number of "
 "day of month. "
 msgid "ddd<br><b>dd</b>"
-msgstr ""
+msgstr "ddd<br><b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
@@ -3411,10 +3386,9 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:216
-#, fuzzy, kde-format
-#| msgid "Location copied to clipboard"
+#, kde-format
 msgid "Phone number copied to clipboard"
-msgstr "Località copiata negli appunti"
+msgstr "Numero di telefono copiato negli appunti"
 
 #: contacts/qml/private/ContactPage.qml:223
 #, kde-format
@@ -3441,10 +3415,9 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:277
-#, fuzzy, kde-format
-#| msgid "Location copied to clipboard"
+#, kde-format
 msgid "Instant Messaging ID copied to clipboard"
-msgstr "Località copiata negli appunti"
+msgstr "ID di messaggistica istantanea copiato negli appunti"
 
 #: contacts/qml/private/ContactPage.qml:303
 #, kde-format
