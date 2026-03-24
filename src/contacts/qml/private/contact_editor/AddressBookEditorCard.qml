@@ -39,9 +39,6 @@ FormCard.FormCard {
         mimeTypeFilter: [Akonadi.MimeTypes.address, Akonadi.MimeTypes.contactGroup]
         accessRightsFilter: Akonadi.Collection.CanCreateItem
         onUserSelectedCollection: collection => root.contactEditor.setDefaultAddressBook(collection)
-        onCollectionChanged: if (collection) {
-            root.contactEditor.setDefaultAddressBook(collection)
-        }
     }
 
     FormCard.FormDelegateSeparator { above: addressBookComboBox; below: nameDelegate }
