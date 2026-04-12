@@ -1004,7 +1004,7 @@ Column {
                                             height: 1
                                             oversizeMouseAreaVertical: 2
                                             z: Infinity
-                                            enabled: !Kirigami.Settings.isMobile && !modelData.isReadOnly
+                                            enabled: !Kirigami.Settings.isMobile && !modelData.isReadOnly && modelData.resizeable
                                             unhoveredColor: "transparent"
 
                                             onDragPositionChanged: parent.resizeHeight = Math.max(viewColumn.periodHeight, hourlyIncidenceDelegateBackgroundBackground.initialIncidenceHeight + changeY)
