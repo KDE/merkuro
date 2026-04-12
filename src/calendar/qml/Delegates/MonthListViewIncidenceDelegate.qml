@@ -164,6 +164,7 @@ Kirigami.AbstractCard {
                 Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.OutCubic } }
                 text: i18nc("Location indicator for incidence. %1 is the location", "<b>Location</b>: %1", incidenceCard.modelData.location)
                 visible: incidenceCard.modelData.location && !incidenceCard.modelData.todoCompleted
+                elide: Text.ElideRight
             }
             
             Text {
