@@ -46,6 +46,7 @@ class IncidenceData
     Q_PROPERTY(int maxConcurrentIncidences MEMBER maxConcurrentIncidences)
     Q_PROPERTY(double widthShare MEMBER widthShare)
     Q_PROPERTY(double priorTakenWidthShare MEMBER priorTakenWidthShare)
+    Q_PROPERTY(bool resizeable MEMBER resizeable)
 
 public:
     QString text;
@@ -74,6 +75,7 @@ public:
     int maxConcurrentIncidences;
     double widthShare;
     double priorTakenWidthShare;
+    bool resizeable;
 };
 
 /**
