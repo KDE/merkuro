@@ -5,14 +5,21 @@
 
 #include <QObject>
 #include <QPointF>
+#include <QtQmlIntegration>
+
+class QQmlEngine;
+class QJSEngine;
 
 class MouseTracker : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(QPointF mousePosition READ mousePosition NOTIFY mousePositionChanged)
 
 public:
     static MouseTracker *instance();
+    static MouseTracker *create(QQmlEngine *, QJSEngine *) { return instance(); }
     [[nodiscard]] QPointF mousePosition() const;
 
 Q_SIGNALS:
