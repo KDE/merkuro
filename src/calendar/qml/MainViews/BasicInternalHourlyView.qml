@@ -149,8 +149,9 @@ Column {
                     Accessible.name: dayHeading.text.replace(/<\/?b>/g, '')
                     onClicked: {
                         Calendar.DateTimeState.selectedDate = dayDelegate.headingDate;
-                        applicationWindow().pageStack.layers.push("qrc:/HourlyView.qml", {
+                        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("HourlyView.qml"), {
                             daysToShow: 1,
+                            createEventAction: applicationWindow().createAction
                         });
                     }
                 }
