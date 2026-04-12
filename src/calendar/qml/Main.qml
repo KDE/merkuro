@@ -497,8 +497,8 @@ BaseApplication {
                     return Math.max(0, Math.min(incidenceItemMidXPoint - width / 2, maxXPosition));
 
                 } else if(openingIncidenceItem) {
-                    const itemLeft = mapFromItem(openingIncidenceItem, 0, 0).x;
-                    const itemRight = mapFromItem(openingIncidenceItem, openingIncidenceItem.width, 0).x;
+                    const itemLeft = incidenceInfoPopupLoader.mapFromItem(openingIncidenceItem, 0, 0).x;
+                    const itemRight = incidenceInfoPopupLoader.mapFromItem(openingIncidenceItem, openingIncidenceItem.width, 0).x;
 
                     return Math.max(itemLeft, Math.min(clickPosition.x, itemRight - width));
                 }
@@ -514,7 +514,7 @@ BaseApplication {
             onIncidenceDataChanged: root.openOccurrence = incidenceData
             onVisibleChanged: {
                 if (visible) {
-                    clickPosition = mapFromGlobal(MouseTracker.mousePosition)
+                    clickPosition = incidenceInfoPopupLoader.mapFromGlobal(MouseTracker.mousePosition.x, MouseTracker.mousePosition.y)
                     root.openOccurrence = incidenceData;
                     reposition();
                 } else {
