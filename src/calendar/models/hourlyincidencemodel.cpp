@@ -145,6 +145,7 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
         incidenceData.incidenceTypeIcon = idx.data(IncidenceOccurrenceModel::IncidenceTypeIcon).toString();
         incidenceData.incidencePtr = idx.data(IncidenceOccurrenceModel::IncidencePtr).value<KCalendarCore::Incidence::Ptr>();
         incidenceData.incidenceOccurrence = idx.data(IncidenceOccurrenceModel::IncidenceOccurrence);
+        incidenceData.resizeable = idx.data(IncidenceOccurrenceModel::Resizeable).toBool();
 
         result.append(incidenceData);
     };
