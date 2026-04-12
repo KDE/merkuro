@@ -73,6 +73,7 @@ public:
         IncidenceTypeIcon,
         IncidencePtr,
         IncidenceOccurrence,
+        Resizeable,
         LastRole
     };
     Q_ENUM(Roles)

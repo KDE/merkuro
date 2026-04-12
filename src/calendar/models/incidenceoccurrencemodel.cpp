@@ -319,6 +319,13 @@ QVariant IncidenceOccurrenceModel::data(const QModelIndex &idx, int role) const
         return QVariant::fromValue(incidence);
     case IncidenceOccurrence:
         return QVariant::fromValue(occurrence);
+    case Resizeable: {
+        if (incidence->type() == KCalendarCore::IncidenceBase::TypeTodo) {
+            auto todo = incidence.staticCast<KCalendarCore::Todo>();
+            return todo->hasDueDate();
+        }
+        return true;
+    }
     default:
         return {};
     }
