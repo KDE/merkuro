@@ -41,31 +41,38 @@ QQC2.ComboBox {
         y: parent.y + parent.height
         z: 1000
         padding: 0
+        onAboutToShow: popupTimePicker.timeChangeHandler()
 
         TimePicker {
             id: popupTimePicker
 
-            Component.onCompleted: minuteMultiples = 5
+            Component.onCompleted: {
+                minuteMultiples = 5;
+                timeChangeHandler();
+            }
+
+            function timeChangeHandler() {
+                // JS for some insane reason always tries to give you a datetime in the local timezone, even though
+                // we want the hours in the datetime's timezone, not our local timezone
+                const adjusted = Calendar.DateUtils.adjustDateTimeToLocalTimeZone(root.dateTime, root.timeZoneOffset)
+
+                popupTimePicker.hours = adjusted.getHours();
+                popupTimePicker.minutes = adjusted.getMinutes();
+            }
+
             Connections {
                 target: root
 
-                function timeChangeHandler() {
-                    if(!popupTimePicker.visible) {
-                        // JS for some insane reason always tries to give you a datetime in the local timezone, even though
-                        // we want the hours in the datetime's timezone, not our local timezone
-                        const adjusted = Calendar.DateUtils.adjustDateTimeToLocalTimeZone(root.dateTime, root.timeZoneOffset)
-
-                        popupTimePicker.hours = adjusted.getHours();
-                        popupTimePicker.minutes = adjusted.getMinutes();
+                function onDateTimeChanged() {
+                    if (!timePopup.visible) {
+                        popupTimePicker.timeChangeHandler();
                     }
                 }
 
-                function onDateTimeChanged() {
-                    timeChangeHandler();
-                }
-
                 function onTimeZoneOffsetChanged() {
-                    timeChangeHandler();
+                    if (!timePopup.visible) {
+                        popupTimePicker.timeChangeHandler();
+                    }
                 }
             }
 
