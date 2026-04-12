@@ -817,6 +817,7 @@ Column {
 
                                         Calendar.DayTapHandler {
                                             id: backgroundDayTapHandler
+                                            includeTime: true
                                             addDate: new Date(Calendar.DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
                                             onDeselect: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
