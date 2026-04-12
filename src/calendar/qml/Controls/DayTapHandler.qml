@@ -12,6 +12,7 @@ TapHandler {
 
     property string defaultType: Calendar.IncidenceWrapper.TypeEvent
     property date addDate
+    property bool includeTime: false
     property double clickX
     property double clickY
     property Component _dayActions: Component {
@@ -25,14 +26,14 @@ TapHandler {
                 text: i18n("New Event…")
                 icon.name: "resource-calendar-insert"
                 onClicked: {
-                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeEvent, dayTapHandler.addDate, 0, dayTapHandler.includeTime);
                 }
             }
             QQC2.MenuItem {
                 text: i18n("New Task…")
                 icon.name: "view-task-add"
                 onClicked: {
-                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, false);
+                    Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, dayTapHandler.addDate, 0, dayTapHandler.includeTime);
                 }
             }
         }
@@ -56,7 +57,7 @@ TapHandler {
             const position = eventPoint.position;
             clickX = position.x;
             clickY = position.y;
-            Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, defaultType, addDate, 0, false);
+            Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(parent.QQC2.ApplicationWindow.window, defaultType, addDate, 0, includeTime);
         }
     }
 }
