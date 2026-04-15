@@ -19,7 +19,10 @@ class MouseTracker : public QObject
 
 public:
     static MouseTracker *instance();
-    static MouseTracker *create(QQmlEngine *, QJSEngine *) { return instance(); }
+    static MouseTracker *create(QQmlEngine *, QJSEngine *)
+    {
+        return instance();
+    }
     [[nodiscard]] QPointF mousePosition() const;
 
 Q_SIGNALS:
