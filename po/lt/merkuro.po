@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 00:44+0000\n"
-"PO-Revision-Date: 2026-03-21 02:09+0200\n"
+"PO-Revision-Date: 2026-04-16 16:41+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -252,7 +252,7 @@ msgstr "Programuotojas"
 #, kde-format
 msgctxt "@item:inlistbox Holiday region, region language"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: calendar/models/holidayregionmodel.cpp:31
 #, kde-format
@@ -284,7 +284,7 @@ msgstr ""
 #: calendar/qml/MainViews/TodoTreeView.qml:68
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Šiandien"
 
 #: calendar/models/todosortfilterproxymodel.cpp:212
 #, kde-format
@@ -403,12 +403,12 @@ msgstr "Nežinoma"
 #: calendar/qml/CalendarUtils/LabelUtils.js:126
 #, kde-format
 msgid "Never ends"
-msgstr ""
+msgstr "Niekada nepasibaigia"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:128
 #, kde-format
 msgid "Ends on %1"
-msgstr ""
+msgstr "Pasibaigia %1"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:130
 #, kde-format
@@ -529,16 +529,16 @@ msgstr "Atsisakyti"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:112
 #, kde-format
 msgid "This event is recurring"
-msgstr ""
+msgstr "Šis įvykis yra pasikartojantis"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:123
 #, kde-format
 msgid "This event has reminder"
 msgid_plural "This event has reminders"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Šis įvykis turi priminimą"
+msgstr[1] "Šie įvykis turi priminimus"
+msgstr[2] "Šie įvykis turi priminimus"
+msgstr[3] "Šie įvykis turi priminimus"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:145
 #, kde-format
@@ -799,7 +799,7 @@ msgstr "<b>%1</b> – %2"
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
-msgstr ""
+msgstr "%1 (%2 diena iš %3)"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:141
 #, kde-format
@@ -981,10 +981,9 @@ msgid "Add"
 msgstr "Pridėti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:144
-#, fuzzy, kde-format
-#| msgid "Summary:"
+#, kde-format
 msgid "Summary"
-msgstr "Santrauka:"
+msgstr "Santrauka"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:147
 #, kde-format
@@ -1002,22 +1001,19 @@ msgid "Add a title for your journal entry"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Vieta:"
+msgstr "Vieta"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Kalendorius"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:280
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Užduotis"
@@ -1028,17 +1024,14 @@ msgid "Completion"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:306
-#, fuzzy, kde-format
-#| msgctxt "%1 is month name, %2 is year"
-#| msgid "%1 %2"
+#, kde-format
 msgid "%1%"
-msgstr "%2 %1"
+msgstr "%1%"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
-#, fuzzy, kde-format
-#| msgid "Priority:"
+#, kde-format
 msgid "Priority"
-msgstr "Prioritetas:"
+msgstr "Prioritetas"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:328
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
@@ -1101,11 +1094,10 @@ msgid "9 (Lowest Priority)"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Pradžia:"
+msgstr "Pradžia"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
 #, kde-format
@@ -1113,31 +1105,27 @@ msgid "All day"
 msgstr "Visą dieną"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Galutinis terminas:"
+msgstr "Galutinis terminas"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Pabaiga:"
+msgstr "Pabaiga"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
-#, fuzzy, kde-format
-#| msgid "Timezone:"
+#, kde-format
 msgid "Timezone"
-msgstr "Laiko juosta:"
+msgstr "Laiko juosta"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Kartoti:"
+msgstr "Kartoti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
 #, kde-format
@@ -1244,11 +1232,10 @@ msgid "After"
 msgstr "Po"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "Pasibaigia %1"
+msgstr "Pasibaigia po:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
 #, kde-format
@@ -1265,18 +1252,16 @@ msgid "Exceptions:"
 msgstr "Išimtys:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Pridėti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Dalyviai:"
+msgstr "Dalyviai"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
@@ -1291,13 +1276,13 @@ msgstr "Pasirinkti iš adresatų"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:863
 #, kde-format
 msgid "Fill in Manually"
-msgstr ""
+msgstr "Užpildyti rankiniu būdu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:872
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Nėra dalyvių"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
@@ -1319,7 +1304,7 @@ msgstr "El. paštas:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:948
 #, kde-format
 msgid "Required"
-msgstr ""
+msgstr "Būtina"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
 #, kde-format
@@ -1332,11 +1317,10 @@ msgid "Request RSVP"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
-#, fuzzy, kde-format
-#| msgid "Reminders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
-msgstr "Priminimai:"
+msgstr "Priminimai"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
@@ -1350,8 +1334,7 @@ msgid "There are no reminders"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Žymės"
@@ -1369,14 +1352,13 @@ msgstr "Bakstelėkite norėdami nustatyti žymes…"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
 #, kde-format
 msgid "Click to set tags…"
-msgstr "Spustelėkite norėdami nustatyti žymes…"
+msgstr "Nustatyti žymes…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Priedai:"
+msgstr "Priedai"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
@@ -1389,11 +1371,10 @@ msgid "Add an attachment"
 msgstr "Pridėti priedą"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Pridėti priedą"
+msgstr "Nėra priedų"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
 #, kde-format
@@ -3724,18 +3705,16 @@ msgid ""
 msgstr ""
 
 #: mail/qml/actions/DeleteMailAction.qml:29
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
-msgstr "Ištrinti kalendorių"
+msgstr "Ištrinti el. paštą"
 
 #: mail/qml/actions/DeleteMailAction.qml:43
-#, fuzzy, kde-format
-#| msgid "Delete calendar"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
-msgstr "Ištrinti kalendorių"
+msgstr "Ištrinti el. paštą"
 
 #: mail/qml/actions/DeleteMailAction.qml:48
 #, kde-format
