@@ -68,7 +68,7 @@ target_link_libraries(merkuro_mail_static
         KPim6::AkonadiSearchPIM
         KPim6::IdentityManagementQuick
         KPim6::Mbox
-        KPim6::Mime
+        KF6::Mime
         KPim6::Libkdepim
         KPim6::PimCommonAkonadi
         KPim6::MimeTreeParserCore
