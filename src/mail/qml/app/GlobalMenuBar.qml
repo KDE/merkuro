@@ -36,16 +36,8 @@ Labs.MenuBar {
             application: root.application
         }
     }
-    Labs.Menu {
-        title: i18nc("@action:menu", "Window")
 
-        Labs.MenuItem {
-            text: root.window.visibility === Window.FullScreen ? i18nc("@action:menu", "Exit Full Screen") : i18nc("@action:menu", "Enter Full Screen")
-            icon.name: "view-fullscreen"
-            shortcut: "F11"
-            onTriggered: root.window.visibility === Window.FullScreen ? root.window.showNormal() : root.window.showFullScreen()
-        }
-    }
+    NativeWindowMenu {}
 
     NativeHelpMenu {
         application: root.application
