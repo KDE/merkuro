@@ -173,25 +173,8 @@ Labs.MenuBar {
 
     NativeWindowMenu {}
 
-    Labs.Menu {
-        title: i18nc("@action:menu", "Settings")
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_tag_manager'
-            application: CalendarApplication
-        }
-
-        Labs.MenuSeparator {}
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'options_configure_keybinding'
-            application: CalendarApplication
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'options_configure'
-            application: CalendarApplication
-        }
+    NativeSettingsMenu {
+        application: CalendarApplication
     }
 
     NativeHelpMenu {

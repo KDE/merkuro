@@ -39,6 +39,10 @@ Labs.MenuBar {
 
     NativeWindowMenu {}
 
+    NativeSettingsMenu {
+        application: root.application
+    }
+
     NativeHelpMenu {
         application: root.application
     }

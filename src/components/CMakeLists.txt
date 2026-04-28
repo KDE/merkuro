@@ -86,6 +86,7 @@ ecm_target_qml_sources(MerkuroComponents SOURCES
         qml/NativeEditMenu.qml
         qml/NativeHelpMenu.qml
         qml/NativeWindowMenu.qml
+        qml/NativeSettingsMenu.qml
 
         # Small controls
         qml/ColoredCheckbox.qml

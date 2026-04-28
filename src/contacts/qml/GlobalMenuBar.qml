@@ -45,25 +45,8 @@ Labs.MenuBar {
 
     NativeWindowMenu {}
 
-    Labs.Menu {
-        title: i18nc("@action:menu", "Settings")
-
-        StatefuleAppLabs.NativeMenuItem {
-            actionName: 'open_tag_manager'
-            application: ContactApplication
-        }
-
-        Labs.MenuSeparator {}
-
-        StatefuleAppLabs.NativeMenuItem {
-            actionName: 'options_configure_keybinding'
-            application: ContactApplication
-        }
-
-        StatefuleAppLabs.NativeMenuItem {
-            actionName: 'options_configure'
-            application: ContactApplication
-        }
+    NativeSettingsMenu {
+        application: ContactApplication
     }
 
     NativeHelpMenu {
