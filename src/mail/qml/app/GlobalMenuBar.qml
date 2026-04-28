@@ -23,41 +23,6 @@ Labs.MenuBar {
         title: i18nc("@action:menu", "View")
 
         StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_month_view'
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_week_view'
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: "open_threeday_view"
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: "open_day_view"
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_schedule_view'
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_todo_view'
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
-            actionName: 'open_contact_view'
-            application: root.application
-        }
-
-        StatefulAppLabs.NativeMenuItem {
             actionName: 'open_kcommand_bar'
             application: root.application
         }
