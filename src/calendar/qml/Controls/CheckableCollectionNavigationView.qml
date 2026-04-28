@@ -266,12 +266,12 @@ QQC2.ScrollView {
                         Connections {
                             target: root.agentConfiguration
 
-                            function onAgentProgressChanged(agentInstance: Akonadi.agentInstance): void {
-                                if (!agentInstance.identifier === collectionSourceItem.collection.resource) {
+                            function onAgentProgressChanged(agentInstance: Akonadi.AgentInstance) {
+                                if (agentInstance.identifier !== collectionSourceItem.collection.resource) {
                                     return;
                                 }
 
-                                loadingIndicator.visible = agentInstance.status === agentInstance.Running;
+                                loadingIndicator.visible = agentInstance.status === Akonadi.AgentConfiguration.Running;
                             }
                         }
 
