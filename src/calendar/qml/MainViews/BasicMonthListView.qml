@@ -346,8 +346,9 @@ QQC2.ScrollView {
                             visible: !backgroundRectangle.incidences.length && dayGrid.isToday
 
                             contentItem: QQC2.Label {
-                                property string selectMethod: Kirigami.Settings.isMobile ? i18n("Tap") : i18n("Click")
-                                text: i18n("Nothing on the books today. %1 to add something.", selectMethod)
+                                text: Kirigami.Settings.isMobile ? 
+                                    i18n("Nothing on the books today. Tap to add something.") :
+                                    i18n("Nothing on the books today. Click to add something.")
                                 wrapMode: Text.Wrap
                             }
 

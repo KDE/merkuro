@@ -140,7 +140,7 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
 
     header = new KMime::Headers::Generic("X-Merkuro-Mail-Transport-Name");
     // Taken from KIdentityManagement, src/core/identitymodel.cpp
-    auto transportName = QString(identity.identityName() + i18nc("Separator between identity name and email address", " - ") + identity.fullEmailAddr());
+    auto transportName = QString(identity.identityName() + i18nc("Separator between identity name and email address", " — ") + identity.fullEmailAddr());
     header->fromUnicodeString(transportName);
     infoPart->setExtraHeaders(extras);
 
