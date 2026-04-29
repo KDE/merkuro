@@ -161,13 +161,10 @@ QQC2.ScrollView {
                         if (!weekHeading.visible)
                             return "";
                         const range = getDateRange();
-                        const format = i18nc("Represents a date format. This should be adapted to locale conventions. " +
-                                             "This will be used in a header, specifying the start & end day of a week. " +
-                                             "The month & year are specified above this in the UI, and may be ommited.",
+                        const format = i18nc("A date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified above this in the UI, and should be omitted.",
                                              "ddd d");
                         return i18nc(
-                            "%1 & %2 are two localised short dates indicating the start & end of a week using the format"+
-                                " specified earlier. %1 is the start, %2 the end.",
+                            "%1 & %2 are two localised short dates indicating the start & end of a week (e.g. Mon 2–Sun 9). %1 is the start, %2 the end.",
                             "%1–%2",
                             range.startDate.toLocaleDateString(Qt.locale(), format),
                             range.endDate.toLocaleDateString(Qt.locale(), format)
@@ -177,14 +174,10 @@ QQC2.ScrollView {
                         if (!weekHeading.visible)
                             return "";
                         const range = getDateRange();
-                        const format = i18nc("Represents a date format. This should be adapted to locale conventions. " +
-                                             "This will be used in a header, specifying the start & end day of a week. " +
-                                             "The month & year are specified above this in the UI, and may be ommited. " +
-                                             "The formated date will be read aloud by screen readers.",
+                        const format = i18nc("A date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified above this in the UI, and should be omitted. Will be read by a screen reader.",
                                              "dddd d");
                         return i18nc(
-                            "%1 & %2 are two localised dates indicating the start & end of a week using the format specified above." +
-                                " %1 is the start, %2 the end. This string is intended to be read by a screen reader.",
+                            "%1 & %2 are two localised dates indicating the start & end of a week (e.g. From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is intended to be read by a screen reader.",
                             "From %1 to %2",
                             range.startDate.toLocaleDateString(Qt.locale(), format),
                             range.endDate.toLocaleDateString(Qt.locale(), format)
@@ -270,10 +263,7 @@ QQC2.ScrollView {
                         onClicked: Calendar.CalendarUiUtils.openDayLayer(backgroundRectangle.periodStartDate)
 
                         property string dateFormatScreenReader: i18nc(
-                            "Short date format, indicating name of day of week and number of day of month. " +
-                                "To be read by screen readers. " +
-                                "Name of month and year is shown in the section title. " +
-                                "This should be adapted to locale convention.",
+                            "Short date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen reader.",
                             "dddd d")
                         Accessible.name: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormatScreenReader)
 
@@ -293,10 +283,7 @@ QQC2.ScrollView {
 
                         property Item smallDayLabel: QQC2.Label {
                             property string dateFormat: i18nc(
-                                "Short date format, showing name of day of week and number of day of month. " +
-                                    "Name of month and year is shown in the section title. " +
-                                    "This should be adapted to locale convention. " +
-                                    "Text between <b> and </b> will be bolded.",
+                                "Short date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method).",
                                 "ddd <b>dd</b>")
 
                             id: smallDayLabel
@@ -315,11 +302,7 @@ QQC2.ScrollView {
 
                         property Item largeDayLabel: Kirigami.Heading {
                             property string dateFormat: i18nc(
-                                "Short date format, showing name of day of week and emphasising the number of day of month. " +
-                                    "Name of month and year is shown in the section title. " +
-                                    "This should be adapted to locale convention. " +
-                                    "Text between <b> and </b> will be bolded." +
-                                    "<br> indicates a line break",
+                                "Short date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Name of month and year is shown in the section title.",
                                 "ddd<br><b>dd</b>")
 
                             id: largeDayLabel
