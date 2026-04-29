@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-13 00:44+0000\n"
+"POT-Creation-Date: 2026-04-29 00:46+0000\n"
 "PO-Revision-Date: 2025-08-21 13:12+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -112,13 +112,13 @@ msgid "To Date…"
 msgstr "Uz datumu…"
 
 #: calendar/calendarapplication.cpp:213
-#: calendar/qml/Controls/DayTapHandler.qml:25
+#: calendar/qml/Controls/DayTapHandler.qml:26
 #, kde-format
 msgid "New Event…"
 msgstr "Jauns notikums…"
 
 #: calendar/calendarapplication.cpp:220
-#: calendar/qml/Controls/DayTapHandler.qml:32
+#: calendar/qml/Controls/DayTapHandler.qml:33
 #, kde-format
 msgid "New Task…"
 msgstr "Jauns uzdevums…"
@@ -1968,19 +1968,12 @@ msgstr "Iet"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
-#: mail/qml/app/GlobalMenuBar.qml:67 mail/qml/app/MenuBar.qml:26
+#: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
 #: mail/qml/FolderView.qml:42
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
 msgstr "Izveidot"
-
-#: calendar/qml/Menus/GlobalMenuBar.qml:177 components/qml/SettingsMenu.qml:14
-#: contacts/qml/GlobalMenuBar.qml:49
-#, kde-format
-msgctxt "@action:menu"
-msgid "Settings"
-msgstr "Iestatījumi"
 
 #: calendar/qml/Menus/MenuBar.qml:65
 #, kde-format
@@ -2570,22 +2563,25 @@ msgctxt "text editing menu action"
 msgid "Redo"
 msgstr "Atatsaukt"
 
+#: components/qml/NativeSettingsMenu.qml:13 components/qml/SettingsMenu.qml:14
+#, kde-format
+msgctxt "@action:menu"
+msgid "Settings"
+msgstr "Iestatījumi"
+
 #: components/qml/NativeWindowMenu.qml:11 components/qml/WindowMenu.qml:12
-#: mail/qml/app/GlobalMenuBar.qml:75
 #, kde-format
 msgctxt "@action:menu"
 msgid "Window"
 msgstr "Logs"
 
 #: components/qml/NativeWindowMenu.qml:14 components/qml/WindowMenu.qml:15
-#: mail/qml/app/GlobalMenuBar.qml:78
 #, kde-format
 msgctxt "@action:menu"
 msgid "Exit Full Screen"
 msgstr "Iziet no pilnekrāna režīma"
 
 #: components/qml/NativeWindowMenu.qml:14 components/qml/WindowMenu.qml:15
-#: mail/qml/app/GlobalMenuBar.qml:78
 #, kde-format
 msgctxt "@action:menu"
 msgid "Enter Full Screen"
