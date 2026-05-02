@@ -29,6 +29,6 @@ ecm_add_test(infinitemerkurocalendarviewmodeltest.cpp
 # the tests need the ical resource, which we might not have at this point (e.g. on the CI)
 find_program(AKONADI_ICAL_RESOURCE NAMES akonadi_ical_resource)
 if(UNIX)
-    add_akonadi_isolated_test_advanced(incidenceoccurrencemodeltest incidenceoccurrencemodeltest.cpp merkuro_calendar_static Qt::Test)
-    add_akonadi_isolated_test_advanced(todosortfilterproxymodeltest todosortfilterproxymodeltest.cpp merkuro_calendar_static Qt::Test)
+    add_akonadi_isolated_test(SOURCE incidenceoccurrencemodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
+    add_akonadi_isolated_test(SOURCE todosortfilterproxymodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
 endif()
