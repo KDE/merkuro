@@ -61,7 +61,6 @@ include(ECMGenerateExportHeader)
 include(ECMPoQmTools)
 include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
-include(ECMGenerateQmlTypes)
 include(ECMQmlModule)
 include(ECMInstallIcons)
 
