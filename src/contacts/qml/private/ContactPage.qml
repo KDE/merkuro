@@ -202,6 +202,7 @@ FormCard.FormCardPage {
             delegate: FormCard.FormButtonDelegate {
                 required property string phoneNumber
                 required property string type
+                required property int index
 
                 visible: text.length > 0
                 trailingLogo {
@@ -212,7 +213,7 @@ FormCard.FormCardPage {
                 text: i18nc("Label for a phone number type", "%1:", type)
                 description: phoneNumber
                 onClicked: {
-                    addressee.phoneModel.copyToClipboard(phoneRepeater.index);
+                    addressee.phoneModel.copyToClipboard(index);
                     applicationWindow().showPassiveNotification(i18n("Phone number copied to clipboard"));
                 }
             }
