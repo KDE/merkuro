@@ -239,10 +239,6 @@ BaseApplication {
             openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
         }
 
-        function onConfigureSchedule(): void {
-            configurationsView.open("freebusy");
-        }
-
         function onOpenSettings(): void {
             configurationsView.open();
         }
