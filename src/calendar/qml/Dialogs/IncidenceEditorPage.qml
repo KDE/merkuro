@@ -49,7 +49,7 @@ FormCard.FormCardPage {
         id: invalidDateMessage
 
         width: parent.width
-        visible: !root.validDates && root.incidenceWrapper && editorLoader.active
+        visible: !root.validDates && (root.incidenceWrapper ?? false) && editorLoader.active
         type: Kirigami.MessageType.Error
         // Specify what the problem is to aid user
         text: if (!root.incidenceWrapper || !editorLoader.active) {
