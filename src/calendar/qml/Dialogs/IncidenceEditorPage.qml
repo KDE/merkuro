@@ -730,8 +730,6 @@ FormCard.FormCardPage {
                     // ?? Layout.fillWidth: currentIndex !== 1 //The end date combo box should fill the layout
                     // Recurrence duration returns -1 for never ending and 0 when the recurrence
                     // end date is set. Any number larger is the set number of recurrences
-                    currentIndex: root.incidenceWrapper.recurrenceData.duration <= 0 ?
-                        root.incidenceWrapper.recurrenceData.duration + 1 : 2
                     onCurrentValueChanged: root.incidenceWrapper.setRecurrenceDataItem("duration", currentValue)
                     textRole: "displayName"
                     valueRole: "duration"
@@ -741,6 +739,10 @@ FormCard.FormCardPage {
                         {displayName: i18n("After"), duration: 1}
                     ]
 
+                    Component.onCompleted: {
+                        currentIndex = root.incidenceWrapper.recurrenceData.duration <= 0 ?
+                            root.incidenceWrapper.recurrenceData.duration + 1 : 2;
+                    }
                 }
 
                 FormCard.FormDateTimeDelegate {
