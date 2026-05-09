@@ -732,7 +732,7 @@ FormCard.FormCardPage {
                     // end date is set. Any number larger is the set number of recurrences
                     currentIndex: root.incidenceWrapper.recurrenceData.duration <= 0 ?
                         root.incidenceWrapper.recurrenceData.duration + 1 : 2
-                    onCurrentValueChanged: root.incidenceWrapper.setRecurrenceDataItem("duration", duration)
+                    onCurrentValueChanged: root.incidenceWrapper.setRecurrenceDataItem("duration", currentValue)
                     textRole: "displayName"
                     valueRole: "duration"
                     model: [
