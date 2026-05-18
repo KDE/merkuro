@@ -1,7 +1,7 @@
 # Translation for merkuro.po to Euskara/Basque (eu).
 # Copyright (C) 2022-2026 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2023, 2024, 2025, 2026.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 02:39+0000\n"
-"PO-Revision-Date: 2026-03-01 00:32+0100\n"
+"PO-Revision-Date: 2026-05-17 13:08+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -807,18 +807,16 @@ msgid "Ends at %1"
 msgstr "%1(e)tan bukatzen da"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
-#, fuzzy, kde-format
-#| msgid "Runs All Day"
+#, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
-msgstr "Egun osoan dabil"
+msgstr "Egun osoan"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
-#, fuzzy, kde-format
-#| msgid "<b>Location:</b>"
+#, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Kokalekua:</b>"
+msgstr "<b>Kokalekua</b>: %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -979,10 +977,9 @@ msgid "Add"
 msgstr "Gehitu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:144
-#, fuzzy, kde-format
-#| msgid "Summary:"
+#, kde-format
 msgid "Summary"
-msgstr "Laburpena:"
+msgstr "Laburpena"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:147
 #, kde-format
@@ -1000,50 +997,43 @@ msgid "Add a title for your journal entry"
 msgstr "Gehitu zure egunkari-sarrerarako izenburu bat"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Kokalekua:"
+msgstr "Kokalekua"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Egutegia"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:280
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Zeregina"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgid "Completion"
-msgstr "Osatzea:"
+msgstr "Osatze-maila"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:306
-#, fuzzy, kde-format
-#| msgctxt "%1 is month name, %2 is year"
-#| msgid "%1 %2"
+#, kde-format
 msgid "%1%"
-msgstr "%2 %1"
+msgstr "%%1"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
-#, fuzzy, kde-format
-#| msgid "Priority:"
+#, kde-format
 msgid "Priority"
-msgstr "Lehentasuna:"
+msgstr "Lehentasuna"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:328
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
-msgstr "Sinatzeke"
+msgstr "Esleitu gabe"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:329
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
@@ -1100,11 +1090,10 @@ msgid "9 (Lowest Priority)"
 msgstr "9 (lehentasun txikiena)"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Hasiera:"
+msgstr "Hasiera"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
 #, kde-format
@@ -1112,18 +1101,16 @@ msgid "All day"
 msgstr "Egun osokoa"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Epe-muga:"
+msgstr "Epemuga"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Amaiera:"
+msgstr "Bukaera"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
 #, kde-format
@@ -1131,11 +1118,10 @@ msgid "Timezone:"
 msgstr "Ordu-eremua:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Errepikatu:"
+msgstr "Errepikatu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
 #, kde-format
@@ -1234,20 +1220,17 @@ msgid "After"
 msgstr "Honen ondoren,"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "%1(e)tan bukatzen da"
+msgstr "Ondoren bukatu:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, fuzzy, kde-format
-#| msgid "occurrence"
-#| msgid_plural "occurrences"
+#, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
-msgstr[0] "agerraldi"
-msgstr[1] "agerraldi"
+msgstr[0] "agerraldi %1"
+msgstr[1] "%1 agerraldi"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
 #, kde-format
@@ -1255,18 +1238,16 @@ msgid "Exceptions:"
 msgstr "Salbuespenak:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Gehitu"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Partaideak:"
+msgstr "Partaideak"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
 #, kde-format
@@ -1287,7 +1268,7 @@ msgstr "Eskuz bete"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Ez dago partaiderik"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
@@ -1322,11 +1303,10 @@ msgid "Request RSVP"
 msgstr "Eskatu «RSVP»"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
-#, fuzzy, kde-format
-#| msgid "Reminders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
-msgstr "Oroigarriak:"
+msgstr "Oroigarriak"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
@@ -1334,15 +1314,13 @@ msgid "Add Reminder"
 msgstr "Gehitu oroigarria"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Gehitu eranskin bat"
+msgstr "Ez dago oroigarririk"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Etiketak"
@@ -1363,11 +1341,10 @@ msgid "Click to set tags…"
 msgstr "Egin klik etiketak ezartzeko..."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Eranskinak:"
+msgstr "Eranskinak"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
 #, kde-format
@@ -1380,17 +1357,16 @@ msgid "Add an attachment"
 msgstr "Gehitu eranskin bat"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Gehitu eranskin bat"
+msgstr "Ez dago eranskinik"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
-msgstr ""
+msgstr "Oharra"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:28
 #, kde-format
@@ -1613,7 +1589,7 @@ msgstr "Egun osoa edo egun anitz"
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "ddd d"
-msgstr ""
+msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:171
 #, kde-format
@@ -1621,14 +1597,14 @@ msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "using the format"
 msgid "%1–%2"
-msgstr ""
+msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:184
 #, kde-format
 msgctxt ""
 "Represents a date format. This should be adapted to locale conventions. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:188
 #, kde-format
@@ -1636,7 +1612,7 @@ msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week using "
 "the format specified above."
 msgid "From %1 to %2"
-msgstr ""
+msgstr "%1(e)tik %2(e)ra arte"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:277
 #, kde-format
@@ -1644,15 +1620,14 @@ msgctxt ""
 "Short date format, indicating name of day of week and number of day of "
 "month. "
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:300
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, showing name of day of week and number of day of month. "
 msgid "ddd <b>dd</b>"
-msgstr "<b>Gaur</b>"
+msgstr "ddd <b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:323
 #, kde-format
@@ -1660,7 +1635,7 @@ msgctxt ""
 "Short date format, showing name of day of week and emphasising the number of "
 "day of month. "
 msgid "ddd<br><b>dd</b>"
-msgstr ""
+msgstr "ddd<br><b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:347
 #, kde-format
@@ -3414,7 +3389,7 @@ msgstr "%1:"
 #: contacts/qml/private/ContactPage.qml:216
 #, kde-format
 msgid "Phone number copied to clipboard"
-msgstr ""
+msgstr "Telefono zenbakia arbelera kopiatu da"
 
 #: contacts/qml/private/ContactPage.qml:223
 #, kde-format
@@ -3443,7 +3418,7 @@ msgstr "%1:"
 #: contacts/qml/private/ContactPage.qml:277
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
-msgstr ""
+msgstr "Bat-bateko mezularitza IDa arbelera kopiatu da"
 
 #: contacts/qml/private/ContactPage.qml:303
 #, kde-format
