@@ -447,7 +447,6 @@ FormCard.FormCardPage {
                 visible: !incidenceForm.isJournal
 
                 FormCard.AbstractFormDelegate {
-                    enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                     background: null
                     contentItem: RowLayout {
                         spacing: Kirigami.Units.smallSpacing
@@ -495,9 +494,13 @@ FormCard.FormCardPage {
                         }
                     }
                 }
+            }
 
-                FormCard.FormDelegateSeparator {}
+            FormCard.FormHeader {
+                title: i18nc("@title", "Timezone")
+            }
 
+            FormCard.FormCard {
                 FormCard.FormComboBoxDelegate {
                     id: timeZoneComboBox
                     text: i18n("Timezone:")
@@ -509,7 +512,6 @@ FormCard.FormCardPage {
                     valueRole: "id"
                     currentIndex: model ? timeZonesModel.getTimeZoneRow(root.incidenceWrapper.timeZone) : -1
                     onCurrentValueChanged: root.incidenceWrapper.timeZone = currentValue
-                    enabled: !incidenceForm.isTodo || (incidenceForm.isTodo && incidenceEndCheckBox.checked)
                 }
             }
 
