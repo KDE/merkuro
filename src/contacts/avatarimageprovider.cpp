@@ -12,7 +12,10 @@ using namespace Qt::Literals::StringLiterals;
 
 AvatarImageProvider *AvatarImageProvider::create(QQmlEngine *engine, QJSEngine *)
 {
-    auto instance = new AvatarImageProvider();
+    const auto instance = new AvatarImageProvider();
+
+    QQmlEngine::setObjectOwnership(instance, QQmlEngine::CppOwnership);
+
     engine->addImageProvider(u"avatar"_s, instance);
     return instance;
 }
