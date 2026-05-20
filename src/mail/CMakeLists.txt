@@ -33,6 +33,9 @@ set(merkuro_mail_SRCS
     mailclient.h
     mailclient.cpp
 
+    mailtransportconfiguration.h
+    mailtransportconfiguration.cpp
+
     identity/identitycryptographybackend.h
     identity/identitycryptographybackend.cpp
     identity/identitycryptographyeditorbackendfactory.h

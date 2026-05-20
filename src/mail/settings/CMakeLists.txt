@@ -8,4 +8,5 @@ qt_add_qml_module(mail_settings
     QML_FILES
         AccountSettingsPage.qml
         Settings.qml
+        TransportConfigurationForm.qml
 )
