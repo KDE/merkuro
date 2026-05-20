@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-20 00:46+0000\n"
 "PO-Revision-Date: 2025-07-09 22:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -260,7 +260,7 @@ msgid "Default from locale"
 msgstr "Területi beállítások alapértelmezése"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1040
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1044
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -330,7 +330,7 @@ msgstr[0] "Minden év %3 %2. napján"
 msgstr[1] "Minden %1. év %3 %2. napján"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:554
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:737
 #, kde-format
 msgid "Never"
@@ -1123,101 +1123,108 @@ msgctxt "@title:group"
 msgid "End"
 msgstr "Befejezés:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:500
 #, fuzzy, kde-format
 #| msgid "Timezone:"
+msgctxt "@title"
 msgid "Timezone"
 msgstr "Időzóna:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
+#, fuzzy, kde-format
+#| msgid "Timezone:"
+msgid "Timezone:"
+msgstr "Időzóna:"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:519
 #, fuzzy, kde-format
 #| msgid "Repeat:"
 msgctxt "@title"
 msgid "Repeat"
 msgstr "Ismétlődés:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:528
 #, kde-format
 msgid "Repeat:"
 msgstr "Ismétlődés:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:555
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
 #, kde-format
 msgid "Daily"
 msgstr "Naponta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
 #, kde-format
 msgid "Weekly"
 msgstr "Hetente"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
 #, kde-format
 msgid "Monthly"
 msgstr "Havonta"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
 #, kde-format
 msgid "Yearly"
 msgstr "Évente"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:561
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
 #, kde-format
 msgid "Custom"
 msgstr "Egyéni"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:581
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgid "Every:"
 msgstr "Minden:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:626
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "napon"
 msgstr[1] "napon"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:627
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "héten"
 msgstr[1] "héten"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:630
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "hónapban"
 msgstr[1] "hónapban"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:631
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "évben"
 msgstr[1] "évben"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:696
 #, kde-format
 msgid "On:"
 msgstr "Ekkor:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:702
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:704
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "Minden hónap %1. napján"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:717
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "Minden hónap %1. hetének %2. napján"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:727
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
 #, kde-format
 msgid "Ends:"
 msgstr "Befejeződés:"
@@ -1232,14 +1239,14 @@ msgstr "Ekkor"
 msgid "After"
 msgstr "Után"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:767
 #, fuzzy, kde-format
 #| msgid "Ends at %1"
 msgctxt "@label:spinbox"
 msgid "Ends after:"
 msgstr "Befejezés: %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:769
 #, fuzzy, kde-format
 #| msgid "occurrence"
 #| msgid_plural "occurrences"
@@ -1248,91 +1255,91 @@ msgid_plural "%1 occurrences"
 msgstr[0] "előfordulás"
 msgstr[1] "előfordulás"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:779
 #, kde-format
 msgid "Exceptions:"
 msgstr "Kivételek:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:782
 #, fuzzy, kde-format
 #| msgid "Add"
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Hozzáadás"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
 #, fuzzy, kde-format
 #| msgid "Attendees:"
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "Résztvevők:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:835
 #, kde-format
 msgid "Add Attendee"
 msgstr "Résztvevő hozzáadása"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:862
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Kiválasztás a névjegyekből"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:863
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Kitöltés kézzel"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:872
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:876
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:132
 #, kde-format
 msgid "Name:"
 msgstr "Név:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:927
 #, kde-format
 msgid "Optional"
 msgstr "Nem kötelező"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:941
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgid "Email:"
 msgstr "E-mail:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:948
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Required"
 msgstr "Kötelező"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:961
 #, kde-format
 msgid "Status:"
 msgstr "Állapot:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:985
 #, kde-format
 msgid "Request RSVP"
 msgstr "Választ kérek"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
 #, fuzzy, kde-format
 #| msgid "Reminders:"
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Emlékeztetők:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1001
 #, kde-format
 msgid "Add Reminder"
 msgstr "Emlékeztető hozzáadása"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
 #, fuzzy, kde-format
 #| msgid "This event has reminder"
 #| msgid_plural "This event has reminders"
@@ -1340,53 +1347,53 @@ msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "Az eseményhez tartozik emlékeztető"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1029
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Címkék"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1027
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgid "Manage tags…"
 msgstr "Címkék kezelése…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Koppintson címkék megadásához…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Kattintson címkék megadásához…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1091
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Mellékletek:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1093
 #, kde-format
 msgid "Add Attachment"
 msgstr "Melléklet hozzáadása"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1096
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1100
 #, kde-format
 msgid "Add an attachment"
 msgstr "Melléklet hozzáadása"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1109
 #, fuzzy, kde-format
 #| msgid "Add an attachment"
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "Melléklet hozzáadása"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1144
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1537,61 +1544,61 @@ msgstr "Eltávolítás"
 msgid "Return to Location"
 msgstr "Vissza a helyhez"
 
-#: calendar/qml/Main.qml:286
+#: calendar/qml/Main.qml:282
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Létrehozás"
 
-#: calendar/qml/Main.qml:291
+#: calendar/qml/Main.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Új esemény…"
 
-#: calendar/qml/Main.qml:297
+#: calendar/qml/Main.qml:293
 #, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Új feladat…"
 
-#: calendar/qml/Main.qml:306
+#: calendar/qml/Main.qml:302
 #, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Hónap"
 
-#: calendar/qml/Main.qml:309
+#: calendar/qml/Main.qml:305
 #, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Hét"
 
-#: calendar/qml/Main.qml:312
+#: calendar/qml/Main.qml:308
 #, kde-format
 msgctxt "@title"
 msgid "Work Week"
 msgstr "Munkahét"
 
-#: calendar/qml/Main.qml:315
+#: calendar/qml/Main.qml:311
 #, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 nap"
 
-#: calendar/qml/Main.qml:318
+#: calendar/qml/Main.qml:314
 #, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Nap"
 
-#: calendar/qml/Main.qml:321
+#: calendar/qml/Main.qml:317
 #, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Ütemezés"
 
-#: calendar/qml/Main.qml:324
+#: calendar/qml/Main.qml:320
 #, kde-format
 msgctxt "@title"
 msgid "Tasks"

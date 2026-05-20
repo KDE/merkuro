@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-20 00:46+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -264,7 +264,7 @@ msgid "Default from locale"
 msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1040
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1044
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -334,7 +334,7 @@ msgstr[0] "प्रतिवर्षं %3 इत्यस्य %2 इत्�
 msgstr[1] "%3 इत्यस्य %2 इत्यत्र प्रत्येकं %1 वर्षेषु"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:554
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:737
 #, kde-format
 msgid "Never"
@@ -1127,101 +1127,108 @@ msgctxt "@title:group"
 msgid "End"
 msgstr "अंत:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:500
 #, fuzzy, kde-format
 #| msgid "Timezone:"
+msgctxt "@title"
 msgid "Timezone"
 msgstr "समयक्षेत्रम् :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
+#, fuzzy, kde-format
+#| msgid "Timezone:"
+msgid "Timezone:"
+msgstr "समयक्षेत्रम् :"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:519
 #, fuzzy, kde-format
 #| msgid "Repeat:"
 msgctxt "@title"
 msgid "Repeat"
 msgstr "परिहरन:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:528
 #, kde-format
 msgid "Repeat:"
 msgstr "परिहरन:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:555
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
 #, kde-format
 msgid "Daily"
 msgstr "प्रतिदिन"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
 #, kde-format
 msgid "Weekly"
 msgstr "साप्ताहिकम्"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
 #, kde-format
 msgid "Monthly"
 msgstr "मासिकम्"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
 #, kde-format
 msgid "Yearly"
 msgstr "वार्षिकम्"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:561
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
 #, kde-format
 msgid "Custom"
 msgstr "आचारः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:581
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgid "Every:"
 msgstr "प्रत्येकं:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:626
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "दिनं"
 msgstr[1] "दिवसाः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:627
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "सप्ताहः"
 msgstr[1] "सप्ताहाः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:630
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "माह"
 msgstr[1] "मासाः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:631
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "वर्ष"
 msgstr[1] "वर्षाः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:696
 #, kde-format
 msgid "On:"
 msgstr "इत्युपरि:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:702
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:704
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "प्रत्येकस्य मासस्य %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:717
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "प्रत्येकस्य मासस्य %1 %2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:727
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
 #, kde-format
 msgid "Ends:"
 msgstr "समाप्तः :"
@@ -1236,14 +1243,14 @@ msgstr "इत्युपरि"
 msgid "After"
 msgstr "अनन्तरम्‌"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:767
 #, fuzzy, kde-format
 #| msgid "Ends at %1"
 msgctxt "@label:spinbox"
 msgid "Ends after:"
 msgstr "%1 इत्यत्र समाप्तं भवति"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:769
 #, fuzzy, kde-format
 #| msgid "occurrence"
 #| msgid_plural "occurrences"
@@ -1252,91 +1259,91 @@ msgid_plural "%1 occurrences"
 msgstr[0] "घटना"
 msgstr[1] "घटनाः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:779
 #, kde-format
 msgid "Exceptions:"
 msgstr "अपवादाः :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:782
 #, fuzzy, kde-format
 #| msgid "Add"
 msgctxt "@action:button"
 msgid "Add"
 msgstr "संयोजयति"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
 #, fuzzy, kde-format
 #| msgid "Attendees:"
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "उपस्थिताः :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:835
 #, kde-format
 msgid "Add Attendee"
 msgstr "Attendee इति योजयतु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:862
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "सम्पर्कात् चयनं कुर्वन्तु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:863
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Manually पूरयन्तु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:872
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:876
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:132
 #, kde-format
 msgid "Name:"
 msgstr "नामः:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:927
 #, kde-format
 msgid "Optional"
 msgstr "वैकल्पिक"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:941
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgid "Email:"
 msgstr "ईमेल :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:948
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Required"
 msgstr "आवश्यकः"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:961
 #, kde-format
 msgid "Status:"
 msgstr "स्थितिः:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:985
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP अनुरोध करें"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
 #, fuzzy, kde-format
 #| msgid "Reminders:"
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "स्मरणम् :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1001
 #, kde-format
 msgid "Add Reminder"
 msgstr "स्मरणं योजयतु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
 #, fuzzy, kde-format
 #| msgid "This event has reminder"
 #| msgid_plural "This event has reminders"
@@ -1344,53 +1351,53 @@ msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "अस्मिन् आयोजने स्मारकं वर्तते"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1029
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "टैग्स"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1027
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgid "Manage tags…"
 msgstr "टैग्स् प्रबन्धयन्तु..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "टैग्स् सेट् कर्तुं ट्याप् कुर्वन्तु..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Click to set tags…"
 msgstr "टैग्स् सेट् कर्तुं क्लिक् कुर्वन्तु..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1091
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "संलग्नकाः :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1093
 #, kde-format
 msgid "Add Attachment"
 msgstr "संलग्नकं योजयतु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1096
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1100
 #, kde-format
 msgid "Add an attachment"
 msgstr "एकं आसक्तिं योजयन्तु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1109
 #, fuzzy, kde-format
 #| msgid "Add an attachment"
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "एकं आसक्तिं योजयन्तु"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1144
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1540,70 +1547,70 @@ msgstr "अपाकरोति"
 msgid "Return to Location"
 msgstr "स्थानं प्रति प्रत्यागच्छन्तु"
 
-#: calendar/qml/Main.qml:286
+#: calendar/qml/Main.qml:282
 #, fuzzy, kde-format
 #| msgid "Create"
 msgctxt "@action:button"
 msgid "Create"
 msgstr "निर्मियताम्"
 
-#: calendar/qml/Main.qml:291
+#: calendar/qml/Main.qml:287
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "नवीनः कार्यक्रमः..."
 
-#: calendar/qml/Main.qml:297
+#: calendar/qml/Main.qml:293
 #, fuzzy, kde-format
 #| msgid "New Task…"
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "नवीनं कार्यम्..."
 
-#: calendar/qml/Main.qml:306
+#: calendar/qml/Main.qml:302
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@title"
 msgid "Month"
 msgstr "माह"
 
-#: calendar/qml/Main.qml:309
+#: calendar/qml/Main.qml:305
 #, fuzzy, kde-format
 #| msgid "Week"
 msgctxt "@title"
 msgid "Week"
 msgstr "सप्ताहः"
 
-#: calendar/qml/Main.qml:312
+#: calendar/qml/Main.qml:308
 #, fuzzy, kde-format
 #| msgid "Week"
 msgctxt "@title"
 msgid "Work Week"
 msgstr "सप्ताहः"
 
-#: calendar/qml/Main.qml:315
+#: calendar/qml/Main.qml:311
 #, fuzzy, kde-format
 #| msgid "3 Days"
 msgctxt "@title"
 msgid "3 Days"
 msgstr "३ दिवसाः"
 
-#: calendar/qml/Main.qml:318
+#: calendar/qml/Main.qml:314
 #, fuzzy, kde-format
 #| msgid "Day"
 msgctxt "@title"
 msgid "Day"
 msgstr "दिनं"
 
-#: calendar/qml/Main.qml:321
+#: calendar/qml/Main.qml:317
 #, fuzzy, kde-format
 #| msgid "Schedule"
 msgctxt "@title"
 msgid "Schedule"
 msgstr "कार्यक्रमः"
 
-#: calendar/qml/Main.qml:324
+#: calendar/qml/Main.qml:320
 #, fuzzy, kde-format
 #| msgid "Tasks"
 msgctxt "@title"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-20 00:46+0000\n"
 "PO-Revision-Date: 2026-04-09 12:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -259,7 +259,7 @@ msgid "Default from locale"
 msgstr "Par défaut à partir des paramètres régionaux"
 
 #: calendar/models/todosortfilterproxymodel.cpp:161
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1040
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1044
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -329,7 +329,7 @@ msgstr[0] "Chaque année le %2 de %3"
 msgstr[1] "Toutes les %1 années le %2 de %3"
 
 #: calendar/qml/CalendarUtils/LabelUtils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:554
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:737
 #, kde-format
 msgid "Never"
@@ -1108,99 +1108,107 @@ msgctxt "@title:group"
 msgid "End"
 msgstr "Fin"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
-#, kde-format
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:500
+#, fuzzy, kde-format
+#| msgid "Timezone"
+msgctxt "@title"
 msgid "Timezone"
 msgstr "Fuseau horaire"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:517
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
+#, fuzzy, kde-format
+#| msgid "Timezone"
+msgid "Timezone:"
+msgstr "Fuseau horaire"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:519
 #, kde-format
 msgctxt "@title"
 msgid "Repeat"
 msgstr "Répéter"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:526
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:528
 #, kde-format
 msgid "Repeat:"
 msgstr "Répétition :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:555
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
 #, kde-format
 msgid "Daily"
 msgstr "Quotidiennement"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
 #, kde-format
 msgid "Weekly"
 msgstr "Hebdomadaire"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
 #, kde-format
 msgid "Monthly"
 msgstr "Mensuellement"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
 #, kde-format
 msgid "Yearly"
 msgstr "annuellement"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:561
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
 #, kde-format
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:581
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
 #, kde-format
 msgid "Every:"
 msgstr "Chaque :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:626
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "jour"
 msgstr[1] "jours"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:627
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "semaine"
 msgstr[1] "semaines"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:630
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "mois"
 msgstr[1] "mois"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:631
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "année"
 msgstr[1] "années"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:694
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:696
 #, kde-format
 msgid "On:"
 msgstr "Sur :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:702
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:704
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "Le %1 de chaque mois"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:717
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "Le %1 %2 de chaque mois"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:727
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
 #, kde-format
 msgid "Ends:"
 msgstr "Se termine :"
@@ -1215,150 +1223,150 @@ msgstr "Sur"
 msgid "After"
 msgstr "Après"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:763
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:767
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
 msgstr "Se termine après :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:769
 #, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
 msgstr[0] "%1 occurrence"
 msgstr[1] "%1 occurrences"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:775
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:779
 #, kde-format
 msgid "Exceptions:"
 msgstr "Exceptions :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:778
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:782
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Ajouter"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:825
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
 #, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "Participants"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:831
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:835
 #, kde-format
 msgid "Add Attendee"
 msgstr "Ajouter un participant"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:858
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:862
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Sélectionnez à partir des contacts"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:863
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Remplissez manuellement"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:872
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:876
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr "Il n'y a aucune personne participante"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:916
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:81
 #: contacts/qml/private/ContactPage.qml:132
 #, kde-format
 msgid "Name:"
 msgstr "Nom :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:923
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:927
 #, kde-format
 msgid "Optional"
 msgstr "Optionnel"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:941
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgid "Email:"
 msgstr "Courriel :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:948
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Required"
 msgstr "Nécessaire"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:957
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:961
 #, kde-format
 msgid "Status:"
 msgstr "État :"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:981
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:985
 #, kde-format
 msgid "Request RSVP"
 msgstr "Requête « RSVP »"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:995
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Rappels"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1001
 #, kde-format
 msgid "Add Reminder"
 msgstr "Ajouter un rappel"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1005
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1009
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "Il n'y a aucun rappel"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1025
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1029
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1027
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgid "Manage tags…"
 msgstr "Gérer les étiquettes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Tapoter pour définir les étiquettes..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1041
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1045
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Cliquez pour définir des étiquettes..."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1087
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1091
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Pièces jointes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1089
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1093
 #, kde-format
 msgid "Add Attachment"
 msgstr "Ajouter une pièce jointe"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1096
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1100
 #, kde-format
 msgid "Add an attachment"
 msgstr "Ajouter une pièce jointe"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1105
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1109
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "Il n'y a aucune pièce jointe"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1140
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1144
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1509,61 +1517,61 @@ msgstr "Supprimer"
 msgid "Return to Location"
 msgstr "Revenir à l'emplacement"
 
-#: calendar/qml/Main.qml:286
+#: calendar/qml/Main.qml:282
 #, kde-format
 msgctxt "@action:button"
 msgid "Create"
 msgstr "Créer"
 
-#: calendar/qml/Main.qml:291
+#: calendar/qml/Main.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "New Event…"
 msgstr "Nouvel évènement..."
 
-#: calendar/qml/Main.qml:297
+#: calendar/qml/Main.qml:293
 #, kde-format
 msgctxt "@action:button"
 msgid "New Task…"
 msgstr "Nouvelle tâche..."
 
-#: calendar/qml/Main.qml:306
+#: calendar/qml/Main.qml:302
 #, kde-format
 msgctxt "@title"
 msgid "Month"
 msgstr "Mois"
 
-#: calendar/qml/Main.qml:309
+#: calendar/qml/Main.qml:305
 #, kde-format
 msgctxt "@title"
 msgid "Week"
 msgstr "Semaine"
 
-#: calendar/qml/Main.qml:312
+#: calendar/qml/Main.qml:308
 #, kde-format
 msgctxt "@title"
 msgid "Work Week"
 msgstr "Semaine de travail"
 
-#: calendar/qml/Main.qml:315
+#: calendar/qml/Main.qml:311
 #, kde-format
 msgctxt "@title"
 msgid "3 Days"
 msgstr "3 jours"
 
-#: calendar/qml/Main.qml:318
+#: calendar/qml/Main.qml:314
 #, kde-format
 msgctxt "@title"
 msgid "Day"
 msgstr "Jour"
 
-#: calendar/qml/Main.qml:321
+#: calendar/qml/Main.qml:317
 #, kde-format
 msgctxt "@title"
 msgid "Schedule"
 msgstr "Calendrier"
 
-#: calendar/qml/Main.qml:324
+#: calendar/qml/Main.qml:320
 #, kde-format
 msgctxt "@title"
 msgid "Tasks"
