@@ -33,6 +33,36 @@ private Q_SLOTS:
         QCOMPARE(utils.secondsToReminderLabel(-7200), u"2 hours before start of event"_s);
         QCOMPARE(utils.secondsToReminderLabel(-259200), u"3 days before start of event"_s);
     }
+
+    void testStartOfWeekMonday()
+    {
+        QLocale locale(QLocale::German);
+        QCOMPARE(locale.firstDayOfWeek(), Qt::Monday);
+
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 15));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 15), locale), QDate(2024, 1, 15));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 21), locale), QDate(2024, 1, 15));
+    }
+
+    void testStartOfWeekSunday()
+    {
+        QLocale locale(QLocale::English);
+        QCOMPARE(locale.firstDayOfWeek(), Qt::Sunday);
+
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 14));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 14), locale), QDate(2024, 1, 14));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 20), locale), QDate(2024, 1, 14));
+    }
+
+    void testStartOfWeekSaturday()
+    {
+        QLocale locale(QLocale::Arabic);
+        QCOMPARE(locale.firstDayOfWeek(), Qt::Saturday);
+
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 13));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 13), locale), QDate(2024, 1, 13));
+        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 19), locale), QDate(2024, 1, 13));
+    }
 };
 
 QTEST_MAIN(CalendarUtilsTest)

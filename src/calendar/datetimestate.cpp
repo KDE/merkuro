@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "datetimestate.h"
+#include "utils.h"
 #include <QTimer>
 
 using namespace std::chrono_literals;
@@ -54,8 +55,9 @@ QDateTime DateTimeState::firstDayOfMonth() const
 
 QDateTime DateTimeState::firstDayOfWeek() const
 {
-    int dayOfWeek = m_selectedDate.date().dayOfWeek();
-    return m_selectedDate.addDays(-dayOfWeek + (m_locale.firstDayOfWeek() % 7));
+    QDateTime result = m_selectedDate;
+    result.setDate(Utils::startOfWeek(m_selectedDate.date(), m_locale));
+    return result;
 }
 
 void DateTimeState::resetTime()

@@ -30,6 +30,8 @@ public:
 
     Q_INVOKABLE int weekNumber(const QDate &date) const;
 
+    [[nodiscard]] static QDate startOfWeek(const QDate &date, const QLocale &locale);
+
 private:
     QStringList m_hourlyViewLocalisedHourLabels;
 };

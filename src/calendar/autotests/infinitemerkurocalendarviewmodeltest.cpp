@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "models/infinitemerkurocalendarviewmodel.h"
+#include "utils.h"
 
 #include <QAbstractItemModelTester>
 #include <QRandomGenerator>
@@ -60,7 +61,7 @@ private:
 
     static QDate firstWeekDayDateForDate(const QDate &date)
     {
-        return date.addDays(-date.dayOfWeek() + (QLocale::system().firstDayOfWeek() % 7));
+        return Utils::startOfWeek(date, QLocale::system());
     }
 
     static void genericMoveTest(InfiniteMerkuroCalendarViewModel &model, std::function<void(std::pair<int, QDate>, QDate)> moveVerifyingFunc)
