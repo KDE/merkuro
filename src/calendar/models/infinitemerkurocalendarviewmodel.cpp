@@ -4,6 +4,7 @@
 #include "models/infinitemerkurocalendarviewmodel.h"
 #include "incidenceoccurrencemodel.h"
 #include "merkuro_calendar_debug.h"
+#include "utils.h"
 #include <Akonadi/EntityTreeModel>
 #include <QMetaEnum>
 #include <cmath>
@@ -34,7 +35,7 @@ void InfiniteMerkuroCalendarViewModel::setup()
         break;
     }
     case WeekScale: {
-        QDate firstDay = today.addDays(-today.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
+        QDate firstDay = Utils::startOfWeek(today, m_locale);
         // We create dates before and after where our view will start from (which is today)
         firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
 
@@ -42,7 +43,7 @@ void InfiniteMerkuroCalendarViewModel::setup()
         break;
     }
     case WorkWeekScale: {
-        QDate firstDay = today.addDays(1 - today.dayOfWeek());
+        QDate firstDay = Utils::startOfWeek(today, m_locale);
         firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
         addWorkWeekDates(true, firstDay);
         break;
@@ -306,7 +307,7 @@ void InfiniteMerkuroCalendarViewModel::addWeekDates(const bool atEnd, const QDat
         }
 
         if (startDate.dayOfWeek() != m_locale.firstDayOfWeek()) {
-            startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
+            startDate = Utils::startOfWeek(startDate, m_locale);
         }
 
         if (atEnd) {
@@ -370,7 +371,7 @@ void InfiniteMerkuroCalendarViewModel::addMonthDates(const bool atEnd, const QDa
         }
         QDate startDate = firstDay;
 
-        startDate = startDate.addDays(-startDate.dayOfWeek() + (m_locale.firstDayOfWeek() % 7));
+        startDate = Utils::startOfWeek(startDate, m_locale);
         if (startDate >= firstDay) {
             startDate = startDate.addDays(-7);
         }

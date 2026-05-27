@@ -69,6 +69,11 @@ QDateTime Utils::addDaysToDate(const QDateTime &date, const int days)
     return date.addDays(days);
 }
 
+QDate Utils::startOfWeek(const QDate &date, const QLocale &locale)
+{
+    return date.addDays(-((date.dayOfWeek() - locale.firstDayOfWeek() + 7) % 7));
+}
+
 int Utils::weekNumber(const QDate &date) const
 {
     return date.weekNumber();
