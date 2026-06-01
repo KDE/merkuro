@@ -201,3 +201,5 @@ bool AccountsModel::onlineAccountsAvailable() const
 {
     return QDBusConnection::sessionBus().interface()->isServiceRegistered(u"org.kde.KOnlineAccounts"_s);
 }
+
+#include "moc_accountsmodel.cpp"
