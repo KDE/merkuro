@@ -3,8 +3,11 @@
 
 import QtQuick
 import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.akonadi as Akonadi
+
+import org.kde.merkuro.components
 
 FormCard.FormCardPage {
     id: root
@@ -20,4 +23,23 @@ FormCard.FormCardPage {
         addPageTitle: i18n("Add New Address Book Source…")
         Layout.fillWidth: true
     }
+
+    FormCard.FormHeader {
+        title: i18n("System Accounts")
+
+        visible: systemAccountsForm.available
+
+        Layout.fillWidth: true
+        Layout.topMargin: Kirigami.Units.largeSpacing
+    }
+
+    SystemAccountsForm {
+        id: systemAccountsForm
+
+        visible: available
+
+        Layout.fillWidth: true
+        types: ["carddav", "google"]
+    }
+
 }

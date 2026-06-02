@@ -80,6 +80,7 @@ ecm_target_qml_sources(MerkuroComponents SOURCES
         qml/WindowMenu.qml
         qml/HelpMenu.qml
         qml/SettingsMenu.qml
+        qml/SystemAccountsForm.qml
 
         # global menu components
         qml/NativeFileMenu.qml
