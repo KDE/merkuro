@@ -39,6 +39,6 @@ FormCard.FormCardPage {
         visible: available
 
         Layout.fillWidth: true
-        types: ["caldav"]
+        types: ["caldav", "google"]
     }
 }
