@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-06-02 00:44+0000\n"
 "PO-Revision-Date: 2025-09-21 13:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -3931,13 +3931,13 @@ msgstr "உடனிணைப்புகள்:"
 msgid "This mail contains an invitation"
 msgstr "இவ்வஞ்சல் அழைப்பிதழைக் கொண்டுள்ளது"
 
-#: mail/settings/AccountSettingsPage.qml:18
+#: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "அடையாளங்கள்"
 
-#: mail/settings/AccountSettingsPage.qml:26
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3945,16 +3945,62 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "அஞ்சல்பெறு கணக்குகள்"
 
-#: mail/settings/AccountSettingsPage.qml:30
+#: mail/settings/AccountSettingsPage.qml:31
+#: mail/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "அஞ்சல் கணக்கு அமைப்புகள்"
+
+#: mail/settings/AccountSettingsPage.qml:37
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@title:group Title for the list of receiving accounts which are imap or "
+#| "pop3 email accounts"
+#| msgid "Receiving Accounts"
+msgctxt ""
+"@title:group Title for the list of sending accounts which are SMTP email "
+"accounts"
+msgid "Sending Accounts"
+msgstr "அஞ்சல்பெறு கணக்குகள்"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "கணக்குகள்"
+
+#: mail/settings/TransportConfigurationForm.qml:31
+#, fuzzy, kde-format
+#| msgid "Configure %1"
+msgctxt "@title:dialog"
+msgid "Configure %1"
+msgstr "%1 தனை அமை"
+
+#: mail/settings/TransportConfigurationForm.qml:37
+#, fuzzy, kde-format
+#| msgid "Modify or delete this account agent."
+msgctxt "@info"
+msgid "Modify or delete this account transport."
+msgstr "இந்த கணக்கிற்கான பின்னணி சேவையை மாற்றியமையுங்கள் அல்லது நீக்குங்கள்."
+
+#: mail/settings/TransportConfigurationForm.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Modify"
+msgstr "திருத்து"
+
+#: mail/settings/TransportConfigurationForm.qml:62
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: mail/settings/TransportConfigurationForm.qml:101
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button"
+msgid "Add Account"
+msgstr "கணக்கை சேர்"
 
 #~ msgid "Calendar:"
 #~ msgstr "நாள்காட்டி:"
@@ -4019,20 +4065,6 @@ msgstr "கணக்குகள்"
 
 #~ msgid "Email Free/Busy"
 #~ msgstr "வேலையுள்ள/இல்லா விவரங்களை மின்னஞ்சலனுப்பு"
-
-#~ msgid "Configure %1"
-#~ msgstr "%1 தனை அமை"
-
-#~ msgid "Modify or delete this account agent."
-#~ msgstr "இந்த கணக்கிற்கான பின்னணி சேவையை மாற்றியமையுங்கள் அல்லது நீக்குங்கள்."
-
-#~ msgctxt "@action:button"
-#~ msgid "Modify"
-#~ msgstr "திருத்து"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "நீக்கு"
 
 #~ msgid "Manage Tags"
 #~ msgstr "குறிச்சொற்களை நிர்வகி"

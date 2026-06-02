@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-06-02 00:44+0000\n"
 "PO-Revision-Date: 2025-03-23 07:29+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -3927,13 +3927,13 @@ msgstr "Alligaĵoj:"
 msgid "This mail contains an invitation"
 msgstr "Ĉi tiu poŝto enhavas inviton"
 
-#: mail/settings/AccountSettingsPage.qml:18
+#: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Identecoj"
 
-#: mail/settings/AccountSettingsPage.qml:26
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3941,16 +3941,62 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Ricevantaj Kontoj"
 
-#: mail/settings/AccountSettingsPage.qml:30
+#: mail/settings/AccountSettingsPage.qml:31
+#: mail/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Agordo de Poŝtkonto"
+
+#: mail/settings/AccountSettingsPage.qml:37
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@title:group Title for the list of receiving accounts which are imap or "
+#| "pop3 email accounts"
+#| msgid "Receiving Accounts"
+msgctxt ""
+"@title:group Title for the list of sending accounts which are SMTP email "
+"accounts"
+msgid "Sending Accounts"
+msgstr "Ricevantaj Kontoj"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Kontoj"
+
+#: mail/settings/TransportConfigurationForm.qml:31
+#, fuzzy, kde-format
+#| msgid "Configure %1"
+msgctxt "@title:dialog"
+msgid "Configure %1"
+msgstr "Agordi %1"
+
+#: mail/settings/TransportConfigurationForm.qml:37
+#, fuzzy, kde-format
+#| msgid "Modify or delete this account agent."
+msgctxt "@info"
+msgid "Modify or delete this account transport."
+msgstr "Modifi aŭ forigi ĉi tiun kontan agenton."
+
+#: mail/settings/TransportConfigurationForm.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Modify"
+msgstr "Modifi"
+
+#: mail/settings/TransportConfigurationForm.qml:62
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Forigi"
+
+#: mail/settings/TransportConfigurationForm.qml:101
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button"
+msgid "Add Account"
+msgstr "Aldoni konto"
 
 #~ msgid "Calendar:"
 #~ msgstr "Kalendaro:"
@@ -4015,20 +4061,6 @@ msgstr "Kontoj"
 
 #~ msgid "Email Free/Busy"
 #~ msgstr "Retpoŝti Libera/Okupita"
-
-#~ msgid "Configure %1"
-#~ msgstr "Agordi %1"
-
-#~ msgid "Modify or delete this account agent."
-#~ msgstr "Modifi aŭ forigi ĉi tiun kontan agenton."
-
-#~ msgctxt "@action:button"
-#~ msgid "Modify"
-#~ msgstr "Modifi"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "Forigi"
 
 #~ msgid "Manage Tags"
 #~ msgstr "Administri Etikedojn"

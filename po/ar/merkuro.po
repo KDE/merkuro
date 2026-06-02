@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-06-02 00:44+0000\n"
 "PO-Revision-Date: 2026-05-21 10:59+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3947,13 +3947,13 @@ msgstr "أرفق مستنداً"
 msgid "This mail contains an invitation"
 msgstr "هذا البريد يحوي دعوة"
 
-#: mail/settings/AccountSettingsPage.qml:18
+#: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "الهويّات"
 
-#: mail/settings/AccountSettingsPage.qml:26
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3961,16 +3961,63 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "حسابات الاستقبال"
 
-#: mail/settings/AccountSettingsPage.qml:30
+#: mail/settings/AccountSettingsPage.qml:31
+#: mail/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "اضبط حساب البريد"
+
+#: mail/settings/AccountSettingsPage.qml:37
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@title:group Title for the list of receiving accounts which are imap or "
+#| "pop3 email accounts"
+#| msgid "Receiving Accounts"
+msgctxt ""
+"@title:group Title for the list of sending accounts which are SMTP email "
+"accounts"
+msgid "Sending Accounts"
+msgstr "حسابات الاستقبال"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "الحسابات"
+
+#: mail/settings/TransportConfigurationForm.qml:31
+#, fuzzy, kde-format
+#| msgid "Configure %1"
+msgctxt "@title:dialog"
+msgid "Configure %1"
+msgstr "اضبط %1"
+
+#: mail/settings/TransportConfigurationForm.qml:37
+#, fuzzy, kde-format
+#| msgid "Modify or delete this account agent."
+msgctxt "@info"
+msgid "Modify or delete this account transport."
+msgstr "عدّل أو احذف وكيل الحساب."
+
+#: mail/settings/TransportConfigurationForm.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Modify"
+msgstr "عدّل"
+
+#: mail/settings/TransportConfigurationForm.qml:62
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "احذف"
+
+#: mail/settings/TransportConfigurationForm.qml:101
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add Account…"
+msgctxt "@action:button"
+msgid "Add Account"
+msgstr "أضف حسابًا…"
 
 #~ msgid "Calendar:"
 #~ msgstr "التقويم:"
@@ -4035,20 +4082,6 @@ msgstr "الحسابات"
 
 #~ msgid "Email Free/Busy"
 #~ msgstr "متوفر/مشغول البريد الإلكترونيّ"
-
-#~ msgid "Configure %1"
-#~ msgstr "اضبط %1"
-
-#~ msgid "Modify or delete this account agent."
-#~ msgstr "عدّل أو احذف وكيل الحساب."
-
-#~ msgctxt "@action:button"
-#~ msgid "Modify"
-#~ msgstr "عدّل"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "احذف"
 
 #~ msgid "Manage Tags"
 #~ msgstr "أدِر الوسوم"

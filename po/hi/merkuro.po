@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-06-02 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -3985,13 +3985,13 @@ msgstr "संलग्नक :"
 msgid "This mail contains an invitation"
 msgstr "इस मेल में एक निमंत्रण है"
 
-#: mail/settings/AccountSettingsPage.qml:18
+#: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "पहचान"
 
-#: mail/settings/AccountSettingsPage.qml:26
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3999,16 +3999,64 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "प्राप्तकर्ता खाते"
 
-#: mail/settings/AccountSettingsPage.qml:30
+#: mail/settings/AccountSettingsPage.qml:31
+#: mail/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "मेल खाता विन्यास"
+
+#: mail/settings/AccountSettingsPage.qml:37
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@title:group Title for the list of receiving accounts which are imap or "
+#| "pop3 email accounts"
+#| msgid "Receiving Accounts"
+msgctxt ""
+"@title:group Title for the list of sending accounts which are SMTP email "
+"accounts"
+msgid "Sending Accounts"
+msgstr "प्राप्तकर्ता खाते"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "खाते"
+
+#: mail/settings/TransportConfigurationForm.qml:31
+#, fuzzy, kde-format
+#| msgid "Configure %1"
+msgctxt "@title:dialog"
+msgid "Configure %1"
+msgstr "%1 विन्यस्त करें"
+
+#: mail/settings/TransportConfigurationForm.qml:37
+#, fuzzy, kde-format
+#| msgid "Modify or delete this account agent."
+msgctxt "@info"
+msgid "Modify or delete this account transport."
+msgstr "इस खाता एजेंट को संशोधित करें या हटाएं ।"
+
+#: mail/settings/TransportConfigurationForm.qml:53
+#, fuzzy, kde-format
+#| msgid "Modify"
+msgctxt "@action:button"
+msgid "Modify"
+msgstr "संशोधित"
+
+#: mail/settings/TransportConfigurationForm.qml:62
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "हटाएं"
+
+#: mail/settings/TransportConfigurationForm.qml:101
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button"
+msgid "Add Account"
+msgstr "खाता जोड़ें"
 
 #~ msgid "Calendar:"
 #~ msgstr "कैलेंडर :"
@@ -4075,24 +4123,6 @@ msgstr "खाते"
 
 #~ msgid "Email Free/Busy"
 #~ msgstr "ईमेल खाली/व्यस्त"
-
-#~ msgid "Configure %1"
-#~ msgstr "%1 विन्यस्त करें"
-
-#~ msgid "Modify or delete this account agent."
-#~ msgstr "इस खाता एजेंट को संशोधित करें या हटाएं ।"
-
-#, fuzzy
-#~| msgid "Modify"
-#~ msgctxt "@action:button"
-#~ msgid "Modify"
-#~ msgstr "संशोधित"
-
-#, fuzzy
-#~| msgid "Delete"
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "हटाएं"
 
 #~ msgid "Manage Tags"
 #~ msgstr "टैग्स प्रबंधित करें"

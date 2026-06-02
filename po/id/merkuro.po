@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-06-02 00:44+0000\n"
 "PO-Revision-Date: 2023-03-22 00:50+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -3953,14 +3953,14 @@ msgstr "Tambahkan Kontak"
 msgid "This mail contains an invitation"
 msgstr ""
 
-#: mail/settings/AccountSettingsPage.qml:18
+#: mail/settings/AccountSettingsPage.qml:19
 #, fuzzy, kde-format
 #| msgid "Add Contact"
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Tambahkan Kontak"
 
-#: mail/settings/AccountSettingsPage.qml:26
+#: mail/settings/AccountSettingsPage.qml:27
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -3968,9 +3968,18 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr ""
 
-#: mail/settings/AccountSettingsPage.qml:30
+#: mail/settings/AccountSettingsPage.qml:31
+#: mail/settings/AccountSettingsPage.qml:41
 #, kde-format
 msgid "Mail Account Configuration"
+msgstr ""
+
+#: mail/settings/AccountSettingsPage.qml:37
+#, kde-format
+msgctxt ""
+"@title:group Title for the list of sending accounts which are SMTP email "
+"accounts"
+msgid "Sending Accounts"
 msgstr ""
 
 #: mail/settings/Settings.qml:12
@@ -3978,6 +3987,39 @@ msgstr ""
 msgctxt "@title"
 msgid "Accounts"
 msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:31
+#, kde-format
+msgctxt "@title:dialog"
+msgid "Configure %1"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:37
+#, kde-format
+msgctxt "@info"
+msgid "Modify or delete this account transport."
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Modify"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:62
+#, fuzzy, kde-format
+#| msgctxt "text editing menu action"
+#| msgid "Delete"
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Hapus"
+
+#: mail/settings/TransportConfigurationForm.qml:101
+#, fuzzy, kde-format
+#| msgid "Add Contact"
+msgctxt "@action:button"
+msgid "Add Account"
+msgstr "Tambahkan Kontak"
 
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "Tambahkan Pengecualian Pengulangan"
@@ -3994,13 +4036,6 @@ msgstr ""
 #~| msgid_plural "Email Addresses"
 #~ msgid "Email Free/Busy"
 #~ msgstr "Alamat Surel"
-
-#, fuzzy
-#~| msgctxt "text editing menu action"
-#~| msgid "Delete"
-#~ msgctxt "@action:button"
-#~ msgid "Delete"
-#~ msgstr "Hapus"
 
 #, fuzzy
 #~| msgid "Add email"
