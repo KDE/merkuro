@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-02 00:44+0000\n"
+"POT-Creation-Date: 2026-06-04 00:45+0000\n"
 "PO-Revision-Date: 2026-06-02 08:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1590,78 +1590,108 @@ msgstr "Restableix"
 msgid "All day or Multi day"
 msgstr "Tot el dia o diversos dies"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:167
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:165
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Represents a date format. This should be adapted to locale conventions. "
+#| msgid "ddd d"
 msgctxt ""
-"Represents a date format. This should be adapted to locale conventions. "
+"A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
+"qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
+"above this in the UI, and should be omitted."
 msgid "ddd d"
 msgstr "ddd d"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:171
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:168
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "%1 & %2 are two localised short dates indicating the start & end of a "
+#| "week using the format"
+#| msgid "%1–%2"
 msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
-"using the format"
+"(e.g. Mon 2–Sun 9). %1 is the start, %2 the end."
 msgid "%1–%2"
 msgstr "%1–%2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:184
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:178
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Represents a date format. This should be adapted to locale conventions. "
+#| msgid "dddd d"
 msgctxt ""
-"Represents a date format. This should be adapted to locale conventions. "
+"A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
+"qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
+"above this in the UI, and should be omitted. Will be read by a screen reader."
 msgid "dddd d"
 msgstr "dddd d"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:188
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:181
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "%1 & %2 are two localised dates indicating the start & end of a week "
+#| "using the format specified above."
+#| msgid "From %1 to %2"
 msgctxt ""
-"%1 & %2 are two localised dates indicating the start & end of a week using "
-"the format specified above."
+"%1 & %2 are two localised dates indicating the start & end of a week (e.g. "
+"From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is "
+"intended to be read by a screen reader."
 msgid "From %1 to %2"
 msgstr "Des de %1 a %2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:277
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:267
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Represents a date format. This should be adapted to locale conventions. "
+#| msgid "dddd d"
 msgctxt ""
-"Short date format, indicating name of day of week and number of day of "
-"month. "
+"Short date format, adapt formatting to locale conventions (see https://doc."
+"qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen "
+"reader."
 msgid "dddd d"
 msgstr "dddd d"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:300
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:287
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Short date format, showing name of day of week and number of day of "
+#| "month. "
+#| msgid "ddd <b>dd</b>"
 msgctxt ""
-"Short date format, showing name of day of week and number of day of month. "
+"Short date format, adapt formatting to locale conventions (see https://doc."
+"qt.io/qt-6/qml-qtqml-qt.html#formatDate-method)."
 msgid "ddd <b>dd</b>"
 msgstr "ddd <b>dd</b>"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:323
-#, kde-format
+#: calendar/qml/MainViews/BasicMonthListView.qml:306
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "Short date format, showing name of day of week and emphasising the number "
+#| "of day of month. "
+#| msgid "ddd<br><b>dd</b>"
 msgctxt ""
-"Short date format, showing name of day of week and emphasising the number of "
-"day of month. "
+"Short date format, adapt formatting to locale conventions (see https://doc."
+"qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Name of month and year is "
+"shown in the section title."
 msgid "ddd<br><b>dd</b>"
 msgstr "ddd<br><b>dd</b>"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:347
+#: calendar/qml/MainViews/BasicMonthListView.qml:330
 #, kde-format
 msgctxt "Date has no events or tasks set"
 msgid "Clear day."
 msgstr "Neteja el dia."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:366
-#, kde-format
-msgid "Tap"
-msgstr "Toca"
+#: calendar/qml/MainViews/BasicMonthListView.qml:350
+#, fuzzy, kde-format
+#| msgid "Nothing on the books today. %1 to add something."
+msgid "Nothing on the books today. Tap to add something."
+msgstr "Res sobre els llibres d'avui. %1 per a afegir alguna cosa."
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:366
-#, kde-format
-msgid "Click"
-msgstr "Clic"
-
-#: calendar/qml/MainViews/BasicMonthListView.qml:367
-#, kde-format
-msgid "Nothing on the books today. %1 to add something."
+#: calendar/qml/MainViews/BasicMonthListView.qml:351
+#, fuzzy, kde-format
+#| msgid "Nothing on the books today. %1 to add something."
+msgid "Nothing on the books today. Click to add something."
 msgstr "Res sobre els llibres d'avui. %1 per a afegir alguna cosa."
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
@@ -2075,16 +2105,10 @@ msgstr "Usa l'adreça de correu completa per a la recuperació"
 msgid "Add New Calendar Source…"
 msgstr "Afegeix una font nova de calendari…"
 
-#: calendar/qml/Settings/SourceSettingsPage.qml:28
+#: calendar/qml/Settings/SourceSettingsPage.qml:28 contacts/qml/Settings.qml:28
 #, kde-format
 msgid "System Accounts"
 msgstr "Comptes del sistema"
-
-#: calendar/qml/Settings/SystemAccountsForm.qml:57
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Account…"
-msgstr "Afegeix un compte…"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
@@ -2544,6 +2568,12 @@ msgstr "Surt de pantalla completa"
 msgctxt "@action:menu"
 msgid "Enter Full Screen"
 msgstr "Entra a pantalla completa"
+
+#: components/qml/SystemAccountsForm.qml:57
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Account…"
+msgstr "Afegeix un compte…"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
 #: contacts/qml/private/ContactPage.qml:241
@@ -3511,18 +3541,18 @@ msgstr "Codi QR"
 msgid "Creating QR code failed"
 msgstr "Ha fallat la creació del codi QR"
 
-#: contacts/qml/Settings.qml:12
+#: contacts/qml/Settings.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuració"
 
-#: contacts/qml/Settings.qml:15
+#: contacts/qml/Settings.qml:18
 #, kde-format
 msgid "Contact Books"
 msgstr "Llibretes de contactes"
 
-#: contacts/qml/Settings.qml:20
+#: contacts/qml/Settings.qml:23
 #, kde-format
 msgid "Add New Address Book Source…"
 msgstr "Afegeix una font nova de llibreta d'adreces…"
@@ -3636,8 +3666,8 @@ msgstr "Error en crear el transport"
 #: mail/mailclient.cpp:143
 #, kde-format
 msgctxt "Separator between identity name and email address"
-msgid " - "
-msgstr " - "
+msgid " — "
+msgstr ""
 
 #: mail/mailclient.cpp:193
 #, kde-format
@@ -3929,6 +3959,22 @@ msgstr "Suprimeix"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Afegeix un compte"
+
+#~ msgctxt ""
+#~ "Short date format, indicating name of day of week and number of day of "
+#~ "month. "
+#~ msgid "dddd d"
+#~ msgstr "dddd d"
+
+#~ msgid "Tap"
+#~ msgstr "Toca"
+
+#~ msgid "Click"
+#~ msgstr "Clic"
+
+#~ msgctxt "Separator between identity name and email address"
+#~ msgid " - "
+#~ msgstr " - "
 
 #~ msgid "Calendar:"
 #~ msgstr "Calendari:"
