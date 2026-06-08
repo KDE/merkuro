@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-04 00:45+0000\n"
-"PO-Revision-Date: 2026-05-21 00:26+0900\n"
+"PO-Revision-Date: 2026-06-07 16:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1571,10 +1571,7 @@ msgid "All day or Multi day"
 msgstr "整天或多日"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:165
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "ddd d"
+#, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
@@ -1583,11 +1580,7 @@ msgid "ddd d"
 msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:168
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 & %2 are two localised short dates indicating the start & end of a "
-#| "week using the format"
-#| msgid "%1–%2"
+#, kde-format
 msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "(e.g. Mon 2–Sun 9). %1 is the start, %2 the end."
@@ -1595,10 +1588,7 @@ msgid "%1–%2"
 msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:178
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "dddd d"
+#, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
@@ -1607,11 +1597,7 @@ msgid "dddd d"
 msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:181
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 & %2 are two localised dates indicating the start & end of a week "
-#| "using the format specified above."
-#| msgid "From %1 to %2"
+#, kde-format
 msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week (e.g. "
 "From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is "
@@ -1620,10 +1606,7 @@ msgid "From %1 to %2"
 msgstr "從 %1 到 %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:267
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "dddd d"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen "
@@ -1632,11 +1615,7 @@ msgid "dddd d"
 msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:287
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Short date format, showing name of day of week and number of day of "
-#| "month. "
-#| msgid "ddd <b>dd</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method)."
@@ -1644,11 +1623,7 @@ msgid "ddd <b>dd</b>"
 msgstr "<b>dd</b>日（ddd）"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:306
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Short date format, showing name of day of week and emphasising the number "
-#| "of day of month. "
-#| msgid "ddd<br><b>dd</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Name of month and year is "
@@ -1663,16 +1638,14 @@ msgid "Clear day."
 msgstr "沒有事情的一天。"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:350
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Tap to add something."
-msgstr "今天沒有任何活動。%1來新增一些。"
+msgstr "今天沒有任何活動。輕點來新增。"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:351
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Click to add something."
-msgstr "今天沒有任何活動。%1來新增一些。"
+msgstr "今天沒有任何活動。點擊來新增。"
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -3623,7 +3596,7 @@ msgstr "建立傳輸時發生錯誤"
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
-msgstr ""
+msgstr " — "
 
 #: mail/mailclient.cpp:193
 #, kde-format
@@ -3870,16 +3843,12 @@ msgid "Mail Account Configuration"
 msgstr "郵件帳號設定"
 
 #: mail/settings/AccountSettingsPage.qml:37
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@title:group Title for the list of receiving accounts which are imap or "
-#| "pop3 email accounts"
-#| msgid "Receiving Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
-msgstr "收件帳號"
+msgstr "寄件帳號"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
@@ -3888,18 +3857,16 @@ msgid "Accounts"
 msgstr "帳號"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, fuzzy, kde-format
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Configure %1"
 msgstr "設定 %1"
 
 #: mail/settings/TransportConfigurationForm.qml:37
-#, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
+#, kde-format
 msgctxt "@info"
 msgid "Modify or delete this account transport."
-msgstr "修改或刪除這個帳號代理。"
+msgstr "修改或刪除這個帳號傳輸。"
 
 #: mail/settings/TransportConfigurationForm.qml:53
 #, kde-format
@@ -3914,12 +3881,10 @@ msgid "Delete"
 msgstr "刪除"
 
 #: mail/settings/TransportConfigurationForm.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
-msgstr "新增帳號…"
+msgstr "新增帳號"
 
 #~ msgctxt ""
 #~ "Short date format, indicating name of day of week and number of day of "
