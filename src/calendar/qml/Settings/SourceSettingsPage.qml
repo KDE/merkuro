@@ -9,6 +9,7 @@ import org.kde.merkuro.calendar
 import org.kde.akonadi
 
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.merkuro.components
 
 FormCard.FormCardPage {
     id: root
