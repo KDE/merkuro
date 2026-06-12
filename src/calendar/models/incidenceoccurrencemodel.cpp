@@ -136,14 +136,11 @@ void IncidenceOccurrenceModel::resetFromSource()
         return;
     }
 
-    setLoading(true);
-
-    if (m_resetThrottlingTimer.isActive() || m_coreCalendar->isLoading()) {
-        // If calendar is still loading then just schedule a refresh later
-        // If refresh timer already active this won't restart it
-        scheduleReset();
+    if (m_resetThrottlingTimer.isActive()) {
         return;
     }
+
+    setLoading(true);
 
     loadColors();
 
