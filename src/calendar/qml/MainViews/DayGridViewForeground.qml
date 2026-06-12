@@ -112,7 +112,7 @@ Column {
                             height: line.height
                             parentViewSpacing: root.spacing
                             horizontalSpacing: linesRepeater.spacing
-                            openOccurrenceId: root.openOccurrence ? root.openOccurrence.incidenceId : ""
+                            openOccurrenceId: root.openOccurrence && root.openOccurrence.incidenceId ? root.openOccurrence.incidenceId : ""
                             dragDropEnabled: root.dragDropEnabled
                         }
                     }
