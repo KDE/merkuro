@@ -270,7 +270,7 @@ QVariant IncidenceOccurrenceModel::data(const QModelIndex &idx, int role) const
     }
     case DurationString: {
         const KCalendarCore::Duration duration(occurrence.start, occurrence.end);
-        return Utils::formatSpelloutDuration(duration, m_format, occurrence.allDay);
+        return CalendarUtils::formatSpelloutDuration(duration, m_format, occurrence.allDay);
     }
     case Recurs:
         return incidence->recurs();

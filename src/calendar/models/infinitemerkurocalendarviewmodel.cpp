@@ -35,7 +35,7 @@ void InfiniteMerkuroCalendarViewModel::setup()
         break;
     }
     case WeekScale: {
-        QDate firstDay = Utils::startOfWeek(today, m_locale);
+        QDate firstDay = CalendarUtils::startOfWeek(today, m_locale);
         // We create dates before and after where our view will start from (which is today)
         firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
 
@@ -43,7 +43,7 @@ void InfiniteMerkuroCalendarViewModel::setup()
         break;
     }
     case WorkWeekScale: {
-        QDate firstDay = Utils::startOfWeek(today, m_locale);
+        QDate firstDay = CalendarUtils::startOfWeek(today, m_locale);
         firstDay = firstDay.addDays(-m_datesToAdd / 2 * 7);
         addWorkWeekDates(true, firstDay);
         break;
@@ -307,7 +307,7 @@ void InfiniteMerkuroCalendarViewModel::addWeekDates(const bool atEnd, const QDat
         }
 
         if (startDate.dayOfWeek() != m_locale.firstDayOfWeek()) {
-            startDate = Utils::startOfWeek(startDate, m_locale);
+            startDate = CalendarUtils::startOfWeek(startDate, m_locale);
         }
 
         if (atEnd) {
@@ -371,7 +371,7 @@ void InfiniteMerkuroCalendarViewModel::addMonthDates(const bool atEnd, const QDa
         }
         QDate startDate = firstDay;
 
-        startDate = Utils::startOfWeek(startDate, m_locale);
+        startDate = CalendarUtils::startOfWeek(startDate, m_locale);
         if (startDate >= firstDay) {
             startDate = startDate.addDays(-7);
         }

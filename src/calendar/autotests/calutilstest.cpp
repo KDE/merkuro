@@ -14,7 +14,7 @@ public:
     ~CalendarUtilsTest() override = default;
 
 private:
-    Utils utils;
+    CalendarUtils utils;
 
 private Q_SLOTS:
     void initTestCase()
@@ -39,9 +39,9 @@ private Q_SLOTS:
         QLocale locale(QLocale::German);
         QCOMPARE(locale.firstDayOfWeek(), Qt::Monday);
 
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 15));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 15), locale), QDate(2024, 1, 15));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 21), locale), QDate(2024, 1, 15));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 15));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 15), locale), QDate(2024, 1, 15));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 21), locale), QDate(2024, 1, 15));
     }
 
     void testStartOfWeekSunday()
@@ -49,9 +49,9 @@ private Q_SLOTS:
         QLocale locale(QLocale::English);
         QCOMPARE(locale.firstDayOfWeek(), Qt::Sunday);
 
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 14));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 14), locale), QDate(2024, 1, 14));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 20), locale), QDate(2024, 1, 14));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 14));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 14), locale), QDate(2024, 1, 14));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 20), locale), QDate(2024, 1, 14));
     }
 
     void testStartOfWeekSaturday()
@@ -59,9 +59,9 @@ private Q_SLOTS:
         QLocale locale(QLocale::Arabic);
         QCOMPARE(locale.firstDayOfWeek(), Qt::Saturday);
 
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 13));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 13), locale), QDate(2024, 1, 13));
-        QCOMPARE(Utils::startOfWeek(QDate(2024, 1, 19), locale), QDate(2024, 1, 13));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 17), locale), QDate(2024, 1, 13));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 13), locale), QDate(2024, 1, 13));
+        QCOMPARE(CalendarUtils::startOfWeek(QDate(2024, 1, 19), locale), QDate(2024, 1, 13));
     }
 };
 

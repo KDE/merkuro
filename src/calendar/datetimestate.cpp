@@ -56,7 +56,7 @@ QDateTime DateTimeState::firstDayOfMonth() const
 QDateTime DateTimeState::firstDayOfWeek() const
 {
     QDateTime result = m_selectedDate;
-    result.setDate(Utils::startOfWeek(m_selectedDate.date(), m_locale));
+    result.setDate(CalendarUtils::startOfWeek(m_selectedDate.date(), m_locale));
     return result;
 }
 

@@ -30,7 +30,7 @@ QString numAndUnit(const qint64 seconds)
 };
 }
 
-Utils::Utils(QObject *parent)
+CalendarUtils::CalendarUtils(QObject *parent)
     : QObject(parent)
 {
     QTime time;
@@ -40,7 +40,7 @@ Utils::Utils(QObject *parent)
     }
 }
 
-QString Utils::secondsToReminderLabel(const qint64 seconds) const
+QString CalendarUtils::secondsToReminderLabel(const qint64 seconds) const
 {
     if (seconds < 0) {
         return i18n("%1 before start of event", numAndUnit(seconds * -1));
@@ -51,7 +51,7 @@ QString Utils::secondsToReminderLabel(const qint64 seconds) const
     }
 }
 
-QString Utils::formatSpelloutDuration(const KCalendarCore::Duration &duration, const KFormat &format, const bool allDay)
+QString CalendarUtils::formatSpelloutDuration(const KCalendarCore::Duration &duration, const KFormat &format, const bool allDay)
 {
     if (duration.asSeconds() == 0) {
         return QString();
@@ -64,22 +64,22 @@ QString Utils::formatSpelloutDuration(const KCalendarCore::Duration &duration, c
     }
 }
 
-QDateTime Utils::addDaysToDate(const QDateTime &date, const int days)
+QDateTime CalendarUtils::addDaysToDate(const QDateTime &date, const int days)
 {
     return date.addDays(days);
 }
 
-QDate Utils::startOfWeek(const QDate &date, const QLocale &locale)
+QDate CalendarUtils::startOfWeek(const QDate &date, const QLocale &locale)
 {
     return date.addDays(-((date.dayOfWeek() - locale.firstDayOfWeek() + 7) % 7));
 }
 
-int Utils::weekNumber(const QDate &date) const
+int CalendarUtils::weekNumber(const QDate &date) const
 {
     return date.weekNumber();
 }
 
-QStringList Utils::hourlyViewLocalisedHourLabels() const
+QStringList CalendarUtils::hourlyViewLocalisedHourLabels() const
 {
     return m_hourlyViewLocalisedHourLabels;
 }

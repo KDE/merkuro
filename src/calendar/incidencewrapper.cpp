@@ -451,7 +451,7 @@ KCalendarCore::Duration IncidenceWrapper::duration() const
 
 QString IncidenceWrapper::durationDisplayString() const
 {
-    return Utils::formatSpelloutDuration(duration(), m_format, allDay());
+    return CalendarUtils::formatSpelloutDuration(duration(), m_format, allDay());
 }
 
 bool IncidenceWrapper::allDay() const

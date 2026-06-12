@@ -61,7 +61,7 @@ private:
 
     static QDate firstWeekDayDateForDate(const QDate &date)
     {
-        return Utils::startOfWeek(date, QLocale::system());
+        return CalendarUtils::startOfWeek(date, QLocale::system());
     }
 
     static void genericMoveTest(InfiniteMerkuroCalendarViewModel &model, std::function<void(std::pair<int, QDate>, QDate)> moveVerifyingFunc)

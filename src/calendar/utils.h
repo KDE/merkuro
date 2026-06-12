@@ -8,16 +8,17 @@
 #include <QObject>
 #include <qqmlregistration.h>
 
-class Utils : public QObject
+class CalendarUtils : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
+    QML_NAMED_ELEMENT(Utils)
 
     Q_PROPERTY(QStringList hourlyViewLocalisedHourLabels READ hourlyViewLocalisedHourLabels CONSTANT)
 
 public:
-    explicit Utils(QObject *parent = nullptr);
+    explicit CalendarUtils(QObject *parent = nullptr);
 
     [[nodiscard]] QStringList hourlyViewLocalisedHourLabels() const;
 
