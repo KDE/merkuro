@@ -324,10 +324,13 @@ QQC2.ScrollView {
                                     collectionList.model.setData(index, checked ? Qt.Checked : Qt.Unchecked, Qt.CheckStateRole);
                                 }
                             }
+                        }
 
-                            Component.onCompleted: collectionList.model.dataChanged.connect(() => {
+                        Connections {
+                            target: collectionList.model
+                            function onDataChanged() {
                                 tapHandler.allCollectionsChecked = tapHandler.areAllCollectionsChecked()
-                            });
+                            }
                         }
 
                         DropArea {
