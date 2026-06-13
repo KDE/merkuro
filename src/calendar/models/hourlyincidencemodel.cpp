@@ -2,7 +2,9 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "hourlyincidencemodel.h"
+#include <QSet>
 #include <QTimeZone>
+#include <algorithm>
 #include <cmath>
 
 using namespace std::chrono_literals;
@@ -113,25 +115,142 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
     const auto rowEnd = rowStart.date().endOfDay();
     const int periodsPerDay = (24 * 60) / mPeriodLength;
 
-    // for (const auto &srcIdx : sorted) {
-    //     qCWarning(MERKURO_CALENDAR_LOG) << "sorted " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() <<
-    //     srcIdx.data(IncidenceOccurrenceModel::Summary).toString()
-    //     << srcIdx.data(IncidenceOccurrenceModel::AllDay).toBool();
-    // }
-    QList<IncidenceData> result;
+    struct PositionData {
+        QModelIndex idx;
+        double start; // position in period units
+        double duration; // width in period units
+        int startMinute; // minutes from day start
+        int endMinute; // minutes from day start
+    };
+    QList<PositionData> positioned;
+    positioned.reserve(sorted.size());
 
-    auto addToResults = [&result](const QModelIndex &idx, double start, double duration) {
+    for (const auto &idx : sorted) {
+        const auto startDT = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
+            ? idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+            : rowStart;
+        const auto endDT = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
+            ? idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+            : rowEnd;
+
+        const auto start = ((startDT.time().hour() * 1.0) * (60.0 / mPeriodLength)) + ((startDT.time().minute() * 1.0) / mPeriodLength);
+        auto duration =
+            qMax(getDuration(startDT, idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()), mPeriodLength), 1.0);
+
+        if (start + duration > periodsPerDay) {
+            duration = periodsPerDay - start;
+        }
+
+        const auto realEndMinutesFromDayStart = qMin((endDT.time().hour() * 60) + endDT.time().minute(), 24 * 60 * 60);
+        const auto startMinutesFromDayStart =
+            startDT.isValid() ? (startDT.time().hour() * 60) + startDT.time().minute() : qMax(realEndMinutesFromDayStart - mPeriodLength, 0);
+        const auto endMinutesFromDayStart = static_cast<int>(floor(startMinutesFromDayStart + (mPeriodLength * duration)));
+
+        positioned.append({idx, start, duration, startMinutesFromDayStart, endMinutesFromDayStart});
+    }
+
+    // Sweep-line column assignment: assign each incidence the lowest available column
+    // so that overlapping incidences get consecutive columns (0, 1, 2, ...).
+    struct ColumnEnd {
+        int minute;
+        int column;
+    };
+
+    // Active columns sorted by end minute for efficient reuse
+    QList<ColumnEnd> activeColumns;
+    QVector<int> incidenceColumn(positioned.size());
+
+    // Process incidences in start-time order (already sorted)
+    for (int i = 0; i < positioned.size(); i++) {
+        const auto &pos = positioned[i];
+
+        // Remove columns that are free before this incidence starts
+        for (auto it = activeColumns.begin(); it != activeColumns.end();) {
+            if (it->minute <= pos.startMinute) {
+                it = activeColumns.erase(it);
+            } else {
+                ++it;
+            }
+        }
+
+        // Find the lowest column number not currently in use
+        QSet<int> usedColumns;
+        for (const auto &ac : activeColumns) {
+            usedColumns.insert(ac.column);
+        }
+        int col = 0;
+        while (usedColumns.contains(col)) {
+            col++;
+        }
+
+        incidenceColumn[i] = col;
+        activeColumns.append({pos.endMinute, col});
+    }
+
+    // Compute per-incidence maxConcurrent: the number of columns used by all
+    // incidences that overlap with it. This equals the max column index of any
+    // overlapping incidence + 1.
+    QVector<int> maxConcurrent(positioned.size(), 1);
+    {
+        // Build start/end events for sweep
+        struct Event {
+            int minute;
+            int type; // +1 start, -1 end
+            int index;
+        };
+        QList<Event> events;
+        events.reserve(positioned.size() * 2);
+        for (int i = 0; i < positioned.size(); i++) {
+            events.append({positioned[i].startMinute, +1, i});
+            events.append({positioned[i].endMinute, -1, i});
+        }
+        std::sort(events.begin(), events.end(), [](const Event &a, const Event &b) {
+            if (a.minute != b.minute)
+                return a.minute < b.minute;
+            return a.type < b.type; // ends (-1) before starts (+1) at same minute
+        });
+
+        // Sweep: track active incidences, update maxConcurrent when a new incidence starts
+        QSet<int> active;
+        for (const auto &event : events) {
+            if (event.type == +1) {
+                active.insert(event.index);
+                int maxCol = 0;
+                for (int idx : active) {
+                    maxCol = qMax(maxCol, incidenceColumn[idx]);
+                }
+                for (int idx : active) {
+                    maxConcurrent[idx] = qMax(maxConcurrent[idx], maxCol + 1);
+                }
+            } else {
+                active.remove(event.index);
+            }
+        }
+    }
+
+    // Build final IncidenceData with layout fields
+    QList<IncidenceData> result;
+    result.reserve(positioned.size());
+
+    for (int i = 0; i < positioned.size(); i++) {
+        const auto &pos = positioned[i];
+        const auto idx = pos.idx;
+        const int col = incidenceColumn[i];
+        const int concurrent = maxConcurrent[i];
+        const double widthShare = 1.0 / concurrent;
+        const double priorTakenWidthShare = col * widthShare;
+
         IncidenceData incidenceData;
         incidenceData.text = idx.data(IncidenceOccurrenceModel::Summary).toString();
-
         incidenceData.description = idx.data(IncidenceOccurrenceModel::Description).toString();
         incidenceData.location = idx.data(IncidenceOccurrenceModel::Location).toString();
         incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime();
         incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime();
-        incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool(),
+        incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool();
         incidenceData.todoCompleted = idx.data(IncidenceOccurrenceModel::TodoCompleted).toBool();
         incidenceData.priority = idx.data(IncidenceOccurrenceModel::Priority).toInt();
-        incidenceData.starts = start, incidenceData.duration = duration,
+        incidenceData.starts = pos.start;
+        incidenceData.duration = pos.duration;
         incidenceData.durationString = idx.data(IncidenceOccurrenceModel::DurationString).toString();
         incidenceData.recurs = idx.data(IncidenceOccurrenceModel::Recurs).toBool();
         incidenceData.hasReminders = idx.data(IncidenceOccurrenceModel::HasReminders).toBool();
@@ -146,150 +265,11 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
         incidenceData.incidencePtr = idx.data(IncidenceOccurrenceModel::IncidencePtr).value<KCalendarCore::Incidence::Ptr>();
         incidenceData.incidenceOccurrence = idx.data(IncidenceOccurrenceModel::IncidenceOccurrence);
         incidenceData.resizeable = idx.data(IncidenceOccurrenceModel::Resizeable).toBool();
+        incidenceData.maxConcurrentIncidences = concurrent;
+        incidenceData.widthShare = widthShare;
+        incidenceData.priorTakenWidthShare = priorTakenWidthShare;
 
         result.append(incidenceData);
-    };
-
-    // Since our hourly view displays by the minute, we need to know how many incidences there are in each minute.
-    // This hash's keys are the minute of the given day, as the view has accuracy down to the minute. Each value
-    // for each key is the number of incidences that occupy that minute's spot.
-    QHash<int, int> takenSpaces;
-    auto setTakenSpaces = [&](int start, int end) {
-        for (int i = start; i < end; i++) {
-            if (!takenSpaces.contains(i)) {
-                takenSpaces[i] = 1;
-            } else {
-                takenSpaces[i]++;
-            }
-        }
-    };
-
-    while (!sorted.isEmpty()) {
-        const auto idx = sorted.takeFirst();
-        const auto startDT = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
-            ? idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
-            : rowStart;
-        const auto endDT = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
-            ? idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
-            : rowEnd;
-        // Need to convert ints into doubles to get more accurate starting positions
-        // We get a start position relative to the number of period spaces there are in a day
-        const auto start = ((startDT.time().hour() * 1.0) * (60.0 / mPeriodLength)) + ((startDT.time().minute() * 1.0) / mPeriodLength);
-        auto duration = // Give a minimum acceptable height or otherwise have unclickable incidence
-            qMax(getDuration(startDT, idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()), mPeriodLength), 1.0);
-
-        // Make sure incidence doesn't extend past the end of the day
-        if (start + duration > periodsPerDay) {
-            duration = periodsPerDay - start;
-        }
-
-        const auto realEndMinutesFromDayStart = qMin((endDT.time().hour() * 60) + endDT.time().minute(), 24 * 60 * 60);
-        // Todos likely won't have end date
-        const auto startMinutesFromDayStart =
-            startDT.isValid() ? (startDT.time().hour() * 60) + startDT.time().minute() : qMax(realEndMinutesFromDayStart - mPeriodLength, 0);
-        const auto displayedEndMinutesFromDayStart = floor(startMinutesFromDayStart + (mPeriodLength * duration));
-
-        addToResults(idx, start, duration);
-        setTakenSpaces(startMinutesFromDayStart, displayedEndMinutesFromDayStart);
-    }
-
-    QHash<int, double> takenWidth; // We need this for potential movers
-    QHash<int, double> startX;
-    // Potential movers are incidences that are placed at first but might need to be moved later as more incidences get placed to
-    // the left of them. Rather than loop more than once over our incidences, we create a record of these and then deal with them
-    // later, storing the needed data in a struct.
-    struct PotentialMover {
-        IncidenceData incidenceData;
-        int resultIterator;
-        int startMinutesFromDayStart;
-        int endMinutesFromDayStart;
-    };
-    QList<PotentialMover> potentialMovers;
-
-    // Calculate the width and x position of each incidence rectangle
-    for (int i = 0; i < result.length(); i++) {
-        auto incidence = result[i];
-        int concurrentIncidences = 1;
-
-        const auto startDT =
-            incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) > rowStart ? incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) : rowStart;
-        const auto endDT =
-            incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) < rowEnd ? incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) : rowEnd;
-        const auto duration = incidence.duration;
-
-        // We need a "real" and "displayed" end time for two reasons:
-        // 1. We need the real end minutes to give a fake start time to todos which do not have a start time
-        // 2. We need the displayed end minutes to be able to properly position those incidences which are displayed as longer
-        // than they actually are
-        const auto realEndMinutesFromDayStart = qMin((endDT.time().hour() * 60) + endDT.time().minute(), 24 * 60 * 60);
-        // Todos likely won't have end date
-        const auto startMinutesFromDayStart =
-            startDT.isValid() ? (startDT.time().hour() * 60) + startDT.time().minute() : qMax(realEndMinutesFromDayStart - mPeriodLength, 0);
-        const int displayedEndMinutesFromDayStart = floor(startMinutesFromDayStart + (mPeriodLength * duration));
-
-        // Get max number of incidences that happen at the same time as this
-        // (there can be different numbers of concurrent incidences during the time)
-        for (int i = startMinutesFromDayStart; i < displayedEndMinutesFromDayStart; i++) {
-            concurrentIncidences = qMax(concurrentIncidences, takenSpaces[i]);
-        }
-
-        incidence.maxConcurrentIncidences = concurrentIncidences;
-        double widthShare = 1.0 / (concurrentIncidences * 1.0); // Width as a fraction of the whole day column width
-        incidence.widthShare = widthShare;
-
-        // This is the value that the QML view will use to position the incidence rectangle on the day column's X axis.
-        double priorTakenWidthShare = 0.0;
-        // If we have empty space at the very left of the column we want to take advantage and place an incidence there
-        // even if there have been other incidences that take up space further to the right. For this we use minStartX,
-        // which gathers the lowest x starting position in a given minute; if this is higher than 0, it means that there
-        // is empty space at the left of the day column.
-        double minStartX = 1.0;
-
-        for (int i = startMinutesFromDayStart; i < displayedEndMinutesFromDayStart - 1; i++) {
-            // If this is the first incidence that has taken up this minute position, set details
-            if (!startX.contains(i)) {
-                takenWidth[i] = widthShare;
-                startX[i] = priorTakenWidthShare;
-            } else {
-                priorTakenWidthShare = qMax(priorTakenWidthShare, takenWidth[i]); // Get maximum prior space taken so we do not overlap with anything
-                minStartX = qMin(minStartX, startX[i]);
-
-                if (startX[i] > 0) {
-                    takenWidth[i] = widthShare; // Reset as there is space available at the beginning of the column
-                } else {
-                    takenWidth[i] += widthShare; // Increase the taken width at this minute position
-                }
-            }
-        }
-
-        if (minStartX > 0) {
-            priorTakenWidthShare = 0;
-            for (int i = startMinutesFromDayStart; i < displayedEndMinutesFromDayStart; i++) {
-                startX[i] = 0;
-            }
-        }
-
-        incidence.priorTakenWidthShare = priorTakenWidthShare;
-
-        if (takenSpaces[startMinutesFromDayStart] < takenSpaces[displayedEndMinutesFromDayStart - 1] && priorTakenWidthShare > 0) {
-            potentialMovers.append(PotentialMover{incidence, i, startMinutesFromDayStart, displayedEndMinutesFromDayStart});
-        }
-
-        result[i] = incidence;
-    }
-
-    for (auto &potentialMover : potentialMovers) {
-        double maxTakenWidth = 0;
-        for (int i = potentialMover.startMinutesFromDayStart; i < potentialMover.endMinutesFromDayStart; i++) {
-            maxTakenWidth = qMax(maxTakenWidth, takenWidth[i]);
-        }
-
-        if (maxTakenWidth < 0.98) {
-            potentialMover.incidenceData.priorTakenWidthShare =
-                potentialMover.incidenceData.widthShare * (takenSpaces[potentialMover.endMinutesFromDayStart - 1] - 1);
-
-            result[potentialMover.resultIterator] = potentialMover.incidenceData;
-        }
     }
 
     return result;
