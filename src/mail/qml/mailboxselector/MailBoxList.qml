@@ -81,6 +81,8 @@ ListView {
                 text: displayName
                 dropAreaHovered: dropArea.containsDrag
 
+                property int progressPercentage: -1
+
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing
 
@@ -106,6 +108,13 @@ ListView {
                         Layout.fillWidth: true
                         Accessible.ignored: true
                     }
+
+                    QQC2.Label {
+                        text: categoryHeader.progressPercentage >= 0 ? i18n("%1%", categoryHeader.progressPercentage) : ""
+                        color: Kirigami.Theme.disabledTextColor
+                        font: Kirigami.Theme.smallFont
+                        visible: text !== ""
+                    }
                 }
 
                 Connections {
@@ -129,6 +138,7 @@ ListView {
                             return;
                         }
                         loadingIndicator.visible = agentInstance.status === Akonadi.AgentConfiguration.Running;
+                        categoryHeader.progressPercentage = agentInstance.progress;
                     }
                 }
 
