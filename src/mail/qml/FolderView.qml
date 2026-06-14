@@ -45,6 +45,14 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             fromQAction: MailApplication.action("check_mail")
             visible: root.searchString.length === 0
+        },
+        Kirigami.Action {
+            icon.name: 'mail-unread'
+            text: i18nc("@action:menu filter for unread mail", "Show Unread Only")
+            checkable: true
+            checked: mailModel.showUnreadOnly
+            visible: root.searchString.length === 0
+            onTriggered: mailModel.showUnreadOnly = checked
         }
     ]
 

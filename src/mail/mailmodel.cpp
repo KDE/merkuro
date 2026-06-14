@@ -5,6 +5,7 @@
 #include "mailmodel.h"
 
 #include <Akonadi/ItemModifyJob>
+#include <Akonadi/MessageStatus>
 #include <Akonadi/SelectionProxyModel>
 #include <KLocalizedString>
 #include <KMime/Message>
@@ -106,6 +107,47 @@ void MailModel::setupModel()
 
     // Setup mail model
     setSourceModel(selectionModel);
+
+    if (m_showUnreadOnly) {
+        captureUnreadSnapshot();
+    }
+}
+
+bool MailModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+{
+    if (!Akonadi::EntityMimeTypeFilterModel::filterAcceptsRow(sourceRow, sourceParent)) {
+        return false;
+    }
+    const QModelIndex idx = sourceModel()->index(sourceRow, 0, sourceParent);
+    const auto item = idx.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+    if (m_showUnreadOnly) {
+        Akonadi::MessageStatus stat;
+        stat.setStatusFromFlags(item.flags());
+        if (stat.isRead()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool MailModel::showUnreadOnly() const
+{
+    return m_showUnreadOnly;
+}
+
+void MailModel::setShowUnreadOnly(bool showUnreadOnly)
+{
+    if (m_showUnreadOnly == showUnreadOnly) {
+        return;
+    }
+    m_showUnreadOnly = showUnreadOnly;
+    if (m_showUnreadOnly) {
+        captureUnreadSnapshot();
+    } else {
+        m_unreadSnapshot.clear();
+    }
+    Q_EMIT showUnreadOnlyChanged();
+    invalidateFilter();
 }
 
 QString MailModel::folderName() const

@@ -23,6 +23,7 @@ class MailModel : public Akonadi::EntityMimeTypeFilterModel, public AbstractMail
     Q_PROPERTY(
         QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
     Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
+    Q_PROPERTY(bool showUnreadOnly READ showUnreadOnly WRITE setShowUnreadOnly NOTIFY showUnreadOnlyChanged)
 
 public:
     explicit MailModel(QObject *parent = nullptr);
@@ -35,19 +36,25 @@ public:
 
     [[nodiscard]] QString folderName() const;
 
+    [[nodiscard]] bool showUnreadOnly() const;
+    void setShowUnreadOnly(bool showUnreadOnly);
+
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
 
 Q_SIGNALS:
     void collectionSelectionModelChanged();
     void entityTreeModelChanged();
     void folderNameChanged();
+    void showUnreadOnlyChanged();
 
 private:
     void setupModel();
 
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::EntityTreeModel *m_entityTreeModel = nullptr;
+    bool m_showUnreadOnly = false;
     Akonadi::Item itemForRow(int row) const;
     QString m_searchString;
     QString m_folderName;
