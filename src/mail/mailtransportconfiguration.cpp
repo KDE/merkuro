@@ -43,7 +43,7 @@ void MailTransportConfiguration::edit(const int transportId)
 {
     const auto transport = MailTransport::TransportManager::self()->transportById(transportId);
     if (!transport) {
-        qCWarning(MERKURO_MAIL_LOG) << "isRemovable called with not valid transportId";
+        qCWarning(MERKURO_MAIL_LOG) << "edit called with invalid transportId";
         return;
     }
 
@@ -54,7 +54,7 @@ void MailTransportConfiguration::remove(const int transportId)
 {
     const auto transport = MailTransport::TransportManager::self()->transportById(transportId);
     if (!transport) {
-        qCWarning(MERKURO_MAIL_LOG) << "isRemovable called with not valid transportId";
+        qCWarning(MERKURO_MAIL_LOG) << "remove called with invalid transportId";
         return;
     }
 
