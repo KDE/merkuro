@@ -56,6 +56,12 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
+        icon.name: "view-refresh"
+        text: i18nc("@action:inmenu", "Restart Account")
+        onClicked: mailActionsPopup.agentConfiguration.restartIdentifier(mailActionsPopup.resourceIdentifier);
+    }
+
+    QQC2.MenuItem {
         icon.name: "settings-configure"
         text: i18nc("@action:inmenu", "Account Settings")
         onClicked: mailActionsPopup.agentConfiguration.editIdentifier(mailActionsPopup.resourceIdentifier);
