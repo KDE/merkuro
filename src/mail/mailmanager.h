@@ -51,6 +51,7 @@ public:
     Q_INVOKABLE void loadMailCollection(const QModelIndex &index);
     Q_INVOKABLE void moveToTrash(const Akonadi::Item &item);
     Q_INVOKABLE void updateCollection(const QModelIndex &index);
+    Q_INVOKABLE void updateCollectionNonRecursive(const QModelIndex &index);
     Q_INVOKABLE void addCollection(const QModelIndex &index, const QVariant &name);
     Q_INVOKABLE void deleteCollection(const QModelIndex &index);
     [[nodiscard]] Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
