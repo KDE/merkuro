@@ -43,6 +43,7 @@ ListView {
     required property var collectionId
     required property string name
     required property string resourceIdentifier
+    readonly property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
     property MailItemMenu mailActionsPopup: MailItemMenu {
         collectionId: mailList.collectionId
         name: mailList.name
@@ -62,6 +63,7 @@ ListView {
 
                 required property string displayName
                 required property var model
+                required property var collection
 
                 property bool chosen: false
                 property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && applicationWindow().wideScreen))
@@ -81,6 +83,15 @@ ListView {
 
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    QQC2.BusyIndicator {
+                        id: loadingIndicator
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                        padding: 0
+                        visible: false
+                        running: visible
+                    }
 
                     Kirigami.Icon {
                         implicitWidth: Kirigami.Units.iconSizes.smallMedium
@@ -107,6 +118,17 @@ ListView {
                         } else {
                             categoryHeader.highlighted = false;
                         }
+                    }
+                }
+
+                Connections {
+                    target: mailList.agentConfiguration
+
+                    function onAgentProgressChanged(agentInstance: Akonadi.AgentInstance) {
+                        if (agentInstance.identifier !== collection.resource) {
+                            return;
+                        }
+                        loadingIndicator.visible = agentInstance.status === Akonadi.AgentConfiguration.Running;
                     }
                 }
 
