@@ -6,6 +6,7 @@
 #include <KIdentityManagementCore/Identity>
 #include <KLocalizedString>
 #include <Libkleo/DefaultKeyFilter>
+#include <Libkleo/Formatting>
 #include <Libkleo/KeyCache>
 #include <Libkleo/KeyListModel>
 #include <gpgme++/key.h>
@@ -37,6 +38,10 @@ QVariant IdentityKeyListModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
+    case Qt::DisplayRole:
+    case Qt::EditRole:
+    case Qt::AccessibleTextRole:
+        return Kleo::Formatting::formatForComboBox(m_baseModel->key(mapToSource(index)));
     case KIdentityManagementQuick::KeyListModelInterface::Roles::KeyByteArrayRole:
         return QByteArray(m_baseModel->key(mapToSource(index)).primaryFingerprint());
     case KIdentityManagementQuick::KeyListModelInterface::Roles::KeyIdentifierRole:
