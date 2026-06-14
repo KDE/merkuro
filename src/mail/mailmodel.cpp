@@ -123,7 +123,7 @@ bool MailModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent)
     if (m_showUnreadOnly) {
         Akonadi::MessageStatus stat;
         stat.setStatusFromFlags(item.flags());
-        if (stat.isRead()) {
+        if (stat.isRead() && !m_unreadSnapshot.contains(item.id())) {
             return false;
         }
     }
@@ -148,6 +148,23 @@ void MailModel::setShowUnreadOnly(bool showUnreadOnly)
     }
     Q_EMIT showUnreadOnlyChanged();
     invalidateFilter();
+}
+
+void MailModel::captureUnreadSnapshot()
+{
+    m_unreadSnapshot.clear();
+    const int rows = rowCount();
+    for (int i = 0; i < rows; ++i) {
+        const auto item = data(index(i, 0), ItemRole).value<Akonadi::Item>();
+        if (!item.isValid()) {
+            continue;
+        }
+        Akonadi::MessageStatus stat;
+        stat.setStatusFromFlags(item.flags());
+        if (!stat.isRead()) {
+            m_unreadSnapshot.insert(item.id());
+        }
+    }
 }
 
 QString MailModel::folderName() const

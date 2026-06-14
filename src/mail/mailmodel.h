@@ -10,6 +10,7 @@
 #include <Akonadi/EntityTreeModel>
 #include <QItemSelectionModel>
 #include <QObject>
+#include <QSet>
 #include <qqmlregistration.h>
 
 #include "abstractmailmodel.h"
@@ -51,10 +52,12 @@ Q_SIGNALS:
 
 private:
     void setupModel();
+    void captureUnreadSnapshot();
 
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::EntityTreeModel *m_entityTreeModel = nullptr;
     bool m_showUnreadOnly = false;
+    QSet<qint64> m_unreadSnapshot;
     Akonadi::Item itemForRow(int row) const;
     QString m_searchString;
     QString m_folderName;
