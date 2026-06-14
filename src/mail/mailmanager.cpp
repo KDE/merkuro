@@ -167,6 +167,12 @@ void MailManager::updateCollection(const QModelIndex &index)
     Akonadi::AgentManager::self()->synchronizeCollection(collection, true);
 }
 
+void MailManager::updateCollectionNonRecursive(const QModelIndex &index)
+{
+    const auto collection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
+    Akonadi::AgentManager::self()->synchronizeCollection(collection, false);
+}
+
 void MailManager::addCollection(const QModelIndex &index, const QVariant &name)
 {
     const auto parentCollection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
