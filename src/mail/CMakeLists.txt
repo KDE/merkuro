@@ -14,6 +14,8 @@ set(merkuro_mail_SRCS
     mailmanager.h
     mailmodel.cpp
     mailmodel.h
+    mailthreader.cpp
+    mailthreader.h
     searchmodel.h
     searchmodel.cpp
     contactimageprovider.cpp
@@ -75,6 +77,7 @@ target_link_libraries(merkuro_mail_static
         KPim6::Libkdepim
         KPim6::PimCommonAkonadi
         KPim6::MimeTreeParserCore
+        KPim6::MessageCore
         KF6::XmlGui
         KF6::Codecs
         KF6::XmlGui
