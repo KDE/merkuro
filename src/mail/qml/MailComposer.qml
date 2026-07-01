@@ -22,6 +22,9 @@ Kirigami.ScrollablePage {
 
     MailClient {
         id: mailClient
+        onFinished: (result, errorString) => {
+            mailComposition.closeDialog();
+        }
     }
 
     GridLayout {
@@ -167,7 +170,6 @@ Kirigami.ScrollablePage {
                     icon.name: 'document-send'
                     onClicked: {
                         mailClient.send(identity.currentValue, subjectText.text, mailContent.text);
-                        mailComposition.closeDialog();
                     }
                 }
             }
