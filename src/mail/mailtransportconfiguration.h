@@ -24,11 +24,14 @@ public:
     [[nodiscard]] MailTransport::TransportType::List availableTransportTypes() const;
 
     Q_INVOKABLE [[nodiscard]] bool isRemovable(const int transportId);
+    Q_INVOKABLE [[nodiscard]] bool isDefault(const int transportId);
 
 public Q_SLOTS:
-    void createNew(const int index);
+    void createNew(const int index, const QString name, const bool setDefault);
     void edit(const int transportId);
     void remove(const int transportId);
+    void rename(const int transportId, const QString newName);
+    void setDefault(const int transportId);
 
 private:
     std::unique_ptr<MailTransport::TransportModel> m_tranportModel;
