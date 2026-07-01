@@ -191,6 +191,7 @@ void MailClient::queueMessage(const int transportId,
     } else if (!transport) {
         qCritical() << "Error loading transport";
         Q_EMIT finished(ResultErrorFetchingTransport, i18n("Error loading transport"));
+        return;
     } else {
         qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(composer->infoPart()->from())));
     }
