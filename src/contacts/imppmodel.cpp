@@ -4,7 +4,6 @@
 #include "imppmodel.h"
 #include <KContacts/Impp>
 #include <KLocalizedString>
-#include <kcontacts_version.h>
 
 #include <QApplication>
 #include <QClipboard>
