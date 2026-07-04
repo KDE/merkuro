@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2025-05-26 09:23+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -3347,6 +3347,7 @@ msgid "Update Profile Picture"
 msgstr "Actualizar a foto de perfil"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3961,36 +3962,68 @@ msgstr "Contas"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Configurar %1"
+msgid "Rename %1"
+msgstr "Retirar a etiqueta %1"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Modificar ou eliminar este axente de conta."
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Contas"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Modificar"
+msgid "Settings"
+msgstr "Configuración"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Engadir unha conta"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Configurar %1"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Modificar ou eliminar este axente de conta."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Modificar"
 
 #~ msgid "Tap"
 #~ msgstr "Toque"
@@ -4023,9 +4056,6 @@ msgstr "Engadir unha conta"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Retirar a etiqueta de filtro"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Retirar a etiqueta %1"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Retirar a etiqueta"

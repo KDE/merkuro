@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2026-06-04 14:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3328,6 +3328,7 @@ msgid "Update Profile Picture"
 msgstr "Оновлення зображення профілю"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3944,35 +3945,65 @@ msgid "Accounts"
 msgstr "Облікові записи"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Налаштовування %1"
+msgid "Rename %1"
+msgstr "Вилучити мітку %1"
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr ""
-"Зміна або вилучення способу передавання даних для цього облікового запису."
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Облікові записи"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Змінити"
+msgid "Settings"
+msgstr "Параметри"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Додати обліковий запис"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Налаштовування %1"
+
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr ""
+#~ "Зміна або вилучення способу передавання даних для цього облікового запису."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Змінити"
 
 #~ msgctxt ""
 #~ "Short date format, indicating name of day of week and number of day of "
@@ -4022,9 +4053,6 @@ msgstr "Додати обліковий запис"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Вилучити мітку фільтрування"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Вилучити мітку %1"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Вилучити мітку"

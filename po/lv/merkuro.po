@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2025-08-21 13:12+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3350,6 +3350,7 @@ msgid "Update Profile Picture"
 msgstr "Atjaunināt profila attēlu"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3970,36 +3971,68 @@ msgstr "Konti"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Konfigurēt %1"
+msgid "Rename %1"
+msgstr "Noņemt „%1“ birku"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Rediģēt vai dzēst šī konta aģentu."
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Konti"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Rediģēt"
+msgid "Settings"
+msgstr "Iestatījumi"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Pievienot kontu"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Konfigurēt %1"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Rediģēt vai dzēst šī konta aģentu."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Rediģēt"
 
 #~ msgid "Tap"
 #~ msgstr "Pieskarieties"
@@ -4032,9 +4065,6 @@ msgstr "Pievienot kontu"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Noņemt filtrēšanas birku"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Noņemt „%1“ birku"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Noņemt birku"

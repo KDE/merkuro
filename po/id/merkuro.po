@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2023-03-22 00:50+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -3364,6 +3364,7 @@ msgid "Update Profile Picture"
 msgstr ""
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action:button"
@@ -3994,22 +3995,27 @@ msgstr ""
 #: mail/settings/TransportConfigurationForm.qml:31
 #, kde-format
 msgctxt "@title:dialog"
-msgid "Configure %1"
+msgid "Rename %1"
 msgstr ""
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr ""
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "Settings"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Pengaturan"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgctxt "@action:menu"
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr ""
+msgid "Settings"
+msgstr "Pengaturan"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, fuzzy, kde-format
 #| msgctxt "text editing menu action"
 #| msgid "Delete"
@@ -4017,12 +4023,26 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Hapus"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Contact"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Tambahkan Kontak"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
 
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "Tambahkan Pengecualian Pengulangan"

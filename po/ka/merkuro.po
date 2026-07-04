@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2026-06-04 05:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3282,6 +3282,7 @@ msgid "Update Profile Picture"
 msgstr "პროფილის სურათის განახლება"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3888,34 +3889,64 @@ msgid "Accounts"
 msgstr "ანგარიშები"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "%1-ის მორგება"
+msgid "Rename %1"
+msgstr "%1 ჭდის წაშლა"
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "ამ ანგარიშის ტრანსპორტის შეცვლა, ან წაშლა."
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "ანგარიშები"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "ჩასწორება"
+msgid "Settings"
+msgstr "&მორგება"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "ანგარიშის დამატება"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "%1-ის მორგება"
+
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "ამ ანგარიშის ტრანსპორტის შეცვლა, ან წაშლა."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "ჩასწორება"
 
 #~ msgctxt ""
 #~ "Short date format, indicating name of day of week and number of day of "
@@ -3962,9 +3993,6 @@ msgstr "ანგარიშის დამატება"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "ფილტრის ჭდის წაშლა"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 ჭდის წაშლა"
 
 #~ msgid "Remove Tag"
 #~ msgstr "ჭდის წაშლა"

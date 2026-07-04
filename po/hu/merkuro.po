@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2025-07-09 22:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3344,6 +3344,7 @@ msgid "Update Profile Picture"
 msgstr "Profilkép frissítése"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3958,36 +3959,68 @@ msgstr "Fiókok"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "%1 beállítása"
+msgid "Rename %1"
+msgstr "%1 címke eltávolítása"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Fiókügynök módosítása vagy törlése."
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Fiókok"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Módosítás"
+msgid "Settings"
+msgstr "Beállítások"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Törlés"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Fiók hozzáadása"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "%1 beállítása"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Fiókügynök módosítása vagy törlése."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Módosítás"
 
 #~ msgid "Tap"
 #~ msgstr "Koppintson"
@@ -4020,9 +4053,6 @@ msgstr "Fiók hozzáadása"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Szűrőcímke eltávolítása"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 címke eltávolítása"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Címke eltávolítása"

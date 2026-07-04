@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3442,6 +3442,7 @@ msgid "Update Profile Picture"
 msgstr ""
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -4083,35 +4084,58 @@ msgstr "Λογαριασμοί"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Διαμόρφωση"
+msgid "Rename %1"
+msgstr "Αφαίρεση %1 ετικέτας"
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr ""
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Λογαριασμοί"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr ""
+msgid "Settings"
+msgstr "Ρυθμίσεις"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Λογαριασμοί"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Διαμόρφωση"
 
 #~ msgid "Tap"
 #~ msgstr "Χτύπημα"
@@ -4147,9 +4171,6 @@ msgstr "Λογαριασμοί"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Αφαίρεση ετικέτας φιλτραρίσματος"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Αφαίρεση %1 ετικέτας"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Αφαίρεση ετικέτας"

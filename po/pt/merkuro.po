@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2023-07-14 22:11+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -3415,6 +3415,7 @@ msgid "Update Profile Picture"
 msgstr "Actualizar a Fotografia do Perfil"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action:button"
@@ -4055,38 +4056,71 @@ msgstr "Contas"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Configurar o %1"
+msgid "Rename %1"
+msgstr "Remover a marca %1"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Modificar ou apagar este agente de contas."
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Contas"
 
-#: mail/settings/TransportConfigurationForm.qml:53
+#: mail/settings/TransportConfigurationForm.qml:83
 #, fuzzy, kde-format
-#| msgid "Modify"
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Modificar"
+msgid "Settings"
+msgstr "Configuração"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Apagar"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Adicionar uma Conta"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Configurar o %1"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Modificar ou apagar este agente de contas."
+
+#, fuzzy
+#~| msgid "Modify"
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Modificar"
 
 #~ msgid "Tap"
 #~ msgstr "Toque"
@@ -4123,9 +4157,6 @@ msgstr "Adicionar uma Conta"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Remover a marca de filtragem"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Remover a marca %1"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Remover a Marca"

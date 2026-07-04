@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2026-06-04 11:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3296,6 +3296,7 @@ msgid "Update Profile Picture"
 msgstr "Actualizar imagen de perfil"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3903,29 +3904,58 @@ msgstr "Cuentas"
 #: mail/settings/TransportConfigurationForm.qml:31
 #, kde-format
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Configurar %1"
+msgid "Rename %1"
+msgstr ""
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Modificar o borrar el transporte de esta cuenta."
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Cuentas"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Modificar"
+msgid "Settings"
+msgstr "Preferencias"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Borrar"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Añadir cuenta"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Configurar %1"
+
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Modificar o borrar el transporte de esta cuenta."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Modificar"

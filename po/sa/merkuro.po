@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -3385,6 +3385,7 @@ msgid "Update Profile Picture"
 msgstr "प्रोफाइल चित्र अद्यतन करें"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -4017,36 +4018,68 @@ msgstr "लेखा"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "%1 विन्यस्यताम्"
+msgid "Rename %1"
+msgstr "%1 टैग् निष्कासयन्तु"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "एतत् खाता एजेण्टं परिवर्तयन्तु अथवा विलोपयन्तु।"
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "लेखा"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "परिवर्तनं कुर्वन्तु"
+msgid "Settings"
+msgstr "सेटिंग्स्"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "लुप्"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "खाता योजयतु"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "%1 विन्यस्यताम्"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "एतत् खाता एजेण्टं परिवर्तयन्तु अथवा विलोपयन्तु।"
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "परिवर्तनं कुर्वन्तु"
 
 #~ msgid "Tap"
 #~ msgstr "नाल"
@@ -4079,9 +4112,6 @@ msgstr "खाता योजयतु"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "फ़िल्टरिंग टैगं निष्कासयन्तु"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 टैग् निष्कासयन्तु"
 
 #~ msgid "Remove Tag"
 #~ msgstr "टैग हटाएँ"

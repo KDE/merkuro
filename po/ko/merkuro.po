@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2026-06-06 14:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3263,6 +3263,7 @@ msgid "Update Profile Picture"
 msgstr "프로필 사진 업데이트"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3859,34 +3860,64 @@ msgid "Accounts"
 msgstr "계정"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "%1 설정"
+msgid "Rename %1"
+msgstr "%1 태그 삭제"
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "이 계정의 전송 방식을 수정하거나 삭제합니다."
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "계정"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "수정"
+msgid "Settings"
+msgstr "설정"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "계정 추가"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "%1 설정"
+
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "이 계정의 전송 방식을 수정하거나 삭제합니다."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "수정"
 
 #~ msgid "Tap"
 #~ msgstr "탭"
@@ -3919,9 +3950,6 @@ msgstr "계정 추가"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "필터 태그 삭제"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 태그 삭제"
 
 #~ msgid "Remove Tag"
 #~ msgstr "태그 삭제"

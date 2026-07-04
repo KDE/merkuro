@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2025-09-21 13:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -3360,6 +3360,7 @@ msgid "Update Profile Picture"
 msgstr "பயனர் படத்தை மாற்று"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3977,36 +3978,68 @@ msgstr "கணக்குகள்"
 
 #: mail/settings/TransportConfigurationForm.qml:31
 #, fuzzy, kde-format
-#| msgid "Configure %1"
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "%1 தனை அமை"
+msgid "Rename %1"
+msgstr "%1 குறிச்சொல்லை நீக்கு"
 
-#: mail/settings/TransportConfigurationForm.qml:37
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, fuzzy, kde-format
-#| msgid "Modify or delete this account agent."
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "இந்த கணக்கிற்கான பின்னணி சேவையை மாற்றியமையுங்கள் அல்லது நீக்குங்கள்."
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "கணக்குகள்"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "திருத்து"
+msgid "Settings"
+msgstr "அமைப்புகள்"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "கணக்கை சேர்"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Configure %1"
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "%1 தனை அமை"
+
+#, fuzzy
+#~| msgid "Modify or delete this account agent."
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "இந்த கணக்கிற்கான பின்னணி சேவையை மாற்றியமையுங்கள் அல்லது நீக்குங்கள்."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "திருத்து"
 
 #~ msgid "Tap"
 #~ msgstr "தட்டுங்கள்"
@@ -4043,9 +4076,6 @@ msgstr "கணக்கை சேர்"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "வடிகட்டியிலுள்ள குறிச்சொல்லை நீக்கு"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 குறிச்சொல்லை நீக்கு"
 
 #~ msgid "Remove Tag"
 #~ msgstr "குறிச்சொல்லை இதிலிருந்து நீக்கு"

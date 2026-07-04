@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-02 00:45+0000\n"
+"POT-Creation-Date: 2026-07-04 00:45+0000\n"
 "PO-Revision-Date: 2026-07-02 23:27+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3296,6 +3296,7 @@ msgid "Update Profile Picture"
 msgstr "Eguneratu profileko irudia"
 
 #: contacts/qml/private/ContactGroupPage.qml:33
+#: mail/settings/TransportConfigurationForm.qml:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3900,34 +3901,64 @@ msgid "Accounts"
 msgstr "Kontuak"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
-msgid "Configure %1"
-msgstr "Konfiguratu %1"
+msgid "Rename %1"
+msgstr "Kendu %1 etiketa"
 
-#: mail/settings/TransportConfigurationForm.qml:37
-#, kde-format
-msgctxt "@info"
-msgid "Modify or delete this account transport."
-msgstr "Aldatu edo ezabatu kontuaren garraioa."
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "Ask to the user to enter name for the Outgoing Account"
+msgid "Account Name"
+msgstr "Kontuak"
 
-#: mail/settings/TransportConfigurationForm.qml:53
-#, kde-format
+#: mail/settings/TransportConfigurationForm.qml:83
+#, fuzzy, kde-format
+#| msgid "Settings"
 msgctxt "@action:button"
-msgid "Modify"
-msgstr "Aldatu"
+msgid "Settings"
+msgstr "Ezarpenak"
 
-#: mail/settings/TransportConfigurationForm.qml:62
+#: mail/settings/TransportConfigurationForm.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: mail/settings/TransportConfigurationForm.qml:101
+#: mail/settings/TransportConfigurationForm.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Gehitu kontua"
+
+#: mail/settings/TransportConfigurationForm.qml:148
+#, kde-format
+msgctxt "@action:button Set the outgoing account as the default"
+msgid "Set as default"
+msgstr ""
+
+#: mail/settings/TransportConfigurationForm.qml:153
+#, kde-format
+msgctxt ""
+"@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
+"etc.)"
+msgid "Select the account type"
+msgstr ""
+
+#~ msgctxt "@title:dialog"
+#~ msgid "Configure %1"
+#~ msgstr "Konfiguratu %1"
+
+#~ msgctxt "@info"
+#~ msgid "Modify or delete this account transport."
+#~ msgstr "Aldatu edo ezabatu kontuaren garraioa."
+
+#~ msgctxt "@action:button"
+#~ msgid "Modify"
+#~ msgstr "Aldatu"
 
 #~ msgctxt ""
 #~ "Short date format, indicating name of day of week and number of day of "
@@ -3974,9 +4005,6 @@ msgstr "Gehitu kontua"
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "Kendu iragazteko etiketa"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Kendu %1 etiketa"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Kendu etiketa"
