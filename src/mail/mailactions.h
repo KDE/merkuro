@@ -6,6 +6,7 @@
 #include "mailapplication.h"
 
 #include <Akonadi/Item>
+#include <MessageComposer/MessageFactoryNG>
 
 #include <QItemSelectionModel>
 #include <QObject>
@@ -43,6 +44,9 @@ public:
     Q_INVOKABLE void setActionState();
     Q_INVOKABLE void moveTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
     Q_INVOKABLE void copyTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
+    Q_INVOKABLE void replyToSender(const Akonadi::Item &item);
+    Q_INVOKABLE void replyToAll(const Akonadi::Item &item);
+    Q_INVOKABLE void forward(const Akonadi::Item &item);
 
     Q_INVOKABLE Akonadi::Item::List selectionToItems() const;
 
@@ -54,10 +58,12 @@ Q_SIGNALS:
     void mailSaveAs(const Akonadi::Item &item);
     void moveToRequested(const Akonadi::Item::List &items);
     void copyToRequested(const Akonadi::Item::List &items);
+    void composerRequested(const QString &to, const QString &subject, const QString &body);
 
 private:
     void modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f);
     void slotTrash();
+    void replyTo(const Akonadi::Item &item, MessageComposer::ReplyStrategy strategy);
 
     QItemSelectionModel *m_selectionModel = nullptr;
     MailApplication *m_mailApplication = nullptr;
@@ -71,4 +77,7 @@ private:
     QAction *m_mailSaveAsAction = nullptr;
     QAction *m_mailMoveToAction = nullptr;
     QAction *m_mailCopyToAction = nullptr;
+    QAction *m_mailReplyAction = nullptr;
+    QAction *m_mailReplyAllAction = nullptr;
+    QAction *m_mailForwardAction = nullptr;
 };

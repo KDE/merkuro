@@ -8,13 +8,19 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemCopyJob>
+#include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/ItemMoveJob>
 #include <Akonadi/MessageStatus>
+#include <KMime/Message>
 #include <MailCommon/MailKernel>
+#include <MessageComposer/MessageFactoryNG>
 
 #include <KAuthorized>
 #include <KLocalizedString>
+
+#include <memory>
 
 using namespace Qt::StringLiterals;
 
@@ -150,6 +156,30 @@ void MailActions::setMailApplication(MailApplication *mailApplication)
         Q_EMIT copyToRequested(selectionToItems());
     });
 
+    m_mailReplyAction = mailApplication->action("mail_reply"_L1);
+    connect(m_mailReplyAction, &QAction::triggered, this, [this] {
+        const auto items = selectionToItems();
+        if (!items.isEmpty()) {
+            replyToSender(items.first());
+        }
+    });
+
+    m_mailReplyAllAction = mailApplication->action("mail_reply_all"_L1);
+    connect(m_mailReplyAllAction, &QAction::triggered, this, [this] {
+        const auto items = selectionToItems();
+        if (!items.isEmpty()) {
+            replyToAll(items.first());
+        }
+    });
+
+    m_mailForwardAction = mailApplication->action("mail_forward"_L1);
+    connect(m_mailForwardAction, &QAction::triggered, this, [this] {
+        const auto items = selectionToItems();
+        if (!items.isEmpty()) {
+            forward(items.first());
+        }
+    });
+
     setActionState();
 }
 
@@ -262,6 +292,97 @@ void MailActions::moveTo(const Akonadi::Item::List &items, const Akonadi::Collec
         if (job->error()) {
             Q_EMIT m_mailApplication->errorOccurred(job->errorText());
         }
+    });
+}
+
+void MailActions::replyToSender(const Akonadi::Item &item)
+{
+    replyTo(item, MessageComposer::ReplySmart);
+}
+
+void MailActions::replyToAll(const Akonadi::Item &item)
+{
+    replyTo(item, MessageComposer::ReplyAll);
+}
+
+void MailActions::replyTo(const Akonadi::Item &item, MessageComposer::ReplyStrategy strategy)
+{
+    auto fetchJob = new Akonadi::ItemFetchJob(item, this);
+    fetchJob->fetchScope().fetchFullPayload(true);
+    connect(fetchJob, &Akonadi::ItemFetchJob::result, this, [this, strategy](KJob *job) {
+        auto fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
+        if (job->error()) {
+            if (m_mailApplication) {
+                Q_EMIT m_mailApplication->errorOccurred(job->errorText());
+            }
+            return;
+        }
+        if (fetchJob->items().isEmpty()) {
+            return;
+        }
+        const auto fetchedItem = fetchJob->items().first();
+        if (!fetchedItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
+            return;
+        }
+        const auto msg = fetchedItem.payload<std::shared_ptr<KMime::Message>>();
+
+        auto factory = new MessageComposer::MessageFactoryNG(msg, fetchedItem.id(), fetchedItem.parentCollection(), this);
+        factory->setIdentityManager(MailKernel::self().identityManager());
+        factory->setReplyStrategy(strategy);
+
+        connect(factory,
+                &MessageComposer::MessageFactoryNG::createReplyDone,
+                this,
+                [this, factory](const MessageComposer::MessageFactoryNG::MessageReply &reply) {
+                    factory->deleteLater();
+                    if (!reply.msg) {
+                        return;
+                    }
+                    const QString to = reply.msg->to()->asUnicodeString();
+                    const QString subject = reply.msg->subject()->asUnicodeString();
+                    KMime::Content *textPart = reply.msg->mainBodyPart("text/plain");
+                    const QString body = textPart ? textPart->decodedText() : QString::fromUtf8(reply.msg->body());
+                    Q_EMIT composerRequested(to, subject, body);
+                });
+        factory->createReplyAsync();
+    });
+}
+
+void MailActions::forward(const Akonadi::Item &item)
+{
+    auto fetchJob = new Akonadi::ItemFetchJob(item, this);
+    fetchJob->fetchScope().fetchFullPayload(true);
+    connect(fetchJob, &Akonadi::ItemFetchJob::result, this, [this](KJob *job) {
+        auto fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
+        if (job->error()) {
+            if (m_mailApplication) {
+                Q_EMIT m_mailApplication->errorOccurred(job->errorText());
+            }
+            return;
+        }
+        if (fetchJob->items().isEmpty()) {
+            return;
+        }
+        const auto fetchedItem = fetchJob->items().first();
+        if (!fetchedItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
+            return;
+        }
+        const auto msg = fetchedItem.payload<std::shared_ptr<KMime::Message>>();
+
+        auto factory = new MessageComposer::MessageFactoryNG(msg, fetchedItem.id(), fetchedItem.parentCollection(), this);
+        factory->setIdentityManager(MailKernel::self().identityManager());
+
+        connect(factory, &MessageComposer::MessageFactoryNG::createForwardDone, this, [this, factory](const std::shared_ptr<KMime::Message> &fwdMsg) {
+            factory->deleteLater();
+            if (!fwdMsg) {
+                return;
+            }
+            const QString subject = fwdMsg->subject()->asUnicodeString();
+            KMime::Content *textPart = fwdMsg->mainBodyPart("text/plain");
+            const QString body = textPart ? textPart->decodedText() : QString::fromUtf8(fwdMsg->body());
+            Q_EMIT composerRequested(QString{}, subject, body);
+        });
+        factory->createForwardAsync();
     });
 }
 

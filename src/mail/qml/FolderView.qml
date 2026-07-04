@@ -169,6 +169,14 @@ Kirigami.ScrollablePage {
                     page.closeDialog();
                 });
             }
+
+            onComposerRequested: (to, subject, body) => {
+                root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"), {
+                    initialTo: to,
+                    initialSubject: subject,
+                    initialBody: body,
+                });
+            }
         }
 
         Component {
