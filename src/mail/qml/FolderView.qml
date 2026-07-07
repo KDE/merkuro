@@ -203,6 +203,18 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_reply')
+                }
+
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_reply_all')
+                }
+
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_forward')
+                }
+
+                Kirigami.Action {
                     fromQAction: MailApplication.action('mail_trash')
                 }
 
