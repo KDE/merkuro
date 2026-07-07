@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Dialogs
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Controls as QQC2
 import org.kde.kitemmodels as KItemModels
 import org.kde.merkuro.mail
@@ -180,10 +181,56 @@ Kirigami.ScrollablePage {
                     text: i18n("Send")
                     icon.name: 'document-send'
                     onClicked: {
+                        mailClient.setDeliveryMode(MailClient.DeliveryMode.Now); // Reset to default
                         mailClient.send(identity.currentValue, subjectText.text, mailContent.text);
                     }
                 }
+                QQC2.ToolButton {
+                    id: sendLaterButton
+                    text: i18nc("@action:button", "Send Later")
+                    icon.name: 'mail-queue-symbolic'
+                    onClicked: {
+                        let dialog = sendLaterDialogComponent.createObject(mailComposition, {
+                            mailClient: mailClient,
+                            identity: identity.currentValue,
+                            subject: subjectText.text,
+                            mailContent: mailContent.text
+                        });
+                        dialog.open();
+                    }
+                }
             }
+        }
+    }
+
+    property Component sendLaterDialogComponent: FormCard.FormCardDialog {
+        id: sendLaterDialog
+
+        property MailClient mailClient
+        property int identity
+        property string subject
+        property string mailContent
+
+        title: i18nc("@title:dialog", "Schedule Send")
+        standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
+
+        onAccepted: {
+            const mode = sendLaterManual.checked ? MailClient.DeliveryMode.Manual : MailClient.DeliveryMode.Programmed;
+            mailClient.setDeliveryMode(mode, sendLaterDatePicker.value);
+            mailClient.send(identity, subject, mailContent);
+        }
+        onRejected: sendLaterDialog.close()
+        onClosed: sendLaterDialog.destroy()
+
+        FormCard.FormCheckDelegate {
+            id: sendLaterManual
+            text: i18nc("@label", "Manual mode")
+        }
+
+        FormCard.FormDateTimeDelegate {
+            id: sendLaterDatePicker
+            enabled: !sendLaterManual.checked
+            text: i18nc("@label", "Send Date and Time")
         }
     }
 }

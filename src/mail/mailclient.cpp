@@ -15,7 +15,6 @@
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityModel>
 
-#include <Akonadi/MessageQueueJob>
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 
@@ -40,6 +39,7 @@ MailClient::MailClient(QObject *parent)
     : QObject(parent)
     , m_headerModel(std::make_unique<MailHeaderModel>())
     , m_attachmentModel(new AttachmentModel(this))
+    , m_deliveryMode(DeliveryMode::Now)
 {
 }
 
@@ -55,6 +55,74 @@ void MailClient::send(uint uoid, const QString &subject, const QString &body)
 
     auto const &identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(uoid);
 
+    auto msg = populateMessageData(identity, subject, body);
+    if (!msg.has_value()) {
+        // Errors emitted by the populateMessageData
+        return;
+    }
+
+    auto transportId = fetchTransportId(identity);
+    if (!transportId.has_value()) {
+        qCWarning(MERKURO_MAIL_LOG) << "No transport found";
+        Q_EMIT finished(ResultErrorFetchingTransport, i18n("No transport found"));
+        return;
+    }
+
+    auto composerPtr = populateComposer(msg.value(), identity, &transportId.value());
+    auto *composer = composerPtr.release();
+    QObject::connect(composer, &MessageComposer::ComposerJob::result, this, [this, transportId, composer, identity, msg]() {
+        for (const auto &message : composer->resultMessages()) {
+            auto messageQueueJob = prepareMessageQueueJob(transportId.value(), composer, identity, message);
+            if (!messageQueueJob.has_value()) {
+                return;
+            }
+
+            auto deliveryInfoValid = populateMessageQueueJobWithDeliveryInfo(messageQueueJob.value(), m_deliveryMode, m_sendAfter);
+            if (!deliveryInfoValid) {
+                return;
+            }
+
+            messageQueueJob.value()->start();
+        }
+        composer->deleteLater();
+    });
+    composer->start();
+}
+
+void MailClient::setDeliveryMode(const DeliveryMode mode, const QDateTime &sendAfter)
+{
+    m_deliveryMode = mode;
+    m_sendAfter = sendAfter;
+}
+
+std::optional<int> MailClient::fetchTransportId(const KIdentityManagementCore::Identity &identity)
+{
+    const auto transportMgr = MailTransport::TransportManager::self();
+
+    if (!identity.transport().isEmpty()) {
+        return identity.transport().toInt();
+    }
+
+    qWarning(MERKURO_MAIL_LOG) << "Error while loading transport, using default transport instead";
+    int transportId = transportMgr->defaultTransportId();
+    if (transportId != -1) {
+        return transportId;
+    }
+
+    if (!transportMgr->showTransportCreationDialog(nullptr, MailTransport::TransportManager::IfNoTransportExists)) {
+        qCritical() << "Error creating transport";
+        Q_EMIT finished(ResultErrorCreatingTransport, i18n("Error creating transport"));
+        return std::nullopt;
+    }
+
+    // If a bug encountered during creation of the transport and not reported by the dialog
+    transportId = transportMgr->defaultTransportId();
+    return transportId != -1 ? std::make_optional(transportId) : std::nullopt;
+}
+
+std::optional<MailClient::MessageData>
+MailClient::populateMessageData(const KIdentityManagementCore::Identity &identity, const QString &subject, const QString &body)
+{
     MessageData msg;
     msg.from = identity.primaryEmailAddress();
     msg.subject = subject;
@@ -78,36 +146,32 @@ void MailClient::send(uint uoid, const QString &subject, const QString &body)
     if (msg.cc.isEmpty() && msg.to.isEmpty() && msg.bcc.isEmpty()) {
         qCWarning(MERKURO_MAIL_LOG) << "There are really no recipients to e-mail";
         Q_EMIT finished(ResultReallyNoRecipients, i18n("There are no recipients to e-mail"));
-        return;
+        return std::nullopt;
     }
 
-    const auto transportMgr = MailTransport::TransportManager::self();
-    int transportId = -1;
-    if (!identity.transport().isEmpty()) {
-        transportId = identity.transport().toInt();
-    } else {
-        qWarning(MERKURO_MAIL_LOG) << "Error while loading transport, using default transport instead";
-        transportId = transportMgr->defaultTransportId();
+    return msg;
+}
+
+bool MailClient::populateMessageQueueJobWithDeliveryInfo(Akonadi::MessageQueueJob *job, const DeliveryMode mode, const QDateTime &sendAfter)
+{
+    if (mode == DeliveryMode::Now) {
+        return true;
     }
 
-    // No transport exits ask user to create one
-    if (transportId == -1) {
-        if (!transportMgr->showTransportCreationDialog(nullptr, MailTransport::TransportManager::IfNoTransportExists)) {
-            qCritical() << "Error creating transport";
-            Q_EMIT finished(ResultErrorCreatingTransport, i18n("Error creating transport"));
-        }
-        transportId = transportMgr->defaultTransportId();
+    if (mode == DeliveryMode::Programmed && !sendAfter.isValid()) {
+        qCWarning(MERKURO_MAIL_LOG) << "sendAfter is not valid.";
+        Q_EMIT finished(ResultNoSendDate, i18n("Send date is not valid."));
+        return false;
     }
 
-    auto composerPtr = populateComposer(msg, identity, &transportId);
-    auto *composer = composerPtr.release();
-    QObject::connect(composer, &MessageComposer::ComposerJob::result, this, [this, transportId, composer, identity, msg]() {
-        for (const auto &message : composer->resultMessages()) {
-            queueMessage(transportId, composer, identity, message);
-        }
-        composer->deleteLater();
-    });
-    composer->start();
+    auto dispatchMode = mode == DeliveryMode::Programmed ? DispatchModeAttribute::Automatic : DispatchModeAttribute::Manual;
+    job->dispatchModeAttribute().setDispatchMode(dispatchMode);
+
+    if (sendAfter.isValid()) {
+        job->dispatchModeAttribute().setSendAfter(sendAfter);
+    }
+
+    return true;
 }
 
 std::unique_ptr<MessageComposer::ComposerJob>
@@ -162,10 +226,10 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
     return composer;
 }
 
-void MailClient::queueMessage(const int transportId,
-                              const MessageComposer::ComposerJob *composer,
-                              const KIdentityManagementCore::Identity &identity,
-                              const std::shared_ptr<KMime::Message> &message)
+std::optional<Akonadi::MessageQueueJob *> MailClient::prepareMessageQueueJob(const int transportId,
+                                                                             const MessageComposer::ComposerJob *composer,
+                                                                             const KIdentityManagementCore::Identity &identity,
+                                                                             const std::shared_ptr<KMime::Message> &message)
 {
     Akonadi::MessageQueueJob *qjob = new Akonadi::MessageQueueJob(this);
     message->assemble();
@@ -191,7 +255,7 @@ void MailClient::queueMessage(const int transportId,
     } else if (!transport) {
         qCritical() << "Error loading transport";
         Q_EMIT finished(ResultErrorFetchingTransport, i18n("Error loading transport"));
-        return;
+        return std::nullopt;
     } else {
         qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(composer->infoPart()->from())));
     }
@@ -201,7 +265,8 @@ void MailClient::queueMessage(const int transportId,
     qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(composer->infoPart()->bcc()));
 
     connect(qjob, &KJob::finished, this, &MailClient::handleQueueJobFinished);
-    qjob->start();
+
+    return qjob;
 }
 
 void MailClient::handleQueueJobFinished(KJob *job)

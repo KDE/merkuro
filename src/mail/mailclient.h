@@ -11,6 +11,7 @@
 
 #include "attachmentmodel.h"
 #include "mailheadermodel.h"
+#include <Akonadi/MessageQueueJob>
 #include <KMime/Message>
 #include <MessageComposer/ComposerViewBase>
 #include <QObject>
@@ -43,6 +44,15 @@ class MailClient : public QObject
     Q_PROPERTY(MailHeaderModel *headerModel READ headerModel CONSTANT)
     Q_PROPERTY(AttachmentModel *attachmentModel READ attachmentModel CONSTANT)
 
+public:
+    enum DeliveryMode {
+        Now,
+        Programmed,
+        Manual
+    };
+    Q_ENUM(DeliveryMode)
+
+private:
     struct MessageData {
         QString from;
         QStringList to;
@@ -59,7 +69,8 @@ public:
         ResultReallyNoRecipients,
         ResultErrorCreatingTransport,
         ResultErrorFetchingTransport,
-        ResultQueueJobError
+        ResultQueueJobError,
+        ResultNoSendDate
     };
 
     explicit MailClient(QObject *parent = nullptr);
@@ -69,19 +80,28 @@ public:
     [[nodiscard]] AttachmentModel *attachmentModel() const;
 
     Q_INVOKABLE void send(uint senderUoid, const QString &subject, const QString &body);
+    Q_INVOKABLE void setDeliveryMode(const DeliveryMode mode, const QDateTime &sendAfter = QDateTime());
 
 private:
     std::unique_ptr<MessageComposer::ComposerJob> populateComposer(const MessageData &msg, KIdentityManagementCore::Identity const &identity, int *transportId);
 
-    void queueMessage(const int transport,
-                      const MessageComposer::ComposerJob *composer,
-                      const KIdentityManagementCore::Identity &identity,
-                      const std::shared_ptr<KMime::Message> &message);
+    std::optional<MessageData> populateMessageData(const KIdentityManagementCore::Identity &identity, const QString &subject, const QString &body);
+
+    bool populateMessageQueueJobWithDeliveryInfo(Akonadi::MessageQueueJob *job, const DeliveryMode mode, const QDateTime &sendAfter);
+
+    std::optional<int> fetchTransportId(const KIdentityManagementCore::Identity &identity);
+
+    std::optional<Akonadi::MessageQueueJob *> prepareMessageQueueJob(const int transportId,
+                                                                     const MessageComposer::ComposerJob *composer,
+                                                                     const KIdentityManagementCore::Identity &identity,
+                                                                     const std::shared_ptr<KMime::Message> &message);
 
     void handleQueueJobFinished(KJob *job);
 
     std::unique_ptr<MailHeaderModel> m_headerModel;
     AttachmentModel *m_attachmentModel;
+    DeliveryMode m_deliveryMode;
+    QDateTime m_sendAfter;
 
 Q_SIGNALS:
     void finished(Akonadi::MailClient::Result result, const QString &errorString);
