@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:45+0000\n"
+"POT-Creation-Date: 2026-07-08 00:45+0000\n"
 "PO-Revision-Date: 2026-05-03 20:43+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2060,7 +2060,7 @@ msgid "Enter email of recipient…"
 msgstr "E-Mailadresse des Empfängers eingeben …"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:169
+#: mail/qml/MailComposer.qml:180
 #, kde-format
 msgid "Send"
 msgstr "Senden"
@@ -3624,7 +3624,7 @@ msgid "Mark as Important"
 msgstr "Als wichtig markieren"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -3635,6 +3635,27 @@ msgstr "In den Papierkorb verschieben"
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Speichern unter …"
+
+#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#, fuzzy, kde-format
+#| msgid "Reply-To:"
+msgctxt "@action"
+msgid "Reply"
+msgstr "Antwort an:"
+
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action"
+msgid "Reply to All"
+msgstr "Alle löschen"
+
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#, fuzzy, kde-format
+#| msgid "Forwards"
+msgctxt "@action"
+msgid "Forward"
+msgstr "Vorwärts"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
@@ -3741,12 +3762,25 @@ msgid "Edit Folder"
 msgstr "Ordner bearbeiten"
 
 #: mail/qml/actions/MailItemMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "Create Folder"
+msgctxt "@action:inmenu"
+msgid "Update Folder"
+msgstr "Ordner erstellen"
+
+#: mail/qml/actions/MailItemMenu.qml:60
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Update Folder and Subfolders"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:69
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Konto neu starten"
 
-#: mail/qml/actions/MailItemMenu.qml:60
+#: mail/qml/actions/MailItemMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3801,23 +3835,23 @@ msgstr "Nachricht speichern — Merkuro Mail"
 msgid "Email messages (*.mbox)"
 msgstr "E-Mail-Nachrichten (*.mbox)"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:186
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Nachricht markieren"
 
-#: mail/qml/FolderView.qml:219
+#: mail/qml/FolderView.qml:239
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Kein Postfach ausgewählt"
 
-#: mail/qml/FolderView.qml:220
+#: mail/qml/FolderView.qml:240
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Wählen Sie ein Postfach aus der Seitenleiste."
 
-#: mail/qml/FolderView.qml:227
+#: mail/qml/FolderView.qml:247
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Postfach ist leer"
@@ -3833,42 +3867,42 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "Neue Nachricht"
 
-#: mail/qml/MailComposer.qml:35
+#: mail/qml/MailComposer.qml:39
 #, kde-format
 msgid "From:"
 msgstr "Von:"
 
-#: mail/qml/MailComposer.qml:46
+#: mail/qml/MailComposer.qml:50
 #, kde-format
 msgid "Identity:"
 msgstr "Identität:"
 
-#: mail/qml/MailComposer.qml:74
+#: mail/qml/MailComposer.qml:78
 #, kde-format
 msgid "To:"
 msgstr "An:"
 
-#: mail/qml/MailComposer.qml:75
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "CC:"
 msgstr "Kopie:"
 
-#: mail/qml/MailComposer.qml:76
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "BCC:"
 msgstr "Blindkopie:"
 
-#: mail/qml/MailComposer.qml:77
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "Reply-To:"
 msgstr "Antwort an:"
 
-#: mail/qml/MailComposer.qml:97
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "Subject:"
 msgstr "Betreff:"
 
-#: mail/qml/MailComposer.qml:155
+#: mail/qml/MailComposer.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"

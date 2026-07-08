@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:45+0000\n"
+"POT-Creation-Date: 2026-07-08 00:45+0000\n"
 "PO-Revision-Date: 2025-05-26 09:23+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2086,7 +2086,7 @@ msgid "Enter email of recipient…"
 msgstr "Escriba o enderezo de correo electrónico de destino…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:169
+#: mail/qml/MailComposer.qml:180
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
@@ -3662,7 +3662,7 @@ msgid "Mark as Important"
 msgstr "Marcar como importante"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -3673,6 +3673,27 @@ msgstr "Botar no lixo"
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Gardar como…"
+
+#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#, fuzzy, kde-format
+#| msgid "Reply-To:"
+msgctxt "@action"
+msgid "Reply"
+msgstr "Responder a:"
+
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action"
+msgid "Reply to All"
+msgstr "Eliminalas todas"
+
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#, fuzzy, kde-format
+#| msgid "Forwards"
+msgctxt "@action"
+msgid "Forward"
+msgstr "Cara a Diante "
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
@@ -3782,12 +3803,25 @@ msgid "Edit Folder"
 msgstr "Engadir un cartafol"
 
 #: mail/qml/actions/MailItemMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "Create Folder"
+msgctxt "@action:inmenu"
+msgid "Update Folder"
+msgstr "Crear un cartafol"
+
+#: mail/qml/actions/MailItemMenu.qml:60
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Update Folder and Subfolders"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:69
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Reiniciar a conta"
 
-#: mail/qml/actions/MailItemMenu.qml:60
+#: mail/qml/actions/MailItemMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3843,23 +3877,23 @@ msgstr "Gardar a mensaxe — Correo de Merkuro"
 msgid "Email messages (*.mbox)"
 msgstr "Mensaxes de correo electrónico (*.mbox)"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:186
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marcar a mensaxe"
 
-#: mail/qml/FolderView.qml:219
+#: mail/qml/FolderView.qml:239
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Non se seleccionou ningunha caixa de correo"
 
-#: mail/qml/FolderView.qml:220
+#: mail/qml/FolderView.qml:240
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Seleccione unha caixa de correo na barra lateral."
 
-#: mail/qml/FolderView.qml:227
+#: mail/qml/FolderView.qml:247
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "A caixa de correo está baleira."
@@ -3875,42 +3909,42 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nova mensaxe"
 
-#: mail/qml/MailComposer.qml:35
+#: mail/qml/MailComposer.qml:39
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: mail/qml/MailComposer.qml:46
+#: mail/qml/MailComposer.qml:50
 #, kde-format
 msgid "Identity:"
 msgstr "Identidade:"
 
-#: mail/qml/MailComposer.qml:74
+#: mail/qml/MailComposer.qml:78
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:75
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "CC:"
 msgstr "Copia:"
 
-#: mail/qml/MailComposer.qml:76
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "BCC:"
 msgstr "Copia agochada:"
 
-#: mail/qml/MailComposer.qml:77
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "Reply-To:"
 msgstr "Responder a:"
 
-#: mail/qml/MailComposer.qml:97
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "Subject:"
 msgstr "Asunto:"
 
-#: mail/qml/MailComposer.qml:155
+#: mail/qml/MailComposer.qml:166
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@action:button"

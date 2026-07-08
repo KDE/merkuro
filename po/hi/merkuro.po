@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:45+0000\n"
+"POT-Creation-Date: 2026-07-08 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2118,7 +2118,7 @@ msgid "Enter email of recipient…"
 msgstr "प्राप्तकर्ता का ईमेल दर्ज करें..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:169
+#: mail/qml/MailComposer.qml:180
 #, kde-format
 msgid "Send"
 msgstr "भेजें"
@@ -3721,7 +3721,7 @@ msgid "Mark as Important"
 msgstr "महत्वपूर्ण के रूप में चिह्नित करें"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:29
+#: mail/qml/ConversationViewer.qml:44
 #, fuzzy, kde-format
 #| msgid "Move to Trash"
 msgctxt "@action"
@@ -3735,6 +3735,27 @@ msgstr "कूडेदान में ले जाएं"
 msgctxt "@action"
 msgid "Save as…"
 msgstr "ऐसे सहेजें..."
+
+#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#, fuzzy, kde-format
+#| msgid "Reply-To:"
+msgctxt "@action"
+msgid "Reply"
+msgstr "को उत्तर :"
+
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action"
+msgid "Reply to All"
+msgstr "सभी को हटाएं"
+
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#, fuzzy, kde-format
+#| msgid "Forwards"
+msgctxt "@action"
+msgid "Forward"
+msgstr "आगे"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, fuzzy, kde-format
@@ -3849,12 +3870,25 @@ msgid "Edit Folder"
 msgstr "फोल्डर जोड़ें"
 
 #: mail/qml/actions/MailItemMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "Create Folder"
+msgctxt "@action:inmenu"
+msgid "Update Folder"
+msgstr "फोल्डर बनाएं"
+
+#: mail/qml/actions/MailItemMenu.qml:60
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Update Folder and Subfolders"
+msgstr ""
+
+#: mail/qml/actions/MailItemMenu.qml:69
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "खाता पुन: प्रारंभ करें"
 
-#: mail/qml/actions/MailItemMenu.qml:60
+#: mail/qml/actions/MailItemMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
@@ -3913,23 +3947,23 @@ msgstr "संदेश सहेजें - मेरकुरो-मेल"
 msgid "Email messages (*.mbox)"
 msgstr "ईमेल संदेश (*.mbox)"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:186
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "संदेश चिह्नित करें"
 
-#: mail/qml/FolderView.qml:219
+#: mail/qml/FolderView.qml:239
 #, kde-format
 msgid "No mailbox selected"
 msgstr "कोई मेलबॉक्स चयनित नहीं है।"
 
-#: mail/qml/FolderView.qml:220
+#: mail/qml/FolderView.qml:240
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "साइडबार से एक मेलबॉक्स चुनें।"
 
-#: mail/qml/FolderView.qml:227
+#: mail/qml/FolderView.qml:247
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "मेलबॉक्स खाली है।"
@@ -3945,42 +3979,42 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "नया संदेश"
 
-#: mail/qml/MailComposer.qml:35
+#: mail/qml/MailComposer.qml:39
 #, kde-format
 msgid "From:"
 msgstr "से :"
 
-#: mail/qml/MailComposer.qml:46
+#: mail/qml/MailComposer.qml:50
 #, kde-format
 msgid "Identity:"
 msgstr "पहचान :"
 
-#: mail/qml/MailComposer.qml:74
+#: mail/qml/MailComposer.qml:78
 #, kde-format
 msgid "To:"
 msgstr "प्रेषिती :"
 
-#: mail/qml/MailComposer.qml:75
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "CC:"
 msgstr "CC :"
 
-#: mail/qml/MailComposer.qml:76
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "BCC:"
 msgstr "BCC :"
 
-#: mail/qml/MailComposer.qml:77
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "Reply-To:"
 msgstr "को उत्तर :"
 
-#: mail/qml/MailComposer.qml:97
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "Subject:"
 msgstr "विषय :"
 
-#: mail/qml/MailComposer.qml:155
+#: mail/qml/MailComposer.qml:166
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@action:button"
