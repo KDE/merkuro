@@ -203,6 +203,10 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Action {
+                    fromQAction: MailApplication.action('send_now')
+                }
+
+                Kirigami.Action {
                     fromQAction: MailApplication.action('mail_reply')
                 }
 

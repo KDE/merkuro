@@ -65,6 +65,7 @@ private:
     void slotTrash();
     void slotDelete();
     void replyTo(const Akonadi::Item &item, MessageComposer::ReplyStrategy strategy);
+    void slotSendNow();
 
     QItemSelectionModel *m_selectionModel = nullptr;
     MailApplication *m_mailApplication = nullptr;
@@ -82,4 +83,5 @@ private:
     QAction *m_mailReplyAction = nullptr;
     QAction *m_mailReplyAllAction = nullptr;
     QAction *m_mailForwardAction = nullptr;
+    QAction *m_sendNowAction = nullptr;
 };

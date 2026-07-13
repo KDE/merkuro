@@ -79,6 +79,9 @@ void MailApplication::setupActions()
     action->setShortcut(u"F"_s);
     mainCollection()->addAction("mail_forward"_L1, action);
 
+    action = new QAction(QIcon::fromTheme(u"mail-send"_s), i18nc("@action", "Send now"));
+    mainCollection()->addAction("send_now"_L1, action);
+
     readSettings();
 }
 

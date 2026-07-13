@@ -7,12 +7,14 @@
 #include "merkuro_mail_debug.h"
 
 #include <Akonadi/EntityTreeModel>
+#include <Akonadi/ErrorAttribute>
 #include <Akonadi/ItemCopyJob>
 #include <Akonadi/ItemDeleteJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/ItemMoveJob>
+#include <Akonadi/MessageFlags>
 #include <Akonadi/MessageStatus>
 #include <KMime/Message>
 #include <MailCommon/MailKernel>
@@ -21,6 +23,7 @@
 #include <KAuthorized>
 #include <KLocalizedString>
 
+#include <akonadi/dispatchmodeattribute.h>
 #include <memory>
 
 using namespace Qt::StringLiterals;
@@ -184,6 +187,9 @@ void MailActions::setMailApplication(MailApplication *mailApplication)
         }
     });
 
+    m_sendNowAction = mailApplication->action("send_now"_L1);
+    connect(m_sendNowAction, &QAction::triggered, this, &MailActions::slotSendNow);
+
     setActionState();
 }
 
@@ -198,6 +204,7 @@ void MailActions::setActionState()
     bool allImportant = true;
     bool allUnimportant = true;
     bool allInTrash = true;
+    bool allInDraftOrOutbox = true;
 
     const auto items = selectionToItems();
     for (const auto &item : items) {
@@ -209,6 +216,7 @@ void MailActions::setActionState()
         allImportant = allImportant && state.isImportant();
         allUnimportant = allUnimportant && !state.isImportant();
         allInTrash = allInTrash && CommonKernel->folderIsTrash(item.parentCollection());
+        allInDraftOrOutbox = allInDraftOrOutbox && CommonKernel->folderIsDraftOrOutbox(item.parentCollection());
     }
     m_markReadAction->setEnabled(!allRead);
     m_markUnreadAction->setEnabled(!allUnread);
@@ -217,6 +225,7 @@ void MailActions::setActionState()
     m_mailSaveAsAction->setVisible(items.size() == 1);
     m_mailDeleteAction->setVisible(allInTrash);
     m_mailTrashAction->setVisible(!allInTrash);
+    m_sendNowAction->setVisible(allInDraftOrOutbox);
 }
 
 void MailActions::modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f)
@@ -421,6 +430,27 @@ void MailActions::copyTo(const Akonadi::Item::List &items, const Akonadi::Collec
             Q_EMIT m_mailApplication->errorOccurred(job->errorText());
         }
     });
+}
+
+void MailActions::slotSendNow()
+{
+    auto items = selectionToItems();
+
+    for (auto &item : items) {
+        // Same code as SendQueuedAction
+        item.addAttribute(new Akonadi::DispatchModeAttribute); // defaults to Automatic
+        if (item.hasAttribute<Akonadi::ErrorAttribute>()) {
+            item.removeAttribute<Akonadi::ErrorAttribute>();
+            item.clearFlag(Akonadi::MessageFlags::HasError);
+        }
+
+        auto job = new Akonadi::ItemModifyJob(item, this);
+        connect(job, &KJob::result, this, [this](KJob *job) {
+            if (job->error()) {
+                Q_EMIT m_mailApplication->errorOccurred(job->errorText());
+            }
+        });
+    }
 }
 
 #include "moc_mailactions.cpp"
