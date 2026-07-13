@@ -215,7 +215,7 @@ Kirigami.ScrollablePage {
         standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
         onAccepted: {
-            const mode = sendLaterManual.checked ? MailClient.DeliveryMode.Manual : MailClient.DeliveryMode.Programmed;
+            const mode = sendLaterManual.checked ? MailClient.DeliveryMode.Manual : MailClient.DeliveryMode.Scheduled;
             mailClient.setDeliveryMode(mode, sendLaterDatePicker.value);
             mailClient.send(identity, subject, mailContent);
         }

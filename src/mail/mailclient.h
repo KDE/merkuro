@@ -47,7 +47,7 @@ class MailClient : public QObject
 public:
     enum DeliveryMode {
         Now,
-        Programmed,
+        Scheduled,
         Manual
     };
     Q_ENUM(DeliveryMode)

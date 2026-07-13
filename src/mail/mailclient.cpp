@@ -158,13 +158,13 @@ bool MailClient::populateMessageQueueJobWithDeliveryInfo(Akonadi::MessageQueueJo
         return true;
     }
 
-    if (mode == DeliveryMode::Programmed && !sendAfter.isValid()) {
+    if (mode == DeliveryMode::Scheduled && !sendAfter.isValid()) {
         qCWarning(MERKURO_MAIL_LOG) << "sendAfter is not valid.";
         Q_EMIT finished(ResultNoSendDate, i18n("Send date is not valid."));
         return false;
     }
 
-    auto dispatchMode = mode == DeliveryMode::Programmed ? DispatchModeAttribute::Automatic : DispatchModeAttribute::Manual;
+    auto dispatchMode = mode == DeliveryMode::Scheduled ? DispatchModeAttribute::Automatic : DispatchModeAttribute::Manual;
     job->dispatchModeAttribute().setDispatchMode(dispatchMode);
 
     if (sendAfter.isValid()) {
