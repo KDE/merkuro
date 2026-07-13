@@ -25,6 +25,7 @@ public:
         StatusRole,
         FavoriteRole,
         ItemRole,
+        DispatchModeRole,
     };
 
     QVariant dataFromItem(const Akonadi::Item &item, int role) const;

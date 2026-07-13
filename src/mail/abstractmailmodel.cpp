@@ -3,6 +3,7 @@
 
 #include "abstractmailmodel.h"
 
+#include <Akonadi/DispatchModeAttribute>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/Item>
 #include <Akonadi/MessageStatus>
@@ -75,6 +76,15 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
         return QVariant::fromValue(stat);
     case ItemRole:
         return QVariant::fromValue(item);
+    case DispatchModeRole:
+        if (const auto attr = item.attribute<Akonadi::DispatchModeAttribute>()) {
+            return QVariantMap{
+                {u"automatic"_s, attr->dispatchMode() == Akonadi::DispatchModeAttribute::Automatic},
+                {u"sendAfter"_s, attr->sendAfter()},
+            };
+        } else {
+            return {};
+        }
     }
 
     return {};
@@ -94,5 +104,6 @@ QHash<int, QByteArray> AbstractMailModel::roleNames() const
         {TextColorRole, "textColor"_ba},
         {BackgroundColorRole, "backgroudColor"_ba},
         {ItemRole, "item"_ba},
+        {DispatchModeRole, "dispatchMode"_ba},
     };
 }

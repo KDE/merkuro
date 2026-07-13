@@ -63,6 +63,7 @@ MailManager::MailManager(QObject *parent)
 
     m_session = new Session("KMailManager Kernel ETM"_ba, this);
     auto folderCollectionMonitor = new MailCommon::FolderCollectionMonitor(m_session, this);
+    folderCollectionMonitor->monitor()->itemFetchScope().fetchAttribute<Akonadi::DispatchModeAttribute>(true);
 
     // setup collection model
     m_entityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);

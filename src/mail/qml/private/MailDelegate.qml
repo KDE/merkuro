@@ -22,7 +22,11 @@ Delegates.IndicatorItemDelegate {
     required property string title
     required property var status
     required property var item
+    required property var dispatchMode
     required property ItemSelectionModel selectionModel
+
+    readonly property bool hasSendAfter: root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime())
+    readonly property bool isScheduled: root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter)
 
     readonly property string datetimeText: datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
 
@@ -143,11 +147,44 @@ Delegates.IndicatorItemDelegate {
                     text: root.datetimeText
                 }
             }
+
             QQC2.Label {
                 Layout.fillWidth: true
                 text: root.title
                 elide: Text.ElideRight
                 font.weight: root.unread ? Font.Bold : Font.Normal
+            }
+
+            Loader {
+                Layout.alignment: Qt.AlignRight 
+                visible: root.isScheduled
+
+                sourceComponent: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+    
+                    HoverHandler {
+                        id: scheduledHoverHandler
+                    }
+    
+                    QQC2.ToolTip.visible: scheduledHoverHandler.hovered
+                    QQC2.ToolTip.text: root.dispatchMode && root.dispatchMode.automatic
+                        ? i18nc("@info:tooltip %1 is a date and time", "Scheduled at %1", scheduledDate.text)
+                        : i18nc("@info:tooltip", "Require manual action. Use Send Now action to send immediately or use Reschedule action to set a date and time.")
+    
+                    Kirigami.Icon {
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        source: 'mail-queue-symbolic'
+                    }
+    
+                    QQC2.Label {
+                        id: scheduledDate
+                        color: Kirigami.Theme.disabledTextColor
+                        text: root.dispatchMode && root.dispatchMode.automatic
+                            ? root.dispatchMode.sendAfter.toLocaleString(Qt.locale(), Locale.ShortFormat)
+                            : i18n("Manual")
+                    }
+                }
             }
         }
     }

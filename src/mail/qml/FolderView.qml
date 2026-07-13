@@ -340,6 +340,7 @@ Kirigami.ScrollablePage {
             required property string title
             required property var status
             required property var item
+            required property var dispatchMode
             required property int index
 
             height: mailDelegate.implicitHeight
@@ -362,6 +363,7 @@ Kirigami.ScrollablePage {
                 title: parentDelegate.title
                 status: parentDelegate.status
                 item: parentDelegate.item
+                dispatchMode: parentDelegate.dispatchMode
                 index: parentDelegate.index
                 selectionModel: mailSelectionModel
 
