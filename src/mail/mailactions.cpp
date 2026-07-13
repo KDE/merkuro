@@ -190,6 +190,16 @@ void MailActions::setMailApplication(MailApplication *mailApplication)
     m_sendNowAction = mailApplication->action("send_now"_L1);
     connect(m_sendNowAction, &QAction::triggered, this, &MailActions::slotSendNow);
 
+    m_mailRescheduleAction = mailApplication->action("mail_reschedule"_L1);
+    connect(m_mailRescheduleAction, &QAction::triggered, this, [this] {
+        const auto index = m_selectionModel->currentIndex();
+        if (!index.isValid()) {
+            return;
+        }
+        auto item = index.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        Q_EMIT mailRescheduleRequested(item);
+    });
+
     setActionState();
 }
 
@@ -226,6 +236,7 @@ void MailActions::setActionState()
     m_mailDeleteAction->setVisible(allInTrash);
     m_mailTrashAction->setVisible(!allInTrash);
     m_sendNowAction->setVisible(allInDraftOrOutbox);
+    m_mailRescheduleAction->setVisible(allInDraftOrOutbox && items.size() == 1);
 }
 
 void MailActions::modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f)

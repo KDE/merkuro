@@ -56,6 +56,7 @@ public:
     Q_INVOKABLE void deleteCollection(const QModelIndex &index);
     [[nodiscard]] Q_INVOKABLE QString resourceIdentifier(const QModelIndex &index);
     Q_INVOKABLE void saveMail(const QUrl &fileUrl, const Akonadi::Item &item);
+    Q_INVOKABLE void rescheduleMail(Akonadi::Item item, const QDateTime &dateTime);
     Q_INVOKABLE void checkMail();
 
     Q_INVOKABLE Akonadi::Collection getCollection(const QModelIndex &index);

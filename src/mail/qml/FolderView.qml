@@ -10,6 +10,7 @@ import QtQml.Models
 import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import './private'
@@ -137,6 +138,11 @@ Kirigami.ScrollablePage {
                 dialog.open();
             }
 
+            onMailRescheduleRequested: (item) => {
+                const dialog = rescheduleDialog.createObject(root, { item });
+                dialog.open();
+            }
+
             onMoveToRequested: items => {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
                 const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
@@ -180,6 +186,26 @@ Kirigami.ScrollablePage {
         }
 
         Component {
+            id: rescheduleDialog
+            FormCard.FormCardDialog {
+                id: dialogRoot
+
+                property var item
+
+                title: i18nc("@title:dialog", "Reschedule Message")
+                standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
+
+                onAccepted: MailManager.rescheduleMail(dialogRoot.item, dateTimeDelegate.value)
+                onClosed: dialogRoot.destroy()
+
+                FormCard.FormDateTimeDelegate {
+                    id: dateTimeDelegate
+                    text: i18nc("@label", "Send Date and Time")
+                }
+            }
+        }
+
+        Component {
             id: contextMenu
             Components.ConvergentContextMenu {
                 Kirigami.Action {
@@ -204,6 +230,10 @@ Kirigami.ScrollablePage {
 
                 Kirigami.Action {
                     fromQAction: MailApplication.action('send_now')
+                }
+
+                Kirigami.Action {
+                    fromQAction: MailApplication.action('mail_reschedule')
                 }
 
                 Kirigami.Action {

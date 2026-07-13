@@ -56,6 +56,7 @@ Q_SIGNALS:
     void itemChanged();
 
     void mailSaveAs(const Akonadi::Item &item);
+    void mailRescheduleRequested(const Akonadi::Item &item);
     void moveToRequested(const Akonadi::Item::List &items);
     void copyToRequested(const Akonadi::Item::List &items);
     void composerRequested(const QString &to, const QString &subject, const QString &body);
@@ -84,4 +85,5 @@ private:
     QAction *m_mailReplyAllAction = nullptr;
     QAction *m_mailForwardAction = nullptr;
     QAction *m_sendNowAction = nullptr;
+    QAction *m_mailRescheduleAction = nullptr;
 };

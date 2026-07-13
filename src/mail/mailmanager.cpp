@@ -14,10 +14,12 @@
 #include <Akonadi/CollectionCreateJob>
 #include <Akonadi/CollectionDeleteJob>
 #include <Akonadi/CollectionPropertiesDialog>
+#include <Akonadi/DispatchModeAttribute>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
+#include <Akonadi/ItemModifyJob>
 #include <Akonadi/ItemMoveJob>
 #include <Akonadi/MessageModel>
 #include <Akonadi/Monitor>
@@ -34,6 +36,7 @@
 #include <QApplication>
 #include <QLoggingCategory>
 #include <QPointer>
+#include <akonadi/dispatchmodeattribute.h>
 using namespace Qt::Literals::StringLiterals;
 MailManager::MailManager(QObject *parent)
     : QObject(parent)
@@ -242,6 +245,22 @@ void MailManager::saveMail(const QUrl &fileUrl, const Akonadi::Item &item)
 
         if (!mbox.save()) {
             qCWarning(MERKURO_MAIL_LOG) << "Error occurred: error saving mail";
+        }
+    });
+}
+
+void MailManager::rescheduleMail(Akonadi::Item item, const QDateTime &dateTime)
+{
+    auto dispatchMode = new Akonadi::DispatchModeAttribute;
+    dispatchMode->setDispatchMode(Akonadi::DispatchModeAttribute::Automatic);
+    dispatchMode->setSendAfter(dateTime);
+
+    item.addAttribute(dispatchMode);
+
+    auto job = new Akonadi::ItemModifyJob(item, this);
+    connect(job, &KJob::result, this, [](KJob *job) {
+        if (job->error()) {
+            qCWarning(MERKURO_MAIL_LOG) << "Error occurred during rescheduling mail: " << job->errorString();
         }
     });
 }

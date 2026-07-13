@@ -82,6 +82,9 @@ void MailApplication::setupActions()
     action = new QAction(QIcon::fromTheme(u"mail-send"_s), i18nc("@action", "Send now"));
     mainCollection()->addAction("send_now"_L1, action);
 
+    action = new QAction(QIcon::fromTheme(u"mail-queue"_s), i18nc("@action", "Reschedule"), this);
+    mainCollection()->addAction("mail_reschedule"_L1, action);
+
     readSettings();
 }
 
