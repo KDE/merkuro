@@ -8,6 +8,7 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemCopyJob>
+#include <Akonadi/ItemDeleteJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
@@ -133,8 +134,11 @@ void MailActions::setMailApplication(MailApplication *mailApplication)
     m_markImportantAction = mailApplication->action("mark_important"_L1);
     connect(m_markImportantAction, &QAction::toggled, this, &MailActions::setImportantState);
 
-    m_mailDeleteAction = mailApplication->action("mail_trash"_L1);
-    connect(m_mailDeleteAction, &QAction::triggered, this, &MailActions::slotTrash);
+    m_mailTrashAction = mailApplication->action("mail_trash"_L1);
+    connect(m_mailTrashAction, &QAction::triggered, this, &MailActions::slotTrash);
+
+    m_mailDeleteAction = mailApplication->action("mail_delete"_L1);
+    connect(m_mailDeleteAction, &QAction::triggered, this, &MailActions::slotDelete);
 
     m_mailSaveAsAction = mailApplication->action("mail_save_as"_L1);
     connect(m_mailSaveAsAction, &QAction::triggered, this, [this] {
@@ -193,6 +197,7 @@ void MailActions::setActionState()
     bool allUnread = true;
     bool allImportant = true;
     bool allUnimportant = true;
+    bool allInTrash = true;
 
     const auto items = selectionToItems();
     for (const auto &item : items) {
@@ -203,12 +208,15 @@ void MailActions::setActionState()
         allUnread = allUnread && !state.isRead();
         allImportant = allImportant && state.isImportant();
         allUnimportant = allUnimportant && !state.isImportant();
+        allInTrash = allInTrash && CommonKernel->folderIsTrash(item.parentCollection());
     }
     m_markReadAction->setEnabled(!allRead);
     m_markUnreadAction->setEnabled(!allUnread);
     m_markImportantAction->setChecked(allImportant);
 
     m_mailSaveAsAction->setVisible(items.size() == 1);
+    m_mailDeleteAction->setVisible(allInTrash);
+    m_mailTrashAction->setVisible(!allInTrash);
 }
 
 void MailActions::modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f)
@@ -272,6 +280,20 @@ void MailActions::slotTrash()
 
     for (const auto &[trash, items] : itemCollections.asKeyValueRange()) {
         auto job = new Akonadi::ItemMoveJob(items, trash);
+        connect(job, &KJob::result, this, [this](KJob *job) {
+            if (job->error()) {
+                Q_EMIT m_mailApplication->errorOccurred(job->errorText());
+            }
+        });
+    }
+}
+
+void MailActions::slotDelete()
+{
+    const auto items = selectionToItems();
+
+    for (const auto &item : items) {
+        auto job = new Akonadi::ItemDeleteJob(item);
         connect(job, &KJob::result, this, [this](KJob *job) {
             if (job->error()) {
                 Q_EMIT m_mailApplication->errorOccurred(job->errorText());

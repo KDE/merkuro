@@ -41,11 +41,19 @@ MimeTreeParser.MailViewer {
             onTriggered: mailActions.forward(root.emptyItem)
         },
         Kirigami.Action {
-            text: i18nc("@action", "Move to Trash")
-            icon.name: "albumfolder-user-trash-symbolic"
+            fromQAction: MailApplication.action('mail_trash')
             onTriggered: {
                 mailActions.item = root.item
-                MailApplication.action('mail_trash').trigger();
+                MailApplication.action("mail_trash").trigger();
+                mailActions.item = undefined;
+            }
+        },
+        Kirigami.Action {
+            fromQAction: MailApplication.action('mail_delete')
+            icon.color: Kirigami.Theme.negativeTextColor
+            onTriggered: {
+                mailActions.item = root.item
+                MailApplication.action("mail_delete").trigger();
                 mailActions.item = undefined;
             }
         }
