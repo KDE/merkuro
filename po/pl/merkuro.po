@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
 "PO-Revision-Date: 2025-02-23 12:27+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1999,7 +1999,7 @@ msgstr "Idź"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:42
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2121,7 +2121,7 @@ msgid "Enter email of recipient…"
 msgstr "Wpisz adres pocztowy lub odbiorcę..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:180
+#: mail/qml/MailComposer.qml:181
 #, kde-format
 msgid "Send"
 msgstr "Wyślij"
@@ -2720,7 +2720,7 @@ msgctxt "@action"
 msgid "Delete contact"
 msgstr "Usuń kontakt"
 
-#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:60
+#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Move to..."
@@ -2728,7 +2728,7 @@ msgctxt "@action"
 msgid "Move to…"
 msgstr "Przenieś do..."
 
-#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:63
+#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Copy to..."
@@ -2849,13 +2849,13 @@ msgstr[0] "%1 zaznaczona"
 msgstr[1] "%1 zaznaczone"
 msgstr[2] "%1 zaznaczonych"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:144
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Przenieś zaznaczenie do:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:161
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3727,7 +3727,6 @@ msgid "Mark as Important"
 msgstr "Oznacz jako ważną"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -3735,55 +3734,89 @@ msgstr "Wyrzuć do kosza"
 
 #: mail/mailapplication.cpp:57
 #, fuzzy, kde-format
+#| msgctxt "@title:dialog"
+#| msgid "Delete Email"
+msgctxt "@action"
+msgid "Delete permanently"
+msgstr "Usuń wiadomość"
+
+#: mail/mailapplication.cpp:61
+#, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Save as..."
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Zapisz jako..."
 
-#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "Odpowiedz-Do:"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Usuń wszystko"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
 msgid "Forward"
 msgstr "Do przodu"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
+#: mail/mailapplication.cpp:82
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action"
+msgid "Send now"
+msgstr "Wyślij"
+
+#: mail/mailapplication.cpp:85
+#, fuzzy, kde-format
+#| msgid "Schedule"
+msgctxt "@action"
+msgid "Reschedule"
+msgstr "Harmonogram"
+
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "Brak odbiorców do wysłania wiadomości"
 
-#: mail/mailclient.cpp:97
+#: mail/mailclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No results found"
+msgid "No transport found"
+msgstr "Nie ma żadnych wyników"
+
+#: mail/mailclient.cpp:114
 #, kde-format
 msgid "Error creating transport"
 msgstr "Błąd przy tworzeniu wysyłki"
 
-#: mail/mailclient.cpp:143
+#: mail/mailclient.cpp:163
+#, fuzzy, kde-format
+#| msgid "The signature is invalid."
+msgid "Send date is not valid."
+msgstr "Podpis jest nieprawidłowy."
+
+#: mail/mailclient.cpp:207
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
 msgstr ""
 
-#: mail/mailclient.cpp:193
+#: mail/mailclient.cpp:257
 #, kde-format
 msgid "Error loading transport"
 msgstr "Błąd przy wczytywaniu wysyłki"
 
-#: mail/mailclient.cpp:211
+#: mail/mailclient.cpp:276
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "Błąd kolejkowania wiadomości w skrzynce wyjściowej: %1"
@@ -3920,13 +3953,13 @@ msgstr "Otwórz plik"
 msgid "Choose file"
 msgstr "Wybierz plik"
 
-#: mail/qml/FolderView.qml:23
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Poszukaj: %1"
 
-#: mail/qml/FolderView.qml:80
+#: mail/qml/FolderView.qml:81
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -3935,33 +3968,47 @@ msgstr[0] "%1 zaznaczona"
 msgstr[1] "%1 zaznaczone"
 msgstr[2] "%1 zaznaczonych"
 
-#: mail/qml/FolderView.qml:126
+#: mail/qml/FolderView.qml:127
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Zapisz wiadomość - Merkuro Mail"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:128
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "Wiadomości pocztowe (*.mbox)"
 
-#: mail/qml/FolderView.qml:186
+#: mail/qml/FolderView.qml:195
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@title:dialog"
+msgid "Reschedule Message"
+msgstr "Nowa wiadomość"
+
+#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#, kde-format
+msgctxt "@label"
+msgid "Send Date and Time"
+msgstr ""
+
+#: mail/qml/FolderView.qml:212
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Oznacz wiadomość"
 
-#: mail/qml/FolderView.qml:239
+#: mail/qml/FolderView.qml:278
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Nie wybrano żadnej skrzynki pocztowej"
 
-#: mail/qml/FolderView.qml:240
+#: mail/qml/FolderView.qml:279
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Wybierz skrzynkę pocztową z paska bocznego."
 
-#: mail/qml/FolderView.qml:247
+#: mail/qml/FolderView.qml:286
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Skrzynka pocztowa jest pusta"
@@ -3971,53 +4018,73 @@ msgstr "Skrzynka pocztowa jest pusta"
 msgid "Mailboxes"
 msgstr "Skrzynki"
 
-#: mail/qml/MailComposer.qml:17
+#: mail/qml/MailComposer.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nowa wiadomość"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "From:"
 msgstr "Od:"
 
-#: mail/qml/MailComposer.qml:50
+#: mail/qml/MailComposer.qml:51
 #, kde-format
 msgid "Identity:"
 msgstr "Tożsamość:"
 
-#: mail/qml/MailComposer.qml:78
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "To:"
 msgstr "Do:"
 
-#: mail/qml/MailComposer.qml:79
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "CC:"
 msgstr "DW:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "BCC:"
 msgstr "UDW:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:82
 #, kde-format
 msgid "Reply-To:"
 msgstr "Odpowiedz-Do:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "Subject:"
 msgstr "Temat:"
 
-#: mail/qml/MailComposer.qml:166
+#: mail/qml/MailComposer.qml:167
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Załączniki:"
+
+#: mail/qml/MailComposer.qml:190
+#, fuzzy, kde-format
+#| msgid "Send SMS"
+msgctxt "@action:button"
+msgid "Send Later"
+msgstr "Wyślij SMSa"
+
+#: mail/qml/MailComposer.qml:214
+#, fuzzy, kde-format
+#| msgid "Schedule View"
+msgctxt "@title:dialog"
+msgid "Schedule Send"
+msgstr "Widok harmonogramu"
+
+#: mail/qml/MailComposer.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Manual mode"
+msgstr ""
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -4264,9 +4331,6 @@ msgstr ""
 #~ msgid "Calendar Handbook"
 #~ msgstr "Podręcznik Kalendarza"
 
-#~ msgid "No results found"
-#~ msgstr "Nie ma żadnych wyników"
-
 #~ msgid "Open Command Bar"
 #~ msgstr "Otwórz pasek poleceń"
 
@@ -4370,9 +4434,6 @@ msgstr ""
 #~ msgid "You are trusting this key."
 #~ msgstr "Ufasz temu kluczowi."
 
-#~ msgid "The signature is invalid."
-#~ msgstr "Podpis jest nieprawidłowy."
-
 #~ msgid "This message is encrypted but we don't have the key for it."
 #~ msgstr "Ta wiadomość jest zaszyfrowana lecz nie mamy do niej klucza."
 
@@ -4434,11 +4495,6 @@ msgstr ""
 
 #~ msgid "Could not decrypt the data."
 #~ msgstr "Nie można odszyfrować danych."
-
-#, fuzzy
-#~| msgid "Send SMS"
-#~ msgid "Sender:"
-#~ msgstr "Wyślij SMSa"
 
 #~ msgid "Save attachment"
 #~ msgstr "Zapisz załącznik"

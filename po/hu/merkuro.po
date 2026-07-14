@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
 "PO-Revision-Date: 2025-07-09 22:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1963,7 +1963,7 @@ msgstr "Ugrás"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:42
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2085,7 +2085,7 @@ msgid "Enter email of recipient…"
 msgstr "Adja meg az e-mail címzettjét…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:180
+#: mail/qml/MailComposer.qml:181
 #, kde-format
 msgid "Send"
 msgstr "Küldés"
@@ -2673,13 +2673,13 @@ msgctxt "@action"
 msgid "Delete contact"
 msgstr "Névjegy törlése"
 
-#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:60
+#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Áthelyezés ide…"
 
-#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:63
+#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
@@ -2792,13 +2792,13 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 kijelölve"
 msgstr[1] "%1 kijelölve"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:144
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Kijelölés áthelyezése ide:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:161
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3659,61 +3659,95 @@ msgid "Mark as Important"
 msgstr "Megjelölés fontosként"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Áthelyezés a Kukába"
 
 #: mail/mailapplication.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@title:dialog"
+#| msgid "Delete Email"
+msgctxt "@action"
+msgid "Delete permanently"
+msgstr "E-mail törlése"
+
+#: mail/mailapplication.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Mentés másként…"
 
-#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "Válaszcím:"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Összes törlése"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
 msgid "Forward"
 msgstr "Előre"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
+#: mail/mailapplication.cpp:82
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action"
+msgid "Send now"
+msgstr "Küldés"
+
+#: mail/mailapplication.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule"
+msgctxt "@action"
+msgid "Reschedule"
+msgstr "Ütemezés"
+
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "Nincsenek résztvevők az e-mailhez"
 
-#: mail/mailclient.cpp:97
+#: mail/mailclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No results found"
+msgid "No transport found"
+msgstr "Nincs találat"
+
+#: mail/mailclient.cpp:114
 #, kde-format
 msgid "Error creating transport"
 msgstr "Hiba az átvitel létrehozásakor"
 
-#: mail/mailclient.cpp:143
+#: mail/mailclient.cpp:163
+#, fuzzy, kde-format
+#| msgid "Calendar is not enabled"
+msgid "Send date is not valid."
+msgstr "A naptár nincs bekapcsolva"
+
+#: mail/mailclient.cpp:207
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
 msgstr ""
 
-#: mail/mailclient.cpp:193
+#: mail/mailclient.cpp:257
 #, kde-format
 msgid "Error loading transport"
 msgstr "Hiba az átvitel betöltésekor"
 
-#: mail/mailclient.cpp:211
+#: mail/mailclient.cpp:276
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "Hiba az üzenet sorba állításakor a kimenő fiókban: %1"
@@ -3850,13 +3884,13 @@ msgstr "Fájl megnyitása"
 msgid "Choose file"
 msgstr "Fájl kiválasztása"
 
-#: mail/qml/FolderView.qml:23
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Keresés: %1"
 
-#: mail/qml/FolderView.qml:80
+#: mail/qml/FolderView.qml:81
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -3864,33 +3898,47 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 kijelölve"
 msgstr[1] "%1 kijelölve"
 
-#: mail/qml/FolderView.qml:126
+#: mail/qml/FolderView.qml:127
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Üzenet mentése - Merkuro Mail"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:128
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "E-mail üzenetek (*.mbox)"
 
-#: mail/qml/FolderView.qml:186
+#: mail/qml/FolderView.qml:195
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@title:dialog"
+msgid "Reschedule Message"
+msgstr "Új üzenet"
+
+#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#, kde-format
+msgctxt "@label"
+msgid "Send Date and Time"
+msgstr ""
+
+#: mail/qml/FolderView.qml:212
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Üzenet megjelölése"
 
-#: mail/qml/FolderView.qml:239
+#: mail/qml/FolderView.qml:278
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Nincs kiválasztva postafiók"
 
-#: mail/qml/FolderView.qml:240
+#: mail/qml/FolderView.qml:279
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Válasszon egy postafiókot az oldalsávról."
 
-#: mail/qml/FolderView.qml:247
+#: mail/qml/FolderView.qml:286
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "A postafiók üres"
@@ -3900,53 +3948,73 @@ msgstr "A postafiók üres"
 msgid "Mailboxes"
 msgstr "Postafiókok"
 
-#: mail/qml/MailComposer.qml:17
+#: mail/qml/MailComposer.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Új üzenet"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "From:"
 msgstr "Feladó:"
 
-#: mail/qml/MailComposer.qml:50
+#: mail/qml/MailComposer.qml:51
 #, kde-format
 msgid "Identity:"
 msgstr "Azonosító:"
 
-#: mail/qml/MailComposer.qml:78
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "To:"
 msgstr "Címzett:"
 
-#: mail/qml/MailComposer.qml:79
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "CC:"
 msgstr "Másolat:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "BCC:"
 msgstr "Titkos másolat:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:82
 #, kde-format
 msgid "Reply-To:"
 msgstr "Válaszcím:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "Subject:"
 msgstr "Tárgy:"
 
-#: mail/qml/MailComposer.qml:166
+#: mail/qml/MailComposer.qml:167
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Mellékletek:"
+
+#: mail/qml/MailComposer.qml:190
+#, fuzzy, kde-format
+#| msgid "Reminders:"
+msgctxt "@action:button"
+msgid "Send Later"
+msgstr "Emlékeztetők:"
+
+#: mail/qml/MailComposer.qml:214
+#, fuzzy, kde-format
+#| msgid "Schedule View"
+msgctxt "@title:dialog"
+msgid "Schedule Send"
+msgstr "Ütemezés nézet"
+
+#: mail/qml/MailComposer.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Manual mode"
+msgstr ""
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -4188,9 +4256,6 @@ msgstr ""
 #~ msgid "Calendar Handbook"
 #~ msgstr "Naptár kézikönyv"
 
-#~ msgid "No results found"
-#~ msgstr "Nincs találat"
-
 #~ msgid "Open Command Bar"
 #~ msgstr "Parancssáv megnyitása"
 
@@ -4280,11 +4345,6 @@ msgstr ""
 
 #~ msgid "Choose Calendar Color"
 #~ msgstr "Naptárszín kiválasztása"
-
-#, fuzzy
-#~| msgid "Reminders:"
-#~ msgid "Sender:"
-#~ msgstr "Emlékeztetők:"
 
 #, fuzzy
 #~| msgid "Add Attachment"

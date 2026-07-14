@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:45+0000\n"
+"POT-Creation-Date: 2026-07-14 00:45+0000\n"
 "PO-Revision-Date: 2026-07-08 05:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1923,7 +1923,7 @@ msgstr "Go"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:42
+#: mail/qml/FolderView.qml:43
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2035,7 +2035,7 @@ msgid "Enter email of recipient…"
 msgstr "შეიყვანეთ მიმღების ელფოსტა…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:180
+#: mail/qml/MailComposer.qml:181
 #, kde-format
 msgid "Send"
 msgstr "გაგზავნა"
@@ -2612,13 +2612,13 @@ msgctxt "@action"
 msgid "Delete contact"
 msgstr "კონტაქტის წაშლა"
 
-#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:60
+#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "გადატანა…"
 
-#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:63
+#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
@@ -2731,13 +2731,13 @@ msgid_plural "%1 selected"
 msgstr[0] "მონიშნულია %1"
 msgstr[1] "მონიშნულია %1"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:144
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "მონიშნულის გადატანა:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:161
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3597,58 +3597,92 @@ msgid "Mark as Important"
 msgstr "მნიშვნელოვნად მონიშვნა"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:44
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "ნაგვის ყუთში გადატანა"
 
 #: mail/mailapplication.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@title:dialog"
+#| msgid "Delete Email"
+msgctxt "@action"
+msgid "Delete permanently"
+msgstr "ელფოსტის წაშლა"
+
+#: mail/mailapplication.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "შენახვა, როგორც…"
 
-#: mail/mailapplication.cpp:66 mail/qml/ConversationViewer.qml:29
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:34
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
 #, kde-format
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "ყველასთვის პასუხი"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
 #, kde-format
 msgctxt "@action"
 msgid "Forward"
 msgstr "გადაგზავნა"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:80
+#: mail/mailapplication.cpp:82
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action"
+msgid "Send now"
+msgstr "გაგზავნა"
+
+#: mail/mailapplication.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule"
+msgctxt "@action"
+msgid "Reschedule"
+msgstr "განრიგი"
+
+#: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "ამ ელფოსტას მიმღებები არ ჰყავს"
 
-#: mail/mailclient.cpp:97
+#: mail/mailclient.cpp:67
+#, fuzzy, kde-format
+#| msgid "No results found"
+msgid "No transport found"
+msgstr "შედეგების გარეშე"
+
+#: mail/mailclient.cpp:114
 #, kde-format
 msgid "Error creating transport"
 msgstr "ტრანსპორტის შექმნის შეცდომა"
 
-#: mail/mailclient.cpp:143
+#: mail/mailclient.cpp:163
+#, fuzzy, kde-format
+#| msgid "The signature is invalid."
+msgid "Send date is not valid."
+msgstr "ხელმოწერა არასწორია."
+
+#: mail/mailclient.cpp:207
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
 msgstr " — "
 
-#: mail/mailclient.cpp:193
+#: mail/mailclient.cpp:257
 #, kde-format
 msgid "Error loading transport"
 msgstr "ტრანსპორტის ჩატვირთვის შეცდომა"
 
-#: mail/mailclient.cpp:211
+#: mail/mailclient.cpp:276
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "ელფოსტის გამავლების სიაში ჩასმის შეცდომა: %1"
@@ -3782,13 +3816,13 @@ msgstr "ფაილის გახსნა"
 msgid "Choose file"
 msgstr "ფაილის არჩევა"
 
-#: mail/qml/FolderView.qml:23
+#: mail/qml/FolderView.qml:24
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "ძებნა: %1"
 
-#: mail/qml/FolderView.qml:80
+#: mail/qml/FolderView.qml:81
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -3796,33 +3830,47 @@ msgid_plural "%1 selected"
 msgstr[0] "მონიშნულია %1"
 msgstr[1] "მონიშნულია %1"
 
-#: mail/qml/FolderView.qml:126
+#: mail/qml/FolderView.qml:127
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "შეტყობინების შენახვა - Merkuro-ის ფოსტა"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:128
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "ელფოსტის შეტყობინებები (*.mbox)"
 
-#: mail/qml/FolderView.qml:186
+#: mail/qml/FolderView.qml:195
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@title:dialog"
+msgid "Reschedule Message"
+msgstr "ახალი შეტყობინება"
+
+#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#, kde-format
+msgctxt "@label"
+msgid "Send Date and Time"
+msgstr ""
+
+#: mail/qml/FolderView.qml:212
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "შეტყობინების დანიშვნა"
 
-#: mail/qml/FolderView.qml:239
+#: mail/qml/FolderView.qml:278
 #, kde-format
 msgid "No mailbox selected"
 msgstr "საფოსტო ყუთი არჩეული არაა"
 
-#: mail/qml/FolderView.qml:240
+#: mail/qml/FolderView.qml:279
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "გვერდითი პანელიდან საფოსტო ყუთის არჩევა."
 
-#: mail/qml/FolderView.qml:247
+#: mail/qml/FolderView.qml:286
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "საფოსტო ყუთი ცარიელია"
@@ -3832,52 +3880,72 @@ msgstr "საფოსტო ყუთი ცარიელია"
 msgid "Mailboxes"
 msgstr "საფოსტო ყუთები"
 
-#: mail/qml/MailComposer.qml:17
+#: mail/qml/MailComposer.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "ახალი შეტყობინება"
 
-#: mail/qml/MailComposer.qml:39
+#: mail/qml/MailComposer.qml:40
 #, kde-format
 msgid "From:"
 msgstr "ვისგან:"
 
-#: mail/qml/MailComposer.qml:50
+#: mail/qml/MailComposer.qml:51
 #, kde-format
 msgid "Identity:"
 msgstr "იდენტიფიკაცია:"
 
-#: mail/qml/MailComposer.qml:78
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "To:"
 msgstr "ვის:"
 
-#: mail/qml/MailComposer.qml:79
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "CC:"
 msgstr "ასლი:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "BCC:"
 msgstr "ფარულიასლი:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:82
 #, kde-format
 msgid "Reply-To:"
 msgstr "უპასუხეთ:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "Subject:"
 msgstr "სათაური:"
 
-#: mail/qml/MailComposer.qml:166
+#: mail/qml/MailComposer.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "დოკუმენტის მიმაგრება"
+
+#: mail/qml/MailComposer.qml:190
+#, fuzzy, kde-format
+#| msgid "Sender:"
+msgctxt "@action:button"
+msgid "Send Later"
+msgstr "გამგზავნი:"
+
+#: mail/qml/MailComposer.qml:214
+#, fuzzy, kde-format
+#| msgid "Schedule View"
+msgctxt "@title:dialog"
+msgid "Schedule Send"
+msgstr "განრიგის ხედი"
+
+#: mail/qml/MailComposer.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Manual mode"
+msgstr ""
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -4117,9 +4185,6 @@ msgstr "აირჩიეთ ანგარიშის ტიპი"
 #~ msgid "Calendar Handbook"
 #~ msgstr "კალენდრის სახელმძღვანელო"
 
-#~ msgid "No results found"
-#~ msgstr "შედეგების გარეშე"
-
 #~ msgid "Open Command Bar"
 #~ msgstr "ბრძანებების ველის გახსნა"
 
@@ -4206,9 +4271,6 @@ msgstr "აირჩიეთ ანგარიშის ტიპი"
 #~ msgid "You are trusting this key."
 #~ msgstr "თქვენ ენდობით ამ გასაღებს."
 
-#~ msgid "The signature is invalid."
-#~ msgstr "ხელმოწერა არასწორია."
-
 #~ msgid "This message is encrypted but we don't have the key for it."
 #~ msgstr "შეტყობინება დაშიფრულია, მაგრამ მისი გასაღები არ გვაქვს."
 
@@ -4264,9 +4326,6 @@ msgstr "აირჩიეთ ანგარიშის ტიპი"
 
 #~ msgid "Could not decrypt the data."
 #~ msgstr "მონაცემების გაშიფვრის შეცდომა."
-
-#~ msgid "Sender:"
-#~ msgstr "გამგზავნი:"
 
 #~ msgid "Save attachment"
 #~ msgstr "მიმაგრებული ფაილის შენახვა"
