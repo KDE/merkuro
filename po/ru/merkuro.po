@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:45+0000\n"
-"PO-Revision-Date: 2026-04-03 19:31+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2026-07-15 10:08+0300\n"
+"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -1135,17 +1135,15 @@ msgid "End"
 msgstr "Окончание"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:500
-#, fuzzy, kde-format
-#| msgid "Timezone"
+#, kde-format
 msgctxt "@title"
 msgid "Timezone"
 msgstr "Часовой пояс"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
-#, fuzzy, kde-format
-#| msgid "Timezone"
+#, kde-format
 msgid "Timezone:"
-msgstr "Часовой пояс"
+msgstr "Часовой пояс:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:519
 #, kde-format
@@ -1624,10 +1622,7 @@ msgid "All day or Multi day"
 msgstr "Весь день или несколько дней"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:165
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "ddd d"
+#, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
@@ -1636,11 +1631,7 @@ msgid "ddd d"
 msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:168
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 & %2 are two localised short dates indicating the start & end of a "
-#| "week using the format"
-#| msgid "%1–%2"
+#, kde-format
 msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "(e.g. Mon 2–Sun 9). %1 is the start, %2 the end."
@@ -1648,10 +1639,7 @@ msgid "%1–%2"
 msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:178
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "dddd d"
+#, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
@@ -1660,11 +1648,7 @@ msgid "dddd d"
 msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:181
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 & %2 are two localised dates indicating the start & end of a week "
-#| "using the format specified above."
-#| msgid "From %1 to %2"
+#, kde-format
 msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week (e.g. "
 "From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is "
@@ -1673,10 +1657,7 @@ msgid "From %1 to %2"
 msgstr "С %1 по %2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:267
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Represents a date format. This should be adapted to locale conventions. "
-#| msgid "dddd d"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen "
@@ -1685,11 +1666,7 @@ msgid "dddd d"
 msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:287
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Short date format, showing name of day of week and number of day of "
-#| "month. "
-#| msgid "ddd <b>dd</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method)."
@@ -1697,11 +1674,7 @@ msgid "ddd <b>dd</b>"
 msgstr "ddd <b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:306
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "Short date format, showing name of day of week and emphasising the number "
-#| "of day of month. "
-#| msgid "ddd<br><b>dd</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Name of month and year is "
@@ -1716,16 +1689,14 @@ msgid "Clear day."
 msgstr "Свободный день."
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:350
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Tap to add something."
-msgstr "На сегодня в планах ничего нет. %1, чтобы что-либо добавить."
+msgstr "На сегодня в планах ничего нет. Нажмите, чтобы что-либо добавить."
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:351
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Click to add something."
-msgstr "На сегодня в планах ничего нет. %1, чтобы что-либо добавить."
+msgstr "На сегодня в планах ничего нет. Щёлкните, чтобы что-либо добавить."
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:237
 #, kde-format
@@ -3235,10 +3206,9 @@ msgid "Add email"
 msgstr "Добавить адрес электронной почты"
 
 #: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:63
-#, fuzzy, kde-format
-#| msgid "protocol:person@example.com"
+#, kde-format
 msgid "@person:example.com"
-msgstr "протокол:имя@сайт.рф"
+msgstr "@имя:сайт.рф"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:16
 #, kde-format
@@ -3693,8 +3663,6 @@ msgstr "Удалить в корзину"
 
 #: mail/mailapplication.cpp:57
 #, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
 msgctxt "@action"
 msgid "Delete permanently"
 msgstr "Удаление письма"
@@ -3707,36 +3675,30 @@ msgstr "Сохранить как…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
 #, fuzzy, kde-format
-#| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "Адрес для ответа:"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
 #, fuzzy, kde-format
-#| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Удалить все"
 
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
 #, fuzzy, kde-format
-#| msgid "Forwards"
 msgctxt "@action"
 msgid "Forward"
 msgstr "Обычное"
 
 #: mail/mailapplication.cpp:82
 #, fuzzy, kde-format
-#| msgid "Send"
 msgctxt "@action"
 msgid "Send now"
 msgstr "Отправить"
 
 #: mail/mailapplication.cpp:85
 #, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
 msgctxt "@action"
 msgid "Reschedule"
 msgstr "Расписание"
@@ -3748,7 +3710,6 @@ msgstr "Нет получателей письма"
 
 #: mail/mailclient.cpp:67
 #, fuzzy, kde-format
-#| msgid "No results found"
 msgid "No transport found"
 msgstr "Ничего не найдено"
 
@@ -3759,7 +3720,6 @@ msgstr "Ошибка при создании транспорта"
 
 #: mail/mailclient.cpp:163
 #, fuzzy, kde-format
-#| msgid "The signature is invalid."
 msgid "Send date is not valid."
 msgstr "Недопустимая подпись."
 
@@ -3767,7 +3727,7 @@ msgstr "Недопустимая подпись."
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
-msgstr ""
+msgstr " — "
 
 #: mail/mailclient.cpp:257
 #, kde-format
@@ -3859,7 +3819,6 @@ msgstr "Редактирование папки"
 
 #: mail/qml/actions/MailItemMenu.qml:54
 #, fuzzy, kde-format
-#| msgid "Create Folder"
 msgctxt "@action:inmenu"
 msgid "Update Folder"
 msgstr "Создать папку"
@@ -3935,8 +3894,6 @@ msgstr "Письма (*.mbox)"
 
 #: mail/qml/FolderView.qml:195
 #, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Новое сообщение"
@@ -4022,14 +3979,12 @@ msgstr "Прикрепить документ"
 
 #: mail/qml/MailComposer.qml:190
 #, fuzzy, kde-format
-#| msgid "Sender:"
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Отправитель:"
 
 #: mail/qml/MailComposer.qml:214
 #, fuzzy, kde-format
-#| msgid "Schedule View"
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Расписание"
@@ -4066,16 +4021,12 @@ msgid "Mail Account Configuration"
 msgstr "Настройка учётной записи почты"
 
 #: mail/settings/AccountSettingsPage.qml:37
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@title:group Title for the list of receiving accounts which are imap or "
-#| "pop3 email accounts"
-#| msgid "Receiving Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
-msgstr "Учётные записи для получения почты"
+msgstr "Учётные записи для отправки почты"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
@@ -4084,23 +4035,20 @@ msgid "Accounts"
 msgstr "Учётные записи"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, fuzzy, kde-format
-#| msgid "Remove %1 tag"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Rename %1"
-msgstr "Удалить метку (%1)"
+msgstr "Переименование %1"
 
 #: mail/settings/TransportConfigurationForm.qml:40
 #: mail/settings/TransportConfigurationForm.qml:143
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
-msgstr "Учётные записи"
+msgstr "Имя учётной записи"
 
 #: mail/settings/TransportConfigurationForm.qml:83
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "Параметры"
@@ -4112,18 +4060,16 @@ msgid "Delete"
 msgstr "Удалить"
 
 #: mail/settings/TransportConfigurationForm.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add Account…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
-msgstr "Добавить учётную запись…"
+msgstr "Добавить учётную запись"
 
 #: mail/settings/TransportConfigurationForm.qml:148
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
-msgstr ""
+msgstr "Установить по умолчанию"
 
 #: mail/settings/TransportConfigurationForm.qml:153
 #, kde-format
@@ -4131,16 +4077,14 @@ msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
-msgstr ""
+msgstr "Выбор типа учётной записи"
 
 #, fuzzy
-#~| msgid "Configure %1"
 #~ msgctxt "@title:dialog"
 #~ msgid "Configure %1"
 #~ msgstr "Настроить %1"
 
 #, fuzzy
-#~| msgid "Modify or delete this account agent."
 #~ msgctxt "@info"
 #~ msgid "Modify or delete this account transport."
 #~ msgstr "Изменить или удалить агент этой учётной записи."

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-14 00:45+0000\n"
-"PO-Revision-Date: 2026-07-09 10:48+0400\n"
+"PO-Revision-Date: 2026-07-15 19:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -3699,12 +3699,10 @@ msgid "Move to Trash"
 msgstr "انقل إلى المهملات"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "احذف البريد الإلكتروني"
+msgstr "احذف نهائيًّا"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -3731,19 +3729,16 @@ msgid "Forward"
 msgstr "حوّل"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "أرسل"
+msgstr "أرسل الآن"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "الجدولة"
+msgstr "أعد الجدولة"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3751,10 +3746,9 @@ msgid "There are no recipients to e-mail"
 msgstr "لا يوجد مستلمون لإرسال البريد الإلكتروني إليهم"
 
 #: mail/mailclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No results found"
+#, kde-format
 msgid "No transport found"
-msgstr "لا توجد نتائج"
+msgstr "لم يعثر على ناقل"
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -3762,10 +3756,9 @@ msgid "Error creating transport"
 msgstr "خطأ إنشاء النّقل"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "The signature is invalid."
+#, kde-format
 msgid "Send date is not valid."
-msgstr "التوقيع غير صالح."
+msgstr "التاريخ الإرسال غير صالح."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3938,18 +3931,16 @@ msgid "Email messages (*.mbox)"
 msgstr "رسائل البريد (*.mbox)"
 
 #: mail/qml/FolderView.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "رسالة جديدة"
+msgstr "أعد جدولة الرسالة"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "أرسل التاريخ والوقت"
 
 #: mail/qml/FolderView.qml:212
 #, kde-format
@@ -4025,24 +4016,22 @@ msgid "Attach Document"
 msgstr "أرفق مستنداً"
 
 #: mail/qml/MailComposer.qml:190
-#, fuzzy, kde-format
-#| msgid "Send SMS"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "أرسل رسالة نصية قصيرة"
+msgstr "أرسل لاحقًا"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "عرض الجدولة"
+msgstr "جدولة الإرسال"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "الوضع اليدوي"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
