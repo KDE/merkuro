@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-14 00:45+0000\n"
-"PO-Revision-Date: 2026-07-09 08:48+0200\n"
+"POT-Creation-Date: 2026-07-17 00:45+0000\n"
+"PO-Revision-Date: 2026-07-15 11:12+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -3565,13 +3565,13 @@ msgstr "xavier.besnard@kde.org"
 msgid "Quit"
 msgstr "Quitter"
 
-#: mail/abstractmailmodel.cpp:24
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Aucun objet"
 
-#: mail/abstractmailmodel.cpp:25
+#: mail/abstractmailmodel.cpp:26
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3622,12 +3622,10 @@ msgid "Move to Trash"
 msgstr "Déplacer vers le corbeille"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "Supprimer un courriel"
+msgstr "Supprimer de façon définitive"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -3654,19 +3652,16 @@ msgid "Forward"
 msgstr "Transférer"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Envoyer"
+msgstr "Envoyer maintenant"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Calendrier"
+msgstr "Re-planifier"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3674,10 +3669,9 @@ msgid "There are no recipients to e-mail"
 msgstr "Il n'y a aucun participant à qui envoyer un courriel"
 
 #: mail/mailclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No results found"
+#, kde-format
 msgid "No transport found"
-msgstr "Aucun résultat trouvé"
+msgstr "Aucun transport n'a été trouvé."
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -3685,10 +3679,9 @@ msgid "Error creating transport"
 msgstr "Erreur de création de transport"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "The signature is invalid."
+#, kde-format
 msgid "Send date is not valid."
-msgstr "La signature n'est pas valable."
+msgstr "La date d'envoi est non valable."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3860,18 +3853,16 @@ msgid "Email messages (*.mbox)"
 msgstr "Messages de courriels (* .mbox)"
 
 #: mail/qml/FolderView.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "Nouveau message"
+msgstr "Re-planifier un message"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "Date et heure d'envoi"
 
 #: mail/qml/FolderView.qml:212
 #, kde-format
@@ -3947,29 +3938,50 @@ msgid "Attach Document"
 msgstr "Mettre un document en pièce jointe"
 
 #: mail/qml/MailComposer.qml:190
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Envoyer"
+msgstr "Envoyer plus tard"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "Affichage par planning"
+msgstr "Planifier l'envoi"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "Mode manuel"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Ce courriel contient une invitation"
+
+#: mail/qml/private/MailDelegate.qml:171
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule"
+msgctxt "@info:tooltip %1 is a date and time"
+msgid "Scheduled at %1"
+msgstr "Calendrier"
+
+#: mail/qml/private/MailDelegate.qml:172
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Require manual action. Use Send Now action to send immediately or use "
+"Reschedule action to set a date and time."
+msgstr ""
+
+#: mail/qml/private/MailDelegate.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Manual mode"
+msgid "Manual"
+msgstr "Mode manuel"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format

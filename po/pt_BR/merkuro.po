@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-14 00:45+0000\n"
+"POT-Creation-Date: 2026-07-17 00:45+0000\n"
 "PO-Revision-Date: 2026-07-14 07:41-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3560,13 +3560,13 @@ msgstr ""
 msgid "Quit"
 msgstr "Sair"
 
-#: mail/abstractmailmodel.cpp:24
+#: mail/abstractmailmodel.cpp:25
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Sem assunto"
 
-#: mail/abstractmailmodel.cpp:25
+#: mail/abstractmailmodel.cpp:26
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -3952,6 +3952,29 @@ msgstr "Modo manual"
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Esse e-mail contém um convite"
+
+#: mail/qml/private/MailDelegate.qml:171
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Schedule"
+msgctxt "@info:tooltip %1 is a date and time"
+msgid "Scheduled at %1"
+msgstr "Agenda"
+
+#: mail/qml/private/MailDelegate.qml:172
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Require manual action. Use Send Now action to send immediately or use "
+"Reschedule action to set a date and time."
+msgstr ""
+
+#: mail/qml/private/MailDelegate.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Manual mode"
+msgid "Manual"
+msgstr "Modo manual"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
