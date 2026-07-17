@@ -34,6 +34,7 @@ public:
     static ContactManager *create(QQmlEngine *, QJSEngine *)
     {
         static ContactManager instance;
+        QQmlEngine::setObjectOwnership(&instance, QQmlEngine::CppOwnership);
         return &instance;
     }
     explicit ContactManager(QObject *parent = nullptr);
