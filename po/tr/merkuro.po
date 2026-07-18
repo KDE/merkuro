@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:45+0000\n"
-"PO-Revision-Date: 2026-07-14 20:47+0300\n"
+"PO-Revision-Date: 2026-07-17 19:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3646,7 +3646,7 @@ msgstr "Şimdi Gönder"
 #, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Yeniden Zamanla"
+msgstr "Yeniden Planla"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3839,7 +3839,7 @@ msgstr "E-posta iletileri (*.mbox)"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "İletiyi Yeniden Zamanla"
+msgstr "İletiyi Yeniden Planla"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
@@ -3944,12 +3944,10 @@ msgid "This mail contains an invitation"
 msgstr "Bu posta bir davet içeriyor"
 
 #: mail/qml/private/MailDelegate.qml:171
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Program"
+msgstr "%1 tarihine yeniden planlandı"
 
 #: mail/qml/private/MailDelegate.qml:172
 #, kde-format
@@ -3958,13 +3956,14 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"Elle yapılması gereken bir eylem gerektirir. Anında göndermek için “Şimdi "
+"Gönder” eylemini kullanın veya başka bir tarih veya zaman ayarlamak için "
+"“Yeniden Planla” yapın."
 
 #: mail/qml/private/MailDelegate.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Manual mode"
+#, kde-format
 msgid "Manual"
-msgstr "Elle yapılan kip"
+msgstr "Elle"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
