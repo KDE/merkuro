@@ -21,6 +21,7 @@ FormCard.FormCardPage {
 
     KIdentityManagement.IdentityConfigurationForm {
         cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
+        signatureEditorBackend: IdentitySignatureEditorBackendFactory.signatureEditorBackend
     }
 
     FormCard.FormHeader {
