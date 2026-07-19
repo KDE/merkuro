@@ -42,6 +42,8 @@ set(merkuro_mail_SRCS
     identity/identitycryptographyeditorbackendfactory.cpp
     identity/identitykeylistmodel.h
     identity/identitykeylistmodel.cpp
+    identity/identitysignatureeditorbackendfactory.h
+    identity/identitysignatureeditorbackendfactory.cpp
 
     messagehandler.cpp
     messagehandler.h

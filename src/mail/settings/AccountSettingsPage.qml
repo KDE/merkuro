@@ -22,6 +22,7 @@ FormCard.FormCardPage {
         // The dependency's QML type metadata omits this registered C++ property type.
         // qmllint disable unresolved-type
         cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
+        signatureEditorBackend: IdentitySignatureEditorBackendFactory.signatureEditorBackend
         // qmllint enable unresolved-type
     }
 
