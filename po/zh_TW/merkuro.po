@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:45+0000\n"
-"PO-Revision-Date: 2026-07-06 05:48+0900\n"
+"PO-Revision-Date: 2026-07-22 01:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -98,6 +98,7 @@ msgstr "往前"
 
 # Back 跟 Forward 反過來是因為英文 Back 是過去但中文「前」才是過去。
 # 例如，「以『後』」是未來但 looking "back" 是過去。
+# --Kisaragi
 #: calendar/calendarapplication.cpp:174
 #, kde-format
 msgid "Forwards"
@@ -3577,12 +3578,10 @@ msgid "Move to Trash"
 msgstr "移到垃圾桶"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "刪除郵件"
+msgstr "永久刪除"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -3591,42 +3590,34 @@ msgid "Save as…"
 msgstr "另存為…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "回覆地址："
+msgstr "回覆"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "全部刪除"
+msgstr "回覆給全部"
 
-# Back 跟 Forward 反過來是因為英文 Back 是過去但中文「前」才是過去。
-# 例如，「以『後』」是未來但 looking "back" 是過去。
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
-msgstr "往後"
+msgstr "轉寄"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "傳送"
+msgstr "立即傳送"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "行程"
+msgstr "重新安排時間"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3634,10 +3625,9 @@ msgid "There are no recipients to e-mail"
 msgstr "沒有收件者能傳送電子郵件"
 
 #: mail/mailclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No results found"
+#, kde-format
 msgid "No transport found"
-msgstr "找不到結果"
+msgstr "未找到傳輸"
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -3645,10 +3635,9 @@ msgid "Error creating transport"
 msgstr "建立傳輸時發生錯誤"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "Calendar is not enabled"
+#, kde-format
 msgid "Send date is not valid."
-msgstr "行事曆未啟用"
+msgstr "傳送日期無效。"
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3743,17 +3732,16 @@ msgid "Edit Folder"
 msgstr "編輯資料夾"
 
 #: mail/qml/actions/MailItemMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "Create Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
-msgstr "建立資料夾"
+msgstr "更新資料夾"
 
 #: mail/qml/actions/MailItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
-msgstr ""
+msgstr "更新資料夾與子資料夾"
 
 #: mail/qml/actions/MailItemMenu.qml:69
 #, kde-format
@@ -3816,18 +3804,16 @@ msgid "Email messages (*.mbox)"
 msgstr "郵件訊息 (*.mbox)"
 
 #: mail/qml/FolderView.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "新信件"
+msgstr "重新安排信件時間"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "傳送日期與時間"
 
 #: mail/qml/FolderView.qml:212
 #, kde-format
@@ -3903,24 +3889,22 @@ msgid "Attach Document"
 msgstr "附加文件"
 
 #: mail/qml/MailComposer.qml:190
-#, fuzzy, kde-format
-#| msgid "Send email"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "傳送電子郵件"
+msgstr "稍後傳送"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "行程檢視"
+msgstr "排程傳送"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "手動模式"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3928,12 +3912,10 @@ msgid "This mail contains an invitation"
 msgstr "這個郵件包含邀請"
 
 #: mail/qml/private/MailDelegate.qml:171
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "行程"
+msgstr "排程於 %1"
 
 #: mail/qml/private/MailDelegate.qml:172
 #, kde-format
@@ -3942,11 +3924,13 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"要求手動操作。使用「立即傳送」動作來現在馬上送出，或是使用「重新安排時間」動"
+"作來設定日期與時間。"
 
 #: mail/qml/private/MailDelegate.qml:185
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
