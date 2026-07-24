@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:45+0000\n"
-"PO-Revision-Date: 2026-07-21 23:11+0200\n"
+"PO-Revision-Date: 2026-07-23 20:08+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -3610,12 +3610,10 @@ msgid "Move to Trash"
 msgstr "Преместване в кошчето"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "Изтриване на писмото"
+msgstr "Необратимо изтриване"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -3624,40 +3622,34 @@ msgid "Save as…"
 msgstr "Запазване като…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "Отговор до:"
+msgstr "Отговор"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "Изтриване на всички"
+msgstr "Отговор на всички"
 
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
 msgstr "Напред"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Изпращане"
+msgstr "Изпращане сега"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Планиране"
+msgstr "Пренасрочване"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3667,7 +3659,7 @@ msgstr "Няма получатели за имейл"
 #: mail/mailclient.cpp:67
 #, kde-format
 msgid "No transport found"
-msgstr ""
+msgstr "Няма конфигуриран транспорт"
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -3675,10 +3667,9 @@ msgid "Error creating transport"
 msgstr "Грешка при създаване на транспорт"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "Calendar is not enabled"
+#, kde-format
 msgid "Send date is not valid."
-msgstr "Календарът не е активиран"
+msgstr "Датата на изпращане не е валидна."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3775,17 +3766,16 @@ msgid "Edit Folder"
 msgstr "Редактиране на папка"
 
 #: mail/qml/actions/MailItemMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "Create Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
-msgstr "Създаване на папка"
+msgstr "Актуализиране на папка"
 
 #: mail/qml/actions/MailItemMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
-msgstr ""
+msgstr "Актуализиране на папка и подпапки"
 
 #: mail/qml/actions/MailItemMenu.qml:69
 #, kde-format
@@ -3849,18 +3839,16 @@ msgid "Email messages (*.mbox)"
 msgstr "Електронни писма (*.mbox)"
 
 #: mail/qml/FolderView.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "Ново съобщение"
+msgstr "Пренасрочване на съобщение"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "Изпращане на дата и час"
 
 #: mail/qml/FolderView.qml:212
 #, kde-format
@@ -3936,24 +3924,22 @@ msgid "Attach Document"
 msgstr "Прикрепяне на документ"
 
 #: mail/qml/MailComposer.qml:190
-#, fuzzy, kde-format
-#| msgid "Send email"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Изпращане на имейл"
+msgstr "Изпращане по-късно"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "Изглед на график"
+msgstr "Планиране на изпращане"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "Ръчен режим"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3961,12 +3947,10 @@ msgid "This mail contains an invitation"
 msgstr "Този имейл съдържа покана"
 
 #: mail/qml/private/MailDelegate.qml:171
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Планиране"
+msgstr "Планирано на %1"
 
 #: mail/qml/private/MailDelegate.qml:172
 #, kde-format
@@ -3975,11 +3959,14 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"Изисква се ръчно действие. Използвайте действието „Изпрати сега“, за да "
+"изпратите незабавно, или използвайте действието „Пренасрочване“, за да "
+"зададете дата и час."
 
 #: mail/qml/private/MailDelegate.qml:185
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Ръчно"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
