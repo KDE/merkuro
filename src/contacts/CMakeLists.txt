@@ -181,3 +181,4 @@ target_link_libraries(merkuro-contact PUBLIC
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.merkuro.contact.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.contact.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES contactconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} RENAME merkuro-contact.kcfg)
