@@ -13,7 +13,6 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemMonitor>
-#include <KCalUtils/RecurrenceActions>
 #include <KFormat>
 #include <QByteArray>
 #include <QObject>
@@ -158,9 +157,9 @@ public:
     Q_ENUM(IncidenceTypes)
 
     enum RecurrenceActions {
-        AllOccurrences = KCalUtils::RecurrenceActions::AllOccurrences,
-        SelectedOccurrence = KCalUtils::RecurrenceActions::SelectedOccurrence,
-        FutureOccurrences = KCalUtils::RecurrenceActions::FutureOccurrences,
+        AllOccurrences,
+        SelectedOccurrence,
+        FutureOccurrences,
     };
     Q_ENUM(RecurrenceActions)
 

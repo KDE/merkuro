@@ -516,7 +516,7 @@ void CalendarManager::updateIncidenceDates(IncidenceWrapper *incidenceWrapper, i
 
     if (incidenceWrapper->incidencePtr()->recurs()) {
         switch (occurrences) {
-        case KCalUtils::RecurrenceActions::AllOccurrences: {
+        case IncidenceWrapper::AllOccurrences: {
             // All occurrences
             KCalendarCore::Incidence::Ptr oldIncidence(incidenceWrapper->incidencePtr()->clone());
             setNewDates(incidenceWrapper->incidencePtr());
@@ -524,9 +524,9 @@ void CalendarManager::updateIncidenceDates(IncidenceWrapper *incidenceWrapper, i
             m_changer->modifyIncidence(item, oldIncidence);
             break;
         }
-        case KCalUtils::RecurrenceActions::SelectedOccurrence: // Just this occurrence
-        case KCalUtils::RecurrenceActions::FutureOccurrences: { // All future occurrences
-            const bool thisAndFuture = (occurrences == KCalUtils::RecurrenceActions::FutureOccurrences);
+        case IncidenceWrapper::SelectedOccurrence: // Just this occurrence
+        case IncidenceWrapper::FutureOccurrences: { // All future occurrences
+            const bool thisAndFuture = (occurrences == IncidenceWrapper::FutureOccurrences);
             auto tzedOccurrenceDate = occurrenceDate.toTimeZone(incidenceWrapper->incidenceStart().timeZone());
             KCalendarCore::Incidence::Ptr newIncidence(
                 KCalendarCore::Calendar::createException(incidenceWrapper->incidencePtr(), tzedOccurrenceDate, thisAndFuture));
