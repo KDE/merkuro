@@ -13,6 +13,7 @@
 #include <KCrash>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 
 #ifdef Q_OS_WINDOWS
 #include <Windows.h>
@@ -24,22 +25,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(u"org.kde.desktop"_s);
-    }
-
-#ifdef Q_OS_WINDOWS
-    if (AttachConsole(ATTACH_PARENT_PROCESS)) {
-        freopen("CONOUT$", "w", stdout);
-        freopen("CONOUT$", "w", stderr);
-    }
-
-    QApplication::setStyle(u"breeze"_s);
-    auto font = app.font();
-    font.setPointSize(10);
-    app.setFont(font);
-#endif
+    KirigamiAppDefaults::apply(&app);
 
     KLocalizedString::setApplicationDomain("merkurolauncher");
     QCoreApplication::setOrganizationName(u"KDE"_s);
@@ -52,7 +38,6 @@ int main(int argc, char *argv[])
                          i18n("© 2024"));
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Maintainer"), u"carl@carlschwan.eu"_s, u"https://carlschwan.eu.com"_s);
     aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
-    KCrash::initialize();
     KAboutData::setApplicationData(aboutData);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.merkuro.words"_s));
 

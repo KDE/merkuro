@@ -21,6 +21,7 @@ target_link_libraries(merkurolauncher PUBLIC
     KF6::CoreAddons
     KF6::Crash
     KF6::KIOWidgets
+    KirigamiApp
 )
 
 target_link_libraries(merkurolauncher PRIVATE

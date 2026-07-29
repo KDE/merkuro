@@ -202,6 +202,7 @@ target_link_libraries(merkuro-calendar
         KF6::IconThemes
         KF6::ConfigWidgets
         KF6::ConfigGui
+        KirigamiApp
 )
 
 install(TARGETS merkuro-calendar ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

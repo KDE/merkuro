@@ -146,6 +146,7 @@ target_link_libraries(merkuro-mail
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::ConfigGui
+        KirigamiApp
         mail_settingsplugin
         merkuro_mail_staticplugin
         merkuro_mail_static

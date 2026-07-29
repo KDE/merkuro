@@ -172,6 +172,7 @@ target_link_libraries(merkuro-contact
         KF6::Crash
         KF6::IconThemes
         KF6::ConfigWidgets
+        KirigamiApp
         KPim6::Libkleo
 )
 target_link_libraries(merkuro-contact PUBLIC

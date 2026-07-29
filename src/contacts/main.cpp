@@ -8,6 +8,7 @@
 #include <KIconTheme>
 #include <KLocalizedString>
 #include <KWindowSystem>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QIcon>
@@ -29,7 +30,6 @@ static void raiseWindow(QWindow *window)
 
 int main(int argc, char *argv[])
 {
-    KIconTheme::initTheme();
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("merkuro"_ba);
@@ -37,10 +37,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(u"Merkuro Contact"_s);
     QCoreApplication::setQuitLockEnabled(false);
 
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(u"org.kde.desktop"_s);
-    }
+    KirigamiAppDefaults::apply(&app);
 
     KStyleManager::initStyle();
 
@@ -67,7 +64,6 @@ int main(int argc, char *argv[])
                         u"claudio.cambra@gmail.com"_s,
                         u"https://claudiocambra.com"_s);
     KAboutData::setApplicationData(aboutData);
-    KCrash::initialize();
     QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.merkuro.contact"_s));
 
     QCommandLineParser parser;

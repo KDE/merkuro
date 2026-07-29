@@ -14,6 +14,7 @@
 #include <KLocalizedString>
 #include <KWindowConfig>
 #include <KWindowSystem>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDBusConnection>
@@ -35,7 +36,6 @@ static void raiseWindow(QWindow *window)
 
 int main(int argc, char *argv[])
 {
-    KIconTheme::initTheme();
     QGuiApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("merkuro"_ba);
@@ -43,12 +43,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(u"Merkuro"_s);
     QCoreApplication::setQuitLockEnabled(false);
 
-    // Default to org.kde.desktop style unless the user forces another style
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(u"org.kde.desktop"_s);
-    }
-
     KStyleManager::initStyle();
+
+    KirigamiAppDefaults::apply(&app);
 
     KAboutData aboutData(
         // The program name used internally.
@@ -74,7 +71,6 @@ int main(int argc, char *argv[])
                         u"https://claudiocambra.com"_s);
     aboutData.addAuthor(i18nc("@info:credit", "Felipe Kinoshita"), i18nc("@info:credit", "Developer"), u"kinofhek@gmail.com"_s, u"https://fhek.gitlab.io"_s);
     KAboutData::setApplicationData(aboutData);
-    KCrash::initialize();
     QGuiApplication::setWindowIcon(QIcon::fromTheme(u"org.kde.merkuro.calendar"_s));
 
     QCommandLineParser parser;
