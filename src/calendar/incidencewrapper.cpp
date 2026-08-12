@@ -417,15 +417,21 @@ QByteArray IncidenceWrapper::timeZone() const
 
 void IncidenceWrapper::setTimeZone(const QByteArray &timeZone)
 {
+    const auto zone = QTimeZone(timeZone);
+    if (!zone.isValid()) {
+        qCWarning(MERKURO_CALENDAR_LOG) << "Ignoring invalid timezone:" << timeZone;
+        return;
+    }
+
     QDateTime start(incidenceStart());
     if (start.isValid()) {
-        start.setTimeZone(QTimeZone(timeZone));
+        start.setTimeZone(zone);
         setIncidenceStart(start, true);
     }
 
     QDateTime end(incidenceEnd());
     if (end.isValid()) {
-        end.setTimeZone(QTimeZone(timeZone));
+        end.setTimeZone(zone);
         setIncidenceEnd(end, true);
     }
 
