@@ -165,7 +165,5 @@ function parseDateString(dateString) {
     const monthIndexNum = Number(splitDateString[localisedDateMonthPosition]) - 1;
     const dayNum = Number(splitDateString[localisedDateDayPosition]);
 
-    console.log(new Date(fixedYearNum, monthIndexNum, dayNum))
-
     return new Date(fixedYearNum, monthIndexNum, dayNum);
 }
