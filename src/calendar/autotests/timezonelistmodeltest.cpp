@@ -3,6 +3,7 @@
 
 #include "../models/timezonelistmodel.h"
 
+#include <QAbstractItemModelTester>
 #include <QGuiApplication>
 #include <QQmlComponent>
 #include <QQmlContext>
@@ -46,7 +47,24 @@ class TimeZoneListModelTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
-    void testComboBoxCurrentValueCanSetByteArrayProperty()
+    void testTimezoneLookupForEveryRow()
+    {
+        TimeZoneListModel model;
+        QAbstractItemModelTester modelTester(&model);
+        QVERIFY(model.rowCount() > 0);
+
+        for (int row = 0; row < model.rowCount(); ++row) {
+            const auto index = model.index(row, 0);
+            QVERIFY(index.isValid());
+
+            const auto id = index.data(TimeZoneListModel::IdRole).toString();
+            const auto matchingRow = model.getTimeZoneRow(id.toUtf8());
+            QVERIFY(matchingRow >= 0 && matchingRow < model.rowCount());
+            QCOMPARE(model.index(matchingRow, 0).data(TimeZoneListModel::IdRole).toString(), id);
+        }
+    }
+
+    void testComboBoxCurrentValueForEveryTimezone()
     {
         TimeZoneListModel model;
         TimeZoneTarget target;
@@ -68,6 +86,8 @@ private Q_SLOTS:
                     currentIndex: timeZonesModel.getTimeZoneRow("UTC")
                     onCurrentValueChanged: target.timeZone = currentValue
                 }
+
+                property alias selectedIndex: comboBox.currentIndex
             }
         )qml",
                           QUrl(u"Test.qml"_s));
@@ -75,7 +95,11 @@ private Q_SLOTS:
         std::unique_ptr<QObject> object(component.create());
         QVERIFY2(object, qPrintable(component.errorString()));
 
-        QTRY_COMPARE(target.timeZone(), QByteArray("UTC"));
+        for (int row = 0; row < model.rowCount(); ++row) {
+            const auto id = model.index(row, 0).data(TimeZoneListModel::IdRole).toString().toUtf8();
+            QVERIFY(object->setProperty("selectedIndex", row));
+            QTRY_COMPARE(target.timeZone(), id);
+        }
     }
 };
 
