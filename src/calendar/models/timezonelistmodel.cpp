@@ -35,7 +35,7 @@ QVariant TimeZoneListModel::data(const QModelIndex &idx, int role) const
     case Qt::DisplayRole:
         return i18n(timeZone.replace('_', ' ').constData());
     case IdRole:
-        return timeZone;
+        return QString::fromUtf8(timeZone);
     default:
         qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for timezone:" << QMetaEnum::fromType<Roles>().valueToKey(role);
         return {};
