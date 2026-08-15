@@ -24,6 +24,9 @@ Delegates.IndicatorItemDelegate {
     required property var item
     required property var dispatchMode
     required property ItemSelectionModel selectionModel
+    required property int level
+    required property bool expandable
+    required property bool expanded
 
     readonly property bool hasSendAfter: !!(root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime()))
     readonly property bool isScheduled: !!(root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter))
@@ -56,6 +59,7 @@ Delegates.IndicatorItemDelegate {
     signal openMailRequested()
     signal starMailRequested()
     signal contextMenuRequested()
+    signal toggleExpansionRequested()
 
     TapHandler {
         acceptedButtons: Qt.RightButton
@@ -83,6 +87,20 @@ Delegates.IndicatorItemDelegate {
 
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
+
+        Item {
+            Layout.preferredWidth: Math.max(0, root.level - 1) * Kirigami.Units.gridUnit
+            Layout.fillHeight: true
+        }
+
+        QQC2.ToolButton {
+            visible: root.expandable
+            icon.name: root.expanded ? "arrow-down" : "arrow-right"
+            display: QQC2.AbstractButton.IconOnly
+            onClicked: root.toggleExpansionRequested()
+            Accessible.name: root.expanded ? i18n("Collapse thread") : i18n("Expand thread")
+            Accessible.role: Accessible.Button
+        }
 
         ColoredCheckbox {
             id: checkbox
@@ -189,4 +207,3 @@ Delegates.IndicatorItemDelegate {
         }
     }
 }
-
