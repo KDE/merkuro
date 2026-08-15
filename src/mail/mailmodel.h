@@ -4,54 +4,30 @@
 
 #pragma once
 
-#include <Akonadi/Item>
+#include "mailpresentationmodel.h"
 
-#include <Akonadi/EntityMimeTypeFilterModel>
-#include <Akonadi/EntityTreeModel>
 #include <QItemSelectionModel>
 #include <QObject>
 #include <qqmlregistration.h>
 
-#include "abstractmailmodel.h"
-
-class MailModel : public Akonadi::EntityMimeTypeFilterModel, public AbstractMailModel
+class MailModel : public MailPresentationModel
 {
     Q_OBJECT
     QML_ELEMENT
 
     Q_PROPERTY(QString folderName READ folderName NOTIFY folderNameChanged)
-    Q_PROPERTY(
-        QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
-    Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
-
 public:
     explicit MailModel(QObject *parent = nullptr);
 
-    [[nodiscard]] QItemSelectionModel *collectionSelectionModel() const;
-    void setCollectionSelectionModel(QItemSelectionModel *collectionSelectionModel);
-
-    [[nodiscard]] Akonadi::EntityTreeModel *entryTreeModel() const;
-    void setEntityTreeModel(Akonadi::EntityTreeModel *entryTreeModel);
-
     [[nodiscard]] QString folderName() const;
 
-    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-
 Q_SIGNALS:
-    void collectionSelectionModelChanged();
-    void entityTreeModelChanged();
     void folderNameChanged();
 
-protected:
-    [[nodiscard]] bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
-
 private:
-    void setupModel();
+    void updateFolderName();
+    void updateFolderNameFromSelection();
 
-    QItemSelectionModel *m_collectionSelectionModel = nullptr;
-    Akonadi::EntityTreeModel *m_entityTreeModel = nullptr;
-    Akonadi::Item itemForRow(int row) const;
-    QString m_searchString;
+    QMetaObject::Connection m_collectionSelectionConnection;
     QString m_folderName;
 };
