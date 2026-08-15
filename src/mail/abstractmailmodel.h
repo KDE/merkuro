@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <Akonadi/EntityTreeModel>
 #include <QVariant>
 
 namespace Akonadi
@@ -14,7 +15,7 @@ class AbstractMailModel
 {
 public:
     enum ExtraRole {
-        TitleRole = Qt::UserRole + 1,
+        TitleRole = Akonadi::EntityTreeModel::UserRole + 1,
         SenderRole,
         FromRole,
         ToRole,

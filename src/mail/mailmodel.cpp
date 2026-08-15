@@ -4,119 +4,49 @@
 
 #include "mailmodel.h"
 
-#include <Akonadi/ItemModifyJob>
-#include <Akonadi/SelectionProxyModel>
-#include <KLocalizedString>
-#include <KMime/Message>
-
 MailModel::MailModel(QObject *parent)
-    : Akonadi::EntityMimeTypeFilterModel(parent)
+    : MailPresentationModel(parent)
 {
-    setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
-    addMimeTypeInclusionFilter(KMime::Message::mimeType());
-    addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
+    connect(this, &MailPresentationModel::collectionSelectionModelChanged, this, &MailModel::updateFolderName);
+    updateFolderName();
 }
 
-bool MailModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+void MailModel::updateFolderName()
 {
-    const auto leftItem = sourceModel()->data(left, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
-    const auto rightItem = sourceModel()->data(right, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
-    return dataFromItem(leftItem, DateTimeRole).toDateTime() < dataFromItem(rightItem, DateTimeRole).toDateTime();
-}
-
-QHash<int, QByteArray> MailModel::roleNames() const
-{
-    return AbstractMailModel::roleNames();
-}
-
-QVariant MailModel::data(const QModelIndex &index, int role) const
-{
-    const QVariant itemVariant = sourceModel()->data(mapToSource(index), Akonadi::EntityTreeModel::ItemRole);
-    const Akonadi::Item item = itemVariant.value<Akonadi::Item>();
-    return AbstractMailModel::dataFromItem(item, role);
-}
-
-Akonadi::Item MailModel::itemForRow(int row) const
-{
-    return data(index(row, 0), ItemRole).value<Akonadi::Item>();
-}
-
-Akonadi::EntityTreeModel *MailModel::entryTreeModel() const
-{
-    return m_entityTreeModel;
-}
-
-void MailModel::setEntityTreeModel(Akonadi::EntityTreeModel *entityTreeModel)
-{
-    if (m_entityTreeModel == entityTreeModel) {
-        return;
+    if (m_collectionSelectionConnection) {
+        disconnect(m_collectionSelectionConnection);
     }
 
-    m_entityTreeModel = entityTreeModel;
-    Q_EMIT entityTreeModelChanged();
-
-    if (!m_entityTreeModel) {
-        return;
+    if (auto *const selectionModel = collectionSelectionModel()) {
+        m_collectionSelectionConnection = connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &MailModel::updateFolderNameFromSelection);
     }
-    setupModel();
+    updateFolderNameFromSelection();
 }
 
-QItemSelectionModel *MailModel::collectionSelectionModel() const
+void MailModel::updateFolderNameFromSelection()
 {
-    return m_collectionSelectionModel;
-}
-
-void MailModel::setCollectionSelectionModel(QItemSelectionModel *collectionSelectionModel)
-{
-    if (m_collectionSelectionModel == collectionSelectionModel) {
-        return;
-    }
-
-    m_collectionSelectionModel = collectionSelectionModel;
-    Q_EMIT collectionSelectionModelChanged();
-
-    if (!m_collectionSelectionModel) {
-        return;
-    }
-    setupModel();
-
-    connect(m_collectionSelectionModel, &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &selected, const QItemSelection &deselected) {
-        Q_UNUSED(deselected)
-        const auto indexes = selected.indexes();
-        if (indexes.isEmpty()) {
-            return;
-        }
-        QString name;
-        QModelIndex index = indexes[0];
-        while (index.isValid()) {
-            if (name.isEmpty()) {
-                name = index.data(Qt::DisplayRole).toString();
-            } else {
-                name = index.data(Qt::DisplayRole).toString() + QLatin1StringView(" / ") + name;
+    QString name;
+    if (auto *const selectionModel = collectionSelectionModel()) {
+        const auto indexes = selectionModel->selectedIndexes();
+        if (!indexes.isEmpty()) {
+            QModelIndex index = indexes[0];
+            while (index.isValid()) {
+                if (name.isEmpty()) {
+                    name = index.data(Qt::DisplayRole).toString();
+                } else {
+                    name = index.data(Qt::DisplayRole).toString() + QLatin1StringView(" / ") + name;
+                }
+                index = index.parent();
             }
-            index = index.parent();
         }
-        m_folderName = name;
-        Q_EMIT folderNameChanged();
-    });
-}
+    }
 
-void MailModel::setupModel()
-{
-    if (!m_collectionSelectionModel || !m_entityTreeModel) {
+    if (m_folderName == name) {
         return;
     }
 
-    auto selectionModel = new Akonadi::SelectionProxyModel(m_collectionSelectionModel, this);
-    selectionModel->setSourceModel(m_entityTreeModel);
-    selectionModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
-
-    // Setup mail model
-    setSourceModel(selectionModel);
-
-    // Filter by datetime with more recent email at top
-    setDynamicSortFilter(true);
-    sort(0, Qt::DescendingOrder);
+    m_folderName = name;
+    Q_EMIT folderNameChanged();
 }
 
 QString MailModel::folderName() const
