@@ -54,6 +54,10 @@ void MailApplication::setupActions()
     action->setShortcut(u"Del"_s);
     mainCollection()->addAction("mail_trash"_L1, action);
 
+    action = new QAction(QIcon::fromTheme(u"user-trash-symbolic"_s), i18nc("@action", "Delete permanently"), this);
+    action->setShortcut(u"Shift+Del"_s);
+    mainCollection()->addAction("mail_delete"_L1, action);
+
     action = new QAction(QIcon::fromTheme(u"document-save-as-symbolic"_s), i18nc("@action", "Save as…"), this);
     mainCollection()->addAction("mail_save_as"_L1, action);
 

@@ -63,6 +63,7 @@ Q_SIGNALS:
 private:
     void modifyStatus(const std::function<Akonadi::MessageStatus(Akonadi::MessageStatus)> &f);
     void slotTrash();
+    void slotDelete();
     void replyTo(const Akonadi::Item &item, MessageComposer::ReplyStrategy strategy);
 
     QItemSelectionModel *m_selectionModel = nullptr;
@@ -73,6 +74,7 @@ private:
     QAction *m_markUnreadAction = nullptr;
     QAction *m_markImportantAction = nullptr;
     QAction *m_markUnimportantAction = nullptr;
+    QAction *m_mailTrashAction = nullptr;
     QAction *m_mailDeleteAction = nullptr;
     QAction *m_mailSaveAsAction = nullptr;
     QAction *m_mailMoveToAction = nullptr;

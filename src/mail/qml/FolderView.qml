@@ -219,6 +219,11 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Action {
+                    fromQAction: MailApplication.action("mail_delete")
+                    icon.color: Kirigami.Theme.negativeTextColor
+                }
+
+                Kirigami.Action {
                     fromQAction: MailApplication.action('mail_move_to')
                 }
 
