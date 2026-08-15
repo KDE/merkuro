@@ -28,6 +28,8 @@ public:
         ItemRole,
         DispatchModeRole,
         ThreadSectionDateRole,
+        UnreadDescendantCountRole,
+        IsThreadRootRole,
     };
 
     QVariant dataFromItem(const Akonadi::Item &item, int role) const;

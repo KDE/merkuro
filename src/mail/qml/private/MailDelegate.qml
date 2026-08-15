@@ -27,6 +27,7 @@ Delegates.IndicatorItemDelegate {
     required property int level
     required property bool expandable
     required property bool expanded
+    required property int unreadDescendantCount
 
     readonly property bool hasSendAfter: !!(root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime()))
     readonly property bool isScheduled: !!(root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter))
@@ -54,7 +55,8 @@ Delegates.IndicatorItemDelegate {
         return root.from.replace(/ <.*>/, "")
     }
 
-    unread: status && !status.isRead
+    unread: root.status && !root.status.isRead
+    readonly property int unreadChildCount: root.unreadDescendantCount
 
     signal openMailRequested()
     signal starMailRequested()
@@ -144,6 +146,30 @@ Delegates.IndicatorItemDelegate {
                     text: root.from
                     elide: Text.ElideRight
                     font.weight: root.unread ? Font.Bold : Font.Normal
+                }
+
+                QQC2.Label {
+                    id: unreadChildrenLabel
+                    visible: root.unreadChildCount > 0
+                    Layout.preferredWidth: Kirigami.Units.gridUnit
+                    Layout.preferredHeight: Kirigami.Units.gridUnit
+                    text: root.unreadChildCount
+                    color: Kirigami.Theme.highlightedTextColor
+                    font.weight: Font.Bold
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                    background: Rectangle {
+                        radius: height / 2
+                        color: Kirigami.Theme.highlightColor
+                    }
+
+                    HoverHandler {
+                        id: unreadChildrenHoverHandler
+                    }
+
+                    QQC2.ToolTip.visible: unreadChildrenHoverHandler.hovered
+                    QQC2.ToolTip.text: i18np("%1 unread message in this thread", "%1 unread messages in this thread", root.unreadChildCount)
                 }
 
                 QQC2.AbstractButton {

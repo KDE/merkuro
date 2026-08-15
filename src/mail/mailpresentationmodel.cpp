@@ -3,6 +3,7 @@
 
 #include "mailpresentationmodel.h"
 
+#include <Akonadi/MessageStatus>
 #include <MessageList/MessageModel>
 #include <QDateTime>
 
@@ -11,6 +12,25 @@ MailPresentationModel::MailPresentationModel(QObject *parent)
     , m_messageModel(std::make_unique<MessageList::MessageModel>(this))
 {
     setSourceModel(m_messageModel.get());
+
+    connect(m_messageModel.get(),
+            &QAbstractItemModel::dataChanged,
+            this,
+            [this](const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &) {
+                QList<QModelIndex> roots;
+                for (int row = topLeft.row(); row <= bottomRight.row(); ++row) {
+                    const auto sourceIndex = m_messageModel->index(row, 0, topLeft.parent());
+                    auto ancestorIndex = sourceIndex;
+                    while (ancestorIndex.isValid()) {
+                        if (!roots.contains(ancestorIndex)) {
+                            roots.append(ancestorIndex);
+                            const auto proxyIndex = mapFromSource(ancestorIndex);
+                            Q_EMIT dataChanged(proxyIndex, proxyIndex, {ThreadSectionDateRole, UnreadDescendantCountRole});
+                        }
+                        ancestorIndex = ancestorIndex.parent();
+                    }
+                }
+            });
 }
 
 Akonadi::EntityTreeModel *MailPresentationModel::entryTreeModel() const
@@ -73,6 +93,20 @@ QVariant MailPresentationModel::threadSectionDate(const QModelIndex &sourceIndex
     return AbstractMailModel::dataFromItem(latestItem, DateRole);
 }
 
+int MailPresentationModel::unreadDescendantCount(const QModelIndex &sourceIndex) const
+{
+    int unreadCount = 0;
+    for (int row = 0; row < m_messageModel->rowCount(sourceIndex); ++row) {
+        const auto childIndex = m_messageModel->index(row, 0, sourceIndex);
+        const auto item = childIndex.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        Akonadi::MessageStatus status;
+        status.setStatusFromFlags(item.flags());
+        unreadCount += !status.isRead();
+        unreadCount += unreadDescendantCount(childIndex);
+    }
+    return unreadCount;
+}
+
 void MailPresentationModel::setThreading(MessageList::Core::Aggregation::Threading threading)
 {
     if (this->threading() == threading) {
@@ -107,6 +141,12 @@ QVariant MailPresentationModel::data(const QModelIndex &index, int role) const
     const auto item = QIdentityProxyModel::data(index, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
     if (role == ThreadSectionDateRole) {
         return threadSectionDate(sourceIndex);
+    }
+    if (role == UnreadDescendantCountRole) {
+        return unreadDescendantCount(sourceIndex);
+    }
+    if (role == IsThreadRootRole) {
+        return !sourceIndex.parent().isValid();
     }
 
     return AbstractMailModel::dataFromItem(item, role);

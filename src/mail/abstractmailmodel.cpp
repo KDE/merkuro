@@ -89,6 +89,10 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
         // Flat models, such as the search model, use the message date as their
         // section date. Threaded models replace this with the latest thread date.
         return dataFromItem(item, DateRole);
+    case UnreadDescendantCountRole:
+        return 0;
+    case IsThreadRootRole:
+        return true;
     }
 
     return {};
@@ -110,5 +114,7 @@ QHash<int, QByteArray> AbstractMailModel::roleNames() const
         {ItemRole, "item"_ba},
         {DispatchModeRole, "dispatchMode"_ba},
         {ThreadSectionDateRole, "threadSectionDate"_ba},
+        {UnreadDescendantCountRole, "unreadDescendantCount"_ba},
+        {IsThreadRootRole, "isThreadRoot"_ba},
     };
 }

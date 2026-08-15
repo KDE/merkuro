@@ -349,6 +349,7 @@ Kirigami.ScrollablePage {
             required property var status
             required property var item
             required property var dispatchMode
+            required property int unreadDescendantCount
             required property int index
             required property int kDescendantLevel
             required property bool kDescendantExpandable
@@ -375,6 +376,7 @@ Kirigami.ScrollablePage {
                 status: parentDelegate.status
                 item: parentDelegate.item
                 dispatchMode: parentDelegate.dispatchMode
+                unreadDescendantCount: parentDelegate.unreadDescendantCount
                 index: parentDelegate.index
                 level: parentDelegate.kDescendantLevel
                 expandable: parentDelegate.kDescendantExpandable
