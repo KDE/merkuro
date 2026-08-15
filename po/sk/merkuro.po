@@ -3626,12 +3626,10 @@ msgid "Move to Trash"
 msgstr "Presunúť do koša"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "Vymazať e-mail"
+msgstr "Odstrániť natrvalo"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -3640,40 +3638,34 @@ msgid "Save as…"
 msgstr "Uložiť ako…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "Odpovedať na:"
+msgstr "Odpovedať"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "Vymazať všetko"
+msgstr "Odpovedať všetkým"
 
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
-msgstr "Dopredu"
+msgstr "Poslať ďalej"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Odoslať"
+msgstr "Odoslať teraz"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Rozvrh"
+msgstr "Preplánovať"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3691,10 +3683,9 @@ msgid "Error creating transport"
 msgstr "Chyba pri vytváraní prenosu"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "The signature is invalid."
+#, kde-format
 msgid "Send date is not valid."
-msgstr "Podpis je neplatný."
+msgstr "Dátum odoslania nie je platný."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3789,11 +3780,10 @@ msgid "Edit Folder"
 msgstr "Upraviť priečinok"
 
 #: mail/qml/actions/MailItemMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "Create Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
-msgstr "Vytvoriť priečinok"
+msgstr "Aktualizovať priečinok"
 
 #: mail/qml/actions/MailItemMenu.qml:60
 #, kde-format
@@ -3864,12 +3854,10 @@ msgid "Email messages (*.mbox)"
 msgstr "E-mailové správy (*.mbox)"
 
 #: mail/qml/FolderView.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "Nová správa"
+msgstr "Preplánovať správu"
 
 #: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
 #, kde-format
@@ -3951,17 +3939,16 @@ msgid "Attach Document"
 msgstr "Priložiť dokument"
 
 #: mail/qml/MailComposer.qml:190
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Poslať SMS"
+msgstr "Odoslať neskôr"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "Zobrazenie rozvrhu"
+msgstr "Naplánovať odoslanie"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
@@ -3975,12 +3962,10 @@ msgid "This mail contains an invitation"
 msgstr "Tento e-mail obsahuje pozvánku"
 
 #: mail/qml/private/MailDelegate.qml:171
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Rozvrh"
+msgstr "Naplánované na %1"
 
 #: mail/qml/private/MailDelegate.qml:172
 #, kde-format
@@ -4030,23 +4015,20 @@ msgid "Accounts"
 msgstr "Účty"
 
 #: mail/settings/TransportConfigurationForm.qml:31
-#, fuzzy, kde-format
-#| msgid "Remove %1 tag"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Rename %1"
-msgstr "Odstrániť značku %1"
+msgstr "Premenovať %1"
 
 #: mail/settings/TransportConfigurationForm.qml:40
 #: mail/settings/TransportConfigurationForm.qml:143
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
-msgstr "Účty"
+msgstr "Názov účtu"
 
 #: mail/settings/TransportConfigurationForm.qml:83
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "Nastavenia"
@@ -4067,7 +4049,7 @@ msgstr "Pridať účet"
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
-msgstr ""
+msgstr "Nastaviť ako predvolený"
 
 #: mail/settings/TransportConfigurationForm.qml:153
 #, kde-format
@@ -4075,7 +4057,7 @@ msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
-msgstr ""
+msgstr "Vyberte typ účtu"
 
 #~ msgctxt "@title:dialog"
 #~ msgid "Configure %1"
