@@ -14,6 +14,8 @@ set(merkuro_mail_SRCS
     mailmanager.h
     mailmodel.cpp
     mailmodel.h
+    mailpresentationmodel.cpp
+    mailpresentationmodel.h
     searchmodel.h
     searchmodel.cpp
     contactimageprovider.cpp
@@ -48,6 +50,7 @@ set(merkuro_mail_SRCS
 
     attachmentmodel.cpp
     attachmentmodel.h
+    foreigntypes.h
 )
 
 ecm_qt_declare_logging_category(merkuro_mail_SRCS
@@ -74,6 +77,7 @@ target_link_libraries(merkuro_mail_static
         KF6::Mime
         KPim6::Libkdepim
         KPim6::PimCommonAkonadi
+        KPim6::MessageList
         KPim6::MimeTreeParserCore
         KF6::XmlGui
         KF6::Codecs
