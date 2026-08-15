@@ -25,7 +25,7 @@ MailPresentationModel::MailPresentationModel(QObject *parent)
                         if (!roots.contains(ancestorIndex)) {
                             roots.append(ancestorIndex);
                             const auto proxyIndex = mapFromSource(ancestorIndex);
-                            Q_EMIT dataChanged(proxyIndex, proxyIndex, {ThreadSectionDateRole, UnreadDescendantCountRole});
+                            Q_EMIT dataChanged(proxyIndex, proxyIndex, {ThreadSectionDateRole, UnreadDescendantCountRole, ThreadSendersRole});
                         }
                         ancestorIndex = ancestorIndex.parent();
                     }
@@ -107,6 +107,24 @@ int MailPresentationModel::unreadDescendantCount(const QModelIndex &sourceIndex)
     return unreadCount;
 }
 
+QStringList MailPresentationModel::threadSenders(const QModelIndex &sourceIndex) const
+{
+    QStringList senders;
+    const auto visit = [&](const auto &visit, const QModelIndex &itemIndex) -> void {
+        const auto item = itemIndex.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        const auto sender = AbstractMailModel::dataFromItem(item, FromRole).toString();
+        if (!sender.isEmpty() && !senders.contains(sender)) {
+            senders.append(sender);
+        }
+
+        for (int row = 0; row < m_messageModel->rowCount(itemIndex); ++row) {
+            visit(visit, m_messageModel->index(row, 0, itemIndex));
+        }
+    };
+    visit(visit, sourceIndex);
+    return senders;
+}
+
 void MailPresentationModel::setThreading(MessageList::Core::Aggregation::Threading threading)
 {
     if (this->threading() == threading) {
@@ -147,6 +165,9 @@ QVariant MailPresentationModel::data(const QModelIndex &index, int role) const
     }
     if (role == IsThreadRootRole) {
         return !sourceIndex.parent().isValid();
+    }
+    if (role == ThreadSendersRole) {
+        return threadSenders(sourceIndex);
     }
 
     return AbstractMailModel::dataFromItem(item, role);

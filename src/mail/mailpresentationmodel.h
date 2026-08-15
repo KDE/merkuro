@@ -11,6 +11,7 @@
 #include <QIdentityProxyModel>
 #include <QItemSelectionModel>
 #include <QPointer>
+#include <QStringList>
 #include <qqmlregistration.h>
 
 #include <memory>
@@ -47,6 +48,7 @@ Q_SIGNALS:
 private:
     [[nodiscard]] QVariant threadSectionDate(const QModelIndex &sourceIndex) const;
     [[nodiscard]] int unreadDescendantCount(const QModelIndex &sourceIndex) const;
+    [[nodiscard]] QStringList threadSenders(const QModelIndex &sourceIndex) const;
 
     std::unique_ptr<MessageList::MessageModel> m_messageModel;
     QPointer<Akonadi::EntityTreeModel> m_entityTreeModel;
