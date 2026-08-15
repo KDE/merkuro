@@ -45,6 +45,8 @@ Q_SIGNALS:
     void threadingChanged();
 
 private:
+    [[nodiscard]] QVariant threadSectionDate(const QModelIndex &sourceIndex) const;
+
     std::unique_ptr<MessageList::MessageModel> m_messageModel;
     QPointer<Akonadi::EntityTreeModel> m_entityTreeModel;
     QPointer<QItemSelectionModel> m_collectionSelectionModel;

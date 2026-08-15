@@ -4,6 +4,7 @@
 #include "mailpresentationmodel.h"
 
 #include <MessageList/MessageModel>
+#include <QDateTime>
 
 MailPresentationModel::MailPresentationModel(QObject *parent)
     : QIdentityProxyModel(parent)
@@ -49,6 +50,29 @@ MessageList::Core::Aggregation::Threading MailPresentationModel::threading() con
     return m_messageModel->threading();
 }
 
+QVariant MailPresentationModel::threadSectionDate(const QModelIndex &sourceIndex) const
+{
+    const auto rootIndex = m_messageModel->threadRoot(sourceIndex);
+
+    Akonadi::Item latestItem;
+    QDateTime latestDate;
+    const auto visit = [&](const auto &visit, const QModelIndex &itemIndex) -> void {
+        const auto item = itemIndex.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        const auto date = AbstractMailModel::dataFromItem(item, DateTimeRole).toDateTime();
+        if (date.isValid() && (!latestDate.isValid() || date > latestDate)) {
+            latestDate = date;
+            latestItem = item;
+        }
+
+        for (int row = 0; row < m_messageModel->rowCount(itemIndex); ++row) {
+            visit(visit, m_messageModel->index(row, 0, itemIndex));
+        }
+    };
+    visit(visit, rootIndex);
+
+    return AbstractMailModel::dataFromItem(latestItem, DateRole);
+}
+
 void MailPresentationModel::setThreading(MessageList::Core::Aggregation::Threading threading)
 {
     if (this->threading() == threading) {
@@ -79,6 +103,11 @@ QVariant MailPresentationModel::data(const QModelIndex &index, int role) const
         return QIdentityProxyModel::data(index, role);
     }
 
+    const auto sourceIndex = mapToSource(index);
     const auto item = QIdentityProxyModel::data(index, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+    if (role == ThreadSectionDateRole) {
+        return threadSectionDate(sourceIndex);
+    }
+
     return AbstractMailModel::dataFromItem(item, role);
 }
