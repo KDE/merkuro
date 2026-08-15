@@ -30,6 +30,7 @@ public:
         ThreadSectionDateRole,
         UnreadDescendantCountRole,
         IsThreadRootRole,
+        ThreadSendersRole,
     };
 
     QVariant dataFromItem(const Akonadi::Item &item, int role) const;

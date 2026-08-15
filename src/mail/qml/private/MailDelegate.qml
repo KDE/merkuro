@@ -28,11 +28,31 @@ Delegates.IndicatorItemDelegate {
     required property bool expandable
     required property bool expanded
     required property int unreadDescendantCount
+    required property var threadSenders
 
     readonly property bool hasSendAfter: !!(root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime()))
     readonly property bool isScheduled: !!(root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter))
 
     readonly property string datetimeText: datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
+    readonly property string senderText: {
+        if (!(root.expandable && !root.expanded)) {
+            return root.displayName(root.from)
+        }
+
+        const names = []
+        for (const sender of root.threadSenders) {
+            const name = root.displayName(sender)
+            if (name.length > 0 && !names.includes(name)) {
+                names.push(name)
+            }
+        }
+        return names.join(", ")
+    }
+
+    function displayName(address: string): string {
+        const match = /^(.*?)\s*<[^>]*>$/.exec(address)
+        return match ? match[1] : address
+    }
 
     // Expected format for `from` is
     //     Some Name <email@domain.test>
@@ -46,14 +66,7 @@ Delegates.IndicatorItemDelegate {
 
         return /<(.*)>/.exec(root.from)[1]
     }
-    readonly property string fromName: {
-        // If there are no `<>`s, it's likely that the email is in the following format instead:
-        //     email@domain.test
-        if (!(from.includes("<") && from.includes(">")))
-            return from
-
-        return root.from.replace(/ <.*>/, "")
-    }
+    readonly property string fromName: root.displayName(root.from)
 
     unread: root.status && !root.status.isRead
     readonly property int unreadChildCount: root.unreadDescendantCount
@@ -143,7 +156,7 @@ Delegates.IndicatorItemDelegate {
                 Layout.fillWidth: true
                 QQC2.Label {
                     Layout.fillWidth: true
-                    text: root.from
+                    text: root.senderText
                     elide: Text.ElideRight
                     font.weight: root.unread ? Font.Bold : Font.Normal
                 }

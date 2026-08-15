@@ -93,6 +93,8 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
         return 0;
     case IsThreadRootRole:
         return true;
+    case ThreadSendersRole:
+        return QStringList{dataFromItem(item, FromRole).toString()};
     }
 
     return {};
@@ -116,5 +118,6 @@ QHash<int, QByteArray> AbstractMailModel::roleNames() const
         {ThreadSectionDateRole, "threadSectionDate"_ba},
         {UnreadDescendantCountRole, "unreadDescendantCount"_ba},
         {IsThreadRootRole, "isThreadRoot"_ba},
+        {ThreadSendersRole, "threadSenders"_ba},
     };
 }
