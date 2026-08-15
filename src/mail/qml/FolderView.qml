@@ -300,7 +300,7 @@ Kirigami.ScrollablePage {
                 required property string section
                 label: section
             }
-            property: "date"
+            property: "threadSectionDate"
         }
 
         onCurrentItemChanged: if (currentIndex !== -1 && currentItem) {
