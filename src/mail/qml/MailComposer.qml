@@ -14,11 +14,15 @@ import org.kde.kidentitymanagement as KIdentityManagement
 
 Kirigami.ScrollablePage {
     id: mailComposition
-    title: i18nc("@title:window", "New Message")
+    title: initialSubject.length > 0 ? initialSubject : i18nc("@title:window", "New Message")
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
     topPadding: Kirigami.Units.largeSpacing
+
+    property string initialTo: ""
+    property string initialSubject: ""
+    property string initialBody: ""
 
     MailClient {
         id: mailClient
@@ -89,6 +93,11 @@ Kirigami.ScrollablePage {
                 wrapMode: Text.Wrap
                 KeyNavigation.priority: KeyNavigation.BeforeItem
                 onTextChanged: mailClient.headerModel.setValue(index, text);
+                Component.onCompleted: {
+                    if (index === 0 && mailComposition.initialTo.length > 0) {
+                        text = mailComposition.initialTo;
+                    }
+                }
             }
         }
 
@@ -99,6 +108,7 @@ Kirigami.ScrollablePage {
         }
         QQC2.TextField {
             id: subjectText
+            text: mailComposition.initialSubject
             Layout.fillWidth: true
             Layout.rightMargin: Kirigami.Units.largeSpacing
             wrapMode: Text.Wrap
@@ -108,6 +118,7 @@ Kirigami.ScrollablePage {
 
         QQC2.TextArea {
             id: mailContent
+            text: mailComposition.initialBody
             Layout.columnSpan: 2
             Layout.fillWidth: true
             Layout.fillHeight: true

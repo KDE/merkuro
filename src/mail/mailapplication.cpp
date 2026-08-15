@@ -63,6 +63,18 @@ void MailApplication::setupActions()
     action = new QAction(QIcon::fromTheme(u"edit-copy-symbolic"_s), i18nc("@action", "Copy to…"), this);
     mainCollection()->addAction("mail_copy_to"_L1, action);
 
+    action = new QAction(QIcon::fromTheme(u"mail-reply-sender-symbolic"_s), i18nc("@action", "Reply"), this);
+    action->setShortcut(u"R"_s);
+    mainCollection()->addAction("mail_reply"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"mail-reply-all-symbolic"_s), i18nc("@action", "Reply to All"), this);
+    action->setShortcut(u"A"_s);
+    mainCollection()->addAction("mail_reply_all"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"mail-forward-symbolic"_s), i18nc("@action", "Forward"), this);
+    action->setShortcut(u"F"_s);
+    mainCollection()->addAction("mail_forward"_L1, action);
+
     readSettings();
 }
 

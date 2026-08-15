@@ -26,6 +26,21 @@ MimeTreeParser.MailViewer {
 
     actions: [
         Kirigami.Action {
+            text: i18nc("@action", "Reply")
+            icon.name: "mail-reply-sender-symbolic"
+            onTriggered: mailActions.replyToSender(root.emptyItem)
+        },
+        Kirigami.Action {
+            text: i18nc("@action", "Reply to All")
+            icon.name: "mail-reply-all-symbolic"
+            onTriggered: mailActions.replyToAll(root.emptyItem)
+        },
+        Kirigami.Action {
+            text: i18nc("@action", "Forward")
+            icon.name: "mail-forward-symbolic"
+            onTriggered: mailActions.forward(root.emptyItem)
+        },
+        Kirigami.Action {
             text: i18nc("@action", "Move to Trash")
             icon.name: "albumfolder-user-trash-symbolic"
             onTriggered: {
