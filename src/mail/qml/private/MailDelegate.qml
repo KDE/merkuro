@@ -25,8 +25,8 @@ Delegates.IndicatorItemDelegate {
     required property var dispatchMode
     required property ItemSelectionModel selectionModel
 
-    readonly property bool hasSendAfter: root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime())
-    readonly property bool isScheduled: root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter)
+    readonly property bool hasSendAfter: !!(root.dispatchMode && root.dispatchMode.sendAfter instanceof Date && !isNaN(root.dispatchMode.sendAfter.getTime()))
+    readonly property bool isScheduled: !!(root.dispatchMode && (!root.dispatchMode.automatic || root.hasSendAfter))
 
     readonly property string datetimeText: datetime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
 
