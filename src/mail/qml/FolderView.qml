@@ -11,6 +11,7 @@ import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kitemmodels
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import './private'
@@ -35,6 +36,13 @@ Kirigami.ScrollablePage {
 
     SearchModel {
         id: searchModel
+    }
+
+    KDescendantsProxyModel {
+        id: mailsModel
+
+        model: root.searchString.length > 0 ? searchModel : mailModel
+        expandsByDefault: false
     }
 
     actions: [
@@ -104,7 +112,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: mails
-        model: root.searchString.length > 0 ? searchModel : mailModel
+        model: mailsModel
         currentIndex: -1
         onCountChanged: if (currentIndex === -1 && count > 0) {
             currentIndex = 0;
@@ -342,6 +350,9 @@ Kirigami.ScrollablePage {
             required property var item
             required property var dispatchMode
             required property int index
+            required property int kDescendantLevel
+            required property bool kDescendantExpandable
+            required property bool kDescendantExpanded
 
             height: mailDelegate.implicitHeight
 
@@ -365,11 +376,16 @@ Kirigami.ScrollablePage {
                 item: parentDelegate.item
                 dispatchMode: parentDelegate.dispatchMode
                 index: parentDelegate.index
+                level: parentDelegate.kDescendantLevel
+                expandable: parentDelegate.kDescendantExpandable
+                expanded: parentDelegate.kDescendantExpanded
                 selectionModel: mailSelectionModel
 
                 onOpenMailRequested: {
                     mails.currentIndex = index;
                 }
+
+                onToggleExpansionRequested: mailsModel.toggleChildren(index)
 
                 onStarMailRequested: {
                     mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
