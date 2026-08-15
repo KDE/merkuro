@@ -17,6 +17,13 @@ MailModel::MailModel(QObject *parent)
     addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
 }
 
+bool MailModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    const auto leftItem = sourceModel()->data(left, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+    const auto rightItem = sourceModel()->data(right, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+    return dataFromItem(leftItem, DateTimeRole).toDateTime() < dataFromItem(rightItem, DateTimeRole).toDateTime();
+}
+
 QHash<int, QByteArray> MailModel::roleNames() const
 {
     return AbstractMailModel::roleNames();
@@ -106,6 +113,10 @@ void MailModel::setupModel()
 
     // Setup mail model
     setSourceModel(selectionModel);
+
+    // Filter by datetime with more recent email at top
+    setDynamicSortFilter(true);
+    sort(0, Qt::DescendingOrder);
 }
 
 QString MailModel::folderName() const
