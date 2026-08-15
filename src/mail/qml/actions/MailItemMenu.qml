@@ -51,7 +51,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Restart Account")
+        text: i18nc("@action:inmenu", "Update Folder and Subfolders")
         onClicked: MailManager.updateCollection(mailActionsPopup.collectionId);
     }
 
