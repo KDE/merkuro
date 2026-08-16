@@ -353,6 +353,7 @@ Kirigami.ScrollablePage {
             required property var threadSenders
             required property int index
             required property int kDescendantLevel
+            required property var kDescendantHasSiblings
             required property bool kDescendantExpandable
             required property bool kDescendantExpanded
 
@@ -381,6 +382,8 @@ Kirigami.ScrollablePage {
                 threadSenders: parentDelegate.threadSenders
                 index: parentDelegate.index
                 level: parentDelegate.kDescendantLevel
+                treeModel: mailsModel
+                hasSiblings: parentDelegate.kDescendantHasSiblings
                 expandable: parentDelegate.kDescendantExpandable
                 expanded: parentDelegate.kDescendantExpanded
                 selectionModel: mailSelectionModel
@@ -388,8 +391,6 @@ Kirigami.ScrollablePage {
                 onOpenMailRequested: {
                     mails.currentIndex = index;
                 }
-
-                onToggleExpansionRequested: mailsModel.toggleChildren(index)
 
                 onStarMailRequested: {
                     mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);

@@ -9,6 +9,7 @@ import QtQml.Models
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.treeview as Tree
 
 import org.kde.merkuro.components
 
@@ -25,6 +26,8 @@ Delegates.IndicatorItemDelegate {
     required property var dispatchMode
     required property ItemSelectionModel selectionModel
     required property int level
+    required property var treeModel
+    required property var hasSiblings
     required property bool expandable
     required property bool expanded
     required property int unreadDescendantCount
@@ -74,7 +77,6 @@ Delegates.IndicatorItemDelegate {
     signal openMailRequested()
     signal starMailRequested()
     signal contextMenuRequested()
-    signal toggleExpansionRequested()
 
     TapHandler {
         acceptedButtons: Qt.RightButton
@@ -103,18 +105,15 @@ Delegates.IndicatorItemDelegate {
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
 
-        Item {
-            Layout.preferredWidth: Math.max(0, root.level - 1) * Kirigami.Units.gridUnit
+        Tree.TreeViewDecoration {
+            parentDelegate: root
+            model: root.treeModel
+            index: root.index
+            kDescendantLevel: root.level
+            kDescendantHasSiblings: root.hasSiblings
+            kDescendantExpandable: root.expandable
+            kDescendantExpanded: root.expanded
             Layout.fillHeight: true
-        }
-
-        QQC2.ToolButton {
-            visible: root.expandable
-            icon.name: root.expanded ? "arrow-down" : "arrow-right"
-            display: QQC2.AbstractButton.IconOnly
-            onClicked: root.toggleExpansionRequested()
-            Accessible.name: root.expanded ? i18n("Collapse thread") : i18n("Expand thread")
-            Accessible.role: Accessible.Button
         }
 
         ColoredCheckbox {
