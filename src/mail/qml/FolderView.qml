@@ -21,6 +21,7 @@ Kirigami.ScrollablePage {
 
     property var collection
     property alias searchString: searchModel.searchString
+    property bool threadingModelRefreshPending: true
 
     title: searchString.length > 0 ? i18nc("@title", "Search: %1", searchString) : mailModel.folderName
 
@@ -29,6 +30,7 @@ Kirigami.ScrollablePage {
 
         collectionSelectionModel: MailManager.collectionSelectionModel
         entryTreeModel: MailManager.entryTreeModel
+        threading: Config.threadedMessageView ? MessageListAggregation.PerfectReferencesAndSubject : MessageListAggregation.NoThreading
         onFolderNameChanged: {
             mails.currentIndex = -1
         }
@@ -45,6 +47,31 @@ Kirigami.ScrollablePage {
         expandsByDefault: false
     }
 
+    Connections {
+        target: mailModel
+
+        function onModelReset(): void {
+            root.threadingModelRefreshPending = true
+        }
+
+        function onLayoutChanged(): void {
+            if (!root.threadingModelRefreshPending) {
+                return
+            }
+
+            root.threadingModelRefreshPending = false
+            if (root.searchString.length > 0) {
+                return
+            }
+
+            // MessageModel reloads with its UI disconnected and reports the
+            // completed fill through layoutChanged(). Rebind the descendants
+            // proxy so it rebuilds its mapping for the new hierarchy.
+            mailsModel.model = null
+            mailsModel.model = mailModel
+        }
+    }
+
     actions: [
         Kirigami.Action {
             icon.name: 'mail-send'
@@ -54,6 +81,19 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             fromQAction: MailApplication.action("check_mail")
             visible: root.searchString.length === 0
+        },
+        Kirigami.Action {
+            text: i18nc("@action", "Thread Messages")
+            tooltip: i18nc("@tooltip", "Toggle threaded message view")
+            icon.name: "view-list-tree"
+            checkable: true
+            checked: Config.threadedMessageView
+            visible: root.searchString.length === 0
+            onTriggered: {
+                root.threadingModelRefreshPending = true
+                Config.threadedMessageView = !Config.threadedMessageView
+                Config.save()
+            }
         }
     ]
 
