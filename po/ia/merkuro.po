@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-04 00:45+0000\n"
+"POT-Creation-Date: 2026-08-16 02:43+0000\n"
 "PO-Revision-Date: 2026-07-15 17:19+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2040,7 +2040,7 @@ msgid "Enter email of recipient…"
 msgstr "Inserta e-posta de destinatario..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:169
+#: mail/qml/MailComposer.qml:180
 #, kde-format
 msgid "Send"
 msgstr "Invia"
@@ -2619,13 +2619,13 @@ msgctxt "@action"
 msgid "Delete contact"
 msgstr "Dele contacto"
 
-#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:60
+#: contacts/contactapplication.cpp:65 mail/mailapplication.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "Move to…"
 msgstr "Move a…"
 
-#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:63
+#: contacts/contactapplication.cpp:68 mail/mailapplication.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Copy to…"
@@ -3606,17 +3606,45 @@ msgid "Mark as Important"
 msgstr "Marca como importante"
 
 #: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:20
-#: mail/qml/ConversationViewer.qml:29
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Move a corbe"
 
 #: mail/mailapplication.cpp:57
+#, fuzzy, kde-format
+#| msgctxt "@title:dialog"
+#| msgid "Delete Email"
+msgctxt "@action"
+msgid "Delete permanently"
+msgstr "Dele EPosta"
+
+#: mail/mailapplication.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Save as…"
 msgstr "Salveguarda como…"
+
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
+#, fuzzy, kde-format
+#| msgid "Reply-To:"
+msgctxt "@action"
+msgid "Reply"
+msgstr "Responde a:"
+
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
+#, fuzzy, kde-format
+#| msgid "Delete All"
+msgctxt "@action"
+msgid "Reply to All"
+msgstr "Dele toto"
+
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
+#, fuzzy, kde-format
+#| msgid "Forwards"
+msgctxt "@action"
+msgid "Forward"
+msgstr "In Avante"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
@@ -3725,8 +3753,8 @@ msgstr "Modifica Dossier"
 #: mail/qml/actions/MailItemMenu.qml:54
 #, kde-format
 msgctxt "@action:inmenu"
-msgid "Restart Account"
-msgstr "Restarta conto"
+msgid "Update Folder and Subfolders"
+msgstr ""
 
 #: mail/qml/actions/MailItemMenu.qml:60
 #, kde-format
@@ -3783,23 +3811,23 @@ msgstr "Salveguarda Message - Merkuro-Mail"
 msgid "Email messages (*.mbox)"
 msgstr "Messages de eposta (email) (*.mbox)"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:186
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Marca message"
 
-#: mail/qml/FolderView.qml:219
+#: mail/qml/FolderView.qml:244
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Nulle cassa postal seligite"
 
-#: mail/qml/FolderView.qml:220
+#: mail/qml/FolderView.qml:245
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Selige un cassa postal ab le barra lateral."
 
-#: mail/qml/FolderView.qml:227
+#: mail/qml/FolderView.qml:252
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Cassa postal es vacue"
@@ -3815,42 +3843,42 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "Nove message"
 
-#: mail/qml/MailComposer.qml:35
+#: mail/qml/MailComposer.qml:39
 #, kde-format
 msgid "From:"
 msgstr "Ex:"
 
-#: mail/qml/MailComposer.qml:46
+#: mail/qml/MailComposer.qml:50
 #, kde-format
 msgid "Identity:"
 msgstr "Identitate:"
 
-#: mail/qml/MailComposer.qml:74
+#: mail/qml/MailComposer.qml:78
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:75
+#: mail/qml/MailComposer.qml:79
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:76
+#: mail/qml/MailComposer.qml:80
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: mail/qml/MailComposer.qml:77
+#: mail/qml/MailComposer.qml:81
 #, kde-format
 msgid "Reply-To:"
 msgstr "Responde a:"
 
-#: mail/qml/MailComposer.qml:97
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "Subject:"
 msgstr "Subjecto:"
 
-#: mail/qml/MailComposer.qml:155
+#: mail/qml/MailComposer.qml:166
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
@@ -3939,6 +3967,10 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Selige le typo de conto"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Restart Account"
+#~ msgstr "Restarta conto"
 
 #~ msgctxt "@title:dialog"
 #~ msgid "Configure %1"
