@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-30 00:45+0000\n"
-"PO-Revision-Date: 2026-08-19 21:31+0200\n"
+"PO-Revision-Date: 2026-08-21 22:49+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2704,7 +2704,7 @@ msgstr "Eginda"
 #: contacts/qml/ContactChooserPage.qml:88
 #, kde-format
 msgid "Select Email Address"
-msgstr "Hautatu e-posta helbidea"
+msgstr "E-posta helbidea hautatu"
 
 #: contacts/qml/ContactListItem.qml:39
 #, kde-format
@@ -3674,10 +3674,9 @@ msgid "Error creating transport"
 msgstr "Errorea garraioa sortzean"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "The signature is invalid."
+#, kde-format
 msgid "Send date is not valid."
-msgstr "Sinadura baliogabea da."
+msgstr "Bidalketa-data ez da balioduna."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3938,17 +3937,16 @@ msgid "Send Later"
 msgstr "Beranduago bidali"
 
 #: mail/qml/MailComposer.qml:214
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "Ordutegi ikuspegia"
+msgstr "Bidalketa programatu"
 
 #: mail/qml/MailComposer.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "Eskuzko modua"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -3956,12 +3954,10 @@ msgid "This mail contains an invitation"
 msgstr "Posta honek gonbidapen bat du"
 
 #: mail/qml/private/MailDelegate.qml:171
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Ordutegia"
+msgstr "%1(e)rako programatuta"
 
 #: mail/qml/private/MailDelegate.qml:172
 #, kde-format
@@ -3970,11 +3966,13 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"Eskuzko ekintza behar du. Berehala bidaltzeko, «Bidali orain» ekintza "
+"erabili; data eta ordua ezartzeko, «Berriro programatu» ekintza erabili."
 
 #: mail/qml/private/MailDelegate.qml:185
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Eskuz"
 
 #: mail/settings/AccountSettingsPage.qml:19
 #, kde-format
