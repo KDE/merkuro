@@ -4,24 +4,24 @@
 Dependencies:
  - 'on': ['Linux', 'FreeBSD']
    'require':
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/qqc2-desktop-style': '@latest-kf6'
-    'frameworks/kcalendarcore': '@latest-kf6'
-    'frameworks/kholidays': '@latest-kf6'
-    'frameworks/kconfigwidgets': '@latest-kf6'
-    'frameworks/kwindowsystem': '@latest-kf6'
-    'frameworks/kxmlgui': '@latest-kf6'
-    'frameworks/kcontacts': '@latest-kf6'
+    'frameworks/extra-cmake-modules': 'Frameworks/6.24'
+    'frameworks/qqc2-desktop-style': 'Frameworks/6.24'
+    'frameworks/kcalendarcore': 'Frameworks/6.24'
+    'frameworks/kholidays': 'Frameworks/6.24'
+    'frameworks/kconfigwidgets': 'Frameworks/6.24'
+    'frameworks/kwindowsystem': 'Frameworks/6.24'
+    'frameworks/kxmlgui': 'Frameworks/6.24'
+    'frameworks/kcontacts': 'Frameworks/6.24'
     'pim/akonadi': '@same'
     'pim/akonadi-calendar': '@same'
     'pim/kcalutils': '@same'
     'pim/kmime': '@same'
     'pim/kdepim-runtime': '@same'
     'pim/mailcommon': '@same'
-    'frameworks/kirigami': '@latest-kf6'
-    'libraries/kirigami-addons': '@latest-kf6'
+    'frameworks/kirigami': 'Frameworks/6.24'
+    'libraries/kirigami-addons': 'v1.11.0'
     'pim/mimetreeparser': '@same'
-    'frameworks/kcrash': '@latest-kf6'
+    'frameworks/kcrash': 'Frameworks/6.24'
 
 Options:
  require-passing-tests-on: ['Linux']
