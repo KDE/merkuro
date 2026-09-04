@@ -164,7 +164,6 @@ private:
     void itemFetchDone(KJob *job);
     void parentCollectionFetchDone(KJob *job);
     void storeDone(KJob *job);
-    void loadContact(const KContacts::Addressee &contact, const ContactMetaData &metaData);
     void setupMonitor();
     void storeContact(KContacts::Addressee &contact, ContactMetaData &metaData) const;
 
