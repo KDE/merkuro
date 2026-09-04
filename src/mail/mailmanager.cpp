@@ -180,12 +180,12 @@ void MailManager::updateCollectionNonRecursive(const QModelIndex &index)
 void MailManager::addCollection(const QModelIndex &index, const QVariant &name)
 {
     const auto parentCollection = foldersModel()->data(index, Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>();
-    const auto collection = new Akonadi::Collection();
-    collection->setParentCollection(parentCollection);
-    collection->setName(name.toString());
-    collection->setContentMimeTypes({u"message/rfc822"_s});
+    Akonadi::Collection collection;
+    collection.setParentCollection(parentCollection);
+    collection.setName(name.toString());
+    collection.setContentMimeTypes({u"message/rfc822"_s});
 
-    const auto job = new Akonadi::CollectionCreateJob(*collection);
+    const auto job = new Akonadi::CollectionCreateJob(collection);
     connect(job, SIGNAL(result(KJob *)), job, SLOT(slotResult(KJob *)));
 }
 
