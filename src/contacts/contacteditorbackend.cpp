@@ -116,7 +116,6 @@ void ContactEditorBackend::itemFetchDone(KJob *job)
     }
 
     m_item = fetchJob->items().at(0);
-    Q_EMIT itemChanged();
 
     setReadOnly(false);
     if (m_mode == ContactEditorBackend::EditMode) {
