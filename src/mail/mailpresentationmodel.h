@@ -38,6 +38,8 @@ public:
     [[nodiscard]] MessageList::Core::Aggregation::Threading threading() const;
     void setThreading(MessageList::Core::Aggregation::Threading threading);
 
+    [[nodiscard]] Akonadi::Item::List conversationItems(const Akonadi::Item &seedItem) const;
+
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
 

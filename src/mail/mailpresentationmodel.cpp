@@ -65,6 +65,33 @@ void MailPresentationModel::setCollectionSelectionModel(QItemSelectionModel *col
     Q_EMIT collectionSelectionModelChanged();
 }
 
+Akonadi::Item::List MailPresentationModel::conversationItems(const Akonadi::Item &seedItem) const
+{
+    Akonadi::Item::List items;
+    const auto seedIndex = m_messageModel->indexForItemId(seedItem.id());
+    if (!seedIndex.isValid()) {
+        return items;
+    }
+
+    const auto rootIndex = m_messageModel->threadRoot(seedIndex);
+    const auto itemIds = m_messageModel->threadItemIds(rootIndex);
+    items.reserve(itemIds.size());
+
+    for (const auto itemId : itemIds) {
+        const auto itemIndex = m_messageModel->indexForItemId(itemId);
+        if (!itemIndex.isValid()) {
+            continue;
+        }
+
+        const auto item = itemIndex.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        if (item.isValid()) {
+            items.append(item);
+        }
+    }
+
+    return items;
+}
+
 MessageList::Core::Aggregation::Threading MailPresentationModel::threading() const
 {
     return m_messageModel->threading();
