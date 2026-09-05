@@ -22,7 +22,8 @@ class MailPresentationModel : public QIdentityProxyModel, public AbstractMailMod
     QML_ELEMENT
 
     Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
-    Q_PROPERTY(QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
+    Q_PROPERTY(
+        QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
     Q_PROPERTY(MessageList::Core::Aggregation::Threading threading READ threading WRITE setThreading NOTIFY threadingChanged)
 
 public:
