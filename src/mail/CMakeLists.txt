@@ -16,6 +16,8 @@ set(merkuro_mail_SRCS
     mailmodel.h
     mailpresentationmodel.cpp
     mailpresentationmodel.h
+    conversationmodel.cpp
+    conversationmodel.h
     searchmodel.h
     searchmodel.cpp
     contactimageprovider.cpp
