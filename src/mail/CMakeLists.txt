@@ -137,6 +137,10 @@ ecm_target_qml_sources(merkuro_mail_static
     qml/mailpartview/ICalPart.qml
 )
 
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
+
 #### Binary
 
 add_executable(merkuro-mail

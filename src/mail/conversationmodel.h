@@ -52,6 +52,9 @@ Q_SIGNALS:
     void folderModelChanged();
     void anchorRowChanged();
 
+protected:
+    [[nodiscard]] virtual Akonadi::Item::List conversationItems() const;
+
 private:
     void refresh();
 

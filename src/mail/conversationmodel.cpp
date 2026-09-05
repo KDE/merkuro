@@ -57,6 +57,11 @@ int ConversationModel::rowCount(const QModelIndex &parent) const
     return parent.isValid() ? 0 : m_items.size();
 }
 
+Akonadi::Item::List ConversationModel::conversationItems() const
+{
+    return m_folderModel ? m_folderModel->conversationItems(m_seedItem) : Akonadi::Item::List{};
+}
+
 QVariant ConversationModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid() || index.row() < 0 || index.row() >= m_items.size()) {
@@ -107,7 +112,7 @@ void ConversationModel::refresh()
 {
     const auto oldAnchor = m_anchorRow;
     beginResetModel();
-    m_items = m_folderModel ? m_folderModel->conversationItems(m_seedItem) : Akonadi::Item::List{};
+    m_items = conversationItems();
     m_anchorRow = -1;
     for (int row = 0; row < m_items.size(); ++row) {
         if (m_items.at(row).id() == m_seedItem.id()) {
