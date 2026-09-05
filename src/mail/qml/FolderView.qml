@@ -351,24 +351,13 @@ Kirigami.ScrollablePage {
             if (pageStack.depth === 2) {
                 pageStack.lastItem.emptyItem = currentItem.item;
                 pageStack.lastItem.mailActions = mailActions,
-                pageStack.lastItem.props = {
-                    from: currentItem.from,
-                    to: currentItem.to,
-                    sender: currentItem.sender,
-                    item: currentItem.item,
-                    title: currentItem.title,
-                };
+                pageStack.lastItem.title = currentItem.title;
             } else {
                 pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: currentItem.item,
                     mailActions: mailActions,
-                    props: {
-                        from: currentItem.from,
-                        to: currentItem.to,
-                        sender: currentItem.sender,
-                        item: currentItem.item,
-                        title: currentItem.title,
-                    },
+                    folderModel: mailModel,
+                    title: currentItem.title,
                 });
                 mails.forceActiveFocus();
             }

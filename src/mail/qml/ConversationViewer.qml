@@ -3,26 +3,29 @@
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as QQC2
 
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
-import org.kde.pim.mimetreeparser as MimeTreeParser
+import './private'
 
-MimeTreeParser.MailViewer {
+Kirigami.ScrollablePage {
     id: root
 
     required property var emptyItem
-    required property var props
     required property MailActions mailActions
+    required property MailPresentationModel folderModel
 
     leftPadding: 0
     rightPadding: 0
-    topPadding: 0
-    bottomPadding: 0
+    topPadding: Kirigami.Units.smallSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
 
-    icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
+    ConversationModel {
+        id: conversationModel
+
+        seedItem: root.emptyItem
+        folderModel: root.folderModel
+    }
 
     actions: [
         Kirigami.Action {
@@ -43,7 +46,7 @@ MimeTreeParser.MailViewer {
         Kirigami.Action {
             fromQAction: MailApplication.action('mail_trash')
             onTriggered: {
-                mailActions.item = root.item
+                mailActions.item = root.emptyItem
                 MailApplication.action("mail_trash").trigger();
                 mailActions.item = undefined;
             }
@@ -52,137 +55,42 @@ MimeTreeParser.MailViewer {
             fromQAction: MailApplication.action('mail_delete')
             icon.color: Kirigami.Theme.negativeTextColor
             onTriggered: {
-                mailActions.item = root.item
+                mailActions.item = root.emptyItem
                 MailApplication.action("mail_delete").trigger();
                 mailActions.item = undefined;
             }
         }
     ]
 
-    header: ColumnLayout {
-        width: parent.width
-        spacing: 0
+    ListView {
+        id: conversationList
 
-        QQC2.Pane {
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            Kirigami.Theme.inherit: false
+        anchors.fill: parent
+        model: conversationModel
+        spacing: Kirigami.Units.smallSpacing
+        clip: true
+        reuseItems: false
 
-            Layout.fillWidth: true
-            padding: root.padding
-            horizontalPadding: Kirigami.Units.gridUnit
+        delegate: ThreadMessageCard {
+            required property int itemId
 
-            contentItem: Kirigami.Heading {
-                text: props.title
-                maximumLineCount: 2
-                wrapMode: Text.Wrap
-                elide: Text.ElideRight
+            isSeed: itemId === root.emptyItem.id
+        }
+
+        Connections {
+            target: conversationModel
+
+            function onAnchorRowChanged(): void {
+                if (conversationModel.anchorRow >= 0) {
+                    conversationList.positionViewAtIndex(conversationModel.anchorRow, ListView.Beginning)
+                }
             }
         }
 
-        QQC2.ToolBar {
-            id: mailHeader
-
-            Layout.fillWidth: true
-
-            padding: root.padding
-            horizontalPadding: Kirigami.Units.gridUnit
-            visible: root.from.length > 0 || root.to.length > 0 || root.subject.length > 0 
-
-            Kirigami.Theme.inherit: false
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-
-            background: Rectangle {
-                color: Kirigami.Theme.alternateBackgroundColor
-
-                Kirigami.Separator {
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                }
-
-                Kirigami.Separator {
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                }
+        Component.onCompleted: Qt.callLater(() => {
+            if (conversationModel.anchorRow >= 0) {
+                conversationList.positionViewAtIndex(conversationModel.anchorRow, ListView.Beginning)
             }
-
-            contentItem: GridLayout {
-                rowSpacing: Kirigami.Units.smallSpacing
-                columnSpacing: Kirigami.Units.smallSpacing
-
-                columns: 2
-
-                QQC2.Label {
-                    text: i18n('Date:')
-                    font.bold: true
-                    visible: date.text.length > 0
-
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                }
-
-                QQC2.Label {
-                    id: date
-                    text: root.dateTime.toLocaleString(Qt.locale(), Locale.ShortFormat)
-                    visible: text.length > 0
-                    horizontalAlignment: Text.AlignRight
-                }
-
-                QQC2.Label {
-                    text: i18n('From:')
-                    font.bold: true
-                    visible: root.from.length > 0
-
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                }
-
-                QQC2.Label {
-                    text: root.from
-                    visible: text.length > 0
-                    elide: Text.ElideRight
-
-                    Layout.fillWidth: true
-                }
-
-                QQC2.Label {
-                    text: i18n('Sender:')
-                    font.bold: true
-                    visible: root.sender.length > 0 && root.sender !== root.from
-
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                }
-
-                QQC2.Label {
-                    visible: root.sender.length > 0 && root.sender !== root.from
-                    text: root.sender
-                    elide: Text.ElideRight
-
-                    Layout.fillWidth: true
-                }
-
-                QQC2.Label {
-                    text: i18n('To:')
-                    font.bold: true
-                    visible: root.to.length > 0
-
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                }
-
-                QQC2.Label {
-                    text: root.to
-                    elide: Text.ElideRight
-                    visible: root.to.length > 0
-
-                    Layout.fillWidth: true
-                }
-            }
-        }
-    }
-
-    MessageLoader {
-        id: messageLoader
-
-        item: root.emptyItem
-        onMessageChanged: root.message = message
+        })
     }
 }

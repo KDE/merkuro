@@ -116,6 +116,7 @@ ecm_target_qml_sources(merkuro_mail_static SOURCES
 ecm_target_qml_sources(merkuro_mail_static
     PRIVATE PATH private SOURCES
     qml/private/MailDelegate.qml
+    qml/private/ThreadMessageCard.qml
 )
 
 ecm_target_qml_sources(merkuro_mail_static
