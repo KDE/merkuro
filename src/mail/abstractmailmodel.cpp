@@ -11,8 +11,14 @@
 #include <KLocalizedString>
 #include <KMime/Message>
 using namespace Qt::Literals::StringLiterals;
-QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) const
+QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role)
 {
+    if (role == Akonadi::EntityTreeModel::ItemIdRole) {
+        return item.id();
+    }
+    if (role == Akonadi::EntityTreeModel::MimeTypeRole) {
+        return item.mimeType();
+    }
     if (role == Akonadi::EntityTreeModel::ItemRole) {
         return QVariant::fromValue(item);
     }
@@ -100,7 +106,7 @@ QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) co
     return {};
 }
 
-QHash<int, QByteArray> AbstractMailModel::roleNames() const
+QHash<int, QByteArray> AbstractMailModel::roleNames()
 {
     return {
         {TitleRole, "title"_ba},

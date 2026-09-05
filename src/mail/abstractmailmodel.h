@@ -33,6 +33,6 @@ public:
         ThreadSendersRole,
     };
 
-    QVariant dataFromItem(const Akonadi::Item &item, int role) const;
-    QHash<int, QByteArray> roleNames() const;
+    static QVariant dataFromItem(const Akonadi::Item &item, int role);
+    static QHash<int, QByteArray> roleNames();
 };
