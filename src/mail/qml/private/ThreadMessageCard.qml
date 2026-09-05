@@ -21,6 +21,7 @@ Item {
     required property bool isSeed
 
     property bool expanded: true
+    readonly property bool contentLoaded: !!messageLoader.message || messageLoader.errorString.length > 0
 
     width: ListView.view ? ListView.view.width : parent.width
     implicitHeight: cardLayout.implicitHeight

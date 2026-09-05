@@ -27,6 +27,28 @@ Kirigami.ScrollablePage {
         folderModel: root.folderModel
     }
 
+    function positionAtAnchor(): void {
+        // The model can be reset before ListView has updated its count and
+        // laid out the new delegates. Defer the positioning until that work
+        // has completed, otherwise the old position may be retained when the
+        // viewer is reused for another seed message.
+        Qt.callLater(() => {
+            const anchorRow = conversationModel.anchorRow;
+            if (!root.visible || anchorRow < 0 || conversationList.count <= anchorRow) {
+                return;
+            }
+
+            if (conversationModel.anchorRow >= 0 && conversationList.count > conversationModel.anchorRow) {
+                conversationList.forceLayout();
+                conversationList.positionViewAtIndex(conversationModel.anchorRow, ListView.Beginning);
+            }
+        });
+    }
+
+    onVisibleChanged: if (visible) {
+        Qt.callLater(() => root.positionAtAnchor());
+    }
+
     actions: [
         Kirigami.Action {
             text: i18nc("@action", "Reply")
@@ -71,26 +93,34 @@ Kirigami.ScrollablePage {
         clip: true
         reuseItems: false
 
+        onCountChanged: root.positionAtAnchor()
+
         delegate: ThreadMessageCard {
             required property int itemId
 
             isSeed: itemId === root.emptyItem.id
+
+            onContentLoadedChanged: if (contentLoaded && itemId === conversationModel.seedItem.id && ListView.view) {
+                ListView.view.positionAtAnchor();
+            }
+
+            onImplicitHeightChanged: if (itemId === conversationModel.seedItem.id && ListView.view) {
+                ListView.view.positionAtAnchor();
+            }
         }
 
         Connections {
             target: conversationModel
 
             function onAnchorRowChanged(): void {
-                if (conversationModel.anchorRow >= 0) {
-                    conversationList.positionViewAtIndex(conversationModel.anchorRow, ListView.Beginning)
-                }
+                root.positionAtAnchor();
+            }
+
+            function onModelReset(): void {
+                root.positionAtAnchor();
             }
         }
 
-        Component.onCompleted: Qt.callLater(() => {
-            if (conversationModel.anchorRow >= 0) {
-                conversationList.positionViewAtIndex(conversationModel.anchorRow, ListView.Beginning)
-            }
-        })
+        Component.onCompleted: root.positionAtAnchor()
     }
 }

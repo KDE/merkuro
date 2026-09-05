@@ -352,6 +352,7 @@ Kirigami.ScrollablePage {
                 pageStack.lastItem.emptyItem = currentItem.item;
                 pageStack.lastItem.mailActions = mailActions,
                 pageStack.lastItem.title = currentItem.title;
+                Qt.callLater(() => pageStack.lastItem.positionAtAnchor());
             } else {
                 pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
                     emptyItem: currentItem.item,
@@ -359,6 +360,7 @@ Kirigami.ScrollablePage {
                     folderModel: mailModel,
                     title: currentItem.title,
                 });
+                Qt.callLater(() => pageStack.lastItem.positionAtAnchor());
                 mails.forceActiveFocus();
             }
 
