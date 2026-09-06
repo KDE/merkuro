@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 00:45+0000\n"
+"POT-Creation-Date: 2026-09-06 00:46+0000\n"
 "PO-Revision-Date: 2026-07-17 08:49+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1927,7 +1927,7 @@ msgstr "Gå"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:43
+#: mail/qml/FolderView.qml:78
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2735,13 +2735,13 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 vald"
 msgstr[1] "%1 valda"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:198
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Flytta markering till:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:215
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3810,13 +3810,27 @@ msgstr "Öppna fil"
 msgid "Choose file"
 msgstr "Välj fil"
 
-#: mail/qml/FolderView.qml:24
+#: mail/qml/FolderView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Sök: %1"
 
-#: mail/qml/FolderView.qml:81
+#: mail/qml/FolderView.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action"
+msgid "Thread Messages"
+msgstr "Nytt brev"
+
+#: mail/qml/FolderView.qml:87
+#, kde-format
+msgctxt "@tooltip"
+msgid "Toggle threaded message view"
+msgstr ""
+
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -3824,45 +3838,45 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 vald"
 msgstr[1] "%1 valda"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:175
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Spara brev: Merkuro e-post"
 
-#: mail/qml/FolderView.qml:128
+#: mail/qml/FolderView.qml:176
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "E-post (*.mbox)"
 
-#: mail/qml/FolderView.qml:195
+#: mail/qml/FolderView.qml:243
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Ändra schemaläggning av meddelande"
 
-#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#: mail/qml/FolderView.qml:251 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr "Skicka datum och tid"
 
-#: mail/qml/FolderView.qml:212
+#: mail/qml/FolderView.qml:260
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Markera brev"
 
-#: mail/qml/FolderView.qml:278
+#: mail/qml/FolderView.qml:326
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Ingen brevlåda vald"
 
-#: mail/qml/FolderView.qml:279
+#: mail/qml/FolderView.qml:327
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Välj en brevlåda i sidoraden."
 
-#: mail/qml/FolderView.qml:286
+#: mail/qml/FolderView.qml:334
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Brevlådan är tom"
@@ -3942,13 +3956,20 @@ msgstr "Manuellt läge"
 msgid "This mail contains an invitation"
 msgstr "Brevet innehåller en inbjudan"
 
-#: mail/qml/private/MailDelegate.qml:171
+#: mail/qml/private/MailDelegate.qml:184
+#, kde-format
+msgid "%1 unread message in this thread"
+msgid_plural "%1 unread messages in this thread"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mail/qml/private/MailDelegate.qml:227
 #, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "Schemalagd %1"
 
-#: mail/qml/private/MailDelegate.qml:172
+#: mail/qml/private/MailDelegate.qml:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3958,7 +3979,7 @@ msgstr ""
 "Kräv manuell åtgärd. Använd åtgärden Skicka nu för att skicka omedelbart "
 "eller använd åtgärden Ändra schemaläggning för att ange datum och tid."
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:241
 #, kde-format
 msgid "Manual"
 msgstr "Manuell"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 00:45+0000\n"
+"POT-Creation-Date: 2026-09-06 00:46+0000\n"
 "PO-Revision-Date: 2026-07-17 09:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1958,7 +1958,7 @@ msgstr "Перейти"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:43
+#: mail/qml/FolderView.qml:78
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2774,13 +2774,13 @@ msgstr[1] "%1 позначені"
 msgstr[2] "%1 позначених"
 msgstr[3] "%1 позначений"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:198
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Пересунуте позначене до:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:215
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3863,13 +3863,27 @@ msgstr "Відкрити файл"
 msgid "Choose file"
 msgstr "Виберіть файл"
 
-#: mail/qml/FolderView.qml:24
+#: mail/qml/FolderView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Пошук: %1"
 
-#: mail/qml/FolderView.qml:81
+#: mail/qml/FolderView.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action"
+msgid "Thread Messages"
+msgstr "Нове повідомлення"
+
+#: mail/qml/FolderView.qml:87
+#, kde-format
+msgctxt "@tooltip"
+msgid "Toggle threaded message view"
+msgstr ""
+
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -3879,45 +3893,45 @@ msgstr[1] "%1 позначених"
 msgstr[2] "%1 позначених"
 msgstr[3] "%1 позначене"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:175
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Зберегти повідомлення – Пошта Merkuro"
 
-#: mail/qml/FolderView.qml:128
+#: mail/qml/FolderView.qml:176
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "повідомлення ел. пошти (*.mbox)"
 
-#: mail/qml/FolderView.qml:195
+#: mail/qml/FolderView.qml:243
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Перепланувати надсилання повідомлення"
 
-#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#: mail/qml/FolderView.qml:251 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr "Надіслати дату і час"
 
-#: mail/qml/FolderView.qml:212
+#: mail/qml/FolderView.qml:260
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Позначити повідомлення"
 
-#: mail/qml/FolderView.qml:278
+#: mail/qml/FolderView.qml:326
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Немає вибраної поштової скриньки"
 
-#: mail/qml/FolderView.qml:279
+#: mail/qml/FolderView.qml:327
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Виберіть поштову скриньку на бічній панелі."
 
-#: mail/qml/FolderView.qml:286
+#: mail/qml/FolderView.qml:334
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Поштова скринька порожня"
@@ -3997,13 +4011,22 @@ msgstr "Ручний режим"
 msgid "This mail contains an invitation"
 msgstr "У цьому повідомленні міститься запрошення"
 
-#: mail/qml/private/MailDelegate.qml:171
+#: mail/qml/private/MailDelegate.qml:184
+#, kde-format
+msgid "%1 unread message in this thread"
+msgid_plural "%1 unread messages in this thread"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: mail/qml/private/MailDelegate.qml:227
 #, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "Заплановано на %1"
 
-#: mail/qml/private/MailDelegate.qml:172
+#: mail/qml/private/MailDelegate.qml:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -4014,7 +4037,7 @@ msgstr ""
 "повідомлення негайно або скористайтеся кнопкою «Перепланувати» для "
 "встановлення дати і часу надсилання."
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:241
 #, kde-format
 msgid "Manual"
 msgstr "Вручну"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-30 00:45+0000\n"
+"POT-Creation-Date: 2026-09-06 00:46+0000\n"
 "PO-Revision-Date: 2026-06-06 14:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1909,7 +1909,7 @@ msgstr "이동"
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:33 contacts/qml/MenuBar.qml:29
 #: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:26
-#: mail/qml/FolderView.qml:43
+#: mail/qml/FolderView.qml:78
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2713,13 +2713,13 @@ msgid "%1 selected"
 msgid_plural "%1 selected"
 msgstr[0] "%1개 선택됨"
 
-#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:150
+#: contacts/qml/ContactView.qml:117 mail/qml/FolderView.qml:198
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "다음으로 선택 이동:"
 
-#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:167
+#: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:215
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3791,30 +3791,44 @@ msgstr "파일 열기"
 msgid "Choose file"
 msgstr "파일 선택"
 
-#: mail/qml/FolderView.qml:24
+#: mail/qml/FolderView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "검색: %1"
 
-#: mail/qml/FolderView.qml:81
+#: mail/qml/FolderView.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Message"
+msgctxt "@action"
+msgid "Thread Messages"
+msgstr "새 메시지"
+
+#: mail/qml/FolderView.qml:87
+#, kde-format
+msgctxt "@tooltip"
+msgid "Toggle threaded message view"
+msgstr ""
+
+#: mail/qml/FolderView.qml:129
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
 msgstr[0] "%1개 선택됨"
 
-#: mail/qml/FolderView.qml:127
+#: mail/qml/FolderView.qml:175
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "메시지 저장 - Merkuro 메일"
 
-#: mail/qml/FolderView.qml:128
+#: mail/qml/FolderView.qml:176
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "이메일 메시지 (*.mbox)"
 
-#: mail/qml/FolderView.qml:195
+#: mail/qml/FolderView.qml:243
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Message"
@@ -3822,29 +3836,29 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "새 메시지"
 
-#: mail/qml/FolderView.qml:203 mail/qml/MailComposer.qml:233
+#: mail/qml/FolderView.qml:251 mail/qml/MailComposer.qml:233
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr ""
 
-#: mail/qml/FolderView.qml:212
+#: mail/qml/FolderView.qml:260
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "메시지 표시"
 
-#: mail/qml/FolderView.qml:278
+#: mail/qml/FolderView.qml:326
 #, kde-format
 msgid "No mailbox selected"
 msgstr "선택한 편지함 없음"
 
-#: mail/qml/FolderView.qml:279
+#: mail/qml/FolderView.qml:327
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "사이드바에서 편지함을 선택하십시오."
 
-#: mail/qml/FolderView.qml:286
+#: mail/qml/FolderView.qml:334
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "편지함이 비어 있음"
@@ -3926,7 +3940,13 @@ msgstr ""
 msgid "This mail contains an invitation"
 msgstr "이 메일에는 초대장이 첨부되어 있습니다"
 
-#: mail/qml/private/MailDelegate.qml:171
+#: mail/qml/private/MailDelegate.qml:184
+#, kde-format
+msgid "%1 unread message in this thread"
+msgid_plural "%1 unread messages in this thread"
+msgstr[0] ""
+
+#: mail/qml/private/MailDelegate.qml:227
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Schedule"
@@ -3934,7 +3954,7 @@ msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "일정"
 
-#: mail/qml/private/MailDelegate.qml:172
+#: mail/qml/private/MailDelegate.qml:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3942,7 +3962,7 @@ msgid ""
 "Reschedule action to set a date and time."
 msgstr ""
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:241
 #, kde-format
 msgid "Manual"
 msgstr ""
