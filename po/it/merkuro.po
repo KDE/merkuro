@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-06 00:46+0000\n"
-"PO-Revision-Date: 2026-07-19 08:50+0200\n"
+"PO-Revision-Date: 2026-09-06 13:57+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -3827,18 +3827,16 @@ msgid "Search: %1"
 msgstr "Cerca: %1"
 
 #: mail/qml/FolderView.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action"
 msgid "Thread Messages"
-msgstr "Nuovo messaggio"
+msgstr "Messaggi della discussione"
 
 #: mail/qml/FolderView.qml:87
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
-msgstr ""
+msgstr "Attiva/disattiva la visualizzazione dei messaggi in discussioni"
 
 #: mail/qml/FolderView.qml:129
 #, kde-format
@@ -3970,8 +3968,8 @@ msgstr "Questo messaggi contiene un invito"
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 messaggio non letto in questa discussione"
+msgstr[1] "%1 messaggi non letti in questa discussione"
 
 #: mail/qml/private/MailDelegate.qml:227
 #, kde-format
