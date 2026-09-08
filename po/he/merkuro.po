@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-06 00:46+0000\n"
-"PO-Revision-Date: 2026-07-17 12:19+0300\n"
+"PO-Revision-Date: 2026-09-07 08:28+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -3858,18 +3858,16 @@ msgid "Search: %1"
 msgstr "חיפוש: %1"
 
 #: mail/qml/FolderView.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action"
 msgid "Thread Messages"
-msgstr "הודעה חדשה"
+msgstr "הודעות שרשור"
 
 #: mail/qml/FolderView.qml:87
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
-msgstr ""
+msgstr "החלפת מצב תצוגת הודעות משורשרות"
 
 #: mail/qml/FolderView.qml:129
 #, kde-format
@@ -4003,10 +4001,10 @@ msgstr "ההודעה הזאת מכילה הזמנה"
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "הודעה שלא נקראה בשרשור הזה"
+msgstr[1] "שתי הודעות שלא נקראו בשרשור הזה"
+msgstr[2] "%1 הודעות שלא נקראו בשרשור הזה"
+msgstr[3] "%1 הודעות שלא נקראו בשרשור הזה"
 
 #: mail/qml/private/MailDelegate.qml:227
 #, kde-format
