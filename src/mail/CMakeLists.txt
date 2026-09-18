@@ -81,7 +81,6 @@ target_link_libraries(merkuro_mail_static
         KPim6::MimeTreeParserCore
         KF6::XmlGui
         KF6::Codecs
-        KF6::XmlGui
         KF6::Crash
         KF6::IconThemes
         KF6::Notifications
