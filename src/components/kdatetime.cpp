@@ -152,6 +152,16 @@ QString KDateTime::toLocaleDateString(QLocale::FormatType format) const
     return QLocale().toString(m_dateTime.toLocalTime(), format);
 }
 
+QString KDateTime::toLocaleTimeString(const QString &format) const
+{
+    return QLocale().toString(m_dateTime.toLocalTime().time(), format);
+}
+
+QString KDateTime::toLocaleTimeString(QLocale::FormatType format) const
+{
+    return QLocale().toString(m_dateTime.toLocalTime().time(), format);
+}
+
 KDateTime KDateTime::addDays(int days) const
 {
     return KDateTime(m_dateTime.addDays(days));
@@ -244,4 +254,8 @@ bool KDateTime::operator>=(const KDateTime &right) const
     return m_dateTime >= right.m_dateTime;
 }
 
+QDebug operator<<(QDebug debug, const KDateTime &dateTime)
+{
+    return debug << dateTime.dateTime();
+}
 }

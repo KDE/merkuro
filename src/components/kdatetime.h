@@ -6,8 +6,10 @@
 #include <merkurocomponents_export.h>
 
 #include <QDateTime>
+#include <QDebug>
 #include <QString>
 #include <QTimeZone>
+#include <qqmlregistration.h>
 
 namespace Merkuro
 {
@@ -160,6 +162,16 @@ public:
     Q_INVOKABLE QString toLocaleDateString(QLocale::FormatType format) const;
 
     /*!
+     * \brief Returns time formatted according to format, in the local timezone.
+     */
+    Q_INVOKABLE QString toLocaleTimeString(const QString &format) const;
+
+    /*!
+     * \brief Returns time formatted using the locale's short format.
+     */
+    Q_INVOKABLE QString toLocaleTimeString(QLocale::FormatType format) const;
+
+    /*!
      * \brief Returns a copy of this date and time, days later (or earlier if negative).
      */
     Q_INVOKABLE KDateTime addDays(int days) const;
@@ -218,4 +230,5 @@ private:
     QDateTime m_dateTime;
 };
 
+MERKUROCOMPONENTS_EXPORT QDebug operator<<(QDebug debug, const KDateTime &dateTime);
 }
