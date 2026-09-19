@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 
     QQmlApplicationEngine engine;
+    KLocalization::setupLocalizedContext(&engine);
 
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine, &parser](const QStringList &arguments, const QString &workingDirectory) {
         Q_UNUSED(workingDirectory)

@@ -64,11 +64,7 @@ void IncidenceWrapper::notifyDataChanged()
     Q_EMIT descriptionChanged();
     Q_EMIT locationChanged();
     Q_EMIT incidenceStartChanged();
-    Q_EMIT incidenceStartDateDisplayChanged();
-    Q_EMIT incidenceStartTimeDisplayChanged();
     Q_EMIT incidenceEndChanged();
-    Q_EMIT incidenceEndDateDisplayChanged();
-    Q_EMIT incidenceEndTimeDisplayChanged();
     Q_EMIT timeZoneChanged();
     Q_EMIT startTimeZoneUTCOffsetMinsChanged();
     Q_EMIT endTimeZoneUTCOffsetMinsChanged();
@@ -244,12 +240,12 @@ float IncidenceWrapper::geoLongitude() const
     return m_incidence->geoLongitude();
 }
 
-QDateTime IncidenceWrapper::incidenceStart() const
+Merkuro::KDateTime IncidenceWrapper::incidenceStart() const
 {
-    return m_incidence->dtStart();
+    return Merkuro::KDateTime(m_incidence->dtStart());
 }
 
-void IncidenceWrapper::setIncidenceStart(const QDateTime &incidenceStart, bool respectTimeZone)
+void IncidenceWrapper::setIncidenceStart(const Merkuro::KDateTime &incidenceStart, bool respectTimeZone)
 {
     // When we receive dates from QML, these are all set to the local system timezone but
     // have the dates and times we want. We need to preserve date and time but set the new
@@ -257,35 +253,31 @@ void IncidenceWrapper::setIncidenceStart(const QDateTime &incidenceStart, bool r
 
     // When we set the timeZone property, however, we invariably also set the incidence start and end.
     // This object needs no change. We therefore need to make sure to preserve the entire QDateTime object here.
-    auto oldStart = this->incidenceStart();
+    const auto oldStart = this->incidenceStart().dateTime();
 
     if (respectTimeZone) {
-        m_incidence->setDtStart(incidenceStart);
+        m_incidence->setDtStart(incidenceStart.dateTime());
         auto newTzEnd = incidenceEnd();
         newTzEnd.setTimeZone(incidenceStart.timeZone());
         setIncidenceEnd(newTzEnd, true);
     } else {
-        const auto date = incidenceStart.date();
-        const auto time = incidenceStart.time();
         QDateTime start;
         start.setTimeZone(QTimeZone(timeZone()));
-        start.setDate(date);
-        start.setTime(time);
+        start.setDate(incidenceStart.date());
+        start.setTime(incidenceStart.time());
         m_incidence->setDtStart(start);
     }
 
     // Do not update the incidence end
     //  - either if the current end is unset
     //  - or if it is set, but we are unsetting the start
-    if (!incidenceEnd().isNull() && !incidenceStart.isNull()) {
-        auto oldStartEndDifference = oldStart.secsTo(incidenceEnd());
-        auto newEnd = this->incidenceStart().addSecs(oldStartEndDifference);
-        setIncidenceEnd(newEnd);
+    if (incidenceEnd().isValid() && incidenceStart.isValid()) {
+        const auto oldStartEndDifference = oldStart.secsTo(incidenceEnd().dateTime());
+        const auto newEnd = this->incidenceStart().dateTime().addSecs(oldStartEndDifference);
+        setIncidenceEnd(Merkuro::KDateTime(newEnd));
     }
 
     Q_EMIT incidenceStartChanged();
-    Q_EMIT incidenceStartDateDisplayChanged();
-    Q_EMIT incidenceStartTimeDisplayChanged();
     Q_EMIT durationChanged();
     Q_EMIT durationDisplayStringChanged();
 }
@@ -312,33 +304,23 @@ void IncidenceWrapper::setIncidenceStartTime(int hours, int minutes)
     setIncidenceStart(newStart, true);
 }
 
-QString IncidenceWrapper::incidenceStartDateDisplay() const
-{
-    return QLocale::system().toString(incidenceStart().date(), QLocale::NarrowFormat);
-}
-
-QString IncidenceWrapper::incidenceStartTimeDisplay() const
-{
-    return QLocale::system().toString(incidenceStart().time(), QLocale::NarrowFormat);
-}
-
-QDateTime IncidenceWrapper::incidenceEnd() const
+Merkuro::KDateTime IncidenceWrapper::incidenceEnd() const
 {
     if (m_incidence->type() == KCalendarCore::Incidence::IncidenceType::TypeEvent) {
         KCalendarCore::Event::Ptr event = m_incidence.staticCast<KCalendarCore::Event>();
-        return event->dtEnd();
+        return Merkuro::KDateTime(event->dtEnd());
     } else if (m_incidence->type() == KCalendarCore::Incidence::IncidenceType::TypeTodo) {
         KCalendarCore::Todo::Ptr todo = m_incidence.staticCast<KCalendarCore::Todo>();
-        return todo->dtDue();
+        return Merkuro::KDateTime(todo->dtDue());
     }
     return {};
 }
 
-void IncidenceWrapper::setIncidenceEnd(const QDateTime &incidenceEnd, bool respectTimeZone)
+void IncidenceWrapper::setIncidenceEnd(const Merkuro::KDateTime &incidenceEnd, bool respectTimeZone)
 {
     QDateTime end;
     if (respectTimeZone) {
-        end = incidenceEnd;
+        end = incidenceEnd.dateTime();
     } else {
         const auto date = incidenceEnd.date();
         const auto time = incidenceEnd.time();
@@ -357,8 +339,6 @@ void IncidenceWrapper::setIncidenceEnd(const QDateTime &incidenceEnd, bool respe
         qCWarning(MERKURO_CALENDAR_LOG) << "Unknown incidence type";
     }
     Q_EMIT incidenceEndChanged();
-    Q_EMIT incidenceEndDateDisplayChanged();
-    Q_EMIT incidenceEndTimeDisplayChanged();
     Q_EMIT durationChanged();
     Q_EMIT durationDisplayStringChanged();
 }
@@ -385,23 +365,14 @@ void IncidenceWrapper::setIncidenceEndTime(int hours, int minutes)
     setIncidenceEnd(newEnd, true);
 }
 
-QString IncidenceWrapper::incidenceEndDateDisplay() const
-{
-    return QLocale::system().toString(incidenceEnd().date(), QLocale::NarrowFormat);
-}
-
-QString IncidenceWrapper::incidenceEndTimeDisplay() const
-{
-    return QLocale::system().toString(incidenceEnd().time(), QLocale::NarrowFormat);
-}
-
 void IncidenceWrapper::setIncidenceTimeToNearestQuarterHour(bool setStartTime, bool setEndTime)
 {
     const int now = QDateTime::currentSecsSinceEpoch();
     const int quarterHourInSecs = 15 * 60;
     const int secsToSet = now + (quarterHourInSecs - now % quarterHourInSecs);
-    QDateTime startTime = QDateTime::currentDateTime();
-    startTime.setSecsSinceEpoch(secsToSet);
+    QDateTime startDateTime = QDateTime::currentDateTime();
+    startDateTime.setSecsSinceEpoch(secsToSet);
+    const Merkuro::KDateTime startTime(startDateTime);
     if (setStartTime) {
         setIncidenceStart(startTime, true);
     }
@@ -423,13 +394,13 @@ void IncidenceWrapper::setTimeZone(const QByteArray &timeZone)
         return;
     }
 
-    QDateTime start(incidenceStart());
+    auto start = incidenceStart();
     if (start.isValid()) {
         start.setTimeZone(zone);
         setIncidenceStart(start, true);
     }
 
-    QDateTime end(incidenceEnd());
+    auto end = incidenceEnd();
     if (end.isValid()) {
         end.setTimeZone(zone);
         setIncidenceEnd(end, true);
@@ -442,12 +413,12 @@ void IncidenceWrapper::setTimeZone(const QByteArray &timeZone)
 
 int IncidenceWrapper::startTimeZoneUTCOffsetMins()
 {
-    return QTimeZone(timeZone()).offsetFromUtc(incidenceStart());
+    return QTimeZone(timeZone()).offsetFromUtc(incidenceStart().dateTime());
 }
 
 int IncidenceWrapper::endTimeZoneUTCOffsetMins()
 {
-    return QTimeZone(timeZone()).offsetFromUtc(incidenceEnd());
+    return QTimeZone(timeZone()).offsetFromUtc(incidenceEnd().dateTime());
 }
 
 KCalendarCore::Duration IncidenceWrapper::duration() const

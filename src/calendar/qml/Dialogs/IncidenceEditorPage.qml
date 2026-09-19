@@ -15,6 +15,7 @@ import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 import org.kde.akonadi as Akonadi
 
 FormCard.FormCardPage {
@@ -34,7 +35,7 @@ FormCard.FormCardPage {
         if (incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
             return editorLoader.active && editorLoader.item.validEndDate
         } else {
-            return editorLoader.active && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart <= root.incidenceWrapper.incidenceEnd)
+            return editorLoader.active && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart.dateTime <= root.incidenceWrapper.incidenceEnd.dateTime)
         }
     }
 
@@ -353,14 +354,14 @@ FormCard.FormCardPage {
                     id: allDayCheckBox
 
                     text: i18n("All day")
-                    enabled: !incidenceForm.isTodo || !isNaN(root.incidenceWrapper.incidenceStart.getTime()) || !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
+                    enabled: !incidenceForm.isTodo || root.incidenceWrapper.incidenceStart.isValid || root.incidenceWrapper.incidenceEnd.isValid
                     onEnabledChanged: if (!enabled) root.incidenceWrapper.allDay = false
                     checked: root.incidenceWrapper.allDay
                     onToggled: {
                         if (!checked) {
                             root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(
-                                !isNaN(root.incidenceWrapper.incidenceStart),
-                                !isNaN(root.incidenceWrapper.incidenceEnd),
+                                root.incidenceWrapper.incidenceStart.isValid,
+                                root.incidenceWrapper.incidenceEnd.isValid,
                             );
                         }
                         root.incidenceWrapper.allDay = checked;
@@ -371,17 +372,15 @@ FormCard.FormCardPage {
             Connections {
                 target: root.incidenceWrapper
                 function onIncidenceStartChanged(): void {
-                    incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                    incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart;
-                    incidenceStartDateCombo.display = root.incidenceWrapper.incidenceStartDateDisplay;
-                    incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStartTimeDisplay;
+                    incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart.dateTime;
+                    incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart.dateTime;
+                    incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat);
                 }
 
                 function onIncidenceEndChanged() {
-                    incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                    incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd;
-                    incidenceEndDateCombo.display = root.incidenceWrapper.incidenceEndDateDisplay;
-                    incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEndTimeDisplay;
+                    incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd.dateTime;
+                    incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd.dateTime;
+                    incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat);
                 }
             }
 
@@ -396,11 +395,11 @@ FormCard.FormCardPage {
 
                             property var oldDate
 
-                            checked: !isNaN(root.incidenceWrapper.incidenceStart.getTime())
+                            checked: root.incidenceWrapper.incidenceStart.isValid
                             onClicked: {
                                 if (!checked && incidenceForm.isTodo) {
                                     oldDate = root.incidenceWrapper.incidenceStart
-                                    root.incidenceWrapper.incidenceStart = new Date(undefined)
+                                    root.incidenceWrapper.incidenceStart = MerkuroComponents.KDateTimeFactory.invalid()
                                 } else if(incidenceForm.isTodo && oldDate) {
                                     root.incidenceWrapper.incidenceStart = oldDate
                                 } else if(incidenceForm.isTodo) {
@@ -414,8 +413,8 @@ FormCard.FormCardPage {
                             id: incidenceStartDateCombo
 
                             Layout.fillWidth: true
-                            display: root.incidenceWrapper.incidenceStartDateDisplay
-                            dateTime: root.incidenceWrapper.incidenceStart
+                            display: root.incidenceWrapper.incidenceStart.toLocaleDateString(Locale.NarrowFormat)
+                            dateTime: root.incidenceWrapper.incidenceStart.dateTime
                             onNewDateChosen: (day, month, year) => {
                                 root.incidenceWrapper.setIncidenceStartDate(day, month, year)
                             }
@@ -428,8 +427,8 @@ FormCard.FormCardPage {
 
                             Layout.fillWidth: true
                             timeZoneOffset: root.incidenceWrapper.startTimeZoneUTCOffsetMins
-                            display: root.incidenceWrapper.incidenceStartTimeDisplay
-                            dateTime: root.incidenceWrapper.incidenceStart
+                            display: root.incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat)
+                            dateTime: root.incidenceWrapper.incidenceStart.dateTime
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
                             enabled: !allDayCheckBox.checked && incidenceStartDateCombo.enabled
                             visible: !allDayCheckBox.checked
@@ -456,11 +455,11 @@ FormCard.FormCardPage {
 
                             property var oldDate
 
-                            checked: !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
+                            checked: root.incidenceWrapper.incidenceEnd.isValid
                             onClicked: {
                                 if (!checked && incidenceForm.isTodo) {
                                     oldDate = root.incidenceWrapper.incidenceEnd
-                                    root.incidenceWrapper.incidenceEnd = new Date(undefined)
+                                    root.incidenceWrapper.incidenceEnd = MerkuroComponents.KDateTimeFactory.invalid()
                                 } else if(incidenceForm.isTodo && oldDate) {
                                     root.incidenceWrapper.incidenceEnd = oldDate
                                 } else if(incidenceForm.isTodo) {
@@ -474,8 +473,8 @@ FormCard.FormCardPage {
                             id: incidenceEndDateCombo
 
                             Layout.fillWidth: true
-                            display: root.incidenceWrapper.incidenceEndDateDisplay
-                            dateTime: root.incidenceWrapper.incidenceEnd
+                            display: root.incidenceWrapper.incidenceEnd.toLocaleDateString(Locale.NarrowFormat)
+                            dateTime: root.incidenceWrapper.incidenceEnd.dateTime
                             onNewDateChosen: (day, month, year) => {
                                 root.incidenceWrapper.setIncidenceEndDate(day, month, year)
                             }
@@ -486,8 +485,8 @@ FormCard.FormCardPage {
 
                             Layout.fillWidth: true
                             timeZoneOffset: root.incidenceWrapper.endTimeZoneUTCOffsetMins
-                            display: root.incidenceWrapper.incidenceEndTimeDisplay
-                            dateTime: root.incidenceWrapper.incidenceEnd
+                            display: root.incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat)
+                            dateTime: root.incidenceWrapper.incidenceEnd.dateTime
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
                             enabled: !allDayCheckBox.checked && incidenceEndDateCombo.enabled
                             visible: !allDayCheckBox.checked
@@ -527,7 +526,7 @@ FormCard.FormCardPage {
                     id: repeatComboBox
                     text: i18n("Repeat:")
 
-                    enabled: !incidenceForm.isTodo || !isNaN(root.incidenceWrapper.incidenceStart.getTime()) || !isNaN(root.incidenceWrapper.incidenceEnd.getTime())
+                    enabled: !incidenceForm.isTodo || root.incidenceWrapper.incidenceStart.isValid || root.incidenceWrapper.incidenceEnd.isValid
                     textRole: "displayName"
                     valueRole: "interval"
                     currentIndex: {

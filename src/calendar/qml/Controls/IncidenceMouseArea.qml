@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 MouseArea {
     id: mouseArea
@@ -189,7 +190,7 @@ MouseArea {
                         wrapper.setIncidenceEndDate(date.getDate(), date.getMonth() + 1, date.getFullYear());
                         wrapper.allDay = true;
                     } else {
-                        wrapper.incidenceEnd = new Date(undefined);
+                        wrapper.incidenceEnd = MerkuroComponents.KDateTimeFactory.invalid();
                     }
 
                     Calendar.CalendarManager.editIncidence(wrapper);

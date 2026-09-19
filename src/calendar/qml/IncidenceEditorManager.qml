@@ -10,7 +10,7 @@ import QtQuick
 import QtQuick.Controls as Controls
 import org.kde.merkuro.calendar as Calendar
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.components as BaseApplication
+import org.kde.merkuro.components as MerkuroComponents
 
 QtObject {
     id: root
@@ -87,15 +87,14 @@ QtObject {
 
         if(eventDate !== undefined && !isNaN(eventDate.getTime())) {
             let existingStart = wrapper.incidenceStart;
-            let existingEnd = wrapper.incidenceEnd;
 
-            let newStart = eventDate;
-            let newEnd = new Date(newStart.getFullYear(), newStart.getMonth(), newStart.getDate(), newStart.getHours() + 1, newStart.getMinutes());
+            let newStart = MerkuroComponents.KDateTimeFactory.fromDateTime(eventDate);
+            let newEnd = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), eventDate.getHours() + 1, eventDate.getMinutes()));
 
             if(!includeTime) {
-                if (!isNaN(existingStart.getTime())) {
-                    newStart = new Date(eventDate.setHours(existingStart.getHours(), existingStart.getMinutes()));
-                    newEnd = new Date(eventDate.setHours(existingStart.getHours() + 1, existingStart.getMinutes()));
+                if (existingStart.isValid) {
+                    newStart = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), existingStart.hour, existingStart.minute));
+                    newEnd = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), existingStart.hour + 1, existingStart.minute));
                 }
             }
 

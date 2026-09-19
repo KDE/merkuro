@@ -17,6 +17,7 @@
 #include <QByteArray>
 #include <QObject>
 #include <QPointer>
+#include <kdatetime.h>
 #include <qqmlintegration.h>
 
 class MonthPosition
@@ -110,12 +111,8 @@ class IncidenceWrapper : public QObject, public Akonadi::ItemMonitor
     Q_PROPERTY(float geoLatitude READ geoLatitude CONSTANT) // TODO: This needs to not be a CONSTANT
     Q_PROPERTY(float geoLongitude READ geoLongitude CONSTANT) // TODO: This needs to not be a CONSTANT
 
-    Q_PROPERTY(QDateTime incidenceStart READ incidenceStart WRITE setIncidenceStart NOTIFY incidenceStartChanged)
-    Q_PROPERTY(QString incidenceStartDateDisplay READ incidenceStartDateDisplay NOTIFY incidenceStartDateDisplayChanged)
-    Q_PROPERTY(QString incidenceStartTimeDisplay READ incidenceStartTimeDisplay NOTIFY incidenceStartTimeDisplayChanged)
-    Q_PROPERTY(QDateTime incidenceEnd READ incidenceEnd WRITE setIncidenceEnd NOTIFY incidenceEndChanged)
-    Q_PROPERTY(QString incidenceEndDateDisplay READ incidenceEndDateDisplay NOTIFY incidenceEndDateDisplayChanged)
-    Q_PROPERTY(QString incidenceEndTimeDisplay READ incidenceEndTimeDisplay NOTIFY incidenceEndTimeDisplayChanged)
+    Q_PROPERTY(Merkuro::KDateTime incidenceStart READ incidenceStart WRITE setIncidenceStart NOTIFY incidenceStartChanged)
+    Q_PROPERTY(Merkuro::KDateTime incidenceEnd READ incidenceEnd WRITE setIncidenceEnd NOTIFY incidenceEndChanged)
     Q_PROPERTY(QByteArray timeZone READ timeZone WRITE setTimeZone NOTIFY timeZoneChanged)
     Q_PROPERTY(int startTimeZoneUTCOffsetMins READ startTimeZoneUTCOffsetMins NOTIFY startTimeZoneUTCOffsetMinsChanged)
     Q_PROPERTY(int endTimeZoneUTCOffsetMins READ endTimeZoneUTCOffsetMins NOTIFY endTimeZoneUTCOffsetMinsChanged)
@@ -197,18 +194,14 @@ public:
     [[nodiscard]] float geoLatitude() const;
     [[nodiscard]] float geoLongitude() const;
 
-    [[nodiscard]] QDateTime incidenceStart() const;
-    Q_INVOKABLE void setIncidenceStart(const QDateTime &incidenceStart, bool respectTimeZone = false);
+    [[nodiscard]] Merkuro::KDateTime incidenceStart() const;
+    Q_INVOKABLE void setIncidenceStart(const Merkuro::KDateTime &incidenceStart, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceStartDate(int day, int month, int year);
     Q_INVOKABLE void setIncidenceStartTime(int hours, int minutes);
-    [[nodiscard]] QString incidenceStartDateDisplay() const;
-    [[nodiscard]] QString incidenceStartTimeDisplay() const;
-    [[nodiscard]] QDateTime incidenceEnd() const;
-    Q_INVOKABLE void setIncidenceEnd(const QDateTime &incidenceEnd, bool respectTimeZone = false);
+    [[nodiscard]] Merkuro::KDateTime incidenceEnd() const;
+    Q_INVOKABLE void setIncidenceEnd(const Merkuro::KDateTime &incidenceEnd, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceEndDate(int day, int month, int year);
     Q_INVOKABLE void setIncidenceEndTime(int hours, int minutes);
-    [[nodiscard]] QString incidenceEndDateDisplay() const;
-    [[nodiscard]] QString incidenceEndTimeDisplay() const;
     Q_INVOKABLE void setIncidenceTimeToNearestQuarterHour(bool setStartTime = true, bool setEndTime = true);
     [[nodiscard]] QByteArray timeZone() const;
     void setTimeZone(const QByteArray &timeZone);
@@ -269,11 +262,7 @@ Q_SIGNALS:
     void locationChanged();
 
     void incidenceStartChanged();
-    void incidenceStartDateDisplayChanged();
-    void incidenceStartTimeDisplayChanged();
     void incidenceEndChanged();
-    void incidenceEndDateDisplayChanged();
-    void incidenceEndTimeDisplayChanged();
     void timeZoneChanged();
     void startTimeZoneUTCOffsetMinsChanged();
     void endTimeZoneUTCOffsetMinsChanged();

@@ -43,8 +43,8 @@ QtObject {
             "text": incidenceWrapper.summary,
             "description": incidenceWrapper.description,
             "location": incidenceWrapper.location,
-            "startTime": incidenceWrapper.incidenceStart,
-            "endTime": incidenceWrapper.incidenceEnd,
+            "startTime": incidenceWrapper.incidenceStart.dateTime,
+            "endTime": incidenceWrapper.incidenceEnd.dateTime,
             "allDay": incidenceWrapper.allDay,
             "todoCompleted": incidenceWrapper.todoCompleted,
             "priority": incidenceWrapper.priority,
@@ -57,8 +57,8 @@ QtObject {
             "recurs": incidenceWrapper.recurrenceData.type !== 0,
             "hasReminders": incidenceWrapper.hasReminders(),
             "isOverdue": incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo &&
-                         !isNaN(incidenceWrapper.incidenceEnd.getTime()) &&
-                         incidenceWrapper.incidenceEnd < appMain.currentDate,
+                         incidenceWrapper.incidenceEnd.isValid &&
+                         incidenceWrapper.incidenceEnd.dateTime < appMain.currentDate,
             "isReadOnly": collectionDetails.readOnly,
             "color": collectionDetails.color,
             "collectionId": incidenceWrapper.collectionId,
