@@ -5,13 +5,14 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import QtQuick.Window
+import org.kde.ki18n
 
 QQC2.Menu {
     id: editMenu
 
     property Window _window: applicationWindow()
 
-    title: i18nc("@action:menu", "Edit")
+    title: KI18n.i18nc("@action:menu", "Edit")
 
     property Connections _textInputConnection: Connections {
         target: editMenu._window
@@ -41,7 +42,7 @@ QQC2.Menu {
     property list<QtObject> _menuItems: [
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.canUndo
-            text: i18nc("text editing menu action", "Undo Text")
+            text: KI18n.i18nc("text editing menu action", "Undo Text")
             onTriggered: {
                 editMenu.field.undo()
                 editMenu.close()
@@ -50,7 +51,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.canRedo
-            text: i18nc("text editing menu action", "Redo Text")
+            text: KI18n.i18nc("text editing menu action", "Redo Text")
             onTriggered: {
                 editMenu.field.undo()
                 editMenu.close()
@@ -62,7 +63,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.selectedText
-            text: i18nc("text editing menu action", "Cut")
+            text: KI18n.i18nc("text editing menu action", "Cut")
             onTriggered: {
                 editMenu.field.cut()
                 editMenu.close()
@@ -71,7 +72,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.selectedText
-            text: i18nc("text editing menu action", "Copy")
+            text: KI18n.i18nc("text editing menu action", "Copy")
             onTriggered: {
                 editMenu.field.copy()
                 editMenu.close()
@@ -80,7 +81,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.canPaste
-            text: i18nc("text editing menu action", "Paste")
+            text: KI18n.i18nc("text editing menu action", "Paste")
             onTriggered: {
                 editMenu.field.paste()
                 editMenu.close()
@@ -89,7 +90,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null && editMenu.field.selectedText !== ""
-            text: i18nc("text editing menu action", "Delete")
+            text: KI18n.i18nc("text editing menu action", "Delete")
             onTriggered: {
                 editMenu.field.remove(editMenu.field.selectionStart, editMenu.field.selectionEnd)
                 editMenu.close()
@@ -101,7 +102,7 @@ QQC2.Menu {
 
         QQC2.MenuItem {
             enabled: editMenu.field !== null
-            text: i18nc("text editing menu action", "Select All")
+            text: KI18n.i18nc("text editing menu action", "Select All")
             onTriggered: {
                 editMenu.field.selectAll()
                 editMenu.close()

@@ -5,13 +5,14 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.kirigami as Kirigami
+import org.kde.ki18n
 
 QQC2.Menu {
     id: root
 
     required property AbstractMerkuroApplication application
 
-    title: i18nc("@action:menu", "Help")
+    title: KI18n.i18nc("@action:menu", "Help")
 
     Kirigami.Action {
         fromQAction: root.application.action('open_about_page')
@@ -22,7 +23,7 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        text: i18nc("@action:menu", "Merkuro Handbook") // todo
+        text: KI18n.i18nc("@action:menu", "Merkuro Handbook") // todo
         visible: false
     }
 }

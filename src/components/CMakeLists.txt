@@ -47,6 +47,7 @@ set_target_properties(MerkuroComponents PROPERTIES
 
 target_link_libraries(MerkuroComponents PUBLIC
     KirigamiAddonsStatefulApp
+    KF6::I18nQml
     KF6::I18n
     KF6::CalendarCore
     KF6::Contacts
@@ -66,7 +67,9 @@ ecm_add_qml_module(MerkuroComponents
     URI "org.kde.merkuro.components"
     VERSION 1.0
     GENERATE_PLUGIN_SOURCE
-    DEPENDENCIES org.kde.kirigamiaddons.statefulapp
+    DEPENDENCIES
+        org.kde.kirigamiaddons.statefulapp
+        org.kde.ki18n
 )
 
 ecm_target_qml_sources(MerkuroComponents SOURCES
@@ -103,4 +106,3 @@ ecm_finalize_qml_module(MerkuroComponents
 # Install
 
 install(TARGETS MerkuroComponents EXPORT MerkuroComponents ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
-

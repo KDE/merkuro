@@ -5,10 +5,11 @@ import Qt.labs.platform as Labs
 import QtQuick
 import QtQuick.Window
 import org.kde.merkuro.components
+import org.kde.ki18n
 
 Labs.Menu {
     id: editMenu
-    title: i18nc("@action:menu", "Edit")
+    title: KI18n.i18nc("@action:menu", "Edit")
 
     property Window _window: applicationWindow()
 
@@ -33,7 +34,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.canUndo
-        text: i18nc("text editing menu action", "Undo")
+        text: KI18n.i18nc("text editing menu action", "Undo")
         shortcut: StandardKey.Undo
         onTriggered: {
             editMenu.field.undo()
@@ -43,7 +44,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.canRedo
-        text: i18nc("text editing menu action", "Redo")
+        text: KI18n.i18nc("text editing menu action", "Redo")
         shortcut: StandardKey.Redo
         onTriggered: {
             editMenu.field.undo()
@@ -56,7 +57,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.selectedText
-        text: i18nc("text editing menu action", "Cut")
+        text: KI18n.i18nc("text editing menu action", "Cut")
         shortcut: StandardKey.Cut
         onTriggered: {
             editMenu.field.cut()
@@ -66,7 +67,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.selectedText
-        text: i18nc("text editing menu action", "Copy")
+        text: KI18n.i18nc("text editing menu action", "Copy")
         shortcut: StandardKey.Copy
         onTriggered: {
             editMenu.field.copy()
@@ -76,7 +77,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.canPaste
-        text: i18nc("text editing menu action", "Paste")
+        text: KI18n.i18nc("text editing menu action", "Paste")
         shortcut: StandardKey.Paste
         onTriggered: {
             editMenu.field.paste()
@@ -86,7 +87,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null && editMenu.field.selectedText !== ""
-        text: i18nc("text editing menu action", "Delete")
+        text: KI18n.i18nc("text editing menu action", "Delete")
         shortcut: ""
         onTriggered: {
             editMenu.field.remove(editMenu.field.selectionStart, editMenu.field.selectionEnd)
@@ -99,7 +100,7 @@ Labs.Menu {
 
     Labs.MenuItem {
         enabled: editMenu.field !== null
-        text: i18nc("text editing menu action", "Select All")
+        text: KI18n.i18nc("text editing menu action", "Select All")
         shortcut: StandardKey.SelectAll
         onTriggered: {
             editMenu.field.selectAll()

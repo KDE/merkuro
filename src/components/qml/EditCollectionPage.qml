@@ -11,6 +11,7 @@ import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
 
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 FormCard.FormCardPage {
     id: root
@@ -25,7 +26,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title", "General")
+        title: KI18n.i18nc("@title", "General")
     }
     FormCard.FormCard {
         FormCard.FormTextFieldDelegate {
@@ -35,13 +36,13 @@ FormCard.FormCardPage {
                 editor.displayName = text;
                 editor.save();
             }
-            label: i18nc("@label:textbox", "Name")
+            label: KI18n.i18nc("@label:textbox", "Name")
             enabled: root.collection.rights & Akonadi.collection.Right.CanChangeCollection
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
             id: iconField
-            text: i18nc("@label:textbox", "Icon")
+            text: KI18n.i18nc("@label:textbox", "Icon")
             iconName: editor.iconName
             onIconNameChanged: if (editor.iconName !== iconName) {
                 editor.iconName = iconName;
@@ -61,26 +62,26 @@ FormCard.FormCardPage {
         }
     }
     FormCard.FormHeader {
-        title: i18nc("@title", "Statistics")
+        title: KI18n.i18nc("@title", "Statistics")
     }
     FormCard.FormCard {
         FormCard.FormTextDelegate {
-            description: i18ncp("@info", "%1 entry", "%1 entries", root.collection.statistics.count)
-            text: i18nc("@label", "Content")
+            description: KI18n.i18ncp("@info", "%1 entry", "%1 entries", root.collection.statistics.count)
+            text: KI18n.i18nc("@label", "Content")
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             description: Format.formatByteSize(root.collection.statistics.size)
-            text: i18nc("@label", "Size")
+            text: KI18n.i18nc("@label", "Size")
         }
     }
     FormCard.FormHeader {
-        title: i18nc("@title", "Retrieval")
+        title: KI18n.i18nc("@title", "Retrieval")
     }
     FormCard.FormCard {
         FormCard.FormCheckDelegate {
             id: useParent
-            text: i18nc("@option:check", "Use options from parent folder or account")
+            text: KI18n.i18nc("@option:check", "Use options from parent folder or account")
             checked: editor.cachePolicy.inheritFromParent
             onToggled: {
                 editor.cachePolicy.inheritFromParent = checked;
@@ -89,7 +90,7 @@ FormCard.FormCardPage {
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormCheckDelegate {
-            text: i18nc("@option:check", "Synchronize when selecting this folder")
+            text: KI18n.i18nc("@option:check", "Synchronize when selecting this folder")
             checked: editor.cachePolicy.syncOnDemand
             onToggled: {
                 editor.cachePolicy.syncOnDemand = checked;
@@ -99,14 +100,14 @@ FormCard.FormCardPage {
         }
         FormCard.FormDelegateSeparator {}
         FormCard.FormSpinBoxDelegate {
-            label: i18nc("@label:spinbox", "Synchronize after")
+            label: KI18n.i18nc("@label:spinbox", "Synchronize after")
             value: editor.cachePolicy.intervalCheckTime
             enabled: !useParent.checked
             textFromValue: function(value, locale) {
                 if (value === 0) {
-                    return i18nc("As in 'Never synchronize this account'", "Never")
+                    return KI18n.i18nc("As in 'Never synchronize this account'", "Never")
                 }
-                return i18ncp("Interval for updating an account", "%1 minute", "%1 minutes", value)
+                return KI18n.i18ncp("Interval for updating an account", "%1 minute", "%1 minutes", value)
             }
 
             valueFromText: function(text, locale) {

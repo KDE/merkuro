@@ -5,18 +5,19 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import QtQuick.Window
+import org.kde.ki18n
 
 QQC2.Menu {
     id: fileMenu
 
     default property list<QtObject> additionalMenuItems
 
-    title: i18nc("@action:menu", "File")
+    title: KI18n.i18nc("@action:menu", "File")
 
     property list<QtObject> _menuItems: [
         QQC2.MenuItem {
             action: QQC2.Action {
-                text: i18nc("@action:menu", "Quit Merkuro")
+                text: KI18n.i18nc("@action:menu", "Quit Merkuro")
                 icon.name: "application-exit"
                 shortcut: StandardKey.Quit
                 onTriggered: Qt.quit()

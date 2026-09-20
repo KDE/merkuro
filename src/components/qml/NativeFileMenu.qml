@@ -4,16 +4,17 @@
 import QtQuick
 import Qt.labs.platform as Labs
 import org.kde.merkuro.components
+import org.kde.ki18n
 
 Labs.Menu {
     id: root
 
-    title: i18nc("@action:menu", "File")
+    title: KI18n.i18nc("@action:menu", "File")
 
     default property list<QtObject> additionalMenuItems
 
     Labs.MenuItem {
-        text: i18nc("@action:menu", "Quit Merkuro")
+        text: KI18n.i18nc("@action:menu", "Quit Merkuro")
         icon.name: "application-exit"
         shortcut: StandardKey.Quit
         onTriggered: Qt.quit()

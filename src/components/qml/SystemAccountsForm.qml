@@ -9,6 +9,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.merkuro.components
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -54,7 +55,7 @@ FormCard.FormCard {
 
     FormCard.FormButtonDelegate {
         id: addAccountDelegate
-        text: i18nc("@action:button", "Add Account…")
+        text: KI18n.i18nc("@action:button", "Add Account…")
         icon.name: "list-add-symbolic"
         onClicked: accountsModel.requestNew(Window.window)
     }

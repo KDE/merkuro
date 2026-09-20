@@ -4,13 +4,14 @@
 import Qt.labs.platform as Labs
 import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.ki18n
 
 Labs.Menu {
     id: root
 
     required property StatefulApp.AbstractKirigamiApplication application
 
-    title: i18nc("@action:menu", "Settings")
+    title: KI18n.i18nc("@action:menu", "Settings")
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "toggle_menubar"
