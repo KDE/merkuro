@@ -41,6 +41,29 @@
 #include <QItemSelectionModel>
 #include <QPointer>
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+void migrateCollectionSelection()
+{
+    const auto oldConfig = KSharedConfig::openConfig(u"kalendarrc"_s);
+    const auto newConfig = KSharedConfig::openConfig(u"merkurocontactrc"_s);
+
+    const auto groupName = u"ContactCollectionSelection"_s;
+    if (!oldConfig->hasGroup(groupName) || newConfig->hasGroup(groupName)) {
+        return;
+    }
+
+    const KConfigGroup oldGroup(oldConfig, groupName);
+    KConfigGroup newGroup(newConfig, groupName);
+    oldGroup.copyTo(&newGroup);
+    oldConfig->deleteGroup(groupName);
+
+    newConfig->sync();
+    oldConfig->sync();
+}
+}
+
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
     , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
@@ -87,7 +110,8 @@ ContactManager::ContactManager(QObject *parent)
         m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
     });
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"kalendarrc"_s);
+    migrateCollectionSelection();
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"merkurocontactrc"_s);
     m_collectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver(this);
     KConfigGroup selectionGroup = config->group(u"ContactCollectionSelection"_s);
     m_collectionSelectionModelStateSaver->setView(nullptr);
@@ -126,7 +150,7 @@ ContactManager::~ContactManager()
 void ContactManager::saveState() const
 {
     Akonadi::ETMViewStateSaver treeStateSaver;
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"kalendarrc"_s);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"merkurocontactrc"_s);
     KConfigGroup group = config->group(u"ContactCollectionSelection"_s);
     treeStateSaver.setView(nullptr);
     treeStateSaver.setSelectionModel(m_checkableProxyModel->selectionModel());
