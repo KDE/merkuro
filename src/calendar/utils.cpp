@@ -6,6 +6,7 @@
 #include <KLocalizedString>
 #include <QDate>
 #include <QLocale>
+#include <QRegularExpression>
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -64,9 +65,59 @@ QString CalendarUtils::formatSpelloutDuration(const KCalendarCore::Duration &dur
     }
 }
 
-QDateTime CalendarUtils::addDaysToDate(const QDateTime &date, const int days)
+Merkuro::KDateTime CalendarUtils::parseDateString(const QString &dateString) const
 {
-    return date.addDays(days);
+    const auto locale = QLocale();
+    const auto defaultParse = [&]() {
+        return Merkuro::KDateTime(QDateTime(locale.toDate(dateString, QLocale::NarrowFormat), QTime(0, 0)));
+    };
+
+    const auto delimiterMatch = QRegularExpression(QStringLiteral("\\D")).match(dateString);
+    if (!delimiterMatch.hasMatch()) {
+        return defaultParse();
+    }
+
+    const auto delimiter = delimiterMatch.captured(0);
+    const auto formatParts = locale.dateFormat(QLocale::NarrowFormat).split(delimiter);
+    const auto formatPartIndex = [&formatParts](const QChar marker) {
+        for (qsizetype i = 0; i < formatParts.size(); ++i) {
+            if (formatParts.at(i).contains(marker, Qt::CaseInsensitive)) {
+                return i;
+            }
+        }
+        return qsizetype{-1};
+    };
+    const auto dayPosition = formatPartIndex(u'd');
+    const auto monthPosition = formatPartIndex(u'm');
+    const auto yearPosition = formatPartIndex(u'y');
+    const auto parts = dateString.split(delimiter);
+    if (parts.size() != 3 || dayPosition < 0 || monthPosition < 0 || yearPosition < 0) {
+        return defaultParse();
+    }
+
+    const auto yearPart = parts.at(yearPosition).trimmed();
+    const auto currentYear = QString::number(QDate::currentDate().year());
+    if (yearPart.isEmpty() || yearPart.size() >= currentYear.size()) {
+        return defaultParse();
+    }
+
+    const QString year = currentYear.left(currentYear.size() - yearPart.size()) + yearPart;
+    bool ok = false;
+    const auto day = parts.at(dayPosition).toInt(&ok);
+    if (!ok) {
+        return Merkuro::KDateTime();
+    }
+    const auto month = parts.at(monthPosition).toInt(&ok);
+    if (!ok) {
+        return Merkuro::KDateTime();
+    }
+    const auto date = QDate(year.toInt(&ok), month, day);
+    return ok && date.isValid() ? Merkuro::KDateTime(QDateTime(date, QTime(0, 0))) : Merkuro::KDateTime();
+}
+
+int CalendarUtils::fullDaysBetweenDates(const Merkuro::KDateTime &date1, const Merkuro::KDateTime &date2) const
+{
+    return date1.date().daysTo(date2.date()) + 1;
 }
 
 QDate CalendarUtils::startOfWeek(const QDate &date, const QLocale &locale)
@@ -74,9 +125,9 @@ QDate CalendarUtils::startOfWeek(const QDate &date, const QLocale &locale)
     return date.addDays(-((date.dayOfWeek() - locale.firstDayOfWeek() + 7) % 7));
 }
 
-int CalendarUtils::weekNumber(const QDate &date) const
+int CalendarUtils::weekNumber(const Merkuro::KDateTime &date) const
 {
-    return date.weekNumber();
+    return date.date().weekNumber();
 }
 
 QStringList CalendarUtils::hourlyViewLocalisedHourLabels() const

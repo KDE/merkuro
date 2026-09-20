@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 import org.kde.kirigamiaddons.dateandtime
 
 RowLayout {
@@ -26,7 +27,7 @@ RowLayout {
         } else {
             Calendar.DatePopupSingleton.y = pageStack.globalToolBar.height - 1;
             Calendar.DatePopupSingleton.x = 0;
-            Calendar.DatePopupSingleton.value = Calendar.DateTimeState.selectedDate
+            Calendar.DatePopupSingleton.value = Calendar.DateTimeState.selectedDate.dateTime
             Calendar.DatePopupSingleton.popupParent = titleDateButton;
             connect.enabled = true;
             Calendar.DatePopupSingleton.open();
@@ -40,7 +41,7 @@ RowLayout {
 
             function onAccepted(): void {
                 Calendar.DatePopupSingleton.close();
-                Calendar.DateTimeState.selectedDate = Calendar.DatePopupSingleton.value;
+                Calendar.DateTimeState.selectedDate = MerkuroComponents.KDateTimeFactory.fromDateTime(Calendar.DatePopupSingleton.value);
             }
 
             function onClosed(): void {

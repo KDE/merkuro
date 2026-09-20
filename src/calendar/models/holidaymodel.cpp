@@ -41,14 +41,16 @@ void HolidayModel::setHolidayRegions(const QStringList &holidayRegions)
     auto start = m_start;
     m_start = {};
 
-    loadDateRange(start, m_days);
+    loadDateRange(Merkuro::KDateTime(QDateTime(start, QTime(0, 0))), m_days);
 }
 
-void HolidayModel::loadDateRange(const QDate &start, int days)
+void HolidayModel::loadDateRange(const Merkuro::KDateTime &startDate, int days)
 {
     if (days == 0) {
         return;
     }
+
+    const auto start = startDate.date();
 
     const auto it = std::ranges::find(m_fetchedIntervals, std::pair<QDate, int>(start, days));
     if (it != m_fetchedIntervals.end()) {

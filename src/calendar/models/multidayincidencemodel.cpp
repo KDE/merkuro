@@ -65,8 +65,8 @@ QList<QModelIndex> MultiDayIncidenceModel::sortedIncidencesFromSourceModel(const
     // Get incidences from source model
     for (int row = 0; row < mSourceModel->rowCount(); row++) {
         const auto srcIdx = mSourceModel->index(row, 0, {});
-        const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date();
-        const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).toDateTime().date();
+        const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date();
+        const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date();
 
         // Skip incidences not part of the week
         if (end < rowStart || start > rowEnd) {
@@ -89,13 +89,13 @@ QList<QModelIndex> MultiDayIncidenceModel::sortedIncidencesFromSourceModel(const
         const auto leftAllDay = left.data(IncidenceOccurrenceModel::AllDay).toBool();
         const auto rightAllDay = right.data(IncidenceOccurrenceModel::AllDay).toBool();
 
-        const auto leftDuration =
-            getDuration(left.data(IncidenceOccurrenceModel::StartTime).toDateTime().date(), left.data(IncidenceOccurrenceModel::EndTime).toDateTime().date());
-        const auto rightDuration =
-            getDuration(right.data(IncidenceOccurrenceModel::StartTime).toDateTime().date(), right.data(IncidenceOccurrenceModel::EndTime).toDateTime().date());
+        const auto leftDuration = getDuration(left.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date(),
+                                              left.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date());
+        const auto rightDuration = getDuration(right.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date(),
+                                               right.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date());
 
-        const auto leftDt = left.data(IncidenceOccurrenceModel::StartTime).toDateTime();
-        const auto rightDt = right.data(IncidenceOccurrenceModel::StartTime).toDateTime();
+        const auto leftDt = left.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime();
+        const auto rightDt = right.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime();
 
         if (leftAllDay && !rightAllDay) {
             return true;
@@ -140,11 +140,12 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
     QVariantList result;
     while (!sorted.isEmpty()) {
         const auto srcIdx = sorted.takeFirst();
-        const auto startDate = srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date() < rowStart
+        const auto startDate = srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date() < rowStart
             ? rowStart
-            : srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date();
-        const auto start = getStart(srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date());
-        const auto duration = qMin(getDuration(startDate, srcIdx.data(IncidenceOccurrenceModel::EndTime).toDateTime().date()), mPeriodLength - start);
+            : srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date();
+        const auto start = getStart(srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date());
+        const auto duration =
+            qMin(getDuration(startDate, srcIdx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date()), mPeriodLength - start);
 
         // qCWarning(MERKURO_CALENDAR_LOG) << "First of line " << srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime() << duration <<
         // srcIdx.data(IncidenceOccurrenceModel::Summary).toString();
@@ -155,8 +156,8 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
             incidenceData.text = idx.data(IncidenceOccurrenceModel::Summary).toString();
             incidenceData.description = idx.data(IncidenceOccurrenceModel::Description).toString();
             incidenceData.location = idx.data(IncidenceOccurrenceModel::Location).toString();
-            incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime();
-            incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime();
+            incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>();
+            incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>();
             incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool();
             incidenceData.todoCompleted = idx.data(IncidenceOccurrenceModel::TodoCompleted).toBool();
             incidenceData.priority = idx.data(IncidenceOccurrenceModel::Priority).toInt();
@@ -211,11 +212,12 @@ QVariantList MultiDayIncidenceModel::layoutLines(const QDate &rowStart) const
 
         for (auto it = sorted.begin(); it != sorted.end();) {
             const auto idx = *it;
-            const auto startDate = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date() < rowStart
+            const auto startDate = idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date() < rowStart
                 ? rowStart
-                : idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date();
-            const auto start = getStart(idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date());
-            const auto duration = qMin(getDuration(startDate, idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().date()), mPeriodLength - start);
+                : idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date();
+            const auto start = getStart(idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date());
+            const auto duration =
+                qMin(getDuration(startDate, idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date()), mPeriodLength - start);
             const auto end = start + duration;
 
             // This leaves a space in rows with all day events, making this y area of the row exclusively for all day events
@@ -240,11 +242,11 @@ QVariant MultiDayIncidenceModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(hasIndex(index.row(), index.column()) && mSourceModel);
 
-    const auto rowStart = mSourceModel->start().addDays(index.row() * mPeriodLength);
+    const auto rowStart = mSourceModel->start().date().addDays(index.row() * mPeriodLength);
 
     switch (role) {
     case PeriodStartDateRole:
-        return rowStart.startOfDay();
+        return QVariant::fromValue(Merkuro::KDateTime(rowStart.startOfDay()));
     case IncidencesRole:
         return layoutLines(rowStart);
     default:
@@ -295,7 +297,7 @@ void MultiDayIncidenceModel::slotSourceDataChanged(const QModelIndex &upperLeft,
         const auto sourceModelIndex = mSourceModel->index(i, 0, {});
         const auto occurrence = sourceModelIndex.data(IncidenceOccurrenceModel::IncidenceOccurrence).value<IncidenceOccurrenceModel::Occurrence>();
 
-        const auto sourceModelStartDate = mSourceModel->start();
+        const auto sourceModelStartDate = mSourceModel->start().date();
         const auto startDaysFromSourceStart = sourceModelStartDate.daysTo(occurrence.start.date());
         const auto endDaysFromSourceStart = sourceModelStartDate.daysTo(occurrence.end.date());
 
@@ -394,7 +396,7 @@ bool MultiDayIncidenceModel::incidencePassesFilter(const QModelIndex &idx) const
         // Start out assuming the worst, filter everything out
         include = false;
 
-        const auto start = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date();
+        const auto start = idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date();
 
         if (m_filters.testFlag(AllDayOnly) && idx.data(IncidenceOccurrenceModel::AllDay).toBool()) {
             include = true;
@@ -425,13 +427,13 @@ int MultiDayIncidenceModel::incidenceCount() const
     int count = 0;
 
     for (int i = 0; i < rowCount(); i++) {
-        const auto rowStart = mSourceModel->start().addDays(i * mPeriodLength);
+        const auto rowStart = mSourceModel->start().date().addDays(i * mPeriodLength);
         const auto rowEnd = rowStart.addDays(mPeriodLength > 1 ? mPeriodLength : 0);
 
         for (int row = 0; row < mSourceModel->rowCount(); row++) {
             const auto srcIdx = mSourceModel->index(row, 0, {});
-            const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().date();
-            const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).toDateTime().date();
+            const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().date();
+            const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().date();
 
             // Skip incidences not part of the week
             if (end < rowStart || start > rowEnd) {

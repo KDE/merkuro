@@ -34,7 +34,7 @@ void RecurrenceExceptionsModel::setIncidencePtr(KCalendarCore::Incidence::Ptr in
     Q_EMIT layoutChanged();
 }
 
-QList<QDate> RecurrenceExceptionsModel::exceptions()
+QList<Merkuro::KDateTime> RecurrenceExceptionsModel::exceptions()
 {
     return m_exceptions;
 }
@@ -45,12 +45,12 @@ void RecurrenceExceptionsModel::updateExceptions()
 
     const auto dateTimes = m_incidence->recurrence()->exDateTimes();
     for (const QDateTime &dateTime : dateTimes) {
-        m_exceptions.append(dateTime.date());
+        m_exceptions.append(Merkuro::KDateTime(dateTime));
     }
 
     const auto dates = m_incidence->recurrence()->exDates();
     for (const QDate &date : dates) {
-        m_exceptions.append(date);
+        m_exceptions.append(Merkuro::KDateTime(QDateTime(date, QTime(0, 0))));
     }
     Q_EMIT exceptionsChanged();
     Q_EMIT layoutChanged();
@@ -66,10 +66,10 @@ QVariant RecurrenceExceptionsModel::data(const QModelIndex &idx, int role) const
     if (!hasIndex(idx.row(), idx.column())) {
         return {};
     }
-    const QDate exception = m_exceptions[idx.row()];
+    const auto exception = m_exceptions[idx.row()];
     switch (role) {
     case DateRole:
-        return exception;
+        return QVariant::fromValue(exception);
     default:
         qCWarning(MERKURO_CALENDAR_LOG) << "Unknown role for incidence:" << QMetaEnum::fromType<Roles>().valueToKey(role);
         return {};
@@ -86,38 +86,42 @@ int RecurrenceExceptionsModel::rowCount(const QModelIndex &) const
     return m_exceptions.size();
 }
 
-void RecurrenceExceptionsModel::addExceptionDateTime(QDateTime date)
+void RecurrenceExceptionsModel::addExceptionDateTime(const Merkuro::KDateTime &date)
 {
     if (!date.isValid()) {
         return;
     }
 
+    const auto dateTime = date.dateTime();
+
     // I don't know why, but different types take different date formats
     if (m_incidence->recurrence()->allDay()) {
-        m_incidence->recurrence()->addExDateTime(date);
+        m_incidence->recurrence()->addExDateTime(dateTime);
     } else {
-        m_incidence->recurrence()->addExDate(date.date());
+        m_incidence->recurrence()->addExDate(dateTime.date());
     }
 
     updateExceptions();
 }
 
-void RecurrenceExceptionsModel::deleteExceptionDateTime(QDateTime date)
+void RecurrenceExceptionsModel::deleteExceptionDateTime(const Merkuro::KDateTime &date)
 {
     if (!date.isValid()) {
         return;
     }
 
+    const auto dateTime = date.dateTime();
+
     if (m_incidence->recurrence()->allDay()) {
         auto dateTimes = m_incidence->recurrence()->exDateTimes();
-        dateTimes.removeAt(dateTimes.indexOf(date));
+        dateTimes.removeAt(dateTimes.indexOf(dateTime));
         m_incidence->recurrence()->setExDateTimes(dateTimes);
     } else {
         auto dates = m_incidence->recurrence()->exDates();
-        const int removeIndex = dates.indexOf(date.date());
+        const int removeIndex = dates.indexOf(dateTime.date());
 
         if (removeIndex >= 0) {
-            dates.removeAt(dates.indexOf(date.date()));
+            dates.removeAt(dates.indexOf(dateTime.date()));
             m_incidence->recurrence()->setExDates(dates);
             updateExceptions();
             return;
@@ -126,7 +130,7 @@ void RecurrenceExceptionsModel::deleteExceptionDateTime(QDateTime date)
         auto dateTimes = m_incidence->recurrence()->exDateTimes();
 
         for (int i = 0; i < dateTimes.size(); i++) {
-            if (dateTimes[i].date() == date.date()) {
+            if (dateTimes[i].date() == dateTime.date()) {
                 dateTimes.removeAt(i);
             }
         }

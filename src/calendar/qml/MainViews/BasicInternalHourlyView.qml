@@ -8,20 +8,22 @@ import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Column {
     id: viewColumn
 
     required property var openOccurrence
     required property int daysToShow
-    required property date startDate
+    required property MerkuroComponents.KDateTime startDate
 
-    property date endDate: Calendar.Utils.addDaysToDate(startDate, viewColumn.daysToShow)
+    readonly property MerkuroComponents.KDateTime startDateTime: startDate
+    readonly property MerkuroComponents.KDateTime endDate: startDateTime.addDays(viewColumn.daysToShow)
 
-    readonly property date currentDate: Calendar.DateTimeState.currentDate
-    readonly property int daysFromWeekStart: Calendar.DateUtils.fullDaysBetweenDates(startDate, currentDate) - 1
+    readonly property MerkuroComponents.KDateTime currentDate: Calendar.DateTimeState.currentDate
+    readonly property int daysFromWeekStart: Calendar.Utils.fullDaysBetweenDates(startDateTime, currentDate) - 1
 
-    readonly property int minutesFromStartOfDay: (currentDate.getHours() * 60) + currentDate.getMinutes()
+    readonly property int minutesFromStartOfDay: (currentDate.hour * 60) + currentDate.minute
     readonly property bool isDark: Calendar.CalendarUiUtils.darkMode
     property bool dragDropEnabled: true
 
@@ -32,7 +34,7 @@ Column {
     readonly property real dayWidth: ((width - hourLabelWidth - leftPadding - scrollbarWidth) / daysToShow) - gridLineWidth
     readonly property real incidenceSpacing: Kirigami.Units.smallSpacing / 2
     readonly property real gridLineWidth: 1.0
-    readonly property real hourLabelWidth: hourLabelMetrics.boundingRect(new Date(0,0,0,0,0,0,0).toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)).width +
+    readonly property real hourLabelWidth: hourLabelMetrics.boundingRect(Calendar.Utils.hourlyViewLocalisedHourLabels[0]).width +
         Kirigami.Units.largeSpacing * 2.5
     readonly property real periodHeight: Kirigami.Units.gridUnit
 
@@ -108,8 +110,8 @@ Column {
 
                 required property int index
 
-                readonly property date headingDate: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
-                readonly property bool isToday: Calendar.DateTimeState.isToday(headingDate)
+                readonly property MerkuroComponents.KDateTime headingDate: viewColumn.startDate.addDays(index)
+                readonly property bool isToday: headingDate.sameDay(viewColumn.currentDate)
 
                 width: viewColumn.dayWidth
                 implicitHeight: dayHeading.implicitHeight
@@ -124,9 +126,9 @@ Column {
                     level: 2
                     color: isToday ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                     text: {
-                        const longText = dayDelegate.headingDate.toLocaleDateString(Qt.locale(), "dddd <b>d</b>");
-                        const mediumText = dayDelegate.headingDate.toLocaleDateString(Qt.locale(), "ddd <b>d</b>");
-                        const shortText = mediumText.slice(0,1) + " " + dayDelegate.headingDate.toLocaleDateString(Qt.locale(), "<b>d</b>");
+                        const longText = dayDelegate.headingDate.toLocaleDateString("dddd <b>d</b>");
+                        const mediumText = dayDelegate.headingDate.toLocaleDateString("ddd <b>d</b>");
+                        const shortText = mediumText.slice(0,1) + " " + dayDelegate.headingDate.toLocaleDateString("<b>d</b>");
 
 
                         if (fontMetrics.boundingRect(longText).width < width) {
@@ -315,7 +317,7 @@ Column {
 
                         required property int index
                         required property var incidences
-                        required property var periodStartDate
+                        required property MerkuroComponents.KDateTime periodStartDate
 
                         width: parent.width
                         implicitHeight: allDayHeader.actualHeight
@@ -327,7 +329,7 @@ Column {
                             spacing: viewColumn.gridLineWidth
 
                             Item {
-                                readonly property date startDate: weekDelegate.periodStartDate
+                                readonly property MerkuroComponents.KDateTime startDate: weekDelegate.periodStartDate
 
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
@@ -407,9 +409,9 @@ Column {
 
                                                 required property int index
 
-                                                readonly property date date: Calendar.Utils.addDaysToDate(viewColumn.startDate, index)
-                                                readonly property bool isToday: Calendar.DateTimeState.isToday(date)
-                                                readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
+                                                readonly property MerkuroComponents.KDateTime date: viewColumn.startDate.addDays(index)
+                                                readonly property bool isToday: date.sameDay(viewColumn.currentDate)
+                                                readonly property string formatedDate: date.toLocaleDateString("yyyy-MM-dd")
                                                 readonly property bool isHoliday: formatedDate in Calendar.HolidayModel.holidays
                                                 readonly property color bgColor: {
                                                     if (Calendar.Config.showHolidaysInCalendarViews && isHoliday) {
@@ -450,9 +452,10 @@ Column {
                                                         const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                                                         incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                                                        let sameTimeOnDate = new Date(listViewMenu.addDate);
-                                                        sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                                        const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                        let sameTimeOnDate = listViewMenu.addDate;
+                                                        sameTimeOnDate.hour = drop.source.occurrenceDate.hour;
+                                                        sameTimeOnDate.minute = drop.source.occurrenceDate.minute;
+                                                        const offset = drop.source.occurrenceDate.msecsTo(sameTimeOnDate);
                                                         /* There are 2 possibilities here: we move multiday incidence between days or we move hourly incidence
                                                          * to convert it into multiday incidence
                                                          */
@@ -530,7 +533,7 @@ Column {
         }
 
         function setToCurrentTime(): void {
-            setPosition(Math.max(0, (new Date()).getHours() - 1) / 23);
+            setPosition(Math.max(0, MerkuroComponents.KDateTimeFactory.now().hour - 1) / 23);
         }
 
         function currentPosition(): real {
@@ -609,10 +612,10 @@ Column {
                         font.weight: Font.DemiBold
                         horizontalAlignment: Text.AlignRight
                         rightPadding: Kirigami.Units.smallSpacing
-                        y: Math.max(0, (viewColumn.currentDate.getHours() * viewColumn.gridLineWidth) + (hourlyView.minuteHeight * viewColumn.minutesFromStartOfDay) - (implicitHeight / 2)) - (viewColumn.gridLineWidth / 2)
+                        y: Math.max(0, (viewColumn.currentDate.hour * viewColumn.gridLineWidth) + (hourlyView.minuteHeight * viewColumn.minutesFromStartOfDay) - (implicitHeight / 2)) - (viewColumn.gridLineWidth / 2)
                         z: 100
 
-                        text: viewColumn.currentDate.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)
+                        text: viewColumn.currentDate.toLocaleTimeString(Locale.NarrowFormat)
 
                     }
                 }
@@ -681,14 +684,12 @@ Column {
 
                             required property int index
                             required property var incidences
-                            required property var periodStartDateTime
+                            required property MerkuroComponents.KDateTime periodStartDateTime
 
-                            readonly property date columnDate: Calendar.DateUtils.addDaysToDate(viewColumn.startDate, index)
-                            readonly property string formatedDate: Qt.formatDate(columnDate, 'yyyy-MM-dd')
+                            readonly property MerkuroComponents.KDateTime columnDate: viewColumn.startDate.addDays(index)
+                            readonly property string formatedDate: columnDate.toLocaleDateString("yyyy-MM-dd")
                             readonly property bool isHoliday: formatedDate in Calendar.HolidayModel.holidays
-                            readonly property bool isToday: columnDate.getDate() === viewColumn.currentDate.getDate() &&
-                                columnDate.getMonth() === viewColumn.currentDate.getMonth() &&
-                                columnDate.getFullYear() === viewColumn.currentDate.getFullYear()
+                            readonly property bool isToday: columnDate.sameDay(viewColumn.currentDate)
 
                             width: viewColumn.dayWidth
                             height: hourlyView.dayHeight
@@ -756,12 +757,14 @@ Column {
                                                                 drop.source.caught = true;
 
                                                                 // We want the date as if it were "from the top" of the droparea
-                                                                const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                                const posDate = backgroundDayTapHandler.addDate;
+                                                                posDate.hour = backgroundRectangle.index;
+                                                                posDate.minute = dropAreaRepeater.minutes * index;
 
-                                                                const startOffset = posDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                                const startOffset = drop.source.occurrenceDate.msecsTo(posDate);
 
-                                                                if (Calendar.DateUtils.sameDay(drop.source.occurrenceDate, posDate)
-                                                                    && Calendar.DateUtils.sameTime(drop.source.occurrenceDate, posDate)) {
+                                                                if (drop.source.occurrenceDate.sameDay(posDate)
+                                                                    && drop.source.occurrenceDate.sameTime(posDate)) {
                                                                     return;
                                                                 }
 
@@ -775,12 +778,16 @@ Column {
                                                                 drop.source.caught = true;
 
                                                                 // We want the date as if it were "from the top" of the droparea
-                                                                const startPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index, dropAreaRepeater.minutes * index);
+                                                                const startPosDate = backgroundDayTapHandler.addDate;
+                                                                startPosDate.hour = backgroundRectangle.index;
+                                                                startPosDate.minute = dropAreaRepeater.minutes * index;
                                                                 // In case when incidence is converted to not be all day anymore, lets set it as 1h long
-                                                                const endPosDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), backgroundRectangle.index + 1, dropAreaRepeater.minutes * index);
+                                                                const endPosDate = backgroundDayTapHandler.addDate;
+                                                                endPosDate.hour = backgroundRectangle.index + 1;
+                                                                endPosDate.minute = dropAreaRepeater.minutes * index;
 
-                                                                const startOffset = startPosDate.getTime() - drop.source.occurrenceDate.getTime();
-                                                                const endOffset = endPosDate.getTime() - drop.source.occurrenceEndDate.getTime();
+                                                                const startOffset = drop.source.occurrenceDate.msecsTo(startPosDate);
+                                                                const endOffset = drop.source.occurrenceEndDate.msecsTo(endPosDate);
 
                                                                 Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, drop.source.occurrenceDate, drop.source);
 
@@ -796,9 +803,11 @@ Column {
                                                                 const isNextHour = minute === 0 && index !== 0;
                                                                 const hour = isNextHour ? backgroundRectangle.index + 1 : backgroundRectangle.index;
 
-                                                                const posDate = new Date(backgroundDayTapHandler.addDate.getFullYear(), backgroundDayTapHandler.addDate.getMonth(), backgroundDayTapHandler.addDate.getDate(), hour, minute);
+                                                                const posDate = backgroundDayTapHandler.addDate;
+                                                                posDate.hour = hour;
+                                                                posDate.minute = minute;
 
-                                                                const endOffset = posDate.getTime() - drop.source.resizerSeparator.parent.occurrenceEndDate.getTime();
+                                                                const endOffset = drop.source.resizerSeparator.parent.occurrenceEndDate.msecsTo(posDate);
 
                                                                 Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, 0, endOffset, drop.source.resizerSeparator.parent.occurrenceDate, drop.source.resizerSeparator.parent);
                                                             }
@@ -818,7 +827,7 @@ Column {
                                         Calendar.DayTapHandler {
                                             id: backgroundDayTapHandler
                                             includeTime: true
-                                            addDate: new Date(Calendar.DateUtils.addDaysToDate(viewColumn.startDate, dayColumn.index).setHours(backgroundRectangle.index))
+                                            addDate: dayColumn.columnDate.addSecs(backgroundRectangle.index * 60 * 60)
                                             onDeselect: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
                                         }
                                     }
@@ -852,8 +861,8 @@ Column {
 
                                         property alias mouseArea: mouseArea
                                         property var incidencePtr: modelData.incidencePtr
-                                        property date occurrenceDate: modelData.startTime
-                                        property date occurrenceEndDate: modelData.endTime
+                                        property MerkuroComponents.KDateTime occurrenceDate: modelData.startTime
+                                        property MerkuroComponents.KDateTime occurrenceEndDate: modelData.endTime
                                         property bool repositionAnimationEnabled: false
                                         property bool caught: false
                                         property real caughtX: x
@@ -970,7 +979,7 @@ Column {
                                                     id: timeLabel
                                                     Layout.fillWidth: true
                                                     horizontalAlignment: Text.AlignRight
-                                                    text: modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat) + "–" + modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)
+                                                    text: modelData.startTime.toLocaleTimeString(Locale.NarrowFormat) + "–" + modelData.endTime.toLocaleTimeString(Locale.NarrowFormat)
                                                     wrapMode: Text.Wrap
                                                     renderType: Text.QtRendering
                                                     color: incidenceContents.textColor
@@ -1020,7 +1029,8 @@ Column {
                 Loader {
                     id: currentTimeMarkerLoader
 
-                    active: viewColumn.currentDate >= viewColumn.startDate && viewColumn.currentDate < viewColumn.endDate
+                                                    active: viewColumn.startDateTime.msecsTo(viewColumn.currentDate) >= 0 &&
+                                                        viewColumn.currentDate.msecsTo(viewColumn.endDate) > 0
 
                     sourceComponent: Rectangle {
                         id: currentTimeMarker
@@ -1029,7 +1039,7 @@ Column {
                         height: viewColumn.gridLineWidth * 2
                         color: Kirigami.Theme.highlightColor
                         x: (viewColumn.daysFromWeekStart * viewColumn.dayWidth) + (viewColumn.daysFromWeekStart * viewColumn.gridLineWidth)
-                        y: (viewColumn.currentDate.getHours() * viewColumn.gridLineWidth) + (hourlyView.minuteHeight * viewColumn.minutesFromStartOfDay) -
+                                                                y: (viewColumn.currentDate.hour * viewColumn.gridLineWidth) + (hourlyView.minuteHeight * viewColumn.minutesFromStartOfDay) -
                             (height / 2) - (viewColumn.gridLineWidth / 2)
                         z: 100
 

@@ -10,6 +10,7 @@
 
 using namespace Qt::StringLiterals;
 using namespace Qt::Literals::StringLiterals;
+
 IncidenceWrapper::IncidenceWrapper(CalendarManager *calendarManager, QObject *parent)
     : QObject(parent)
     , m_calendarManager(calendarManager)
@@ -293,6 +294,11 @@ void IncidenceWrapper::setIncidenceStartDate(int day, int month, int year)
     setIncidenceStart(newStart, true);
 }
 
+void IncidenceWrapper::setIncidenceStartDate(const Merkuro::KDateTime &date)
+{
+    setIncidenceStartDate(date.day(), date.month(), date.year());
+}
+
 void IncidenceWrapper::setIncidenceStartTime(int hours, int minutes)
 {
     QTime time;
@@ -352,6 +358,11 @@ void IncidenceWrapper::setIncidenceEndDate(int day, int month, int year)
     newEnd.setDate(date);
 
     setIncidenceEnd(newEnd, true);
+}
+
+void IncidenceWrapper::setIncidenceEndDate(const Merkuro::KDateTime &date)
+{
+    setIncidenceEndDate(date.day(), date.month(), date.year());
 }
 
 void IncidenceWrapper::setIncidenceEndTime(int hours, int minutes)
@@ -455,46 +466,12 @@ void IncidenceWrapper::setPriority(int priority)
 
 KCalendarCore::Recurrence *IncidenceWrapper::recurrence() const
 {
-    KCalendarCore::Recurrence *recurrence = m_incidence->recurrence();
-    return recurrence;
+    return m_incidence->recurrence();
 }
 
 RecurrenceData IncidenceWrapper::recurrenceData() const
 {
-    QBitArray weekDaysBits = m_incidence->recurrence()->days();
-    QList<bool> weekDaysBools(7);
-
-    for (int i = 0; i < weekDaysBits.size(); i++) {
-        weekDaysBools[i] = weekDaysBits[i];
-    }
-
-    QList<MonthPosition> monthPositions;
-    const auto monthPositionsToConvert = m_incidence->recurrence()->monthPositions();
-    for (const auto &pos : monthPositionsToConvert) {
-        monthPositions.append({
-            pos.day(),
-            pos.pos(),
-        });
-    }
-
-    // FYI: yearPositions() just calls monthPositions(), so we're cutting out the middleman
-    return RecurrenceData{
-        weekDaysBools,
-        m_incidence->recurrence()->duration(),
-        m_incidence->recurrence()->frequency(),
-        m_incidence->recurrence()->startDateTime(),
-        QLocale::system().toString(m_incidence->recurrence()->startDateTime(), QLocale::NarrowFormat),
-        m_incidence->recurrence()->endDateTime(),
-        QLocale::system().toString(m_incidence->recurrence()->endDateTime(), QLocale::NarrowFormat),
-        QLocale::system().toString(m_incidence->recurrence()->endDate(), QLocale::NarrowFormat),
-        m_incidence->recurrence()->allDay(),
-        m_incidence->recurrence()->recurrenceType(),
-        m_incidence->recurrence()->monthDays(),
-        monthPositions,
-        m_incidence->recurrence()->yearDays(),
-        m_incidence->recurrence()->yearDates(),
-        m_incidence->recurrence()->yearMonths(),
-    };
+    return RecurrenceData(m_incidence->recurrence());
 }
 
 void IncidenceWrapper::setRecurrenceDataItem(const QString &key, const QVariant &value)
@@ -533,8 +510,9 @@ void IncidenceWrapper::setRecurrenceDataItem(const QString &key, const QVariant 
     } else if (key == QLatin1StringView("frequency")) {
         m_incidence->recurrence()->setFrequency(value.toInt());
 
-    } else if ((key == QLatin1StringView("startDateTime") || key == QLatin1StringView("endDateTime")) && value.toDateTime().isValid()) {
-        auto dt = value.toDateTime();
+    } else if ((key == QLatin1StringView("startDateTime") || key == QLatin1StringView("endDateTime"))
+               && (value.canConvert<Merkuro::KDateTime>() || value.toDateTime().isValid())) {
+        const auto dt = value.canConvert<Merkuro::KDateTime>() ? value.value<Merkuro::KDateTime>() : Merkuro::KDateTime(value.toDateTime());
         QDateTime adjustedDt;
         adjustedDt.setTimeZone(incidenceEnd().timeZone());
         adjustedDt.setDate(dt.date());
@@ -636,14 +614,14 @@ void IncidenceWrapper::setTodoCompleted(bool completed)
     Q_EMIT todoCompletedChanged();
 }
 
-QDateTime IncidenceWrapper::todoCompletionDt()
+Merkuro::KDateTime IncidenceWrapper::todoCompletionDt()
 {
     if (m_incidence->type() != KCalendarCore::IncidenceBase::TypeTodo) {
         return {};
     }
 
     auto todo = m_incidence.staticCast<KCalendarCore::Todo>();
-    return todo->completed();
+    return Merkuro::KDateTime(todo->completed());
 }
 
 int IncidenceWrapper::todoPercentComplete() const

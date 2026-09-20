@@ -35,7 +35,7 @@ FormCard.FormCardPage {
         if (incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
             return editorLoader.active && editorLoader.item.validEndDate
         } else {
-            return editorLoader.active && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart.dateTime <= root.incidenceWrapper.incidenceEnd.dateTime)
+            return editorLoader.active && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart.msecsTo(root.incidenceWrapper.incidenceEnd) >= 0)
         }
     }
 
@@ -132,7 +132,6 @@ FormCard.FormCardPage {
                 incidenceEndDateCombo.validDate || !incidenceEndCheckBox.checked :
                 incidenceEndDateCombo.validDate
             readonly property bool validFormDates: validStartDate && (validEndDate || root.incidenceWrapper.allDay)
-            property date todayDate: new Date()
             property bool isTodo: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
             property bool isJournal: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeJournal
 
@@ -372,14 +371,14 @@ FormCard.FormCardPage {
             Connections {
                 target: root.incidenceWrapper
                 function onIncidenceStartChanged(): void {
-                    incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart.dateTime;
-                    incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart.dateTime;
+                    incidenceStartDateCombo.dateTime = root.incidenceWrapper.incidenceStart;
+                            incidenceStartTimeCombo.dateTime = root.incidenceWrapper.incidenceStart;
                     incidenceStartTimeCombo.display = root.incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat);
                 }
 
                 function onIncidenceEndChanged() {
-                    incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd.dateTime;
-                    incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd.dateTime;
+                    incidenceEndDateCombo.dateTime = root.incidenceWrapper.incidenceEnd;
+                            incidenceEndTimeCombo.dateTime = root.incidenceWrapper.incidenceEnd;
                     incidenceEndTimeCombo.display = root.incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat);
                 }
             }
@@ -393,14 +392,14 @@ FormCard.FormCardPage {
                         QQC2.CheckBox {
                             id: incidenceStartCheckBox
 
-                            property var oldDate
+                            property MerkuroComponents.KDateTime oldDate: MerkuroComponents.KDateTimeFactory.invalid()
 
                             checked: root.incidenceWrapper.incidenceStart.isValid
                             onClicked: {
                                 if (!checked && incidenceForm.isTodo) {
                                     oldDate = root.incidenceWrapper.incidenceStart
                                     root.incidenceWrapper.incidenceStart = MerkuroComponents.KDateTimeFactory.invalid()
-                                } else if(incidenceForm.isTodo && oldDate) {
+                                } else if(incidenceForm.isTodo && oldDate.isValid) {
                                     root.incidenceWrapper.incidenceStart = oldDate
                                 } else if(incidenceForm.isTodo) {
                                     root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(true, false);
@@ -414,7 +413,7 @@ FormCard.FormCardPage {
 
                             Layout.fillWidth: true
                             display: root.incidenceWrapper.incidenceStart.toLocaleDateString(Locale.NarrowFormat)
-                            dateTime: root.incidenceWrapper.incidenceStart.dateTime
+                            dateTime: root.incidenceWrapper.incidenceStart
                             onNewDateChosen: (day, month, year) => {
                                 root.incidenceWrapper.setIncidenceStartDate(day, month, year)
                             }
@@ -428,7 +427,7 @@ FormCard.FormCardPage {
                             Layout.fillWidth: true
                             timeZoneOffset: root.incidenceWrapper.startTimeZoneUTCOffsetMins
                             display: root.incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat)
-                            dateTime: root.incidenceWrapper.incidenceStart.dateTime
+                            dateTime: root.incidenceWrapper.incidenceStart
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
                             enabled: !allDayCheckBox.checked && incidenceStartDateCombo.enabled
                             visible: !allDayCheckBox.checked
@@ -453,14 +452,14 @@ FormCard.FormCardPage {
                         QQC2.CheckBox {
                             id: incidenceEndCheckBox
 
-                            property var oldDate
+                            property MerkuroComponents.KDateTime oldDate: MerkuroComponents.KDateTimeFactory.invalid()
 
                             checked: root.incidenceWrapper.incidenceEnd.isValid
                             onClicked: {
                                 if (!checked && incidenceForm.isTodo) {
                                     oldDate = root.incidenceWrapper.incidenceEnd
                                     root.incidenceWrapper.incidenceEnd = MerkuroComponents.KDateTimeFactory.invalid()
-                                } else if(incidenceForm.isTodo && oldDate) {
+                                } else if(incidenceForm.isTodo && oldDate.isValid) {
                                     root.incidenceWrapper.incidenceEnd = oldDate
                                 } else if(incidenceForm.isTodo) {
                                     root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(false, true);
@@ -474,7 +473,7 @@ FormCard.FormCardPage {
 
                             Layout.fillWidth: true
                             display: root.incidenceWrapper.incidenceEnd.toLocaleDateString(Locale.NarrowFormat)
-                            dateTime: root.incidenceWrapper.incidenceEnd.dateTime
+                            dateTime: root.incidenceWrapper.incidenceEnd
                             onNewDateChosen: (day, month, year) => {
                                 root.incidenceWrapper.setIncidenceEndDate(day, month, year)
                             }
@@ -486,7 +485,7 @@ FormCard.FormCardPage {
                             Layout.fillWidth: true
                             timeZoneOffset: root.incidenceWrapper.endTimeZoneUTCOffsetMins
                             display: root.incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat)
-                            dateTime: root.incidenceWrapper.incidenceEnd.dateTime
+                            dateTime: root.incidenceWrapper.incidenceEnd
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)
                             enabled: !allDayCheckBox.checked && incidenceEndDateCombo.enabled
                             visible: !allDayCheckBox.checked
@@ -691,6 +690,8 @@ FormCard.FormCardPage {
                     contentItem: ColumnLayout {
                         id: monthlyRecurRadioColumn
 
+                        readonly property MerkuroComponents.KDateTime incidenceStartDateFromText: incidenceStartDateCombo.dateFromText
+
                         QQC2.Label {
                             text: i18n("On:")
                         }
@@ -698,7 +699,7 @@ FormCard.FormCardPage {
                         Layout.fillWidth: true
 
                         QQC2.RadioButton {
-                            property int dateOfMonth: incidenceStartDateCombo.dateFromText.getDate()
+                            property int dateOfMonth: monthlyRecurRadioColumn.incidenceStartDateFromText.day
 
                             text: i18nc("%1 is the day number of month", "The %1 of each month", Calendar.LabelUtils.numberToString(dateOfMonth))
 
@@ -707,11 +708,9 @@ FormCard.FormCardPage {
                         }
 
                         QQC2.RadioButton {
-                            property int dayOfWeek: incidenceStartDateCombo.dateFromText.getDay() > 0 ?
-                                                    incidenceStartDateCombo.dateFromText.getDay() - 1 :
-                                                    7 // C++ Qt day of week index goes Mon-Sun, 0-7
-                            property int weekOfMonth: Math.ceil((incidenceStartDateCombo.dateFromText.getDate() + 6 - incidenceStartDateCombo.dateFromText.getDay())/7);
-                            property string dayOfWeekString: Qt.locale().dayName(incidenceStartDateCombo.dateFromText.getDay())
+                            property int dayOfWeek: monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek - 1
+                            property int weekOfMonth: Math.ceil((monthlyRecurRadioColumn.incidenceStartDateFromText.day + monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek - 1) / 7);
+                            property string dayOfWeekString: Qt.locale().dayName(monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek)
 
                             text: i18nc("the weekOfMonth dayOfWeekString of each month", "The %1 %2 of each month", Calendar.LabelUtils.numberToString(weekOfMonth), dayOfWeekString)
                             checked: root.incidenceWrapper.recurrenceData.type === 5 // Monthly on position
@@ -750,15 +749,6 @@ FormCard.FormCardPage {
                     dateTimeDisplay: FormCard.FormDateTimeDelegate.Date
 
                     visible: endRecurType.visible && endRecurType.currentIndex === 1
-                    // onVisibleChanged: if (visible && isNaN(root.incidenceWrapper.recurrenceData.endDateTime.getTime())) {
-                    //     root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date());
-                    // }
-
-                    // display: root.incidenceWrapper.recurrenceData.endDateDisplay
-                    // dateTime: root.incidenceWrapper.recurrenceData.endDateTime
-                    // onNewDateChosen: (day, month, year) => {
-                    //     root.incidenceWrapper.setRecurrenceDataItem("endDateTime", new Date(year, month - 1, day));
-                    // }
                 }
 
                 FormCard.FormSpinBoxDelegate {
@@ -794,7 +784,7 @@ FormCard.FormCardPage {
                             enabled: false
 
                             function onAccepted(): void {
-                                root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(Calendar.DatePopupSingleton.value);
+                                root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(MerkuroComponents.KDateTimeFactory.fromDateTime(Calendar.DatePopupSingleton.value));
                                 Calendar.DatePopupSingleton.close();
                             }
 
@@ -811,11 +801,11 @@ FormCard.FormCardPage {
                     delegate: FormCard.FormTextDelegate {
                         id: exceptionDelegate
 
-                        required property date date
+                        required property MerkuroComponents.KDateTime date
 
                         leftPadding: Kirigami.Units.largeSpacing * 4
 
-                        text: date.toLocaleDateString(Qt.locale())
+                        text: date.toLocaleDateString(Locale.NarrowFormat)
                         trailing: QQC2.Button {
                             icon.name: "edit-delete-remove"
                             onClicked: root.incidenceWrapper.recurrenceExceptionsModel.deleteExceptionDateTime(date)

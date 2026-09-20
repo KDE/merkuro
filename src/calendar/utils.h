@@ -6,6 +6,7 @@
 #include <KCalendarCore/Duration>
 #include <KFormat>
 #include <QObject>
+#include <merkurokdatetime.h>
 #include <qqmlregistration.h>
 
 class CalendarUtils : public QObject
@@ -22,14 +23,15 @@ public:
 
     [[nodiscard]] QStringList hourlyViewLocalisedHourLabels() const;
 
-    Q_INVOKABLE QDateTime addDaysToDate(const QDateTime &date, const int days);
+    Q_INVOKABLE Merkuro::KDateTime parseDateString(const QString &dateString) const;
+    Q_INVOKABLE int fullDaysBetweenDates(const Merkuro::KDateTime &date1, const Merkuro::KDateTime &date2) const;
 
     /// Gives prettified time
     Q_INVOKABLE QString secondsToReminderLabel(const qint64 seconds) const;
 
     [[nodiscard]] static QString formatSpelloutDuration(const KCalendarCore::Duration &duration, const KFormat &format, const bool allDay);
 
-    Q_INVOKABLE int weekNumber(const QDate &date) const;
+    Q_INVOKABLE int weekNumber(const Merkuro::KDateTime &date) const;
 
     [[nodiscard]] static QDate startOfWeek(const QDate &date, const QLocale &locale);
 

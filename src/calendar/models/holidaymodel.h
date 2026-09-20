@@ -6,6 +6,7 @@
 #include <KHolidays/HolidayRegion>
 #include <QDate>
 #include <QObject>
+#include <merkurokdatetime.h>
 #include <qqmlintegration.h>
 
 class HolidayModel : public QObject
@@ -20,7 +21,7 @@ class HolidayModel : public QObject
 public:
     explicit HolidayModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void loadDateRange(const QDate &start, int days);
+    Q_INVOKABLE void loadDateRange(const Merkuro::KDateTime &start, int days);
 
     [[nodiscard]] QStringList holidayRegions() const;
     void setHolidayRegions(const QStringList &holidayRegions);

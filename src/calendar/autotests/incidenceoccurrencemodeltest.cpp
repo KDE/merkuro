@@ -26,7 +26,7 @@ public:
     {
         QSignalSpy loadingChanged(&model, &IncidenceOccurrenceModel::loadingChanged);
 
-        model.setStart(m_now.date());
+        model.setStart(Merkuro::KDateTime(m_now));
         model.setLength(m_testModelLength);
         model.setCalendar(m_calendar);
 
@@ -133,8 +133,8 @@ private Q_SLOTS:
         QSignalSpy resetThrottleIntervalChanged(&model, &IncidenceOccurrenceModel::resetThrottleIntervalChanged);
         static constexpr auto testRefreshIntervalThrottle = 200;
 
-        model.setStart(m_now.date());
-        QCOMPARE(model.start(), m_now.date());
+        model.setStart(Merkuro::KDateTime(m_now));
+        QCOMPARE(model.start(), Merkuro::KDateTime(m_now));
         QCOMPARE(startChanged.count(), 1);
 
         model.setLength(m_testModelLength);
@@ -167,7 +167,7 @@ private Q_SLOTS:
         // but until a calendar is set nothing should happen. Let's check.
         // Wait for at least the time it takes for the throttler to let a reset happen
         const auto signalWaitTime = model.resetThrottleInterval() + 1; // To be safe
-        model.setStart(m_now.date());
+        model.setStart(Merkuro::KDateTime(m_now));
         model.setLength(m_testModelLength);
         QVERIFY(!loadingChanged.wait(signalWaitTime));
         QCOMPARE(loadingChanged.count(), 0);
@@ -191,7 +191,7 @@ private Q_SLOTS:
         QAbstractItemModelTester modelTester(&model);
         QSignalSpy loadingChanged(&model, &IncidenceOccurrenceModel::loadingChanged);
 
-        model.setStart(m_now.date());
+        model.setStart(Merkuro::KDateTime(m_now));
         model.setLength(m_testModelLength);
         model.setCalendar(m_calendar);
 

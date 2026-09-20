@@ -86,7 +86,7 @@ QVariant InfiniteMerkuroCalendarViewModel::data(const QModelIndex &idx, int role
         case Qt::DisplayRole:
             return firstDay;
         case FirstDayOfMonthRole:
-            return firstDay.startOfDay();
+            return QVariant::fromValue(Merkuro::KDateTime(firstDay.startOfDay()));
         case SelectedMonthRole:
             return firstDay.month();
         case SelectedYearRole:
@@ -103,7 +103,7 @@ QVariant InfiniteMerkuroCalendarViewModel::data(const QModelIndex &idx, int role
     case Qt::DisplayRole:
         return startDate;
     case StartDateRole:
-        return startDate.startOfDay();
+        return QVariant::fromValue(Merkuro::KDateTime(startDate.startOfDay()));
     case SelectedMonthRole:
         return startDate.month();
     case SelectedYearRole:
@@ -177,12 +177,12 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
         Q_UNREACHABLE();
     }
 
-    auto firstItemDate = data(index(0, 0), role).toDateTime().date();
-    auto lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime().date();
+    auto firstItemDate = data(index(0, 0), role).value<Merkuro::KDateTime>().date();
+    auto lastItemDate = data(index(rowCount() - 1, 0), role).value<Merkuro::KDateTime>().date();
 
     while (firstItemDate >= selectedDate) {
         addDates(false);
-        firstItemDate = data(index(0, 0), role).toDateTime().date();
+        firstItemDate = data(index(0, 0), role).value<Merkuro::KDateTime>().date();
         newIndex = 0;
     }
 
@@ -215,11 +215,11 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
 
     while (lastItemDate <= selectedDate) {
         addDates(true);
-        lastItemDate = data(index(rowCount() - 1, 0), role).toDateTime().date();
+        lastItemDate = data(index(rowCount() - 1, 0), role).value<Merkuro::KDateTime>().date();
     }
 
     if (m_scale == ThreeDayScale || m_scale == WeekScale || m_scale == WorkWeekScale) {
-        const auto newIndexStartDate = index(newIndex, 0).data(StartDateRole).toDate();
+        const auto newIndexStartDate = index(newIndex, 0).data(StartDateRole).value<Merkuro::KDateTime>().date();
         const auto startDateToSelectedDateDays = newIndexStartDate.daysTo(selectedDate);
         const auto dayDiffFloat = static_cast<float>(startDateToSelectedDateDays);
 
@@ -231,6 +231,11 @@ int InfiniteMerkuroCalendarViewModel::moveToDate(const QDate &selectedDate, cons
     }
 
     return newIndex;
+}
+
+int InfiniteMerkuroCalendarViewModel::moveToDate(const Merkuro::KDateTime &selectedDate, const Merkuro::KDateTime &currentDate, const int currentIndex)
+{
+    return moveToDate(selectedDate.date(), currentDate.date(), currentIndex);
 }
 
 void InfiniteMerkuroCalendarViewModel::addDates(const bool atEnd, const QDate startFrom)

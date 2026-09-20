@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Kirigami.ScrollablePage {
     id: root
@@ -58,7 +59,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, MerkuroComponents.KDateTimeFactory.now(), Calendar.Filter.collectionId);
         },
         Kirigami.Action {
             id: action

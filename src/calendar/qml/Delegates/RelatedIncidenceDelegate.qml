@@ -100,8 +100,8 @@ Item {
 
         QQC2.Label {
             text: incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo ?
-                incidenceWrapper.incidenceEnd.dateTime.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat) :
-                incidenceWrapper.incidenceStart.dateTime.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)
+                incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat) :
+                incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat)
             color: incidenceContents.textColor
             visible: !incidenceWrapper.allDay
         }

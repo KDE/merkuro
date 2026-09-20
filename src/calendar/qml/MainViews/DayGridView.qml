@@ -9,6 +9,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Item {
     id: root
@@ -21,15 +22,15 @@ Item {
     property int daysPerRow: 7
     property real weekHeaderWidth: Calendar.Config.showWeekNumbers ? Kirigami.Units.gridUnit * 1.5 : 0
 
-    readonly property date currentDate: Calendar.DateTimeState.currentDate
+    readonly property MerkuroComponents.KDateTime currentDate: Calendar.DateTimeState.currentDate
     // Getting the components once makes this faster when we need them repeatedly
-    readonly property int currentDay: currentDate.getDate()
-    readonly property int currentMonth: currentDate.getMonth()
-    readonly property int currentYear:currentDate.getFullYear()
+    readonly property int currentDay: currentDate.day
+    readonly property int currentMonth: currentDate.month - 1
+    readonly property int currentYear: currentDate.year
 
-    property date firstDayOfMonth: Calendar.DateUtils.getFirstDayOfMonth(currentDate)
-    property date startDate: Calendar.DateUtils.getFirstDayOfWeek(firstDayOfMonth)
-    readonly property int month: firstDayOfMonth.getMonth()
+    property MerkuroComponents.KDateTime firstDayOfMonth: currentDate.addDays(1 - currentDate.day).startOfDay()
+    property MerkuroComponents.KDateTime startDate: firstDayOfMonth.addDays(-((firstDayOfMonth.dayOfWeek - Qt.locale().firstDayOfWeek + 7) % 7))
+    readonly property int month: firstDayOfMonth.month - 1
 
     property bool paintGrid: true
     property bool showDayIndicator: true

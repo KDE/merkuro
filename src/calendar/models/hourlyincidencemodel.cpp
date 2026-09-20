@@ -46,8 +46,8 @@ QList<QModelIndex> HourlyIncidenceModel::sortedIncidencesFromSourceModel(const Q
     // Get incidences from source model
     for (int row = 0; row < mSourceModel->rowCount(); row++) {
         const auto srcIdx = mSourceModel->index(row, 0, {});
-        const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone());
-        const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone());
+        const auto start = srcIdx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone());
+        const auto end = srcIdx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone());
 
         // Skip incidences not part of the week
         if (end < rowStart || start > rowEnd) {
@@ -83,8 +83,8 @@ QList<QModelIndex> HourlyIncidenceModel::sortedIncidencesFromSourceModel(const Q
         const auto leftAllDay = left.data(IncidenceOccurrenceModel::AllDay).toBool();
         const auto rightAllDay = right.data(IncidenceOccurrenceModel::AllDay).toBool();
 
-        const auto leftDt = left.data(IncidenceOccurrenceModel::StartTime).toDateTime();
-        const auto rightDt = right.data(IncidenceOccurrenceModel::StartTime).toDateTime();
+        const auto leftDt = left.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime();
+        const auto rightDt = right.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime();
 
         if (leftAllDay && !rightAllDay) {
             return true;
@@ -126,8 +126,8 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
 
         incidenceData.description = idx.data(IncidenceOccurrenceModel::Description).toString();
         incidenceData.location = idx.data(IncidenceOccurrenceModel::Location).toString();
-        incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime();
-        incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime();
+        incidenceData.startTime = idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>();
+        incidenceData.endTime = idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>();
         incidenceData.allDay = idx.data(IncidenceOccurrenceModel::AllDay).toBool(),
         incidenceData.todoCompleted = idx.data(IncidenceOccurrenceModel::TodoCompleted).toBool();
         incidenceData.priority = idx.data(IncidenceOccurrenceModel::Priority).toInt();
@@ -166,17 +166,21 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
 
     while (!sorted.isEmpty()) {
         const auto idx = sorted.takeFirst();
-        const auto startDT = idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
-            ? idx.data(IncidenceOccurrenceModel::StartTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+        const auto startDT =
+            idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone()) > rowStart
+            ? idx.data(IncidenceOccurrenceModel::StartTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone())
             : rowStart;
-        const auto endDT = idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
-            ? idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone())
+        const auto endDT = idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone()) < rowEnd
+            ? idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone())
             : rowEnd;
         // Need to convert ints into doubles to get more accurate starting positions
         // We get a start position relative to the number of period spaces there are in a day
         const auto start = ((startDT.time().hour() * 1.0) * (60.0 / mPeriodLength)) + ((startDT.time().minute() * 1.0) / mPeriodLength);
         auto duration = // Give a minimum acceptable height or otherwise have unclickable incidence
-            qMax(getDuration(startDT, idx.data(IncidenceOccurrenceModel::EndTime).toDateTime().toTimeZone(QTimeZone::systemTimeZone()), mPeriodLength), 1.0);
+            qMax(getDuration(startDT,
+                             idx.data(IncidenceOccurrenceModel::EndTime).value<Merkuro::KDateTime>().dateTime().toTimeZone(QTimeZone::systemTimeZone()),
+                             mPeriodLength),
+                 1.0);
 
         // Make sure incidence doesn't extend past the end of the day
         if (start + duration > periodsPerDay) {
@@ -211,10 +215,10 @@ QList<IncidenceData> HourlyIncidenceModel::layoutLines(const QDateTime &rowStart
         auto incidence = result[i];
         int concurrentIncidences = 1;
 
-        const auto startDT =
-            incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) > rowStart ? incidence.startTime.toTimeZone(QTimeZone::systemTimeZone()) : rowStart;
-        const auto endDT =
-            incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) < rowEnd ? incidence.endTime.toTimeZone(QTimeZone::systemTimeZone()) : rowEnd;
+        const auto startDateTime = incidence.startTime.dateTime().toTimeZone(QTimeZone::systemTimeZone());
+        const auto endDateTime = incidence.endTime.dateTime().toTimeZone(QTimeZone::systemTimeZone());
+        const auto startDT = startDateTime > rowStart ? startDateTime : rowStart;
+        const auto endDT = endDateTime < rowEnd ? endDateTime : rowEnd;
         const auto duration = incidence.duration;
 
         // We need a "real" and "displayed" end time for two reasons:
@@ -299,10 +303,10 @@ QVariant HourlyIncidenceModel::data(const QModelIndex &idx, int role) const
 {
     Q_ASSERT(hasIndex(idx.row(), idx.column()) && mSourceModel);
 
-    const auto rowStart = mSourceModel->start().addDays(idx.row()).startOfDay();
+    const auto rowStart = mSourceModel->start().date().addDays(idx.row()).startOfDay();
     switch (role) {
     case PeriodStartDateTimeRole:
-        return rowStart;
+        return QVariant::fromValue(Merkuro::KDateTime(rowStart));
     case IncidencesRole:
         return QVariant::fromValue(layoutLines(rowStart));
     default:

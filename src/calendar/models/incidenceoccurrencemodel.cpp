@@ -32,22 +32,22 @@ IncidenceOccurrenceModel::IncidenceOccurrenceModel(QObject *parent)
     connect(m_colorWatcher.data(), &KConfigWatcher::configChanged, this, &IncidenceOccurrenceModel::resetFromSource);
 }
 
-void IncidenceOccurrenceModel::setStart(const QDate &start)
+void IncidenceOccurrenceModel::setStart(const Merkuro::KDateTime &start)
 {
-    if (start == mStart) {
+    if (start.date() == mStart) {
         return;
     }
 
-    mStart = start;
+    mStart = start.date();
     Q_EMIT startChanged();
 
     mEnd = mStart.addDays(mLength);
     scheduleReset();
 }
 
-QDate IncidenceOccurrenceModel::start() const
+Merkuro::KDateTime IncidenceOccurrenceModel::start() const
 {
-    return mStart;
+    return Merkuro::KDateTime(mStart.startOfDay());
 }
 
 void IncidenceOccurrenceModel::setLength(int length)
@@ -261,9 +261,9 @@ QVariant IncidenceOccurrenceModel::data(const QModelIndex &idx, int role) const
     case Location:
         return incidence->location();
     case StartTime:
-        return occurrence.start;
+        return QVariant::fromValue(Merkuro::KDateTime(occurrence.start));
     case EndTime:
-        return occurrence.end;
+        return QVariant::fromValue(Merkuro::KDateTime(occurrence.end));
     case Duration: {
         const KCalendarCore::Duration duration(occurrence.start, occurrence.end);
         return QVariant::fromValue(duration);

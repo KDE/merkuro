@@ -4,6 +4,7 @@
 #include "todosortfilterproxymodel.h"
 
 #include <Akonadi/CollectionColorAttribute>
+#include <merkurokdatetime.h>
 
 #include "../filter.h"
 using namespace Qt::Literals::StringLiterals;
@@ -97,9 +98,9 @@ QVariant TodoSortFilterProxyModel::data(const QModelIndex &index, int role) cons
     }
 
     if (role == Roles::StartTimeRole) {
-        return todoPtr->dtStart();
+        return QVariant::fromValue(Merkuro::KDateTime(todoPtr->dtStart()));
     } else if (role == Roles::EndTimeRole) {
-        return todoPtr->dtDue();
+        return QVariant::fromValue(Merkuro::KDateTime(todoPtr->dtDue()));
     } else if (role == Roles::DisplayDueDateRole) {
         return todoDueDateDisplayString(todoPtr, DisplayDateTimeAndIfOverdue);
     } else if (role == Roles::LocationRole) {

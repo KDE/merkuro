@@ -25,7 +25,7 @@ add_library(MerkuroComponents SHARED
     collectionutils.cpp
     collectionutils.h
     kdatetime.cpp
-    kdatetime.h
+    merkurokdatetime.h
     kdatetimefactory.cpp
     kdatetimefactory.h
     ${merkuro_components_SRCS}

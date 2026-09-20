@@ -12,6 +12,7 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kitemmodels
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 ListView {
     id: root
@@ -34,7 +35,6 @@ ListView {
     property var retainedTodoData: ({})
     property var retainedCollectionData: ({})
 
-    property date currentDate: new Date()
     property var filterCollectionDetails
 
     property int showCompleted: Calendar.TodoSortFilterProxyModel.ShowAll
@@ -140,7 +140,7 @@ ListView {
         helpfulAction: Kirigami.Action {
             text: i18n("Create")
             icon.name: "list-add"
-            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, new Date(), Calendar.Filter.collectionId);
+            onTriggered: Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(root.QQC2.ApplicationWindow.window, Calendar.IncidenceWrapper.TypeTodo, MerkuroComponents.KDateTimeFactory.now(), Calendar.Filter.collectionId);
         }
     }
 
@@ -160,7 +160,7 @@ ListView {
     delegate: Delegates.RoundedTreeDelegate {
         id: listItem
 
-        readonly property bool validEndDt: !isNaN(model.endTime.getTime())
+        readonly property bool validEndDt: model.endTime.isValid
 
         property alias mouseArea: mouseArea
         property bool repositionAnimationEnabled: false
@@ -178,8 +178,8 @@ ListView {
         required property var color
         required property var incidencePtr
         required property var collectionId
-        required property date startTime
-        required property date endTime
+        required property MerkuroComponents.KDateTime startTime
+        required property MerkuroComponents.KDateTime endTime
         required property var priority
         required property var todoCategories
         required property bool recurs
@@ -254,9 +254,9 @@ ListView {
 
             onViewClicked: listItem.clicked()
             onDeleteClicked: Calendar.CalendarUiUtils.setUpDelete(listItem.incidencePtr,
-                                                         listItem.endTime ? listItem.endTime :
-                                                                         listItem.startTime ? listItem.startTime :
-                                                                                           null)
+                                                         listItem.endTime.isValid ? listItem.endTime :
+                                                                         listItem.startTime.isValid ? listItem.startTime :
+                                                                                           MerkuroComponents.KDateTimeFactory.invalid())
             onTodoCompletedClicked: listItem.model.checked = listItem.model.checked === 0 ? 2 : 0
 
             GridLayout {

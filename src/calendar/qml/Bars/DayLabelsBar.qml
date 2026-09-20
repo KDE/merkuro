@@ -10,10 +10,11 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Row {
     id: root
-    property date startDate
+    property MerkuroComponents.KDateTime startDate
     property real dayWidth
     property real daysToShow
 
@@ -28,15 +29,15 @@ Row {
         delegate: QQC2.Control {
             id: delegate
             required property int modelData
-            property date day: Calendar.DateUtils.addDaysToDate(root.startDate, modelData)
+            property MerkuroComponents.KDateTime day: root.startDate.addDays(modelData)
 
             width: root.dayWidth
 
             Layout.maximumHeight: Kirigami.Units.gridUnit * 2
             contentItem: Kirigami.Heading {
                 text: {
-                    const longText = delegate.day.toLocaleString(Qt.locale(), "dddd");
-                    const midText = delegate.day.toLocaleString(Qt.locale(), "ddd");
+                    const longText = delegate.day.toLocaleDateString("dddd");
+                    const midText = delegate.day.toLocaleDateString("ddd");
                     const shortText = Qt.locale().name.startsWith("zh_") ? midText.slice(-1) : midText.slice(0, 1);
                     switch(Calendar.Config.weekdayLabelLength) {
                         case Calendar.Config.Full:
@@ -68,4 +69,3 @@ Row {
         }
     }
 }
-

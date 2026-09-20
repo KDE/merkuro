@@ -7,12 +7,13 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Components.MessageDialog {
     id: deletePage
 
-    signal addException(date exceptionDate, var incidenceWrapper)
-    signal addRecurrenceEndDate(date endDate, var incidenceWrapper)
+    signal addException(MerkuroComponents.KDateTime exceptionDate, var incidenceWrapper)
+    signal addRecurrenceEndDate(MerkuroComponents.KDateTime endDate, var incidenceWrapper)
     signal deleteIncidence(var incidencePtr)
     signal deleteIncidenceWithChildren(var incidencePtr)
     signal cancel
@@ -20,7 +21,7 @@ Components.MessageDialog {
     // For incidence deletion
     property var incidenceWrapper
     property bool incidenceHasChildren: incidenceWrapper !== undefined ? CalendarManager.hasChildren(incidenceWrapper.incidencePtr) : false
-    property date deleteDate
+    property MerkuroComponents.KDateTime deleteDate
 
     modal: true
     focus: true
@@ -50,9 +51,9 @@ Components.MessageDialog {
         } else if(incidenceWrapper.recurrenceData.type === 0 && deletePage.incidenceHasChildren) {
             return i18n("Item \"%1\" has sub-items. Do you want to delete all related items, or just the currently selected item?", incidenceWrapper.summary)
         } else if (incidenceWrapper.recurrenceData.type > 0 && deletePage.incidenceHasChildren) {
-            return i18n("The calendar item \"%1\" recurs over multiple dates. This item also has sub-items.\n\nDo you want to delete the selected occurrence on %2, also future occurrences, or all of its occurrences?\n\nDeleting all will also delete sub-items!", incidenceWrapper.summary, deleteDate.toLocaleDateString(Qt.locale()))
+            return i18n("The calendar item \"%1\" recurs over multiple dates. This item also has sub-items.\n\nDo you want to delete the selected occurrence on %2, also future occurrences, or all of its occurrences?\n\nDeleting all will also delete sub-items!", incidenceWrapper.summary, deleteDate.toLocaleDateString(Locale.NarrowFormat))
         } else if (incidenceWrapper.recurrenceData.type > 0) {
-            return i18n("The calendar item \"%1\" recurs over multiple dates. Do you want to delete the selected occurrence on %2, also future occurrences, or all of its occurrences?", incidenceWrapper.summary, deleteDate.toLocaleDateString(Qt.locale()))
+            return i18n("The calendar item \"%1\" recurs over multiple dates. Do you want to delete the selected occurrence on %2, also future occurrences, or all of its occurrences?", incidenceWrapper.summary, deleteDate.toLocaleDateString(Locale.NarrowFormat))
         }
         wrapMode: Text.Wrap
     }
@@ -86,9 +87,7 @@ Components.MessageDialog {
                 // We want to include the delete date in the deletion
                 // Setting the last recurrence day is not inclusive
                 // (i.e. occurrence on that day is not deleted)
-                let dateBeforeDeleteDate = new Date(deleteDate);
-                dateBeforeDeleteDate.setDate(deleteDate.getDate() - 1);
-                addRecurrenceEndDate(dateBeforeDeleteDate, incidenceWrapper)
+                addRecurrenceEndDate(deleteDate.addDays(-1), incidenceWrapper)
             }
         }
 

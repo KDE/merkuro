@@ -7,6 +7,7 @@
 #include "models/attachmentsmodel.h"
 #include "models/attendeesmodel.h"
 #include "models/recurrenceexceptionsmodel.h"
+#include "recurrencedata.h"
 
 #include <Akonadi/CollectionIdentificationAttribute>
 #include <Akonadi/Item>
@@ -17,61 +18,8 @@
 #include <QByteArray>
 #include <QObject>
 #include <QPointer>
-#include <kdatetime.h>
+#include <merkurokdatetime.h>
 #include <qqmlintegration.h>
-
-class MonthPosition
-{
-    Q_GADGET
-    Q_PROPERTY(int day MEMBER day)
-    Q_PROPERTY(int pos MEMBER pos)
-
-public:
-    int day;
-    int pos;
-
-    bool operator==(const MonthPosition &rhs) const
-    {
-        return day == rhs.day && pos == rhs.pos;
-    }
-};
-
-class RecurrenceData
-{
-    Q_GADGET
-    Q_PROPERTY(QList<bool> weekdays MEMBER weekdays)
-    Q_PROPERTY(int duration MEMBER duration)
-    Q_PROPERTY(int frequency MEMBER frequency)
-    Q_PROPERTY(QDateTime startDateTime MEMBER startDateTime)
-    Q_PROPERTY(QString startDateTimeDisplay MEMBER startDateTimeDisplay)
-    Q_PROPERTY(QDateTime endDateTime MEMBER endDateTime)
-    Q_PROPERTY(QString endDateTimeDisplay MEMBER endDateTimeDisplay)
-    Q_PROPERTY(QString endDateDisplay MEMBER endDateDisplay)
-    Q_PROPERTY(bool allDay MEMBER allDay)
-    Q_PROPERTY(ushort type MEMBER type)
-    Q_PROPERTY(QList<int> monthDays MEMBER monthDays)
-    Q_PROPERTY(QList<MonthPosition> monthPositions MEMBER monthPositions)
-    Q_PROPERTY(QList<int> yearDays MEMBER yearDays)
-    Q_PROPERTY(QList<int> yearDates MEMBER yearDates)
-    Q_PROPERTY(QList<int> yearMonths MEMBER yearMonths)
-
-public:
-    QList<bool> weekdays;
-    int duration;
-    int frequency;
-    QDateTime startDateTime;
-    QString startDateTimeDisplay;
-    QDateTime endDateTime;
-    QString endDateTimeDisplay;
-    QString endDateDisplay;
-    bool allDay;
-    ushort type;
-    QList<int> monthDays;
-    QList<MonthPosition> monthPositions;
-    QList<int> yearDays;
-    QList<int> yearDates;
-    QList<int> yearMonths;
-};
 
 /**
  * This class is a wrapper for a KCalendarCore::Incidence::Ptr object.
@@ -132,7 +80,7 @@ class IncidenceWrapper : public QObject, public Akonadi::ItemMonitor
     Q_PROPERTY(AttachmentsModel *attachmentsModel READ attachmentsModel NOTIFY attachmentsModelChanged)
 
     Q_PROPERTY(bool todoCompleted READ todoCompleted WRITE setTodoCompleted NOTIFY todoCompletedChanged)
-    Q_PROPERTY(QDateTime todoCompletionDt READ todoCompletionDt NOTIFY todoCompletionDtChanged)
+    Q_PROPERTY(Merkuro::KDateTime todoCompletionDt READ todoCompletionDt NOTIFY todoCompletionDtChanged)
     Q_PROPERTY(int todoPercentComplete READ todoPercentComplete WRITE setTodoPercentComplete NOTIFY todoPercentCompleteChanged)
 
     Q_PROPERTY(QString googleConferenceUrl READ googleConferenceUrl NOTIFY googleConferenceUrlChanged)
@@ -197,10 +145,12 @@ public:
     [[nodiscard]] Merkuro::KDateTime incidenceStart() const;
     Q_INVOKABLE void setIncidenceStart(const Merkuro::KDateTime &incidenceStart, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceStartDate(int day, int month, int year);
+    Q_INVOKABLE void setIncidenceStartDate(const Merkuro::KDateTime &date);
     Q_INVOKABLE void setIncidenceStartTime(int hours, int minutes);
     [[nodiscard]] Merkuro::KDateTime incidenceEnd() const;
     Q_INVOKABLE void setIncidenceEnd(const Merkuro::KDateTime &incidenceEnd, bool respectTimeZone = false);
     Q_INVOKABLE void setIncidenceEndDate(int day, int month, int year);
+    Q_INVOKABLE void setIncidenceEndDate(const Merkuro::KDateTime &date);
     Q_INVOKABLE void setIncidenceEndTime(int hours, int minutes);
     Q_INVOKABLE void setIncidenceTimeToNearestQuarterHour(bool setStartTime = true, bool setEndTime = true);
     [[nodiscard]] QByteArray timeZone() const;
@@ -227,7 +177,7 @@ public:
 
     [[nodiscard]] bool todoCompleted() const;
     void setTodoCompleted(bool completed);
-    [[nodiscard]] QDateTime todoCompletionDt();
+    [[nodiscard]] Merkuro::KDateTime todoCompletionDt();
     [[nodiscard]] int todoPercentComplete() const;
     void setTodoPercentComplete(int todoPercentComplete);
 

@@ -15,10 +15,26 @@ public:
 
 private:
     CalendarUtils utils;
+    QLocale m_originalLocale;
 
 private Q_SLOTS:
     void initTestCase()
     {
+        m_originalLocale = QLocale();
+        QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
+    }
+
+    void cleanupTestCase()
+    {
+        QLocale::setDefault(m_originalLocale);
+    }
+
+    void testParseDateString()
+    {
+        QCOMPARE(utils.parseDateString(u"1/2/2025"_s).date(), QDate(2025, 1, 2));
+        QCOMPARE(utils.parseDateString(u"1/2/26"_s).date(), QDate(2026, 1, 2));
+        QVERIFY(!utils.parseDateString(u"2/30/26"_s).isValid());
+        QVERIFY(!utils.parseDateString(u"not a date"_s).isValid());
     }
 
     void testRemindersLabel()
