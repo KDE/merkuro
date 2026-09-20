@@ -9,6 +9,8 @@
 #include <QObject>
 #include <qqmlregistration.h>
 
+#include "merkuro_contact_export.h"
+
 class ContactGroupEditorPrivate;
 class QAbstractItemModel;
 
@@ -60,7 +62,7 @@ class QAbstractItemModel;
  * @author Tobias Koenig <tokoe@kde.org>
  * @author Carl Schwan <carl@carlschwan.eu>
  */
-class ContactGroupEditor : public QObject
+class MERKURO_CONTACT_EXPORT ContactGroupEditor : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

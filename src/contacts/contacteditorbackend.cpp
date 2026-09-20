@@ -136,9 +136,9 @@ void ContactEditorBackend::itemFetchDone(KJob *job)
         m_contactMetaData.load(m_item);
         contact()->setDisplayType((AddresseeWrapper::DisplayType)m_contactMetaData.displayNameMode());
         contact()->setAddressee(m_item.payload<KContacts::Addressee>());
+        Q_EMIT contactChanged();
     }
     Q_EMIT itemChanged();
-    Q_EMIT contactChanged();
 }
 
 void ContactEditorBackend::parentCollectionFetchDone(KJob *job)
@@ -168,6 +168,7 @@ void ContactEditorBackend::parentCollectionFetchDone(KJob *job)
     m_contactMetaData.load(m_item);
     contact()->setDisplayType((AddresseeWrapper::DisplayType)m_contactMetaData.displayNameMode());
     contact()->setAddressee(m_item.payload<KContacts::Addressee>());
+    Q_EMIT contactChanged();
 }
 
 qint64 ContactEditorBackend::collectionId() const

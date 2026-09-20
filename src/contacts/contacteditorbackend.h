@@ -5,6 +5,7 @@
 #pragma once
 
 #include "contactmetadata.h"
+#include "merkuro_contact_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
 #include <QObject>
@@ -70,7 +71,7 @@ class AddresseeWrapper;
  * @author Tobias Koenig <tokoe@kde.org>
  * @author Carl Schwan <carl@carlschwan.eu>
  */
-class ContactEditorBackend : public QObject
+class MERKURO_CONTACT_EXPORT ContactEditorBackend : public QObject
 {
     Q_OBJECT
     QML_NAMED_ELEMENT(ContactEditor)

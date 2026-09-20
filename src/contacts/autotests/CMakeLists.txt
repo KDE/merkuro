@@ -24,3 +24,9 @@ ecm_add_test(phonemodeltest.cpp
     LINK_LIBRARIES merkuro_contact Qt::Test
     NAME_PREFIX "merkuro-contact-"
 )
+
+if(UNIX)
+    add_akonadi_isolated_test(SOURCE editorandrepositorytest.cpp
+        LINK_LIBRARIES merkuro_contact Qt::Test
+    )
+endif()

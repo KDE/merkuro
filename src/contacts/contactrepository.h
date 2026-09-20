@@ -6,6 +6,8 @@
 #include <QColor>
 #include <QObject>
 
+#include "merkuro_contact_export.h"
+
 class QAbstractItemModel;
 class QItemSelectionModel;
 class QSortFilterProxyModel;
@@ -21,7 +23,7 @@ class EntityMimeTypeFilterModel;
 class Session;
 }
 
-class ContactRepository : public QObject
+class MERKURO_CONTACT_EXPORT ContactRepository : public QObject
 {
     Q_OBJECT
 
