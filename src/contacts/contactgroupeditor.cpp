@@ -61,6 +61,7 @@ ContactGroupEditorPrivate::~ContactGroupEditorPrivate()
 void ContactGroupEditorPrivate::itemFetchDone(KJob *job)
 {
     if (job->error()) {
+        Q_EMIT mParent->errorOccured(job->errorString());
         return;
     }
 
@@ -70,6 +71,7 @@ void ContactGroupEditorPrivate::itemFetchDone(KJob *job)
     }
 
     if (fetchJob->items().isEmpty()) {
+        Q_EMIT mParent->errorOccured(i18n("The contact group could not be found."));
         return;
     }
 
@@ -93,11 +95,17 @@ void ContactGroupEditorPrivate::itemFetchDone(KJob *job)
 void ContactGroupEditorPrivate::parentCollectionFetchDone(KJob *job)
 {
     if (job->error()) {
+        Q_EMIT mParent->errorOccured(job->errorString());
         return;
     }
 
     auto fetchJob = qobject_cast<Akonadi::CollectionFetchJob *>(job);
     if (!fetchJob) {
+        return;
+    }
+
+    if (fetchJob->collections().isEmpty()) {
+        Q_EMIT mParent->errorOccured(i18n("The contact group address book could not be found."));
         return;
     }
 
@@ -131,7 +139,7 @@ void ContactGroupEditorPrivate::storeDone(KJob *job)
 
 void ContactGroupEditor::fetchItem()
 {
-    auto job = new ItemFetchJob(d->mItem);
+    auto job = new ItemFetchJob(d->mItem, this);
     job->fetchScope().fetchFullPayload();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
 
@@ -190,11 +198,11 @@ void ContactGroupEditor::loadContactGroup(const Akonadi::Item &item)
         Q_ASSERT_X(false, "ContactGroupEditor::loadContactGroup", "You are calling loadContactGroup in CreateMode!");
     }
 
-    auto job = new ItemFetchJob(item);
+    auto job = new ItemFetchJob(item, this);
     job->fetchScope().fetchFullPayload();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
 
-    connect(job, &ItemModifyJob::result, this, [this](KJob *job) {
+    connect(job, &ItemFetchJob::result, this, [this](KJob *job) {
         d->itemFetchDone(job);
     });
 
@@ -206,11 +214,13 @@ bool ContactGroupEditor::saveContactGroup()
 {
     if (d->mMode == EditMode) {
         if (!d->mItem.isValid()) {
+            Q_EMIT errorOccured(i18n("The contact group is no longer available."));
             return false;
         }
 
         if (d->mReadOnly) {
-            return true;
+            Q_EMIT errorOccured(i18n("The contact group is read-only."));
+            return false;
         }
 
         auto group = d->mItem.payload<KContacts::ContactGroup>();
@@ -221,7 +231,7 @@ bool ContactGroupEditor::saveContactGroup()
 
         d->mItem.setPayload<KContacts::ContactGroup>(group);
 
-        auto job = new ItemModifyJob(d->mItem);
+        auto job = new ItemModifyJob(d->mItem, this);
         connect(job, &ItemModifyJob::result, this, [this](KJob *job) {
             d->storeDone(job);
         });
@@ -256,7 +266,7 @@ bool ContactGroupEditor::saveContactGroup()
         item.setPayload<KContacts::ContactGroup>(group);
         item.setMimeType(KContacts::ContactGroup::mimeType());
 
-        auto job = new ItemCreateJob(item, d->mDefaultCollection);
+        auto job = new ItemCreateJob(item, d->mDefaultCollection, this);
         connect(job, &ItemCreateJob::result, this, [this](KJob *job) {
             d->storeDone(job);
         });

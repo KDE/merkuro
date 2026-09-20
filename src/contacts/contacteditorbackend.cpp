@@ -10,6 +10,7 @@
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
+#include <KLocalizedString>
 
 ContactEditorBackend::ContactEditorBackend(QObject *parent)
     : QObject(parent)
@@ -61,7 +62,10 @@ Akonadi::Item ContactEditorBackend::item() const
 
 void ContactEditorBackend::setItem(const Akonadi::Item &item)
 {
-    auto job = new Akonadi::ItemFetchJob(item);
+    m_item = item;
+    Q_EMIT itemChanged();
+
+    auto job = new Akonadi::ItemFetchJob(item, this);
     job->fetchScope().fetchFullPayload();
     job->fetchScope().fetchAttribute<ContactMetaDataAttribute>();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
@@ -89,7 +93,7 @@ void ContactEditorBackend::setupMonitor()
 
 void ContactEditorBackend::fetchItem()
 {
-    auto job = new Akonadi::ItemFetchJob(m_item);
+    auto job = new Akonadi::ItemFetchJob(m_item, this);
     job->fetchScope().fetchFullPayload();
     job->fetchScope().fetchAttribute<ContactMetaDataAttribute>();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
@@ -112,6 +116,7 @@ void ContactEditorBackend::itemFetchDone(KJob *job)
     }
 
     if (fetchJob->items().isEmpty()) {
+        Q_EMIT errorOccured(i18n("The contact could not be found."));
         return;
     }
 
@@ -122,7 +127,7 @@ void ContactEditorBackend::itemFetchDone(KJob *job)
         // if in edit mode we have to fetch the parent collection to find out
         // about the modify rights of the item
 
-        auto collectionFetchJob = new Akonadi::CollectionFetchJob(m_item.parentCollection(), Akonadi::CollectionFetchJob::Base);
+        auto collectionFetchJob = new Akonadi::CollectionFetchJob(m_item.parentCollection(), Akonadi::CollectionFetchJob::Base, this);
         this->connect(collectionFetchJob, &Akonadi::CollectionFetchJob::result, this, [this](KJob *job) {
             parentCollectionFetchDone(job);
         });
@@ -148,6 +153,11 @@ void ContactEditorBackend::parentCollectionFetchDone(KJob *job)
         return;
     }
 
+    if (fetchJob->collections().isEmpty()) {
+        Q_EMIT errorOccured(i18n("The contact address book could not be found."));
+        return;
+    }
+
     const Akonadi::Collection parentCollection = fetchJob->collections().at(0);
     if (parentCollection.isValid()) {
         setReadOnly(!(parentCollection.rights() & Akonadi::Collection::CanChangeItem));
@@ -167,9 +177,14 @@ qint64 ContactEditorBackend::collectionId() const
 
 void ContactEditorBackend::saveContactInAddressBook()
 {
+    if (!m_addressee) {
+        Q_EMIT errorOccured(i18n("The contact is not loaded yet."));
+        return;
+    }
+
     if (m_mode == EditMode) {
         if (!m_item.isValid() || m_readOnly) {
-            qDebug() << "item not valid anymore";
+            Q_EMIT errorOccured(m_readOnly ? i18n("The contact is read-only.") : i18n("The contact is no longer available."));
             return;
         }
 
@@ -181,12 +196,15 @@ void ContactEditorBackend::saveContactInAddressBook()
 
         m_item.setPayload<KContacts::Addressee>(addressee);
 
-        auto job = new Akonadi::ItemModifyJob(m_item);
+        auto job = new Akonadi::ItemModifyJob(m_item, this);
         connect(job, &Akonadi::ItemModifyJob::result, this, [this](KJob *job) {
             storeDone(job);
         });
     } else if (m_mode == CreateMode) {
-        Q_ASSERT(m_defaultAddressBook.isValid());
+        if (!m_defaultAddressBook.isValid()) {
+            Q_EMIT errorOccured(i18n("No address book selected."));
+            return;
+        }
 
         KContacts::Addressee addr(m_addressee->addressee());
         storeContact(addr, m_contactMetaData);
@@ -197,7 +215,7 @@ void ContactEditorBackend::saveContactInAddressBook()
 
         m_contactMetaData.store(item);
 
-        auto job = new Akonadi::ItemCreateJob(item, m_defaultAddressBook);
+        auto job = new Akonadi::ItemCreateJob(item, m_defaultAddressBook, this);
         connect(job, &Akonadi::ItemCreateJob::result, this, [this](KJob *job) {
             storeDone(job);
         });
