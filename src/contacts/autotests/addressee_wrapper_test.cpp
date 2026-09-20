@@ -3,6 +3,7 @@
 
 #include "../addresseewrapper.h"
 
+#include <KContacts/Email>
 #include <QSignalSpy>
 #include <QTest>
 
@@ -19,8 +20,10 @@ private Q_SLOTS:
         addressee.setUid(u"ada-lovelace"_s);
         addressee.setGivenName(u"Ada"_s);
         addressee.setFamilyName(u"Lovelace"_s);
-        addressee.setName(u"Ada Lovelace"_s);
-        addressee.insertEmail(u"ada@example.org"_s, true);
+        addressee.setFormattedName(u"Ada Lovelace"_s);
+        KContacts::Email email(u"ada@example.org"_s);
+        email.setPreferred(true);
+        addressee.setEmailList({email});
 
         KContacts::PhoneNumber phone(u"+49 123 456"_s);
         addressee.insertPhoneNumber(phone);
@@ -39,7 +42,7 @@ private Q_SLOTS:
         QCOMPARE(nameChanged.count(), 1);
         QCOMPARE(wrapper.formattedName(), u"Ada Byron Lovelace"_s);
         QCOMPARE(wrapper.givenName(), u"Ada"_s);
-        QCOMPARE(wrapper.familyName(), u"Byron Lovelace"_s);
+        QCOMPARE(wrapper.familyName(), u"Lovelace"_s);
 
         wrapper.emailModel()->addEmail(u"ada@kde.org"_s, EmailModel::Work);
         QCOMPARE(wrapper.addressee().emails().size(), 2);
@@ -50,7 +53,9 @@ private Q_SLOTS:
     {
         KContacts::Addressee addressee;
         addressee.setName(u"Grace Hopper"_s);
-        addressee.insertEmail(u"grace@example.org"_s, true);
+        KContacts::Email email(u"grace@example.org"_s);
+        email.setPreferred(true);
+        addressee.setEmailList({email});
 
         AddresseeWrapper wrapper;
         wrapper.setAddressee(addressee);
