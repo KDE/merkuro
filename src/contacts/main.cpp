@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     engine.loadFromModule("org.kde.merkuro.contact", "Main");
 
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {

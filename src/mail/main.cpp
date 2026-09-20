@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 
     engine.addImageProvider(u"contact"_s, new ContactImageProvider);
 
-    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     if (!args.isEmpty()) {
         engine.loadFromModule("org.kde.merkuro.mail", "OpenMbox");
         const auto rootObjects = engine.rootObjects();

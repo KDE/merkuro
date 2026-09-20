@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
         }
     });
 
-    engine.rootContext()->setContextObject(new KLocalizedQmlContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     engine.loadFromModule("org.kde.merkuro.calendar", "Main");
 
     if (engine.rootObjects().isEmpty()) {
