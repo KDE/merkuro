@@ -8,6 +8,7 @@ import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.mail as Mail
+import org.kde.ki18n
 
 RowLayout {
     id: root
@@ -103,7 +104,7 @@ RowLayout {
                                 Layout.maximumHeight: itemProgressBar.implicitHeight
                                 display: QQC2.AbstractButton.IconOnly
                                 flat: true
-                                text: i18n("Cancel")
+                                text: KI18n.i18n("Cancel")
                                 icon.name: "process-stop"
                                 visible: model.canBeCancelled
                                 onClicked: progressModel.cancelItem(model.id)

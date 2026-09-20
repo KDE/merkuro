@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail
+import org.kde.ki18n
 
 Kirigami.Action {
     required property var index
@@ -14,12 +15,12 @@ Kirigami.Action {
 
         Kirigami.PromptDialog {
             id: newFolderDialog
-            title: i18n("New Folder")
+            title: KI18n.i18n("New Folder")
             standardButtons: Kirigami.Dialog.NoButton
 
             customFooterActions: [
                 Kirigami.Action {
-                    text: i18n("Create Folder")
+                    text: KI18n.i18n("Create Folder")
                     icon.name: "dialog-ok"
                     onTriggered: {
                         MailManager.addCollection(index, newFolderName.text);
@@ -27,7 +28,7 @@ Kirigami.Action {
                     }
                 },
                 Kirigami.Action {
-                    text: i18n("Cancel")
+                    text: KI18n.i18n("Cancel")
                     icon.name: "dialog-cancel"
                     onTriggered: newFolderDialog.close() 
                 }
@@ -35,7 +36,7 @@ Kirigami.Action {
 
             QQC2.TextField {
                 id: newFolderName
-                placeholderText: i18n("Folder Name…")
+                placeholderText: KI18n.i18n("Folder Name…")
             }
         }
     }

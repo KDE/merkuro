@@ -5,10 +5,11 @@ import QtQuick
 
 import org.kde.kirigami as Kirigami
 import org.kde.raven
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Mailboxes")
+    title: KI18n.i18n("Mailboxes")
     
     MailBoxList {}
 }

@@ -12,6 +12,7 @@ import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.treeview as Tree
 
 import org.kde.merkuro.components
+import org.kde.ki18n
 
 Delegates.IndicatorItemDelegate {
     id: root
@@ -181,7 +182,7 @@ Delegates.IndicatorItemDelegate {
                     }
 
                     QQC2.ToolTip.visible: unreadChildrenHoverHandler.hovered
-                    QQC2.ToolTip.text: i18np("%1 unread message in this thread", "%1 unread messages in this thread", root.unreadChildCount)
+                    QQC2.ToolTip.text: KI18n.i18np("%1 unread message in this thread", "%1 unread messages in this thread", root.unreadChildCount)
                 }
 
                 QQC2.AbstractButton {
@@ -224,8 +225,8 @@ Delegates.IndicatorItemDelegate {
     
                     QQC2.ToolTip.visible: scheduledHoverHandler.hovered
                     QQC2.ToolTip.text: root.dispatchMode && root.dispatchMode.automatic
-                        ? i18nc("@info:tooltip %1 is a date and time", "Scheduled at %1", scheduledDate.text)
-                        : i18nc("@info:tooltip", "Require manual action. Use Send Now action to send immediately or use Reschedule action to set a date and time.")
+                        ? KI18n.i18nc("@info:tooltip %1 is a date and time", "Scheduled at %1", scheduledDate.text)
+                        : KI18n.i18nc("@info:tooltip", "Require manual action. Use Send Now action to send immediately or use Reschedule action to set a date and time.")
     
                     Kirigami.Icon {
                         Layout.preferredWidth: Kirigami.Units.iconSizes.small
@@ -238,7 +239,7 @@ Delegates.IndicatorItemDelegate {
                         color: Kirigami.Theme.disabledTextColor
                         text: root.dispatchMode && root.dispatchMode.automatic
                             ? root.dispatchMode.sendAfter.toLocaleString(Qt.locale(), Locale.ShortFormat)
-                            : i18n("Manual")
+                            : KI18n.i18n("Manual")
                     }
                 }
             }

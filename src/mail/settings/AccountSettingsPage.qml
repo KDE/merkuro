@@ -11,12 +11,13 @@ import org.kde.akonadi.mime as AkonadiMime
 import org.kde.kidentitymanagement as KIdentityManagement
 import org.kde.merkuro.mail
 import org.kde.merkuro.mail.settings as MailSettings
+import org.kde.ki18n
 
 FormCard.FormCardPage {
     id: accountsSettingsPage
 
     FormCard.FormHeader {
-        title: i18nc("@action:group", "Identities")
+        title: KI18n.i18nc("@action:group", "Identities")
     }
 
     KIdentityManagement.IdentityConfigurationForm {
@@ -24,20 +25,20 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group Title for the list of receiving accounts which are imap or pop3 email accounts", "Receiving Accounts")
+        title: KI18n.i18nc("@title:group Title for the list of receiving accounts which are imap or pop3 email accounts", "Receiving Accounts")
     }
 
     Akonadi.AgentConfigurationForm {
-        addPageTitle: i18n("Mail Account Configuration")
+        addPageTitle: KI18n.i18n("Mail Account Configuration")
         mimetypes: Akonadi.MimeTypes.mail
         specialCollections: AkonadiMime.SpecialMailCollections
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group Title for the list of sending accounts which are SMTP email accounts", "Sending Accounts")
+        title: KI18n.i18nc("@title:group Title for the list of sending accounts which are SMTP email accounts", "Sending Accounts")
     }
 
     MailSettings.TransportConfigurationForm {
-        addPageTitle: i18n("Mail Account Configuration")
+        addPageTitle: KI18n.i18n("Mail Account Configuration")
     }
 }

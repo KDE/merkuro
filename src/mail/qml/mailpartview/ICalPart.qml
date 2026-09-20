@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQml.Models
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
+import org.kde.ki18n
 
 ColumnLayout {
     id: root
@@ -25,6 +26,6 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.maximumWidth: parent.width
         visible: true
-        text: i18n("This mail contains an invitation")
+        text: KI18n.i18n("This mail contains an invitation")
     }
 }

@@ -3,13 +3,14 @@
 
 import QtQuick
 import org.kde.kirigamiaddons.settings as KirigamiSettings
+import org.kde.ki18n
 
 KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"
     modules: [
         KirigamiSettings.ConfigurationModule {
             moduleId: "accounts"
-            text: i18nc("@title", "Accounts")
+            text: KI18n.i18nc("@title", "Accounts")
             icon.name: "preferences-system-users"
             page: () => Qt.createComponent("AccountSettingsPage.qml")
         }

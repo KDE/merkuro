@@ -13,6 +13,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.mail
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -28,7 +29,7 @@ FormCard.FormCard {
 
         property var transportDelegate
 
-        title: i18nc("@title:dialog", "Rename %1", transportDelegate.transportName)
+        title: KI18n.i18nc("@title:dialog", "Rename %1", transportDelegate.transportName)
         standardButtons:  QQC2.Dialog.Cancel | QQC2.Dialog.Ok
         parent: root.QQC2.Overlay.overlay
 
@@ -37,7 +38,7 @@ FormCard.FormCard {
                 id: nameDelegate
                 readonly property bool isValid: text.trim().length > 0
 
-                label: i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
+                label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
                 placeholderText: transportDelegate.transportName
             }
         }
@@ -70,7 +71,7 @@ FormCard.FormCard {
             trailing: RowLayout {
                 QQC2.ToolButton {
                     icon.name: "entry-edit"
-                    text: i18nc("@action:button", "Edit")
+                    text: KI18n.i18nc("@action:button", "Edit")
                     display: QQC2.Button.IconOnly
                     onClicked: {
                         renameDialog.transportDelegate = transportDelegate;
@@ -80,14 +81,14 @@ FormCard.FormCard {
 
                 QQC2.ToolButton {
                     icon.name: "settings-configure"
-                    text: i18nc("@action:button", "Settings")
+                    text: KI18n.i18nc("@action:button", "Settings")
                     display: QQC2.Button.IconOnly
                     onClicked: root._configuration.edit(transportDelegate.transportIdentifier);
                 }
 
                 QQC2.ToolButton {
                     icon.name: "delete"
-                    text: i18nc("@action:button", "Delete")
+                    text: KI18n.i18nc("@action:button", "Delete")
                     display: QQC2.Button.IconOnly
                     onClicked: root._configuration.remove(transportDelegate.transportIdentifier);
                     enabled: root._configuration.isRemovable(transportDelegate.transportIdentifier)
@@ -103,7 +104,7 @@ FormCard.FormCard {
 
     FormCard.FormButtonDelegate {
         id: addAccountDelegate
-        text: i18nc("@action:button", "Add Account")
+        text: KI18n.i18nc("@action:button", "Add Account")
         icon.name: "list-add-symbolic"
         onClicked: (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(addAccountPage)
     }
@@ -132,7 +133,7 @@ FormCard.FormCard {
             }
 
             FormCard.FormHeader {
-                title: i18nc("General")
+                title: KI18n.i18nc("General")
             }
 
             FormCard.FormCard {
@@ -140,17 +141,17 @@ FormCard.FormCard {
                     id: newNameDelegate
                     readonly property bool isValid: text.trim().length > 0
 
-                    label: i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
+                    label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
                 }
 
                 FormCard.FormCheckDelegate {
                     id: defaultDelegate
-                    text: i18nc("@action:button Set the outgoing account as the default", "Set as default")
+                    text: KI18n.i18nc("@action:button Set the outgoing account as the default", "Set as default")
                 }
             }
 
             FormCard.FormHeader {
-                title: i18nc("@title:header Title of a list of transport types (SMTP, Microsoft Exchange, etc.)", "Select the account type")
+                title: KI18n.i18nc("@title:header Title of a list of transport types (SMTP, Microsoft Exchange, etc.)", "Select the account type")
             }
 
             FormCard.FormCard {

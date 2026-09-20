@@ -12,10 +12,11 @@ import org.kde.kitemmodels as KItemModels
 import org.kde.merkuro.mail
 import org.kde.akonadi as Akonadi
 import org.kde.kidentitymanagement as KIdentityManagement
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: mailComposition
-    title: initialSubject.length > 0 ? initialSubject : i18nc("@title:window", "New Message")
+    title: initialSubject.length > 0 ? initialSubject : KI18n.i18nc("@title:window", "New Message")
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
@@ -37,7 +38,7 @@ Kirigami.ScrollablePage {
         anchors.fill: parent
 
         QQC2.Label {
-            text: i18n("From:")
+            text: KI18n.i18n("From:")
             Layout.leftMargin: Kirigami.Units.largeSpacing
         }
 
@@ -48,7 +49,7 @@ Kirigami.ScrollablePage {
         }
 
         QQC2.Label {
-            text: i18n("Identity:")
+            text: KI18n.i18n("Identity:")
             Layout.leftMargin: Kirigami.Units.largeSpacing
         }
 
@@ -76,10 +77,10 @@ Kirigami.ScrollablePage {
                 Component.onCompleted: currentIndex = Math.min(mailClient.headerModel.rowCount() - 1, 1);
                 onCurrentValueChanged: mailClient.headerModel.setType(index, currentValue);
                 model: [
-                    { value: MailHeaderModel.To, text: i18n("To:") },
-                    { value: MailHeaderModel.CC, text: i18n("CC:") },
-                    { value: MailHeaderModel.BCC, text: i18n("BCC:") },
-                    { value: MailHeaderModel.ReplyTo, text: i18n("Reply-To:") },
+                    { value: MailHeaderModel.To, text: KI18n.i18n("To:") },
+                    { value: MailHeaderModel.CC, text: KI18n.i18n("CC:") },
+                    { value: MailHeaderModel.BCC, text: KI18n.i18n("BCC:") },
+                    { value: MailHeaderModel.ReplyTo, text: KI18n.i18n("Reply-To:") },
                 ]
             }
         }
@@ -104,7 +105,7 @@ Kirigami.ScrollablePage {
 
         QQC2.Label {
             id: subject
-            text: i18n("Subject:")
+            text: KI18n.i18n("Subject:")
             Layout.leftMargin: Kirigami.Units.largeSpacing
         }
         QQC2.TextField {
@@ -164,7 +165,7 @@ Kirigami.ScrollablePage {
                     KeyNavigation.priority: KeyNavigation.BeforeItem
                     KeyNavigation.tab: sendButton
 
-                    text: i18nc("@action:button", "Attach Document")
+                    text: KI18n.i18nc("@action:button", "Attach Document")
                     onClicked: {
                         let dialog = Qt.createComponent("QtQuick.Dialogs", "FileDialog").createObject() as FileDialog;
                         dialog.accepted.connect(() => {
@@ -178,7 +179,7 @@ Kirigami.ScrollablePage {
                 }
                 QQC2.ToolButton {
                     id: sendButton
-                    text: i18n("Send")
+                    text: KI18n.i18n("Send")
                     icon.name: 'document-send'
                     onClicked: {
                         mailClient.setDeliveryMode(MailClient.DeliveryMode.Now); // Reset to default
@@ -187,7 +188,7 @@ Kirigami.ScrollablePage {
                 }
                 QQC2.ToolButton {
                     id: sendLaterButton
-                    text: i18nc("@action:button", "Send Later")
+                    text: KI18n.i18nc("@action:button", "Send Later")
                     icon.name: 'mail-queue-symbolic'
                     onClicked: {
                         let dialog = sendLaterDialogComponent.createObject(mailComposition, {
@@ -211,7 +212,7 @@ Kirigami.ScrollablePage {
         property string subject
         property string mailContent
 
-        title: i18nc("@title:dialog", "Schedule Send")
+        title: KI18n.i18nc("@title:dialog", "Schedule Send")
         standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
         onAccepted: {
@@ -224,13 +225,13 @@ Kirigami.ScrollablePage {
 
         FormCard.FormCheckDelegate {
             id: sendLaterManual
-            text: i18nc("@label", "Manual mode")
+            text: KI18n.i18nc("@label", "Manual mode")
         }
 
         FormCard.FormDateTimeDelegate {
             id: sendLaterDatePicker
             enabled: !sendLaterManual.checked
-            text: i18nc("@label", "Send Date and Time")
+            text: KI18n.i18nc("@label", "Send Date and Time")
         }
     }
 }

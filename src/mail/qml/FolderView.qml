@@ -15,6 +15,7 @@ import org.kde.kitemmodels
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import './private'
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: root
@@ -23,7 +24,7 @@ Kirigami.ScrollablePage {
     property alias searchString: searchModel.searchString
     property bool threadingModelRefreshPending: true
 
-    title: searchString.length > 0 ? i18nc("@title", "Search: %1", searchString) : mailModel.folderName
+    title: searchString.length > 0 ? KI18n.i18nc("@title", "Search: %1", searchString) : mailModel.folderName
 
     MailModel {
         id: mailModel
@@ -75,7 +76,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: 'mail-send'
-            text: i18nc("@action:menu", "Create")
+            text: KI18n.i18nc("@action:menu", "Create")
             onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
         },
         Kirigami.Action {
@@ -83,8 +84,8 @@ Kirigami.ScrollablePage {
             visible: root.searchString.length === 0
         },
         Kirigami.Action {
-            text: i18nc("@action", "Thread Messages")
-            tooltip: i18nc("@tooltip", "Toggle threaded message view")
+            text: KI18n.i18nc("@action", "Thread Messages")
+            tooltip: KI18n.i18nc("@tooltip", "Toggle threaded message view")
             icon.name: "view-list-tree"
             checkable: true
             checked: Config.threadedMessageView
@@ -126,7 +127,7 @@ Kirigami.ScrollablePage {
             }
 
             Kirigami.Heading {
-                text: i18ncp("Number of selected emails", "%1 selected", "%1 selected", mailSelectionModel.selectedIndexes.length)
+                text: KI18n.i18ncp("Number of selected emails", "%1 selected", "%1 selected", mailSelectionModel.selectedIndexes.length)
                 level: 2
                 elide: Text.ElideRight
                 Layout.fillWidth: true
@@ -172,8 +173,8 @@ Kirigami.ScrollablePage {
             onMailSaveAs: (item) => {
                 const component = Qt.createComponent("QtQuick.Dialogs", "FileDialog");
                 const dialog = component.createObject(root.QQC2.Overlay.overlay, {
-                    title: i18n("Save Message - Merkuro Mail"),
-                    nameFilters: [i18n("Email messages (*.mbox)")],
+                    title: KI18n.i18n("Save Message - Merkuro Mail"),
+                    nameFilters: [KI18n.i18n("Email messages (*.mbox)")],
                     currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation),
                     fileMode: FileDialog.SaveFile,
                 });
@@ -195,7 +196,7 @@ Kirigami.ScrollablePage {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
                 const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',
-                    title: i18nc("@title:dialog", "Move Selection To:"),
+                    title: KI18n.i18nc("@title:dialog", "Move Selection To:"),
                     mimeTypeFilter: [Akonadi.MimeTypes.mail],
                 });
 
@@ -212,7 +213,7 @@ Kirigami.ScrollablePage {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
                 const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',
-                    title: i18nc("@title:dialog", "Copy Selection To:"),
+                    title: KI18n.i18nc("@title:dialog", "Copy Selection To:"),
                     mimeTypeFilter: [Akonadi.MimeTypes.mail],
                 });
                 page.selected.connect((collection) => {
@@ -240,7 +241,7 @@ Kirigami.ScrollablePage {
 
                 property var item
 
-                title: i18nc("@title:dialog", "Reschedule Message")
+                title: KI18n.i18nc("@title:dialog", "Reschedule Message")
                 standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
                 onAccepted: MailManager.rescheduleMail(dialogRoot.item, dateTimeDelegate.value)
@@ -248,7 +249,7 @@ Kirigami.ScrollablePage {
 
                 FormCard.FormDateTimeDelegate {
                     id: dateTimeDelegate
-                    text: i18nc("@label", "Send Date and Time")
+                    text: KI18n.i18nc("@label", "Send Date and Time")
                 }
             }
         }
@@ -257,7 +258,7 @@ Kirigami.ScrollablePage {
             id: contextMenu
             Components.ConvergentContextMenu {
                 Kirigami.Action {
-                    text: i18nc("@action:menu", "Mark Message")
+                    text: KI18n.i18nc("@action:menu", "Mark Message")
 
                     Kirigami.Action {
                         fromQAction: MailApplication.action('mark_read')
@@ -323,15 +324,15 @@ Kirigami.ScrollablePage {
             id: mailboxSelected
             anchors.centerIn: parent
             visible: MailManager.selectedFolderName === ""
-            text: i18n("No mailbox selected")
-            explanation: i18n("Select a mailbox from the sidebar.")
+            text: KI18n.i18n("No mailbox selected")
+            explanation: KI18n.i18n("Select a mailbox from the sidebar.")
             icon.name: "mail-unread"
         }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: mails.count === 0 && !mailboxSelected.visible
-            text: i18n("Mailbox is empty")
+            text: KI18n.i18n("Mailbox is empty")
             icon.name: "mail-folder-inbox"
         }
 

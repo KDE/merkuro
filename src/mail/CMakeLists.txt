@@ -85,6 +85,7 @@ target_link_libraries(merkuro_mail_static
         KF6::IconThemes
         KF6::Notifications
         MerkuroComponents
+        KF6::I18nQml
 )
 
 ecm_add_qml_module(merkuro_mail_static
@@ -95,6 +96,7 @@ ecm_add_qml_module(merkuro_mail_static
         org.kde.kirigamiaddons.formcard
         org.kde.kirigamiaddons.delegates
         org.kde.kirigamiaddons.statefulapp
+        org.kde.ki18n
         org.kde.akonadi
 )
 

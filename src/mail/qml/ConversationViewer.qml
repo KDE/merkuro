@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
 import org.kde.pim.mimetreeparser as MimeTreeParser
+import org.kde.ki18n
 
 MimeTreeParser.MailViewer {
     id: root
@@ -26,17 +27,17 @@ MimeTreeParser.MailViewer {
 
     actions: [
         Kirigami.Action {
-            text: i18nc("@action", "Reply")
+            text: KI18n.i18nc("@action", "Reply")
             icon.name: "mail-reply-sender-symbolic"
             onTriggered: mailActions.replyToSender(root.emptyItem)
         },
         Kirigami.Action {
-            text: i18nc("@action", "Reply to All")
+            text: KI18n.i18nc("@action", "Reply to All")
             icon.name: "mail-reply-all-symbolic"
             onTriggered: mailActions.replyToAll(root.emptyItem)
         },
         Kirigami.Action {
-            text: i18nc("@action", "Forward")
+            text: KI18n.i18nc("@action", "Forward")
             icon.name: "mail-forward-symbolic"
             onTriggered: mailActions.forward(root.emptyItem)
         },
@@ -114,7 +115,7 @@ MimeTreeParser.MailViewer {
                 columns: 2
 
                 QQC2.Label {
-                    text: i18n('Date:')
+                    text: KI18n.i18n('Date:')
                     font.bold: true
                     visible: date.text.length > 0
 
@@ -129,7 +130,7 @@ MimeTreeParser.MailViewer {
                 }
 
                 QQC2.Label {
-                    text: i18n('From:')
+                    text: KI18n.i18n('From:')
                     font.bold: true
                     visible: root.from.length > 0
 
@@ -145,7 +146,7 @@ MimeTreeParser.MailViewer {
                 }
 
                 QQC2.Label {
-                    text: i18n('Sender:')
+                    text: KI18n.i18n('Sender:')
                     font.bold: true
                     visible: root.sender.length > 0 && root.sender !== root.from
 
@@ -161,7 +162,7 @@ MimeTreeParser.MailViewer {
                 }
 
                 QQC2.Label {
-                    text: i18n('To:')
+                    text: KI18n.i18n('To:')
                     font.bold: true
                     visible: root.to.length > 0
 

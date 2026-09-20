@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
+import org.kde.ki18n
 
 Controls.Action {
     id: root
@@ -17,7 +18,7 @@ Controls.Action {
 
     signal removed
 
-    text: i18nc("@action", "Move to Trash")
+    text: KI18n.i18nc("@action", "Move to Trash")
     icon.name: "albumfolder-user-trash-symbolic"
 
 
@@ -26,7 +27,7 @@ Controls.Action {
 
         implicitWidth: Math.min(parent.width - Kirigami.Units.gridUnit * 2, Kirigami.Units.gridUnit * 30)
         dontShowAgainName: 'delete-mail'
-        title: i18nc("@title:dialog", "Delete Email")
+        title: KI18n.i18nc("@title:dialog", "Delete Email")
         dialogType: Components.MessageDialog.Warning
         standardButtons: Controls.Dialog.Ok | Controls.Dialog.Cancel
 
@@ -40,12 +41,12 @@ Controls.Action {
 
         Component.onCompleted: {
             const okButton = dialog.standardButton(Controls.Dialog.Ok)
-            okButton.text = i18nc("@action:button", "Delete Email")
+            okButton.text = KI18n.i18nc("@action:button", "Delete Email")
             okButton.icon.name = "delete-symbolic"
         }
 
         Kirigami.SelectableLabel {
-            text: i18n("Are you sure you want to delete the email \"%1\", discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", root.name )
+            text: KI18n.i18n("Are you sure you want to delete the email \"%1\", discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", root.name )
             Layout.fillWidth: true
             wrapMode: Text.Wrap
         }

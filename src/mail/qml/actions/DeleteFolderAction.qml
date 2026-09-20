@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail
+import org.kde.ki18n
 
 Kirigami.Action {
     property var index
@@ -16,12 +17,12 @@ Kirigami.Action {
 
         Kirigami.PromptDialog {
             id: deleteFolderDialog
-            title: i18n("Delete Folder")
+            title: KI18n.i18n("Delete Folder")
             standardButtons: Kirigami.Dialog.NoButton
 
             customFooterActions: [
                 Kirigami.Action {
-                    text: i18n("Delete Folder")
+                    text: KI18n.i18n("Delete Folder")
                     icon.name: "dialog-ok"
                     onTriggered: {
                         MailManager.deleteCollection(index);
@@ -29,14 +30,14 @@ Kirigami.Action {
                     }
                 },
                 Kirigami.Action {
-                    text: i18n("Cancel")
+                    text: KI18n.i18n("Cancel")
                     icon.name: "dialog-cancel"
                     onTriggered: deleteFolderDialog.close() 
                 }
             ]
 
             QQC2.TextArea {
-                text: i18n("Are you sure you want to delete the folder %1, discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", name.toUpperCase())
+                text: KI18n.i18n("Are you sure you want to delete the folder %1, discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", name.toUpperCase())
                 textFormat: TextEdit.RichText
                 background: null
                 readOnly: true

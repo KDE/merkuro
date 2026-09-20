@@ -6,6 +6,7 @@ import QtQuick.Controls as QQC2
 import org.kde.akonadi as Akonadi
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
+import org.kde.ki18n
 
 QQC2.Menu {
     id: mailActionsPopup
@@ -20,14 +21,14 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "folder-new"
-        text: i18n("Add Folder")
+        text: KI18n.i18n("Add Folder")
         action: NewFolderAction {
             index: mailActionsPopup.collectionId
         }
     }
     QQC2.MenuItem {
         icon.name: "edit-delete"
-        text: i18n("Delete Folder")
+        text: KI18n.i18n("Delete Folder")
         action: DeleteFolderAction {
             index: mailActionsPopup.collectionId
             name: mailActionsPopup.name
@@ -36,11 +37,11 @@ QQC2.Menu {
     }
     QQC2.MenuItem {
         icon.name: "settings-configure"
-        text: i18nc("@action:inmenu", "Edit Folder…")
+        text: KI18n.i18nc("@action:inmenu", "Edit Folder…")
         onClicked: {
             let component = Qt.createComponent("org.kde.merkuro.components", "EditCollectionPage");
             pageStack.pushDialogLayer(component, {
-                title: i18nc("@title", "Edit Folder"),
+                title: KI18n.i18nc("@title", "Edit Folder"),
                 collection: MailManager.getCollection(mailActionsPopup.collectionId),
             }, {});
         }
@@ -51,13 +52,13 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Update Folder")
+        text: KI18n.i18nc("@action:inmenu", "Update Folder")
         onClicked: MailManager.updateCollectionNonRecursive(mailActionsPopup.collectionId);
     }
 
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Update Folder and Subfolders")
+        text: KI18n.i18nc("@action:inmenu", "Update Folder and Subfolders")
         onClicked: MailManager.updateCollection(mailActionsPopup.collectionId);
     }
 
@@ -66,13 +67,13 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Restart Account")
+        text: KI18n.i18nc("@action:inmenu", "Restart Account")
         onClicked: mailActionsPopup.agentConfiguration.restartIdentifier(mailActionsPopup.resourceIdentifier);
     }
 
     QQC2.MenuItem {
         icon.name: "settings-configure"
-        text: i18nc("@action:inmenu", "Account Settings")
+        text: KI18n.i18nc("@action:inmenu", "Account Settings")
         onClicked: mailActionsPopup.agentConfiguration.editIdentifier(mailActionsPopup.resourceIdentifier);
     }
 }

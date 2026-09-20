@@ -7,18 +7,19 @@ import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.pim.mimetreeparser
 import org.kde.merkuro.mail
+import org.kde.ki18n
 
 Kirigami.ApplicationWindow {
     id: root
 
     readonly property Kirigami.Action openFileAction: Kirigami.Action {
-        text: i18n("Open File")
+        text: KI18n.i18n("Open File")
         onTriggered: fileDialog.open()
     }
 
     FileDialog {
         id: fileDialog
-        title: i18n("Choose file")
+        title: KI18n.i18n("Choose file")
         onAccepted: messageHandler.open(fileUrl)
     }
 
