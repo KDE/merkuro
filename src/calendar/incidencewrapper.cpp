@@ -319,7 +319,7 @@ Merkuro::KDateTime IncidenceWrapper::incidenceEnd() const
         KCalendarCore::Todo::Ptr todo = m_incidence.staticCast<KCalendarCore::Todo>();
         return Merkuro::KDateTime(todo->dtDue());
     }
-    return {};
+    return Merkuro::KDateTime{};
 }
 
 void IncidenceWrapper::setIncidenceEnd(const Merkuro::KDateTime &incidenceEnd, bool respectTimeZone)
@@ -617,7 +617,7 @@ void IncidenceWrapper::setTodoCompleted(bool completed)
 Merkuro::KDateTime IncidenceWrapper::todoCompletionDt()
 {
     if (m_incidence->type() != KCalendarCore::IncidenceBase::TypeTodo) {
-        return {};
+        return Merkuro::KDateTime{};
     }
 
     auto todo = m_incidence.staticCast<KCalendarCore::Todo>();

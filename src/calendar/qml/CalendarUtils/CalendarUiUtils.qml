@@ -145,7 +145,7 @@ QtObject {
 
     function openDayLayer(selectedDate: MerkuroComponents.KDateTime) {
         if(selectedDate.isValid) {
-            DateTimeState.setSelectedYearMonthDay(selectedDate.year, selectedDate.month, selectedDate.day);
+            DateTimeState.setSelectedDate(selectedDate);
             appMain.dayViewAction.trigger();
         }
     }
