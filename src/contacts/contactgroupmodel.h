@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "merkuro_contact_export.h"
 #include <QAbstractListModel>
 
 #include <KContacts/ContactGroup>
@@ -11,7 +12,7 @@
 
 class ContactGroupModelPrivate;
 
-class ContactGroupModel : public QAbstractListModel
+class MERKURO_CONTACT_EXPORT ContactGroupModel : public QAbstractListModel
 {
     Q_OBJECT
 
