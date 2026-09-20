@@ -177,6 +177,10 @@ qint64 ContactEditorBackend::collectionId() const
 
 void ContactEditorBackend::saveContactInAddressBook()
 {
+    if (m_saving) {
+        return;
+    }
+
     if (!m_addressee) {
         Q_EMIT errorOccured(i18n("The contact is not loaded yet."));
         return;
@@ -196,6 +200,8 @@ void ContactEditorBackend::saveContactInAddressBook()
 
         m_item.setPayload<KContacts::Addressee>(addressee);
 
+        m_saving = true;
+        Q_EMIT savingChanged();
         auto job = new Akonadi::ItemModifyJob(m_item, this);
         connect(job, &Akonadi::ItemModifyJob::result, this, [this](KJob *job) {
             storeDone(job);
@@ -215,6 +221,8 @@ void ContactEditorBackend::saveContactInAddressBook()
 
         m_contactMetaData.store(item);
 
+        m_saving = true;
+        Q_EMIT savingChanged();
         auto job = new Akonadi::ItemCreateJob(item, m_defaultAddressBook, this);
         connect(job, &Akonadi::ItemCreateJob::result, this, [this](KJob *job) {
             storeDone(job);
@@ -224,6 +232,9 @@ void ContactEditorBackend::saveContactInAddressBook()
 
 void ContactEditorBackend::storeDone(KJob *job)
 {
+    m_saving = false;
+    Q_EMIT savingChanged();
+
     if (job->error() != KJob::NoError) {
         Q_EMIT errorOccured(job->errorString());
         return;
@@ -249,6 +260,11 @@ void ContactEditorBackend::storeContact(KContacts::Addressee &contact, ContactMe
 bool ContactEditorBackend::isReadOnly() const
 {
     return m_readOnly;
+}
+
+bool ContactEditorBackend::saving() const
+{
+    return m_saving;
 }
 void ContactEditorBackend::setReadOnly(bool isReadOnly)
 {

@@ -46,6 +46,7 @@ public:
     Monitor *mMonitor = nullptr;
     QString mName;
     bool mReadOnly = false;
+    bool mSaving = false;
 };
 
 ContactGroupEditorPrivate::ContactGroupEditorPrivate(ContactGroupEditor *parent)
@@ -124,6 +125,9 @@ void ContactGroupEditorPrivate::parentCollectionFetchDone(KJob *job)
 
 void ContactGroupEditorPrivate::storeDone(KJob *job)
 {
+    mSaving = false;
+    Q_EMIT mParent->savingChanged();
+
     if (job->error()) {
         Q_EMIT mParent->errorOccured(job->errorString());
         return;
@@ -212,6 +216,10 @@ void ContactGroupEditor::loadContactGroup(const Akonadi::Item &item)
 
 bool ContactGroupEditor::saveContactGroup()
 {
+    if (d->mSaving) {
+        return false;
+    }
+
     if (d->mMode == EditMode) {
         if (!d->mItem.isValid()) {
             Q_EMIT errorOccured(i18n("The contact group is no longer available."));
@@ -231,6 +239,8 @@ bool ContactGroupEditor::saveContactGroup()
 
         d->mItem.setPayload<KContacts::ContactGroup>(group);
 
+        d->mSaving = true;
+        Q_EMIT savingChanged();
         auto job = new ItemModifyJob(d->mItem, this);
         connect(job, &ItemModifyJob::result, this, [this](KJob *job) {
             d->storeDone(job);
@@ -266,6 +276,8 @@ bool ContactGroupEditor::saveContactGroup()
         item.setPayload<KContacts::ContactGroup>(group);
         item.setMimeType(KContacts::ContactGroup::mimeType());
 
+        d->mSaving = true;
+        Q_EMIT savingChanged();
         auto job = new ItemCreateJob(item, d->mDefaultCollection, this);
         connect(job, &ItemCreateJob::result, this, [this](KJob *job) {
             d->storeDone(job);
@@ -326,6 +338,11 @@ void ContactGroupEditor::setReadOnly(bool isReadOnly)
     }
     d->mReadOnly = isReadOnly;
     Q_EMIT isReadOnlyChanged();
+}
+
+bool ContactGroupEditor::saving() const
+{
+    return d->mSaving;
 }
 
 QAbstractItemModel *ContactGroupEditor::groupModel() const

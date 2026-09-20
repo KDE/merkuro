@@ -20,15 +20,19 @@ FormCard.FormCardPage {
     property alias item: contactEditor.item
 
     property bool displayAdvancedNameFields: false
-    property bool saving: false
+    readonly property bool saving: contactEditor.saving
 
     readonly property ContactEditor contactEditor: ContactEditor {
         id: contactEditor
         mode: ContactEditor.CreateMode
-        onFinished: root.closeDialog()
+        onFinished: {
+            ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
+            ContactConfig.save();
+            root.closeDialog();
+        }
         onErrorOccured: errorMsg => {
+            errorContainer.displayError = true;
             errorContainer.errorMessage = errorMsg;
-            errorContainer.contentItem.visible = true;
         }
         onItemChangedExternally: itemChangedExternallySheet.open()
     }
@@ -41,7 +45,6 @@ FormCard.FormCardPage {
         enabled: contactEditor.contact.formattedName.length > 0
         shortcut: "Return"
         onTriggered: {
-            root.saving = true;
             if (phoneEditorId.phoneText.length > 0) {
                 contactEditor.contact.phoneModel.addPhoneNumber(phoneEditorId.phoneText, phoneEditorId.newPhoneTypeComboText)
             }
@@ -52,8 +55,6 @@ FormCard.FormCardPage {
                 contactEditor.collectionId = addressBookEditorCard.addressBookComboBoxId
             }
             contactEditor.saveContactInAddressBook()
-            ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
-            ContactConfig.save();
         }
     }
 
@@ -63,7 +64,7 @@ FormCard.FormCardPage {
         return KI18n.i18n("Edit Contact");
     }
 
-    enabled: !contactEditor.isReadOnly
+    enabled: !contactEditor.isReadOnly && !contactEditor.saving
 
     //property FileDialog fileDialog: FileDialog {
     //    id: fileDialog
@@ -158,7 +159,7 @@ FormCard.FormCardPage {
             QQC2.Button {
                 icon.name: root.mode === ContactEditor.EditMode ? "document-save" : "list-add"
                 text: root.mode === ContactEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
-                enabled: contactEditor.contact.formattedName.length > 0
+                enabled: contactEditor.contact.formattedName.length > 0 && !contactEditor.saving
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
 
@@ -194,11 +195,11 @@ FormCard.FormCardPage {
                 Layout.fillWidth: true
             }
         }
-        onRejected: itemChangedExternallySheet.close()
-        onAccepted: {
+        onRejected: {
             contactEditor.fetchItem();
             itemChangedExternallySheet.close();
         }
+        onAccepted: itemChangedExternallySheet.close()
 
         footer: QQC2.DialogButtonBox {
             QQC2.Button {

@@ -69,6 +69,7 @@ class ContactGroupEditor : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(qint64 collectionId READ collectionId NOTIFY collectionChanged)
     Q_PROPERTY(bool isReadOnly READ isReadOnly NOTIFY isReadOnlyChanged)
+    Q_PROPERTY(bool saving READ saving NOTIFY savingChanged)
     Q_PROPERTY(QAbstractItemModel *groupModel READ groupModel CONSTANT)
 public:
     /**
@@ -111,6 +112,7 @@ public:
     [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);
     [[nodiscard]] bool isReadOnly() const;
+    [[nodiscard]] bool saving() const;
     void setReadOnly(bool isReadOnly);
 
     [[nodiscard]] QString name() const;
@@ -139,6 +141,7 @@ Q_SIGNALS:
 
     void modeChanged();
     void isReadOnlyChanged();
+    void savingChanged();
     void nameChanged();
     void itemChanged();
     void collectionChanged();

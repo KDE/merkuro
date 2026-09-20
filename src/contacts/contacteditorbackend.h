@@ -80,6 +80,7 @@ class ContactEditorBackend : public QObject
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)
     Q_PROPERTY(qint64 collectionId READ collectionId WRITE setCollectionId NOTIFY collectionChanged)
     Q_PROPERTY(bool isReadOnly READ isReadOnly NOTIFY addresseeChanged NOTIFY modeChanged)
+    Q_PROPERTY(bool saving READ saving NOTIFY savingChanged)
 
 public:
     /**
@@ -116,6 +117,7 @@ public:
     [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);
     [[nodiscard]] bool isReadOnly() const;
+    [[nodiscard]] bool saving() const;
     void setReadOnly(bool isReadOnly);
     void setCollectionId(qint64 collectionId);
 
@@ -156,6 +158,7 @@ Q_SIGNALS:
     void contactChanged();
     void modeChanged();
     void isReadOnlyChanged();
+    void savingChanged();
     void itemChanged();
     void collectionChanged();
     void itemChangedExternally();
@@ -172,6 +175,7 @@ private:
     AddresseeWrapper *m_addressee = nullptr;
     Mode m_mode;
     bool m_readOnly = false;
+    bool m_saving = false;
     ContactMetaData m_contactMetaData;
     Akonadi::Monitor *m_monitor = nullptr;
 };

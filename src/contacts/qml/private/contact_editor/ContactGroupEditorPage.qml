@@ -20,7 +20,11 @@ FormCard.FormCardPage {
     property ContactGroupEditor contactGroupEditor: ContactGroupEditor {
         id: contactGroupEditor
         mode: ContactGroupEditor.CreateMode
-        onFinished: root.closeDialog()
+        onFinished: {
+            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
+            ContactConfig.save();
+            root.closeDialog();
+        }
         onErrorOccured: (error) => {
             errorContainer.text = error;
             errorContainer.visible = true;
@@ -42,8 +46,6 @@ FormCard.FormCardPage {
         shortcut: "Return"
         onTriggered: {
             contactGroupEditor.saveContactGroup()
-            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
-            ContactConfig.save();
         }
     }
 
@@ -174,7 +176,7 @@ FormCard.FormCardPage {
         QQC2.Button {
             icon.name: mode === ContactGroupEditor.EditMode ? "document-save" : "list-add"
             text: mode === ContactGroupEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
-            enabled: isNotEmptyStr(contactGroupEditor.name)
+            enabled: isNotEmptyStr(contactGroupEditor.name) && !contactGroupEditor.saving
             QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
         }
 
@@ -209,11 +211,11 @@ FormCard.FormCardPage {
                 Layout.fillWidth: true
             }
         }
-        onRejected: itemChangedExternallySheet.close()
-        onAccepted: {
+        onRejected: {
             contactGroupEditor.fetchItem();
             itemChangedExternallySheet.close();
         }
+        onAccepted: itemChangedExternallySheet.close()
 
         footer: QQC2.DialogButtonBox {
             QQC2.Button {
