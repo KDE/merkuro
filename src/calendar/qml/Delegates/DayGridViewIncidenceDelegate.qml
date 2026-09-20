@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Item {
     id: incidenceDelegate
@@ -15,8 +16,8 @@ Item {
     required property int duration
     required property var incidenceId
     required property var incidencePtr
-    required property date occurrenceDate
-    required property date occurrenceEndDate
+    required property MerkuroComponents.KDateTime occurrenceDate
+    required property MerkuroComponents.KDateTime occurrenceEndDate
     required property bool allDay
     required property bool isDark
 
@@ -30,11 +31,9 @@ Item {
         openOccurrenceId === incidenceDelegate.incidenceId : false
     property bool reactToCurrentMonth: true
     readonly property bool isInCurrentMonth: reactToCurrentMonth ?
-        incidenceDelegate.occurrenceEndDate.getMonth() === root.month || incidenceDelegate.occurrenceDate.getMonth() === root.month :
+        incidenceDelegate.occurrenceEndDate.month - 1 === root.month || incidenceDelegate.occurrenceDate.month - 1 === root.month :
         true
-    readonly property bool isMultiDay: occurrenceDate.getDay() !== occurrenceEndDate.getDay() ||
-                                       occurrenceDate.getMonth() !== occurrenceEndDate.getMonth() ||
-                                       occurrenceDate.getFullYear() !== occurrenceDate.getFullYear()
+    readonly property bool isMultiDay: !occurrenceDate.sameDay(occurrenceEndDate)
 
     property alias mouseArea: mouseArea
     property bool repositionAnimationEnabled: false
@@ -192,8 +191,8 @@ Item {
 
         QQC2.Label {
             text: modelData.incidenceType === Calendar.IncidenceWrapper.TypeTodo ?
-                incidenceDelegate.occurrenceEndDate.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat) :
-                incidenceDelegate.occurrenceDate.toLocaleTimeString(Qt.locale(), Locale.NarrowFormat)
+                incidenceDelegate.occurrenceEndDate.toLocaleTimeString(Locale.NarrowFormat) :
+                incidenceDelegate.occurrenceDate.toLocaleTimeString(Locale.NarrowFormat)
             font.pointSize: parent.spaceRestricted ? Kirigami.Theme.smallFont.pointSize :
                 Kirigami.Theme.defaultFont.pointSize
             renderType: Text.QtRendering

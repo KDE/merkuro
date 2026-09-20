@@ -25,7 +25,7 @@ add_library(MerkuroComponents SHARED
     collectionutils.cpp
     collectionutils.h
     kdatetime.cpp
-    kdatetime.h
+    merkurokdatetime.h
     kdatetimefactory.cpp
     kdatetimefactory.h
     ${merkuro_components_SRCS}
@@ -107,4 +107,3 @@ ecm_finalize_qml_module(MerkuroComponents
 # Install
 
 install(TARGETS MerkuroComponents EXPORT MerkuroComponents ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
-

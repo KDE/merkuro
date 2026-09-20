@@ -7,6 +7,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 PathView {
     id: root
@@ -33,7 +34,7 @@ PathView {
     required property bool dragDropEnabled
     property real scrollPosition
 
-    readonly property date selectedDate: if (daysToShow % 7 === 0) {
+    readonly property MerkuroComponents.KDateTime selectedDate: if (daysToShow % 7 === 0) {
         Calendar.DateTimeState.firstDayOfWeek
     } else {
         Calendar.DateTimeState.selectedDate
@@ -83,9 +84,8 @@ PathView {
         id: viewLoader
 
         required property int index
-        required property date startDate
+        required property MerkuroComponents.KDateTime startDate
 
-        readonly property date endDate: Calendar.Utils.addDaysToDate(startDate, root.daysToShow)
 
         readonly property bool isCurrentItem: PathView.isCurrentItem
         readonly property bool isNextOrCurrentItem: index >= root.currentIndex -1 && index <= root.currentIndex + 1
@@ -107,4 +107,3 @@ PathView {
         }
     }
 }
-

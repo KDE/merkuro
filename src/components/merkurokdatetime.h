@@ -60,6 +60,9 @@ class MERKUROCOMPONENTS_EXPORT KDateTime
      */
     Q_PROPERTY(int day READ day WRITE setDay)
 
+    /* The day of the week, from 1 (Monday) to 7 (Sunday). */
+    Q_PROPERTY(int dayOfWeek READ dayOfWeek)
+
     /*!
      * \qmlproperty int KDateTime::hour
      * \brief The hour, from 0 to 23.
@@ -126,6 +129,8 @@ public:
     int day() const;
     void setDay(int day);
 
+    int dayOfWeek() const;
+
     int hour() const;
     void setHour(int hour);
 
@@ -170,6 +175,18 @@ public:
      * \brief Returns time formatted using the locale's short format.
      */
     Q_INVOKABLE QString toLocaleTimeString(QLocale::FormatType format) const;
+
+    /*!
+     * \brief Returns whether this date and right fall on the same local day.
+     */
+    Q_INVOKABLE bool sameDay(const KDateTime &right) const;
+
+    /*!
+     * \brief Returns whether this date and right have the same local time.
+     */
+    Q_INVOKABLE bool sameTime(const KDateTime &right) const;
+
+    Q_INVOKABLE qint64 msecsTo(const KDateTime &right) const;
 
     /*!
      * \brief Returns a copy of this date and time, days later (or earlier if negative).
@@ -232,3 +249,5 @@ private:
 
 MERKUROCOMPONENTS_EXPORT QDebug operator<<(QDebug debug, const KDateTime &dateTime);
 }
+
+Q_DECLARE_METATYPE(Merkuro::KDateTime)

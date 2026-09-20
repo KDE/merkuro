@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Kirigami.AbstractCard {
     id: incidenceCard
@@ -18,14 +19,14 @@ Kirigami.AbstractCard {
         Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing
     property bool isOpenOccurrence: scrollView.openOccurrence ?
         scrollView.openOccurrence.incidenceId === modelData.incidenceId : false
-    property bool multiday: modelData.startTime.getDate() !== modelData.endTime.getDate()
-    property int incidenceDays: Calendar.DateUtils.fullDaysBetweenDates(modelData.startTime, modelData.endTime)
-    property int dayOfMultidayIncidence: Calendar.DateUtils.fullDaysBetweenDates(modelData.startTime, periodStartDate)
+    property bool multiday: !modelData.startTime.sameDay(modelData.endTime)
+    property int incidenceDays: Calendar.Utils.fullDaysBetweenDates(modelData.startTime, modelData.endTime)
+    property int dayOfMultidayIncidence: Calendar.Utils.fullDaysBetweenDates(modelData.startTime, periodStartDate)
 
     property alias mouseArea: incidenceMouseArea
     property var incidencePtr: modelData.incidencePtr
-    property date occurrenceDate: modelData.startTime
-    property date occurrenceEndDate: modelData.endTime
+    property MerkuroComponents.KDateTime occurrenceDate: modelData.startTime
+    property MerkuroComponents.KDateTime occurrenceEndDate: modelData.endTime
     property bool repositionAnimationEnabled: false
     property bool caught: false
     property real caughtX: 0
@@ -139,15 +140,15 @@ Kirigami.AbstractCard {
                 text: {
                     if (incidenceCard.modelData.allDay) {
                         i18n("Runs all day")
-                    } else if (modelData.startTime.getTime() === modelData.endTime.getTime()) {
-                        modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat);
+                    } else if (modelData.startTime.sameDay(modelData.endTime) && modelData.startTime.sameTime(modelData.endTime)) {
+                        modelData.startTime.toLocaleTimeString(Locale.ShortFormat);
                     } else if (!incidenceCard.multiday) {
                         i18nc("Displays times between incidence start and end", "%1 - %2",
-                              modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat), modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                              modelData.startTime.toLocaleTimeString(Locale.ShortFormat), modelData.endTime.toLocaleTimeString(Locale.ShortFormat));
                     } else if (incidenceCard.dayOfMultidayIncidence === 1) {
-                        i18n("Starts at %1", modelData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                        i18n("Starts at %1", modelData.startTime.toLocaleTimeString(Locale.ShortFormat));
                     } else if (incidenceCard.dayOfMultidayIncidence === incidenceCard.incidenceDays) {
-                        i18n("Ends at %1", modelData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat));
+                        i18n("Ends at %1", modelData.endTime.toLocaleTimeString(Locale.ShortFormat));
                     } else {
                         i18nc("Label for incidence in between multiday start/finish", "Runs All Day")
                     }

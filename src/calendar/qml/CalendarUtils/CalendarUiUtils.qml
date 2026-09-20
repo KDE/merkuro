@@ -7,6 +7,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 QtObject {
     id: utilsObject
@@ -43,8 +44,8 @@ QtObject {
             "text": incidenceWrapper.summary,
             "description": incidenceWrapper.description,
             "location": incidenceWrapper.location,
-            "startTime": incidenceWrapper.incidenceStart.dateTime,
-            "endTime": incidenceWrapper.incidenceEnd.dateTime,
+            "startTime": incidenceWrapper.incidenceStart,
+            "endTime": incidenceWrapper.incidenceEnd,
             "allDay": incidenceWrapper.allDay,
             "todoCompleted": incidenceWrapper.todoCompleted,
             "priority": incidenceWrapper.priority,
@@ -58,7 +59,7 @@ QtObject {
             "hasReminders": incidenceWrapper.hasReminders(),
             "isOverdue": incidenceWrapper.incidenceType === IncidenceWrapper.TypeTodo &&
                          incidenceWrapper.incidenceEnd.isValid &&
-                         incidenceWrapper.incidenceEnd.dateTime < appMain.currentDate,
+                         incidenceWrapper.incidenceEnd.msecsTo(Calendar.DateTimeState.currentDate) > 0,
             "isReadOnly": collectionDetails.readOnly,
             "color": collectionDetails.color,
             "collectionId": incidenceWrapper.collectionId,
@@ -103,7 +104,7 @@ QtObject {
         }
     }
 
-    function setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, occurrenceDate, caughtDelegate, allDay=null) {
+    function setUpIncidenceDateChange(incidenceWrapper, startOffset, endOffset, occurrenceDate: MerkuroComponents.KDateTime, caughtDelegate, allDay=null) {
         appMain.pageStack.currentItem.dragDropEnabled = false;
 
         if(appMain.pageStack.layers.currentItem && appMain.pageStack.layers.currentItem.dragDropEnabled) {
@@ -142,9 +143,9 @@ QtObject {
         }
     }
 
-    function openDayLayer(selectedDate) {
-        if(!isNaN(selectedDate.getTime())) {
-            DateTimeState.setSelectedYearMonthDay(selectedDate.getFullYear(), selectedDate.getMonth() + 1, selectedDate.getDate());
+    function openDayLayer(selectedDate: MerkuroComponents.KDateTime) {
+        if(selectedDate.isValid) {
+            DateTimeState.setSelectedYearMonthDay(selectedDate.year, selectedDate.month, selectedDate.day);
             appMain.dayViewAction.trigger();
         }
     }

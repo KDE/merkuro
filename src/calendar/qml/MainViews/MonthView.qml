@@ -83,11 +83,9 @@ Kirigami.Page {
             anchors.fill: parent
 
             firstDayOfMonth: Calendar.DateTimeState.firstDayOfMonth
-            startDate: Calendar.DateUtils.getFirstDayOfWeek(firstDayOfMonth)
 
             dragDropEnabled: root.dragDropEnabled
             openOccurrence: root.openOccurrence
         }
     }
 }
-

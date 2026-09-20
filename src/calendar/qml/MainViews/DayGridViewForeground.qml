@@ -8,13 +8,14 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Column {
     id: root
 
     readonly property bool isDark: Calendar.CalendarUiUtils.darkMode
 
-    required property date startDate
+    required property MerkuroComponents.KDateTime startDate
 
     required property bool isCurrentView
     required property bool showDayIndicator
@@ -51,7 +52,7 @@ Column {
 
             required property int index
             required property var incidences
-            required property var periodStartDate
+            required property MerkuroComponents.KDateTime periodStartDate
 
             width: parent.width
             height: root.dayHeight
@@ -121,10 +122,9 @@ Column {
                 Calendar.DayTapHandler {
                     id: listViewMenu
                     addDate: {
-                        const baseDateRaw = weekDelegate.periodStartDate
+                        const baseDate = weekDelegate.periodStartDate
                         const rowDayIndex = Math.floor(clickX / root.dayWidth)
-                        const baseDate = new Date(baseDateRaw);
-                        return new Date(baseDate.setDate(baseDate.getDate() + rowDayIndex))
+                        return baseDate.addDays(rowDayIndex)
                     }
                     onDeselect: Calendar.CalendarUiUtils.appMain.incidenceInfoViewer.close()
                 }

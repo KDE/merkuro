@@ -88,10 +88,6 @@ FormCard.FormCardPage {
                         id: checkBoxItem
                         focusPolicy: Qt.NoFocus // provided by delegate
 
-                        checkState: delegate.checkState
-                        nextCheckState: delegate.nextCheckState
-                        tristate: delegate.tristate
-
                         topPadding: 0
                         leftPadding: 0
                         rightPadding: 0

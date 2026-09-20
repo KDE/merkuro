@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Column {
     id: root
@@ -16,14 +17,14 @@ Column {
     readonly property alias dayLabelsBar: dayLabelsBarComponent
     required property Item parentGridView
 
-    required property date startDate
+    required property MerkuroComponents.KDateTime startDate
     required property int month
 
-    readonly property date currentDate: Calendar.DateTimeState.currentDate
+    readonly property MerkuroComponents.KDateTime currentDate: Calendar.DateTimeState.currentDate
     // Getting the components once makes this faster when we need them repeatedly
-    readonly property int currentDay: currentDate.getDate()
-    readonly property int currentMonth: currentDate.getMonth()
-    readonly property int currentYear: currentDate.getFullYear()
+    readonly property int currentDay: currentDate.day
+    readonly property int currentMonth: currentDate.month - 1
+    readonly property int currentYear: currentDate.year
 
     required property real dayWidth
     required property real dayHeight
@@ -91,7 +92,7 @@ Column {
                 Loader {
                     id: weekHeader
 
-                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, weekRow.index * 7)
+                    property MerkuroComponents.KDateTime startDate: root.startDate.addDays(weekRow.index * 7)
 
                     active: Calendar.Config.showWeekNumbers
                     visible: Calendar.Config.showWeekNumbers
@@ -115,7 +116,7 @@ Column {
                 Item {
                     id: dayDelegate
 
-                    property date startDate: Calendar.Utils.addDaysToDate(root.startDate, weekRow.index * 7)
+                    property MerkuroComponents.KDateTime startDate: root.startDate.addDays(weekRow.index * 7)
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
@@ -137,11 +138,11 @@ Column {
 
                                 required property var modelData
 
-                                readonly property date gridSquareDate: date
-                                readonly property date date: Calendar.DateUtils.addDaysToDate(dayDelegate.startDate, modelData)
-                                readonly property int day: date.getDate()
-                                readonly property int month: date.getMonth()
-                                readonly property int year: date.getFullYear()
+                                readonly property MerkuroComponents.KDateTime gridSquareDate: date
+                                readonly property MerkuroComponents.KDateTime date: dayDelegate.startDate.addDays(modelData)
+                                readonly property int day: date.day
+                                readonly property int month: date.month - 1
+                                readonly property int year: date.year
                                 readonly property color bgColor: {
                                     if (Calendar.Config.showHolidaysInCalendarViews && gridItem.isHoliday) {
                                         Kirigami.Theme.negativeBackgroundColor
@@ -158,7 +159,7 @@ Column {
 
                                 readonly property bool isToday: day === root.currentDay && month === root.currentMonth && year === root.currentYear
                                 readonly property bool isCurrentMonth: month === root.month
-                                readonly property string formatedDate: Qt.formatDate(gridItem.date, 'yyyy-MM-dd')
+                                readonly property string formatedDate: gridItem.date.toLocaleDateString("yyyy-MM-dd")
                                 readonly property bool isHoliday: Calendar.Config.showHolidaysInCalendarViews && formatedDate in Calendar.HolidayModel.holidays
                                 readonly property string holidayText: {
                                     if (!isHoliday) {
@@ -185,7 +186,7 @@ Column {
                                         z: 9999
                                         onDropped: drop => {
                                             if (root.isCurrentView) {
-                                                if (Calendar.DateUtils.sameDay(gridItem.date, drop.source.occurrenceDate)) {
+                                                if (gridItem.date.sameDay(drop.source.occurrenceDate)) {
                                                     return;
                                                 }
                                                 const pos = mapToItem(parentGridView, backgroundRectangle.x, backgroundRectangle.y);
@@ -198,9 +199,10 @@ Column {
                                                 const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                                                 incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                                                let sameTimeOnDate = new Date(gridItem.date);
-                                                sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                                                const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                                                let sameTimeOnDate = gridItem.date;
+                                                sameTimeOnDate.hour = drop.source.occurrenceDate.hour;
+                                                sameTimeOnDate.minute = drop.source.occurrenceDate.minute;
+                                                const offset = drop.source.occurrenceDate.msecsTo(sameTimeOnDate);
                                                 Calendar.CalendarUiUtils.setUpIncidenceDateChange(incidenceWrapper, offset, offset, drop.source.occurrenceDate, drop.source)
                                             }
                                         }
@@ -223,7 +225,7 @@ Column {
                                         left: parent.left
                                     }
 
-                                    Accessible.name: gridItem.isToday && gridItem.width > Kirigami.Units.gridUnit * 5 ? todayLabel.text.replace(/<b>/g, '').replace(/<\/b>/g, '') : gridItem.date.toLocaleDateString(Qt.locale(), Locale.LongFormat)
+                                    Accessible.name: gridItem.isToday && gridItem.width > Kirigami.Units.gridUnit * 5 ? todayLabel.text.replace(/<b>/g, '').replace(/<\/b>/g, '') : gridItem.date.toLocaleDateString(Locale.LongFormat)
 
                                     contentItem: RowLayout {
                                         id: dayNumberLayout
@@ -254,7 +256,7 @@ Column {
                                             id: dateLabel
 
                                             Layout.alignment: Qt.AlignRight | Qt.AlignTop
-                                            text: gridItem.date.toLocaleDateString(Qt.locale(), gridItem.day == 1 ?
+                                            text: gridItem.date.toLocaleDateString(gridItem.day == 1 ?
                                             "d MMM" : "d")
                                             renderType: Text.QtRendering
                                             padding: Kirigami.Units.smallSpacing

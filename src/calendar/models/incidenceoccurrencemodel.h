@@ -18,6 +18,7 @@
 #include <QList>
 #include <QSharedPointer>
 #include <QTimer>
+#include <merkurokdatetime.h>
 #include <qqmlintegration.h>
 
 class Filter;
@@ -42,7 +43,7 @@ class IncidenceOccurrenceModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(QDate start READ start WRITE setStart NOTIFY startChanged)
+    Q_PROPERTY(Merkuro::KDateTime start READ start WRITE setStart NOTIFY startChanged)
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(Filter *filter READ filter WRITE setFilter NOTIFY filterChanged)
     Q_PROPERTY(Akonadi::ETMCalendar::Ptr calendar READ calendar WRITE setCalendar NOTIFY calendarChanged)
@@ -84,7 +85,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
 
     Akonadi::ETMCalendar::Ptr calendar() const;
-    [[nodiscard]] QDate start() const;
+    [[nodiscard]] Merkuro::KDateTime start() const;
     [[nodiscard]] int length() const;
     Filter *filter() const;
     [[nodiscard]] bool loading() const;
@@ -108,7 +109,7 @@ Q_SIGNALS:
     void resetThrottleIntervalChanged();
 
 public Q_SLOTS:
-    void setStart(const QDate &start);
+    void setStart(const Merkuro::KDateTime &start);
     void setLength(int length);
     void setFilter(Filter *filter);
     void setCalendar(Akonadi::ETMCalendar::Ptr calendar);

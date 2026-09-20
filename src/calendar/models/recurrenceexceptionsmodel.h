@@ -5,12 +5,13 @@
 
 #include <KCalendarCore/Calendar>
 #include <QAbstractListModel>
+#include <merkurokdatetime.h>
 
 class RecurrenceExceptionsModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(KCalendarCore::Incidence::Ptr incidencePtr READ incidencePtr WRITE setIncidencePtr NOTIFY incidencePtrChanged)
-    Q_PROPERTY(QList<QDate> exceptions READ exceptions NOTIFY exceptionsChanged)
+    Q_PROPERTY(QList<Merkuro::KDateTime> exceptions READ exceptions NOTIFY exceptionsChanged)
     Q_PROPERTY(QVariantMap dataroles READ dataroles CONSTANT)
 
 public:
@@ -24,7 +25,7 @@ public:
 
     KCalendarCore::Incidence::Ptr incidencePtr();
     void setIncidencePtr(KCalendarCore::Incidence::Ptr incidence);
-    [[nodiscard]] QList<QDate> exceptions();
+    [[nodiscard]] QList<Merkuro::KDateTime> exceptions();
     void updateExceptions();
     [[nodiscard]] QVariantMap dataroles();
 
@@ -32,8 +33,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 
-    Q_INVOKABLE void addExceptionDateTime(QDateTime date);
-    Q_INVOKABLE void deleteExceptionDateTime(QDateTime date);
+    Q_INVOKABLE void addExceptionDateTime(const Merkuro::KDateTime &date);
+    Q_INVOKABLE void deleteExceptionDateTime(const Merkuro::KDateTime &date);
 
 Q_SIGNALS:
     void incidencePtrChanged();
@@ -41,6 +42,6 @@ Q_SIGNALS:
 
 private:
     KCalendarCore::Incidence::Ptr m_incidence;
-    QList<QDate> m_exceptions;
+    QList<Merkuro::KDateTime> m_exceptions;
     QVariantMap m_dataRoles;
 };

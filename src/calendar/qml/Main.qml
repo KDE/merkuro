@@ -600,7 +600,7 @@ BaseApplication {
         }
 
         onAddException: (exceptionDate, incidenceWrapper) => {
-            if (root.openOccurrence && DateUtils.sameDay(root.openOccurrence.incidenceData.startTime, exceptionDate)) {
+            if (root.openOccurrence && root.openOccurrence.incidenceData.startTime.sameDay(exceptionDate)) {
                 closeOpenIncidenceIfSame()
             }
 
@@ -611,7 +611,7 @@ BaseApplication {
         }
         onAddRecurrenceEndDate: (endDate, incidenceWrapper) => {
             // If occurrence is past the new recurrence end date, it has ben deleted so kill instance in incidence info
-            if (root.openOccurrence && root.openOccurrence.startTime >= endDate) {
+            if (root.openOccurrence && endDate.msecsTo(root.openOccurrence.startTime) >= 0) {
                 closeOpenIncidenceIfSame();
             }
 

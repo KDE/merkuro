@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 QQC2.ComboBox {
     id: root
@@ -13,7 +14,7 @@ QQC2.ComboBox {
 
     property int timeZoneOffset: 0
     property string display
-    property date dateTime
+    property MerkuroComponents.KDateTime dateTime
     property alias timePicker: popupTimePicker
 
     editable: true
@@ -26,9 +27,9 @@ QQC2.ComboBox {
             if (editText.length === 4 && editText[1] === ":") {
                 editText = "0" + editText;
             }
-            const dateFromTime = Date.fromLocaleTimeString(Qt.locale(), editText, Locale.NarrowFormat);
-            if(!isNaN(dateFromTime.getTime())) {
-                newTimeChosen(dateFromTime.getHours(), dateFromTime.getMinutes());
+            const timeFromText = MerkuroComponents.KDateTimeFactory.fromLocaleTimeString(editText, Locale.NarrowFormat);
+            if (timeFromText.isValid) {
+                newTimeChosen(timeFromText.hour, timeFromText.minute);
             }
         }
     }
@@ -52,12 +53,8 @@ QQC2.ComboBox {
             }
 
             function timeChangeHandler() {
-                // JS for some insane reason always tries to give you a datetime in the local timezone, even though
-                // we want the hours in the datetime's timezone, not our local timezone
-                const adjusted = Calendar.DateUtils.adjustDateTimeToLocalTimeZone(root.dateTime, root.timeZoneOffset)
-
-                popupTimePicker.hours = adjusted.getHours();
-                popupTimePicker.minutes = adjusted.getMinutes();
+                popupTimePicker.hours = root.dateTime.hour;
+                popupTimePicker.minutes = root.dateTime.minute;
             }
 
             Connections {

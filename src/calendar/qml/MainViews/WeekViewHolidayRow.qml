@@ -7,11 +7,12 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Row {
     id: root
 
-    required property date startDate
+    required property MerkuroComponents.KDateTime startDate
     required property int daysToShow
     required property bool showHolidaysConfig
     property bool hasHolidayInWeek: false
@@ -27,8 +28,7 @@ Row {
     function checkHolidays(): void {
         let hasHoliday = false;
         for (let i = 0; i < root.daysToShow; ++i) {
-            const date = Calendar.Utils.addDaysToDate(root.startDate, i);
-            const formatedDate = Qt.formatDate(date, 'yyyy-MM-dd')
+            const formatedDate = root.startDate.addDays(i).toLocaleDateString("yyyy-MM-dd")
             if (formatedDate in Calendar.HolidayModel.holidays) {
                 hasHoliday = true
                 break;
@@ -58,8 +58,8 @@ Row {
             id: delegate
 
             required property int index
-            readonly property date date: Calendar.Utils.addDaysToDate(root.startDate, index)
-            readonly property string formatedDate: Qt.formatDate(date, 'yyyy-MM-dd')
+            readonly property MerkuroComponents.KDateTime date: root.startDate.addDays(index)
+            readonly property string formatedDate: date.toLocaleDateString("yyyy-MM-dd")
             readonly property var holidays: Calendar.HolidayModel.holidays[formatedDate] ?? []
 
             width: root.dayWidth

@@ -78,7 +78,7 @@ Q_SIGNALS:
     void todoViewShowCompleted();
     void todoViewShowCurrentDayOnly();
     void refreshAll();
-    void openIncidence(const IncidenceData incidenceData, const QDateTime occurrence);
+    void openIncidence(const IncidenceData incidenceData, const Merkuro::KDateTime occurrence);
     void calendarChanged();
     void showMenubarChanged(bool state);
 

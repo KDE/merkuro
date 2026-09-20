@@ -69,7 +69,7 @@ QtObject {
         });
     }
 
-    function openNewIncidenceEditorDialog(window: Kirigami.ApplicationWindow, type: int, eventDate: date, collectionId: int, includeTime: bool): void {
+    function openNewIncidenceEditorDialog(window: Kirigami.ApplicationWindow, type: int, eventDate: MerkuroComponents.KDateTime, collectionId: int, includeTime: bool): void {
         const editor = getEditor(window);
         if (!editor) {
             return;
@@ -85,16 +85,18 @@ QtObject {
             return;
         }
 
-        if(eventDate !== undefined && !isNaN(eventDate.getTime())) {
+        const eventDateTime = eventDate !== undefined ? eventDate : MerkuroComponents.KDateTimeFactory.invalid();
+        if(eventDateTime.isValid) {
             let existingStart = wrapper.incidenceStart;
 
-            let newStart = MerkuroComponents.KDateTimeFactory.fromDateTime(eventDate);
-            let newEnd = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), eventDate.getHours() + 1, eventDate.getMinutes()));
+            let newStart = eventDateTime;
+            let newEnd = eventDateTime.addSecs(3600);
 
             if(!includeTime) {
                 if (existingStart.isValid) {
-                    newStart = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), existingStart.hour, existingStart.minute));
-                    newEnd = MerkuroComponents.KDateTimeFactory.fromDateTime(new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate(), existingStart.hour + 1, existingStart.minute));
+                    newStart.hour = existingStart.hour;
+                    newStart.minute = existingStart.minute;
+                    newEnd = newStart.addSecs(3600);
                 }
             }
 

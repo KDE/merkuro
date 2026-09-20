@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.merkuro.components as MerkuroComponents
 
 Kirigami.Page {
     id: recurringIncidenceChangePage
@@ -19,7 +20,7 @@ Kirigami.Page {
     property bool isMove: false
     property int startOffset: 0
     property int endOffset: 0
-    property date occurrenceDate
+    property MerkuroComponents.KDateTime occurrenceDate
     property Item caughtDelegate
     property bool allDay
 
@@ -89,4 +90,3 @@ Kirigami.Page {
         }
     }
 }
-

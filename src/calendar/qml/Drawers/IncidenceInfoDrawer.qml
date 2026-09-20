@@ -9,13 +9,14 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.merkuro.calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 Kirigami.OverlayDrawer {
     id: root
 
     signal addSubTodo(var parentWrapper)
     signal editIncidence(var incidencePtr)
-    signal deleteIncidence(var incidencePtr, date deleteDate)
+    signal deleteIncidence(var incidencePtr, MerkuroComponents.KDateTime deleteDate)
 
     property var incidenceData
     property var incidenceWrapper

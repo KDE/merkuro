@@ -7,6 +7,7 @@
 #include "multidayincidencemodel.h"
 #include <Akonadi/ETMCalendar>
 #include <QLocale>
+#include <merkurokdatetime.h>
 #include <qqmlintegration.h>
 
 class InfiniteMerkuroCalendarViewModel : public QAbstractListModel
@@ -49,6 +50,7 @@ public:
     int rowCount(const QModelIndex &parent = {}) const override;
 
     Q_INVOKABLE int moveToDate(const QDate &selectedDate, const QDate &currentDate, const int currentIndex);
+    Q_INVOKABLE int moveToDate(const Merkuro::KDateTime &selectedDate, const Merkuro::KDateTime &currentDate, const int currentIndex);
     Q_INVOKABLE void addDates(const bool atEnd, const QDate startFrom = QDate());
     void addDayDates(const bool atEnd, const QDate &startFrom, int amount = 1);
     void addWeekDates(const bool atEnd, const QDate &startFrom);

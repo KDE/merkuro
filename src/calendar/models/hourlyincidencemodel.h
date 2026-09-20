@@ -8,6 +8,7 @@
 #include <QList>
 #include <QSharedPointer>
 #include <QTimer>
+#include <merkurokdatetime.h>
 #include <qqmlintegration.h>
 
 namespace KCalendarCore
@@ -23,8 +24,8 @@ class IncidenceData
     Q_PROPERTY(QString text MEMBER text)
     Q_PROPERTY(QString description MEMBER description)
     Q_PROPERTY(QString location MEMBER location)
-    Q_PROPERTY(QDateTime startTime MEMBER startTime)
-    Q_PROPERTY(QDateTime endTime MEMBER endTime)
+    Q_PROPERTY(Merkuro::KDateTime startTime MEMBER startTime)
+    Q_PROPERTY(Merkuro::KDateTime endTime MEMBER endTime)
     Q_PROPERTY(bool allDay MEMBER allDay)
     Q_PROPERTY(bool todoCompleted MEMBER todoCompleted)
     Q_PROPERTY(int priority MEMBER priority)
@@ -52,8 +53,8 @@ public:
     QString text;
     QString description;
     QString location;
-    QDateTime startTime;
-    QDateTime endTime;
+    Merkuro::KDateTime startTime;
+    Merkuro::KDateTime endTime;
     bool allDay;
     bool todoCompleted;
     int priority;

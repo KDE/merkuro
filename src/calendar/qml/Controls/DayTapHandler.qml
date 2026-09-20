@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 TapHandler {
     id: dayTapHandler
@@ -11,7 +12,7 @@ TapHandler {
     signal deselect
 
     property string defaultType: Calendar.IncidenceWrapper.TypeEvent
-    property date addDate
+    property MerkuroComponents.KDateTime addDate
     property bool includeTime: false
     property double clickX
     property double clickY

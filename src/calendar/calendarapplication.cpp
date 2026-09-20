@@ -420,8 +420,8 @@ void CalendarApplication::showIncidenceByUid(const QString &uid, const QDateTime
     incidenceData.text = incidence->summary();
     incidenceData.description = incidence->description();
     incidenceData.location = incidence->location();
-    incidenceData.startTime = occurrence;
-    incidenceData.endTime = incidenceEnd;
+    incidenceData.startTime = Merkuro::KDateTime(occurrence);
+    incidenceData.endTime = Merkuro::KDateTime(incidenceEnd);
     incidenceData.allDay = incidence->allDay();
     incidenceData.todoCompleted = false;
     incidenceData.priority = incidence->priority();
@@ -444,7 +444,7 @@ void CalendarApplication::showIncidenceByUid(const QString &uid, const QDateTime
         incidenceData.isOverdue = todo->isOverdue();
     }
 
-    Q_EMIT openIncidence(incidenceData, occurrence);
+    Q_EMIT openIncidence(incidenceData, Merkuro::KDateTime(occurrence));
 
     KWindowSystem::setCurrentXdgActivationToken(xdgActivationToken);
     QWindow *window = QGuiApplication::topLevelWindows().isEmpty() ? nullptr : QGuiApplication::topLevelWindows().at(0);

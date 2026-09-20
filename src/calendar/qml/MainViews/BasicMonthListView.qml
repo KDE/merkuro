@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 /**
  * This is the schedule view
@@ -18,11 +19,11 @@ QQC2.ScrollView {
     id: scrollView
 
     required property var openOccurrence
-    required property date startDate
+    required property MerkuroComponents.KDateTime startDate
     required property bool dragDropEnabled
     required property bool isCurrentItem
 
-    readonly property int daysInMonth: new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate()
+    readonly property int daysInMonth: startDate.addMonths(1).addDays(-1).day
 
     property real savedYScrollPos: 0
 
@@ -34,7 +35,7 @@ QQC2.ScrollView {
     contentWidth: availableWidth
     QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
-    function addIncidence(type, eventDate) {
+    function addIncidence(type, eventDate: MerkuroComponents.KDateTime) {
         savedYScrollPos = QQC2.ScrollBar.vertical.visualPosition;
         Calendar.IncidenceEditorManager.openNewIncidenceEditorDialog(QQC2.ApplicationWindow.window, type, eventDate);
     }
@@ -66,8 +67,8 @@ QQC2.ScrollView {
         }
 
         const currentDate = Calendar.DateTimeState.currentDate;
-        if (currentDate.getDate() > 1 && currentDate.getMonth() === startDate.getMonth() && currentDate.getFullYear() === startDate.getFullYear()) {
-            scheduleListView.positionViewAtIndex(currentDate.getDate() - 1, ListView.Beginning);
+        if (currentDate.day > 1 && currentDate.month === startDate.month && currentDate.year === startDate.year) {
+            scheduleListView.positionViewAtIndex(currentDate.day - 1, ListView.Beginning);
         } else {
             scheduleListView.positionViewAtBeginning()
         }
@@ -98,7 +99,7 @@ QQC2.ScrollView {
             id: backgroundRectangle
 
             required property var incidences
-            required property var periodStartDate
+            required property MerkuroComponents.KDateTime periodStartDate
             required property int index
 
             width: scheduleListView.width
@@ -120,7 +121,7 @@ QQC2.ScrollView {
                 z: 9999
                 onDropped: drop => {
                     if(scrollView.isCurrentItem) {
-                        if (Calendar.DateUtils.sameDay(dayTapHandler.addDate, drop.source.occurrenceDate)) {
+                        if (dayTapHandler.addDate.sameDay(drop.source.occurrenceDate)) {
                             return;
                         }
                         scrollView.savedYScrollPos = scrollView.QQC2.ScrollBar.vertical.visualPosition;
@@ -133,9 +134,10 @@ QQC2.ScrollView {
                         const incidenceWrapper = Calendar.CalendarManager.createIncidenceWrapper();
                         incidenceWrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(drop.source.incidencePtr);
 
-                        let sameTimeOnDate = new Date(dayTapHandler.addDate);
-                        sameTimeOnDate = new Date(sameTimeOnDate.setHours(drop.source.occurrenceDate.getHours(), drop.source.occurrenceDate.getMinutes()));
-                        const offset = sameTimeOnDate.getTime() - drop.source.occurrenceDate.getTime();
+                        let sameTimeOnDate = dayTapHandler.addDate;
+                        sameTimeOnDate.hour = drop.source.occurrenceDate.hour;
+                        sameTimeOnDate.minute = drop.source.occurrenceDate.minute;
+                        const offset = drop.source.occurrenceDate.msecsTo(sameTimeOnDate);
                         scrollView.moveIncidence(offset, drop.source.occurrenceDate, incidenceWrapper, drop.source);
                     }
                 }
@@ -166,8 +168,8 @@ QQC2.ScrollView {
                         return i18nc(
                             "%1 & %2 are two localised short dates indicating the start & end of a week (e.g. Mon 2–Sun 9). %1 is the start, %2 the end.",
                             "%1–%2",
-                            range.startDate.toLocaleDateString(Qt.locale(), format),
-                            range.endDate.toLocaleDateString(Qt.locale(), format)
+                            range.startDate.toLocaleDateString(format),
+                            range.endDate.toLocaleDateString(format)
                         );
                     }
                     Accessible.name: {
@@ -179,13 +181,13 @@ QQC2.ScrollView {
                         return i18nc(
                             "%1 & %2 are two localised dates indicating the start & end of a week (e.g. From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is intended to be read by a screen reader.",
                             "From %1 to %2",
-                            range.startDate.toLocaleDateString(Qt.locale(), format),
-                            range.endDate.toLocaleDateString(Qt.locale(), format)
+                            range.startDate.toLocaleDateString(format),
+                            range.endDate.toLocaleDateString(format)
                         );
                     }
                     visible: Calendar.Config.showWeekHeaders &&
                         backgroundRectangle.periodStartDate !== undefined &&
-                        (backgroundRectangle.periodStartDate.getDay() === Qt.locale().firstDayOfWeek ||
+                        (backgroundRectangle.periodStartDate.dayOfWeek === Qt.locale().firstDayOfWeek ||
                          backgroundRectangle.index === 0)
 
                     // This function computes the date range for this
@@ -199,14 +201,13 @@ QQC2.ScrollView {
                         const LOCALE_START_DOW = Qt.locale().firstDayOfWeek;
                         const LOCALE_END_DOW = LOCALE_START_DOW === 1 ? 7 : LOCALE_START_DOW - 1;
 
-                        const currentDOW = backgroundRectangle.periodStartDate.getDay();
+                        const currentDOW = backgroundRectangle.periodStartDate.dayOfWeek;
                         const startDate = backgroundRectangle.periodStartDate;
 
                         // If the current DOW is the start DOW, the calculation to get to the end of the week are quite simple!
                         if (currentDOW === LOCALE_START_DOW) {
                             // Let's add 6 days to the start date, while making sure not to overflow the current month
-                            let endDate = new Date(startDate);
-                            endDate.setDate(Math.min(endDate.getDate() + 6, scrollView.daysInMonth));
+                            const endDate = startDate.addDays(Math.min(6, scrollView.daysInMonth - startDate.day));
                             // This will give us a date fairly easily!
                             return { startDate, endDate };
                         }
@@ -222,8 +223,7 @@ QQC2.ScrollView {
                             LOCALE_END_DOW - currentDOW;
 
                         // Then, let's just find the end date by adding the number of days to skip to the current date
-                        let endDate = new Date(startDate);
-                        endDate.setDate(endDate.getDate() + distanceToEndDOW);
+                        const endDate = startDate.addDays(distanceToEndDOW);
 
                         return { startDate, endDate };
                     }
@@ -248,7 +248,7 @@ QQC2.ScrollView {
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
 
                     property real dayLabelWidth: Kirigami.Units.gridUnit * 4
-                    property bool isToday: new Date(backgroundRectangle.periodStartDate).setHours(0,0,0,0) === new Date().setHours(0,0,0,0)
+                    property bool isToday: backgroundRectangle.periodStartDate.sameDay(Calendar.DateTimeState.currentDate)
 
                     QQC2.Button {
                         id: dayButton
@@ -265,7 +265,7 @@ QQC2.ScrollView {
                         property string dateFormatScreenReader: i18nc(
                             "Short date format, adapt formatting to locale conventions (see https://doc.qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen reader.",
                             "dddd d")
-                        Accessible.name: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormatScreenReader)
+                        Accessible.name: backgroundRectangle.periodStartDate.toLocaleDateString(dateFormatScreenReader)
 
                         // The goal is to measure how long a string of ~4 characters, in the current default font,
                         // using the maximum font size a dayButton label can be, is.
@@ -296,7 +296,7 @@ QQC2.ScrollView {
                             wrapMode: Text.Wrap
                             textFormat: Text.StyledText
                             color: Kirigami.Theme.disabledTextColor
-                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormat)
+                            text: backgroundRectangle.periodStartDate.toLocaleDateString(dateFormat)
                         }
 
 
@@ -315,7 +315,7 @@ QQC2.ScrollView {
                             textFormat: Text.StyledText
                             wrapMode: Text.Wrap
                             color: dayGrid.isToday ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                            text: backgroundRectangle.periodStartDate.toLocaleDateString(Qt.locale(), dateFormat)
+                            text: backgroundRectangle.periodStartDate.toLocaleDateString(dateFormat)
                         }
 
 

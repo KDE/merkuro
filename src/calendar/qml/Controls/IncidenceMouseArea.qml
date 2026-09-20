@@ -12,7 +12,7 @@ MouseArea {
     id: mouseArea
 
     signal viewClicked(var incidenceData)
-    signal deleteClicked(var incidencePtr, date deleteDate)
+    signal deleteClicked(var incidencePtr, MerkuroComponents.KDateTime deleteDate)
     signal todoCompletedClicked(var incidencePtr)
 
     property double clickX
@@ -185,9 +185,8 @@ MouseArea {
                     const wrapper = Calendar.CalendarManager.createIncidenceWrapper()
                     wrapper.incidenceItem = Calendar.CalendarManager.incidenceItem(mouseArea.incidenceData.incidencePtr);
 
-                    if(date && !isNaN(date.getTime())) {
-                        // Remember we have to convert from JS months (0-11) to Qt months (1-12)
-                        wrapper.setIncidenceEndDate(date.getDate(), date.getMonth() + 1, date.getFullYear());
+                    if(date && date.isValid) {
+                        wrapper.setIncidenceEndDate(date);
                         wrapper.allDay = true;
                     } else {
                         wrapper.incidenceEnd = MerkuroComponents.KDateTimeFactory.invalid();
@@ -203,45 +202,33 @@ MouseArea {
                 }
 
                 QQC2.Action {
-                    readonly property date dateToday: new Date()
+                    readonly property MerkuroComponents.KDateTime dateToday: MerkuroComponents.KDateTimeFactory.now()
 
                     icon.name: "go-jump-today"
-                    text: i18n("Today (%1)", dateToday.toLocaleDateString(Qt.locale(), Locale.NarrowFormat))
+                    text: i18n("Today (%1)", dateToday.toLocaleDateString(Locale.NarrowFormat))
                     onTriggered: setDueDateMenu.setDate(dateToday)
                 }
 
                 QQC2.Action {
-                    readonly property date dateTomorrow: {
-                        let date = new Date();
-                        date.setDate(date.getDate() + 1);
-                        return date;
-                    }
+                    readonly property MerkuroComponents.KDateTime dateTomorrow: dateToday.addDays(1)
 
                     icon.name: "view-calendar-day"
-                    text: i18n("Tomorrow (%1)", dateTomorrow.toLocaleDateString(Qt.locale(), Locale.NarrowFormat))
+                    text: i18n("Tomorrow (%1)", dateTomorrow.toLocaleDateString(Locale.NarrowFormat))
                     onTriggered: setDueDateMenu.setDate(dateTomorrow);
                 }
 
                 QQC2.Action {
-                    readonly property date dateInAWeek: {
-                        let date = new Date();
-                        date.setDate(date.getDate() + 7);
-                        return date;
-                    }
+                    readonly property MerkuroComponents.KDateTime dateInAWeek: dateToday.addDays(7)
                     icon.name: "view-calendar-week"
-                    text: i18n("In a week (%1)", dateInAWeek.toLocaleDateString(Qt.locale(), Locale.NarrowFormat))
+                    text: i18n("In a week (%1)", dateInAWeek.toLocaleDateString(Locale.NarrowFormat))
                     onTriggered: setDueDateMenu.setDate(dateInAWeek);
                 }
 
                 QQC2.Action {
-                    readonly property date dateInAMonth: {
-                        let date = new Date();
-                        date.setMonth(date.getMonth() + 1);
-                        return date;
-                    }
+                    readonly property MerkuroComponents.KDateTime dateInAMonth: dateToday.addMonths(1)
 
                     icon.name: "view-calendar-month"
-                    text: i18n("In a month (%1)", dateInAMonth.toLocaleDateString(Qt.locale(), Locale.NarrowFormat))
+                    text: i18n("In a month (%1)", dateInAMonth.toLocaleDateString(Locale.NarrowFormat))
                     onTriggered: setDueDateMenu.setDate(dateInAMonth);
                 }
             }

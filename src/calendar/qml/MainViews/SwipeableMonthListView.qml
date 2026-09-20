@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 PathView {
     id: root
@@ -49,8 +50,8 @@ PathView {
         id: viewLoader
 
         required property int index
-        required property date startDate
-        required property var firstDayOfMonth
+        required property MerkuroComponents.KDateTime startDate
+        required property MerkuroComponents.KDateTime firstDayOfMonth
         readonly property bool isNextOrCurrentItem: index >= root.currentIndex -1 && index <= root.currentIndex + 1
         readonly property bool isCurrentItem: PathView.isCurrentItem
 

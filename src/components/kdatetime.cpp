@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "kdatetime.h"
+#include "merkurokdatetime.h"
 
 #include <QLocale>
 #include <QRegularExpression>
@@ -69,6 +69,11 @@ void KDateTime::setMonth(int month)
 int KDateTime::day() const
 {
     return m_dateTime.date().day();
+}
+
+int KDateTime::dayOfWeek() const
+{
+    return m_dateTime.toLocalTime().date().dayOfWeek();
 }
 
 void KDateTime::setDay(int day)
@@ -160,6 +165,21 @@ QString KDateTime::toLocaleTimeString(const QString &format) const
 QString KDateTime::toLocaleTimeString(QLocale::FormatType format) const
 {
     return QLocale().toString(m_dateTime.toLocalTime().time(), format);
+}
+
+bool KDateTime::sameDay(const KDateTime &right) const
+{
+    return m_dateTime.toLocalTime().date() == right.m_dateTime.toLocalTime().date();
+}
+
+bool KDateTime::sameTime(const KDateTime &right) const
+{
+    return m_dateTime.toLocalTime().time() == right.m_dateTime.toLocalTime().time();
+}
+
+qint64 KDateTime::msecsTo(const KDateTime &right) const
+{
+    return m_dateTime.msecsTo(right.m_dateTime);
 }
 
 KDateTime KDateTime::addDays(int days) const

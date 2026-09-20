@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtLocation
 import org.kde.merkuro.calendar as Calendar
+import org.kde.merkuro.components as MerkuroComponents
 
 QQC2.ScrollView {
     id: root
@@ -30,12 +31,12 @@ QQC2.ScrollView {
     readonly property int relatedIncidenceDelegateHeight: Kirigami.Units.gridUnit * 3
     readonly property alias scrollView: root
 
-    readonly property bool validIncidenceStart: root.incidenceData && !isNaN(root.incidenceData.startTime.getTime())
-    readonly property bool validIncidenceEnd: root.incidenceData && !isNaN(root.incidenceData.endTime.getTime())
+    readonly property bool validIncidenceStart: root.incidenceData && root.incidenceData.startTime.isValid
+    readonly property bool validIncidenceEnd: root.incidenceData && root.incidenceData.endTime.isValid
     readonly property bool validIncidenceStartOrEnd: validIncidenceStart || validIncidenceEnd
     readonly property bool bothIncidenceStartAndEndValid: validIncidenceStart && validIncidenceEnd
-    readonly property bool sameIncidenceStartAndEndDate: root.incidenceData.startTime.toDateString() === root.incidenceData.endTime.toDateString()
-    readonly property bool sameIncidenceStartAndEndTime: root.incidenceData.startTime.toTimeString() === root.incidenceData.endTime.toTimeString()
+    readonly property bool sameIncidenceStartAndEndDate: root.incidenceData.startTime.sameDay(root.incidenceData.endTime)
+    readonly property bool sameIncidenceStartAndEndTime: root.incidenceData.startTime.sameTime(root.incidenceData.endTime)
 
     onIncidenceDataChanged: {
         QQC2.ScrollBar.vertical.position = 0;
@@ -214,8 +215,8 @@ QQC2.ScrollView {
         QQC2.Label {
             id: dateLabel
 
-            readonly property string startDateString: root.incidenceData.startTime.toLocaleDateString(Qt.locale())
-            readonly property string endDateString: root.incidenceData.endTime.toLocaleDateString(Qt.locale())
+            readonly property string startDateString: root.incidenceData.startTime.toLocaleDateString(Locale.NarrowFormat)
+            readonly property string endDateString: root.incidenceData.endTime.toLocaleDateString(Locale.NarrowFormat)
 
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
@@ -241,8 +242,8 @@ QQC2.ScrollView {
         QQC2.Label {
             id: timeLabel
 
-            readonly property string startTimeString: root.incidenceData.startTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
-            readonly property string endTimeString: root.incidenceData.endTime.toLocaleTimeString(Qt.locale(), Locale.ShortFormat)
+            readonly property string startTimeString: root.incidenceData.startTime.toLocaleTimeString(Locale.ShortFormat)
+            readonly property string endTimeString: root.incidenceData.endTime.toLocaleTimeString(Locale.ShortFormat)
 
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
@@ -296,13 +297,11 @@ QQC2.ScrollView {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
 
-            readonly property date completionDate: root.incidenceWrapper.todoCompletionDt
-            readonly property bool validCompletionDate: isNaN(completionDate.getTime())
+            readonly property MerkuroComponents.KDateTime completionDate: root.incidenceWrapper.todoCompletionDt
+            readonly property bool validCompletionDate: completionDate.isValid
 
-            text: completionDate.toLocaleString(Qt.locale())
+            text: completionDate.toLocaleDateString(Locale.ShortFormat) + " " + completionDate.toLocaleTimeString(Locale.ShortFormat)
             visible: root.incidenceWrapper.todoCompleted
-            // HACK: For some reason, calling the todoCompletionDt always returns an invalid date once it is changed (???)
-            onVisibleChanged: if(visible && !validCompletionDate) { text = new Date().toLocaleString(Qt.locale()) }
             wrapMode: Text.Wrap
         }
 
@@ -319,7 +318,7 @@ QQC2.ScrollView {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
-                text: Calendar.LabelUtils.recurrenceToString(root.incidenceWrapper.recurrenceData)
+                text: root.incidenceWrapper.recurrenceData.recurrenceToString()
                 wrapMode: Text.Wrap
             }
 
@@ -354,7 +353,7 @@ QQC2.ScrollView {
                 Layout.fillWidth: true
                 visible: root.incidenceWrapper.recurrenceData.duration > -1
 
-                text: Calendar.LabelUtils.recurrenceEndToString(root.incidenceWrapper.recurrenceData)
+                text: root.incidenceWrapper.recurrenceData.recurrenceEndToString()
                 wrapMode: Text.Wrap
             }
         }

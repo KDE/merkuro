@@ -101,7 +101,7 @@ Kirigami.Page {
     titleDelegate: Calendar.ViewTitleDelegate {
         titleDateButton {
             range: true
-            lastDate: Calendar.Utils.addDaysToDate(Calendar.DateTimeState.selectedDate, root.daysToShow - 1)
+            lastDate: Calendar.DateTimeState.selectedDate.addDays(root.daysToShow - 1)
         }
 
         Repeater {
@@ -180,7 +180,7 @@ Kirigami.Page {
 
             startDate: root.daysToShow === 7 ? Calendar.DateTimeState.firstDayOfWeek
                        : root.daysToShow === 5 ? (Qt.locale().firstDayOfWeek === Qt.Monday ? Calendar.DateTimeState.firstDayOfWeek
-                                                  : Calendar.Utils.addDaysToDate(Calendar.DateTimeState.firstDayOfWeek, 1))
+                                                  : Calendar.DateTimeState.firstDayOfWeek.addDays(1))
                        : Calendar.DateTimeState.selectedDate
             daysToShow: root.daysToShow
             dragDropEnabled: root.dragDropEnabled

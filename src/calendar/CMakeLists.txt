@@ -9,6 +9,8 @@ set(merkuro_calendar_SRCS
 
     datetimestate.h
     datetimestate.cpp
+    recurrencedata.h
+    recurrencedata.cpp
 
     calendarmanager.cpp
     calendarmanager.h
@@ -135,7 +137,6 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
         qml/MainViews/WeekViewHolidayRow.qml
         qml/MainViews/HourlyView.qml
 
-        qml/CalendarUtils/DateUtils.js
         qml/CalendarUtils/LabelUtils.js
         qml/CalendarUtils/CalendarUiUtils.qml
 
