@@ -12,5 +12,12 @@ EMAIL:ada@example.org
 END:VCARD
       </payload>
     </item>
+    <item rid="friends" mimetype="application/x-vnd.kde.contactgroup">
+      <payload><![CDATA[
+        <contactGroup uid="friends" name="KDE Friends">
+          <contactData name="Grace Hopper" email="grace@example.org"/>
+        </contactGroup>
+      ]]></payload>
+    </item>
   </collection>
 </knut>
