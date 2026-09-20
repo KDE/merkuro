@@ -31,6 +31,12 @@ ecm_add_test(contactgroupmodeltest.cpp
     NAME_PREFIX "merkuro-contact-"
 )
 
+ecm_add_test(addressee_wrapper_test.cpp
+    TEST_NAME addressee_wrapper_test
+    LINK_LIBRARIES merkuro_contact Qt::Test
+    NAME_PREFIX "merkuro-contact-"
+)
+
 if(UNIX)
     add_akonadi_isolated_test(SOURCE editorandrepositorytest.cpp
         LINK_LIBRARIES merkuro_contact Qt::Test
