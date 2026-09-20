@@ -59,8 +59,6 @@ target_sources(merkuro_contact PRIVATE
     imppmodel.cpp
     emailmodel.h
     emailmodel.cpp
-    globalcontactmodel.cpp
-    globalcontactmodel.h
     certificatesmodel.cpp
     certificatesmodel.h
     contactactions.cpp

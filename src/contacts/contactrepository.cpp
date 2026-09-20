@@ -5,15 +5,17 @@
 
 #include "contactcollectionmodel.h"
 #include "contactconfig.h"
-#include "globalcontactmodel.h"
-#include "merkuro_contact_debug.h"
 #include "sortedcollectionproxymodel.h"
+#include <Akonadi/ChangeRecorder>
 #include <Akonadi/Collection>
 #include <Akonadi/ColorProxyModel>
 #include <Akonadi/ContactsTreeModel>
 #include <Akonadi/ETMViewStateSaver>
+#include <Akonadi/EntityDisplayAttribute>
 #include <Akonadi/EntityMimeTypeFilterModel>
+#include <Akonadi/ItemFetchScope>
 #include <Akonadi/SelectionProxyModel>
+#include <Akonadi/Session>
 #include <KCheckableProxyModel>
 #include <KConfigGroup>
 #include <KContacts/Addressee>
@@ -50,13 +52,26 @@ void migrateCollectionSelection()
 
 ContactRepository::ContactRepository(QObject *parent)
     : QObject(parent)
+    , m_session(new Akonadi::Session("KAddressBook::ContactSession"))
+    , m_monitor(new Akonadi::ChangeRecorder)
+    , m_contactModel(new Akonadi::ContactsTreeModel(m_monitor))
     , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
 {
-    const auto contactModel = GlobalContactModel::instance()->model();
-    connect(contactModel, &Akonadi::EntityTreeModel::errorOccurred, this, &ContactRepository::errorOccurred);
+    Akonadi::ItemFetchScope scope;
+    scope.fetchFullPayload(true);
+    scope.fetchAttribute<Akonadi::EntityDisplayAttribute>();
+
+    m_monitor->setSession(m_session);
+    m_monitor->fetchCollection(true);
+    m_monitor->setItemFetchScope(scope);
+    m_monitor->setCollectionMonitored(Akonadi::Collection::root());
+    m_monitor->setMimeTypeMonitored(KContacts::Addressee::mimeType(), true);
+    m_monitor->setMimeTypeMonitored(KContacts::ContactGroup::mimeType(), true);
+
+    connect(m_contactModel, &Akonadi::EntityTreeModel::errorOccurred, this, &ContactRepository::errorOccurred);
 
     m_collectionTree->setSortCaseSensitivity(Qt::CaseInsensitive);
-    m_collectionTree->setSourceModel(contactModel);
+    m_collectionTree->setSourceModel(m_contactModel);
     m_collectionTree->addMimeTypeInclusionFilter(Akonadi::Collection::mimeType());
     m_collectionTree->setHeaderGroup(Akonadi::EntityTreeModel::CollectionTreeHeaders);
 
@@ -105,7 +120,7 @@ ContactRepository::ContactRepository(QObject *parent)
     });
 
     auto selectionProxyModel = new Akonadi::SelectionProxyModel(m_checkableProxyModel->selectionModel(), this);
-    selectionProxyModel->setSourceModel(contactModel);
+    selectionProxyModel->setSourceModel(m_contactModel);
     selectionProxyModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
 
     auto flatModel = new KDescendantsProxyModel(this);
@@ -127,6 +142,9 @@ ContactRepository::ContactRepository(QObject *parent)
 ContactRepository::~ContactRepository()
 {
     saveState();
+    delete m_contactModel;
+    delete m_monitor;
+    delete m_session;
 }
 
 void ContactRepository::saveState() const

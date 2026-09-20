@@ -14,8 +14,11 @@ class ColorProxyModel;
 
 namespace Akonadi
 {
+class ChangeRecorder;
+class ContactsTreeModel;
 class ETMViewStateSaver;
 class EntityMimeTypeFilterModel;
+class Session;
 }
 
 class ContactRepository : public QObject
@@ -37,6 +40,9 @@ Q_SIGNALS:
 private:
     void saveState() const;
 
+    Akonadi::Session *const m_session;
+    Akonadi::ChangeRecorder *const m_monitor;
+    Akonadi::ContactsTreeModel *const m_contactModel;
     Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
