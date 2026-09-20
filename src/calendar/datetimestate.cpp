@@ -66,25 +66,28 @@ void DateTimeState::resetTime()
     Q_EMIT selectedDateChanged();
 }
 
-void DateTimeState::setSelectedYearMonthDay(const int year, const int month, const int day)
+void DateTimeState::setSelectedDate(const Merkuro::KDateTime &date)
 {
-    m_selectedDate.setDate(QDate(year, month, day));
+    m_selectedDate = date;
     Q_EMIT selectedDateChanged();
 }
 
 void DateTimeState::setSelectedDay(const int day)
 {
-    setSelectedYearMonthDay(m_selectedDate.year(), m_selectedDate.month(), day);
+    m_selectedDate.setDay(day);
+    Q_EMIT selectedDateChanged();
 }
 
 void DateTimeState::setSelectedMonth(const int month)
 {
-    setSelectedYearMonthDay(m_selectedDate.year(), month, m_selectedDate.day());
+    m_selectedDate.setMonth(month);
+    Q_EMIT selectedDateChanged();
 }
 
 void DateTimeState::setSelectedYear(const int year)
 {
-    setSelectedYearMonthDay(year, m_selectedDate.month(), m_selectedDate.day());
+    m_selectedDate.setYear(year);
+    Q_EMIT selectedDateChanged();
 }
 
 #include "moc_datetimestate.cpp"
