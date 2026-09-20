@@ -12,11 +12,12 @@ import QtQuick.Controls as Controls
 
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: root
 
-    title: i18n("Contacts")
+    title: KI18n.i18n("Contacts")
 
     property alias contactDelegate: contactsList.delegate
     readonly property alias selectionModel: contactSelectionModel
@@ -45,7 +46,7 @@ Kirigami.ScrollablePage {
             criteria: ViewSection.FirstCharacter
             delegate: Kirigami.ListSectionHeader {
                 required property string section
-                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
+                text: section.trim().length > 0 ? section : KI18n.i18nc("Placeholder", "No Name")
             }
         }
 
@@ -54,7 +55,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No contacts")
+            text: KI18n.i18n("No contacts")
             visible: contactsList.count === 0
         }
     }

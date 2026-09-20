@@ -5,6 +5,7 @@ import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: page
@@ -30,7 +31,7 @@ Kirigami.ScrollablePage {
 
     actions: Kirigami.Action {
         icon.name: "document-edit"
-        text: i18nc("@action:button", "Edit")
+        text: KI18n.i18nc("@action:button", "Edit")
         onTriggered: openEditor()
     }
 

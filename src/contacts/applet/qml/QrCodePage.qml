@@ -13,12 +13,13 @@ import org.kde.kquickcontrolsaddons
 import org.kde.merkuro.contact
 import org.kde.prison as Prison
 import org.kde.kirigami as Kirigami
+import org.kde.ki18n
 
 ColumnLayout {
     id: barcodeView
 
     property string qrCodeData
-    property string title: i18n("QR Code")
+    property string title: KI18n.i18n("QR Code")
 
     Keys.onPressed: {
         if (event.key == Qt.Key_Escape) {
@@ -32,7 +33,7 @@ ColumnLayout {
             PlasmaComponents3.Button {
                 Layout.fillWidth: true
                 icon.name: "go-previous-view"
-                text: i18n("Return to Contact")
+                text: KI18n.i18n("Return to Contact")
                 onClicked: stack.pop()
             }
 
@@ -49,9 +50,9 @@ ColumnLayout {
 
                 Component.onCompleted: {
                     [
-                        {text: i18n("QR Code"), type: Prison.Barcode.QRCode},
-                        {text: i18n("Data Matrix"), type: Prison.Barcode.DataMatrix},
-                        {text: i18nc("Aztec barcode", "Aztec"), type: Prison.Barcode.Aztec}
+                        {text: KI18n.i18n("QR Code"), type: Prison.Barcode.QRCode},
+                        {text: KI18n.i18n("Data Matrix"), type: Prison.Barcode.DataMatrix},
+                        {text: KI18n.i18nc("Aztec barcode", "Aztec"), type: Prison.Barcode.Aztec}
                     ].forEach((item) => {
                         let menuItem = menuItemComponent.createObject(menu, {
                             text: item.text,
@@ -75,7 +76,7 @@ ColumnLayout {
                 onClicked: menu.open()
 
                 PlasmaComponents3.ToolTip {
-                    text: i18n("Change the QR code type")
+                    text: KI18n.i18n("Change the QR code type")
                 }
             }
         }
@@ -99,7 +100,7 @@ ColumnLayout {
             anchors.fill: parent
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            text: i18n("Creating QR code failed")
+            text: KI18n.i18n("Creating QR code failed")
             wrapMode: Text.WordWrap
             visible: barcodeItem.implicitWidth === 0 && barcodeItem.implicitHeight === 0
         }
@@ -108,7 +109,7 @@ ColumnLayout {
             anchors.fill: parent
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            text: i18n("The QR code is too large to be displayed")
+            text: KI18n.i18n("The QR code is too large to be displayed")
             wrapMode: Text.WordWrap
             visible: barcodeItem.implicitWidth > barcodeItem.width || barcodeItem.implicitHeight > barcodeItem.height
         }

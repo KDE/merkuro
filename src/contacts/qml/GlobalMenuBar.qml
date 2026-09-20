@@ -9,6 +9,7 @@ import QtQuick.Window
 import org.kde.merkuro.components
 import org.kde.merkuro.contact
 import org.kde.kirigamiaddons.statefulapp.labs as StatefuleAppLabs
+import org.kde.ki18n
 
 Labs.MenuBar {
     NativeFileMenu {}
@@ -16,7 +17,7 @@ Labs.MenuBar {
     NativeEditMenu {}
 
     Labs.Menu {
-        title: i18nc("@action:menu", "View")
+        title: KI18n.i18nc("@action:menu", "View")
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: 'open_kcommand_bar'
@@ -30,7 +31,7 @@ Labs.MenuBar {
     }
 
     Labs.Menu {
-        title: i18nc("@action:menu", "Create")
+        title: KI18n.i18nc("@action:menu", "Create")
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: "create_contact"

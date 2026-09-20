@@ -9,6 +9,7 @@ import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 ColumnLayout {
     id: root
@@ -25,8 +26,8 @@ ColumnLayout {
         onLoaded: item.open();
 
         sourceComponent: FileDialog {
-            title: i18n("Select a file")
-            nameFilters: [i18n("Images files (*.png *.jpeg *.jpg)")]
+            title: KI18n.i18n("Select a file")
+            nameFilters: [KI18n.i18n("Images files (*.png *.jpeg *.jpg)")]
             folder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
             onAccepted: {
                 if (currentFile) {
@@ -40,7 +41,7 @@ ColumnLayout {
     }
 
     QQC2.RoundButton {
-        Kirigami.FormData.label: i18n("Photo")
+        Kirigami.FormData.label: KI18n.i18n("Photo")
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
         // Square button
@@ -83,7 +84,7 @@ ColumnLayout {
     }
 
     QQC2.Label {
-        text: root.loadedPhoto.isEmpty ? i18n("Add Profile Picture") : i18n("Update Profile Picture")
+        text: root.loadedPhoto.isEmpty ? KI18n.i18n("Add Profile Picture") : KI18n.i18n("Update Profile Picture")
         color: Kirigami.Theme.disabledTextColor
         Layout.alignment: Qt.AlignHCenter
     }

@@ -11,6 +11,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 FormCard.FormCardPage {
     id: root
@@ -57,9 +58,9 @@ FormCard.FormCardPage {
     }
 
     title: if (mode === ContactEditor.CreateMode) {
-        return i18n("Add Contact");
+        return KI18n.i18n("Add Contact");
     } else {
-        return i18n("Edit Contact");
+        return KI18n.i18n("Edit Contact");
     }
 
     enabled: !contactEditor.isReadOnly
@@ -100,7 +101,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Personal Information")
+        title: KI18n.i18n("Personal Information")
     }
 
     PersonalInfoEditorCard {
@@ -108,7 +109,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Business Information")
+        title: KI18n.i18n("Business Information")
     }
 
     BusinessEditorCard {
@@ -116,7 +117,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Phone")
+        title: KI18n.i18n("Phone")
     }
 
     PhoneEditorCard {
@@ -125,7 +126,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("E-mail")
+        title: KI18n.i18n("E-mail")
     }
 
     EmailEditorCard {
@@ -134,7 +135,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Instant Messenger")
+        title: KI18n.i18n("Instant Messenger")
     }
 
     InstantMessengerEditorCard {
@@ -156,7 +157,7 @@ FormCard.FormCardPage {
 
             QQC2.Button {
                 icon.name: root.mode === ContactEditor.EditMode ? "document-save" : "list-add"
-                text: root.mode === ContactEditor.EditMode ? i18n("Save") : i18n("Add")
+                text: root.mode === ContactEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
                 enabled: contactEditor.contact.formattedName.length > 0
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
@@ -173,7 +174,7 @@ FormCard.FormCardPage {
     property QQC2.Dialog itemChangedExternallySheet: QQC2.Dialog {
         id: itemChangedExternallySheet
         visible: false
-        title: i18n("Warning")
+        title: KI18n.i18n("Warning")
         modal: true
         focus: true
         x: (parent.width - width) / 2
@@ -183,12 +184,12 @@ FormCard.FormCardPage {
         contentItem: ColumnLayout {
             Kirigami.Heading {
                 level: 4
-                text: i18n("This contact was changed elsewhere during editing.")
+                text: KI18n.i18n("This contact was changed elsewhere during editing.")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: i18n("Which changes should be kept?")
+                text: KI18n.i18n("Which changes should be kept?")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
@@ -201,12 +202,12 @@ FormCard.FormCardPage {
 
         footer: QQC2.DialogButtonBox {
             QQC2.Button {
-                text: i18n("Current changes")
+                text: KI18n.i18n("Current changes")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
 
             QQC2.Button {
-                text: i18n("External changes")
+                text: KI18n.i18n("External changes")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
             }
         }

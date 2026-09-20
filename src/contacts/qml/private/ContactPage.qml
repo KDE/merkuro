@@ -11,6 +11,7 @@ import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 FormCard.FormCardPage {
     id: page
@@ -33,14 +34,14 @@ FormCard.FormCardPage {
     actions: [
         Kirigami.Action {
             icon.name: "document-edit"
-            text: i18nc("@action:inmenu", "Edit")
+            text: KI18n.i18nc("@action:inmenu", "Edit")
             onTriggered: openEditor()
         },
         Kirigami.Action {
             fromQAction: ContactApplication.action('contact_delete')
         },
         Kirigami.Action {
-            text: i18nc("@action:inmenu", "Cancel")
+            text: KI18n.i18nc("@action:inmenu", "Cancel")
             icon.name: "dialog-cancel"
             visible: Kirigami.Settings.isMobile
 
@@ -59,10 +60,10 @@ FormCard.FormCardPage {
     Header {
         Layout.fillWidth: true
         photoUrl: addressee.photoUrl
-        name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : i18nc("Placeholder", "No Name")
+        name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : KI18n.i18nc("Placeholder", "No Name")
         actions: [
             Kirigami.Action {
-                text: i18n("Call")
+                text: KI18n.i18n("Call")
                 icon.name: "call-start"
                 visible: addressee.phoneNumbers.length > 0
                 onTriggered: {
@@ -73,7 +74,7 @@ FormCard.FormCardPage {
                     } else {
                         const pop = callPopup.createObject(page, {
                             numbers: addressee.phoneNumbers,
-                            title: i18n("Select number to call")
+                            title: KI18n.i18n("Select number to call")
                         });
                         pop.onNumberSelected.connect(number => callNumber(number));
                         pop.open();
@@ -81,7 +82,7 @@ FormCard.FormCardPage {
                 }
             },
             Kirigami.Action {
-                text: i18n("Send SMS")
+                text: KI18n.i18n("Send SMS")
                 icon.name: "mail-message"
                 visible: addressee.phoneNumbers.length > 0
                 onTriggered: {
@@ -92,7 +93,7 @@ FormCard.FormCardPage {
                     } else {
                         const pop = callPopup.createObject(page, {
                             numbers: addressee.phoneNumbers,
-                            title: i18n("Select number to send message to"),
+                            title: KI18n.i18n("Select number to send message to"),
                         });
                         pop.onNumberSelected.connect(number => sendSms(number));
                         pop.open();
@@ -100,13 +101,13 @@ FormCard.FormCardPage {
                 }
             },
             Kirigami.Action {
-                text: i18n("Send email")
+                text: KI18n.i18n("Send email")
                 icon.name: "mail-message"
                 visible: addressee.preferredEmail.length > 0
                 onTriggered: Qt.openUrlExternally(`mailto:${addressee.preferredEmail}`)
             },
             Kirigami.Action {
-                text: i18n("Show QR Code")
+                text: KI18n.i18n("Show QR Code")
                 icon.name: 'view-barcode-qr'
                 onTriggered: pageStack.layers.push(Qt.resolvedUrl('./QrCodePage.qml'), {
                     qrCodeData: addressee.qrCodeData(),
@@ -122,33 +123,33 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Contact information")
+        title: KI18n.i18n("Contact information")
     }
 
     FormCard.FormCard {
         FormCard.FormTextDelegate {
             visible: description !== ""
             description: addressee.formattedName
-            text: i18n("Name:")
+            text: KI18n.i18n("Name:")
         }
 
         FormCard.FormTextDelegate {
             visible: description !== ""
             description: addressee.nickName
-            text: i18n("Nickname:")
+            text: KI18n.i18n("Nickname:")
         }
 
         FormCard.FormLinkDelegate {
             id: blogFeed
             visible: addressee.blogFeed + '' !== ''
-            text: i18n("Blog Feed:")
+            text: KI18n.i18n("Blog Feed:")
             description: addressee.blogFeed
             url: addressee.blogFeed
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Personal information")
+        title: KI18n.i18n("Personal information")
         visible: birthday.visible || anniversary.visible || spousesName.visible
     }
 
@@ -158,10 +159,10 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: birthday
             visible: description !== ""
-            text: i18n("Birthday:")
+            text: KI18n.i18n("Birthday:")
             // We do not always have the year
             description: if (addressee.birthday.getFullYear() === 0) {
-                return Qt.formatDate(addressee.birthday, i18nc('Day month format', 'dd.MM.'))
+                return Qt.formatDate(addressee.birthday, KI18n.i18nc('Day month format', 'dd.MM.'))
             } else {
                 return addressee.birthday.toLocaleDateString()
             }
@@ -172,23 +173,23 @@ FormCard.FormCardPage {
             visible: description !== ""
             // We do not always have the year
             description: if (addressee.anniversary.getFullYear() === 0) {
-                return Qt.formatDate(addressee.anniversary, i18nc('Day month format', 'dd.MM.'))
+                return Qt.formatDate(addressee.anniversary, KI18n.i18nc('Day month format', 'dd.MM.'))
             } else {
                 return addressee.anniversary.toLocaleDateString()
             }
-            text: i18n("Anniversary:")
+            text: KI18n.i18n("Anniversary:")
         }
 
         FormCard.FormTextDelegate {
             id: spousesName
             visible: description !== ""
             description: addressee.spousesName
-            text: i18n("Partner's name:")
+            text: KI18n.i18n("Partner's name:")
         }
     }
 
     FormCard.FormHeader {
-        title: i18np("Phone Number", "Phone Numbers", addressee.phoneModel.count)
+        title: KI18n.i18np("Phone Number", "Phone Numbers", addressee.phoneModel.count)
         visible: phoneRepeater.count > 0
     }
 
@@ -210,18 +211,18 @@ FormCard.FormCardPage {
                     implicitWidth: Kirigami.Units.iconSizes.small
                     implicitHeight: Kirigami.Units.iconSizes.small
                 }
-                text: i18nc("Label for a phone number type", "%1:", type)
+                text: KI18n.i18nc("Label for a phone number type", "%1:", type)
                 description: phoneNumber
                 onClicked: {
                     addressee.phoneModel.copyToClipboard(index);
-                    applicationWindow().showPassiveNotification(i18n("Phone number copied to clipboard"));
+                    applicationWindow().showPassiveNotification(KI18n.i18n("Phone number copied to clipboard"));
                 }
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18np("Address", "Addresses", addressesRepeater.count)
+        title: KI18n.i18np("Address", "Addresses", addressesRepeater.count)
         visible: addressesRepeater.count > 0
     }
 
@@ -238,14 +239,14 @@ FormCard.FormCardPage {
 
                 visible: text.length > 0
 
-                text: typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", typeLabel) : i18n("Home:")
+                text: typeLabel ? KI18n.i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", typeLabel) : KI18n.i18n("Home:")
                 description: formattedAddress
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Instant Messaging")
+        title: KI18n.i18n("Instant Messaging")
         visible: imppRepeater.count > 0
     }
 
@@ -264,7 +265,7 @@ FormCard.FormCardPage {
                 required property string typeIcon
 
                 visible: text !== ""
-                text: i18nc("Label for a messaging protocol", "%1:", typeLabel)
+                text: KI18n.i18nc("Label for a messaging protocol", "%1:", typeLabel)
                 description: username
 
                 trailingLogo.source: "edit-copy-symbolic"
@@ -275,14 +276,14 @@ FormCard.FormCardPage {
 
                 onClicked: {
                     addressee.imppModel.copyToClipboard(imppRepeater.index);
-                    applicationWindow().showPassiveNotification(i18n("Instant Messaging ID copied to clipboard"));
+                    applicationWindow().showPassiveNotification(KI18n.i18n("Instant Messaging ID copied to clipboard"));
                 }
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Business Information")
+        title: KI18n.i18n("Business Information")
         visible: businessCard.visible
     }
 
@@ -301,55 +302,55 @@ FormCard.FormCardPage {
         FormCard.FormTextDelegate {
             id: organization
             visible: description.length > 0
-            text: i18n("Organization:")
+            text: KI18n.i18n("Organization:")
             description: addressee.organization
         }
 
         FormCard.FormTextDelegate {
             id: profession
             visible: description.length > 0
-            text: i18n("Profession:")
+            text: KI18n.i18n("Profession:")
             description: addressee.profession
         }
 
         FormCard.FormTextDelegate {
             id: title
             visible: description !== ''
-            text: i18n("Title:")
+            text: KI18n.i18n("Title:")
             description: addressee.title
         }
 
         FormCard.FormTextDelegate {
             id: department
             visible: description !== ''
-            text: i18n("Department:")
+            text: KI18n.i18n("Department:")
             description: addressee.department
         }
 
         FormCard.FormTextDelegate {
             id: office
             visible: description.length > 0
-            text: i18n("Office:")
+            text: KI18n.i18n("Office:")
             description: addressee.office
         }
 
         FormCard.FormTextDelegate {
             id: managersName
             visible: description.length > 0
-            text: i18n("Manager's name:")
+            text: KI18n.i18n("Manager's name:")
             description: addressee.managersName
         }
 
         FormCard.FormTextDelegate {
             id: assistantsName
             visible: description.length > 0
-            text: i18n("Assistant's name:")
+            text: KI18n.i18n("Assistant's name:")
             description: addressee.assistantsName
         }
     }
 
     FormCard.FormHeader {
-        title: i18np("Email Address", "Email Addresses", emailRepeater.count > 0)
+        title: KI18n.i18np("Email Address", "Email Addresses", emailRepeater.count > 0)
         visible: emailRepeater.count > 0
     }
 
@@ -371,7 +372,7 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         visible: certificateRepeater.count > 0
-        title: i18nc("@title:group", "Cryptographic Certificates")
+        title: KI18n.i18nc("@title:group", "Cryptographic Certificates")
     }
 
     FormCard.FormCard {

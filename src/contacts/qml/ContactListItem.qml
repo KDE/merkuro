@@ -20,6 +20,7 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.components
 import org.kde.akonadi as Akonadi
 import org.kde.contacts as Contacts
+import org.kde.ki18n
 
 Delegates.RoundedItemDelegate {
     id: root
@@ -36,7 +37,7 @@ Delegates.RoundedItemDelegate {
 
     signal createContextMenu
 
-    text: model.display.trim().length > 0 ? model.display : i18nc("@info:placeholder", "No Name")
+    text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No Name")
 
     onPressAndHold: {
         root.selectionModel.clearCurrentIndex();

@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 Components.MessageDialog {
     id: root
@@ -17,25 +18,25 @@ Components.MessageDialog {
     required property list<Akonadi.item> items
     required property list<string> names
 
-    title: i18nc("@title:dialog", "Confirm Contact Deletion")
+    title: KI18n.i18nc("@title:dialog", "Confirm Contact Deletion")
     dialogType: Components.MessageDialog.Warning
     standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
     Component.onCompleted: {
         const deleteButton = standardButton(QQC2.Dialog.Ok);
-        deleteButton.text = i18ncp("@action:button", "Delete contact", "Delete contacts", items.length);
+        deleteButton.text = KI18n.i18ncp("@action:button", "Delete contact", "Delete contacts", items.length);
         deleteButton.icon.name = 'delete-symbolic';
     }
 
     QQC2.Label {
         text: {
-            let msg = i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", items.length) + '<ul>';
+            let msg = KI18n.i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", items.length) + '<ul>';
 
             for (let name of root.names) {
                 msg += '<li><b>' + name + '</b></li>';
             }
 
-            msg += '<ul><br />' + i18n("You won't be able to revert this action.");
+            msg += '<ul><br />' + KI18n.i18n("You won't be able to revert this action.");
             return msg;
         }
         wrapMode: Text.WordWrap

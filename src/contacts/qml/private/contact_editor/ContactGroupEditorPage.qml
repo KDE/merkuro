@@ -10,6 +10,7 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 FormCard.FormCardPage {
     id: root
@@ -27,7 +28,7 @@ FormCard.FormCardPage {
         onItemChangedExternally: itemChangedExternallySheet.open()
     }
 
-    title: mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? i18n("Edit %1", contactGroupEditor.name) : i18n("Create Contact Group")
+    title: mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? KI18n.i18n("Edit %1", contactGroupEditor.name) : KI18n.i18n("Create Contact Group")
 
     onItemChanged: contactGroupEditor.loadContactGroup(item)
 
@@ -60,7 +61,7 @@ FormCard.FormCardPage {
         Akonadi.FormCollectionComboBox {
             id: addressBookComboBox
 
-            text: i18n("Address Book:")
+            text: KI18n.i18n("Address Book:")
             Layout.fillWidth: true
             enabled: mode === ContactGroupEditor.CreateMode
 
@@ -78,15 +79,15 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
-            label: i18n("Name:")
+            label: KI18n.i18n("Name:")
             text: contactGroupEditor.name
             onTextChanged: contactGroupEditor.name = text;
-            placeholderText: i18n("Contact group name")
+            placeholderText: KI18n.i18n("Contact group name")
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Members")
+        title: KI18n.i18n("Members")
     }
 
     FormCard.FormCard {
@@ -163,7 +164,7 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormTextDelegate {
-            description: i18n("Only contacts with an email address can be added to a contact group")
+            description: KI18n.i18n("Only contacts with an email address can be added to a contact group")
         }
     }
 
@@ -172,7 +173,7 @@ FormCard.FormCardPage {
 
         QQC2.Button {
             icon.name: mode === ContactGroupEditor.EditMode ? "document-save" : "list-add"
-            text: mode === ContactGroupEditor.EditMode ? i18n("Save") : i18n("Add")
+            text: mode === ContactGroupEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
             enabled: isNotEmptyStr(contactGroupEditor.name)
             QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
         }
@@ -188,7 +189,7 @@ FormCard.FormCardPage {
     property QQC2.Dialog itemChangedExternallySheet: QQC2.Dialog {
         id: itemChangedExternallySheet
         visible: false
-        title: i18n("Warning")
+        title: KI18n.i18n("Warning")
         modal: true
         focus: true
         x: (parent.width - width) / 2
@@ -198,12 +199,12 @@ FormCard.FormCardPage {
         contentItem: ColumnLayout {
             Kirigami.Heading {
                 level: 4
-                text: i18n("This contact group was changed elsewhere during editing.")
+                text: KI18n.i18n("This contact group was changed elsewhere during editing.")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: i18n("Which changes should be kept?")
+                text: KI18n.i18n("Which changes should be kept?")
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
             }
@@ -216,12 +217,12 @@ FormCard.FormCardPage {
 
         footer: QQC2.DialogButtonBox {
             QQC2.Button {
-                text: i18n("Current changes")
+                text: KI18n.i18n("Current changes")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
 
             QQC2.Button {
-                text: i18n("External changes")
+                text: KI18n.i18n("External changes")
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
             }
         }

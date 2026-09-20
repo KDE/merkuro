@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.merkuro.contact
 import org.kde.kirigami as Kirigami
+import org.kde.ki18n
 
 QQC2.MenuBar {
     FileMenu {}
@@ -14,7 +15,7 @@ QQC2.MenuBar {
     EditMenu {}
 
     QQC2.Menu {
-        title: i18nc("@action:menu", "View")
+        title: KI18n.i18nc("@action:menu", "View")
 
         Kirigami.Action {
             fromQAction: ContactApplication.action('open_kcommand_bar')
@@ -26,7 +27,7 @@ QQC2.MenuBar {
     }
 
     QQC2.Menu {
-        title: i18nc("@action:menu", "Create")
+        title: KI18n.i18nc("@action:menu", "Create")
 
         Kirigami.Action {
             fromQAction: ContactApplication.action("create_contact")

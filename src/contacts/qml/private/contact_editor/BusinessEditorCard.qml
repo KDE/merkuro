@@ -11,6 +11,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -19,69 +20,69 @@ FormCard.FormCard {
 
     FormCard.FormTextFieldDelegate {
         id: organizationId
-        label: i18n("Organization")
+        label: KI18n.i18n("Organization")
         text: root.contactEditor.contact.organization
         onTextChanged: root.contactEditor.contact.organization = text
-        placeholderText: i18nc("Placeholder value for name of Organization", "KDE")
+        placeholderText: KI18n.i18nc("Placeholder value for name of Organization", "KDE")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: professionId
-        label: i18n("Profession")
+        label: KI18n.i18n("Profession")
         text: root.contactEditor.contact.profession
         onTextChanged: root.contactEditor.contact.profession = text
-        placeholderText: i18nc("Placeholder value for name of Profession", "Software Developer")
+        placeholderText: KI18n.i18nc("Placeholder value for name of Profession", "Software Developer")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: titleId
-        label: i18n("Title")
+        label: KI18n.i18n("Title")
         text: root.contactEditor.contact.title
         onTextChanged: root.contactEditor.contact.title = text
-        placeholderText: i18nc("Placeholder value for Title", "SDE-1")
+        placeholderText: KI18n.i18nc("Placeholder value for Title", "SDE-1")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: deptId
-        label: i18n("Department")
+        label: KI18n.i18n("Department")
         text: root.contactEditor.contact.department
         onTextChanged: root.contactEditor.contact.department = text
-        placeholderText: i18nc("Placeholder value for name of Department", "Merkuro-Team")
+        placeholderText: KI18n.i18nc("Placeholder value for name of Department", "Merkuro-Team")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: officeId
-        label: i18n("Office")
+        label: KI18n.i18n("Office")
         text: root.contactEditor.contact.office
         onTextChanged: root.contactEditor.contact.office = text
-        placeholderText: i18nc("Placeholder value for Office", "Tech Wing, 4th Floor")
+        placeholderText: KI18n.i18nc("Placeholder value for Office", "Tech Wing, 4th Floor")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: managersNameId
-        label: i18n("Manager's Name")
+        label: KI18n.i18n("Manager's Name")
         text: root.contactEditor.contact.managersName
         onTextChanged: root.contactEditor.contact.managersName = text
-        placeholderText: i18nc("Placeholder value for Manager's Name", "Bob")
+        placeholderText: KI18n.i18nc("Placeholder value for Manager's Name", "Bob")
     }
 
     FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: assistantsNameId
-        label: i18n("Assistant's Name")
+        label: KI18n.i18n("Assistant's Name")
         text: root.contactEditor.contact.assistantsName
         onTextChanged: root.contactEditor.contact.assistantsName = text
-        placeholderText: i18nc("Placeholder value for Assistants's Name", "Jill")
+        placeholderText: KI18n.i18nc("Placeholder value for Assistants's Name", "Jill")
     }
 }

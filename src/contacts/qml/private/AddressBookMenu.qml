@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.merkuro as Merkuro
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 QQC2.Menu {
     id: actionsPopup
@@ -21,17 +22,17 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "edit-entry"
-        text: i18nc("@action:inmenu", "Edit address book…")
+        text: KI18n.i18nc("@action:inmenu", "Edit address book…")
         onClicked: ContactManager.editCollection(actionsPopup.collection);
     }
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Update address book")
+        text: KI18n.i18nc("@action:inmenu", "Update address book")
         onClicked: ContactManager.updateCollection(actionsPopup.collection);
     }
     QQC2.MenuItem {
         icon.name: "edit-delete"
-        text: i18nc("@action:inmenu", "Delete address book")
+        text: KI18n.i18nc("@action:inmenu", "Delete address book")
         enabled: actionsPopup.collectionDetails.canDelete
         onClicked: ContactManager.deleteCollection(actionsPopup.collection)
     }
@@ -39,7 +40,7 @@ QQC2.Menu {
     }
     QQC2.MenuItem {
         icon.name: "color-picker"
-        text: i18nc("@action:inmenu", "Set address book color…")
+        text: KI18n.i18nc("@action:inmenu", "Set address book color…")
         onClicked: {
             colorDialogLoader.active = true;
             colorDialogLoader.item.open();
@@ -51,19 +52,19 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "settings-configure"
-        text: i18nc("@action:inmenu", "Address book source settings…")
+        text: KI18n.i18nc("@action:inmenu", "Address book source settings…")
         onClicked: actionsPopup.agentConfiguration.editIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }
     QQC2.MenuItem {
         icon.name: "view-refresh"
-        text: i18nc("@action:inmenu", "Update address book source")
+        text: KI18n.i18nc("@action:inmenu", "Update address book source")
         onClicked: actionsPopup.agentConfiguration.restartIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }
     QQC2.MenuItem {
         icon.name: "edit-delete"
-        text: i18nc("@action:inmenu", "Delete address source")
+        text: KI18n.i18nc("@action:inmenu", "Delete address source")
         onClicked: actionsPopup.agentConfiguration.removeIdentifier(collectionDetails.resource)
         visible: collectionDetails.isResource
     }

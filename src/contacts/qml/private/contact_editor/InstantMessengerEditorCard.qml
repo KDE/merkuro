@@ -8,6 +8,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -60,7 +61,7 @@ FormCard.FormCard {
             QQC2.TextField {
                 id: newUsername
                 Layout.fillWidth: true
-                placeholderText: i18n("@person:example.com")
+                placeholderText: KI18n.i18n("@person:example.com")
                 inputMethodHints: Qt.ImhEmailCharactersOnly
             }
 

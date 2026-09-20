@@ -8,6 +8,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -29,10 +30,10 @@ FormCard.FormCard {
                     model: ListModel {id: emailTypeModel; dynamicRoles: true }
                     Component.onCompleted: {
                         [
-                            { value: EmailModel.Unknown, text: i18n("Unknown") },
-                            { value: EmailModel.Home, text: i18n("Home") },
-                            { value: EmailModel.Work, text: i18n("Work") },
-                            { value: EmailModel.Other, text: i18n("Other") }
+                            { value: EmailModel.Unknown, text: KI18n.i18n("Unknown") },
+                            { value: EmailModel.Home, text: KI18n.i18n("Home") },
+                            { value: EmailModel.Work, text: KI18n.i18n("Work") },
+                            { value: EmailModel.Other, text: KI18n.i18n("Other") }
                         ].forEach((type) => {
                             emailTypeModel.append(type);
                         });
@@ -53,7 +54,7 @@ FormCard.FormCard {
                     icon.name: "list-remove"
                     implicitWidth: implicitHeight
                     QQC2.ToolTip {
-                        text: i18n("Remove email")
+                        text: KI18n.i18n("Remove email")
                     }
                     onClicked: root.contactEditor.contact.emailModel.deleteEmail(index)
                 }
@@ -72,10 +73,10 @@ FormCard.FormCard {
                 currentIndex: 0
                 Component.onCompleted: {
                     [
-                        { value: EmailModel.Home, text: i18n("Home") },
-                        { value: EmailModel.Work, text: i18n("Work") },
-                        { value: EmailModel.Both, text: i18n("Both") },
-                        { value: EmailModel.Other, text: i18n("Other…") }
+                        { value: EmailModel.Home, text: KI18n.i18n("Home") },
+                        { value: EmailModel.Work, text: KI18n.i18n("Work") },
+                        { value: EmailModel.Both, text: KI18n.i18n("Both") },
+                        { value: EmailModel.Other, text: KI18n.i18n("Other…") }
                     ].forEach((type) => {
                         newEmailTypeModel.append(type);
                     });
@@ -84,7 +85,7 @@ FormCard.FormCard {
             QQC2.TextField {
                 id: toAddEmail
                 Layout.fillWidth: true
-                placeholderText: i18n("user@example.org")
+                placeholderText: KI18n.i18n("user@example.org")
                 inputMethodHints: Qt.ImhEmailCharactersOnly
             }
 
@@ -93,7 +94,7 @@ FormCard.FormCard {
                 implicitWidth: implicitHeight
                 enabled: isNotEmptyStr(toAddEmail.text)
                 QQC2.ToolTip {
-                    text: i18n("Add email")
+                    text: KI18n.i18n("Add email")
                 }
                 onClicked: {
                     root.contactEditor.contact.emailModel.addEmail(toAddEmail.text, newEmailType.currentValue);

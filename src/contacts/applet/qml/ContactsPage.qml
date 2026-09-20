@@ -10,11 +10,12 @@ import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.merkuro.contact
 import org.kde.kitemmodels
+import org.kde.ki18n
 
 PlasmaComponents3.ScrollView {
     id: scrollView
     anchors.fill: parent
-    property string title: i18n("Contacts")
+    property string title: KI18n.i18n("Contacts")
 
     property var header: PlasmaExtras.PlasmoidHeading {
         focus: true
@@ -83,7 +84,7 @@ PlasmaComponents3.ScrollView {
             criteria: ViewSection.FirstCharacter
             delegate: Kirigami.ListSectionHeader {
                 required property string section
-                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
+                text: section.trim().length > 0 ? section : KI18n.i18nc("Placeholder", "No Name")
             }
         }
 

@@ -12,6 +12,7 @@ import org.kde.merkuro.components
 import org.kde.kirigamiaddons.components as Components
 import org.kde.akonadi as Akonadi
 import './private'
+import org.kde.ki18n
 
 Kirigami.ScrollablePage {
     id: root
@@ -20,21 +21,21 @@ Kirigami.ScrollablePage {
 
     property var attendeeAkonadiIds
 
-    title: i18n("Contacts")
+    title: KI18n.i18n("Contacts")
 
     actions: Kirigami.Action {
         icon.name: 'contact-new-symbolic'
-        text: i18nc("@action:inmenu", "Create")
+        text: KI18n.i18nc("@action:inmenu", "Create")
         Kirigami.Action {
             id: createNewContactAction
-            text: i18nc("@action:inmenu", "New Contact")
+            text: KI18n.i18nc("@action:inmenu", "New Contact")
             onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
                 mode: ContactEditor.CreateMode,
             })
         }
         Kirigami.Action {
             id: createNewContactGroupAction
-            text: i18nc("@action:inmenu", "New Contact Group")
+            text: KI18n.i18nc("@action:inmenu", "New Contact Group")
             onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
                 mode: ContactGroupEditor.CreateMode,
             })
@@ -82,7 +83,7 @@ Kirigami.ScrollablePage {
             }
 
             Kirigami.Heading {
-                text: i18ncp("Number of selected contacts", "%1 selected", "%1 selected", contactSelectionModel.selectedIndexes.length)
+                text: KI18n.i18ncp("Number of selected contacts", "%1 selected", "%1 selected", contactSelectionModel.selectedIndexes.length)
                 level: 2
                 elide: Text.ElideRight
                 Layout.fillWidth: true
@@ -114,7 +115,7 @@ Kirigami.ScrollablePage {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
             const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',
-                title: i18nc("@title:dialog", "Move Selection To:"),
+                title: KI18n.i18nc("@title:dialog", "Move Selection To:"),
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
             });
 
@@ -131,7 +132,7 @@ Kirigami.ScrollablePage {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
             const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',
-                title: i18nc("@title:dialog", "Copy Selection To:"),
+                title: KI18n.i18nc("@title:dialog", "Copy Selection To:"),
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
             });
             page.selected.connect((collection) => {
@@ -202,7 +203,7 @@ Kirigami.ScrollablePage {
             delegate: Kirigami.ListSectionHeader {
                 required property string section
 
-                text: section.trim().length > 0 ? section : i18nc("Placeholder", "No Name")
+                text: section.trim().length > 0 ? section : KI18n.i18nc("Placeholder", "No Name")
             }
         }
         clip: true
@@ -241,7 +242,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No contacts")
+            text: KI18n.i18n("No contacts")
             visible: contactsList.count === 0
         }
     }

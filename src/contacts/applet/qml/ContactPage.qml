@@ -8,6 +8,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 PlasmaComponents3.ScrollView {
     id: root
@@ -45,15 +46,15 @@ PlasmaComponents3.ScrollView {
 
             PlasmaComponents3.Button {
                 icon.name: "go-previous-view"
-                text: i18n("Return to Contact List")
+                text: KI18n.i18n("Return to Contact List")
                 onClicked: stack.pop()
                 Layout.fillWidth: true
             }
 
             PlasmaComponents3.ToolButton {
                 id: configureButtonCall
-                Accessible.name: i18n("Call")
-                PlasmaComponents3.ToolTip { text: i18n("Call") }
+                Accessible.name: KI18n.i18n("Call")
+                PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
                 icon.name: "call-start"
                 visible: addressee.phoneNumbers.length > 0
                 onClicked: {
@@ -65,7 +66,7 @@ PlasmaComponents3.ScrollView {
                         if (menuCall.count == 0) {
                             model.forEach((item) => {
                                 let menuItem = menuItemComponent.createObject(menuCall, {
-                                    text: i18n("%1 (%2)", item.typeLabel, item.number)
+                                    text: KI18n.i18n("%1 (%2)", item.typeLabel, item.number)
                                 });
                                 menuItem.clicked.connect(() => {
                                     callNumber(item.number);
@@ -84,8 +85,8 @@ PlasmaComponents3.ScrollView {
 
             PlasmaComponents3.ToolButton {
                 id: configureButtonSms
-                Accessible.name: i18n("Send SMS")
-                PlasmaComponents3.ToolTip { text: i18n("Send SMS") }
+                Accessible.name: KI18n.i18n("Send SMS")
+                PlasmaComponents3.ToolTip { text: KI18n.i18n("Send SMS") }
                 icon.name: "mail-message"
                 visible: addressee.phoneNumbers.length > 0
                 onClicked: {
@@ -97,7 +98,7 @@ PlasmaComponents3.ScrollView {
                         if (menuSms.count == 0) {
                             model.forEach((item) => {
                                 let menuItem = menuItemComponent.createObject(menuSms, {
-                                    text: i18n("%1 (%2)", item.typeLabel, item.number)
+                                    text: KI18n.i18n("%1 (%2)", item.typeLabel, item.number)
                                 });
                                 menuItem.clicked.connect(() => {
                                     sendSms(item.number);
@@ -115,8 +116,8 @@ PlasmaComponents3.ScrollView {
             }
 
             PlasmaComponents3.ToolButton {
-                Accessible.name: i18n("Send Email")
-                PlasmaComponents3.ToolTip { text: i18n("Send Email") }
+                Accessible.name: KI18n.i18n("Send Email")
+                PlasmaComponents3.ToolTip { text: KI18n.i18n("Send Email") }
                 icon.name: "mail-message"
                 visible: addressee.preferredEmail.length > 0
                 onClicked: Qt.openUrlExternally(`mailto:${addressee.preferredEmail}`)
@@ -124,8 +125,8 @@ PlasmaComponents3.ScrollView {
 
             PlasmaComponents3.ToolButton {
                 icon.name: 'view-barcode-qr'
-                Accessible.name: i18n("Show QR Code")
-                PlasmaComponents3.ToolTip { text: i18n("Show QR Code") }
+                Accessible.name: KI18n.i18n("Show QR Code")
+                PlasmaComponents3.ToolTip { text: KI18n.i18n("Show QR Code") }
                 onClicked: stack.push(Qt.resolvedUrl('./QrCodePage.qml'), {
                     qrCodeData: addressee.qrCodeData(),
                 })
@@ -156,7 +157,7 @@ PlasmaComponents3.ScrollView {
 
             PlasmaComponents3.Label {
                 visible: addressee.nickName !== ""
-                text: i18n("Nickname: %1", addressee.nickName)
+                text: KI18n.i18n("Nickname: %1", addressee.nickName)
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.topMargin: Kirigami.Units.smallSpacing
@@ -166,11 +167,11 @@ PlasmaComponents3.ScrollView {
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.topMargin: Kirigami.Units.smallSpacing
-                visible: text !== i18n("Birthday:") + ' '
+                visible: text !== KI18n.i18n("Birthday:") + ' '
                 text: if (addressee.birthday.getFullYear() === 0) {
-                    return Qt.formatDate(addressee.birthday, i18nc("Day month format", "dd.MM."))
+                    return Qt.formatDate(addressee.birthday, KI18n.i18nc("Day month format", "dd.MM."))
                 } else {
-                    return i18n("Birthday:") + ' ' + addressee.birthday.toLocaleDateString()
+                    return KI18n.i18n("Birthday:") + ' ' + addressee.birthday.toLocaleDateString()
                 }
             }
 
@@ -179,7 +180,7 @@ PlasmaComponents3.ScrollView {
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.topMargin: Kirigami.Units.smallSpacing
                 visible: addressesRepeater.count > 0
-                text: i18np("Address", "Addresses", addressesRepeater.count)
+                text: KI18n.i18np("Address", "Addresses", addressesRepeater.count)
                 level: 4
             }
 
@@ -190,7 +191,7 @@ PlasmaComponents3.ScrollView {
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
                     visible: text.length !== 0
-                    text: (model.typeLabel ? i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", model.typeLabel) : '') + ' ' + model.formattedAddress
+                    text: (model.typeLabel ? KI18n.i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", model.typeLabel) : '') + ' ' + model.formattedAddress
                 }
             }
 
@@ -199,7 +200,7 @@ PlasmaComponents3.ScrollView {
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 visible: emailRepeater.count > 0
-                text: i18np("Email Address", "Email Addresses", emailRepeater.count)
+                text: KI18n.i18np("Email Address", "Email Addresses", emailRepeater.count)
                 level: 4
             }
 
@@ -211,7 +212,7 @@ PlasmaComponents3.ScrollView {
                     text: `${model.type} <a href="mailto:${model.display}">${model.display}</a>`
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
-                    PlasmaComponents3.ToolTip { text: i18n("Send Email") }
+                    PlasmaComponents3.ToolTip { text: KI18n.i18n("Send Email") }
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
                         id: area
@@ -228,7 +229,7 @@ PlasmaComponents3.ScrollView {
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 visible: phoneRepeater.count > 0
-                text: i18np("Phone number", "Phone numbers", phoneRepeater.count)
+                text: KI18n.i18np("Phone number", "Phone numbers", phoneRepeater.count)
                 level: 4
             }
 
@@ -237,10 +238,10 @@ PlasmaComponents3.ScrollView {
                 model: addressee.phoneModel
                 PlasmaComponents3.Label {
                     visible: text !== ""
-                    text: i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
+                    text: KI18n.i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
-                    PlasmaComponents3.ToolTip { text: i18n("Call") }
+                    PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
                         id: area

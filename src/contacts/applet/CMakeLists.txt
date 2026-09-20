@@ -5,6 +5,7 @@ find_package(Plasma)
 
 if(Plasma_FOUND)
     plasma_add_applet(org.kde.merkuro.contact.applet
+        QML_ARGS DEPENDENCIES org.kde.ki18n
         QML_SOURCES
             qml/CompactRepresentation.qml
             qml/ContactPage.qml

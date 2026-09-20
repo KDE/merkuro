@@ -11,6 +11,7 @@ import org.kde.akonadi as Akonadi
 import org.kde.merkuro.components
 import Qt.labs.qmlmodels
 import org.kde.kitemmodels
+import org.kde.ki18n
 
 Kirigami.OverlayDrawer {
     id: root
@@ -120,7 +121,7 @@ Kirigami.OverlayDrawer {
 
                     hoverEnabled: false
                     width: parent.width
-                    text: i18n("Contacts")
+                    text: KI18n.i18n("Contacts")
 
                     contentItem: RowLayout {
                         Kirigami.Icon {

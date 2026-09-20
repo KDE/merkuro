@@ -11,6 +11,7 @@ import org.kde.merkuro.contact
 import org.kde.merkuro.components as Components
 import org.kde.akonadi as Akonadi
 import './private'
+import org.kde.ki18n
 
 ContactsPage {
     id: root
@@ -32,7 +33,7 @@ ContactsPage {
 
     actions: Kirigami.Action {
         icon.name: "object-select-symbolic"
-        text: i18n("Done")
+        text: KI18n.i18n("Done")
         onTriggered: pageStack.pop()
     }
 
@@ -85,7 +86,7 @@ ContactsPage {
         id: emailPickerSheet
 
         header: Kirigami.Heading {
-            text: i18n("Select Email Address")
+            text: KI18n.i18n("Select Email Address")
         }
 
         ListView {

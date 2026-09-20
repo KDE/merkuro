@@ -5,6 +5,7 @@
 import QtQuick
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -13,7 +14,7 @@ FormCard.FormCard {
 
     FormCard.FormTextFieldDelegate {
         id: partnerDelegate
-        label: i18nc("@label", "Partner's name")
+        label: KI18n.i18nc("@label", "Partner's name")
         text: root.contactEditor.contact.spousesName
         onTextChanged: root.contactEditor.contact.spousesName = text
     }
@@ -22,7 +23,7 @@ FormCard.FormCard {
 
     FormCard.FormDateTimeDelegate {
         id: anniversaryDelegate
-        text: i18nc("@label", "Anniversary")
+        text: KI18n.i18nc("@label", "Anniversary")
         dateTimeDisplay: FormCard.FormDateTimeDelegate.DateTimeDisplay.Date
         value: root.contactEditor.contact.anniversary
         onValueChanged: root.contactEditor.contact.anniversary = value
@@ -32,7 +33,7 @@ FormCard.FormCard {
 
     FormCard.FormDateTimeDelegate {
         id: birtdayDelegate
-        text: i18nc("@label", "Birthday")
+        text: KI18n.i18nc("@label", "Birthday")
         dateTimeDisplay: FormCard.FormDateTimeDelegate.DateTimeDisplay.Date
         value: root.contactEditor.contact.birthday
         onValueChanged: root.contactEditor.contact.birthday = value

@@ -22,6 +22,7 @@ target_link_libraries(merkuro_contact PUBLIC
     KPim6::AkonadiWidgets
     KPim6::AkonadiContactCore
     MerkuroComponents
+    KF6::I18nQml
     Gpgmepp
     QGpgmeQt6
     KPim6::Libkleo
@@ -93,6 +94,8 @@ target_sources(merkuro_contact PRIVATE
 ecm_add_qml_module(merkuro_contact
     URI "org.kde.merkuro.contact"
     GENERATE_PLUGIN_SOURCE
+    DEPENDENCIES
+        org.kde.ki18n
     RESOURCES
         resources/fallbackBackground.png
 )

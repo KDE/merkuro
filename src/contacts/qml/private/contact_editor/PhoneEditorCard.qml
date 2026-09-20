@@ -11,6 +11,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
+import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
@@ -31,20 +32,20 @@ FormCard.FormCard {
                     model: ListModel {id: phoneTypeModel; dynamicRoles: true }
                     Component.onCompleted: {
                         [
-                            { value: PhoneModel.Home, text: i18n("Home") },
-                            { value: PhoneModel.Work, text: i18n("Work") },
-                            { value: PhoneModel.Msg, text: i18n("Messaging") },
-                            { value: PhoneModel.Voice, text: i18n("Voice") },
-                            { value: PhoneModel.Fax, text: i18n("Fax") },
-                            { value: PhoneModel.Cell, text: i18n("Cell") },
-                            { value: PhoneModel.Video, text: i18n("Video") },
-                            { value: PhoneModel.Bbs, text: i18n("Mailbox") },
-                            { value: PhoneModel.Modem, text: i18n("Modem") },
-                            { value: PhoneModel.Car, text: i18n("Car") },
-                            { value: PhoneModel.Isdn, text: i18n("ISDN") },
-                            { value: PhoneModel.Psc, text: i18n("PCS") },
-                            { value: PhoneModel.Pager, text: i18n("Pager") },
-                            { value: PhoneModel.Undefined, text: i18n("Undefined") },
+                            { value: PhoneModel.Home, text: KI18n.i18n("Home") },
+                            { value: PhoneModel.Work, text: KI18n.i18n("Work") },
+                            { value: PhoneModel.Msg, text: KI18n.i18n("Messaging") },
+                            { value: PhoneModel.Voice, text: KI18n.i18n("Voice") },
+                            { value: PhoneModel.Fax, text: KI18n.i18n("Fax") },
+                            { value: PhoneModel.Cell, text: KI18n.i18n("Cell") },
+                            { value: PhoneModel.Video, text: KI18n.i18n("Video") },
+                            { value: PhoneModel.Bbs, text: KI18n.i18n("Mailbox") },
+                            { value: PhoneModel.Modem, text: KI18n.i18n("Modem") },
+                            { value: PhoneModel.Car, text: KI18n.i18n("Car") },
+                            { value: PhoneModel.Isdn, text: KI18n.i18n("ISDN") },
+                            { value: PhoneModel.Psc, text: KI18n.i18n("PCS") },
+                            { value: PhoneModel.Pager, text: KI18n.i18n("Pager") },
+                            { value: PhoneModel.Undefined, text: KI18n.i18n("Undefined") },
                         ].forEach((type) => {
                             phoneTypeModel.append(type);
                         });
@@ -79,19 +80,19 @@ FormCard.FormCard {
                 model: ListModel {id: phoneTypeModel; dynamicRoles: true }
                 Component.onCompleted: {
                     [
-                        { value: PhoneModel.Home, text: i18n("Home") },
-                        { value: PhoneModel.Work, text: i18n("Work") },
-                        { value: PhoneModel.Msg, text: i18n("Messaging") },
-                        { value: PhoneModel.Voice, text: i18n("Voice") },
-                        { value: PhoneModel.Fax, text: i18n("Fax") },
-                        { value: PhoneModel.Cell, text: i18n("Cell") },
-                        { value: PhoneModel.Video, text: i18n("Video") },
-                        { value: PhoneModel.Bbs, text: i18n("Mailbox") },
-                        { value: PhoneModel.Modem, text: i18n("Modem") },
-                        { value: PhoneModel.Car, text: i18n("Car") },
-                        { value: PhoneModel.Isdn, text: i18n("ISDN") },
-                        { value: PhoneModel.Psc, text: i18n("PCS") },
-                        { value: PhoneModel.Pager, text: i18n("Pager") }
+                        { value: PhoneModel.Home, text: KI18n.i18n("Home") },
+                        { value: PhoneModel.Work, text: KI18n.i18n("Work") },
+                        { value: PhoneModel.Msg, text: KI18n.i18n("Messaging") },
+                        { value: PhoneModel.Voice, text: KI18n.i18n("Voice") },
+                        { value: PhoneModel.Fax, text: KI18n.i18n("Fax") },
+                        { value: PhoneModel.Cell, text: KI18n.i18n("Cell") },
+                        { value: PhoneModel.Video, text: KI18n.i18n("Video") },
+                        { value: PhoneModel.Bbs, text: KI18n.i18n("Mailbox") },
+                        { value: PhoneModel.Modem, text: KI18n.i18n("Modem") },
+                        { value: PhoneModel.Car, text: KI18n.i18n("Car") },
+                        { value: PhoneModel.Isdn, text: KI18n.i18n("ISDN") },
+                        { value: PhoneModel.Psc, text: KI18n.i18n("PCS") },
+                        { value: PhoneModel.Pager, text: KI18n.i18n("Pager") }
                     ].forEach((type) => {
                         phoneTypeModel.append(type);
                     });
@@ -103,7 +104,7 @@ FormCard.FormCard {
             QQC2.TextField {
                 id: toAddPhone
                 Layout.fillWidth: true
-                placeholderText: i18n("+33 7 55 23 68 67")
+                placeholderText: KI18n.i18n("+33 7 55 23 68 67")
                 inputMethodHints: Qt.ImhDialableCharactersOnly
             }
 

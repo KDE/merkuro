@@ -10,6 +10,7 @@ import org.kde.plasma.plasmoid
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.ksvg as KSvg
 import org.kde.merkuro.contact
+import org.kde.ki18n
 
 PlasmoidItem {
     id: contactApplet
@@ -31,7 +32,7 @@ PlasmoidItem {
         header: stack.currentItem.header
 
         property string itemTitle: stack.currentItem.title
-        onItemTitleChanged: contactApplet.Plasmoid.title = itemTitle ?? i18n("Contact")
+        onItemTitleChanged: contactApplet.Plasmoid.title = itemTitle ?? KI18n.i18n("Contact")
 
         property alias listMargins: listItemSvg.margins
 
