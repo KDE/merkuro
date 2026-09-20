@@ -67,9 +67,8 @@ private Q_SLOTS:
         QSignalSpy finished(&editor, &ContactEditorBackend::finished);
         editor.contact()->setNote(u"Updated by the editor test"_s);
         editor.saveContactInAddressBook();
-        QVERIFY(savingChanged.wait(10000));
-        QVERIFY(editor.saving());
-        QVERIFY(finished.wait(10000));
+        QTRY_VERIFY_WITH_TIMEOUT(finished.count() > 0, 10000);
+        QCOMPARE(savingChanged.count(), 2);
         QVERIFY(!editor.saving());
         QVERIFY(errors.isEmpty());
     }
