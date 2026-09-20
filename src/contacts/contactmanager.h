@@ -3,21 +3,12 @@
 
 #pragma once
 
-#include <Akonadi/CollectionFilterProxyModel>
 #include <Akonadi/Item>
+#include <QAbstractItemModel>
 #include <QObject>
 #include <QQmlEngine>
-#include <QSortFilterProxyModel>
 
-namespace Akonadi
-{
-class ETMViewStateSaver;
-class EntityMimeTypeFilterModel;
-}
-class KCheckableProxyModel;
-class QAbstractItemModel;
-class QItemSelectionModel;
-class ColorProxyModel;
+class ContactRepository;
 
 class ContactManager : public QObject
 {
@@ -56,12 +47,5 @@ Q_SIGNALS:
     void errorOccurred(const QString &errorOccurred);
 
 private:
-    void saveState() const;
-
-    Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
-    QItemSelectionModel *m_collectionSelectionModel = nullptr;
-    Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
-    QSortFilterProxyModel *m_filteredContacts = nullptr;
-    KCheckableProxyModel *m_checkableProxyModel = nullptr;
-    ColorProxyModel *m_colorProxy = nullptr;
+    ContactRepository *const m_repository;
 };

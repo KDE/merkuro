@@ -5,11 +5,8 @@
 
 #include "contactmanager.h"
 
-#include "contactcollectionmodel.h"
-#include "contactconfig.h"
-#include "globalcontactmodel.h"
+#include "contactrepository.h"
 #include "merkuro_contact_debug.h"
-#include "sortedcollectionproxymodel.h"
 #include <Akonadi/AgentManager>
 #include <Akonadi/Collection>
 #include <Akonadi/CollectionColorAttribute>
@@ -18,153 +15,28 @@
 #include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/CollectionStatistics>
 #include <Akonadi/CollectionUtils>
-#include <Akonadi/ColorProxyModel>
-#include <Akonadi/ContactsFilterProxyModel>
-#include <Akonadi/ContactsTreeModel>
-#include <Akonadi/ETMViewStateSaver>
-#include <Akonadi/EmailAddressSelectionModel>
-#include <Akonadi/EntityMimeTypeFilterModel>
-#include <Akonadi/EntityRightsFilterModel>
+#include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemDeleteJob>
-#include <Akonadi/ItemFetchJob>
-#include <Akonadi/ItemFetchScope>
-#include <Akonadi/Monitor>
-#include <Akonadi/SelectionProxyModel>
-#include <KCheckableProxyModel>
-#include <KConfigGroup>
-#include <KContacts/Addressee>
-#include <KContacts/ContactGroup>
-#include <KDescendantsProxyModel>
 #include <KLocalizedString>
-#include <KSelectionProxyModel>
-#include <KSharedConfig>
-#include <QItemSelectionModel>
 #include <QPointer>
-using namespace Qt::Literals::StringLiterals;
-
-namespace
-{
-void migrateCollectionSelection()
-{
-    const auto oldConfig = KSharedConfig::openConfig(u"kalendarrc"_s);
-    const auto newConfig = KSharedConfig::openConfig(u"merkurocontactrc"_s);
-
-    const auto groupName = u"ContactCollectionSelection"_s;
-    if (!oldConfig->hasGroup(groupName) || newConfig->hasGroup(groupName)) {
-        return;
-    }
-
-    const KConfigGroup oldGroup(oldConfig, groupName);
-    KConfigGroup newGroup(newConfig, groupName);
-    oldGroup.copyTo(&newGroup);
-    oldConfig->deleteGroup(groupName);
-
-    newConfig->sync();
-    oldConfig->sync();
-}
-}
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
-    , m_collectionTree(new Akonadi::EntityMimeTypeFilterModel(this))
+    , m_repository(new ContactRepository(this))
 {
-    const auto contactModel = GlobalContactModel::instance()->model();
-    connect(contactModel, &Akonadi::EntityTreeModel::errorOccurred, this, &ContactManager::errorOccurred);
-
-    // Sidebar collection model
-    m_collectionTree->setSortCaseSensitivity(Qt::CaseInsensitive);
-    m_collectionTree->setSourceModel(contactModel);
-    m_collectionTree->addMimeTypeInclusionFilter(Akonadi::Collection::mimeType());
-    m_collectionTree->setHeaderGroup(Akonadi::EntityTreeModel::CollectionTreeHeaders);
-
-    m_collectionSelectionModel = new QItemSelectionModel(m_collectionTree);
-    m_checkableProxyModel = new ContactCollectionModel(this);
-    m_checkableProxyModel->setSelectionModel(m_collectionSelectionModel);
-    m_checkableProxyModel->setSourceModel(m_collectionTree);
-
-    auto contactConfig = ContactConfig::self();
-    contactConfig->lastUsedAddressBookCollection();
-
-    auto sortedModel = new SortedCollectionProxModel(this);
-    sortedModel->setObjectName(QLatin1StringView("Sort collection"));
-    sortedModel->setSourceModel(m_checkableProxyModel);
-    sortedModel->addMimeTypeFilter(KContacts::Addressee::mimeType());
-    sortedModel->addMimeTypeFilter(KContacts::ContactGroup::mimeType());
-    sortedModel->setSortCaseSensitivity(Qt::CaseInsensitive);
-    sortedModel->sort(0, Qt::AscendingOrder);
-
-    m_colorProxy = new ColorProxyModel(this);
-    m_colorProxy->addMimeTypeFilters({
-        "text/calendar"_L1,
-        "application/x-vnd.akonadi.calendar.event"_L1,
-        "application/x-vnd.akonadi.calendar.todo"_L1,
-        "text/directory"_L1,
-        "inode/directory"_L1,
-        "application/x-vnd.kde.contactgroup"_L1,
-        "application/x-vnd.akonadi.calendar.journal"_L1,
-    });
-    m_colorProxy->setSourceModel(sortedModel);
-    m_colorProxy->setObjectName(QLatin1StringView("Show contact colors"));
-    m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
-    connect(contactConfig, &ContactConfig::lastUsedAddressBookCollectionChanged, this, [this, contactConfig]() {
-        m_colorProxy->setStandardCollectionId(contactConfig->lastUsedAddressBookCollection());
-    });
-
-    migrateCollectionSelection();
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"merkurocontactrc"_s);
-    m_collectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver(this);
-    KConfigGroup selectionGroup = config->group(u"ContactCollectionSelection"_s);
-    m_collectionSelectionModelStateSaver->setView(nullptr);
-    m_collectionSelectionModelStateSaver->setSelectionModel(m_checkableProxyModel->selectionModel());
-    m_collectionSelectionModelStateSaver->restoreState(selectionGroup);
-    connect(m_checkableProxyModel->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &, const QItemSelection &) {
-        saveState();
-    });
-
-    // List of contacts for the main contact view
-    auto selectionProxyModel = new Akonadi::SelectionProxyModel(m_checkableProxyModel->selectionModel(), this);
-    selectionProxyModel->setSourceModel(GlobalContactModel::instance()->model());
-    selectionProxyModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
-
-    auto flatModel = new KDescendantsProxyModel(this);
-    flatModel->setSourceModel(selectionProxyModel);
-
-    auto entityMimeTypeFilterModel = new Akonadi::EntityMimeTypeFilterModel(this);
-    entityMimeTypeFilterModel->setSourceModel(flatModel);
-    entityMimeTypeFilterModel->addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
-    entityMimeTypeFilterModel->setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
-
-    m_filteredContacts = new QSortFilterProxyModel(this);
-    m_filteredContacts->setSourceModel(entityMimeTypeFilterModel);
-    m_filteredContacts->setSortLocaleAware(true);
-    m_filteredContacts->setSortCaseSensitivity(Qt::CaseInsensitive);
-    m_filteredContacts->setFilterCaseSensitivity(Qt::CaseInsensitive);
-    m_filteredContacts->sort(0);
+    connect(m_repository, &ContactRepository::errorOccurred, this, &ContactManager::errorOccurred);
 }
 
-ContactManager::~ContactManager()
-{
-    saveState();
-}
-
-void ContactManager::saveState() const
-{
-    Akonadi::ETMViewStateSaver treeStateSaver;
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"merkurocontactrc"_s);
-    KConfigGroup group = config->group(u"ContactCollectionSelection"_s);
-    treeStateSaver.setView(nullptr);
-    treeStateSaver.setSelectionModel(m_checkableProxyModel->selectionModel());
-    treeStateSaver.saveState(group);
-}
+ContactManager::~ContactManager() = default;
 
 QAbstractItemModel *ContactManager::contactCollections() const
 {
-    return m_colorProxy;
+    return m_repository->contactCollections();
 }
 
 QAbstractItemModel *ContactManager::filteredContacts() const
 {
-    return m_filteredContacts;
+    return m_repository->filteredContacts();
 }
 
 Akonadi::Item ContactManager::getItem(qint64 itemId)
@@ -229,7 +101,7 @@ QVariantMap ContactManager::getCollectionDetails(const Akonadi::Collection &coll
     collectionDetails[QStringLiteral("id")] = collection.id();
     collectionDetails[QStringLiteral("name")] = collection.name();
     collectionDetails[QStringLiteral("displayName")] = collection.displayName();
-    collectionDetails[QStringLiteral("color")] = m_colorProxy->color(collection.id());
+    collectionDetails[QStringLiteral("color")] = m_repository->collectionColor(collection.id());
     collectionDetails[QStringLiteral("count")] = collection.statistics().count();
     collectionDetails[QStringLiteral("isResource")] = Akonadi::CollectionUtils::isResource(collection);
     collectionDetails[QStringLiteral("resource")] = collection.resource();
@@ -251,7 +123,7 @@ void ContactManager::setCollectionColor(Akonadi::Collection collection, const QC
         if (job->error()) {
             qCWarning(MERKURO_CONTACT_LOG) << "Error occurred modifying collection color: " << job->errorString();
         } else {
-            m_colorProxy->setColor(collection.id(), color);
+            m_repository->setCollectionColor(collection.id(), color);
         }
     });
 }
