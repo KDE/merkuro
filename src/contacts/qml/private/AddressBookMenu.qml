@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro as Merkuro
 import org.kde.merkuro.contact
 import org.kde.akonadi as Akonadi
 import org.kde.ki18n
@@ -18,12 +17,18 @@ QQC2.Menu {
 
     required property var collection
     required property var collectionDetails
-    required property Akonadi.AgentConfiguraion agentConfiguration
+    required property Akonadi.AgentConfiguration agentConfiguration
 
     QQC2.MenuItem {
         icon.name: "edit-entry"
         text: KI18n.i18nc("@action:inmenu", "Edit address book…")
-        onClicked: ContactManager.editCollection(actionsPopup.collection);
+        onClicked: {
+            const component = Qt.createComponent("org.kde.merkuro.components", "EditCollectionPage");
+            QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                title: KI18n.i18nc("@title", "Edit Address Book"),
+                collection: actionsPopup.collection,
+            }, {});
+        }
     }
     QQC2.MenuItem {
         icon.name: "view-refresh"

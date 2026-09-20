@@ -21,6 +21,15 @@ Kirigami.OverlayDrawer {
     signal deleteCollection(int collectionId, var collectionDetails)
 
     property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
+    property var contextCollection
+    property var contextCollectionDetails
+
+    AddressBookMenu {
+        id: addressBookMenu
+        collection: root.contextCollection
+        collectionDetails: root.contextCollectionDetails
+        agentConfiguration: root.agentConfiguration
+    }
 
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
@@ -295,6 +304,15 @@ Kirigami.OverlayDrawer {
                             onClicked: {
                                 collectionItem.model.checkState = collectionItem.checkState === 0 ? 2 : 0
                                 root.collectionCheckChanged()
+                            }
+
+                            TapHandler {
+                                acceptedButtons: Qt.RightButton
+                                onTapped: {
+                                    root.contextCollection = collectionItem.collection
+                                    root.contextCollectionDetails = Contact.ContactManager.getCollectionDetails(collectionItem.collection)
+                                    addressBookMenu.popup()
+                                }
                             }
                         }
                     }

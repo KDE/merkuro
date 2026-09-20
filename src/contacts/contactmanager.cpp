@@ -12,13 +12,10 @@
 #include <Akonadi/CollectionColorAttribute>
 #include <Akonadi/CollectionDeleteJob>
 #include <Akonadi/CollectionModifyJob>
-#include <Akonadi/CollectionPropertiesDialog>
 #include <Akonadi/CollectionStatistics>
 #include <Akonadi/CollectionUtils>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemDeleteJob>
-#include <KLocalizedString>
-#include <QPointer>
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
@@ -84,14 +81,6 @@ void ContactManager::deleteCollection(const Akonadi::Collection &collection)
     if (instance.isValid()) {
         Akonadi::AgentManager::self()->removeInstance(instance);
     }
-}
-
-void ContactManager::editCollection(const Akonadi::Collection &collection)
-{
-    // TODO: Reimplement this dialog in QML
-    QPointer<Akonadi::CollectionPropertiesDialog> dlg = new Akonadi::CollectionPropertiesDialog(collection);
-    dlg->setWindowTitle(i18nc("@title:window", "Properties of Address Book %1", collection.name()));
-    dlg->show();
 }
 
 QVariantMap ContactManager::getCollectionDetails(const Akonadi::Collection &collection)

@@ -40,7 +40,6 @@ public:
     Q_INVOKABLE void updateAllCollections();
     Q_INVOKABLE void updateCollection(const Akonadi::Collection &collection);
     Q_INVOKABLE void deleteCollection(const Akonadi::Collection &collection);
-    Q_INVOKABLE void editCollection(const Akonadi::Collection &collection);
     Q_INVOKABLE QVariantMap getCollectionDetails(const Akonadi::Collection &collection);
 
 Q_SIGNALS:
