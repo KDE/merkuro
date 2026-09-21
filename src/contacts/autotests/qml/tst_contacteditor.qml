@@ -44,6 +44,12 @@ TestCase {
         signalName: "errorOccurred"
     }
 
+    SignalSpy {
+        id: itemChangedExternallySpy
+        target: existingContactEditor
+        signalName: "itemChangedExternally"
+    }
+
     Text {
         id: nameBinding
         text: editor.contact.formattedName
@@ -103,6 +109,26 @@ TestCase {
         compare(saveErrorSpy.count, 0)
         compare(existingContactEditor.saving, false)
         compare(existingContactEditor.contact.note, "Updated by the QML editor test")
+    }
+
+    // Regression test for m_item revision going stale after an external change.
+    function test_itemChangedExternallyKeepsItemRevisionInSync() {
+        existingContactEditor.contact.formattedName = ""
+        existingContactEditor.item = contactTestItemProvider.item
+        tryCompare(existingContactEditor.contact, "formattedName", "QML Editor Test Contact")
+
+        itemChangedExternallySpy.clear()
+        contactTestItemProvider.modifyItemNoteExternally(existingContactEditor.item, "Changed by another client")
+        itemChangedExternallySpy.wait(5000)
+        compare(itemFetchErrorSpy.count, 0)
+
+        existingContactEditor.contact.note = "Kept my own edit"
+        existingContactEditor.saveContactInAddressBook()
+
+        saveSpy.wait(5000)
+        compare(saveErrorSpy.count, 0)
+        compare(existingContactEditor.saving, false)
+        compare(existingContactEditor.contact.note, "Kept my own edit")
     }
 
 }

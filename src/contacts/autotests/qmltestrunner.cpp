@@ -7,6 +7,8 @@
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
+#include <Akonadi/ItemModifyJob>
+#include <Akonadi/Session>
 #include <KContacts/Addressee>
 #include <KJob>
 #include <KLocalizedQmlContext>
@@ -59,6 +61,24 @@ public:
                 return;
             }
             QTimer::singleShot(100, this, &ContactTestItemProvider::createContact);
+        });
+    }
+
+    // Modifies on a non-default Session so a ContactEditorBackend watching this
+    // item (which ignores its own default-session changes) sees it as external.
+    Q_INVOKABLE void modifyItemNoteExternally(Akonadi::Item item, const QString &note)
+    {
+        static auto externalSession = new Akonadi::Session("merkuro-contact-qmltest-external-session");
+
+        auto addressee = item.payload<KContacts::Addressee>();
+        addressee.setNote(note);
+        item.setPayload(addressee);
+
+        auto job = new Akonadi::ItemModifyJob(item, externalSession);
+        connect(job, &KJob::result, this, [this](KJob *job) {
+            if (job->error()) {
+                Q_EMIT errorOccurred(QStringLiteral("Failed to modify the test contact externally: ") + job->errorString());
+            }
         });
     }
 
