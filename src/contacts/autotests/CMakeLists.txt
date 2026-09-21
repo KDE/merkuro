@@ -31,13 +31,12 @@ ecm_add_test(contactgroupmodeltest.cpp
     NAME_PREFIX "merkuro-contact-"
 )
 
-ecm_add_test(addressee_wrapper_test.cpp
-    TEST_NAME addressee_wrapper_test
-    LINK_LIBRARIES merkuro_contact Qt::Test
-    NAME_PREFIX "merkuro-contact-"
-)
-
 if(UNIX)
+    add_akonadi_isolated_test(SOURCE addressee_wrapper_test.cpp
+        LINK_LIBRARIES merkuro_contact Qt::Test
+        NAME_PREFIX "merkuro-contact-"
+    )
+
     add_akonadi_isolated_test(SOURCE editorandrepositorytest.cpp
         LINK_LIBRARIES merkuro_contact Qt::Test
         NAME_PREFIX "merkuro-contact-"
@@ -59,11 +58,11 @@ if(UNIX)
             NAME_PREFIX "merkuro-contact-"
         )
     set_property(TEST merkuro-contact-akonadi-sqlite-qmltest APPEND PROPERTY
-        ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
+        ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>:${CMAKE_INSTALL_FULL_LIBDIR}/qml"
     )
     if(TEST merkuro-contact-akonadi-mysql-qmltest)
         set_property(TEST merkuro-contact-akonadi-mysql-qmltest APPEND PROPERTY
-            ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
+            ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>:${CMAKE_INSTALL_FULL_LIBDIR}/qml"
         )
     endif()
 endif()
