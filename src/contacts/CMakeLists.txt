@@ -95,7 +95,18 @@ ecm_add_qml_module(merkuro_contact
     URI "org.kde.merkuro.contact"
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
+        org.kde.akonadi
+        org.kde.kirigami
+        org.kde.kirigamiaddons.components
+        org.kde.kirigamiaddons.delegates
+        org.kde.kirigamiaddons.formcard
+        org.kde.kirigamiaddons.labs.components
+        org.kde.kirigamiaddons.statefulapp.labs
+        org.kde.kitemmodels
+        org.kde.contacts
         org.kde.ki18n
+        org.kde.merkuro.components
+        org.kde.prison
     RESOURCES
         resources/fallbackBackground.png
 )

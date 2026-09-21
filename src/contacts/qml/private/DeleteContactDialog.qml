@@ -17,6 +17,7 @@ Components.MessageDialog {
 
     required property list<Akonadi.item> items
     required property list<string> names
+    property int pendingDeletions: 0
 
     title: KI18n.i18nc("@title:dialog", "Confirm Contact Deletion")
     dialogType: Components.MessageDialog.Warning
@@ -26,6 +27,7 @@ Components.MessageDialog {
         const deleteButton = standardButton(QQC2.Dialog.Ok);
         deleteButton.text = KI18n.i18ncp("@action:button", "Delete contact", "Delete contacts", items.length);
         deleteButton.icon.name = 'delete-symbolic';
+        deleteButton.enabled = Qt.binding(() => root.pendingDeletions === 0);
     }
 
     QQC2.Label {
@@ -43,14 +45,22 @@ Components.MessageDialog {
         Layout.fillWidth: true
     }
 
-    onRejected: root.close()
-    onAccepted: {
-        for (let item of items) {
-            ContactManager.deleteItem(item)
+    function finishPendingDeletion(job: var): void {
+        if (job.error) {
+            ContactManager.errorOccurred(job.errorString);
         }
-        if (root.QQC2.ApplicationWindow.window.pageStack.depth > 1) {
+        root.pendingDeletions--;
+        if (root.pendingDeletions === 0 && root.QQC2.ApplicationWindow.window.pageStack.depth > 1) {
             root.QQC2.ApplicationWindow.window.pageStack.pop()
         }
-        root.close();
+    }
+
+    onRejected: root.close()
+    onAccepted: {
+        root.pendingDeletions = items.length;
+        for (let item of items) {
+            const job = ContactManager.deleteItem(item);
+            job.result.connect(root.finishPendingDeletion);
+        }
     }
 }

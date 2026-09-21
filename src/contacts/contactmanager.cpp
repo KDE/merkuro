@@ -16,6 +16,7 @@
 #include <Akonadi/CollectionUtils>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemDeleteJob>
+#include <KJob>
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
@@ -43,9 +44,9 @@ Akonadi::Item ContactManager::getItem(qint64 itemId)
     return item;
 }
 
-void ContactManager::deleteItem(const Akonadi::Item &item)
+KJob *ContactManager::deleteItem(const Akonadi::Item &item)
 {
-    new Akonadi::ItemDeleteJob(item);
+    return new Akonadi::ItemDeleteJob(item);
 }
 
 void ContactManager::updateAllCollections()

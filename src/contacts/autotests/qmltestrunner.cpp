@@ -82,9 +82,19 @@ public:
         });
     }
 
+    Q_INVOKABLE void checkItemExists(const Akonadi::Item &item)
+    {
+        auto job = new Akonadi::ItemFetchJob(item);
+        connect(job, &KJob::result, this, [this](KJob *job) {
+            const auto fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
+            Q_EMIT itemExistenceChecked(!job->error() && fetchJob && !fetchJob->items().isEmpty());
+        });
+    }
+
 Q_SIGNALS:
     void itemChanged();
     void errorOccurred(const QString &message);
+    void itemExistenceChecked(bool exists);
 
 private:
     Akonadi::Item m_item;
