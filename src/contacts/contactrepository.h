@@ -47,7 +47,7 @@ private:
     Akonadi::ContactsTreeModel *const m_contactModel;
     Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
-    Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
+    std::unique_ptr<Akonadi::ETMViewStateSaver> m_collectionSelectionModelStateSaver;
     QSortFilterProxyModel *m_filteredContacts = nullptr;
     KCheckableProxyModel *m_checkableProxyModel = nullptr;
     ColorProxyModel *m_colorProxy = nullptr;
