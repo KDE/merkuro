@@ -42,13 +42,14 @@ FormCard.FormCardPage {
     }
     data: QQC2.Action {
         id: submitAction
+        objectName: "submitAction"
         enabled: contactEditor.contact.formattedName.length > 0
         shortcut: "Return"
         onTriggered: {
             if (phoneEditorId.phoneText.length > 0) {
                 contactEditor.contact.phoneModel.addPhoneNumber(phoneEditorId.phoneText, phoneEditorId.newPhoneTypeComboText)
             }
-            if (emailEditorId.toAddEmailText > 0) {
+            if (emailEditorId.toAddEmailText.length > 0) {
                 contactEditor.contact.emailModel.addEmail(emailEditorId.toAddEmailText, emailEditorId.newEmailTypeCurrentValue);
             }
             if (contactEditor.collectionId < 0) {

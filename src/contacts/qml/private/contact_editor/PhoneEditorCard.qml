@@ -103,6 +103,7 @@ FormCard.FormCard {
             }
             QQC2.TextField {
                 id: toAddPhone
+                objectName: "toAddPhoneField"
                 Layout.fillWidth: true
                 placeholderText: KI18n.i18n("+33 7 55 23 68 67")
                 inputMethodHints: Qt.ImhDialableCharactersOnly
@@ -110,6 +111,7 @@ FormCard.FormCard {
 
             // button to add additional text field
             QQC2.Button {
+                objectName: "addPhoneButton"
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
                 enabled: isNotEmptyStr(toAddPhone.text)

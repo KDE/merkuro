@@ -84,12 +84,14 @@ FormCard.FormCard {
             }
             QQC2.TextField {
                 id: toAddEmail
+                objectName: "toAddEmailField"
                 Layout.fillWidth: true
                 placeholderText: KI18n.i18n("user@example.org")
                 inputMethodHints: Qt.ImhEmailCharactersOnly
             }
 
             QQC2.Button {
+                objectName: "addEmailButton"
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
                 enabled: isNotEmptyStr(toAddEmail.text)

@@ -60,6 +60,7 @@ FormCard.FormCard {
 
             QQC2.TextField {
                 id: newUsername
+                objectName: "newUsernameField"
                 Layout.fillWidth: true
                 placeholderText: KI18n.i18n("@person:example.com")
                 inputMethodHints: Qt.ImhEmailCharactersOnly
