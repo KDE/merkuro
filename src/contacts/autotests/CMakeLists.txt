@@ -61,14 +61,14 @@ if(UNIX)
         ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>:${CMAKE_INSTALL_FULL_LIBDIR}/qml"
     )
     set_property(TEST merkuro-contact-akonadi-sqlite-qmltest PROPERTY
-        TIMEOUT_SIGNAL_NAME "ABRT"
+        TIMEOUT_SIGNAL_NAME "SIGQUIT"
     )
     if(TEST merkuro-contact-akonadi-mysql-qmltest)
         set_property(TEST merkuro-contact-akonadi-mysql-qmltest APPEND PROPERTY
             ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>:${CMAKE_INSTALL_FULL_LIBDIR}/qml"
         )
         set_property(TEST merkuro-contact-akonadi-mysql-qmltest PROPERTY
-            TIMEOUT_SIGNAL_NAME "ABRT"
+            TIMEOUT_SIGNAL_NAME "SIGQUIT"
         )
     endif()
 endif()
