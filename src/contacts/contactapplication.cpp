@@ -14,7 +14,7 @@ using namespace Qt::StringLiterals;
 
 ContactApplication::ContactApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
-    , mContactCollection(new KirigamiActionCollection(parent, i18n("Contact")))
+    , mContactCollection(new KirigamiActionCollection(this, i18n("Contact")))
 {
     mContactCollection->setComponentDisplayName(i18n("Contact"));
     setupActions();

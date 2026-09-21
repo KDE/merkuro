@@ -21,7 +21,7 @@
 using namespace Qt::Literals::StringLiterals;
 CalendarApplication::CalendarApplication(QObject *parent)
     : AbstractMerkuroApplication(parent)
-    , mSortCollection(new KirigamiActionCollection(parent, i18n("Sort")))
+    , mSortCollection(new KirigamiActionCollection(this, i18n("Sort")))
     , m_viewGroup(new QActionGroup(this))
     , m_config(new CalendarConfig(this))
 {
