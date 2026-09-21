@@ -15,8 +15,12 @@
 #include <QGuiApplication>
 #include <QVariantMap>
 
-#include <KWaylandExtras>
 #include <KWindowSystem>
+
+#if __has_include(<KWaylandExtras>)
+#include <KWaylandExtras>
+#define MERKURO_HAVE_KWAYLANDEXTRAS
+#endif
 
 using namespace Qt::Literals;
 
@@ -141,6 +145,7 @@ void AccountsModel::requestNew(QWindow *context)
         }
     };
 
+#ifdef MERKURO_HAVE_KWAYLANDEXTRAS
     if (KWindowSystem::isPlatformWayland()) {
         KWaylandExtras::exportWindow(context);
         connect(
@@ -151,7 +156,11 @@ void AccountsModel::requestNew(QWindow *context)
                 request(handle);
             },
             Qt::SingleShotConnection);
-    } else if (KWindowSystem::isPlatformX11()) {
+        return;
+    }
+#endif
+
+    if (KWindowSystem::isPlatformX11()) {
         request(QString::number(context->winId()));
     }
 }
@@ -168,13 +177,16 @@ void AccountsModel::configure(QWindow *context, const QString &path)
         }
     };
 
+#ifdef MERKURO_HAVE_KWAYLANDEXTRAS
     if (KWindowSystem::isPlatformWayland()) {
         KWaylandExtras::xdgActivationToken(context, KWaylandExtras::lastInputSerial(context), QString()).then(this, [run](const QString &token) {
             run(token);
         });
-    } else {
-        run(QString());
+        return;
     }
+#endif
+
+    run(QString());
 }
 
 void AccountsModel::slotAccountCreationFinished(const QDBusObjectPath &path, const QString & /*xdgActivationToken*/)
