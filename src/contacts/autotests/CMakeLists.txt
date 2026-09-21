@@ -58,11 +58,12 @@ if(UNIX)
             TEST_NAME qmltest
             NAME_PREFIX "merkuro-contact-"
         )
-    set_property(
-        TEST
-        merkuro-contact-akonadi-sqlite-qmltest
-        merkuro-contact-akonadi-mysql-qmltest
-        APPEND PROPERTY
-            ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
+    set_property(TEST merkuro-contact-akonadi-sqlite-qmltest APPEND PROPERTY
+        ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
     )
+    if(TEST merkuro-contact-akonadi-mysql-qmltest)
+        set_property(TEST merkuro-contact-akonadi-mysql-qmltest APPEND PROPERTY
+            ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
+        )
+    endif()
 endif()
