@@ -43,3 +43,26 @@ if(UNIX)
         NAME_PREFIX "merkuro-contact-"
     )
 endif()
+
+find_package(Qt6QmlTools ${QT_REQUIRED_VERSION} CONFIG REQUIRED)
+
+add_executable(contactqmltestrunner qmltestrunner.cpp)
+target_link_libraries(contactqmltestrunner PRIVATE Qt6::QuickTest merkuro_contact)
+target_compile_definitions(contactqmltestrunner PRIVATE
+    QUICK_TEST_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/qml"
+)
+
+if(UNIX)
+    add_akonadi_isolated_test(
+        COMMAND $<TARGET_FILE:contactqmltestrunner>
+            TEST_NAME qmltest
+            NAME_PREFIX "merkuro-contact-"
+        )
+    set_property(
+        TEST
+        merkuro-contact-akonadi-sqlite-qmltest
+        merkuro-contact-akonadi-mysql-qmltest
+        APPEND PROPERTY
+            ENVIRONMENT "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:merkuro_contact>"
+    )
+endif()

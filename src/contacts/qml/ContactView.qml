@@ -20,6 +20,8 @@ Kirigami.ScrollablePage {
     objectName: "contactView"
 
     property var attendeeAkonadiIds
+    property var contactsModel: ContactManager.filteredContacts
+    property var activeContextMenu
 
     title: KI18n.i18n("Contacts")
 
@@ -173,9 +175,24 @@ Kirigami.ScrollablePage {
         }
     }
 
+    function showContextMenu(index: int): void {
+        contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(index, 0), ItemSelectionModel.Current);
+        contactActions.setActionState();
+
+        const menu = contextMenu.createObject(root);
+        root.activeContextMenu = menu;
+        menu.popup();
+
+        menu.closed.connect(() => {
+            root.activeContextMenu = null;
+            contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactsList.currentIndex, 0), ItemSelectionModel.Current);
+        })
+    }
+
     Component {
         id: contextMenu
         Components.ConvergentContextMenu {
+            objectName: "contactContextMenu"
             Kirigami.Action {
                 fromQAction: ContactApplication.action('contact_edit')
             }
@@ -196,6 +213,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: contactsList
+        objectName: "contactsList"
         reuseItems: true
         section {
             property: "display"
@@ -207,9 +225,10 @@ Kirigami.ScrollablePage {
             }
         }
         clip: true
-        model: ContactManager.filteredContacts
+        model: root.contactsModel
         delegate: ContactListItem {
             id: contactListItem
+            objectName: "contactListItem"
 
             selectionModel: contactSelectionModel
 
@@ -228,19 +247,12 @@ Kirigami.ScrollablePage {
             }
 
             onCreateContextMenu: {
-                contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
-                contactActions.setActionState();
-
-                const menu = contextMenu.createObject(root);
-                menu.popup();
-
-                menu.closed.connect(() => {
-                    contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactsList.currentIndex, 0), ItemSelectionModel.Current);
-                })
+                root.showContextMenu(contactListItem.index)
             }
         }
 
         Kirigami.PlaceholderMessage {
+            objectName: "noContactsPlaceholder"
             anchors.centerIn: parent
             text: KI18n.i18n("No contacts")
             visible: contactsList.count === 0

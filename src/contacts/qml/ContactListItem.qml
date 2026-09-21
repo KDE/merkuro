@@ -24,7 +24,6 @@ import org.kde.ki18n
 
 Delegates.RoundedItemDelegate {
     id: root
-
     required property int index
     required property int itemId
     required property string displayName

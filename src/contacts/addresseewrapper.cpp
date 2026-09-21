@@ -106,7 +106,24 @@ void AddresseeWrapper::setAddresseeItem(const Akonadi::Item &addresseeItem)
 
 void AddresseeWrapper::itemChanged(const Akonadi::Item &item)
 {
-    setAddressee(item.payload<KContacts::Addressee>());
+    if (item.hasPayload<KContacts::Addressee>()) {
+        setAddressee(item.payload<KContacts::Addressee>());
+        return;
+    }
+
+    auto job = new Akonadi::ItemFetchJob(item, this);
+    job->fetchScope().fetchFullPayload();
+    connect(job, &Akonadi::ItemFetchJob::result, this, [this](KJob *job) {
+        const auto fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
+        if (!fetchJob || fetchJob->items().isEmpty()) {
+            return;
+        }
+
+        const auto item = fetchJob->items().constFirst();
+        if (item.hasPayload<KContacts::Addressee>()) {
+            setAddressee(item.payload<KContacts::Addressee>());
+        }
+    });
 }
 
 KContacts::Addressee AddresseeWrapper::addressee() const
