@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-21 00:45+0000\n"
-"PO-Revision-Date: 2026-09-07 14:05+0200\n"
+"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"PO-Revision-Date: 2026-09-21 10:40+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:65
@@ -958,14 +958,14 @@ msgid "End date cannot be before start date."
 msgstr "Einddatum kan niet vóór de begindatum zijn."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Save"
 msgstr "Opslaan"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Add"
@@ -2630,54 +2630,52 @@ msgstr "Kopiëren naar…"
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
-msgstr ""
+msgstr "De contactpersoon is niet gevonden."
 
 #: contacts/contacteditorbackend.cpp:157
 #, kde-format
 msgid "The contact address book could not be found."
-msgstr ""
+msgstr "Het adresboek met contactpersonen is niet gevonden."
 
 #: contacts/contacteditorbackend.cpp:186
 #, kde-format
 msgid "The contact is not loaded yet."
-msgstr ""
+msgstr "De contactpersoon is nog niet geladen."
 
 #: contacts/contacteditorbackend.cpp:192
 #, kde-format
 msgid "The contact is read-only."
-msgstr ""
+msgstr "De contactpersoon is alleen-lezen."
 
 #: contacts/contacteditorbackend.cpp:192
-#, fuzzy, kde-format
-#| msgid "The key details are not available."
+#, kde-format
 msgid "The contact is no longer available."
-msgstr "De details van de sleutel zijn niet beschikbaar."
+msgstr "De contactpersoon is niet langer beschikbaar."
 
 #: contacts/contacteditorbackend.cpp:212
-#, fuzzy, kde-format
-#| msgid "No address book selected"
+#, kde-format
 msgid "No address book selected."
-msgstr "Geen adresboek geselecteerd"
+msgstr "Geen adresboek geselecteerd."
 
 #: contacts/contactgroupeditor.cpp:75
 #, kde-format
 msgid "The contact group could not be found."
-msgstr ""
+msgstr "De contactpersoongroep is niet gevonden."
 
 #: contacts/contactgroupeditor.cpp:109
 #, kde-format
 msgid "The contact group address book could not be found."
-msgstr ""
+msgstr "Het adresboek met contactpersoongroepen is niet gevonden."
 
 #: contacts/contactgroupeditor.cpp:225
 #, kde-format
 msgid "The contact group is no longer available."
-msgstr ""
+msgstr "De contactpersoongroep is niet langer beschikbaar."
 
 #: contacts/contactgroupeditor.cpp:230
 #, kde-format
 msgid "The contact group is read-only."
-msgstr ""
+msgstr "De contactpersoongroep is alleen-lezen."
 
 #: contacts/contactgroupeditor.cpp:251
 #, kde-format
@@ -2742,37 +2740,37 @@ msgstr "Gereed"
 msgid "Select Email Address"
 msgstr "E-mailadres selecteren"
 
-#: contacts/qml/ContactListItem.qml:40
+#: contacts/qml/ContactListItem.qml:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Naamloos"
 
-#: contacts/qml/ContactView.qml:24 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Contactpersonen"
 
-#: contacts/qml/ContactView.qml:28
+#: contacts/qml/ContactView.qml:30
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Aanmaken"
 
-#: contacts/qml/ContactView.qml:31
+#: contacts/qml/ContactView.qml:33
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Nieuw contactpersoon"
 
-#: contacts/qml/ContactView.qml:38
+#: contacts/qml/ContactView.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Nieuwe contactgroep"
 
-#: contacts/qml/ContactView.qml:86
+#: contacts/qml/ContactView.qml:88
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2780,26 +2778,26 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 geselecteerd"
 msgstr[1] "%1 geselecteerd"
 
-#: contacts/qml/ContactView.qml:118 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Selectie verplaatsen naar:"
 
-#: contacts/qml/ContactView.qml:135 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Selectie kopiëren naar:"
 
-#: contacts/qml/ContactView.qml:206 contacts/qml/private/ContactPage.qml:63
+#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
 #: contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Naamloos"
 
-#: contacts/qml/ContactView.qml:245 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
 #, kde-format
 msgid "No contacts"
 msgstr "Geen contactpersonen"
@@ -2811,12 +2809,10 @@ msgid "Edit address book…"
 msgstr "Adresboek bewerken…"
 
 #: contacts/qml/private/AddressBookMenu.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Address Book"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Address Book"
-msgstr "Adresboek"
+msgstr "Adresboek bewerken"
 
 #: contacts/qml/private/AddressBookMenu.qml:35
 #, kde-format
@@ -3067,66 +3063,66 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "Jill"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:62
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
 #, kde-format
 msgid "Add Contact"
 msgstr "contactpersoon toevoegen"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
 #, kde-format
 msgid "Edit Contact"
 msgstr "Contactpersoon bewerken"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:105
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
 #, kde-format
 msgid "Personal Information"
 msgstr "Persoonlijke informatie"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:113
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
 #: contacts/qml/private/ContactPage.qml:286
 #, kde-format
 msgid "Business Information"
 msgstr "Zakelijke informatie"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:121
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
 #, kde-format
 msgid "Phone"
 msgstr "Telefoon"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:130
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
 #, kde-format
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:139
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
 #, kde-format
 msgid "Instant Messenger"
 msgstr "Instant-messenger"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
 #, kde-format
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "Deze contactpersoon is elders gewijzigd tijdens de bewerking."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:193
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "Welke wijzigingen moeten behouden worden?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
 #, kde-format
 msgid "Current changes"
 msgstr "Huidige wijzigingen"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
 msgid "External changes"
@@ -3205,17 +3201,17 @@ msgstr "Beiden"
 msgid "Other…"
 msgstr "Overigen…"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:88
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:89
 #, kde-format
 msgid "user@example.org"
 msgstr "gebruiker@voorbeeld.nl"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:97
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:99
 #, kde-format
 msgid "Add email"
 msgstr "E-mail toevoegen"
 
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:64
+#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:65
 #, kde-format
 msgid "@person:example.com"
 msgstr "@persoon:voorbeeld.nl"
@@ -3309,7 +3305,7 @@ msgstr "Pager"
 msgid "Undefined"
 msgstr "Ongedefinieerd"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:107
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:108
 #, kde-format
 msgid "+33 7 55 23 68 67"
 msgstr "+33 7 55 23 68 67"
@@ -3518,13 +3514,13 @@ msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "Cryptografische certificaten"
 
-#: contacts/qml/private/DeleteContactDialog.qml:21
+#: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "Verwijderin van contactpersoon bevestigen"
 
-#: contacts/qml/private/DeleteContactDialog.qml:27
+#: contacts/qml/private/DeleteContactDialog.qml:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
@@ -3532,7 +3528,7 @@ msgid_plural "Delete contacts"
 msgstr[0] "Contactpersoon verwijderen"
 msgstr[1] "Contactpersonen verwijderen"
 
-#: contacts/qml/private/DeleteContactDialog.qml:33
+#: contacts/qml/private/DeleteContactDialog.qml:35
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
@@ -3540,7 +3536,7 @@ msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "Wilt u uw contactpersoon verwijderen:"
 msgstr[1] "Wilt u uw contactpersonen verwijderen:"
 
-#: contacts/qml/private/DeleteContactDialog.qml:39
+#: contacts/qml/private/DeleteContactDialog.qml:41
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "U kunt deze actie niet terugdraaien."

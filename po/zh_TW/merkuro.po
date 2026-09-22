@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-21 00:45+0000\n"
-"PO-Revision-Date: 2026-09-15 14:01+0900\n"
+"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"PO-Revision-Date: 2026-09-22 00:23+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -948,14 +948,14 @@ msgid "End date cannot be before start date."
 msgstr "結束日期不能早於開始日期。"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Save"
 msgstr "儲存"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Add"
@@ -2609,53 +2609,52 @@ msgstr "複製到…"
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
-msgstr ""
+msgstr "找不到聯絡人。"
 
 #: contacts/contacteditorbackend.cpp:157
 #, kde-format
 msgid "The contact address book could not be found."
-msgstr ""
+msgstr "找不到聯絡人通訊錄。"
 
 #: contacts/contacteditorbackend.cpp:186
 #, kde-format
 msgid "The contact is not loaded yet."
-msgstr ""
+msgstr "該聯絡人尚未載入。"
 
 #: contacts/contacteditorbackend.cpp:192
 #, kde-format
 msgid "The contact is read-only."
-msgstr ""
+msgstr "該聯絡人是唯讀的。"
 
 #: contacts/contacteditorbackend.cpp:192
 #, kde-format
 msgid "The contact is no longer available."
-msgstr ""
+msgstr "該聯絡人已不再可用。"
 
 #: contacts/contacteditorbackend.cpp:212
-#, fuzzy, kde-format
-#| msgid "No address book selected"
+#, kde-format
 msgid "No address book selected."
-msgstr "未選取通訊錄"
+msgstr "未選取通訊錄。"
 
 #: contacts/contactgroupeditor.cpp:75
 #, kde-format
 msgid "The contact group could not be found."
-msgstr ""
+msgstr "找不到聯絡人群組。"
 
 #: contacts/contactgroupeditor.cpp:109
 #, kde-format
 msgid "The contact group address book could not be found."
-msgstr ""
+msgstr "找不到聯絡人群組通訊錄。"
 
 #: contacts/contactgroupeditor.cpp:225
 #, kde-format
 msgid "The contact group is no longer available."
-msgstr ""
+msgstr "該聯絡人通訊錄已不再可用。"
 
 #: contacts/contactgroupeditor.cpp:230
 #, kde-format
 msgid "The contact group is read-only."
-msgstr ""
+msgstr "該聯絡人通訊錄是唯讀的。"
 
 #: contacts/contactgroupeditor.cpp:251
 #, kde-format
@@ -2720,63 +2719,63 @@ msgstr "完成"
 msgid "Select Email Address"
 msgstr "選取電子郵件地址"
 
-#: contacts/qml/ContactListItem.qml:40
+#: contacts/qml/ContactListItem.qml:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "未命名"
 
-#: contacts/qml/ContactView.qml:24 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "聯絡人"
 
-#: contacts/qml/ContactView.qml:28
+#: contacts/qml/ContactView.qml:30
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "建立"
 
-#: contacts/qml/ContactView.qml:31
+#: contacts/qml/ContactView.qml:33
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "新增聯絡人"
 
-#: contacts/qml/ContactView.qml:38
+#: contacts/qml/ContactView.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "新增聯絡人群組"
 
-#: contacts/qml/ContactView.qml:86
+#: contacts/qml/ContactView.qml:88
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
 msgstr[0] "選取 %1 個"
 
-#: contacts/qml/ContactView.qml:118 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "將所選移動到："
 
-#: contacts/qml/ContactView.qml:135 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "將所選複製到："
 
-#: contacts/qml/ContactView.qml:206 contacts/qml/private/ContactPage.qml:63
+#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
 #: contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "未命名"
 
-#: contacts/qml/ContactView.qml:245 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
 #, kde-format
 msgid "No contacts"
 msgstr "沒有聯絡人"
@@ -2788,9 +2787,7 @@ msgid "Edit address book…"
 msgstr "編輯通訊錄"
 
 #: contacts/qml/private/AddressBookMenu.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit address book…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Address Book"
 msgstr "編輯通訊錄"
@@ -3044,66 +3041,66 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "Jill"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:62
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
 #, kde-format
 msgid "Add Contact"
 msgstr "新增聯絡人"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
 #, kde-format
 msgid "Edit Contact"
 msgstr "編輯聯絡人"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:105
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
 #, kde-format
 msgid "Personal Information"
 msgstr "個人資訊"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:113
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
 #: contacts/qml/private/ContactPage.qml:286
 #, kde-format
 msgid "Business Information"
 msgstr "企業資訊"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:121
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
 #, kde-format
 msgid "Phone"
 msgstr "電話"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:130
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
 #, kde-format
 msgid "E-mail"
 msgstr "電子郵件"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:139
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
 #, kde-format
 msgid "Instant Messenger"
 msgstr "即時訊息程式"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
 #, kde-format
 msgid "Warning"
 msgstr "警告"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "這個聯絡人在編輯時在其他地方被變更。"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:193
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "要保留哪些變更？"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
 #, kde-format
 msgid "Current changes"
 msgstr "目前的變更"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
 msgid "External changes"
@@ -3180,17 +3177,17 @@ msgstr "兩者"
 msgid "Other…"
 msgstr "其他…"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:88
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:89
 #, kde-format
 msgid "user@example.org"
 msgstr "user@example.org"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:97
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:99
 #, kde-format
 msgid "Add email"
 msgstr "新增電子郵件"
 
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:64
+#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:65
 #, kde-format
 msgid "@person:example.com"
 msgstr "@person:example.com"
@@ -3284,7 +3281,7 @@ msgstr "呼叫器"
 msgid "Undefined"
 msgstr "未定義"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:107
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:108
 #, kde-format
 msgid "+33 7 55 23 68 67"
 msgstr "+33 7 55 23 68 67"
@@ -3490,27 +3487,27 @@ msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "數位憑證"
 
-#: contacts/qml/private/DeleteContactDialog.qml:21
+#: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "確認刪除聯絡人"
 
-#: contacts/qml/private/DeleteContactDialog.qml:27
+#: contacts/qml/private/DeleteContactDialog.qml:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
 msgid_plural "Delete contacts"
 msgstr[0] "刪除聯絡人"
 
-#: contacts/qml/private/DeleteContactDialog.qml:33
+#: contacts/qml/private/DeleteContactDialog.qml:35
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
 msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "您確定要刪除您這些聯絡人嗎："
 
-#: contacts/qml/private/DeleteContactDialog.qml:39
+#: contacts/qml/private/DeleteContactDialog.qml:41
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "您將無法復原這個動作。"

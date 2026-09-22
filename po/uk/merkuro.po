@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-21 00:45+0000\n"
-"PO-Revision-Date: 2026-09-06 18:06+0300\n"
+"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"PO-Revision-Date: 2026-09-21 09:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -981,14 +981,14 @@ msgid "End date cannot be before start date."
 msgstr "Кінцева дата не може передувати початковій."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Save"
 msgstr "Зберегти"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:161
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
 #, kde-format
 msgid "Add"
@@ -2668,54 +2668,52 @@ msgstr "Скопіювати в…"
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
-msgstr ""
+msgstr "Не вдалося знайти запис контакту."
 
 #: contacts/contacteditorbackend.cpp:157
 #, kde-format
 msgid "The contact address book could not be found."
-msgstr ""
+msgstr "Не вдалося знайти адресну книгу контактів."
 
 #: contacts/contacteditorbackend.cpp:186
 #, kde-format
 msgid "The contact is not loaded yet."
-msgstr ""
+msgstr "Запис контакту ще не завантажено."
 
 #: contacts/contacteditorbackend.cpp:192
 #, kde-format
 msgid "The contact is read-only."
-msgstr ""
+msgstr "Запис контакту призначено лише для читання."
 
 #: contacts/contacteditorbackend.cpp:192
-#, fuzzy, kde-format
-#| msgid "The key details are not available."
+#, kde-format
 msgid "The contact is no longer available."
-msgstr "Подробиці щодо ключа недоступні."
+msgstr "Доступ до запису контакту втрачено."
 
 #: contacts/contacteditorbackend.cpp:212
-#, fuzzy, kde-format
-#| msgid "No address book selected"
+#, kde-format
 msgid "No address book selected."
-msgstr "Немає вибраної адресної книги"
+msgstr "Немає вибраної адресної книги."
 
 #: contacts/contactgroupeditor.cpp:75
 #, kde-format
 msgid "The contact group could not be found."
-msgstr ""
+msgstr "Не вдалося знайти групу контактів."
 
 #: contacts/contactgroupeditor.cpp:109
 #, kde-format
 msgid "The contact group address book could not be found."
-msgstr ""
+msgstr "Не вдалося знайти адресну книгу групи контактів."
 
 #: contacts/contactgroupeditor.cpp:225
 #, kde-format
 msgid "The contact group is no longer available."
-msgstr ""
+msgstr "Доступ до групи контактів втрачено."
 
 #: contacts/contactgroupeditor.cpp:230
 #, kde-format
 msgid "The contact group is read-only."
-msgstr ""
+msgstr "Групу контактів призначено лише для читання."
 
 #: contacts/contactgroupeditor.cpp:251
 #, kde-format
@@ -2780,37 +2778,37 @@ msgstr "Виконано"
 msgid "Select Email Address"
 msgstr "Виберіть адресу ел. пошти"
 
-#: contacts/qml/ContactListItem.qml:40
+#: contacts/qml/ContactListItem.qml:39
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Name"
 msgstr "Без назви"
 
-#: contacts/qml/ContactView.qml:24 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
 #: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Контакти"
 
-#: contacts/qml/ContactView.qml:28
+#: contacts/qml/ContactView.qml:30
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Створити"
 
-#: contacts/qml/ContactView.qml:31
+#: contacts/qml/ContactView.qml:33
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Створити контакт"
 
-#: contacts/qml/ContactView.qml:38
+#: contacts/qml/ContactView.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Створити групу контактів"
 
-#: contacts/qml/ContactView.qml:86
+#: contacts/qml/ContactView.qml:88
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2820,26 +2818,26 @@ msgstr[1] "%1 позначені"
 msgstr[2] "%1 позначених"
 msgstr[3] "%1 позначений"
 
-#: contacts/qml/ContactView.qml:118 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Пересунуте позначене до:"
 
-#: contacts/qml/ContactView.qml:135 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Копіювати позначене до:"
 
-#: contacts/qml/ContactView.qml:206 contacts/qml/private/ContactPage.qml:63
+#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
 #: contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Без назви"
 
-#: contacts/qml/ContactView.qml:245 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
 #, kde-format
 msgid "No contacts"
 msgstr "Немає контактів"
@@ -2851,12 +2849,10 @@ msgid "Edit address book…"
 msgstr "Редагувати адресну книгу…"
 
 #: contacts/qml/private/AddressBookMenu.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Address Book"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Address Book"
-msgstr "Адресна книга"
+msgstr "Редагування адресної книги"
 
 #: contacts/qml/private/AddressBookMenu.qml:35
 #, kde-format
@@ -3107,67 +3103,67 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "Олена"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:62
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
 #, kde-format
 msgid "Add Contact"
 msgstr "Додати контакт"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
 #, kde-format
 msgid "Edit Contact"
 msgstr "Редагувати контакт"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:105
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
 #, kde-format
 msgid "Personal Information"
 msgstr "Особиста інформація"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:113
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
 #: contacts/qml/private/ContactPage.qml:286
 #, kde-format
 msgid "Business Information"
 msgstr "Робочі відомості"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:121
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
 #, kde-format
 msgid "Phone"
 msgstr "Телефон"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:130
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
 #, kde-format
 msgid "E-mail"
 msgstr "Ел. пошта"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:139
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
 #, kde-format
 msgid "Instant Messenger"
 msgstr "Обмін миттєвими повідомленнями"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
 #, kde-format
 msgid "Warning"
 msgstr "Попередження"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:188
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr ""
 "Цей запис контакту було змінено поза межами програми під час редагування."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:193
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "Які зміни слід зберегти?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:206
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
 #, kde-format
 msgid "Current changes"
 msgstr "Поточні мови"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
 #, kde-format
 msgid "External changes"
@@ -3247,17 +3243,17 @@ msgstr "Обидва"
 msgid "Other…"
 msgstr "Інше…"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:88
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:89
 #, kde-format
 msgid "user@example.org"
 msgstr "користувач@example.org"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:97
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:99
 #, kde-format
 msgid "Add email"
 msgstr "Додати електронну пошту"
 
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:64
+#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:65
 #, kde-format
 msgid "@person:example.com"
 msgstr "@ivan:ukrmail.org"
@@ -3351,7 +3347,7 @@ msgstr "Пейджер"
 msgid "Undefined"
 msgstr "Не визначено"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:107
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:108
 #, kde-format
 msgid "+33 7 55 23 68 67"
 msgstr "+38 0 55 23 68 67"
@@ -3566,13 +3562,13 @@ msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "Криптографічні сертифікати"
 
-#: contacts/qml/private/DeleteContactDialog.qml:21
+#: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "Підтвердження вилучення запису контакту"
 
-#: contacts/qml/private/DeleteContactDialog.qml:27
+#: contacts/qml/private/DeleteContactDialog.qml:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
@@ -3582,7 +3578,7 @@ msgstr[1] "Вилучити контакт"
 msgstr[2] "Вилучити контакт"
 msgstr[3] "Вилучити контакт"
 
-#: contacts/qml/private/DeleteContactDialog.qml:33
+#: contacts/qml/private/DeleteContactDialog.qml:35
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
@@ -3592,7 +3588,7 @@ msgstr[1] "Хочете вилучити ваш записи контактів:
 msgstr[2] "Хочете вилучити ваш записи контактів:"
 msgstr[3] "Хочете вилучити ваш запис контакту:"
 
-#: contacts/qml/private/DeleteContactDialog.qml:39
+#: contacts/qml/private/DeleteContactDialog.qml:41
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Ви не зможете скасувати наслідки цієї дії."
