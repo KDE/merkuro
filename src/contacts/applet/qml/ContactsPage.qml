@@ -9,7 +9,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.merkuro.contact
-import org.kde.kitemmodels
 import org.kde.ki18n
 
 PlasmaComponents3.ScrollView {
@@ -70,7 +69,7 @@ PlasmaComponents3.ScrollView {
 
     contentItem: ListView {
         id: contactsList
-        model: KSortFilterProxyModel {
+        model: ContactListProxyModel {
             filterCaseSensitivity: Qt.CaseInsensitive
             sourceModel: ContactsModel {}
         }

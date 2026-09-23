@@ -69,6 +69,8 @@ target_sources(merkuro_contact PRIVATE
     contactrepository.cpp
     contactcollectionmodel.cpp
     contactcollectionmodel.h
+    contactlistproxymodel.cpp
+    contactlistproxymodel.h
     contacteditorbackend.h
     contacteditorbackend.cpp
     contactgroupeditor.h

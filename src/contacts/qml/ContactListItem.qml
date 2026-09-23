@@ -36,7 +36,7 @@ Delegates.RoundedItemDelegate {
 
     signal createContextMenu
 
-    text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No Name")
+    text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No name")
 
     onPressAndHold: {
         root.selectionModel.clearCurrentIndex();

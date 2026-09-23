@@ -5,6 +5,7 @@
 
 #include "contactcollectionmodel.h"
 #include "contactconfig.h"
+#include "contactlistproxymodel.h"
 #include "sortedcollectionproxymodel.h"
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/Collection>
@@ -24,7 +25,6 @@
 #include <KSelectionProxyModel>
 #include <KSharedConfig>
 #include <QItemSelectionModel>
-#include <QSortFilterProxyModel>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -131,7 +131,7 @@ ContactRepository::ContactRepository(QObject *parent)
     entityMimeTypeFilterModel->addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
     entityMimeTypeFilterModel->setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
 
-    m_filteredContacts = new QSortFilterProxyModel(this);
+    m_filteredContacts = new ContactListProxyModel(this);
     m_filteredContacts->setSourceModel(entityMimeTypeFilterModel);
     m_filteredContacts->setSortLocaleAware(true);
     m_filteredContacts->setSortCaseSensitivity(Qt::CaseInsensitive);

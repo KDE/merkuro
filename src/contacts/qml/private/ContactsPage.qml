@@ -51,7 +51,10 @@ Kirigami.ScrollablePage {
         }
 
         clip: true
-        model: ContactsModel {}
+        model: ContactListProxyModel {
+            filterCaseSensitivity: Qt.CaseInsensitive
+            sourceModel: ContactsModel {}
+        }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
