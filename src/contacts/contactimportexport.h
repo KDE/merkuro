@@ -5,7 +5,9 @@
 
 #include <Akonadi/Item>
 #include <QObject>
+#include <QTemporaryFile>
 #include <QUrl>
+#include <memory>
 #include <qqmlregistration.h>
 
 class QAbstractItemModel;
@@ -26,11 +28,13 @@ public:
     Q_INVOKABLE void importContacts(const QUrl &url, qint64 collectionId);
     Q_INVOKABLE void exportContacts(const QUrl &url);
     Q_INVOKABLE void exportContact(const QUrl &url, qint64 itemId);
+    Q_INVOKABLE void prepareContactForSharing(qint64 itemId);
 
 Q_SIGNALS:
     void importInProgressChanged();
     void importFinished(bool success, int count, const QString &errorMessage);
     void exportFinished(bool success, int count, const QString &errorMessage);
+    void contactReadyToShare(const QUrl &url);
 
 private:
     void setImportInProgress(bool inProgress);
@@ -45,4 +49,5 @@ private:
     bool m_importFailed = false;
     QString m_importError;
     Akonadi::Item::List m_itemsToImport;
+    std::unique_ptr<QTemporaryFile> m_sharedContactFile;
 };

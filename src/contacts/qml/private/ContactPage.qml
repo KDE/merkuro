@@ -47,6 +47,11 @@ FormCard.FormCardPage {
 	    displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: exportFileDialog.open()
         },
+        ShareAction {
+            application: page.QQC2.ApplicationWindow.window
+            exporter: contactExporter
+            itemId: page.itemId
+        },
         Kirigami.Action {
             text: KI18n.i18nc("@action:inmenu", "Cancel")
             icon.name: "dialog-cancel"

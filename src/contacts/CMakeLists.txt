@@ -45,6 +45,13 @@ ecm_generate_export_header(merkuro_contact
     BASE_NAME MERKURO_CONTACT
 )
 
+if (WIN32 OR APPLE)
+    set(contact_share_action_source qml/private/ShareActionDummy.qml)
+    set(contact_purpose_qml)
+else()
+    set(contact_share_action_source qml/private/PurposeShareAction.qml)
+    set(contact_purpose_qml qml/private/ContactShareDialog.qml)
+endif()
 set_target_properties(merkuro_contact PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_sources(merkuro_contact PRIVATE
     contactapplication.cpp
@@ -129,6 +136,7 @@ ecm_target_qml_sources(merkuro_contact SOURCES
 ecm_target_qml_sources(merkuro_contact
     PRIVATE PATH private SOURCES
     qml/private/ContactPage.qml
+    ${contact_purpose_qml}
     qml/private/ContactGroupPage.qml
     qml/private/ContactsPage.qml
     qml/private/Header.qml
@@ -136,6 +144,17 @@ ecm_target_qml_sources(merkuro_contact
     qml/private/QrCodePage.qml
     qml/private/AddressBookMenu.qml
     qml/private/DeleteContactDialog.qml
+)
+set_source_files_properties(${contact_share_action_source} PROPERTIES
+    QT_RESOURCE_ALIAS private/ShareAction.qml
+    QT_QML_INTERNAL_TYPE TRUE
+)
+qt_target_qml_sources(merkuro_contact
+    QML_FILES ${contact_share_action_source}
+)
+set_source_files_properties(${contact_share_action_source} PROPERTIES
+    QT_RESOURCE_ALIAS private/ShareAction.qml
+    QT_QML_INTERNAL_TYPE TRUE
 )
 
 ecm_target_qml_sources(merkuro_contact

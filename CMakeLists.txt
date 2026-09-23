@@ -109,6 +109,9 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Notifications
     Crash
 )
+if (NOT WIN32 AND NOT APPLE)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+endif()
 find_package(KF6KirigamiAddons 1.4.0 REQUIRED)
 set_package_properties(KF6QQC2DesktopStyle PROPERTIES
     TYPE RUNTIME

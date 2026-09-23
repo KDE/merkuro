@@ -13,6 +13,7 @@
 #include <KContacts/VCardConverter>
 #include <KLocalizedString>
 #include <QAbstractItemModel>
+#include <QDir>
 #include <QFile>
 #include <QItemSelectionModel>
 #include <QSaveFile>
@@ -171,6 +172,35 @@ void ContactImportExport::exportContact(const QUrl &url, qint64 itemId)
             return;
         }
         writeContacts(url, fetchJob->items());
+    });
+}
+
+void ContactImportExport::prepareContactForSharing(qint64 itemId)
+{
+    auto fetchJob = new Akonadi::ItemFetchJob(Akonadi::Item(itemId), this);
+    fetchJob->fetchScope().fetchFullPayload();
+    connect(fetchJob, &KJob::result, this, [this, fetchJob] {
+        if (fetchJob->error() || fetchJob->items().isEmpty()) {
+            Q_EMIT exportFinished(false, 0, fetchJob->errorText().isEmpty() ? i18nc("@info", "The contact could not be found.") : fetchJob->errorText());
+            return;
+        }
+
+        const auto item = fetchJob->items().constFirst();
+        if (!item.hasPayload<KContacts::Addressee>()) {
+            Q_EMIT exportFinished(false, 0, i18nc("@info", "There are no contacts to export."));
+            return;
+        }
+
+        KContacts::VCardConverter converter;
+        const auto vCards = converter.createVCards({item.payload<KContacts::Addressee>()}, KContacts::VCardConverter::v3_0);
+        m_sharedContactFile = std::make_unique<QTemporaryFile>(QDir::tempPath() + u"/merkuro-contact-XXXXXX.vcf"_s);
+        m_sharedContactFile->setAutoRemove(true);
+        if (!m_sharedContactFile->open() || m_sharedContactFile->write(vCards) != vCards.size() || !m_sharedContactFile->flush()) {
+            m_sharedContactFile.reset();
+            Q_EMIT exportFinished(false, 0, i18nc("@info", "Could not prepare the contact for sharing."));
+            return;
+        }
+        Q_EMIT contactReadyToShare(QUrl::fromLocalFile(m_sharedContactFile->fileName()));
     });
 }
 
