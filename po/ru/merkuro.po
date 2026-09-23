@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:46+0000\n"
-"PO-Revision-Date: 2026-09-19 19:53+0300\n"
+"PO-Revision-Date: 2026-09-22 21:53+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -2669,54 +2669,52 @@ msgstr "Копировать в…"
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
-msgstr ""
+msgstr "Не удалось найти контакт."
 
 #: contacts/contacteditorbackend.cpp:157
 #, kde-format
 msgid "The contact address book could not be found."
-msgstr ""
+msgstr "Не удалось найти адресную книгу контактов."
 
 #: contacts/contacteditorbackend.cpp:186
 #, kde-format
 msgid "The contact is not loaded yet."
-msgstr ""
+msgstr "Контакт ещё не загружен."
 
 #: contacts/contacteditorbackend.cpp:192
 #, kde-format
 msgid "The contact is read-only."
-msgstr ""
+msgstr "Контакт доступен только для чтения."
 
 #: contacts/contacteditorbackend.cpp:192
-#, fuzzy, kde-format
-#| msgid "The key details are not available."
+#, kde-format
 msgid "The contact is no longer available."
-msgstr "Информация о ключе недоступна."
+msgstr "Контакт больше недоступен."
 
 #: contacts/contacteditorbackend.cpp:212
-#, fuzzy, kde-format
-#| msgid "No address book selected"
+#, kde-format
 msgid "No address book selected."
 msgstr "Не выбрано ни одной адресной книги"
 
 #: contacts/contactgroupeditor.cpp:75
 #, kde-format
 msgid "The contact group could not be found."
-msgstr ""
+msgstr "Не удалось найти группу контактов."
 
 #: contacts/contactgroupeditor.cpp:109
 #, kde-format
 msgid "The contact group address book could not be found."
-msgstr ""
+msgstr "Не удалось найти адресную книгу группы контактов."
 
 #: contacts/contactgroupeditor.cpp:225
 #, kde-format
 msgid "The contact group is no longer available."
-msgstr ""
+msgstr "Группа контактов больше недоступна."
 
 #: contacts/contactgroupeditor.cpp:230
 #, kde-format
 msgid "The contact group is read-only."
-msgstr ""
+msgstr "Группа контактов доступна только для чтения."
 
 #: contacts/contactgroupeditor.cpp:251
 #, kde-format
@@ -2853,7 +2851,7 @@ msgid "Edit address book…"
 msgstr "Редактировать адресную книгу…"
 
 #: contacts/qml/private/AddressBookMenu.qml:28
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Edit Address Book"
 msgstr "Адресная книга:"
@@ -3744,16 +3742,16 @@ msgid "Forward"
 msgstr "Перенаправить"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Отправить"
+msgstr "Отправить сейчас"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Расписание"
+msgstr "Перенести"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -3761,9 +3759,9 @@ msgid "There are no recipients to e-mail"
 msgstr "Нет получателей письма"
 
 #: mail/mailclient.cpp:67
-#, fuzzy, kde-format
+#, kde-format
 msgid "No transport found"
-msgstr "Ничего не найдено"
+msgstr "Метод отправки не найден"
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -3771,9 +3769,9 @@ msgid "Error creating transport"
 msgstr "Ошибка при создании транспорта"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
+#, kde-format
 msgid "Send date is not valid."
-msgstr "Недопустимая подпись."
+msgstr "Некорректная дата отправки."
 
 #: mail/mailclient.cpp:207
 #, kde-format
@@ -3870,10 +3868,10 @@ msgid "Edit Folder"
 msgstr "Редактирование папки"
 
 #: mail/qml/actions/MailItemMenu.qml:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
-msgstr "Создать папку"
+msgstr "Обновить папку"
 
 #: mail/qml/actions/MailItemMenu.qml:61
 #, kde-format
@@ -3925,18 +3923,16 @@ msgid "Search: %1"
 msgstr "Поиск: %1"
 
 #: mail/qml/FolderView.qml:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@action"
 msgid "Thread Messages"
-msgstr "Новое сообщение"
+msgstr "Письма дискуссиями"
 
 #: mail/qml/FolderView.qml:88
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
-msgstr ""
+msgstr "Показывать письма дискуссиями"
 
 #: mail/qml/FolderView.qml:130
 #, kde-format
@@ -3959,16 +3955,16 @@ msgid "Email messages (*.mbox)"
 msgstr "Письма (*.mbox)"
 
 #: mail/qml/FolderView.qml:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "Новое сообщение"
+msgstr "Перенести сообщение"
 
 #: mail/qml/FolderView.qml:252 mail/qml/MailComposer.qml:234
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "Дата и время отправки"
 
 #: mail/qml/FolderView.qml:261
 #, kde-format
@@ -4044,13 +4040,13 @@ msgid "Attach Document"
 msgstr "Прикрепить документ"
 
 #: mail/qml/MailComposer.qml:191
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Отправитель:"
+msgstr "Отправить позже"
 
 #: mail/qml/MailComposer.qml:215
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Расписание"
@@ -4059,7 +4055,7 @@ msgstr "Расписание"
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "Ручной режим"
 
 #: mail/qml/mailpartview/ICalPart.qml:29
 #, kde-format
@@ -4070,16 +4066,16 @@ msgstr "Это письмо содержит приглашение"
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 непрочитанное письмо в дискуссии"
+msgstr[1] "%1 непрочитанных письма в дискуссии"
+msgstr[2] "%1 непрочитанных писем в дискуссии"
+msgstr[3] "одно непрочитанное письмо в дискуссии"
 
 #: mail/qml/private/MailDelegate.qml:228
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Расписание"
+msgstr "Запланировано на %1"
 
 #: mail/qml/private/MailDelegate.qml:229
 #, kde-format
@@ -4088,11 +4084,13 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"Требуется ручное действие. Для немедленной отправки используйте «Отправить "
+"сейчас», для задания даты и времени — «Перенести»."
 
 #: mail/qml/private/MailDelegate.qml:242
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Вручную"
 
 #: mail/settings/AccountSettingsPage.qml:20
 #, kde-format
