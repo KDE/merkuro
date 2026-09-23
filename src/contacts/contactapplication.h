@@ -23,6 +23,8 @@ public:
 Q_SIGNALS:
     void createNewContact();
     void createNewContactGroup();
+    void importContactsRequested();
+    void exportContactsRequested();
     void refreshAll();
     void showMenubarChanged(bool state);
     void errorOccurred(const QString &error);

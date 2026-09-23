@@ -63,6 +63,8 @@ target_sources(merkuro_contact PRIVATE
     certificatesmodel.h
     contactactions.cpp
     contactactions.h
+    contactimportexport.cpp
+    contactimportexport.h
     contactmanager.h
     contactmanager.cpp
     contactrepository.h

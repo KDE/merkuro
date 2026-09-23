@@ -68,6 +68,20 @@ void ContactApplication::setupActions()
     action = new QAction(QIcon::fromTheme(u"edit-copy-symbolic"_s), i18nc("@action", "Copy to…"), this);
     mainCollection()->addAction("contact_copy_to"_L1, action);
 
+    actionName = QLatin1StringView("import_contacts");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto importAction = mainCollection()->addAction(actionName, this, &ContactApplication::importContactsRequested);
+        importAction->setText(i18nc("@action:inmenu", "Import Contacts…"));
+        importAction->setIcon(QIcon::fromTheme(u"document-import"_s));
+    }
+
+    actionName = QLatin1StringView("export_contacts");
+    if (KAuthorized::authorizeAction(actionName)) {
+        auto exportAction = mainCollection()->addAction(actionName, this, &ContactApplication::exportContactsRequested);
+        exportAction->setText(i18nc("@action:inmenu", "Export Contacts…"));
+        exportAction->setIcon(QIcon::fromTheme(u"document-export"_s));
+    }
+
     readSettings();
 }
 

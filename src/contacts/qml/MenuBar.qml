@@ -10,7 +10,15 @@ import org.kde.kirigami as Kirigami
 import org.kde.ki18n
 
 QQC2.MenuBar {
-    FileMenu {}
+    FileMenu {
+        Kirigami.Action {
+            fromQAction: ContactApplication.action("import_contacts")
+        }
+
+        Kirigami.Action {
+            fromQAction: ContactApplication.action("export_contacts")
+        }
+    }
 
     EditMenu {}
 

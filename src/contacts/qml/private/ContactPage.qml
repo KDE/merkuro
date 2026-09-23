@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 
@@ -41,6 +42,12 @@ FormCard.FormCardPage {
             fromQAction: ContactApplication.action('contact_delete')
         },
         Kirigami.Action {
+            icon.name: "document-export"
+            text: KI18n.i18nc("@action:inmenu", "Export Contact…")
+	    displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: exportFileDialog.open()
+        },
+        Kirigami.Action {
             text: KI18n.i18nc("@action:inmenu", "Cancel")
             icon.name: "dialog-cancel"
             visible: Kirigami.Settings.isMobile
@@ -48,6 +55,28 @@ FormCard.FormCardPage {
             onTriggered: pageStack.pop()
         }
     ]
+
+    ContactImportExport {
+        id: contactExporter
+
+        onExportFinished: (success, count, errorMessage) => {
+            if (success) {
+                page.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Contact exported successfully."), "short");
+            } else {
+                page.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not export contact: %1", errorMessage), "long");
+            }
+        }
+    }
+
+    FileDialog {
+        id: exportFileDialog
+        title: KI18n.i18n("Export contact")
+        fileMode: FileDialog.SaveFile
+        defaultSuffix: "vcf"
+        nameFilters: [KI18n.i18n("vCard files (*.vcf)")]
+
+        onAccepted: contactExporter.exportContact(exportFileDialog.selectedFile, page.itemId)
+    }
 
     function callNumber(number): void {
         Qt.openUrlExternally("tel:" + number)

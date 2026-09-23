@@ -5,6 +5,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.contact
@@ -108,6 +109,72 @@ Kirigami.ScrollablePage {
         model: contactsList.model
     }
 
+    ContactImportExport {
+        id: contactImportExport
+        model: root.contactsModel
+        selectionModel: contactSelectionModel
+
+        onImportFinished: (success, count, errorMessage) => {
+            if (success) {
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18ncp("%1 is the number of imported contacts", "%1 contact imported successfully.", "%1 contacts imported successfully.", count), "short");
+            } else {
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not import contacts: %1", errorMessage), "long");
+            }
+        }
+
+        onExportFinished: (success, count, errorMessage) => {
+            if (success) {
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18ncp("%1 is the number of exported contacts", "%1 contact exported successfully.", "%1 contacts exported successfully.", count), "short");
+            } else {
+                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not export contacts: %1", errorMessage), "long");
+            }
+        }
+    }
+
+    Connections {
+        target: ContactApplication
+
+        function onImportContactsRequested(): void {
+            if (!contactImportExport.importInProgress) {
+                importFileDialog.open();
+            }
+        }
+
+        function onExportContactsRequested(): void {
+            exportFileDialog.open();
+        }
+    }
+
+    FileDialog {
+        id: importFileDialog
+        title: KI18n.i18n("Import contacts")
+        nameFilters: [KI18n.i18n("vCard files (*.vcf *.vcard)")]
+
+        onAccepted: {
+            const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
+            const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                configGroup: "contact-collection-chooser-import",
+                title: KI18n.i18n("Import Contacts To:"),
+                mimeTypeFilter: [Akonadi.MimeTypes.address],
+            });
+            page.selected.connect(collection => {
+                contactImportExport.importContacts(importFileDialog.selectedFile, collection.id);
+                page.closeDialog();
+            });
+            page.rejected.connect(() => page.closeDialog());
+        }
+    }
+
+    FileDialog {
+        id: exportFileDialog
+        title: KI18n.i18n("Export contacts")
+        fileMode: FileDialog.SaveFile
+        defaultSuffix: "vcf"
+        nameFilters: [KI18n.i18n("vCard files (*.vcf)")]
+
+        onAccepted: contactImportExport.exportContacts(exportFileDialog.selectedFile)
+    }
+
     ContactActions {
         id: contactActions
         selectionModel: contactSelectionModel
@@ -193,6 +260,7 @@ Kirigami.ScrollablePage {
         id: contextMenu
         Components.ConvergentContextMenu {
             objectName: "contactContextMenu"
+
             Kirigami.Action {
                 fromQAction: ContactApplication.action('contact_edit')
             }

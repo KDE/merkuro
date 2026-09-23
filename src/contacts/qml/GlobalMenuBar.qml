@@ -12,7 +12,17 @@ import org.kde.kirigamiaddons.statefulapp.labs as StatefuleAppLabs
 import org.kde.ki18n
 
 Labs.MenuBar {
-    NativeFileMenu {}
+    NativeFileMenu {
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: "import_contacts"
+            application: ContactApplication
+        }
+
+        StatefuleAppLabs.NativeMenuItem {
+            actionName: "export_contacts"
+            application: ContactApplication
+        }
+    }
 
     NativeEditMenu {}
 
