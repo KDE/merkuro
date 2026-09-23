@@ -107,6 +107,16 @@ Kirigami.ScrollablePage {
     ItemSelectionModel {
         id: contactSelectionModel
         model: contactsList.model
+
+        Component.onCompleted: ContactApplication.setExportSelection(hasSelection)
+    }
+
+    Connections {
+        target: contactSelectionModel
+
+        function onSelectionChanged(): void {
+            ContactApplication.setExportSelection(contactSelectionModel.hasSelection);
+        }
     }
 
     ContactImportExport {

@@ -78,11 +78,19 @@ void ContactApplication::setupActions()
     actionName = QLatin1StringView("export_contacts");
     if (KAuthorized::authorizeAction(actionName)) {
         auto exportAction = mainCollection()->addAction(actionName, this, &ContactApplication::exportContactsRequested);
-        exportAction->setText(i18nc("@action:inmenu", "Export Contacts…"));
+        exportAction->setText(i18nc("@action:inmenu", "Export all contacts…"));
         exportAction->setIcon(QIcon::fromTheme(u"document-export"_s));
+        mExportAction = exportAction;
     }
 
     readSettings();
+}
+
+void ContactApplication::setExportSelection(bool hasSelection)
+{
+    if (mExportAction) {
+        mExportAction->setText(hasSelection ? i18nc("@action:inmenu", "Export selected contacts…") : i18nc("@action:inmenu", "Export all contacts…"));
+    }
 }
 
 void ContactApplication::saveWindowGeometry(QQuickWindow *window)

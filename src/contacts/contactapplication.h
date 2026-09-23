@@ -6,6 +6,7 @@
 #include <abstractmerkuroapplication.h>
 
 class QQuickWindow;
+class QAction;
 
 class MERKURO_CONTACT_EXPORT ContactApplication : public AbstractMerkuroApplication
 {
@@ -19,6 +20,7 @@ public:
     QList<KirigamiActionCollection *> actionCollections() const override;
 
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
+    Q_INVOKABLE void setExportSelection(bool hasSelection);
 
 Q_SIGNALS:
     void createNewContact();
@@ -32,4 +34,5 @@ Q_SIGNALS:
 private:
     void setupActions() override;
     KirigamiActionCollection *mContactCollection = nullptr;
+    QAction *mExportAction = nullptr;
 };
