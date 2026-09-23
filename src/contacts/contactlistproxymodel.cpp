@@ -5,7 +5,9 @@
 
 #include <Akonadi/EntityTreeModel>
 #include <KContacts/Addressee>
+#include <KContacts/PhoneNumber>
 #include <QCollator>
+#include <algorithm>
 
 namespace
 {
@@ -44,6 +46,46 @@ QVariant ContactListProxyModel::data(const QModelIndex &index, int role) const
         return displayText(display, item);
     }
     return QSortFilterProxyModel::data(index, role);
+}
+
+bool ContactListProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+{
+    if (QSortFilterProxyModel::filterAcceptsRow(sourceRow, sourceParent)) {
+        return true;
+    }
+
+    const auto expression = filterRegularExpression();
+    if (expression.pattern().isEmpty()) {
+        return true;
+    }
+
+    const auto sourceIndex = sourceModel()->index(sourceRow, filterKeyColumn(), sourceParent);
+    const auto item = sourceIndex.data(Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+    if (!item.hasPayload<KContacts::Addressee>()) {
+        return false;
+    }
+
+    const auto addressee = item.payload<KContacts::Addressee>();
+    QStringList searchableFields{
+        addressee.formattedName(),
+        addressee.realName(),
+        addressee.givenName(),
+        addressee.additionalName(),
+        addressee.familyName(),
+        addressee.nickName(),
+        addressee.organization(),
+        addressee.preferredEmail(),
+    };
+    for (const auto &email : addressee.emailList()) {
+        searchableFields.append(email.mail());
+    }
+    for (const auto &phoneNumber : addressee.phoneNumbers()) {
+        searchableFields.append(phoneNumber.number());
+    }
+
+    return std::any_of(searchableFields.cbegin(), searchableFields.cend(), [&expression](const QString &field) {
+        return expression.match(field).hasMatch();
+    });
 }
 
 bool ContactListProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
