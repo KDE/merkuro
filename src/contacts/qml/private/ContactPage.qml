@@ -49,18 +49,18 @@ FormCard.FormCardPage {
         }
     ]
 
-    function callNumber(number) {
+    function callNumber(number): void {
         Qt.openUrlExternally("tel:" + number)
     }
 
-    function sendSms(number) {
+    function sendSms(number): void {
         Qt.openUrlExternally("sms:" + number)
     }
 
     Header {
         Layout.fillWidth: true
         photoUrl: addressee.photoUrl
-        name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : KI18n.i18nc("Placeholder", "No Name")
+        name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : (addressee.preferredEmail.trim().length > 0 ? addressee.preferredEmail : KI18n.i18nc("@info:placeholder", "No name"))
         actions: [
             Kirigami.Action {
                 text: KI18n.i18n("Call")
@@ -124,24 +124,33 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: KI18n.i18n("Contact information")
+        visible: contactInfoCard.visible
     }
 
     FormCard.FormCard {
+        id: contactInfoCard
+
+        visible: addressee.formattedName.trim().length > 0
+            || addressee.nickName.trim().length > 0
+            || addressee.blogFeed.length > 0
+
         FormCard.FormTextDelegate {
-            visible: description !== ""
-            description: addressee.formattedName
+            id: nameField
+            visible: description.length > 0
+            description: addressee.formattedName.trim()
             text: KI18n.i18n("Name:")
         }
 
         FormCard.FormTextDelegate {
-            visible: description !== ""
-            description: addressee.nickName
+            id: nickNameField
+            visible: description.length > 0
+            description: addressee.nickName.trim()
             text: KI18n.i18n("Nickname:")
         }
 
         FormCard.FormLinkDelegate {
-            id: blogFeed
-            visible: addressee.blogFeed + '' !== ''
+            id: blogFeedField
+            visible: description.length > 0
             text: KI18n.i18n("Blog Feed:")
             description: addressee.blogFeed
             url: addressee.blogFeed
@@ -150,10 +159,12 @@ FormCard.FormCardPage {
 
     FormCard.FormHeader {
         title: KI18n.i18n("Personal information")
-        visible: birthday.visible || anniversary.visible || spousesName.visible
+        visible: personalInfoCard.visible
     }
 
     FormCard.FormCard {
+        id: personalInfoCard
+
         visible: birthday.visible || anniversary.visible || spousesName.visible
 
         FormCard.FormTextDelegate {
