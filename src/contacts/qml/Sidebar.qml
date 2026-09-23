@@ -23,6 +23,7 @@ Kirigami.OverlayDrawer {
     property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
     property var contextCollection
     property var contextCollectionDetails
+    required property Kirigami.PageRow pageStack
 
     AddressBookMenu {
         id: addressBookMenu
@@ -69,7 +70,7 @@ Kirigami.OverlayDrawer {
             id: toolbar
 
             Layout.fillWidth: true
-            Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+            Layout.preferredHeight: root.pageStack.globalToolBar.preferredHeight - root.pageStack.SafeArea.margins.top
 
             leftPadding: root.collapsed ? 0 : Kirigami.Units.smallSpacing
             rightPadding: root.collapsed ? Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing

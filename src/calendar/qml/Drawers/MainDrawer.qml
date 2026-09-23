@@ -28,6 +28,7 @@ Kirigami.OverlayDrawer {
     property bool refuseModal: false
     property int prevWindowWidth: applicationWindow().width
     property int narrowWindowWidth: Kirigami.Units.gridUnit * 50
+    required property Kirigami.PageRow pageStack
 
     Connections {
         target: applicationWindow()
@@ -99,7 +100,7 @@ Kirigami.OverlayDrawer {
         QQC2.ToolBar {
             id: toolbar
             Layout.fillWidth: true
-            Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+            Layout.preferredHeight: root.pageStack.globalToolBar.preferredHeight - root.pageStack.SafeArea.margins.top
 
             leftPadding: mainDrawer.collapsed ? 0 : Kirigami.Units.smallSpacing
             rightPadding: mainDrawer.collapsed ? Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing

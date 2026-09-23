@@ -23,6 +23,8 @@ BaseApplication {
     globalDrawer: Mail.MailSidebar {
         id: sidebar
 
+        pageStack: root.pageStack
+
         onSearch: (searchString) => {
             root.searchString = searchString;
         }

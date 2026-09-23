@@ -17,6 +17,7 @@ Kirigami.OverlayDrawer {
     id: root
 
     property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
+    required property Kirigami.PageRow pageStack
 
     signal search(string searchString)
 
@@ -58,7 +59,8 @@ Kirigami.OverlayDrawer {
             id: toolbar
 
             Layout.fillWidth: true
-            Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+            Layout.preferredHeight: root.pageStack.globalToolBar.preferredHeight - root.pageStack.SafeArea.margins.top
+
 
             leftPadding: root.collapsed ? 0 : Kirigami.Units.smallSpacing
             rightPadding: root.collapsed ? Kirigami.Units.smallSpacing / 2 : Kirigami.Units.smallSpacing

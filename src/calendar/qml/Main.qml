@@ -348,6 +348,7 @@ BaseApplication {
     globalDrawer: MainDrawer {
         id: mainDrawer
         mode: root.pageStack.currentItem ? root.pageStack.currentItem.mode : CalendarApplication.Event
+        pageStack: root.pageStack
     }
 
     contextDrawer: root.incidenceInfoDrawerEnabled ? incidenceInfoDrawer : null

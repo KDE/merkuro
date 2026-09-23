@@ -22,6 +22,7 @@ BaseApplication {
 
     globalDrawer: Contact.Sidebar {
         id: sidebar
+	pageStack: root.pageStack
     }
 
     Loader {
