@@ -110,7 +110,7 @@ ContactRepository::ContactRepository(QObject *parent)
 
     migrateCollectionSelection();
     const auto config = KSharedConfig::openConfig(u"merkurocontactrc"_s);
-    m_collectionSelectionModelStateSaver = std::make_unique<Akonadi::ETMViewStateSaver>();
+    m_collectionSelectionModelStateSaver = new Akonadi::ETMViewStateSaver();
     KConfigGroup selectionGroup = config->group(u"ContactCollectionSelection"_s);
     m_collectionSelectionModelStateSaver->setView(nullptr);
     m_collectionSelectionModelStateSaver->setSelectionModel(m_checkableProxyModel->selectionModel());

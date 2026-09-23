@@ -5,3 +5,4 @@
 # Qt retains the font database and Fontconfig fallback data until process exit.
 leak:QFontDatabasePrivate::load
 leak:libfontconfig
+leak:KViewStateSerializer::KViewStateSerializer
