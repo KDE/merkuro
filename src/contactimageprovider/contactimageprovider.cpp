@@ -5,7 +5,7 @@
 
 #include <Akonadi/ContactSearchJob>
 #include <KIO/TransferJob>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QDnsLookup>
@@ -19,16 +19,25 @@
 #include <kjob.h>
 #include <qobject.h>
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+QString cacheDirectory()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + u"/merkuro"_s;
+}
+}
+
 ContactImageProvider::ContactImageProvider()
 
 {
     qnam.setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
 
-    qnam.enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/hsts/"));
+    qnam.enableStrictTransportSecurityStore(true, cacheDirectory() + u"/hsts/"_s);
     qnam.setStrictTransportSecurityEnabled(true);
 
     auto namDiskCache = new QNetworkDiskCache(&qnam);
-    namDiskCache->setCacheDirectory(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/nam/"));
+    namDiskCache->setCacheDirectory(cacheDirectory() + u"/nam/"_s);
     qnam.setCache(namDiskCache);
 }
 
@@ -37,31 +46,49 @@ QQuickImageResponse *ContactImageProvider::requestImageResponse(const QString &e
     return new ThumbnailResponse(email, requestedSize, &qnam);
 }
 
+QString ContactImageProvider::cacheFilePath(const QString &email)
+{
+    const auto normalizedEmail = email.trimmed().toLower();
+    const auto key = QCryptographicHash::hash(normalizedEmail.toUtf8(), QCryptographicHash::Md5).toHex();
+    return u"%1/contact_picture_provider/%2.png"_s.arg(cacheDirectory(), QString::fromLatin1(key));
+}
+
 ThumbnailResponse::ThumbnailResponse(QString email, QSize size, QNetworkAccessManager *qnam)
-    : m_email(std::move(email))
+    : m_email(email.trimmed().toLower())
     , requestedSize(size)
-    , localFile(u"%1/contact_picture_provider/%2.png"_s.arg(QStandardPaths::writableLocation(QStandardPaths::CacheLocation), m_email))
+    , localFile(ContactImageProvider::cacheFilePath(m_email))
     , m_qnam(qnam)
     , errorStr(u"Image request hasn't started"_s)
 {
-    m_email = m_email.trimmed().toLower();
+    moveToThread(QCoreApplication::instance()->thread());
+
     QImage cachedImage;
     if (cachedImage.load(localFile)) {
         m_image = cachedImage;
         errorStr.clear();
-        Q_EMIT finished();
+        QMetaObject::invokeMethod(
+            this,
+            [this]() {
+                Q_EMIT finished();
+            },
+            Qt::QueuedConnection);
         return;
     }
 
     QFileInfo info(localFile);
     const auto aWeekAgo = QDate::currentDate().addDays(-7);
-    if (info.exists() && info.birthTime().date() > aWeekAgo) {
+    if (info.exists() && info.lastModified().date() > aWeekAgo) {
         errorStr = u"No image found last time we tried."_s;
+        QMetaObject::invokeMethod(
+            this,
+            [this]() {
+                Q_EMIT finished();
+            },
+            Qt::QueuedConnection);
         return;
     }
 
     // Execute a request on the main thread asynchronously
-    moveToThread(QApplication::instance()->thread());
     QMetaObject::invokeMethod(this, &ThumbnailResponse::startRequest, Qt::QueuedConnection);
 }
 
@@ -71,7 +98,7 @@ void ThumbnailResponse::startRequest()
     job->setQuery(Akonadi::ContactSearchJob::Email, m_email, Akonadi::ContactSearchJob::ExactMatch);
 
     // Runs in the main thread, not QML thread
-    Q_ASSERT(QThread::currentThread() == QApplication::instance()->thread());
+    Q_ASSERT(QThread::currentThread() == QCoreApplication::instance()->thread());
 
     // Connect to any possible outcome including abandonment
     // to make sure the QML thread is not left stuck forever.
@@ -231,14 +258,18 @@ void ThumbnailResponse::imageQueried(QNetworkReply *reply)
     }
 
     const QByteArray imageData = reply->readAll();
-    if (m_image.loadFromData(imageData)) {
+    QImage image;
+    if (image.loadFromData(imageData)) {
         QString localPath = QFileInfo(localFile).absolutePath();
         QDir dir;
         if (!dir.exists(localPath)) {
             dir.mkpath(localPath);
         }
 
-        m_image.save(localFile);
+        image.save(localFile);
+        QWriteLocker locker(&lock);
+        m_image = std::move(image);
+        errorStr.clear();
     }
 
     Q_EMIT finished();

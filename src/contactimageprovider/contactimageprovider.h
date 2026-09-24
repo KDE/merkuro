@@ -53,6 +53,7 @@ class ContactImageProvider : public QQuickAsyncImageProvider
 {
 public:
     explicit ContactImageProvider();
+    static QString cacheFilePath(const QString &email);
     QQuickImageResponse *requestImageResponse(const QString &id, const QSize &requestedSize) override;
 
 private:

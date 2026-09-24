@@ -22,6 +22,7 @@ target_link_libraries(merkuro_contact PUBLIC
     KPim6::AkonadiWidgets
     KPim6::AkonadiContactCore
     MerkuroComponents
+    MerkuroContactImageProvider
     KF6::I18nQml
     Gpgmepp
     QGpgmeQt6

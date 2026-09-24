@@ -82,9 +82,14 @@ Delegates.RoundedItemDelegate {
             Layout.preferredWidth: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
             Layout.preferredHeight: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
 
-            source: root.addressee.photo ?
-                (root.addressee.photo.url.toString().length > 0 ? root.addressee.photo.url.toString() : "image://avatar/" + root.itemId)
-                : null
+            source: {
+                if (!root.addressee.photo.isEmpty) {
+                    return root.addressee.photo.isIntern ? "image://avatar/" + root.itemId : root.addressee.photo.url
+                } else if (root.mimeType === Akonadi.MimeTypes.address && root.addressee.preferredEmail.length > 0) {
+                    return "image://contact/" + root.addressee.preferredEmail
+                }
+                return ""
+            }
 
             Accessible.ignored: true // same as name
         }

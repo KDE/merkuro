@@ -64,6 +64,25 @@ private Q_SLOTS:
         QVERIFY(qrCodeData.contains(u"Grace Hopper"_s));
         QVERIFY(qrCodeData.contains(u"grace@example.org"_s));
     }
+
+    void photoUrlUsesLibravatarOnlyWithoutContactPhoto()
+    {
+        AddresseeWrapper wrapper;
+        QCOMPARE(wrapper.photoUrl(), QString());
+
+        KContacts::Addressee addressee;
+        KContacts::Email email(u"ada@example.org"_s);
+        email.setPreferred(true);
+        addressee.setEmailList({email});
+        wrapper.setAddressee(addressee);
+        QCOMPARE(wrapper.photoUrl(), u"image://contact/ada@example.org"_s);
+
+        KContacts::Picture photo;
+        photo.setUrl(u"https://example.org/ada.png"_s);
+        addressee.setPhoto(photo);
+        wrapper.setAddressee(addressee);
+        QCOMPARE(wrapper.photoUrl(), u"https://example.org/ada.png"_s);
+    }
 };
 
 QTEST_MAIN(AddresseeWrapperTest)

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "avatarimageprovider.h"
+#include "contactimageprovider.h"
 #include "contactmanager.h"
 
 #include <Akonadi/ItemFetchJob>
@@ -17,6 +18,7 @@ AvatarImageProvider *AvatarImageProvider::create(QQmlEngine *engine, QJSEngine *
     QQmlEngine::setObjectOwnership(instance, QQmlEngine::CppOwnership);
 
     engine->addImageProvider(u"avatar"_s, instance);
+    engine->addImageProvider(u"contact"_s, new ContactImageProvider);
     return instance;
 }
 

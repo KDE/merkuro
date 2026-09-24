@@ -18,8 +18,6 @@ set(merkuro_mail_SRCS
     mailpresentationmodel.h
     searchmodel.h
     searchmodel.cpp
-    contactimageprovider.cpp
-    contactimageprovider.h
     progressmodel.cpp
     progressmodel.h
 
@@ -85,6 +83,7 @@ target_link_libraries(merkuro_mail_static
         KF6::IconThemes
         KF6::Notifications
         MerkuroComponents
+        MerkuroContactImageProvider
         KF6::I18nQml
 )
 

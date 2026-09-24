@@ -23,6 +23,8 @@ AddresseeWrapper::AddresseeWrapper(QObject *parent)
 
     connect(m_emailModel, &EmailModel::changed, this, [this](const KContacts::Email::List &emails) {
         m_addressee.setEmailList(emails);
+        Q_EMIT preferredEmailChanged();
+        Q_EMIT photoChanged();
     });
 
     connect(m_phoneModel, &PhoneModel::changed, this, [this](const KContacts::PhoneNumber::List &phoneNumbers) {
@@ -508,7 +510,7 @@ void AddresseeWrapper::setSuffix(const QString &name)
 QString AddresseeWrapper::photoUrl() const
 {
     if (photo().isEmpty()) {
-        return {};
+        return preferredEmail().isEmpty() ? QString() : u"image://contact/%1"_s.arg(preferredEmail());
     }
     if (photo().isIntern()) {
         return u"image://avatar/%1"_s.arg(item().id());
