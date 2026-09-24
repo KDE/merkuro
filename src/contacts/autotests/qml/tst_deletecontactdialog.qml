@@ -67,8 +67,11 @@ TestCase {
         })
         verify(dialog)
 
+        dialog.open()
+        tryCompare(dialog, "visible", true)
         dialog.accept()
         compare(dialog.standardButton(QQC2.Dialog.Ok).enabled, false)
+        tryCompare(dialog, "visible", false)
 
         waitUntilItemDeleted(item)
     }

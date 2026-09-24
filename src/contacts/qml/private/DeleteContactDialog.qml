@@ -62,5 +62,6 @@ Components.MessageDialog {
             const job = ContactManager.deleteItem(item);
             job.result.connect(root.finishPendingDeletion);
         }
+        root.close()
     }
 }
