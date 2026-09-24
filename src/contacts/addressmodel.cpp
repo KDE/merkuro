@@ -16,6 +16,10 @@ int AddressModel::rowCount(const QModelIndex &parent) const
 
 QVariant AddressModel::data(const QModelIndex &idx, int role) const
 {
+    if (!checkIndex(idx)) {
+        return {};
+    }
+
     const auto &address = m_addresses[idx.row()];
     switch (role) {
     case CountryRole:
@@ -48,6 +52,8 @@ QVariant AddressModel::data(const QModelIndex &idx, int role) const
         return QVariant::fromValue(address.type());
     case TypeLabelRole:
         return address.typeLabel();
+    case GeoUriRole:
+        return address.geoUri();
     default:
         return {};
     }
@@ -71,6 +77,7 @@ QHash<int, QByteArray> AddressModel::roleNames() const
         {StreetRole, "street"_ba},
         {TypeRole, "type"_ba},
         {TypeLabelRole, "typeLabel"_ba},
+        {GeoUriRole, "geoUri"_ba},
     };
 }
 
@@ -79,6 +86,46 @@ void AddressModel::setAddresses(const KContacts::Address::List &addresses)
     beginResetModel();
     m_addresses = addresses;
     endResetModel();
+}
+
+KContacts::Address AddressModel::addressAt(int row) const
+{
+    return hasIndex(row, 0) ? m_addresses.at(row) : KContacts::Address();
+}
+
+void AddressModel::addAddress(const KContacts::Address &address)
+{
+    const int row = m_addresses.size();
+    beginInsertRows({}, row, row);
+    m_addresses.append(address);
+    endInsertRows();
+    Q_EMIT changed(m_addresses);
+}
+
+void AddressModel::updateAddress(int row, const KContacts::Address &address)
+{
+    if (!hasIndex(row, 0)) {
+        return;
+    }
+
+    auto updated = address;
+    // KContacts::Address currently drops Geo when its shared data is detached.
+    updated.setGeo(m_addresses.at(row).geo());
+    m_addresses[row] = updated;
+    Q_EMIT dataChanged(index(row, 0), index(row, 0));
+    Q_EMIT changed(m_addresses);
+}
+
+void AddressModel::deleteAddress(int row)
+{
+    if (!hasIndex(row, 0)) {
+        return;
+    }
+
+    beginRemoveRows({}, row, row);
+    m_addresses.removeAt(row);
+    endRemoveRows();
+    Q_EMIT changed(m_addresses);
 }
 
 #include "moc_addressmodel.cpp"

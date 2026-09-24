@@ -65,6 +65,30 @@ private Q_SLOTS:
         QVERIFY(qrCodeData.contains(u"grace@example.org"_s));
     }
 
+    void addressEditsAreStoredInTheContact()
+    {
+        AddresseeWrapper wrapper;
+        KContacts::Addressee addressee;
+        KContacts::Address original(KContacts::Address::Home);
+        original.setStreet(u"First Street"_s);
+        addressee.setAddresses({original});
+        wrapper.setAddressee(addressee);
+
+        KContacts::Address second(KContacts::Address::Work);
+        second.setStreet(u"Second Street"_s);
+        wrapper.addressesModel()->addAddress(second);
+        QCOMPARE(wrapper.addressee().addresses().size(), 2);
+        QCOMPARE(wrapper.addressee().addresses().at(1).street(), u"Second Street"_s);
+
+        auto updated = wrapper.addressesModel()->addressAt(0);
+        updated.setStreet(u"Updated Street"_s);
+        wrapper.addressesModel()->updateAddress(0, updated);
+        QCOMPARE(wrapper.addressee().addresses().at(0).street(), u"Updated Street"_s);
+
+        wrapper.addressesModel()->deleteAddress(1);
+        QCOMPARE(wrapper.addressee().addresses().size(), 1);
+    }
+
     void photoUrlUsesLibravatarOnlyWithoutContactPhoto()
     {
         AddresseeWrapper wrapper;

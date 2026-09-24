@@ -14,6 +14,8 @@ TestCase {
     height: 600
 
     readonly property var pageComponent: Qt.createComponent(Qt.resolvedUrl("../../qml/private/contact_editor/ContactEditorPage.qml"))
+    readonly property var addressCardComponent: Qt.createComponent(Qt.resolvedUrl("../../qml/private/contact_editor/AddressEditorCard.qml"))
+    readonly property var addressPageComponent: Qt.createComponent(Qt.resolvedUrl("../../qml/private/contact_editor/AddressEditorPage.qml"))
 
     function test_createModeTitle(): void {
         const page = createTemporaryObject(pageComponent, testCase, {mode: ContactEditor.CreateMode})
@@ -88,6 +90,76 @@ TestCase {
 
         usernameField.text = "ada"
         compare(usernameField.text, "ada")
+    }
+
+    function test_addressPageAddsAndEditsAddresses(): void {
+        const editorPage = createTemporaryObject(pageComponent, testCase)
+        const model = editorPage.contactEditor.contact.addressesModel
+
+        const firstPage = createTemporaryObject(addressPageComponent, testCase, {addressModel: model, row: -1})
+        verify(firstPage)
+        const firstStreetField = findChild(firstPage, "addressStreetField")
+        const firstCityField = findChild(firstPage, "addressCityField")
+        const firstSaveButton = findChild(firstPage, "saveAddressButton")
+        verify(firstStreetField)
+        verify(firstCityField)
+        verify(firstSaveButton)
+        const typeCombo = findChild(firstPage, "addressTypeCombo")
+        verify(typeCombo)
+        compare(typeCombo.count, 7)
+        compare(typeCombo.currentValue, AddressModel.Home)
+        typeCombo.activated(5)
+        compare(typeCombo.currentValue, AddressModel.Work)
+        compare(firstPage.hasAddressDetails, false)
+        compare(firstSaveButton.enabled, false)
+        firstStreetField.text = "First Street"
+        firstCityField.text = "Berlin"
+        compare(firstPage.hasAddressDetails, true)
+        compare(firstSaveButton.enabled, true)
+        firstPage.saveAddress()
+        compare(model.rowCount(), 1)
+        compare(model.addressAt(0).type, AddressModel.Work)
+
+        const secondPage = createTemporaryObject(addressPageComponent, testCase, {addressModel: model, row: -1})
+        verify(secondPage)
+        findChild(secondPage, "addressStreetField").text = "Second Street"
+        secondPage.saveAddress()
+        compare(model.rowCount(), 2)
+
+        const editPage = createTemporaryObject(addressPageComponent, testCase, {addressModel: model, row: 0})
+        verify(editPage)
+        const editStreetField = findChild(editPage, "addressStreetField")
+        compare(editStreetField.text, "First Street")
+        const editTypeCombo = findChild(editPage, "addressTypeCombo")
+        compare(editTypeCombo.currentValue, AddressModel.Work)
+        editTypeCombo.activated(4)
+        editStreetField.text = "Updated Street"
+        editPage.saveAddress()
+        compare(model.data(model.index(0, 0), AddressModel.StreetRole), "Updated Street")
+        compare(model.addressAt(0).type, AddressModel.Home)
+        compare(model.data(model.index(1, 0), AddressModel.StreetRole), "Second Street")
+    }
+
+    function test_addressCardRequestsSelectedAddress(): void {
+        const editorPage = createTemporaryObject(pageComponent, testCase)
+        const model = editorPage.contactEditor.contact.addressesModel
+        let address = model.addressAt(-1)
+        address.street = "First Street"
+        model.addAddress(address)
+
+        const card = createTemporaryObject(addressCardComponent, testCase, {contactEditor: editorPage.contactEditor})
+        verify(card)
+        let requestedRow = -2
+        card.addressRequested.connect(row => requestedRow = row)
+
+        const addButton = findChild(card, "addAddressButton")
+        const addressRow = findChild(card, "addressRow0")
+        verify(addButton)
+        verify(addressRow)
+        addButton.clicked()
+        compare(requestedRow, -1)
+        addressRow.clicked()
+        compare(requestedRow, 0)
     }
 
     function test_submitFlushesPendingEmailField(): void {

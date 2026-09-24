@@ -161,6 +161,8 @@ set_source_files_properties(${contact_share_action_source} PROPERTIES
 ecm_target_qml_sources(merkuro_contact
     PRIVATE PATH private/contact_editor SOURCES
     qml/private/contact_editor/AddressBookEditorCard.qml
+    qml/private/contact_editor/AddressEditorCard.qml
+    qml/private/contact_editor/AddressEditorPage.qml
     qml/private/contact_editor/BusinessEditorCard.qml
     qml/private/contact_editor/ContactEditorPage.qml
     qml/private/contact_editor/ContactGroupEditorPage.qml

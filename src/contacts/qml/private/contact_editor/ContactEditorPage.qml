@@ -139,6 +139,18 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
+        title: KI18n.i18nc("@title:group", "Addresses")
+    }
+
+    AddressEditorCard {
+        contactEditor: root.contactEditor
+        onAddressRequested: row => root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./AddressEditorPage.qml"), {
+            addressModel: root.contactEditor.contact.addressesModel,
+            row: row,
+        })
+    }
+
+    FormCard.FormHeader {
         title: KI18n.i18n("Instant Messenger")
     }
 

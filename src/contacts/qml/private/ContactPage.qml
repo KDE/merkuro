@@ -278,14 +278,24 @@ FormCard.FormCardPage {
             id: addressesRepeater
             model: addressee.addressesModel
 
-            delegate: FormCard.FormTextDelegate {
+            delegate: FormCard.FormButtonDelegate {
                 required property string formattedAddress
                 required property string typeLabel
+                required property url geoUri
 
-                visible: text.length > 0
+                visible: geoUri.toString().length > 0
 
                 text: typeLabel ? KI18n.i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", typeLabel) : KI18n.i18n("Home:")
                 description: formattedAddress
+                trailingLogo {
+                    source: "map-symbolic"
+                    implicitWidth: Kirigami.Units.iconSizes.small
+                    implicitHeight: Kirigami.Units.iconSizes.small
+                }
+                Accessible.name: formattedAddress.trim().length > 0
+                    ? KI18n.i18nc("@action:button Accessible name for opening a contact address in a map", "Show %1 on a map", formattedAddress)
+                    : KI18n.i18nc("@action:button Accessible name for opening contact coordinates in a map", "Show location on a map")
+                onClicked: Qt.openUrlExternally(geoUri)
             }
         }
     }

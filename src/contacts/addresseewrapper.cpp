@@ -31,6 +31,10 @@ AddresseeWrapper::AddresseeWrapper(QObject *parent)
         m_addressee.setPhoneNumbers(phoneNumbers);
     });
 
+    connect(m_addressesModel, &AddressModel::changed, this, [this](const KContacts::Address::List &addresses) {
+        m_addressee.setAddresses(addresses);
+    });
+
     connect(m_imppModel, &ImppModel::changed, this, [this](const KContacts::Impp::List &impps) {
         m_addressee.setImppList(impps);
     });
