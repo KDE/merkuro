@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2026-09-21 10:40+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1273,7 +1273,7 @@ msgstr "Er zijn geen deelnemers"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
 msgstr "Naam:"
@@ -1410,60 +1410,60 @@ msgstr "Markeren als onvoltooid"
 msgid "Mark Complete"
 msgstr "Markeren als voltooid"
 
-#: calendar/qml/Drawers/MainDrawer.qml:114 launcher/Main.qml:48
+#: calendar/qml/Drawers/MainDrawer.qml:115 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Agenda"
 
-#: calendar/qml/Drawers/MainDrawer.qml:158
+#: calendar/qml/Drawers/MainDrawer.qml:159
 #, kde-format
 msgid "Undo: "
 msgstr "Ongedaan maken: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:166
+#: calendar/qml/Drawers/MainDrawer.qml:167
 #, kde-format
 msgid "Redo: "
 msgstr "Opnieuw: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:175
+#: calendar/qml/Drawers/MainDrawer.qml:176
 #: calendar/qml/Menus/GlobalMenuBar.qml:126 calendar/qml/Menus/MenuBar.qml:104
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Alle agenda's vernieuwen"
 
-#: calendar/qml/Drawers/MainDrawer.qml:182
+#: calendar/qml/Drawers/MainDrawer.qml:183
 #, kde-format
 msgid "Configure"
 msgstr "Configureren"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "Ongedaan maken: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgid "Undo"
 msgstr "Ongedaan maken"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "Opnieuw: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgid "Redo"
 msgstr "Opnieuw"
 
-#: calendar/qml/Drawers/MainDrawer.qml:301
+#: calendar/qml/Drawers/MainDrawer.qml:302
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:378
 #, kde-format
 msgid "View all tasks"
 msgstr "Alle taken bekijken"
@@ -1903,7 +1903,7 @@ msgid "Choose Calendar Color"
 msgstr "Agendakleur kiezen"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
-#: contacts/qml/GlobalMenuBar.qml:20 contacts/qml/MenuBar.qml:18
+#: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:26
 #: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:19
 #, kde-format
 msgctxt "@action:menu"
@@ -1923,7 +1923,7 @@ msgid "Go"
 msgstr "Ga naar"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
-#: contacts/qml/GlobalMenuBar.qml:34 contacts/qml/MenuBar.qml:30
+#: contacts/qml/GlobalMenuBar.qml:44 contacts/qml/MenuBar.qml:38
 #: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:27
 #: mail/qml/FolderView.qml:79
 #, kde-format
@@ -2537,7 +2537,7 @@ msgid "Add Account…"
 msgstr "Account toevoegen…"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgid "Home:"
 msgstr "Privé:"
@@ -2627,6 +2627,29 @@ msgctxt "@action"
 msgid "Copy to…"
 msgstr "Kopiëren naar…"
 
+#: contacts/contactapplication.cpp:74
+#, fuzzy, kde-format
+#| msgid "Import Calendar…"
+msgctxt "@action:inmenu"
+msgid "Import Contacts…"
+msgstr "Agenda importeren…"
+
+#: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export all contacts…"
+msgstr "Contactpersoon bewerken…"
+
+#: contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete contact"
+msgctxt "@action:inmenu"
+msgid "Export selected contacts…"
+msgstr "Contactpersoon verwijderen"
+
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
@@ -2704,6 +2727,63 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "E-mail"
 
+#: contacts/contactimportexport.cpp:58
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not read the vCard file."
+msgstr "Kon de gegevens niet ontcijferen."
+
+#: contacts/contactimportexport.cpp:66
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgctxt "@info"
+msgid "The file did not contain any contacts."
+msgstr "Deze e-mail bevat een uitnodiging"
+
+#: contacts/contactimportexport.cpp:88
+#, fuzzy, kde-format
+#| msgid "The contact address book could not be found."
+msgctxt "@info"
+msgid "The selected address book could not be found."
+msgstr "Het adresboek met contactpersonen is niet gevonden."
+
+#: contacts/contactimportexport.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book does not allow contacts to be added."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
+#: contacts/contactimportexport.cpp:224
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not write the vCard file."
+msgstr "Kon de gegevens niet ontcijferen."
+
+#: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
+#: contacts/contactimportexport.cpp:216
+#, fuzzy, kde-format
+#| msgid "There are no recipients to e-mail"
+msgctxt "@info"
+msgid "There are no contacts to export."
+msgstr "Er zijn geen ontvangers om een e-mail naar te verzenden"
+
+#: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
+#, fuzzy, kde-format
+#| msgid "The contact could not be found."
+msgctxt "@info"
+msgid "The contact could not be found."
+msgstr "De contactpersoon is niet gevonden."
+
+#: contacts/contactimportexport.cpp:200
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not prepare the contact for sharing."
+msgstr "Kon de gegevens niet ontcijferen."
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2740,37 +2820,39 @@ msgstr "Gereed"
 msgid "Select Email Address"
 msgstr "E-mailadres selecteren"
 
-#: contacts/qml/ContactListItem.qml:39
-#, kde-format
+#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "Placeholder when no name is set"
+#| msgid "No name"
 msgctxt "@info:placeholder"
-msgid "No Name"
+msgid "No name"
 msgstr "Naamloos"
 
-#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
+#: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Contactpersonen"
 
-#: contacts/qml/ContactView.qml:30
+#: contacts/qml/ContactView.qml:31
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Aanmaken"
 
-#: contacts/qml/ContactView.qml:33
+#: contacts/qml/ContactView.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Nieuw contactpersoon"
 
-#: contacts/qml/ContactView.qml:40
+#: contacts/qml/ContactView.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Nieuwe contactgroep"
 
-#: contacts/qml/ContactView.qml:88
+#: contacts/qml/ContactView.qml:89
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2778,26 +2860,86 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 geselecteerd"
 msgstr[1] "%1 geselecteerd"
 
-#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:129
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of imported contacts"
+msgid "%1 contact imported successfully."
+msgid_plural "%1 contacts imported successfully."
+msgstr[0] "%1 gebeurtenissen zijn met succes geïmporteerd."
+msgstr[1] "%1 gebeurtenissen zijn met succes geïmporteerd."
+
+#: contacts/qml/ContactView.qml:131
+#, kde-format
+msgid "Could not import contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:137
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of exported contacts"
+msgid "%1 contact exported successfully."
+msgid_plural "%1 contacts exported successfully."
+msgstr[0] "%1 gebeurtenissen zijn met succes geïmporteerd."
+msgstr[1] "%1 gebeurtenissen zijn met succes geïmporteerd."
+
+#: contacts/qml/ContactView.qml:139
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgid "Could not export contacts: %1"
+msgstr "Kon de gegevens niet ontcijferen."
+
+#: contacts/qml/ContactView.qml:160
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Import contacts"
+msgstr "Geen contactpersonen"
+
+#: contacts/qml/ContactView.qml:161
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf *.vcard)"
+msgstr "Calendar-bestanden (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:167
+#, fuzzy, kde-format
+#| msgid "Create Contact Group"
+msgid "Import Contacts To:"
+msgstr "Contactgroep aanmaken"
+
+#: contacts/qml/ContactView.qml:180
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contacts"
+msgstr "Geen contactpersonen"
+
+#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf)"
+msgstr "Calendar-bestanden (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Selectie verplaatsen naar:"
 
-#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Selectie kopiëren naar:"
 
-#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
-#: contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Naamloos"
 
-#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "Geen contactpersonen"
@@ -3079,7 +3221,7 @@ msgid "Personal Information"
 msgstr "Persoonlijke informatie"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:286
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Business Information"
 msgstr "Zakelijke informatie"
@@ -3342,177 +3484,214 @@ msgctxt "@action:button"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: contacts/qml/private/ContactPage.qml:37
+#: contacts/qml/private/ContactPage.qml:38
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: contacts/qml/private/ContactPage.qml:44
+#: contacts/qml/private/ContactPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export Contact…"
+msgstr "Contactpersoon bewerken…"
+
+#: contacts/qml/private/ContactPage.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: contacts/qml/private/ContactPage.qml:66
+#: contacts/qml/private/ContactPage.qml:69
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgid "Contact exported successfully."
+msgstr "%1 gebeurtenissen zijn met succes geïmporteerd."
+
+#: contacts/qml/private/ContactPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgid "Could not export contact: %1"
+msgstr "Kon de gegevens niet ontcijferen."
+
+#: contacts/qml/private/ContactPage.qml:78
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contact"
+msgstr "Geen contactpersonen"
+
+#: contacts/qml/private/ContactPage.qml:100
 #, kde-format
 msgid "Call"
 msgstr "Oproep"
 
-#: contacts/qml/private/ContactPage.qml:77
+#: contacts/qml/private/ContactPage.qml:111
 #, kde-format
 msgid "Select number to call"
 msgstr "Te bellen nummer selecteren"
 
-#: contacts/qml/private/ContactPage.qml:85
+#: contacts/qml/private/ContactPage.qml:119
 #, kde-format
 msgid "Send SMS"
 msgstr "SMS verzenden"
 
-#: contacts/qml/private/ContactPage.qml:96
+#: contacts/qml/private/ContactPage.qml:130
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Telefoonnummer om bericht naar te verzenden selecteren"
 
-#: contacts/qml/private/ContactPage.qml:104
+#: contacts/qml/private/ContactPage.qml:138
 #, kde-format
 msgid "Send email"
 msgstr "E-mail verzenden"
 
-#: contacts/qml/private/ContactPage.qml:110
+#: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Show QR Code"
 msgstr "QR-code tonen"
 
-#: contacts/qml/private/ContactPage.qml:126
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Contact information"
 msgstr "Contactinformatie"
 
-#: contacts/qml/private/ContactPage.qml:139
+#: contacts/qml/private/ContactPage.qml:182
 #, kde-format
 msgid "Nickname:"
 msgstr "Schermnaam:"
 
-#: contacts/qml/private/ContactPage.qml:145
+#: contacts/qml/private/ContactPage.qml:188
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Blogfeed:"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:195
 #, kde-format
 msgid "Personal information"
 msgstr "Persoonlijke informatie"
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Birthday:"
 msgstr "Verjaardag:"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:225
 #, kde-format
 msgid "Anniversary:"
 msgstr "Trouwdag:"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:232
 #, kde-format
 msgid "Partner's name:"
 msgstr "Naam van partner:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:237
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "telefoonnummer"
 msgstr[1] "Telefoonnummers"
 
-#: contacts/qml/private/ContactPage.qml:214
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:218
+#: contacts/qml/private/ContactPage.qml:263
 #, kde-format
 msgid "Phone number copied to clipboard"
 msgstr "Telefoonnummer naar klembord gekopieerd"
 
-#: contacts/qml/private/ContactPage.qml:225
+#: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Adres"
 msgstr[1] "Adressen"
 
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:249
+#: contacts/qml/private/ContactPage.qml:294
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
 
-#: contacts/qml/private/ContactPage.qml:268
+#: contacts/qml/private/ContactPage.qml:313
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:279
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "Instant Messaging-ID naar klembord gekopieerd"
 
-#: contacts/qml/private/ContactPage.qml:305
+#: contacts/qml/private/ContactPage.qml:350
 #, kde-format
 msgid "Organization:"
 msgstr "Organisatie:"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:357
 #, kde-format
 msgid "Profession:"
 msgstr "Beroep:"
 
-#: contacts/qml/private/ContactPage.qml:319
+#: contacts/qml/private/ContactPage.qml:364
 #, kde-format
 msgid "Title:"
 msgstr "Titel:"
 
-#: contacts/qml/private/ContactPage.qml:326
+#: contacts/qml/private/ContactPage.qml:371
 #, kde-format
 msgid "Department:"
 msgstr "Afdeling:"
 
-#: contacts/qml/private/ContactPage.qml:333
+#: contacts/qml/private/ContactPage.qml:378
 #, kde-format
 msgid "Office:"
 msgstr "Kantoor:"
 
-#: contacts/qml/private/ContactPage.qml:340
+#: contacts/qml/private/ContactPage.qml:385
 #, kde-format
 msgid "Manager's name:"
 msgstr "Naam van manager:"
 
-#: contacts/qml/private/ContactPage.qml:347
+#: contacts/qml/private/ContactPage.qml:392
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Naam van assistent:"
 
-#: contacts/qml/private/ContactPage.qml:353
+#: contacts/qml/private/ContactPage.qml:398
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "E-mailadres"
 msgstr[1] "E-mailadres selecteren"
 
-#: contacts/qml/private/ContactPage.qml:375
+#: contacts/qml/private/ContactPage.qml:420
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "Cryptografische certificaten"
+
+#: contacts/qml/private/ContactShareDialog.qml:34
+#, kde-format
+msgid "Could not share contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactShareDialog.qml:37
+#, kde-format
+msgid "Contact shared successfully."
+msgstr ""
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -3540,6 +3719,23 @@ msgstr[1] "Wilt u uw contactpersonen verwijderen:"
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "U kunt deze actie niet terugdraaien."
+
+#: contacts/qml/private/PurposeShareAction.qml:26
+#: contacts/qml/private/ShareActionDummy.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "New Contact"
+msgctxt "@action:inmenu"
+msgid "Share Contact"
+msgstr "Nieuw contactpersoon"
+
+#: contacts/qml/private/PurposeShareAction.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Delete contact"
+msgctxt "@tooltip"
+msgid "Share this contact"
+msgstr "Contactpersoon verwijderen"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -4113,6 +4309,10 @@ msgctxt ""
 msgid "Select the account type"
 msgstr "Selecteer het type account"
 
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Name"
+#~ msgstr "Naamloos"
+
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Address Book %1"
 #~ msgstr "Eigenschappen van adresboek %1"
@@ -4238,10 +4438,6 @@ msgstr "Selecteer het type account"
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
 #~ msgstr "Eigenschappen van agenda %1"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Delete contact"
-#~ msgstr "Contactpersoon verwijderen"
 
 #~ msgid "Quickly Add a New Task."
 #~ msgstr "Snel een nieuwe taak toevoegen."
@@ -4411,9 +4607,6 @@ msgstr "Selecteer het type account"
 #~ msgid "Could not decrypt the data: no key found for recipients."
 #~ msgstr ""
 #~ "Kon de gegevens niet ontcijferen: geen sleutel gevonden voor ontvangers."
-
-#~ msgid "Could not decrypt the data."
-#~ msgstr "Kon de gegevens niet ontcijferen."
 
 #~ msgid "Save attachment"
 #~ msgstr "Bijlage opslaan"

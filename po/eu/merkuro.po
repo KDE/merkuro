@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2026-08-21 22:49+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1278,7 +1278,7 @@ msgstr "Ez dago partaiderik"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
 msgstr "Izena:"
@@ -1415,60 +1415,60 @@ msgstr "Markatu Osatzeke"
 msgid "Mark Complete"
 msgstr "Markatu Osatuta"
 
-#: calendar/qml/Drawers/MainDrawer.qml:114 launcher/Main.qml:48
+#: calendar/qml/Drawers/MainDrawer.qml:115 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Egutegia"
 
-#: calendar/qml/Drawers/MainDrawer.qml:158
+#: calendar/qml/Drawers/MainDrawer.qml:159
 #, kde-format
 msgid "Undo: "
 msgstr "Desegin: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:166
+#: calendar/qml/Drawers/MainDrawer.qml:167
 #, kde-format
 msgid "Redo: "
 msgstr "Berregin: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:175
+#: calendar/qml/Drawers/MainDrawer.qml:176
 #: calendar/qml/Menus/GlobalMenuBar.qml:126 calendar/qml/Menus/MenuBar.qml:104
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Berritu egutegi guztiak"
 
-#: calendar/qml/Drawers/MainDrawer.qml:182
+#: calendar/qml/Drawers/MainDrawer.qml:183
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "Desegin: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgid "Undo"
 msgstr "Desegin"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "Berregin: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgid "Redo"
 msgstr "Berregin"
 
-#: calendar/qml/Drawers/MainDrawer.qml:301
+#: calendar/qml/Drawers/MainDrawer.qml:302
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:378
 #, kde-format
 msgid "View all tasks"
 msgstr "Ikusi zeregin guztiak"
@@ -1908,7 +1908,7 @@ msgid "Choose Calendar Color"
 msgstr "Hautatu egutegiaren kolorea"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
-#: contacts/qml/GlobalMenuBar.qml:20 contacts/qml/MenuBar.qml:18
+#: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:26
 #: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:19
 #, kde-format
 msgctxt "@action:menu"
@@ -1928,7 +1928,7 @@ msgid "Go"
 msgstr "Joan"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
-#: contacts/qml/GlobalMenuBar.qml:34 contacts/qml/MenuBar.qml:30
+#: contacts/qml/GlobalMenuBar.qml:44 contacts/qml/MenuBar.qml:38
 #: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:27
 #: mail/qml/FolderView.qml:79
 #, kde-format
@@ -2547,7 +2547,7 @@ msgid "Add Account…"
 msgstr "Kontua gehitu…"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgid "Home:"
 msgstr "Etxea:"
@@ -2637,6 +2637,29 @@ msgctxt "@action"
 msgid "Copy to…"
 msgstr "Kopiatu hona..."
 
+#: contacts/contactapplication.cpp:74
+#, fuzzy, kde-format
+#| msgid "Import Calendar…"
+msgctxt "@action:inmenu"
+msgid "Import Contacts…"
+msgstr "Inportatu egutegia..."
+
+#: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export all contacts…"
+msgstr "Editatu kontaktua..."
+
+#: contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete contact"
+msgctxt "@action:inmenu"
+msgid "Export selected contacts…"
+msgstr "Ezabatu kontaktua"
+
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
@@ -2716,6 +2739,61 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "E-posta"
 
+#: contacts/contactimportexport.cpp:58
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not read the vCard file."
+msgstr "Datuak ezin izan ditu deszifratu."
+
+#: contacts/contactimportexport.cpp:66
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgctxt "@info"
+msgid "The file did not contain any contacts."
+msgstr "Posta honek gonbidapen bat du"
+
+#: contacts/contactimportexport.cpp:88
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book does not allow contacts to be added."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
+#: contacts/contactimportexport.cpp:224
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not write the vCard file."
+msgstr "Datuak ezin izan ditu deszifratu."
+
+#: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
+#: contacts/contactimportexport.cpp:216
+#, fuzzy, kde-format
+#| msgid "There are no recipients to e-mail"
+msgctxt "@info"
+msgid "There are no contacts to export."
+msgstr "Ez dago e-posta bidaltzeko hartzailerik"
+
+#: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "The contact could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:200
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgctxt "@info"
+msgid "Could not prepare the contact for sharing."
+msgstr "Datuak ezin izan ditu deszifratu."
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2752,37 +2830,39 @@ msgstr "Eginda"
 msgid "Select Email Address"
 msgstr "E-posta helbidea hautatu"
 
-#: contacts/qml/ContactListItem.qml:39
-#, kde-format
+#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "Placeholder when no name is set"
+#| msgid "No name"
 msgctxt "@info:placeholder"
-msgid "No Name"
-msgstr "Izenik ez"
+msgid "No name"
+msgstr "Izenik gabe"
 
-#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
+#: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-#: contacts/qml/ContactView.qml:30
+#: contacts/qml/ContactView.qml:31
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Sortu"
 
-#: contacts/qml/ContactView.qml:33
+#: contacts/qml/ContactView.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Kontaktu berria"
 
-#: contacts/qml/ContactView.qml:40
+#: contacts/qml/ContactView.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Kontaktu-talde berria"
 
-#: contacts/qml/ContactView.qml:88
+#: contacts/qml/ContactView.qml:89
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2790,26 +2870,86 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 hautatuta"
 msgstr[1] "%1 hautatuta"
 
-#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:129
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of imported contacts"
+msgid "%1 contact imported successfully."
+msgid_plural "%1 contacts imported successfully."
+msgstr[0] "%1 intzidentzia ondo inportatu dira."
+msgstr[1] "%1 intzidentzia ondo inportatu dira."
+
+#: contacts/qml/ContactView.qml:131
+#, kde-format
+msgid "Could not import contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:137
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of exported contacts"
+msgid "%1 contact exported successfully."
+msgid_plural "%1 contacts exported successfully."
+msgstr[0] "%1 intzidentzia ondo inportatu dira."
+msgstr[1] "%1 intzidentzia ondo inportatu dira."
+
+#: contacts/qml/ContactView.qml:139
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgid "Could not export contacts: %1"
+msgstr "Datuak ezin izan ditu deszifratu."
+
+#: contacts/qml/ContactView.qml:160
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Import contacts"
+msgstr "Kontakturik ez"
+
+#: contacts/qml/ContactView.qml:161
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf *.vcard)"
+msgstr "Egutegi fitxategiak (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:167
+#, fuzzy, kde-format
+#| msgid "Create Contact Group"
+msgid "Import Contacts To:"
+msgstr "Sortu kontaktu-taldea"
+
+#: contacts/qml/ContactView.qml:180
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contacts"
+msgstr "Kontakturik ez"
+
+#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf)"
+msgstr "Egutegi fitxategiak (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Mugitu hautapena hona:"
 
-#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Kopiatu hautapena hona:"
 
-#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
-#: contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Izenik gabe"
 
-#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "Kontakturik ez"
@@ -3092,7 +3232,7 @@ msgid "Personal Information"
 msgstr "Norbanakoaren informazioa"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:286
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Business Information"
 msgstr "Negozioko informazioa"
@@ -3355,177 +3495,214 @@ msgctxt "@action:button"
 msgid "Edit"
 msgstr "Editatu"
 
-#: contacts/qml/private/ContactPage.qml:37
+#: contacts/qml/private/ContactPage.qml:38
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Editatu"
 
-#: contacts/qml/private/ContactPage.qml:44
+#: contacts/qml/private/ContactPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export Contact…"
+msgstr "Editatu kontaktua..."
+
+#: contacts/qml/private/ContactPage.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: contacts/qml/private/ContactPage.qml:66
+#: contacts/qml/private/ContactPage.qml:69
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgid "Contact exported successfully."
+msgstr "%1 intzidentzia ondo inportatu dira."
+
+#: contacts/qml/private/ContactPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Could not decrypt the data."
+msgid "Could not export contact: %1"
+msgstr "Datuak ezin izan ditu deszifratu."
+
+#: contacts/qml/private/ContactPage.qml:78
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contact"
+msgstr "Kontakturik ez"
+
+#: contacts/qml/private/ContactPage.qml:100
 #, kde-format
 msgid "Call"
 msgstr "Deitu"
 
-#: contacts/qml/private/ContactPage.qml:77
+#: contacts/qml/private/ContactPage.qml:111
 #, kde-format
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: contacts/qml/private/ContactPage.qml:85
+#: contacts/qml/private/ContactPage.qml:119
 #, kde-format
 msgid "Send SMS"
 msgstr "Bidali SMS"
 
-#: contacts/qml/private/ContactPage.qml:96
+#: contacts/qml/private/ContactPage.qml:130
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Hautatu mezua beharreko zenbakia"
 
-#: contacts/qml/private/ContactPage.qml:104
+#: contacts/qml/private/ContactPage.qml:138
 #, kde-format
 msgid "Send email"
 msgstr "Bidali e-posta"
 
-#: contacts/qml/private/ContactPage.qml:110
+#: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Show QR Code"
 msgstr "Erakutsi QR kodea"
 
-#: contacts/qml/private/ContactPage.qml:126
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Contact information"
 msgstr "Kontaktuaren informazioa"
 
-#: contacts/qml/private/ContactPage.qml:139
+#: contacts/qml/private/ContactPage.qml:182
 #, kde-format
 msgid "Nickname:"
 msgstr "Goitizena:"
 
-#: contacts/qml/private/ContactPage.qml:145
+#: contacts/qml/private/ContactPage.qml:188
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Blog-jarioa:"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:195
 #, kde-format
 msgid "Personal information"
 msgstr "Norbanakoaren informazioa"
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Birthday:"
 msgstr "Jaioteguna:"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:225
 #, kde-format
 msgid "Anniversary:"
 msgstr "Urtemuga:"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:232
 #, kde-format
 msgid "Partner's name:"
 msgstr "Bikotekidearen izena:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:237
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Telefono zenbakia"
 msgstr[1] "Telefono zenbakiak"
 
-#: contacts/qml/private/ContactPage.qml:214
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:218
+#: contacts/qml/private/ContactPage.qml:263
 #, kde-format
 msgid "Phone number copied to clipboard"
 msgstr "Telefono zenbakia arbelera kopiatu da"
 
-#: contacts/qml/private/ContactPage.qml:225
+#: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Helbidea"
 msgstr[1] "Helbideak"
 
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:249
+#: contacts/qml/private/ContactPage.qml:294
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Bat-bateko mezularitza"
 
-#: contacts/qml/private/ContactPage.qml:268
+#: contacts/qml/private/ContactPage.qml:313
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:279
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "Bat-bateko mezularitza IDa arbelera kopiatu da"
 
-#: contacts/qml/private/ContactPage.qml:305
+#: contacts/qml/private/ContactPage.qml:350
 #, kde-format
 msgid "Organization:"
 msgstr "Erakundea:"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:357
 #, kde-format
 msgid "Profession:"
 msgstr "Lanbidea:"
 
-#: contacts/qml/private/ContactPage.qml:319
+#: contacts/qml/private/ContactPage.qml:364
 #, kde-format
 msgid "Title:"
 msgstr "Titulua:"
 
-#: contacts/qml/private/ContactPage.qml:326
+#: contacts/qml/private/ContactPage.qml:371
 #, kde-format
 msgid "Department:"
 msgstr "Saila:"
 
-#: contacts/qml/private/ContactPage.qml:333
+#: contacts/qml/private/ContactPage.qml:378
 #, kde-format
 msgid "Office:"
 msgstr "Bulegoa:"
 
-#: contacts/qml/private/ContactPage.qml:340
+#: contacts/qml/private/ContactPage.qml:385
 #, kde-format
 msgid "Manager's name:"
 msgstr "Kudeatzailearen izena:"
 
-#: contacts/qml/private/ContactPage.qml:347
+#: contacts/qml/private/ContactPage.qml:392
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Laguntzailearen izena:"
 
-#: contacts/qml/private/ContactPage.qml:353
+#: contacts/qml/private/ContactPage.qml:398
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "E-posta helbidea"
 msgstr[1] "E-posta helbideak"
 
-#: contacts/qml/private/ContactPage.qml:375
+#: contacts/qml/private/ContactPage.qml:420
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "Ziurtagiri kriptografikoak"
+
+#: contacts/qml/private/ContactShareDialog.qml:34
+#, kde-format
+msgid "Could not share contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactShareDialog.qml:37
+#, kde-format
+msgid "Contact shared successfully."
+msgstr ""
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -3553,6 +3730,23 @@ msgstr[1] "Zure kontaktuak benetan ezabatu nahi dituzu:"
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Ezingo duzu ekintza hau atzera bota."
+
+#: contacts/qml/private/PurposeShareAction.qml:26
+#: contacts/qml/private/ShareActionDummy.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "New Contact"
+msgctxt "@action:inmenu"
+msgid "Share Contact"
+msgstr "Kontaktu berria"
+
+#: contacts/qml/private/PurposeShareAction.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Delete contact"
+msgctxt "@tooltip"
+msgid "Share this contact"
+msgstr "Ezabatu kontaktua"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -4127,6 +4321,10 @@ msgctxt ""
 msgid "Select the account type"
 msgstr "Hautatu kontu-mota"
 
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Name"
+#~ msgstr "Izenik ez"
+
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Address Book %1"
 #~ msgstr "%1 helbide-liburuaren propietateak"
@@ -4249,10 +4447,6 @@ msgstr "Hautatu kontu-mota"
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
 #~ msgstr "%1 egutegiaren propietateak"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Delete contact"
-#~ msgstr "Ezabatu kontaktua"
 
 #~ msgid "Quickly Add a New Task."
 #~ msgstr "Zeregin berri bat azkar gehitzea."
@@ -4425,9 +4619,6 @@ msgstr "Hautatu kontu-mota"
 #~ msgid "Could not decrypt the data: no key found for recipients."
 #~ msgstr ""
 #~ "Datuak ezin izan ditu deszifratu: ez da aurkitu hartzailearen gakorik."
-
-#~ msgid "Could not decrypt the data."
-#~ msgstr "Datuak ezin izan ditu deszifratu."
 
 #~ msgid "Save attachment"
 #~ msgstr "Gorde eranskina"

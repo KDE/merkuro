@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2025-07-09 22:38+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1297,7 +1297,7 @@ msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
 msgstr "Név:"
@@ -1440,60 +1440,60 @@ msgstr "Megjelölés befejezetlenként"
 msgid "Mark Complete"
 msgstr "Megjelölés befejezettként"
 
-#: calendar/qml/Drawers/MainDrawer.qml:114 launcher/Main.qml:48
+#: calendar/qml/Drawers/MainDrawer.qml:115 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Naptár"
 
-#: calendar/qml/Drawers/MainDrawer.qml:158
+#: calendar/qml/Drawers/MainDrawer.qml:159
 #, kde-format
 msgid "Undo: "
 msgstr "Visszavonás: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:166
+#: calendar/qml/Drawers/MainDrawer.qml:167
 #, kde-format
 msgid "Redo: "
 msgstr "Újra: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:175
+#: calendar/qml/Drawers/MainDrawer.qml:176
 #: calendar/qml/Menus/GlobalMenuBar.qml:126 calendar/qml/Menus/MenuBar.qml:104
 #, kde-format
 msgid "Refresh All Calendars"
 msgstr "Összes naptár frissítése"
 
-#: calendar/qml/Drawers/MainDrawer.qml:182
+#: calendar/qml/Drawers/MainDrawer.qml:183
 #, kde-format
 msgid "Configure"
 msgstr "Beállítás"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "Visszavonás: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "Újra: %1"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgid "Redo"
 msgstr "Újra"
 
-#: calendar/qml/Drawers/MainDrawer.qml:301
+#: calendar/qml/Drawers/MainDrawer.qml:302
 #, kde-format
 msgid "Settings"
 msgstr "Beállítások"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:378
 #, kde-format
 msgid "View all tasks"
 msgstr "Összes feladat megjelenítése"
@@ -1941,7 +1941,7 @@ msgid "Choose Calendar Color"
 msgstr "Naptárszín kiválasztása"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
-#: contacts/qml/GlobalMenuBar.qml:20 contacts/qml/MenuBar.qml:18
+#: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:26
 #: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:19
 #, kde-format
 msgctxt "@action:menu"
@@ -1961,7 +1961,7 @@ msgid "Go"
 msgstr "Ugrás"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
-#: contacts/qml/GlobalMenuBar.qml:34 contacts/qml/MenuBar.qml:30
+#: contacts/qml/GlobalMenuBar.qml:44 contacts/qml/MenuBar.qml:38
 #: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:27
 #: mail/qml/FolderView.qml:79
 #, kde-format
@@ -2595,7 +2595,7 @@ msgid "Add Account…"
 msgstr "Fiók hozzáadása"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgid "Home:"
 msgstr "Kezdőlap:"
@@ -2685,6 +2685,29 @@ msgctxt "@action"
 msgid "Copy to…"
 msgstr "Másolás ide…"
 
+#: contacts/contactapplication.cpp:74
+#, fuzzy, kde-format
+#| msgid "Import Calendar…"
+msgctxt "@action:inmenu"
+msgid "Import Contacts…"
+msgstr "Naptár importálása…"
+
+#: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export all contacts…"
+msgstr "Névjegy szerkesztése…"
+
+#: contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete contact"
+msgctxt "@action:inmenu"
+msgid "Export selected contacts…"
+msgstr "Névjegy törlése"
+
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
@@ -2763,6 +2786,58 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr "E-mail"
 
+#: contacts/contactimportexport.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "Could not read the vCard file."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:66
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgctxt "@info"
+msgid "The file did not contain any contacts."
+msgstr "A levél meghívót tartalmaz"
+
+#: contacts/contactimportexport.cpp:88
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book does not allow contacts to be added."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
+#: contacts/contactimportexport.cpp:224
+#, kde-format
+msgctxt "@info"
+msgid "Could not write the vCard file."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
+#: contacts/contactimportexport.cpp:216
+#, fuzzy, kde-format
+#| msgid "There are no recipients to e-mail"
+msgctxt "@info"
+msgid "There are no contacts to export."
+msgstr "Nincsenek résztvevők az e-mailhez"
+
+#: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "The contact could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:200
+#, kde-format
+msgctxt "@info"
+msgid "Could not prepare the contact for sharing."
+msgstr ""
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2799,37 +2874,39 @@ msgstr "Kész"
 msgid "Select Email Address"
 msgstr "Válasszon e-mail-címet"
 
-#: contacts/qml/ContactListItem.qml:39
-#, kde-format
+#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "Placeholder when no name is set"
+#| msgid "No name"
 msgctxt "@info:placeholder"
-msgid "No Name"
+msgid "No name"
 msgstr "Nincs név"
 
-#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
+#: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Névjegyek"
 
-#: contacts/qml/ContactView.qml:30
+#: contacts/qml/ContactView.qml:31
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Létrehozás"
 
-#: contacts/qml/ContactView.qml:33
+#: contacts/qml/ContactView.qml:34
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Új névjegy"
 
-#: contacts/qml/ContactView.qml:40
+#: contacts/qml/ContactView.qml:41
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Új névjegycsoport"
 
-#: contacts/qml/ContactView.qml:88
+#: contacts/qml/ContactView.qml:89
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2837,26 +2914,85 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 kijelölve"
 msgstr[1] "%1 kijelölve"
 
-#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:129
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of imported contacts"
+msgid "%1 contact imported successfully."
+msgid_plural "%1 contacts imported successfully."
+msgstr[0] "%1 előfordulás sikeresen importálva."
+msgstr[1] "%1 előfordulás sikeresen importálva."
+
+#: contacts/qml/ContactView.qml:131
+#, kde-format
+msgid "Could not import contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:137
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of exported contacts"
+msgid "%1 contact exported successfully."
+msgid_plural "%1 contacts exported successfully."
+msgstr[0] "%1 előfordulás sikeresen importálva."
+msgstr[1] "%1 előfordulás sikeresen importálva."
+
+#: contacts/qml/ContactView.qml:139
+#, kde-format
+msgid "Could not export contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:160
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Import contacts"
+msgstr "Nincsenek névjegyek"
+
+#: contacts/qml/ContactView.qml:161
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf *.vcard)"
+msgstr "Naptárfájlok (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:167
+#, fuzzy, kde-format
+#| msgid "Create Contact Group"
+msgid "Import Contacts To:"
+msgstr "Névjegycsoport létrehozása"
+
+#: contacts/qml/ContactView.qml:180
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contacts"
+msgstr "Nincsenek névjegyek"
+
+#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Calendar files (*.ics *.vcs)"
+msgid "vCard files (*.vcf)"
+msgstr "Naptárfájlok (*.ics *.vcs)"
+
+#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Kijelölés áthelyezése ide:"
 
-#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Kijelölés másolása ide:"
 
-#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
-#: contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Nincs név"
 
-#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "Nincsenek névjegyek"
@@ -3139,7 +3275,7 @@ msgid "Personal Information"
 msgstr "Személyes információk"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:286
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Business Information"
 msgstr "Üzleti információk"
@@ -3402,177 +3538,213 @@ msgctxt "@action:button"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: contacts/qml/private/ContactPage.qml:37
+#: contacts/qml/private/ContactPage.qml:38
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: contacts/qml/private/ContactPage.qml:44
+#: contacts/qml/private/ContactPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Edit contact…"
+msgctxt "@action:inmenu"
+msgid "Export Contact…"
+msgstr "Névjegy szerkesztése…"
+
+#: contacts/qml/private/ContactPage.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: contacts/qml/private/ContactPage.qml:66
+#: contacts/qml/private/ContactPage.qml:69
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgid "Contact exported successfully."
+msgstr "%1 előfordulás sikeresen importálva."
+
+#: contacts/qml/private/ContactPage.qml:71
+#, kde-format
+msgid "Could not export contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:78
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contact"
+msgstr "Nincsenek névjegyek"
+
+#: contacts/qml/private/ContactPage.qml:100
 #, kde-format
 msgid "Call"
 msgstr "Hívás"
 
-#: contacts/qml/private/ContactPage.qml:77
+#: contacts/qml/private/ContactPage.qml:111
 #, kde-format
 msgid "Select number to call"
 msgstr "Válassza ki a hívandó számot"
 
-#: contacts/qml/private/ContactPage.qml:85
+#: contacts/qml/private/ContactPage.qml:119
 #, kde-format
 msgid "Send SMS"
 msgstr "SMS küldése"
 
-#: contacts/qml/private/ContactPage.qml:96
+#: contacts/qml/private/ContactPage.qml:130
 #, kde-format
 msgid "Select number to send message to"
 msgstr "Válassza ki a számot az üzenethez"
 
-#: contacts/qml/private/ContactPage.qml:104
+#: contacts/qml/private/ContactPage.qml:138
 #, kde-format
 msgid "Send email"
 msgstr "E-mail küldése"
 
-#: contacts/qml/private/ContactPage.qml:110
+#: contacts/qml/private/ContactPage.qml:144
 #, kde-format
 msgid "Show QR Code"
 msgstr "QR-kód megjelenítése"
 
-#: contacts/qml/private/ContactPage.qml:126
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Contact information"
 msgstr "Elérhetőség"
 
-#: contacts/qml/private/ContactPage.qml:139
+#: contacts/qml/private/ContactPage.qml:182
 #, kde-format
 msgid "Nickname:"
 msgstr "Becenév:"
 
-#: contacts/qml/private/ContactPage.qml:145
+#: contacts/qml/private/ContactPage.qml:188
 #, kde-format
 msgid "Blog Feed:"
 msgstr "Blog:"
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:195
 #, kde-format
 msgid "Personal information"
 msgstr "Személyes adatok"
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Birthday:"
 msgstr "Születésnap:"
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:225
 #, kde-format
 msgid "Anniversary:"
 msgstr "Évforduló:"
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:232
 #, kde-format
 msgid "Partner's name:"
 msgstr "Partner neve:"
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:237
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
 msgstr[0] "Telefonszám"
 msgstr[1] "Telefonszámok"
 
-#: contacts/qml/private/ContactPage.qml:214
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:218
+#: contacts/qml/private/ContactPage.qml:263
 #, kde-format
 msgid "Phone number copied to clipboard"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:225
+#: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "Cím"
 msgstr[1] "Címek"
 
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:249
+#: contacts/qml/private/ContactPage.qml:294
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Azonnali üzenetküldés"
 
-#: contacts/qml/private/ContactPage.qml:268
+#: contacts/qml/private/ContactPage.qml:313
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:279
+#: contacts/qml/private/ContactPage.qml:324
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:305
+#: contacts/qml/private/ContactPage.qml:350
 #, kde-format
 msgid "Organization:"
 msgstr "Szervezet:"
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:357
 #, kde-format
 msgid "Profession:"
 msgstr "Foglalkozás:"
 
-#: contacts/qml/private/ContactPage.qml:319
+#: contacts/qml/private/ContactPage.qml:364
 #, kde-format
 msgid "Title:"
 msgstr "Cím:"
 
-#: contacts/qml/private/ContactPage.qml:326
+#: contacts/qml/private/ContactPage.qml:371
 #, kde-format
 msgid "Department:"
 msgstr "Részleg:"
 
-#: contacts/qml/private/ContactPage.qml:333
+#: contacts/qml/private/ContactPage.qml:378
 #, kde-format
 msgid "Office:"
 msgstr "Iroda:"
 
-#: contacts/qml/private/ContactPage.qml:340
+#: contacts/qml/private/ContactPage.qml:385
 #, kde-format
 msgid "Manager's name:"
 msgstr "Menedzser neve:"
 
-#: contacts/qml/private/ContactPage.qml:347
+#: contacts/qml/private/ContactPage.qml:392
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Asszisztens neve:"
 
-#: contacts/qml/private/ContactPage.qml:353
+#: contacts/qml/private/ContactPage.qml:398
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "E-mail-cím"
 msgstr[1] "E-mail-címek"
 
-#: contacts/qml/private/ContactPage.qml:375
+#: contacts/qml/private/ContactPage.qml:420
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
 msgstr "Titkosítási tanúsítványok"
+
+#: contacts/qml/private/ContactShareDialog.qml:34
+#, kde-format
+msgid "Could not share contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactShareDialog.qml:37
+#, kde-format
+msgid "Contact shared successfully."
+msgstr ""
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -3600,6 +3772,23 @@ msgstr[1] "Biztosan törölni szeretné ezt a névjegyeit:"
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Ez a művelet nem vonható vissza."
+
+#: contacts/qml/private/PurposeShareAction.qml:26
+#: contacts/qml/private/ShareActionDummy.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "New Contact"
+msgctxt "@action:inmenu"
+msgid "Share Contact"
+msgstr "Új névjegy"
+
+#: contacts/qml/private/PurposeShareAction.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Delete contact"
+msgctxt "@tooltip"
+msgid "Share this contact"
+msgstr "Névjegy törlése"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -4202,6 +4391,10 @@ msgctxt ""
 msgid "Select the account type"
 msgstr ""
 
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Name"
+#~ msgstr "Nincs név"
+
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Address Book %1"
 #~ msgstr "A(z) %1 címjegyzék tulajdonságai"
@@ -4316,10 +4509,6 @@ msgstr ""
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
 #~ msgstr "A(z) %1 naptár tulajdonságai"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Delete contact"
-#~ msgstr "Névjegy törlése"
 
 #~ msgid "Quickly Add a New Task."
 #~ msgstr "Új feladat létrehozása gyorsan."

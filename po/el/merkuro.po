@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2024-09-04 14:30+0300\n"
 "Last-Translator: Αντώνης Γέραλης <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -1320,7 +1320,7 @@ msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
-#: contacts/qml/private/ContactPage.qml:133
+#: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
 msgstr "Όνομα:"
@@ -1463,63 +1463,63 @@ msgstr "Να σημειωθεί ως ασυμπλήρωτο"
 msgid "Mark Complete"
 msgstr "Να σημειωθεί ως συμπληρωμένο"
 
-#: calendar/qml/Drawers/MainDrawer.qml:114 launcher/Main.qml:48
+#: calendar/qml/Drawers/MainDrawer.qml:115 launcher/Main.qml:48
 #, kde-format
 msgid "Calendar"
 msgstr "Ημερολόγιο"
 
-#: calendar/qml/Drawers/MainDrawer.qml:158
+#: calendar/qml/Drawers/MainDrawer.qml:159
 #, kde-format
 msgid "Undo: "
 msgstr "Αναίρεση: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:166
+#: calendar/qml/Drawers/MainDrawer.qml:167
 #, kde-format
 msgid "Redo: "
 msgstr "Επανάληψη: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:175
+#: calendar/qml/Drawers/MainDrawer.qml:176
 #: calendar/qml/Menus/GlobalMenuBar.qml:126 calendar/qml/Menus/MenuBar.qml:104
 #, fuzzy, kde-format
 #| msgid "Import Calendar"
 msgid "Refresh All Calendars"
 msgstr "Εισαγωγή ημερολογίου"
 
-#: calendar/qml/Drawers/MainDrawer.qml:182
+#: calendar/qml/Drawers/MainDrawer.qml:183
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, fuzzy, kde-format
 #| msgid "Undo: "
 msgctxt "@action:inmenu %1 is the name of the action getting reverted"
 msgid "Undo: %1"
 msgstr "Αναίρεση: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:285
+#: calendar/qml/Drawers/MainDrawer.qml:286
 #, kde-format
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, fuzzy, kde-format
 #| msgid "Redo: "
 msgctxt "@action:inmenu %1 is the name of the action getting re-applied"
 msgid "Redo: %1"
 msgstr "Επανάληψη: "
 
-#: calendar/qml/Drawers/MainDrawer.qml:290
+#: calendar/qml/Drawers/MainDrawer.qml:291
 #, kde-format
 msgid "Redo"
 msgstr "Επανάληψη"
 
-#: calendar/qml/Drawers/MainDrawer.qml:301
+#: calendar/qml/Drawers/MainDrawer.qml:302
 #, kde-format
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: calendar/qml/Drawers/MainDrawer.qml:377
+#: calendar/qml/Drawers/MainDrawer.qml:378
 #, kde-format
 msgid "View all tasks"
 msgstr "Προβολή όλων των εργασιών"
@@ -2003,7 +2003,7 @@ msgid "Choose Calendar Color"
 msgstr "Επιλογή χρώματος ημερολογίου"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
-#: contacts/qml/GlobalMenuBar.qml:20 contacts/qml/MenuBar.qml:18
+#: contacts/qml/GlobalMenuBar.qml:30 contacts/qml/MenuBar.qml:26
 #: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:19
 #, kde-format
 msgctxt "@action:menu"
@@ -2023,7 +2023,7 @@ msgid "Go"
 msgstr "Μετάβαση"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
-#: contacts/qml/GlobalMenuBar.qml:34 contacts/qml/MenuBar.qml:30
+#: contacts/qml/GlobalMenuBar.qml:44 contacts/qml/MenuBar.qml:38
 #: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:27
 #: mail/qml/FolderView.qml:79
 #, kde-format
@@ -2654,7 +2654,7 @@ msgid "Add Account…"
 msgstr "Λογαριασμοί"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgid "Home:"
 msgstr ""
@@ -2753,6 +2753,27 @@ msgctxt "@action"
 msgid "Copy to…"
 msgstr ""
 
+#: contacts/contactapplication.cpp:74
+#, fuzzy, kde-format
+#| msgid "Import Calendar…"
+msgctxt "@action:inmenu"
+msgid "Import Contacts…"
+msgstr "Εισαγωγή ημερολογίου…"
+
+#: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgctxt "@action:inmenu"
+msgid "Export all contacts…"
+msgstr "Επαφές"
+
+#: contacts/contactapplication.cpp:92
+#, fuzzy, kde-format
+#| msgid "Create new calendar"
+msgctxt "@action:inmenu"
+msgid "Export selected contacts…"
+msgstr "Δημιουργία νέου ημερολογίου"
+
 #: contacts/contacteditorbackend.cpp:119
 #, kde-format
 msgid "The contact could not be found."
@@ -2831,6 +2852,57 @@ msgctxt "contact's email address"
 msgid "EMail"
 msgstr ""
 
+#: contacts/contactimportexport.cpp:58
+#, kde-format
+msgctxt "@info"
+msgid "Could not read the vCard file."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:66
+#, kde-format
+msgctxt "@info"
+msgid "The file did not contain any contacts."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:88
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "The selected address book does not allow contacts to be added."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
+#: contacts/contactimportexport.cpp:224
+#, kde-format
+msgctxt "@info"
+msgid "Could not write the vCard file."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
+#: contacts/contactimportexport.cpp:216
+#, fuzzy, kde-format
+#| msgid "Add Attachment"
+msgctxt "@info"
+msgid "There are no contacts to export."
+msgstr "Προσθήκη συνημμένου"
+
+#: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
+#, kde-format
+msgctxt "@info"
+msgid "The contact could not be found."
+msgstr ""
+
+#: contacts/contactimportexport.cpp:200
+#, kde-format
+msgctxt "@info"
+msgid "Could not prepare the contact for sharing."
+msgstr ""
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2869,40 +2941,41 @@ msgstr "Έγινε"
 msgid "Select Email Address"
 msgstr "Επιλογή διεύθυνσης αλληλογραφίας"
 
-#: contacts/qml/ContactListItem.qml:39
+#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
 #, fuzzy, kde-format
-#| msgid "Name:"
+#| msgctxt "NAME OF TRANSLATORS"
+#| msgid "Your names"
 msgctxt "@info:placeholder"
-msgid "No Name"
-msgstr "Όνομα:"
+msgid "No name"
+msgstr "Stelios"
 
-#: contacts/qml/ContactView.qml:26 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
+#: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
+#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Επαφές"
 
-#: contacts/qml/ContactView.qml:30
+#: contacts/qml/ContactView.qml:31
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: contacts/qml/ContactView.qml:33
+#: contacts/qml/ContactView.qml:34
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Νέο γεγονός…"
 
-#: contacts/qml/ContactView.qml:40
+#: contacts/qml/ContactView.qml:41
 #, fuzzy, kde-format
 #| msgid "New Event…"
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Νέο γεγονός…"
 
-#: contacts/qml/ContactView.qml:88
+#: contacts/qml/ContactView.qml:89
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2910,28 +2983,85 @@ msgid_plural "%1 selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: contacts/qml/ContactView.qml:120 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:129
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of imported contacts"
+msgid "%1 contact imported successfully."
+msgid_plural "%1 contacts imported successfully."
+msgstr[0] "%1 περιστατικά εισήχθησαν επιτυχώς."
+msgstr[1] "%1 περιστατικά εισήχθησαν επιτυχώς."
+
+#: contacts/qml/ContactView.qml:131
+#, kde-format
+msgid "Could not import contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:137
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgctxt "%1 is the number of exported contacts"
+msgid "%1 contact exported successfully."
+msgid_plural "%1 contacts exported successfully."
+msgstr[0] "%1 περιστατικά εισήχθησαν επιτυχώς."
+msgstr[1] "%1 περιστατικά εισήχθησαν επιτυχώς."
+
+#: contacts/qml/ContactView.qml:139
+#, kde-format
+msgid "Could not export contacts: %1"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:160
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Import contacts"
+msgstr "Χωρίς επαφές"
+
+#: contacts/qml/ContactView.qml:161
+#, kde-format
+msgid "vCard files (*.vcf *.vcard)"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:167
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgid "Import Contacts To:"
+msgstr "Νέο γεγονός…"
+
+#: contacts/qml/ContactView.qml:180
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contacts"
+msgstr "Χωρίς επαφές"
+
+#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#, kde-format
+msgid "vCard files (*.vcf)"
+msgstr ""
+
+#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr ""
 
-#: contacts/qml/ContactView.qml:137 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
 #, fuzzy, kde-format
 #| msgid "Completion:"
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Συμπλήρωση:"
 
-#: contacts/qml/ContactView.qml:224 contacts/qml/private/ContactPage.qml:63
-#: contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Όνομα:"
 
-#: contacts/qml/ContactView.qml:257 contacts/qml/private/ContactsPage.qml:58
+#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "Χωρίς επαφές"
@@ -3230,7 +3360,7 @@ msgid "Personal Information"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:286
+#: contacts/qml/private/ContactPage.qml:331
 #, kde-format
 msgid "Business Information"
 msgstr ""
@@ -3499,86 +3629,111 @@ msgctxt "@action:button"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: contacts/qml/private/ContactPage.qml:37
+#: contacts/qml/private/ContactPage.qml:38
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: contacts/qml/private/ContactPage.qml:44
+#: contacts/qml/private/ContactPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgctxt "@action:inmenu"
+msgid "Export Contact…"
+msgstr "Επαφές"
+
+#: contacts/qml/private/ContactPage.qml:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: contacts/qml/private/ContactPage.qml:66
+#: contacts/qml/private/ContactPage.qml:69
+#, fuzzy, kde-format
+#| msgctxt "%1 is a number"
+#| msgid "%1 incidences were imported successfully."
+msgid "Contact exported successfully."
+msgstr "%1 περιστατικά εισήχθησαν επιτυχώς."
+
+#: contacts/qml/private/ContactPage.qml:71
+#, kde-format
+msgid "Could not export contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:78
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Export contact"
+msgstr "Χωρίς επαφές"
+
+#: contacts/qml/private/ContactPage.qml:100
 #, kde-format
 msgid "Call"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:77
+#: contacts/qml/private/ContactPage.qml:111
 #, kde-format
 msgid "Select number to call"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:85
+#: contacts/qml/private/ContactPage.qml:119
 #, kde-format
 msgid "Send SMS"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:96
+#: contacts/qml/private/ContactPage.qml:130
 #, kde-format
 msgid "Select number to send message to"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:104
+#: contacts/qml/private/ContactPage.qml:138
 #, kde-format
 msgid "Send email"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:110
+#: contacts/qml/private/ContactPage.qml:144
 #, fuzzy, kde-format
 #| msgid "Show Completed"
 msgid "Show QR Code"
 msgstr "Εμφάνιση συμπληρωμένων"
 
-#: contacts/qml/private/ContactPage.qml:126
+#: contacts/qml/private/ContactPage.qml:160
 #, kde-format
 msgid "Contact information"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:139
+#: contacts/qml/private/ContactPage.qml:182
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Nickname:"
 msgstr "Όνομα:"
 
-#: contacts/qml/private/ContactPage.qml:145
+#: contacts/qml/private/ContactPage.qml:188
 #, kde-format
 msgid "Blog Feed:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:152
+#: contacts/qml/private/ContactPage.qml:195
 #, kde-format
 msgid "Personal information"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:162
+#: contacts/qml/private/ContactPage.qml:207
 #, kde-format
 msgid "Birthday:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:180
+#: contacts/qml/private/ContactPage.qml:225
 #, kde-format
 msgid "Anniversary:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:187
+#: contacts/qml/private/ContactPage.qml:232
 #, kde-format
 msgid "Partner's name:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:192
+#: contacts/qml/private/ContactPage.qml:237
 #, fuzzy, kde-format
 #| msgid "Show week numbers"
 msgid "Phone Number"
@@ -3586,86 +3741,86 @@ msgid_plural "Phone Numbers"
 msgstr[0] "Εμφάνιση αριθμών εβδομάδας"
 msgstr[1] "Εμφάνιση αριθμών εβδομάδας"
 
-#: contacts/qml/private/ContactPage.qml:214
+#: contacts/qml/private/ContactPage.qml:259
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:218
+#: contacts/qml/private/ContactPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Location copied to clipboard"
 msgid "Phone number copied to clipboard"
 msgstr "Η τοποθεσία αντιγράφτηκε στο πρόχειρο"
 
-#: contacts/qml/private/ContactPage.qml:225
+#: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: contacts/qml/private/ContactPage.qml:242
+#: contacts/qml/private/ContactPage.qml:287
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:249
+#: contacts/qml/private/ContactPage.qml:294
 #, kde-format
 msgid "Instant Messaging"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:268
+#: contacts/qml/private/ContactPage.qml:313
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:279
+#: contacts/qml/private/ContactPage.qml:324
 #, fuzzy, kde-format
 #| msgid "Location copied to clipboard"
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "Η τοποθεσία αντιγράφτηκε στο πρόχειρο"
 
-#: contacts/qml/private/ContactPage.qml:305
+#: contacts/qml/private/ContactPage.qml:350
 #, kde-format
 msgid "Organization:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:312
+#: contacts/qml/private/ContactPage.qml:357
 #, kde-format
 msgid "Profession:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:319
+#: contacts/qml/private/ContactPage.qml:364
 #, kde-format
 msgid "Title:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:326
+#: contacts/qml/private/ContactPage.qml:371
 #, kde-format
 msgid "Department:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:333
+#: contacts/qml/private/ContactPage.qml:378
 #, kde-format
 msgid "Office:"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:340
+#: contacts/qml/private/ContactPage.qml:385
 #, fuzzy, kde-format
 #| msgid "Manage Tags"
 msgid "Manager's name:"
 msgstr "Διαχείριση ετικετών"
 
-#: contacts/qml/private/ContactPage.qml:347
+#: contacts/qml/private/ContactPage.qml:392
 #, fuzzy, kde-format
 #| msgid "Manage Tags"
 msgid "Assistant's name:"
 msgstr "Διαχείριση ετικετών"
 
-#: contacts/qml/private/ContactPage.qml:353
+#: contacts/qml/private/ContactPage.qml:398
 #, fuzzy, kde-format
 #| msgid "Select Email Address"
 msgid "Email Address"
@@ -3673,10 +3828,20 @@ msgid_plural "Email Addresses"
 msgstr[0] "Επιλογή διεύθυνσης αλληλογραφίας"
 msgstr[1] "Επιλογή διεύθυνσης αλληλογραφίας"
 
-#: contacts/qml/private/ContactPage.qml:375
+#: contacts/qml/private/ContactPage.qml:420
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
+msgstr ""
+
+#: contacts/qml/private/ContactShareDialog.qml:34
+#, kde-format
+msgid "Could not share contact: %1"
+msgstr ""
+
+#: contacts/qml/private/ContactShareDialog.qml:37
+#, kde-format
+msgid "Contact shared successfully."
 msgstr ""
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
@@ -3707,6 +3872,21 @@ msgstr[1] "Θέλετε να διαγράψετε το αντικείμενο: �
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr ""
+
+#: contacts/qml/private/PurposeShareAction.qml:26
+#: contacts/qml/private/ShareActionDummy.qml:14
+#, fuzzy, kde-format
+#| msgid "New Event…"
+msgctxt "@action:inmenu"
+msgid "Share Contact"
+msgstr "Νέο γεγονός…"
+
+#: contacts/qml/private/PurposeShareAction.qml:28
+#, fuzzy, kde-format
+#| msgid "Create new calendar"
+msgctxt "@tooltip"
+msgid "Share this contact"
+msgstr "Δημιουργία νέου ημερολογίου"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -4319,6 +4499,12 @@ msgid "Select the account type"
 msgstr ""
 
 #, fuzzy
+#~| msgid "Name:"
+#~ msgctxt "@info:placeholder"
+#~ msgid "No Name"
+#~ msgstr "Όνομα:"
+
+#, fuzzy
 #~| msgid "Import Calendar"
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Address Book %1"
@@ -4434,12 +4620,6 @@ msgstr ""
 #~ msgctxt "@title:window"
 #~ msgid "Properties of Calendar %1"
 #~ msgstr "Εισαγωγή ημερολογίου"
-
-#, fuzzy
-#~| msgid "Create new calendar"
-#~ msgctxt "@action:inmenu"
-#~ msgid "Delete contact"
-#~ msgstr "Δημιουργία νέου ημερολογίου"
 
 #~ msgid "Quickly Add a New Task."
 #~ msgstr "Γρήγορη προσθήκη νέας εργασίας."
