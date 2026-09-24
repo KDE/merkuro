@@ -304,28 +304,55 @@ Kirigami.ScrollablePage {
         }
         clip: true
         model: root.contactsModel
-        delegate: ContactListItem {
-            id: contactListItem
-            objectName: "contactListItem"
+        delegate: Item {
+            id: contactDelegate
 
-            selectionModel: contactSelectionModel
+            required property int index
+            required property int itemId
+            required property string displayName
+            required property string mimeType
+            required property var model
+            required property var addressee
+            required property Akonadi.item item
+            required property var decoration
 
-            onClicked: if (contactListItem.mimeType === 'application/x-vnd.kde.contactgroup') {
-                contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
-                contactsList.currentIndex = index;
-                applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
-                    itemId: contactListItem.itemId,
-                });
-            } else {
-                contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
-                contactsList.currentIndex = index;
-                applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
-                    itemId: contactListItem.itemId,
-                });
-            }
+            width: contactsList.width
+            height: contactListItem.height
 
-            onCreateContextMenu: {
-                root.showContextMenu(contactListItem.index)
+            ContactListItem {
+                id: contactListItem
+                objectName: "contactListItem"
+
+                index: contactDelegate.index
+                itemId: contactDelegate.itemId
+                displayName: contactDelegate.displayName
+                mimeType: contactDelegate.mimeType
+                model: contactDelegate.model
+                addressee: contactDelegate.addressee
+                item: contactDelegate.item
+                decoration: contactDelegate.decoration
+                width: contactDelegate.width
+                highlighted: contactDelegate.ListView.isCurrentItem
+                selectionModel: contactSelectionModel
+                dragEnabled: true
+
+                onClicked: if (contactListItem.mimeType === 'application/x-vnd.kde.contactgroup') {
+                    contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
+                    contactsList.currentIndex = contactListItem.index;
+                    applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
+                        itemId: contactListItem.itemId,
+                    });
+                } else {
+                    contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
+                    contactsList.currentIndex = contactListItem.index;
+                    applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
+                        itemId: contactListItem.itemId,
+                    });
+                }
+
+                onCreateContextMenu: {
+                    root.showContextMenu(contactListItem.index)
+                }
             }
         }
 

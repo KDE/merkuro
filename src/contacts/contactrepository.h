@@ -20,6 +20,7 @@ class ChangeRecorder;
 class ContactsTreeModel;
 class ETMViewStateSaver;
 class EntityMimeTypeFilterModel;
+class SelectionProxyModel;
 class Session;
 }
 
@@ -45,6 +46,7 @@ private:
     Akonadi::Session *const m_session;
     Akonadi::ChangeRecorder *const m_monitor;
     Akonadi::ContactsTreeModel *const m_contactModel;
+    Akonadi::SelectionProxyModel *m_selectionProxyModel = nullptr;
     Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;

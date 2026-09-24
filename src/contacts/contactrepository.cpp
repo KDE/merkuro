@@ -119,12 +119,12 @@ ContactRepository::ContactRepository(QObject *parent)
         saveState();
     });
 
-    auto selectionProxyModel = new Akonadi::SelectionProxyModel(m_checkableProxyModel->selectionModel(), this);
-    selectionProxyModel->setSourceModel(m_contactModel);
-    selectionProxyModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
+    m_selectionProxyModel = new Akonadi::SelectionProxyModel(m_checkableProxyModel->selectionModel());
+    m_selectionProxyModel->setSourceModel(m_contactModel);
+    m_selectionProxyModel->setFilterBehavior(KSelectionProxyModel::ChildrenOfExactSelection);
 
     auto flatModel = new KDescendantsProxyModel(this);
-    flatModel->setSourceModel(selectionProxyModel);
+    flatModel->setSourceModel(m_selectionProxyModel);
 
     auto entityMimeTypeFilterModel = new Akonadi::EntityMimeTypeFilterModel(this);
     entityMimeTypeFilterModel->setSourceModel(flatModel);
@@ -142,6 +142,7 @@ ContactRepository::ContactRepository(QObject *parent)
 ContactRepository::~ContactRepository()
 {
     saveState();
+    delete m_selectionProxyModel;
     delete m_contactModel;
     delete m_monitor;
     delete m_session;

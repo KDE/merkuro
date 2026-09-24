@@ -8,10 +8,12 @@
 
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/ItemFetchJob>
+#include <Akonadi/ItemMoveJob>
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 #include <KJob>
 #include <QAbstractItemModel>
+#include <QItemSelectionModel>
 #include <QSignalSpy>
 #include <QTest>
 #include <akonadi/qtest_akonadi.h>
@@ -40,10 +42,12 @@ private Q_SLOTS:
         for (const auto &collection : collectionJob->collections()) {
             if (collection.name() == u"Contacts") {
                 m_contactCollection = collection;
-                break;
+            } else if (collection.name() == u"Other Contacts") {
+                m_otherContactCollection = collection;
             }
         }
         QVERIFY(m_contactCollection.isValid());
+        QVERIFY(m_otherContactCollection.isValid());
     }
 
     void editorLoadsAndStoresContact()
@@ -100,6 +104,38 @@ private Q_SLOTS:
         QVERIFY(!editor.saving());
     }
 
+    void repositoryCanBeDestroyedWithSelectedCollection()
+    {
+        auto repository = std::make_unique<ContactRepository>();
+        auto selectionModel = repository->findChild<QItemSelectionModel *>();
+        QVERIFY(selectionModel);
+        QTRY_VERIFY_WITH_TIMEOUT(selectionModel->model()->rowCount() > 0, 5000);
+        selectionModel->select(selectionModel->model()->index(0, 0), QItemSelectionModel::Select);
+        QVERIFY(selectionModel->hasSelection());
+
+        repository.reset();
+    }
+
+    void editorMovesContactToAnotherAddressBook()
+    {
+        ContactEditorBackend editor;
+        editor.setMode(ContactEditorBackend::EditMode);
+        QSignalSpy loaded(&editor, &ContactEditorBackend::contactChanged);
+        editor.setItem(m_contactItem);
+        QVERIFY(loaded.wait(3000));
+        editor.setDefaultAddressBook(m_otherContactCollection);
+
+        QSignalSpy finished(&editor, &ContactEditorBackend::finished);
+        editor.saveContactInAddressBook();
+        QVERIFY(finished.wait(5000));
+        QCOMPARE(editor.item().parentCollection().id(), m_otherContactCollection.id());
+
+        auto moveBackJob = new Akonadi::ItemMoveJob(editor.item(), m_contactCollection, this);
+        QSignalSpy moveBackResult(moveBackJob, &KJob::result);
+        QVERIFY(moveBackResult.wait(5000));
+        QVERIFY2(!moveBackJob->error(), qPrintable(moveBackJob->errorString()));
+    }
+
     void groupEditorLoadsAndStoresGroup()
     {
         ContactGroupEditor editor;
@@ -154,6 +190,7 @@ private Q_SLOTS:
 private:
     std::unique_ptr<ContactRepository> m_repository;
     Akonadi::Collection m_contactCollection;
+    Akonadi::Collection m_otherContactCollection;
     Akonadi::Item m_contactItem;
     Akonadi::Item m_contactGroupItem;
 };

@@ -184,6 +184,7 @@ Kirigami.OverlayDrawer {
 
                             text: model.display
                             highlighted: activeFocus
+                            dropAreaHovered: contactDropArea.containsDrag
 
                             hoverEnabled: false
                             Accessible.checkable: true
@@ -239,6 +240,21 @@ Kirigami.OverlayDrawer {
                                     }
                                 }
                             }
+
+                            DropArea {
+                                id: contactDropArea
+                                anchors.fill: parent
+                                onEntered: function(drag: var): void {
+                                    if (!drag.source || drag.source.objectName !== "contactListItem") {
+                                        drag.accepted = false;
+                                    }
+                                }
+                                onDropped: function(drop: var): void {
+                                    if (drop.source && drop.source.objectName === "contactListItem") {
+                                        drop.source.moveToCollection(collectionSourceItem.collection);
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -261,6 +277,7 @@ Kirigami.OverlayDrawer {
                             text: model.display
                             enabled: !root.drawerCollapsed
                             highlighted: activeFocus
+                            dropAreaHovered: contactDropArea.containsDrag
 
                             leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
                             leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
@@ -313,6 +330,21 @@ Kirigami.OverlayDrawer {
                                     root.contextCollection = collectionItem.collection
                                     root.contextCollectionDetails = Contact.ContactManager.getCollectionDetails(collectionItem.collection)
                                     addressBookMenu.popup()
+                                }
+                            }
+
+                            DropArea {
+                                id: contactDropArea
+                                anchors.fill: parent
+                                onEntered: function(drag: var): void {
+                                    if (!drag.source || drag.source.objectName !== "contactListItem") {
+                                        drag.accepted = false;
+                                    }
+                                }
+                                onDropped: function(drop: var): void {
+                                    if (drop.source && drop.source.objectName === "contactListItem") {
+                                        drop.source.moveToCollection(collectionItem.collection);
+                                    }
                                 }
                             }
                         }

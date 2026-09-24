@@ -33,8 +33,13 @@ Delegates.RoundedItemDelegate {
     required property Akonadi.item item
     required property var decoration
     required property ItemSelectionModel selectionModel
+    property bool dragEnabled: false
 
     signal createContextMenu
+
+    function moveToCollection(collection: var): void {
+        ContactManager.moveItemToCollection(root.item, collection);
+    }
 
     text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No name")
 
@@ -99,4 +104,29 @@ Delegates.RoundedItemDelegate {
         acceptedButtons: Qt.RightButton
         onTapped: root.createContextMenu()
     }
+
+    states: State {
+        when: root.Drag.active
+        ParentChange {
+            target: root
+            parent: root.QQC2.Overlay.overlay
+        }
+    }
+
+    DragHandler {
+        id: dragHandler
+        enabled: root.dragEnabled && !Kirigami.Settings.isMobile && root.mimeType === Akonadi.MimeTypes.address
+        cursorShape: Qt.DragMoveCursor
+        onActiveChanged: {
+            root.down = false;
+            if (!active) {
+                root.Drag.drop();
+            }
+        }
+    }
+
+    Drag.active: dragHandler.active
+    Drag.supportedActions: Qt.MoveAction
+    Drag.hotSpot.x: root.width / 2
+    Drag.hotSpot.y: root.height / 2
 }

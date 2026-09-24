@@ -28,6 +28,18 @@ TestCase {
         contactsModel.clear()
     }
 
+    function appendContact(name: string, itemId: int): void {
+        contactsModel.append({
+            display: name,
+            displayName: name,
+            itemId: itemId,
+            mimeType: "text/directory",
+            addressee: testContact,
+            item: ContactManager.getItem(itemId),
+            decoration: "",
+        })
+    }
+
     function test_viewProperties() {
         const view = createTemporaryObject(contactViewComponent, testCase)
         verify(view)
@@ -50,15 +62,7 @@ TestCase {
     }
 
     function test_nonEmptyStateAndContextMenu() {
-        contactsModel.append({
-            display: "Ada Lovelace",
-            displayName: "Ada Lovelace",
-            itemId: 1,
-            mimeType: "text/directory",
-            addressee: testContact,
-            item: ContactManager.getItem(1),
-            decoration: "",
-        })
+        appendContact("Ada Lovelace", 1)
 
         const view = createTemporaryObject(contactViewComponent, testCase, {
             contactsModel: contactsModel,

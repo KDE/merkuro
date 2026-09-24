@@ -18,18 +18,15 @@ FormCard.FormCard {
     required property ContactEditor contactEditor
     required property int mode
 
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
-
     property alias addressBookComboBoxId: addressBookComboBox.defaultCollectionId;
     property alias addressBookComboBox: addressBookComboBox
+
+    Layout.topMargin: Kirigami.Units.largeSpacing
 
     Akonadi.FormCollectionComboBox {
         id: addressBookComboBox
 
         text: KI18n.i18n("Address book:")
-        Layout.fillWidth: true
-        enabled: root.mode === ContactEditor.CreateMode
 
         defaultCollectionId: if (root.mode === ContactEditor.CreateMode) {
             return ContactConfig.lastUsedAddressBookCollection;
@@ -46,28 +43,37 @@ FormCard.FormCard {
 
     FormCard.AbstractFormDelegate {
         id: nameDelegate
-        Layout.fillWidth: true
+
         contentItem: ColumnLayout {
+		    spacing: Kirigami.Units.smallSpacing
+
             QQC2.Label {
                 text: KI18n.i18n("Name")
                 Layout.fillWidth: true
             }
+
             RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 Layout.fillWidth: true
+
                 QQC2.TextField {
                     id: textField
-                    Accessible.description: KI18n.i18n("Name")
-                    Layout.fillWidth: true
                     text: root.contactEditor.contact.formattedName
                     onTextEdited: root.contactEditor.contact.formattedName = text
                     placeholderText: KI18n.i18n("Contact name")
+
+                    Accessible.description: KI18n.i18n("Name")
+                    Layout.fillWidth: true
                 }
+
                 QQC2.Button {
                     icon.name: 'settings-configure'
                     onClicked: displayAdvancedNameFields = !displayAdvancedNameFields
-                    QQC2.ToolTip {
-                        text: KI18n.i18n("Advanced")
-                    }
+
+                    QQC2.ToolTip.text: KI18n.i18n("Advanced")
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
             }
         }

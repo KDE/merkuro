@@ -11,6 +11,11 @@
 class ContactRepository;
 class KJob;
 
+namespace Akonadi
+{
+class Collection;
+}
+
 class ContactManager : public QObject
 {
     Q_OBJECT
@@ -38,6 +43,7 @@ public:
 
     Q_INVOKABLE void setCollectionColor(Akonadi::Collection collection, const QColor &color);
     Q_INVOKABLE KJob *deleteItem(const Akonadi::Item &item);
+    Q_INVOKABLE void moveItemToCollection(const Akonadi::Item &item, const Akonadi::Collection &destination);
     Q_INVOKABLE void updateAllCollections();
     Q_INVOKABLE void updateCollection(const Akonadi::Collection &collection);
     Q_INVOKABLE void deleteCollection(const Akonadi::Collection &collection);

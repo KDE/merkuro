@@ -8,6 +8,7 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
+#include <Akonadi/ItemMoveJob>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
 #include <KLocalizedString>
@@ -22,12 +23,20 @@ ContactEditorBackend::~ContactEditorBackend() = default;
 
 void ContactEditorBackend::setDefaultAddressBook(const Akonadi::Collection &addressbook)
 {
+    if (m_defaultAddressBook == addressbook) {
+        return;
+    }
     m_defaultAddressBook = addressbook;
+    Q_EMIT collectionChanged();
 }
 
 void ContactEditorBackend::setCollectionId(const qint64 collectionId)
 {
+    if (m_defaultAddressBook.id() == collectionId) {
+        return;
+    }
     m_defaultAddressBook.setId(collectionId);
+    Q_EMIT collectionChanged();
 }
 
 AddresseeWrapper *ContactEditorBackend::contact()
@@ -192,6 +201,12 @@ void ContactEditorBackend::saveContactInAddressBook()
             Q_EMIT errorOccured(m_readOnly ? i18n("The contact is read-only.") : i18n("The contact is no longer available."));
             return;
         }
+        if (m_defaultAddressBook.id() != m_item.parentCollection().id()
+            && (!(m_defaultAddressBook.rights() & Akonadi::Collection::CanCreateItem)
+                || !m_defaultAddressBook.contentMimeTypes().contains(KContacts::Addressee::mimeType()))) {
+            Q_EMIT errorOccured(i18n("The selected address book cannot store contacts."));
+            return;
+        }
 
         auto addressee = m_addressee->addressee();
 
@@ -205,7 +220,18 @@ void ContactEditorBackend::saveContactInAddressBook()
         Q_EMIT savingChanged();
         auto job = new Akonadi::ItemModifyJob(m_item, this);
         connect(job, &Akonadi::ItemModifyJob::result, this, [this](KJob *job) {
-            storeDone(job);
+            if (job->error() || m_defaultAddressBook.id() == m_item.parentCollection().id()) {
+                storeDone(job);
+                return;
+            }
+
+            auto moveJob = new Akonadi::ItemMoveJob(m_item, m_defaultAddressBook, this);
+            connect(moveJob, &KJob::result, this, [this, moveJob](KJob *) {
+                if (!moveJob->error()) {
+                    m_item.setParentCollection(m_defaultAddressBook);
+                }
+                storeDone(moveJob);
+            });
         });
     } else if (m_mode == CreateMode) {
         if (!m_defaultAddressBook.isValid()) {

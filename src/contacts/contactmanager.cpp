@@ -16,7 +16,9 @@
 #include <Akonadi/CollectionUtils>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemDeleteJob>
+#include <Akonadi/ItemMoveJob>
 #include <KJob>
+#include <KLocalizedString>
 
 ContactManager::ContactManager(QObject *parent)
     : QObject(parent)
@@ -47,6 +49,24 @@ Akonadi::Item ContactManager::getItem(qint64 itemId)
 KJob *ContactManager::deleteItem(const Akonadi::Item &item)
 {
     return new Akonadi::ItemDeleteJob(item);
+}
+
+void ContactManager::moveItemToCollection(const Akonadi::Item &item, const Akonadi::Collection &destination)
+{
+    if (!item.isValid() || !destination.isValid() || item.parentCollection() == destination) {
+        return;
+    }
+    if (!(destination.rights() & Akonadi::Collection::CanCreateItem) || !destination.contentMimeTypes().contains(item.mimeType())) {
+        Q_EMIT errorOccurred(i18n("The selected address book cannot store this contact."));
+        return;
+    }
+
+    auto job = new Akonadi::ItemMoveJob(item, destination, this);
+    connect(job, &KJob::result, this, [this](KJob *job) {
+        if (job->error()) {
+            Q_EMIT errorOccurred(job->errorText());
+        }
+    });
 }
 
 void ContactManager::updateAllCollections()
