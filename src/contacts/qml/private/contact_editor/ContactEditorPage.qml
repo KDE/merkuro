@@ -158,6 +158,37 @@ FormCard.FormCardPage {
         contactEditor: root.contactEditor
     }
 
+    FormCard.FormHeader {
+        title: KI18n.i18nc("@title:group", "Notes")
+    }
+
+    FormCard.FormCard {
+        QQC2.ScrollView {
+            id: noteScrollView
+            objectName: "contactNoteScrollView"
+            background: null
+            contentWidth: availableWidth
+            Layout.fillWidth: true
+            Layout.preferredHeight: Kirigami.Units.gridUnit * 6
+
+            QQC2.TextArea {
+                objectName: "contactNoteField"
+                Accessible.name: KI18n.i18nc("@label:textbox", "Notes")
+                placeholderText: KI18n.i18nc("@info:placeholder", "Add a note")
+                text: root.contactEditor.contact.note
+                onTextChanged: root.contactEditor.contact.note = text
+                wrapMode: TextEdit.Wrap
+                background: null
+                width: noteScrollView.availableWidth
+
+                leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                rightPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                topPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                bottomPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            }
+        }
+    }
+
 
     footer: ColumnLayout {
         spacing: 0

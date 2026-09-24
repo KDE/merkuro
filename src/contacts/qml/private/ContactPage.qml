@@ -426,6 +426,21 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
+        title: KI18n.i18nc("@title:group", "Notes")
+        visible: addressee.note.trim().length > 0
+    }
+
+    FormCard.FormCard {
+        visible: addressee.note.trim().length > 0
+
+        FormCard.FormTextDelegate {
+            objectName: "contactNoteDisplay"
+            description: addressee.note
+            descriptionItem.textFormat: Text.PlainText
+        }
+    }
+
+    FormCard.FormHeader {
         visible: certificateRepeater.count > 0
         title: KI18n.i18nc("@title:group", "Cryptographic Certificates")
     }

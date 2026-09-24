@@ -92,6 +92,26 @@ TestCase {
         compare(usernameField.text, "ada")
     }
 
+    function test_noteCanBeEdited(): void {
+        const editorPage = createTemporaryObject(pageComponent, testCase)
+        verify(editorPage)
+        const noteField = findChild(editorPage, "contactNoteField")
+        verify(noteField)
+        compare(noteField.background, null)
+        editorPage.contactEditor.contact.note = "Existing note"
+        compare(noteField.text, "Existing note")
+        noteField.text = "Met at the conference\nFollow up next week"
+        compare(editorPage.contactEditor.contact.note, noteField.text)
+        const noteScrollView = findChild(editorPage, "contactNoteScrollView")
+        verify(noteScrollView)
+        noteField.text = Array(40).fill("Long note").join("\n")
+        verify(noteScrollView.contentHeight > noteScrollView.height)
+        noteScrollView.contentItem.contentY = 50
+        verify(noteScrollView.contentItem.contentY > 0)
+        noteField.text = ""
+        compare(editorPage.contactEditor.contact.note, "")
+    }
+
     function test_addressPageAddsAndEditsAddresses(): void {
         const editorPage = createTemporaryObject(pageComponent, testCase)
         const model = editorPage.contactEditor.contact.addressesModel
