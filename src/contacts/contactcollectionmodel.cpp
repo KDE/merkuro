@@ -38,3 +38,12 @@ QVariant ContactCollectionModel::data(const QModelIndex &index, int role) const
     }
     return KCheckableProxyModel::data(index, role);
 }
+
+bool ContactCollectionModel::select(const QItemSelection &selection, QItemSelectionModel::SelectionFlags command)
+{
+    if (!(command & QItemSelectionModel::Select)) {
+        return false;
+    }
+
+    return KCheckableProxyModel::select(selection, QItemSelectionModel::ClearAndSelect);
+}

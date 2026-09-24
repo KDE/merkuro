@@ -16,7 +16,6 @@ import org.kde.ki18n
 Kirigami.OverlayDrawer {
     id: root
 
-    signal collectionCheckChanged
     signal closeParentDrawer
     signal deleteCollection(int collectionId, var collectionDetails)
 
@@ -276,7 +275,7 @@ Kirigami.OverlayDrawer {
 
                             text: model.display
                             enabled: !root.drawerCollapsed
-                            highlighted: activeFocus
+                            highlighted: model.checkState === Qt.Checked || activeFocus
                             dropAreaHovered: contactDropArea.containsDrag
 
                             leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
@@ -285,9 +284,7 @@ Kirigami.OverlayDrawer {
                             rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
                             rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
-                            Accessible.checkable: true
-                            Accessible.checked: model.checkState === 2
-                            Accessible.onToggleAction: clicked()
+                            Accessible.selected: model.checkState === Qt.Checked
 
                             contentItem: RowLayout {
                                 Kirigami.Icon {
@@ -303,25 +300,17 @@ Kirigami.OverlayDrawer {
                                     Layout.fillWidth: true
                                 }
 
-                                ColoredCheckbox {
-                                    id: collectionCheckbox
-
+                                Rectangle {
                                     Layout.alignment: Qt.AlignVCenter
-                                    visible: model.checkState !== null
+                                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                    implicitHeight: implicitWidth
+                                    radius: Kirigami.Units.smallSpacing
                                     color: collectionItem.collectionColor
-                                    checked: model.checkState === 2
-                                    onCheckedChanged: root.collectionCheckChanged()
-                                    activeFocusOnTab: false
-                                    onClicked: {
-                                        model.checkState = model.checkState === 0 ? 2 : 0
-                                        root.collectionCheckChanged()
-                                    }
                                 }
                             }
 
                             onClicked: {
-                                collectionItem.model.checkState = collectionItem.checkState === 0 ? 2 : 0
-                                root.collectionCheckChanged()
+                                collectionItem.model.checkState = Qt.Checked
                             }
 
                             TapHandler {

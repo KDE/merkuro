@@ -12,4 +12,7 @@ public:
     explicit ContactCollectionModel(QObject *parent);
 
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+
+protected:
+    bool select(const QItemSelection &selection, QItemSelectionModel::SelectionFlags command) override;
 };

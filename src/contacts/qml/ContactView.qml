@@ -34,6 +34,7 @@ Kirigami.ScrollablePage {
             text: KI18n.i18nc("@action:inmenu", "New Contact")
             onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
                 mode: ContactEditor.CreateMode,
+                initialCollectionId: ContactManager.selectedCollectionId(),
             })
         }
         Kirigami.Action {
@@ -41,6 +42,7 @@ Kirigami.ScrollablePage {
             text: KI18n.i18nc("@action:inmenu", "New Contact Group")
             onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
                 mode: ContactGroupEditor.CreateMode,
+                initialCollectionId: ContactManager.selectedCollectionId(),
             })
         }
     }

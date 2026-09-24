@@ -17,6 +17,7 @@ FormCard.FormCard {
 
     required property ContactEditor contactEditor
     required property int mode
+    required property double initialCollectionId
 
     property alias addressBookComboBoxId: addressBookComboBox.defaultCollectionId;
     property alias addressBookComboBox: addressBookComboBox
@@ -25,11 +26,12 @@ FormCard.FormCard {
 
     Akonadi.FormCollectionComboBox {
         id: addressBookComboBox
+        objectName: "addressBookComboBox"
 
         text: KI18n.i18n("Address book:")
 
         defaultCollectionId: if (root.mode === ContactEditor.CreateMode) {
-            return ContactConfig.lastUsedAddressBookCollection;
+            return root.initialCollectionId >= 0 ? root.initialCollectionId : ContactConfig.lastUsedAddressBookCollection;
         } else {
             return root.contactEditor.collectionId;
         }

@@ -18,6 +18,7 @@ FormCard.FormCardPage {
 
     property alias mode: contactEditor.mode
     property alias item: contactEditor.item
+    property double initialCollectionId: -1
 
     property bool displayAdvancedNameFields: false
     readonly property bool saving: contactEditor.saving
@@ -26,7 +27,7 @@ FormCard.FormCardPage {
         id: contactEditor
         mode: ContactEditor.CreateMode
         onFinished: {
-            ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBoxId;
+            ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.currentValue;
             ContactConfig.save();
             root.closeDialog();
         }
@@ -52,8 +53,8 @@ FormCard.FormCardPage {
             if (emailEditorId.toAddEmailText.length > 0) {
                 contactEditor.contact.emailModel.addEmail(emailEditorId.toAddEmailText, emailEditorId.newEmailTypeCurrentValue);
             }
-            if (contactEditor.collectionId < 0) {
-                contactEditor.collectionId = addressBookEditorCard.addressBookComboBoxId
+            if (root.mode === ContactEditor.CreateMode && addressBookEditorCard.addressBookComboBox.currentIndex >= 0) {
+                contactEditor.collectionId = addressBookEditorCard.addressBookComboBox.currentValue
             }
             contactEditor.saveContactInAddressBook()
         }
@@ -100,6 +101,7 @@ FormCard.FormCardPage {
         id: addressBookEditorCard
         contactEditor: root.contactEditor
         mode: root.mode
+        initialCollectionId: root.initialCollectionId
     }
 
     FormCard.FormHeader {
@@ -165,8 +167,10 @@ FormCard.FormCardPage {
             }
 
             onRejected: {
-                ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.defaultCollectionId;
-                ContactConfig.save();
+                if (addressBookEditorCard.addressBookComboBox.currentIndex >= 0) {
+                    ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.currentValue;
+                    ContactConfig.save();
+                }
                 root.closeDialog();
             }
             onAccepted: submitAction.trigger();

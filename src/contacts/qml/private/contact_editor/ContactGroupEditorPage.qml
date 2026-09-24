@@ -17,11 +17,12 @@ FormCard.FormCardPage {
 
     property alias mode: contactGroupEditor.mode
     property var item
+    property double initialCollectionId: -1
     property ContactGroupEditor contactGroupEditor: ContactGroupEditor {
         id: contactGroupEditor
         mode: ContactGroupEditor.CreateMode
         onFinished: {
-            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
+            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.currentValue;
             ContactConfig.save();
             root.closeDialog();
         }
@@ -45,6 +46,10 @@ FormCard.FormCardPage {
         enabled: contactGroupEditor.name.length > 0
         shortcut: "Return"
         onTriggered: {
+            if (root.mode === ContactGroupEditor.CreateMode && addressBookComboBox.currentIndex >= 0) {
+                const index = addressBookComboBox.model.index(addressBookComboBox.currentIndex, 0);
+                contactGroupEditor.setDefaultAddressBook(addressBookComboBox.model.data(index, Akonadi.EntityTreeModel.CollectionRole));
+            }
             contactGroupEditor.saveContactGroup()
         }
     }
@@ -62,13 +67,14 @@ FormCard.FormCardPage {
 
         Akonadi.FormCollectionComboBox {
             id: addressBookComboBox
+            objectName: "groupAddressBookComboBox"
 
             text: KI18n.i18n("Address Book:")
             Layout.fillWidth: true
             enabled: mode === ContactGroupEditor.CreateMode
 
             defaultCollectionId: if (mode === ContactGroupEditor.CreateMode) {
-                return ContactConfig.lastUsedAddressBookCollection;
+                return root.initialCollectionId >= 0 ? root.initialCollectionId : ContactConfig.lastUsedAddressBookCollection;
             } else {
                 return contactGroupEditor.collectionId;
             }
@@ -181,8 +187,10 @@ FormCard.FormCardPage {
         }
 
         onRejected: {
-            ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.defaultCollectionId;
-            ContactConfig.save();
+            if (addressBookComboBox.currentIndex >= 0) {
+                ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.currentValue;
+                ContactConfig.save();
+            }
             root.closeDialog();
         }
         onAccepted: submitAction.trigger()

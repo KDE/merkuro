@@ -7,6 +7,7 @@
 #include "../contactrepository.h"
 
 #include <Akonadi/CollectionFetchJob>
+#include <Akonadi/EntityTreeModel>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemMoveJob>
 #include <KContacts/Addressee>
@@ -114,6 +115,40 @@ private Q_SLOTS:
         QVERIFY(selectionModel->hasSelection());
 
         repository.reset();
+    }
+
+    void selectingAddressBookShowsOnlyItsContacts()
+    {
+        auto *collections = m_repository->contactCollections();
+        const auto findCollection = [collections](auto &&self, const QModelIndex &parent, qint64 id) -> QModelIndex {
+            for (int row = 0; row < collections->rowCount(parent); ++row) {
+                const auto index = collections->index(row, 0, parent);
+                if (index.data(Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>().id() == id) {
+                    return index;
+                }
+                if (const auto child = self(self, index, id); child.isValid()) {
+                    return child;
+                }
+            }
+            return {};
+        };
+
+        QTRY_VERIFY_WITH_TIMEOUT(findCollection(findCollection, {}, m_contactCollection.id()).isValid(), 5000);
+        QTRY_VERIFY_WITH_TIMEOUT(findCollection(findCollection, {}, m_otherContactCollection.id()).isValid(), 5000);
+        const auto contacts = findCollection(findCollection, {}, m_contactCollection.id());
+        const auto otherContacts = findCollection(findCollection, {}, m_otherContactCollection.id());
+
+        QVERIFY(collections->setData(contacts, Qt::Checked, Qt::CheckStateRole));
+        QCOMPARE(m_repository->selectedCollectionId(), m_contactCollection.id());
+        QTRY_COMPARE_WITH_TIMEOUT(m_repository->filteredContacts()->rowCount(), 2, 5000);
+        QVERIFY(collections->setData(otherContacts, Qt::Checked, Qt::CheckStateRole));
+        QCOMPARE(m_repository->selectedCollectionId(), m_otherContactCollection.id());
+        QTRY_COMPARE_WITH_TIMEOUT(m_repository->filteredContacts()->rowCount(), 0, 5000);
+        QCOMPARE(contacts.data(Qt::CheckStateRole).toInt(), int(Qt::Unchecked));
+        QCOMPARE(otherContacts.data(Qt::CheckStateRole).toInt(), int(Qt::Checked));
+
+        QVERIFY(collections->setData(contacts, Qt::Checked, Qt::CheckStateRole));
+        QTRY_COMPARE_WITH_TIMEOUT(m_repository->filteredContacts()->rowCount(), 2, 5000);
     }
 
     void editorMovesContactToAnotherAddressBook()

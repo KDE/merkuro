@@ -40,6 +40,7 @@ public:
     QAbstractItemModel *filteredContacts() const;
 
     Q_INVOKABLE Akonadi::Item getItem(qint64 itemId);
+    Q_INVOKABLE qint64 selectedCollectionId() const;
 
     Q_INVOKABLE void setCollectionColor(Akonadi::Collection collection, const QColor &color);
     Q_INVOKABLE KJob *deleteItem(const Akonadi::Item &item);

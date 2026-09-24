@@ -39,6 +39,11 @@ QAbstractItemModel *ContactManager::filteredContacts() const
     return m_repository->filteredContacts();
 }
 
+qint64 ContactManager::selectedCollectionId() const
+{
+    return m_repository->selectedCollectionId();
+}
+
 Akonadi::Item ContactManager::getItem(qint64 itemId)
 {
     Akonadi::Item item(itemId);

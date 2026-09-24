@@ -115,9 +115,23 @@ ContactRepository::ContactRepository(QObject *parent)
     m_collectionSelectionModelStateSaver->setView(nullptr);
     m_collectionSelectionModelStateSaver->setSelectionModel(m_checkableProxyModel->selectionModel());
     m_collectionSelectionModelStateSaver->restoreState(selectionGroup);
-    connect(m_checkableProxyModel->selectionModel(), &QItemSelectionModel::selectionChanged, this, [this](const QItemSelection &, const QItemSelection &) {
-        saveState();
-    });
+    connect(m_checkableProxyModel->selectionModel(),
+            &QItemSelectionModel::selectionChanged,
+            this,
+            [this](const QItemSelection &selected, const QItemSelection &) {
+                const auto selectedIndexes = m_collectionSelectionModel->selectedIndexes();
+                if (selectedIndexes.size() > 1) {
+                    const auto newlySelected = selected.indexes();
+                    m_collectionSelectionModel->select(newlySelected.isEmpty() ? selectedIndexes.constFirst() : newlySelected.constLast(),
+                                                       QItemSelectionModel::ClearAndSelect);
+                    return;
+                }
+                saveState();
+            });
+    const auto restoredSelection = m_collectionSelectionModel->selectedIndexes();
+    if (restoredSelection.size() > 1) {
+        m_collectionSelectionModel->select(restoredSelection.constFirst(), QItemSelectionModel::ClearAndSelect);
+    }
 
     m_selectionProxyModel = new Akonadi::SelectionProxyModel(m_checkableProxyModel->selectionModel());
     m_selectionProxyModel->setSourceModel(m_contactModel);
@@ -166,6 +180,16 @@ QAbstractItemModel *ContactRepository::contactCollections() const
 QAbstractItemModel *ContactRepository::filteredContacts() const
 {
     return m_filteredContacts;
+}
+
+qint64 ContactRepository::selectedCollectionId() const
+{
+    const auto selectedIndexes = m_collectionSelectionModel->selectedIndexes();
+    if (selectedIndexes.isEmpty()) {
+        return -1;
+    }
+
+    return selectedIndexes.constFirst().data(Akonadi::EntityTreeModel::CollectionRole).value<Akonadi::Collection>().id();
 }
 
 QColor ContactRepository::collectionColor(qint64 collectionId) const

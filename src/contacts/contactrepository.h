@@ -34,6 +34,7 @@ public:
 
     QAbstractItemModel *contactCollections() const;
     QAbstractItemModel *filteredContacts() const;
+    qint64 selectedCollectionId() const;
     QColor collectionColor(qint64 collectionId) const;
     void setCollectionColor(qint64 collectionId, const QColor &color);
 
