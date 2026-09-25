@@ -14,6 +14,7 @@ class MessageLoader : public QObject
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(Akonadi::Item item READ item WRITE setItem NOTIFY itemChanged)
+    Q_PROPERTY(qint64 itemId READ itemId WRITE setItemId NOTIFY itemChanged)
     Q_PROPERTY(std::shared_ptr<KMime::Message> message READ message NOTIFY messageChanged)
 
 public:
@@ -21,6 +22,8 @@ public:
 
     [[nodiscard]] Akonadi::Item item() const;
     void setItem(const Akonadi::Item &item);
+    [[nodiscard]] qint64 itemId() const;
+    void setItemId(qint64 itemId);
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
 
 Q_SIGNALS:

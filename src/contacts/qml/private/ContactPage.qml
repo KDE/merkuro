@@ -445,6 +445,52 @@ FormCard.FormCardPage {
         }
     }
 
+    ContactActivityModel {
+        id: recentMessages
+        kind: ContactActivityModel.Messages
+        emails: addressee.emailModel.emails
+    }
+
+    FormCard.FormHeader {
+        title: KI18n.i18nc("@title:group", "Recent emails")
+        visible: recentMessages.count > 0
+    }
+
+    FormCard.FormCard {
+        visible: recentMessages.count > 0
+
+        Repeater {
+            model: recentMessages
+            delegate: ContactActivityDelegate {
+                required property int index
+                kind: ContactActivityModel.Messages
+                onActivated: recentMessages.openMessage(index)
+            }
+        }
+    }
+
+    ContactActivityModel {
+        id: recentEvents
+        kind: ContactActivityModel.Events
+        emails: addressee.emailModel.emails
+    }
+
+    FormCard.FormHeader {
+        title: KI18n.i18nc("@title:group", "Recent events")
+        visible: recentEvents.count > 0
+    }
+
+    FormCard.FormCard {
+        visible: recentEvents.count > 0
+
+        Repeater {
+            model: recentEvents
+            delegate: ContactActivityDelegate {
+                kind: ContactActivityModel.Events
+            }
+        }
+    }
+
     FormCard.FormHeader {
         visible: certificateRepeater.count > 0
         title: KI18n.i18nc("@title:group", "Cryptographic Certificates")

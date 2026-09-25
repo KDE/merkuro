@@ -14,9 +14,14 @@ import org.kde.ki18n
 MimeTreeParser.MailViewer {
     id: root
 
-    required property var emptyItem
-    required property var props
+    property var emptyItem
+    property var props
     required property MailActions mailActions
+    property real itemId: 0
+    readonly property var actionItem: root.itemId > 0 ? messageLoader.item : root.emptyItem
+    readonly property bool hasLoadedItem: root.itemId <= 0 || Boolean(root.message)
+
+    Component.onDestruction: if (root.itemId > 0 && root.mailActions) root.mailActions.item = undefined
 
     leftPadding: 0
     rightPadding: 0
@@ -29,33 +34,38 @@ MimeTreeParser.MailViewer {
         Kirigami.Action {
             text: KI18n.i18nc("@action", "Reply")
             icon.name: "mail-reply-sender-symbolic"
-            onTriggered: mailActions.replyToSender(root.emptyItem)
+            enabled: root.hasLoadedItem
+            onTriggered: root.mailActions.replyToSender(root.actionItem)
         },
         Kirigami.Action {
             text: KI18n.i18nc("@action", "Reply to All")
             icon.name: "mail-reply-all-symbolic"
-            onTriggered: mailActions.replyToAll(root.emptyItem)
+            enabled: root.hasLoadedItem
+            onTriggered: root.mailActions.replyToAll(root.actionItem)
         },
         Kirigami.Action {
             text: KI18n.i18nc("@action", "Forward")
             icon.name: "mail-forward-symbolic"
-            onTriggered: mailActions.forward(root.emptyItem)
+            enabled: root.hasLoadedItem
+            onTriggered: root.mailActions.forward(root.actionItem)
         },
         Kirigami.Action {
             fromQAction: MailApplication.action('mail_trash')
+            enabled: root.hasLoadedItem && MailApplication.action('mail_trash').enabled
             onTriggered: {
-                mailActions.item = root.item
+                mailActions.item = root.actionItem
                 MailApplication.action("mail_trash").trigger();
-                mailActions.item = undefined;
+                if (root.itemId <= 0) mailActions.item = undefined;
             }
         },
         Kirigami.Action {
             fromQAction: MailApplication.action('mail_delete')
             icon.color: Kirigami.Theme.negativeTextColor
+            enabled: root.hasLoadedItem && MailApplication.action('mail_delete').enabled
             onTriggered: {
-                mailActions.item = root.item
+                mailActions.item = root.actionItem
                 MailApplication.action("mail_delete").trigger();
-                mailActions.item = undefined;
+                if (root.itemId <= 0) mailActions.item = undefined;
             }
         }
     ]
@@ -73,7 +83,7 @@ MimeTreeParser.MailViewer {
             horizontalPadding: Kirigami.Units.gridUnit
 
             contentItem: Kirigami.Heading {
-                text: props.title
+                text: root.props && root.props.title ? root.props.title : root.subject
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
                 elide: Text.ElideRight
@@ -182,8 +192,16 @@ MimeTreeParser.MailViewer {
 
     MessageLoader {
         id: messageLoader
+        onMessageChanged: {
+            root.message = message
+            if (root.itemId > 0) root.mailActions.item = message ? item : undefined
+        }
+    }
 
-        item: root.emptyItem
-        onMessageChanged: root.message = message
+    Binding {
+        target: messageLoader
+        property: root.itemId > 0 ? "itemId" : "item"
+        value: root.itemId > 0 ? root.itemId : root.emptyItem
+        when: root.itemId > 0 || root.emptyItem !== undefined
     }
 }

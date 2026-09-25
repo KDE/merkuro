@@ -12,11 +12,24 @@ BaseApplication {
 
     property string searchString: ''
 
+    function showMessage(itemId: real): void {
+        root.pageStack.layers.push(conversationViewerComponent, {
+            itemId: itemId,
+            mailActions: folderView.viewerMailActions,
+        });
+    }
+
+    Component {
+        id: conversationViewerComponent
+        Mail.ConversationViewer {}
+    }
+
     application: Mail.MailApplication
 
     menubarComponent: MenuBar {}
 
     pageStack.initialPage: Mail.FolderView {
+        id: folderView
         searchString: root.searchString
     }
 

@@ -25,6 +25,12 @@ ecm_add_test(birthdaycalendartest.cpp
     NAME_PREFIX "merkuro-contact-"
 )
 
+ecm_add_test(contactactivitymodeltest.cpp
+    TEST_NAME contactactivitymodeltest
+    LINK_LIBRARIES merkuro_contact Qt::Test
+    NAME_PREFIX "merkuro-contact-"
+)
+
 ecm_add_test(contactlistproxymodeltest.cpp
     TEST_NAME contactlistproxymodeltest
     LINK_LIBRARIES merkuro_contact Qt::Test

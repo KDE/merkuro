@@ -12,6 +12,7 @@
 #include <KWindowSystem>
 #include <KirigamiAddons/App/KirigamiAppDefaults>
 #include <QApplication>
+#include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDir>
 #include <QIcon>
@@ -28,6 +29,31 @@ static void raiseWindow(QWindow *window)
 {
     KWindowSystem::updateStartupId(window);
     KWindowSystem::activateWindow(window);
+}
+
+static qint64 requestedMessageId(const QStringList &arguments)
+{
+    const auto option = arguments.indexOf(u"--show-message"_s);
+    if (option < 0 || option + 1 >= arguments.size()) {
+        return -1;
+    }
+    bool valid = false;
+    const auto id = arguments.at(option + 1).toLongLong(&valid);
+    return valid && id > 0 ? id : -1;
+}
+
+static void showMessage(QQmlApplicationEngine &engine, qint64 itemId)
+{
+    if (itemId <= 0) {
+        return;
+    }
+    for (auto *object : engine.rootObjects()) {
+        if (auto *window = qobject_cast<QQuickWindow *>(object)) {
+            QMetaObject::invokeMethod(window, "showMessage", Q_ARG(double, static_cast<double>(itemId)));
+            raiseWindow(window);
+            return;
+        }
+    }
 }
 
 int main(int argc, char *argv[])
@@ -69,12 +95,12 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
+    parser.addOption(QCommandLineOption(u"show-message"_s, i18n("Open an Akonadi message by ID."), u"id"_s));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
     KDBusService service(KDBusService::Unique);
 
-    const auto options = parser.optionNames();
     const auto args = parser.positionalArguments();
     QQmlApplicationEngine engine;
 
@@ -99,19 +125,22 @@ int main(int argc, char *argv[])
     } else {
         engine.loadFromModule("org.kde.merkuro.mail", "Main");
 
-        QObject::connect(&service,
-                         &KDBusService::activateRequested,
-                         &engine,
-                         [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
-                             const auto rootObjects = engine.rootObjects();
-                             for (auto obj : rootObjects) {
-                                 auto view = qobject_cast<QQuickWindow *>(obj);
-                                 if (view) {
-                                     raiseWindow(view);
-                                     return;
-                                 }
-                             }
-                         });
+        showMessage(engine, requestedMessageId(app.arguments()));
+
+        QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
+            if (requestedMessageId(arguments) > 0) {
+                showMessage(engine, requestedMessageId(arguments));
+                return;
+            }
+            const auto rootObjects = engine.rootObjects();
+            for (auto obj : rootObjects) {
+                auto view = qobject_cast<QQuickWindow *>(obj);
+                if (view) {
+                    raiseWindow(view);
+                    return;
+                }
+            }
+        });
     }
 
     if (engine.rootObjects().isEmpty()) {

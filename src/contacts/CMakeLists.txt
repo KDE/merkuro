@@ -22,9 +22,11 @@ target_link_libraries(merkuro_contact PUBLIC
     KPim6::AkonadiWidgets
     KPim6::AkonadiContactCore
     KPim6::AkonadiCalendar
+    KPim6::AkonadiMime
     MerkuroComponents
     MerkuroContactImageProvider
     KF6::I18nQml
+    KF6::KIOGui
     Gpgmepp
     QGpgmeQt6
     KPim6::Libkleo
@@ -82,6 +84,8 @@ target_sources(merkuro_contact PRIVATE
     contactcollectionmodel.h
     contactlistproxymodel.cpp
     contactlistproxymodel.h
+    contactactivitymodel.cpp
+    contactactivitymodel.h
     birthdaycalendar.cpp
     birthdaycalendar.h
     contacteditorbackend.h
@@ -140,6 +144,7 @@ ecm_target_qml_sources(merkuro_contact SOURCES
 ecm_target_qml_sources(merkuro_contact
     PRIVATE PATH private SOURCES
     qml/private/ContactPage.qml
+    qml/private/ContactActivityDelegate.qml
     ${contact_purpose_qml}
     qml/private/ContactGroupPage.qml
     qml/private/ContactsPage.qml

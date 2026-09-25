@@ -22,6 +22,7 @@ Kirigami.ScrollablePage {
 
     property var collection
     property alias searchString: searchModel.searchString
+    property alias viewerMailActions: mailActions
     property bool threadingModelRefreshPending: true
 
     title: searchString.length > 0 ? KI18n.i18nc("@title", "Search: %1", searchString) : mailModel.folderName

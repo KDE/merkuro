@@ -80,12 +80,14 @@ void MailActions::setItem(const Akonadi::Item &item)
     }
     m_item = item;
     Q_EMIT itemChanged();
+    setActionState();
 }
 
 void MailActions::unsetItem()
 {
     m_item = {};
     Q_EMIT itemChanged();
+    setActionState();
 }
 
 MailApplication *MailActions::mailApplication() const
