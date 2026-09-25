@@ -20,6 +20,8 @@ FormCard.FormCard {
     property alias phoneText: toAddPhone.text
     property alias newPhoneTypeComboText: newPhoneTypeCombo.currentValue
 
+    Component.onCompleted: autoSeparators = true
+
     Repeater {
         id: phoneRepeater
         model: root.contactEditor.contact.phoneModel

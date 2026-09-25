@@ -24,6 +24,8 @@ FormCard.FormCard {
         id: _configuration
     }
 
+    Component.onCompleted: autoSeparators = true
+
     FormCard.FormCardDialog {
         id: renameDialog
 
@@ -95,11 +97,6 @@ FormCard.FormCard {
                 }
             }
         }
-    }
-
-    FormCard.FormDelegateSeparator {
-        below: addAccountDelegate
-        visible: transportsRepeater.count > 0
     }
 
     FormCard.FormButtonDelegate {

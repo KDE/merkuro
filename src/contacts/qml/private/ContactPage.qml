@@ -56,7 +56,7 @@ FormCard.FormCardPage {
         Kirigami.Action {
             icon.name: "document-export"
             text: KI18n.i18nc("@action:inmenu", "Export Contact…")
-	    displayHint: Kirigami.DisplayHint.AlwaysHide
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: exportFileDialog.open()
         },
         ShareAction {
@@ -245,6 +245,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: phoneRepeater.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: phoneRepeater
@@ -278,6 +279,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: addressesRepeater.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: addressesRepeater
@@ -312,6 +314,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: imppRepeater.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: imppRepeater
@@ -416,6 +419,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: emailRepeater.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: emailRepeater
@@ -458,6 +462,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: recentMessages.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             model: recentMessages
@@ -482,6 +487,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: recentEvents.count > 0
+        Component.onCompleted: autoSeparators = true
 
         Repeater {
             model: recentEvents
@@ -498,6 +504,8 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         visible: certificateRepeater.count > 0
+        Component.onCompleted: autoSeparators = true
+
         Repeater {
             id: certificateRepeater
 

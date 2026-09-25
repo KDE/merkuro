@@ -17,6 +17,8 @@ FormCard.FormCard {
     property alias toAddEmailText: toAddEmail.text
     property alias newEmailTypeCurrentValue: newEmailType.currentValue
 
+    Component.onCompleted: autoSeparators = true
+
     Repeater {
         id: emailRepeater
         model: root.contactEditor.contact.emailModel

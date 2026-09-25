@@ -15,6 +15,8 @@ FormCard.FormCard {
     required property ContactEditor contactEditor
     signal addressRequested(int row)
 
+    Component.onCompleted: autoSeparators = true
+
     Repeater {
         model: root.contactEditor?.contact.addressesModel
 

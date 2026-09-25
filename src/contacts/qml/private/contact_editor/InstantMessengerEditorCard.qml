@@ -15,6 +15,8 @@ FormCard.FormCard {
 
     required property ContactEditor contactEditor
 
+    Component.onCompleted: autoSeparators = true
+
     Repeater {
         model: root.contactEditor.contact.imppModel
 

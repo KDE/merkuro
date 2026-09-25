@@ -18,6 +18,8 @@ FormCard.FormCard {
 
     property alias available: accountsModel.onlineAccountsAvailable
 
+    Component.onCompleted: autoSeparators = true
+
     AccountsModel {
         id: accountsModel
 
@@ -46,11 +48,6 @@ FormCard.FormCard {
 
             onClicked: accountsModel.configure(Window.window, path)
         }
-    }
-
-    FormCard.FormDelegateSeparator {
-        below: addAccountDelegate
-        visible: accountsRepeater.count > 0
     }
 
     FormCard.FormButtonDelegate {

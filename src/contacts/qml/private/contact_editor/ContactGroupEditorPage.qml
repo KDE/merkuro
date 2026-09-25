@@ -99,6 +99,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        Component.onCompleted: autoSeparators = true
+
         Repeater {
             id: repeater
             model: contactGroupEditor.groupModel

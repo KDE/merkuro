@@ -872,6 +872,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                Component.onCompleted: autoSeparators = true
+
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no attendees")
                     visible: attendeesRepeater.count === 0
@@ -1005,6 +1007,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                Component.onCompleted: autoSeparators = true
+
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no reminders")
                     visible: remindersRepeater.count === 0
@@ -1105,6 +1109,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                Component.onCompleted: autoSeparators = true
+
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no attachments")
                     visible: attachmentsRepeater.count === 0
