@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigamiaddons.settings as KirigamiSettings
 import org.kde.ki18n

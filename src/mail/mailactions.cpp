@@ -95,7 +95,7 @@ MailApplication *MailActions::mailApplication() const
     return m_mailApplication;
 }
 
-Akonadi::Item::List MailActions::selectionToItems() const
+QList<Akonadi::Item> MailActions::selectionToItems() const
 {
     if (m_item.isValid()) {
         return {m_item};
@@ -103,7 +103,7 @@ Akonadi::Item::List MailActions::selectionToItems() const
 
     auto indexes = m_selectionModel->selectedIndexes();
     indexes << m_selectionModel->currentIndex();
-    Akonadi::Item::List items;
+    QList<Akonadi::Item> items;
     for (const auto &index : std::as_const(indexes)) {
         if (!index.isValid()) {
             continue;
@@ -324,7 +324,7 @@ void MailActions::slotDelete()
     }
 }
 
-void MailActions::moveTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination)
+void MailActions::moveTo(const QList<Akonadi::Item> &items, const Akonadi::Collection &destination)
 {
     if (!(destination.rights() & Akonadi::Collection::CanCreateItem)) {
         qCWarning(MERKURO_MAIL_LOG) << "Unable to move items to unwritable location" << destination;
@@ -430,7 +430,7 @@ void MailActions::forward(const Akonadi::Item &item)
     });
 }
 
-void MailActions::copyTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination)
+void MailActions::copyTo(const QList<Akonadi::Item> &items, const Akonadi::Collection &destination)
 {
     if (!(destination.rights() & Akonadi::Collection::CanCreateItem)) {
         qCWarning(MERKURO_MAIL_LOG) << "Unable to copy items to unwritable location" << destination;

@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2024 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.mail as Mail
 import org.kde.ki18n
 
@@ -14,7 +14,8 @@ RowLayout {
     id: root
 
     readonly property alias working: progressModel.working
-    readonly property bool popupOpen: popupLoader.active && popupLoader.item.visible
+    readonly property QQC2.Popup progressPopup: popupLoader.item as QQC2.Popup
+    readonly property bool popupOpen: popupLoader.active && root.progressPopup.visible
     
     property int popupMaxHeight: 300
 
@@ -51,11 +52,11 @@ RowLayout {
         sourceComponent: QQC2.Popup {
             id: progressPopup
 
-            readonly property point rootPoint: mapFromItem(root, root.x, root.y)
+            readonly property point rootPoint: root.mapToItem(progressPopup.parent, 0, 0)
             readonly property int listViewTopMargin: Kirigami.Units.largeSpacing
             readonly property int listViewBottomMargin: Kirigami.Units.largeSpacing
             readonly property int scrollInternalHeight:
-                contentItem.contentHeight + listViewTopMargin + listViewBottomMargin
+                ((progressPopup.contentItem as QQC2.ScrollView).contentItem as ListView).contentHeight + listViewTopMargin + listViewBottomMargin
 
             x: rootPoint.x
             y: rootPoint.y - height
@@ -65,12 +66,22 @@ RowLayout {
 
             contentItem: QQC2.ScrollView {
                 ListView {
+                    id: progressList
                     topMargin: progressPopup.listViewTopMargin
                     bottomMargin: progressPopup.listViewBottomMargin
                     spacing: Kirigami.Units.largeSpacing
 
                     model: progressModel
                     delegate: ColumnLayout {
+                        id: progressDelegate
+
+                        required property string display
+                        required property string status
+                        required property real progress
+                        required property bool usesBusyIndicator
+                        required property bool canBeCancelled
+                        required property string itemId
+
                         anchors.left: parent.left
                         anchors.right: parent.right
                         anchors.leftMargin: Kirigami.Units.smallSpacing
@@ -80,13 +91,13 @@ RowLayout {
 
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: model.display
+                            text: progressDelegate.display
                             font.bold: true
                             elide: Text.ElideRight
                         }
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: model.status
+                            text: progressDelegate.status
                             wrapMode: Text.Wrap
                         }
                         RowLayout {
@@ -97,8 +108,8 @@ RowLayout {
                                 id: itemProgressBar
                                 from: 0
                                 to: 100
-                                value: model.progress
-                                indeterminate: model.usesBusyIndicator
+                                value: progressDelegate.progress
+                                indeterminate: progressDelegate.usesBusyIndicator
                             }
                             QQC2.Button {
                                 Layout.maximumHeight: itemProgressBar.implicitHeight
@@ -106,14 +117,14 @@ RowLayout {
                                 flat: true
                                 text: KI18n.i18n("Cancel")
                                 icon.name: "process-stop"
-                                visible: model.canBeCancelled
-                                onClicked: progressModel.cancelItem(model.id)
+                                visible: progressDelegate.canBeCancelled
+                                onClicked: progressModel.cancelItem(progressDelegate.itemId)
                             }
                         }
                     }
                 }
             }
         }
-        onLoaded: item.open()
+        onLoaded: root.progressPopup.open()
     }
 }

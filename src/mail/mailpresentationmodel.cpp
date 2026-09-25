@@ -65,9 +65,9 @@ void MailPresentationModel::setCollectionSelectionModel(QItemSelectionModel *col
     Q_EMIT collectionSelectionModelChanged();
 }
 
-MessageList::Core::Aggregation::Threading MailPresentationModel::threading() const
+MailPresentationModel::Threading MailPresentationModel::threading() const
 {
-    return m_messageModel->threading();
+    return static_cast<Threading>(m_messageModel->threading());
 }
 
 QVariant MailPresentationModel::threadSectionDate(const QModelIndex &sourceIndex) const
@@ -125,13 +125,13 @@ QStringList MailPresentationModel::threadSenders(const QModelIndex &sourceIndex)
     return senders;
 }
 
-void MailPresentationModel::setThreading(MessageList::Core::Aggregation::Threading threading)
+void MailPresentationModel::setThreading(Threading threading)
 {
     if (this->threading() == threading) {
         return;
     }
 
-    m_messageModel->setThreading(threading);
+    m_messageModel->setThreading(static_cast<MessageList::Core::Aggregation::Threading>(threading));
     Q_EMIT threadingChanged();
 }
 

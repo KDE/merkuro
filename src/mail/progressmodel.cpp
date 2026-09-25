@@ -123,7 +123,7 @@ QHash<int, QByteArray> ProgressModel::roleNames() const
         {CanBeCancelledRole, "canBeCancelled"_ba},
         {UsesBusyIndicatorRole, "usesBusyIndicator"_ba},
         {CryptoStatusRole, "cryptoStatus"_ba},
-        {IdRole, "id"_ba},
+        {IdRole, "itemId"_ba},
     });
     return rolenames;
 }

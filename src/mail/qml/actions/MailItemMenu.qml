@@ -1,22 +1,26 @@
 // SPDX-FileCopyrightText: 2023 Aakarsh MJ <mj.akarsh@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.akonadi as Akonadi
+import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail
 import org.kde.merkuro.components
 import org.kde.ki18n
 
 QQC2.Menu {
     id: mailActionsPopup
+    readonly property Kirigami.ApplicationWindow appWindow: mailActionsPopup.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
     z: 1000
 
     required property var collectionId
     required property string name
     required property string resourceIdentifier
     readonly property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {
-        mimetypes: Akonadi.MimeTypes.mail
+        mimetypes: [Akonadi.MimeTypes.mail]
     }
 
     QQC2.MenuItem {
@@ -40,7 +44,7 @@ QQC2.Menu {
         text: KI18n.i18nc("@action:inmenu", "Edit Folder…")
         onClicked: {
             let component = Qt.createComponent("org.kde.merkuro.components", "EditCollectionPage");
-            pageStack.pushDialogLayer(component, {
+            mailActionsPopup.appWindow.pageStack.pushDialogLayer(component, {
                 title: KI18n.i18nc("@title", "Edit Folder"),
                 collection: MailManager.getCollection(mailActionsPopup.collectionId),
             }, {});

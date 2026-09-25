@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.components
@@ -21,14 +23,14 @@ BaseApplication {
 
     Component {
         id: conversationViewerComponent
-        Mail.ConversationViewer {}
+        ConversationViewer {}
     }
 
     merkuroApplication: Mail.MailApplication
 
     menubarComponent: MenuBar {}
 
-    pageStack.initialPage: Mail.FolderView {
+    pageStack.initialPage: FolderView {
         id: folderView
         searchString: root.searchString
     }
@@ -47,12 +49,12 @@ BaseApplication {
        id: globalMenuLoader
        active: !Kirigami.Settings.isMobile
        sourceComponent: GlobalMenuBar {
-           application: root.application
+           application: root.merkuroApplication
         }
     }
 
     Connections {
-        target: Mail.MailApplication
+        target: root.merkuroApplication
 
         function onOpenSettings(): void {
             settings.open();

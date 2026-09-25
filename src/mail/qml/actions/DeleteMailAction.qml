@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2024 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
@@ -53,7 +55,7 @@ Controls.Action {
     }
 
     onTriggered: {
-        const dialog = deleteMailDialogComponent.createObject(applicationWindow());
+        const dialog = deleteMailDialogComponent.createObject(Controls.ApplicationWindow.window) as Components.MessageDialog;
         dialog.openDialog();
     }
 }

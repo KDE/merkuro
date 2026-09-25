@@ -1,14 +1,17 @@
 // SPDX-FileCopyrightText: 2023 Aakarsh MJ <mj.akarsh@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.mail
 import org.kde.ki18n
 
 Kirigami.Action {
+    id: root
+
     property var index
     property string name
 
@@ -25,7 +28,7 @@ Kirigami.Action {
                     text: KI18n.i18n("Delete Folder")
                     icon.name: "dialog-ok"
                     onTriggered: {
-                        MailManager.deleteCollection(index);
+                        MailManager.deleteCollection(root.index);
                         deleteFolderDialog.close();
                     }
                 },
@@ -37,7 +40,7 @@ Kirigami.Action {
             ]
 
             QQC2.TextArea {
-                text: KI18n.i18n("Are you sure you want to delete the folder %1, discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", name.toUpperCase())
+                text: KI18n.i18n("Are you sure you want to delete the folder %1, discarding its contents? <br /> <b>Beware</b> that discarded messages are not saved into your Trash folder and are permanently deleted.", root.name.toUpperCase())
                 textFormat: TextEdit.RichText
                 background: null
                 readOnly: true
@@ -47,7 +50,7 @@ Kirigami.Action {
     }
 
     onTriggered: {
-        const dialog = deleteFolderDialogComponent.createObject(applicationWindow());
+        const dialog = deleteFolderDialogComponent.createObject(QQC2.ApplicationWindow.window) as Kirigami.PromptDialog;
         dialog.open();
     }
 }

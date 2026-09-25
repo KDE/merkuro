@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Aakarsh MJ <mj.akarsh@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -8,6 +10,8 @@ import org.kde.merkuro.mail
 import org.kde.ki18n
 
 Kirigami.Action {
+    id: root
+
     required property var index
 
     readonly property Component newFolderDialogComponent: Component {
@@ -23,7 +27,7 @@ Kirigami.Action {
                     text: KI18n.i18n("Create Folder")
                     icon.name: "dialog-ok"
                     onTriggered: {
-                        MailManager.addCollection(index, newFolderName.text);
+                        MailManager.addCollection(root.index, newFolderName.text);
                         newFolderDialog.close();
                     }
                 },
@@ -42,7 +46,7 @@ Kirigami.Action {
     }
 
     onTriggered: {
-        const dialog = newFolderDialogComponent.createObject(applicationWindow());
+        const dialog = newFolderDialogComponent.createObject(QQC2.ApplicationWindow.window) as Kirigami.PromptDialog;
         dialog.open();
     }
 }

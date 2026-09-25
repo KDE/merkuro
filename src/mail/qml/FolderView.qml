@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtCore
 import QtQuick
 import QtQuick.Layouts
@@ -24,6 +26,7 @@ Kirigami.ScrollablePage {
     property alias searchString: searchModel.searchString
     property alias viewerMailActions: mailActions
     property bool threadingModelRefreshPending: true
+    readonly property Kirigami.ApplicationWindow appWindow: root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
 
     title: searchString.length > 0 ? KI18n.i18nc("@title", "Search: %1", searchString) : mailModel.folderName
 
@@ -32,7 +35,7 @@ Kirigami.ScrollablePage {
 
         collectionSelectionModel: MailManager.collectionSelectionModel
         entryTreeModel: MailManager.entryTreeModel
-        threading: Config.threadedMessageView ? MessageListAggregation.PerfectReferencesAndSubject : MessageListAggregation.NoThreading
+        threading: Config.threadedMessageView ? MailPresentationModel.PerfectReferencesAndSubject : MailPresentationModel.NoThreading
         onFolderNameChanged: {
             mails.currentIndex = -1
         }
@@ -78,7 +81,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: 'mail-send'
             text: KI18n.i18nc("@action:menu", "Create")
-            onTriggered: applicationWindow().pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
+            onTriggered: root.appWindow.pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"))
         },
         Kirigami.Action {
             fromQAction: MailApplication.action("check_mail")
@@ -178,7 +181,7 @@ Kirigami.ScrollablePage {
                     nameFilters: [KI18n.i18n("Email messages (*.mbox)")],
                     currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation),
                     fileMode: FileDialog.SaveFile,
-                });
+                }) as FileDialog;
 
                 dialog.accepted.connect(() => {
                     if (dialog.selectedFile) {
@@ -189,13 +192,13 @@ Kirigami.ScrollablePage {
             }
 
             onMailRescheduleRequested: (item) => {
-                const dialog = rescheduleDialog.createObject(root, { item });
+                const dialog = rescheduleDialog.createObject(root, { item }) as QQC2.Dialog;
                 dialog.open();
             }
 
             onMoveToRequested: items => {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
-                const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                const page = root.appWindow.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',
                     title: KI18n.i18nc("@title:dialog", "Move Selection To:"),
                     mimeTypeFilter: [Akonadi.MimeTypes.mail],
@@ -212,7 +215,7 @@ Kirigami.ScrollablePage {
 
             onCopyToRequested: items => {
                 const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
-                const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+                const page = root.appWindow.pageStack.pushDialogLayer(component, {
                     configGroup: 'mail-collection-chooser-move',
                     title: KI18n.i18nc("@title:dialog", "Copy Selection To:"),
                     mimeTypeFilter: [Akonadi.MimeTypes.mail],
@@ -227,7 +230,7 @@ Kirigami.ScrollablePage {
             }
 
             onComposerRequested: (to, subject, body) => {
-                root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"), {
+                root.appWindow.pageStack.pushDialogLayer(Qt.resolvedUrl("./MailComposer.qml"), {
                     initialTo: to,
                     initialSubject: subject,
                     initialBody: body,
@@ -324,7 +327,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             id: mailboxSelected
             anchors.centerIn: parent
-            visible: MailManager.selectedFolderName === ""
+            visible: mailModel.folderName === ""
             text: KI18n.i18n("No mailbox selected")
             explanation: KI18n.i18n("Select a mailbox from the sidebar.")
             icon.name: "mail-unread"
@@ -340,7 +343,7 @@ Kirigami.ScrollablePage {
         section {
             delegate: Kirigami.ListSectionHeader {
                 required property string section
-                label: section
+                text: section
             }
             property: "threadSectionDate"
         }
@@ -348,34 +351,36 @@ Kirigami.ScrollablePage {
         onCurrentItemChanged: if (currentIndex !== -1 && currentItem) {
             mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(currentIndex, 0), ItemSelectionModel.Current);
 
-            const pageStack = (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack;
+            const pageStack = root.appWindow.pageStack;
+            const currentItem = mails.currentItem.children[0] as MailDelegate;
 
             if (pageStack.depth === 2) {
-                pageStack.lastItem.emptyItem = currentItem.item;
-                pageStack.lastItem.mailActions = mailActions,
-                pageStack.lastItem.props = {
-                    from: currentItem.from,
-                    to: currentItem.to,
-                    sender: currentItem.sender,
-                    item: currentItem.item,
-                    title: currentItem.title,
+                const viewer = pageStack.lastItem as ConversationViewer;
+                viewer.emptyItem = currentItem["item"];
+                viewer.mailActions = mailActions;
+                viewer.props = {
+                    from: currentItem["from"],
+                    to: currentItem["to"],
+                    sender: currentItem["sender"],
+                    item: currentItem["item"],
+                    title: currentItem["title"],
                 };
             } else {
                 pageStack.push(Qt.resolvedUrl('ConversationViewer.qml'), {
-                    emptyItem: currentItem.item,
+                    emptyItem: currentItem["item"],
                     mailActions: mailActions,
                     props: {
-                        from: currentItem.from,
-                        to: currentItem.to,
-                        sender: currentItem.sender,
-                        item: currentItem.item,
-                        title: currentItem.title,
+                        from: currentItem["from"],
+                        to: currentItem["to"],
+                        sender: currentItem["sender"],
+                        item: currentItem["item"],
+                        title: currentItem["title"],
                     },
                 });
                 mails.forceActiveFocus();
             }
 
-            if (!currentItem.status.isRead) {
+            if (!currentItem["status"].isRead) {
                 mailActions.setReadState(true);
             }
         }
@@ -443,7 +448,7 @@ Kirigami.ScrollablePage {
                     mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
                     mailActions.setActionState();
 
-                    const menu = contextMenu.createObject(root);
+                    const menu = contextMenu.createObject(root) as QQC2.Menu;
                     root.collection = mailDelegate.item;
                     menu.popup();
 

@@ -1,15 +1,14 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import Qt.labs.qmlmodels
-import org.kde.kitemmodels
 import org.kde.akonadi as Akonadi
 import org.kde.merkuro.mail
-import org.kde.merkuro.components
 
 import './mailboxselector'
 
@@ -18,11 +17,12 @@ Kirigami.OverlayDrawer {
 
     property Akonadi.AgentConfiguration agentConfiguration: Akonadi.AgentConfiguration {}
     required property Kirigami.PageRow pageStack
+    readonly property Kirigami.ApplicationWindow appWindow: root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
 
     signal search(string searchString)
 
-    edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+    edge: Application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    modal: !enabled || Kirigami.Settings.isMobile || (root.appWindow.width < Kirigami.Units.gridUnit * 50 && !root.collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
     onModalChanged: drawerOpen = !modal;
 
     z: modal ? Math.round(position * 10000000) : 100
@@ -104,9 +104,9 @@ Kirigami.OverlayDrawer {
             function getPage(name: string): Kirigami.Page {
                 switch (name) {
                 case "FolderView":
-                    return pagePool.loadPage(Qt.resolvedUrl("./FolderView.qml"))
+                    return pagePool.loadPage(Qt.resolvedUrl("./FolderView.qml")) as Kirigami.Page
                 case "MailBoxListPage":
-                    return pagePool.loadPage(Qt.resolvedUrl("./mailboxselector/MailBoxListPage.qml"))
+                    return pagePool.loadPage(Qt.resolvedUrl("./mailboxselector/MailBoxListPage.qml")) as Kirigami.Page
                 }
             }
         }

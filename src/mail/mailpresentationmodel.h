@@ -24,9 +24,15 @@ class MailPresentationModel : public QIdentityProxyModel, public AbstractMailMod
     Q_PROPERTY(Akonadi::EntityTreeModel *entryTreeModel READ entryTreeModel WRITE setEntityTreeModel NOTIFY entityTreeModelChanged)
     Q_PROPERTY(
         QItemSelectionModel *collectionSelectionModel READ collectionSelectionModel WRITE setCollectionSelectionModel NOTIFY collectionSelectionModelChanged)
-    Q_PROPERTY(MessageList::Core::Aggregation::Threading threading READ threading WRITE setThreading NOTIFY threadingChanged)
+    Q_PROPERTY(Threading threading READ threading WRITE setThreading NOTIFY threadingChanged)
 
 public:
+    enum Threading {
+        NoThreading = MessageList::Core::Aggregation::NoThreading,
+        PerfectReferencesAndSubject = MessageList::Core::Aggregation::PerfectReferencesAndSubject,
+    };
+    Q_ENUM(Threading)
+
     explicit MailPresentationModel(QObject *parent = nullptr);
 
     [[nodiscard]] Akonadi::EntityTreeModel *entryTreeModel() const;
@@ -35,8 +41,8 @@ public:
     [[nodiscard]] QItemSelectionModel *collectionSelectionModel() const;
     void setCollectionSelectionModel(QItemSelectionModel *collectionSelectionModel);
 
-    [[nodiscard]] MessageList::Core::Aggregation::Threading threading() const;
-    void setThreading(MessageList::Core::Aggregation::Threading threading);
+    [[nodiscard]] Threading threading() const;
+    void setThreading(Threading threading);
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;

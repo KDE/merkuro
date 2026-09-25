@@ -42,13 +42,13 @@ public:
     Q_INVOKABLE void setReadState(bool isRead);
     Q_INVOKABLE void setImportantState(bool isImportant);
     Q_INVOKABLE void setActionState();
-    Q_INVOKABLE void moveTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
-    Q_INVOKABLE void copyTo(const Akonadi::Item::List &items, const Akonadi::Collection &destination);
+    Q_INVOKABLE void moveTo(const QList<Akonadi::Item> &items, const Akonadi::Collection &destination);
+    Q_INVOKABLE void copyTo(const QList<Akonadi::Item> &items, const Akonadi::Collection &destination);
     Q_INVOKABLE void replyToSender(const Akonadi::Item &item);
     Q_INVOKABLE void replyToAll(const Akonadi::Item &item);
     Q_INVOKABLE void forward(const Akonadi::Item &item);
 
-    Q_INVOKABLE Akonadi::Item::List selectionToItems() const;
+    Q_INVOKABLE QList<Akonadi::Item> selectionToItems() const;
 
 Q_SIGNALS:
     void selectionModelChanged();
@@ -57,8 +57,8 @@ Q_SIGNALS:
 
     void mailSaveAs(const Akonadi::Item &item);
     void mailRescheduleRequested(const Akonadi::Item &item);
-    void moveToRequested(const Akonadi::Item::List &items);
-    void copyToRequested(const Akonadi::Item::List &items);
+    void moveToRequested(const QList<Akonadi::Item> &items);
+    void copyToRequested(const QList<Akonadi::Item> &items);
     void composerRequested(const QString &to, const QString &subject, const QString &body);
 
 private:

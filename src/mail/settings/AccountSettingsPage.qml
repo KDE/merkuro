@@ -1,10 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Claudio Cambra <claudio.cambra@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick
-import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
+pragma ComponentBehavior: Bound
+
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.akonadi as Akonadi
 import org.kde.akonadi.mime as AkonadiMime
@@ -21,7 +19,10 @@ FormCard.FormCardPage {
     }
 
     KIdentityManagement.IdentityConfigurationForm {
+        // The dependency's QML type metadata omits this registered C++ property type.
+        // qmllint disable unresolved-type
         cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
+        // qmllint enable unresolved-type
     }
 
     FormCard.FormHeader {
@@ -31,7 +32,10 @@ FormCard.FormCardPage {
     Akonadi.AgentConfigurationForm {
         addPageTitle: KI18n.i18n("Mail Account Configuration")
         mimetypes: Akonadi.MimeTypes.mail
+        // The dependency exposes SpecialMailCollections as a derived runtime type.
+        // qmllint disable incompatible-type
         specialCollections: AkonadiMime.SpecialMailCollections
+        // qmllint enable incompatible-type
     }
 
     FormCard.FormHeader {

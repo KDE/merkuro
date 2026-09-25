@@ -1,10 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carson Black <uhhadd@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import Qt.labs.platform as Labs
 
 import QtQuick
-import QtQuick.Controls as QQC2
 import QtQuick.Window
 import org.kde.merkuro.components
 import org.kde.kirigamiaddons.actions.labs as StatefulAppLabs

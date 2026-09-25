@@ -2,16 +2,19 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Dialogs
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Controls as QQC2
-import org.kde.kitemmodels as KItemModels
 import org.kde.merkuro.mail
-import org.kde.akonadi as Akonadi
-import org.kde.kidentitymanagement as KIdentityManagement
+// The identity model is registered at runtime but omitted from the dependency's QML type metadata.
+// qmllint disable unused-imports
+import org.kde.kidentitymanagement 1.0 as KIdentityManagement
+// qmllint enable unused-imports
 import org.kde.ki18n
 
 Kirigami.ScrollablePage {
@@ -25,11 +28,12 @@ Kirigami.ScrollablePage {
     property string initialTo: ""
     property string initialSubject: ""
     property string initialBody: ""
+    readonly property Kirigami.ApplicationWindow appWindow: mailComposition.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
 
     MailClient {
         id: mailClient
-        onFinished: (result, errorString) => {
-            mailComposition.closeDialog();
+        onFinished: {
+            mailComposition.Kirigami.PageStack.closeDialog();
         }
     }
 
@@ -55,7 +59,9 @@ Kirigami.ScrollablePage {
 
         QQC2.ComboBox {
             id: identity
+            // qmllint disable import
             model: KIdentityManagement.IdentityModel {}
+            // qmllint enable import
             textRole: "display"
             valueRole: "uoid"
             onActivated: from.text = model.email(currentValue)
@@ -69,13 +75,14 @@ Kirigami.ScrollablePage {
             model: mailClient.headerModel
             QQC2.ComboBox {
                 id: control
-                Layout.row: index + 2
+                required property int index
+                Layout.row: control.index + 2
                 Layout.column: 0
                 Layout.leftMargin: Kirigami.Units.largeSpacing
                 textRole: "text"
                 valueRole: "value"
                 Component.onCompleted: currentIndex = Math.min(mailClient.headerModel.rowCount() - 1, 1);
-                onCurrentValueChanged: mailClient.headerModel.setType(index, currentValue);
+                onCurrentValueChanged: mailClient.headerModel.setType(control.index, currentValue);
                 model: [
                     { value: MailHeaderModel.To, text: KI18n.i18n("To:") },
                     { value: MailHeaderModel.CC, text: KI18n.i18n("CC:") },
@@ -88,15 +95,16 @@ Kirigami.ScrollablePage {
             model: mailClient.headerModel
             QQC2.TextField {
                 id: controlsText
-                Layout.row: index + 2
+                required property int index
+                Layout.row: controlsText.index + 2
                 Layout.column: 1
                 Layout.fillWidth: true
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 wrapMode: Text.Wrap
                 KeyNavigation.priority: KeyNavigation.BeforeItem
-                onTextChanged: mailClient.headerModel.setValue(index, text);
+                onTextChanged: mailClient.headerModel.setValue(controlsText.index, text);
                 Component.onCompleted: {
-                    if (index === 0 && mailComposition.initialTo.length > 0) {
+                    if (controlsText.index === 0 && mailComposition.initialTo.length > 0) {
                         text = mailComposition.initialTo;
                     }
                 }
@@ -171,7 +179,7 @@ Kirigami.ScrollablePage {
                         dialog.accepted.connect(() => {
                             mailClient.attachmentModel.addAttachment(dialog.selectedFile)
                         });
-                        dialog.open();
+                        (dialog as QQC2.Dialog).open();
                     }
                 }
                 Item {
@@ -191,13 +199,13 @@ Kirigami.ScrollablePage {
                     text: KI18n.i18nc("@action:button", "Send Later")
                     icon.name: 'mail-queue-symbolic'
                     onClicked: {
-                        let dialog = sendLaterDialogComponent.createObject(mailComposition, {
+                        let dialog = mailComposition.sendLaterDialogComponent.createObject(mailComposition, {
                             mailClient: mailClient,
                             identity: identity.currentValue,
                             subject: subjectText.text,
                             mailContent: mailContent.text
                         });
-                        dialog.open();
+                        (dialog as QQC2.Dialog).open();
                     }
                 }
             }

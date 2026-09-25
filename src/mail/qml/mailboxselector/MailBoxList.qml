@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -11,10 +13,8 @@ import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 import org.kde.akonadi as Akonadi
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.treeview as Tree
 import org.kde.kitemmodels
 import org.kde.merkuro.mail
-import org.kde.merkuro.components
 import '../actions'
 
 ListView {
@@ -33,16 +33,17 @@ ListView {
         configGroup: "mail-sidebar"
         onCurrentIndexChanged: {
             mailList.currentIndex = currentIndex
-            mailList.currentItem.trigger();
+            mailList.invokeTrigger(mailList.currentItem);
         }
     }
 
     onCurrentIndexChanged: stateSaver.currentIndex = currentIndex
     onModelChanged: currentIndex = -1
 
-    required property var collectionId
-    required property string name
-    required property string resourceIdentifier
+    property var collectionId: -1
+    property string name
+    property string resourceIdentifier
+    readonly property Kirigami.ApplicationWindow appWindow: mailList.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
     property MailItemMenu mailActionsPopup: MailItemMenu {
         collectionId: mailList.collectionId
         name: mailList.name
@@ -50,6 +51,14 @@ ListView {
     }
 
     signal folderChosen
+
+    function invokeTrigger(item: var): void {
+        item.trigger();
+    }
+
+    function moveItemToCollection(source: var, collection: var): void {
+        source.moveToCollection(collection);
+    }
 
     delegate: DelegateChooser {
         role: 'kDescendantExpandable'
@@ -61,10 +70,11 @@ ListView {
                 id: categoryHeader
 
                 required property string displayName
+                required property var collection
                 required property var model
 
                 property bool chosen: false
-                property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && applicationWindow().wideScreen))
+                property bool showSelected: (categoryHeader.pressed === true || (categoryHeader.highlighted === true && mailList.appWindow.wideScreen))
 
                 function trigger(): void {
                     model.checkState = model.checkState === 0 ? 2 : 0;
@@ -77,7 +87,7 @@ ListView {
                 }
 
                 text: displayName
-                dropAreaHovered: dropArea.containsDrag
+                dropAreaHovered: categoryDropArea.containsDrag
 
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing
@@ -117,21 +127,21 @@ ListView {
                         if (mouse.button === Qt.LeftButton) {
                             categoryHeader.trigger();
                         } else if (mouse.button === Qt.RightButton) {
-                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(index, 0));
+                            mailList.collectionId = foldersModel.mapToSource(foldersModel.index(categoryHeader.model.index, 0));
                             mailList.name = categoryHeader.displayName;
                             mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
 
-                            mailActionsPopup.popup()
+                            mailList.mailActionsPopup.popup()
                         }
                     }
                 }
 
                 DropArea {
-                    id: dropArea
+                    id: categoryDropArea
 
                     anchors.fill: parent
                     onDropped: (drop) => {
-                        drop.source.moveToCollection(controlRoot.collection);
+                        mailList.moveItemToCollection(drop.source, categoryHeader.collection);
                     }
                 }
             }
@@ -149,10 +159,10 @@ ListView {
                 required property int unreadCount
 
                 property bool chosen: false
-                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && applicationWindow().wideScreen))
+                property bool showSelected: (controlRoot.pressed === true || (controlRoot.highlighted === true && mailList.appWindow.wideScreen))
 
                 text: displayName
-                dropAreaHovered: dropArea.containsDrag
+                dropAreaHovered: folderDropArea.containsDrag
 
                 function trigger(): void {
                     model.checkState = model.checkState === 0 ? 2 : 0;
@@ -180,7 +190,7 @@ ListView {
                 contentItem: RowLayout {
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
-                        source: model.decoration
+                        source: controlRoot.model.decoration
                         Layout.preferredHeight: Kirigami.Units.iconSizes.small
                         Layout.preferredWidth: Layout.preferredHeight
                     }
@@ -228,17 +238,17 @@ ListView {
                             mailList.name = controlRoot.displayName;
                             mailList.resourceIdentifier = MailManager.resourceIdentifier(mailList.collectionId);
 
-                            mailActionsPopup.popup();
+                            mailList.mailActionsPopup.popup();
                         }
                     }
                 }
 
                 DropArea {
-                    id: dropArea
+                    id: folderDropArea
 
                     anchors.fill: parent
                     onDropped: (drop) => {
-                        drop.source.moveToCollection(controlRoot.collection);
+                        mailList.moveItemToCollection(drop.source, controlRoot.collection);
                     }
                 }
             }

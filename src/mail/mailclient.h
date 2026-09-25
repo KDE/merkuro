@@ -104,7 +104,7 @@ private:
     QDateTime m_sendAfter;
 
 Q_SIGNALS:
-    void finished(Akonadi::MailClient::Result result, const QString &errorString);
+    void finished(int result, const QString &errorString);
 };
 }
 

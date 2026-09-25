@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <espidev@gmail.com>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -11,6 +13,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.pim.mimetreeparser as MimeTreeParser
 import org.kde.ki18n
 
+// External KMime shared-pointer metadata is not available to qmllint.
+// qmllint disable unresolved-type
 MimeTreeParser.MailViewer {
     id: root
 
@@ -53,9 +57,9 @@ MimeTreeParser.MailViewer {
             fromQAction: MailApplication.action('mail_trash')
             enabled: root.hasLoadedItem && MailApplication.action('mail_trash').enabled
             onTriggered: {
-                mailActions.item = root.actionItem
+                root.mailActions.item = root.actionItem
                 MailApplication.action("mail_trash").trigger();
-                if (root.itemId <= 0) mailActions.item = undefined;
+                if (root.itemId <= 0) root.mailActions.item = undefined;
             }
         },
         Kirigami.Action {
@@ -63,9 +67,9 @@ MimeTreeParser.MailViewer {
             icon.color: Kirigami.Theme.negativeTextColor
             enabled: root.hasLoadedItem && MailApplication.action('mail_delete').enabled
             onTriggered: {
-                mailActions.item = root.actionItem
+                root.mailActions.item = root.actionItem
                 MailApplication.action("mail_delete").trigger();
-                if (root.itemId <= 0) mailActions.item = undefined;
+                if (root.itemId <= 0) root.mailActions.item = undefined;
             }
         }
     ]
@@ -205,3 +209,4 @@ MimeTreeParser.MailViewer {
         when: root.itemId > 0 || root.emptyItem !== undefined
     }
 }
+// qmllint enable unresolved-type

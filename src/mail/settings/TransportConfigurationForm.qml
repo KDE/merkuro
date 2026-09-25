@@ -10,8 +10,6 @@ import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.components as Components
 import org.kde.merkuro.mail
 import org.kde.ki18n
 
@@ -24,14 +22,14 @@ FormCard.FormCard {
         id: _configuration
     }
 
-    Component.onCompleted: autoSeparators = true
+    Component.onCompleted: root.autoSeparators = true
 
     FormCard.FormCardDialog {
         id: renameDialog
 
         property var transportDelegate
 
-        title: KI18n.i18nc("@title:dialog", "Rename %1", transportDelegate.transportName)
+        title: KI18n.i18nc("@title:dialog", "Rename %1", renameDialog.transportDelegate.transportName)
         standardButtons:  QQC2.Dialog.Cancel | QQC2.Dialog.Ok
         parent: root.QQC2.Overlay.overlay
 
@@ -41,13 +39,13 @@ FormCard.FormCard {
                 readonly property bool isValid: text.trim().length > 0
 
                 label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
-                placeholderText: transportDelegate.transportName
+                placeholderText: renameDialog.transportDelegate.transportName
             }
         }
 
         onAccepted: {
-            root._configuration.rename(transportDelegate.index, nameDelegate.text);
-            closeDialog();
+            root._configuration.rename(renameDialog.transportDelegate.index, nameDelegate.text);
+            renameDialog.Kirigami.PageStack.closeDialog();
         }
     }
 
@@ -120,10 +118,10 @@ FormCard.FormCard {
                 contentItem: QQC2.DialogButtonBox {
                     padding: 0
                     standardButtons: QQC2.DialogButtonBox.Close | QQC2.DialogButtonBox.Ok
-                    onRejected: overlay.closeDialog()
+                    onRejected: overlay.Kirigami.PageStack.closeDialog()
                     onAccepted: {
                         root._configuration.createNew(overlay.selectedTransportType, newNameDelegate.text, defaultDelegate.checked);
-                        overlay.closeDialog();
+                        overlay.Kirigami.PageStack.closeDialog();
                         overlay.destroy();
                     }
                 }

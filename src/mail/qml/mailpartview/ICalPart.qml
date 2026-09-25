@@ -2,11 +2,10 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import QtQml.Models
-import org.kde.merkuro.mail
 import org.kde.kirigami as Kirigami
 import org.kde.ki18n
 
