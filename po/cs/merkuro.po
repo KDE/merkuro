@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
-"PO-Revision-Date: 2026-09-21 15:04+0200\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"PO-Revision-Date: 2026-09-24 12:43+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -972,15 +972,15 @@ msgid "End date cannot be before start date."
 msgstr "Datum ukončení nesmí být dřívější než datum zahájení."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Save"
 msgstr "Uložit"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Add"
 msgstr "Přidat"
@@ -1291,7 +1291,7 @@ msgid "There are no attendees"
 msgstr "Nejsou zde žádní účastníci"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:90
 #: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
@@ -2558,8 +2558,13 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "Přidat účet…"
 
+#: contactimageprovider/contactimageprovider.cpp:179
+#, kde-format
+msgid "Image request has been cancelled"
+msgstr "Žádost o obrázek byla zrušena"
+
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgid "Home:"
 msgstr "Domácí stránka:"
@@ -2650,54 +2655,56 @@ msgid "Copy to…"
 msgstr "Kopírovat do…"
 
 #: contacts/contactapplication.cpp:74
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
-msgstr "Importovat kalendář…"
+msgstr "Importovat kontakty…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "Upravit kontakt…"
+msgstr "Exportovat všechny kontakty…"
 
 #: contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
-msgstr "Smazat kontakt"
+msgstr "Exportovat vybrané kontakty…"
 
-#: contacts/contacteditorbackend.cpp:119
+#: contacts/contacteditorbackend.cpp:128
 #, kde-format
 msgid "The contact could not be found."
 msgstr "Kontakt se nepodařilo najít."
 
-#: contacts/contacteditorbackend.cpp:157
+#: contacts/contacteditorbackend.cpp:166
 #, kde-format
 msgid "The contact address book could not be found."
 msgstr "Adresář kontaktů nebyl nalezen."
 
-#: contacts/contacteditorbackend.cpp:186
+#: contacts/contacteditorbackend.cpp:195
 #, kde-format
 msgid "The contact is not loaded yet."
 msgstr "Kontakt ještě nebyl načten."
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is read-only."
 msgstr "Kontakt je pouze pro čtení."
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is no longer available."
 msgstr "Tento kontakt již není dostupný."
 
-#: contacts/contacteditorbackend.cpp:212
+#: contacts/contacteditorbackend.cpp:207
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The selected address book could not be found."
+msgid "The selected address book cannot store contacts."
+msgstr "Vybraná kniha kontaktů nebyla nalezena."
+
+#: contacts/contacteditorbackend.cpp:238
 #, kde-format
 msgid "No address book selected."
 msgstr "Nebyla vybrána žádná kniha adres."
@@ -2753,46 +2760,42 @@ msgstr "E-mail"
 #, kde-format
 msgctxt "@info"
 msgid "Could not read the vCard file."
-msgstr ""
+msgstr "Nepodařilo se načíst soubor vCard."
 
 #: contacts/contactimportexport.cpp:66
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info"
 msgid "The file did not contain any contacts."
-msgstr "Tento e-mail obsahuje pozvánku"
+msgstr "Soubor neobsahoval žádné kontakty."
 
 #: contacts/contactimportexport.cpp:88
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The selected address book could not be found."
-msgstr "Adresář kontaktů nebyl nalezen."
+msgstr "Vybraná kniha kontaktů nebyla nalezena."
 
 #: contacts/contactimportexport.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "The selected address book does not allow contacts to be added."
-msgstr ""
+msgstr "Vybraná kniha kontaktů neumožňuje přidávání kontaktů."
 
 #: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
 #: contacts/contactimportexport.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Could not write the vCard file."
-msgstr ""
+msgstr "Nepodařilo se zapsat soubor vCard."
 
 #: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
 #: contacts/contactimportexport.cpp:216
-#, fuzzy, kde-format
-#| msgid "There are no recipients to e-mail"
+#, kde-format
 msgctxt "@info"
 msgid "There are no contacts to export."
-msgstr "E-mail nemá žádné příjemce"
+msgstr "Nejsou žádné kontakty k exportu."
 
 #: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The contact could not be found."
 msgstr "Kontakt se nepodařilo najít."
@@ -2801,7 +2804,14 @@ msgstr "Kontakt se nepodařilo najít."
 #, kde-format
 msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
-msgstr ""
+msgstr "Nepodařilo se připravit kontakt pro sdílení."
+
+#: contacts/contactmanager.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The selected address book could not be found."
+msgid "The selected address book cannot store this contact."
+msgstr "Vybraná kniha kontaktů nebyla nalezena."
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
@@ -2839,16 +2849,14 @@ msgstr "Hotovo"
 msgid "Select Email Address"
 msgstr "Vybrat e-mailovou adresu"
 
-#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "Placeholder when no name is set"
-#| msgid "No name"
+#: contacts/qml/ContactListItem.qml:44 contacts/qml/private/ContactPage.qml:97
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No name"
 msgstr "Beze jména"
 
 #: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
+#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "Kontakty"
@@ -2865,13 +2873,13 @@ msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "Nový kontakt"
 
-#: contacts/qml/ContactView.qml:41
+#: contacts/qml/ContactView.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "Nová skupina kontaktů"
 
-#: contacts/qml/ContactView.qml:89
+#: contacts/qml/ContactView.qml:91
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2880,87 +2888,78 @@ msgstr[0] "%1 vybraný"
 msgstr[1] "%1 vybraní"
 msgstr[2] "%1 vybraných"
 
-#: contacts/qml/ContactView.qml:129
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#: contacts/qml/ContactView.qml:131
+#, kde-format
 msgctxt "%1 is the number of imported contacts"
 msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
-msgstr[0] "%1 položek bylo úspěšně importováno."
-msgstr[1] "%1 položek bylo úspěšně importováno."
-msgstr[2] "%1 položek bylo úspěšně importováno."
+msgstr[0] "%1 kontakt byl úspěšně importován."
+msgstr[1] "%1 kontakty byly úspěšně importovány."
+msgstr[2] "%1 kontaktů bylo úspěšně importováno."
 
-#: contacts/qml/ContactView.qml:131
+#: contacts/qml/ContactView.qml:133
 #, kde-format
 msgid "Could not import contacts: %1"
-msgstr ""
-
-#: contacts/qml/ContactView.qml:137
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
-msgctxt "%1 is the number of exported contacts"
-msgid "%1 contact exported successfully."
-msgid_plural "%1 contacts exported successfully."
-msgstr[0] "%1 položek bylo úspěšně importováno."
-msgstr[1] "%1 položek bylo úspěšně importováno."
-msgstr[2] "%1 položek bylo úspěšně importováno."
+msgstr "Nepodařilo se importovat kontakty: %1"
 
 #: contacts/qml/ContactView.qml:139
 #, kde-format
+msgctxt "%1 is the number of exported contacts"
+msgid "%1 contact exported successfully."
+msgid_plural "%1 contacts exported successfully."
+msgstr[0] "%1 kontakt byl úspěšně exportován."
+msgstr[1] "%1 kontakty byly úspěšně exportovány."
+msgstr[2] "%1 kontaktů bylo úspěšně exportováno."
+
+#: contacts/qml/ContactView.qml:141
+#, kde-format
 msgid "Could not export contacts: %1"
-msgstr ""
+msgstr "Nepodařilo se exportovat kontakty: %1"
 
-#: contacts/qml/ContactView.qml:160
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#: contacts/qml/ContactView.qml:162
+#, kde-format
 msgid "Import contacts"
-msgstr "Žádné kontakty"
+msgstr "Importovat kontakty"
 
-#: contacts/qml/ContactView.qml:161
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#: contacts/qml/ContactView.qml:163
+#, kde-format
 msgid "vCard files (*.vcf *.vcard)"
-msgstr "Soubory kalendáře (*.ics *.vcs)"
+msgstr "Soubory vCard (*.vcf, *.vcard)"
 
-#: contacts/qml/ContactView.qml:167
-#, fuzzy, kde-format
-#| msgid "Create Contact Group"
+#: contacts/qml/ContactView.qml:169
+#, kde-format
 msgid "Import Contacts To:"
-msgstr "Vytvořit skupinu kontaktů"
+msgstr "Importovat kontakty do:"
 
-#: contacts/qml/ContactView.qml:180
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#: contacts/qml/ContactView.qml:182
+#, kde-format
 msgid "Export contacts"
-msgstr "Žádné kontakty"
+msgstr "Exportovat kontakty"
 
-#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#: contacts/qml/ContactView.qml:185 contacts/qml/private/ContactPage.qml:81
+#, kde-format
 msgid "vCard files (*.vcf)"
-msgstr "Soubory kalendáře (*.ics *.vcs)"
+msgstr "Soubory vCard (*.vcf)"
 
-#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:199 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Přesunout výběr do:"
 
-#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:216 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "Zkopírovat výběr do:"
 
-#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:304 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "Bez jména"
 
-#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
+#: contacts/qml/ContactView.qml:364 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "Žádné kontakty"
@@ -3013,142 +3012,296 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "Smazat zdroj adres"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:31
 #, kde-format
 msgid "Address book:"
 msgstr "Kniha adres:"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:52
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:59
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:53
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:68
 #, kde-format
 msgid "Name"
 msgstr "Jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:63
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
 msgstr "Jméno kontaktu"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:69
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:76
 #, kde-format
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:82
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:90
 #, kde-format
 msgid "Honorific prefix"
 msgstr "Akademický titul před jménem"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Dr."
 msgstr "Dr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Miss"
 msgstr "Slečna"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mr."
 msgstr "Pan"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mrs."
 msgstr "Pí."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Ms."
 msgstr "Sl."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Prof."
 msgstr "Prof."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:94
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:102
 #, kde-format
 msgid "Given name"
 msgstr "Jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:97
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:105
 #, kde-format
 msgid "First name or chosen name"
 msgstr "Jméno nebo zvolené jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:103
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:111
 #, kde-format
 msgid "Additional name"
 msgstr "Další jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:114
 #, kde-format
 msgid "Middle name or other name"
 msgstr "Prostřední nebo jiné jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:112
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:120
 #, kde-format
 msgid "Family name:"
 msgstr "Příjmení:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:123
 #, kde-format
 msgid "Surname or last name"
 msgstr "Příjmení nebo poslední jméno"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:121
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:129
 #, kde-format
 msgid "Honorific suffix"
 msgstr "Akademický titul za jménem"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "I"
 msgstr "I"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "II"
 msgstr "II"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "III"
 msgstr "III"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Jr."
 msgstr "Ml."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Sr."
 msgstr "St."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:132
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:140
 #, kde-format
 msgid "Nickname"
 msgstr "Přezdívka"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
 #, kde-format
 msgid "Alternative name"
 msgstr "Alternativní název"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:151
 #, kde-format
 msgid "Blog Feed"
 msgstr "Kanál blogu"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:154
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:28
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@item:inlistbox"
+msgid "Address"
+msgstr "Adresa"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:39
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@action:button"
+msgid "Add address"
+msgstr "Adresa"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:22
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Domestic"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Alternative name"
+msgctxt "@item:inlistbox Address type"
+msgid "International"
+msgstr "Alternativní název"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Postal"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Parcel"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@item:inlistbox Address type"
+msgid "Home"
+msgstr "Domů"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@item:inlistbox Address type"
+msgid "Work"
+msgstr "Práce"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Preferred"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:window"
+msgid "Add address"
+msgstr "Adresa"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Edit Address Book"
+msgctxt "@title:window"
+msgid "Edit address"
+msgstr "Upravit knihu adres"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:66
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@label:listbox"
+msgid "Address type"
+msgstr "Adresa"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Other"
+msgctxt "@item:inlistbox Address type"
+msgid "Other"
+msgstr "Jiné"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:85
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Street"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:93
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Apartment, suite, etc."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:101
+#, kde-format
+msgctxt "@label:textbox"
+msgid "P.O. box"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:112
+#, kde-format
+msgctxt "@label:textbox"
+msgid "City"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:118
+#, kde-format
+msgctxt "@label:textbox"
+msgid "State or region"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Postal code"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:130
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Country"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:140
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Delivery label"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:160
+#, fuzzy, kde-format
+#| msgid "Remove email"
+msgctxt "@action:button"
+msgid "Remove address"
+msgstr "Odstranit e-mail"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Uložit"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
 #, kde-format
@@ -3227,102 +3380,134 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "Jill"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
 #, kde-format
 msgid "Add Contact"
 msgstr "Přidat kontakt"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:66
 #, kde-format
 msgid "Edit Contact"
 msgstr "Upravit kontakt"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
 #, kde-format
 msgid "Personal Information"
 msgstr "Osobní informace"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#: contacts/qml/private/ContactPage.qml:341
 #, kde-format
 msgid "Business Information"
 msgstr "Informace o zaměstnání"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:124
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:133
 #, kde-format
 msgid "E-mail"
 msgstr "E-mail"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:group"
+msgid "Addresses"
+msgstr "Adresa"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
 #, kde-format
 msgid "Instant Messenger"
 msgstr "Internetový komunikátor"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#: contacts/qml/private/ContactPage.qml:429
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@title:group"
+msgid "Notes"
+msgstr "Poznámka"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:176
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@label:textbox"
+msgid "Notes"
+msgstr "Poznámka"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Add Folder"
+msgctxt "@info:placeholder"
+msgid "Add a note"
+msgstr "Přidat složku"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:226
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:202
 #, kde-format
 msgid "Warning"
 msgstr "Varování"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:236
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "Tento kontakt byl jinde během úprav změněn."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:241
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:217
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "Které změny by měly být zachovány?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:254
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:230
 #, kde-format
 msgid "Current changes"
 msgstr "Současné změny"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:259
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:235
 #, kde-format
 msgid "External changes"
 msgstr "Vnější změny"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Edit %1"
 msgstr "Upravit %1"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Create Contact Group"
 msgstr "Vytvořit skupinu kontaktů"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:66
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:72
 #, kde-format
 msgid "Address Book:"
 msgstr "Kniha adres:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:87
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:93
 #, kde-format
 msgid "Contact group name"
 msgstr "Název skupiny kontaktů"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:98
 #, kde-format
 msgid "Members"
 msgstr "Členové"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr "Do skupiny kontaktů lze přidat pouze kontakty s e-mailovou adresou"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:204
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:212
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "Tato skupina kontaktů byla jinde během úprav změněna."
@@ -3511,12 +3696,10 @@ msgid "Edit"
 msgstr "Upravit"
 
 #: contacts/qml/private/ContactPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
-msgstr "Upravit kontakt…"
+msgstr "Exportovat kontakt…"
 
 #: contacts/qml/private/ContactPage.qml:56
 #, kde-format
@@ -3525,22 +3708,19 @@ msgid "Cancel"
 msgstr "Zrušit"
 
 #: contacts/qml/private/ContactPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgid "Contact exported successfully."
-msgstr "%1 položek bylo úspěšně importováno."
+msgstr "Kontakt byl úspěšně exportován."
 
 #: contacts/qml/private/ContactPage.qml:71
 #, kde-format
 msgid "Could not export contact: %1"
-msgstr ""
+msgstr "Nepodařilo se exportovat kontakt: %1"
 
 #: contacts/qml/private/ContactPage.qml:78
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contact"
-msgstr "Žádné kontakty"
+msgstr "Exportovat kontakt"
 
 #: contacts/qml/private/ContactPage.qml:100
 #, kde-format
@@ -3634,64 +3814,78 @@ msgstr[0] "Adresa"
 msgstr[1] "Adresy"
 msgstr[2] "Adresy"
 
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:294
+#: contacts/qml/private/ContactPage.qml:296
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:button Accessible name for opening a contact address in a map"
+msgid "Show %1 on a map"
+msgstr "Ukázat zobrazení"
+
+#: contacts/qml/private/ContactPage.qml:297
+#, kde-format
+msgctxt ""
+"@action:button Accessible name for opening contact coordinates in a map"
+msgid "Show location on a map"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:304
 #, kde-format
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
 
-#: contacts/qml/private/ContactPage.qml:313
+#: contacts/qml/private/ContactPage.qml:323
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:334
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "Instant Messaging ID bylo zkopírováno do schránky"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:360
 #, kde-format
 msgid "Organization:"
 msgstr "Organizace:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:367
 #, kde-format
 msgid "Profession:"
 msgstr "Profese:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:374
 #, kde-format
 msgid "Title:"
 msgstr "Název:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:381
 #, kde-format
 msgid "Department:"
 msgstr "Oddělení:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:388
 #, kde-format
 msgid "Office:"
 msgstr "Kancelář:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:395
 #, kde-format
 msgid "Manager's name:"
 msgstr "Jméno manažera:"
 
-#: contacts/qml/private/ContactPage.qml:392
+#: contacts/qml/private/ContactPage.qml:402
 #, kde-format
 msgid "Assistant's name:"
 msgstr "Jméno asistenta:"
 
-#: contacts/qml/private/ContactPage.qml:398
+#: contacts/qml/private/ContactPage.qml:408
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -3699,7 +3893,7 @@ msgstr[0] "E-mailová adresa"
 msgstr[1] "E-mailové adresy"
 msgstr[2] "E-mailové adresy"
 
-#: contacts/qml/private/ContactPage.qml:420
+#: contacts/qml/private/ContactPage.qml:445
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3708,12 +3902,12 @@ msgstr "Kryptografické certifikáty"
 #: contacts/qml/private/ContactShareDialog.qml:34
 #, kde-format
 msgid "Could not share contact: %1"
-msgstr ""
+msgstr "Nelze sdílet kontakt: %1"
 
 #: contacts/qml/private/ContactShareDialog.qml:37
 #, kde-format
 msgid "Contact shared successfully."
-msgstr ""
+msgstr "Kontakt byl úspěšně sdílen."
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -3746,20 +3940,16 @@ msgstr "Tento krok nelze vrátit."
 
 #: contacts/qml/private/PurposeShareAction.qml:26
 #: contacts/qml/private/ShareActionDummy.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New Contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Share Contact"
-msgstr "Nový kontakt"
+msgstr "Sdílet kontakt"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@tooltip"
 msgid "Share this contact"
-msgstr "Smazat kontakt"
+msgstr "Sdílet tento kontakt"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -3807,13 +3997,13 @@ msgstr "© 2024"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #: launcher/main.cpp:40
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: launcher/Main.qml:58
 #, kde-format
@@ -3831,11 +4021,6 @@ msgstr "Žádný předmět"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "Neznámý"
-
-#: mail/contactimageprovider.cpp:152
-#, kde-format
-msgid "Image request has been cancelled"
-msgstr "Žádost o obrázek byla zrušena"
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4374,9 +4559,6 @@ msgstr "Vyberte typ účtu"
 
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "Přidat výjimku opakování"
-
-#~ msgid "Show map"
-#~ msgstr "Ukázat zobrazení"
 
 #~ msgid "Description:"
 #~ msgstr "Popis:"

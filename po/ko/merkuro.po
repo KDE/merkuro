@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2026-06-06 14:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -947,15 +947,15 @@ msgid "End date cannot be before start date."
 msgstr "종료 날짜가 시작 날짜보다 빠를 수 없습니다."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Save"
 msgstr "저장"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Add"
 msgstr "추가"
@@ -1256,7 +1256,7 @@ msgid "There are no attendees"
 msgstr "참석자가 없음"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:90
 #: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
@@ -2516,8 +2516,13 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "계정 추가…"
 
+#: contactimageprovider/contactimageprovider.cpp:179
+#, kde-format
+msgid "Image request has been cancelled"
+msgstr "그림 요청이 취소됨"
+
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgid "Home:"
 msgstr "집:"
@@ -2630,32 +2635,38 @@ msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
 msgstr "연락처 삭제"
 
-#: contacts/contacteditorbackend.cpp:119
+#: contacts/contacteditorbackend.cpp:128
 #, kde-format
 msgid "The contact could not be found."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:157
+#: contacts/contacteditorbackend.cpp:166
 #, kde-format
 msgid "The contact address book could not be found."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:186
+#: contacts/contacteditorbackend.cpp:195
 #, kde-format
 msgid "The contact is not loaded yet."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is read-only."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is no longer available."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:212
+#: contacts/contacteditorbackend.cpp:207
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgid "The selected address book cannot store contacts."
+msgstr "이 메일에는 초대장이 첨부되어 있습니다"
+
+#: contacts/contacteditorbackend.cpp:238
 #, fuzzy, kde-format
 #| msgid "No address book selected"
 msgid "No address book selected."
@@ -2760,6 +2771,11 @@ msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
 msgstr ""
 
+#: contacts/contactmanager.cpp:65
+#, kde-format
+msgid "The selected address book cannot store this contact."
+msgstr ""
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2796,7 +2812,7 @@ msgstr "완료"
 msgid "Select Email Address"
 msgstr "이메일 주소 선택"
 
-#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
+#: contacts/qml/ContactListItem.qml:44 contacts/qml/private/ContactPage.qml:97
 #, fuzzy, kde-format
 #| msgctxt "Placeholder when no name is set"
 #| msgid "No name"
@@ -2805,7 +2821,7 @@ msgid "No name"
 msgstr "이름 없음"
 
 #: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
+#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "연락처"
@@ -2822,20 +2838,20 @@ msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "새 연락처"
 
-#: contacts/qml/ContactView.qml:41
+#: contacts/qml/ContactView.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "새 연락처 그룹"
 
-#: contacts/qml/ContactView.qml:89
+#: contacts/qml/ContactView.qml:91
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
 msgstr[0] "%1개 선택됨"
 
-#: contacts/qml/ContactView.qml:129
+#: contacts/qml/ContactView.qml:131
 #, fuzzy, kde-format
 #| msgctxt "%1 is a number"
 #| msgid "%1 incidences were imported successfully."
@@ -2844,12 +2860,12 @@ msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
 msgstr[0] "항목 %1개를 가져왔습니다."
 
-#: contacts/qml/ContactView.qml:131
+#: contacts/qml/ContactView.qml:133
 #, kde-format
 msgid "Could not import contacts: %1"
 msgstr ""
 
-#: contacts/qml/ContactView.qml:137
+#: contacts/qml/ContactView.qml:139
 #, fuzzy, kde-format
 #| msgctxt "%1 is a number"
 #| msgid "%1 incidences were imported successfully."
@@ -2858,60 +2874,60 @@ msgid "%1 contact exported successfully."
 msgid_plural "%1 contacts exported successfully."
 msgstr[0] "항목 %1개를 가져왔습니다."
 
-#: contacts/qml/ContactView.qml:139
+#: contacts/qml/ContactView.qml:141
 #, kde-format
 msgid "Could not export contacts: %1"
 msgstr ""
 
-#: contacts/qml/ContactView.qml:160
+#: contacts/qml/ContactView.qml:162
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Import contacts"
 msgstr "연락처 없음"
 
-#: contacts/qml/ContactView.qml:161
+#: contacts/qml/ContactView.qml:163
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf *.vcard)"
 msgstr "캘린더 파일 (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:167
+#: contacts/qml/ContactView.qml:169
 #, fuzzy, kde-format
 #| msgid "Create Contact Group"
 msgid "Import Contacts To:"
 msgstr "연락처 그룹 만들기"
 
-#: contacts/qml/ContactView.qml:180
+#: contacts/qml/ContactView.qml:182
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Export contacts"
 msgstr "연락처 없음"
 
-#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#: contacts/qml/ContactView.qml:185 contacts/qml/private/ContactPage.qml:81
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf)"
 msgstr "캘린더 파일 (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:199 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "다음으로 선택 이동:"
 
-#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:216 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "다음으로 선택 복사:"
 
-#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:304 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "이름 없음"
 
-#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
+#: contacts/qml/ContactView.qml:364 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "연락처 없음"
@@ -2966,141 +2982,295 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "주소록 원본 삭제"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:31
 #, kde-format
 msgid "Address book:"
 msgstr "주소록:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:52
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:59
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:53
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:68
 #, kde-format
 msgid "Name"
 msgstr "이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:63
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
 msgstr "연락처 이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:69
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:76
 #, kde-format
 msgid "Advanced"
 msgstr "고급"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:82
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:90
 #, kde-format
 msgid "Honorific prefix"
 msgstr "존칭 접두사"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Dr."
 msgstr "박사"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Miss"
 msgstr "Miss"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mr."
 msgstr "Mr."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mrs."
 msgstr "Mrs."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Ms."
 msgstr "Ms."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Prof."
 msgstr "교수"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:94
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:102
 #, kde-format
 msgid "Given name"
 msgstr "이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:97
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:105
 #, kde-format
 msgid "First name or chosen name"
 msgstr "이름이나 선호하는 이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:103
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:111
 #, kde-format
 msgid "Additional name"
 msgstr "추가 이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:114
 #, kde-format
 msgid "Middle name or other name"
 msgstr "가운데 이름이나 기타 이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:112
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:120
 #, kde-format
 msgid "Family name:"
 msgstr "성"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:123
 #, kde-format
 msgid "Surname or last name"
 msgstr "성"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:121
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:129
 #, kde-format
 msgid "Honorific suffix"
 msgstr "존칭 접미사"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "I"
 msgstr "1세"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "II"
 msgstr "2세"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "III"
 msgstr "3세"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Jr."
 msgstr "주니어"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Sr."
 msgstr "시니어"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:132
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:140
 #, kde-format
 msgid "Nickname"
 msgstr "별명"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
 #, kde-format
 msgid "Alternative name"
 msgstr "대체 이름"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:151
 #, kde-format
 msgid "Blog Feed"
 msgstr "블로그 피드"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:154
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:28
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@item:inlistbox"
+msgid "Address"
+msgstr "주소"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:39
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@action:button"
+msgid "Add address"
+msgstr "주소"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:22
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Domestic"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Alternative name"
+msgctxt "@item:inlistbox Address type"
+msgid "International"
+msgstr "대체 이름"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Postal"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Parcel"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@item:inlistbox Address type"
+msgid "Home"
+msgstr "집"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@item:inlistbox Address type"
+msgid "Work"
+msgstr "직장"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Preferred"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:window"
+msgid "Add address"
+msgstr "주소"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Edit address book…"
+msgctxt "@title:window"
+msgid "Edit address"
+msgstr "주소록 편집…"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:66
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@label:listbox"
+msgid "Address type"
+msgstr "주소"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Other"
+msgctxt "@item:inlistbox Address type"
+msgid "Other"
+msgstr "기타"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:85
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Street"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:93
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Apartment, suite, etc."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:101
+#, kde-format
+msgctxt "@label:textbox"
+msgid "P.O. box"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:112
+#, kde-format
+msgctxt "@label:textbox"
+msgid "City"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:118
+#, kde-format
+msgctxt "@label:textbox"
+msgid "State or region"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Postal code"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:130
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Country"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:140
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Delivery label"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:160
+#, fuzzy, kde-format
+#| msgid "Remove Tag"
+msgctxt "@action:button"
+msgid "Remove address"
+msgstr "태그 삭제"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action:button"
+msgid "Save"
+msgstr "저장"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
 #, kde-format
@@ -3179,102 +3349,134 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "영희"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
 #, kde-format
 msgid "Add Contact"
 msgstr "연락처 추가"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:66
 #, kde-format
 msgid "Edit Contact"
 msgstr "연락처 편집"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
 #, kde-format
 msgid "Personal Information"
 msgstr "개인 정보"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#: contacts/qml/private/ContactPage.qml:341
 #, kde-format
 msgid "Business Information"
 msgstr "비즈니스 정보"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:124
 #, kde-format
 msgid "Phone"
 msgstr "전화"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:133
 #, kde-format
 msgid "E-mail"
 msgstr "이메일"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:group"
+msgid "Addresses"
+msgstr "주소"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
 #, kde-format
 msgid "Instant Messenger"
 msgstr "인스턴트 메신저"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#: contacts/qml/private/ContactPage.qml:429
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@title:group"
+msgid "Notes"
+msgstr "메모"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:176
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@label:textbox"
+msgid "Notes"
+msgstr "메모"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Add Folder"
+msgctxt "@info:placeholder"
+msgid "Add a note"
+msgstr "폴더 추가"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:226
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:202
 #, kde-format
 msgid "Warning"
 msgstr "경고"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:236
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "이 연락처를 편집하는 중 다른 곳에서 변경되었습니다."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:241
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:217
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "어떤 변경 사항을 유지하시겠습니까?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:254
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:230
 #, kde-format
 msgid "Current changes"
 msgstr "현재 변경 사항"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:259
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:235
 #, kde-format
 msgid "External changes"
 msgstr "외부 변경 사항"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Edit %1"
 msgstr "%1 편집"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Create Contact Group"
 msgstr "연락처 그룹 만들기"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:66
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:72
 #, kde-format
 msgid "Address Book:"
 msgstr "주소록:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:87
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:93
 #, kde-format
 msgid "Contact group name"
 msgstr "연락처 그룹 이름"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:98
 #, kde-format
 msgid "Members"
 msgstr "구성원"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr "이메일 주소가 있는 연락처만 연락처 그룹에 포함할 수 있음"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:204
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:212
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "이 연락처 그룹을 편집하는 중 다른 곳에서 변경되었습니다."
@@ -3582,70 +3784,84 @@ msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "주소"
 
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:294
+#: contacts/qml/private/ContactPage.qml:296
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:button Accessible name for opening a contact address in a map"
+msgid "Show %1 on a map"
+msgstr "지도 표시"
+
+#: contacts/qml/private/ContactPage.qml:297
+#, kde-format
+msgctxt ""
+"@action:button Accessible name for opening contact coordinates in a map"
+msgid "Show location on a map"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:304
 #, kde-format
 msgid "Instant Messaging"
 msgstr "인스턴트 메시징"
 
-#: contacts/qml/private/ContactPage.qml:313
+#: contacts/qml/private/ContactPage.qml:323
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:334
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "인스턴트 메시지 ID를 클립보드에 복사함"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:360
 #, kde-format
 msgid "Organization:"
 msgstr "조직:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:367
 #, kde-format
 msgid "Profession:"
 msgstr "직업:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:374
 #, kde-format
 msgid "Title:"
 msgstr "직위:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:381
 #, kde-format
 msgid "Department:"
 msgstr "부서:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:388
 #, kde-format
 msgid "Office:"
 msgstr "사무실:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:395
 #, kde-format
 msgid "Manager's name:"
 msgstr "관리자 이름:"
 
-#: contacts/qml/private/ContactPage.qml:392
+#: contacts/qml/private/ContactPage.qml:402
 #, kde-format
 msgid "Assistant's name:"
 msgstr "비서 이름:"
 
-#: contacts/qml/private/ContactPage.qml:398
+#: contacts/qml/private/ContactPage.qml:408
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "이메일 주소"
 
-#: contacts/qml/private/ContactPage.qml:420
+#: contacts/qml/private/ContactPage.qml:445
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3773,11 +3989,6 @@ msgstr "제목 없음"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "알 수 없음"
-
-#: mail/contactimageprovider.cpp:152
-#, kde-format
-msgid "Image request has been cancelled"
-msgstr "그림 요청이 취소됨"
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4321,9 +4532,6 @@ msgstr ""
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "반복에 예외 추가"
 
-#~ msgid "Show map"
-#~ msgstr "지도 표시"
-
 #~ msgid "Description:"
 #~ msgstr "설명:"
 
@@ -4340,9 +4548,6 @@ msgstr ""
 
 #~ msgid "Remove filtering tag"
 #~ msgstr "필터 태그 삭제"
-
-#~ msgid "Remove Tag"
-#~ msgstr "태그 삭제"
 
 #~ msgctxt "As in 'Never synchronize this calendar'"
 #~ msgid "Never"

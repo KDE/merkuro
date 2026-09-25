@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
 "PO-Revision-Date: 2025-09-21 13:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -961,15 +961,15 @@ msgid "End date cannot be before start date."
 msgstr "முடியும் தேதி, துவக்க தேதிக்கு முந்தையதாக இருக்க முடியாது."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Save"
 msgstr "சேமி"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Add"
 msgstr "சேர்"
@@ -1294,7 +1294,7 @@ msgid "There are no attendees"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:90
 #: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
@@ -2595,8 +2595,13 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "கணக்கை சேர்"
 
+#: contactimageprovider/contactimageprovider.cpp:179
+#, kde-format
+msgid "Image request has been cancelled"
+msgstr "பட கோரிக்கை ரத்து செய்யப்பட்டது"
+
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgid "Home:"
 msgstr "வீடு:"
@@ -2718,33 +2723,39 @@ msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
 msgstr "தொடர்பை நீக்கு"
 
-#: contacts/contacteditorbackend.cpp:119
+#: contacts/contacteditorbackend.cpp:128
 #, kde-format
 msgid "The contact could not be found."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:157
+#: contacts/contacteditorbackend.cpp:166
 #, kde-format
 msgid "The contact address book could not be found."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:186
+#: contacts/contacteditorbackend.cpp:195
 #, kde-format
 msgid "The contact is not loaded yet."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is read-only."
 msgstr ""
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The contact is no longer available."
 msgstr "சாவியின் விவரங்கள் கிடைக்கவில்லை."
 
-#: contacts/contacteditorbackend.cpp:212
+#: contacts/contacteditorbackend.cpp:207
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgid "The selected address book cannot store contacts."
+msgstr "இவ்வஞ்சல் அழைப்பிதழைக் கொண்டுள்ளது"
+
+#: contacts/contacteditorbackend.cpp:238
 #, fuzzy, kde-format
 #| msgid "No address book selected"
 msgid "No address book selected."
@@ -2852,6 +2863,11 @@ msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
 msgstr "தரவின் மறையாக்கத்தை நீக்க முடியவில்லை."
 
+#: contacts/contactmanager.cpp:65
+#, kde-format
+msgid "The selected address book cannot store this contact."
+msgstr ""
+
 #: contacts/emailmodel.cpp:50
 #, kde-format
 msgid "Both:"
@@ -2888,7 +2904,7 @@ msgstr "முடிந்தது"
 msgid "Select Email Address"
 msgstr "மின்னஞ்சல் முகவரியை தேர்ந்தெடுப்பது"
 
-#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
+#: contacts/qml/ContactListItem.qml:44 contacts/qml/private/ContactPage.qml:97
 #, fuzzy, kde-format
 #| msgctxt "Placeholder when no name is set"
 #| msgid "No name"
@@ -2897,7 +2913,7 @@ msgid "No name"
 msgstr "பெயரில்லை"
 
 #: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
+#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "தொடர்புகள்"
@@ -2914,13 +2930,13 @@ msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "புதிய தொடர்பு"
 
-#: contacts/qml/ContactView.qml:41
+#: contacts/qml/ContactView.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "புதிய தொடர்புக்குழு"
 
-#: contacts/qml/ContactView.qml:89
+#: contacts/qml/ContactView.qml:91
 #, fuzzy, kde-format
 #| msgctxt "Number of selected emails"
 #| msgid "%1 selected"
@@ -2931,7 +2947,7 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 தேர்ந்தெடுக்கப்பட்டுள்ளது"
 msgstr[1] "%1 தேர்ந்தெடுக்கப்பட்டுள்ளன"
 
-#: contacts/qml/ContactView.qml:129
+#: contacts/qml/ContactView.qml:131
 #, fuzzy, kde-format
 #| msgctxt "%1 is a number"
 #| msgid "%1 incidences were imported successfully."
@@ -2941,12 +2957,12 @@ msgid_plural "%1 contacts imported successfully."
 msgstr[0] "%1 நிகழ்வுகள் வெற்றிகரமாக இறக்குமதி செய்யப்பட்டன."
 msgstr[1] "%1 நிகழ்வுகள் வெற்றிகரமாக இறக்குமதி செய்யப்பட்டன."
 
-#: contacts/qml/ContactView.qml:131
+#: contacts/qml/ContactView.qml:133
 #, kde-format
 msgid "Could not import contacts: %1"
 msgstr ""
 
-#: contacts/qml/ContactView.qml:137
+#: contacts/qml/ContactView.qml:139
 #, fuzzy, kde-format
 #| msgctxt "%1 is a number"
 #| msgid "%1 incidences were imported successfully."
@@ -2956,61 +2972,61 @@ msgid_plural "%1 contacts exported successfully."
 msgstr[0] "%1 நிகழ்வுகள் வெற்றிகரமாக இறக்குமதி செய்யப்பட்டன."
 msgstr[1] "%1 நிகழ்வுகள் வெற்றிகரமாக இறக்குமதி செய்யப்பட்டன."
 
-#: contacts/qml/ContactView.qml:139
+#: contacts/qml/ContactView.qml:141
 #, fuzzy, kde-format
 #| msgid "Could not decrypt the data."
 msgid "Could not export contacts: %1"
 msgstr "தரவின் மறையாக்கத்தை நீக்க முடியவில்லை."
 
-#: contacts/qml/ContactView.qml:160
+#: contacts/qml/ContactView.qml:162
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Import contacts"
 msgstr "தொடர்புகள் இல்லை"
 
-#: contacts/qml/ContactView.qml:161
+#: contacts/qml/ContactView.qml:163
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf *.vcard)"
 msgstr "நாள்காட்டி கோப்புகள் (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:167
+#: contacts/qml/ContactView.qml:169
 #, fuzzy, kde-format
 #| msgid "Create Contact Group"
 msgid "Import Contacts To:"
 msgstr "தொடர்புக்குழுவை உருவாக்கு"
 
-#: contacts/qml/ContactView.qml:180
+#: contacts/qml/ContactView.qml:182
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Export contacts"
 msgstr "தொடர்புகள் இல்லை"
 
-#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
+#: contacts/qml/ContactView.qml:185 contacts/qml/private/ContactPage.qml:81
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf)"
 msgstr "நாள்காட்டி கோப்புகள் (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:199 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "தேர்வை இங்கு நகர்த்து:"
 
-#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:216 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "தேர்வை இங்கு நகலெடு:"
 
-#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:304 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
 msgstr "பெயரில்லை"
 
-#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
+#: contacts/qml/ContactView.qml:364 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "தொடர்புகள் இல்லை"
@@ -3066,141 +3082,294 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "முகவரிப்புத்தகத்தின் மூலத்தை நீக்கு"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:31
 #, kde-format
 msgid "Address book:"
 msgstr "முகவரிப்புத்தகம்:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:52
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:59
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:53
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:68
 #, kde-format
 msgid "Name"
 msgstr "பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:63
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
 msgstr "தொடர்பின் பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:69
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:76
 #, kde-format
 msgid "Advanced"
 msgstr "மேம்பட்டவை"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:82
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:90
 #, kde-format
 msgid "Honorific prefix"
 msgstr "மரியாதைப்படுத்தும் முன்னொட்டு"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Dr."
 msgstr "மரு."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Miss"
 msgstr "செல்வி"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mr."
 msgstr "திரு"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mrs."
 msgstr "திருமதி"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Ms."
 msgstr ""
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Prof."
 msgstr "பேராசிரியர்."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:94
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:102
 #, kde-format
 msgid "Given name"
 msgstr "முதல் பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:97
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:105
 #, kde-format
 msgid "First name or chosen name"
 msgstr "முதல் அல்லது விருப்பமான பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:103
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:111
 #, kde-format
 msgid "Additional name"
 msgstr "கூடுதல் பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:114
 #, kde-format
 msgid "Middle name or other name"
 msgstr "நடுப்பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:112
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:120
 #, kde-format
 msgid "Family name:"
 msgstr "குடும்பப் பெயர்:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:123
 #, kde-format
 msgid "Surname or last name"
 msgstr "கடைசிப்பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:121
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:129
 #, kde-format
 msgid "Honorific suffix"
 msgstr "மரியாதைப்படுத்தும் பின்னொட்டு"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "I"
 msgstr "I"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "II"
 msgstr "II"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "III"
 msgstr "III"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Jr."
 msgstr "இளையவர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Sr."
 msgstr "மூத்தவர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:132
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:140
 #, kde-format
 msgid "Nickname"
 msgstr "செல்லப்பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
 #, kde-format
 msgid "Alternative name"
 msgstr "மாற்றுப்பெயர்"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:151
 #, kde-format
 msgid "Blog Feed"
 msgstr "வலைப்பதிவு தொகுப்பு"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:154
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:28
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@item:inlistbox"
+msgid "Address"
+msgstr "முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:39
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@action:button"
+msgid "Add address"
+msgstr "முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:22
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Domestic"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Alternative name"
+msgctxt "@item:inlistbox Address type"
+msgid "International"
+msgstr "மாற்றுப்பெயர்"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Postal"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Parcel"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@item:inlistbox Address type"
+msgid "Home"
+msgstr "வீடு"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@item:inlistbox Address type"
+msgid "Work"
+msgstr "வேலை"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Preferred"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:window"
+msgid "Add address"
+msgstr "முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Email address"
+msgctxt "@title:window"
+msgid "Edit address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:66
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@label:listbox"
+msgid "Address type"
+msgstr "முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Other"
+msgctxt "@item:inlistbox Address type"
+msgid "Other"
+msgstr "மற்றது"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:85
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Street"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:93
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Apartment, suite, etc."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:101
+#, kde-format
+msgctxt "@label:textbox"
+msgid "P.O. box"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:112
+#, kde-format
+msgctxt "@label:textbox"
+msgid "City"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:118
+#, kde-format
+msgctxt "@label:textbox"
+msgid "State or region"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Postal code"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:130
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Country"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:140
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Delivery label"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:160
+#, fuzzy, kde-format
+#| msgid "Email address"
+msgctxt "@action:button"
+msgid "Remove address"
+msgstr "மின்னஞ்சல் முகவரி"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action:button"
+msgid "Save"
+msgstr "சேமி"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
 #, kde-format
@@ -3279,102 +3448,130 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "சல்மான்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
 #, kde-format
 msgid "Add Contact"
 msgstr "தொடர்பை சேர்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:66
 #, kde-format
 msgid "Edit Contact"
 msgstr "தொடர்பை திருத்து"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
 #, kde-format
 msgid "Personal Information"
 msgstr "தனிப்பட்ட விவரங்கள்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#: contacts/qml/private/ContactPage.qml:341
 #, kde-format
 msgid "Business Information"
 msgstr "வேலை விவரங்கள்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:124
 #, kde-format
 msgid "Phone"
 msgstr "தொலைபேசி"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:133
 #, kde-format
 msgid "E-mail"
 msgstr "மின்னஞ்சல்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:group"
+msgid "Addresses"
+msgstr "முகவரி"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
 #, kde-format
 msgid "Instant Messenger"
 msgstr ""
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#: contacts/qml/private/ContactPage.qml:429
+#, kde-format
+msgctxt "@title:group"
+msgid "Notes"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:176
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Notes"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Add Folder"
+msgctxt "@info:placeholder"
+msgid "Add a note"
+msgstr "அடைவை சேர்"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:226
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:202
 #, kde-format
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:236
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "திருத்துகையில் இத்தொடர்பு வேறு நிரலால் மாற்றப்பட்டுள்ளது."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:241
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:217
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "எந்த மாற்றங்களை வைத்திருக்க வேண்டும்?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:254
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:230
 #, kde-format
 msgid "Current changes"
 msgstr "தற்போதைய மாற்றங்கள்"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:259
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:235
 #, kde-format
 msgid "External changes"
 msgstr "வேளி மாற்றங்கள்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Edit %1"
 msgstr "%1 தனை திருத்து"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Create Contact Group"
 msgstr "தொடர்புக்குழுவை உருவாக்கு"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:66
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:72
 #, kde-format
 msgid "Address Book:"
 msgstr "முகவரிப்புத்தகம்:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:87
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:93
 #, kde-format
 msgid "Contact group name"
 msgstr "தொடர்புக்குழுவின் பெயர்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:98
 #, kde-format
 msgid "Members"
 msgstr "உறுப்பினர்கள்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr "மின்னஞ்சல் முகவரியையுடைய தொடர்புகளையே தொடர்புக்குழுவில் சேர்க்க முடியும்"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:204
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:212
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "திருத்துகையில் இத்தொடர்புக்குழு வேறு நிரலால் மாற்றப்பட்டுள்ளது."
@@ -3686,71 +3883,85 @@ msgid_plural "Addresses"
 msgstr[0] "முகவரி"
 msgstr[1] "முகவரிகள்"
 
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:294
+#: contacts/qml/private/ContactPage.qml:296
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:button Accessible name for opening a contact address in a map"
+msgid "Show %1 on a map"
+msgstr "நிலப்படத்தை காட்டு"
+
+#: contacts/qml/private/ContactPage.qml:297
+#, kde-format
+msgctxt ""
+"@action:button Accessible name for opening contact coordinates in a map"
+msgid "Show location on a map"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:304
 #, kde-format
 msgid "Instant Messaging"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:313
+#: contacts/qml/private/ContactPage.qml:323
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:334
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr ""
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:360
 #, kde-format
 msgid "Organization:"
 msgstr "நிறுவனம்:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:367
 #, kde-format
 msgid "Profession:"
 msgstr "பணி:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:374
 #, kde-format
 msgid "Title:"
 msgstr "பொறுப்பு:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:381
 #, kde-format
 msgid "Department:"
 msgstr "பிரிவு:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:388
 #, kde-format
 msgid "Office:"
 msgstr "அலுவலகம்:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:395
 #, kde-format
 msgid "Manager's name:"
 msgstr "மேலாளரின் பெயர்:"
 
-#: contacts/qml/private/ContactPage.qml:392
+#: contacts/qml/private/ContactPage.qml:402
 #, kde-format
 msgid "Assistant's name:"
 msgstr "உதவியாளரின் பெயர்:"
 
-#: contacts/qml/private/ContactPage.qml:398
+#: contacts/qml/private/ContactPage.qml:408
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "மின்னஞ்சல் முகவரி"
 msgstr[1] "மின்னஞ்சல் முகவரிகள்"
 
-#: contacts/qml/private/ContactPage.qml:420
+#: contacts/qml/private/ContactPage.qml:445
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3882,11 +4093,6 @@ msgstr "தலைப்பில்லாத‍து"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "தெரியாதது"
-
-#: mail/contactimageprovider.cpp:152
-#, kde-format
-msgid "Image request has been cancelled"
-msgstr "பட கோரிக்கை ரத்து செய்யப்பட்டது"
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4456,9 +4662,6 @@ msgstr ""
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "மறுநிகழ்வுக்கான விதிவிலக்கை சேர்"
 
-#~ msgid "Show map"
-#~ msgstr "நிலப்படத்தை காட்டு"
-
 #~ msgid "Description:"
 #~ msgstr "விவரணம்:"
 
@@ -4608,9 +4811,6 @@ msgstr ""
 
 #~ msgid "Identity"
 #~ msgstr "அடையாளம்"
-
-#~ msgid "Email address"
-#~ msgstr "மின்னஞ்சல் முகவரி"
 
 #~ msgid "E-mail aliases"
 #~ msgstr "மாற்று மின்னஞ்சல் முகவரிகள்"

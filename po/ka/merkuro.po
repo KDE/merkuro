@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
-"PO-Revision-Date: 2026-09-21 04:10+0200\n"
+"POT-Creation-Date: 2026-09-25 00:47+0000\n"
+"PO-Revision-Date: 2026-09-24 03:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -957,15 +957,15 @@ msgid "End date cannot be before start date."
 msgstr "დასრულების თარიღი არ შეიძლება დაწყების თარიღამდე იყოს."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:178
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:184
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
@@ -1271,7 +1271,7 @@ msgid "There are no attendees"
 msgstr "დამსწრეების გარეშე"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:84
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:90
 #: contacts/qml/private/ContactPage.qml:175
 #, kde-format
 msgid "Name:"
@@ -2533,8 +2533,13 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "ანგარიშის დამატება…"
 
+#: contactimageprovider/contactimageprovider.cpp:179
+#, kde-format
+msgid "Image request has been cancelled"
+msgstr "გამოსახულების მოთხოვნა გაუქმდა"
+
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgid "Home:"
 msgstr "საწყისი:"
@@ -2573,7 +2578,7 @@ msgstr "სწორი"
 #, kde-format
 msgctxt "Placeholder when no name is set"
 msgid "No name"
-msgstr "უსახელო"
+msgstr "სახელის გარეშე"
 
 #: contacts/contactactions.cpp:159
 #, kde-format
@@ -2625,54 +2630,56 @@ msgid "Copy to…"
 msgstr "კოპირება…"
 
 #: contacts/contactapplication.cpp:74
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
-msgstr "კალენდრის შემოტანა…"
+msgstr "კონტაქტების შემოტანა…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "კონტაქტის ჩასწორება…"
+msgstr "ყველა კონტაქტის გატანა…"
 
 #: contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
-msgstr "კონტაქტის წაშლა"
+msgstr "მონიშნული კონტაქტების გატანა…"
 
-#: contacts/contacteditorbackend.cpp:119
+#: contacts/contacteditorbackend.cpp:128
 #, kde-format
 msgid "The contact could not be found."
 msgstr "კონტაქტის აღმოჩენა შეუძლებელია."
 
-#: contacts/contacteditorbackend.cpp:157
+#: contacts/contacteditorbackend.cpp:166
 #, kde-format
 msgid "The contact address book could not be found."
 msgstr "კონტაქტის მისამართების წიგნის აღმოჩენა შეუძლებელია."
 
-#: contacts/contacteditorbackend.cpp:186
+#: contacts/contacteditorbackend.cpp:195
 #, kde-format
 msgid "The contact is not loaded yet."
 msgstr "კონტაქტი ჯერ ჩატვირთული არაა."
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is read-only."
 msgstr "კონტაქტი მხოლოდ-წაკითხვადია."
 
-#: contacts/contacteditorbackend.cpp:192
+#: contacts/contacteditorbackend.cpp:201
 #, kde-format
 msgid "The contact is no longer available."
 msgstr "კონტაქტი ხელმისაწვდომი აღარაა."
 
-#: contacts/contacteditorbackend.cpp:212
+#: contacts/contacteditorbackend.cpp:207
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The selected address book could not be found."
+msgid "The selected address book cannot store contacts."
+msgstr "მონიშნული მისამართების წიგნის აღმოჩენა შეუძლებელია."
+
+#: contacts/contacteditorbackend.cpp:238
 #, kde-format
 msgid "No address book selected."
 msgstr "მისამართების წიგნი არჩეული არაა."
@@ -2725,61 +2732,61 @@ msgid "EMail"
 msgstr "ელფოსტა"
 
 #: contacts/contactimportexport.cpp:58
-#, fuzzy, kde-format
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgctxt "@info"
 msgid "Could not read the vCard file."
-msgstr "მონაცემების გაშიფვრის შეცდომა."
+msgstr "vCard ფაილის წაკითხვა შეუძლებელია."
 
 #: contacts/contactimportexport.cpp:66
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info"
 msgid "The file did not contain any contacts."
-msgstr "ეს ელფოსტა მოსაწვევს შეიცავს"
+msgstr "ეს ფაილი კონტაქტებს არ შეიცავს."
 
 #: contacts/contactimportexport.cpp:88
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The selected address book could not be found."
-msgstr "კონტაქტის მისამართების წიგნის აღმოჩენა შეუძლებელია."
+msgstr "მონიშნული მისამართების წიგნის აღმოჩენა შეუძლებელია."
 
 #: contacts/contactimportexport.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "The selected address book does not allow contacts to be added."
-msgstr ""
+msgstr "არჩეული მისამართების წიგნი კონტაქტების დამატების საშუალებას არ იძლევა."
 
 #: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
 #: contacts/contactimportexport.cpp:224
-#, fuzzy, kde-format
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgctxt "@info"
 msgid "Could not write the vCard file."
-msgstr "მონაცემების გაშიფვრის შეცდომა."
+msgstr "vCard ფაილის ჩაწერა შეუძლებელია."
 
 #: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
 #: contacts/contactimportexport.cpp:216
-#, fuzzy, kde-format
-#| msgid "There are no recipients to e-mail"
+#, kde-format
 msgctxt "@info"
 msgid "There are no contacts to export."
-msgstr "ამ ელფოსტას მიმღებები არ ჰყავს"
+msgstr "გასატანი კონტაქტების გარეშე."
 
 #: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The contact could not be found."
 msgstr "კონტაქტის აღმოჩენა შეუძლებელია."
 
 #: contacts/contactimportexport.cpp:200
-#, fuzzy, kde-format
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
-msgstr "მონაცემების გაშიფვრის შეცდომა."
+msgstr "კონტაქტის გასაზიარებლად მომზადება შეუძლებელია."
+
+#: contacts/contactmanager.cpp:65
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "The selected address book could not be found."
+msgid "The selected address book cannot store this contact."
+msgstr "მონიშნული მისამართების წიგნის აღმოჩენა შეუძლებელია."
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
@@ -2817,16 +2824,14 @@ msgstr "დასრულდა"
 msgid "Select Email Address"
 msgstr "აირჩიეთ ელფოსტის მისამართები"
 
-#: contacts/qml/ContactListItem.qml:39 contacts/qml/private/ContactPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "Placeholder when no name is set"
-#| msgid "No name"
+#: contacts/qml/ContactListItem.qml:44 contacts/qml/private/ContactPage.qml:97
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No name"
-msgstr "უსახელო"
+msgstr "სახელის გარეშე"
 
 #: contacts/qml/ContactView.qml:27 contacts/qml/private/ContactsPage.qml:20
-#: contacts/qml/Sidebar.qml:134 launcher/Main.qml:53
+#: contacts/qml/Sidebar.qml:133 launcher/Main.qml:53
 #, kde-format
 msgid "Contacts"
 msgstr "კონტაქტები"
@@ -2843,13 +2848,13 @@ msgctxt "@action:inmenu"
 msgid "New Contact"
 msgstr "ახალი კონტაქტი"
 
-#: contacts/qml/ContactView.qml:41
+#: contacts/qml/ContactView.qml:42
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Contact Group"
 msgstr "ახალი კონტაქტების ჯგუფი"
 
-#: contacts/qml/ContactView.qml:89
+#: contacts/qml/ContactView.qml:91
 #, kde-format
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
@@ -2857,86 +2862,76 @@ msgid_plural "%1 selected"
 msgstr[0] "მონიშნულია %1"
 msgstr[1] "მონიშნულია %1"
 
-#: contacts/qml/ContactView.qml:129
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#: contacts/qml/ContactView.qml:131
+#, kde-format
 msgctxt "%1 is the number of imported contacts"
 msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
-msgstr[0] "%1 ინციდენტის შემოტანა წარმატებულია."
-msgstr[1] "%1 ინციდენტის შემოტანა წარმატებულია."
+msgstr[0] "%1 კონტაქტის შემოტანა წარმატებულია."
+msgstr[1] "%1 კონტაქტის შემოტანა წარმატებულია."
 
-#: contacts/qml/ContactView.qml:131
+#: contacts/qml/ContactView.qml:133
 #, kde-format
 msgid "Could not import contacts: %1"
-msgstr ""
+msgstr "კონტაქტების შემოტანა შეუძლებელია: %1"
 
-#: contacts/qml/ContactView.qml:137
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#: contacts/qml/ContactView.qml:139
+#, kde-format
 msgctxt "%1 is the number of exported contacts"
 msgid "%1 contact exported successfully."
 msgid_plural "%1 contacts exported successfully."
-msgstr[0] "%1 ინციდენტის შემოტანა წარმატებულია."
-msgstr[1] "%1 ინციდენტის შემოტანა წარმატებულია."
+msgstr[0] "%1 კონტაქტის გატანა წარმატებულია."
+msgstr[1] "%1 კონტაქტის გატანა წარმატებულია."
 
-#: contacts/qml/ContactView.qml:139
-#, fuzzy, kde-format
-#| msgid "Could not decrypt the data."
+#: contacts/qml/ContactView.qml:141
+#, kde-format
 msgid "Could not export contacts: %1"
-msgstr "მონაცემების გაშიფვრის შეცდომა."
+msgstr "კონტაქტების გატანა შეუძლებელია: %1"
 
-#: contacts/qml/ContactView.qml:160
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#: contacts/qml/ContactView.qml:162
+#, kde-format
 msgid "Import contacts"
-msgstr "კონტაქტების გარეშე"
+msgstr "კონტაქტების შემოტანა"
 
-#: contacts/qml/ContactView.qml:161
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#: contacts/qml/ContactView.qml:163
+#, kde-format
 msgid "vCard files (*.vcf *.vcard)"
-msgstr "კალენდრის ფაილები (*.ics *.vcs)"
+msgstr "vCard ფაილები (*.vcf *.vcard)"
 
-#: contacts/qml/ContactView.qml:167
-#, fuzzy, kde-format
-#| msgid "Create Contact Group"
+#: contacts/qml/ContactView.qml:169
+#, kde-format
 msgid "Import Contacts To:"
-msgstr "კონტაქტების ჯგუფის შექმნა"
+msgstr "კონტაქტების შემოტანა სად:"
 
-#: contacts/qml/ContactView.qml:180
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#: contacts/qml/ContactView.qml:182
+#, kde-format
 msgid "Export contacts"
-msgstr "კონტაქტების გარეშე"
+msgstr "კონტაქტების გატანა"
 
-#: contacts/qml/ContactView.qml:183 contacts/qml/private/ContactPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#: contacts/qml/ContactView.qml:185 contacts/qml/private/ContactPage.qml:81
+#, kde-format
 msgid "vCard files (*.vcf)"
-msgstr "კალენდრის ფაილები (*.ics *.vcs)"
+msgstr "vCard ფაილები (*.vcf)"
 
-#: contacts/qml/ContactView.qml:197 mail/qml/FolderView.qml:199
+#: contacts/qml/ContactView.qml:199 mail/qml/FolderView.qml:199
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "მონიშნულის გადატანა:"
 
-#: contacts/qml/ContactView.qml:214 mail/qml/FolderView.qml:216
+#: contacts/qml/ContactView.qml:216 mail/qml/FolderView.qml:216
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
 msgstr "მონიშნულის კოპირება:"
 
-#: contacts/qml/ContactView.qml:302 contacts/qml/private/ContactsPage.qml:49
+#: contacts/qml/ContactView.qml:304 contacts/qml/private/ContactsPage.qml:49
 #, kde-format
 msgctxt "Placeholder"
 msgid "No Name"
-msgstr "უსახელო"
+msgstr "სახელის გარეშე"
 
-#: contacts/qml/ContactView.qml:335 contacts/qml/private/ContactsPage.qml:61
+#: contacts/qml/ContactView.qml:364 contacts/qml/private/ContactsPage.qml:61
 #, kde-format
 msgid "No contacts"
 msgstr "კონტაქტების გარეშე"
@@ -2989,141 +2984,294 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "მისამართის წყაროს წაშლა"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:30
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:31
 #, kde-format
 msgid "Address book:"
 msgstr "მისამართების წიგნი:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:52
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:59
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:53
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:68
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:63
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:66
 #, kde-format
 msgid "Contact name"
 msgstr "კონტაქტის სახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:69
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:76
 #, kde-format
 msgid "Advanced"
 msgstr "დამატებითი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:82
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:90
 #, kde-format
 msgid "Honorific prefix"
 msgstr "საპატიო პრეფიქსი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Dr."
 msgstr "დრ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Miss"
 msgstr "ქნ"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mr."
 msgstr "ბნ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Mrs."
 msgstr "ქნ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Ms."
 msgstr "ქნ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:85
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:93
 #, kde-format
 msgid "Prof."
 msgstr "პროფ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:94
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:102
 #, kde-format
 msgid "Given name"
 msgstr "მინიჭებული სახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:97
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:105
 #, kde-format
 msgid "First name or chosen name"
 msgstr "სახელი ან მეტსახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:103
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:111
 #, kde-format
 msgid "Additional name"
 msgstr "დამატებითი სახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:106
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:114
 #, kde-format
 msgid "Middle name or other name"
 msgstr "შუა სახელი ან მეტსახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:112
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:120
 #, kde-format
 msgid "Family name:"
 msgstr "საოჯახო სახელი:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:123
 #, kde-format
 msgid "Surname or last name"
 msgstr "გვარი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:121
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:129
 #, kde-format
 msgid "Honorific suffix"
 msgstr "საპატიო სუფიქსი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "I"
 msgstr "I"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "II"
 msgstr "II"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "III"
 msgstr "III"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Jr."
 msgstr "უმც."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Sr."
 msgstr "უფრ."
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:132
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:140
 #, kde-format
 msgid "Nickname"
 msgstr "მეტსახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:135
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
 #, kde-format
 msgid "Alternative name"
 msgstr "ალტერნატიული სახელი"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:143
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:151
 #, kde-format
 msgid "Blog Feed"
 msgstr "ბლოგის ლენტა"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:146
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:154
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:28
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@item:inlistbox"
+msgid "Address"
+msgstr "მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorCard.qml:39
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@action:button"
+msgid "Add address"
+msgstr "მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:22
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Domestic"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Alternative name"
+msgctxt "@item:inlistbox Address type"
+msgid "International"
+msgstr "ალტერნატიული სახელი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Postal"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Parcel"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Home"
+msgctxt "@item:inlistbox Address type"
+msgid "Home"
+msgstr "საწყისი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
+#, fuzzy, kde-format
+#| msgid "Work"
+msgctxt "@item:inlistbox Address type"
+msgid "Work"
+msgstr "სამუშაო"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
+#, kde-format
+msgctxt "@item:inlistbox Address type"
+msgid "Preferred"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:window"
+msgid "Add address"
+msgstr "მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:40
+#, fuzzy, kde-format
+#| msgid "Email address"
+msgctxt "@title:window"
+msgid "Edit address"
+msgstr "ელფოსტის მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:66
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@label:listbox"
+msgid "Address type"
+msgstr "მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Other"
+msgctxt "@item:inlistbox Address type"
+msgid "Other"
+msgstr "სხვა"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:85
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Street"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:93
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Apartment, suite, etc."
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:101
+#, kde-format
+msgctxt "@label:textbox"
+msgid "P.O. box"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:112
+#, kde-format
+msgctxt "@label:textbox"
+msgid "City"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:118
+#, kde-format
+msgctxt "@label:textbox"
+msgid "State or region"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:124
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Postal code"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:130
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Country"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:140
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Delivery label"
+msgstr ""
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:160
+#, fuzzy, kde-format
+#| msgid "Email address"
+msgctxt "@action:button"
+msgid "Remove address"
+msgstr "ელფოსტის მისამართი"
+
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:171
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action:button"
+msgid "Save"
+msgstr "შენახვა"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:23
 #, kde-format
@@ -3202,103 +3350,135 @@ msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
 msgstr "ჯილი"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:63
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:64
 #, kde-format
 msgid "Add Contact"
 msgstr "კონტაქტის დამატება"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:65
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:66
 #, kde-format
 msgid "Edit Contact"
 msgstr "კოტაქტის ჩასწორება"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:106
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:108
 #, kde-format
 msgid "Personal Information"
 msgstr "პირადი ინფორმაცია"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:114
-#: contacts/qml/private/ContactPage.qml:331
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:116
+#: contacts/qml/private/ContactPage.qml:341
 #, kde-format
 msgid "Business Information"
 msgstr "ბიზნესის ინფორმაცია"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:122
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:124
 #, kde-format
 msgid "Phone"
 msgstr "ტელეფონი"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:131
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:133
 #, kde-format
 msgid "E-mail"
 msgstr "ელფოსტა"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:140
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Address"
+#| msgid_plural "Addresses"
+msgctxt "@title:group"
+msgid "Addresses"
+msgstr "მისამართი"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:154
 #, kde-format
 msgid "Instant Messenger"
 msgstr "მყისი შეტყობინებები"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:179
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:194
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:162
+#: contacts/qml/private/ContactPage.qml:429
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@title:group"
+msgid "Notes"
+msgstr "შენიშვნა"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:176
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Note"
+msgctxt "@label:textbox"
+msgid "Notes"
+msgstr "შენიშვნა"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Add Folder"
+msgctxt "@info:placeholder"
+msgid "Add a note"
+msgstr "საქაღალდის დამატება"
+
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:226
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:202
 #, kde-format
 msgid "Warning"
 msgstr "გაფრთხილება"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:189
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:236
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "ეს კონტაქტი ჩასწორებისას სადღაც სხვა ადგილიდან შეიცვალა."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:194
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:209
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:241
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:217
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "რომელი ცვლილებები შევინახო?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:207
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:222
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:254
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:230
 #, kde-format
 msgid "Current changes"
 msgstr "მიმდინარე ცვლილებები"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:227
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:259
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:235
 #, kde-format
 msgid "External changes"
 msgstr "გარე ცვლილებები"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Edit %1"
 msgstr "%1-ის ჩასწორება"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:35
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:36
 #, kde-format
 msgid "Create Contact Group"
 msgstr "კონტაქტების ჯგუფის შექმნა"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:66
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:72
 #, kde-format
 msgid "Address Book:"
 msgstr "მისამართების წიგნი:"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:87
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:93
 #, kde-format
 msgid "Contact group name"
 msgstr "კონტაქტების ჯგუფის სახელი"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:98
 #, kde-format
 msgid "Members"
 msgstr "წევრები"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:169
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:175
 #, kde-format
 msgid "Only contacts with an email address can be added to a contact group"
 msgstr ""
 "კონტაქტების ჯგუფში მხოლოდ ელფოსტის მქონე კონტაქტების ჩამატება შეგიძლიათ"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:204
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:212
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr "ეს კონტაქტების ჯგუფი ჩასწორებისას, სადღაც სხვა ადგილიდან შეიცვალა."
@@ -3487,12 +3667,10 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: contacts/qml/private/ContactPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
-msgstr "კონტაქტის ჩასწორება…"
+msgstr "კონტაქტის გატანა…"
 
 #: contacts/qml/private/ContactPage.qml:56
 #, kde-format
@@ -3501,23 +3679,19 @@ msgid "Cancel"
 msgstr "გაუქმება"
 
 #: contacts/qml/private/ContactPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgid "Contact exported successfully."
-msgstr "%1 ინციდენტის შემოტანა წარმატებულია."
+msgstr "კონტაქტის გატანა წარმატებულია."
 
 #: contacts/qml/private/ContactPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Could not decrypt the data."
+#, kde-format
 msgid "Could not export contact: %1"
-msgstr "მონაცემების გაშიფვრის შეცდომა."
+msgstr "კონტაქტის გატანა შეუძლებელია: %1"
 
 #: contacts/qml/private/ContactPage.qml:78
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contact"
-msgstr "კონტაქტების გარეშე"
+msgstr "კონტაქტის გატანა"
 
 #: contacts/qml/private/ContactPage.qml:100
 #, kde-format
@@ -3609,71 +3783,85 @@ msgid_plural "Addresses"
 msgstr[0] "მისამართი"
 msgstr[1] "მისამართები"
 
-#: contacts/qml/private/ContactPage.qml:287
+#: contacts/qml/private/ContactPage.qml:288
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:294
+#: contacts/qml/private/ContactPage.qml:296
+#, fuzzy, kde-format
+#| msgid "Show map"
+msgctxt "@action:button Accessible name for opening a contact address in a map"
+msgid "Show %1 on a map"
+msgstr "რუკის ჩვენება"
+
+#: contacts/qml/private/ContactPage.qml:297
+#, kde-format
+msgctxt ""
+"@action:button Accessible name for opening contact coordinates in a map"
+msgid "Show location on a map"
+msgstr ""
+
+#: contacts/qml/private/ContactPage.qml:304
 #, kde-format
 msgid "Instant Messaging"
 msgstr "მოკლე-შეტყობინება"
 
-#: contacts/qml/private/ContactPage.qml:313
+#: contacts/qml/private/ContactPage.qml:323
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:324
+#: contacts/qml/private/ContactPage.qml:334
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "მყისი შეტყობინების ID დაკოპირდა ბუფერში"
 
-#: contacts/qml/private/ContactPage.qml:350
+#: contacts/qml/private/ContactPage.qml:360
 #, kde-format
 msgid "Organization:"
 msgstr "ორგანიზაცია:"
 
-#: contacts/qml/private/ContactPage.qml:357
+#: contacts/qml/private/ContactPage.qml:367
 #, kde-format
 msgid "Profession:"
 msgstr "პროფესია:"
 
-#: contacts/qml/private/ContactPage.qml:364
+#: contacts/qml/private/ContactPage.qml:374
 #, kde-format
 msgid "Title:"
 msgstr "სათაური:"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:381
 #, kde-format
 msgid "Department:"
 msgstr "დეპარტამენტი:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:388
 #, kde-format
 msgid "Office:"
 msgstr "ოფისი:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:395
 #, kde-format
 msgid "Manager's name:"
 msgstr "მმართველის სახელი:"
 
-#: contacts/qml/private/ContactPage.qml:392
+#: contacts/qml/private/ContactPage.qml:402
 #, kde-format
 msgid "Assistant's name:"
 msgstr "დამხმარის სახელი:"
 
-#: contacts/qml/private/ContactPage.qml:398
+#: contacts/qml/private/ContactPage.qml:408
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
 msgstr[0] "ელფოსტის მისამართი"
 msgstr[1] "ელფოსტის მისამართი"
 
-#: contacts/qml/private/ContactPage.qml:420
+#: contacts/qml/private/ContactPage.qml:445
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -3682,12 +3870,12 @@ msgstr "კრიპტოგრაფიული სერთიფიკა�
 #: contacts/qml/private/ContactShareDialog.qml:34
 #, kde-format
 msgid "Could not share contact: %1"
-msgstr ""
+msgstr "კონტაქტის გაზიარება შეუძლებელია: %1"
 
 #: contacts/qml/private/ContactShareDialog.qml:37
 #, kde-format
 msgid "Contact shared successfully."
-msgstr ""
+msgstr "კონტაქტის გაზიარება წარმატებულია."
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -3718,20 +3906,16 @@ msgstr "ეს ქმედება შეუქცევადია."
 
 #: contacts/qml/private/PurposeShareAction.qml:26
 #: contacts/qml/private/ShareActionDummy.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New Contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Share Contact"
-msgstr "ახალი კონტაქტი"
+msgstr "კონტაქტის გაზიარება"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@tooltip"
 msgid "Share this contact"
-msgstr "კონტაქტის წაშლა"
+msgstr "ამ კონტაქტის გაზიარება"
 
 #: contacts/qml/private/QrCodePage.qml:16
 #, kde-format
@@ -3803,11 +3987,6 @@ msgstr "სათაურის გარეშე"
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "უცნობი"
-
-#: mail/contactimageprovider.cpp:152
-#, kde-format
-msgid "Image request has been cancelled"
-msgstr "გამოსახულების მოთხოვნა გაუქმდა"
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4348,9 +4527,6 @@ msgstr "აირჩიეთ ანგარიშის ტიპი"
 #~ msgid "Add Recurrence Exception"
 #~ msgstr "გამეორებადი გამონაკლისის დამატება"
 
-#~ msgid "Show map"
-#~ msgstr "რუკის ჩვენება"
-
 #~ msgid "Description:"
 #~ msgstr "აღწერა:"
 
@@ -4500,9 +4676,6 @@ msgstr "აირჩიეთ ანგარიშის ტიპი"
 
 #~ msgid "Identity"
 #~ msgstr "იდენტიფიკაცია"
-
-#~ msgid "Email address"
-#~ msgstr "ელფოსტის მისამართი"
 
 #~ msgid "E-mail aliases"
 #~ msgstr "ელფოსტის ფსევდონიმები"
