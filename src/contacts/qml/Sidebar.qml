@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -8,7 +10,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.merkuro.contact as Contact
 import org.kde.akonadi as Akonadi
-import org.kde.merkuro.components
 import Qt.labs.qmlmodels
 import org.kde.kitemmodels
 import org.kde.ki18n
@@ -23,6 +24,8 @@ Kirigami.OverlayDrawer {
     property var contextCollection
     property var contextCollectionDetails
     required property Kirigami.PageRow pageStack
+    readonly property Kirigami.ApplicationWindow appWindow: root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+    readonly property bool isRightToLeft: Application.layoutDirection === Qt.RightToLeft
 
     AddressBookMenu {
         id: addressBookMenu
@@ -31,8 +34,8 @@ Kirigami.OverlayDrawer {
         agentConfiguration: root.agentConfiguration
     }
 
-    edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+    edge: root.isRightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    modal: !enabled || Kirigami.Settings.isMobile || (root.appWindow.width < Kirigami.Units.gridUnit * 50 && !root.collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
     onModalChanged: drawerOpen = !modal;
 
     z: modal ? Math.round(position * 10000000) : 100
@@ -81,7 +84,7 @@ Kirigami.OverlayDrawer {
                     Layout.fillWidth: true
 
                     opacity: root.collapsed ? 0 : 1
-                    onTextChanged: Contact.ContactManager.filteredContacts.setFilterFixedString(text)
+                    onTextChanged: Contact.ContactManager.setContactFilter(text)
 
                     Behavior on opacity {
                         OpacityAnimator {
@@ -186,11 +189,11 @@ Kirigami.OverlayDrawer {
 
                             topInset: 2 * Kirigami.Units.largeSpacing + Math.round(Kirigami.Units.smallSpacing / 2)
                             topPadding: 2 * Kirigami.Units.largeSpacing + verticalPadding
-                            leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Kirigami.Units.smallSpacing : 0
-                            leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
+                            leftInset: !root.isRightToLeft ? (kDescendantLevel - 1) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                            leftPadding: (!root.isRightToLeft ? (kDescendantLevel - 1) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
-                            rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
-                            rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
+                            rightInset: (root.isRightToLeft ? (kDescendantLevel - 1) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                            rightPadding: (root.isRightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
                             text: model.display
                             highlighted: !Contact.ContactManager.showBirthdays && activeFocus
@@ -260,8 +263,9 @@ Kirigami.OverlayDrawer {
                                     }
                                 }
                                 onDropped: function(drop: var): void {
-                                    if (drop.source && drop.source.objectName === "contactListItem") {
-                                        drop.source.moveToCollection(collectionSourceItem.collection);
+                                    const contactListItem = drop.source as ContactListItem;
+                                    if (contactListItem && contactListItem.objectName === "contactListItem") {
+                                        contactListItem.moveToCollection(collectionSourceItem.collection);
                                     }
                                 }
                             }
@@ -285,15 +289,15 @@ Kirigami.OverlayDrawer {
                             required property color collectionColor
 
                             text: model.display
-                            enabled: !root.drawerCollapsed
+                            enabled: !root.collapsed
                             highlighted: !Contact.ContactManager.showBirthdays && (model.checkState === Qt.Checked || activeFocus)
-                            dropAreaHovered: contactDropArea.containsDrag
+                            dropAreaHovered: collectionContactDropArea.containsDrag
 
-                            leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
-                            leftPadding: (Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
+                            leftInset: !root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
+                            leftPadding: (!root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Math.round(Kirigami.Units.smallSpacing / 2) : 0) + Kirigami.Units.smallSpacing
 
-                            rightInset: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
-                            rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
+                            rightInset: (root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
+                            rightPadding: (root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
                             Accessible.selected: model.checkState === Qt.Checked
 
@@ -335,7 +339,7 @@ Kirigami.OverlayDrawer {
                             }
 
                             DropArea {
-                                id: contactDropArea
+                                id: collectionContactDropArea
                                 anchors.fill: parent
                                 onEntered: function(drag: var): void {
                                     if (!drag.source || drag.source.objectName !== "contactListItem") {
@@ -343,8 +347,9 @@ Kirigami.OverlayDrawer {
                                     }
                                 }
                                 onDropped: function(drop: var): void {
-                                    if (drop.source && drop.source.objectName === "contactListItem") {
-                                        drop.source.moveToCollection(collectionItem.collection);
+                                    const contactListItem = drop.source as ContactListItem;
+                                    if (contactListItem && contactListItem.objectName === "contactListItem") {
+                                        contactListItem.moveToCollection(collectionItem.collection);
                                     }
                                 }
                             }

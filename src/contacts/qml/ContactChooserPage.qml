@@ -34,7 +34,7 @@ ContactsPage {
     actions: Kirigami.Action {
         icon.name: "object-select-symbolic"
         text: KI18n.i18n("Done")
-        onTriggered: pageStack.pop()
+        onTriggered: (root.Kirigami.PageStack.pageStack as Kirigami.PageRow).pop()
     }
 
     selectionModel {

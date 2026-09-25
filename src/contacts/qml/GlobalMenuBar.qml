@@ -2,25 +2,26 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import Qt.labs.platform as Labs
 
 import QtQuick
-import QtQuick.Window
 import org.kde.merkuro.components
 import org.kde.merkuro.contact
-import org.kde.kirigamiaddons.statefulapp.labs as StatefuleAppLabs
+import org.kde.kirigamiaddons.actions.labs as StatefuleAppLabs
 import org.kde.ki18n
 
 Labs.MenuBar {
     NativeFileMenu {
         StatefuleAppLabs.NativeMenuItem {
             actionName: "import_contacts"
-            application: ContactApplication
+            actionObject: ContactApplication.action("import_contacts")
         }
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: "export_contacts"
-            application: ContactApplication
+            actionObject: ContactApplication.action("export_contacts")
         }
     }
 
@@ -31,12 +32,12 @@ Labs.MenuBar {
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: 'open_kcommand_bar'
-            application: ContactApplication
+            actionObject: ContactApplication.action("open_kcommand_bar")
         }
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: "refresh_all"
-            application: ContactApplication
+            actionObject: ContactApplication.action("refresh_all")
         }
     }
 
@@ -45,12 +46,12 @@ Labs.MenuBar {
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: "create_contact"
-            application: ContactApplication
+            actionObject: ContactApplication.action("create_contact")
         }
 
         StatefuleAppLabs.NativeMenuItem {
             actionName: "create_contact_group"
-            application: ContactApplication
+            actionObject: ContactApplication.action("create_contact_group")
         }
     }
 

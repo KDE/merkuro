@@ -2,36 +2,35 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import Qt.labs.platform as Labs
-import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions.labs as StatefulAppLabs
 import org.kde.ki18n
 
 Labs.Menu {
     id: root
 
-    required property StatefulApp.AbstractKirigamiApplication application
+    required property AbstractMerkuroApplication application
 
     title: KI18n.i18nc("@action:menu", "Settings")
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "toggle_menubar"
-        application: root.application
+        actionObject: root.application.action("toggle_menubar")
     }
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "open_tag_manager"
-        application: root.application
+        actionObject: root.application.action("open_tag_manager")
     }
 
     Labs.MenuSeparator {}
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "options_configure_keybinding"
-        application: root.application
+        actionObject: root.application.action("options_configure_keybinding")
     }
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "options_configure"
-        application: root.application
+        actionObject: root.application.action("options_configure")
     }
 }

@@ -2,25 +2,24 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 import Qt.labs.platform as Labs
-import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions.labs as StatefulAppLabs
 import org.kde.ki18n
 
 Labs.Menu {
     id: root
 
-    required property StatefulApp.AbstractKirigamiApplication application
+    required property AbstractMerkuroApplication application
 
     title: KI18n.i18nc("@action:menu", "Help")
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "open_about_page"
-        application: root.application
+        actionObject: root.application.action("open_about_page")
     }
 
     StatefulAppLabs.NativeMenuItem {
         actionName: "open_about_kde_page"
-        application: root.application
+        actionObject: root.application.action("open_about_kde_page")
     }
 
     Labs.MenuItem {

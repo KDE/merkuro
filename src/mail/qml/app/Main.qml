@@ -24,7 +24,7 @@ BaseApplication {
         Mail.ConversationViewer {}
     }
 
-    application: Mail.MailApplication
+    merkuroApplication: Mail.MailApplication
 
     menubarComponent: MenuBar {}
 

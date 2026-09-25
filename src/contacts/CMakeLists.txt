@@ -120,7 +120,9 @@ ecm_add_qml_module(merkuro_contact
         org.kde.kirigamiaddons.delegates
         org.kde.kirigamiaddons.formcard
         org.kde.kirigamiaddons.labs.components
-        org.kde.kirigamiaddons.statefulapp.labs
+        org.kde.kirigamiaddons.actions
+        org.kde.kirigamiaddons.actions.labs
+        org.kde.kirigamiaddons.statefulapp
         org.kde.kitemmodels
         org.kde.contacts
         org.kde.ki18n

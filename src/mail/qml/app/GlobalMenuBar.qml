@@ -7,14 +7,13 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Window
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
+import org.kde.kirigamiaddons.actions.labs as StatefulAppLabs
 import org.kde.ki18n
 
 Labs.MenuBar {
     id: root
 
-    required property StatefulApp.AbstractKirigamiApplication application
+    required property AbstractMerkuroApplication application
 
     NativeFileMenu {}
 
@@ -25,7 +24,7 @@ Labs.MenuBar {
 
         StatefulAppLabs.NativeMenuItem {
             actionName: 'open_kcommand_bar'
-            application: root.application
+            actionObject: root.application.action("open_kcommand_bar")
         }
     }
 
@@ -34,7 +33,7 @@ Labs.MenuBar {
 
         StatefulAppLabs.NativeMenuItem {
             actionName: 'create_mail'
-            application: root.application
+            actionObject: root.application.action("create_mail")
         }
     }
 

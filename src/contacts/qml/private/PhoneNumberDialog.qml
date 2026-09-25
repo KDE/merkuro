@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2021 Nicolas Fella <nicolas.fella@gmx.de>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -12,11 +12,10 @@ Kirigami.OverlaySheet {
     id: root
 
     property alias numbers: list.model
-    property alias title: heading.text
-
     signal numberSelected(string number)
 
     header: Kirigami.Heading {
+        text: root.title
         id: heading
     }
 
@@ -36,8 +35,8 @@ Kirigami.OverlaySheet {
             }
 
             onClicked: {
-                close();
-                root.numberSelected(modelData.normalizedNumber);
+                root.close();
+                root.numberSelected(contactDelegate.modelData.normalizedNumber);
             }
         }
     }

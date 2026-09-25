@@ -2,22 +2,24 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <car@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQml
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.merkuro.contact
 import org.kde.prison as Prison
 import org.kde.ki18n
 
 Kirigami.Page {
+    id: root
+
     property string qrCodeData
     title: KI18n.i18n("QR Code")
 
     contentItem: Prison.Barcode {
         id: barcodeItem
-        content: qrCodeData
+        content: root.qrCodeData
         barcodeType: Prison.Barcode.QRCode
     }
 

@@ -6,7 +6,7 @@ import Qt.labs.platform as Labs
 import QtQuick
 import org.kde.merkuro.calendar
 import org.kde.merkuro.components
-import org.kde.kirigamiaddons.statefulapp.labs as StatefulAppLabs
+import org.kde.kirigamiaddons.actions.labs as StatefulAppLabs
 
 Labs.MenuBar {
     id: bar

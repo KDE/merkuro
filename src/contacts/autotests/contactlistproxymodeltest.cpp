@@ -4,6 +4,7 @@
 #include "contactlistproxymodel.h"
 
 #include <Akonadi/EntityTreeModel>
+#include <KContacts/Addressee>
 #include <KLocalizedString>
 #include <QStandardItemModel>
 #include <QTest>
@@ -75,6 +76,27 @@ private Q_SLOTS:
         model.setBirthdays({{1, today}, {2, today.addDays(2).addYears(-30)}});
         QCOMPARE(model.index(0, 0).data(Qt::DisplayRole).toString(), u"Ada"_s);
         QCOMPARE(model.index(0, 0).data(ContactListProxyModel::BirthdaySectionRole).toString(), u"Today"_s);
+    }
+
+    void fullNameUsesContactNameInsteadOfDisplayRole()
+    {
+        QStandardItemModel source;
+        auto sourceItem = new QStandardItem(u"email@example.org"_s);
+        Akonadi::Item item(1);
+        item.setMimeType(KContacts::Addressee::mimeType());
+        KContacts::Addressee addressee;
+        addressee.setGivenName(u"Ada"_s);
+        addressee.setFamilyName(u"Lovelace"_s);
+        item.setPayload(addressee);
+        sourceItem->setData(QVariant::fromValue(item), Akonadi::EntityTreeModel::ItemRole);
+        source.appendRow(sourceItem);
+
+        ContactListProxyModel model;
+        model.setSourceModel(&source);
+
+        QCOMPARE(model.roleNames().value(ContactListProxyModel::FullNameRole), "fullName");
+        QCOMPARE(model.index(0, 0).data(ContactListProxyModel::FullNameRole).toString(), u"Ada Lovelace"_s);
+        QCOMPARE(model.index(0, 0).data(Qt::DisplayRole).toString(), u"email@example.org"_s);
     }
 
     void nextBirthdayWrapsAroundYear()

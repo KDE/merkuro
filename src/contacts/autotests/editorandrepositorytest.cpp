@@ -4,6 +4,7 @@
 #include "../addresseewrapper.h"
 #include "../contacteditorbackend.h"
 #include "../contactgroupeditor.h"
+#include "../contactlistproxymodel.h"
 #include "../contactrepository.h"
 
 #include <Akonadi/CollectionFetchJob>

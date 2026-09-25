@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -72,7 +74,7 @@ FormCard.FormCard {
             QQC2.Button {
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
-                enabled: isNotEmptyStr(newUsername.text)
+                enabled: newUsername.text.trim().length > 0
                 onClicked: {
                     // Hack-y: The goal is to get the current value of the model if the user has not
                     //         edited the display text, otherwise use the value the user inputed.

@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -27,6 +29,13 @@ FormCard.FormCard {
         model: root.contactEditor.contact.phoneModel
 
         delegate: FormCard.AbstractFormDelegate {
+            id: phoneDelegate
+
+            required property int index
+            required property int typeValue
+            required property int type
+            required property var model
+
             Layout.fillWidth: true
 
             contentItem: RowLayout {
@@ -45,29 +54,29 @@ FormCard.FormCard {
                             { value: PhoneModel.Modem, text: KI18n.i18n("Modem") },
                             { value: PhoneModel.Car, text: KI18n.i18n("Car") },
                             { value: PhoneModel.Isdn, text: KI18n.i18n("ISDN") },
-                            { value: PhoneModel.Psc, text: KI18n.i18n("PCS") },
+                            { value: PhoneModel.Pcs, text: KI18n.i18n("PCS") },
                             { value: PhoneModel.Pager, text: KI18n.i18n("Pager") },
                             { value: PhoneModel.Undefined, text: KI18n.i18n("Undefined") },
                         ].forEach((type) => {
                             phoneTypeModel.append(type);
                         });
-                        currentIndex = indexOfValue(typeValue)
+                        currentIndex = indexOfValue(phoneDelegate.typeValue)
                     }
                     textRole: "text"
                     valueRole: "value"
-                    onCurrentValueChanged: type = currentValue
+                    onCurrentValueChanged: phoneDelegate.type = currentValue
                 }
                 QQC2.TextField {
                     id: phoneField
-                    text: model.display
+                    text: phoneDelegate.model.display
                     inputMethodHints: Qt.ImhDialableCharactersOnly
                     Layout.fillWidth: true
-                    onTextChanged: model.display = text
+                    onTextChanged: phoneDelegate.model.display = text
                 }
                 QQC2.Button {
                     icon.name: "list-remove"
                     implicitWidth: implicitHeight
-                    onClicked: root.contactEditor.contact.phoneModel.deletePhoneNumber(index)
+                    onClicked: root.contactEditor.contact.phoneModel.deletePhoneNumber(phoneDelegate.index)
                 }
             }
         }
@@ -76,10 +85,10 @@ FormCard.FormCard {
     FormCard.AbstractFormDelegate {
         Layout.fillWidth: true
         contentItem: RowLayout {
-            visible: !root.saving
+            visible: !root.contactEditor.saving
             QQC2.ComboBox {
                 id: newPhoneTypeCombo
-                model: ListModel {id: phoneTypeModel; dynamicRoles: true }
+                model: ListModel {id: newPhoneTypeModel; dynamicRoles: true }
                 Component.onCompleted: {
                     [
                         { value: PhoneModel.Home, text: KI18n.i18n("Home") },
@@ -93,10 +102,10 @@ FormCard.FormCard {
                         { value: PhoneModel.Modem, text: KI18n.i18n("Modem") },
                         { value: PhoneModel.Car, text: KI18n.i18n("Car") },
                         { value: PhoneModel.Isdn, text: KI18n.i18n("ISDN") },
-                        { value: PhoneModel.Psc, text: KI18n.i18n("PCS") },
+                        { value: PhoneModel.Pcs, text: KI18n.i18n("PCS") },
                         { value: PhoneModel.Pager, text: KI18n.i18n("Pager") }
                     ].forEach((type) => {
-                        phoneTypeModel.append(type);
+                        newPhoneTypeModel.append(type);
                     });
                 }
                 textRole: "text"
@@ -116,7 +125,7 @@ FormCard.FormCard {
                 objectName: "addPhoneButton"
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
-                enabled: isNotEmptyStr(toAddPhone.text)
+                enabled: toAddPhone.text.trim().length > 0
                 onClicked: {
                     root.contactEditor.contact.phoneModel.addPhoneNumber(toAddPhone.text, newPhoneTypeCombo.currentValue)
                     toAddPhone.text = '';

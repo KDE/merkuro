@@ -7,6 +7,7 @@
 #include <QAbstractListModel>
 
 #include <KContacts/ContactGroup>
+#include <qqmlregistration.h>
 
 #include <memory>
 
@@ -15,6 +16,8 @@ class ContactGroupModelPrivate;
 class MERKURO_CONTACT_EXPORT ContactGroupModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("ContactGroupModel instances are managed by ContactGroupEditor")
 
 public:
     enum Role {

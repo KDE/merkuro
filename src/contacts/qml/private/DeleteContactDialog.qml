@@ -25,14 +25,14 @@ Components.MessageDialog {
 
     Component.onCompleted: {
         const deleteButton = standardButton(QQC2.Dialog.Ok);
-        deleteButton.text = KI18n.i18ncp("@action:button", "Delete contact", "Delete contacts", items.length);
+        deleteButton.text = KI18n.i18ncp("@action:button", "Delete contact", "Delete contacts", root.items.length);
         deleteButton.icon.name = 'delete-symbolic';
         deleteButton.enabled = Qt.binding(() => root.pendingDeletions === 0);
     }
 
     QQC2.Label {
         text: {
-            let msg = KI18n.i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", items.length) + '<ul>';
+            let msg = KI18n.i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", root.items.length) + '<ul>';
 
             for (let name of root.names) {
                 msg += '<li><b>' + name + '</b></li>';
@@ -50,8 +50,9 @@ Components.MessageDialog {
             ContactManager.errorOccurred(job.errorString);
         }
         root.pendingDeletions--;
-        if (root.pendingDeletions === 0 && root.QQC2.ApplicationWindow.window.pageStack.depth > 1) {
-            root.QQC2.ApplicationWindow.window.pageStack.pop()
+        const pageStack = root.Kirigami.PageStack.pageStack as Kirigami.PageRow;
+        if (root.pendingDeletions === 0 && pageStack.depth > 1) {
+            pageStack.pop()
         }
     }
 

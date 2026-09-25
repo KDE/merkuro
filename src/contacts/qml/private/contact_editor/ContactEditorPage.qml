@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -29,7 +31,7 @@ FormCard.FormCardPage {
         onFinished: {
             ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.currentValue;
             ContactConfig.save();
-            root.closeDialog();
+            root.Kirigami.PageStack.closeDialog();
         }
         onErrorOccured: errorMsg => {
             errorContainer.displayError = true;
@@ -102,6 +104,8 @@ FormCard.FormCardPage {
         contactEditor: root.contactEditor
         mode: root.mode
         initialCollectionId: root.initialCollectionId
+        displayAdvancedNameFields: root.displayAdvancedNameFields
+        onToggleAdvancedNameFields: root.displayAdvancedNameFields = !root.displayAdvancedNameFields
     }
 
     FormCard.FormHeader {
@@ -144,7 +148,7 @@ FormCard.FormCardPage {
 
     AddressEditorCard {
         contactEditor: root.contactEditor
-        onAddressRequested: row => root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./AddressEditorPage.qml"), {
+        onAddressRequested: row => (root.Kirigami.PageStack.pageStack as Kirigami.PageRow).pushDialogLayer(Qt.resolvedUrl("./AddressEditorPage.qml"), {
             addressModel: root.contactEditor.contact.addressesModel,
             row: row,
         })
@@ -214,7 +218,7 @@ FormCard.FormCardPage {
                     ContactConfig.lastUsedAddressBookCollection = addressBookEditorCard.addressBookComboBox.currentValue;
                     ContactConfig.save();
                 }
-                root.closeDialog();
+                root.Kirigami.PageStack.closeDialog();
             }
             onAccepted: submitAction.trigger();
         }

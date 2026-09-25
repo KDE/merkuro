@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -24,7 +26,7 @@ FormCard.FormCardPage {
         onFinished: {
             ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.currentValue;
             ContactConfig.save();
-            root.closeDialog();
+            root.Kirigami.PageStack.closeDialog();
         }
         onErrorOccured: (error) => {
             errorContainer.text = error;
@@ -33,7 +35,7 @@ FormCard.FormCardPage {
         onItemChangedExternally: itemChangedExternallySheet.open()
     }
 
-    title: mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? KI18n.i18n("Edit %1", contactGroupEditor.name) : KI18n.i18n("Create Contact Group")
+    title: root.mode === ContactGroupEditor.EditMode && contactGroupEditor.name ? KI18n.i18n("Edit %1", contactGroupEditor.name) : KI18n.i18n("Create Contact Group")
 
     onItemChanged: contactGroupEditor.loadContactGroup(item)
 
@@ -71,9 +73,9 @@ FormCard.FormCardPage {
 
             text: KI18n.i18n("Address Book:")
             Layout.fillWidth: true
-            enabled: mode === ContactGroupEditor.CreateMode
+            enabled: root.mode === ContactGroupEditor.CreateMode
 
-            defaultCollectionId: if (mode === ContactGroupEditor.CreateMode) {
+            defaultCollectionId: if (root.mode === ContactGroupEditor.CreateMode) {
                 return root.initialCollectionId >= 0 ? root.initialCollectionId : ContactConfig.lastUsedAddressBookCollection;
             } else {
                 return contactGroupEditor.collectionId;
@@ -127,7 +129,7 @@ FormCard.FormCardPage {
                     }
                     QQC2.Button {
                         icon.name: 'list-remove'
-                        onClicked: contactGroupEditor.groupModel.removeContact(index)
+                        onClicked: contactGroupEditor.groupModel.removeContact(contactDelegate.index)
                     }
                 }
             }
@@ -182,9 +184,9 @@ FormCard.FormCardPage {
         standardButtons: QQC2.DialogButtonBox.Cancel
 
         QQC2.Button {
-            icon.name: mode === ContactGroupEditor.EditMode ? "document-save" : "list-add"
-            text: mode === ContactGroupEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
-            enabled: isNotEmptyStr(contactGroupEditor.name) && !contactGroupEditor.saving
+            icon.name: root.mode === ContactGroupEditor.EditMode ? "document-save" : "list-add"
+            text: root.mode === ContactGroupEditor.EditMode ? KI18n.i18n("Save") : KI18n.i18n("Add")
+            enabled: root.isNotEmptyStr(contactGroupEditor.name) && !contactGroupEditor.saving
             QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
         }
 
@@ -193,7 +195,7 @@ FormCard.FormCardPage {
                 ContactConfig.lastUsedAddressBookCollection = addressBookComboBox.currentValue;
                 ContactConfig.save();
             }
-            root.closeDialog();
+            root.Kirigami.PageStack.closeDialog();
         }
         onAccepted: submitAction.trigger()
     }

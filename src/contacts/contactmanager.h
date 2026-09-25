@@ -9,6 +9,7 @@
 #include <QQmlEngine>
 
 class ContactRepository;
+class ContactListProxyModel;
 class KJob;
 
 namespace Akonadi
@@ -26,7 +27,7 @@ class ContactManager : public QObject
     Q_PROPERTY(QAbstractItemModel *contactCollections READ contactCollections CONSTANT)
 
     /// Model containing the contacts from the selected collection
-    Q_PROPERTY(QAbstractItemModel *filteredContacts READ filteredContacts CONSTANT)
+    Q_PROPERTY(ContactListProxyModel *filteredContacts READ filteredContacts CONSTANT)
     Q_PROPERTY(bool showBirthdays READ showBirthdays WRITE setShowBirthdays NOTIFY showBirthdaysChanged)
 public:
     static ContactManager *create(QQmlEngine *, QJSEngine *)
@@ -38,12 +39,13 @@ public:
     explicit ContactManager(QObject *parent = nullptr);
     ~ContactManager() override;
     QAbstractItemModel *contactCollections() const;
-    QAbstractItemModel *filteredContacts() const;
+    ContactListProxyModel *filteredContacts() const;
     bool showBirthdays() const;
     void setShowBirthdays(bool enabled);
 
     Q_INVOKABLE Akonadi::Item getItem(qint64 itemId);
     Q_INVOKABLE qint64 selectedCollectionId() const;
+    Q_INVOKABLE void setContactFilter(const QString &filter);
 
     Q_INVOKABLE void setCollectionColor(Akonadi::Collection collection, const QColor &color);
     Q_INVOKABLE KJob *deleteItem(const Akonadi::Item &item);

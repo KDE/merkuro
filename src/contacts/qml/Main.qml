@@ -1,20 +1,19 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as QQC2
 import org.kde.merkuro.components
 import org.kde.merkuro.contact as Contact
-import org.kde.akonadi as Akonadi
 import org.kde.kirigami as Kirigami
 
 BaseApplication {
     id: root
 
-    application: Contact.ContactApplication
+    merkuroApplication: Contact.ContactApplication
 
-    title: pageStack.currentItem.title
+    title: (root.pageStack.currentItem as Kirigami.Page).title
 
     menubarComponent: Contact.MenuBar {}
 
@@ -37,7 +36,7 @@ BaseApplication {
         target: Contact.ContactApplication
 
         function onOpenSettings(): void {
-            const openDialogWindow = pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.contact", "Settings"), {
+            const openDialogWindow = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.contact", "Settings"), {
                 width: root.width
             }, {
                 width: Kirigami.Units.gridUnit * 30,

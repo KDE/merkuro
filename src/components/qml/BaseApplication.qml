@@ -7,12 +7,15 @@ import QtQuick
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigamiaddons.actions as StatefulApp
 
 StatefulApp.StatefulWindow {
     id: root
 
+    required property AbstractMerkuroApplication merkuroApplication
     required property Component menubarComponent
+
+    application: root.merkuroApplication
 
     width: Kirigami.Units.gridUnit * 65
     windowName: 'Main'

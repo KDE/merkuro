@@ -96,6 +96,7 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
         QtLocation
         org.kde.merkuro.components
+        org.kde.kirigamiaddons.actions.labs
         org.kde.akonadi
         QtCore
         QtGui

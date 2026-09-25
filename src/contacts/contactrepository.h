@@ -35,7 +35,7 @@ public:
     ~ContactRepository() override;
 
     QAbstractItemModel *contactCollections() const;
-    QAbstractItemModel *filteredContacts() const;
+    ContactListProxyModel *filteredContacts() const;
     qint64 selectedCollectionId() const;
     bool showBirthdays() const;
     void setShowBirthdays(bool enabled);

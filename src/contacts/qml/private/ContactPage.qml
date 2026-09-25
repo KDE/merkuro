@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.merkuro.contact
@@ -18,6 +18,8 @@ FormCard.FormCardPage {
     id: page
 
     property int itemId
+    readonly property Kirigami.ApplicationWindow appWindow: page.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+    readonly property Kirigami.PageRow pageStack: page.appWindow.pageStack as Kirigami.PageRow
     property AddresseeWrapper addressee: AddresseeWrapper {
         id: addressee
         addresseeItem: ContactManager.getItem(page.itemId)
@@ -38,7 +40,7 @@ FormCard.FormCardPage {
     title: addressee.formattedName
 
     function openEditor(): void {
-        pageStack.pushDialogLayer(Qt.resolvedUrl("./contact_editor/ContactEditorPage.qml"), {
+        page.pageStack.pushDialogLayer(Qt.resolvedUrl("./contact_editor/ContactEditorPage.qml"), {
             mode: ContactEditor.EditMode,
             item: page.addressee.addresseeItem,
         })
@@ -48,7 +50,7 @@ FormCard.FormCardPage {
         Kirigami.Action {
             icon.name: "document-edit"
             text: KI18n.i18nc("@action:inmenu", "Edit")
-            onTriggered: openEditor()
+            onTriggered: page.openEditor()
         },
         Kirigami.Action {
             fromQAction: ContactApplication.action('contact_delete')
@@ -60,7 +62,7 @@ FormCard.FormCardPage {
             onTriggered: exportFileDialog.open()
         },
         ShareAction {
-            application: page.QQC2.ApplicationWindow.window
+            application: page.appWindow
             exporter: contactExporter
             itemId: page.itemId
         },
@@ -69,7 +71,7 @@ FormCard.FormCardPage {
             icon.name: "dialog-cancel"
             visible: Kirigami.Settings.isMobile
 
-            onTriggered: pageStack.pop()
+            onTriggered: page.pageStack.pop()
         }
     ]
 
@@ -78,9 +80,9 @@ FormCard.FormCardPage {
 
         onExportFinished: (success, count, errorMessage) => {
             if (success) {
-                page.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Contact exported successfully."), "short");
+                page.appWindow.showPassiveNotification(KI18n.i18n("Contact exported successfully."), "short");
             } else {
-                page.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not export contact: %1", errorMessage), "long");
+                page.appWindow.showPassiveNotification(KI18n.i18n("Could not export contact: %1", errorMessage), "long");
             }
         }
     }
@@ -122,8 +124,8 @@ FormCard.FormCardPage {
                         const pop = callPopup.createObject(page, {
                             numbers: addressee.phoneNumbers,
                             title: KI18n.i18n("Select number to call")
-                        });
-                        pop.onNumberSelected.connect(number => callNumber(number));
+                        }) as PhoneNumberDialog;
+                        pop.numberSelected.connect(number => page.callNumber(number));
                         pop.open();
                     }
                 }
@@ -141,8 +143,8 @@ FormCard.FormCardPage {
                         const pop = callPopup.createObject(page, {
                             numbers: addressee.phoneNumbers,
                             title: KI18n.i18n("Select number to send message to"),
-                        });
-                        pop.onNumberSelected.connect(number => sendSms(number));
+                        }) as PhoneNumberDialog;
+                        pop.numberSelected.connect(number => page.sendSms(number));
                         pop.open();
                     }
                 }
@@ -156,7 +158,7 @@ FormCard.FormCardPage {
             Kirigami.Action {
                 text: KI18n.i18n("Show QR Code")
                 icon.name: 'view-barcode-qr'
-                onTriggered: pageStack.layers.push(Qt.resolvedUrl('./QrCodePage.qml'), {
+                onTriggered: page.pageStack.layers.push(Qt.resolvedUrl('./QrCodePage.qml'), {
                     qrCodeData: addressee.qrCodeData(),
                 })
             }
@@ -179,7 +181,7 @@ FormCard.FormCardPage {
 
         visible: addressee.formattedName.trim().length > 0
             || addressee.nickName.trim().length > 0
-            || addressee.blogFeed.length > 0
+            || addressee.blogFeed.toString().length > 0
 
         FormCard.FormTextDelegate {
             id: nameField
@@ -239,7 +241,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: KI18n.i18np("Phone Number", "Phone Numbers", addressee.phoneModel.count)
+        title: KI18n.i18np("Phone Number", "Phone Numbers", addressee.phoneModel.rowCount())
         visible: phoneRepeater.count > 0
     }
 
@@ -266,7 +268,7 @@ FormCard.FormCardPage {
                 description: phoneNumber
                 onClicked: {
                     addressee.phoneModel.copyToClipboard(index);
-                    applicationWindow().showPassiveNotification(KI18n.i18n("Phone number copied to clipboard"));
+                    page.appWindow.showPassiveNotification(KI18n.i18n("Phone number copied to clipboard"));
                 }
             }
         }
@@ -323,6 +325,7 @@ FormCard.FormCardPage {
             delegate: FormCard.FormButtonDelegate {
                 id: imppDelegate
 
+                required property int index
                 required property string username
                 required property string typeLabel
                 required property string typeIcon
@@ -338,8 +341,8 @@ FormCard.FormCardPage {
                 icon.name: typeIcon
 
                 onClicked: {
-                    addressee.imppModel.copyToClipboard(imppRepeater.index);
-                    applicationWindow().showPassiveNotification(KI18n.i18n("Instant Messaging ID copied to clipboard"));
+                    addressee.imppModel.copyToClipboard(imppDelegate.index);
+                    page.appWindow.showPassiveNotification(KI18n.i18n("Instant Messaging ID copied to clipboard"));
                 }
             }
         }
@@ -562,6 +565,7 @@ FormCard.FormCardPage {
                                 model: certificateDelegate.tags
 
                                 Kirigami.Chip {
+                                    required property string modelData
                                     text: modelData
                                     closable: false
                                 }

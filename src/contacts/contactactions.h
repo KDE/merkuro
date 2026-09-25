@@ -44,11 +44,11 @@ Q_SIGNALS:
     void contactApplicationChanged();
     void itemChanged();
 
-    void moveToRequested(const Akonadi::Item::List &items);
-    void copyToRequested(const Akonadi::Item::List &items);
-    void deleteRequested(const Akonadi::Item::List &items, const QStringList &names);
-    void editContactGroup(const Akonadi::Item::Id &itemId);
-    void editContact(const Akonadi::Item::Id &itemId);
+    void moveToRequested(const QList<Akonadi::Item> &items);
+    void copyToRequested(const QList<Akonadi::Item> &items);
+    void deleteRequested(const QList<Akonadi::Item> &items, const QStringList &names);
+    void editContactGroup(qint64 itemId);
+    void editContact(qint64 itemId);
 
 private:
     QItemSelectionModel *m_selectionModel = nullptr;

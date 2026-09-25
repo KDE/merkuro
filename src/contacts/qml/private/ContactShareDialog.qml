@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2026 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
@@ -30,13 +32,13 @@ Kirigami.Page {
         id: jobView
 
         onStateChanged: {
-            if (state === Purpose.PurposeJobController.Error) {
+            if (jobState === Purpose.PurposeJobController.Error) {
                 root.application.showPassiveNotification(KI18n.i18n("Could not share contact: %1", jobView.job.errorString), "long");
                 root.Kirigami.PageStack.closeDialog();
-            } else if (state === Purpose.PurposeJobController.Finished) {
+            } else if (jobState === Purpose.PurposeJobController.Finished) {
                 root.application.showPassiveNotification(KI18n.i18n("Contact shared successfully."), "short");
                 root.Kirigami.PageStack.closeDialog();
-            } else if (state === Purpose.PurposeJobController.Cancelled) {
+            } else if (jobState === Purpose.PurposeJobController.Cancelled) {
                 root.Kirigami.PageStack.closeDialog();
             }
         }

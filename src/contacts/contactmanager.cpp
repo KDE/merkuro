@@ -5,6 +5,7 @@
 
 #include "contactmanager.h"
 
+#include "contactlistproxymodel.h"
 #include "contactrepository.h"
 #include "merkuro_contact_debug.h"
 #include <Akonadi/AgentManager>
@@ -34,9 +35,14 @@ QAbstractItemModel *ContactManager::contactCollections() const
     return m_repository->contactCollections();
 }
 
-QAbstractItemModel *ContactManager::filteredContacts() const
+ContactListProxyModel *ContactManager::filteredContacts() const
 {
     return m_repository->filteredContacts();
+}
+
+void ContactManager::setContactFilter(const QString &filter)
+{
+    m_repository->filteredContacts()->setFilterFixedString(filter);
 }
 
 bool ContactManager::showBirthdays() const

@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2023 Aakarsh MJ <mj.akarsh@gmail.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.merkuro.contact

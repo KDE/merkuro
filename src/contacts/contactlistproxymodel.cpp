@@ -57,6 +57,13 @@ ContactListProxyModel::ContactListProxyModel(QObject *parent)
 
 QVariant ContactListProxyModel::data(const QModelIndex &index, int role) const
 {
+    if (role == FullNameRole) {
+        const auto item = QSortFilterProxyModel::data(index, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
+        if (item.mimeType() == KContacts::Addressee::mimeType() && item.hasPayload<KContacts::Addressee>()) {
+            return item.payload<KContacts::Addressee>().realName();
+        }
+        return QSortFilterProxyModel::data(index, Qt::DisplayRole);
+    }
     if (role == BirthdaySectionRole || role == BirthdayDateRole || role == BirthdayAgeRole) {
         if (!m_birthdaysOnly) {
             return role == BirthdaySectionRole ? QVariant(QString()) : role == BirthdayDateRole ? QVariant(QDate()) : QVariant(0);
@@ -86,6 +93,7 @@ QVariant ContactListProxyModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> ContactListProxyModel::roleNames() const
 {
     auto names = QSortFilterProxyModel::roleNames();
+    names.insert(FullNameRole, "fullName");
     names.insert(BirthdaySectionRole, "birthdaySection");
     names.insert(BirthdayDateRole, "birthdayDate");
     names.insert(BirthdayAgeRole, "birthdayAge");

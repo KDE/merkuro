@@ -11,7 +11,6 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 import org.kde.merkuro.contact
@@ -26,9 +25,8 @@ Delegates.RoundedItemDelegate {
     id: root
     required property int index
     required property int itemId
-    required property string displayName
+    required property string fullName
     required property string mimeType
-    required property var model
     required property Contacts.addressee addressee
     required property Akonadi.item item
     required property var decoration
@@ -44,7 +42,7 @@ Delegates.RoundedItemDelegate {
         ContactManager.moveItemToCollection(root.item, collection);
     }
 
-    text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No name")
+    text: root.fullName.trim().length > 0 ? root.fullName : KI18n.i18nc("@info:placeholder", "No name")
     Accessible.description: root.showBirthday
         ? (root.birthdayAge > 0
             ? KI18n.i18nc("@info:accessible Birthday date and upcoming age", "Birthday on %1, turning %2", root.birthdayDate.toLocaleDateString(), root.birthdayAge)

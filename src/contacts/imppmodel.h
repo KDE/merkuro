@@ -6,10 +6,12 @@
 #include "merkuro_contact_export.h"
 #include <KContacts/Addressee>
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 class MERKURO_CONTACT_EXPORT ImppModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum ExtraRole {

@@ -188,7 +188,7 @@ QAbstractItemModel *ContactRepository::contactCollections() const
     return m_colorProxy;
 }
 
-QAbstractItemModel *ContactRepository::filteredContacts() const
+ContactListProxyModel *ContactRepository::filteredContacts() const
 {
     return m_filteredContacts;
 }

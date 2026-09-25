@@ -17,7 +17,7 @@ import org.kde.merkuro.components
 BaseApplication {
     id: root
 
-    application: CalendarApplication
+    merkuroApplication: CalendarApplication
 
     property var openOccurrence: ({})
 

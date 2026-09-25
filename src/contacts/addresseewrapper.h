@@ -42,7 +42,7 @@ class MERKURO_CONTACT_EXPORT AddresseeWrapper : public QObject, public Akonadi::
     Q_PROPERTY(QString nickName READ nickName WRITE setNickName NOTIFY nickNameChanged)
     Q_PROPERTY(QUrl blogFeed READ blogFeed WRITE setBlogFeed NOTIFY blogFeedChanged)
     Q_PROPERTY(QString preferredEmail READ preferredEmail NOTIFY preferredEmailChanged)
-    Q_PROPERTY(KContacts::PhoneNumber::List phoneNumbers READ phoneNumbers NOTIFY phoneNumbersChanged)
+    Q_PROPERTY(QList<KContacts::PhoneNumber> phoneNumbers READ phoneNumbers NOTIFY phoneNumbersChanged)
     Q_PROPERTY(EmailModel *emailModel READ emailModel CONSTANT)
     Q_PROPERTY(PhoneModel *phoneModel READ phoneModel CONSTANT)
 

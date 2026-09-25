@@ -95,6 +95,8 @@ ecm_add_qml_module(merkuro_mail_static
         org.kde.kirigamiaddons.formcard
         org.kde.kirigamiaddons.delegates
         org.kde.kirigamiaddons.statefulapp
+        org.kde.kirigamiaddons.actions
+        org.kde.kirigamiaddons.actions.labs
         org.kde.ki18n
         org.kde.akonadi
 )

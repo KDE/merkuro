@@ -23,6 +23,8 @@ Kirigami.ScrollablePage {
     property var attendeeAkonadiIds
     property var contactsModel: ContactManager.filteredContacts
     property var activeContextMenu
+    readonly property Kirigami.PageRow pageStack: Kirigami.PageStack.pageStack as Kirigami.PageRow
+    readonly property Kirigami.ApplicationWindow appWindow: root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
 
     title: ContactManager.showBirthdays ? KI18n.i18nc("@title:window", "Birthdays") : KI18n.i18n("Contacts")
 
@@ -32,7 +34,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: createNewContactAction
             text: KI18n.i18nc("@action:inmenu", "New Contact")
-            onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
+            onTriggered: root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
                 mode: ContactEditor.CreateMode,
                 initialCollectionId: ContactManager.selectedCollectionId(),
             })
@@ -40,7 +42,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: createNewContactGroupAction
             text: KI18n.i18nc("@action:inmenu", "New Contact Group")
-            onTriggered: root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
+            onTriggered: root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
                 mode: ContactGroupEditor.CreateMode,
                 initialCollectionId: ContactManager.selectedCollectionId(),
             })
@@ -128,17 +130,17 @@ Kirigami.ScrollablePage {
 
         onImportFinished: (success, count, errorMessage) => {
             if (success) {
-                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18ncp("%1 is the number of imported contacts", "%1 contact imported successfully.", "%1 contacts imported successfully.", count), "short");
+                root.appWindow.showPassiveNotification(KI18n.i18ncp("%1 is the number of imported contacts", "%1 contact imported successfully.", "%1 contacts imported successfully.", count), "short");
             } else {
-                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not import contacts: %1", errorMessage), "long");
+                root.appWindow.showPassiveNotification(KI18n.i18n("Could not import contacts: %1", errorMessage), "long");
             }
         }
 
         onExportFinished: (success, count, errorMessage) => {
             if (success) {
-                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18ncp("%1 is the number of exported contacts", "%1 contact exported successfully.", "%1 contacts exported successfully.", count), "short");
+                root.appWindow.showPassiveNotification(KI18n.i18ncp("%1 is the number of exported contacts", "%1 contact exported successfully.", "%1 contacts exported successfully.", count), "short");
             } else {
-                root.QQC2.ApplicationWindow.window.showPassiveNotification(KI18n.i18n("Could not export contacts: %1", errorMessage), "long");
+                root.appWindow.showPassiveNotification(KI18n.i18n("Could not export contacts: %1", errorMessage), "long");
             }
         }
     }
@@ -164,7 +166,7 @@ Kirigami.ScrollablePage {
 
         onAccepted: {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
-            const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+            const page = root.pageStack.pushDialogLayer(component, {
                 configGroup: "contact-collection-chooser-import",
                 title: KI18n.i18n("Import Contacts To:"),
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
@@ -194,7 +196,7 @@ Kirigami.ScrollablePage {
 
         onMoveToRequested: items => {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
-            const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+            const page = root.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',
                 title: KI18n.i18nc("@title:dialog", "Move Selection To:"),
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
@@ -211,7 +213,7 @@ Kirigami.ScrollablePage {
 
         onCopyToRequested: items => {
             const component = Qt.createComponent("org.kde.akonadi", "CollectionChooserPage");
-            const page = root.QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(component, {
+            const page = root.pageStack.pushDialogLayer(component, {
                 configGroup: 'contact-collection-chooser-move',
                 title: KI18n.i18nc("@title:dialog", "Copy Selection To:"),
                 mimeTypeFilter: [Akonadi.MimeTypes.address],
@@ -226,14 +228,14 @@ Kirigami.ScrollablePage {
         }
 
         onEditContact: (itemId) => {
-            const page = applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
+            const page = root.pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
                 itemId,
             })
             page.openEditor();
         }
 
         onEditContactGroup: (itemId) => {
-            const page = applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
+            const page = root.pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
                 itemId,
             })
             page.openEditor();
@@ -249,7 +251,7 @@ Kirigami.ScrollablePage {
             const dialog = component.createObject(root, {
                 items,
                 names,
-            });
+            }) as DeleteContactDialog;
             dialog.open();
         }
     }
@@ -258,7 +260,7 @@ Kirigami.ScrollablePage {
         contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(index, 0), ItemSelectionModel.Current);
         contactActions.setActionState();
 
-        const menu = contextMenu.createObject(root);
+        const menu = contextMenu.createObject(root) as Components.ConvergentContextMenu;
         root.activeContextMenu = menu;
         menu.popup();
 
@@ -311,9 +313,8 @@ Kirigami.ScrollablePage {
 
             required property int index
             required property int itemId
-            required property string displayName
+            required property string fullName
             required property string mimeType
-            required property var model
             required property var addressee
             required property Akonadi.item item
             required property var decoration
@@ -329,9 +330,8 @@ Kirigami.ScrollablePage {
 
                 index: contactDelegate.index
                 itemId: contactDelegate.itemId
-                displayName: contactDelegate.displayName
+                fullName: contactDelegate.fullName
                 mimeType: contactDelegate.mimeType
-                model: contactDelegate.model
                 addressee: contactDelegate.addressee
                 item: contactDelegate.item
                 decoration: contactDelegate.decoration
@@ -346,13 +346,13 @@ Kirigami.ScrollablePage {
                 onClicked: if (contactListItem.mimeType === 'application/x-vnd.kde.contactgroup') {
                     contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
                     contactsList.currentIndex = contactListItem.index;
-                    applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
+                    root.pageStack.push(Qt.resolvedUrl('./private/ContactGroupPage.qml'), {
                         itemId: contactListItem.itemId,
                     });
                 } else {
                     contactSelectionModel.setCurrentIndex(contactSelectionModel.model.index(contactListItem.index, 0), ItemSelectionModel.Current);
                     contactsList.currentIndex = contactListItem.index;
-                    applicationWindow().pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
+                    root.pageStack.push(Qt.resolvedUrl('./private/ContactPage.qml'), {
                         itemId: contactListItem.itemId,
                     });
                 }

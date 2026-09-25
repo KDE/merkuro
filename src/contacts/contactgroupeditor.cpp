@@ -345,7 +345,7 @@ bool ContactGroupEditor::saving() const
     return d->mSaving;
 }
 
-QAbstractItemModel *ContactGroupEditor::groupModel() const
+ContactGroupModel *ContactGroupEditor::groupModel() const
 {
     return d->mGroupModel;
 }

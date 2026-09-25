@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -15,9 +17,12 @@ import org.kde.ki18n
 FormCard.FormCard {
     id: root
 
+    signal toggleAdvancedNameFields
+
     required property ContactEditor contactEditor
     required property int mode
     required property double initialCollectionId
+    required property bool displayAdvancedNameFields
 
     property alias addressBookComboBoxId: addressBookComboBox.defaultCollectionId;
     property alias addressBookComboBox: addressBookComboBox
@@ -71,7 +76,7 @@ FormCard.FormCard {
 
                 QQC2.Button {
                     icon.name: 'settings-configure'
-                    onClicked: displayAdvancedNameFields = !displayAdvancedNameFields
+                    onClicked: root.toggleAdvancedNameFields()
 
                     QQC2.ToolTip.text: KI18n.i18n("Advanced")
                     QQC2.ToolTip.visible: hovered
@@ -82,7 +87,7 @@ FormCard.FormCard {
     }
 
     ColumnLayout {
-        visible: displayAdvancedNameFields
+        visible: root.displayAdvancedNameFields
 
         FormCard.FormDelegateSeparator {}
 

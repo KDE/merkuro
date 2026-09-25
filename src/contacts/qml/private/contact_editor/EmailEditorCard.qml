@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -25,6 +27,10 @@ FormCard.FormCard {
 
         delegate: FormCard.AbstractFormDelegate {
             id: emailRow
+            required property int index
+            required property int typeValue
+            required property int type
+            required property var model
             Layout.fillWidth: true
             contentItem: RowLayout {
                 QQC2.ComboBox {
@@ -42,15 +48,15 @@ FormCard.FormCard {
                     }
                     textRole: "text"
                     valueRole: "value"
-                    currentIndex: typeValue
-                    onCurrentValueChanged: type = currentValue
+                    currentIndex: emailRow.typeValue
+                    onCurrentValueChanged: emailRow.type = currentValue
                 }
                 QQC2.TextField {
                     id: textField
                     Layout.fillWidth: true
-                    text: model.display
+                    text: emailRow.model.display
                     inputMethodHints: Qt.ImhEmailCharactersOnly
-                    onTextChanged: model.display = text;
+                    onTextChanged: emailRow.model.display = text;
                 }
                 QQC2.Button {
                     icon.name: "list-remove"
@@ -58,7 +64,7 @@ FormCard.FormCard {
                     QQC2.ToolTip {
                         text: KI18n.i18n("Remove email")
                     }
-                    onClicked: root.contactEditor.contact.emailModel.deleteEmail(index)
+                    onClicked: root.contactEditor.contact.emailModel.deleteEmail(emailRow.index)
                 }
             }
         }
@@ -66,7 +72,7 @@ FormCard.FormCard {
     FormCard.AbstractFormDelegate {
         Layout.fillWidth: true
         contentItem: RowLayout {
-            visible: !root.saving
+            visible: !root.contactEditor.saving
             QQC2.ComboBox {
                 id: newEmailType
                 model: ListModel {id: newEmailTypeModel; dynamicRoles: true }
@@ -77,7 +83,7 @@ FormCard.FormCard {
                     [
                         { value: EmailModel.Home, text: KI18n.i18n("Home") },
                         { value: EmailModel.Work, text: KI18n.i18n("Work") },
-                        { value: EmailModel.Both, text: KI18n.i18n("Both") },
+                        { value: EmailModel.Home | EmailModel.Work, text: KI18n.i18n("Both") },
                         { value: EmailModel.Other, text: KI18n.i18n("Other…") }
                     ].forEach((type) => {
                         newEmailTypeModel.append(type);
@@ -96,7 +102,7 @@ FormCard.FormCard {
                 objectName: "addEmailButton"
                 icon.name: "list-add"
                 implicitWidth: implicitHeight
-                enabled: isNotEmptyStr(toAddEmail.text)
+                enabled: toAddEmail.text.trim().length > 0
                 QQC2.ToolTip {
                     text: KI18n.i18n("Add email")
                 }

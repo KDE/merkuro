@@ -12,6 +12,7 @@
 #include "merkuro_contact_export.h"
 
 class ContactGroupEditorPrivate;
+class ContactGroupModel;
 class QAbstractItemModel;
 
 /**
@@ -72,7 +73,7 @@ class MERKURO_CONTACT_EXPORT ContactGroupEditor : public QObject
     Q_PROPERTY(qint64 collectionId READ collectionId NOTIFY collectionChanged)
     Q_PROPERTY(bool isReadOnly READ isReadOnly NOTIFY isReadOnlyChanged)
     Q_PROPERTY(bool saving READ saving NOTIFY savingChanged)
-    Q_PROPERTY(QAbstractItemModel *groupModel READ groupModel CONSTANT)
+    Q_PROPERTY(ContactGroupModel *groupModel READ groupModel CONSTANT)
 public:
     /**
      * Describes the mode of the editor.
@@ -119,7 +120,7 @@ public:
 
     [[nodiscard]] QString name() const;
     void setName(const QString &name);
-    QAbstractItemModel *groupModel() const;
+    ContactGroupModel *groupModel() const;
 
     Q_INVOKABLE void fetchItem();
 

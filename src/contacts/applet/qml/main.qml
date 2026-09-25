@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <car@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts

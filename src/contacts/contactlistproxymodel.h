@@ -18,6 +18,7 @@ class MERKURO_CONTACT_EXPORT ContactListProxyModel : public QSortFilterProxyMode
 
 public:
     enum Role {
+        FullNameRole = Qt::UserRole + 99,
         BirthdaySectionRole = Qt::UserRole + 100,
         BirthdayDateRole,
         BirthdayAgeRole,

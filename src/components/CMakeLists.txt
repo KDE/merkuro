@@ -68,6 +68,8 @@ ecm_add_qml_module(MerkuroComponents
     VERSION 1.0
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
+        org.kde.kirigamiaddons.actions
+        org.kde.kirigamiaddons.actions.labs
         org.kde.kirigamiaddons.statefulapp
         org.kde.ki18n
 )

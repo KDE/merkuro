@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
@@ -23,7 +25,7 @@ ColumnLayout {
         id: photoUploadLoader
 
         active: false
-        onLoaded: item.open();
+        onLoaded: (item as FileDialog).open();
 
         sourceComponent: FileDialog {
             title: KI18n.i18n("Select a file")
