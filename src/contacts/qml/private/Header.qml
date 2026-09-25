@@ -16,6 +16,7 @@ QQC2.Control {
     id: root
 
     required property string name
+    property string subtitle: ""
     property alias actions: toolbar.actions
 
     required property string photoUrl
@@ -113,6 +114,14 @@ QQC2.Control {
                     maximumLineCount: 2
                     wrapMode: Text.Wrap
                     elide: Text.ElideRight
+                }
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    visible: root.subtitle.length > 0
+                    text: root.subtitle
+                    color: Kirigami.Theme.disabledTextColor
+                    wrapMode: Text.Wrap
                 }
 
                 Kirigami.ActionToolBar {

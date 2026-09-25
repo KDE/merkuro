@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     property var contactsModel: ContactManager.filteredContacts
     property var activeContextMenu
 
-    title: KI18n.i18n("Contacts")
+    title: ContactManager.showBirthdays ? KI18n.i18nc("@title:window", "Birthdays") : KI18n.i18n("Contacts")
 
     actions: Kirigami.Action {
         icon.name: 'contact-new-symbolic'
@@ -296,8 +296,8 @@ Kirigami.ScrollablePage {
         objectName: "contactsList"
         reuseItems: true
         section {
-            property: "display"
-            criteria: ViewSection.FirstCharacter
+            property: ContactManager.showBirthdays ? "birthdaySection" : "display"
+            criteria: ContactManager.showBirthdays ? ViewSection.FullString : ViewSection.FirstCharacter
             delegate: Kirigami.ListSectionHeader {
                 required property string section
 
@@ -317,6 +317,8 @@ Kirigami.ScrollablePage {
             required property var addressee
             required property Akonadi.item item
             required property var decoration
+            required property date birthdayDate
+            required property int birthdayAge
 
             width: contactsList.width
             height: contactListItem.height
@@ -333,6 +335,9 @@ Kirigami.ScrollablePage {
                 addressee: contactDelegate.addressee
                 item: contactDelegate.item
                 decoration: contactDelegate.decoration
+                showBirthday: ContactManager.showBirthdays
+                birthdayDate: contactDelegate.birthdayDate
+                birthdayAge: contactDelegate.birthdayAge
                 width: contactDelegate.width
                 highlighted: contactDelegate.ListView.isCurrentItem
                 selectionModel: contactSelectionModel
@@ -361,7 +366,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             objectName: "noContactsPlaceholder"
             anchors.centerIn: parent
-            text: KI18n.i18n("No contacts")
+            text: ContactManager.showBirthdays ? KI18n.i18nc("@info:placeholder", "No birthdays") : KI18n.i18n("No contacts")
             visible: contactsList.count === 0
         }
     }

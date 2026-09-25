@@ -34,6 +34,9 @@ Delegates.RoundedItemDelegate {
     required property var decoration
     required property ItemSelectionModel selectionModel
     property bool dragEnabled: false
+    property bool showBirthday: false
+    property date birthdayDate
+    property int birthdayAge: 0
 
     signal createContextMenu
 
@@ -42,6 +45,11 @@ Delegates.RoundedItemDelegate {
     }
 
     text: model.display.trim().length > 0 ? model.display : KI18n.i18nc("@info:placeholder", "No name")
+    Accessible.description: root.showBirthday
+        ? (root.birthdayAge > 0
+            ? KI18n.i18nc("@info:accessible Birthday date and upcoming age", "Birthday on %1, turning %2", root.birthdayDate.toLocaleDateString(), root.birthdayAge)
+            : KI18n.i18nc("@info:accessible Birthday date", "Birthday on %1", root.birthdayDate.toLocaleDateString()))
+        : ""
 
     onPressAndHold: {
         root.selectionModel.clearCurrentIndex();
@@ -94,14 +102,46 @@ Delegates.RoundedItemDelegate {
             Accessible.ignored: true // same as name
         }
 
-        Kirigami.Heading {
-            text: root.text
-            textFormat: Text.PlainText
-            elide: Text.ElideRight
-            maximumLineCount: 1
-            level: 3
+        ColumnLayout {
             Layout.fillWidth: true
-            Accessible.ignored: true // already exposed in root
+            spacing: 0
+
+            Kirigami.Heading {
+                text: root.text
+                textFormat: Text.PlainText
+                elide: Text.ElideRight
+                maximumLineCount: 1
+                level: 3
+                Layout.fillWidth: true
+                Accessible.ignored: true // already exposed in root
+            }
+
+            QQC2.Label {
+                visible: root.showBirthday && root.birthdayAge > 0
+                text: KI18n.i18ncp("Age on the next birthday", "%1 year", "%1 years", root.birthdayAge)
+                color: Kirigami.Theme.disabledTextColor
+                Layout.fillWidth: true
+                Accessible.ignored: true
+            }
+        }
+
+        ColumnLayout {
+            visible: root.showBirthday
+            spacing: 0
+
+            QQC2.Label {
+                text: Qt.formatDate(root.birthdayDate, "MMM").toLocaleUpperCase()
+                color: Kirigami.Theme.disabledTextColor
+                Layout.alignment: Qt.AlignHCenter
+                Accessible.ignored: true
+            }
+
+            Kirigami.Heading {
+                text: Qt.formatDate(root.birthdayDate, "d")
+                level: 3
+                Layout.alignment: Qt.AlignHCenter
+                Accessible.ignored: true
+            }
         }
     }
 

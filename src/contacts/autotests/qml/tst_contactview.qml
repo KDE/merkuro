@@ -37,6 +37,8 @@ TestCase {
             addressee: testContact,
             item: ContactManager.getItem(itemId),
             decoration: "",
+            birthdayDate: new Date(2026, 0, 1),
+            birthdayAge: 0,
         })
     }
 

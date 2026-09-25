@@ -39,6 +39,20 @@ QAbstractItemModel *ContactManager::filteredContacts() const
     return m_repository->filteredContacts();
 }
 
+bool ContactManager::showBirthdays() const
+{
+    return m_repository->showBirthdays();
+}
+
+void ContactManager::setShowBirthdays(bool enabled)
+{
+    if (showBirthdays() == enabled) {
+        return;
+    }
+    m_repository->setShowBirthdays(enabled);
+    Q_EMIT showBirthdaysChanged();
+}
+
 qint64 ContactManager::selectedCollectionId() const
 {
     return m_repository->selectedCollectionId();

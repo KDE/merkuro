@@ -19,6 +19,18 @@ ecm_add_test(addressmodeltest.cpp
     NAME_PREFIX "merkuro-contact-"
 )
 
+ecm_add_test(birthdaycalendartest.cpp
+    TEST_NAME birthdaycalendartest
+    LINK_LIBRARIES merkuro_contact Qt::Test
+    NAME_PREFIX "merkuro-contact-"
+)
+
+ecm_add_test(contactlistproxymodeltest.cpp
+    TEST_NAME contactlistproxymodeltest
+    LINK_LIBRARIES merkuro_contact Qt::Test
+    NAME_PREFIX "merkuro-contact-"
+)
+
 ecm_add_test(phonemodeltest.cpp
     TEST_NAME phonemodeltest
     LINK_LIBRARIES merkuro_contact Qt::Test

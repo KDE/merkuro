@@ -13,6 +13,8 @@ class QItemSelectionModel;
 class QSortFilterProxyModel;
 class KCheckableProxyModel;
 class ColorProxyModel;
+class ContactListProxyModel;
+class BirthdayCalendar;
 
 namespace Akonadi
 {
@@ -35,6 +37,8 @@ public:
     QAbstractItemModel *contactCollections() const;
     QAbstractItemModel *filteredContacts() const;
     qint64 selectedCollectionId() const;
+    bool showBirthdays() const;
+    void setShowBirthdays(bool enabled);
     QColor collectionColor(qint64 collectionId) const;
     void setCollectionColor(qint64 collectionId, const QColor &color);
 
@@ -51,7 +55,11 @@ private:
     Akonadi::EntityMimeTypeFilterModel *const m_collectionTree;
     QItemSelectionModel *m_collectionSelectionModel = nullptr;
     Akonadi::ETMViewStateSaver *m_collectionSelectionModelStateSaver = nullptr;
-    QSortFilterProxyModel *m_filteredContacts = nullptr;
+    ContactListProxyModel *m_filteredContacts = nullptr;
+    QAbstractItemModel *m_selectedContacts = nullptr;
+    QAbstractItemModel *m_allContacts = nullptr;
+    BirthdayCalendar *m_birthdayCalendar = nullptr;
+    bool m_showBirthdays = false;
     KCheckableProxyModel *m_checkableProxyModel = nullptr;
     ColorProxyModel *m_colorProxy = nullptr;
 };

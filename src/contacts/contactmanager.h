@@ -27,6 +27,7 @@ class ContactManager : public QObject
 
     /// Model containing the contacts from the selected collection
     Q_PROPERTY(QAbstractItemModel *filteredContacts READ filteredContacts CONSTANT)
+    Q_PROPERTY(bool showBirthdays READ showBirthdays WRITE setShowBirthdays NOTIFY showBirthdaysChanged)
 public:
     static ContactManager *create(QQmlEngine *, QJSEngine *)
     {
@@ -38,6 +39,8 @@ public:
     ~ContactManager() override;
     QAbstractItemModel *contactCollections() const;
     QAbstractItemModel *filteredContacts() const;
+    bool showBirthdays() const;
+    void setShowBirthdays(bool enabled);
 
     Q_INVOKABLE Akonadi::Item getItem(qint64 itemId);
     Q_INVOKABLE qint64 selectedCollectionId() const;
@@ -52,6 +55,7 @@ public:
 
 Q_SIGNALS:
     void errorOccurred(const QString &errorOccurred);
+    void showBirthdaysChanged();
 
 private:
     ContactRepository *const m_repository;

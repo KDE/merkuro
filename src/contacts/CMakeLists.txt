@@ -21,6 +21,7 @@ target_link_libraries(merkuro_contact PUBLIC
     KF6::ConfigGui
     KPim6::AkonadiWidgets
     KPim6::AkonadiContactCore
+    KPim6::AkonadiCalendar
     MerkuroComponents
     MerkuroContactImageProvider
     KF6::I18nQml
@@ -81,6 +82,8 @@ target_sources(merkuro_contact PRIVATE
     contactcollectionmodel.h
     contactlistproxymodel.cpp
     contactlistproxymodel.h
+    birthdaycalendar.cpp
+    birthdaycalendar.h
     contacteditorbackend.h
     contacteditorbackend.cpp
     contactgroupeditor.h

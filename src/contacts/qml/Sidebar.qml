@@ -111,6 +111,17 @@ Kirigami.OverlayDrawer {
             }
         }
 
+        Delegates.RoundedItemDelegate {
+            objectName: "birthdaysButton"
+            Layout.fillWidth: true
+            text: KI18n.i18nc("@action:button Show contacts with birthdays", "Birthdays")
+            icon.name: "view-calendar-birthday"
+            highlighted: Contact.ContactManager.showBirthdays
+            Accessible.checkable: true
+            Accessible.checked: Contact.ContactManager.showBirthdays
+            onClicked: Contact.ContactManager.showBirthdays = !Contact.ContactManager.showBirthdays
+        }
+
         QQC2.ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -182,7 +193,7 @@ Kirigami.OverlayDrawer {
                             rightPadding: (Qt.application.layoutDirection === Qt.RightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
                             text: model.display
-                            highlighted: activeFocus
+                            highlighted: !Contact.ContactManager.showBirthdays && activeFocus
                             dropAreaHovered: contactDropArea.containsDrag
 
                             hoverEnabled: false
@@ -275,7 +286,7 @@ Kirigami.OverlayDrawer {
 
                             text: model.display
                             enabled: !root.drawerCollapsed
-                            highlighted: model.checkState === Qt.Checked || activeFocus
+                            highlighted: !Contact.ContactManager.showBirthdays && (model.checkState === Qt.Checked || activeFocus)
                             dropAreaHovered: contactDropArea.containsDrag
 
                             leftInset: Qt.application.layoutDirection !== Qt.RightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
@@ -310,6 +321,7 @@ Kirigami.OverlayDrawer {
                             }
 
                             onClicked: {
+                                Contact.ContactManager.showBirthdays = false
                                 collectionItem.model.checkState = Qt.Checked
                             }
 

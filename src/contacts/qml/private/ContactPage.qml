@@ -22,6 +22,18 @@ FormCard.FormCardPage {
         id: addressee
         addresseeItem: ContactManager.getItem(page.itemId)
     }
+    readonly property bool hasBirthday: !isNaN(addressee.birthday.getTime())
+    readonly property bool hasAnniversary: !isNaN(addressee.anniversary.getTime())
+    readonly property string birthdayText: {
+        if (!page.hasBirthday) {
+            return "";
+        }
+        // A year of zero means that only the day and month are known.
+        if (addressee.birthday.getFullYear() === 0) {
+            return Qt.formatDate(addressee.birthday, KI18n.i18nc("Day month format", "dd.MM."));
+        }
+        return addressee.birthday.toLocaleDateString();
+    }
 
     title: addressee.formattedName
 
@@ -95,6 +107,7 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
         photoUrl: addressee.photoUrl
         name: addressee.formattedName.trim().length > 0 ? addressee.formattedName : (addressee.preferredEmail.trim().length > 0 ? addressee.preferredEmail : KI18n.i18nc("@info:placeholder", "No name"))
+        subtitle: page.hasBirthday ? KI18n.i18nc("@info:label Contact birthday", "Birthday: %1", page.birthdayText) : ""
         actions: [
             Kirigami.Action {
                 text: KI18n.i18n("Call")
@@ -199,28 +212,20 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         id: personalInfoCard
 
-        visible: birthday.visible || anniversary.visible || spousesName.visible
-
-        FormCard.FormTextDelegate {
-            id: birthday
-            visible: description !== ""
-            text: KI18n.i18n("Birthday:")
-            // We do not always have the year
-            description: if (addressee.birthday.getFullYear() === 0) {
-                return Qt.formatDate(addressee.birthday, KI18n.i18nc('Day month format', 'dd.MM.'))
-            } else {
-                return addressee.birthday.toLocaleDateString()
-            }
-        }
+        visible: anniversary.visible || spousesName.visible
 
         FormCard.FormTextDelegate {
             id: anniversary
-            visible: description !== ""
+            visible: page.hasAnniversary
             // We do not always have the year
-            description: if (addressee.anniversary.getFullYear() === 0) {
-                return Qt.formatDate(addressee.anniversary, KI18n.i18nc('Day month format', 'dd.MM.'))
-            } else {
-                return addressee.anniversary.toLocaleDateString()
+            description: {
+                if (!page.hasAnniversary) {
+                    return "";
+                }
+                if (addressee.anniversary.getFullYear() === 0) {
+                    return Qt.formatDate(addressee.anniversary, KI18n.i18nc("Day month format", "dd.MM."));
+                }
+                return addressee.anniversary.toLocaleDateString();
             }
             text: KI18n.i18n("Anniversary:")
         }

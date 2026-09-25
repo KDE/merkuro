@@ -3,6 +3,7 @@
 
 #include "contactrepository.h"
 
+#include "birthdaycalendar.h"
 #include "contactcollectionmodel.h"
 #include "contactconfig.h"
 #include "contactlistproxymodel.h"
@@ -144,9 +145,19 @@ ContactRepository::ContactRepository(QObject *parent)
     entityMimeTypeFilterModel->setSourceModel(flatModel);
     entityMimeTypeFilterModel->addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
     entityMimeTypeFilterModel->setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
+    m_selectedContacts = entityMimeTypeFilterModel;
+
+    auto allFlatModel = new KDescendantsProxyModel(this);
+    allFlatModel->setSourceModel(m_contactModel);
+
+    auto allItemModel = new Akonadi::EntityMimeTypeFilterModel(this);
+    allItemModel->setSourceModel(allFlatModel);
+    allItemModel->addMimeTypeExclusionFilter(Akonadi::Collection::mimeType());
+    allItemModel->setHeaderGroup(Akonadi::EntityTreeModel::ItemListHeaders);
+    m_allContacts = allItemModel;
 
     m_filteredContacts = new ContactListProxyModel(this);
-    m_filteredContacts->setSourceModel(entityMimeTypeFilterModel);
+    m_filteredContacts->setSourceModel(m_selectedContacts);
     m_filteredContacts->setSortLocaleAware(true);
     m_filteredContacts->setSortCaseSensitivity(Qt::CaseInsensitive);
     m_filteredContacts->setFilterCaseSensitivity(Qt::CaseInsensitive);
@@ -180,6 +191,37 @@ QAbstractItemModel *ContactRepository::contactCollections() const
 QAbstractItemModel *ContactRepository::filteredContacts() const
 {
     return m_filteredContacts;
+}
+
+bool ContactRepository::showBirthdays() const
+{
+    return m_showBirthdays;
+}
+
+void ContactRepository::setShowBirthdays(bool enabled)
+{
+    if (m_showBirthdays == enabled) {
+        return;
+    }
+
+    m_showBirthdays = enabled;
+    if (enabled) {
+        m_collectionSelectionModel->clearSelection();
+    }
+    if (enabled && !m_birthdayCalendar) {
+        m_birthdayCalendar = new BirthdayCalendar(this);
+        connect(m_birthdayCalendar, &BirthdayCalendar::birthdaysChanged, this, [this]() {
+            if (m_showBirthdays) {
+                m_filteredContacts->setBirthdays(m_birthdayCalendar->birthdays());
+            }
+        });
+    }
+
+    m_filteredContacts->setSourceModel(enabled ? m_allContacts : m_selectedContacts);
+    if (enabled) {
+        m_filteredContacts->setBirthdays(m_birthdayCalendar->birthdays());
+    }
+    m_filteredContacts->setBirthdaysOnly(enabled);
 }
 
 qint64 ContactRepository::selectedCollectionId() const
