@@ -47,19 +47,8 @@ int main(int argc, char *argv[])
 
     KirigamiAppDefaults::apply(&app);
 
-    KAboutData aboutData(
-        // The program name used internally.
-        u"merkuro.calendar"_s,
-        // A displayable program name string.
-        i18nc("@title", "Merkuro Calendar"),
-        QStringLiteral(MERKURO_VERSION_STRING),
-        // Short description of what the app does.
-        i18n("Calendar Application"),
-        // The license this code is released under.
-        KAboutLicense::GPL_V3,
-        // Copyright Statement.
-        i18n("© KDE Community 2021–2026"));
-    aboutData.setBugAddress("https://bugs.kde.org/enter_bug.cgi?format=guided&product=merkuro&version=" + QStringLiteral(MERKURO_VERSION_STRING).toUtf8());
+    auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro.calendar"_s);
+    aboutData.setVersion(MERKURO_VERSION_STRING);
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
                         u"carl@carlschwan.eu"_s,

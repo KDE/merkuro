@@ -30,12 +30,8 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("merkurolauncher");
     QCoreApplication::setOrganizationName(u"KDE"_s);
 
-    KAboutData aboutData(u"merkurolauncher"_s,
-                         i18nc("@title", "Merkuro Launcher"),
-                         QStringLiteral(MERKURO_VERSION_STRING),
-                         i18n("merkuro Launcher"),
-                         KAboutLicense::GPL,
-                         i18n("© 2024"));
+    auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro"_s);
+    aboutData.setVersion(MERKURO_VERSION_STRING);
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"), i18nc("@info:credit", "Maintainer"), u"carl@carlschwan.eu"_s, u"https://carlschwan.eu.com"_s);
     aboutData.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     KAboutData::setApplicationData(aboutData);
