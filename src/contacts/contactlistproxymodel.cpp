@@ -60,7 +60,7 @@ QVariant ContactListProxyModel::data(const QModelIndex &index, int role) const
     if (role == FullNameRole) {
         const auto item = QSortFilterProxyModel::data(index, Akonadi::EntityTreeModel::ItemRole).value<Akonadi::Item>();
         if (item.mimeType() == KContacts::Addressee::mimeType() && item.hasPayload<KContacts::Addressee>()) {
-            return item.payload<KContacts::Addressee>().realName();
+            return displayText(item.payload<KContacts::Addressee>().realName(), item);
         }
         return QSortFilterProxyModel::data(index, Qt::DisplayRole);
     }
