@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
     KStyleManager::initStyle();
 
     auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro.contact"_s);
+    aboutData.setComponentName(u"merkuro.contacts"_s);
     aboutData.setVersion(MERKURO_VERSION_STRING);
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
