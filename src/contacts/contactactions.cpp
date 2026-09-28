@@ -143,14 +143,14 @@ void ContactActions::setContactApplication(ContactApplication *ContactApplicatio
         for (const auto &item : items) {
             if (item.hasPayload<KContacts::Addressee>()) {
                 const auto addressee = item.payload<KContacts::Addressee>();
-                if (!addressee.realName().isEmpty()) {
+                if (!addressee.realName().trimmed().isEmpty()) {
                     names << addressee.realName();
-                } else if (!addressee.preferredEmail().isEmpty()) {
+                } else if (!addressee.preferredEmail().trimmed().isEmpty()) {
                     names << addressee.preferredEmail();
-                } else if (!addressee.familyName().isEmpty()) {
+                } else if (!addressee.familyName().trimmed().isEmpty()) {
                     names << addressee.familyName();
                 } else {
-                    names << i18nc("Placeholder when no name is set", "No name");
+                    names << QString();
                 }
             } else if (item.hasPayload<KContacts::ContactGroup>()) {
                 const auto group = item.payload<KContacts::ContactGroup>();

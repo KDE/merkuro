@@ -23,6 +23,23 @@ Components.MessageDialog {
     dialogType: Components.MessageDialog.Warning
     standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
+    Instantiator {
+        id: addressees
+        model: root.items
+        delegate: Loader {
+            id: addresseeLoader
+            required property int index
+            required property Akonadi.item modelData
+            active: root.names[index].trim().length === 0
+                && modelData.mimeType === Akonadi.MimeTypes.address
+            sourceComponent: Component {
+                AddresseeWrapper {
+                    addresseeItem: addresseeLoader.modelData
+                }
+            }
+        }
+    }
+
     Component.onCompleted: {
         const deleteButton = standardButton(QQC2.Dialog.Ok);
         deleteButton.text = KI18n.i18ncp("@action:button", "Delete contact", "Delete contacts", root.items.length);
@@ -34,7 +51,18 @@ Components.MessageDialog {
         text: {
             let msg = KI18n.i18ncp("@info", "Do you really want to delete your contact:", "Do you really want to delete your contacts:", root.items.length) + '<ul>';
 
-            for (let name of root.names) {
+            for (let i = 0; i < root.names.length; ++i) {
+                let name = root.names[i];
+                if (name.trim().length === 0) {
+                    const loader = addressees.objectAt(i) as Loader;
+                    const addressee = loader.status === Loader.Ready ? loader.item as AddresseeWrapper : null;
+                    if (addressee && addressee.preferredEmail.trim().length > 0) {
+                        name = addressee.preferredEmail;
+                    }
+                }
+                if (name.trim().length === 0) {
+                    name = KI18n.i18nc("Placeholder when no name is set", "No name");
+                }
                 msg += '<li><b>' + name + '</b></li>';
             }
 
