@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-25 05:56+0200\n"
+"PO-Revision-Date: 2026-09-26 07:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2780,8 +2780,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr "კონტაქტის გასაზიარებლად მომზადება შეუძლებელია."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "დღეს"
@@ -2837,25 +2836,21 @@ msgstr "სახელის გარეშე"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "დაბადების დღე %1-ზე. ხდება %2 ლის"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "დაბადების დღე"
+msgstr "დაბადების დღე %1-ზე"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "წელი"
-msgstr[1] "წელი"
+msgstr[0] "%1 წელი"
+msgstr[1] "%1 წელი"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2864,12 +2859,10 @@ msgid "Contacts"
 msgstr "კონტაქტები"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "დაბადების დღე"
+msgstr "დაბადების დღეები"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -2972,12 +2965,10 @@ msgid "No contacts"
 msgstr "კონტაქტების გარეშე"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "დაბადების დღე"
+msgstr "დაბადების დღეების გარეშე"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3678,14 +3669,13 @@ msgstr "პროფილის სურათის განახლებ�
 #, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "მოვლენა"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "ელფოტა:"
+msgstr "ელფოსტა"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3699,7 +3689,7 @@ msgstr "ჩასწორება"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "დდ.თთ."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3735,11 +3725,10 @@ msgid "Export contact"
 msgstr "კონტაქტის გატანა"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "დაბადების დღე:"
+msgstr "დაბადების დღე: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3904,17 +3893,16 @@ msgstr[0] "ელფოსტის მისამართი"
 msgstr[1] "ელფოსტის მისამართი"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "ელფოსტის წაშლა"
+msgstr "უახლესი ელფოსტები"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "ბოლო მოვლენები"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -3999,12 +3987,10 @@ msgid "Add New Address Book Source…"
 msgstr "ახალი მისამართების წიგნის წყაროს დამატება…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "დაბადების დღე"
+msgstr "დაბადების დღეები"
 
 #: launcher/main.cpp:34
 #, kde-format
@@ -4191,7 +4177,7 @@ msgstr "ელფოსტის კლიენტი"
 #: mail/main.cpp:98
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Akonadi-ის შეტყობინების გახსნა ID-ით."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25

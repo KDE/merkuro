@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-25 18:18+0200\n"
+"PO-Revision-Date: 2026-09-26 18:58+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2784,8 +2784,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr "De contactpersoon kon niet worden voorbereid om te worden gedeeld."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Vandaag"
@@ -2841,25 +2840,21 @@ msgstr "Naamloos"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "Verjaardag op %1, wordt dan %2"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "Verjaardag"
+msgstr "Verjaardag op %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "jaar"
-msgstr[1] "jaar"
+msgstr[0] "%1 jaar"
+msgstr[1] "%1 jaar"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2868,12 +2863,10 @@ msgid "Contacts"
 msgstr "Contactpersonen"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "Verjaardag"
+msgstr "Verjaardagen"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -2976,12 +2969,10 @@ msgid "No contacts"
 msgstr "Geen contactpersonen"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "Verjaardag"
+msgstr "Geen verjaardagen"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3680,18 +3671,16 @@ msgid "Update Profile Picture"
 msgstr "Profielafbeelding bijwerken"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Event"
+#, kde-format
 msgctxt "@info:label"
 msgid "Event"
 msgstr "Afspraak"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "E-mail:"
+msgstr "E-mailadres"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3705,7 +3694,7 @@ msgstr "Bewerken"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3741,11 +3730,10 @@ msgid "Export contact"
 msgstr "Contactpersoon exporteren"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "Verjaardag:"
+msgstr "Verjaardag: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3910,18 +3898,16 @@ msgstr[0] "E-mailadres"
 msgstr[1] "E-mailadres selecteren"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "E-mailadres verwijderen"
+msgstr "Recente e-mails"
 
 #: contacts/qml/private/ContactPage.qml:487
-#, fuzzy, kde-format
-#| msgid "New event"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr "Nieuwe gebeurtenis"
+msgstr "Recente afspraken"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -4006,12 +3992,10 @@ msgid "Add New Address Book Source…"
 msgstr "Nieuw adresboekbron toevoegen…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "Verjaardag"
+msgstr "Verjaardagen"
 
 #: launcher/main.cpp:34
 #, kde-format
@@ -4198,7 +4182,7 @@ msgstr "E-mailprogramma"
 #: mail/main.cpp:98
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Een Akonadi-bericht per ID openen."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25

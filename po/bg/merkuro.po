@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-22 23:10+0200\n"
+"PO-Revision-Date: 2026-09-28 00:00+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2643,7 +2643,7 @@ msgstr "Копиране в…"
 #| msgid "Import Calendar…"
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
-msgstr "Импортиране на календар…"
+msgstr "Импортиране на контакти…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
 #, fuzzy, kde-format
@@ -2651,7 +2651,7 @@ msgstr "Импортиране на календар…"
 #| msgid "Edit contact…"
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "Редактиране на контакт…"
+msgstr "Експорт на всички контакти…"
 
 #: contacts/contactapplication.cpp:92
 #, fuzzy, kde-format
@@ -2659,7 +2659,7 @@ msgstr "Редактиране на контакт…"
 #| msgid "Delete contact"
 msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
-msgstr "Изтриване на контакт"
+msgstr "Експорт на избраните контакти…"
 
 #: contacts/contacteditorbackend.cpp:128
 #, kde-format
@@ -2690,7 +2690,7 @@ msgstr "Контактът вече не е наличен."
 #, fuzzy, kde-format
 #| msgid "The contact address book could not be found."
 msgid "The selected address book cannot store contacts."
-msgstr "Адресната книга на контактите не можа да бъде намерена."
+msgstr "Избраната адресна книга не може да съхранява контакти."
 
 #: contacts/contacteditorbackend.cpp:238
 #, kde-format
@@ -2745,37 +2745,37 @@ msgid "EMail"
 msgstr "Електронна поща"
 
 #: contacts/contactimportexport.cpp:58
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not read the vCard file."
-msgstr ""
+msgstr "Неуспешно четене на vCard файла."
 
 #: contacts/contactimportexport.cpp:66
 #, fuzzy, kde-format
 #| msgid "This mail contains an invitation"
 msgctxt "@info"
 msgid "The file did not contain any contacts."
-msgstr "Този имейл съдържа покана"
+msgstr "Файлът не съдържа контакти."
 
 #: contacts/contactimportexport.cpp:88
 #, fuzzy, kde-format
 #| msgid "The contact address book could not be found."
 msgctxt "@info"
 msgid "The selected address book could not be found."
-msgstr "Адресната книга на контактите не можа да бъде намерена."
+msgstr "Избраният адресник не можа да бъде намерен."
 
 #: contacts/contactimportexport.cpp:94
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "The selected address book does not allow contacts to be added."
-msgstr ""
+msgstr "Избраната адресна книга не позволява добавяне на контакти."
 
 #: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
 #: contacts/contactimportexport.cpp:224
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not write the vCard file."
-msgstr ""
+msgstr "Грешка при записване на vCard файла."
 
 #: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
 #: contacts/contactimportexport.cpp:216
@@ -2783,7 +2783,7 @@ msgstr ""
 #| msgid "There are no recipients to e-mail"
 msgctxt "@info"
 msgid "There are no contacts to export."
-msgstr "Няма получатели за имейл"
+msgstr "Няма контакти за експортиране."
 
 #: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
 #, fuzzy, kde-format
@@ -2793,10 +2793,10 @@ msgid "The contact could not be found."
 msgstr "Контактът не беше намерен."
 
 #: contacts/contactimportexport.cpp:200
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
-msgstr ""
+msgstr "Неуспешно подготвяне на контакта за споделяне."
 
 #: contacts/contactlistproxymodel.cpp:83
 #, fuzzy, kde-format
@@ -2809,7 +2809,7 @@ msgstr "Днес"
 #, fuzzy, kde-format
 #| msgid "The contact address book could not be found."
 msgid "The selected address book cannot store this contact."
-msgstr "Адресната книга на контактите не можа да бъде намерена."
+msgstr "Избраната адресна книга не може да съхранява този контакт."
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
@@ -2859,15 +2859,13 @@ msgstr "Без име"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "Рожден ден на %1, навършване на %2 години"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "Рожден ден"
+msgstr "Рожден ден на %1"
 
 #: contacts/qml/ContactListItem.qml:119
 #, fuzzy, kde-format
@@ -2876,8 +2874,8 @@ msgstr "Рожден ден"
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "година"
-msgstr[1] "години"
+msgstr[0] "%1 година"
+msgstr[1] "%1 години"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2886,12 +2884,10 @@ msgid "Contacts"
 msgstr "Контакти"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "Рожден ден"
+msgstr "Рождени дни"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -2926,13 +2922,13 @@ msgstr[1] "%1 избрани"
 msgctxt "%1 is the number of imported contacts"
 msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
-msgstr[0] "%1 случая бяха импортирани успешно."
-msgstr[1] "%1 случая бяха импортирани успешно."
+msgstr[0] "%1 контакт е импортиран успешно."
+msgstr[1] "%1 контакта са импортирани успешно."
 
 #: contacts/qml/ContactView.qml:135
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not import contacts: %1"
-msgstr ""
+msgstr "Грешка при импортиране на контакти: %1"
 
 #: contacts/qml/ContactView.qml:141
 #, fuzzy, kde-format
@@ -2941,43 +2937,43 @@ msgstr ""
 msgctxt "%1 is the number of exported contacts"
 msgid "%1 contact exported successfully."
 msgid_plural "%1 contacts exported successfully."
-msgstr[0] "%1 случая бяха импортирани успешно."
-msgstr[1] "%1 случая бяха импортирани успешно."
+msgstr[0] "%1 контакт е експортиран успешно."
+msgstr[1] "%1 контакта са експортирани успешно."
 
 #: contacts/qml/ContactView.qml:143
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not export contacts: %1"
-msgstr ""
+msgstr "Грешка при експортиране на контакти: %1"
 
 #: contacts/qml/ContactView.qml:164
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Import contacts"
-msgstr "Няма контакти"
+msgstr "Импортиране на контакти"
 
 #: contacts/qml/ContactView.qml:165
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf *.vcard)"
-msgstr "Календарни файлове (*.ics *.vcs)"
+msgstr "vCard файлове (*.vcf *.vcard)"
 
 #: contacts/qml/ContactView.qml:171
 #, fuzzy, kde-format
 #| msgid "Create Contact Group"
 msgid "Import Contacts To:"
-msgstr "Създаване на група за контакти"
+msgstr "Импортиране на контакти в:"
 
 #: contacts/qml/ContactView.qml:184
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Export contacts"
-msgstr "Няма контакти"
+msgstr "Експорт на контакти"
 
 #: contacts/qml/ContactView.qml:187 contacts/qml/private/ContactPage.qml:95
 #, fuzzy, kde-format
 #| msgid "Calendar files (*.ics *.vcs)"
 msgid "vCard files (*.vcf)"
-msgstr "Календарни файлове (*.ics *.vcs)"
+msgstr "vCard файлове (*.vcf)"
 
 #: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:200
 #, kde-format
@@ -3008,7 +3004,7 @@ msgstr "Няма контакти"
 #| msgid "Birthday"
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "Рожден ден"
+msgstr "Няма рождени дни"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3208,32 +3204,32 @@ msgstr "Адрес"
 #| msgid_plural "Addresses"
 msgctxt "@action:button"
 msgid "Add address"
-msgstr "Адрес"
+msgstr "Добавяне на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Domestic"
-msgstr ""
+msgstr "Местен"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
 #, fuzzy, kde-format
 #| msgid "Alternative name"
 msgctxt "@item:inlistbox Address type"
 msgid "International"
-msgstr "Алтернативно име"
+msgstr "Международен"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Postal"
-msgstr ""
+msgstr "Пощенски"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Parcel"
-msgstr ""
+msgstr "Парцел"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
 #, fuzzy, kde-format
@@ -3243,8 +3239,7 @@ msgid "Home"
 msgstr "Домашен"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Work"
 msgstr "Служебен"
@@ -3253,7 +3248,7 @@ msgstr "Служебен"
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Preferred"
-msgstr ""
+msgstr "Предпочитан"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
 #, fuzzy, kde-format
@@ -3261,15 +3256,13 @@ msgstr ""
 #| msgid_plural "Addresses"
 msgctxt "@title:window"
 msgid "Add address"
-msgstr "Адрес"
+msgstr "Добавяне на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Address Book"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit address"
-msgstr "Редактиране на адресната книга"
+msgstr "Редактиране на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
 #, fuzzy, kde-format
@@ -3277,69 +3270,68 @@ msgstr "Редактиране на адресната книга"
 #| msgid_plural "Addresses"
 msgctxt "@label:listbox"
 msgid "Address type"
-msgstr "Адрес"
+msgstr "Тип адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Other"
 msgctxt "@item:inlistbox Address type"
 msgid "Other"
-msgstr "Друг"
+msgstr "Други"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:87
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Street"
-msgstr ""
+msgstr "Улица"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:95
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Apartment, suite, etc."
-msgstr ""
+msgstr "Апартамент, офис и др."
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "P.O. box"
-msgstr ""
+msgstr "Пощенска кутия"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:114
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "City"
-msgstr ""
+msgstr "Град"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:120
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "State or region"
-msgstr ""
+msgstr "Област или регион"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:126
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Postal code"
-msgstr ""
+msgstr "Пощенски код"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:132
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Country"
-msgstr ""
+msgstr "Държава"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:142
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Delivery label"
-msgstr ""
+msgstr "Етикет за доставка"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove address"
-msgstr "Премахване на имейл"
+msgstr "Премахване на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
 #, fuzzy, kde-format
@@ -3462,7 +3454,7 @@ msgstr "Електронна поща"
 #| msgid_plural "Addresses"
 msgctxt "@title:group"
 msgid "Addresses"
-msgstr "Адрес"
+msgstr "Адреси"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:158
 #, kde-format
@@ -3476,7 +3468,7 @@ msgstr "Instant Messenger"
 #| msgid "Note"
 msgctxt "@title:group"
 msgid "Notes"
-msgstr "Бележка"
+msgstr "Бележки"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
 #, fuzzy, kde-format
@@ -3484,14 +3476,14 @@ msgstr "Бележка"
 #| msgid "Note"
 msgctxt "@label:textbox"
 msgid "Notes"
-msgstr "Бележка"
+msgstr "Бележки"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:181
 #, fuzzy, kde-format
 #| msgid "Add Folder"
 msgctxt "@info:placeholder"
 msgid "Add a note"
-msgstr "Добавяне на папка"
+msgstr "Добавяне на бележка"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:230
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
@@ -3728,17 +3720,17 @@ msgid "Update Profile Picture"
 msgstr "Актуализиране на профилна снимка"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "Събитие"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
 #, fuzzy, kde-format
 #| msgid "Email:"
 msgctxt "@info:label"
 msgid "Email"
-msgstr "Е-поща:"
+msgstr "Имейл"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3749,10 +3741,10 @@ msgstr "Редактиране"
 
 #: contacts/qml/private/ContactPage.qml:35
 #: contacts/qml/private/ContactPage.qml:228
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "дд.ММ."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3766,7 +3758,7 @@ msgstr "Редактиране"
 #| msgid "Edit contact…"
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
-msgstr "Редактиране на контакт…"
+msgstr "Експортиране на контакт…"
 
 #: contacts/qml/private/ContactPage.qml:70
 #, kde-format
@@ -3779,25 +3771,25 @@ msgstr "Отказ"
 #| msgctxt "%1 is a number"
 #| msgid "%1 incidences were imported successfully."
 msgid "Contact exported successfully."
-msgstr "%1 случая бяха импортирани успешно."
+msgstr "Контактът е експортиран успешно."
 
 #: contacts/qml/private/ContactPage.qml:85
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not export contact: %1"
-msgstr ""
+msgstr "Грешка при експортиране на контакт: %1"
 
 #: contacts/qml/private/ContactPage.qml:92
 #, fuzzy, kde-format
 #| msgid "No contacts"
 msgid "Export contact"
-msgstr "Няма контакти"
+msgstr "Експорт на контакт"
 
 #: contacts/qml/private/ContactPage.qml:112
 #, fuzzy, kde-format
 #| msgid "Birthday:"
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "рожден ден:"
+msgstr "Дата на раждане: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3891,17 +3883,17 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:305
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
-msgstr ""
+msgstr "Показване на %1 на карта"
 
 #: contacts/qml/private/ContactPage.qml:306
 #, kde-format
 msgctxt ""
 "@action:button Accessible name for opening contact coordinates in a map"
 msgid "Show location on a map"
-msgstr ""
+msgstr "Показване на местоположението на карта"
 
 #: contacts/qml/private/ContactPage.qml:313
 #, kde-format
@@ -3962,17 +3954,16 @@ msgstr[0] "Имейл адрес"
 msgstr[1] "Имейл адрес"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "Премахване на имейл"
+msgstr "Последни имейли"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "Последни събития"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -3981,14 +3972,14 @@ msgid "Cryptographic Certificates"
 msgstr "Криптографски сертификати"
 
 #: contacts/qml/private/ContactShareDialog.qml:36
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not share contact: %1"
-msgstr ""
+msgstr "Грешка при споделяне на контакт: %1"
 
 #: contacts/qml/private/ContactShareDialog.qml:39
-#, kde-format
+#, fuzzy, kde-format
 msgid "Contact shared successfully."
-msgstr ""
+msgstr "Контактът е споделен успешно."
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -4024,7 +4015,7 @@ msgstr "Няма да можете да отмените това действи
 #| msgid "New Contact"
 msgctxt "@action:inmenu"
 msgid "Share Contact"
-msgstr "Нов контакт"
+msgstr "Споделяне на контакт"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
 #, fuzzy, kde-format
@@ -4032,7 +4023,7 @@ msgstr "Нов контакт"
 #| msgid "Delete contact"
 msgctxt "@tooltip"
 msgid "Share this contact"
-msgstr "Изтриване на контакт"
+msgstr "Споделяне на този контакт"
 
 #: contacts/qml/private/QrCodePage.qml:18
 #, kde-format
@@ -4061,12 +4052,10 @@ msgid "Add New Address Book Source…"
 msgstr "Добавяне на нов източник на адресна книга…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "Рожден ден"
+msgstr "Рождени дни"
 
 #: launcher/main.cpp:34
 #, kde-format
@@ -4251,9 +4240,9 @@ msgid "Email Client"
 msgstr "Имейл клиент"
 
 #: mail/main.cpp:98
-#, kde-format
+#, fuzzy, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Отваряне на съобщение от Akonadi по ID."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25
@@ -4613,7 +4602,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Избиране на вида на акаунта"
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "No Name"
-#~ msgstr "Без име"

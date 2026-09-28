@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-25 13:54+0300\n"
+"PO-Revision-Date: 2026-09-26 13:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2821,8 +2821,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr "Не вдалося приготувати запис контакту до оприлюднення."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Сьогодні"
@@ -2878,27 +2877,23 @@ msgstr "Немає назви"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "День народження %1, виповниться %2"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "День народження"
+msgstr "День народження %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "рік"
-msgstr[1] "роки"
-msgstr[2] "років"
-msgstr[3] "рік"
+msgstr[0] "%1 рік"
+msgstr[1] "%1 роки"
+msgstr[2] "%1 років"
+msgstr[3] "%1 рік"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2907,12 +2902,10 @@ msgid "Contacts"
 msgstr "Контакти"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "День народження"
+msgstr "Дні народження"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -3021,12 +3014,10 @@ msgid "No contacts"
 msgstr "Немає контактів"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "День народження"
+msgstr "Немає днів народження"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3727,18 +3718,16 @@ msgid "Update Profile Picture"
 msgstr "Оновлення зображення профілю"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Event"
+#, kde-format
 msgctxt "@info:label"
 msgid "Event"
 msgstr "Подія"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "Ел. пошта:"
+msgstr "Ел. пошта"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3752,7 +3741,7 @@ msgstr "Змінити"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3788,11 +3777,10 @@ msgid "Export contact"
 msgstr "Експортувати контакт"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "День народження:"
+msgstr "День народження: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3963,18 +3951,16 @@ msgstr[2] "Адреси ел. пошти"
 msgstr[3] "Адреса ел. пошти"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "Вилучити адресу ел. пошти"
+msgstr "Нещодавні повідомлення ел. пошти"
 
 #: contacts/qml/private/ContactPage.qml:487
-#, fuzzy, kde-format
-#| msgid "New event"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr "Нова подія"
+msgstr "Нещодавні події"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -4063,12 +4049,10 @@ msgid "Add New Address Book Source…"
 msgstr "Додати нове джерело даних адресної книги…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "День народження"
+msgstr "Дні народження"
 
 #: launcher/main.cpp:34
 #, kde-format
@@ -4255,7 +4239,7 @@ msgstr "Клієнт електронної пошти"
 #: mail/main.cpp:98
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Відкрити повідомлення Akonadi за ідентифікатором."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25

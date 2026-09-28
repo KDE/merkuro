@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-25 19:44+0200\n"
+"PO-Revision-Date: 2026-09-26 08:31+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2818,8 +2818,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr "Stika ni bilo mogoče pripraviti za deljenje."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Danes"
@@ -2875,27 +2874,23 @@ msgstr "Brez imena"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "Rojstni dan %1, dopolnjuje %2"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "Rojstni dan"
+msgstr "Rojstni dan na %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "leto"
-msgstr[1] "leti"
-msgstr[2] "leta"
-msgstr[3] "let"
+msgstr[0] "%1 leto"
+msgstr[1] "%1 leti"
+msgstr[2] "%1 leta"
+msgstr[3] "%1 let"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2904,12 +2899,10 @@ msgid "Contacts"
 msgstr "Stiki"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "Rojstni dan"
+msgstr "Rojstni dnevi"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -3018,12 +3011,10 @@ msgid "No contacts"
 msgstr "Ni stikov"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "Rojstni dan"
+msgstr "Ni rojstnih dni"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3723,14 +3714,13 @@ msgstr "Posodobi sliko profila"
 #, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "Dogodek"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "E-pošta:"
+msgstr "E-pošta"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3744,7 +3734,7 @@ msgstr "Uredi"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3780,11 +3770,10 @@ msgid "Export contact"
 msgstr "Izvozi stik"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "Rojstni dan:"
+msgstr "Rojstni dan: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3955,17 +3944,16 @@ msgstr[2] "Naslovi e-pošte"
 msgstr[3] "Naslovi e-pošte"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "Odstrani e-pošto"
+msgstr "Nedavna poštna sporočila"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "Nedavni dogodki"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -4054,12 +4042,10 @@ msgid "Add New Address Book Source…"
 msgstr "Dodaj nov vir adresarja…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "Rojstni dan"
+msgstr "Rojstni dnevi"
 
 #: launcher/main.cpp:34
 #, kde-format
@@ -4246,7 +4232,7 @@ msgstr "Odjemalec elektronske pošte"
 #: mail/main.cpp:98
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Odpri sporočilo Akonadi z ID-jem."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25

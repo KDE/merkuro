@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-25 11:20+0200\n"
+"PO-Revision-Date: 2026-09-26 11:32+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2805,8 +2805,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr "Nepodařilo se připravit kontakt pro sdílení."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Dnes"
@@ -2862,26 +2861,22 @@ msgstr "Beze jména"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "Narozeniny %1, oslava %2. narozenin"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "Narozeniny"
+msgstr "Narozeniny %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "rok"
-msgstr[1] "roky"
-msgstr[2] "let"
+msgstr[0] "%1 rok"
+msgstr[1] "%1 roky"
+msgstr[2] "%1 let"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2890,9 +2885,7 @@ msgid "Contacts"
 msgstr "Kontakty"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
 msgstr "Narozeniny"
@@ -3001,12 +2994,10 @@ msgid "No contacts"
 msgstr "Žádné kontakty"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "Narozeniny"
+msgstr "Žádné narozeniny"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3707,14 +3698,13 @@ msgstr "Aktualizovat profilový obrázek"
 #, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "Událost"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "E-mail:"
+msgstr "E-mail"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:76
@@ -3728,7 +3718,7 @@ msgstr "Úpravy"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3764,11 +3754,10 @@ msgid "Export contact"
 msgstr "Exportovat kontakt"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "Narozeniny:"
+msgstr "Narozeniny: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3936,17 +3925,16 @@ msgstr[1] "E-mailové adresy"
 msgstr[2] "E-mailové adresy"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "Odstranit e-mail"
+msgstr "Nedávné e-maily"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "Nedávné události"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -4033,9 +4021,7 @@ msgid "Add New Address Book Source…"
 msgstr "Přidat nový zdroj knihy adres…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
 msgstr "Narozeniny"
@@ -4225,7 +4211,7 @@ msgstr "Poštovní klient"
 #: mail/main.cpp:98
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Otevřít zprávu Akonadi podle ID."
 
 #: mail/qml/actions/DeleteFolderAction.qml:20
 #: mail/qml/actions/DeleteFolderAction.qml:25
