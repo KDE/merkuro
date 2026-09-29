@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -202,50 +202,33 @@ msgstr "त्रुटिः अभवत्: %1"
 msgid "Task"
 msgstr "कार्य"
 
-#: calendar/main.cpp:54
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Calendar"
-msgstr "बुध पञ्चाङ्ग"
-
-#: calendar/main.cpp:57
-#, kde-format
-msgid "Calendar Application"
-msgstr "पञ्चाङ्ग अनुप्रयोग"
-
-#: calendar/main.cpp:61 contacts/main.cpp:55 mail/main.cpp:82
-#, fuzzy, kde-format
-#| msgid "(c) KDE Community 2021-2024"
-msgid "© KDE Community 2021–2026"
-msgstr "(ग) केडीई समुदाय 2021-2024"
-
-#: calendar/main.cpp:63 contacts/main.cpp:57 launcher/main.cpp:39
-#: mail/main.cpp:84
+#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
+#: mail/main.cpp:74
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान्"
 
-#: calendar/main.cpp:64 calendar/main.cpp:69 contacts/main.cpp:58
-#: contacts/main.cpp:63 launcher/main.cpp:39 mail/main.cpp:85 mail/main.cpp:90
+#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
+#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "परिपालकः"
 
-#: calendar/main.cpp:68 contacts/main.cpp:62 mail/main.cpp:89
+#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "चैम्बर की"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "फेलिप किनोशिता"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -864,8 +847,8 @@ msgstr "भवन्तः एतत् कार्यं प्रत्या
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:85
-#: mail/qml/actions/DeleteFolderAction.qml:33
-#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:107
+#: mail/qml/actions/DeleteFolderAction.qml:36
+#: mail/qml/actions/NewFolderAction.qml:35 mail/qml/ProgressStatusBar.qml:118
 #, kde-format
 msgid "Cancel"
 msgstr "निरसयतु"
@@ -1967,7 +1950,7 @@ msgstr "Calendar Color इति चिनोतु"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
 #: contacts/qml/GlobalMenuBar.qml:31 contacts/qml/MenuBar.qml:28
-#: mail/qml/app/GlobalMenuBar.qml:23 mail/qml/app/MenuBar.qml:19
+#: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:21
 #, kde-format
 msgctxt "@action:menu"
 msgid "View"
@@ -1987,8 +1970,8 @@ msgstr "गच्छ"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:45 contacts/qml/MenuBar.qml:40
-#: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:27
-#: mail/qml/FolderView.qml:80
+#: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:29
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2110,7 +2093,7 @@ msgid "Enter email of recipient…"
 msgstr "प्राप्तकर्तायाः ईमेल प्रविष्टं कुर्वन्तु..."
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:182
+#: mail/qml/MailComposer.qml:190
 #, kde-format
 msgid "Send"
 msgstr "प्रेषयतु"
@@ -2664,12 +2647,6 @@ msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
 msgstr "मान्य"
 
-#: contacts/contactactions.cpp:153
-#, kde-format
-msgctxt "Placeholder when no name is set"
-msgid "No name"
-msgstr "न नाम"
-
 #: contacts/contactactions.cpp:159
 #, fuzzy, kde-format
 #| msgctxt "@info: shorthand for the key is invalid"
@@ -2912,17 +2889,6 @@ msgstr "कार्यम्‌:"
 msgid "Other:"
 msgstr "इतर:"
 
-#: contacts/main.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Contact"
-msgstr "बुध सम्पर्क"
-
-#: contacts/main.cpp:51
-#, kde-format
-msgid "Address Book Application"
-msgstr "पता पुस्तिका आवेदन"
-
 #: contacts/qml/ContactChooserPage.qml:36
 #, kde-format
 msgid "Done"
@@ -3066,13 +3032,13 @@ msgstr "सम्पर्कः नास्ति"
 msgid "vCard files (*.vcf)"
 msgstr "पञ्चाङ्गसञ्चिकाः (*.ics *.vcs) ."
 
-#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:200
+#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr ""
 
-#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:217
+#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:220
 #, fuzzy, kde-format
 #| msgid "Completion:"
 msgctxt "@title:dialog"
@@ -3830,7 +3796,7 @@ msgid "Email"
 msgstr "ईमेल :"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
-#: mail/settings/TransportConfigurationForm.qml:76
+#: mail/settings/TransportConfigurationForm.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -4086,7 +4052,7 @@ msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "सम्पर्कविलोपनस्य पुष्टिः कुर्वन्तु"
 
-#: contacts/qml/private/DeleteContactDialog.qml:28
+#: contacts/qml/private/DeleteContactDialog.qml:45
 #, fuzzy, kde-format
 #| msgid "Delete contact"
 msgctxt "@action:button"
@@ -4095,7 +4061,7 @@ msgid_plural "Delete contacts"
 msgstr[0] "सम्पर्क विलोपना"
 msgstr[1] "सम्पर्क विलोपना"
 
-#: contacts/qml/private/DeleteContactDialog.qml:35
+#: contacts/qml/private/DeleteContactDialog.qml:52
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete your contact: <b>%1</b>?"
 msgctxt "@info"
@@ -4104,7 +4070,13 @@ msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "किं भवान् वास्तवमेव स्वस्य सम्पर्कं विलोपयितुम् इच्छति: <b>%1</b> ?"
 msgstr[1] "किं भवान् वास्तवमेव स्वस्य सम्पर्कं विलोपयितुम् इच्छति: <b>%1</b> ?"
 
-#: contacts/qml/private/DeleteContactDialog.qml:41
+#: contacts/qml/private/DeleteContactDialog.qml:64
+#, kde-format
+msgctxt "Placeholder when no name is set"
+msgid "No name"
+msgstr "न नाम"
+
+#: contacts/qml/private/DeleteContactDialog.qml:69
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "भवन्तः एतत् कार्यं प्रत्यागन्तुं न शक्ष्यन्ति।"
@@ -4159,30 +4131,13 @@ msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
 msgstr "जन्मदिवस"
 
-#: launcher/main.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Launcher"
-msgstr "बुध प्रक्षेपक"
-
 #: launcher/main.cpp:36
-#, kde-format
-msgid "merkuro Launcher"
-msgstr "बुध प्रक्षेपक"
-
-#: launcher/main.cpp:38
-#, fuzzy, kde-format
-#| msgid "(c) 2024"
-msgid "© 2024"
-msgstr "(ग) 2024"
-
-#: launcher/main.cpp:40
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "श्रीकान्त् कलवार्"
 
-#: launcher/main.cpp:40
+#: launcher/main.cpp:36
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -4241,7 +4196,7 @@ msgctxt "@action"
 msgid "Mark as Important"
 msgstr "महत्त्वपूर्णं इति चिह्नं कुर्वन्तु"
 
-#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:21
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:23
 #, fuzzy, kde-format
 #| msgid "Move to Trash"
 msgctxt "@action"
@@ -4263,21 +4218,21 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "यथा रक्षन्तु..."
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:35
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "उत्तरम्-To:"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:41
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "सर्वं विलोपयतु"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:47
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
@@ -4344,30 +4299,19 @@ msgstr ""
 "संसाधनं %1 भग्नम् अस्ति।\n"
 "%2"
 
-#: mail/main.cpp:75
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Mail"
-msgstr "बुध मेल"
-
-#: mail/main.cpp:78
-#, kde-format
-msgid "Email Client"
-msgstr "ईमेल क्लायन्ट्"
-
-#: mail/main.cpp:98
+#: mail/main.cpp:88
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
 
-#: mail/qml/actions/DeleteFolderAction.qml:20
-#: mail/qml/actions/DeleteFolderAction.qml:25
-#: mail/qml/actions/MailItemMenu.qml:31
+#: mail/qml/actions/DeleteFolderAction.qml:23
+#: mail/qml/actions/DeleteFolderAction.qml:28
+#: mail/qml/actions/MailItemMenu.qml:35
 #, kde-format
 msgid "Delete Folder"
 msgstr "पुटं विलोपयन्तु"
 
-#: mail/qml/actions/DeleteFolderAction.qml:40
+#: mail/qml/actions/DeleteFolderAction.qml:43
 #, kde-format
 msgid ""
 "Are you sure you want to delete the folder %1, discarding its contents? <br /"
@@ -4378,21 +4322,21 @@ msgstr ""
 "<b>सावधानं भवतु</b> यत् परित्यक्ताः सन्देशाः भवतः Trash समुच्चय मध्ये न रक्षिताः भवन्ति "
 "तथा च स्थायिरूपेण विलोपिताः भवन्ति ।"
 
-#: mail/qml/actions/DeleteMailAction.qml:30
+#: mail/qml/actions/DeleteMailAction.qml:32
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@title:dialog"
 msgid "Delete Email"
 msgstr "सर्वं विलोपयतु"
 
-#: mail/qml/actions/DeleteMailAction.qml:44
+#: mail/qml/actions/DeleteMailAction.qml:46
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action:button"
 msgid "Delete Email"
 msgstr "सर्वं विलोपयतु"
 
-#: mail/qml/actions/DeleteMailAction.qml:49
+#: mail/qml/actions/DeleteMailAction.qml:51
 #, fuzzy, kde-format
 #| msgid ""
 #| "Are you sure you want to delete the folder %1, discarding its contents? "
@@ -4407,12 +4351,12 @@ msgstr ""
 "<b>सावधानं भवतु</b> यत् परित्यक्ताः सन्देशाः भवतः Trash समुच्चय मध्ये न रक्षिताः भवन्ति "
 "तथा च स्थायिरूपेण विलोपिताः भवन्ति ।"
 
-#: mail/qml/actions/MailItemMenu.qml:24
+#: mail/qml/actions/MailItemMenu.qml:28
 #, kde-format
 msgid "Add Folder"
 msgstr "पुटं योजयतु"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:44
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Edit calendar…"
@@ -4420,71 +4364,71 @@ msgctxt "@action:inmenu"
 msgid "Edit Folder…"
 msgstr "पञ्चाङ्गं सम्पादयन्तु..."
 
-#: mail/qml/actions/MailItemMenu.qml:44
+#: mail/qml/actions/MailItemMenu.qml:48
 #, fuzzy, kde-format
 #| msgid "Add Folder"
 msgctxt "@title"
 msgid "Edit Folder"
 msgstr "पुटं योजयतु"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:59
 #, fuzzy, kde-format
 #| msgid "Create Folder"
 msgctxt "@action:inmenu"
 msgid "Update Folder"
 msgstr "Folder रचयन्तु"
 
-#: mail/qml/actions/MailItemMenu.qml:61
+#: mail/qml/actions/MailItemMenu.qml:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
 msgstr ""
 
-#: mail/qml/actions/MailItemMenu.qml:70
+#: mail/qml/actions/MailItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "खाता पुनः आरभत"
 
-#: mail/qml/actions/MailItemMenu.qml:76
+#: mail/qml/actions/MailItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
 msgstr "खाता सेटिंग्स्"
 
-#: mail/qml/actions/NewFolderAction.qml:18
+#: mail/qml/actions/NewFolderAction.qml:22
 #, kde-format
 msgid "New Folder"
 msgstr "नवीनं पुटम्"
 
-#: mail/qml/actions/NewFolderAction.qml:23
+#: mail/qml/actions/NewFolderAction.qml:27
 #, kde-format
 msgid "Create Folder"
 msgstr "Folder रचयन्तु"
 
-#: mail/qml/actions/NewFolderAction.qml:39
+#: mail/qml/actions/NewFolderAction.qml:43
 #, fuzzy, kde-format
 #| msgid "Folder Name..."
 msgid "Folder Name…"
 msgstr "पुटस्य नाम..."
 
-#: mail/qml/desktopactions/OpenMbox.qml:16
+#: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
 msgid "Open File"
 msgstr "सञ्चिकां उद्घाटयन्तु"
 
-#: mail/qml/desktopactions/OpenMbox.qml:22
+#: mail/qml/desktopactions/OpenMbox.qml:25
 #, kde-format
 msgid "Choose file"
 msgstr "सञ्चिकां चिनोतु"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "अन्वेषणम् : %1"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:91
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Message"
@@ -4492,13 +4436,13 @@ msgctxt "@action"
 msgid "Thread Messages"
 msgstr "नवीन सन्देश"
 
-#: mail/qml/FolderView.qml:89
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
 msgstr ""
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:134
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgctxt "Number of selected emails"
@@ -4507,19 +4451,19 @@ msgid_plural "%1 selected"
 msgstr[0] "कोऽपि मेलबॉक्सः चयनितः नास्ति"
 msgstr[1] "कोऽपि मेलबॉक्सः चयनितः नास्ति"
 
-#: mail/qml/FolderView.qml:177
+#: mail/qml/FolderView.qml:180
 #, fuzzy, kde-format
 #| msgid "Save Message - Merkuro-Mail"
 msgid "Save Message - Merkuro Mail"
 msgstr "सन्देशं रक्षतु - बुध मेल"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:181
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox)"
 msgid "Email messages (*.mbox)"
 msgstr "ईमेल सन्देशाः (*.mbox) ."
 
-#: mail/qml/FolderView.qml:245
+#: mail/qml/FolderView.qml:248
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Message"
@@ -4527,126 +4471,126 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "नवीन सन्देश"
 
-#: mail/qml/FolderView.qml:253 mail/qml/MailComposer.qml:234
+#: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr ""
 
-#: mail/qml/FolderView.qml:262
+#: mail/qml/FolderView.qml:265
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "सन्देशं चिह्नितव्यम्"
 
-#: mail/qml/FolderView.qml:328
+#: mail/qml/FolderView.qml:331
 #, kde-format
 msgid "No mailbox selected"
 msgstr "कोऽपि मेलबॉक्सः चयनितः नास्ति"
 
-#: mail/qml/FolderView.qml:329
+#: mail/qml/FolderView.qml:332
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "पार्श्वपट्टिकातः एकं मेलबॉक्सं चिनोतु ।"
 
-#: mail/qml/FolderView.qml:336
+#: mail/qml/FolderView.qml:339
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "मेलबॉक्स रिक्तम् अस्ति"
 
-#: mail/qml/mailboxselector/MailBoxListPage.qml:12
+#: mail/qml/mailboxselector/MailBoxListPage.qml:13
 #, kde-format
 msgid "Mailboxes"
 msgstr "मेलबॉक्साः"
 
-#: mail/qml/MailComposer.qml:19
+#: mail/qml/MailComposer.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "नवीन सन्देश"
 
-#: mail/qml/MailComposer.qml:41
+#: mail/qml/MailComposer.qml:45
 #, kde-format
 msgid "From:"
 msgstr "इत्यस्मात्‌:"
 
-#: mail/qml/MailComposer.qml:52
+#: mail/qml/MailComposer.qml:56
 #, kde-format
 msgid "Identity:"
 msgstr "चिह्नं:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:87
 #, kde-format
 msgid "To:"
 msgstr "इत्यस्मै:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:88
 #, kde-format
 msgid "CC:"
 msgstr "सी. सी."
 
-#: mail/qml/MailComposer.qml:82
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "BCC:"
 msgstr "बीसीसी :"
 
-#: mail/qml/MailComposer.qml:83
+#: mail/qml/MailComposer.qml:90
 #, kde-format
 msgid "Reply-To:"
 msgstr "उत्तरम्-To:"
 
-#: mail/qml/MailComposer.qml:108
+#: mail/qml/MailComposer.qml:116
 #, kde-format
 msgid "Subject:"
 msgstr "विषयः:"
 
-#: mail/qml/MailComposer.qml:168
+#: mail/qml/MailComposer.qml:176
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "संलग्नकाः :"
 
-#: mail/qml/MailComposer.qml:191
+#: mail/qml/MailComposer.qml:199
 #, fuzzy, kde-format
 #| msgid "Send email"
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "ईमेल प्रेषयन्तु"
 
-#: mail/qml/MailComposer.qml:215
+#: mail/qml/MailComposer.qml:223
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "अनुसूची दृश्यम्"
 
-#: mail/qml/MailComposer.qml:228
+#: mail/qml/MailComposer.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:29
+#: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "अस्मिन् मेलपत्रे आमन्त्रणं भवति"
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:187
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mail/qml/private/MailDelegate.qml:228
+#: mail/qml/private/MailDelegate.qml:230
 #, fuzzy, kde-format
 #| msgid "Schedule"
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "कार्यक्रमः"
 
-#: mail/qml/private/MailDelegate.qml:229
+#: mail/qml/private/MailDelegate.qml:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -4654,18 +4598,18 @@ msgid ""
 "Reschedule action to set a date and time."
 msgstr ""
 
-#: mail/qml/private/MailDelegate.qml:242
+#: mail/qml/private/MailDelegate.qml:244
 #, kde-format
 msgid "Manual"
 msgstr ""
 
-#: mail/settings/AccountSettingsPage.qml:20
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "तादात्म्यम्"
 
-#: mail/settings/AccountSettingsPage.qml:28
+#: mail/settings/AccountSettingsPage.qml:29
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -4673,13 +4617,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "लेखा प्राप्ति"
 
-#: mail/settings/AccountSettingsPage.qml:32
-#: mail/settings/AccountSettingsPage.qml:42
+#: mail/settings/AccountSettingsPage.qml:33
+#: mail/settings/AccountSettingsPage.qml:46
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "मेल खाता विन्यास"
 
-#: mail/settings/AccountSettingsPage.qml:38
+#: mail/settings/AccountSettingsPage.qml:42
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@title:group Title for the list of receiving accounts which are imap or "
@@ -4691,60 +4635,98 @@ msgctxt ""
 msgid "Sending Accounts"
 msgstr "लेखा प्राप्ति"
 
-#: mail/settings/Settings.qml:13
+#: mail/settings/Settings.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "लेखा"
 
-#: mail/settings/TransportConfigurationForm.qml:34
+#: mail/settings/TransportConfigurationForm.qml:32
 #, fuzzy, kde-format
 #| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
 msgid "Rename %1"
 msgstr "%1 टैग् निष्कासयन्तु"
 
-#: mail/settings/TransportConfigurationForm.qml:43
-#: mail/settings/TransportConfigurationForm.qml:141
+#: mail/settings/TransportConfigurationForm.qml:41
+#: mail/settings/TransportConfigurationForm.qml:139
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
 msgstr "लेखा"
 
-#: mail/settings/TransportConfigurationForm.qml:86
+#: mail/settings/TransportConfigurationForm.qml:84
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: mail/settings/TransportConfigurationForm.qml:93
+#: mail/settings/TransportConfigurationForm.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "लुप्"
 
-#: mail/settings/TransportConfigurationForm.qml:104
+#: mail/settings/TransportConfigurationForm.qml:102
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "खाता योजयतु"
 
-#: mail/settings/TransportConfigurationForm.qml:146
+#: mail/settings/TransportConfigurationForm.qml:144
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
 msgstr ""
 
-#: mail/settings/TransportConfigurationForm.qml:151
+#: mail/settings/TransportConfigurationForm.qml:149
 #, kde-format
 msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
 msgstr ""
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Calendar"
+#~ msgstr "बुध पञ्चाङ्ग"
+
+#~ msgid "Calendar Application"
+#~ msgstr "पञ्चाङ्ग अनुप्रयोग"
+
+#, fuzzy
+#~| msgid "(c) KDE Community 2021-2024"
+#~ msgid "© KDE Community 2021–2026"
+#~ msgstr "(ग) केडीई समुदाय 2021-2024"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Contact"
+#~ msgstr "बुध सम्पर्क"
+
+#~ msgid "Address Book Application"
+#~ msgstr "पता पुस्तिका आवेदन"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Launcher"
+#~ msgstr "बुध प्रक्षेपक"
+
+#~ msgid "merkuro Launcher"
+#~ msgstr "बुध प्रक्षेपक"
+
+#, fuzzy
+#~| msgid "(c) 2024"
+#~ msgid "© 2024"
+#~ msgstr "(ग) 2024"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Mail"
+#~ msgstr "बुध मेल"
+
+#~ msgid "Email Client"
+#~ msgstr "ईमेल क्लायन्ट्"
 
 #, fuzzy
 #~| msgctxt "Placeholder"

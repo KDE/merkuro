@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-02-25 16:29+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -198,49 +198,33 @@ msgstr "Sattui virhe: %1"
 msgid "Task"
 msgstr "Tehtävä"
 
-#: calendar/main.cpp:54
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Calendar"
-msgstr "Merkuro Calendar"
-
-#: calendar/main.cpp:57
-#, kde-format
-msgid "Calendar Application"
-msgstr "Kalenterisovellus"
-
-#: calendar/main.cpp:61 contacts/main.cpp:55 mail/main.cpp:82
-#, kde-format
-msgid "© KDE Community 2021–2026"
-msgstr "© KDE-yhteisö 2021–2026"
-
-#: calendar/main.cpp:63 contacts/main.cpp:57 launcher/main.cpp:39
-#: mail/main.cpp:84
+#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
+#: mail/main.cpp:74
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:64 calendar/main.cpp:69 contacts/main.cpp:58
-#: contacts/main.cpp:63 launcher/main.cpp:39 mail/main.cpp:85 mail/main.cpp:90
+#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
+#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: calendar/main.cpp:68 contacts/main.cpp:62 mail/main.cpp:89
+#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -857,8 +841,8 @@ msgstr "Tätä toimenpidettä ei voi kumota"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:85
-#: mail/qml/actions/DeleteFolderAction.qml:33
-#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:107
+#: mail/qml/actions/DeleteFolderAction.qml:36
+#: mail/qml/actions/NewFolderAction.qml:35 mail/qml/ProgressStatusBar.qml:118
 #, kde-format
 msgid "Cancel"
 msgstr "Peru"
@@ -1935,7 +1919,7 @@ msgstr "Valitse kalenteriväri"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
 #: contacts/qml/GlobalMenuBar.qml:31 contacts/qml/MenuBar.qml:28
-#: mail/qml/app/GlobalMenuBar.qml:23 mail/qml/app/MenuBar.qml:19
+#: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:21
 #, kde-format
 msgctxt "@action:menu"
 msgid "View"
@@ -1955,8 +1939,8 @@ msgstr "Siirry"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:45 contacts/qml/MenuBar.qml:40
-#: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:27
-#: mail/qml/FolderView.qml:80
+#: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:29
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2067,7 +2051,7 @@ msgid "Enter email of recipient…"
 msgstr "Anna vastaanottajan sähköpostiosoite…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:182
+#: mail/qml/MailComposer.qml:190
 #, kde-format
 msgid "Send"
 msgstr "Lähetä"
@@ -2606,12 +2590,6 @@ msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
 msgstr "Kelvollinen"
 
-#: contacts/contactactions.cpp:153
-#, kde-format
-msgctxt "Placeholder when no name is set"
-msgid "No name"
-msgstr "Ei nimeä"
-
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
@@ -2851,17 +2829,6 @@ msgstr "Työ:"
 msgid "Other:"
 msgstr "Muu:"
 
-#: contacts/main.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Contact"
-msgstr "Merkuro-yhteystieto"
-
-#: contacts/main.cpp:51
-#, kde-format
-msgid "Address Book Application"
-msgstr "Osoitekirjasovellus"
-
 #: contacts/qml/ContactChooserPage.qml:36
 #, kde-format
 msgid "Done"
@@ -3005,13 +2972,13 @@ msgstr "Ei yhteystietoja"
 msgid "vCard files (*.vcf)"
 msgstr "Kalenteritiedostot (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:200
+#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Siirrä valinta:"
 
-#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:217
+#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:220
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3769,7 +3736,7 @@ msgid "Email"
 msgstr "Sähköposti:"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
-#: mail/settings/TransportConfigurationForm.qml:76
+#: mail/settings/TransportConfigurationForm.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -4029,7 +3996,7 @@ msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "Vahvista yhteystiedon poistaminen"
 
-#: contacts/qml/private/DeleteContactDialog.qml:28
+#: contacts/qml/private/DeleteContactDialog.qml:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
@@ -4037,7 +4004,7 @@ msgid_plural "Delete contacts"
 msgstr[0] "Poista yhteystieto"
 msgstr[1] "Poista yhteystiedot"
 
-#: contacts/qml/private/DeleteContactDialog.qml:35
+#: contacts/qml/private/DeleteContactDialog.qml:52
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
@@ -4045,7 +4012,13 @@ msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "Haluatko varmasti poistaa yhteystiedon:"
 msgstr[1] "Haluatko varmasti poistaa yhteystiedot:"
 
-#: contacts/qml/private/DeleteContactDialog.qml:41
+#: contacts/qml/private/DeleteContactDialog.qml:64
+#, kde-format
+msgctxt "Placeholder when no name is set"
+msgid "No name"
+msgstr "Ei nimeä"
+
+#: contacts/qml/private/DeleteContactDialog.qml:69
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Tätä toimenpidettä ei voi kumota."
@@ -4101,29 +4074,13 @@ msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
 msgstr "Syntymäpäivä"
 
-#: launcher/main.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Launcher"
-msgstr "Merkuro-käynnistin"
-
 #: launcher/main.cpp:36
-#, kde-format
-msgid "merkuro Launcher"
-msgstr "Merkuro-käynnistin"
-
-#: launcher/main.cpp:38
-#, kde-format
-msgid "© 2024"
-msgstr "© 2024"
-
-#: launcher/main.cpp:40
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: launcher/main.cpp:40
+#: launcher/main.cpp:36
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -4179,7 +4136,7 @@ msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Merkitse tärkeäksi"
 
-#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:21
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:23
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -4199,21 +4156,21 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Tallenna nimellä…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:35
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "Vastausosoite:"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:41
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Poista kaikki"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:47
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
@@ -4282,30 +4239,19 @@ msgstr ""
 "Resurssi %1 on rikki.\n"
 "%2"
 
-#: mail/main.cpp:75
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Mail"
-msgstr "Merkuro-sähköposti"
-
-#: mail/main.cpp:78
-#, kde-format
-msgid "Email Client"
-msgstr "Sähköpostiohjelma"
-
-#: mail/main.cpp:98
+#: mail/main.cpp:88
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
 
-#: mail/qml/actions/DeleteFolderAction.qml:20
-#: mail/qml/actions/DeleteFolderAction.qml:25
-#: mail/qml/actions/MailItemMenu.qml:31
+#: mail/qml/actions/DeleteFolderAction.qml:23
+#: mail/qml/actions/DeleteFolderAction.qml:28
+#: mail/qml/actions/MailItemMenu.qml:35
 #, kde-format
 msgid "Delete Folder"
 msgstr "Poista kansio"
 
-#: mail/qml/actions/DeleteFolderAction.qml:40
+#: mail/qml/actions/DeleteFolderAction.qml:43
 #, kde-format
 msgid ""
 "Are you sure you want to delete the folder %1, discarding its contents? <br /"
@@ -4316,19 +4262,19 @@ msgstr ""
 "b>, ettei poistettuja viestejä tallenneta roskakoriin vaan ne poistetaan "
 "pysyvästi."
 
-#: mail/qml/actions/DeleteMailAction.qml:30
+#: mail/qml/actions/DeleteMailAction.qml:32
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
 msgstr "Poista viesti"
 
-#: mail/qml/actions/DeleteMailAction.qml:44
+#: mail/qml/actions/DeleteMailAction.qml:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
 msgstr "Poista viesti"
 
-#: mail/qml/actions/DeleteMailAction.qml:49
+#: mail/qml/actions/DeleteMailAction.qml:51
 #, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
@@ -4339,80 +4285,80 @@ msgstr ""
 "ettei poistettuja viestejä tallenneta roskakoriin vaan ne poistetaan "
 "pysyvästi."
 
-#: mail/qml/actions/MailItemMenu.qml:24
+#: mail/qml/actions/MailItemMenu.qml:28
 #, kde-format
 msgid "Add Folder"
 msgstr "Lisää kansio"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Folder…"
 msgstr "Muokkaa kansiota…"
 
-#: mail/qml/actions/MailItemMenu.qml:44
+#: mail/qml/actions/MailItemMenu.qml:48
 #, kde-format
 msgctxt "@title"
 msgid "Edit Folder"
 msgstr "Muokkaa kansiota"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:59
 #, fuzzy, kde-format
 #| msgid "Create Folder"
 msgctxt "@action:inmenu"
 msgid "Update Folder"
 msgstr "Luo kansio"
 
-#: mail/qml/actions/MailItemMenu.qml:61
+#: mail/qml/actions/MailItemMenu.qml:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
 msgstr ""
 
-#: mail/qml/actions/MailItemMenu.qml:70
+#: mail/qml/actions/MailItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Käynnistä tili uudelleen"
 
-#: mail/qml/actions/MailItemMenu.qml:76
+#: mail/qml/actions/MailItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
 msgstr "Tilin asetukset"
 
-#: mail/qml/actions/NewFolderAction.qml:18
+#: mail/qml/actions/NewFolderAction.qml:22
 #, kde-format
 msgid "New Folder"
 msgstr "Uusi kansio"
 
-#: mail/qml/actions/NewFolderAction.qml:23
+#: mail/qml/actions/NewFolderAction.qml:27
 #, kde-format
 msgid "Create Folder"
 msgstr "Luo kansio"
 
-#: mail/qml/actions/NewFolderAction.qml:39
+#: mail/qml/actions/NewFolderAction.qml:43
 #, kde-format
 msgid "Folder Name…"
 msgstr "Kansion nimi…"
 
-#: mail/qml/desktopactions/OpenMbox.qml:16
+#: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
 msgid "Open File"
 msgstr "Avaa tiedosto"
 
-#: mail/qml/desktopactions/OpenMbox.qml:22
+#: mail/qml/desktopactions/OpenMbox.qml:25
 #, kde-format
 msgid "Choose file"
 msgstr "Valitse tiedosto"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Etsi: %1"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:91
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Message"
@@ -4420,13 +4366,13 @@ msgctxt "@action"
 msgid "Thread Messages"
 msgstr "Uusi viesti"
 
-#: mail/qml/FolderView.qml:89
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
 msgstr ""
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:134
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -4434,17 +4380,17 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 valittu"
 msgstr[1] "%1 valittu"
 
-#: mail/qml/FolderView.qml:177
+#: mail/qml/FolderView.qml:180
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Tallenna viesti – Merkuro Mail"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:181
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "Sähköpostiviestit (*.mbox)"
 
-#: mail/qml/FolderView.qml:245
+#: mail/qml/FolderView.qml:248
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "New Message"
@@ -4452,118 +4398,118 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Uusi viesti"
 
-#: mail/qml/FolderView.qml:253 mail/qml/MailComposer.qml:234
+#: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr ""
 
-#: mail/qml/FolderView.qml:262
+#: mail/qml/FolderView.qml:265
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Merkitse viesti"
 
-#: mail/qml/FolderView.qml:328
+#: mail/qml/FolderView.qml:331
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Postilaatikkoa ei ole valittu"
 
-#: mail/qml/FolderView.qml:329
+#: mail/qml/FolderView.qml:332
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Valitse postilaatikko sivupaneelista."
 
-#: mail/qml/FolderView.qml:336
+#: mail/qml/FolderView.qml:339
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Postilaatikko on tyhjä"
 
-#: mail/qml/mailboxselector/MailBoxListPage.qml:12
+#: mail/qml/mailboxselector/MailBoxListPage.qml:13
 #, kde-format
 msgid "Mailboxes"
 msgstr "Postilaatikot"
 
-#: mail/qml/MailComposer.qml:19
+#: mail/qml/MailComposer.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Uusi viesti"
 
-#: mail/qml/MailComposer.qml:41
+#: mail/qml/MailComposer.qml:45
 #, kde-format
 msgid "From:"
 msgstr "Lähettäjä:"
 
-#: mail/qml/MailComposer.qml:52
+#: mail/qml/MailComposer.qml:56
 #, kde-format
 msgid "Identity:"
 msgstr "Henkilöys:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:87
 #, kde-format
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:88
 #, kde-format
 msgid "CC:"
 msgstr "Kopio:"
 
-#: mail/qml/MailComposer.qml:82
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "BCC:"
 msgstr "Piilokopio:"
 
-#: mail/qml/MailComposer.qml:83
+#: mail/qml/MailComposer.qml:90
 #, kde-format
 msgid "Reply-To:"
 msgstr "Vastausosoite:"
 
-#: mail/qml/MailComposer.qml:108
+#: mail/qml/MailComposer.qml:116
 #, kde-format
 msgid "Subject:"
 msgstr "Aihe:"
 
-#: mail/qml/MailComposer.qml:168
+#: mail/qml/MailComposer.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Liitä tiedosto"
 
-#: mail/qml/MailComposer.qml:191
+#: mail/qml/MailComposer.qml:199
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Lähetä"
 
-#: mail/qml/MailComposer.qml:215
+#: mail/qml/MailComposer.qml:223
 #, fuzzy, kde-format
 #| msgid "Schedule View"
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Aikataulunäkymä"
 
-#: mail/qml/MailComposer.qml:228
+#: mail/qml/MailComposer.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:29
+#: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Tämä viesti sisältää kutsun"
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:187
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mail/qml/private/MailDelegate.qml:228
+#: mail/qml/private/MailDelegate.qml:230
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Schedule"
@@ -4571,7 +4517,7 @@ msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "Aikataulu"
 
-#: mail/qml/private/MailDelegate.qml:229
+#: mail/qml/private/MailDelegate.qml:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -4579,18 +4525,18 @@ msgid ""
 "Reschedule action to set a date and time."
 msgstr ""
 
-#: mail/qml/private/MailDelegate.qml:242
+#: mail/qml/private/MailDelegate.qml:244
 #, kde-format
 msgid "Manual"
 msgstr ""
 
-#: mail/settings/AccountSettingsPage.qml:20
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Henkilöydet"
 
-#: mail/settings/AccountSettingsPage.qml:28
+#: mail/settings/AccountSettingsPage.qml:29
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -4598,13 +4544,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Saapuvat tilit"
 
-#: mail/settings/AccountSettingsPage.qml:32
-#: mail/settings/AccountSettingsPage.qml:42
+#: mail/settings/AccountSettingsPage.qml:33
+#: mail/settings/AccountSettingsPage.qml:46
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Sähköpostitilin asetus"
 
-#: mail/settings/AccountSettingsPage.qml:38
+#: mail/settings/AccountSettingsPage.qml:42
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@title:group Title for the list of receiving accounts which are imap or "
@@ -4616,60 +4562,94 @@ msgctxt ""
 msgid "Sending Accounts"
 msgstr "Saapuvat tilit"
 
-#: mail/settings/Settings.qml:13
+#: mail/settings/Settings.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Tilit"
 
-#: mail/settings/TransportConfigurationForm.qml:34
+#: mail/settings/TransportConfigurationForm.qml:32
 #, fuzzy, kde-format
 #| msgid "Remove %1 tag"
 msgctxt "@title:dialog"
 msgid "Rename %1"
 msgstr "Poista %1 luokitus"
 
-#: mail/settings/TransportConfigurationForm.qml:43
-#: mail/settings/TransportConfigurationForm.qml:141
+#: mail/settings/TransportConfigurationForm.qml:41
+#: mail/settings/TransportConfigurationForm.qml:139
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
 msgstr "Tilit"
 
-#: mail/settings/TransportConfigurationForm.qml:86
+#: mail/settings/TransportConfigurationForm.qml:84
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: mail/settings/TransportConfigurationForm.qml:93
+#: mail/settings/TransportConfigurationForm.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Poista"
 
-#: mail/settings/TransportConfigurationForm.qml:104
+#: mail/settings/TransportConfigurationForm.qml:102
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Lisää tili"
 
-#: mail/settings/TransportConfigurationForm.qml:146
+#: mail/settings/TransportConfigurationForm.qml:144
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
 msgstr ""
 
-#: mail/settings/TransportConfigurationForm.qml:151
+#: mail/settings/TransportConfigurationForm.qml:149
 #, kde-format
 msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
 msgstr ""
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Calendar"
+#~ msgstr "Merkuro Calendar"
+
+#~ msgid "Calendar Application"
+#~ msgstr "Kalenterisovellus"
+
+#~ msgid "© KDE Community 2021–2026"
+#~ msgstr "© KDE-yhteisö 2021–2026"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Contact"
+#~ msgstr "Merkuro-yhteystieto"
+
+#~ msgid "Address Book Application"
+#~ msgstr "Osoitekirjasovellus"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Launcher"
+#~ msgstr "Merkuro-käynnistin"
+
+#~ msgid "merkuro Launcher"
+#~ msgstr "Merkuro-käynnistin"
+
+#~ msgid "© 2024"
+#~ msgstr "© 2024"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Mail"
+#~ msgstr "Merkuro-sähköposti"
+
+#~ msgid "Email Client"
+#~ msgstr "Sähköpostiohjelma"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "No Name"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-09-25 16:51+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -199,49 +199,33 @@ msgstr "حدث خطأ: %1"
 msgid "Task"
 msgstr "المهمّة"
 
-#: calendar/main.cpp:54
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Calendar"
-msgstr "تقويم ميركورو"
-
-#: calendar/main.cpp:57
-#, kde-format
-msgid "Calendar Application"
-msgstr "تطبيق التقويم"
-
-#: calendar/main.cpp:61 contacts/main.cpp:55 mail/main.cpp:82
-#, kde-format
-msgid "© KDE Community 2021–2026"
-msgstr "© مجتمع كِيدِي 2021–2026"
-
-#: calendar/main.cpp:63 contacts/main.cpp:57 launcher/main.cpp:39
-#: mail/main.cpp:84
+#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
+#: mail/main.cpp:74
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "كارل شوان"
 
-#: calendar/main.cpp:64 calendar/main.cpp:69 contacts/main.cpp:58
-#: contacts/main.cpp:63 launcher/main.cpp:39 mail/main.cpp:85 mail/main.cpp:90
+#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
+#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "المشرف"
 
-#: calendar/main.cpp:68 contacts/main.cpp:62 mail/main.cpp:89
+#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "كلاو كامبرا"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "فيليبي كينوشيتا"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -898,8 +882,8 @@ msgstr "لن تتمكن من التراجع عن هذا الإجراء"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:85
-#: mail/qml/actions/DeleteFolderAction.qml:33
-#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:107
+#: mail/qml/actions/DeleteFolderAction.qml:36
+#: mail/qml/actions/NewFolderAction.qml:35 mail/qml/ProgressStatusBar.qml:118
 #, kde-format
 msgid "Cancel"
 msgstr "ألغِ"
@@ -1967,7 +1951,7 @@ msgstr "اختر لون التقويم"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
 #: contacts/qml/GlobalMenuBar.qml:31 contacts/qml/MenuBar.qml:28
-#: mail/qml/app/GlobalMenuBar.qml:23 mail/qml/app/MenuBar.qml:19
+#: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:21
 #, kde-format
 msgctxt "@action:menu"
 msgid "View"
@@ -1987,8 +1971,8 @@ msgstr "انتقل"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:45 contacts/qml/MenuBar.qml:40
-#: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:27
-#: mail/qml/FolderView.qml:80
+#: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:29
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2099,7 +2083,7 @@ msgid "Enter email of recipient…"
 msgstr "ادخل البريد الإلكتروني للمستلم…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:182
+#: mail/qml/MailComposer.qml:190
 #, kde-format
 msgid "Send"
 msgstr "أرسل"
@@ -2646,12 +2630,6 @@ msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
 msgstr "صالح"
 
-#: contacts/contactactions.cpp:153
-#, kde-format
-msgctxt "Placeholder when no name is set"
-msgid "No name"
-msgstr "بلا اسم"
-
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
@@ -2890,17 +2868,6 @@ msgstr "العمل:"
 msgid "Other:"
 msgstr "أخرى:"
 
-#: contacts/main.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Contact"
-msgstr "متراسل ميركورو"
-
-#: contacts/main.cpp:51
-#, kde-format
-msgid "Address Book Application"
-msgstr "تطبيق دفتر العناوين"
-
 #: contacts/qml/ContactChooserPage.qml:36
 #, kde-format
 msgid "Done"
@@ -3057,13 +3024,13 @@ msgstr "بلا متراسلين"
 msgid "vCard files (*.vcf)"
 msgstr "ملفات التقويم (*.ics *.vcs)"
 
-#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:200
+#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "نقل التّحديد إلى:"
 
-#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:217
+#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:220
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -3799,7 +3766,7 @@ msgid "Email"
 msgstr "البريد الإلكترونيّ:"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
-#: mail/settings/TransportConfigurationForm.qml:76
+#: mail/settings/TransportConfigurationForm.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -4068,7 +4035,7 @@ msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "تأكيد حذف المتراسل"
 
-#: contacts/qml/private/DeleteContactDialog.qml:28
+#: contacts/qml/private/DeleteContactDialog.qml:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
@@ -4080,7 +4047,7 @@ msgstr[3] "احذف المتراسل"
 msgstr[4] "احذف المتراسل"
 msgstr[5] "احذف المتراسل"
 
-#: contacts/qml/private/DeleteContactDialog.qml:35
+#: contacts/qml/private/DeleteContactDialog.qml:52
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
@@ -4092,7 +4059,13 @@ msgstr[3] "أمتأكّد من حذف المتراسِلين:"
 msgstr[4] "أمتأكّد من حذف المتراسِلين:"
 msgstr[5] "أمتأكّد من حذف المتراسِلين:"
 
-#: contacts/qml/private/DeleteContactDialog.qml:41
+#: contacts/qml/private/DeleteContactDialog.qml:64
+#, kde-format
+msgctxt "Placeholder when no name is set"
+msgid "No name"
+msgstr "بلا اسم"
+
+#: contacts/qml/private/DeleteContactDialog.qml:69
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "لن تتمكن من التراجع عن هذا الإجراء."
@@ -4148,29 +4121,13 @@ msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
 msgstr "عيد الميلاد"
 
-#: launcher/main.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Launcher"
-msgstr "مطلق ميركورو"
-
 #: launcher/main.cpp:36
-#, kde-format
-msgid "merkuro Launcher"
-msgstr "مطلق ميركورو"
-
-#: launcher/main.cpp:38
-#, kde-format
-msgid "© 2024"
-msgstr "© 2024"
-
-#: launcher/main.cpp:40
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "زايد السعيدي"
 
-#: launcher/main.cpp:40
+#: launcher/main.cpp:36
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -4226,7 +4183,7 @@ msgctxt "@action"
 msgid "Mark as Important"
 msgstr "علّمها هامّة"
 
-#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:21
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:23
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -4244,19 +4201,19 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "احفظ كَ‍…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:35
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
 #, kde-format
 msgctxt "@action"
 msgid "Reply"
 msgstr "ردّ"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:41
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "ردّ على الكل"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:47
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Forward"
@@ -4319,30 +4276,19 @@ msgstr ""
 "المورد %1 معطوب.\n"
 "%2"
 
-#: mail/main.cpp:75
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Mail"
-msgstr "بريد ميركورو"
-
-#: mail/main.cpp:78
-#, kde-format
-msgid "Email Client"
-msgstr "عميل البريد الإلكتروني"
-
-#: mail/main.cpp:98
+#: mail/main.cpp:88
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
 
-#: mail/qml/actions/DeleteFolderAction.qml:20
-#: mail/qml/actions/DeleteFolderAction.qml:25
-#: mail/qml/actions/MailItemMenu.qml:31
+#: mail/qml/actions/DeleteFolderAction.qml:23
+#: mail/qml/actions/DeleteFolderAction.qml:28
+#: mail/qml/actions/MailItemMenu.qml:35
 #, kde-format
 msgid "Delete Folder"
 msgstr "احذف المجلد"
 
-#: mail/qml/actions/DeleteFolderAction.qml:40
+#: mail/qml/actions/DeleteFolderAction.qml:43
 #, kde-format
 msgid ""
 "Are you sure you want to delete the folder %1, discarding its contents? <br /"
@@ -4352,19 +4298,19 @@ msgstr ""
 "أتريد حقًّا حذف المجلّد %1 مهملًا محتواه؟ <br /><b>احترس</b> فالرّسائل المهملة لن "
 "تُحفظ في مجلّد المهملات وستُحذف إلى الأبد."
 
-#: mail/qml/actions/DeleteMailAction.qml:30
+#: mail/qml/actions/DeleteMailAction.qml:32
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
 msgstr "احذف البريد الإلكتروني"
 
-#: mail/qml/actions/DeleteMailAction.qml:44
+#: mail/qml/actions/DeleteMailAction.qml:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
 msgstr "احذف البريد الإلكتروني"
 
-#: mail/qml/actions/DeleteMailAction.qml:49
+#: mail/qml/actions/DeleteMailAction.qml:51
 #, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
@@ -4375,91 +4321,91 @@ msgstr ""
 "<br /><b>احذر</b> من أن الرسائل المتخلص منها لن تحفظ في مجلد سلة المهملات، "
 "بل تحذف بشكل دائم."
 
-#: mail/qml/actions/MailItemMenu.qml:24
+#: mail/qml/actions/MailItemMenu.qml:28
 #, kde-format
 msgid "Add Folder"
 msgstr "أضف مجلدًا"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Folder…"
 msgstr "حرر المجلد…"
 
-#: mail/qml/actions/MailItemMenu.qml:44
+#: mail/qml/actions/MailItemMenu.qml:48
 #, kde-format
 msgctxt "@title"
 msgid "Edit Folder"
 msgstr "حرر المجلد"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
 msgstr "حدّث مجلّد"
 
-#: mail/qml/actions/MailItemMenu.qml:61
+#: mail/qml/actions/MailItemMenu.qml:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
 msgstr "حدّث المجلد وجميع مجلداته الفرعية"
 
-#: mail/qml/actions/MailItemMenu.qml:70
+#: mail/qml/actions/MailItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "أعد تشغيل الحساب"
 
-#: mail/qml/actions/MailItemMenu.qml:76
+#: mail/qml/actions/MailItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
 msgstr "إعدادات الحساب"
 
-#: mail/qml/actions/NewFolderAction.qml:18
+#: mail/qml/actions/NewFolderAction.qml:22
 #, kde-format
 msgid "New Folder"
 msgstr "مجلّد جديد"
 
-#: mail/qml/actions/NewFolderAction.qml:23
+#: mail/qml/actions/NewFolderAction.qml:27
 #, kde-format
 msgid "Create Folder"
 msgstr "أنشئ مجلّدًا"
 
-#: mail/qml/actions/NewFolderAction.qml:39
+#: mail/qml/actions/NewFolderAction.qml:43
 #, kde-format
 msgid "Folder Name…"
 msgstr "اسم المجلد…"
 
-#: mail/qml/desktopactions/OpenMbox.qml:16
+#: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
 msgid "Open File"
 msgstr "افتح ملفًّا"
 
-#: mail/qml/desktopactions/OpenMbox.qml:22
+#: mail/qml/desktopactions/OpenMbox.qml:25
 #, kde-format
 msgid "Choose file"
 msgstr "اختر ملفّا"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "ابحث: %1"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:91
 #, kde-format
 msgctxt "@action"
 msgid "Thread Messages"
 msgstr "اجعل الرسائل في سلسلة موضوع"
 
-#: mail/qml/FolderView.qml:89
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
 msgstr "تبديل عرض الرسائل المُرتبة حسب سلسلة المحادثة"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:134
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -4471,125 +4417,125 @@ msgstr[3] "%1 رسائل مُحددة"
 msgstr[4] "%1 رسالة مُحددة"
 msgstr[5] "%1 رسالة مُحددة"
 
-#: mail/qml/FolderView.qml:177
+#: mail/qml/FolderView.qml:180
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "احفظ الرسالة - بريد ميركورو"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:181
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "رسائل البريد (*.mbox)"
 
-#: mail/qml/FolderView.qml:245
+#: mail/qml/FolderView.qml:248
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "أعد جدولة الرسالة"
 
-#: mail/qml/FolderView.qml:253 mail/qml/MailComposer.qml:234
+#: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr "أرسل التاريخ والوقت"
 
-#: mail/qml/FolderView.qml:262
+#: mail/qml/FolderView.qml:265
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "علّم الرّسالة"
 
-#: mail/qml/FolderView.qml:328
+#: mail/qml/FolderView.qml:331
 #, kde-format
 msgid "No mailbox selected"
 msgstr "لم يُحدّد صندوق بريد"
 
-#: mail/qml/FolderView.qml:329
+#: mail/qml/FolderView.qml:332
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "حدد صندوق بريد من الشريط الجانبي"
 
-#: mail/qml/FolderView.qml:336
+#: mail/qml/FolderView.qml:339
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "صندوق البريد فارغ"
 
-#: mail/qml/mailboxselector/MailBoxListPage.qml:12
+#: mail/qml/mailboxselector/MailBoxListPage.qml:13
 #, kde-format
 msgid "Mailboxes"
 msgstr "صناديق البريد"
 
-#: mail/qml/MailComposer.qml:19
+#: mail/qml/MailComposer.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "رسالة جديدة"
 
-#: mail/qml/MailComposer.qml:41
+#: mail/qml/MailComposer.qml:45
 #, kde-format
 msgid "From:"
 msgstr "من:"
 
-#: mail/qml/MailComposer.qml:52
+#: mail/qml/MailComposer.qml:56
 #, kde-format
 msgid "Identity:"
 msgstr "الهويّة:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:87
 #, kde-format
 msgid "To:"
 msgstr "إلى:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:88
 #, kde-format
 msgid "CC:"
 msgstr "ن‌ك:"
 
-#: mail/qml/MailComposer.qml:82
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "BCC:"
 msgstr "ن‌ك‌ع:"
 
-#: mail/qml/MailComposer.qml:83
+#: mail/qml/MailComposer.qml:90
 #, kde-format
 msgid "Reply-To:"
 msgstr "رُد إلى:"
 
-#: mail/qml/MailComposer.qml:108
+#: mail/qml/MailComposer.qml:116
 #, kde-format
 msgid "Subject:"
 msgstr "الموضوع:"
 
-#: mail/qml/MailComposer.qml:168
+#: mail/qml/MailComposer.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "أرفق مستندًا"
 
-#: mail/qml/MailComposer.qml:191
+#: mail/qml/MailComposer.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "أرسل لاحقًا"
 
-#: mail/qml/MailComposer.qml:215
+#: mail/qml/MailComposer.qml:223
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "جدولة الإرسال"
 
-#: mail/qml/MailComposer.qml:228
+#: mail/qml/MailComposer.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
 msgstr "الوضع اليدوي"
 
-#: mail/qml/mailpartview/ICalPart.qml:29
+#: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "هذا البريد يحوي دعوة"
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:187
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
@@ -4600,13 +4546,13 @@ msgstr[3] "%1 رسائل غير مقروءة في هذه السلسلة"
 msgstr[4] "%1 رسالة غير مقروءة في هذه السلسلة"
 msgstr[5] "%1 رسالة غير مقروءة في هذه السلسلة"
 
-#: mail/qml/private/MailDelegate.qml:228
+#: mail/qml/private/MailDelegate.qml:230
 #, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "مجدول في %1"
 
-#: mail/qml/private/MailDelegate.qml:229
+#: mail/qml/private/MailDelegate.qml:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -4616,18 +4562,18 @@ msgstr ""
 "يتطلب إجراءً يدويًّا. استخدم الإجراء «أرسل الآن» للإرسال فورًا، أو استخدم "
 "الإجراء «إعادة الجدولة» لتحديد التاريخ والوقت."
 
-#: mail/qml/private/MailDelegate.qml:242
+#: mail/qml/private/MailDelegate.qml:244
 #, kde-format
 msgid "Manual"
 msgstr "يدويّ"
 
-#: mail/settings/AccountSettingsPage.qml:20
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "الهويّات"
 
-#: mail/settings/AccountSettingsPage.qml:28
+#: mail/settings/AccountSettingsPage.qml:29
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -4635,13 +4581,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "حسابات الاستقبال"
 
-#: mail/settings/AccountSettingsPage.qml:32
-#: mail/settings/AccountSettingsPage.qml:42
+#: mail/settings/AccountSettingsPage.qml:33
+#: mail/settings/AccountSettingsPage.qml:46
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "اضبط حساب البريد"
 
-#: mail/settings/AccountSettingsPage.qml:38
+#: mail/settings/AccountSettingsPage.qml:42
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
@@ -4649,56 +4595,90 @@ msgctxt ""
 msgid "Sending Accounts"
 msgstr "حسابات الإرسال"
 
-#: mail/settings/Settings.qml:13
+#: mail/settings/Settings.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "الحسابات"
 
-#: mail/settings/TransportConfigurationForm.qml:34
+#: mail/settings/TransportConfigurationForm.qml:32
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Rename %1"
 msgstr "أعد تسمية %1"
 
-#: mail/settings/TransportConfigurationForm.qml:43
-#: mail/settings/TransportConfigurationForm.qml:141
+#: mail/settings/TransportConfigurationForm.qml:41
+#: mail/settings/TransportConfigurationForm.qml:139
 #, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
 msgstr "اسم الحساب"
 
-#: mail/settings/TransportConfigurationForm.qml:86
+#: mail/settings/TransportConfigurationForm.qml:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "إعدادات"
 
-#: mail/settings/TransportConfigurationForm.qml:93
+#: mail/settings/TransportConfigurationForm.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "احذف"
 
-#: mail/settings/TransportConfigurationForm.qml:104
+#: mail/settings/TransportConfigurationForm.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "أضف حسابًا"
 
-#: mail/settings/TransportConfigurationForm.qml:146
+#: mail/settings/TransportConfigurationForm.qml:144
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
 msgstr "اجعله المبدئي"
 
-#: mail/settings/TransportConfigurationForm.qml:151
+#: mail/settings/TransportConfigurationForm.qml:149
 #, kde-format
 msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
 msgstr "حدد نوع الحساب"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Calendar"
+#~ msgstr "تقويم ميركورو"
+
+#~ msgid "Calendar Application"
+#~ msgstr "تطبيق التقويم"
+
+#~ msgid "© KDE Community 2021–2026"
+#~ msgstr "© مجتمع كِيدِي 2021–2026"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Contact"
+#~ msgstr "متراسل ميركورو"
+
+#~ msgid "Address Book Application"
+#~ msgstr "تطبيق دفتر العناوين"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Launcher"
+#~ msgstr "مطلق ميركورو"
+
+#~ msgid "merkuro Launcher"
+#~ msgstr "مطلق ميركورو"
+
+#~ msgid "© 2024"
+#~ msgstr "© 2024"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Mail"
+#~ msgstr "بريد ميركورو"
+
+#~ msgid "Email Client"
+#~ msgstr "عميل البريد الإلكتروني"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "No Name"

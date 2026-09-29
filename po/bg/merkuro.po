@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-26 00:46+0000\n"
-"PO-Revision-Date: 2026-09-28 00:00+0200\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"PO-Revision-Date: 2026-09-28 17:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -201,49 +201,33 @@ msgstr "Възникна грешка: %1"
 msgid "Task"
 msgstr "Задача"
 
-#: calendar/main.cpp:54
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Calendar"
-msgstr "Календар Меркуро"
-
-#: calendar/main.cpp:57
-#, kde-format
-msgid "Calendar Application"
-msgstr "Приложение Календар"
-
-#: calendar/main.cpp:61 contacts/main.cpp:55 mail/main.cpp:82
-#, kde-format
-msgid "© KDE Community 2021–2026"
-msgstr "© Общността на KDE 2021-2026"
-
-#: calendar/main.cpp:63 contacts/main.cpp:57 launcher/main.cpp:39
-#: mail/main.cpp:84
+#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
+#: mail/main.cpp:74
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:64 calendar/main.cpp:69 contacts/main.cpp:58
-#: contacts/main.cpp:63 launcher/main.cpp:39 mail/main.cpp:85 mail/main.cpp:90
+#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
+#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Поддръжка"
 
-#: calendar/main.cpp:68 contacts/main.cpp:62 mail/main.cpp:89
+#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:72
+#: calendar/main.cpp:62
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -857,8 +841,8 @@ msgstr "Няма да можете да отмените това действи
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:85
-#: mail/qml/actions/DeleteFolderAction.qml:33
-#: mail/qml/actions/NewFolderAction.qml:31 mail/qml/ProgressStatusBar.qml:107
+#: mail/qml/actions/DeleteFolderAction.qml:36
+#: mail/qml/actions/NewFolderAction.qml:35 mail/qml/ProgressStatusBar.qml:118
 #, kde-format
 msgid "Cancel"
 msgstr "Отказване"
@@ -1907,7 +1891,7 @@ msgstr "Изберете цвят на календара"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:38 calendar/qml/Menus/MenuBar.qml:31
 #: contacts/qml/GlobalMenuBar.qml:31 contacts/qml/MenuBar.qml:28
-#: mail/qml/app/GlobalMenuBar.qml:23 mail/qml/app/MenuBar.qml:19
+#: mail/qml/app/GlobalMenuBar.qml:24 mail/qml/app/MenuBar.qml:21
 #, kde-format
 msgctxt "@action:menu"
 msgid "View"
@@ -1927,8 +1911,8 @@ msgstr "Отиване"
 
 #: calendar/qml/Menus/GlobalMenuBar.qml:161 calendar/qml/Menus/MenuBar.qml:136
 #: contacts/qml/GlobalMenuBar.qml:45 contacts/qml/MenuBar.qml:40
-#: mail/qml/app/GlobalMenuBar.qml:32 mail/qml/app/MenuBar.qml:27
-#: mail/qml/FolderView.qml:80
+#: mail/qml/app/GlobalMenuBar.qml:33 mail/qml/app/MenuBar.qml:29
+#: mail/qml/FolderView.qml:83
 #, kde-format
 msgctxt "@action:menu"
 msgid "Create"
@@ -2040,7 +2024,7 @@ msgid "Enter email of recipient…"
 msgstr "Въведете имейл на получателя…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:182
+#: mail/qml/MailComposer.qml:190
 #, kde-format
 msgid "Send"
 msgstr "Изпращане"
@@ -2583,12 +2567,6 @@ msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
 msgstr "Валидност"
 
-#: contacts/contactactions.cpp:153
-#, kde-format
-msgctxt "Placeholder when no name is set"
-msgid "No name"
-msgstr "Без име"
-
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
@@ -2639,27 +2617,22 @@ msgid "Copy to…"
 msgstr "Копиране в…"
 
 #: contacts/contactapplication.cpp:74
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
 msgstr "Импортиране на контакти…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "Експорт на всички контакти…"
+msgstr "Експортиране на всички контакти…"
 
 #: contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
-msgstr "Експорт на избраните контакти…"
+msgstr "Експортиране на избраните контакти…"
 
 #: contacts/contacteditorbackend.cpp:128
 #, kde-format
@@ -2687,8 +2660,7 @@ msgid "The contact is no longer available."
 msgstr "Контактът вече не е наличен."
 
 #: contacts/contacteditorbackend.cpp:207
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store contacts."
 msgstr "Избраната адресна книга не може да съхранява контакти."
 
@@ -2745,69 +2717,63 @@ msgid "EMail"
 msgstr "Електронна поща"
 
 #: contacts/contactimportexport.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not read the vCard file."
 msgstr "Неуспешно четене на vCard файла."
 
 #: contacts/contactimportexport.cpp:66
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info"
 msgid "The file did not contain any contacts."
 msgstr "Файлът не съдържа контакти."
 
 #: contacts/contactimportexport.cpp:88
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The selected address book could not be found."
-msgstr "Избраният адресник не можа да бъде намерен."
+msgstr "Избраната адресна книга не можа да бъде намерена."
 
 #: contacts/contactimportexport.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "The selected address book does not allow contacts to be added."
 msgstr "Избраната адресна книга не позволява добавяне на контакти."
 
 #: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
 #: contacts/contactimportexport.cpp:224
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not write the vCard file."
 msgstr "Грешка при записване на vCard файла."
 
 #: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
 #: contacts/contactimportexport.cpp:216
-#, fuzzy, kde-format
-#| msgid "There are no recipients to e-mail"
+#, kde-format
 msgctxt "@info"
 msgid "There are no contacts to export."
 msgstr "Няма контакти за експортиране."
 
 #: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The contact could not be found."
 msgstr "Контактът не беше намерен."
 
 #: contacts/contactimportexport.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
 msgstr "Неуспешно подготвяне на контакта за споделяне."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Днес"
 
 #: contacts/contactmanager.cpp:85
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store this contact."
 msgstr "Избраната адресна книга не може да съхранява този контакт."
 
@@ -2826,17 +2792,6 @@ msgstr "Служебен:"
 msgid "Other:"
 msgstr "Друго:"
 
-#: contacts/main.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Contact"
-msgstr "Контакт на Merkuro"
-
-#: contacts/main.cpp:51
-#, kde-format
-msgid "Address Book Application"
-msgstr "Приложение за адресна книга"
-
 #: contacts/qml/ContactChooserPage.qml:36
 #, kde-format
 msgid "Done"
@@ -2848,9 +2803,7 @@ msgid "Select Email Address"
 msgstr "Избиране на имейл адрес"
 
 #: contacts/qml/ContactListItem.qml:45 contacts/qml/private/ContactPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt "Placeholder when no name is set"
-#| msgid "No name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No name"
 msgstr "Без име"
@@ -2868,9 +2821,7 @@ msgid "Birthday on %1"
 msgstr "Рожден ден на %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
@@ -2916,9 +2867,7 @@ msgstr[0] "%1 избрани"
 msgstr[1] "%1 избрани"
 
 #: contacts/qml/ContactView.qml:133
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgctxt "%1 is the number of imported contacts"
 msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
@@ -2926,14 +2875,12 @@ msgstr[0] "%1 контакт е импортиран успешно."
 msgstr[1] "%1 контакта са импортирани успешно."
 
 #: contacts/qml/ContactView.qml:135
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not import contacts: %1"
 msgstr "Грешка при импортиране на контакти: %1"
 
 #: contacts/qml/ContactView.qml:141
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgctxt "%1 is the number of exported contacts"
 msgid "%1 contact exported successfully."
 msgid_plural "%1 contacts exported successfully."
@@ -2941,47 +2888,42 @@ msgstr[0] "%1 контакт е експортиран успешно."
 msgstr[1] "%1 контакта са експортирани успешно."
 
 #: contacts/qml/ContactView.qml:143
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not export contacts: %1"
 msgstr "Грешка при експортиране на контакти: %1"
 
 #: contacts/qml/ContactView.qml:164
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Import contacts"
 msgstr "Импортиране на контакти"
 
 #: contacts/qml/ContactView.qml:165
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf *.vcard)"
 msgstr "vCard файлове (*.vcf *.vcard)"
 
 #: contacts/qml/ContactView.qml:171
-#, fuzzy, kde-format
-#| msgid "Create Contact Group"
+#, kde-format
 msgid "Import Contacts To:"
 msgstr "Импортиране на контакти в:"
 
 #: contacts/qml/ContactView.qml:184
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contacts"
-msgstr "Експорт на контакти"
+msgstr "Експортиране на контакти"
 
 #: contacts/qml/ContactView.qml:187 contacts/qml/private/ContactPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf)"
 msgstr "vCard файлове (*.vcf)"
 
-#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:200
+#: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
 msgstr "Преместване на селекцията в:"
 
-#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:217
+#: contacts/qml/ContactView.qml:218 mail/qml/FolderView.qml:220
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
@@ -2999,9 +2941,7 @@ msgid "No contacts"
 msgstr "Няма контакти"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
 msgstr "Няма рождени дни"
@@ -3191,30 +3131,25 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Address"
 msgstr "Адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:43
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add address"
 msgstr "Добавяне на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Domestic"
 msgstr "Местен"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "International"
 msgstr "Международен"
@@ -3232,8 +3167,7 @@ msgid "Parcel"
 msgstr "Парцел"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Home"
 msgstr "Домашен"
@@ -3251,9 +3185,7 @@ msgid "Preferred"
 msgstr "Предпочитан"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add address"
 msgstr "Добавяне на адрес"
@@ -3265,28 +3197,25 @@ msgid "Edit address"
 msgstr "Редактиране на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Address type"
 msgstr "Тип адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Other"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Other"
 msgstr "Други"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:87
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Street"
 msgstr "Улица"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Apartment, suite, etc."
 msgstr "Апартамент, офис и др."
@@ -3298,13 +3227,13 @@ msgid "P.O. box"
 msgstr "Пощенска кутия"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:114
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "City"
 msgstr "Град"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:120
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "State or region"
 msgstr "Област или регион"
@@ -3316,13 +3245,13 @@ msgid "Postal code"
 msgstr "Пощенски код"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:132
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Country"
 msgstr "Държава"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:142
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Delivery label"
 msgstr "Етикет за доставка"
@@ -3334,8 +3263,7 @@ msgid "Remove address"
 msgstr "Премахване на адрес"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Запазване"
@@ -3449,9 +3377,7 @@ msgid "E-mail"
 msgstr "Електронна поща"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:group"
 msgid "Addresses"
 msgstr "Адреси"
@@ -3463,24 +3389,19 @@ msgstr "Instant Messenger"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:166
 #: contacts/qml/private/ContactPage.qml:441
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notes"
 msgstr "Бележки"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Notes"
 msgstr "Бележки"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add a note"
 msgstr "Добавяне на бележка"
@@ -3720,20 +3641,19 @@ msgid "Update Profile Picture"
 msgstr "Актуализиране на профилна снимка"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:label"
 msgid "Event"
 msgstr "Събитие"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
 msgstr "Имейл"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
-#: mail/settings/TransportConfigurationForm.qml:76
+#: mail/settings/TransportConfigurationForm.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
@@ -3741,7 +3661,7 @@ msgstr "Редактиране"
 
 #: contacts/qml/private/ContactPage.qml:35
 #: contacts/qml/private/ContactPage.qml:228
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
 msgstr "дд.ММ."
@@ -3753,9 +3673,7 @@ msgid "Edit"
 msgstr "Редактиране"
 
 #: contacts/qml/private/ContactPage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
 msgstr "Експортиране на контакт…"
@@ -3767,26 +3685,22 @@ msgid "Cancel"
 msgstr "Отказ"
 
 #: contacts/qml/private/ContactPage.qml:83
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgid "Contact exported successfully."
 msgstr "Контактът е експортиран успешно."
 
 #: contacts/qml/private/ContactPage.qml:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not export contact: %1"
 msgstr "Грешка при експортиране на контакт: %1"
 
 #: contacts/qml/private/ContactPage.qml:92
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contact"
-msgstr "Експорт на контакт"
+msgstr "Експортиране на контакт"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
 msgstr "Дата на раждане: %1"
@@ -3883,7 +3797,7 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:305
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
 msgstr "Показване на %1 на карта"
@@ -3972,12 +3886,12 @@ msgid "Cryptographic Certificates"
 msgstr "Криптографски сертификати"
 
 #: contacts/qml/private/ContactShareDialog.qml:36
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not share contact: %1"
 msgstr "Грешка при споделяне на контакт: %1"
 
 #: contacts/qml/private/ContactShareDialog.qml:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Contact shared successfully."
 msgstr "Контактът е споделен успешно."
 
@@ -3987,7 +3901,7 @@ msgctxt "@title:dialog"
 msgid "Confirm Contact Deletion"
 msgstr "Потвърдете изтриването на контакта"
 
-#: contacts/qml/private/DeleteContactDialog.qml:28
+#: contacts/qml/private/DeleteContactDialog.qml:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete contact"
@@ -3995,7 +3909,7 @@ msgid_plural "Delete contacts"
 msgstr[0] "Изтриване на контакт"
 msgstr[1] "Изтриване на контакт"
 
-#: contacts/qml/private/DeleteContactDialog.qml:35
+#: contacts/qml/private/DeleteContactDialog.qml:52
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to delete your contact:"
@@ -4003,24 +3917,26 @@ msgid_plural "Do you really want to delete your contacts:"
 msgstr[0] "Наистина ли искате да изтриете вашия контакт:"
 msgstr[1] "Наистина ли искате да изтриете вашите контакти:"
 
-#: contacts/qml/private/DeleteContactDialog.qml:41
+#: contacts/qml/private/DeleteContactDialog.qml:64
+#, kde-format
+msgctxt "Placeholder when no name is set"
+msgid "No name"
+msgstr "Без име"
+
+#: contacts/qml/private/DeleteContactDialog.qml:69
 #, kde-format
 msgid "You won't be able to revert this action."
 msgstr "Няма да можете да отмените това действие."
 
 #: contacts/qml/private/PurposeShareAction.qml:26
 #: contacts/qml/private/ShareActionDummy.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New Contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Share Contact"
 msgstr "Споделяне на контакт"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@tooltip"
 msgid "Share this contact"
 msgstr "Споделяне на този контакт"
@@ -4057,29 +3973,13 @@ msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
 msgstr "Рождени дни"
 
-#: launcher/main.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Merkuro Launcher"
-msgstr "Стартер на Меркуро"
-
 #: launcher/main.cpp:36
-#, kde-format
-msgid "merkuro Launcher"
-msgstr "Стартер merkuro"
-
-#: launcher/main.cpp:38
-#, kde-format
-msgid "© 2024"
-msgstr "© 2024"
-
-#: launcher/main.cpp:40
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Минчо Кондарев"
 
-#: launcher/main.cpp:40
+#: launcher/main.cpp:36
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -4135,7 +4035,7 @@ msgctxt "@action"
 msgid "Mark as Important"
 msgstr "Маркиране като важно"
 
-#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:21
+#: mail/mailapplication.cpp:53 mail/qml/actions/DeleteMailAction.qml:23
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
@@ -4153,19 +4053,19 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Запазване като…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:35
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
 #, kde-format
 msgctxt "@action"
 msgid "Reply"
 msgstr "Отговор"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:41
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
 #, kde-format
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Отговор на всички"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:47
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
 #, kde-format
 msgctxt "@action"
 msgid "Forward"
@@ -4228,30 +4128,19 @@ msgstr ""
 "Ресурсът %1 е повреден.\n"
 "%2"
 
-#: mail/main.cpp:75
+#: mail/main.cpp:88
 #, kde-format
-msgctxt "@title"
-msgid "Merkuro Mail"
-msgstr "Електронна поща Merkuro"
-
-#: mail/main.cpp:78
-#, kde-format
-msgid "Email Client"
-msgstr "Имейл клиент"
-
-#: mail/main.cpp:98
-#, fuzzy, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr "Отваряне на съобщение от Akonadi по ID."
 
-#: mail/qml/actions/DeleteFolderAction.qml:20
-#: mail/qml/actions/DeleteFolderAction.qml:25
-#: mail/qml/actions/MailItemMenu.qml:31
+#: mail/qml/actions/DeleteFolderAction.qml:23
+#: mail/qml/actions/DeleteFolderAction.qml:28
+#: mail/qml/actions/MailItemMenu.qml:35
 #, kde-format
 msgid "Delete Folder"
 msgstr "Изтриване на папка"
 
-#: mail/qml/actions/DeleteFolderAction.qml:40
+#: mail/qml/actions/DeleteFolderAction.qml:43
 #, kde-format
 msgid ""
 "Are you sure you want to delete the folder %1, discarding its contents? <br /"
@@ -4262,19 +4151,19 @@ msgstr ""
 "съдържание? <br /> <b>Имайте в предвид</b>, че изхвърлените съобщения не се "
 "записват в папка Кошче,а се изтриват необратимо."
 
-#: mail/qml/actions/DeleteMailAction.qml:30
+#: mail/qml/actions/DeleteMailAction.qml:32
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Delete Email"
 msgstr "Изтриване на писмото"
 
-#: mail/qml/actions/DeleteMailAction.qml:44
+#: mail/qml/actions/DeleteMailAction.qml:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Email"
 msgstr "Изтриване на писмото"
 
-#: mail/qml/actions/DeleteMailAction.qml:49
+#: mail/qml/actions/DeleteMailAction.qml:51
 #, kde-format
 msgid ""
 "Are you sure you want to delete the email \"%1\", discarding its contents? "
@@ -4285,91 +4174,91 @@ msgstr ""
 "съдържанието му? <br /> <b>Имайте в предвид</b>, че изхвърлените съобщения "
 "не се записват в папка Кошче, а се изтриват необратимо."
 
-#: mail/qml/actions/MailItemMenu.qml:24
+#: mail/qml/actions/MailItemMenu.qml:28
 #, kde-format
 msgid "Add Folder"
 msgstr "Добавяне на папка"
 
-#: mail/qml/actions/MailItemMenu.qml:40
+#: mail/qml/actions/MailItemMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Folder…"
 msgstr "Редактиране на папка…"
 
-#: mail/qml/actions/MailItemMenu.qml:44
+#: mail/qml/actions/MailItemMenu.qml:48
 #, kde-format
 msgctxt "@title"
 msgid "Edit Folder"
 msgstr "Редактиране на папка"
 
-#: mail/qml/actions/MailItemMenu.qml:55
+#: mail/qml/actions/MailItemMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
 msgstr "Актуализиране на папка"
 
-#: mail/qml/actions/MailItemMenu.qml:61
+#: mail/qml/actions/MailItemMenu.qml:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
 msgstr "Актуализиране на папка и подпапки"
 
-#: mail/qml/actions/MailItemMenu.qml:70
+#: mail/qml/actions/MailItemMenu.qml:74
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Restart Account"
 msgstr "Рестартиране на акаунт"
 
-#: mail/qml/actions/MailItemMenu.qml:76
+#: mail/qml/actions/MailItemMenu.qml:80
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Account Settings"
 msgstr "Настройки на акаунта"
 
-#: mail/qml/actions/NewFolderAction.qml:18
+#: mail/qml/actions/NewFolderAction.qml:22
 #, kde-format
 msgid "New Folder"
 msgstr "Нова папка"
 
-#: mail/qml/actions/NewFolderAction.qml:23
+#: mail/qml/actions/NewFolderAction.qml:27
 #, kde-format
 msgid "Create Folder"
 msgstr "Създаване на папка"
 
-#: mail/qml/actions/NewFolderAction.qml:39
+#: mail/qml/actions/NewFolderAction.qml:43
 #, kde-format
 msgid "Folder Name…"
 msgstr "Име на директория…"
 
-#: mail/qml/desktopactions/OpenMbox.qml:16
+#: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
 msgid "Open File"
 msgstr "Отваряне на файл"
 
-#: mail/qml/desktopactions/OpenMbox.qml:22
+#: mail/qml/desktopactions/OpenMbox.qml:25
 #, kde-format
 msgid "Choose file"
 msgstr "Избор на файл"
 
-#: mail/qml/FolderView.qml:28
+#: mail/qml/FolderView.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "Search: %1"
 msgstr "Търсене: %1"
 
-#: mail/qml/FolderView.qml:88
+#: mail/qml/FolderView.qml:91
 #, kde-format
 msgctxt "@action"
 msgid "Thread Messages"
 msgstr "Съобщения в нишка"
 
-#: mail/qml/FolderView.qml:89
+#: mail/qml/FolderView.qml:92
 #, kde-format
 msgctxt "@tooltip"
 msgid "Toggle threaded message view"
 msgstr "Превключване на изгледа по нишки"
 
-#: mail/qml/FolderView.qml:131
+#: mail/qml/FolderView.qml:134
 #, kde-format
 msgctxt "Number of selected emails"
 msgid "%1 selected"
@@ -4377,138 +4266,138 @@ msgid_plural "%1 selected"
 msgstr[0] "%1 избран"
 msgstr[1] "%1 избрани"
 
-#: mail/qml/FolderView.qml:177
+#: mail/qml/FolderView.qml:180
 #, kde-format
 msgid "Save Message - Merkuro Mail"
 msgstr "Запазване на писмо - Поща на Merkuro"
 
-#: mail/qml/FolderView.qml:178
+#: mail/qml/FolderView.qml:181
 #, kde-format
 msgid "Email messages (*.mbox)"
 msgstr "Електронни писма (*.mbox)"
 
-#: mail/qml/FolderView.qml:245
+#: mail/qml/FolderView.qml:248
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Пренасрочване на съобщение"
 
-#: mail/qml/FolderView.qml:253 mail/qml/MailComposer.qml:234
+#: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr "Изпращане на дата и час"
 
-#: mail/qml/FolderView.qml:262
+#: mail/qml/FolderView.qml:265
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "Маркиране на писмо"
 
-#: mail/qml/FolderView.qml:328
+#: mail/qml/FolderView.qml:331
 #, kde-format
 msgid "No mailbox selected"
 msgstr "Няма избрана пощенска кутия"
 
-#: mail/qml/FolderView.qml:329
+#: mail/qml/FolderView.qml:332
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "Изберете пощенска кутия от страничната лента."
 
-#: mail/qml/FolderView.qml:336
+#: mail/qml/FolderView.qml:339
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "Пощенската кутия е празна"
 
-#: mail/qml/mailboxselector/MailBoxListPage.qml:12
+#: mail/qml/mailboxselector/MailBoxListPage.qml:13
 #, kde-format
 msgid "Mailboxes"
 msgstr "Пощенски кутии"
 
-#: mail/qml/MailComposer.qml:19
+#: mail/qml/MailComposer.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Ново съобщение"
 
-#: mail/qml/MailComposer.qml:41
+#: mail/qml/MailComposer.qml:45
 #, kde-format
 msgid "From:"
 msgstr "От:"
 
-#: mail/qml/MailComposer.qml:52
+#: mail/qml/MailComposer.qml:56
 #, kde-format
 msgid "Identity:"
 msgstr "Самоличност:"
 
-#: mail/qml/MailComposer.qml:80
+#: mail/qml/MailComposer.qml:87
 #, kde-format
 msgid "To:"
 msgstr "До:"
 
-#: mail/qml/MailComposer.qml:81
+#: mail/qml/MailComposer.qml:88
 #, kde-format
 msgid "CC:"
 msgstr "Копие до:"
 
-#: mail/qml/MailComposer.qml:82
+#: mail/qml/MailComposer.qml:89
 #, kde-format
 msgid "BCC:"
 msgstr "Скр. копие до:"
 
-#: mail/qml/MailComposer.qml:83
+#: mail/qml/MailComposer.qml:90
 #, kde-format
 msgid "Reply-To:"
 msgstr "Отговор до:"
 
-#: mail/qml/MailComposer.qml:108
+#: mail/qml/MailComposer.qml:116
 #, kde-format
 msgid "Subject:"
 msgstr "Тема:"
 
-#: mail/qml/MailComposer.qml:168
+#: mail/qml/MailComposer.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Прикрепяне на документ"
 
-#: mail/qml/MailComposer.qml:191
+#: mail/qml/MailComposer.qml:199
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Изпращане по-късно"
 
-#: mail/qml/MailComposer.qml:215
+#: mail/qml/MailComposer.qml:223
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Планиране на изпращане"
 
-#: mail/qml/MailComposer.qml:228
+#: mail/qml/MailComposer.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
 msgstr "Ръчен режим"
 
-#: mail/qml/mailpartview/ICalPart.qml:29
+#: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
 msgid "This mail contains an invitation"
 msgstr "Този имейл съдържа покана"
 
-#: mail/qml/private/MailDelegate.qml:185
+#: mail/qml/private/MailDelegate.qml:187
 #, kde-format
 msgid "%1 unread message in this thread"
 msgid_plural "%1 unread messages in this thread"
 msgstr[0] "%1 непрочетено съобщение в тази нишка"
 msgstr[1] "%1 непрочетени съобщения в тази нишка"
 
-#: mail/qml/private/MailDelegate.qml:228
+#: mail/qml/private/MailDelegate.qml:230
 #, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
 msgstr "Планирано на %1"
 
-#: mail/qml/private/MailDelegate.qml:229
+#: mail/qml/private/MailDelegate.qml:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -4519,18 +4408,18 @@ msgstr ""
 "изпратите незабавно, или използвайте действието „Пренасрочване“, за да "
 "зададете дата и час."
 
-#: mail/qml/private/MailDelegate.qml:242
+#: mail/qml/private/MailDelegate.qml:244
 #, kde-format
 msgid "Manual"
 msgstr "Ръчно"
 
-#: mail/settings/AccountSettingsPage.qml:20
+#: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
 msgctxt "@action:group"
 msgid "Identities"
 msgstr "Самоличности"
 
-#: mail/settings/AccountSettingsPage.qml:28
+#: mail/settings/AccountSettingsPage.qml:29
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -4538,13 +4427,13 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "Получаване на акаунти"
 
-#: mail/settings/AccountSettingsPage.qml:32
-#: mail/settings/AccountSettingsPage.qml:42
+#: mail/settings/AccountSettingsPage.qml:33
+#: mail/settings/AccountSettingsPage.qml:46
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "Конфигурация на имейл акаунт"
 
-#: mail/settings/AccountSettingsPage.qml:38
+#: mail/settings/AccountSettingsPage.qml:42
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
@@ -4552,53 +4441,87 @@ msgctxt ""
 msgid "Sending Accounts"
 msgstr "Изпращане на акаунти"
 
-#: mail/settings/Settings.qml:13
+#: mail/settings/Settings.qml:15
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Акаунти"
 
-#: mail/settings/TransportConfigurationForm.qml:34
+#: mail/settings/TransportConfigurationForm.qml:32
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Rename %1"
 msgstr "Преименуване на %1"
 
-#: mail/settings/TransportConfigurationForm.qml:43
-#: mail/settings/TransportConfigurationForm.qml:141
+#: mail/settings/TransportConfigurationForm.qml:41
+#: mail/settings/TransportConfigurationForm.qml:139
 #, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
 msgstr "Име на профила"
 
-#: mail/settings/TransportConfigurationForm.qml:86
+#: mail/settings/TransportConfigurationForm.qml:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "Настройки"
 
-#: mail/settings/TransportConfigurationForm.qml:93
+#: mail/settings/TransportConfigurationForm.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Изтриване"
 
-#: mail/settings/TransportConfigurationForm.qml:104
+#: mail/settings/TransportConfigurationForm.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Добавяне на акаунт"
 
-#: mail/settings/TransportConfigurationForm.qml:146
+#: mail/settings/TransportConfigurationForm.qml:144
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
 msgstr "Задаване по подразбиране"
 
-#: mail/settings/TransportConfigurationForm.qml:151
+#: mail/settings/TransportConfigurationForm.qml:149
 #, kde-format
 msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
 msgstr "Избиране на вида на акаунта"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Calendar"
+#~ msgstr "Календар Меркуро"
+
+#~ msgid "Calendar Application"
+#~ msgstr "Приложение Календар"
+
+#~ msgid "© KDE Community 2021–2026"
+#~ msgstr "© Общността на KDE 2021-2026"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Contact"
+#~ msgstr "Контакт на Merkuro"
+
+#~ msgid "Address Book Application"
+#~ msgstr "Приложение за адресна книга"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Launcher"
+#~ msgstr "Стартер на Меркуро"
+
+#~ msgid "merkuro Launcher"
+#~ msgstr "Стартер merkuro"
+
+#~ msgid "© 2024"
+#~ msgstr "© 2024"
+
+#~ msgctxt "@title"
+#~ msgid "Merkuro Mail"
+#~ msgstr "Електронна поща Merkuro"
+
+#~ msgid "Email Client"
+#~ msgstr "Имейл клиент"
