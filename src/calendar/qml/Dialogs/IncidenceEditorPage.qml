@@ -172,6 +172,7 @@ FormCard.FormCardPage {
 
                 FormCard.FormTextFieldDelegate {
                     id: summaryField
+                    objectName: "summaryField"
 
                     label: i18n("Summary")
                     placeholderText: switch (root.incidenceWrapper.incidenceType) {
@@ -183,7 +184,7 @@ FormCard.FormCardPage {
                         return i18n("Add a title for your journal entry")
                     }
                     text: root.incidenceWrapper.summary
-                    onTextChanged: root.incidenceWrapper.summary = text
+                    onTextEdited: root.incidenceWrapper.summary = text
                 }
 
                 FormCard.FormDelegateSeparator {}
@@ -341,13 +342,14 @@ FormCard.FormCardPage {
 
                         QQC2.Slider {
                             id: slider
+                            objectName: "completionSlider"
                             Layout.fillWidth: true
                             orientation: Qt.Horizontal
                             from: 0
                             to: 100.0
                             stepSize: 10.0
                             value: root.incidenceWrapper.todoPercentComplete
-                            onValueChanged: root.incidenceWrapper.todoPercentComplete = value
+                            onMoved: root.incidenceWrapper.todoPercentComplete = value
                         }
                     }
                 }
