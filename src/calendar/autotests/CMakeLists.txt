@@ -40,3 +40,36 @@ if(UNIX)
     add_akonadi_isolated_test(SOURCE incidenceoccurrencemodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
     add_akonadi_isolated_test(SOURCE todosortfilterproxymodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
 endif()
+
+add_executable(calendarqmltestrunner qmltestrunner.cpp)
+target_link_libraries(calendarqmltestrunner PRIVATE
+    Qt::QuickTest
+    merkuro_calendar_static
+    merkuro_calendar_staticplugin
+)
+target_compile_definitions(calendarqmltestrunner PRIVATE
+    QUICK_TEST_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/qml"
+)
+
+if(UNIX)
+    add_akonadi_isolated_test(
+        COMMAND $<TARGET_FILE:calendarqmltestrunner>
+        TEST_NAME qmltest
+        NAME_PREFIX "merkuro-calendar-"
+    )
+    foreach(backend sqlite mysql pgsql)
+        set(test_name "merkuro-calendar-akonadi-${backend}-qmltest")
+        if(TEST ${test_name})
+            set_property(TEST ${test_name} APPEND PROPERTY ENVIRONMENT
+                "QML2_IMPORT_PATH=$<TARGET_FILE_DIR:MerkuroComponents>:${CMAKE_INSTALL_FULL_LIBDIR}/qml"
+                "QT_QPA_PLATFORM=offscreen"
+                "QT_QUICK_BACKEND=software"
+            )
+            set_tests_properties(${test_name} PROPERTIES
+                LABELS "qml;akonadi"
+                TIMEOUT 120
+                TIMEOUT_SIGNAL_NAME "SIGQUIT"
+            )
+        endif()
+    endforeach()
+endif()
