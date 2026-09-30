@@ -53,7 +53,7 @@ FormCard.FormCardPage {
     }
 
     function save(): void {
-        if (!root.validDates || editorBackend.saving) {
+        if (!root.validDates || editorBackend.saving || root.incidenceWrapper.hasExternalChanges) {
             return;
         }
         if (!root.editMode && root.incidenceWrapper.collectionId < 0) {
@@ -63,6 +63,16 @@ FormCard.FormCardPage {
             }
         }
         editorBackend.save(root.incidenceWrapper, root.editMode);
+    }
+
+    Components.MessageDialog {
+        id: reloadDialog
+        objectName: "reloadIncidenceDialog"
+        dialogType: Components.MessageDialog.Warning
+        title: i18nc("@title:window", "Reload Incidence")
+        subtitle: i18n("Reloading will discard your unsaved changes and load the latest version.")
+        standardButtons: QQC2.Dialog.Ok | QQC2.Dialog.Cancel
+        onAccepted: editorBackend.reload(root.incidenceWrapper)
     }
 
     readonly property bool validDates: {
@@ -85,6 +95,23 @@ FormCard.FormCardPage {
 
     header: ColumnLayout {
         spacing: 0
+
+        Components.Banner {
+            objectName: "externalChangeMessage"
+            Layout.fillWidth: true
+            visible: root.incidenceWrapper && root.incidenceWrapper.hasExternalChanges
+            type: Kirigami.MessageType.Warning
+            text: root.incidenceWrapper && root.incidenceWrapper.incidenceDeleted
+                ? i18n("This incidence was deleted. Your unsaved changes have been kept.")
+                : i18n("This incidence changed outside this editor. Your unsaved changes have been kept. Reload the latest version before saving.")
+            actions: Kirigami.Action {
+                text: i18nc("@action:button", "Reload")
+                icon.name: "view-refresh"
+                enabled: !editorBackend.saving && root.incidenceWrapper && !root.incidenceWrapper.incidenceDeleted
+                visible: root.incidenceWrapper && !root.incidenceWrapper.incidenceDeleted
+                onTriggered: reloadDialog.open()
+            }
+        }
 
         Components.Banner {
             objectName: "saveErrorMessage"
@@ -133,7 +160,7 @@ FormCard.FormCardPage {
                 objectName: "saveButton"
                 icon.name: root.editMode ? "document-save" : "list-add"
                 text: root.editMode ? i18n("Save") : i18n("Add")
-                enabled: !editorBackend.saving && root.validDates && root.incidenceWrapper.summary.trim().length > 0
+                enabled: !editorBackend.saving && root.validDates && !root.incidenceWrapper.hasExternalChanges && root.incidenceWrapper.summary.trim().length > 0
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
 

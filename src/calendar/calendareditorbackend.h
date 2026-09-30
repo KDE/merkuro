@@ -29,6 +29,7 @@ public:
     QString errorMessage() const;
 
     Q_INVOKABLE void save(IncidenceWrapper *wrapper, bool editMode);
+    Q_INVOKABLE void reload(IncidenceWrapper *wrapper);
 
 Q_SIGNALS:
     void calendarManagerChanged();

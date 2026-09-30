@@ -124,7 +124,17 @@ void CalendarEditorBackend::save(IncidenceWrapper *wrapper, bool editMode)
         const auto storedItem = m_manager->incidenceItem(wrapper->incidencePtr());
         item = wrapper->incidenceItem();
         if (!storedItem.isValid() || !item.isValid() || item.id() != storedItem.id() || !wrapper->originalIncidencePtr()) {
+            if (item.isValid()) {
+                wrapper->recordRemoval();
+            }
             setErrorMessage(i18n("The incidence is no longer available."));
+            return;
+        }
+        wrapper->recordExternalChange(storedItem);
+        if (wrapper->hasExternalChanges()) {
+            setErrorMessage(wrapper->incidenceDeleted()
+                                ? i18n("The incidence was deleted. Your unsaved changes have been kept.")
+                                : i18n("The incidence changed outside this editor. Reload it before saving. Your unsaved changes have been kept."));
             return;
         }
         const auto source = m_manager->getCollection(item.parentCollection().id());
@@ -165,6 +175,18 @@ void CalendarEditorBackend::save(IncidenceWrapper *wrapper, bool editMode)
     }
 }
 
+void CalendarEditorBackend::reload(IncidenceWrapper *wrapper)
+{
+    if (m_saving || !wrapper) {
+        return;
+    }
+    if (wrapper->reloadLatest()) {
+        setErrorMessage({});
+    } else {
+        setErrorMessage(i18n("The incidence is no longer available. Your unsaved changes have been kept."));
+    }
+}
+
 int CalendarEditorBackend::createIncidence(const KCalendarCore::Incidence::Ptr &incidence, const Akonadi::Collection &collection)
 {
     return m_manager->incidenceChanger()->createIncidence(incidence, collection);
@@ -172,6 +194,7 @@ int CalendarEditorBackend::createIncidence(const KCalendarCore::Incidence::Ptr &
 
 int CalendarEditorBackend::modifyIncidence(const Akonadi::Item &item, const KCalendarCore::Incidence::Ptr &original)
 {
+    // TODO: Use FailOnConflict once available to also catch revision changes after the cache check.
     return m_manager->incidenceChanger()->modifyIncidence(item, original);
 }
 

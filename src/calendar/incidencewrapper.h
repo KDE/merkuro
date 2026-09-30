@@ -37,6 +37,8 @@ class IncidenceWrapper : public QObject, public Akonadi::ItemMonitor
 
     // Akonadi properties
     Q_PROPERTY(Akonadi::Item incidenceItem READ incidenceItem WRITE setIncidenceItem NOTIFY incidenceItemChanged)
+    Q_PROPERTY(bool hasExternalChanges READ hasExternalChanges NOTIFY externalChangeChanged)
+    Q_PROPERTY(bool incidenceDeleted READ incidenceDeleted NOTIFY externalChangeChanged)
     Q_PROPERTY(qint64 collectionId READ collectionId WRITE setCollectionId NOTIFY collectionIdChanged)
 
     // Incidence properties
@@ -117,6 +119,11 @@ public:
 
     [[nodiscard]] Akonadi::Item incidenceItem() const;
     void setIncidenceItem(const Akonadi::Item &incidenceItem);
+    bool hasExternalChanges() const;
+    bool incidenceDeleted() const;
+    void recordExternalChange(const Akonadi::Item &item);
+    void recordRemoval();
+    bool reloadLatest();
     KCalendarCore::Incidence::Ptr incidencePtr() const;
     KCalendarCore::Incidence::Ptr originalIncidencePtr();
     [[nodiscard]] int incidenceType() const;
@@ -196,6 +203,7 @@ public:
     [[nodiscard]] QString googleConferenceUrl();
 Q_SIGNALS:
     void incidenceItemChanged();
+    void externalChangeChanged();
     void incidencePtrChanged(KCalendarCore::Incidence::Ptr incidencePtr);
     void originalIncidencePtrChanged();
     void incidenceTypeChanged();
@@ -236,6 +244,7 @@ Q_SIGNALS:
 
 protected:
     void itemChanged(const Akonadi::Item &item) override;
+    void itemRemoved() override;
 
 private:
     void setIncidencePtr(KCalendarCore::Incidence::Ptr incidencePtr);
@@ -248,6 +257,9 @@ private:
 
     // The editor's item snapshot is independent of the monitor's fetch cache.
     Akonadi::Item m_incidenceItem;
+    Akonadi::Item m_externalItem;
+    bool m_editing = false;
+    bool m_incidenceDeleted = false;
     KCalendarCore::Incidence::Ptr m_incidence;
     KCalendarCore::Incidence::Ptr m_originalIncidence;
     qint64 m_collectionId = -1; // For when we want to edit, this is temporary

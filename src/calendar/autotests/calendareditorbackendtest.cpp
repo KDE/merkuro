@@ -8,8 +8,10 @@
 #include <Akonadi/CollectionCreateJob>
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/ItemCreateJob>
+#include <Akonadi/ItemDeleteJob>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
+#include <Akonadi/ItemModifyJob>
 #include <KCheckableProxyModel>
 #include <KJob>
 #include <QSignalSpy>
@@ -18,6 +20,14 @@
 #include <memory>
 
 using namespace Qt::StringLiterals;
+
+class MonitoredWrapper : public IncidenceWrapper
+{
+public:
+    using IncidenceWrapper::IncidenceWrapper;
+    using IncidenceWrapper::itemChanged;
+    using IncidenceWrapper::itemRemoved;
+};
 
 class ManualJob : public KJob
 {
@@ -179,6 +189,104 @@ private Q_SLOTS:
         QCOMPARE(saved->summary(), u"Persisted snapshot"_s);
     }
 
+    void externalUpdatesPreserveDraftAndOriginalRevision()
+    {
+        MonitoredWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.triggerEditMode();
+        wrapper.setSummary(u"Unsaved draft"_s);
+        QSignalSpy changed(&wrapper, &IncidenceWrapper::externalChangeChanged);
+        wrapper.itemChanged(m_item); // Initial fetch of the unchanged revision.
+        QVERIFY(!wrapper.hasExternalChanges());
+        auto external = m_item;
+        external.setRevision(m_item.revision() + 1);
+        const KCalendarCore::Incidence::Ptr payload(m_item.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setSummary(u"External title"_s);
+        external.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        wrapper.itemChanged(external);
+        QCOMPARE(changed.count(), 1);
+        QVERIFY(wrapper.hasExternalChanges());
+        QVERIFY(!wrapper.incidenceDeleted());
+        QCOMPARE(wrapper.summary(), u"Unsaved draft"_s);
+        QCOMPARE(wrapper.originalIncidencePtr()->summary(), u"Original title"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), m_item.revision());
+        QCOMPARE(wrapper.incidenceItem().payload<KCalendarCore::Incidence::Ptr>()->summary(), u"Original title"_s);
+        // A caller/cache mutation must not change the pending reload snapshot.
+        payload->setSummary(u"Later mutation"_s);
+        wrapper.itemChanged(m_item);
+        QVERIFY(wrapper.reloadLatest());
+        QCOMPARE(wrapper.summary(), u"External title"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), external.revision());
+        QVERIFY(!wrapper.hasExternalChanges());
+        wrapper.setSummary(u"New draft"_s);
+        QCOMPARE(wrapper.originalIncidencePtr()->summary(), u"External title"_s);
+        QCOMPARE(wrapper.incidenceItem().payload<KCalendarCore::Incidence::Ptr>()->summary(), u"External title"_s);
+    }
+
+    void deletionPreservesDraftAndDisablesReload()
+    {
+        MonitoredWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.triggerEditMode();
+        wrapper.setSummary(u"Deleted incidence draft"_s);
+        wrapper.itemRemoved();
+        QVERIFY(wrapper.hasExternalChanges());
+        QVERIFY(wrapper.incidenceDeleted());
+        QVERIFY(!wrapper.reloadLatest());
+        QCOMPARE(wrapper.summary(), u"Deleted incidence draft"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), m_item.revision());
+        ControlledEditorBackend backend;
+        backend.setCalendarManager(m_manager.get());
+        backend.save(&wrapper, true);
+        QCOMPARE(backend.modifies, 0);
+        QVERIFY(!backend.errorMessage().isEmpty());
+        QVERIFY(!backend.saving());
+    }
+
+    void conflictingSaveKeepsDraftUntilReload()
+    {
+        MonitoredWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.triggerEditMode();
+        wrapper.setSummary(u"Unsaved conflict draft"_s);
+        auto external = m_item;
+        external.setRevision(m_item.revision() + 1);
+        const KCalendarCore::Incidence::Ptr payload(m_item.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setSummary(u"Changed outside editor"_s);
+        external.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        wrapper.itemChanged(external);
+        ControlledEditorBackend backend;
+        backend.setCalendarManager(m_manager.get());
+        backend.save(&wrapper, true);
+        QCOMPARE(backend.modifies, 0);
+        QVERIFY(!backend.errorMessage().isEmpty());
+        QCOMPARE(wrapper.summary(), u"Unsaved conflict draft"_s);
+        backend.reload(&wrapper);
+        QCOMPARE(wrapper.summary(), u"Changed outside editor"_s);
+        QVERIFY(backend.errorMessage().isEmpty());
+        backend.save(&wrapper, true);
+        QCOMPARE(backend.modifies, 1);
+        QCOMPARE(backend.savedItem.revision(), external.revision());
+        backend.finishChange(Akonadi::IncidenceChanger::ResultCodeJobError);
+        QVERIFY(!backend.saving());
+        QCOMPARE(wrapper.summary(), u"Changed outside editor"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), external.revision());
+    }
+
+    void liveWrappersStillFollowUpdates()
+    {
+        MonitoredWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        auto external = m_item;
+        external.setRevision(m_item.revision() + 1);
+        const KCalendarCore::Incidence::Ptr payload(m_item.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setSummary(u"Live updated title"_s);
+        external.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        wrapper.itemChanged(external);
+        QCOMPARE(wrapper.summary(), u"Live updated title"_s);
+        QVERIFY(!wrapper.hasExternalChanges());
+    }
+
     void rejectsMissingCalendarAndOriginal()
     {
         ControlledEditorBackend backend;
@@ -317,6 +425,7 @@ private Q_SLOTS:
         QVERIFY(wrapper.incidenceItem().isValid());
         const auto uid = wrapper.uid();
         QTRY_VERIFY(m_manager->incidenceItem(uid).isValid());
+        wrapper.triggerEditMode();
         wrapper.setSummary(u"Persisted edit"_s);
         backend.save(&wrapper, true);
         QTRY_COMPARE(finished.count(), 2);
@@ -328,6 +437,96 @@ private Q_SLOTS:
         QVERIFY2(!fetch->error(), qPrintable(fetch->errorString()));
         QCOMPARE(fetch->items().size(), 1);
         QCOMPARE(fetch->items().first().payload<KCalendarCore::Incidence::Ptr>()->summary(), u"Persisted edit"_s);
+    }
+    void realNotificationsPreserveDraft()
+    {
+        const KCalendarCore::Incidence::Ptr todo(new KCalendarCore::Todo);
+        todo->setSummary(u"Original external test"_s);
+        Akonadi::Item proposed;
+        proposed.setMimeType(todo->mimeType());
+        proposed.setPayload<KCalendarCore::Incidence::Ptr>(todo);
+        Akonadi::ItemCreateJob create(proposed, m_source);
+        create.setAutoDelete(false);
+        QVERIFY(create.exec());
+        const auto original = create.item();
+        QTRY_VERIFY(m_manager->incidenceItem(todo).isValid());
+        MonitoredWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(original);
+        wrapper.triggerEditMode();
+        wrapper.setSummary(u"Unsaved real draft"_s);
+        auto external = original;
+        const KCalendarCore::Incidence::Ptr payload(todo->clone());
+        payload->setSummary(u"External persisted title"_s);
+        external.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        Akonadi::ItemModifyJob modify(external);
+        modify.setAutoDelete(false);
+        modify.disableAutomaticConflictHandling();
+        QVERIFY(modify.exec());
+        QTRY_VERIFY(wrapper.hasExternalChanges());
+        QCOMPARE(wrapper.summary(), u"Unsaved real draft"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), original.revision());
+        ControlledEditorBackend backend;
+        backend.setCalendarManager(m_manager.get());
+        backend.save(&wrapper, true);
+        QCOMPARE(backend.modifies, 0);
+        backend.reload(&wrapper);
+        QCOMPARE(wrapper.summary(), u"External persisted title"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), modify.item().revision());
+        wrapper.setSummary(u"Draft before deletion"_s);
+        Akonadi::ItemDeleteJob remove(wrapper.incidenceItem());
+        remove.setAutoDelete(false);
+        QVERIFY(remove.exec());
+        QTRY_VERIFY(wrapper.incidenceDeleted());
+        QCOMPARE(wrapper.summary(), u"Draft before deletion"_s);
+        backend.save(&wrapper, true);
+        QCOMPARE(backend.modifies, 0);
+        QCOMPARE(wrapper.summary(), u"Draft before deletion"_s);
+    }
+
+    void saveRejectsStaleRevisionFromCalendarCache()
+    {
+        auto changer = m_manager->incidenceChanger();
+        QSignalSpy modified(changer, &Akonadi::IncidenceChanger::modifyFinished);
+        auto updated = m_item;
+        const KCalendarCore::Incidence::Ptr payload(m_item.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setSummary(u"Newer persisted revision"_s);
+        updated.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        QVERIFY(changer->modifyIncidence(updated, m_item.payload<KCalendarCore::Incidence::Ptr>()) >= 0);
+        QTRY_COMPARE(modified.count(), 1);
+        QCOMPARE(modified.at(0).at(2).value<Akonadi::IncidenceChanger::ResultCode>(), Akonadi::IncidenceChanger::ResultCodeSuccess);
+        const auto latest = modified.at(0).at(1).value<Akonadi::Item>();
+        QVERIFY(latest.revision() > m_item.revision());
+        QTRY_COMPARE(m_manager->incidenceItem(payload).revision(), latest.revision());
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.triggerEditMode();
+        wrapper.setSummary(u"Stale draft"_s);
+        CalendarEditorBackend backend;
+        backend.setCalendarManager(m_manager.get());
+        QSignalSpy finished(&backend, &CalendarEditorBackend::finished);
+        backend.save(&wrapper, true);
+        QVERIFY(!backend.saving());
+        QVERIFY(!backend.errorMessage().isEmpty());
+        QVERIFY(wrapper.hasExternalChanges());
+        QCOMPARE(wrapper.summary(), u"Stale draft"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), m_item.revision());
+        QCOMPARE(finished.count(), 0);
+        QCOMPARE(modified.count(), 1);
+        auto fetch = new Akonadi::ItemFetchJob(latest, this);
+        fetch->fetchScope().fetchFullPayload();
+        QSignalSpy fetched(fetch, &KJob::result);
+        QVERIFY(fetched.wait());
+        QVERIFY2(!fetch->error(), qPrintable(fetch->errorString()));
+        QCOMPARE(fetch->items().first().payload<KCalendarCore::Incidence::Ptr>()->summary(), u"Newer persisted revision"_s);
+        backend.reload(&wrapper);
+        QCOMPARE(wrapper.summary(), u"Newer persisted revision"_s);
+        QVERIFY(!wrapper.hasExternalChanges());
+        QVERIFY(backend.errorMessage().isEmpty());
+        wrapper.setSummary(u"Rebased draft"_s);
+        backend.save(&wrapper, true);
+        QTRY_COMPARE(finished.count(), 1);
+        QVERIFY(backend.errorMessage().isEmpty());
+        QCOMPARE(wrapper.summary(), u"Rebased draft"_s);
     }
 };
 

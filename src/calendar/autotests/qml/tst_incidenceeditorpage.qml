@@ -89,6 +89,45 @@ Item {
             compare(summarySpy.count, 1);
         }
 
+        function test_externalChangesRequireConfirmedReload(): void {
+            editorTestHelper.prepareEditor(root.wrapper);
+            root.wrapper.summary = "Unsaved draft";
+            const page = createPage(false);
+            page.editMode = true;
+            editorTestHelper.updateEditor(root.wrapper, "External title");
+            const banner = findChild(page, "externalChangeMessage");
+            tryCompare(banner, "visible", true);
+            compare(root.wrapper.summary, "Unsaved draft");
+            compare(findChild(page, "saveButton").enabled, false);
+            banner.actions[0].trigger();
+            const dialog = findChild(page, "reloadIncidenceDialog");
+            tryCompare(dialog, "opened", true);
+            dialog.reject();
+            compare(root.wrapper.summary, "Unsaved draft");
+            compare(root.wrapper.hasExternalChanges, true);
+            banner.actions[0].trigger();
+            tryCompare(dialog, "opened", true);
+            dialog.accept();
+            tryCompare(root.wrapper, "summary", "External title");
+            compare(root.wrapper.hasExternalChanges, false);
+            tryCompare(findChild(page, "summaryField"), "text", "External title");
+            tryCompare(findChild(page, "saveButton"), "enabled", true);
+        }
+
+        function test_deletionKeepsDraftAndDisablesSave(): void {
+            editorTestHelper.prepareEditor(root.wrapper);
+            root.wrapper.summary = "Draft before deletion";
+            const page = createPage(false);
+            page.editMode = true;
+            editorTestHelper.removeEditor(root.wrapper);
+            const banner = findChild(page, "externalChangeMessage");
+            tryCompare(banner, "visible", true);
+            compare(banner.actions[0].enabled, false);
+            compare(banner.actions[0].visible, false);
+            compare(findChild(page, "saveButton").enabled, false);
+            compare(root.wrapper.summary, "Draft before deletion");
+        }
+
         function test_summaryKeyboardEditsUpdateDraft(): void {
             const page = createPage(false);
             const field = findChild(page, "summaryField");

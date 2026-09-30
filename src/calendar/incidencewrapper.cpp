@@ -92,15 +92,73 @@ Akonadi::Item IncidenceWrapper::incidenceItem() const
 void IncidenceWrapper::setIncidenceItem(const Akonadi::Item &incidenceItem)
 {
     if (incidenceItem.hasPayload<KCalendarCore::Incidence::Ptr>()) {
+        if (incidenceItem.id() != m_incidenceItem.id()) {
+            m_editing = false;
+        }
+        const bool hadExternalChanges = hasExternalChanges();
+        if (!m_editing || (!m_incidenceDeleted && incidenceItem.revision() >= m_externalItem.revision())) {
+            m_externalItem = {};
+            m_incidenceDeleted = false;
+        }
         m_incidenceItem = incidenceItem;
+        m_incidenceItem.setPayload<KCalendarCore::Incidence::Ptr>(
+            KCalendarCore::Incidence::Ptr(incidenceItem.payload<KCalendarCore::Incidence::Ptr>()->clone()));
         setItem(incidenceItem);
-        setIncidencePtr(incidenceItem.payload<KCalendarCore::Incidence::Ptr>());
+        setIncidencePtr(KCalendarCore::Incidence::Ptr(incidenceItem.payload<KCalendarCore::Incidence::Ptr>()->clone()));
+
+        if (hadExternalChanges != hasExternalChanges()) {
+            Q_EMIT externalChangeChanged();
+        }
 
         Q_EMIT incidenceItemChanged();
         Q_EMIT collectionIdChanged();
     } else {
         qCWarning(MERKURO_CALENDAR_LOG) << "This is not an incidence item.";
     }
+}
+
+bool IncidenceWrapper::hasExternalChanges() const
+{
+    return m_externalItem.isValid() || m_incidenceDeleted;
+}
+
+bool IncidenceWrapper::incidenceDeleted() const
+{
+    return m_incidenceDeleted;
+}
+
+void IncidenceWrapper::recordExternalChange(const Akonadi::Item &item)
+{
+    if (m_incidenceDeleted || item.id() != m_incidenceItem.id() || !item.hasPayload<KCalendarCore::Incidence::Ptr>()
+        || item.revision() < m_incidenceItem.revision()
+        || (item.revision() == m_incidenceItem.revision() && item.parentCollection().id() == m_incidenceItem.parentCollection().id())
+        || (m_externalItem.isValid() && item.revision() < m_externalItem.revision())) {
+        return;
+    }
+    m_externalItem = item;
+    m_externalItem.setPayload<KCalendarCore::Incidence::Ptr>(KCalendarCore::Incidence::Ptr(item.payload<KCalendarCore::Incidence::Ptr>()->clone()));
+    Q_EMIT externalChangeChanged();
+}
+
+void IncidenceWrapper::recordRemoval()
+{
+    if (m_incidenceDeleted) {
+        return;
+    }
+    m_externalItem = {};
+    m_incidenceDeleted = true;
+    Q_EMIT externalChangeChanged();
+}
+
+bool IncidenceWrapper::reloadLatest()
+{
+    if (m_incidenceDeleted || !m_externalItem.hasPayload<KCalendarCore::Incidence::Ptr>()) {
+        return false;
+    }
+    const auto latest = m_externalItem;
+    m_collectionId = -1;
+    setIncidenceItem(latest);
+    return true;
 }
 
 KCalendarCore::Incidence::Ptr IncidenceWrapper::incidencePtr() const
@@ -655,10 +713,11 @@ void IncidenceWrapper::setTodoPercentComplete(int todoPercentComplete)
 
 void IncidenceWrapper::triggerEditMode() // You edit a clone so that the original ptr isn't messed with
 {
-    auto itemToEdit = m_incidenceItem;
-    KCalendarCore::Incidence::Ptr clonedPtr(m_incidence->clone());
-    itemToEdit.setPayload<KCalendarCore::Incidence::Ptr>(clonedPtr);
-    setIncidenceItem(itemToEdit);
+    if (m_editing) {
+        return;
+    }
+    m_editing = true;
+    setIncidenceItem(m_incidenceItem);
 }
 
 static int nearestQuarterHour(int secsSinceEpoch)
@@ -693,6 +752,7 @@ void IncidenceWrapper::setNewTodo()
 
 void IncidenceWrapper::setNewIncidence(KCalendarCore::Incidence::Ptr incidence)
 {
+    m_editing = false;
     Akonadi::Item incidenceItem;
     incidenceItem.setPayload<KCalendarCore::Incidence::Ptr>(incidence);
     setIncidenceItem(incidenceItem);
@@ -809,9 +869,20 @@ void IncidenceWrapper::clearRecurrences()
 
 void IncidenceWrapper::itemChanged(const Akonadi::Item &item)
 {
+    if (m_editing) {
+        recordExternalChange(item);
+        return;
+    }
     if (item.hasPayload<KCalendarCore::Incidence::Ptr>()) {
         qCDebug(MERKURO_CALENDAR_LOG) << item.payload<KCalendarCore::Incidence::Ptr>()->summary() << item.parentCollection().id();
         setIncidenceItem(item);
+    }
+}
+
+void IncidenceWrapper::itemRemoved()
+{
+    if (m_incidenceItem.isValid()) {
+        recordRemoval();
     }
 }
 
