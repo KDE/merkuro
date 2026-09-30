@@ -24,8 +24,14 @@ Kirigami.ApplicationWindow {
         id: incidenceEditorPageInLoader
 
         onCancel: root.close()
-        Keys.onEscapePressed: root.close()
+        Keys.onEscapePressed: if (!incidenceEditorPageInLoader.saving) root.close()
     }
 
-    onClosing: destroy();
+    onClosing: close => {
+        if (incidenceEditorPageInLoader.saving) {
+            close.accepted = false;
+        } else {
+            root.destroy();
+        }
+    }
 }

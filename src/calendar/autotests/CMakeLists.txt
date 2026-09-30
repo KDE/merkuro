@@ -39,6 +39,10 @@ find_program(AKONADI_ICAL_RESOURCE NAMES akonadi_ical_resource)
 if(UNIX)
     add_akonadi_isolated_test(SOURCE incidenceoccurrencemodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
     add_akonadi_isolated_test(SOURCE todosortfilterproxymodeltest.cpp LINK_LIBRARIES merkuro_calendar_static Qt::Test)
+    add_akonadi_isolated_test(SOURCE calendareditorbackendtest.cpp
+        LINK_LIBRARIES merkuro_calendar_static Qt::Test
+        NAME_PREFIX "merkuro-calendar-"
+    )
 endif()
 
 add_executable(calendarqmltestrunner qmltestrunner.cpp)
@@ -58,6 +62,22 @@ if(UNIX)
         NAME_PREFIX "merkuro-calendar-"
     )
     foreach(backend sqlite mysql pgsql)
+        foreach(calendar_test incidenceoccurrencemodeltest todosortfilterproxymodeltest)
+            set(existing_test_name "akonadi-${backend}-${calendar_test}")
+            if(TEST ${existing_test_name})
+                set_tests_properties(${existing_test_name} PROPERTIES
+                    ENVIRONMENT_MODIFICATION "QT_PLUGIN_PATH=path_list_prepend:${KDE_INSTALL_FULL_QTPLUGINDIR}"
+                )
+            endif()
+        endforeach()
+        set(backend_test_name "merkuro-calendar-akonadi-${backend}-calendareditorbackendtest")
+        if(TEST ${backend_test_name})
+            set_property(TEST ${backend_test_name} APPEND PROPERTY ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+            set_tests_properties(${backend_test_name} PROPERTIES
+                ENVIRONMENT_MODIFICATION "QT_PLUGIN_PATH=path_list_prepend:${KDE_INSTALL_FULL_QTPLUGINDIR}"
+                TIMEOUT 120
+            )
+        endif()
         set(test_name "merkuro-calendar-akonadi-${backend}-qmltest")
         if(TEST ${test_name})
             set_property(TEST ${test_name} APPEND PROPERTY ENVIRONMENT
@@ -67,6 +87,7 @@ if(UNIX)
             )
             set_tests_properties(${test_name} PROPERTIES
                 LABELS "qml;akonadi"
+                ENVIRONMENT_MODIFICATION "QT_PLUGIN_PATH=path_list_prepend:${KDE_INSTALL_FULL_QTPLUGINDIR}"
                 TIMEOUT 120
                 TIMEOUT_SIGNAL_NAME "SIGQUIT"
             )

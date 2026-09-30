@@ -97,11 +97,11 @@ Merkuro::KDateTime CalendarUtils::parseDateString(const QString &dateString) con
 
     const auto yearPart = parts.at(yearPosition).trimmed();
     const auto currentYear = QString::number(QDate::currentDate().year());
-    if (yearPart.isEmpty() || yearPart.size() >= currentYear.size()) {
+    if (yearPart.isEmpty()) {
         return defaultParse();
     }
 
-    const QString year = currentYear.left(currentYear.size() - yearPart.size()) + yearPart;
+    const QString year = yearPart.size() < currentYear.size() ? currentYear.left(currentYear.size() - yearPart.size()) + yearPart : yearPart;
     bool ok = false;
     const auto day = parts.at(dayPosition).toInt(&ok);
     if (!ok) {

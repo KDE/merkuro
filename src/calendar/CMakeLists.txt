@@ -20,6 +20,8 @@ set(merkuro_calendar_SRCS
     filter.h
     incidencewrapper.cpp
     incidencewrapper.h
+    calendareditorbackend.cpp
+    calendareditorbackend.h
     mousetracker.cpp
     mousetracker.h
     importer.h

@@ -86,12 +86,13 @@ void IncidenceWrapper::notifyDataChanged()
 
 Akonadi::Item IncidenceWrapper::incidenceItem() const
 {
-    return item();
+    return m_incidenceItem;
 }
 
 void IncidenceWrapper::setIncidenceItem(const Akonadi::Item &incidenceItem)
 {
     if (incidenceItem.hasPayload<KCalendarCore::Incidence::Ptr>()) {
+        m_incidenceItem = incidenceItem;
         setItem(incidenceItem);
         setIncidencePtr(incidenceItem.payload<KCalendarCore::Incidence::Ptr>());
 
@@ -146,7 +147,7 @@ QString IncidenceWrapper::uid() const
 
 qint64 IncidenceWrapper::collectionId() const
 {
-    return m_collectionId < 0 ? item().parentCollection().id() : m_collectionId;
+    return m_collectionId < 0 ? m_incidenceItem.parentCollection().id() : m_collectionId;
 }
 
 void IncidenceWrapper::setCollectionId(qint64 collectionId)
@@ -654,7 +655,7 @@ void IncidenceWrapper::setTodoPercentComplete(int todoPercentComplete)
 
 void IncidenceWrapper::triggerEditMode() // You edit a clone so that the original ptr isn't messed with
 {
-    auto itemToEdit = item();
+    auto itemToEdit = m_incidenceItem;
     KCalendarCore::Incidence::Ptr clonedPtr(m_incidence->clone());
     itemToEdit.setPayload<KCalendarCore::Incidence::Ptr>(clonedPtr);
     setIncidenceItem(itemToEdit);

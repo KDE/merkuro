@@ -149,12 +149,12 @@ bool KDateTime::isCurrentYear() const
 
 QString KDateTime::toLocaleDateString(const QString &format) const
 {
-    return QLocale().toString(m_dateTime.toLocalTime(), format);
+    return QLocale().toString(m_dateTime.toLocalTime().date(), format);
 }
 
 QString KDateTime::toLocaleDateString(QLocale::FormatType format) const
 {
-    return QLocale().toString(m_dateTime.toLocalTime(), format);
+    return QLocale().toString(m_dateTime.toLocalTime().date(), format);
 }
 
 QString KDateTime::toLocaleTimeString(const QString &format) const

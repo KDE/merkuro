@@ -246,6 +246,8 @@ private:
 
     QPointer<CalendarManager> m_calendarManager = nullptr;
 
+    // The editor's item snapshot is independent of the monitor's fetch cache.
+    Akonadi::Item m_incidenceItem;
     KCalendarCore::Incidence::Ptr m_incidence;
     KCalendarCore::Incidence::Ptr m_originalIncidence;
     qint64 m_collectionId = -1; // For when we want to edit, this is temporary

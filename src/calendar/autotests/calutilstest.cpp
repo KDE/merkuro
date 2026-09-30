@@ -37,6 +37,16 @@ private Q_SLOTS:
         QVERIFY(!utils.parseDateString(u"not a date"_s).isValid());
     }
 
+    void testDateFormattingRoundTrip()
+    {
+        const QDate date(2026, 10, 2);
+        const Merkuro::KDateTime dateTime(QDateTime(date, QTime(14, 30)));
+        const auto text = dateTime.toLocaleDateString(QLocale::NarrowFormat);
+        QCOMPARE(text, QLocale().toString(date, QLocale::NarrowFormat));
+        QCOMPARE(utils.parseDateString(text).date(), date);
+        QCOMPARE(dateTime.toLocaleDateString(u"yyyy-MM-dd"_s), u"2026-10-02"_s);
+    }
+
     void testRemindersLabel()
     {
         QCOMPARE(utils.secondsToReminderLabel(0), u"On event start"_s);

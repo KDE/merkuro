@@ -25,17 +25,54 @@ FormCard.FormCardPage {
 
     // Setting the incidenceWrapper here and now causes some *really* weird behaviour.
     // Set it after this component has already been instantiated.
-    property var incidenceWrapper
+    property Calendar.IncidenceWrapper incidenceWrapper
     property bool editMode: false
+    readonly property bool saving: editorBackend.saving
+
+    onBackRequested: event => {
+        if (editorBackend.saving) {
+            event.accepted = true;
+        }
+    }
+
+    Calendar.CalendarEditorBackend {
+        id: editorBackend
+        calendarManager: Calendar.CalendarManager
+
+        onFinished: {
+            if (!root.editMode) {
+                if (root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
+                    Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
+                } else {
+                    Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
+                }
+                Calendar.Config.save();
+            }
+            root.cancel();
+        }
+    }
+
+    function save(): void {
+        if (!root.validDates || editorBackend.saving) {
+            return;
+        }
+        if (!root.editMode && root.incidenceWrapper.collectionId < 0) {
+            root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
+            if (root.incidenceWrapper.collectionId < 0) {
+                root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
+            }
+        }
+        editorBackend.save(root.incidenceWrapper, root.editMode);
+    }
 
     readonly property bool validDates: {
         if (!incidenceWrapper) {
             return false;
         }
         if (incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
-            return editorLoader.active && editorLoader.item.validEndDate
+            return editorLoader.status === Loader.Ready && editorLoader.item.validEndDate
         } else {
-            return editorLoader.active && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart.msecsTo(root.incidenceWrapper.incidenceEnd) >= 0)
+            return editorLoader.status === Loader.Ready && editorLoader.item.validFormDates && (incidenceWrapper.allDay || root.incidenceWrapper.incidenceStart.msecsTo(root.incidenceWrapper.incidenceEnd) >= 0)
         }
     }
 
@@ -46,23 +83,35 @@ FormCard.FormCardPage {
         "";
     }
 
-    header: Components.Banner {
-        id: invalidDateMessage
+    header: ColumnLayout {
+        spacing: 0
 
-        width: parent.width
-        visible: !root.validDates && (root.incidenceWrapper ?? false) && editorLoader.active
-        type: Kirigami.MessageType.Error
-        // Specify what the problem is to aid user
-        text: if (!root.incidenceWrapper || !editorLoader.active) {
-            return '';
-        } else {
-            if (incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
-                return i18n("Invalid dates provided.");
+        Components.Banner {
+            objectName: "saveErrorMessage"
+            Layout.fillWidth: true
+            visible: editorBackend.errorMessage.length > 0
+            type: Kirigami.MessageType.Error
+            text: editorBackend.errorMessage
+        }
+
+        Components.Banner {
+            id: invalidDateMessage
+
+            Layout.fillWidth: true
+            visible: !root.validDates && root.incidenceWrapper !== null && editorLoader.status === Loader.Ready
+            type: Kirigami.MessageType.Error
+            // Specify what the problem is to aid user
+            text: if (!root.incidenceWrapper || !editorLoader.active) {
+                return '';
             } else {
-                if (!editorLoader.item.validFormDates) {
+                if (incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
                     return i18n("Invalid dates provided.");
+                } else {
+                    if (!editorLoader.item.validFormDates) {
+                        return i18n("Invalid dates provided.");
+                    }
+                    return i18n("End date cannot be before start date.");
                 }
-                return i18n("End date cannot be before start date.");
             }
         }
     }
@@ -76,39 +125,20 @@ FormCard.FormCardPage {
 
         QQC2.DialogButtonBox {
             Layout.fillWidth: true
+            enabled: !editorBackend.saving
 
             standardButtons: QQC2.DialogButtonBox.Cancel
 
             QQC2.Button {
+                objectName: "saveButton"
                 icon.name: root.editMode ? "document-save" : "list-add"
                 text: root.editMode ? i18n("Save") : i18n("Add")
-                enabled: root.validDates && root.incidenceWrapper.summary && root.incidenceWrapper.collectionId
+                enabled: !editorBackend.saving && root.validDates && root.incidenceWrapper.summary.trim().length > 0
                 QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
             }
 
-            onRejected: root.cancel()
-            onAccepted: {
-                if (root.editMode) {
-                    Calendar.CalendarManager.editIncidence(root.incidenceWrapper);
-                } else if (root.validDates) {
-                    if(root.incidenceWrapper.collectionId < 0) {
-                        root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.currentValue;
-                    }
-                    if (root.incidenceWrapper.collectionId < 0) {
-                        root.incidenceWrapper.collectionId = editorLoader.item.calendarCombo.defaultCollectionId;
-                    }
-
-                    if(root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo) {
-                        Calendar.Config.lastUsedTodoCollection = root.incidenceWrapper.collectionId;
-                    } else {
-                        Calendar.Config.lastUsedEventCollection = root.incidenceWrapper.collectionId;
-                    }
-                    Calendar.Config.save();
-
-                    Calendar.CalendarManager.addIncidence(root.incidenceWrapper);
-                }
-                root.cancel();
-            }
+            onRejected: if (!editorBackend.saving) root.cancel()
+            onAccepted: root.save()
         }
     }
 
@@ -116,12 +146,14 @@ FormCard.FormCardPage {
     Loader {
         id: editorLoader
 
-        active: root.incidenceWrapper !== undefined
+        active: root.incidenceWrapper !== null
+        enabled: !editorBackend.saving
 
         Layout.fillWidth: true
 
         sourceComponent: ColumnLayout {
             id: incidenceForm
+            property alias calendarCombo: calendarCombo
 
 	        spacing: 0
 
