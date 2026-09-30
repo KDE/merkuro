@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 00:46+0000\n"
-"PO-Revision-Date: 2026-09-21 23:15+0300\n"
+"PO-Revision-Date: 2026-09-27 10:02+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2641,27 +2641,22 @@ msgid "Copy to…"
 msgstr "העתקה אל…"
 
 #: contacts/contactapplication.cpp:74
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
-msgstr "ייבוא לוח שנה…"
+msgstr "ייבוא אנשי קשר…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "עריכת איש קשר…"
+msgstr "ייצוא כל אנשי הקשר…"
 
 #: contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export selected contacts…"
-msgstr "מחיקת איש קשר"
+msgstr "ייצוא אנשי הקשר הנבחרים…"
 
 #: contacts/contacteditorbackend.cpp:128
 #, kde-format
@@ -2689,10 +2684,9 @@ msgid "The contact is no longer available."
 msgstr "איש הקשר לא זמין עוד."
 
 #: contacts/contacteditorbackend.cpp:207
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store contacts."
-msgstr "לא ניתן למצוא את פנקס הכתובות של איש הקשר."
+msgstr "פנקס הכתובות הנבחר לא יכול לאחסן אנשי קשר."
 
 #: contacts/contacteditorbackend.cpp:238
 #, kde-format
@@ -2750,46 +2744,42 @@ msgstr "דוא״ל"
 #, kde-format
 msgctxt "@info"
 msgid "Could not read the vCard file."
-msgstr ""
+msgstr "לא ניתן לקרוא את קובץ ה־vCard."
 
 #: contacts/contactimportexport.cpp:66
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info"
 msgid "The file did not contain any contacts."
-msgstr "ההודעה הזאת מכילה הזמנה"
+msgstr "הקובץ לא הכיל אנשי קשר כלשהם."
 
 #: contacts/contactimportexport.cpp:88
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The selected address book could not be found."
-msgstr "לא ניתן למצוא את פנקס הכתובות של איש הקשר."
+msgstr "לא ניתן למצוא את פנקס הכתובות הנבחר."
 
 #: contacts/contactimportexport.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "The selected address book does not allow contacts to be added."
-msgstr ""
+msgstr "פנקס הכתובות הנבחר לא מאפשר הוספת אנשי קשר."
 
 #: contacts/contactimportexport.cpp:128 contacts/contactimportexport.cpp:163
 #: contacts/contactimportexport.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "Could not write the vCard file."
-msgstr ""
+msgstr "לא ניתן לכתוב את קובץ ה־vCard."
 
 #: contacts/contactimportexport.cpp:153 contacts/contactimportexport.cpp:190
 #: contacts/contactimportexport.cpp:216
-#, fuzzy, kde-format
-#| msgid "There are no recipients to e-mail"
+#, kde-format
 msgctxt "@info"
 msgid "There are no contacts to export."
-msgstr "אין נמענים לשליחת הודעת הדוא״ל"
+msgstr "אין אנשי קשר לייצוא."
 
 #: contacts/contactimportexport.cpp:171 contacts/contactimportexport.cpp:184
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgctxt "@info"
 msgid "The contact could not be found."
 msgstr "לא ניתן למצוא את איש הקשר."
@@ -2798,20 +2788,18 @@ msgstr "לא ניתן למצוא את איש הקשר."
 #, kde-format
 msgctxt "@info"
 msgid "Could not prepare the contact for sharing."
-msgstr ""
+msgstr "לא ניתן להכין את איש הקשר לשיתוף."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "היום"
 
 #: contacts/contactmanager.cpp:85
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store this contact."
-msgstr "לא ניתן למצוא את פנקס הכתובות של איש הקשר."
+msgstr "פנקס הכתובות הנבחר לא יכול לאחסן את איש הקשר הזה."
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
@@ -2839,9 +2827,7 @@ msgid "Select Email Address"
 msgstr "בחירת כתובת דוא״ל"
 
 #: contacts/qml/ContactListItem.qml:45 contacts/qml/private/ContactPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt "Placeholder when no name is set"
-#| msgid "No name"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No name"
 msgstr "אין שם"
@@ -2850,27 +2836,23 @@ msgstr "אין שם"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "יום הולדת ב־%1, חגיגות ה־%2"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "יום הולדת"
+msgstr "יום הולדת ב־%1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
 msgstr[0] "שנה"
 msgstr[1] "שנתיים"
-msgstr[2] "שנים"
-msgstr[3] "שנים"
+msgstr[2] "%1 שנים"
+msgstr[3] "%1 שנים"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2879,12 +2861,10 @@ msgid "Contacts"
 msgstr "אנשי קשר"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "יום הולדת"
+msgstr "ימי הולדת"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -2915,68 +2895,59 @@ msgstr[2] "נבחרו %1"
 msgstr[3] "נבחרו %1"
 
 #: contacts/qml/ContactView.qml:133
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgctxt "%1 is the number of imported contacts"
 msgid "%1 contact imported successfully."
 msgid_plural "%1 contacts imported successfully."
-msgstr[0] "%1 מאורעות יובאו בהצלחה."
-msgstr[1] "%1 מאורעות יובאו בהצלחה."
-msgstr[2] "%1 מאורעות יובאו בהצלחה."
-msgstr[3] "%1 מאורעות יובאו בהצלחה."
+msgstr[0] "איש קשר יובא בהצלחה."
+msgstr[1] "שני אנשי קשר יובאו בהצלחה."
+msgstr[2] "%1 אנשי קשר יובאו בהצלחה."
+msgstr[3] "%1 אנשי קשר יובאו בהצלחה."
 
 #: contacts/qml/ContactView.qml:135
 #, kde-format
 msgid "Could not import contacts: %1"
-msgstr ""
+msgstr "לא ניתן לייבא אנשי קשר: %1"
 
 #: contacts/qml/ContactView.qml:141
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgctxt "%1 is the number of exported contacts"
 msgid "%1 contact exported successfully."
 msgid_plural "%1 contacts exported successfully."
-msgstr[0] "%1 מאורעות יובאו בהצלחה."
-msgstr[1] "%1 מאורעות יובאו בהצלחה."
-msgstr[2] "%1 מאורעות יובאו בהצלחה."
-msgstr[3] "%1 מאורעות יובאו בהצלחה."
+msgstr[0] "איש קשר יוצא בהצלחה."
+msgstr[1] "שני אנשי קשר יוצאו בהצלחה."
+msgstr[2] "%1 אנשי קשר יוצאו בהצלחה."
+msgstr[3] "%1 אנשי קשר יוצאו בהצלחה."
 
 #: contacts/qml/ContactView.qml:143
 #, kde-format
 msgid "Could not export contacts: %1"
-msgstr ""
+msgstr "לא ניתן לייצא אנשי קשר: %1"
 
 #: contacts/qml/ContactView.qml:164
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Import contacts"
-msgstr "אין אנשי קשר"
+msgstr "ייבוא אנשי קשר"
 
 #: contacts/qml/ContactView.qml:165
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf *.vcard)"
-msgstr "קובצי לוח שנה (‎*.ics‏ ‎*.vcs)"
+msgstr "קובצי vCard‏ (‎*.vcf‏ ‎*.vcard)"
 
 #: contacts/qml/ContactView.qml:171
-#, fuzzy, kde-format
-#| msgid "Create Contact Group"
+#, kde-format
 msgid "Import Contacts To:"
-msgstr "יצירת קבוצת קשר"
+msgstr "ייבוא אנשי קשר אל:"
 
 #: contacts/qml/ContactView.qml:184
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contacts"
-msgstr "אין אנשי קשר"
+msgstr "ייצוא אנשי קשר"
 
 #: contacts/qml/ContactView.qml:187 contacts/qml/private/ContactPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf)"
-msgstr "קובצי לוח שנה (‎*.ics‏ ‎*.vcs)"
+msgstr "קובצי vCard ‏(‎*.vcf)"
 
 #: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
@@ -3002,12 +2973,10 @@ msgid "No contacts"
 msgstr "אין אנשי קשר"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "יום הולדת"
+msgstr "אין ימי הולדת"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3194,56 +3163,49 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Address"
 msgstr "כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:43
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add address"
-msgstr "כתובת"
+msgstr "הוספת כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Domestic"
-msgstr ""
+msgstr "ארצי"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "International"
-msgstr "שם חלופי"
+msgstr "בינלאומי"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Postal"
-msgstr ""
+msgstr "מכתבים"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Parcel"
-msgstr ""
+msgstr "חבילות"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Home"
 msgstr "בית"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Work"
 msgstr "עבודה"
@@ -3252,97 +3214,88 @@ msgstr "עבודה"
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Preferred"
-msgstr ""
+msgstr "מועדפת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add address"
-msgstr "כתובת"
+msgstr "הוספת כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Address Book"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit address"
-msgstr "עריכת פנקס כתובות"
+msgstr "עריכת כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Address type"
-msgstr "כתובת"
+msgstr "סוג כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Other"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Other"
-msgstr "אחר"
+msgstr "אחרת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:87
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Street"
-msgstr ""
+msgstr "רחוב"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Apartment, suite, etc."
-msgstr ""
+msgstr "דירה, יחידה ועוד."
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "P.O. box"
-msgstr ""
+msgstr "תיבת דואר"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "City"
-msgstr ""
+msgstr "עיר"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "State or region"
-msgstr ""
+msgstr "מדינה או אזור"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:126
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Postal code"
-msgstr ""
+msgstr "מיקוד"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:132
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Country"
-msgstr ""
+msgstr "ארץ"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:142
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Delivery label"
-msgstr ""
+msgstr "תווית משלוח"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove address"
-msgstr "הסרת תגית"
+msgstr "הסרת כתובת"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "שמירה"
@@ -3456,12 +3409,10 @@ msgid "E-mail"
 msgstr "דוא״ל"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:group"
 msgid "Addresses"
-msgstr "כתובת"
+msgstr "כתובות"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:158
 #, kde-format
@@ -3470,27 +3421,22 @@ msgstr "מסרים מיידיים"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:166
 #: contacts/qml/private/ContactPage.qml:441
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notes"
-msgstr "פתקית"
+msgstr "פתקיות"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Notes"
-msgstr "פתקית"
+msgstr "פתקיות"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add a note"
-msgstr "הוספת תיקייה"
+msgstr "הוספת פתקית"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:230
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
@@ -3730,14 +3676,13 @@ msgstr "עדכון תמונת פרופיל"
 #, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "אירוע"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "דוא״ל:"
+msgstr "דוא״ל"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:74
@@ -3751,7 +3696,7 @@ msgstr "עריכה"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3760,12 +3705,10 @@ msgid "Edit"
 msgstr "עריכה"
 
 #: contacts/qml/private/ContactPage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
-msgstr "עריכת איש קשר…"
+msgstr "ייצוא איש קשר…"
 
 #: contacts/qml/private/ContactPage.qml:70
 #, kde-format
@@ -3774,29 +3717,25 @@ msgid "Cancel"
 msgstr "ביטול"
 
 #: contacts/qml/private/ContactPage.qml:83
-#, fuzzy, kde-format
-#| msgctxt "%1 is a number"
-#| msgid "%1 incidences were imported successfully."
+#, kde-format
 msgid "Contact exported successfully."
-msgstr "%1 מאורעות יובאו בהצלחה."
+msgstr "איש הקשר יוצא בהצלחה."
 
 #: contacts/qml/private/ContactPage.qml:85
 #, kde-format
 msgid "Could not export contact: %1"
-msgstr ""
+msgstr "לא ניתן לייצא איש קשר: %1"
 
 #: contacts/qml/private/ContactPage.qml:92
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contact"
-msgstr "אין אנשי קשר"
+msgstr "ייצוא איש קשר"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "יום הולדת:"
+msgstr "יום הולדת: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3894,18 +3833,17 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:305
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
-msgstr "הצגת מפה"
+msgstr "הצגת %1 במפה"
 
 #: contacts/qml/private/ContactPage.qml:306
 #, kde-format
 msgctxt ""
 "@action:button Accessible name for opening contact coordinates in a map"
 msgid "Show location on a map"
-msgstr ""
+msgstr "הצגת מקום במפה"
 
 #: contacts/qml/private/ContactPage.qml:313
 #, kde-format
@@ -3968,17 +3906,16 @@ msgstr[2] "כתובות דוא״ל"
 msgstr[3] "כתובות דוא״ל"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "הסרת דוא״ל"
+msgstr "הודעות דוא״ל אחרונות"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "אירועים אחרונים"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -3989,12 +3926,12 @@ msgstr "אישורים קריפטוגרפיים"
 #: contacts/qml/private/ContactShareDialog.qml:36
 #, kde-format
 msgid "Could not share contact: %1"
-msgstr ""
+msgstr "לא ניתן לשתף איש קשר: %1"
 
 #: contacts/qml/private/ContactShareDialog.qml:39
 #, kde-format
 msgid "Contact shared successfully."
-msgstr ""
+msgstr "איש הקשר שותף בהצלחה."
 
 #: contacts/qml/private/DeleteContactDialog.qml:22
 #, kde-format
@@ -4035,20 +3972,16 @@ msgstr "זאת פעולה בלתי הפיכה."
 
 #: contacts/qml/private/PurposeShareAction.qml:26
 #: contacts/qml/private/ShareActionDummy.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New Contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Share Contact"
-msgstr "איש קשר חדש"
+msgstr "שיתוף איש קשר"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@tooltip"
 msgid "Share this contact"
-msgstr "מחיקת איש קשר"
+msgstr "שיתוף איש הקשר הזה"
 
 #: contacts/qml/private/QrCodePage.qml:18
 #, kde-format
@@ -4077,12 +4010,10 @@ msgid "Add New Address Book Source…"
 msgstr "הוספת מקור פנקס כתובות חדש…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "יום הולדת"
+msgstr "ימי הולדת"
 
 #: launcher/main.cpp:36
 #, kde-format
@@ -4242,7 +4173,7 @@ msgstr ""
 #: mail/main.cpp:88
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "פתיחת הודעת Akonadi לפי מזהה."
 
 #: mail/qml/actions/DeleteFolderAction.qml:23
 #: mail/qml/actions/DeleteFolderAction.qml:28
