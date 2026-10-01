@@ -581,6 +581,9 @@ void IncidenceWrapper::setRecurrenceDataItem(const QString &key, const QVariant 
             m_incidence->recurrence()->setStartDateTime(adjustedDt, false);
 
         } else if (key == QLatin1StringView("endDateTime")) {
+            if (adjustedDt.isValid()) {
+                m_incidence->recurrence()->setDuration(0);
+            }
             m_incidence->recurrence()->setEndDateTime(adjustedDt);
         }
 
@@ -850,9 +853,26 @@ void IncidenceWrapper::setRegularRecurrence(IncidenceWrapper::RecurrenceInterval
 
 void IncidenceWrapper::setMonthlyPosRecurrence(short pos, int day)
 {
-    QBitArray daysBitArray(7);
-    daysBitArray[day] = 1;
-    m_incidence->recurrence()->addMonthlyPos(pos, daysBitArray);
+    if (pos < -5 || pos > 5 || day < 0 || day > 6) {
+        return;
+    }
+    auto recurrence = m_incidence->recurrence();
+    recurrence->setMonthly(recurrence->frequency());
+    recurrence->setMonthlyDate({});
+    recurrence->setMonthlyPos({KCalendarCore::RecurrenceRule::WDayPos(pos, day + 1)});
+    Q_EMIT recurrenceDataChanged();
+}
+
+void IncidenceWrapper::setMonthlyDateRecurrence(int day)
+{
+    if (day < 1 || day > 31) {
+        return;
+    }
+    auto recurrence = m_incidence->recurrence();
+    recurrence->setMonthly(recurrence->frequency());
+    recurrence->setMonthlyPos({});
+    recurrence->setMonthlyDate({day});
+    Q_EMIT recurrenceDataChanged();
 }
 
 void IncidenceWrapper::setRecurrenceOccurrences(int occurrences)

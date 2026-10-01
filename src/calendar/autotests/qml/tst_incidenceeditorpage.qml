@@ -46,6 +46,36 @@ Item {
         signalName: "incidenceItemChanged"
     }
 
+    SignalSpy {
+        id: recurrenceSpy
+        target: root.wrapper
+        signalName: "recurrenceDataChanged"
+    }
+
+    SignalSpy {
+        id: categoriesSpy
+        target: root.wrapper
+        signalName: "categoriesChanged"
+    }
+
+    SignalSpy {
+        id: attendeeSpy
+        target: root.wrapper ? root.wrapper.attendeesModel : null
+        signalName: "dataChanged"
+    }
+
+    SignalSpy {
+        id: descriptionSpy
+        target: root.wrapper
+        signalName: "descriptionChanged"
+    }
+
+    SignalSpy {
+        id: allDaySpy
+        target: root.wrapper
+        signalName: "allDayChanged"
+    }
+
     TestCase {
         name: "IncidenceEditorTest"
         when: windowShown
@@ -87,6 +117,177 @@ Item {
             root.wrapper.summary = "Updated title";
             tryCompare(field, "text", "Updated title");
             compare(summarySpy.count, 1);
+        }
+
+        function test_openingPreservesFullDraft(): void {
+            editorTestHelper.setEditorFixture(root.wrapper, "monthly-position");
+            const expected = editorTestHelper.draftContents(root.wrapper);
+            recurrenceSpy.clear();
+            categoriesSpy.clear();
+            attendeeSpy.clear();
+            descriptionSpy.clear();
+            const page = createPage(false);
+            page.editMode = true;
+            const attendeeName = findChild(page, "attendeeName0");
+            verify(!!attendeeName, "Object exists");
+            tryCompare(attendeeName, "text", "Fixture attendee");
+            compare(editorTestHelper.draftContents(root.wrapper), expected);
+            compare(recurrenceSpy.count, 0);
+            compare(categoriesSpy.count, 0);
+            compare(attendeeSpy.count, 0);
+            compare(descriptionSpy.count, 0);
+        }
+
+        function test_openingUndatedTodoPreservesAllDay(): void {
+            root.wrapper.setNewTodo();
+            root.wrapper.allDay = true;
+            allDaySpy.clear();
+            const page = createPage(false);
+            compare(root.wrapper.allDay, true);
+            compare(allDaySpy.count, 0);
+            verify(!!page, "Component exists");
+        }
+
+        function test_removingLastTodoDateClearsAllDay(): void {
+            root.wrapper.setNewTodo();
+            root.wrapper.setIncidenceTimeToNearestQuarterHour(true, false);
+            root.wrapper.allDay = true;
+            const page = createPage(false);
+            const start = findChild(page, "incidenceStartCheckBox");
+            verify(!!start, "Object exists");
+            allDaySpy.clear();
+            start.forceActiveFocus();
+            tryCompare(start, "activeFocus", true);
+            keyClick(Qt.Key_Space);
+            tryVerify(() => !root.wrapper.incidenceStart.isValid);
+            compare(root.wrapper.allDay, false);
+            compare(allDaySpy.count, 1);
+        }
+
+        function test_reloadPreservesFullDraft(): void {
+            editorTestHelper.setEditorFixture(root.wrapper, "weekly");
+            editorTestHelper.prepareEditor(root.wrapper);
+            const page = createPage(false);
+            page.editMode = true;
+            root.wrapper.description = "Unsaved notes";
+            root.wrapper.categories = [];
+            const expected = editorTestHelper.updateEditorFixture(root.wrapper, "monthly-position");
+            const banner = findChild(page, "externalChangeMessage");
+            verify(!!banner, "Object exists");
+            banner.actions[0].trigger();
+            const dialog = findChild(page, "reloadIncidenceDialog");
+            verify(!!dialog, "Object exists");
+            tryCompare(dialog, "opened", true);
+            attendeeSpy.clear();
+            dialog.accept();
+            tryCompare(root.wrapper, "hasExternalChanges", false);
+            compare(editorTestHelper.draftContents(root.wrapper), expected);
+            const notes = findChild(page, "descriptionField");
+            verify(!!notes, "Object exists");
+            tryCompare(notes, "text", "Fixture notes");
+            compare(attendeeSpy.count, 0);
+            recurrenceSpy.clear();
+            categoriesSpy.clear();
+            descriptionSpy.clear();
+            const selector = findChild(page, "categorySelector");
+            verify(!!selector, "Object exists");
+            tryVerify(() => selector.count > 0);
+            selector.popup.open();
+            tryCompare(selector.popup, "opened", true);
+            compare(editorTestHelper.draftContents(root.wrapper), expected);
+            compare(recurrenceSpy.count, 0);
+            compare(categoriesSpy.count, 0);
+            compare(descriptionSpy.count, 0);
+            selector.popup.close();
+        }
+
+        function test_notesKeyboardEditsKeepBinding(): void {
+            const page = createPage(false);
+            const notes = findChild(page, "descriptionField");
+            verify(!!notes, "Object exists");
+            notes.forceActiveFocus();
+            tryCompare(notes, "activeFocus", true);
+            notes.selectAll();
+            descriptionSpy.clear();
+            keySequence("A");
+            tryCompare(root.wrapper, "description", "a");
+            compare(descriptionSpy.count, 1);
+            root.wrapper.description = "Model notes";
+            tryCompare(notes, "text", "Model notes");
+            compare(descriptionSpy.count, 2);
+        }
+
+        function test_attendeeKeyboardEditsKeepBinding(): void {
+            editorTestHelper.setEditorFixture(root.wrapper, "weekly");
+            const page = createPage(false);
+            const field = findChild(page, "attendeeName0");
+            verify(!!field, "Object exists");
+            field.forceActiveFocus();
+            tryCompare(field, "activeFocus", true);
+            field.selectAll();
+            attendeeSpy.clear();
+            keySequence("A");
+            const attendees = root.wrapper.attendeesModel;
+            tryVerify(() => attendees.data(attendees.index(0, 0), Calendar.AttendeesModel.NameRole) === "a");
+            compare(attendeeSpy.count, 1);
+            attendees.setData(attendees.index(0, 0), "Refreshed attendee", Calendar.AttendeesModel.NameRole);
+            tryCompare(field, "text", "Refreshed attendee");
+            compare(attendeeSpy.count, 2);
+        }
+
+        function test_categorySelectionKeepsBinding(): void {
+            editorTestHelper.setEditorFixture(root.wrapper, "weekly");
+            const page = createPage(false);
+            const selector = findChild(page, "categorySelector");
+            verify(!!selector, "Object exists");
+            tryVerify(() => selector.count > 0);
+            categoriesSpy.clear();
+            selector.popup.open();
+            tryCompare(selector.popup, "opened", true);
+            const delegate = findChild(selector.popup.contentItem, "categoryDelegateEditor category");
+            verify(!!delegate, "Object exists");
+            compare(delegate.checked, true);
+            compare(categoriesSpy.count, 0);
+            mouseClick(delegate);
+            tryVerify(() => root.wrapper.categories.length === 0);
+            compare(categoriesSpy.count, 1);
+            root.wrapper.categories = ["Editor category"];
+            tryCompare(delegate, "checked", true);
+            compare(categoriesSpy.count, 2);
+            const checkbox = findChild(delegate, "categoryCheckboxEditor category");
+            verify(!!checkbox, "Object exists");
+            selector.popup.open();
+            tryCompare(selector.popup, "opened", true);
+            mouseClick(checkbox);
+            tryVerify(() => root.wrapper.categories.length === 0);
+            compare(categoriesSpy.count, 3);
+            selector.popup.close();
+        }
+
+        function test_attendeeStatusAndRsvpOnlyWriteOnUserInput(): void {
+            editorTestHelper.setEditorFixture(root.wrapper, "weekly");
+            const page = createPage(false);
+            page.editMode = true;
+            const status = findChild(page, "attendeeStatus0");
+            const rsvp = findChild(page, "attendeeRsvp0");
+            verify(!!status, "Object exists");
+            verify(!!rsvp, "Object exists");
+            const attendees = root.wrapper.attendeesModel;
+            const index = attendees.index(0, 0);
+            attendeeSpy.clear();
+            attendees.setData(index, false, Calendar.AttendeesModel.RSVPRole);
+            tryCompare(rsvp, "checked", false);
+            compare(attendeeSpy.count, 1);
+            rsvp.forceActiveFocus();
+            tryCompare(rsvp, "activeFocus", true);
+            keyClick(Qt.Key_Space);
+            tryVerify(() => attendees.data(index, Calendar.AttendeesModel.RSVPRole));
+            compare(attendeeSpy.count, 2);
+            status.forceActiveFocus();
+            tryCompare(status, "activeFocus", true);
+            keyClick(Qt.Key_Down);
+            tryVerify(() => attendeeSpy.count === 3);
+            compare(attendees.data(index, Calendar.AttendeesModel.StatusRole), status.currentValue);
         }
 
         function test_externalChangesRequireConfirmedReload(): void {
@@ -175,8 +376,7 @@ Item {
             for (let row = 0; row < model.rowCount(parentIndex); ++row) {
                 const index = model.index(row, 0, parentIndex);
                 const collection = model.data(index, Akonadi.EntityTreeModel.CollectionRole);
-                if ((collection.rights & Akonadi.Collection.CanCreateItem)
-                    && collection.contentMimeTypes.indexOf("application/x-vnd.akonadi.calendar.event") !== -1) {
+                if ((collection.rights & Akonadi.Collection.CanCreateItem) && collection.contentMimeTypes.indexOf("application/x-vnd.akonadi.calendar.event") !== -1) {
                     return collection.id;
                 }
                 const childId = writableCalendarId(model, index);

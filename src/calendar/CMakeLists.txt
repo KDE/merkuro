@@ -107,6 +107,7 @@ ecm_add_qml_module(merkuro_calendar_static GENERATE_PLUGIN_SOURCE
     QML_FILES
         qml/incidenceeditor/ReminderDelegate.qml
         qml/incidenceeditor/PriorityComboBox.qml
+        qml/incidenceeditor/RecurrenceEditor.qml
         qml/BottomToolBar.qml
         qml/Menus/MenuBar.qml
         qml/Controls/DatePopupSingleton.qml

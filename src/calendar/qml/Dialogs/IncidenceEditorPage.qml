@@ -194,6 +194,12 @@ FormCard.FormCardPage {
             property bool isTodo: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeTodo
             property bool isJournal: root.incidenceWrapper.incidenceType === Calendar.IncidenceWrapper.TypeJournal
 
+            function clearAllDayForUndatedTodo(): void {
+                if (isTodo && !root.incidenceWrapper.incidenceStart.isValid && !root.incidenceWrapper.incidenceEnd.isValid) {
+                    root.incidenceWrapper.allDay = false;
+                }
+            }
+
             FormCard.FormCard {
                 Layout.topMargin: Kirigami.Units.gridUnit
 
@@ -271,7 +277,7 @@ FormCard.FormCardPage {
                         autoUpdate: true
                         onLocationsChanged: locationField.openOrCloseLocationsPopup()
                     }
-                    onCurrentValueChanged: root.incidenceWrapper.location = currentValue.address.text
+                    onActivated: root.incidenceWrapper.location = currentValue.address.text
                     Keys.onPressed: locationField.openOrCloseLocationsPopup()
 
                     QQC2.BusyIndicator {
@@ -325,7 +331,7 @@ FormCard.FormCardPage {
                         return root.incidenceWrapper.collectionId;
                     }
 
-                    onCurrentIndexChanged: {
+                    onActivated: {
                         if (calendarCombo.model.rowCount() === 0) {
                             return;
                         }
@@ -399,7 +405,7 @@ FormCard.FormCardPage {
                     ]
 
                     currentIndex: root.incidenceWrapper.priority
-                    onCurrentValueChanged: root.incidenceWrapper.priority = currentValue
+                    onActivated: root.incidenceWrapper.priority = currentValue
                     visible: incidenceForm.isTodo
 
                     textRole: "display"
@@ -415,7 +421,6 @@ FormCard.FormCardPage {
 
                     text: i18n("All day")
                     enabled: !incidenceForm.isTodo || root.incidenceWrapper.incidenceStart.isValid || root.incidenceWrapper.incidenceEnd.isValid
-                    onEnabledChanged: if (!enabled) root.incidenceWrapper.allDay = false
                     checked: root.incidenceWrapper.allDay
                     onToggled: {
                         if (!checked) {
@@ -452,6 +457,7 @@ FormCard.FormCardPage {
 
                         QQC2.CheckBox {
                             id: incidenceStartCheckBox
+                            objectName: "incidenceStartCheckBox"
 
                             property MerkuroComponents.KDateTime oldDate: MerkuroComponents.KDateTimeFactory.invalid()
 
@@ -465,6 +471,7 @@ FormCard.FormCardPage {
                                 } else if(incidenceForm.isTodo) {
                                     root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(true, false);
                                 }
+                                incidenceForm.clearAllDayForUndatedTodo();
                             }
                             visible: incidenceForm.isTodo
                         }
@@ -512,6 +519,7 @@ FormCard.FormCardPage {
 
                         QQC2.CheckBox {
                             id: incidenceEndCheckBox
+                            objectName: "incidenceEndCheckBox"
 
                             property MerkuroComponents.KDateTime oldDate: MerkuroComponents.KDateTimeFactory.invalid()
 
@@ -525,6 +533,7 @@ FormCard.FormCardPage {
                                 } else if(incidenceForm.isTodo) {
                                     root.incidenceWrapper.setIncidenceTimeToNearestQuarterHour(false, true);
                                 }
+                                incidenceForm.clearAllDayForUndatedTodo();
                             }
                             visible: incidenceForm.isTodo
                         }
@@ -570,7 +579,7 @@ FormCard.FormCardPage {
                     textRole: "displayName"
                     valueRole: "id"
                     currentIndex: model ? timeZonesModel.getTimeZoneRow(root.incidenceWrapper.timeZone) : -1
-                    onCurrentValueChanged: root.incidenceWrapper.timeZone = currentValue
+                    onActivated: root.incidenceWrapper.timeZone = currentValue
                 }
             }
 
@@ -578,301 +587,8 @@ FormCard.FormCardPage {
                 title: i18nc("@title", "Repeat")
             }
 
-            FormCard.FormCard {
-                id: customRecurrenceLayout
-
-                // TODO visible: repeatComboBox.currentIndex > 0 // Not "Never" index
-                FormCard.FormComboBoxDelegate {
-                    id: repeatComboBox
-                    text: i18n("Repeat:")
-
-                    enabled: !incidenceForm.isTodo || root.incidenceWrapper.incidenceStart.isValid || root.incidenceWrapper.incidenceEnd.isValid
-                    textRole: "displayName"
-                    valueRole: "interval"
-                    currentIndex: {
-                        switch(root.incidenceWrapper.recurrenceData.type) {
-                            case 0:
-                                return root.incidenceWrapper.recurrenceData.type;
-                            case 3: // Daily
-                                return root.incidenceWrapper.recurrenceData.frequency === 1 ?
-                                    root.incidenceWrapper.recurrenceData.type - 2 : 5
-                            case 4: // Weekly
-                                return root.incidenceWrapper.recurrenceData.frequency === 1 ?
-                                    (root.incidenceWrapper.recurrenceData.weekdays.filter(x => x === true).length === 0 ?
-                                    root.incidenceWrapper.recurrenceData.type - 2 : 5) : 5
-                            case 5: // Monthly on position (e.g. third Monday)
-                            case 8: // Yearly on day
-                            case 9: // Yearly on position
-                            case 10: // Other
-                                return 5;
-                            case 6: // Monthly on day (1st of month)
-                                return 3;
-                            case 7: // Yearly on month
-                                return 4;
-                        }
-                    }
-                    model: [
-                        {key: "never", displayName: i18n("Never"), interval: -1},
-                        {key: "daily", displayName: i18n("Daily"), interval: Calendar.IncidenceWrapper.Daily},
-                        {key: "weekly", displayName: i18n("Weekly"), interval: Calendar.IncidenceWrapper.Weekly},
-                        {key: "monthly", displayName: i18n("Monthly"), interval: Calendar.IncidenceWrapper.Monthly},
-                        {key: "yearly", displayName: i18n("Yearly"), interval: Calendar.IncidenceWrapper.Yearly},
-                        {key: "custom", displayName: i18n("Custom"), interval: -1}
-                    ]
-
-                    onCurrentValueChanged: if (currentValue >= 0) {
-                        root.incidenceWrapper.setRegularRecurrence(currentValue)
-                    } else {
-                        root.incidenceWrapper.clearRecurrences();
-                    }
-                }
-
-                function setOccurrence() {
-                    root.incidenceWrapper.setRegularRecurrence(recurScaleRuleCombobox.currentValue, recurFreqRuleSpinbox.value);
-
-                    if(recurScaleRuleCombobox.currentValue === Calendar.IncidenceWrapper.Weekly) {
-                        weekdayCheckboxRepeater.setWeekdaysRepeat();
-                    }
-                }
-
-                FormCard.AbstractFormDelegate {
-                    visible: repeatComboBox.currentIndex === 5
-                    contentItem: RowLayout {
-                        QQC2.Label {
-                            text: i18n("Every:")
-                        }
-
-                        QQC2.SpinBox {
-                            id: recurFreqRuleSpinbox
-
-                            Layout.fillWidth: true
-                            from: 1
-                            value: root.incidenceWrapper.recurrenceData.frequency
-                            onValueChanged: if(visible) { root.incidenceWrapper.setRecurrenceDataItem("frequency", value) }
-                        }
-                        QQC2.ComboBox {
-                            id: recurScaleRuleCombobox
-
-                            Layout.fillWidth: true
-                            visible: repeatComboBox.currentIndex === 5
-
-                            textRole: "displayName"
-                            valueRole: "interval"
-                            onCurrentValueChanged: if(visible) {
-                                customRecurrenceLayout.setOccurrence();
-                                repeatComboBox.currentIndex = 5; // Otherwise resets to default daily/weekly/etc.
-                            }
-                            currentIndex: {
-                                if(root.incidenceWrapper.recurrenceData.type === undefined) {
-                                    return 0;
-                                }
-
-                                switch(root.incidenceWrapper.recurrenceData.type) {
-                                    case 3: // Daily
-                                    case 4: // Weekly
-                                        return root.incidenceWrapper.recurrenceData.type - 3
-                                    case 5: // Monthly on position (e.g. third Monday)
-                                    case 6: // Monthly on day (1st of month)
-                                        return 2;
-                                    case 7: // Yearly on month
-                                    case 8: // Yearly on day
-                                    case 9: // Yearly on position
-                                        return 3;
-                                    default:
-                                        return 0;
-                                }
-                            }
-
-                            model: [
-                                {key: "day", displayName: i18np("day", "days", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Daily},
-                                {key: "week", displayName: i18np("week", "weeks", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Weekly},
-                                {key: "month", displayName: i18np("month", "months", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Monthly},
-                                {key: "year", displayName: i18np("year", "years", recurFreqRuleSpinbox.value), interval: Calendar.IncidenceWrapper.Yearly},
-                            ]
-                        }
-                    }
-                }
-
-                FormCard.AbstractFormDelegate {
-                    visible: recurScaleRuleCombobox.currentValue === Calendar.IncidenceWrapper.Weekly && repeatComboBox.currentValue === -1
-                    contentItem: GridLayout {
-                        id: recurWeekdayRuleLayout
-                        columns: 7
-                        Repeater {
-                            model: 7
-                            delegate: QQC2.Label {
-                                required property int index
-                                Layout.fillWidth: true
-                                horizontalAlignment: Text.AlignHCenter
-                                text: Qt.locale().dayName(Qt.locale().firstDayOfWeek + index, Locale.ShortFormat)
-                            }
-                        }
-
-                        Repeater {
-                            id: weekdayCheckboxRepeater
-
-                            property var checkboxes: []
-                            function setWeekdaysRepeat() {
-                                let selectedDays = new Array(7)
-                                for(let checkbox of checkboxes) {
-                                    // C++ func takes 7 bit array
-                                    selectedDays[checkbox.dayNumber] = checkbox.checked
-                                }
-                                root.incidenceWrapper.setRecurrenceDataItem("weekdays", selectedDays);
-                            }
-
-                            model: 7
-                            delegate: QQC2.CheckBox {
-                                required property int index
-                                // We make sure we get dayNumber per the day of the week number used by C++ Qt
-                                property int dayNumber: Qt.locale().firstDayOfWeek + index > 7 ?
-                                                        Qt.locale().firstDayOfWeek + index - 1 - 7 :
-                                                        Qt.locale().firstDayOfWeek + index - 1
-
-                                checked: root.incidenceWrapper.recurrenceData?.weekdays[dayNumber] ?? false
-                                onClicked: {
-                                    let newWeekdays = [...root.incidenceWrapper.recurrenceData.weekdays];
-                                    newWeekdays[dayNumber] = !root.incidenceWrapper.recurrenceData.weekdays[dayNumber];
-                                    root.incidenceWrapper.setRecurrenceDataItem("weekdays", newWeekdays);
-                                }
-
-                                Layout.alignment: Qt.AlignHCenter
-                            }
-                        }
-                    }
-                }
-
-                QQC2.ButtonGroup {
-                    buttons: monthlyRecurRadioColumn.children
-                }
-
-                FormCard.AbstractFormDelegate {
-                    visible: recurScaleRuleCombobox.currentValue === Calendar.IncidenceWrapper.Monthly && repeatComboBox.currentIndex === 5
-                    contentItem: ColumnLayout {
-                        id: monthlyRecurRadioColumn
-
-                        readonly property MerkuroComponents.KDateTime incidenceStartDateFromText: incidenceStartDateCombo.dateFromText
-
-                        QQC2.Label {
-                            text: i18n("On:")
-                        }
-
-                        Layout.fillWidth: true
-
-                        QQC2.RadioButton {
-                            property int dateOfMonth: monthlyRecurRadioColumn.incidenceStartDateFromText.day
-
-                            text: i18nc("%1 is the day number of month", "The %1 of each month", Calendar.LabelUtils.numberToString(dateOfMonth))
-
-                            checked: root.incidenceWrapper.recurrenceData.type === 6 // Monthly on day (1st of month)
-                            onClicked: customRecurrenceLayout.setOccurrence()
-                        }
-
-                        QQC2.RadioButton {
-                            property int dayOfWeek: monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek - 1
-                            property int weekOfMonth: Math.ceil((monthlyRecurRadioColumn.incidenceStartDateFromText.day + monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek - 1) / 7);
-                            property string dayOfWeekString: Qt.locale().dayName(monthlyRecurRadioColumn.incidenceStartDateFromText.dayOfWeek)
-
-                            text: i18nc("the weekOfMonth dayOfWeekString of each month", "The %1 %2 of each month", Calendar.LabelUtils.numberToString(weekOfMonth), dayOfWeekString)
-                            checked: root.incidenceWrapper.recurrenceData.type === 5 // Monthly on position
-                            onTextChanged: if(checked) { root.incidenceWrapper.setMonthlyPosRecurrence(weekOfMonth, dayOfWeek); }
-                            onClicked: root.incidenceWrapper.setMonthlyPosRecurrence(weekOfMonth, dayOfWeek)
-                        }
-                    }
-                }
-
-                FormCard.FormComboBoxDelegate {
-                    id: endRecurType
-
-                    visible: repeatComboBox.currentIndex !== 0
-                    text: i18n("Ends:")
-                    // ?? Layout.fillWidth: currentIndex !== 1 //The end date combo box should fill the layout
-                    // Recurrence duration returns -1 for never ending and 0 when the recurrence
-                    // end date is set. Any number larger is the set number of recurrences
-                    onCurrentValueChanged: if (visible) { root.incidenceWrapper.setRecurrenceDataItem("duration", currentValue) }
-                    textRole: "displayName"
-                    valueRole: "duration"
-                    model: [
-                        {displayName: i18n("Never"), duration: -1},
-                        {displayName: i18n("On"), duration: 0},
-                        {displayName: i18n("After"), duration: 1}
-                    ]
-
-                    Component.onCompleted: {
-                        currentIndex = root.incidenceWrapper.recurrenceData.duration <= 0 ?
-                            root.incidenceWrapper.recurrenceData.duration + 1 : 2;
-                    }
-                }
-
-                FormCard.FormDateTimeDelegate {
-                    id: recurEndDateCombo
-
-                    dateTimeDisplay: FormCard.FormDateTimeDelegate.Date
-
-                    visible: endRecurType.visible && endRecurType.currentIndex === 1
-                }
-
-                FormCard.FormSpinBoxDelegate {
-                    id: recurOccurrenceEndSpinbox
-                    label: i18nc("@label:spinbox", "Ends after:")
-                    textFromValue: function(value: int): string {
-                        return i18np("%1 occurrence", "%1 occurrences", value)
-                    }
-                    visible: endRecurType.currentIndex === 2
-                    onVisibleChanged: if (visible) { root.incidenceWrapper.setRecurrenceOccurrences(recurOccurrenceEndSpinbox.value) }
-                    from: 1
-                    value: root.incidenceWrapper.recurrenceData.duration
-                    onValueChanged: if (visible) { root.incidenceWrapper.setRecurrenceOccurrences(value) }
-                }
-
-                FormCard.FormTextDelegate {
-                    text: i18n("Exceptions:")
-                    visible: repeatComboBox.currentIndex !== 0
-                    trailing: QQC2.Button {
-                        text: i18nc("@action:button", "Add")
-                        icon.name: "list-add"
-                        onClicked: {
-                            Calendar.DatePopupSingleton.value = incidenceEndDateCombo.value;
-                            Calendar.DatePopupSingleton.popupParent = root;
-                            Calendar.DatePopupSingleton.y = y + height;
-                            Calendar.DatePopupSingleton.open()
-                            connect.enabled = true;
-                        }
-                        Connections {
-                            id: connect
-
-                            target: Calendar.DatePopupSingleton
-                            enabled: false
-
-                            function onAccepted(): void {
-                                root.incidenceWrapper.recurrenceExceptionsModel.addExceptionDateTime(MerkuroComponents.KDateTimeFactory.fromDateTime(Calendar.DatePopupSingleton.value));
-                                Calendar.DatePopupSingleton.close();
-                            }
-
-                            function onClosed(): void {
-                                enabled = false;
-                            }
-                        }
-                    }
-                }
-
-                Repeater {
-                    model: root.incidenceWrapper.recurrenceExceptionsModel
-
-                    delegate: FormCard.FormTextDelegate {
-                        id: exceptionDelegate
-
-                        required property MerkuroComponents.KDateTime date
-
-                        leftPadding: Kirigami.Units.largeSpacing * 4
-
-                        text: date.toLocaleDateString(Locale.NarrowFormat)
-                        trailing: QQC2.Button {
-                            icon.name: "edit-delete-remove"
-                            onClicked: root.incidenceWrapper.recurrenceExceptionsModel.deleteExceptionDateTime(date)
-                        }
-                    }
-                }
+            Calendar.RecurrenceEditor {
+                incidenceWrapper: root.incidenceWrapper
             }
 
             FormCard.FormHeader {
@@ -977,8 +693,9 @@ FormCard.FormCardPage {
                                     Layout.column: 1
                                     Layout.columnSpan: 4
                                     placeholderText: i18n("Optional")
+                                    objectName: "attendeeName" + attendeeDelegate.index
                                     text: attendeeDelegate.name
-                                    onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                    onTextEdited: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                 text,
                                                                                                 Calendar.AttendeesModel.NameRole)
                                 }
@@ -1002,8 +719,9 @@ FormCard.FormCardPage {
                                     Layout.column: 1
                                     Layout.columnSpan: 4
                                     placeholderText: i18n("Required")
+                                    objectName: "attendeeEmail" + attendeeDelegate.index
                                     text: attendeeDelegate.email
-                                    onTextChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                    onTextEdited: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                 text,
                                                                                                 Calendar.AttendeesModel.EmailRole)
                                 }
@@ -1021,8 +739,9 @@ FormCard.FormCardPage {
                                     model: root.incidenceWrapper.attendeesModel.attendeeStatusModel
                                     textRole: "display"
                                     valueRole: "value"
+                                    objectName: "attendeeStatus" + attendeeDelegate.index
                                     currentIndex: attendeeDelegate.status // role of parent
-                                    onCurrentValueChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                    onActivated: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                         currentValue,
                                                                                                         Calendar.AttendeesModel.StatusRole)
 
@@ -1035,8 +754,9 @@ FormCard.FormCardPage {
                                     Layout.column: 3
                                     Layout.columnSpan: 2
                                     text: i18n("Request RSVP")
+                                    objectName: "attendeeRsvp" + attendeeDelegate.index
                                     checked: attendeeDelegate.rsvp
-                                    onCheckedChanged: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                    onToggled: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                     checked,
                                                                                                     Calendar.AttendeesModel.RSVPRole)
                                     visible: root.editMode
@@ -1092,6 +812,7 @@ FormCard.FormCardPage {
                 FormCard.AbstractFormDelegate {
                     background: null
                     contentItem: QQC2.ComboBox {
+                        objectName: "categorySelector"
                         enabled: count > 0
                         model: Akonadi.TagManager.tagModel
                         displayText: root.incidenceWrapper.categories.length > 0 ?
@@ -1104,6 +825,7 @@ FormCard.FormCardPage {
                             required property int index
                             required property string name
 
+                            objectName: "categoryDelegate" + name
                             text: name
 
                             checkable: true
@@ -1116,12 +838,11 @@ FormCard.FormCardPage {
                             contentItem: RowLayout {
                                 QQC2.CheckBox {
                                     id: checkBox
+                                    objectName: "categoryCheckbox" + delegate.name
                                     activeFocusOnTab: false
 
                                     checked: delegate.checked
-                                    onCheckedChanged: if (delegate.checked !== checked) {
-                                        delegate.checked = checked;
-                                    }
+                                    onClicked: delegate.toggleCategory()
                                 }
 
                                 Delegates.DefaultContentItem {
@@ -1129,13 +850,14 @@ FormCard.FormCardPage {
                                 }
                             }
 
-                            onCheckedChanged: {
-                                root.incidenceWrapper.categories.includes(name) ?
-                                    root.incidenceWrapper.categories = root.incidenceWrapper.categories.filter(tag => tag !== name) :
-                                    root.incidenceWrapper.categories = [...root.incidenceWrapper.categories, name]
-                                checkBox.checked = delegate.checked;
-
+                            function toggleCategory(): void {
+                                root.incidenceWrapper.categories = root.incidenceWrapper.categories.includes(name)
+                                    ? root.incidenceWrapper.categories.filter(tag => tag !== name)
+                                    : [...root.incidenceWrapper.categories, name];
                             }
+
+                            onClicked: toggleCategory()
+
                         }
                     }
                 }
@@ -1202,9 +924,10 @@ FormCard.FormCardPage {
 
             FormCard.FormCard {
                 QQC2.TextArea {
+                    objectName: "descriptionField"
                     text: root.incidenceWrapper.description
                     wrapMode: TextEdit.Wrap
-                    onTextChanged: root.incidenceWrapper.description = text
+                    onTextEdited: root.incidenceWrapper.description = text
                     background.visible: activeFocus
 
                     leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
