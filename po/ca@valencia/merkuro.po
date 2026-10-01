@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:46+0000\n"
-"PO-Revision-Date: 2026-09-24 09:35+0200\n"
+"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"PO-Revision-Date: 2026-09-26 13:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -193,10 +193,9 @@ msgstr "No s'ha seleccionat cap bústia"
 
 #: calendar/calendareditorbackend.cpp:117
 #, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "The selected address book could not be found."
+#| msgid "The selected address book cannot store this contact."
 msgid "The selected calendar cannot store this incidence."
-msgstr "No s'ha pogut trobar la llibreta d'adreces seleccionada."
+msgstr "La llibreta d'adreces seleccionada no pot emmagatzemar este contacte."
 
 #: calendar/calendareditorbackend.cpp:130
 #, fuzzy, kde-format
@@ -332,7 +331,7 @@ msgid "Default from locale"
 msgstr "Predeterminat de la configuració regional"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1098
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:819
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -984,406 +983,279 @@ msgstr "Guarda"
 msgid "Add"
 msgstr "Afig"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:204
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:210
 #, kde-format
 msgid "Summary"
 msgstr "Resum"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:207
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:213
 #, kde-format
 msgid "Add a title for your task"
 msgstr "Afegiu un títol per a la tasca"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:209
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:215
 #, kde-format
 msgid "Add a title for your event"
 msgstr "Afegiu un títol per a l'esdeveniment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:211
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:217
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "Afegiu un títol per a l'entrada del diari"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:223
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Location"
 msgstr "Ubicació"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:308
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:314
 #, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Calendari"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:340
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:346
 #, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Tasca"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:356
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
 #, kde-format
 msgid "Completion"
 msgstr "Compleció"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:366
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:372
 #, kde-format
 msgid "%1%"
 msgstr "%1%"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:387
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
 #, kde-format
 msgid "Priority"
 msgstr "Prioritat"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:389
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
 msgstr "Sense assignar"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:390
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
 #, kde-format
 msgid "1 (Highest Priority)"
 msgstr "1 (prioritat més alta)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:391
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:23
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:392
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:24
 #, kde-format
 msgid "3"
 msgstr "3"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:25
 #, kde-format
 msgid "4"
 msgstr "4"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:394
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:26
 #, kde-format
 msgid "5 (Medium Priority)"
 msgstr "5 (prioritat mitjana)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:27
 #, kde-format
 msgid "6"
 msgstr "6"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:28
 #, kde-format
 msgid "7"
 msgstr "7"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:29
 #, kde-format
 msgid "8"
 msgstr "8"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:30
 #, kde-format
 msgid "9 (Lowest Priority)"
 msgstr "9 (prioritat més baixa)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgctxt "@title:group"
 msgid "Start"
 msgstr "Inici"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:422
 #, kde-format
 msgid "All day"
 msgstr "Tot el dia"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
 #, kde-format
 msgctxt "@title:group"
 msgid "Due"
 msgstr "Venciment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
 #, kde-format
 msgctxt "@title:group"
 msgid "End"
 msgstr "Final"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:568
 #, kde-format
 msgctxt "@title"
 msgid "Timezone"
 msgstr "Fus horari"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:565
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
 #, kde-format
 msgid "Timezone:"
 msgstr "Fus horari:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:578
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgctxt "@title"
 msgid "Repeat"
 msgstr "Repetició"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
-#, kde-format
-msgid "Repeat:"
-msgstr "Repetix:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:796
-#: calendar/recurrencedata.cpp:66
-#, kde-format
-msgid "Never"
-msgstr "Mai"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
-#, kde-format
-msgid "Daily"
-msgstr "Diàriament"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:617
-#, kde-format
-msgid "Weekly"
-msgstr "Setmanalment"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:618
-#, kde-format
-msgid "Monthly"
-msgstr "Mensualment"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:619
-#, kde-format
-msgid "Yearly"
-msgstr "Anualment"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:620
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
-#, kde-format
-msgid "Custom"
-msgstr "Personalitzat"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:642
-#, kde-format
-msgid "Every:"
-msgstr "Cada:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:687
-#, kde-format
-msgid "day"
-msgid_plural "days"
-msgstr[0] "dia"
-msgstr[1] "dies"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
-#, kde-format
-msgid "week"
-msgid_plural "weeks"
-msgstr[0] "setmana"
-msgstr[1] "setmanes"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:689
-#, kde-format
-msgid "month"
-msgid_plural "months"
-msgstr[0] "mes"
-msgstr[1] "mesos"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:690
-#, kde-format
-msgid "year"
-msgid_plural "years"
-msgstr[0] "any"
-msgstr[1] "anys"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:757
-#, kde-format
-msgid "On:"
-msgstr "Actiu:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, kde-format
-msgctxt "%1 is the day number of month"
-msgid "The %1 of each month"
-msgstr "%1 de cada mes"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:776
-#, kde-format
-msgctxt "the weekOfMonth dayOfWeekString of each month"
-msgid "The %1 %2 of each month"
-msgstr "%2 de %1 de cada mes"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:788
-#, kde-format
-msgid "Ends:"
-msgstr "Acaba:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:797
-#, kde-format
-msgid "On"
-msgstr "En"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
-#, kde-format
-msgid "After"
-msgstr "Després"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Ends after:"
-msgstr "Finalitza després de:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:819
-#, kde-format
-msgid "%1 occurrence"
-msgid_plural "%1 occurrences"
-msgstr[0] "%1 ocurrència"
-msgstr[1] "%1 ocurrències"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
-#, kde-format
-msgid "Exceptions:"
-msgstr "Excepcions:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:832
-#, kde-format
-msgctxt "@action:button"
-msgid "Add"
-msgstr "Afig"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:879
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:595
 #, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "Assistents"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
 #, kde-format
 msgid "Add Attendee"
 msgstr "Afig assistents"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Trieu des dels contactes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:917
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:633
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Emplena manualment"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:928
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:644
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr "No hi ha cap assistent"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
 #: contacts/qml/private/ContactPage.qml:190
 #, kde-format
 msgid "Name:"
 msgstr "Nom:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:695
 #, kde-format
 msgid "Optional"
 msgstr "Opcional"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:714
 #, kde-format
 msgid "Email:"
 msgstr "Correu electrònic:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:721
 #, kde-format
 msgid "Required"
 msgstr "Requerit"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:731
 #, kde-format
 msgid "Status:"
 msgstr "Estat:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:756
 #, kde-format
 msgid "Request RSVP"
 msgstr "Demana RSVP"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Recordatoris"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1053
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:773
 #, kde-format
 msgid "Add Reminder"
 msgstr "Afig un recordatori"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "No hi ha cap recordatori"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1083
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:803
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1085
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:805
 #, kde-format
 msgid "Manage tags…"
 msgstr "Gestiona les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:820
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Toqueu per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:820
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Cliqueu per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1145
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Adjunts"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1147
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:869
 #, kde-format
 msgid "Add Attachment"
 msgstr "Afig un adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1154
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:876
 #, kde-format
 msgid "Add an attachment"
 msgstr "Afig un adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1165
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:887
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "No hi ha cap adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1200
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1492,6 +1364,133 @@ msgstr "Vista de totes les tasques"
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritat:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:33
+#, kde-format
+msgid "Repeat:"
+msgstr "Repetix:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:69
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:292
+#: calendar/recurrencedata.cpp:66
+#, kde-format
+msgid "Never"
+msgstr "Mai"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:74
+#, kde-format
+msgid "Daily"
+msgstr "Diàriament"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:79
+#, kde-format
+msgid "Weekly"
+msgstr "Setmanalment"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:84
+#, kde-format
+msgid "Monthly"
+msgstr "Mensualment"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:89
+#, kde-format
+msgid "Yearly"
+msgstr "Anualment"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:94
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
+#, kde-format
+msgid "Custom"
+msgstr "Personalitzat"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:121
+#, kde-format
+msgid "Every:"
+msgstr "Cada:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:167
+#, kde-format
+msgid "day"
+msgid_plural "days"
+msgstr[0] "dia"
+msgstr[1] "dies"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:172
+#, kde-format
+msgid "week"
+msgid_plural "weeks"
+msgstr[0] "setmana"
+msgstr[1] "setmanes"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:177
+#, kde-format
+msgid "month"
+msgid_plural "months"
+msgstr[0] "mes"
+msgstr[1] "mesos"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:182
+#, kde-format
+msgid "year"
+msgid_plural "years"
+msgstr[0] "any"
+msgstr[1] "anys"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:240
+#, kde-format
+msgid "On:"
+msgstr "Actiu:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:250
+#, kde-format
+msgctxt "%1 is the day number of month"
+msgid "The %1 of each month"
+msgstr "%1 de cada mes"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:263
+#, kde-format
+msgctxt "the weekOfMonth dayOfWeekString of each month"
+msgid "The %1 %2 of each month"
+msgstr "%2 de %1 de cada mes"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:275
+#, kde-format
+msgid "Ends:"
+msgstr "Acaba:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:296
+#, kde-format
+msgid "On"
+msgstr "En"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:300
+#, kde-format
+msgid "After"
+msgstr "Després"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:323
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Ends after:"
+msgstr "Finalitza després de:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:325
+#, kde-format
+msgid "%1 occurrence"
+msgid_plural "%1 occurrences"
+msgstr[0] "%1 ocurrència"
+msgstr[1] "%1 ocurrències"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:334
+#, kde-format
+msgid "Exceptions:"
+msgstr "Excepcions:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:337
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "Afig"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:52
 #, kde-format
@@ -2662,31 +2661,31 @@ msgstr "S'ha cancel·lat la sol·licitud d'imatge"
 msgid "Home:"
 msgstr "Casa:"
 
-#: contacts/certificatesmodel.cpp:84
+#: contacts/certificatesmodel.cpp:85
 #, kde-format
 msgctxt "@info: shorthand for the key is revoked"
 msgid "Revoked"
 msgstr "Revocada"
 
-#: contacts/certificatesmodel.cpp:87
+#: contacts/certificatesmodel.cpp:88
 #, kde-format
 msgctxt "@info: shorthand for the key is expired"
 msgid "Expired"
 msgstr "Caducada"
 
-#: contacts/certificatesmodel.cpp:90
+#: contacts/certificatesmodel.cpp:91
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
 msgstr "Desactivada"
 
-#: contacts/certificatesmodel.cpp:93
+#: contacts/certificatesmodel.cpp:94
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
 msgstr "No vàlida"
 
-#: contacts/certificatesmodel.cpp:96
+#: contacts/certificatesmodel.cpp:97
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
@@ -2785,11 +2784,9 @@ msgid "The contact is no longer available."
 msgstr "El contacte ja no es troba disponible."
 
 #: contacts/contacteditorbackend.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "The selected address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store contacts."
-msgstr "No s'ha pogut trobar la llibreta d'adreces seleccionada."
+msgstr "La llibreta d'adreces seleccionada no pot emmagatzemar contactes."
 
 #: contacts/contacteditorbackend.cpp:238
 #, kde-format
@@ -2895,18 +2892,15 @@ msgid "Could not prepare the contact for sharing."
 msgstr "No s'ha pogut preparar el contacte per a compartir."
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Hui"
 
 #: contacts/contactmanager.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "The selected address book could not be found."
+#, kde-format
 msgid "The selected address book cannot store this contact."
-msgstr "No s'ha pogut trobar la llibreta d'adreces seleccionada."
+msgstr "La llibreta d'adreces seleccionada no pot emmagatzemar este contacte."
 
 #: contacts/emailmodel.cpp:50
 #, kde-format
@@ -2943,25 +2937,21 @@ msgstr "Sense nom"
 #, kde-format
 msgctxt "@info:accessible Birthday date and upcoming age"
 msgid "Birthday on %1, turning %2"
-msgstr ""
+msgstr "Aniversari %1, en fa %2"
 
 #: contacts/qml/ContactListItem.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:accessible Birthday date"
 msgid "Birthday on %1"
-msgstr "Data de naixement"
+msgstr "Aniversari %1"
 
 #: contacts/qml/ContactListItem.qml:119
-#, fuzzy, kde-format
-#| msgid "year"
-#| msgid_plural "years"
+#, kde-format
 msgctxt "Age on the next birthday"
 msgid "%1 year"
 msgid_plural "%1 years"
-msgstr[0] "any"
-msgstr[1] "anys"
+msgstr[0] "%1 any"
+msgstr[1] "%1 anys"
 
 #: contacts/qml/ContactView.qml:29 contacts/qml/private/ContactsPage.qml:22
 #: contacts/qml/Sidebar.qml:147 launcher/Main.qml:53
@@ -2970,12 +2960,10 @@ msgid "Contacts"
 msgstr "Contactes"
 
 #: contacts/qml/ContactView.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@title:window"
 msgid "Birthdays"
-msgstr "Data de naixement"
+msgstr "Dates de naixement"
 
 #: contacts/qml/ContactView.qml:33
 #, kde-format
@@ -3078,12 +3066,10 @@ msgid "No contacts"
 msgstr "No hi ha cap contacte"
 
 #: contacts/qml/ContactView.qml:369
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No birthdays"
-msgstr "Data de naixement"
+msgstr "Sense dates de naixement"
 
 #: contacts/qml/private/AddressBookMenu.qml:31
 #, kde-format
@@ -3271,56 +3257,49 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Address"
 msgstr "Adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:43
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add address"
-msgstr "Adreça"
+msgstr "Afig una adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Domestic"
-msgstr ""
+msgstr "Nacional"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Alternative name"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "International"
-msgstr "Nom alternatiu"
+msgstr "Internacional"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:26
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Postal"
-msgstr ""
+msgstr "Postal"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:27
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Parcel"
-msgstr ""
+msgstr "Paquets postals"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Home"
-msgstr "Inici"
+msgstr "Casa"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Work"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Work"
 msgstr "Faena"
@@ -3329,35 +3308,28 @@ msgstr "Faena"
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Preferred"
-msgstr ""
+msgstr "Preferida"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add address"
-msgstr "Adreça"
+msgstr "Afig una adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Address Book"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit address"
-msgstr "Edició de llibreta d'adreces"
+msgstr "Editeu adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Address type"
-msgstr "Adreça"
+msgstr "Tipus d'adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Other"
+#, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Other"
 msgstr "Altres"
@@ -3366,60 +3338,59 @@ msgstr "Altres"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Street"
-msgstr ""
+msgstr "Carrer"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Apartment, suite, etc."
-msgstr ""
+msgstr "Pis, apartament, habitació, etc."
 
+# skip-rule: kct-box
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "P.O. box"
-msgstr ""
+msgstr "Apartat postal"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "City"
-msgstr ""
+msgstr "Ciutat"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "State or region"
-msgstr ""
+msgstr "Estat o regió"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:126
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Postal code"
-msgstr ""
+msgstr "Codi postal"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:132
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:142
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Delivery label"
-msgstr ""
+msgstr "Etiqueta de lliurament"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove address"
-msgstr "Elimina el correu electrònic"
+msgstr "Elimina l'adreça"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Guarda"
@@ -3533,12 +3504,10 @@ msgid "E-mail"
 msgstr "Correu electrònic"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:group"
 msgid "Addresses"
-msgstr "Adreça"
+msgstr "Adreces"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:158
 #, kde-format
@@ -3547,27 +3516,22 @@ msgstr "Missatgeria instantània"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:166
 #: contacts/qml/private/ContactPage.qml:441
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notes"
-msgstr "Nota"
+msgstr "Notes"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Note"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Notes"
-msgstr "Nota"
+msgstr "Notes"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Add Folder"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Add a note"
-msgstr "Afig una carpeta"
+msgstr "Afig una nota"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:230
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
@@ -3809,14 +3773,13 @@ msgstr "Actualitza la imatge de perfil"
 #, kde-format
 msgctxt "@info:label"
 msgid "Event"
-msgstr ""
+msgstr "Esdeveniment"
 
 #: contacts/qml/private/ContactActivityDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgctxt "@info:label"
 msgid "Email"
-msgstr "Correu electrònic:"
+msgstr "Correu electrònic"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
 #: mail/settings/TransportConfigurationForm.qml:74
@@ -3830,7 +3793,7 @@ msgstr "Edita"
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
-msgstr ""
+msgstr "dd.MM."
 
 #: contacts/qml/private/ContactPage.qml:52
 #, kde-format
@@ -3866,11 +3829,10 @@ msgid "Export contact"
 msgstr "Exporta el contacte"
 
 #: contacts/qml/private/ContactPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Birthday:"
+#, kde-format
 msgctxt "@info:label Contact birthday"
 msgid "Birthday: %1"
-msgstr "Data de naixement:"
+msgstr "Data de naixement: %1"
 
 #: contacts/qml/private/ContactPage.qml:115
 #, kde-format
@@ -3967,14 +3929,14 @@ msgstr "%1:"
 #, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
-msgstr ""
+msgstr "Mostra %1 en un mapa"
 
 #: contacts/qml/private/ContactPage.qml:306
 #, kde-format
 msgctxt ""
 "@action:button Accessible name for opening contact coordinates in a map"
 msgid "Show location on a map"
-msgstr ""
+msgstr "Mostra la ubicació en un mapa"
 
 #: contacts/qml/private/ContactPage.qml:313
 #, kde-format
@@ -4035,17 +3997,16 @@ msgstr[0] "Adreça de correu electrònic"
 msgstr[1] "Adreces de correu electrònic"
 
 #: contacts/qml/private/ContactPage.qml:462
-#, fuzzy, kde-format
-#| msgid "Remove email"
+#, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
-msgstr "Elimina el correu electrònic"
+msgstr "Correus electrònics recents"
 
 #: contacts/qml/private/ContactPage.qml:487
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
-msgstr ""
+msgstr "Esdeveniments recents"
 
 #: contacts/qml/private/ContactPage.qml:505
 #, kde-format
@@ -4136,12 +4097,10 @@ msgid "Add New Address Book Source…"
 msgstr "Afig una font nova de llibreta d'adreces…"
 
 #: contacts/qml/Sidebar.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Birthday"
+#, kde-format
 msgctxt "@action:button Show contacts with birthdays"
 msgid "Birthdays"
-msgstr "Data de naixement"
+msgstr "Dates de naixement"
 
 #: launcher/main.cpp:36
 #, kde-format
@@ -4303,7 +4262,7 @@ msgstr ""
 #: mail/main.cpp:88
 #, kde-format
 msgid "Open an Akonadi message by ID."
-msgstr ""
+msgstr "Obri un missatge d'Akonadi per ID."
 
 #: mail/qml/actions/DeleteFolderAction.qml:23
 #: mail/qml/actions/DeleteFolderAction.qml:28
@@ -4663,37 +4622,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Trieu el tipus de compte"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Calendar"
-#~ msgstr "Calendari de Merkuro"
-
-#~ msgid "Calendar Application"
-#~ msgstr "Aplicació de calendari"
-
-#~ msgid "© KDE Community 2021–2026"
-#~ msgstr "© La comunitat KDE 2021–2026"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Contact"
-#~ msgstr "Contactes de Merkuro"
-
-#~ msgid "Address Book Application"
-#~ msgstr "Aplicació de llibreta d'adreces"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Launcher"
-#~ msgstr "Iniciador de Merkuro"
-
-#~ msgid "merkuro Launcher"
-#~ msgstr "Iniciador de Merkuro"
-
-#~ msgid "© 2024"
-#~ msgstr "© 2024"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Mail"
-#~ msgstr "Correu de Merkuro"
-
-#~ msgid "Email Client"
-#~ msgstr "Client de correu"

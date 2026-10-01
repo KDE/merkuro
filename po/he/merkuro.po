@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:46+0000\n"
-"PO-Revision-Date: 2026-09-27 10:02+0300\n"
+"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"PO-Revision-Date: 2026-10-01 09:15+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -167,44 +167,39 @@ msgid "Refresh All"
 msgstr "לרענן הכול"
 
 #: calendar/calendareditorbackend.cpp:48
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The calendar is no longer available."
-msgstr "איש הקשר לא זמין עוד."
+msgstr "לוח השנה לא זמין עוד."
 
 #: calendar/calendareditorbackend.cpp:104
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is not available."
-msgstr "איש הקשר לא זמין עוד."
+msgstr "החזרה לא זמינה."
 
 #: calendar/calendareditorbackend.cpp:108
 #, kde-format
 msgid "Please enter a title."
-msgstr ""
+msgstr "נא למלא כותרת."
 
 #: calendar/calendareditorbackend.cpp:113
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgid "No calendar selected."
-msgstr "לא נבחרה תיבת דוא״ל"
+msgstr "לא נבחר לוח שנה."
 
 #: calendar/calendareditorbackend.cpp:117
-#, fuzzy, kde-format
-#| msgid "The selected address book cannot store this contact."
+#, kde-format
 msgid "The selected calendar cannot store this incidence."
-msgstr "פנקס הכתובות הנבחר לא יכול לאחסן את איש הקשר הזה."
+msgstr "לוח השנה לא יכול לאחסן את החזרה הזאת."
 
 #: calendar/calendareditorbackend.cpp:130
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is no longer available."
-msgstr "איש הקשר לא זמין עוד."
+msgstr "החזרה לא זמינה עוד."
 
 #: calendar/calendareditorbackend.cpp:136
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "החזרה נמחקה. השינויים שלא שמרת נשארו."
 
 #: calendar/calendareditorbackend.cpp:137
 #, kde-format
@@ -212,43 +207,40 @@ msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
+"החזרה השתנתה מחוץ לעורך הזה. כדאי לרענן לפני השמירה. השינויים שלא שמרת נשארו."
 
 #: calendar/calendareditorbackend.cpp:142
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The incidence is read-only."
-msgstr "איש הקשר הוא לקריאה בלבד."
+msgstr "החזרה היא לקריאה בלבד."
 
 #: calendar/calendareditorbackend.cpp:151
 #, kde-format
 msgid ""
 "The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
+msgstr "אי אפשר להעביר את החזרה והמשימות שקשורות אליה ללוח השנה הנבחר."
 
 #: calendar/calendareditorbackend.cpp:158
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The selected calendar is read-only."
-msgstr "איש הקשר הוא לקריאה בלבד."
+msgstr "לוח השנה הנבחר הוא לקריאה בלבד."
 
 #: calendar/calendareditorbackend.cpp:174
 #: calendar/calendareditorbackend.cpp:213
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgid "The incidence could not be saved."
-msgstr "לא ניתן למצוא את איש הקשר."
+msgstr "לא ניתן לשמור את החזרה."
 
 #: calendar/calendareditorbackend.cpp:186
 #, kde-format
 msgid ""
 "The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
+msgstr "החזרה לא זמינה עוד. השינויים שלא שמרת נשארו."
 
 #: calendar/calendareditorbackend.cpp:237
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
-msgstr "לא ניתן למצוא את פנקס הכתובות של איש הקשר."
+msgstr "החזרה נשמרה אך לא ניתן להעביר אותה: %1"
 
 #: calendar/calendarmanager.cpp:535
 #, kde-format
@@ -328,7 +320,7 @@ msgid "Default from locale"
 msgstr "ברירת מחדל מההגדרות האזוריות"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1098
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:819
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -918,13 +910,13 @@ msgstr "למחוק הכול"
 #, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
-msgstr ""
+msgstr "ריענון חזרה"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
 #, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
-msgstr ""
+msgstr "ריענון יסלק את השינויים שלא שמרת וירענן את הגרסה העדכנית ביותר."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
@@ -941,7 +933,7 @@ msgstr "הוספת %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:105
 #, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "החזרה הזאת נמחקה. השינויים שלא שמרת נשארו."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
 #, kde-format
@@ -949,12 +941,14 @@ msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
 "kept. Reload the latest version before saving."
 msgstr ""
+"החזרה הזאת נערכה מחוץ לעורך הזה. השינויים שלא שמרת נשארו. כדאי לרענן לגרסה "
+"העדכנית ביותר לפני השמירה."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "ריענון"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -981,416 +975,279 @@ msgstr "שמירה"
 msgid "Add"
 msgstr "הוספה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:204
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:210
 #, kde-format
 msgid "Summary"
 msgstr "תקציר"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:207
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:213
 #, kde-format
 msgid "Add a title for your task"
 msgstr "הוספת כותרת למשימה שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:209
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:215
 #, kde-format
 msgid "Add a title for your event"
 msgstr "הוספת כותרת לאירוע שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:211
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:217
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "הוספת כותרת לרשומת היומן שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:223
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Location"
 msgstr "מקום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:308
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:314
 #, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "לוח שנה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:340
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:346
 #, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "משימה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:356
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
 #, kde-format
 msgid "Completion"
 msgstr "השלמה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:366
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:372
 #, kde-format
 msgid "%1%"
 msgstr "%1%"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:387
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
 #, kde-format
 msgid "Priority"
 msgstr "עדיפות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:389
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
 msgstr "לא מוקצה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:390
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
 #, kde-format
 msgid "1 (Highest Priority)"
 msgstr "1 (העדיפות הגבוהה ביותר)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:391
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:23
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:392
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:24
 #, kde-format
 msgid "3"
 msgstr "3"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:25
 #, kde-format
 msgid "4"
 msgstr "4"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:394
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:26
 #, kde-format
 msgid "5 (Medium Priority)"
 msgstr "5 (עדיפות בינונית)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:27
 #, kde-format
 msgid "6"
 msgstr "6"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:28
 #, kde-format
 msgid "7"
 msgstr "7"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:29
 #, kde-format
 msgid "8"
 msgstr "8"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:30
 #, kde-format
 msgid "9 (Lowest Priority)"
 msgstr "9 (העדיפות הנמוכה ביותר)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
 #, kde-format
 msgctxt "@title:group"
 msgid "Start"
 msgstr "התחלה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:422
 #, kde-format
 msgid "All day"
 msgstr "כל היום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
 #, kde-format
 msgctxt "@title:group"
 msgid "Due"
 msgstr "מועד תוקף"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
 #, kde-format
 msgctxt "@title:group"
 msgid "End"
 msgstr "סיום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:568
 #, kde-format
 msgctxt "@title"
 msgid "Timezone"
 msgstr "אזור זמן"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:565
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
 #, kde-format
 msgid "Timezone:"
 msgstr "אזור זמן:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:578
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgctxt "@title"
 msgid "Repeat"
 msgstr "חזרה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
-#, kde-format
-msgid "Repeat:"
-msgstr "חזרה:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:796
-#: calendar/recurrencedata.cpp:66
-#, kde-format
-msgid "Never"
-msgstr "אף פעם"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
-#, kde-format
-msgid "Daily"
-msgstr "יומית"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:617
-#, kde-format
-msgid "Weekly"
-msgstr "שבועית"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:618
-#, kde-format
-msgid "Monthly"
-msgstr "חודשית"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:619
-#, kde-format
-msgid "Yearly"
-msgstr "שנתית"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:620
-#: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
-#, kde-format
-msgid "Custom"
-msgstr "התאמה אישית"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:642
-#, kde-format
-msgid "Every:"
-msgstr "כל:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:687
-#, kde-format
-msgid "day"
-msgid_plural "days"
-msgstr[0] "יום"
-msgstr[1] "יומיים"
-msgstr[2] "ימים"
-msgstr[3] "ימים"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
-#, kde-format
-msgid "week"
-msgid_plural "weeks"
-msgstr[0] "שבוע"
-msgstr[1] "שבועיים"
-msgstr[2] "שבועות"
-msgstr[3] "שבועות"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:689
-#, kde-format
-msgid "month"
-msgid_plural "months"
-msgstr[0] "חודש"
-msgstr[1] "חודשיים"
-msgstr[2] "חודשים"
-msgstr[3] "חודשים"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:690
-#, kde-format
-msgid "year"
-msgid_plural "years"
-msgstr[0] "שנה"
-msgstr[1] "שנתיים"
-msgstr[2] "שנים"
-msgstr[3] "שנים"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:757
-#, kde-format
-msgid "On:"
-msgstr "ב־:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
-#, kde-format
-msgctxt "%1 is the day number of month"
-msgid "The %1 of each month"
-msgstr "ב־%1 בכל חודש"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:776
-#, kde-format
-msgctxt "the weekOfMonth dayOfWeekString of each month"
-msgid "The %1 %2 of each month"
-msgstr "ביום %2 ה־%1 בכל חודש"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:788
-#, kde-format
-msgid "Ends:"
-msgstr "מסתיים:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:797
-#, kde-format
-msgid "On"
-msgstr "בתאריך"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
-#, kde-format
-msgid "After"
-msgstr "אחרי"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
-#, kde-format
-msgctxt "@label:spinbox"
-msgid "Ends after:"
-msgstr "מסתיים לאחר:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:819
-#, kde-format
-msgid "%1 occurrence"
-msgid_plural "%1 occurrences"
-msgstr[0] "חזרה"
-msgstr[1] "שתי חזרות"
-msgstr[2] "%1 חזרות"
-msgstr[3] "%1 חזרות"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
-#, kde-format
-msgid "Exceptions:"
-msgstr "חריגות:"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:832
-#, kde-format
-msgctxt "@action:button"
-msgid "Add"
-msgstr "הוספה"
-
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:879
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:595
 #, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
 #, kde-format
 msgid "Add Attendee"
 msgstr "הוספת משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "בחירה מאנשי הקשר"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:917
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:633
 #, kde-format
 msgid "Fill in Manually"
 msgstr "מילוי ידני"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:928
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:644
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr "אין משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
 #: contacts/qml/private/ContactPage.qml:190
 #, kde-format
 msgid "Name:"
 msgstr "שם:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:695
 #, kde-format
 msgid "Optional"
 msgstr "רשות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:714
 #, kde-format
 msgid "Email:"
 msgstr "דוא״ל:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:721
 #, kde-format
 msgid "Required"
 msgstr "חובה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:731
 #, kde-format
 msgid "Status:"
 msgstr "מצב:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:756
 #, kde-format
 msgid "Request RSVP"
 msgstr "בקשת אישור הגעה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "תזכורות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1053
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:773
 #, kde-format
 msgid "Add Reminder"
 msgstr "הוספת תזכורת"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "אין תזכורות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1083
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:803
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "תגיות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1085
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:805
 #, kde-format
 msgid "Manage tags…"
 msgstr "ניהול תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:820
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "יש לגעת כדי להגדיר תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:820
 #, kde-format
 msgid "Click to set tags…"
 msgstr "יש ללחוץ כדי להגדיר תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1145
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "צרופות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1147
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:869
 #, kde-format
 msgid "Add Attachment"
 msgstr "הוספת צרופה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1154
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:876
 #, kde-format
 msgid "Add an attachment"
 msgstr "הוספת צרופה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1165
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:887
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "אין צרופות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1200
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1498,6 +1355,143 @@ msgstr "הצגת כל המשימות"
 #, kde-format
 msgid "Priority:"
 msgstr "עדיפות:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:33
+#, kde-format
+msgid "Repeat:"
+msgstr "חזרה:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:69
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:292
+#: calendar/recurrencedata.cpp:66
+#, kde-format
+msgid "Never"
+msgstr "אף פעם"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:74
+#, kde-format
+msgid "Daily"
+msgstr "יומית"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:79
+#, kde-format
+msgid "Weekly"
+msgstr "שבועית"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:84
+#, kde-format
+msgid "Monthly"
+msgstr "חודשית"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:89
+#, kde-format
+msgid "Yearly"
+msgstr "שנתית"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:94
+#: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
+#, kde-format
+msgid "Custom"
+msgstr "התאמה אישית"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:121
+#, kde-format
+msgid "Every:"
+msgstr "כל:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:167
+#, kde-format
+msgid "day"
+msgid_plural "days"
+msgstr[0] "יום"
+msgstr[1] "יומיים"
+msgstr[2] "ימים"
+msgstr[3] "ימים"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:172
+#, kde-format
+msgid "week"
+msgid_plural "weeks"
+msgstr[0] "שבוע"
+msgstr[1] "שבועיים"
+msgstr[2] "שבועות"
+msgstr[3] "שבועות"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:177
+#, kde-format
+msgid "month"
+msgid_plural "months"
+msgstr[0] "חודש"
+msgstr[1] "חודשיים"
+msgstr[2] "חודשים"
+msgstr[3] "חודשים"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:182
+#, kde-format
+msgid "year"
+msgid_plural "years"
+msgstr[0] "שנה"
+msgstr[1] "שנתיים"
+msgstr[2] "שנים"
+msgstr[3] "שנים"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:240
+#, kde-format
+msgid "On:"
+msgstr "ב־:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:250
+#, kde-format
+msgctxt "%1 is the day number of month"
+msgid "The %1 of each month"
+msgstr "ב־%1 בכל חודש"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:263
+#, kde-format
+msgctxt "the weekOfMonth dayOfWeekString of each month"
+msgid "The %1 %2 of each month"
+msgstr "ביום %2 ה־%1 בכל חודש"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:275
+#, kde-format
+msgid "Ends:"
+msgstr "מסתיים:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:296
+#, kde-format
+msgid "On"
+msgstr "בתאריך"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:300
+#, kde-format
+msgid "After"
+msgstr "אחרי"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:323
+#, kde-format
+msgctxt "@label:spinbox"
+msgid "Ends after:"
+msgstr "מסתיים לאחר:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:325
+#, kde-format
+msgid "%1 occurrence"
+msgid_plural "%1 occurrences"
+msgstr[0] "חזרה"
+msgstr[1] "שתי חזרות"
+msgstr[2] "%1 חזרות"
+msgstr[3] "%1 חזרות"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:334
+#, kde-format
+msgid "Exceptions:"
+msgstr "חריגות:"
+
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:337
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "הוספה"
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:52
 #, kde-format
@@ -2315,7 +2309,7 @@ msgstr "נעץ (הצגת המקום במדויק)"
 #: calendar/recurrencedata.cpp:31
 #, kde-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: calendar/recurrencedata.cpp:68
 #, kde-format
@@ -2678,31 +2672,31 @@ msgstr "בקשת התמונה בוטלה"
 msgid "Home:"
 msgstr "בית:"
 
-#: contacts/certificatesmodel.cpp:84
+#: contacts/certificatesmodel.cpp:85
 #, kde-format
 msgctxt "@info: shorthand for the key is revoked"
 msgid "Revoked"
 msgstr "נשלל"
 
-#: contacts/certificatesmodel.cpp:87
+#: contacts/certificatesmodel.cpp:88
 #, kde-format
 msgctxt "@info: shorthand for the key is expired"
 msgid "Expired"
 msgstr "פג תוקף"
 
-#: contacts/certificatesmodel.cpp:90
+#: contacts/certificatesmodel.cpp:91
 #, kde-format
 msgctxt "@info: shorthand for the key is disabled"
 msgid "Disabled"
 msgstr "מושבת"
 
-#: contacts/certificatesmodel.cpp:93
+#: contacts/certificatesmodel.cpp:94
 #, kde-format
 msgctxt "@info: shorthand for the key is invalid"
 msgid "Invalid"
 msgstr "שגוי"
 
-#: contacts/certificatesmodel.cpp:96
+#: contacts/certificatesmodel.cpp:97
 #, kde-format
 msgctxt "@info: shorthand for the key is valid"
 msgid "Valid"
