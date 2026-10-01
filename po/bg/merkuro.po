@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-01 00:46+0000\n"
 "PO-Revision-Date: 2026-09-28 17:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 26.08.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
-#: calendar/qml/MainViews/TodoView.qml:65
+#: calendar/qml/MainViews/TodoView.qml:66
 #, kde-format
 msgid "Sort"
 msgstr "Сортиране"
@@ -110,13 +110,13 @@ msgid "To Date…"
 msgstr "Към днешна дата…"
 
 #: calendar/calendarapplication.cpp:213
-#: calendar/qml/Controls/DayTapHandler.qml:26
+#: calendar/qml/Controls/DayTapHandler.qml:27
 #, kde-format
 msgid "New Event…"
 msgstr "Ново събитие…"
 
 #: calendar/calendarapplication.cpp:220
-#: calendar/qml/Controls/DayTapHandler.qml:33
+#: calendar/qml/Controls/DayTapHandler.qml:34
 #, kde-format
 msgid "New Task…"
 msgstr "Нова задача…"
@@ -166,6 +166,90 @@ msgstr "Показване само на днешна дата"
 msgid "Refresh All"
 msgstr "Опресни всички"
 
+#: calendar/calendareditorbackend.cpp:48
+#, fuzzy, kde-format
+#| msgid "The contact is no longer available."
+msgid "The calendar is no longer available."
+msgstr "Контактът вече не е наличен."
+
+#: calendar/calendareditorbackend.cpp:104
+#, fuzzy, kde-format
+#| msgid "The contact is no longer available."
+msgid "The incidence is not available."
+msgstr "Контактът вече не е наличен."
+
+#: calendar/calendareditorbackend.cpp:108
+#, kde-format
+msgid "Please enter a title."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:113
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgid "No calendar selected."
+msgstr "Няма избрана пощенска кутия"
+
+#: calendar/calendareditorbackend.cpp:117
+#, fuzzy, kde-format
+#| msgid "The selected address book cannot store this contact."
+msgid "The selected calendar cannot store this incidence."
+msgstr "Избраната адресна книга не може да съхранява този контакт."
+
+#: calendar/calendareditorbackend.cpp:130
+#, fuzzy, kde-format
+#| msgid "The contact is no longer available."
+msgid "The incidence is no longer available."
+msgstr "Контактът вече не е наличен."
+
+#: calendar/calendareditorbackend.cpp:136
+#, kde-format
+msgid "The incidence was deleted. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:137
+#, kde-format
+msgid ""
+"The incidence changed outside this editor. Reload it before saving. Your "
+"unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:142
+#, fuzzy, kde-format
+#| msgid "The contact is read-only."
+msgid "The incidence is read-only."
+msgstr "Контактът е само за четене."
+
+#: calendar/calendareditorbackend.cpp:151
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:158
+#, fuzzy, kde-format
+#| msgid "The contact is read-only."
+msgid "The selected calendar is read-only."
+msgstr "Контактът е само за четене."
+
+#: calendar/calendareditorbackend.cpp:174
+#: calendar/calendareditorbackend.cpp:213
+#, fuzzy, kde-format
+#| msgid "The contact could not be found."
+msgid "The incidence could not be saved."
+msgstr "Контактът не беше намерен."
+
+#: calendar/calendareditorbackend.cpp:186
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:237
+#, fuzzy, kde-format
+#| msgid "The contact address book could not be found."
+msgid "The incidence was saved, but could not be moved: %1"
+msgstr "Адресната книга на контактите не можа да бъде намерена."
+
 #: calendar/calendarmanager.cpp:535
 #, kde-format
 msgid "Move occurrence(s)"
@@ -194,9 +278,9 @@ msgstr "Изтрийте задача и направете подзадачи �
 msgid "An error occurred: %1"
 msgstr "Възникна грешка: %1"
 
-#: calendar/incidencewrapper.cpp:137
+#: calendar/incidencewrapper.cpp:193
 #: calendar/models/incidenceoccurrencemodel.cpp:312
-#: calendar/models/todosortfilterproxymodel.cpp:149
+#: calendar/models/todosortfilterproxymodel.cpp:150
 #, kde-format
 msgid "Task"
 msgstr "Задача"
@@ -245,25 +329,25 @@ msgctxt "@item:inlistbox"
 msgid "Default from locale"
 msgstr "По подразбиране от регионалните настройки"
 
-#: calendar/models/todosortfilterproxymodel.cpp:161
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1048
+#: calendar/models/todosortfilterproxymodel.cpp:162
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1098
 #, kde-format
 msgctxt "List separator"
 msgid ", "
 msgstr ", "
 
-#: calendar/models/todosortfilterproxymodel.cpp:179
+#: calendar/models/todosortfilterproxymodel.cpp:180
 #, kde-format
 msgid "No set date"
 msgstr "Няма определена дата"
 
-#: calendar/models/todosortfilterproxymodel.cpp:183
+#: calendar/models/todosortfilterproxymodel.cpp:184
 #: calendar/qml/MainViews/TodoTreeView.qml:67
 #, kde-format
 msgid "Overdue"
 msgstr "Просрочени"
 
-#: calendar/models/todosortfilterproxymodel.cpp:189
+#: calendar/models/todosortfilterproxymodel.cpp:190
 #: calendar/qml/MainViews/MonthView.qml:44
 #: calendar/qml/MainViews/ScheduleView.qml:39
 #: calendar/qml/MainViews/TodoTreeView.qml:68
@@ -271,13 +355,13 @@ msgstr "Просрочени"
 msgid "Today"
 msgstr "Днес"
 
-#: calendar/models/todosortfilterproxymodel.cpp:212
+#: calendar/models/todosortfilterproxymodel.cpp:213
 #, kde-format
 msgctxt "Please retain space"
 msgid " at %1"
 msgstr "в %1"
 
-#: calendar/models/todosortfilterproxymodel.cpp:213
+#: calendar/models/todosortfilterproxymodel.cpp:214
 #, kde-format
 msgctxt "Please retain parenthesis and space"
 msgid " (overdue)"
@@ -293,128 +377,37 @@ msgstr "Филтриране по тагове"
 msgid "All Tasks"
 msgstr "Всички задачи"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:30
-#, kde-format
-msgid "Every week"
-msgid_plural "Every %1 weeks"
-msgstr[0] "Всяка седмица"
-msgstr[1] "На всеки %1 седмици"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:33
-#, kde-format
-msgid "Every week on"
-msgid_plural "Every %1 weeks on"
-msgstr[0] "Всяка седмица на"
-msgstr[1] "На всеки %1 седмици"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:66
-#: calendar/qml/CalendarUtils/LabelUtils.js:105
-#, kde-format
-msgid "Every year on the %2 of %3"
-msgid_plural "Every %1 years on the %2 of %3"
-msgstr[0] "Всяка година на %2 от %3"
-msgstr[1] "На всеки %1 години на %2 от %3"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:82
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:556
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:737
-#, kde-format
-msgid "Never"
-msgstr "Никога"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:85
-#, kde-format
-msgid "Every minute"
-msgid_plural "Every %1 minutes"
-msgstr[0] "Всяка минута"
-msgstr[1] "На всеки %1 минути"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:88
-#, kde-format
-msgid "Every hour"
-msgid_plural "Every %1 hours"
-msgstr[0] "Всеки час"
-msgstr[1] "На всеки %1 часа"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:91
-#, kde-format
-msgid "Every day"
-msgid_plural "Every %1 days"
-msgstr[0] "Всеки ден"
-msgstr[1] "Всеки %1 дена"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:97
-#: calendar/qml/CalendarUtils/LabelUtils.js:101
-#, kde-format
-msgid "Every month on the %2"
-msgid_plural "Every %1 months on the %2"
-msgstr[0] "Всеки месец на %2"
-msgstr[1] "На всеки %1 месеца на %2"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:109
-#, kde-format
-msgid "Every year on the %2 day of the year"
-msgid_plural "Every %1 years on the %2 day of the year"
-msgstr[0] "Всяка година на %2 ден от годината"
-msgstr[1] "На всеки %1 години на %2 ден от годината"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:115
-#, kde-format
-msgid "Complex recurrence rule"
-msgstr "Правило за комплексно повтаряне"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:118
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:41
-#, kde-format
-msgid "Unknown"
-msgstr "Неизвестно"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:126
-#, kde-format
-msgid "Never ends"
-msgstr "Никога не свършва"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:128
-#, kde-format
-msgid "Ends on %1"
-msgstr "Приключва на %1"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:130
-#, kde-format
-msgid "Ends after %1 occurrences"
-msgstr "Завършва след %1 повторения"
-
-#: calendar/qml/CalendarUtils/LabelUtils.js:189
+#: calendar/qml/CalendarUtils/LabelUtils.js:83
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Highest priority)"
 msgstr "%1 (най-висок приоритет)"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:191
+#: calendar/qml/CalendarUtils/LabelUtils.js:85
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Mid-high priority)"
 msgstr "%1 (Средно висок приоритет)"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:193
+#: calendar/qml/CalendarUtils/LabelUtils.js:87
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Medium priority)"
 msgstr "%1 (среден приоритет)"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:195
+#: calendar/qml/CalendarUtils/LabelUtils.js:89
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Mid-low priority)"
 msgstr "%1 (средно нисък приоритет)"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:197
+#: calendar/qml/CalendarUtils/LabelUtils.js:91
 #, kde-format
 msgctxt "%1 is the priority level number"
 msgid "%1 (Lowest priority)"
 msgstr "%1 (най-нисък приоритет)"
 
-#: calendar/qml/CalendarUtils/LabelUtils.js:199
+#: calendar/qml/CalendarUtils/LabelUtils.js:93
 #, kde-format
 msgid "No set priority level"
 msgstr "Няма зададено ниво на приоритет"
@@ -499,215 +492,215 @@ msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Отказ"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:112
+#: calendar/qml/Controls/IncidenceInfoContents.qml:113
 #, kde-format
 msgid "This event is recurring"
 msgstr "Това събитие се повтаря"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:123
+#: calendar/qml/Controls/IncidenceInfoContents.qml:124
 #, kde-format
 msgid "This event has reminder"
 msgid_plural "This event has reminders"
 msgstr[0] "Това събитие има напомняне"
 msgstr[1] "Това събитие има напомняния"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:145
+#: calendar/qml/Controls/IncidenceInfoContents.qml:146
 #, kde-format
 msgctxt "%1 is a percentage number"
 msgid "<b>%1%</b> Complete"
 msgstr "<b>%1%</b> Завършено"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:175
+#: calendar/qml/Controls/IncidenceInfoContents.qml:176
 #, kde-format
 msgid "<b>Calendar:</b>"
 msgstr "<b>Календар:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:187
+#: calendar/qml/Controls/IncidenceInfoContents.qml:188
 #, kde-format
 msgid "<b>Tags:</b>"
 msgstr "<b>Тагове:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:211
+#: calendar/qml/Controls/IncidenceInfoContents.qml:212
 #, kde-format
 msgid "<b>Date:</b>"
 msgstr "<b>Дата:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:238
+#: calendar/qml/Controls/IncidenceInfoContents.qml:239
 #, kde-format
 msgid "<b>Time:</b>"
 msgstr "<b>Час:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:265
+#: calendar/qml/Controls/IncidenceInfoContents.qml:266
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>Продължителност:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:279
+#: calendar/qml/Controls/IncidenceInfoContents.qml:280
 #, kde-format
 msgid "<b>Priority level:</b>"
 msgstr "<b>Приоритет:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:291
+#: calendar/qml/Controls/IncidenceInfoContents.qml:292
 #, kde-format
 msgid "<b>Completed:</b>"
 msgstr "<b>Завършено:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:311
+#: calendar/qml/Controls/IncidenceInfoContents.qml:310
 #, kde-format
 msgid "<b>Recurrence:</b>"
 msgstr "<b>Повторение:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:334
+#: calendar/qml/Controls/IncidenceInfoContents.qml:333
 #, kde-format
 msgid "Except on:"
 msgstr "С изключение на:"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:364
+#: calendar/qml/Controls/IncidenceInfoContents.qml:363
 #, kde-format
 msgid "<b>Location:</b>"
 msgstr "<b>Местоположение:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:421
+#: calendar/qml/Controls/IncidenceInfoContents.qml:420
 #, kde-format
 msgid "Unable to find location."
 msgstr "Не може да се намери местоположение."
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:456
+#: calendar/qml/Controls/IncidenceInfoContents.qml:455
 #, kde-format
 msgid "<b>Description:</b>"
 msgstr "<b>Описание:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:471
+#: calendar/qml/Controls/IncidenceInfoContents.qml:470
 #, kde-format
 msgid "<b>Attachment:</b>"
 msgid_plural "<b>Attachments:</b>"
 msgstr[0] "<b>Прикачен файл:</b>"
 msgstr[1] "<b>Прикачени файлове:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:496
+#: calendar/qml/Controls/IncidenceInfoContents.qml:495
 #, kde-format
 msgid "<b>Reminders:</b>"
 msgstr "<b>Напомняния:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:524
+#: calendar/qml/Controls/IncidenceInfoContents.qml:523
 #, kde-format
 msgid "<b>Organizer:</b>"
 msgstr "<b>Организатор:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:541
+#: calendar/qml/Controls/IncidenceInfoContents.qml:540
 #, kde-format
 msgid "<b>Google Meet:</b>"
 msgstr "<b>Google Meet:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:552
+#: calendar/qml/Controls/IncidenceInfoContents.qml:551
 #, kde-format
 msgid "<b>Guests:</b>"
 msgstr "<b>Гости:</b>"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:588
+#: calendar/qml/Controls/IncidenceInfoContents.qml:587
 #, kde-format
 msgid "Super-task"
 msgstr "Основна задача"
 
-#: calendar/qml/Controls/IncidenceInfoContents.qml:613
+#: calendar/qml/Controls/IncidenceInfoContents.qml:612
 #, kde-format
 msgid "Sub-task"
 msgid_plural "Sub-tasks"
 msgstr[0] "Подзадача"
 msgstr[1] "Подзадачи"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:59
+#: calendar/qml/Controls/IncidenceMouseArea.qml:60
 #, kde-format
 msgid "View"
 msgstr "Изглед"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:65
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:91
+#: calendar/qml/Controls/IncidenceMouseArea.qml:66
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:92
 #, kde-format
 msgid "Edit"
 msgstr "Редактиране"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:74
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:97
+#: calendar/qml/Controls/IncidenceMouseArea.qml:75
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:33
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:111
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:98
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:86
+#: calendar/qml/Controls/IncidenceMouseArea.qml:87
 #, kde-format
 msgid "Mark Task as Incomplete"
 msgstr "Маркиране на задачата като незавършена"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:86
+#: calendar/qml/Controls/IncidenceMouseArea.qml:87
 #, kde-format
 msgid "Mark Task as Complete"
 msgstr "Маркиране на задачата като завършена"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:94
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:68
+#: calendar/qml/Controls/IncidenceMouseArea.qml:95
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:69
 #, kde-format
 msgid "Add Sub-Task"
 msgstr "Добавяне на подзадача"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:107
+#: calendar/qml/Controls/IncidenceMouseArea.qml:108
 #, kde-format
 msgid "Set priority…"
 msgstr "Задаване на приоритет…"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:119
+#: calendar/qml/Controls/IncidenceMouseArea.qml:120
 #: calendar/qml/Controls/IncidenceMouseArea.qml:200
 #, kde-format
 msgid "None"
 msgstr "Без"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:125
+#: calendar/qml/Controls/IncidenceMouseArea.qml:126
 #, kde-format
 msgid "1 (highest priority)"
 msgstr "1 (най-висок приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:131
+#: calendar/qml/Controls/IncidenceMouseArea.qml:132
 #, kde-format
 msgid "2 (mid-high priority)"
 msgstr "2 (средно висок приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:137
+#: calendar/qml/Controls/IncidenceMouseArea.qml:138
 #, kde-format
 msgid "3 (mid-high priority)"
 msgstr "3 (средно висок приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:143
+#: calendar/qml/Controls/IncidenceMouseArea.qml:144
 #, kde-format
 msgid "4 (mid-high priority)"
 msgstr "4 (средно висок приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:149
+#: calendar/qml/Controls/IncidenceMouseArea.qml:150
 #, kde-format
 msgid "5 (medium priority)"
 msgstr "5 (среден приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:155
+#: calendar/qml/Controls/IncidenceMouseArea.qml:156
 #, kde-format
 msgid "6 (mid-low priority)"
 msgstr "6 (средно нисък приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:161
+#: calendar/qml/Controls/IncidenceMouseArea.qml:162
 #, kde-format
 msgid "7 (mid-low priority)"
 msgstr "7 (средно нисък приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:167
+#: calendar/qml/Controls/IncidenceMouseArea.qml:168
 #, kde-format
 msgid "8 (mid-low priority)"
 msgstr "8 (средно нисък приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:173
+#: calendar/qml/Controls/IncidenceMouseArea.qml:174
 #, kde-format
 msgid "9 (lowest priority)"
 msgstr "9 (най-нисък приоритет)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:180
+#: calendar/qml/Controls/IncidenceMouseArea.qml:181
 #, kde-format
 msgid "Set due date…"
 msgstr "Задаване на краен срок…"
@@ -717,17 +710,17 @@ msgstr "Задаване на краен срок…"
 msgid "Today (%1)"
 msgstr "Днес (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:220
+#: calendar/qml/Controls/IncidenceMouseArea.qml:216
 #, kde-format
 msgid "Tomorrow (%1)"
 msgstr "Утре (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:231
+#: calendar/qml/Controls/IncidenceMouseArea.qml:223
 #, kde-format
 msgid "In a week (%1)"
 msgstr "След една седмица (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:243
+#: calendar/qml/Controls/IncidenceMouseArea.qml:231
 #, kde-format
 msgid "In a month (%1)"
 msgstr "След един месец (%1)"
@@ -742,60 +735,60 @@ msgstr "Разширяване на основното чекмедже"
 msgid "Collapse Main Drawer"
 msgstr "Затваряне на основното чекмедже"
 
-#: calendar/qml/Controls/TitleDateButton.qml:30
-#: calendar/qml/Controls/TitleDateButton.qml:35
+#: calendar/qml/Controls/TitleDateButton.qml:31
+#: calendar/qml/Controls/TitleDateButton.qml:36
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "<b>%1</b> %2"
 msgstr "<b>%1</b> %2"
 
-#: calendar/qml/Controls/TitleDateButton.qml:38
+#: calendar/qml/Controls/TitleDateButton.qml:39
 #, kde-format
 msgctxt ""
 "%1 is the month and year of the range start, %2 is the same for range end"
 msgid "%1 – %2"
 msgstr "%1 – %2"
 
-#: calendar/qml/Controls/TitleDateButton.qml:40
+#: calendar/qml/Controls/TitleDateButton.qml:41
 #, kde-format
 msgctxt "%1 is month of range start, %2 is month + year of range end"
 msgid "<b>%1</b> – %2"
 msgstr "<b>%1</b> – %2"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:123
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:124
 #, kde-format
 msgctxt "%1 is the name of the event"
 msgid "%1 (Day %2 of %3)"
 msgstr "%1 (Ден %2 от %3)"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:141
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:142
 #, kde-format
 msgid "Runs all day"
 msgstr "Протича през целия ден"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:145
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:146
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:148
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:149
 #, kde-format
 msgid "Starts at %1"
 msgstr "Започва от %1"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:150
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:151
 #, kde-format
 msgid "Ends at %1"
 msgstr "Завършва в %1"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:152
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:153
 #, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
 msgstr "Протича през целия ден"
 
-#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:165
+#: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:166
 #, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
@@ -839,8 +832,8 @@ msgid "You won't be able to revert this action"
 msgstr "Няма да можете да отмените това действие"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:85
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:121
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:86
 #: mail/qml/actions/DeleteFolderAction.qml:36
 #: mail/qml/actions/NewFolderAction.qml:35 mail/qml/ProgressStatusBar.qml:118
 #, kde-format
@@ -852,18 +845,18 @@ msgstr "Отказване"
 msgid "Delete calendar"
 msgstr "Изтриване на календара"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:31
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:32
 #, kde-format
 msgctxt "%1 is the type of the incidence (e.g event, todo, journal entry)"
 msgid "Delete %1"
 msgstr "Изтриване на %1"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:49
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:50
 #, kde-format
 msgid "Do you want to delete item: \"%1\"?"
 msgstr "Искате ли да изтриете елемент: „%1“?"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:51
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:52
 #, kde-format
 msgid ""
 "Item \"%1\" has sub-items. Do you want to delete all related items, or just "
@@ -872,7 +865,7 @@ msgstr ""
 "Елемент „%1“ има под-елементи. Искате ли да изтриете всички свързани "
 "елементи или само текущо избрания елемент?"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:53
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:54
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. This item also has sub-"
@@ -891,7 +884,7 @@ msgstr ""
 "\n"
 "Изтриването на всички ще изтрие и подпозиции!"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:55
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:56
 #, kde-format
 msgid ""
 "The calendar item \"%1\" recurs over multiple dates. Do you want to delete "
@@ -901,467 +894,504 @@ msgstr ""
 "Календарният елемент „%1“ се повтаря на няколко дати. Искате ли да изтриете "
 "избраното срещане на %2, също и бъдещи срещания, или всичките му срещания?"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:70
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:71
 #, kde-format
 msgid "Only Delete Current"
 msgstr "Изтриване само на Текущи"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:80
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:81
 #, kde-format
 msgid "Also Delete Future"
 msgstr "Също така изтриване на предстоящи"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:97
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:96
 #, kde-format
 msgid "Delete Only This"
 msgstr "Изтриване само това"
 
-#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
+#: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:111
 #, kde-format
 msgid "Delete All"
 msgstr "Изтриване на всички"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:42
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:72
+#, kde-format
+msgctxt "@title:window"
+msgid "Reload Incidence"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
+#, kde-format
+msgid ""
+"Reloading will discard your unsaved changes and load the latest version."
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "Редактиране %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:43
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:91
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "Добавяне %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:59
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:62
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:105
+#, kde-format
+msgid "This incidence was deleted. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
+#, kde-format
+msgid ""
+"This incidence changed outside this editor. Your unsaved changes have been "
+"kept. Reload the latest version before saving."
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
+#, kde-format
+msgctxt "@action:button"
+msgid "Reload"
+msgstr ""
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "Предоставени са невалидни дати."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:64
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:140
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "Крайната дата не може да бъде преди началната."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:188
 #, kde-format
 msgid "Save"
 msgstr "Запазване"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:188
 #, kde-format
 msgid "Add"
 msgstr "Добавяне"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:144
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:204
 #, kde-format
 msgid "Summary"
 msgstr "Обобщение"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:147
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:207
 #, kde-format
 msgid "Add a title for your task"
 msgstr "Добавяне на заглавие за вашата задача"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:149
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:209
 #, kde-format
 msgid "Add a title for your event"
 msgstr "Добавяне на заглавие за вашето събитие"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:151
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:211
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "Добавяне на заглавие към вашия запис в дневника"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:223
 #, kde-format
 msgctxt "@label"
 msgid "Location"
 msgstr "Местоположение"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:308
 #, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Календар"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:280
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:340
 #, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Задача"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:296
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:356
 #, kde-format
 msgid "Completion"
 msgstr "Завършване"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:306
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:366
 #, kde-format
 msgid "%1%"
 msgstr "%1%"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:387
 #, kde-format
 msgid "Priority"
 msgstr "Приоритет"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:328
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:389
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
 msgstr "Неприсвоен"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:329
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:390
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
 #, kde-format
 msgid "1 (Highest Priority)"
 msgstr "1 (най-висок приоритет)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:330
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:391
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:23
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:331
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:392
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:24
 #, kde-format
 msgid "3"
 msgstr "3"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:332
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:25
 #, kde-format
 msgid "4"
 msgstr "4"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:333
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:394
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:26
 #, kde-format
 msgid "5 (Medium Priority)"
 msgstr "5 (среден приоритет)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:334
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:27
 #, kde-format
 msgid "6"
 msgstr "6"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:335
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:28
 #, kde-format
 msgid "7"
 msgstr "7"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:336
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:29
 #, kde-format
 msgid "8"
 msgstr "8"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:337
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:30
 #, kde-format
 msgid "9 (Lowest Priority)"
 msgstr "9 (най-нисък приоритет)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:350
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:411
 #, kde-format
 msgctxt "@title:group"
 msgid "Start"
 msgstr "Начало"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:355
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:416
 #, kde-format
 msgid "All day"
 msgstr "Цял ден"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
 #, kde-format
 msgctxt "@title:group"
 msgid "Due"
 msgstr "Срок"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:442
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:501
 #, kde-format
 msgctxt "@title:group"
 msgid "End"
 msgstr "Край"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:500
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
 #, kde-format
 msgctxt "@title"
 msgid "Timezone"
 msgstr "Часова зона"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:565
 #, kde-format
 msgid "Timezone:"
 msgstr "Часова зона:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:519
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:578
 #, kde-format
 msgctxt "@title"
 msgid "Repeat"
 msgstr "Повтаряне"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:528
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
 #, kde-format
 msgid "Repeat:"
 msgstr "Повторение:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:557
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:615
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:796
+#: calendar/recurrencedata.cpp:66
+#, kde-format
+msgid "Never"
+msgstr "Никога"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:616
 #, kde-format
 msgid "Daily"
 msgstr "Ежедневно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:558
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:617
 #, kde-format
 msgid "Weekly"
 msgstr "Ежеседмично"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:559
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:618
 #, kde-format
 msgid "Monthly"
 msgstr "Месечно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:560
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:619
 #, kde-format
 msgid "Yearly"
 msgstr "Годишно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:561
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:620
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
 #, kde-format
 msgid "Custom"
 msgstr "Потребителски"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:583
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:642
 #, kde-format
 msgid "Every:"
 msgstr "На всеки:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:628
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:687
 #, kde-format
 msgid "day"
 msgid_plural "days"
 msgstr[0] "ден"
 msgstr[1] "дена"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:629
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "седмица"
 msgstr[1] "седмици"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:630
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:689
 #, kde-format
 msgid "month"
 msgid_plural "months"
 msgstr[0] "месец"
 msgstr[1] "месеца"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:631
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:690
 #, kde-format
 msgid "year"
 msgid_plural "years"
 msgstr[0] "година"
 msgstr[1] "години"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:696
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:757
 #, kde-format
 msgid "On:"
 msgstr "На:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:704
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:765
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "%1 от всеки месец"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:717
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:776
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "%1 %2 от всеки месец"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:788
 #, kde-format
 msgid "Ends:"
 msgstr "Край:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:738
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:797
 #, kde-format
 msgid "On"
 msgstr "На"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:739
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:798
 #, kde-format
 msgid "After"
 msgstr "След"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:767
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
 msgstr "Завършва след:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:769
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:819
 #, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
 msgstr[0] "%1 събитие"
 msgstr[1] "%1 събития"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:779
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
 #, kde-format
 msgid "Exceptions:"
 msgstr "Изключения:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:782
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:832
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Добавяне"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:829
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:879
 #, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "Участници"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:835
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
 #, kde-format
 msgid "Add Attendee"
 msgstr "Добавяне на участник"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:862
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:912
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "Изберете от Контакти"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:917
 #, kde-format
 msgid "Fill in Manually"
 msgstr "Попълнете ръчно"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:878
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:928
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr "Няма участници"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:972
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
 #: contacts/qml/private/ContactPage.qml:190
 #, kde-format
 msgid "Name:"
 msgstr "Име:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:929
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:979
 #, kde-format
 msgid "Optional"
 msgstr "По избор"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
 msgid "Email:"
 msgstr "Е-поща:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:954
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1004
 #, kde-format
 msgid "Required"
 msgstr "Задължителен"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Status:"
 msgstr "Състояние:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:987
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1037
 #, kde-format
 msgid "Request RSVP"
 msgstr "Заявка за отговор"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1001
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1051
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Напомняния"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1003
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1053
 #, kde-format
 msgid "Add Reminder"
 msgstr "Добавяне на напомняне"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1063
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "Няма напомняния"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1033
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1083
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Етикети"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1035
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1085
 #, kde-format
 msgid "Manage tags…"
 msgstr "Управление на тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1049
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Докоснете, за да зададете тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1049
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1099
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Кликнете, за да зададете тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1095
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1145
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Прикачени файлове"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1097
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1147
 #, kde-format
 msgid "Add Attachment"
 msgstr "Добавяне на прикачен файл"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1104
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1154
 #, kde-format
 msgid "Add an attachment"
 msgstr "Добавяне на прикачен файл"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1115
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1165
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "Няма прикачени файлове"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1150
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1200
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
 msgstr "Бележка"
 
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:28
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:29
 #, kde-format
 msgid "Change incidence date"
 msgstr "Промяна на датата на възникване"
 
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:46
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:47
 #, kde-format
 msgid ""
 "The item you are trying to change is a recurring item. Should the changes be "
@@ -1372,27 +1402,27 @@ msgstr ""
 "промените да се приложат само към това единствено събитие, също и към бъдещи "
 "елементи или към всички елементи в повторението?"
 
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:61
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:62
 #, kde-format
 msgid "Only This Item"
 msgstr "Само този елемент"
 
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:69
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:70
 #, kde-format
 msgid "Also Future Items"
 msgstr "Също така бъдещи елементи"
 
-#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:77
+#: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:78
 #, kde-format
 msgid "All Occurrences"
 msgstr "Всички събития"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:83
 #, kde-format
 msgid "Mark Incomplete"
 msgstr "Маркиране като незавършено"
 
-#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
+#: calendar/qml/Drawers/IncidenceInfoDrawer.qml:83
 #, kde-format
 msgid "Mark Complete"
 msgstr "Маркиране като  завършено"
@@ -1561,18 +1591,18 @@ msgctxt "@title"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:264
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:266
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Възстановяване на мащаба"
 
-#: calendar/qml/MainViews/BasicInternalHourlyView.qml:277
+#: calendar/qml/MainViews/BasicInternalHourlyView.qml:279
 #, kde-format
 msgid "All day or Multi day"
 msgstr "Цял ден или няколко дни"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:165
+#: calendar/qml/MainViews/BasicMonthListView.qml:167
 #, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
@@ -1581,7 +1611,7 @@ msgctxt ""
 msgid "ddd d"
 msgstr "ddd d"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:168
+#: calendar/qml/MainViews/BasicMonthListView.qml:170
 #, kde-format
 msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
@@ -1589,7 +1619,7 @@ msgctxt ""
 msgid "%1–%2"
 msgstr "%1–%2"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:178
+#: calendar/qml/MainViews/BasicMonthListView.qml:180
 #, kde-format
 msgctxt ""
 "A date format, adapt formatting to locale conventions (see https://doc.qt.io/"
@@ -1598,7 +1628,7 @@ msgctxt ""
 msgid "dddd d"
 msgstr "dddd d"
 
-#: calendar/qml/MainViews/BasicMonthListView.qml:181
+#: calendar/qml/MainViews/BasicMonthListView.qml:183
 #, kde-format
 msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week (e.g. "
@@ -1649,7 +1679,7 @@ msgstr "Днес няма нищо по книгите. Докоснете, за
 msgid "Nothing on the books today. Click to add something."
 msgstr "Днес няма нищо по книгите. Кликнете, за да добавите нещо."
 
-#: calendar/qml/MainViews/DayGridViewBackground.qml:237
+#: calendar/qml/MainViews/DayGridViewBackground.qml:239
 #, kde-format
 msgid "<b>Today</b>"
 msgstr "<b>Днес</b>"
@@ -1771,7 +1801,7 @@ msgid "No tasks left to complete"
 msgstr "Няма останали задачи за изпълнение"
 
 #: calendar/qml/MainViews/TodoTreeView.qml:141
-#: calendar/qml/MainViews/TodoView.qml:59
+#: calendar/qml/MainViews/TodoView.qml:60
 #, kde-format
 msgid "Create"
 msgstr "Създаване"
@@ -1781,32 +1811,32 @@ msgstr "Създаване"
 msgid " , is overdue"
 msgstr ", е просрочен"
 
-#: calendar/qml/MainViews/TodoView.qml:47
+#: calendar/qml/MainViews/TodoView.qml:48
 #, kde-format
 msgid "Tasks"
 msgstr "Задачи"
 
-#: calendar/qml/MainViews/TodoView.qml:94
+#: calendar/qml/MainViews/TodoView.qml:95
 #, kde-format
 msgid "Show Completed"
 msgstr "Показване на завършени"
 
-#: calendar/qml/MainViews/TodoView.qml:109
+#: calendar/qml/MainViews/TodoView.qml:110
 #, kde-format
 msgid "Completed Tasks in %1"
 msgstr "Завършени задачи в %1"
 
-#: calendar/qml/MainViews/TodoView.qml:109
+#: calendar/qml/MainViews/TodoView.qml:110
 #, kde-format
 msgid "Completed Tasks"
 msgstr "Изпълнени задачи"
 
-#: calendar/qml/MainViews/TodoView.qml:157
+#: calendar/qml/MainViews/TodoView.qml:158
 #, kde-format
 msgid "Create a New Task…"
 msgstr "Създаване на нова задача…"
 
-#: calendar/qml/MainViews/TodoView.qml:197
+#: calendar/qml/MainViews/TodoView.qml:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Task"
@@ -2084,238 +2114,325 @@ msgctxt "@label:listbox"
 msgid "Select Holiday Regions"
 msgstr "Избиране на регионални празнични дни"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:128
+#: calendar/qml/Settings/ViewSettingsPage.qml:124
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "Показване на задачи в изгледи на календара"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:138
+#: calendar/qml/Settings/ViewSettingsPage.qml:134
 #, kde-format
 msgid "Show sub-tasks in calendar views"
 msgstr "Показване на подзадачи в изгледи на календара"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:152
+#: calendar/qml/Settings/ViewSettingsPage.qml:148
 #, kde-format
 msgid "Past event transparency"
 msgstr "Прозрачност на минали събития"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:171
+#: calendar/qml/Settings/ViewSettingsPage.qml:167
 #, kde-format
 msgid "Month view settings"
 msgstr "Настройки за месечен изглед"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:202
+#: calendar/qml/Settings/ViewSettingsPage.qml:198
 #, kde-format
 msgid "Month view mode"
 msgstr "Режим на преглед в месеци"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:209
+#: calendar/qml/Settings/ViewSettingsPage.qml:205
 #, kde-format
 msgid "Swipeable month grid"
 msgstr "Плъзгаща се месечна решетка"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:216
+#: calendar/qml/Settings/ViewSettingsPage.qml:212
 #, kde-format
 msgid "Basic month grid"
 msgstr "Опростена месечна решетка"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:222
+#: calendar/qml/Settings/ViewSettingsPage.qml:218
 #, kde-format
 msgid "Swipeable month grid requires higher system performance."
 msgstr ""
 "Плъзгащата се месечна мрежа изисква по-висока производителност на системата."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:229
+#: calendar/qml/Settings/ViewSettingsPage.qml:225
 #, kde-format
 msgid "Weekday label alignment"
 msgstr "Подравняване на етикетите за делнични дни"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:236
+#: calendar/qml/Settings/ViewSettingsPage.qml:232
 #, kde-format
 msgid "Left"
 msgstr "Вляво"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:243
+#: calendar/qml/Settings/ViewSettingsPage.qml:239
 #, kde-format
 msgid "Center"
 msgstr "В средата"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:250
+#: calendar/qml/Settings/ViewSettingsPage.qml:246
 #, kde-format
 msgid "Right"
 msgstr "Вдясно"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:260
+#: calendar/qml/Settings/ViewSettingsPage.qml:256
 #, kde-format
 msgid "Weekday label length:"
 msgstr "Дължина на етикета за деня от седмицата:"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:265
+#: calendar/qml/Settings/ViewSettingsPage.qml:261
 #, kde-format
 msgid "Full name (Monday)"
 msgstr "Пълно име (понеделник)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:272
+#: calendar/qml/Settings/ViewSettingsPage.qml:268
 #, kde-format
 msgid "Abbreviated (Mon)"
 msgstr "Съкратено (пн)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:280
+#: calendar/qml/Settings/ViewSettingsPage.qml:276
 #, kde-format
 msgid "Letter only (M)"
 msgstr "Само буква (П)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:289
+#: calendar/qml/Settings/ViewSettingsPage.qml:285
 #, kde-format
 msgid "Show week numbers"
 msgstr "Показване на номера на седмицата"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:303
+#: calendar/qml/Settings/ViewSettingsPage.qml:299
 #, kde-format
 msgid "Grid border width (pixels):"
 msgstr "Ширина на рамката на мрежата (пиксели):"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:327
+#: calendar/qml/Settings/ViewSettingsPage.qml:323
 #, kde-format
 msgid "Week view settings"
 msgstr "Настройки за седмичен изглед"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:340
+#: calendar/qml/Settings/ViewSettingsPage.qml:336
 #, kde-format
 msgid "Week view mode"
 msgstr "Режим на преглед в седмици"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:347
+#: calendar/qml/Settings/ViewSettingsPage.qml:343
 #, kde-format
 msgid "Swipeable week view"
 msgstr "Седмичен изглед с възможност за плъзгане"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:354
+#: calendar/qml/Settings/ViewSettingsPage.qml:350
 #, kde-format
 msgid "Basic week view"
 msgstr "Опростен седмичен изглед"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:360
+#: calendar/qml/Settings/ViewSettingsPage.qml:356
 #, kde-format
 msgid "Swipeable week view requires higher system performance."
 msgstr ""
 "Седмичен изглед с плъзгане изисква по-висока производителност на системата."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:367
+#: calendar/qml/Settings/ViewSettingsPage.qml:363
 #, kde-format
 msgid "Schedule View settings"
 msgstr "Настройки за изглед на график"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:380
+#: calendar/qml/Settings/ViewSettingsPage.qml:376
 #, kde-format
 msgid "Schedule view mode"
 msgstr "Режим на преглед на графика"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:387
+#: calendar/qml/Settings/ViewSettingsPage.qml:383
 #, kde-format
 msgid "Swipeable schedule view"
 msgstr "Изглед на график с възможност за плъзгане"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:394
+#: calendar/qml/Settings/ViewSettingsPage.qml:390
 #, kde-format
 msgid "Basic schedule view"
 msgstr "Опростен изглед на графика"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:400
+#: calendar/qml/Settings/ViewSettingsPage.qml:396
 #, kde-format
 msgid "Swipeable schedule view requires higher system performance."
 msgstr ""
 "Изгледът на график с плъзгане изисква по-висока производителност на "
 "системата."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:409
+#: calendar/qml/Settings/ViewSettingsPage.qml:405
 #, kde-format
 msgid "Show week headers"
 msgstr "Показване на заглавки на седмицата"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:421
+#: calendar/qml/Settings/ViewSettingsPage.qml:417
 #, kde-format
 msgid "Hide empty days"
 msgstr "Скриване на празни дни"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:431
+#: calendar/qml/Settings/ViewSettingsPage.qml:427
 #, kde-format
 msgid "Tasks View settings"
 msgstr "Настройки на изглед на задачи"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:436
+#: calendar/qml/Settings/ViewSettingsPage.qml:432
 #, kde-format
 msgid "Show completed sub-tasks"
 msgstr "Показване на завършени подзадачи"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:447
+#: calendar/qml/Settings/ViewSettingsPage.qml:443
 #, kde-format
 msgid "Maps"
 msgstr "Карти"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:453
+#: calendar/qml/Settings/ViewSettingsPage.qml:449
 #, kde-format
 msgid "Enable maps"
 msgstr "Активиране на карти"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:460
+#: calendar/qml/Settings/ViewSettingsPage.qml:456
 #, kde-format
 msgid "May cause crashing on some systems."
 msgstr "Може да причини срив на някои системи."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:467
+#: calendar/qml/Settings/ViewSettingsPage.qml:463
 #, kde-format
 msgid "Location marker"
 msgstr "Маркер за местоположение"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:473
+#: calendar/qml/Settings/ViewSettingsPage.qml:469
 #, kde-format
 msgid "Circle (shows area of location)"
 msgstr "Кръг (показва зона на местоположение)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:480
+#: calendar/qml/Settings/ViewSettingsPage.qml:476
 #, kde-format
 msgid "Pin (shows exact location)"
 msgstr "Карфица (показва точното местоположение)"
 
-#: calendar/utils.cpp:20
+#: calendar/recurrencedata.cpp:31
+#, kde-format
+msgid "%1%2"
+msgstr ""
+
+#: calendar/recurrencedata.cpp:68
+#, kde-format
+msgid "Every minute"
+msgid_plural "Every %1 minutes"
+msgstr[0] "Всяка минута"
+msgstr[1] "На всеки %1 минути"
+
+#: calendar/recurrencedata.cpp:70
+#, kde-format
+msgid "Every hour"
+msgid_plural "Every %1 hours"
+msgstr[0] "Всеки час"
+msgstr[1] "На всеки %1 часа"
+
+#: calendar/recurrencedata.cpp:72
+#, kde-format
+msgid "Every day"
+msgid_plural "Every %1 days"
+msgstr[0] "Всеки ден"
+msgstr[1] "Всеки %1 дена"
+
+#: calendar/recurrencedata.cpp:74
+#, kde-format
+msgid "Every week"
+msgid_plural "Every %1 weeks"
+msgstr[0] "Всяка седмица"
+msgstr[1] "На всеки %1 седмици"
+
+#: calendar/recurrencedata.cpp:82
+#, kde-format
+msgid "Every week on"
+msgid_plural "Every %1 weeks on"
+msgstr[0] "Всяка седмица на"
+msgstr[1] "На всеки %1 седмици"
+
+#: calendar/recurrencedata.cpp:91 calendar/recurrencedata.cpp:94
+#, kde-format
+msgid "Every month on the %2"
+msgid_plural "Every %1 months on the %2"
+msgstr[0] "Всеки месец на %2"
+msgstr[1] "На всеки %1 месеца на %2"
+
+#: calendar/recurrencedata.cpp:96 calendar/recurrencedata.cpp:117
+#, kde-format
+msgid "Every year on the %2 of %3"
+msgid_plural "Every %1 years on the %2 of %3"
+msgstr[0] "Всяка година на %2 от %3"
+msgstr[1] "На всеки %1 години на %2 от %3"
+
+#: calendar/recurrencedata.cpp:106
+#, kde-format
+msgid "Every year on the %2 day of the year"
+msgid_plural "Every %1 years on the %2 day of the year"
+msgstr[0] "Всяка година на %2 ден от годината"
+msgstr[1] "На всеки %1 години на %2 ден от годината"
+
+#: calendar/recurrencedata.cpp:120
+#, kde-format
+msgid "Complex recurrence rule"
+msgstr "Правило за комплексно повтаряне"
+
+#: calendar/recurrencedata.cpp:122
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:41
+#, kde-format
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: calendar/recurrencedata.cpp:130
+#, kde-format
+msgid "Never ends"
+msgstr "Никога не свършва"
+
+#: calendar/recurrencedata.cpp:132
+#, kde-format
+msgid "Ends on %1"
+msgstr "Приключва на %1"
+
+#: calendar/recurrencedata.cpp:134
+#, kde-format
+msgid "Ends after %1 occurrences"
+msgstr "Завършва след %1 повторения"
+
+#: calendar/utils.cpp:21
 #, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 days"
 msgstr "%1 дни"
 
-#: calendar/utils.cpp:22
+#: calendar/utils.cpp:23
 #, kde-format
 msgid "1 day"
 msgstr "1 ден"
 
-#: calendar/utils.cpp:24
+#: calendar/utils.cpp:25
 #, kde-format
 msgctxt "%1 is 2 or more"
 msgid "%1 hours"
 msgstr "%1 часа"
 
-#: calendar/utils.cpp:26
+#: calendar/utils.cpp:27
 #, kde-format
 msgid "1 hour"
 msgstr "1 час"
 
-#: calendar/utils.cpp:28
+#: calendar/utils.cpp:29
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1 минути"
 
-#: calendar/utils.cpp:46
+#: calendar/utils.cpp:47
 #, kde-format
 msgid "%1 before start of event"
 msgstr "%1 преди началото на събитието"
 
-#: calendar/utils.cpp:48
+#: calendar/utils.cpp:49
 #, kde-format
 msgid "%1 after start of event"
 msgstr "%1 след началото на събитието"
 
-#: calendar/utils.cpp:50
+#: calendar/utils.cpp:51
 #, kde-format
 msgid "On event start"
 msgstr "В началото на събитието"
