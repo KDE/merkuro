@@ -207,7 +207,6 @@ target_link_libraries(merkuro-calendar
         KF6::DBusAddons
         KF6::WindowSystem
         KF6::IconThemes
-        KF6::ConfigWidgets
         KF6::ConfigGui
         KirigamiApp
 )

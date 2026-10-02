@@ -20,7 +20,6 @@
 #include <KLocalizedQmlContext>
 #include <Libkleo/KeyCache>
 
-#include <KStyleManager>
 using namespace Qt::Literals::StringLiterals;
 static void raiseWindow(QWindow *window)
 {
@@ -38,8 +37,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setQuitLockEnabled(false);
 
     KirigamiAppDefaults::apply(&app);
-
-    KStyleManager::initStyle();
 
     auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro.contact"_s);
     aboutData.setComponentName(u"merkuro.contacts"_s);

@@ -26,7 +26,6 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 
-#include <KStyleManager>
 using namespace Qt::Literals::StringLiterals;
 static void raiseWindow(QWindow *window)
 {
@@ -42,8 +41,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName(u"KDE"_s);
     QCoreApplication::setApplicationName(u"Merkuro"_s);
     QCoreApplication::setQuitLockEnabled(false);
-
-    KStyleManager::initStyle();
 
     KirigamiAppDefaults::apply(&app);
 

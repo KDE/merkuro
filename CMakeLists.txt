@@ -95,7 +95,6 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} REQUIRED COMPONENTS
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CalendarCore
-    ConfigWidgets
     Contacts
     CoreAddons
     DBusAddons

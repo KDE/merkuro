@@ -23,7 +23,6 @@
 
 #include <KIconTheme>
 
-#include <KStyleManager>
 using namespace Qt::Literals::StringLiterals;
 static void raiseWindow(QWindow *window)
 {
@@ -65,7 +64,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(u"Merkuro Mail"_s);
     QCoreApplication::setQuitLockEnabled(false);
 
-    KStyleManager::initStyle();
     KirigamiAppDefaults::apply(&app);
 
     auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro.mail"_s);
