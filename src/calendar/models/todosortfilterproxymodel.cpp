@@ -689,10 +689,13 @@ int TodoSortFilterProxyModel::compareCompletion(const QModelIndex &left, const Q
         if (!leftTodo || !rightTodo) {
             return 0;
         } else {
+            if (leftTodo->completed() == rightTodo->completed()) {
+                return 0;
+            }
             return (leftTodo->completed() > rightTodo->completed()) ? -1 : 1;
         }
     } else {
-        return (leftValue < rightValue) ? -1 : 1;
+        return leftValue == rightValue ? 0 : (leftValue < rightValue ? -1 : 1);
     }
 }
 
@@ -711,23 +714,21 @@ int TodoSortFilterProxyModel::comparePriorities(const QModelIndex &left, const Q
     const auto rightTodo = right.data(Akonadi::TodoModel::TodoPtrRole).value<KCalendarCore::Todo::Ptr>();
     Q_ASSERT(leftTodo);
     Q_ASSERT(rightTodo);
-    // Todos with no priority have a priority of 0 -- push these to list end in ascending order
-    if (m_sortAscending && leftTodo->priority() == 0) {
-        return 1;
-    } else if (!leftTodo || !rightTodo || leftTodo->priority() == rightTodo->priority()) {
+    if (!leftTodo || !rightTodo || leftTodo->priority() == rightTodo->priority()) {
         return 0;
-    } else if (leftTodo->priority() < rightTodo->priority()) {
-        return -1;
-    } else {
-        return 1;
     }
+    // Todos with no priority have a priority of 0 -- push these to list end in ascending order.
+    if (m_sortAscending && (leftTodo->priority() == 0 || rightTodo->priority() == 0)) {
+        return leftTodo->priority() == 0 ? 1 : -1;
+    }
+    return leftTodo->priority() < rightTodo->priority() ? -1 : 1;
 }
 
 bool TodoSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     // Workaround for cases where lessThan will receive invalid left index
-    if (!left.isValid()) {
-        return true;
+    if (!left.isValid() || !right.isValid()) {
+        return !left.isValid() && right.isValid();
     }
 
     // To-dos without due date should appear last when sorting ascending,
@@ -747,7 +748,7 @@ bool TodoSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelInd
             const int fallbackComparison = comparePriorities(leftPriorityIndex, rightPriorityIndex);
 
             if (fallbackComparison != 0) {
-                return fallbackComparison == 1;
+                return fallbackComparison == -1;
             }
         }
     } else if (right.column() == Akonadi::TodoModel::StartDateColumn) {
@@ -767,7 +768,7 @@ bool TodoSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelInd
             const int fallbackComparison = compareDueDates(leftDueDateIndex, rightDueDateIndex);
 
             if (fallbackComparison != 0) {
-                return fallbackComparison == 1;
+                return fallbackComparison == -1;
             }
         }
     } else if (right.column() == Akonadi::TodoModel::PercentColumn) {

@@ -20,10 +20,11 @@ void RemindersModel::setIncidence(KCalendarCore::Incidence::Ptr incidence)
     if (m_incidence == incidence) {
         return;
     }
+    beginResetModel();
     m_incidence = incidence;
+    endResetModel();
     Q_EMIT incidenceChanged();
     Q_EMIT alarmsChanged();
-    Q_EMIT layoutChanged();
 }
 
 KCalendarCore::Alarm::List RemindersModel::alarms() const
@@ -36,8 +37,9 @@ KCalendarCore::Alarm::List RemindersModel::alarms() const
 
 QVariant RemindersModel::data(const QModelIndex &idx, int role) const
 {
-    Q_ASSERT(m_incidence);
-    Q_ASSERT(checkIndex(idx, QAbstractItemModel::CheckIndexOption::IndexIsValid));
+    if (idx.model() != this || !hasIndex(idx.row(), idx.column())) {
+        return {};
+    }
 
     auto alarm = m_incidence->alarms()[idx.row()];
     switch (role) {
@@ -59,10 +61,11 @@ QVariant RemindersModel::data(const QModelIndex &idx, int role) const
 
 bool RemindersModel::setData(const QModelIndex &idx, const QVariant &value, int role)
 {
-    Q_ASSERT(m_incidence);
-    Q_ASSERT(checkIndex(idx, QAbstractItemModel::CheckIndexOption::IndexIsValid));
+    if (idx.model() != this || !hasIndex(idx.row(), idx.column())) {
+        return false;
+    }
 
-    if (!idx.isValid()) {
+    if (m_incidence->isReadOnly()) {
         return false;
     }
 
@@ -94,6 +97,7 @@ bool RemindersModel::setData(const QModelIndex &idx, const QVariant &value, int 
         return false;
     }
     Q_EMIT dataChanged(idx, idx);
+    Q_EMIT alarmsChanged();
     return true;
 }
 
@@ -107,9 +111,9 @@ QHash<int, QByteArray> RemindersModel::roleNames() const
     };
 }
 
-int RemindersModel::rowCount(const QModelIndex &) const
+int RemindersModel::rowCount(const QModelIndex &parent) const
 {
-    if (!m_incidence) {
+    if (parent.isValid() || !m_incidence) {
         return 0;
     }
     return m_incidence->alarms().size();
@@ -117,7 +121,9 @@ int RemindersModel::rowCount(const QModelIndex &) const
 
 void RemindersModel::addAlarm()
 {
-    Q_ASSERT(m_incidence);
+    if (!m_incidence || m_incidence->isReadOnly()) {
+        return;
+    }
 
     KCalendarCore::Alarm::Ptr alarm(new KCalendarCore::Alarm(m_incidence.get()));
     alarm->setEnabled(true);
@@ -127,22 +133,27 @@ void RemindersModel::addAlarm()
 
     qCDebug(MERKURO_CALENDAR_LOG) << alarm->parentUid();
 
+    const int row = rowCount();
+    beginInsertRows({}, row, row);
     m_incidence->addAlarm(alarm);
+    endInsertRows();
     Q_EMIT alarmsChanged();
-    Q_EMIT layoutChanged();
 }
 
 void RemindersModel::deleteAlarm(const int row)
 {
-    Q_ASSERT(m_incidence);
+    if (!m_incidence || m_incidence->isReadOnly()) {
+        return;
+    }
 
     if (!hasIndex(row, 0)) {
         return;
     }
 
+    beginRemoveRows({}, row, row);
     m_incidence->removeAlarm(m_incidence->alarms()[row]);
+    endRemoveRows();
     Q_EMIT alarmsChanged();
-    Q_EMIT layoutChanged();
 }
 
 #include "moc_remindersmodel.cpp"

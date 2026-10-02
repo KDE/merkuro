@@ -26,15 +26,16 @@ void AttachmentsModel::setIncidencePtr(KCalendarCore::Incidence::Ptr incidence)
     if (m_incidence == incidence) {
         return;
     }
+    beginResetModel();
     m_incidence = incidence;
+    endResetModel();
     Q_EMIT incidencePtrChanged();
     Q_EMIT attachmentsChanged();
-    Q_EMIT layoutChanged();
 }
 
 KCalendarCore::Attachment::List AttachmentsModel::attachments() const
 {
-    return m_incidence->attachments();
+    return m_incidence ? m_incidence->attachments() : KCalendarCore::Attachment::List{};
 }
 
 QVariantMap AttachmentsModel::dataroles() const
@@ -44,7 +45,7 @@ QVariantMap AttachmentsModel::dataroles() const
 
 QVariant AttachmentsModel::data(const QModelIndex &idx, int role) const
 {
-    if (!hasIndex(idx.row(), idx.column())) {
+    if (idx.model() != this || !hasIndex(idx.row(), idx.column())) {
         return {};
     }
 
@@ -85,43 +86,49 @@ QHash<int, QByteArray> AttachmentsModel::roleNames() const
     };
 }
 
-int AttachmentsModel::rowCount(const QModelIndex &) const
+int AttachmentsModel::rowCount(const QModelIndex &parent) const
 {
-    return m_incidence->attachments().size();
+    return parent.isValid() || !m_incidence ? 0 : m_incidence->attachments().size();
 }
 
 void AttachmentsModel::addAttachment(const QString &uri)
 {
+    if (!m_incidence || m_incidence->isReadOnly() || uri.isEmpty()) {
+        return;
+    }
     const QMimeType type = m_mimeDb.mimeTypeForUrl(QUrl(uri));
 
     KCalendarCore::Attachment attachment(uri);
     attachment.setLabel(QUrl(uri).fileName());
     attachment.setMimeType(type.name());
+    const int row = rowCount();
+    beginInsertRows({}, row, row);
     m_incidence->addAttachment(attachment);
+    endInsertRows();
 
     Q_EMIT attachmentsChanged();
-    Q_EMIT layoutChanged();
 }
 
 void AttachmentsModel::deleteAttachment(const QString &uri)
 {
-    KCalendarCore::Attachment::List attachments = m_incidence->attachments();
-
-    for (const auto &attachment : attachments) {
-        if (attachment.uri() == uri) {
-            attachments.removeAll(attachment);
-            break;
+    if (!m_incidence || m_incidence->isReadOnly()) {
+        return;
+    }
+    auto attachments = m_incidence->attachments();
+    // Remove each matching row separately so indexes for other attachments remain valid.
+    for (int row = attachments.size() - 1; row >= 0; --row) {
+        if (attachments.at(row).uri() != uri) {
+            continue;
         }
+        beginRemoveRows({}, row, row);
+        attachments.removeAt(row);
+        m_incidence->clearAttachments();
+        for (const auto &attachment : attachments) {
+            m_incidence->addAttachment(attachment);
+        }
+        endRemoveRows();
+        Q_EMIT attachmentsChanged();
     }
-
-    m_incidence->clearAttachments();
-
-    for (const auto &attachment : attachments) {
-        m_incidence->addAttachment(attachment);
-    }
-
-    Q_EMIT attachmentsChanged();
-    Q_EMIT layoutChanged();
 }
 
 #include "moc_attachmentsmodel.cpp"

@@ -108,7 +108,10 @@ QList<QModelIndex> MultiDayIncidenceModel::sortedIncidencesFromSourceModel(const
         }
 
         // The rest sorted by start date
-        return leftDt < rightDt && leftDuration <= rightDuration;
+        if (leftDt != rightDt) {
+            return leftDt < rightDt;
+        }
+        return leftDuration < rightDuration;
     });
 
     return sorted;

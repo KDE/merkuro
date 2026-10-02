@@ -84,6 +84,9 @@ Q_SIGNALS:
     void attendeesAkonadiIdsChanged();
 
 private:
+    void insertAttendee(const KCalendarCore::Attendee &attendee);
+
+    quint64 m_contactSearchGeneration = 0;
     KCalendarCore::Incidence::Ptr m_incidence;
     AttendeeStatusModel m_attendeeStatusModel;
     QList<qint64> m_attendeesAkonadiIds;

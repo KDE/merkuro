@@ -19,10 +19,10 @@ Akonadi::Item ItemTagsModel::item() const
 
 void ItemTagsModel::setItem(const Akonadi::Item &item)
 {
-    Q_EMIT layoutAboutToBeChanged();
+    beginResetModel();
     m_item = item;
+    endResetModel();
     Q_EMIT itemChanged();
-    Q_EMIT layoutChanged();
 }
 
 int ItemTagsModel::rowCount(const QModelIndex &parent) const
@@ -36,7 +36,7 @@ int ItemTagsModel::rowCount(const QModelIndex &parent) const
 
 QVariant ItemTagsModel::data(const QModelIndex &idx, int role) const
 {
-    if (!hasIndex(idx.row(), idx.column())) {
+    if (idx.model() != this || !hasIndex(idx.row(), idx.column())) {
         return {};
     }
 

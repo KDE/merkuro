@@ -94,3 +94,9 @@ if(UNIX)
         endif()
     endforeach()
 endif()
+
+ecm_add_test(editormodelstest.cpp
+    TEST_NAME editormodelstest
+    LINK_LIBRARIES merkuro_calendar_static Qt::Test
+    NAME_PREFIX "merkuro-calendar-"
+)
