@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 17:42+0000\n"
-"PO-Revision-Date: 2026-09-26 17:29+0100\n"
+"PO-Revision-Date: 2026-10-01 20:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -168,44 +168,40 @@ msgid "Refresh All"
 msgstr "Actualizar todo"
 
 #: calendar/calendareditorbackend.cpp:48
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The calendar is no longer available."
-msgstr "El contacto ya no está disponible."
+msgstr "El calendario ya no está disponible."
 
 #: calendar/calendareditorbackend.cpp:104
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is not available."
-msgstr "El contacto ya no está disponible."
+msgstr "La incidencia no está disponible."
 
 #: calendar/calendareditorbackend.cpp:108
 #, kde-format
 msgid "Please enter a title."
-msgstr ""
+msgstr "Introduzca un título."
 
 #: calendar/calendareditorbackend.cpp:113
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgid "No calendar selected."
-msgstr "No se ha seleccionado ningún buzón"
+msgstr "No se ha seleccionado ningún calendario."
 
 #: calendar/calendareditorbackend.cpp:117
-#, fuzzy, kde-format
-#| msgid "The selected address book cannot store this contact."
+#, kde-format
 msgid "The selected calendar cannot store this incidence."
-msgstr "La libreta de direcciones seleccionada no puede guardar este contacto."
+msgstr "El calendario seleccionado no puede guardar esta incidencia."
 
 #: calendar/calendareditorbackend.cpp:130
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is no longer available."
-msgstr "El contacto ya no está disponible."
+msgstr "La incidencia ya no está disponible."
 
 #: calendar/calendareditorbackend.cpp:136
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
+"La incidencia ha sido borrada. Sus cambios sin guardar se han conservado."
 
 #: calendar/calendareditorbackend.cpp:137
 #, kde-format
@@ -213,43 +209,45 @@ msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
+"La incidencia ha cambiado fuera de este editor. Vuelva a cargarla antes de "
+"guardar. Sus cambios sin guardar se han conservado."
 
 #: calendar/calendareditorbackend.cpp:142
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The incidence is read-only."
-msgstr "El contacto es de solo lectura."
+msgstr "La incidencia es de solo lectura."
 
 #: calendar/calendareditorbackend.cpp:151
 #, kde-format
 msgid ""
 "The incidence and its related tasks cannot be moved to the selected calendar."
 msgstr ""
+"La incidencia y sus tareas relacionadas no se pueden mover al calendario "
+"seleccionado."
 
 #: calendar/calendareditorbackend.cpp:158
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The selected calendar is read-only."
-msgstr "El contacto es de solo lectura."
+msgstr "El calendario seleccionado es de solo lectura."
 
 #: calendar/calendareditorbackend.cpp:174
 #: calendar/calendareditorbackend.cpp:213
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgid "The incidence could not be saved."
-msgstr "No se ha podido encontrar el contacto."
+msgstr "No se ha podido guardar la incidencia."
 
 #: calendar/calendareditorbackend.cpp:186
 #, kde-format
 msgid ""
 "The incidence is no longer available. Your unsaved changes have been kept."
 msgstr ""
+"La incidencia ya no está disponible. Sus cambios sin guardar se han "
+"conservado."
 
 #: calendar/calendareditorbackend.cpp:237
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
-msgstr "No se ha podido encontrar la libreta de direcciones del contacto."
+msgstr "La incidencia se ha guardado, pero no se puede mover: %1"
 
 #: calendar/calendarmanager.cpp:535
 #, kde-format
@@ -920,13 +918,15 @@ msgstr "Borrar todas"
 #, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
-msgstr ""
+msgstr "Volver a cargar la incidencia"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
 #, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
 msgstr ""
+"Al volver a cargarla se descartarán los cambios que no haya guardado y se "
+"cargará la última versión."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
@@ -944,6 +944,7 @@ msgstr "Añadir %1"
 #, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
+"Esta incidencia ha sido borrada. Sus cambios sin guardar se han conservado."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
 #, kde-format
@@ -951,12 +952,14 @@ msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
 "kept. Reload the latest version before saving."
 msgstr ""
+"Esta incidencia ha cambiado fuera de este editor. Sus cambios sin guardar se "
+"han conservado. Vuelva a cargar la última versión antes de guardarla."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Volver a cargar"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -2314,7 +2317,7 @@ msgstr "Marcador (muestra la ubicación exacta)"
 #: calendar/recurrencedata.cpp:31
 #, kde-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: calendar/recurrencedata.cpp:68
 #, kde-format
@@ -4615,37 +4618,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Seleccionar el tipo de cuenta cuenta"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Calendar"
-#~ msgstr "Calendario de Merkuro"
-
-#~ msgid "Calendar Application"
-#~ msgstr "Aplicación de calendarios"
-
-#~ msgid "© KDE Community 2021–2026"
-#~ msgstr "© La Comunidad KDE 2021–2026"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Contact"
-#~ msgstr "Contactos de Merkuro"
-
-#~ msgid "Address Book Application"
-#~ msgstr "Aplicación de libreta de direcciones"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Launcher"
-#~ msgstr "Lanzador de Merkuro"
-
-#~ msgid "merkuro Launcher"
-#~ msgstr "Lanzador de Merkuro"
-
-#~ msgid "© 2024"
-#~ msgstr "© 2024"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Mail"
-#~ msgstr "Correo de Merkuro"
-
-#~ msgid "Email Client"
-#~ msgstr "Cliente de correo electrónico"
