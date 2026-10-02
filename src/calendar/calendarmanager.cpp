@@ -9,6 +9,7 @@
 //  SPDX-License-Identifier: GPL-2.0-or-later WITH LicenseRef-Qt-Commercial-exception-1.0
 
 #include "calendarmanager.h"
+#include "calendarincidencejob.h"
 
 // Akonadi
 #include "merkuro_calendar_debug.h"
@@ -34,7 +35,6 @@
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/History>
 #include <Akonadi/ItemModifyJob>
-#include <Akonadi/ItemMoveJob>
 #include <Akonadi/Monitor>
 #include <KCheckableProxyModel>
 #include <KDescendantsProxyModel>
@@ -417,138 +417,51 @@ KCalendarCore::Incidence::List CalendarManager::childIncidences(const QString &u
     return m_calendar->childIncidences(uid);
 }
 
-void CalendarManager::addIncidence(IncidenceWrapper *incidenceWrapper)
+CalendarIncidenceJob *CalendarManager::createIncidenceJob()
 {
-    if (incidenceWrapper->collectionId() < 0) {
-        const auto sharedConfig = KSharedConfig::openConfig();
-        const auto editorConfigSection = sharedConfig->group(u"Editor"_s);
-
-        const auto lastUsedCollectionType =
-            incidenceWrapper->incidenceType() == KCalendarCore::IncidenceBase::TypeTodo ? u"lastUsedTodoCollection"_s : u"lastUsedEventCollection"_s;
-        const auto lastUsedCollectionId = editorConfigSection.readEntry(lastUsedCollectionType, -1);
-
-        if (lastUsedCollectionId > -1) {
-            incidenceWrapper->setCollectionId(lastUsedCollectionId);
-        }
-    }
-
-    Akonadi::Collection collection(incidenceWrapper->collectionId());
-
-    switch (incidenceWrapper->incidencePtr()->type()) {
-    case (KCalendarCore::IncidenceBase::TypeEvent): {
-        KCalendarCore::Event::Ptr event = incidenceWrapper->incidencePtr().staticCast<KCalendarCore::Event>();
-        m_changer->createIncidence(event, collection);
-        break;
-    }
-    case (KCalendarCore::IncidenceBase::TypeTodo): {
-        KCalendarCore::Todo::Ptr todo = incidenceWrapper->incidencePtr().staticCast<KCalendarCore::Todo>();
-        m_changer->createIncidence(todo, collection);
-        break;
-    }
-    default:
-        m_changer->createIncidence(KCalendarCore::Incidence::Ptr(incidenceWrapper->incidencePtr()->clone()), collection);
-        break;
-    }
-    // This will fritz if you don't choose a valid *calendar*
+    return new CalendarIncidenceJob(this, this);
 }
 
-// Replicates IncidenceDialogPrivate::save
-void CalendarManager::editIncidence(IncidenceWrapper *incidenceWrapper)
+CalendarIncidenceJob *CalendarManager::startIncidenceJob(CalendarIncidenceJob *job)
 {
-    // We need to use the incidenceChanger manually to get the change recorded in the history
-    // For undo/redo to work properly we need to change the ownership of the incidence pointers
-    KCalendarCore::Incidence::Ptr changedIncidence(incidenceWrapper->incidencePtr()->clone());
-    KCalendarCore::Incidence::Ptr originalPayload(incidenceWrapper->originalIncidencePtr()->clone());
-
-    Akonadi::Item modifiedItem = m_calendar->item(changedIncidence->instanceIdentifier());
-    modifiedItem.setPayload<KCalendarCore::Incidence::Ptr>(changedIncidence);
-
-    m_changer->modifyIncidence(modifiedItem, originalPayload);
-
-    if (!incidenceWrapper->collectionId() || incidenceWrapper->collectionId() < 0 || modifiedItem.parentCollection().id() == incidenceWrapper->collectionId()) {
-        return;
-    }
-
-    changeIncidenceCollection(modifiedItem, incidenceWrapper->collectionId());
+    connect(job, &KJob::result, this, [this](KJob *job) {
+        if (job->error()) {
+            Q_EMIT errorOccurred(job->errorText());
+        }
+    });
+    job->start();
+    return job;
 }
 
-void CalendarManager::updateIncidenceDates(IncidenceWrapper *incidenceWrapper, int startOffset, int endOffset, int occurrences, const QDateTime &occurrenceDate)
-{ // start and end offsets are in msecs
-
-    Akonadi::Item item = m_calendar->item(incidenceWrapper->incidencePtr());
-    item.setPayload(incidenceWrapper->incidencePtr());
-
-    auto setNewDates = [&](KCalendarCore::Incidence::Ptr incidence) {
-        if (incidence->type() == KCalendarCore::Incidence::TypeTodo) {
-            // For to-dos endOffset is ignored because it will always be == to startOffset because we only
-            // support moving to-dos, not resizing them. There are no multi-day to-dos.
-            // Lets just call it offset to reduce confusion.
-            const int offset = startOffset;
-
-            KCalendarCore::Todo::Ptr todo = incidence.staticCast<KCalendarCore::Todo>();
-            QDateTime due = todo->dtDue();
-            QDateTime start = todo->dtStart();
-            if (due.isValid()) { // Due has priority over start.
-                // We will only move the due date, unlike events where we move both.
-                due = due.addMSecs(offset);
-                todo->setDtDue(due);
-
-                if (start.isValid() && start > due) {
-                    // Start can't be bigger than due.
-                    todo->setDtStart(due);
-                }
-            } else if (start.isValid()) {
-                // So we're displaying a to-do that doesn't have due date, only start...
-                start = start.addMSecs(offset);
-                todo->setDtStart(start);
-            } else {
-                // This never happens
-                // qCWarning(CALENDARVIEW_LOG) << "Move what? uid:" << todo->uid() << "; summary=" << todo->summary();
-            }
-        } else {
-            incidence->setDtStart(incidence->dtStart().addMSecs(startOffset));
-            if (incidence->type() == KCalendarCore::Incidence::TypeEvent) {
-                KCalendarCore::Event::Ptr event = incidence.staticCast<KCalendarCore::Event>();
-                event->setDtEnd(event->dtEnd().addMSecs(endOffset));
-            }
-        }
-    };
-
-    if (incidenceWrapper->incidencePtr()->recurs()) {
-        switch (occurrences) {
-        case IncidenceWrapper::AllOccurrences: {
-            // All occurrences
-            KCalendarCore::Incidence::Ptr oldIncidence(incidenceWrapper->incidencePtr()->clone());
-            setNewDates(incidenceWrapper->incidencePtr());
-            qCDebug(MERKURO_CALENDAR_LOG) << incidenceWrapper->incidenceStart();
-            m_changer->modifyIncidence(item, oldIncidence);
-            break;
-        }
-        case IncidenceWrapper::SelectedOccurrence: // Just this occurrence
-        case IncidenceWrapper::FutureOccurrences: { // All future occurrences
-            const bool thisAndFuture = (occurrences == IncidenceWrapper::FutureOccurrences);
-            auto tzedOccurrenceDate = occurrenceDate.toTimeZone(incidenceWrapper->incidenceStart().timeZone());
-            KCalendarCore::Incidence::Ptr newIncidence(
-                KCalendarCore::Calendar::createException(incidenceWrapper->incidencePtr(), tzedOccurrenceDate, thisAndFuture));
-
-            if (newIncidence) {
-                m_changer->startAtomicOperation(i18n("Move occurrence(s)"));
-                setNewDates(newIncidence);
-                m_changer->createIncidence(newIncidence, m_calendar->collection(incidenceWrapper->collectionId()));
-                m_changer->endAtomicOperation();
-            } else {
-                qCDebug(MERKURO_CALENDAR_LOG) << i18n("Unable to add the exception item to the calendar. No change will be done.");
-            }
-            break;
-        }
-        }
-    } else { // Doesn't recur
-        KCalendarCore::Incidence::Ptr oldIncidence(incidenceWrapper->incidencePtr()->clone());
-        setNewDates(incidenceWrapper->incidencePtr());
-        m_changer->modifyIncidence(item, oldIncidence);
+CalendarIncidenceJob *CalendarManager::addIncidence(IncidenceWrapper *wrapper)
+{
+    if (wrapper && wrapper->collectionId() < 0) {
+        const auto editorConfig = KSharedConfig::openConfig()->group(u"Editor"_s);
+        const auto key = wrapper->incidenceType() == KCalendarCore::IncidenceBase::TypeTodo ? u"lastUsedTodoCollection"_s : u"lastUsedEventCollection"_s;
+        wrapper->setCollectionId(editorConfig.readEntry(key, -1));
     }
+    auto job = createIncidenceJob();
+    job->prepareSave(wrapper, false);
+    return startIncidenceJob(job);
+}
 
-    Q_EMIT updateIncidenceDatesCompleted();
+CalendarIncidenceJob *CalendarManager::editIncidence(IncidenceWrapper *wrapper)
+{
+    auto job = createIncidenceJob();
+    job->prepareSave(wrapper, true);
+    return startIncidenceJob(job);
+}
+
+CalendarIncidenceJob *
+CalendarManager::updateIncidenceDates(IncidenceWrapper *wrapper, int startOffset, int endOffset, int occurrences, const QDateTime &occurrenceDate)
+{
+    auto job = createIncidenceJob();
+    job->prepareDateChange(wrapper, startOffset, endOffset, occurrences, occurrenceDate);
+    // Release the drag interaction after either success or failure, never on submission.
+    connect(job, &KJob::result, this, [this] {
+        Q_EMIT updateIncidenceDatesFinished();
+    });
+    return startIncidenceJob(job);
 }
 
 bool CalendarManager::hasChildren(KCalendarCore::Incidence::Ptr incidence)
@@ -556,92 +469,23 @@ bool CalendarManager::hasChildren(KCalendarCore::Incidence::Ptr incidence)
     return !m_calendar->childIncidences(incidence->uid()).isEmpty();
 }
 
-void CalendarManager::deleteAllChildren(KCalendarCore::Incidence::Ptr incidence)
+CalendarIncidenceJob *CalendarManager::deleteIncidence(KCalendarCore::Incidence::Ptr incidence, bool deleteChildren)
 {
-    const auto allChildren = m_calendar->childIncidences(incidence->uid());
-
-    for (const auto &child : allChildren) {
-        if (!m_calendar->childIncidences(child->uid()).isEmpty()) {
-            deleteAllChildren(child);
-        }
-    }
-
-    for (const auto &child : allChildren) {
-        m_calendar->deleteIncidence(child);
-    }
+    auto job = createIncidenceJob();
+    job->prepareDelete(incidence, deleteChildren);
+    return startIncidenceJob(job);
 }
 
-void CalendarManager::deleteIncidence(KCalendarCore::Incidence::Ptr incidence, bool deleteChildren)
+CalendarIncidenceJob *CalendarManager::changeIncidenceCollection(KCalendarCore::Incidence::Ptr incidence, qint64 collectionId)
 {
-    const auto directChildren = m_calendar->childIncidences(incidence->uid());
-
-    if (!directChildren.isEmpty()) {
-        if (deleteChildren) {
-            m_changer->startAtomicOperation(i18n("Delete task and its sub-tasks"));
-            deleteAllChildren(incidence);
-        } else {
-            m_changer->startAtomicOperation(i18n("Delete task and make sub-tasks independent"));
-            for (const auto &child : directChildren) {
-                const auto instances = m_calendar->instances(child);
-                for (const auto &instance : instances) {
-                    KCalendarCore::Incidence::Ptr oldInstance(instance->clone());
-                    instance->setRelatedTo(QString());
-                    m_changer->modifyIncidence(m_calendar->item(instance), oldInstance);
-                }
-
-                KCalendarCore::Incidence::Ptr oldInc(child->clone());
-                child->setRelatedTo(QString());
-                m_changer->modifyIncidence(m_calendar->item(child), oldInc);
-            }
-        }
-
-        m_calendar->deleteIncidence(incidence);
-        m_changer->endAtomicOperation();
-        return;
-    }
-
-    m_calendar->deleteIncidence(incidence);
+    return changeIncidenceCollection(incidence ? m_calendar->item(incidence->instanceIdentifier()) : Akonadi::Item(), collectionId);
 }
 
-void CalendarManager::changeIncidenceCollection(KCalendarCore::Incidence::Ptr incidence, qint64 collectionId)
+CalendarIncidenceJob *CalendarManager::changeIncidenceCollection(Akonadi::Item item, qint64 collectionId)
 {
-    KCalendarCore::Incidence::Ptr incidenceClone(incidence->clone());
-    Akonadi::Item modifiedItem = m_calendar->item(incidence->instanceIdentifier());
-    modifiedItem.setPayload<KCalendarCore::Incidence::Ptr>(incidenceClone);
-
-    if (modifiedItem.parentCollection().id() != collectionId) {
-        changeIncidenceCollection(modifiedItem, collectionId);
-    }
-}
-
-void CalendarManager::changeIncidenceCollection(Akonadi::Item item, qint64 collectionId)
-{
-    if (item.parentCollection().id() == collectionId) {
-        return;
-    }
-
-    Q_ASSERT(item.hasPayload<KCalendarCore::Incidence::Ptr>());
-
-    Akonadi::Collection newCollection(collectionId);
-    item.setParentCollection(newCollection);
-
-    auto job = new Akonadi::ItemMoveJob(item, newCollection);
-    // Add some type of check here?
-    connect(job, &KJob::result, job, [this, job, item, collectionId]() {
-        qCDebug(MERKURO_CALENDAR_LOG) << job->error();
-
-        if (!job->error()) {
-            const auto allChildren = m_calendar->childIncidences(item.id());
-            for (const auto &child : allChildren) {
-                changeIncidenceCollection(m_calendar->item(child), collectionId);
-            }
-
-            auto parent = item.payload<KCalendarCore::Incidence::Ptr>()->relatedTo();
-            if (!parent.isEmpty()) {
-                changeIncidenceCollection(m_calendar->item(parent), collectionId);
-            }
-        }
-    });
+    auto job = createIncidenceJob();
+    job->prepareMove(item, getCollection(collectionId));
+    return startIncidenceJob(job);
 }
 
 QVariantMap CalendarManager::getCollectionDetails(QVariant collectionId)

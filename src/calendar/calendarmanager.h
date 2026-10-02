@@ -17,6 +17,7 @@
 #include <qqmlintegration.h>
 
 class IncidenceWrapper;
+class CalendarIncidenceJob;
 
 namespace Akonadi
 {
@@ -53,6 +54,7 @@ class CalendarManager : public QObject
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
+    Q_MOC_INCLUDE("calendarincidencejob.h")
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(QAbstractProxyModel *collections READ collections CONSTANT)
@@ -91,18 +93,17 @@ public:
     Akonadi::Item incidenceItem(const QString &uid) const;
     KCalendarCore::Incidence::List childIncidences(const QString &uid) const;
 
-    Q_INVOKABLE void addIncidence(IncidenceWrapper *incidenceWrapper);
-    Q_INVOKABLE void editIncidence(IncidenceWrapper *incidenceWrapper);
-    Q_INVOKABLE void updateIncidenceDates(IncidenceWrapper *incidenceWrapper,
-                                          int startOffset,
-                                          int endOffset,
-                                          int occurrences = -1,
-                                          const QDateTime &occurrenceDate = QDateTime());
+    Q_INVOKABLE CalendarIncidenceJob *addIncidence(IncidenceWrapper *incidenceWrapper);
+    Q_INVOKABLE CalendarIncidenceJob *editIncidence(IncidenceWrapper *incidenceWrapper);
+    Q_INVOKABLE CalendarIncidenceJob *updateIncidenceDates(IncidenceWrapper *incidenceWrapper,
+                                                           int startOffset,
+                                                           int endOffset,
+                                                           int occurrences = -1,
+                                                           const QDateTime &occurrenceDate = QDateTime());
     Q_INVOKABLE bool hasChildren(KCalendarCore::Incidence::Ptr incidence);
-    void deleteAllChildren(KCalendarCore::Incidence::Ptr incidence);
-    Q_INVOKABLE void deleteIncidence(KCalendarCore::Incidence::Ptr incidence, bool deleteChildren = false);
-    Q_INVOKABLE void changeIncidenceCollection(KCalendarCore::Incidence::Ptr incidence, qint64 collectionId);
-    void changeIncidenceCollection(Akonadi::Item item, qint64 collectionId);
+    Q_INVOKABLE CalendarIncidenceJob *deleteIncidence(KCalendarCore::Incidence::Ptr incidence, bool deleteChildren = false);
+    Q_INVOKABLE CalendarIncidenceJob *changeIncidenceCollection(KCalendarCore::Incidence::Ptr incidence, qint64 collectionId);
+    CalendarIncidenceJob *changeIncidenceCollection(Akonadi::Item item, qint64 collectionId);
     Q_INVOKABLE QVariantMap getCollectionDetails(QVariant collectionId);
     Q_INVOKABLE void setCollectionColor(qint64 collectionId, const QColor &color);
     Q_INVOKABLE QVariant getIncidenceSubclassed(KCalendarCore::Incidence::Ptr incidencePtr);
@@ -115,6 +116,9 @@ public:
     Q_INVOKABLE void deleteCollection(qint64 collectionId);
     Q_INVOKABLE void toggleCollection(qint64 collectionId);
 
+protected:
+    virtual CalendarIncidenceJob *createIncidenceJob();
+
 private Q_SLOTS:
     void delayedInit();
 
@@ -123,12 +127,14 @@ Q_SIGNALS:
     void calendarChanged();
     void undoRedoDataChanged();
     void enabledTodoCollectionsChanged();
-    void updateIncidenceDatesCompleted();
+    void updateIncidenceDatesFinished();
     void collectionColorsChanged();
     void incidenceAdded();
     void errorOccurred(const QString &errorOccurred);
 
 private:
+    CalendarIncidenceJob *startIncidenceJob(CalendarIncidenceJob *job);
+
     Akonadi::ETMCalendar::Ptr m_calendar = nullptr;
     Akonadi::IncidenceChanger *m_changer = nullptr;
     KDescendantsProxyModel *m_flatCollectionTreeModel = nullptr;

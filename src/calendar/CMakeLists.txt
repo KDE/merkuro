@@ -22,6 +22,8 @@ set(merkuro_calendar_SRCS
     incidencewrapper.h
     calendareditorbackend.cpp
     calendareditorbackend.h
+    calendarincidencejob.cpp
+    calendarincidencejob.h
     mousetracker.cpp
     mousetracker.h
     importer.h
@@ -72,6 +74,7 @@ kconfig_add_kcfg_files(merkuro_calendar_static GENERATE_MOC calendarconfig.kcfgc
 set_target_properties(merkuro_calendar_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_calendar_static PUBLIC
     Qt::DBus
+    KF6::CoreAddons
     KF6::WindowSystem
     KF6::Contacts
     KF6::Crash

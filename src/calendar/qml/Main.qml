@@ -584,7 +584,7 @@ BaseApplication {
 
     Connections {
         target: CalendarManager
-        function onUpdateIncidenceDatesCompleted() { CalendarUiUtils.reenableDragOnCurrentView(); }
+        function onUpdateIncidenceDatesFinished(): void { CalendarUiUtils.reenableDragOnCurrentView(); }
     }
 
     property Component deleteIncidenceDialogComponent: DeleteIncidenceDialog {

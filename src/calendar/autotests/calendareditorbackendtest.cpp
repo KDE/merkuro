@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "calendareditorbackend.h"
+#include "calendarincidencejob.h"
 #include "calendarmanager.h"
 #include "incidencewrapper.h"
 
@@ -49,56 +50,116 @@ public:
     }
 };
 
-class ControlledEditorBackend : public CalendarEditorBackend
-{
-public:
-    using CalendarEditorBackend::CalendarEditorBackend;
+struct ControlledChanges {
+    CalendarManager *manager = nullptr;
     int creates = 0;
     int modifies = 0;
     int moves = 0;
+    int deletes = 0;
     int changeId = 1000;
     bool reject = false;
     bool editing = false;
     Akonadi::Item savedItem;
     KCalendarCore::Incidence::Ptr originalSnapshot;
     Akonadi::Item::List movedItems;
+    Akonadi::Item::List deletedItems;
+    Akonadi::Item::List modifiedItems;
+    QList<int> modificationIds;
+    int deletionId = -1;
     QPointer<ManualJob> moveJob;
 
     void finishChange(Akonadi::IncidenceChanger::ResultCode result)
     {
         const auto error = result == Akonadi::IncidenceChanger::ResultCodeSuccess ? QString() : u"Save failed"_s;
+        auto changer = manager->incidenceChanger();
         if (editing) {
-            Q_EMIT calendarManager()->incidenceChanger()->modifyFinished(changeId, savedItem, result, error);
+            Q_EMIT changer->modifyFinished(changeId, savedItem, result, error);
         } else {
-            Q_EMIT calendarManager()->incidenceChanger()->createFinished(changeId, savedItem, result, error);
+            Q_EMIT changer->createFinished(changeId, savedItem, result, error);
         }
+    }
+};
+
+class ControlledIncidenceJob : public CalendarIncidenceJob
+{
+public:
+    ControlledIncidenceJob(CalendarManager *manager, ControlledChanges &changes, QObject *parent = nullptr)
+        : CalendarIncidenceJob(manager, parent)
+        , m_changes(changes)
+    {
+        m_changes.manager = manager;
     }
 
 protected:
     int createIncidence(const KCalendarCore::Incidence::Ptr &incidence, const Akonadi::Collection &collection) override
     {
-        ++creates;
-        editing = false;
-        savedItem = Akonadi::Item(999999);
-        savedItem.setMimeType(incidence->mimeType());
-        savedItem.setPayload<KCalendarCore::Incidence::Ptr>(incidence);
-        savedItem.setParentCollection(collection);
-        return reject ? -1 : ++changeId;
+        ++m_changes.creates;
+        m_changes.editing = false;
+        m_changes.savedItem = Akonadi::Item(999999);
+        m_changes.savedItem.setMimeType(incidence->mimeType());
+        m_changes.savedItem.setPayload<KCalendarCore::Incidence::Ptr>(incidence);
+        m_changes.savedItem.setParentCollection(collection);
+        return m_changes.reject ? -1 : ++m_changes.changeId;
     }
     int modifyIncidence(const Akonadi::Item &item, const KCalendarCore::Incidence::Ptr &original) override
     {
-        ++modifies;
-        editing = true;
-        savedItem = item;
-        originalSnapshot = original;
-        return reject ? -1 : ++changeId;
+        ++m_changes.modifies;
+        m_changes.editing = true;
+        m_changes.savedItem = item;
+        m_changes.originalSnapshot = original;
+        const int id = m_changes.reject ? -1 : ++m_changes.changeId;
+        m_changes.modifiedItems.append(item);
+        m_changes.modificationIds.append(id);
+        return id;
+    }
+    int deleteIncidences(const Akonadi::Item::List &items) override
+    {
+        ++m_changes.deletes;
+        m_changes.deletedItems = items;
+        m_changes.deletionId = m_changes.reject ? -1 : ++m_changes.changeId;
+        return m_changes.deletionId;
     }
     KJob *moveItems(const Akonadi::Item::List &items, const Akonadi::Collection &) override
     {
-        ++moves;
-        movedItems = items;
-        moveJob = new ManualJob(this);
-        return moveJob;
+        ++m_changes.moves;
+        m_changes.movedItems = items;
+        m_changes.moveJob = new ManualJob(this);
+        return m_changes.moveJob;
+    }
+
+private:
+    ControlledChanges &m_changes;
+};
+
+class ControlledEditorBackend : public CalendarEditorBackend, public ControlledChanges
+{
+public:
+    using CalendarEditorBackend::CalendarEditorBackend;
+
+    void save(IncidenceWrapper *wrapper, bool editMode)
+    {
+        CalendarEditorBackend::save(wrapper, editMode);
+        // Dispatch job startup; persistence completion is still controlled by the test.
+        QCoreApplication::sendPostedEvents(nullptr, QEvent::MetaCall);
+    }
+
+protected:
+    CalendarIncidenceJob *createJob() override
+    {
+        return new ControlledIncidenceJob(calendarManager(), *this, this);
+    }
+};
+
+class ControlledCalendarManager : public CalendarManager
+{
+public:
+    bool controlled = false;
+    ControlledChanges changes;
+
+protected:
+    CalendarIncidenceJob *createIncidenceJob() override
+    {
+        return controlled ? new ControlledIncidenceJob(this, changes, this) : CalendarManager::createIncidenceJob();
     }
 };
 
@@ -107,7 +168,7 @@ class CalendarEditorBackendTest : public QObject
     Q_OBJECT
 
 private:
-    std::unique_ptr<CalendarManager> m_manager;
+    std::unique_ptr<ControlledCalendarManager> m_manager;
     Akonadi::Collection m_source;
     Akonadi::Collection m_destination;
     Akonadi::Item m_item;
@@ -122,11 +183,30 @@ private:
         }
     }
 
+    void createFamily(Akonadi::Item::List &family)
+    {
+        for (int i = 0; i < 2; ++i) {
+            const KCalendarCore::Incidence::Ptr todo(new KCalendarCore::Todo);
+            todo->setSummary(i == 0 ? u"Move parent"_s : u"Move child"_s);
+            if (i == 1) {
+                todo->setRelatedTo(family.first().payload<KCalendarCore::Incidence::Ptr>()->uid());
+            }
+            Akonadi::Item proposed;
+            proposed.setMimeType(todo->mimeType());
+            proposed.setPayload<KCalendarCore::Incidence::Ptr>(todo);
+            Akonadi::ItemCreateJob create(proposed, m_source);
+            create.setAutoDelete(false);
+            QVERIFY(create.exec());
+            family.append(create.item());
+            QTRY_VERIFY(m_manager->incidenceItem(todo).isValid());
+        }
+    }
+
 private Q_SLOTS:
     void initTestCase()
     {
         AkonadiTest::checkTestIsIsolated();
-        m_manager = std::make_unique<CalendarManager>();
+        m_manager = std::make_unique<ControlledCalendarManager>();
         m_manager->incidenceChanger()->setShowDialogsOnError(false);
 
         auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive, this);
@@ -166,6 +246,279 @@ private Q_SLOTS:
         QVERIFY2(!create->error(), qPrintable(create->errorString()));
         m_item = create->item();
         QTRY_VERIFY(m_manager->incidenceItem(todo).isValid());
+    }
+
+    void cleanup()
+    {
+        m_manager->controlled = false;
+        m_manager->changes = {};
+    }
+
+    void quickEditWaitsForModificationAndMove()
+    {
+        m_manager->controlled = true;
+        auto &changes = m_manager->changes;
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.setSummary(u"Quick edit"_s);
+        wrapper.setCollectionId(m_destination.id());
+        auto job = m_manager->editIncidence(&wrapper);
+        QSignalSpy result(job, &KJob::result);
+        job->start(); // Starting an already started operation must not resubmit it.
+        QCOMPARE(changes.modifies, 0);
+        QTRY_COMPARE(changes.modifies, 1);
+        QCOMPARE(changes.moves, 0);
+        QCOMPARE(result.count(), 0);
+        changes.finishChange(Akonadi::IncidenceChanger::ResultCodeSuccess);
+        QCOMPARE(changes.moves, 1);
+        changes.finishChange(Akonadi::IncidenceChanger::ResultCodeSuccess);
+        QCOMPARE(changes.moves, 1);
+        QCOMPARE(result.count(), 0);
+        changes.moveJob->finish(false);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(job->error(), 0);
+        QCOMPARE(wrapper.collectionId(), m_destination.id());
+    }
+
+    void quickEditFailureDoesNotMove()
+    {
+        m_manager->controlled = true;
+        auto &changes = m_manager->changes;
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        wrapper.setSummary(u"Quick draft"_s);
+        wrapper.setCollectionId(m_destination.id());
+        const auto cached = m_manager->incidenceItem(wrapper.incidencePtr());
+        const auto cachedSummary = cached.payload<KCalendarCore::Incidence::Ptr>()->summary();
+        auto job = m_manager->editIncidence(&wrapper);
+        QSignalSpy result(job, &KJob::result);
+        QSignalSpy errors(m_manager.get(), &CalendarManager::errorOccurred);
+        QTRY_COMPARE(changes.modifies, 1);
+        // The submitted payload is independent of later edits to the wrapper.
+        wrapper.setSummary(u"Later draft"_s);
+        QCOMPARE(changes.savedItem.payload<KCalendarCore::Incidence::Ptr>()->summary(), u"Quick draft"_s);
+        changes.finishChange(Akonadi::IncidenceChanger::ResultCodeJobError);
+        QCOMPARE(changes.moves, 0);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(errors.count(), 1);
+        QCOMPARE(job->errorText(), u"Save failed"_s);
+        QCOMPARE(wrapper.summary(), u"Later draft"_s);
+        QCOMPARE(wrapper.incidenceItem().revision(), m_item.revision());
+        QCOMPARE(cached.payload<KCalendarCore::Incidence::Ptr>()->summary(), cachedSummary);
+    }
+
+    void dateChangeFinishesAfterPersistence_data()
+    {
+        QTest::addColumn<bool>("failed");
+        QTest::newRow("success") << false;
+        QTest::newRow("failure") << true;
+    }
+
+    void dateChangeFinishesAfterPersistence()
+    {
+        QFETCH(bool, failed);
+        m_manager->controlled = true;
+        auto &changes = m_manager->changes;
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        const QDateTime due(QDate(2026, 7, 15), QTime(10, 0), QTimeZone::UTC);
+        wrapper.incidencePtr().staticCast<KCalendarCore::Todo>()->setDtDue(due);
+        const auto cachedDue =
+            m_manager->incidenceItem(wrapper.incidencePtr()).payload<KCalendarCore::Incidence::Ptr>().staticCast<KCalendarCore::Todo>()->dtDue();
+        QSignalSpy terminal(m_manager.get(), &CalendarManager::updateIncidenceDatesFinished);
+        auto job = m_manager->updateIncidenceDates(&wrapper, 3600000, 3600000);
+        QSignalSpy result(job, &KJob::result);
+        QCOMPARE(terminal.count(), 0);
+        QTRY_COMPARE(changes.modifies, 1);
+        QCOMPARE(terminal.count(), 0);
+        QCOMPARE(wrapper.incidencePtr().staticCast<KCalendarCore::Todo>()->dtDue(), due);
+        QCOMPARE(changes.savedItem.payload<KCalendarCore::Incidence::Ptr>().staticCast<KCalendarCore::Todo>()->dtDue(), due.addSecs(3600));
+        QCOMPARE(m_manager->incidenceItem(wrapper.incidencePtr()).payload<KCalendarCore::Incidence::Ptr>().staticCast<KCalendarCore::Todo>()->dtDue(),
+                 cachedDue);
+        changes.finishChange(failed ? Akonadi::IncidenceChanger::ResultCodeJobError : Akonadi::IncidenceChanger::ResultCodeSuccess);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(terminal.count(), 1);
+        QCOMPARE(bool(job->error()), failed);
+        QCOMPARE(wrapper.incidencePtr().staticCast<KCalendarCore::Todo>()->dtDue(), failed ? due : due.addSecs(3600));
+    }
+
+    void recurrenceDateChangeCreatesException_data()
+    {
+        QTest::addColumn<int>("scope");
+        QTest::newRow("selected") << int(IncidenceWrapper::SelectedOccurrence);
+        QTest::newRow("future") << int(IncidenceWrapper::FutureOccurrences);
+    }
+
+    void recurrenceDateChangeCreatesException()
+    {
+        QFETCH(int, scope);
+        m_manager->controlled = true;
+        auto &changes = m_manager->changes;
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        const QDateTime start(QDate(2026, 7, 15), QTime(9, 0), QTimeZone::UTC);
+        const auto todo = wrapper.incidencePtr().staticCast<KCalendarCore::Todo>();
+        todo->setDtStart(start);
+        todo->setDtDue(start.addSecs(3600));
+        todo->recurrence()->setDaily(1);
+        const auto occurrence = start.addDays(2);
+        auto job = m_manager->updateIncidenceDates(&wrapper, 3600000, 3600000, scope, occurrence);
+        QSignalSpy result(job, &KJob::result);
+        QTRY_COMPARE(changes.creates, 1);
+        QCOMPARE(changes.modifies, 0);
+        const auto exception = changes.savedItem.payload<KCalendarCore::Incidence::Ptr>();
+        QCOMPARE(exception->recurrenceId(), occurrence);
+        QCOMPARE(exception->thisAndFuture(), scope == IncidenceWrapper::FutureOccurrences);
+        QVERIFY(!exception->recurs());
+        QCOMPARE(exception.staticCast<KCalendarCore::Todo>()->dtDue(), occurrence.addSecs(7200));
+        QCOMPARE(result.count(), 0);
+        changes.finishChange(Akonadi::IncidenceChanger::ResultCodeSuccess);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(wrapper.incidenceItem().id(), m_item.id());
+        QVERIFY(wrapper.incidencePtr()->recurs());
+        QCOMPARE(wrapper.incidencePtr()->dtStart(), start);
+    }
+
+    void rejectedDateChangeStillReleasesInteraction()
+    {
+        m_manager->controlled = true;
+        QSignalSpy terminal(m_manager.get(), &CalendarManager::updateIncidenceDatesFinished);
+        QSignalSpy errors(m_manager.get(), &CalendarManager::errorOccurred);
+        auto job = m_manager->updateIncidenceDates(nullptr, 0, 0);
+        job->setAutoDelete(false);
+        QSignalSpy result(job, &KJob::result);
+        QCOMPARE(terminal.count(), 0);
+        QTRY_COMPARE(terminal.count(), 1);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(errors.count(), 1);
+        QVERIFY(job->error());
+    }
+
+    void deletingParentDoesNotMutateCachedChildren()
+    {
+        const KCalendarCore::Incidence::Ptr child(new KCalendarCore::Todo);
+        child->setSummary(u"Child task"_s);
+        child->setRelatedTo(m_item.payload<KCalendarCore::Incidence::Ptr>()->uid());
+        Akonadi::Item proposed;
+        proposed.setMimeType(child->mimeType());
+        proposed.setPayload<KCalendarCore::Incidence::Ptr>(child);
+        Akonadi::ItemCreateJob create(proposed, m_source);
+        create.setAutoDelete(false);
+        QVERIFY(create.exec());
+        QTRY_VERIFY(m_manager->incidenceItem(child).isValid());
+        QTRY_COMPARE(m_manager->childIncidences(child->relatedTo()).size(), 1);
+        m_manager->controlled = true;
+        auto &changes = m_manager->changes;
+        auto job = m_manager->deleteIncidence(m_item.payload<KCalendarCore::Incidence::Ptr>());
+        QSignalSpy result(job, &KJob::result);
+        QTRY_COMPARE(changes.deletes, 1);
+        QCOMPARE(changes.modifies, 1);
+        QCOMPARE(changes.modifiedItems.first().payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        const auto cached = m_manager->incidenceItem(child).payload<KCalendarCore::Incidence::Ptr>();
+        QCOMPARE(cached->relatedTo(), child->relatedTo());
+        auto changer = m_manager->incidenceChanger();
+        Q_EMIT changer->modifyFinished(changes.modificationIds.first(), {}, Akonadi::IncidenceChanger::ResultCodeJobError, u"Child update failed"_s);
+        QCOMPARE(result.count(), 0);
+        Q_EMIT changer->deleteFinished(changes.deletionId, {}, Akonadi::IncidenceChanger::ResultCodeRolledback, u"Rolled back"_s);
+        QCOMPARE(result.count(), 1);
+        QCOMPARE(job->errorText(), u"Child update failed"_s);
+        QCOMPARE(cached->relatedTo(), child->relatedTo());
+        Akonadi::ItemDeleteJob remove(create.item());
+        remove.setAutoDelete(false);
+        QVERIFY(remove.exec());
+        QTRY_VERIFY(!m_manager->incidenceItem(child).isValid());
+    }
+
+    void jobDestructionDisconnectsPendingChanges()
+    {
+        ControlledChanges changes;
+        auto owner = std::make_unique<QObject>();
+        auto job = new ControlledIncidenceJob(m_manager.get(), changes, owner.get());
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(m_item);
+        QVERIFY(job->prepareSave(&wrapper, true));
+        job->start();
+        QTRY_COMPARE(changes.modifies, 1);
+        QPointer<CalendarIncidenceJob> guarded(job);
+        owner.reset();
+        QVERIFY(!guarded);
+        changes.finishChange(Akonadi::IncidenceChanger::ResultCodeSuccess);
+        QCOMPARE(wrapper.incidenceItem().revision(), m_item.revision());
+    }
+
+    void movesFamilyAndDeletesParentUsingRealJobs()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        QCOMPARE(family.size(), 2);
+        const auto parent = family.first().payload<KCalendarCore::Incidence::Ptr>();
+        const auto child = family.last().payload<KCalendarCore::Incidence::Ptr>();
+        QTRY_COMPARE(m_manager->childIncidences(parent->uid()).size(), 1);
+        std::unique_ptr<CalendarIncidenceJob> move(m_manager->changeIncidenceCollection(child, m_destination.id()));
+        move->setAutoDelete(false);
+        QSignalSpy moved(move.get(), &KJob::result);
+        QTRY_COMPARE(moved.count(), 1);
+        QVERIFY2(!move->error(), qPrintable(move->errorText()));
+        QTRY_COMPARE(m_manager->incidenceItem(parent).parentCollection().id(), m_destination.id());
+        QTRY_COMPARE(m_manager->incidenceItem(child).parentCollection().id(), m_destination.id());
+        // Older Akonadi Calendar drops the child index when reinserting the parent.
+        // Keep this combined regression test without requiring that dependency fix.
+        const bool lostChildLinks = m_manager->childIncidences(parent->uid()).isEmpty();
+        std::unique_ptr<CalendarIncidenceJob> remove(m_manager->deleteIncidence(parent));
+        remove->setAutoDelete(false);
+        QSignalSpy removed(remove.get(), &KJob::result);
+        QTRY_COMPARE(removed.count(), 1);
+        QVERIFY2(!remove->error(), qPrintable(remove->errorText()));
+        QTRY_VERIFY(!m_manager->incidenceItem(parent).isValid());
+        if (lostChildLinks) {
+            QEXPECT_FAIL("", "Akonadi Calendar loses child links when reinserting their parent", Continue);
+            QCOMPARE(m_manager->incidenceItem(child).payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        } else {
+            QTRY_COMPARE(m_manager->incidenceItem(child).payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        }
+        Akonadi::ItemFetchJob fetch(family.last());
+        fetch.setAutoDelete(false);
+        fetch.fetchScope().fetchFullPayload();
+        fetch.fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
+        QVERIFY(fetch.exec());
+        QCOMPARE(fetch.items().size(), 1);
+        QCOMPARE(fetch.items().first().parentCollection().id(), m_destination.id());
+        if (lostChildLinks) {
+            QEXPECT_FAIL("", "Akonadi Calendar loses child links when reinserting their parent", Continue);
+        }
+        QCOMPARE(fetch.items().first().payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        Akonadi::ItemDeleteJob cleanup(family.last());
+        cleanup.setAutoDelete(false);
+        QVERIFY(cleanup.exec());
+        QTRY_VERIFY(!m_manager->incidenceItem(child).isValid());
+    }
+
+    void deletesParentAndKeepsChildrenUsingRealJobs()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        QCOMPARE(family.size(), 2);
+        const auto parent = family.first().payload<KCalendarCore::Incidence::Ptr>();
+        const auto child = family.last().payload<KCalendarCore::Incidence::Ptr>();
+        QTRY_COMPARE(m_manager->childIncidences(parent->uid()).size(), 1);
+        std::unique_ptr<CalendarIncidenceJob> job(m_manager->deleteIncidence(parent));
+        job->setAutoDelete(false);
+        QSignalSpy result(job.get(), &KJob::result);
+        QTRY_COMPARE(result.count(), 1);
+        QVERIFY2(!job->error(), qPrintable(job->errorText()));
+        QTRY_VERIFY(!m_manager->incidenceItem(parent).isValid());
+        QTRY_COMPARE(m_manager->incidenceItem(child).payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        Akonadi::ItemFetchJob fetch(family.last());
+        fetch.setAutoDelete(false);
+        fetch.fetchScope().fetchFullPayload();
+        fetch.fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
+        QVERIFY(fetch.exec());
+        QCOMPARE(fetch.items().size(), 1);
+        QCOMPARE(fetch.items().first().payload<KCalendarCore::Incidence::Ptr>()->relatedTo(), QString());
+        Akonadi::ItemDeleteJob cleanup(family.last());
+        cleanup.setAutoDelete(false);
+        QVERIFY(cleanup.exec());
+        QTRY_VERIFY(!m_manager->incidenceItem(child).isValid());
     }
 
     void wrapperStoresEditorSnapshotIndependently()

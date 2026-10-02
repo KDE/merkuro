@@ -3,14 +3,13 @@
 
 #pragma once
 
-#include <Akonadi/IncidenceChanger>
 #include <QObject>
 #include <QPointer>
 #include <qqmlintegration.h>
 
 class CalendarManager;
 class IncidenceWrapper;
-class KJob;
+class CalendarIncidenceJob;
 
 class CalendarEditorBackend : public QObject
 {
@@ -38,23 +37,12 @@ Q_SIGNALS:
     void finished();
 
 protected:
-    // Operation boundaries allow tests to control completion and failure order.
-    virtual int createIncidence(const KCalendarCore::Incidence::Ptr &incidence, const Akonadi::Collection &collection);
-    virtual int modifyIncidence(const Akonadi::Item &item, const KCalendarCore::Incidence::Ptr &original);
-    virtual KJob *moveItems(const Akonadi::Item::List &items, const Akonadi::Collection &collection);
+    virtual CalendarIncidenceJob *createJob();
 
 private:
-    void changeFinished(int changeId, const Akonadi::Item &item, Akonadi::IncidenceChanger::ResultCode result, const QString &error);
-    void complete(const QString &error = {});
     void setErrorMessage(const QString &error);
-    Akonadi::Item::List relatedItems(const Akonadi::Item &item) const;
 
     QPointer<CalendarManager> m_manager;
-    QPointer<IncidenceWrapper> m_wrapper;
     bool m_saving = false;
-    bool m_editMode = false;
-    int m_changeId = -1;
     QString m_errorMessage;
-    Akonadi::Collection m_destination;
-    Akonadi::Item::List m_itemsToMove;
 };
