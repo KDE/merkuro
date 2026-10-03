@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
-"PO-Revision-Date: 2026-09-27 15:26+0200\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"PO-Revision-Date: 2026-10-02 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -165,112 +165,123 @@ msgstr "Visa bara idag"
 msgid "Refresh All"
 msgstr "Uppdatera alla"
 
-#: calendar/calendareditorbackend.cpp:48
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
-msgid "The calendar is no longer available."
-msgstr "Kontakten är inte längre tillgänglig."
-
-#: calendar/calendareditorbackend.cpp:104
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
-msgid "The incidence is not available."
-msgstr "Kontakten är inte längre tillgänglig."
-
-#: calendar/calendareditorbackend.cpp:108
+#: calendar/calendareditorbackend.cpp:62
 #, kde-format
 msgid "Please enter a title."
+msgstr "Ange en titel."
+
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
 msgstr ""
+"Förekomsten är inte längre tillgänglig. Dina osparade ändringar har "
+"behållits."
 
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
+#, kde-format
+msgid "The calendar is no longer available."
+msgstr "Kalendern är inte längre tillgänglig."
+
+#: calendar/calendarincidencejob.cpp:89
 #, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#| msgid "The selected calendar is read-only."
+msgid "The selected calendar is read-only or unavailable."
+msgstr "Den markerade kalendern är skrivskyddad."
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+"Förekomsten och dess tillhörande uppgifter kan inte flyttas till den "
+"markerade kalendern."
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
+#, kde-format
+msgid "The incidence is not available."
+msgstr "Förekomsten är inte längre tillgänglig."
+
+#: calendar/calendarincidencejob.cpp:107
+#, kde-format
 msgid "No calendar selected."
-msgstr "Ingen brevlåda vald"
+msgstr "Ingen kalender markerad."
 
-#: calendar/calendareditorbackend.cpp:117
-#, fuzzy, kde-format
-#| msgid "The selected address book cannot store this contact."
+#: calendar/calendarincidencejob.cpp:110
+#, kde-format
 msgid "The selected calendar cannot store this incidence."
-msgstr "Den markerade adressboken kan inte lagra den här kontakten."
+msgstr "Den markerade kalendern kan inte lagra förekomsten."
 
-#: calendar/calendareditorbackend.cpp:130
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
+#, kde-format
 msgid "The incidence is no longer available."
-msgstr "Kontakten är inte längre tillgänglig."
+msgstr "Förekomsten är inte längre tillgänglig."
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "Förekomsten har tagits bort. Dina osparade ändringar har behållits."
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
+"Förekomsten har ändrats utanför editorn. Uppdatera den innan du sparar. Dina "
+"osparade ändringar har behållits."
 
-#: calendar/calendareditorbackend.cpp:142
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#: calendar/calendarincidencejob.cpp:128
+#, kde-format
 msgid "The incidence is read-only."
-msgstr "Kontakten är skrivskyddad."
+msgstr "Förekomsten är skrivskyddad."
 
-#: calendar/calendareditorbackend.cpp:151
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:158
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
 msgid "The selected calendar is read-only."
-msgstr "Kontakten är skrivskyddad."
+msgstr "Den markerade kalendern är skrivskyddad."
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
 #, fuzzy, kde-format
-#| msgid "The contact could not be found."
-msgid "The incidence could not be saved."
-msgstr "Kontakten kunde inte hittas."
+#| msgid "No calendar selected."
+msgid "No occurrence selected."
+msgstr "Ingen kalender markerad."
 
-#: calendar/calendareditorbackend.cpp:186
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
+msgid "Unable to create the occurrence exception."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:256
 #, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "Ändra förekomstdatum"
+
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be changed."
+msgstr "Förekomsten kunde inte sparas."
+
+#: calendar/calendarincidencejob.cpp:357
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be moved."
+msgstr "Förekomsten kunde inte sparas."
+
+#: calendar/calendarincidencejob.cpp:362
+#, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
-msgstr "Kontaktens adressbok kunde inte hittas."
+msgstr "Förekomsten sparades, men kunde inte flyttas: %1"
 
-#: calendar/calendarmanager.cpp:535
-#, kde-format
-msgid "Move occurrence(s)"
-msgstr "Flytta förekomst(er)"
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr ""
-"Kan inte lägga till undantagsposten i kalendern. Ingen ändring kommer att "
-"göras."
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "Ta bort aktivitet och dess delaktivitet"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "Ta bort aktivitet och gör delaktiviteter oberoende"
+#: calendar/calendarincidencejob.cpp:363
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be moved: %1"
+msgstr "Förekomsten kunde inte sparas."
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -284,33 +295,33 @@ msgstr "Ett fel uppstod: %1"
 msgid "Task"
 msgstr "Uppgift"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Underhåll"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -914,17 +925,18 @@ msgid "Delete All"
 msgstr "Ta bort alla"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Delete Incidence"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
-msgstr "Ta bort förekomst"
+msgstr "Uppdatera förekomst"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
 #, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
 msgstr ""
+"Uppdatering gör att osparade ändringar går förlorade och att den senaste "
+"versionen läses in."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
@@ -942,6 +954,7 @@ msgstr "Lägg till %1"
 #, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
+"Den här förekomsten har tagits bort. Dina osparade ändringar har behållits."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
 #, kde-format
@@ -949,12 +962,14 @@ msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
 "kept. Reload the latest version before saving."
 msgstr ""
+"Den här förekomsten har ändrats utanför editorn. Dina osparade ändringar har "
+"behållits. Uppdatera till den senaste versionen innan du sparar."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Uppdatera"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -2307,7 +2322,7 @@ msgstr "Stift (visar exakt plats)"
 #: calendar/recurrencedata.cpp:31
 #, kde-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1 %2"
 
 #: calendar/recurrencedata.cpp:68
 #, kde-format
@@ -2780,7 +2795,7 @@ msgstr "Den markerade adressboken kan inte lagra kontakter."
 #: contacts/contacteditorbackend.cpp:238
 #, kde-format
 msgid "No address book selected."
-msgstr "Ingen adressbok vald."
+msgstr "Ingen adressbok markerad."
 
 #: contacts/contactgroupeditor.cpp:75
 #, kde-format
@@ -2976,8 +2991,8 @@ msgstr "Ny kontaktgrupp"
 msgctxt "Number of selected contacts"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "%1 vald"
-msgstr[1] "%1 valda"
+msgstr[0] "%1 markerad"
+msgstr[1] "%1 markerade"
 
 #: contacts/qml/ContactView.qml:133
 #, kde-format
@@ -4241,7 +4256,7 @@ msgstr ""
 "Resursen %1 är felaktig.\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr "Öppna ett Akonadi-brev enligt id."
@@ -4376,8 +4391,8 @@ msgstr "Ändra visning av trådade brev"
 msgctxt "Number of selected emails"
 msgid "%1 selected"
 msgid_plural "%1 selected"
-msgstr[0] "%1 vald"
-msgstr[1] "%1 valda"
+msgstr[0] "%1 markerat"
+msgstr[1] "%1 markerade"
 
 #: mail/qml/FolderView.qml:180
 #, kde-format
@@ -4603,6 +4618,21 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Välj kontotypen"
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "Flytta förekomst(er)"
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr ""
+#~ "Kan inte lägga till undantagsposten i kalendern. Ingen ändring kommer att "
+#~ "göras."
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "Ta bort aktivitet och dess delaktivitet"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "Ta bort aktivitet och gör delaktiviteter oberoende"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"

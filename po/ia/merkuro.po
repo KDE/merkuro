@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
 "PO-Revision-Date: 2026-09-28 11:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -166,112 +166,125 @@ msgstr "Monstra solmente hodie"
 msgid "Refresh All"
 msgstr "Refresca toto"
 
-#: calendar/calendareditorbackend.cpp:48
+#: calendar/calendareditorbackend.cpp:62
+#, kde-format
+msgid "Please enter a title."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The calendar is no longer available."
 msgstr "Le contacto non es plus disponibile. "
 
-#: calendar/calendareditorbackend.cpp:104
+#: calendar/calendarincidencejob.cpp:89
+#, fuzzy, kde-format
+#| msgid "The contact is read-only."
+msgid "The selected calendar is read-only or unavailable."
+msgstr "Le contacto es de sol lectura."
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The incidence is not available."
 msgstr "Le contacto non es plus disponibile. "
 
-#: calendar/calendareditorbackend.cpp:108
-#, kde-format
-msgid "Please enter a title."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendarincidencejob.cpp:107
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No calendar selected."
 msgstr "Nulle cassa postal seligite"
 
-#: calendar/calendareditorbackend.cpp:117
+#: calendar/calendarincidencejob.cpp:110
 #, fuzzy, kde-format
 #| msgid "The selected address book cannot store this contact."
 msgid "The selected calendar cannot store this incidence."
 msgstr "Le adressario seligite non pote immagazinar iste contacto."
 
-#: calendar/calendareditorbackend.cpp:130
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The incidence is no longer available."
 msgstr "Le contacto non es plus disponibile. "
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:142
+#: calendar/calendarincidencejob.cpp:128
 #, fuzzy, kde-format
 #| msgid "The contact is read-only."
 msgid "The incidence is read-only."
 msgstr "Le contacto es de sol lectura."
 
-#: calendar/calendareditorbackend.cpp:151
-#, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:158
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, fuzzy, kde-format
 #| msgid "The contact is read-only."
 msgid "The selected calendar is read-only."
 msgstr "Le contacto es de sol lectura."
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
 #, fuzzy, kde-format
-#| msgid "The contact could not be found."
-msgid "The incidence could not be saved."
-msgstr "Le contacto non poteva esser trovate."
+#| msgid "No mailbox selected"
+msgid "No occurrence selected."
+msgstr "Nulle cassa postal seligite"
 
-#: calendar/calendareditorbackend.cpp:186
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
+msgid "Unable to create the occurrence exception."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:256
+#, fuzzy, kde-format
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "Modifica data de incidentia"
+
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
+#, fuzzy, kde-format
+#| msgid "The contact could not be found."
+msgid "The incidence could not be changed."
+msgstr "Le contacto non poteva esser trovate."
+
+#: calendar/calendarincidencejob.cpp:357
+#, fuzzy, kde-format
+#| msgid "The contact could not be found."
+msgid "The incidence could not be moved."
+msgstr "Le contacto non poteva esser trovate."
+
+#: calendar/calendarincidencejob.cpp:362
 #, fuzzy, kde-format
 #| msgid "The contact address book could not be found."
 msgid "The incidence was saved, but could not be moved: %1"
 msgstr "Le adressario de contacto non poteva esser trovate."
 
-#: calendar/calendarmanager.cpp:535
-#, kde-format
-msgid "Move occurrence(s)"
-msgstr "Move recurrentia(s)"
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr ""
-"Incapace de adder le elemento de exception al calendario. Nulle modification "
-"essera facite."
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "Dele carga e su sub-cargas"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "Dele carga e face sub-cargas independente"
+#: calendar/calendarincidencejob.cpp:363
+#, fuzzy, kde-format
+#| msgid "The contact could not be found."
+msgid "The incidence could not be moved: %1"
+msgstr "Le contacto non poteva esser trovate."
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -285,33 +298,33 @@ msgstr "Un error occurreva: %1"
 msgid "Task"
 msgstr "Carga"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Mantenitor"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -4246,7 +4259,7 @@ msgstr ""
 "Ressource %1 es rupte.\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr "Aperi un message de Akonadi per ID."
@@ -4608,6 +4621,21 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Selige le typo de conto"
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "Move recurrentia(s)"
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr ""
+#~ "Incapace de adder le elemento de exception al calendario. Nulle "
+#~ "modification essera facite."
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "Dele carga e su sub-cargas"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "Dele carga e face sub-cargas independente"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"

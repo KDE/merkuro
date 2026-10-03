@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -164,109 +164,125 @@ msgstr "Zobraziť iba dnes"
 msgid "Refresh All"
 msgstr "Obnoviť všetko"
 
-#: calendar/calendareditorbackend.cpp:48
+#: calendar/calendareditorbackend.cpp:62
+#, kde-format
+msgid "Please enter a title."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The calendar is no longer available."
 msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
-#: calendar/calendareditorbackend.cpp:104
+#: calendar/calendarincidencejob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete calendar source"
+msgid "The selected calendar is read-only or unavailable."
+msgstr "Vymazať zdroj kalendára"
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The incidence is not available."
 msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
-#: calendar/calendareditorbackend.cpp:108
-#, kde-format
-msgid "Please enter a title."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendarincidencejob.cpp:107
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No calendar selected."
 msgstr "Nie je vybratá žiadna e-mailová schránka"
 
-#: calendar/calendareditorbackend.cpp:117
+#: calendar/calendarincidencejob.cpp:110
 #, fuzzy, kde-format
 #| msgid "This mail contains an invitation"
 msgid "The selected calendar cannot store this incidence."
 msgstr "Tento e-mail obsahuje pozvánku"
 
-#: calendar/calendareditorbackend.cpp:130
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The incidence is no longer available."
 msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:142
+#: calendar/calendarincidencejob.cpp:128
 #, kde-format
 msgid "The incidence is read-only."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:151
-#, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:158
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Delete calendar source"
 msgid "The selected calendar is read-only."
 msgstr "Vymazať zdroj kalendára"
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgid "No occurrence selected."
+msgstr "Nie je vybratá žiadna e-mailová schránka"
+
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid "The incidence could not be saved."
+msgid "Unable to create the occurrence exception."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:186
-#, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
+#: calendar/calendarincidencejob.cpp:256
+#, fuzzy, kde-format
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "Zmeniť dátum výskytu"
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be changed."
+msgstr "Podrobnosti o kľúči nie sú k dispozícii."
+
+#: calendar/calendarincidencejob.cpp:357
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be moved."
+msgstr "Podrobnosti o kľúči nie sú k dispozícii."
+
+#: calendar/calendarincidencejob.cpp:362
 #, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
 msgstr ""
 
-#: calendar/calendarmanager.cpp:535
-#, kde-format
-msgid "Move occurrence(s)"
-msgstr "Presunúť výskyt(y)"
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr ""
-"Nie je možné pridať položku výnimky do kalendára. Nevykoná sa žiadna zmena."
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "Vymazať úlohu a jej vedľajšie úlohy"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "Vymazať úlohu a osamostatniť vedľajšie úlohy"
+#: calendar/calendarincidencejob.cpp:363
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be moved: %1"
+msgstr "Podrobnosti o kľúči nie sú k dispozícii."
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -280,33 +296,33 @@ msgstr "Vyskytla sa chyba: %1"
 msgid "Task"
 msgstr "Úloha"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Správca"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -4331,7 +4347,7 @@ msgstr ""
 "Zdroj %1 je poškodený.\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
@@ -4693,6 +4709,21 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Vyberte typ účtu"
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "Presunúť výskyt(y)"
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr ""
+#~ "Nie je možné pridať položku výnimky do kalendára. Nevykoná sa žiadna "
+#~ "zmena."
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "Vymazať úlohu a jej vedľajšie úlohy"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "Vymazať úlohu a osamostatniť vedľajšie úlohy"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"

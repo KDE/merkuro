@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
-"PO-Revision-Date: 2026-02-25 16:29+0200\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"PO-Revision-Date: 2026-08-25 10:43+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -165,108 +165,125 @@ msgstr "Näytä vain tänäinen"
 msgid "Refresh All"
 msgstr "Virkistä kaikki"
 
-#: calendar/calendareditorbackend.cpp:48
+#: calendar/calendareditorbackend.cpp:62
+#, kde-format
+msgid "Please enter a title."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The calendar is no longer available."
 msgstr "Avaimen tietoja ei ole saatavilla."
 
-#: calendar/calendareditorbackend.cpp:104
+#: calendar/calendarincidencejob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete calendar source"
+msgid "The selected calendar is read-only or unavailable."
+msgstr "Poista kalenterilähde"
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The incidence is not available."
 msgstr "Avaimen tietoja ei ole saatavilla."
 
-#: calendar/calendareditorbackend.cpp:108
-#, kde-format
-msgid "Please enter a title."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendarincidencejob.cpp:107
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No calendar selected."
 msgstr "Postilaatikkoa ei ole valittu"
 
-#: calendar/calendareditorbackend.cpp:117
+#: calendar/calendarincidencejob.cpp:110
 #, fuzzy, kde-format
 #| msgid "This mail contains an invitation"
 msgid "The selected calendar cannot store this incidence."
 msgstr "Tämä viesti sisältää kutsun"
 
-#: calendar/calendareditorbackend.cpp:130
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, fuzzy, kde-format
 #| msgid "The key details are not available."
 msgid "The incidence is no longer available."
 msgstr "Avaimen tietoja ei ole saatavilla."
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:142
+#: calendar/calendarincidencejob.cpp:128
 #, kde-format
 msgid "The incidence is read-only."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:151
-#, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:158
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Delete calendar source"
 msgid "The selected calendar is read-only."
 msgstr "Poista kalenterilähde"
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgid "No occurrence selected."
+msgstr "Postilaatikkoa ei ole valittu"
+
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid "The incidence could not be saved."
+msgid "Unable to create the occurrence exception."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:186
-#, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
+#: calendar/calendarincidencejob.cpp:256
+#, fuzzy, kde-format
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "Muuta esiintymäpäivää"
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be changed."
+msgstr "Avaimen tietoja ei ole saatavilla."
+
+#: calendar/calendarincidencejob.cpp:357
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be moved."
+msgstr "Avaimen tietoja ei ole saatavilla."
+
+#: calendar/calendarincidencejob.cpp:362
 #, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
 msgstr ""
 
-#: calendar/calendarmanager.cpp:535
-#, kde-format
-msgid "Move occurrence(s)"
-msgstr "Siirrä esiintymiä"
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr "Poikkeusmerkintää ei voi lisätä kalenteriin. Muutoksia ei tehdä."
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "Poista tehtävä alitehtävineen"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "Poista tehtävä ja muuta sen alitehtävät itsenäisiksi"
+#: calendar/calendarincidencejob.cpp:363
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgid "The incidence could not be moved: %1"
+msgstr "Avaimen tietoja ei ole saatavilla."
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -280,33 +297,33 @@ msgstr "Sattui virhe: %1"
 msgid "Task"
 msgstr "Tehtävä"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -777,18 +794,16 @@ msgid "Ends at %1"
 msgstr "Päättyy %1"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:153
-#, fuzzy, kde-format
-#| msgid "Runs All Day"
+#, kde-format
 msgctxt "Label for incidence in between multiday start/finish"
 msgid "Runs All Day"
-msgstr "Koko päivä"
+msgstr "Kestää koko päivän"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "<b>Location:</b>"
+#, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Sijainti:</b>"
+msgstr "<b>Sijainti</b>: %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -979,8 +994,7 @@ msgid "Add"
 msgstr "Lisää"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Summary"
+#, kde-format
 msgid "Summary"
 msgstr "Yhteenveto"
 
@@ -1000,44 +1014,37 @@ msgid "Add a title for your journal entry"
 msgstr "Lisää päiväkirjamerkintääsi otsikko"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Sijainti:"
+msgstr "Sijainti"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:314
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "Kalenteri"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:346
-#, fuzzy, kde-format
-#| msgid "Task"
+#, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "Tehtävä"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
-#, fuzzy, kde-format
-#| msgid "Completion:"
+#, kde-format
 msgid "Completion"
-msgstr "Valmius:"
+msgstr "Valmistuminen"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:372
-#, fuzzy, kde-format
-#| msgctxt "%1 is month name, %2 is year"
-#| msgid "%1 %2"
+#, kde-format
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1 %"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
-#, fuzzy, kde-format
-#| msgid "Priority"
+#, kde-format
 msgid "Priority"
-msgstr "Etusijaisuus"
+msgstr "Etusija"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
@@ -1100,11 +1107,10 @@ msgid "9 (Lowest Priority)"
 msgstr "9 (pienin etusija)"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
-#, fuzzy, kde-format
-#| msgid "Start:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Start"
-msgstr "Alkaa:"
+msgstr "Alkaa"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:422
 #, kde-format
@@ -1112,25 +1118,22 @@ msgid "All day"
 msgstr "Koko päivä"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
-#, fuzzy, kde-format
-#| msgid "Due:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Due"
-msgstr "Määräaika:"
+msgstr "Määräaika"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
-#, fuzzy, kde-format
-#| msgid "End:"
+#, kde-format
 msgctxt "@title:group"
 msgid "End"
-msgstr "Päättyy:"
+msgstr "Päättyy"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:568
-#, fuzzy, kde-format
-#| msgid "Timezone:"
+#, kde-format
 msgctxt "@title"
 msgid "Timezone"
-msgstr "Aikavyöhyke:"
+msgstr "Aikavyöhyke"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:574
 #, kde-format
@@ -1138,18 +1141,16 @@ msgid "Timezone:"
 msgstr "Aikavyöhyke:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:587
-#, fuzzy, kde-format
-#| msgid "Repeat:"
+#, kde-format
 msgctxt "@title"
 msgid "Repeat"
-msgstr "Toisto:"
+msgstr "Toisto"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:595
-#, fuzzy, kde-format
-#| msgid "Attendees:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
-msgstr "Osallistujat:"
+msgstr "Osallistujat"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:601
 #, kde-format
@@ -1170,7 +1171,7 @@ msgstr "Täytä käsin"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
-msgstr ""
+msgstr "Osallistujia ei ole"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
@@ -1205,11 +1206,10 @@ msgid "Request RSVP"
 msgstr "Pyydä vastausta"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
-#, fuzzy, kde-format
-#| msgid "Reminders:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
-msgstr "Muistutukset:"
+msgstr "Muistutukset"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:773
 #, kde-format
@@ -1217,16 +1217,13 @@ msgid "Add Reminder"
 msgstr "Lisää muistutus"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:783
-#, fuzzy, kde-format
-#| msgid "This event has reminder"
-#| msgid_plural "This event has reminders"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr "Tällä tapahtumalla on muistutus"
+msgstr "Muistutuksia ei ole"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:803
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Luokitukset"
@@ -1247,11 +1244,10 @@ msgid "Click to set tags…"
 msgstr "Aseta luokituksia napsauttamalla…"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
-#, fuzzy, kde-format
-#| msgid "Attachments:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
-msgstr "Liitteet:"
+msgstr "Liitteet"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:869
 #, kde-format
@@ -1264,17 +1260,16 @@ msgid "Add an attachment"
 msgstr "Lisää liite"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:887
-#, fuzzy, kde-format
-#| msgid "Add an attachment"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
-msgstr "Lisää liite"
+msgstr "Liitteitä ei ole"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:922
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
-msgstr ""
+msgstr "Huomautus"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:29
 #, kde-format
@@ -1483,20 +1478,17 @@ msgid "After"
 msgstr "Jälkeen"
 
 #: calendar/qml/incidenceeditor/RecurrenceEditor.qml:323
-#, fuzzy, kde-format
-#| msgid "Ends at %1"
+#, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
-msgstr "Päättyy %1"
+msgstr "Päättyy:"
 
 #: calendar/qml/incidenceeditor/RecurrenceEditor.qml:325
-#, fuzzy, kde-format
-#| msgid "occurrence"
-#| msgid_plural "occurrences"
+#, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
-msgstr[0] "kerta"
-msgstr[1] "kertaa"
+msgstr[0] "%1 esiintymä"
+msgstr[1] "%1 esiintymää"
 
 #: calendar/qml/incidenceeditor/RecurrenceEditor.qml:334
 #, kde-format
@@ -1504,8 +1496,7 @@ msgid "Exceptions:"
 msgstr "Poikkeukset:"
 
 #: calendar/qml/incidenceeditor/RecurrenceEditor.qml:337
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Lisää"
@@ -1629,7 +1620,7 @@ msgctxt ""
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
 "above this in the UI, and should be omitted."
 msgid "ddd d"
-msgstr ""
+msgstr "ddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:170
 #, kde-format
@@ -1637,7 +1628,7 @@ msgctxt ""
 "%1 & %2 are two localised short dates indicating the start & end of a week "
 "(e.g. Mon 2–Sun 9). %1 is the start, %2 the end."
 msgid "%1–%2"
-msgstr ""
+msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:180
 #, kde-format
@@ -1646,7 +1637,7 @@ msgctxt ""
 "qt-6/qml-qtqml-qt.html#formatDate-method). The month & year are specified "
 "above this in the UI, and should be omitted. Will be read by a screen reader."
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:183
 #, kde-format
@@ -1655,7 +1646,7 @@ msgctxt ""
 "From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is "
 "intended to be read by a screen reader."
 msgid "From %1 to %2"
-msgstr ""
+msgstr "%1–%2"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:267
 #, kde-format
@@ -1664,26 +1655,24 @@ msgctxt ""
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Will be read by a screen "
 "reader."
 msgid "dddd d"
-msgstr ""
+msgstr "dddd d"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:287
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method)."
 msgid "ddd <b>dd</b>"
-msgstr "<b>Tänään</b>"
+msgstr "ddd <b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:306
-#, fuzzy, kde-format
-#| msgid "<b>Today</b>"
+#, kde-format
 msgctxt ""
 "Short date format, adapt formatting to locale conventions (see https://doc."
 "qt.io/qt-6/qml-qtqml-qt.html#formatDate-method). Name of month and year is "
 "shown in the section title."
 msgid "ddd<br><b>dd</b>"
-msgstr "<b>Tänään</b>"
+msgstr "ddd<br><b>dd</b>"
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:330
 #, kde-format
@@ -1692,16 +1681,14 @@ msgid "Clear day."
 msgstr "Tyhjennä päivä."
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:350
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Tap to add something."
-msgstr "Ei mitään tiedossa tänään. Lisää jotakin %1."
+msgstr "Ei mitään tiedossa tänään. Napauta lisätäksesi jotakin."
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:351
-#, fuzzy, kde-format
-#| msgid "Nothing on the books today. %1 to add something."
+#, kde-format
 msgid "Nothing on the books today. Click to add something."
-msgstr "Ei mitään tiedossa tänään. Lisää jotakin %1."
+msgstr "Ei mitään tiedossa tänään. Napsauta lisätäksesi jotakin."
 
 #: calendar/qml/MainViews/DayGridViewBackground.qml:239
 #, kde-format
@@ -3713,10 +3700,9 @@ msgid "Add email"
 msgstr "Lisää sähköposti"
 
 #: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:69
-#, fuzzy, kde-format
-#| msgid "protocol:person@example.com"
+#, kde-format
 msgid "@person:example.com"
-msgstr "yhteyskäytäntö:käyttäjä@esimerkki.fi"
+msgstr "@henkilö:esimerkki.fi"
 
 #: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:19
 #, kde-format
@@ -3985,10 +3971,9 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:271
-#, fuzzy, kde-format
-#| msgid "Location copied to clipboard"
+#, kde-format
 msgid "Phone number copied to clipboard"
-msgstr "Sijainti kopioitu leikepöydälle"
+msgstr "Puhelinnumero kopioitiin leikepöydälle"
 
 #: contacts/qml/private/ContactPage.qml:278
 #, kde-format
@@ -4029,10 +4014,9 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:345
-#, fuzzy, kde-format
-#| msgid "Location copied to clipboard"
+#, kde-format
 msgid "Instant Messaging ID copied to clipboard"
-msgstr "Sijainti kopioitu leikepöydälle"
+msgstr "Pikaviestintätunniste kopioitiin leikepöydälle"
 
 #: contacts/qml/private/ContactPage.qml:371
 #, kde-format
@@ -4259,12 +4243,10 @@ msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
 #: mail/mailapplication.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:dialog"
-#| msgid "Delete Email"
+#, kde-format
 msgctxt "@action"
 msgid "Delete permanently"
-msgstr "Poista viesti"
+msgstr "Poista pysyvästi"
 
 #: mail/mailapplication.cpp:61
 #, kde-format
@@ -4273,40 +4255,34 @@ msgid "Save as…"
 msgstr "Tallenna nimellä…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "Vastausosoite:"
+msgstr "Vastaa"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
-#, fuzzy, kde-format
-#| msgid "Delete All"
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "Poista kaikki"
+msgstr "Vastaa kaikille"
 
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
-msgstr "Eteenpäin"
+msgstr "Edennä"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Lähetä"
+msgstr "Lähetä nyt"
 
 #: mail/mailapplication.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@action"
 msgid "Reschedule"
-msgstr "Aikataulu"
+msgstr "Ajasta uudelleen"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:148
 #, kde-format
@@ -4314,10 +4290,9 @@ msgid "There are no recipients to e-mail"
 msgstr "Viestissä ei ole vastaanottajia"
 
 #: mail/mailclient.cpp:67
-#, fuzzy, kde-format
-#| msgid "No results found"
+#, kde-format
 msgid "No transport found"
-msgstr "Tuloksia ei löytynyt"
+msgstr "Välitystä ei löytynyt"
 
 #: mail/mailclient.cpp:114
 #, kde-format
@@ -4325,16 +4300,15 @@ msgid "Error creating transport"
 msgstr "Virhe luotaessa postinvälitystä"
 
 #: mail/mailclient.cpp:163
-#, fuzzy, kde-format
-#| msgid "The signature is invalid."
+#, kde-format
 msgid "Send date is not valid."
-msgstr "Allekirjoitus on virheellinen."
+msgstr "Lähetyspäiväys ei ole kelvollinen."
 
 #: mail/mailclient.cpp:207
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
-msgstr ""
+msgstr " — "
 
 #: mail/mailclient.cpp:257
 #, kde-format
@@ -4355,7 +4329,7 @@ msgstr ""
 "Resurssi %1 on rikki.\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
@@ -4419,17 +4393,16 @@ msgid "Edit Folder"
 msgstr "Muokkaa kansiota"
 
 #: mail/qml/actions/MailItemMenu.qml:59
-#, fuzzy, kde-format
-#| msgid "Create Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder"
-msgstr "Luo kansio"
+msgstr "Päivitä kansio"
 
 #: mail/qml/actions/MailItemMenu.qml:65
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Update Folder and Subfolders"
-msgstr ""
+msgstr "Päivitä kansio alikansioineen"
 
 #: mail/qml/actions/MailItemMenu.qml:74
 #, kde-format
@@ -4507,18 +4480,16 @@ msgid "Email messages (*.mbox)"
 msgstr "Sähköpostiviestit (*.mbox)"
 
 #: mail/qml/FolderView.qml:248
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Message"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
-msgstr "Uusi viesti"
+msgstr "Ajasta viesti uudelleen"
 
 #: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
-msgstr ""
+msgstr "Lähetyspäivä ja -aika"
 
 #: mail/qml/FolderView.qml:265
 #, kde-format
@@ -4594,24 +4565,22 @@ msgid "Attach Document"
 msgstr "Liitä tiedosto"
 
 #: mail/qml/MailComposer.qml:199
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Lähetä"
+msgstr "Lähetä myöhemmin"
 
 #: mail/qml/MailComposer.qml:223
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
-msgstr "Aikataulunäkymä"
+msgstr "Ajasta lähetys"
 
 #: mail/qml/MailComposer.qml:236
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
-msgstr ""
+msgstr "Mukautettu tila"
 
 #: mail/qml/mailpartview/ICalPart.qml:28
 #, kde-format
@@ -4626,12 +4595,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: mail/qml/private/MailDelegate.qml:230
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Schedule"
+#, kde-format
 msgctxt "@info:tooltip %1 is a date and time"
 msgid "Scheduled at %1"
-msgstr "Aikataulu"
+msgstr "Ajastettu %1"
 
 #: mail/qml/private/MailDelegate.qml:231
 #, kde-format
@@ -4640,11 +4607,13 @@ msgid ""
 "Require manual action. Use Send Now action to send immediately or use "
 "Reschedule action to set a date and time."
 msgstr ""
+"Vaatii käyttäjän toimia. ”Lähetä nyt” lähettää välittömästi ja ”Ajasta "
+"uudelleen” asettaa päivän ja kellonajan."
 
 #: mail/qml/private/MailDelegate.qml:244
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Mukautettu"
 
 #: mail/settings/AccountSettingsPage.qml:18
 #, kde-format
@@ -4667,16 +4636,12 @@ msgid "Mail Account Configuration"
 msgstr "Sähköpostitilin asetus"
 
 #: mail/settings/AccountSettingsPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@title:group Title for the list of receiving accounts which are imap or "
-#| "pop3 email accounts"
-#| msgid "Receiving Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
-msgstr "Saapuvat tilit"
+msgstr "Lähetystilit"
 
 #: mail/settings/Settings.qml:15
 #, kde-format
@@ -4685,23 +4650,20 @@ msgid "Accounts"
 msgstr "Tilit"
 
 #: mail/settings/TransportConfigurationForm.qml:32
-#, fuzzy, kde-format
-#| msgid "Remove %1 tag"
+#, kde-format
 msgctxt "@title:dialog"
 msgid "Rename %1"
-msgstr "Poista %1 luokitus"
+msgstr "Muuta nimeä: %1"
 
 #: mail/settings/TransportConfigurationForm.qml:41
 #: mail/settings/TransportConfigurationForm.qml:139
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
-msgstr "Tilit"
+msgstr "Tilin nimi"
 
 #: mail/settings/TransportConfigurationForm.qml:84
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "Asetukset"
@@ -4713,8 +4675,7 @@ msgid "Delete"
 msgstr "Poista"
 
 #: mail/settings/TransportConfigurationForm.qml:102
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Lisää tili"
@@ -4723,7 +4684,7 @@ msgstr "Lisää tili"
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
-msgstr ""
+msgstr "Aseta oletukseksi"
 
 #: mail/settings/TransportConfigurationForm.qml:149
 #, kde-format
@@ -4731,7 +4692,20 @@ msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
 "etc.)"
 msgid "Select the account type"
-msgstr ""
+msgstr "Valitse tilityyppi"
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "Siirrä esiintymiä"
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr "Poikkeusmerkintää ei voi lisätä kalenteriin. Muutoksia ei tehdä."
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "Poista tehtävä alitehtävineen"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "Poista tehtävä ja muuta sen alitehtävät itsenäisiksi"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"

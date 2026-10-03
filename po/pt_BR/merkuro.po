@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
 "PO-Revision-Date: 2026-10-01 07:26-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -168,42 +168,66 @@ msgstr "Mostrar somente hoje"
 msgid "Refresh All"
 msgstr "Atualizar tudo"
 
-#: calendar/calendareditorbackend.cpp:48
-#, kde-format
-msgid "The calendar is no longer available."
-msgstr "O calendário não está mais disponível."
-
-#: calendar/calendareditorbackend.cpp:104
-#, kde-format
-msgid "The incidence is not available."
-msgstr "A ocorrência não está mais disponível."
-
-#: calendar/calendareditorbackend.cpp:108
+#: calendar/calendareditorbackend.cpp:62
 #, kde-format
 msgid "Please enter a title."
 msgstr "Digite um título."
 
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+"A ocorrência não está mais disponível. Suas alterações não salvas foram "
+"preservadas."
+
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
+#, kde-format
+msgid "The calendar is no longer available."
+msgstr "O calendário não está mais disponível."
+
+#: calendar/calendarincidencejob.cpp:89
+#, fuzzy, kde-format
+#| msgid "The selected calendar is read-only."
+msgid "The selected calendar is read-only or unavailable."
+msgstr "O calendário selecionado é somente leitura."
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+"A ocorrência e as tarefas relacionadas a ela não podem ser movidas para o "
+"calendário selecionado."
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
+#, kde-format
+msgid "The incidence is not available."
+msgstr "A ocorrência não está mais disponível."
+
+#: calendar/calendarincidencejob.cpp:107
 #, kde-format
 msgid "No calendar selected."
 msgstr "Nenhuma calendário selecionado."
 
-#: calendar/calendareditorbackend.cpp:117
+#: calendar/calendarincidencejob.cpp:110
 #, kde-format
 msgid "The selected calendar cannot store this incidence."
 msgstr "O calendário selecionado não pode armazenar esta ocorrência."
 
-#: calendar/calendareditorbackend.cpp:130
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, kde-format
 msgid "The incidence is no longer available."
 msgstr "A ocorrência não está mais disponível."
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr "A ocorrência foi excluída. Suas alterações não salvas foram mantidas."
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
@@ -212,65 +236,55 @@ msgstr ""
 "A ocorrência foi alterada fora deste editor. Recarregue-o antes de salvar. "
 "Suas alterações não salvas foram preservadas."
 
-#: calendar/calendareditorbackend.cpp:142
+#: calendar/calendarincidencejob.cpp:128
 #, kde-format
 msgid "The incidence is read-only."
 msgstr "A ocorrência é somente leitura."
 
-#: calendar/calendareditorbackend.cpp:151
-#, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-"A ocorrência e as tarefas relacionadas a ela não podem ser movidas para o "
-"calendário selecionado."
-
-#: calendar/calendareditorbackend.cpp:158
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, kde-format
 msgid "The selected calendar is read-only."
 msgstr "O calendário selecionado é somente leitura."
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
+#, fuzzy, kde-format
+#| msgid "No calendar selected."
+msgid "No occurrence selected."
+msgstr "Nenhuma calendário selecionado."
+
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid "The incidence could not be saved."
+msgid "Unable to create the occurrence exception."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:256
+#, fuzzy, kde-format
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "Alterar data de ocorrência"
+
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be changed."
 msgstr "Não foi possível salvar a ocorrência."
 
-#: calendar/calendareditorbackend.cpp:186
-#, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
-"A ocorrência não está mais disponível. Suas alterações não salvas foram "
-"preservadas."
+#: calendar/calendarincidencejob.cpp:357
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be moved."
+msgstr "Não foi possível salvar a ocorrência."
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:362
 #, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
 msgstr "A ocorrência foi salva, mas não pôde ser movida: %1"
 
-#: calendar/calendarmanager.cpp:535
-#, kde-format
-msgid "Move occurrence(s)"
-msgstr "Mover ocorrência(s)"
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr ""
-"Não foi possível adicionar o item de exceção ao calendário. Nenhuma mudança "
-"será feita."
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "Excluir tarefa e suas sub-tarefas"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "Excluir tarefa e tornar as sub-tarefas independentes"
+#: calendar/calendarincidencejob.cpp:363
+#, fuzzy, kde-format
+#| msgid "The incidence could not be saved."
+msgid "The incidence could not be moved: %1"
+msgstr "Não foi possível salvar a ocorrência."
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -284,33 +298,33 @@ msgstr "Ocorreu um erro: %1"
 msgid "Task"
 msgstr "Tarefa"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "Mantenedor"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "Clau Cambra"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "Felipe Kinoshita"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -4253,7 +4267,7 @@ msgstr ""
 "O recurso %1 está quebrado.\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr "Abra uma mensagem do Akonadi pelo ID."
@@ -4615,6 +4629,21 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Selecionar o tipo de conta"
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "Mover ocorrência(s)"
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr ""
+#~ "Não foi possível adicionar o item de exceção ao calendário. Nenhuma "
+#~ "mudança será feita."
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "Excluir tarefa e suas sub-tarefas"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "Excluir tarefa e tornar as sub-tarefas independentes"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"

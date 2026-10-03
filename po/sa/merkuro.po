@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:42+0000\n"
+"POT-Creation-Date: 2026-10-03 00:46+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -169,106 +169,120 @@ msgstr "To Today इति"
 msgid "Refresh All"
 msgstr "सर्वाणि ताजगी कुर्वन्तु"
 
-#: calendar/calendareditorbackend.cpp:48
+#: calendar/calendareditorbackend.cpp:62
+#, kde-format
+msgid "Please enter a title."
+msgstr ""
+
+#: calendar/calendareditorbackend.cpp:92
+#, kde-format
+msgid ""
+"The incidence is no longer available. Your unsaved changes have been kept."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
+#: calendar/calendarincidencejob.cpp:250
 #, fuzzy, kde-format
 #| msgid "Calendar is not enabled"
 msgid "The calendar is no longer available."
 msgstr "पञ्चाङ्गं सक्षमं न भवति"
 
-#: calendar/calendareditorbackend.cpp:104
+#: calendar/calendarincidencejob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Delete calendar source"
+msgid "The selected calendar is read-only or unavailable."
+msgstr "पञ्चाङ्गस्य स्रोतः विलोपयन्तु"
+
+#: calendar/calendarincidencejob.cpp:94
+#, kde-format
+msgid ""
+"The incidence and its related tasks cannot be moved to the selected calendar."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
+#: calendar/calendarincidencejob.cpp:209
 #, kde-format
 msgid "The incidence is not available."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:108
-#, kde-format
-msgid "Please enter a title."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:113
+#: calendar/calendarincidencejob.cpp:107
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No calendar selected."
 msgstr "कोऽपि मेलबॉक्सः चयनितः नास्ति"
 
-#: calendar/calendareditorbackend.cpp:117
+#: calendar/calendarincidencejob.cpp:110
 #, fuzzy, kde-format
 #| msgid "This mail contains an invitation"
 msgid "The selected calendar cannot store this incidence."
 msgstr "अस्मिन् मेलपत्रे आमन्त्रणं भवति"
 
-#: calendar/calendareditorbackend.cpp:130
+#: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, kde-format
 msgid "The incidence is no longer available."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:136
+#: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:137
+#: calendar/calendarincidencejob.cpp:125
 #, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:142
+#: calendar/calendarincidencejob.cpp:128
 #, kde-format
 msgid "The incidence is read-only."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:151
-#, kde-format
-msgid ""
-"The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
-
-#: calendar/calendareditorbackend.cpp:158
+#: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Delete calendar source"
 msgid "The selected calendar is read-only."
 msgstr "पञ्चाङ्गस्य स्रोतः विलोपयन्तु"
 
-#: calendar/calendareditorbackend.cpp:174
-#: calendar/calendareditorbackend.cpp:213
+#: calendar/calendarincidencejob.cpp:156
+#, fuzzy, kde-format
+#| msgid "No mailbox selected"
+msgid "No occurrence selected."
+msgstr "कोऽपि मेलबॉक्सः चयनितः नास्ति"
+
+#: calendar/calendarincidencejob.cpp:162
 #, kde-format
-msgid "The incidence could not be saved."
+msgid "Unable to create the occurrence exception."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:186
+#: calendar/calendarincidencejob.cpp:256
+#, fuzzy, kde-format
+#| msgid "Change incidence date"
+msgid "Change incidence"
+msgstr "घटनातिथिं परिवर्तयन्तु"
+
+#: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
 #, kde-format
-msgid ""
-"The incidence is no longer available. Your unsaved changes have been kept."
+msgid "The incidence could not be changed."
 msgstr ""
 
-#: calendar/calendareditorbackend.cpp:237
+#: calendar/calendarincidencejob.cpp:357
+#, kde-format
+msgid "The incidence could not be moved."
+msgstr ""
+
+#: calendar/calendarincidencejob.cpp:362
 #, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
 msgstr ""
 
-#: calendar/calendarmanager.cpp:535
+#: calendar/calendarincidencejob.cpp:363
 #, kde-format
-msgid "Move occurrence(s)"
-msgstr "घटना(s) चालयन्तु ."
-
-#: calendar/calendarmanager.cpp:540
-#, kde-format
-msgid ""
-"Unable to add the exception item to the calendar. No change will be done."
-msgstr "अपवाद-वस्तुं पञ्चाङ्गे योजयितुं असमर्थः । परिवर्तनं न भविष्यति।"
-
-#: calendar/calendarmanager.cpp:580
-#, kde-format
-msgid "Delete task and its sub-tasks"
-msgstr "कार्यं तस्य उपकार्यं च विलोपयन्तु"
-
-#: calendar/calendarmanager.cpp:583
-#, kde-format
-msgid "Delete task and make sub-tasks independent"
-msgstr "कार्यं विलोप्य उपकार्यं स्वतन्त्रं कुर्वन्तु"
+msgid "The incidence could not be moved: %1"
+msgstr ""
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -282,33 +296,33 @@ msgstr "त्रुटिः अभवत्: %1"
 msgid "Task"
 msgstr "कार्य"
 
-#: calendar/main.cpp:53 contacts/main.cpp:47 launcher/main.cpp:35
-#: mail/main.cpp:74
+#: calendar/main.cpp:50 contacts/main.cpp:44 launcher/main.cpp:35
+#: mail/main.cpp:72
 #, kde-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान्"
 
-#: calendar/main.cpp:54 calendar/main.cpp:59 contacts/main.cpp:48
-#: contacts/main.cpp:53 launcher/main.cpp:35 mail/main.cpp:75 mail/main.cpp:80
+#: calendar/main.cpp:51 calendar/main.cpp:56 contacts/main.cpp:45
+#: contacts/main.cpp:50 launcher/main.cpp:35 mail/main.cpp:73 mail/main.cpp:78
 #, kde-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "परिपालकः"
 
-#: calendar/main.cpp:58 contacts/main.cpp:52 mail/main.cpp:79
+#: calendar/main.cpp:55 contacts/main.cpp:49 mail/main.cpp:77
 #, kde-format
 msgctxt "@info:credit"
 msgid "Clau Cambra"
 msgstr "चैम्बर की"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Felipe Kinoshita"
 msgstr "फेलिप किनोशिता"
 
-#: calendar/main.cpp:62
+#: calendar/main.cpp:59
 #, kde-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -4412,7 +4426,7 @@ msgstr ""
 "संसाधनं %1 भग्नम् अस्ति।\n"
 "%2"
 
-#: mail/main.cpp:88
+#: mail/main.cpp:86
 #, kde-format
 msgid "Open an Akonadi message by ID."
 msgstr ""
@@ -4802,6 +4816,19 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr ""
+
+#~ msgid "Move occurrence(s)"
+#~ msgstr "घटना(s) चालयन्तु ."
+
+#~ msgid ""
+#~ "Unable to add the exception item to the calendar. No change will be done."
+#~ msgstr "अपवाद-वस्तुं पञ्चाङ्गे योजयितुं असमर्थः । परिवर्तनं न भविष्यति।"
+
+#~ msgid "Delete task and its sub-tasks"
+#~ msgstr "कार्यं तस्य उपकार्यं च विलोपयन्तु"
+
+#~ msgid "Delete task and make sub-tasks independent"
+#~ msgstr "कार्यं विलोप्य उपकार्यं स्वतन्त्रं कुर्वन्तु"
 
 #~ msgctxt "@title"
 #~ msgid "Merkuro Calendar"
