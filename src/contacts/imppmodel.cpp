@@ -47,11 +47,7 @@ QVariant ImppModel::data(const QModelIndex &idx, int role) const
     case TypeIconRole:
         return QIcon(impp.serviceIcon());
     case UsernameRole:
-#if KCONTACTS_VERSION >= QT_VERSION_CHECK(6, 27, 0)
         return impp.username();
-#else
-        return impp.address().toDisplayString(QUrl::RemoveScheme);
-#endif
     }
 
     return {};
@@ -102,11 +98,7 @@ void ImppModel::deleteImpp(const int row)
 
 void ImppModel::copyToClipboard(int row) const
 {
-#if KCONTACTS_VERSION >= QT_VERSION_CHECK(6, 27, 0)
     QApplication::clipboard()->setText(m_impps[row].username());
-#else
-    QApplication::clipboard()->setText(m_impps[row].address().toDisplayString(QUrl::RemoveScheme));
-#endif
 }
 
 #include "moc_imppmodel.cpp"
