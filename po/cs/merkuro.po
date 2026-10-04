@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:46+0000\n"
-"PO-Revision-Date: 2026-10-02 00:05+0200\n"
-"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
+"PO-Revision-Date: 2026-10-04 00:02+0200\n"
+"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:66
@@ -186,10 +186,9 @@ msgid "The calendar is no longer available."
 msgstr "Tento kalendář již není dostupný."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgid "The selected calendar is read-only."
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "Vybraný kalendář je pouze ke čtení."
+msgstr "Vybraný kalendář je pouze ke čtení nebo nedostupný."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
@@ -243,33 +242,29 @@ msgid "The selected calendar is read-only."
 msgstr "Vybraný kalendář je pouze ke čtení."
 
 #: calendar/calendarincidencejob.cpp:156
-#, fuzzy, kde-format
-#| msgid "No calendar selected."
+#, kde-format
 msgid "No occurrence selected."
-msgstr "Není vybrán žádný kalendář."
+msgstr "Nebyla vybrána žádná položka."
 
 #: calendar/calendarincidencejob.cpp:162
 #, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "Nelze vytvořit výjimku položky."
 
 #: calendar/calendarincidencejob.cpp:256
-#, fuzzy, kde-format
-#| msgid "Change incidence date"
+#, kde-format
 msgid "Change incidence"
-msgstr "Změnit datum položky"
+msgstr "Změnit položku"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be changed."
-msgstr "Položku nelze uložit."
+msgstr "Položku nelze změnit."
 
 #: calendar/calendarincidencejob.cpp:357
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved."
-msgstr "Položku nelze uložit."
+msgstr "Položku nelze přesunout."
 
 #: calendar/calendarincidencejob.cpp:362
 #, kde-format
@@ -277,10 +272,9 @@ msgid "The incidence was saved, but could not be moved: %1"
 msgstr "Položka byla uložena, ale nebylo možné ji přesunout: %1"
 
 #: calendar/calendarincidencejob.cpp:363
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved: %1"
-msgstr "Položku nelze uložit."
+msgstr "Položku nelze přesunout: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format

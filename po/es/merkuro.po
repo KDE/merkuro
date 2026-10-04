@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:46+0000\n"
-"PO-Revision-Date: 2026-10-01 20:10+0100\n"
+"PO-Revision-Date: 2026-10-03 12:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -187,10 +187,9 @@ msgid "The calendar is no longer available."
 msgstr "El calendario ya no está disponible."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgid "The selected calendar is read-only."
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "El calendario seleccionado es de solo lectura."
+msgstr "El calendario seleccionado es de solo lectura o no está disponible."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
@@ -247,33 +246,29 @@ msgid "The selected calendar is read-only."
 msgstr "El calendario seleccionado es de solo lectura."
 
 #: calendar/calendarincidencejob.cpp:156
-#, fuzzy, kde-format
-#| msgid "No calendar selected."
+#, kde-format
 msgid "No occurrence selected."
-msgstr "No se ha seleccionado ningún calendario."
+msgstr "No se ha seleccionado ninguna ocurrencia."
 
 #: calendar/calendarincidencejob.cpp:162
 #, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "No se ha podido crear la excepción de la ocurrencia."
 
 #: calendar/calendarincidencejob.cpp:256
-#, fuzzy, kde-format
-#| msgid "Change incidence date"
+#, kde-format
 msgid "Change incidence"
-msgstr "Cambiar la fecha de la incidencia"
+msgstr "Cambiar incidencia"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be changed."
-msgstr "No se ha podido guardar la incidencia."
+msgstr "No se ha podido cambiar la incidencia."
 
 #: calendar/calendarincidencejob.cpp:357
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved."
-msgstr "No se ha podido guardar la incidencia."
+msgstr "No se ha podido mover la incidencia."
 
 #: calendar/calendarincidencejob.cpp:362
 #, kde-format
@@ -281,10 +276,9 @@ msgid "The incidence was saved, but could not be moved: %1"
 msgstr "La incidencia se ha guardado, pero no se puede mover: %1"
 
 #: calendar/calendarincidencejob.cpp:363
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved: %1"
-msgstr "No se ha podido guardar la incidencia."
+msgstr "No se ha podido mover la incidencia: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -4632,18 +4626,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Seleccionar el tipo de cuenta cuenta"
-
-#~ msgid "Move occurrence(s)"
-#~ msgstr "Mover ocurrencias"
-
-#~ msgid ""
-#~ "Unable to add the exception item to the calendar. No change will be done."
-#~ msgstr ""
-#~ "No se ha podido añadir el elemento de excepción al calendario. No se "
-#~ "realizará ningún cambio."
-
-#~ msgid "Delete task and its sub-tasks"
-#~ msgstr "Borrar tarea y sus subtareas"
-
-#~ msgid "Delete task and make sub-tasks independent"
-#~ msgstr "Borrar tarea y hacer las subtareas independientes"

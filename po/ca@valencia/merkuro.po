@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:46+0000\n"
-"PO-Revision-Date: 2026-10-01 09:54+0200\n"
+"PO-Revision-Date: 2026-10-03 11:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -188,10 +188,9 @@ msgid "The calendar is no longer available."
 msgstr "El calendari ja no es troba disponible."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgid "The selected calendar is read-only."
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "El calendari seleccionat només és de lectura."
+msgstr "El calendari seleccionat només és de lectura o no està disponible."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
@@ -249,33 +248,29 @@ msgid "The selected calendar is read-only."
 msgstr "El calendari seleccionat només és de lectura."
 
 #: calendar/calendarincidencejob.cpp:156
-#, fuzzy, kde-format
-#| msgid "No calendar selected."
+#, kde-format
 msgid "No occurrence selected."
-msgstr "No s'ha seleccionat cap calendari."
+msgstr "No s'ha seleccionat cap ocurrència."
 
 #: calendar/calendarincidencejob.cpp:162
 #, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "No s'ha pogut crear l'excepció de l'ocurrència."
 
 #: calendar/calendarincidencejob.cpp:256
-#, fuzzy, kde-format
-#| msgid "Change incidence date"
+#, kde-format
 msgid "Change incidence"
-msgstr "Canvia la data de la incidència"
+msgstr "Canvia la incidència"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be changed."
-msgstr "No s'ha pogut guardar la incidència."
+msgstr "No s'ha pogut canviar la incidència."
 
 #: calendar/calendarincidencejob.cpp:357
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved."
-msgstr "No s'ha pogut guardar la incidència."
+msgstr "No s'ha pogut moure la incidència."
 
 #: calendar/calendarincidencejob.cpp:362
 #, kde-format
@@ -283,10 +278,9 @@ msgid "The incidence was saved, but could not be moved: %1"
 msgstr "S'ha guardat la incidència, però no s'ha pogut moure: %1"
 
 #: calendar/calendarincidencejob.cpp:363
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved: %1"
-msgstr "No s'ha pogut guardar la incidència."
+msgstr "No s'ha pogut moure la incidència: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -1293,7 +1287,7 @@ msgid ""
 "items in the recurrence?"
 msgstr ""
 "L'element que esteu intentant canviar és un element repetitiu. Els canvis "
-"s'han d'aplicar a esta única ocurrència, també als elements futurs o a tots "
+"s'han d'aplicar a este cas individual, també als elements futurs o a tots "
 "els elements de la recurrència?"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:62
@@ -4641,18 +4635,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Trieu el tipus de compte"
-
-#~ msgid "Move occurrence(s)"
-#~ msgstr "Mou les ocurrències"
-
-#~ msgid ""
-#~ "Unable to add the exception item to the calendar. No change will be done."
-#~ msgstr ""
-#~ "No s'ha pogut afegir l'element d'excepció al calendari. No es farà cap "
-#~ "canvi."
-
-#~ msgid "Delete task and its sub-tasks"
-#~ msgstr "Suprimix la tasca i les seues subtasques"
-
-#~ msgid "Delete task and make sub-tasks independent"
-#~ msgstr "Suprimix la tasca i crea subtasques independents"

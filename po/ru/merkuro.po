@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:46+0000\n"
-"PO-Revision-Date: 2026-10-01 08:17+0200\n"
+"PO-Revision-Date: 2026-10-03 08:16+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -185,10 +185,9 @@ msgid "The calendar is no longer available."
 msgstr "Календарь больше недоступен."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgid "The selected calendar is read-only."
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "Выбранный календарь доступен только для чтения."
+msgstr "Выбранный календарь доступен только для чтения или недоступен."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
@@ -244,33 +243,29 @@ msgid "The selected calendar is read-only."
 msgstr "Выбранный календарь доступен только для чтения."
 
 #: calendar/calendarincidencejob.cpp:156
-#, fuzzy, kde-format
-#| msgid "No calendar selected."
+#, kde-format
 msgid "No occurrence selected."
-msgstr "Не выбран календарь."
+msgstr "Не выбрано повторение события."
 
 #: calendar/calendarincidencejob.cpp:162
 #, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "Не удалось создать исключение для повторения события."
 
 #: calendar/calendarincidencejob.cpp:256
-#, fuzzy, kde-format
-#| msgid "Change incidence date"
+#, kde-format
 msgid "Change incidence"
-msgstr "Изменить дату"
+msgstr "Изменить событие"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be changed."
-msgstr "Не удалось сохранить событие."
+msgstr "Не удалось изменить событие."
 
 #: calendar/calendarincidencejob.cpp:357
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved."
-msgstr "Не удалось сохранить событие."
+msgstr "Не удалось переместить событие."
 
 #: calendar/calendarincidencejob.cpp:362
 #, kde-format
@@ -278,10 +273,9 @@ msgid "The incidence was saved, but could not be moved: %1"
 msgstr "Событие сохранено, но переместить его не удалось: %1"
 
 #: calendar/calendarincidencejob.cpp:363
-#, fuzzy, kde-format
-#| msgid "The incidence could not be saved."
+#, kde-format
 msgid "The incidence could not be moved: %1"
-msgstr "Не удалось сохранить событие."
+msgstr "Не удалось переместить событие: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format
