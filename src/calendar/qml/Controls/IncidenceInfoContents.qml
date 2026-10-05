@@ -38,6 +38,15 @@ QQC2.ScrollView {
     readonly property bool sameIncidenceStartAndEndDate: root.incidenceData.startTime.sameDay(root.incidenceData.endTime)
     readonly property bool sameIncidenceStartAndEndTime: root.incidenceData.startTime.sameTime(root.incidenceData.endTime)
 
+    function loadChildIncidences(): void {
+        if (root.incidenceWrapper) {
+            root.incidenceWrapper.loadChildIncidences();
+        }
+    }
+
+    onIncidenceWrapperChanged: root.loadChildIncidences()
+    Component.onCompleted: root.loadChildIncidences()
+
     onIncidenceDataChanged: {
         QQC2.ScrollBar.vertical.position = 0;
 

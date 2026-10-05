@@ -203,6 +203,169 @@ private:
     }
 
 private Q_SLOTS:
+    void childIncidencesWithoutService()
+    {
+        IncidenceWrapper wrapper(nullptr);
+        QSignalSpy changed(&wrapper, &IncidenceWrapper::childIncidencesChanged);
+        wrapper.loadChildIncidences();
+        wrapper.setNewTodo();
+        QVERIFY(wrapper.childIncidences().isEmpty());
+        QCOMPARE(changed.size(), 0);
+        IncidenceWrapper draft(m_manager.get());
+        draft.loadChildIncidences();
+        QVERIFY(draft.childIncidences().isEmpty());
+    }
+
+    void childIncidencesLoadOnlyDirectChildren()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        for (int i = 0; i < 6; ++i) {
+            const KCalendarCore::Incidence::Ptr todo(new KCalendarCore::Todo);
+            todo->setRelatedTo(family.last().payload<KCalendarCore::Incidence::Ptr>()->uid());
+            Akonadi::Item proposed;
+            proposed.setMimeType(todo->mimeType());
+            proposed.setPayload<KCalendarCore::Incidence::Ptr>(todo);
+            Akonadi::ItemCreateJob create(proposed, m_source);
+            create.setAutoDelete(false);
+            QVERIFY(create.exec());
+            family.append(create.item());
+            QTRY_VERIFY(m_manager->incidenceItem(todo).isValid());
+        }
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(family.first());
+        QVERIFY(wrapper.childIncidences().isEmpty());
+        QVERIFY(wrapper.findChildren<IncidenceWrapper *>().isEmpty());
+        Q_EMIT m_manager->calendarChanged();
+        QVERIFY(wrapper.findChildren<IncidenceWrapper *>().isEmpty());
+        wrapper.loadChildIncidences();
+        QCOMPARE(wrapper.childIncidences().size(), 1);
+        QCOMPARE(wrapper.findChildren<IncidenceWrapper *>().size(), 1);
+        auto child = wrapper.childIncidences().first().value<IncidenceWrapper *>();
+        QVERIFY(child->childIncidences().isEmpty());
+        Q_EMIT m_manager->calendarChanged();
+        QCOMPARE(wrapper.findChildren<IncidenceWrapper *>().size(), 1);
+        child->loadChildIncidences();
+        QCOMPARE(child->childIncidences().size(), 1);
+        QCOMPARE(wrapper.findChildren<IncidenceWrapper *>().size(), 2);
+    }
+
+    void childIncidenceCache()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(family.first());
+        wrapper.loadChildIncidences();
+        QCOMPARE(wrapper.childIncidences().size(), 1);
+        QPointer<IncidenceWrapper> child = wrapper.childIncidences().first().value<IncidenceWrapper *>();
+        QVERIFY(child);
+        QSignalSpy changed(&wrapper, &IncidenceWrapper::childIncidencesChanged);
+        for (int i = 0; i < 10; ++i) {
+            QCOMPARE(wrapper.childIncidences().first().value<IncidenceWrapper *>(), child.data());
+        }
+        QCOMPARE(changed.count(), 0);
+        Q_EMIT m_manager->calendarChanged();
+        QCOMPARE(changed.count(), 0);
+        QCOMPARE(wrapper.childIncidences().first().value<IncidenceWrapper *>(), child.data());
+
+        auto modified = family.last();
+        const KCalendarCore::Incidence::Ptr payload(modified.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setSummary(u"Updated child"_s);
+        modified.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        Akonadi::ItemModifyJob update(modified);
+        update.setAutoDelete(false);
+        QVERIFY(update.exec());
+        QTRY_COMPARE(child->summary(), payload->summary());
+        QCOMPARE(changed.count(), 0);
+        QCOMPARE(wrapper.childIncidences().first().value<IncidenceWrapper *>(), child.data());
+
+        const KCalendarCore::Incidence::Ptr secondChild(new KCalendarCore::Todo);
+        secondChild->setRelatedTo(wrapper.uid());
+        Akonadi::Item proposed;
+        proposed.setMimeType(secondChild->mimeType());
+        proposed.setPayload<KCalendarCore::Incidence::Ptr>(secondChild);
+        Akonadi::ItemCreateJob create(proposed, m_source);
+        create.setAutoDelete(false);
+        QVERIFY(create.exec());
+        QTRY_COMPARE(wrapper.childIncidences().size(), 2);
+        QCOMPARE(changed.count(), 1);
+        QVERIFY(wrapper.childIncidences().contains(QVariant::fromValue(child.data())));
+
+        Akonadi::ItemDeleteJob remove(family.last());
+        remove.setAutoDelete(false);
+        QVERIFY(remove.exec());
+        QTRY_COMPARE(wrapper.childIncidences().size(), 1);
+        QCOMPARE(changed.count(), 2);
+        QTRY_VERIFY(child.isNull());
+        QCOMPARE(wrapper.childIncidences().first().value<IncidenceWrapper *>()->uid(), secondChild->uid());
+
+        QPointer<IncidenceWrapper> remaining = wrapper.childIncidences().first().value<IncidenceWrapper *>();
+        wrapper.setNewTodo();
+        QVERIFY(wrapper.childIncidences().isEmpty());
+        QCOMPARE(changed.count(), 3);
+        QTRY_VERIFY(remaining.isNull());
+        wrapper.setNewEvent();
+        QCOMPARE(changed.count(), 3);
+    }
+
+    void childIncidenceCacheReparenting()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(family.first());
+        wrapper.loadChildIncidences();
+        QPointer<IncidenceWrapper> child = wrapper.childIncidences().first().value<IncidenceWrapper *>();
+        auto modified = family.last();
+        const KCalendarCore::Incidence::Ptr payload(modified.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setRelatedTo({});
+        modified.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        Akonadi::ItemModifyJob update(modified);
+        update.setAutoDelete(false);
+        QVERIFY(update.exec());
+        QTRY_VERIFY(wrapper.childIncidences().isEmpty());
+        QTRY_VERIFY(child.isNull());
+    }
+
+    void childIncidenceCacheForResolvedParent()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(family.last());
+        auto parent = wrapper.parentIncidence();
+        QVERIFY(parent);
+        parent->loadChildIncidences();
+        QCOMPARE(parent->childIncidences().size(), 1);
+        QCOMPARE(parent->childIncidences().first().value<IncidenceWrapper *>()->uid(), wrapper.uid());
+    }
+
+    void childIncidenceCacheCycles()
+    {
+        Akonadi::Item::List family;
+        createFamily(family);
+        auto modified = family.first();
+        const KCalendarCore::Incidence::Ptr payload(modified.payload<KCalendarCore::Incidence::Ptr>()->clone());
+        payload->setRelatedTo(family.last().payload<KCalendarCore::Incidence::Ptr>()->uid());
+        modified.setPayload<KCalendarCore::Incidence::Ptr>(payload);
+        Akonadi::ItemModifyJob update(modified);
+        update.setAutoDelete(false);
+        QVERIFY(update.exec());
+        QTRY_COMPARE(m_manager->childIncidences(payload->relatedTo()).size(), 1);
+        IncidenceWrapper wrapper(m_manager.get());
+        wrapper.setIncidenceItem(update.item());
+        wrapper.loadChildIncidences();
+        QCOMPARE(wrapper.childIncidences().size(), 1);
+        auto child = wrapper.childIncidences().first().value<IncidenceWrapper *>();
+        child->loadChildIncidences();
+        QVERIFY(child->childIncidences().isEmpty());
+        Q_EMIT m_manager->calendarChanged();
+        QCOMPARE(wrapper.childIncidences().first().value<IncidenceWrapper *>(), child);
+        child->loadChildIncidences();
+        QVERIFY(child->childIncidences().isEmpty());
+    }
+
     void initTestCase()
     {
         AkonadiTest::checkTestIsIsolated();

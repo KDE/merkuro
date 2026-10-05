@@ -135,7 +135,8 @@ public:
     [[nodiscard]] QString parent() const;
     void setParent(const QString &parent);
     IncidenceWrapper *parentIncidence();
-    QVariantList childIncidences();
+    QVariantList childIncidences() const;
+    Q_INVOKABLE void loadChildIncidences();
 
     [[nodiscard]] QString summary() const;
     void setSummary(const QString &summary);
@@ -271,4 +272,5 @@ private:
     KFormat m_format;
     Ptr m_parentIncidence;
     QVariantList m_childIncidences;
+    bool m_childrenLoaded = false;
 };

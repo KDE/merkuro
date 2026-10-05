@@ -7,6 +7,8 @@
 #include <KLocalizedString>
 #include <QBitArray>
 #include <QJSValue>
+#include <QSet>
+#include <utility>
 
 using namespace Qt::StringLiterals;
 using namespace Qt::Literals::StringLiterals;
@@ -25,17 +27,11 @@ IncidenceWrapper::IncidenceWrapper(CalendarManager *calendarManager, QObject *pa
         m_attachmentsModel.setIncidencePtr(incidencePtr);
     });
 
-    // While generally we know of the relationship an incidence has regarding its parent,
-    // from the POV of an incidence, we have no idea of its relationship to its children.
-    // This is a limitation of KCalendarCore, which only supports one type of relationship
-    // type per incidence and throughout the PIM infrastructure it is always the 'parent'
-    // relationship that is used.
-
-    // We therefore need to rely on the ETMCalendar for this information. Since the ETMCalendar
-    // does not provide us with any specific information about the incidences changed when it
-    // updates, we unfortunately have to this the coarse way and just update everything when
-    // things change.
-    connect(m_calendarManager, &CalendarManager::calendarChanged, this, &IncidenceWrapper::resetChildIncidences);
+    // Child relationships are maintained by the calendar, rather than by the item payload.
+    if (m_calendarManager) {
+        connect(m_calendarManager, &CalendarManager::calendarChanged, this, &IncidenceWrapper::resetChildIncidences);
+        connect(m_calendarManager, &QObject::destroyed, this, &IncidenceWrapper::resetChildIncidences);
+    }
 
     Akonadi::ItemFetchScope scope;
     scope.fetchFullPayload();
@@ -59,7 +55,6 @@ void IncidenceWrapper::notifyDataChanged()
     Q_EMIT collectionIdChanged();
     Q_EMIT parentChanged();
     Q_EMIT parentIncidenceChanged();
-    Q_EMIT childIncidencesChanged();
     Q_EMIT summaryChanged();
     Q_EMIT categoriesChanged();
     Q_EMIT descriptionChanged();
@@ -173,6 +168,8 @@ void IncidenceWrapper::setIncidencePtr(const KCalendarCore::Incidence::Ptr incid
     KCalendarCore::Incidence::Ptr originalIncidence(incidencePtr->clone());
     m_originalIncidence = originalIncidence;
 
+    resetChildIncidences();
+
     Q_EMIT incidencePtrChanged(incidencePtr);
     Q_EMIT originalIncidencePtrChanged();
     notifyDataChanged();
@@ -232,10 +229,18 @@ IncidenceWrapper *IncidenceWrapper::parentIncidence()
     return m_parentIncidence.data();
 }
 
-QVariantList IncidenceWrapper::childIncidences()
+QVariantList IncidenceWrapper::childIncidences() const
 {
-    resetChildIncidences();
     return m_childIncidences;
+}
+
+void IncidenceWrapper::loadChildIncidences()
+{
+    if (m_childrenLoaded) {
+        return;
+    }
+    m_childrenLoaded = true;
+    resetChildIncidences();
 }
 
 QString IncidenceWrapper::summary() const
@@ -761,15 +766,8 @@ void IncidenceWrapper::setNewIncidence(KCalendarCore::Incidence::Ptr incidence)
     setIncidenceItem(incidenceItem);
 }
 
-// We need to be careful when we call updateParentIncidence and resetChildIncidences.
-// For instance, we always call them on-demand based on access to the properties and not
-// upon object construction on upon setting the incidence pointer.
-
-// Calling them both recursively down a family tree can cause a cascade of infinite
-// new IncidenceWrappers being created. Say we create a new incidence wrapper here and
-// call this new incidence's updateParentIncidence and resetChildIncidences, creating
-// a new child wrapper, creating more wrappers there, and so on.
-
+// Parent wrappers are still resolved on demand. Child caches avoid expanding a
+// relationship back to a wrapper already present in their QObject ownership chain.
 void IncidenceWrapper::updateParentIncidence()
 {
     if (!m_incidence) {
@@ -785,23 +783,61 @@ void IncidenceWrapper::updateParentIncidence()
 
 void IncidenceWrapper::resetChildIncidences()
 {
-    cleanupChildIncidences();
-
-    if (!m_incidence) {
+    if (!m_childrenLoaded) {
         return;
     }
-
-    const auto incidences = m_calendarManager->childIncidences(uid());
-    QVariantList wrappedIncidences;
-
-    for (const auto &incidence : incidences) {
-        const auto wrappedIncidence = new IncidenceWrapper(m_calendarManager, this);
-        wrappedIncidence->setIncidenceItem(m_calendarManager->incidenceItem(incidence));
-        wrappedIncidences.append(QVariant::fromValue(wrappedIncidence));
+    QHash<Akonadi::Item::Id, IncidenceWrapper *> existing;
+    for (const auto &child : std::as_const(m_childIncidences)) {
+        auto wrapper = child.value<IncidenceWrapper *>();
+        existing.insert(wrapper->incidenceItem().id(), wrapper);
     }
 
-    m_childIncidences = wrappedIncidences;
-    Q_EMIT childIncidencesChanged();
+    QVariantList children;
+    if (m_incidenceItem.isValid() && m_incidence && m_calendarManager && m_calendarManager->calendar()) {
+        const auto incidences = m_calendarManager->childIncidences(uid());
+        QSet<Akonadi::Item::Id> seen;
+        for (const auto &incidence : incidences) {
+            // Malformed RELATED-TO cycles must not recursively create wrappers.
+            bool cyclic = false;
+            for (auto ancestor = this; ancestor;) {
+                if (ancestor->uid() == incidence->uid()) {
+                    cyclic = true;
+                    break;
+                }
+                auto owner = qobject_cast<IncidenceWrapper *>(ancestor->QObject::parent());
+                // A separately resolved parent starts a new child tree. Its owning
+                // wrapper is a legitimate child, rather than a RELATED-TO cycle.
+                if (owner && owner->m_parentIncidence.data() == ancestor) {
+                    break;
+                }
+                ancestor = owner;
+            }
+            if (cyclic) {
+                continue;
+            }
+            const auto item = m_calendarManager->incidenceItem(incidence);
+            if (!item.isValid() || !item.hasPayload<KCalendarCore::Incidence::Ptr>() || seen.contains(item.id())) {
+                continue;
+            }
+            seen.insert(item.id());
+            auto wrapper = existing.take(item.id());
+            if (!wrapper) {
+                wrapper = new IncidenceWrapper(m_calendarManager, this);
+                wrapper->setIncidenceItem(item);
+            }
+            // Existing wrappers receive payload updates through their own ItemMonitor.
+            children.append(QVariant::fromValue(wrapper));
+        }
+    }
+
+    if (children != m_childIncidences) {
+        m_childIncidences = children;
+        Q_EMIT childIncidencesChanged();
+    }
+    // Notify views before disposing of wrappers that are no longer in the list.
+    for (auto wrapper : std::as_const(existing)) {
+        wrapper->deleteLater();
+    }
 }
 
 void IncidenceWrapper::cleanupChildIncidences()

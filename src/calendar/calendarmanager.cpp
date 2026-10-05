@@ -414,7 +414,7 @@ Akonadi::Item CalendarManager::incidenceItem(const QString &uid) const
 
 KCalendarCore::Incidence::List CalendarManager::childIncidences(const QString &uid) const
 {
-    return m_calendar->childIncidences(uid);
+    return m_calendar ? m_calendar->childIncidences(uid) : KCalendarCore::Incidence::List{};
 }
 
 CalendarIncidenceJob *CalendarManager::createIncidenceJob()
