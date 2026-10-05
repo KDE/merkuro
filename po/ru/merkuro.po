@@ -125,7 +125,7 @@ msgstr "Создать задачу…"
 #: calendar/calendarapplication.cpp:233
 #, kde-format
 msgid "Import Calendar…"
-msgstr "Импорт календаря..."
+msgstr "Импорт календаря…"
 
 #: calendar/calendarapplication.cpp:253
 #, kde-format
@@ -599,7 +599,7 @@ msgstr "Кроме:"
 #: calendar/qml/Controls/IncidenceInfoContents.qml:364
 #, kde-format
 msgid "<b>Location:</b>"
-msgstr "<b>Расположение:</b>"
+msgstr "<b>Место проведения:</b>"
 
 #: calendar/qml/Controls/IncidenceInfoContents.qml:421
 #, kde-format
@@ -763,12 +763,12 @@ msgstr "Завтра (%1)"
 #: calendar/qml/Controls/IncidenceMouseArea.qml:231
 #, kde-format
 msgid "In a week (%1)"
-msgstr "На этой неделе (%1)"
+msgstr "Через неделю (%1)"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:243
 #, kde-format
 msgid "In a month (%1)"
-msgstr "В этом месяце (%1)"
+msgstr "Через месяц (%1)"
 
 #: calendar/qml/Controls/MainDrawerToggleButton.qml:24
 #, kde-format
@@ -815,7 +815,7 @@ msgstr "Продолжается весь день"
 #, kde-format
 msgctxt "Displays times between incidence start and end"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: calendar/qml/Delegates/MonthListViewIncidenceDelegate.qml:148
 #, kde-format
@@ -837,7 +837,7 @@ msgstr "Продолжается весь день"
 #, kde-format
 msgctxt "Location indicator for incidence. %1 is the location"
 msgid "<b>Location</b>: %1"
-msgstr "<b>Расположение:</b> %1"
+msgstr "<b>Место проведения:</b> %1"
 
 #: calendar/qml/Dialogs/CollectionPickerPage.qml:21
 #, kde-format
@@ -874,7 +874,7 @@ msgstr "Удалить календарь «%1»?"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:49
 #, kde-format
 msgid "You won't be able to revert this action"
-msgstr "Это действие будет нельзя отменить"
+msgstr "Это действие нельзя будет отменить"
 
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:62
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:122
@@ -888,9 +888,7 @@ msgstr "Отмена"
 #: calendar/qml/Dialogs/DeleteCalendarDialog.qml:66
 #, kde-format
 msgid "Delete calendar"
-msgstr ""
-"Удаление календаря\n"
-"удаление календаря"
+msgstr "Удалить календарь"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:31
 #, kde-format
@@ -926,8 +924,8 @@ msgstr ""
 "Для события «%1» календаря предусмотрены повторы в несколько дат. Кроме "
 "того, у этой записи имеются вложенные записи.\n"
 "\n"
-"Удалить выбранное событие %2, также последующие повторы или все записиэтого "
-"события?\n"
+"Удалить выбранное повторение %2, также будущие повторения или все повторения "
+"этого события?\n"
 "\n"
 "Удаление всего также приведёт к удалению вложенных записей."
 
@@ -939,7 +937,8 @@ msgid ""
 "occurrences?"
 msgstr ""
 "Для события «%1» календаря предусмотрены повторы в несколько дат. Удалить "
-"выбранное событие %2, также последующие повторы или все записиэтого события?"
+"выбранное повторение %2, также будущие повторения или все повторения этого "
+"события?"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:70
 #, kde-format
@@ -954,7 +953,7 @@ msgstr "Также удалить будущие"
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:97
 #, kde-format
 msgid "Delete Only This"
-msgstr "Только эту задачу"
+msgstr "Удалить только эту запись"
 
 #: calendar/qml/Dialogs/DeleteIncidenceDialog.qml:112
 #, kde-format
@@ -1016,13 +1015,13 @@ msgstr "Добавить название события"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:151
 #, kde-format
 msgid "Add a title for your journal entry"
-msgstr "Добавить название записи журнала"
+msgstr "Добавить название записи дневника"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:163
 #, kde-format
 msgctxt "@label"
 msgid "Location"
-msgstr "Расположение"
+msgstr "Место проведения"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:248
 #, kde-format
@@ -1055,7 +1054,7 @@ msgstr "Приоритет"
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
-msgstr "Не распределено"
+msgstr "Не задан"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:329
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
@@ -1243,7 +1242,7 @@ msgstr "%1 %2 каждого месяца"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
 #, kde-format
 msgid "Ends:"
-msgstr "Закончить:"
+msgstr "Окончание:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:738
 #, kde-format
@@ -1328,7 +1327,7 @@ msgstr "Эл. почта:"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:952
 #, kde-format
 msgid "Required"
-msgstr "Необходимо"
+msgstr "Обязательно"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:961
 #, kde-format
@@ -1424,17 +1423,17 @@ msgstr ""
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:61
 #, kde-format
 msgid "Only This Item"
-msgstr "Только эта запись"
+msgstr "Только это повторение"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:69
 #, kde-format
 msgid "Also Future Items"
-msgstr "И будущие записи"
+msgstr "Также будущие повторения"
 
 #: calendar/qml/Dialogs/RecurringIncidenceChangePage.qml:77
 #, kde-format
 msgid "All Occurrences"
-msgstr "Все записи события"
+msgstr "Все повторения"
 
 #: calendar/qml/Drawers/IncidenceInfoDrawer.qml:82
 #, kde-format
@@ -1523,7 +1522,7 @@ msgstr "мин."
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:148
 #, kde-format
 msgid "hours"
-msgstr "час"
+msgstr "ч."
 
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:149
 #, kde-format
@@ -1614,7 +1613,7 @@ msgstr "Задачи"
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
-msgstr "Восстановить"
+msgstr "Сбросить"
 
 #: calendar/qml/MainViews/BasicInternalHourlyView.qml:277
 #, kde-format
@@ -1838,7 +1837,7 @@ msgstr "Задачи"
 #: calendar/qml/MainViews/TodoView.qml:94
 #, kde-format
 msgid "Show Completed"
-msgstr "Показать завершённые"
+msgstr "Показывать завершённые"
 
 #: calendar/qml/MainViews/TodoView.qml:109
 #, kde-format
@@ -2055,7 +2054,7 @@ msgstr "Пароль"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:205
 #, kde-format
 msgid "Save password"
-msgstr "Сохранить пароль"
+msgstr "Сохранять пароль"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:112
 #, kde-format
@@ -2115,7 +2114,7 @@ msgstr "Системные учётные записи"
 #: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "General settings"
-msgstr "Основные параметры"
+msgstr "Общие параметры"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:24
 #, kde-format
@@ -2281,7 +2280,7 @@ msgstr "Показывать заголовки недель"
 #: calendar/qml/Settings/ViewSettingsPage.qml:421
 #, kde-format
 msgid "Hide empty days"
-msgstr "Скрыть пустые дни"
+msgstr "Скрывать пустые дни"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:431
 #, kde-format
@@ -2425,7 +2424,7 @@ msgstr "Размер"
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
-msgstr "Синхронизация"
+msgstr "Получение"
 
 #: components/qml/EditCollectionPage.qml:83
 #, kde-format
@@ -2780,13 +2779,13 @@ msgstr[3] "Выбрано: %1"
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Move Selection To:"
-msgstr "Перемещение выбранного по указанному адресу"
+msgstr "Переместить выбранное в:"
 
 #: contacts/qml/ContactView.qml:134 mail/qml/FolderView.qml:161
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Copy Selection To:"
-msgstr "Копирование выбранного по указанному адресу"
+msgstr "Копировать выбранное в:"
 
 #: contacts/qml/ContactView.qml:205 contacts/qml/private/ContactPage.qml:62
 #: contacts/qml/private/ContactsPage.qml:48
@@ -2921,7 +2920,7 @@ msgstr "Отчество или другое имя"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:111
 #, kde-format
 msgid "Family name:"
-msgstr "Фамилия"
+msgstr "Фамилия:"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:114
 #, kde-format
@@ -3047,7 +3046,7 @@ msgstr "Олег"
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:82
 #, kde-format
 msgid "Assistant's Name"
-msgstr "Ассистент"
+msgstr "Секретарь"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:85
 #, kde-format
@@ -3100,8 +3099,7 @@ msgstr "Предупреждение"
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:186
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
-msgstr ""
-"Во время редактирования этот контакт был изменён за пределами программы."
+msgstr "Во время редактирования этот контакт был изменён в другом месте."
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:191
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
@@ -3156,8 +3154,7 @@ msgstr ""
 #, kde-format
 msgid "This contact group was changed elsewhere during editing."
 msgstr ""
-"Во время редактирования эта группа контактов была изменена за пределами "
-"программы."
+"Во время редактирования эта группа контактов была изменена в другом месте."
 
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:33
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:75
@@ -3322,7 +3319,7 @@ msgstr "Фотография"
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
 msgid "Add Profile Picture"
-msgstr "Добавить изображения профиля"
+msgstr "Добавить изображение профиля"
 
 #: contacts/qml/private/contact_editor/PhotoEditor.qml:86
 #, kde-format
@@ -3351,7 +3348,7 @@ msgstr "Отмена"
 #: contacts/qml/private/ContactPage.qml:65
 #, kde-format
 msgid "Call"
-msgstr "Вызов"
+msgstr "Позвонить"
 
 #: contacts/qml/private/ContactPage.qml:76
 #, kde-format
@@ -3366,7 +3363,7 @@ msgstr "Отправить SMS"
 #: contacts/qml/private/ContactPage.qml:95
 #, kde-format
 msgid "Select number to send message to"
-msgstr "Выберите номер для отправления SMS"
+msgstr "Выберите номер для отправки SMS"
 
 #: contacts/qml/private/ContactPage.qml:103
 #, kde-format
@@ -3498,7 +3495,7 @@ msgstr "Руководитель:"
 #: contacts/qml/private/ContactPage.qml:346
 #, kde-format
 msgid "Assistant's name:"
-msgstr "Помощник:"
+msgstr "Секретарь:"
 
 #: contacts/qml/private/ContactPage.qml:352
 #, kde-format
@@ -3544,7 +3541,7 @@ msgstr[3] "Действительно удалить запись контакт
 #: contacts/qml/private/DeleteContactDialog.qml:38
 #, kde-format
 msgid "You won't be able to revert this action."
-msgstr "Это действие будет нельзя отменить."
+msgstr "Это действие нельзя будет отменить."
 
 #: contacts/qml/private/QrCodePage.qml:15
 #, kde-format
@@ -3565,7 +3562,7 @@ msgstr "Параметры"
 #: contacts/qml/Settings.qml:18
 #, kde-format
 msgid "Contact Books"
-msgstr "Записные книги"
+msgstr "Адресные книги"
 
 #: contacts/qml/Settings.qml:23
 #, kde-format
@@ -3659,7 +3656,7 @@ msgstr "Отметить как важное"
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
-msgstr "Удалить в корзину"
+msgstr "Переместить в корзину"
 
 #: mail/mailapplication.cpp:57
 #, kde-format
@@ -3699,7 +3696,7 @@ msgstr "Нет получателей письма"
 #: mail/mailclient.cpp:97
 #, kde-format
 msgid "Error creating transport"
-msgstr "Ошибка при создании транспорта"
+msgstr "Ошибка при создании метода отправки"
 
 #: mail/mailclient.cpp:143
 #, kde-format
@@ -3710,7 +3707,7 @@ msgstr " — "
 #: mail/mailclient.cpp:193
 #, kde-format
 msgid "Error loading transport"
-msgstr "Ошибка при загрузке транспорта"
+msgstr "Ошибка при загрузке метода отправки"
 
 #: mail/mailclient.cpp:211
 #, kde-format
@@ -3851,7 +3848,7 @@ msgstr[3] "Выбрано: %1"
 #: mail/qml/FolderView.qml:126
 #, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Сохранение сообщения - Почта Merkuro"
+msgstr "Сохранение сообщения — Почта Merkuro"
 
 #: mail/qml/FolderView.qml:127
 #, kde-format
