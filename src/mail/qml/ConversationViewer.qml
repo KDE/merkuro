@@ -14,7 +14,7 @@ import org.kde.pim.mimetreeparser as MimeTreeParser
 import org.kde.ki18n
 
 // External KMime shared-pointer metadata is not available to qmllint.
-// qmllint disable unresolved-type
+// qmllint disable unresolved-type missing-type
 MimeTreeParser.MailViewer {
     id: root
 
@@ -23,6 +23,7 @@ MimeTreeParser.MailViewer {
     required property MailActions mailActions
     property real itemId: 0
     readonly property var actionItem: root.itemId > 0 ? messageLoader.item : root.emptyItem
+    readonly property bool hasDistinctSender: root.sender.length > 0 && root.sender !== root.from
     readonly property bool hasLoadedItem: root.itemId <= 0 || Boolean(root.message)
 
     Component.onDestruction: if (root.itemId > 0 && root.mailActions) root.mailActions.item = undefined
@@ -73,6 +74,62 @@ MimeTreeParser.MailViewer {
             }
         }
     ]
+
+    component AddressRow: RowLayout {
+        id: addressRow
+
+        required property string address
+        required property bool showDkim
+
+        readonly property bool hasDkimStatus: addressRow.showDkim && dkimVerifier.status !== DkimVerifier.Unknown
+        readonly property string dkimText: hasDkimStatus ? KI18n.i18nc("@info", "Domain authentication (DKIM): %1", statusText()) : ""
+
+        visible: addressRow.address.length > 0
+        spacing: Kirigami.Units.smallSpacing
+
+        Layout.fillWidth: true
+
+        QQC2.ToolTip.visible: hasDkimStatus && addressHover.hovered
+        QQC2.ToolTip.text: dkimText
+	QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+        HoverHandler {
+            id: addressHover
+        }
+
+        Kirigami.Icon {
+            visible: addressRow.hasDkimStatus
+            source: "emblem-information"
+            color: Kirigami.Theme.textColor
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Accessible.ignored: true
+        }
+
+        QQC2.Label {
+            text: addressRow.address
+            elide: Text.ElideRight
+            Layout.fillWidth: true
+            Accessible.description: addressRow.dkimText
+        }
+
+        function statusText(): string {
+            switch (dkimVerifier.status) {
+            case DkimVerifier.Valid:
+                return dkimVerifier.hasWarning
+                    ? KI18n.i18nc("@info", "Valid signature with warnings from domain %1", dkimVerifier.signingDomain)
+                    : KI18n.i18nc("@info", "Valid signature from domain %1", dkimVerifier.signingDomain);
+            case DkimVerifier.Invalid:
+                return KI18n.i18nc("@info", "Invalid domain signature");
+            case DkimVerifier.EmailNotSigned:
+                return KI18n.i18nc("@info", "No domain signature");
+            case DkimVerifier.NeedToBeSigned:
+                return KI18n.i18nc("@info", "Expected signature from domain %1", dkimVerifier.signingDomain);
+            default:
+                return "";
+            }
+        }
+    }
 
     header: ColumnLayout {
         width: parent.width
@@ -151,28 +208,23 @@ MimeTreeParser.MailViewer {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
-                QQC2.Label {
-                    text: root.from
-                    visible: text.length > 0
-                    elide: Text.ElideRight
-
-                    Layout.fillWidth: true
+                AddressRow {
+                    address: root.from
+                    showDkim: !root.hasDistinctSender
                 }
 
                 QQC2.Label {
                     text: KI18n.i18n('Sender:')
                     font.bold: true
-                    visible: root.sender.length > 0 && root.sender !== root.from
+                    visible: root.hasDistinctSender
 
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
-                QQC2.Label {
-                    visible: root.sender.length > 0 && root.sender !== root.from
-                    text: root.sender
-                    elide: Text.ElideRight
-
-                    Layout.fillWidth: true
+                AddressRow {
+                    visible: root.hasDistinctSender
+                    address: root.sender
+                    showDkim: true
                 }
 
                 QQC2.Label {
@@ -194,6 +246,11 @@ MimeTreeParser.MailViewer {
         }
     }
 
+    DkimVerifier {
+        id: dkimVerifier
+        message: root.message
+    }
+
     MessageLoader {
         id: messageLoader
         onMessageChanged: {
@@ -209,4 +266,4 @@ MimeTreeParser.MailViewer {
         when: root.itemId > 0 || root.emptyItem !== undefined
     }
 }
-// qmllint enable unresolved-type
+// qmllint enable unresolved-type missing-type

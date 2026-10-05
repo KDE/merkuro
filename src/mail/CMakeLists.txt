@@ -21,6 +21,9 @@ set(merkuro_mail_SRCS
     progressmodel.cpp
     progressmodel.h
 
+    dkimverifier.h
+    dkimverifier.cpp
+
     messageloader.h
     messageloader.cpp
 
@@ -65,6 +68,7 @@ kconfig_add_kcfg_files(merkuro_mail_static GENERATE_MOC mailconfig.kcfgc)
 set_target_properties(merkuro_mail_static PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(merkuro_mail_static
     PUBLIC
+        KPim6::MessageCore
         KPim6::MessageComposer
         KPim6::MailCommon
         KPim6::MailTransport
@@ -170,3 +174,7 @@ install(PROGRAMS org.kde.merkuro.mail.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.merkuro.mail.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES merkuro.mail.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 install(FILES mailconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} RENAME merkuro-mail.kcfg)
+
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
