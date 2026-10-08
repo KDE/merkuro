@@ -167,124 +167,128 @@ msgid "Refresh All"
 msgstr "Опресни всички"
 
 #: calendar/calendareditorbackend.cpp:62
-#, kde-format
+#, fuzzy, kde-format
 msgid "Please enter a title."
-msgstr ""
+msgstr "Моля, въведете заглавие."
 
 #: calendar/calendareditorbackend.cpp:92
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
+msgstr "Събитието вече не е достъпно. Незапазените промени бяха запазени."
 
 #: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
 #: calendar/calendarincidencejob.cpp:250
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The calendar is no longer available."
-msgstr "Контактът вече не е наличен."
+msgstr "Календарът вече не е наличен."
 
 #: calendar/calendarincidencejob.cpp:89
 #, fuzzy, kde-format
 #| msgid "The contact is read-only."
 msgid "The selected calendar is read-only or unavailable."
-msgstr "Контактът е само за четене."
+msgstr "Избраният календар е само за четене или недостъпен."
 
 #: calendar/calendarincidencejob.cpp:94
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The incidence and its related tasks cannot be moved to the selected calendar."
 msgstr ""
+"Събитието и свързаните с него задачи не могат да бъдат преместени в избрания "
+"календар."
 
 #: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
 #: calendar/calendarincidencejob.cpp:209
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The incidence is not available."
-msgstr "Контактът вече не е наличен."
+msgstr "Събитието не е налично."
 
 #: calendar/calendarincidencejob.cpp:107
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No calendar selected."
-msgstr "Няма избрана пощенска кутия"
+msgstr "Няма избран календар."
 
 #: calendar/calendarincidencejob.cpp:110
 #, fuzzy, kde-format
 #| msgid "The selected address book cannot store this contact."
 msgid "The selected calendar cannot store this incidence."
-msgstr "Избраната адресна книга не може да съхранява този контакт."
+msgstr "Избраният календар не може да съхрани това събитие."
 
 #: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
 #, fuzzy, kde-format
 #| msgid "The contact is no longer available."
 msgid "The incidence is no longer available."
-msgstr "Контактът вече не е наличен."
+msgstr "Събитието вече не е налично."
 
 #: calendar/calendarincidencejob.cpp:124
-#, kde-format
+#, fuzzy, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "Събитието беше изтрито. Незапазените промени бяха запазени."
 
 #: calendar/calendarincidencejob.cpp:125
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
+"Събитието е променено извън този редактор. Презареждане преди запис. "
+"Незапазените промени са запазени."
 
 #: calendar/calendarincidencejob.cpp:128
 #, fuzzy, kde-format
 #| msgid "The contact is read-only."
 msgid "The incidence is read-only."
-msgstr "Контактът е само за четене."
+msgstr "Събитието е само за четене."
 
 #: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
 #, fuzzy, kde-format
 #| msgid "The contact is read-only."
 msgid "The selected calendar is read-only."
-msgstr "Контактът е само за четене."
+msgstr "Избраният календар е само за четене."
 
 #: calendar/calendarincidencejob.cpp:156
 #, fuzzy, kde-format
 #| msgid "No mailbox selected"
 msgid "No occurrence selected."
-msgstr "Няма избрана пощенска кутия"
+msgstr "Няма избрано събитие."
 
 #: calendar/calendarincidencejob.cpp:162
-#, kde-format
+#, fuzzy, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "Грешка при създаване на изключение от събитие."
 
 #: calendar/calendarincidencejob.cpp:256
 #, fuzzy, kde-format
 #| msgid "Change incidence date"
 msgid "Change incidence"
-msgstr "Промяна на датата на възникване"
+msgstr "Промяна на събитието"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
 #, fuzzy, kde-format
 #| msgid "The contact could not be found."
 msgid "The incidence could not be changed."
-msgstr "Контактът не беше намерен."
+msgstr "Събитието не можа да бъде променено."
 
 #: calendar/calendarincidencejob.cpp:357
 #, fuzzy, kde-format
 #| msgid "The contact could not be found."
 msgid "The incidence could not be moved."
-msgstr "Контактът не беше намерен."
+msgstr "Събитието не можа да бъде преместено."
 
 #: calendar/calendarincidencejob.cpp:362
 #, fuzzy, kde-format
 #| msgid "The contact address book could not be found."
 msgid "The incidence was saved, but could not be moved: %1"
-msgstr "Адресната книга на контактите не можа да бъде намерена."
+msgstr "Събитието беше записано, но не можа да бъде преместено: %1"
 
 #: calendar/calendarincidencejob.cpp:363
 #, fuzzy, kde-format
 #| msgid "The contact could not be found."
 msgid "The incidence could not be moved: %1"
-msgstr "Контактът не беше намерен."
+msgstr "Събитието не можа да бъде преместено: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -928,16 +932,17 @@ msgid "Delete All"
 msgstr "Изтриване на всички"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:72
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
-msgstr ""
+msgstr "Презареждане на събитието"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
 msgstr ""
+"Презареждането ще изтрие незапазените промени и ще зареди последната версия."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
@@ -952,22 +957,24 @@ msgid "Add %1"
 msgstr "Добавяне %1"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:105
-#, kde-format
+#, fuzzy, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "Това събитие беше изтрито. Незапазените ви промени бяха запазени."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
 "kept. Reload the latest version before saving."
 msgstr ""
+"Това събитие беше променено извън редактора. Незапазените промени бяха "
+"запазени. Презареждане на последната версия преди записване."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Презареждане"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -2322,9 +2329,9 @@ msgid "Pin (shows exact location)"
 msgstr "Карфица (показва точното местоположение)"
 
 #: calendar/recurrencedata.cpp:31
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: calendar/recurrencedata.cpp:68
 #, kde-format
@@ -4621,52 +4628,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Избиране на вида на акаунта"
-
-#~ msgid "Move occurrence(s)"
-#~ msgstr "Преместване на среща(ия)"
-
-#~ msgid ""
-#~ "Unable to add the exception item to the calendar. No change will be done."
-#~ msgstr ""
-#~ "Не може да се добави елементът за изключение към календара. Няма да се "
-#~ "прави промяна."
-
-#~ msgid "Delete task and its sub-tasks"
-#~ msgstr "Изтриване на задача и нейните подзадачи"
-
-#~ msgid "Delete task and make sub-tasks independent"
-#~ msgstr "Изтрийте задача и направете подзадачи независими"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Calendar"
-#~ msgstr "Календар Меркуро"
-
-#~ msgid "Calendar Application"
-#~ msgstr "Приложение Календар"
-
-#~ msgid "© KDE Community 2021–2026"
-#~ msgstr "© Общността на KDE 2021-2026"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Contact"
-#~ msgstr "Контакт на Merkuro"
-
-#~ msgid "Address Book Application"
-#~ msgstr "Приложение за адресна книга"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Launcher"
-#~ msgstr "Стартер на Меркуро"
-
-#~ msgid "merkuro Launcher"
-#~ msgstr "Стартер merkuro"
-
-#~ msgid "© 2024"
-#~ msgstr "© 2024"
-
-#~ msgctxt "@title"
-#~ msgid "Merkuro Mail"
-#~ msgstr "Електронна поща Merkuro"
-
-#~ msgid "Email Client"
-#~ msgstr "Имейл клиент"
