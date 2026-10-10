@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-10 00:47+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -4345,21 +4345,21 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "यथा रक्षन्तु..."
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:40
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "उत्तरम्-To:"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:46
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "सर्वं विलोपयतु"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:52
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
@@ -4538,6 +4538,44 @@ msgstr "Folder रचयन्तु"
 #| msgid "Folder Name..."
 msgid "Folder Name…"
 msgstr "पुटस्य नाम..."
+
+#: mail/qml/ConversationViewer.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Domain authentication (DKIM): %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:120
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature with warnings from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:121
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info: shorthand for the key is invalid"
+#| msgid "Invalid"
+msgctxt "@info"
+msgid "Invalid domain signature"
+msgstr "अप्रतिषेध"
+
+#: mail/qml/ConversationViewer.qml:125
+#, kde-format
+msgctxt "@info"
+msgid "No domain signature"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:127
+#, kde-format
+msgctxt "@info"
+msgid "Expected signature from domain %1"
+msgstr ""
 
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format

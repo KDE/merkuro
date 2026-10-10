@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-10 00:47+0000\n"
 "PO-Revision-Date: 2026-10-03 08:16+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -4231,19 +4231,19 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Сохранить как…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:40
 #, kde-format
 msgctxt "@action"
 msgid "Reply"
 msgstr "Ответить"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:46
 #, kde-format
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "Ответить всем"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:52
 #, kde-format
 msgctxt "@action"
 msgid "Forward"
@@ -4407,6 +4407,43 @@ msgstr "Создать папку"
 #, kde-format
 msgid "Folder Name…"
 msgstr "Имя папки…"
+
+#: mail/qml/ConversationViewer.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Domain authentication (DKIM): %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:120
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature with warnings from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:121
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:123
+#, fuzzy, kde-format
+#| msgid "Invalid item"
+msgctxt "@info"
+msgid "Invalid domain signature"
+msgstr "Недействительная запись"
+
+#: mail/qml/ConversationViewer.qml:125
+#, kde-format
+msgctxt "@info"
+msgid "No domain signature"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:127
+#, kde-format
+msgctxt "@info"
+msgid "Expected signature from domain %1"
+msgstr ""
 
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format

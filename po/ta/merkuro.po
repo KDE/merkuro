@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-10 00:47+0000\n"
 "PO-Revision-Date: 2025-09-21 13:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -4326,21 +4326,21 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "வேறு பெயரில் சேமி..."
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:40
 #, fuzzy, kde-format
 #| msgid "Reply-To:"
 msgctxt "@action"
 msgid "Reply"
 msgstr "பதில் பெறுபவர்:"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:46
 #, fuzzy, kde-format
 #| msgid "Delete All"
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "அனைத்தையும் நீக்கு"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:52
 #, fuzzy, kde-format
 #| msgid "Forwards"
 msgctxt "@action"
@@ -4513,6 +4513,44 @@ msgstr "அடைவை உருவாக்கு"
 #| msgid "Folder Name..."
 msgid "Folder Name…"
 msgstr "அடைவின் பெயர்..."
+
+#: mail/qml/ConversationViewer.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Domain authentication (DKIM): %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:120
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature with warnings from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:121
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:123
+#, fuzzy, kde-format
+#| msgctxt "@info: shorthand for the key is invalid"
+#| msgid "Invalid"
+msgctxt "@info"
+msgid "Invalid domain signature"
+msgstr "முறையற்றது"
+
+#: mail/qml/ConversationViewer.qml:125
+#, kde-format
+msgctxt "@info"
+msgid "No domain signature"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:127
+#, kde-format
+msgctxt "@info"
+msgid "Expected signature from domain %1"
+msgstr ""
 
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format

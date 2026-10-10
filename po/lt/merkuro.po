@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2026-08-17 14:35+0300\n"
+"POT-Creation-Date: 2026-10-10 00:47+0000\n"
+"PO-Revision-Date: 2026-10-09 22:28+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -145,12 +145,12 @@ msgstr ""
 #: calendar/calendarapplication.cpp:301
 #, kde-format
 msgid "Ascending order"
-msgstr ""
+msgstr "Didėjančia tvarka"
 
 #: calendar/calendarapplication.cpp:317
 #, kde-format
 msgid "Descending Order"
-msgstr ""
+msgstr "Mažėjančia tvarka"
 
 #: calendar/calendarapplication.cpp:333
 #, kde-format
@@ -180,17 +180,15 @@ msgstr ""
 
 #: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
 #: calendar/calendarincidencejob.cpp:250
-#, fuzzy, kde-format
-#| msgid "Calendar is not enabled"
+#, kde-format
 msgid "The calendar is no longer available."
-msgstr "Kalendorius nėra įjungtas"
+msgstr "Kalendorius daugiau nebeprieinamas."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Delete calendar source"
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "Ištrinti kalendoriaus šaltinį"
+msgstr ""
+"Pasirinktas kalendorius yra skirtas tik skaitymui arba yra neprieinamas."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
@@ -239,11 +237,9 @@ msgid "The incidence is read-only."
 msgstr ""
 
 #: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Delete calendar source"
+#, kde-format
 msgid "The selected calendar is read-only."
-msgstr "Ištrinti kalendoriaus šaltinį"
+msgstr "Pasirinktas kalendorius yra skirtas tik skaitymui."
 
 #: calendar/calendarincidencejob.cpp:156
 #, fuzzy, kde-format
@@ -954,7 +950,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "Įkelti iš naujo"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -965,7 +961,7 @@ msgstr "Pateiktos neteisingos datos."
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:140
 #, kde-format
 msgid "End date cannot be before start date."
-msgstr ""
+msgstr "Pabaigos data negali būti anksčiau pradžios datos."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:162
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
@@ -1208,7 +1204,7 @@ msgstr "Pridėti priminimą"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr ""
+msgstr "Nėra priminimų"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:803
 #, kde-format
@@ -2718,7 +2714,7 @@ msgstr ""
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
-msgstr ""
+msgstr "Neteisingas elementas"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2733,7 +2729,7 @@ msgstr "Naujas adresatas…"
 #: contacts/contactapplication.cpp:45
 #, kde-format
 msgid "Refresh All Address Books"
-msgstr ""
+msgstr "Įkelti visas adresų knygas iš naujo"
 
 #: contacts/contactapplication.cpp:55
 #, kde-format
@@ -2765,19 +2761,16 @@ msgid "Copy to…"
 msgstr "Kopijuoti į…"
 
 #: contacts/contactapplication.cpp:74
-#, fuzzy, kde-format
-#| msgid "Import Calendar…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Import Contacts…"
-msgstr "Importuoti kalendorių…"
+msgstr "Importuoti adresatus…"
 
 #: contacts/contactapplication.cpp:81 contacts/contactapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export all contacts…"
-msgstr "Taisyti adresatą…"
+msgstr "Eksportuoti visus adresatus…"
 
 #: contacts/contactapplication.cpp:92
 #, fuzzy, kde-format
@@ -2924,8 +2917,7 @@ msgid "Could not prepare the contact for sharing."
 msgstr ""
 
 #: contacts/contactlistproxymodel.cpp:83
-#, fuzzy, kde-format
-#| msgid "Today"
+#, kde-format
 msgctxt "@title:section"
 msgid "Today"
 msgstr "Šiandien"
@@ -3067,34 +3059,29 @@ msgid "Could not export contacts: %1"
 msgstr ""
 
 #: contacts/qml/ContactView.qml:164
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Import contacts"
-msgstr "Nėra adresatų"
+msgstr "Importuoti adresatus"
 
 #: contacts/qml/ContactView.qml:165
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf *.vcard)"
-msgstr "Kalendoriaus failai (*.ics *.vcs)"
+msgstr "vCard failai (*.vcf *.vcard)"
 
 #: contacts/qml/ContactView.qml:171
-#, fuzzy, kde-format
-#| msgid "Create Contact Group"
+#, kde-format
 msgid "Import Contacts To:"
-msgstr "Sukurti adresatų grupę"
+msgstr "Importuoti adresatus į:"
 
 #: contacts/qml/ContactView.qml:184
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contacts"
-msgstr "Nėra adresatų"
+msgstr "Eksportuoti adresatus"
 
 #: contacts/qml/ContactView.qml:187 contacts/qml/private/ContactPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Calendar files (*.ics *.vcs)"
+#, kde-format
 msgid "vCard files (*.vcf)"
-msgstr "Kalendoriaus failai (*.ics *.vcs)"
+msgstr "vCard failai (*.vcf)"
 
 #: contacts/qml/ContactView.qml:201 mail/qml/FolderView.qml:203
 #, kde-format
@@ -3134,12 +3121,10 @@ msgid "Edit address book…"
 msgstr "Taisyti adresų knygą…"
 
 #: contacts/qml/private/AddressBookMenu.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit address book…"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Address Book"
-msgstr "Taisyti adresų knygą…"
+msgstr "Taisyti adresų knygą"
 
 #: contacts/qml/private/AddressBookMenu.qml:42
 #, kde-format
@@ -3286,12 +3271,12 @@ msgstr "III"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
 #, kde-format
 msgid "Jr."
-msgstr ""
+msgstr "Jaunesnysis"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
 #, kde-format
 msgid "Sr."
-msgstr ""
+msgstr "Vyresnysis"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:145
 #, kde-format
@@ -3314,20 +3299,16 @@ msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Address"
 msgstr "Adresas"
 
 #: contacts/qml/private/contact_editor/AddressEditorCard.qml:43
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add address"
-msgstr "Adresas"
+msgstr "Pridėti adresą"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:24
 #, kde-format
@@ -3374,28 +3355,22 @@ msgid "Preferred"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add address"
-msgstr "Adresas"
+msgstr "Pridėti adresą"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Edit address book…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit address"
-msgstr "Taisyti adresų knygą…"
+msgstr "Taisyti adresą"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Address type"
-msgstr "Adresas"
+msgstr "Adreso tipas"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
 #, kde-format
@@ -3452,15 +3427,13 @@ msgid "Delivery label"
 msgstr ""
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove address"
-msgstr "Šalinti žymę"
+msgstr "Šalinti adresą"
 
 #: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Įrašyti"
@@ -3485,7 +3458,7 @@ msgstr "Profesija"
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
-msgstr ""
+msgstr "Programinės įrangos plėtotojas"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:45
 #, kde-format
@@ -3574,12 +3547,10 @@ msgid "E-mail"
 msgstr "El. paštas"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Address"
-#| msgid_plural "Addresses"
+#, kde-format
 msgctxt "@title:group"
 msgid "Addresses"
-msgstr "Adresas"
+msgstr "Adresai"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:158
 #, kde-format
@@ -3878,12 +3849,10 @@ msgid "Edit"
 msgstr "Taisa"
 
 #: contacts/qml/private/ContactPage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit contact…"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Export Contact…"
-msgstr "Taisyti adresatą…"
+msgstr "Eksportuoti adresatą…"
 
 #: contacts/qml/private/ContactPage.qml:70
 #, kde-format
@@ -3902,10 +3871,9 @@ msgid "Could not export contact: %1"
 msgstr ""
 
 #: contacts/qml/private/ContactPage.qml:92
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Export contact"
-msgstr "Nėra adresatų"
+msgstr "Eksportuoti adresatą"
 
 #: contacts/qml/private/ContactPage.qml:112
 #, fuzzy, kde-format
@@ -4010,11 +3978,10 @@ msgid "%1:"
 msgstr "%1:"
 
 #: contacts/qml/private/ContactPage.qml:305
-#, fuzzy, kde-format
-#| msgid "Show map"
+#, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
-msgstr "Rodyti žemėlapį"
+msgstr "Rodyti žemėlapyje %1"
 
 #: contacts/qml/private/ContactPage.qml:306
 #, kde-format
@@ -4152,20 +4119,16 @@ msgstr "Jūs nebegalėsite sugrąžinti šio veiksmo."
 
 #: contacts/qml/private/PurposeShareAction.qml:26
 #: contacts/qml/private/ShareActionDummy.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "New Contact"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Share Contact"
-msgstr "Naujas adresatas"
+msgstr "Bendrinti adresatą"
 
 #: contacts/qml/private/PurposeShareAction.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Delete contact"
+#, kde-format
 msgctxt "@tooltip"
 msgid "Share this contact"
-msgstr "Ištrinti adresatą"
+msgstr "Bendrinti šį adresatą"
 
 #: contacts/qml/private/QrCodePage.qml:18
 #, kde-format
@@ -4216,7 +4179,7 @@ msgstr "<>"
 #: launcher/Main.qml:58
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Išjungti"
 
 #: mail/abstractmailmodel.cpp:25
 #, kde-format
@@ -4281,34 +4244,29 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "Įrašyti kaip…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:40
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "Kam atsakyti:"
+msgstr "Atsakyti"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:45
-#, fuzzy, kde-format
-#| msgctxt "text editing menu action"
-#| msgid "Select All"
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:46
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "Pažymėti viską"
+msgstr "Atsakyti visiems"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:51
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:52
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
-msgstr "Pirmyn"
+msgstr "Persiųsti"
 
 #: mail/mailapplication.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action"
 msgid "Send now"
-msgstr "Siųsti"
+msgstr "Siųsti dabar"
 
 #: mail/mailapplication.cpp:85
 #, fuzzy, kde-format
@@ -4461,6 +4419,43 @@ msgstr "Sukurti aplanką"
 msgid "Folder Name…"
 msgstr "Aplanko pavadinimas…"
 
+#: mail/qml/ConversationViewer.qml:85
+#, kde-format
+msgctxt "@info"
+msgid "Domain authentication (DKIM): %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:120
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature with warnings from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:121
+#, kde-format
+msgctxt "@info"
+msgid "Valid signature from domain %1"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:123
+#, fuzzy, kde-format
+#| msgid "Invalid item"
+msgctxt "@info"
+msgid "Invalid domain signature"
+msgstr "Neteisingas elementas"
+
+#: mail/qml/ConversationViewer.qml:125
+#, kde-format
+msgctxt "@info"
+msgid "No domain signature"
+msgstr ""
+
+#: mail/qml/ConversationViewer.qml:127
+#, kde-format
+msgctxt "@info"
+msgid "Expected signature from domain %1"
+msgstr ""
+
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
 msgid "Open File"
@@ -4500,11 +4495,9 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: mail/qml/FolderView.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Merkuro paštas"
+msgstr "Įrašyti laišką – Merkuro paštas"
 
 #: mail/qml/FolderView.qml:181
 #, kde-format
@@ -4597,11 +4590,10 @@ msgid "Attach Document"
 msgstr "Pridėti dokumentą"
 
 #: mail/qml/MailComposer.qml:199
-#, fuzzy, kde-format
-#| msgid "Send email"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
-msgstr "Siųsti el. laišką"
+msgstr "Siųsti vėliau"
 
 #: mail/qml/MailComposer.qml:223
 #, fuzzy, kde-format
@@ -4672,13 +4664,12 @@ msgid "Mail Account Configuration"
 msgstr "Pašto paskyros konfigūracija"
 
 #: mail/settings/AccountSettingsPage.qml:42
-#, fuzzy, kde-format
-#| msgid "System Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
-msgstr "Sistemos paskyros"
+msgstr "Išsiuntimo paskyros"
 
 #: mail/settings/Settings.qml:15
 #, kde-format
