@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-16 02:43+0000\n"
-"PO-Revision-Date: 2026-08-17 14:35+0300\n"
+"PO-Revision-Date: 2026-10-09 22:28+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -145,12 +145,12 @@ msgstr ""
 #: calendar/calendarapplication.cpp:301
 #, kde-format
 msgid "Ascending order"
-msgstr ""
+msgstr "Didėjančia tvarka"
 
 #: calendar/calendarapplication.cpp:317
 #, kde-format
 msgid "Descending Order"
-msgstr ""
+msgstr "Mažėjančia tvarka"
 
 #: calendar/calendarapplication.cpp:333
 #, kde-format
@@ -181,12 +181,12 @@ msgstr ""
 #: calendar/calendarmanager.cpp:580
 #, kde-format
 msgid "Delete task and its sub-tasks"
-msgstr ""
+msgstr "Ištrinti užduotį ir jos dalines užduotis"
 
 #: calendar/calendarmanager.cpp:583
 #, kde-format
 msgid "Delete task and make sub-tasks independent"
-msgstr ""
+msgstr "Ištrinti užduotį ir paversti dalines užduotis nepriklausomomis"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -964,7 +964,7 @@ msgstr "Pateiktos neteisingos datos."
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:64
 #, kde-format
 msgid "End date cannot be before start date."
-msgstr ""
+msgstr "Pabaigos data negali būti anksčiau pradžios datos."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:83
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:159
@@ -1337,7 +1337,7 @@ msgstr "Pridėti priminimą"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
-msgstr ""
+msgstr "Nėra priminimų"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:1029
 #, kde-format
@@ -1628,11 +1628,7 @@ msgid "dddd d"
 msgstr ""
 
 #: calendar/qml/MainViews/BasicMonthListView.qml:181
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 & %2 are two localised dates indicating the start & end of a week "
-#| "using the format specified above."
-#| msgid "From %1 to %2"
+#, kde-format
 msgctxt ""
 "%1 & %2 are two localised dates indicating the start & end of a week (e.g. "
 "From Monday 2 to Sunday 9). %1 is the start, %2 the end. This string is "
@@ -2608,7 +2604,7 @@ msgstr ""
 #: contacts/contactactions.cpp:159
 #, kde-format
 msgid "Invalid item"
-msgstr ""
+msgstr "Neteisingas elementas"
 
 #: contacts/contactapplication.cpp:17 contacts/contactapplication.cpp:19
 #, kde-format
@@ -2623,7 +2619,7 @@ msgstr "Naujas adresatas…"
 #: contacts/contactapplication.cpp:45
 #, kde-format
 msgid "Refresh All Address Books"
-msgstr ""
+msgstr "Įkelti visas adresų knygas iš naujo"
 
 #: contacts/contactapplication.cpp:55
 #, kde-format
@@ -2940,12 +2936,12 @@ msgstr "III"
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:124
 #, kde-format
 msgid "Jr."
-msgstr ""
+msgstr "Jaunesnysis"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:124
 #, kde-format
 msgid "Sr."
-msgstr ""
+msgstr "Vyresnysis"
 
 #: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:131
 #, kde-format
@@ -2987,7 +2983,7 @@ msgstr "Profesija"
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
-msgstr ""
+msgstr "Programinės įrangos plėtotojas"
 
 #: contacts/qml/private/contact_editor/BusinessEditorCard.qml:42
 #, kde-format
@@ -3588,7 +3584,7 @@ msgstr "<>"
 #: launcher/Main.qml:58
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Išjungti"
 
 #: mail/abstractmailmodel.cpp:24
 #, kde-format
@@ -3659,26 +3655,22 @@ msgid "Save as…"
 msgstr "Įrašyti kaip…"
 
 #: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:29
-#, fuzzy, kde-format
-#| msgid "Reply-To:"
+#, kde-format
 msgctxt "@action"
 msgid "Reply"
-msgstr "Kam atsakyti:"
+msgstr "Atsakyti"
 
 #: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:34
-#, fuzzy, kde-format
-#| msgctxt "text editing menu action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Reply to All"
-msgstr "Pažymėti viską"
+msgstr "Atsakyti visiems"
 
 #: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:39
-#, fuzzy, kde-format
-#| msgid "Forwards"
+#, kde-format
 msgctxt "@action"
 msgid "Forward"
-msgstr "Pirmyn"
+msgstr "Persiųsti"
 
 #: mail/mailclient.cpp:52 mail/mailclient.cpp:80
 #, kde-format
@@ -3832,11 +3824,9 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: mail/qml/FolderView.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Merkuro Mail"
+#, kde-format
 msgid "Save Message - Merkuro Mail"
-msgstr "Merkuro paštas"
+msgstr "Įrašyti laišką – Merkuro paštas"
 
 #: mail/qml/FolderView.qml:127
 #, kde-format
@@ -3942,13 +3932,12 @@ msgid "Mail Account Configuration"
 msgstr "Pašto paskyros konfigūracija"
 
 #: mail/settings/AccountSettingsPage.qml:37
-#, fuzzy, kde-format
-#| msgid "System Accounts"
+#, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
-msgstr "Sistemos paskyros"
+msgstr "Išsiuntimo paskyros"
 
 #: mail/settings/Settings.qml:12
 #, kde-format
