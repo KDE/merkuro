@@ -416,7 +416,6 @@ void TodoSortFilterProxyModel::setCalendar(Akonadi::ETMCalendar::Ptr &calendar)
     // No need to manually emit beginResetModel(), source model does it for us
     m_calendar = calendar;
     m_todoTreeModel->setSourceModel(calendar->model());
-    m_baseTodoModel->setCalendar(m_calendar);
     Q_EMIT calendarChanged();
 }
 
