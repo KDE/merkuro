@@ -23,10 +23,7 @@ public:
     int day;
     int pos;
 
-    bool operator==(const MonthPosition &rhs) const
-    {
-        return day == rhs.day && pos == rhs.pos;
-    }
+    bool operator==(const MonthPosition &rhs) const = default;
 };
 
 class RecurrenceData
