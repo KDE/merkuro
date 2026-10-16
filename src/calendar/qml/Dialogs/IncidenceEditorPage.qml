@@ -833,7 +833,7 @@ FormCard.FormCardPage {
                             highlighted: false
 
                             topInset: index === 0 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
-                            bottomInset: index === ListView.view.count - 1 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
+                            bottomInset: ListView.view && index === ListView.view.count - 1 ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 2)
 
                             contentItem: RowLayout {
                                 QQC2.CheckBox {
