@@ -979,7 +979,10 @@ Column {
                                                     id: timeLabel
                                                     Layout.fillWidth: true
                                                     horizontalAlignment: Text.AlignRight
-                                                    text: modelData.startTime.toLocaleTimeString(Locale.NarrowFormat) + "–" + modelData.endTime.toLocaleTimeString(Locale.NarrowFormat)
+                                                    // Zero-width space after the dash: when the tile is too
+                                                    // narrow for the whole range, the label wraps there
+                                                    // instead of in the middle of a time.
+                                                    text: modelData.startTime.toLocaleTimeString(Locale.NarrowFormat) + "–\u200B" + modelData.endTime.toLocaleTimeString(Locale.NarrowFormat)
                                                     wrapMode: Text.Wrap
                                                     renderType: Text.QtRendering
                                                     color: incidenceContents.textColor
