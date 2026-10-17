@@ -11,7 +11,6 @@ QQC2.ComboBox {
 
     signal newDateChosen(int day, int month, int year)
 
-    property int timeZoneOffset: 0
     property string display: dateTime.toLocaleDateString(Locale.NarrowFormat) // Can override for better C++ time strings
     property MerkuroComponents.KDateTime dateTime: MerkuroComponents.KDateTimeFactory.now()
     property MerkuroComponents.KDateTime dateFromText: Calendar.Utils.parseDateString(editText)

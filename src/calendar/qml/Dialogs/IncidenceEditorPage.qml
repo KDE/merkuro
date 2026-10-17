@@ -493,7 +493,6 @@ FormCard.FormCardPage {
                             id: incidenceStartTimeCombo
 
                             Layout.fillWidth: true
-                            timeZoneOffset: root.incidenceWrapper.startTimeZoneUTCOffsetMins
                             display: root.incidenceWrapper.incidenceStart.toLocaleTimeString(Locale.NarrowFormat)
                             dateTime: root.incidenceWrapper.incidenceStart
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceStartTime(hours, minutes)
@@ -553,7 +552,6 @@ FormCard.FormCardPage {
                             id: incidenceEndTimeCombo
 
                             Layout.fillWidth: true
-                            timeZoneOffset: root.incidenceWrapper.endTimeZoneUTCOffsetMins
                             display: root.incidenceWrapper.incidenceEnd.toLocaleTimeString(Locale.NarrowFormat)
                             dateTime: root.incidenceWrapper.incidenceEnd
                             onNewTimeChosen: (hours, minutes) => root.incidenceWrapper.setIncidenceEndTime(hours, minutes)

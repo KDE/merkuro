@@ -12,7 +12,6 @@ QQC2.ComboBox {
 
     signal newTimeChosen(int hours, int minutes)
 
-    property int timeZoneOffset: 0
     property string display
     property MerkuroComponents.KDateTime dateTime
     property alias timePicker: popupTimePicker
@@ -53,8 +52,9 @@ QQC2.ComboBox {
             }
 
             function timeChangeHandler() {
-                popupTimePicker.hours = root.dateTime.hour;
-                popupTimePicker.minutes = root.dateTime.minute;
+                const localDateTime = root.dateTime.toLocalTime();
+                popupTimePicker.hours = localDateTime.hour;
+                popupTimePicker.minutes = localDateTime.minute;
             }
 
             Connections {
@@ -66,11 +66,6 @@ QQC2.ComboBox {
                     }
                 }
 
-                function onTimeZoneOffsetChanged() {
-                    if (!timePopup.visible) {
-                        popupTimePicker.timeChangeHandler();
-                    }
-                }
             }
 
             function valuesChangedHandler() {
