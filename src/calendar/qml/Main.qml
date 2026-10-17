@@ -652,11 +652,11 @@ BaseApplication {
                 closeDialog();
             }
             onChangeThis: {
-                CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.SelectedOccurrence, occurrenceDate);
+                CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.SelectedOccurrence, occurrenceDate.dateTime);
                 closeDialog();
             }
             onChangeThisAndFuture: {
-                CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.FutureOccurrences, occurrenceDate);
+                CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.FutureOccurrences, occurrenceDate.dateTime);
                 closeDialog();
             }
             onCancel: {
