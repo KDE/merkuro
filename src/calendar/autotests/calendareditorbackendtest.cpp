@@ -525,7 +525,7 @@ private Q_SLOTS:
         todo->setDtDue(start.addSecs(3600));
         todo->recurrence()->setDaily(1);
         const auto occurrence = start.addDays(2);
-        auto job = m_manager->updateIncidenceDates(&wrapper, 3600000, 3600000, scope, occurrence);
+        auto job = m_manager->updateIncidenceDates(&wrapper, 3600000, 3600000, scope, Merkuro::KDateTime(occurrence));
         QSignalSpy result(job, &KJob::result);
         QTRY_COMPARE(changes.creates, 1);
         QCOMPARE(changes.modifies, 0);

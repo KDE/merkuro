@@ -453,10 +453,10 @@ CalendarIncidenceJob *CalendarManager::editIncidence(IncidenceWrapper *wrapper)
 }
 
 CalendarIncidenceJob *
-CalendarManager::updateIncidenceDates(IncidenceWrapper *wrapper, int startOffset, int endOffset, int occurrences, const QDateTime &occurrenceDate)
+CalendarManager::updateIncidenceDates(IncidenceWrapper *wrapper, int startOffset, int endOffset, int occurrences, const Merkuro::KDateTime &occurrenceDate)
 {
     auto job = createIncidenceJob();
-    job->prepareDateChange(wrapper, startOffset, endOffset, occurrences, occurrenceDate);
+    job->prepareDateChange(wrapper, startOffset, endOffset, occurrences, occurrenceDate.dateTime());
     // Release the drag interaction after either success or failure, never on submission.
     connect(job, &KJob::result, this, [this] {
         Q_EMIT updateIncidenceDatesFinished();

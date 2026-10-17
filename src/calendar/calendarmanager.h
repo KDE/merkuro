@@ -10,6 +10,7 @@
 #include <Akonadi/IncidenceChanger>
 
 #include "calendarconfig.h"
+#include <merkurokdatetime.h>
 #include <Akonadi/CollectionFilterProxyModel>
 #include <Akonadi/SearchCollectionHelper>
 #include <KConfigWatcher>
@@ -99,7 +100,7 @@ public:
                                                            int startOffset,
                                                            int endOffset,
                                                            int occurrences = -1,
-                                                           const QDateTime &occurrenceDate = QDateTime());
+                                                           const Merkuro::KDateTime &occurrenceDate = Merkuro::KDateTime());
     Q_INVOKABLE bool hasChildren(KCalendarCore::Incidence::Ptr incidence);
     Q_INVOKABLE CalendarIncidenceJob *deleteIncidence(KCalendarCore::Incidence::Ptr incidence, bool deleteChildren = false);
     Q_INVOKABLE CalendarIncidenceJob *changeIncidenceCollection(KCalendarCore::Incidence::Ptr incidence, qint64 collectionId);
