@@ -353,7 +353,9 @@ void IncidenceWrapper::setIncidenceStartDate(int day, int month, int year)
     date.setDate(year, month, day);
 
     auto newStart = incidenceStart();
-    newStart.setDate(date);
+    QDateTime localStart = newStart.dateTime().toLocalTime();
+    localStart.setDate(date);
+    newStart.setDateTime(localStart.toTimeZone(newStart.dateTime().timeZone()));
 
     setIncidenceStart(newStart, true);
 }
@@ -369,7 +371,9 @@ void IncidenceWrapper::setIncidenceStartTime(int hours, int minutes)
     time.setHMS(hours, minutes, 0);
 
     auto newStart = incidenceStart();
-    newStart.setTime(time);
+    QDateTime localStart = newStart.dateTime().toLocalTime();
+    localStart.setTime(time);
+    newStart.setDateTime(localStart.toTimeZone(newStart.dateTime().timeZone()));
 
     setIncidenceStart(newStart, true);
 }
@@ -419,7 +423,9 @@ void IncidenceWrapper::setIncidenceEndDate(int day, int month, int year)
     date.setDate(year, month, day);
 
     auto newEnd = incidenceEnd();
-    newEnd.setDate(date);
+    QDateTime localEnd = newEnd.dateTime().toLocalTime();
+    localEnd.setDate(date);
+    newEnd.setDateTime(localEnd.toTimeZone(newEnd.dateTime().timeZone()));
 
     setIncidenceEnd(newEnd, true);
 }
@@ -435,7 +441,9 @@ void IncidenceWrapper::setIncidenceEndTime(int hours, int minutes)
     time.setHMS(hours, minutes, 0);
 
     auto newEnd = incidenceEnd();
-    newEnd.setTime(time);
+    QDateTime localEnd = newEnd.dateTime().toLocalTime();
+    localEnd.setTime(time);
+    newEnd.setDateTime(localEnd.toTimeZone(newEnd.dateTime().timeZone()));
 
     setIncidenceEnd(newEnd, true);
 }
