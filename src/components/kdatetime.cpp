@@ -167,6 +167,11 @@ QString KDateTime::toLocaleTimeString(QLocale::FormatType format) const
     return QLocale().toString(m_dateTime.toLocalTime().time(), format);
 }
 
+KDateTime KDateTime::toLocalTime() const
+{
+    return KDateTime(m_dateTime.toLocalTime());
+}
+
 bool KDateTime::sameDay(const KDateTime &right) const
 {
     return m_dateTime.toLocalTime().date() == right.m_dateTime.toLocalTime().date();

@@ -228,6 +228,11 @@ public:
      */
     Q_INVOKABLE KDateTime endOfYear() const;
 
+    /*!
+     * \brief Returns this date and time converted to the local timezone.
+     */
+    Q_INVOKABLE KDateTime toLocalTime() const;
+
     bool operator==(const QDateTime &right) const;
     bool operator==(const KDateTime &right) const;
 
