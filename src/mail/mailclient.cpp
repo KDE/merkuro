@@ -179,7 +179,6 @@ MailClient::populateComposer(const MessageData &msg, KIdentityManagementCore::Id
 {
     auto composer = std::make_unique<MessageComposer::ComposerJob>();
     auto *globalPart = composer->globalPart();
-    globalPart->setGuiEnabled(false);
     globalPart->setMDNRequested(false);
     globalPart->setRequestDeleveryConfirmation(false);
 
