@@ -32,32 +32,12 @@ Kirigami.ScrollablePage {
         icon.name: 'contact-new-symbolic'
         text: KI18n.i18nc("@action:inmenu", "Create")
         Kirigami.Action {
-            id: createNewContactAction
             text: KI18n.i18nc("@action:inmenu", "New Contact")
-            onTriggered: root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
-                mode: ContactEditor.CreateMode,
-                initialCollectionId: ContactManager.selectedCollectionId(),
-            })
+            onTriggered: ContactApplication.createNewContact()
         }
         Kirigami.Action {
-            id: createNewContactGroupAction
             text: KI18n.i18nc("@action:inmenu", "New Contact Group")
-            onTriggered: root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
-                mode: ContactGroupEditor.CreateMode,
-                initialCollectionId: ContactManager.selectedCollectionId(),
-            })
-        }
-    }
-
-    Connections {
-        target: ContactApplication
-
-        function onCreateNewContact(): void {
-            createNewContactAction.trigger();
-        }
-
-        function onCreateNewContactGroup(): void {
-            createNewContactGroupAction.trigger();
+            onTriggered: ContactApplication.createNewContactGroup()
         }
     }
 

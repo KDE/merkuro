@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <Akonadi/EntityTreeModel>
+#include <Akonadi/ContactsTreeModel>
 #include <QSortFilterProxyModel>
 #include <qqmlregistration.h>
 
@@ -15,7 +15,7 @@ class ContactsModel : public QSortFilterProxyModel
 
 public:
     enum ExtraRoles {
-        EmailRole = Akonadi::EntityTreeModel::UserRole + 1,
+        EmailRole = Akonadi::ContactsTreeModel::UserRole + 1,
         AllEmailsRole,
         GidRole,
     };

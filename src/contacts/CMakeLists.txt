@@ -16,6 +16,7 @@ ecm_qt_declare_logging_category(merkuro_contact_SRCS
 target_link_libraries(merkuro_contact PUBLIC
     Qt::Qml
     Qt::Quick
+    Qt::Positioning
     KF6::XmlGui
     KF6::Contacts
     KF6::ConfigGui
@@ -100,6 +101,8 @@ target_sources(merkuro_contact PRIVATE
     contactmetadata.h
     contactsmodel.cpp
     contactsmodel.h
+    contactmapmodel.cpp
+    contactmapmodel.h
     attributes/contactmetadataattribute_p.h
     attributes/contactmetadataattribute.cpp
     attributes/attributeregistrar.cpp
@@ -135,6 +138,7 @@ ecm_add_qml_module(merkuro_contact
 ecm_target_qml_sources(merkuro_contact SOURCES
     qml/ContactChooserPage.qml
     qml/ContactView.qml
+    qml/ContactMapPage.qml
     qml/MenuBar.qml
     qml/Sidebar.qml
     qml/GlobalMenuBar.qml

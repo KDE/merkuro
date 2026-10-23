@@ -17,6 +17,8 @@ import org.kde.ki18n
 FormCard.FormCardPage {
     id: page
 
+    Kirigami.ColumnView.fillWidth: page.Kirigami.ColumnView.view?.get(0)?.objectName !== "contactMapPage"
+
     property int itemId
     readonly property Kirigami.ApplicationWindow appWindow: page.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
     readonly property Kirigami.PageRow pageStack: page.appWindow.pageStack as Kirigami.PageRow

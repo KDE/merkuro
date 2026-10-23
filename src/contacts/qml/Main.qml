@@ -17,7 +17,17 @@ BaseApplication {
 
     menubarComponent: Contact.MenuBar {}
 
-    pageStack.initialPage: Contact.ContactView {}
+    pageStack.initialPage: sidebar.showMap ? mapPage : contactsPage
+
+    Component {
+        id: contactsPage
+        Contact.ContactView {}
+    }
+
+    Component {
+        id: mapPage
+        Contact.ContactMapPage {}
+    }
 
     globalDrawer: Contact.Sidebar {
         id: sidebar
@@ -34,6 +44,20 @@ BaseApplication {
 
     Connections {
         target: Contact.ContactApplication
+
+        function onCreateNewContact(): void {
+            root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactEditorPage.qml"), {
+                mode: Contact.ContactEditor.CreateMode,
+                initialCollectionId: Contact.ContactManager.selectedCollectionId(),
+            });
+        }
+
+        function onCreateNewContactGroup(): void {
+            root.pageStack.pushDialogLayer(Qt.resolvedUrl("./private/contact_editor/ContactGroupEditorPage.qml"), {
+                mode: Contact.ContactGroupEditor.CreateMode,
+                initialCollectionId: Contact.ContactManager.selectedCollectionId(),
+            });
+        }
 
         function onOpenSettings(): void {
             const openDialogWindow = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.merkuro.contact", "Settings"), {

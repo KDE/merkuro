@@ -24,6 +24,8 @@ Kirigami.OverlayDrawer {
     property var contextCollection
     property var contextCollectionDetails
     required property Kirigami.PageRow pageStack
+    property bool showMap: false
+    property alias collectionsModel: collectionList.model
     readonly property Kirigami.ApplicationWindow appWindow: root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
     readonly property bool isRightToLeft: Application.layoutDirection === Qt.RightToLeft
 
@@ -120,9 +122,26 @@ Kirigami.OverlayDrawer {
             text: KI18n.i18nc("@action:button Show contacts with birthdays", "Birthdays")
             icon.name: "view-calendar-birthday"
             highlighted: Contact.ContactManager.showBirthdays
-            Accessible.checkable: true
-            Accessible.checked: Contact.ContactManager.showBirthdays
-            onClicked: Contact.ContactManager.showBirthdays = !Contact.ContactManager.showBirthdays
+            checkable: true
+            checked: Contact.ContactManager.showBirthdays
+            onClicked: {
+                root.showMap = false;
+                Contact.ContactManager.showBirthdays = !Contact.ContactManager.showBirthdays;
+            }
+        }
+
+        Delegates.RoundedItemDelegate {
+            objectName: "mapButton"
+            Layout.fillWidth: true
+            text: KI18n.i18nc("@action:button Show all contacts on a map", "Map")
+            icon.name: "map-globe"
+            highlighted: root.showMap
+            checkable: true
+            checked: highlighted
+            onClicked: {
+                Contact.ContactManager.showBirthdays = false;
+                root.showMap = true;
+            }
         }
 
         QQC2.ScrollView {
@@ -196,7 +215,7 @@ Kirigami.OverlayDrawer {
                             rightPadding: (root.isRightToLeft ? (kDescendantLevel - 1) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
                             text: model.display
-                            highlighted: !Contact.ContactManager.showBirthdays && activeFocus
+                            highlighted: !root.showMap && !Contact.ContactManager.showBirthdays && activeFocus
                             dropAreaHovered: contactDropArea.containsDrag
 
                             hoverEnabled: false
@@ -277,6 +296,7 @@ Kirigami.OverlayDrawer {
 
                         Delegates.RoundedItemDelegate {
                             id: collectionItem
+                            objectName: "addressBookButton"
 
                             required property int index
                             required property var decoration
@@ -290,7 +310,7 @@ Kirigami.OverlayDrawer {
 
                             text: model.display
                             enabled: !root.collapsed
-                            highlighted: !Contact.ContactManager.showBirthdays && (model.checkState === Qt.Checked || activeFocus)
+                            highlighted: !root.showMap && !Contact.ContactManager.showBirthdays && (model.checkState === Qt.Checked || activeFocus)
                             dropAreaHovered: collectionContactDropArea.containsDrag
 
                             leftInset: !root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + Kirigami.Units.smallSpacing : 0
@@ -299,7 +319,7 @@ Kirigami.OverlayDrawer {
                             rightInset: (root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2  + horizontalPadding : 0) + Kirigami.Units.smallSpacing
                             rightPadding: (root.isRightToLeft ? Math.max(0, kDescendantLevel - 2) * padding * 2 + horizontalPadding : 0) + Math.round(Kirigami.Units.smallSpacing * 2.5)
 
-                            Accessible.selected: model.checkState === Qt.Checked
+                            Accessible.selected: !root.showMap && model.checkState === Qt.Checked
 
                             contentItem: RowLayout {
                                 Kirigami.Icon {
@@ -325,6 +345,7 @@ Kirigami.OverlayDrawer {
                             }
 
                             onClicked: {
+                                root.showMap = false;
                                 Contact.ContactManager.showBirthdays = false
                                 collectionItem.model.checkState = Qt.Checked
                             }
