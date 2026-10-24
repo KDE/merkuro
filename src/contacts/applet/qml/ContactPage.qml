@@ -238,19 +238,32 @@ PlasmaComponents3.ScrollView {
             Repeater {
                 id: phoneRepeater
                 model: addressee.phoneModel
-                PlasmaComponents3.Label {
-                    visible: text !== ""
-                    text: KI18n.i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
-                    Layout.leftMargin: Kirigami.Units.smallSpacing
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
-                    PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    MouseArea {
-                        id: area
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        cursorShape: Qt.PointingHandCursor
-                        onClicked: Qt.openUrlExternally(`tel:${model.display}`)
+
+                RowLayout { 
+                    visible: phoneNumberLabel.text !== ""
+                    PlasmaComponents3.Label {
+                        id: phoneNumberLabel
+                        text: KI18n.i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
+                        Layout.leftMargin: Kirigami.Units.smallSpacing
+                        Layout.rightMargin: Kirigami.Units.smallSpacing
+                        PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
+                        onLinkActivated: Qt.openUrlExternally(link)
+                        MouseArea {
+                            id: area
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: Qt.openUrlExternally(`tel:${model.display}`)
+                        }
+                    }
+                    PlasmaComponents3.ToolButton {
+                        id: phoneNumberCopyButton
+                        icon.name: 'edit-copy'
+                        Accessible.name: KI18n.i18n("Copy phone number")
+                        PlasmaComponents3.ToolTip { text: KI18n.i18n("Copy phone number to clipboard") }
+                        onClicked: {
+                            model.copyToClipboard(index);
+                        }
                     }
                 }
             }
