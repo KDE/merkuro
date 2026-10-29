@@ -109,8 +109,6 @@ public:
      */
     Q_INVOKABLE bool saveContactGroup();
 
-    [[nodiscard]] bool hasNoSavedData() const;
-
     [[nodiscard]] qint64 collectionId() const;
     [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);

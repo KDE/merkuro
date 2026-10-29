@@ -136,7 +136,6 @@ private:
     void emitDateDataChanged(const QModelIndex &idx);
     void updateDateLabels();
     void loadColors();
-    [[nodiscard]] QHash<QString, QColor> colorCache() const;
     [[nodiscard]] QString todoDueDateDisplayString(const KCalendarCore::Todo::Ptr todo, const DueDateDisplayFormat format) const;
 
     [[nodiscard]] int compareStartDates(const QModelIndex &left, const QModelIndex &right) const;

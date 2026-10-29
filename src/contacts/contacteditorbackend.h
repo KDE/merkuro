@@ -111,8 +111,6 @@ public:
      */
     Q_INVOKABLE void setDefaultAddressBook(const Akonadi::Collection &addressbook);
 
-    [[nodiscard]] bool hasNoSavedData() const;
-
     [[nodiscard]] AddresseeWrapper *contact();
     [[nodiscard]] qint64 collectionId() const;
     [[nodiscard]] Mode mode() const;
