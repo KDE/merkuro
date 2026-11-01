@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalendar package.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:50+0000\n"
-"PO-Revision-Date: 2026-09-26 16:59+0400\n"
+"PO-Revision-Date: 2026-10-31 20:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:66
@@ -169,62 +169,56 @@ msgstr "حدّث الكل"
 #: calendar/calendareditorbackend.cpp:62
 #, kde-format
 msgid "Please enter a title."
-msgstr ""
+msgstr "يرجى إدخال عنوان."
 
 #: calendar/calendareditorbackend.cpp:92
 #, kde-format
 msgid ""
 "The incidence is no longer available. Your unsaved changes have been kept."
-msgstr ""
+msgstr "لم يعد الحدث متاحًا. أُبقيت تغييراتك غير المحفوظة."
 
 #: calendar/calendarincidencejob.cpp:20 calendar/calendarincidencejob.cpp:34
 #: calendar/calendarincidencejob.cpp:250
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The calendar is no longer available."
-msgstr "لم يعد المتراسل متاحًا."
+msgstr "لم يعد التقويم متاحًا."
 
 #: calendar/calendarincidencejob.cpp:89
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The selected calendar is read-only or unavailable."
-msgstr "المتراسل للقراءة فقط."
+msgstr "التقويم المحدد للقراءة فقط أو غير متاح."
 
 #: calendar/calendarincidencejob.cpp:94
 #, kde-format
 msgid ""
 "The incidence and its related tasks cannot be moved to the selected calendar."
-msgstr ""
+msgstr "لا يمكن نقل الحدث ومهامه المرتبطة إلى التقويم المحدد."
 
 #: calendar/calendarincidencejob.cpp:103 calendar/calendarincidencejob.cpp:196
 #: calendar/calendarincidencejob.cpp:209
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is not available."
-msgstr "لم يعد المتراسل متاحًا."
+msgstr "الحدث غير متاح."
 
 #: calendar/calendarincidencejob.cpp:107
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgid "No calendar selected."
-msgstr "لم يُحدّد صندوق بريد"
+msgstr "لم يُحدد أي تقويم."
 
 #: calendar/calendarincidencejob.cpp:110
-#, fuzzy, kde-format
-#| msgid "The selected address book cannot store this contact."
+#, kde-format
 msgid "The selected calendar cannot store this incidence."
-msgstr "لا يمكن لدفتر العناوين المحدد تخزين هذا المتراسل."
+msgstr "لا يمكن للتقويم المحدد تخزين هذا الحدث."
 
 #: calendar/calendarincidencejob.cpp:119 calendar/calendarincidencejob.cpp:213
-#, fuzzy, kde-format
-#| msgid "The contact is no longer available."
+#, kde-format
 msgid "The incidence is no longer available."
-msgstr "لم يعد المتراسل متاحًا."
+msgstr "لم يعد الحدث متاحًا."
 
 #: calendar/calendarincidencejob.cpp:124
 #, kde-format
 msgid "The incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "حُذف الحدث. أُبقيت تغييراتك غير المحفوظة."
 
 #: calendar/calendarincidencejob.cpp:125
 #, kde-format
@@ -232,59 +226,53 @@ msgid ""
 "The incidence changed outside this editor. Reload it before saving. Your "
 "unsaved changes have been kept."
 msgstr ""
+"تغيّر الحدث خارج هذا المحرر. أعد تحميله قبل الحفظ. أُبقيت تغييراتك غير "
+"المحفوظة."
 
 #: calendar/calendarincidencejob.cpp:128
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The incidence is read-only."
-msgstr "المتراسل للقراءة فقط."
+msgstr "الحدث للقراءة فقط."
 
 #: calendar/calendarincidencejob.cpp:140 calendar/calendarincidencejob.cpp:188
-#, fuzzy, kde-format
-#| msgid "The contact is read-only."
+#, kde-format
 msgid "The selected calendar is read-only."
-msgstr "المتراسل للقراءة فقط."
+msgstr "التقويم المحدد للقراءة فقط."
 
 #: calendar/calendarincidencejob.cpp:156
-#, fuzzy, kde-format
-#| msgid "No mailbox selected"
+#, kde-format
 msgid "No occurrence selected."
-msgstr "لم يُحدّد صندوق بريد"
+msgstr "لم تُحدد أي تكرار."
 
 #: calendar/calendarincidencejob.cpp:162
 #, kde-format
 msgid "Unable to create the occurrence exception."
-msgstr ""
+msgstr "تعذّر إنشاء استثناء التكرار."
 
 #: calendar/calendarincidencejob.cpp:256
-#, fuzzy, kde-format
-#| msgid "Change incidence date"
+#, kde-format
 msgid "Change incidence"
-msgstr "غيّر تاريخ الحدوث"
+msgstr "غيّر الحدث"
 
 #: calendar/calendarincidencejob.cpp:260 calendar/calendarincidencejob.cpp:318
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgid "The incidence could not be changed."
-msgstr "تعذّر العثور على المتراسل."
+msgstr "تعذّر تغيير الحدث."
 
 #: calendar/calendarincidencejob.cpp:357
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgid "The incidence could not be moved."
-msgstr "تعذّر العثور على المتراسل."
+msgstr "تعذّر نقل الحدث."
 
 #: calendar/calendarincidencejob.cpp:362
-#, fuzzy, kde-format
-#| msgid "The contact address book could not be found."
+#, kde-format
 msgid "The incidence was saved, but could not be moved: %1"
-msgstr "تعذّر العثور على دفتر عناوين المتراسل."
+msgstr "حُفظ الحدث، لكن تعذّر نقله: %1"
 
 #: calendar/calendarincidencejob.cpp:363
-#, fuzzy, kde-format
-#| msgid "The contact could not be found."
+#, kde-format
 msgid "The incidence could not be moved: %1"
-msgstr "تعذّر العثور على المتراسل."
+msgstr "تعذّر نقل الحدث: %1"
 
 #: calendar/importer.cpp:49
 #, kde-format
@@ -942,13 +930,13 @@ msgstr "احذف الكل"
 #, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
-msgstr ""
+msgstr "أعد تحميل الحدث"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
 #, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
-msgstr ""
+msgstr "إعادة التحميل ستتجاهل تغييراتك غير المحفوظة وتحمّل أحدث نسخة."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
 #, kde-format
@@ -965,7 +953,7 @@ msgstr "أضف %1"
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:105
 #, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
-msgstr ""
+msgstr "حُذف هذا الحدث. أُبقيت تغييراتك غير المحفوظة."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
 #, kde-format
@@ -973,12 +961,14 @@ msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
 "kept. Reload the latest version before saving."
 msgstr ""
+"تغيّر هذا الحدث خارج هذا المحرر. أُبقيت تغييراتك غير المحفوظة. أعد تحميل أحدث "
+"نسخة قبل الحفظ."
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
-msgstr ""
+msgstr "أعد التحميل"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
@@ -2349,7 +2339,7 @@ msgstr "دبوس (تعرض الموقع بالضبط)"
 #: calendar/recurrencedata.cpp:31
 #, kde-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: calendar/recurrencedata.cpp:68
 #, kde-format
@@ -4465,38 +4455,37 @@ msgstr "اسم المجلد…"
 #, kde-format
 msgctxt "@info"
 msgid "Domain authentication (DKIM): %1"
-msgstr ""
+msgstr "استيثاق النطاق (DKIM): %1"
 
 #: mail/qml/ConversationViewer.qml:120
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature with warnings from domain %1"
-msgstr ""
+msgstr "توقيع صالح مع تحذيرات من النطاق %1"
 
 #: mail/qml/ConversationViewer.qml:121
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature from domain %1"
-msgstr ""
+msgstr "توقيع صالح من النطاق %1"
 
 #: mail/qml/ConversationViewer.qml:123
-#, fuzzy, kde-format
-#| msgid "Invalid item"
+#, kde-format
 msgctxt "@info"
 msgid "Invalid domain signature"
-msgstr "عنصر غير صالح"
+msgstr "توقيع نطاق غير صالح"
 
 #: mail/qml/ConversationViewer.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "No domain signature"
-msgstr ""
+msgstr "لا توقيع للنطاق"
 
 #: mail/qml/ConversationViewer.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Expected signature from domain %1"
-msgstr ""
+msgstr "توقيع متوقع من النطاق %1"
 
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
