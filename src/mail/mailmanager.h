@@ -69,10 +69,8 @@ Q_SIGNALS:
 
 private:
     bool m_loading;
-    Akonadi::Session *m_session;
     MailCommon::EntityCollectionOrderProxyModel *m_foldersModel;
 
     // folders
     QItemSelectionModel *m_collectionSelectionModel;
-    Akonadi::EntityTreeModel *m_entityTreeModel;
 };

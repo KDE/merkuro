@@ -39,6 +39,8 @@ class MailKernel : public QObject, public MailCommon::IKernel, public MailCommon
 public:
     static MailKernel &self();
 
+    [[nodiscard]] Akonadi::EntityTreeModel *entityTreeModel() const;
+
     // IKernel
     KIdentityManagementCore::IdentityManager *identityManager() override;
     MessageComposer::MessageSender *msgSender() override;

@@ -7,8 +7,10 @@
 
 #include <Akonadi/AgentManager>
 #include <Akonadi/ChangeRecorder>
+#include <Akonadi/DispatchModeAttribute>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
+#include <Akonadi/ItemFetchScope>
 #include <Akonadi/Session>
 
 #include <KIdentityManagementCore/IdentityManager>
@@ -42,6 +44,7 @@ MailKernel::MailKernel(QObject *parent)
     auto session = new Akonadi::Session("Merkuro Mail Kernel ETM", this);
 
     mFolderCollectionMonitor = new MailCommon::FolderCollectionMonitor(session, this);
+    folderCollectionMonitor()->itemFetchScope().fetchAttribute<Akonadi::DispatchModeAttribute>(true);
 
     mEntityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor(), this);
     mEntityTreeModel->setListFilter(Akonadi::CollectionFetchScope::Enabled);
@@ -66,6 +69,11 @@ MailKernel::~MailKernel()
     CommonKernel->registerKernelIf(nullptr);
     CommonKernel->registerSettingsIf(nullptr);
     CommonKernel->registerFilterIf(nullptr);
+}
+
+Akonadi::EntityTreeModel *MailKernel::entityTreeModel() const
+{
+    return mEntityTreeModel;
 }
 
 KIdentityManagementCore::IdentityManager *MailKernel::identityManager()

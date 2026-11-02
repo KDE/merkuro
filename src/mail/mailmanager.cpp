@@ -30,7 +30,6 @@
 #include <KLocalizedString>
 #include <KMbox/MBox>
 #include <KMime/Message>
-#include <MailCommon/FolderCollectionMonitor>
 #include <MailCommon/MailKernel>
 #include <MailCommon/MailUtil>
 #include <QApplication>
@@ -42,11 +41,9 @@ MailManager::MailManager(QObject *parent)
     : QObject(parent)
     , m_loading(true)
 {
-    using namespace Akonadi;
+    auto &kernel = MailKernel::self();
 
-    MailKernel::self();
-
-    connect(&MailKernel::self(), &MailKernel::errorOccurred, this, &MailManager::errorOccurred);
+    connect(&kernel, &MailKernel::errorOccurred, this, &MailManager::errorOccurred);
 
     //                              mailModel
     //                                  ^
@@ -61,17 +58,9 @@ MailManager::MailManager(QObject *parent)
     //  collectionFilter                |
     //            \__________________treemodel
 
-    m_session = new Session("KMailManager Kernel ETM"_ba, this);
-    auto folderCollectionMonitor = new MailCommon::FolderCollectionMonitor(m_session, this);
-    folderCollectionMonitor->monitor()->itemFetchScope().fetchAttribute<Akonadi::DispatchModeAttribute>(true);
-
     // setup collection model
-    m_entityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor->monitor(), this);
-    m_entityTreeModel->setItemPopulationStrategy(Akonadi::EntityTreeModel::LazyPopulation);
-    connect(m_entityTreeModel, &Akonadi::EntityTreeModel::errorOccurred, this, &MailManager::errorOccurred);
-
     auto foldersModel = new Akonadi::CollectionFilterProxyModel(this);
-    foldersModel->setSourceModel(m_entityTreeModel);
+    foldersModel->setSourceModel(kernel.entityTreeModel());
     foldersModel->addMimeTypeFilter(KMime::Message::mimeType());
 
     m_foldersModel = new MailCommon::EntityCollectionOrderProxyModel(this);
@@ -127,7 +116,7 @@ QItemSelectionModel *MailManager::collectionSelectionModel() const
 
 Akonadi::EntityTreeModel *MailManager::entryTreeModel() const
 {
-    return m_entityTreeModel;
+    return MailKernel::self().entityTreeModel();
 }
 
 void MailManager::loadMailCollection(const QModelIndex &modelIndex)
@@ -151,7 +140,7 @@ MailCommon::EntityCollectionOrderProxyModel *MailManager::foldersModel() const
 
 Akonadi::Session *MailManager::session() const
 {
-    return m_session;
+    return MailKernel::self().folderCollectionMonitor()->session();
 }
 
 void MailManager::moveToTrash(const Akonadi::Item &item)
