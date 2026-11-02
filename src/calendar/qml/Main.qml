@@ -236,7 +236,7 @@ BaseApplication {
 
         function onTodoViewShowCompleted(): void {
             const openDialogWindow = root.pageStack.pushDialogLayer(root.pageStack.currentItem.completedSheetComponent);
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+            openDialogWindow.Keys.escapePressed.connect(function(): void { openDialogWindow.Kirigami.PageStack.closeDialog() });
         }
 
         function onOpenSettings(): void {
@@ -649,20 +649,20 @@ BaseApplication {
 
             onChangeAll: {
                 CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.AllOccurrences);
-                closeDialog();
+                recurringIncidenceChangePage.Kirigami.PageStack.closeDialog();
             }
             onChangeThis: {
                 CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.SelectedOccurrence, occurrenceDate);
-                closeDialog();
+                recurringIncidenceChangePage.Kirigami.PageStack.closeDialog();
             }
             onChangeThisAndFuture: {
                 CalendarManager.updateIncidenceDates(incidenceWrapper, startOffset, endOffset, IncidenceWrapper.FutureOccurrences, occurrenceDate);
-                closeDialog();
+                recurringIncidenceChangePage.Kirigami.PageStack.closeDialog();
             }
             onCancel: {
                 caughtDelegate.caught = false;
                 CalendarUiUtils.reenableDragOnCurrentView();
-                closeDialog();
+                recurringIncidenceChangePage.Kirigami.PageStack.closeDialog();
             }
         }
     }

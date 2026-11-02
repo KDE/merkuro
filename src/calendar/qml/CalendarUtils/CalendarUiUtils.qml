@@ -131,7 +131,7 @@ QtObject {
                 onClosing: onClosingHandler()
             });
 
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+            openDialogWindow.Keys.escapePressed.connect(function(): void { openDialogWindow.Kirigami.PageStack.closeDialog() });
         }
     }
 

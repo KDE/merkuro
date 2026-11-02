@@ -78,7 +78,7 @@ StatefulApp.StatefulWindow {
                 height: Kirigami.Units.gridUnit * 30
             });
 
-            openDialogWindow.Keys.escapePressed.connect(function() { openDialogWindow.closeDialog() });
+            openDialogWindow.Keys.escapePressed.connect(function(): void { openDialogWindow.Kirigami.PageStack.closeDialog() });
         }
 
     }

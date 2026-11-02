@@ -173,9 +173,9 @@ Kirigami.ScrollablePage {
             });
             page.selected.connect(collection => {
                 contactImportExport.importContacts(importFileDialog.selectedFile, collection.id);
-                page.closeDialog();
+                page.Kirigami.PageStack.closeDialog();
             });
-            page.rejected.connect(() => page.closeDialog());
+            page.rejected.connect(() => page.Kirigami.PageStack.closeDialog());
         }
     }
 
@@ -204,10 +204,10 @@ Kirigami.ScrollablePage {
 
             page.selected.connect(collection => {
                 contactActions.moveTo(items, collection);
-                page.closeDialog();
+                page.Kirigami.PageStack.closeDialog();
             });
             page.rejected.connect(() => {
-                page.closeDialog();
+                page.Kirigami.PageStack.closeDialog();
             });
         }
 
@@ -220,10 +220,10 @@ Kirigami.ScrollablePage {
             });
             page.selected.connect((collection) => {
                 contactActions.copyTo(items, collection);
-                page.closeDialog();
+                page.Kirigami.PageStack.closeDialog();
             });
             page.rejected.connect(() => {
-                page.closeDialog();
+                page.Kirigami.PageStack.closeDialog();
             });
         }
 

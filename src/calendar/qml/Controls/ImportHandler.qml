@@ -68,14 +68,16 @@ Calendar.Importer {
 
     property var importMergeCollectionPickerComponent: Component {
         Calendar.CollectionPickerPage {
+            id: collectionPickerPage
+
             onCollectionPicked: {
                 root.importCalendarFromUrl(root.currentFile, true, collectionId);
                 root.calendarImportInProgress = false;
-                closeDialog();
+                collectionPickerPage.Kirigami.PageStack.closeDialog();
             }
             onCancel: {
                 root.calendarImportInProgress = false;
-                closeDialog()
+                collectionPickerPage.Kirigami.PageStack.closeDialog()
             }
         }
     }

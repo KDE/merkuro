@@ -206,10 +206,10 @@ Kirigami.ScrollablePage {
 
                 page.selected.connect((collection) => {
                     mailActions.moveTo(items, collection);
-                    page.closeDialog();
+                    page.Kirigami.PageStack.closeDialog();
                 });
                 page.rejected.connect(() => {
-                    page.closeDialog();
+                    page.Kirigami.PageStack.closeDialog();
                 });
             }
 
@@ -222,10 +222,10 @@ Kirigami.ScrollablePage {
                 });
                 page.selected.connect((collection) => {
                     mailActions.copyTo(items, collection);
-                    page.closeDialog();
+                    page.Kirigami.PageStack.closeDialog();
                 });
                 page.rejected.connect(() => {
-                    page.closeDialog();
+                    page.Kirigami.PageStack.closeDialog();
                 });
             }
 

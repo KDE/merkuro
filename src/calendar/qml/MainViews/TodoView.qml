@@ -132,10 +132,10 @@ Kirigami.ScrollablePage {
             onCollectionPicked: {
                 collectionPickerSheet.incidenceWrapper.collectionId = collectionId;
                 Calendar.CalendarManager.addIncidence(collectionPickerSheet.incidenceWrapper);
-                collectionPickerSheet.closeDialog();
+                collectionPickerSheet.Kirigami.PageStack.closeDialog();
                 addField.clear();
             }
-            onCancel: closeDialog()
+            onCancel: collectionPickerSheet.Kirigami.PageStack.closeDialog()
         }
     }
 
