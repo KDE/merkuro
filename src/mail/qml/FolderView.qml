@@ -448,7 +448,7 @@ Kirigami.ScrollablePage {
                     mailSelectionModel.setCurrentIndex(mailSelectionModel.model.index(mailDelegate.index, 0), ItemSelectionModel.Current);
                     mailActions.setActionState();
 
-                    const menu = contextMenu.createObject(root) as QQC2.Menu;
+                    const menu = contextMenu.createObject(root) as Components.ConvergentContextMenu;
                     root.collection = mailDelegate.item;
                     menu.popup();
 
