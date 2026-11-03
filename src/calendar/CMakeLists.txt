@@ -202,7 +202,7 @@ target_link_libraries(merkuro-calendar
         Qt::Widgets
         Qt::Quick
         Qt::QuickControls2
-        KF6::I18n
+        KF6::I18nQml
         KF6::CoreAddons
         KF6::DBusAddons
         KF6::WindowSystem
