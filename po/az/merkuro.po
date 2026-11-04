@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
 "PO-Revision-Date: 2023-07-07 19:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -1031,6 +1031,7 @@ msgid "Add a title for your journal entry"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
+#: mail/qml/mailpartview/ICalPart.qml:73
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "@label"
@@ -4780,9 +4781,72 @@ msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:28
+#: mail/qml/mailpartview/ICalPart.qml:43
 #, kde-format
-msgid "This mail contains an invitation"
+msgctxt "@info"
+msgid "This calendar invitation could not be read."
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:56
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgctxt "@title"
+msgid "Calendar event"
+msgstr "Təqvim"
+
+#: mail/qml/mailpartview/ICalPart.qml:63
+#, fuzzy, kde-format
+#| msgid "This event has reminder"
+#| msgid_plural "This event has reminders"
+msgctxt "@info"
+msgid "This event has been canceled."
+msgstr "Bu tədbirin üçün xatırlatma var"
+
+#: mail/qml/mailpartview/ICalPart.qml:67
+#, fuzzy, kde-format
+#| msgid "All day"
+msgctxt "@info"
+msgid "%1 · All day"
+msgstr "Bütün gün"
+
+#: mail/qml/mailpartview/ICalPart.qml:69
+#, fuzzy, kde-format
+#| msgid "Undo: "
+msgctxt "@info:accessibility"
+msgid "When: %1"
+msgstr "Geri qaytarmaq: "
+
+#: mail/qml/mailpartview/ICalPart.qml:75
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgctxt "@info:accessibility"
+msgid "Location: %1"
+msgstr "Məkan:"
+
+#: mail/qml/mailpartview/ICalPart.qml:79
+#, kde-format
+msgctxt "@info"
+msgid "%1 (organizer)"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:81
+#, fuzzy, kde-format
+#| msgid "<b>Organizer:</b>"
+msgctxt "@info:accessibility"
+msgid "Organizer: %1"
+msgstr "<b>Təşkilatçı:</b>"
+
+#: mail/qml/mailpartview/ICalPart.qml:86
+#, fuzzy, kde-format
+#| msgid "Attendees:"
+msgctxt "@info:accessibility"
+msgid "Attendees: %1"
+msgstr "İştirakçılar:"
+
+#: mail/qml/mailpartview/ICalPart.qml:91
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Details: %1"
 msgstr ""
 
 #: mail/qml/private/MailDelegate.qml:187

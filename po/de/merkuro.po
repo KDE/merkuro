@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
 "PO-Revision-Date: 2026-05-03 20:43+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1019,6 +1019,7 @@ msgid "Add a title for your journal entry"
 msgstr "Geben Sie einen Titel für Ihren Tagebucheintrag ein"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
+#: mail/qml/mailpartview/ICalPart.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Location"
@@ -4657,10 +4658,75 @@ msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:28
+#: mail/qml/mailpartview/ICalPart.qml:43
+#, fuzzy, kde-format
+#| msgid "The key details are not available."
+msgctxt "@info"
+msgid "This calendar invitation could not be read."
+msgstr "Es sind keine Details für den Schlüssel verfügbar."
+
+#: mail/qml/mailpartview/ICalPart.qml:56
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgctxt "@title"
+msgid "Calendar event"
+msgstr "Kalender"
+
+#: mail/qml/mailpartview/ICalPart.qml:63
+#, fuzzy, kde-format
+#| msgid "Image request has been cancelled"
+msgctxt "@info"
+msgid "This event has been canceled."
+msgstr "Bildanfrage wurde abgebrochen"
+
+#: mail/qml/mailpartview/ICalPart.qml:67
+#, fuzzy, kde-format
+#| msgid "All day"
+msgctxt "@info"
+msgid "%1 · All day"
+msgstr "Ganztägig"
+
+#: mail/qml/mailpartview/ICalPart.qml:69
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu %1 is the name of the action getting reverted"
+#| msgid "Undo: %1"
+msgctxt "@info:accessibility"
+msgid "When: %1"
+msgstr "Rückgängig: %1"
+
+#: mail/qml/mailpartview/ICalPart.qml:75
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Location"
+msgctxt "@info:accessibility"
+msgid "Location: %1"
+msgstr "Ort"
+
+#: mail/qml/mailpartview/ICalPart.qml:79
 #, kde-format
-msgid "This mail contains an invitation"
-msgstr "Diese E-Mail enthält eine Einladung"
+msgctxt "@info"
+msgid "%1 (organizer)"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:81
+#, fuzzy, kde-format
+#| msgid "<b>Organizer:</b>"
+msgctxt "@info:accessibility"
+msgid "Organizer: %1"
+msgstr "<b>Veranstalter:</b>"
+
+#: mail/qml/mailpartview/ICalPart.qml:86
+#, fuzzy, kde-format
+#| msgid "Attendee "
+msgctxt "@info:accessibility"
+msgid "Attendees: %1"
+msgstr "Teilnehmer"
+
+#: mail/qml/mailpartview/ICalPart.qml:91
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Details: %1"
+msgstr ""
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4777,6 +4843,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr ""
+
+#~ msgid "This mail contains an invitation"
+#~ msgstr "Diese E-Mail enthält eine Einladung"
 
 #~ msgid "Move occurrence(s)"
 #~ msgstr "Vorkommen verschieben"
@@ -5311,6 +5380,3 @@ msgstr ""
 
 #~ msgid "years"
 #~ msgstr "Jahre"
-
-#~ msgid "Attendee "
-#~ msgstr "Teilnehmer"

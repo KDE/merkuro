@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
-"PO-Revision-Date: 2026-10-09 10:06+0300\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
+"PO-Revision-Date: 2026-11-03 20:29+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:66
@@ -1006,6 +1006,7 @@ msgid "Add a title for your journal entry"
 msgstr "הוספת כותרת לרשומת היומן שלך"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
+#: mail/qml/mailpartview/ICalPart.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Location"
@@ -4397,38 +4398,37 @@ msgstr "שם תיקייה…"
 #, kde-format
 msgctxt "@info"
 msgid "Domain authentication (DKIM): %1"
-msgstr ""
+msgstr "אימות שמות תחום (DKIM): %1"
 
 #: mail/qml/ConversationViewer.qml:120
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature with warnings from domain %1"
-msgstr ""
+msgstr "אימות חתימה עם אזהרות משם התחום %1"
 
 #: mail/qml/ConversationViewer.qml:121
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature from domain %1"
-msgstr ""
+msgstr "חתימה תקפה משם התחום %1"
 
 #: mail/qml/ConversationViewer.qml:123
-#, fuzzy, kde-format
-#| msgid "Invalid item"
+#, kde-format
 msgctxt "@info"
 msgid "Invalid domain signature"
-msgstr "פריט שגוי"
+msgstr "חתימת שם תחום שגויה"
 
 #: mail/qml/ConversationViewer.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "No domain signature"
-msgstr ""
+msgstr "אין חתימת שם תחום"
 
 #: mail/qml/ConversationViewer.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "Expected signature from domain %1"
-msgstr ""
+msgstr "חתימה צפויה משם תחום %1"
 
 #: mail/qml/desktopactions/OpenMbox.qml:19
 #, kde-format
@@ -4581,10 +4581,76 @@ msgctxt "@label"
 msgid "Manual mode"
 msgstr "מצב ידני"
 
-#: mail/qml/mailpartview/ICalPart.qml:28
+#: mail/qml/mailpartview/ICalPart.qml:43
+#, fuzzy, kde-format
+#| msgid "The incidence could not be moved."
+msgctxt "@info"
+msgid "This calendar invitation could not be read."
+msgstr "לא ניתן להעביר את החזרה."
+
+#: mail/qml/mailpartview/ICalPart.qml:56
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgctxt "@title"
+msgid "Calendar event"
+msgstr "לוח שנה"
+
+#: mail/qml/mailpartview/ICalPart.qml:63
+#, fuzzy, kde-format
+#| msgid "Image request has been cancelled"
+msgctxt "@info"
+msgid "This event has been canceled."
+msgstr "בקשת התמונה בוטלה"
+
+#: mail/qml/mailpartview/ICalPart.qml:67
+#, fuzzy, kde-format
+#| msgid "All day"
+msgctxt "@info"
+msgid "%1 · All day"
+msgstr "כל היום"
+
+#: mail/qml/mailpartview/ICalPart.qml:69
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu %1 is the name of the action getting reverted"
+#| msgid "Undo: %1"
+msgctxt "@info:accessibility"
+msgid "When: %1"
+msgstr "הסגה: %1"
+
+#: mail/qml/mailpartview/ICalPart.qml:75
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Location"
+msgctxt "@info:accessibility"
+msgid "Location: %1"
+msgstr "מקום"
+
+#: mail/qml/mailpartview/ICalPart.qml:79
 #, kde-format
-msgid "This mail contains an invitation"
-msgstr "ההודעה הזאת מכילה הזמנה"
+msgctxt "@info"
+msgid "%1 (organizer)"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:81
+#, fuzzy, kde-format
+#| msgid "<b>Organizer:</b>"
+msgctxt "@info:accessibility"
+msgid "Organizer: %1"
+msgstr "<b>ארגון:</b>"
+
+#: mail/qml/mailpartview/ICalPart.qml:86
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Attendees"
+msgctxt "@info:accessibility"
+msgid "Attendees: %1"
+msgstr "משתתפים"
+
+#: mail/qml/mailpartview/ICalPart.qml:91
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Details: %1"
+msgstr ""
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4694,6 +4760,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "בחירת סוג החשבון"
+
+#~ msgid "This mail contains an invitation"
+#~ msgstr "ההודעה הזאת מכילה הזמנה"
 
 #~ msgid "Move occurrence(s)"
 #~ msgstr "העברת החזרות"

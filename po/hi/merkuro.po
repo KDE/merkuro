@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -1021,6 +1021,7 @@ msgid "Add a title for your journal entry"
 msgstr "अपने दैनिकी प्रविष्टि के लिए एक शीर्षक जोड़ें"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
+#: mail/qml/mailpartview/ICalPart.qml:73
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "@label"
@@ -4746,10 +4747,72 @@ msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:28
+#: mail/qml/mailpartview/ICalPart.qml:43
 #, kde-format
-msgid "This mail contains an invitation"
-msgstr "इस मेल में एक निमंत्रण है"
+msgctxt "@info"
+msgid "This calendar invitation could not be read."
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:56
+#, fuzzy, kde-format
+#| msgid "Calendar"
+msgctxt "@title"
+msgid "Calendar event"
+msgstr "कैलेंडर"
+
+#: mail/qml/mailpartview/ICalPart.qml:63
+#, fuzzy, kde-format
+#| msgid "Image request has been cancelled"
+msgctxt "@info"
+msgid "This event has been canceled."
+msgstr "छवि अनुरोध रद्द कर दिया गया है"
+
+#: mail/qml/mailpartview/ICalPart.qml:67
+#, fuzzy, kde-format
+#| msgid "All day"
+msgctxt "@info"
+msgid "%1 · All day"
+msgstr "सारा दिन"
+
+#: mail/qml/mailpartview/ICalPart.qml:69
+#, fuzzy, kde-format
+#| msgid "Undo: "
+msgctxt "@info:accessibility"
+msgid "When: %1"
+msgstr "पूर्ववत करें:"
+
+#: mail/qml/mailpartview/ICalPart.qml:75
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgctxt "@info:accessibility"
+msgid "Location: %1"
+msgstr "स्थान :"
+
+#: mail/qml/mailpartview/ICalPart.qml:79
+#, kde-format
+msgctxt "@info"
+msgid "%1 (organizer)"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:81
+#, fuzzy, kde-format
+#| msgid "<b>Organizer:</b>"
+msgctxt "@info:accessibility"
+msgid "Organizer: %1"
+msgstr "<b>आयोजक :</b>"
+
+#: mail/qml/mailpartview/ICalPart.qml:86
+#, fuzzy, kde-format
+#| msgid "Attendees:"
+msgctxt "@info:accessibility"
+msgid "Attendees: %1"
+msgstr "उपस्थितगण :"
+
+#: mail/qml/mailpartview/ICalPart.qml:91
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Details: %1"
+msgstr ""
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4865,6 +4928,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr ""
+
+#~ msgid "This mail contains an invitation"
+#~ msgstr "इस मेल में एक निमंत्रण है"
 
 #~ msgid "Move occurrence(s)"
 #~ msgstr "घटनाओं को स्थानांतरित करें"

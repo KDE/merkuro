@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-04 01:04+0000\n"
 "PO-Revision-Date: 2021-06-24 17:34-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -979,6 +979,7 @@ msgid "Add a title for your journal entry"
 msgstr ""
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
+#: mail/qml/mailpartview/ICalPart.qml:73
 #, kde-format
 msgctxt "@label"
 msgid "Location"
@@ -4463,9 +4464,64 @@ msgctxt "@label"
 msgid "Manual mode"
 msgstr ""
 
-#: mail/qml/mailpartview/ICalPart.qml:28
+#: mail/qml/mailpartview/ICalPart.qml:43
 #, kde-format
-msgid "This mail contains an invitation"
+msgctxt "@info"
+msgid "This calendar invitation could not be read."
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:56
+#, kde-format
+msgctxt "@title"
+msgid "Calendar event"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:63
+#, kde-format
+msgctxt "@info"
+msgid "This event has been canceled."
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:67
+#, kde-format
+msgctxt "@info"
+msgid "%1 · All day"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:69
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "When: %1"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:75
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Location: %1"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:79
+#, kde-format
+msgctxt "@info"
+msgid "%1 (organizer)"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:81
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Organizer: %1"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:86
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Attendees: %1"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:91
+#, kde-format
+msgctxt "@info:accessibility"
+msgid "Details: %1"
 msgstr ""
 
 #: mail/qml/private/MailDelegate.qml:187
