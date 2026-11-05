@@ -33,22 +33,20 @@ FormCard.FormCard {
         standardButtons:  QQC2.Dialog.Cancel | QQC2.Dialog.Ok
         parent: root.QQC2.Overlay.overlay
 
-        FormCard.FormCard {
-            autoSeparators: true
+        FormCard.FormTextFieldDelegate {
+            id: nameDelegate
+            readonly property bool isValid: text.trim().length > 0
 
-            FormCard.FormTextFieldDelegate {
-                id: nameDelegate
-                readonly property bool isValid: text.trim().length > 0
-
-                label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
-                placeholderText: renameDialog.transportDelegate ? renameDialog.transportDelegate.transportName : ""
-            }
+            label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
+            placeholderText: renameDialog.transportDelegate ? renameDialog.transportDelegate.transportName : ""
         }
 
         onAccepted: {
             root._configuration.rename(renameDialog.transportDelegate.index, nameDelegate.text);
-            renameDialog.Kirigami.PageStack.closeDialog();
+            renameDialog.close();
         }
+
+        onRejected: renameDialog.close()
     }
 
     Repeater {
@@ -71,6 +69,8 @@ FormCard.FormCard {
             }
 
             trailing: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 QQC2.ToolButton {
                     icon.name: "entry-edit"
                     text: KI18n.i18nc("@action:button", "Edit")
