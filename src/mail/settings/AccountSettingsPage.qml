@@ -19,6 +19,9 @@ FormCard.FormCardPage {
     }
 
     KIdentityManagement.IdentityConfigurationForm {
+        imageSourceForEmail: function(emailAddress: string): url {
+            return "image://contact/" + emailAddress;
+        }
         // The dependency's QML type metadata omits this registered C++ property type.
         // qmllint disable unresolved-type
         cryptographyEditorBackend: IdentityCryptographyEditorBackendFactory.cryptoEditorBackend
