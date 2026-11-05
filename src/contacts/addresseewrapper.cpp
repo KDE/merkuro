@@ -27,8 +27,9 @@ AddresseeWrapper::AddresseeWrapper(QObject *parent)
         Q_EMIT photoChanged();
     });
 
-    connect(m_phoneModel, &PhoneModel::changed, this, [this](const KContacts::PhoneNumber::List &phoneNumbers) {
+    connect(m_phoneModel, &PhoneModel::changed, this, [this](const QList<KContacts::PhoneNumber> &phoneNumbers) {
         m_addressee.setPhoneNumbers(phoneNumbers);
+        Q_EMIT phoneNumbersChanged();
     });
 
     connect(m_addressesModel, &AddressModel::changed, this, [this](const KContacts::Address::List &addresses) {
@@ -201,7 +202,7 @@ void AddresseeWrapper::setBirthday(const QDateTime &birthday)
     Q_EMIT birthdayChanged();
 }
 
-KContacts::PhoneNumber::List AddresseeWrapper::phoneNumbers() const
+QList<KContacts::PhoneNumber> AddresseeWrapper::phoneNumbers() const
 {
     return m_addressee.phoneNumbers();
 }

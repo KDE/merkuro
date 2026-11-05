@@ -31,9 +31,9 @@ PlasmoidItem {
 
         focus: true
 
-        header: stack.currentItem.header
+        header: stack.currentItem ? stack.currentItem.header : null
 
-        property string itemTitle: stack.currentItem.title
+        property string itemTitle: stack.currentItem ? stack.currentItem.title : ""
         onItemTitleChanged: contactApplet.Plasmoid.title = itemTitle ?? KI18n.i18n("Contact")
 
         property alias listMargins: listItemSvg.margins

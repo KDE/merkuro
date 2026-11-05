@@ -6,11 +6,13 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQml
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.merkuro.contact
 import org.kde.ki18n
+import "." as Applet
 
 PlasmaComponents3.ScrollView {
     id: root
@@ -18,102 +20,104 @@ PlasmaComponents3.ScrollView {
     property int itemId
     topPadding: 0
 
-    property string title: addressee.formattedName
+    property string title: root.addressee.formattedName
+    readonly property QQC2.StackView pageStack: root.QQC2.StackView.view
+    readonly property bool hasBirthday: !isNaN(root.addressee.birthday.getTime())
 
     property AddresseeWrapper addressee: AddresseeWrapper {
         addresseeItem: ContactManager.getItem(root.itemId)
     }
     PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
 
-    function callNumber(number) {
+    function callNumber(number: string): void {
         Qt.openUrlExternally("tel:" + number)
     }
 
-    function sendSms(number) {
+    function sendSms(number: string): void {
         Qt.openUrlExternally("sms:" + number)
     }
 
-    Keys.onPressed: if (event.key === Qt.Key_Escape) {
-        stack.pop()
-        event.accepted = true;
+    Keys.onPressed: function(event: KeyEvent): void {
+        if (event.key === Qt.Key_Escape) {
+            root.pageStack.pop();
+            event.accepted = true;
+        }
     }
 
     property var header: PlasmaExtras.PlasmoidHeading {
-        Component {
-            id: menuItemComponent
-            PlasmaComponents3.MenuItem { }
-        }
         RowLayout {
             width: parent.width
 
             PlasmaComponents3.Button {
                 icon.name: "go-previous-view"
                 text: KI18n.i18n("Return to Contact List")
-                onClicked: stack.pop()
+                onClicked: root.pageStack.pop()
                 Layout.fillWidth: true
             }
 
             PlasmaComponents3.ToolButton {
                 id: configureButtonCall
+                objectName: "callButton"
                 Accessible.name: KI18n.i18n("Call")
                 PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
                 icon.name: "call-start"
                 visible: addressee.phoneNumbers.length > 0
                 onClicked: {
-                    const model = addressee.phoneNumbers;
-
-                    if (model.length === 1) {
-                        page.callNumber(model[0].normalizedNumber);
+                    if (root.addressee.phoneNumbers.length === 1) {
+                        root.callNumber(root.addressee.phoneNumbers[0].normalizedNumber);
                     } else {
-                        if (menuCall.count == 0) {
-                            model.forEach((item) => {
-                                let menuItem = menuItemComponent.createObject(menuCall, {
-                                    text: KI18n.i18n("%1 (%2)", item.typeLabel, item.number)
-                                });
-                                menuItem.clicked.connect(() => {
-                                    callNumber(item.number);
-                                });
-                                menuCall.addItem(menuItem);
-                            });
-                        }
                         menuCall.open();
                     }
                 }
                 PlasmaComponents3.Menu {
                     id: menuCall
+                    objectName: "callMenu"
                     y: configureButtonCall.height
+
+                    Instantiator {
+                        model: root.addressee.phoneNumbers
+                        delegate: PlasmaComponents3.MenuItem {
+                            required property var modelData
+
+                            text: KI18n.i18n("%1 (%2)", modelData.typeLabel, modelData.number)
+                            onTriggered: root.callNumber(modelData.normalizedNumber)
+                        }
+                        onObjectAdded: function(index: int, object: QtObject): void { menuCall.insertItem(index, object); }
+                        onObjectRemoved: function(index: int, object: QtObject): void { menuCall.removeItem(object); }
+                    }
                 }
             }
 
             PlasmaComponents3.ToolButton {
                 id: configureButtonSms
+                objectName: "smsButton"
                 Accessible.name: KI18n.i18n("Send SMS")
                 PlasmaComponents3.ToolTip { text: KI18n.i18n("Send SMS") }
                 icon.name: "mail-message"
                 visible: addressee.phoneNumbers.length > 0
                 onClicked: {
-                    const model = addressee.phoneNumbers;
-
-                    if (addressee.phoneNumbers.length === 1) {
-                        sendSms(model[0].normalizedNumber);
+                    if (root.addressee.phoneNumbers.length === 1) {
+                        root.sendSms(root.addressee.phoneNumbers[0].normalizedNumber);
                     } else {
-                        if (menuSms.count == 0) {
-                            model.forEach((item) => {
-                                let menuItem = menuItemComponent.createObject(menuSms, {
-                                    text: KI18n.i18n("%1 (%2)", item.typeLabel, item.number)
-                                });
-                                menuItem.clicked.connect(() => {
-                                    sendSms(item.number);
-                                });
-                                menuSms.addItem(menuItem);
-                            });
-                        }
                         menuSms.open();
                     }
                 }
                 PlasmaComponents3.Menu {
                     id: menuSms
+                    objectName: "smsMenu"
                     y: configureButtonSms.height
+
+                    Instantiator {
+                        model: root.addressee.phoneNumbers
+                        delegate: PlasmaComponents3.MenuItem {
+                            required property var modelData
+
+                            text: KI18n.i18n("%1 (%2)", modelData.typeLabel, modelData.number)
+                            onTriggered: root.sendSms(modelData.normalizedNumber)
+                        }
+                        onObjectAdded: function(index: int, object: QtObject): void { menuSms.insertItem(index, object); }
+                        onObjectRemoved: function(index: int, object: QtObject): void { menuSms.removeItem(object); }
+                    }
                 }
             }
 
@@ -129,7 +133,7 @@ PlasmaComponents3.ScrollView {
                 icon.name: 'view-barcode-qr'
                 Accessible.name: KI18n.i18n("Show QR Code")
                 PlasmaComponents3.ToolTip { text: KI18n.i18n("Show QR Code") }
-                onClicked: stack.push(Qt.resolvedUrl('./QrCodePage.qml'), {
+                onClicked: root.pageStack.push(Qt.resolvedUrl('./QrCodePage.qml'), {
                     qrCodeData: addressee.qrCodeData(),
                 })
             }
@@ -142,11 +146,11 @@ PlasmaComponents3.ScrollView {
             id: layout
             width: parent.width
             spacing: 0
-            Header {
+            Applet.Header {
                 Layout.fillWidth: true
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 8
 
-                name: addressee.name
+                name: root.addressee.formattedName
                 photoUrl: addressee.photoUrl
                 backgroundSource: "qrc:/qt/qml/plasma/applet/org/kde/merkuro/contact/applet/fallbackBackground.png"
 
@@ -169,8 +173,11 @@ PlasmaComponents3.ScrollView {
                 Layout.leftMargin: Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.topMargin: Kirigami.Units.smallSpacing
-                visible: text !== KI18n.i18n("Birthday:") + ' '
-                text: if (addressee.birthday.getFullYear() === 0) {
+                objectName: "birthdayLabel"
+                visible: root.hasBirthday
+                text: if (!root.hasBirthday) {
+                    return "";
+                } else if (addressee.birthday.getFullYear() === 0) {
                     return Qt.formatDate(addressee.birthday, KI18n.i18nc("Day month format", "dd.MM."))
                 } else {
                     return KI18n.i18n("Birthday:") + ' ' + addressee.birthday.toLocaleDateString()
@@ -188,12 +195,18 @@ PlasmaComponents3.ScrollView {
 
             Repeater {
                 id: addressesRepeater
-                model: addressee.addressesModel
+                model: root.addressee.addressesModel
                 PlasmaComponents3.Label {
+                    id: addressDelegate
+                    objectName: "addressDelegate"
+
+                    required property string typeLabel
+                    required property string formattedAddress
+
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
-                    visible: text.length !== 0
-                    text: (model.typeLabel ? KI18n.i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", model.typeLabel) : '') + ' ' + model.formattedAddress
+                    visible: addressDelegate.formattedAddress.length > 0
+                    text: (addressDelegate.typeLabel ? KI18n.i18nc("%1 is the type of the address, e.g. home, work, ...", "%1:", addressDelegate.typeLabel) : '') + ' ' + addressDelegate.formattedAddress
                 }
             }
 
@@ -208,20 +221,26 @@ PlasmaComponents3.ScrollView {
 
             Repeater {
                 id: emailRepeater
-                model: addressee.emailModel
+                model: root.addressee.emailModel
                 PlasmaComponents3.Label {
-                    visible: text !== ""
-                    text: `${model.type} <a href="mailto:${model.display}">${model.display}</a>`
+                    id: emailDelegate
+                    objectName: "emailDelegate"
+
+                    required property string type
+                    required property string email
+
+                    visible: emailDelegate.email.length > 0
+                    text: `${emailDelegate.type} <a href="mailto:${emailDelegate.email}">${emailDelegate.email}</a>`
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
                     PlasmaComponents3.ToolTip { text: KI18n.i18n("Send Email") }
-                    onLinkActivated: Qt.openUrlExternally(link)
+                    onLinkActivated: function(link: string): void { Qt.openUrlExternally(link); }
                     MouseArea {
                         id: area
                         anchors.fill: parent
                         hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
-                        onClicked: Qt.openUrlExternally(`mailto:${model.display}`)
+                        onClicked: Qt.openUrlExternally(`mailto:${emailDelegate.email}`)
                     }
                 }
             }
@@ -253,7 +272,7 @@ PlasmaComponents3.ScrollView {
                         Layout.leftMargin: Kirigami.Units.smallSpacing
                         Layout.rightMargin: Kirigami.Units.smallSpacing
                         PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
-                        onLinkActivated: Qt.openUrlExternally(link)
+                        onLinkActivated: function(link: string): void { Qt.openUrlExternally(link); }
                         MouseArea {
                             id: phoneNumberMouseArea
                             anchors.fill: parent

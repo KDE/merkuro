@@ -7,10 +7,10 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQml
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.plasmoid
-import org.kde.plasma.extras as PlasmaExtras
 import org.kde.kquickcontrolsaddons
 import org.kde.merkuro.contact
 import org.kde.prison as Prison
@@ -22,10 +22,11 @@ ColumnLayout {
 
     property string qrCodeData
     property string title: KI18n.i18n("QR Code")
+    readonly property QQC2.StackView pageStack: barcodeView.QQC2.StackView.view
 
-    Keys.onPressed: {
+    Keys.onPressed: function(event: KeyEvent): void {
         if (event.key == Qt.Key_Escape) {
-            stack.pop()
+            barcodeView.pageStack.pop()
             event.accepted = true;
         }
     }
@@ -36,7 +37,7 @@ ColumnLayout {
                 Layout.fillWidth: true
                 icon.name: "go-previous-view"
                 text: KI18n.i18n("Return to Contact")
-                onClicked: stack.pop()
+                onClicked: barcodeView.pageStack.pop()
             }
 
             Component {
@@ -46,8 +47,8 @@ ColumnLayout {
 
             PlasmaComponents3.Menu {
                 id: menu
-                x: configureButton.x
-                y: configureButton.y + configureButton.height
+                parent: configureButton
+                y: configureButton.height
                 onClosed: configureButton.checked = false
 
                 Component.onCompleted: {
@@ -64,7 +65,6 @@ ColumnLayout {
                             })
                         });
                         menuItem.clicked.connect(() => {
-                            barcodeItem.barcodeType = item.type;
                             Plasmoid.configuration.barcodeType = item.type;
                         });
                         menu.addItem(menuItem);
@@ -84,14 +84,14 @@ ColumnLayout {
         }
     }
     Item {
-        Layout.fillWidth: parent
-        Layout.fillHeight: parent
+        Layout.fillWidth: true
+        Layout.fillHeight: true
         Layout.topMargin: Kirigami.Units.smallSpacing
 
         Prison.Barcode {
             id: barcodeItem
             readonly property bool valid: implicitWidth > 0 && implicitHeight > 0 && implicitWidth <= width && implicitHeight <= height
-            content: qrCodeData
+            content: barcodeView.qrCodeData
             anchors.fill: parent
             barcodeType: Plasmoid.configuration.barcodeType
             // Cannot set visible to false as we need it to re-render when changing its size

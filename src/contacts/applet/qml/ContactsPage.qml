@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQml
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
@@ -17,6 +18,7 @@ PlasmaComponents3.ScrollView {
     id: scrollView
     anchors.fill: parent
     property string title: KI18n.i18n("Contacts")
+    readonly property QQC2.StackView pageStack: scrollView.QQC2.StackView.view
 
     property var header: PlasmaExtras.PlasmoidHeading {
         focus: true
@@ -24,26 +26,28 @@ PlasmaComponents3.ScrollView {
             width: parent.width
             PlasmaExtras.SearchField {
                 id: searchField
+                objectName: "contactSearchField"
                 Layout.fillWidth: true
                 onTextChanged: contactsList.model.setFilterFixedString(text)
             }
         }
     }
 
-    Keys.onPressed: {
-        function goToCurrent() {
-            contactsList.positionViewAtIndex(contactsList.currentIndex, ListView.Contain);
-            if (contactsList.currentIndex != -1) {
-                contactsList.currentItem.forceActiveFocus();
-            }
+    function goToCurrent(): void {
+        contactsList.positionViewAtIndex(contactsList.currentIndex, ListView.Contain);
+        if (contactsList.currentItem) {
+            contactsList.currentItem.forceActiveFocus();
         }
+    }
+
+    Keys.onPressed: function(event: KeyEvent): void {
         if (event.modifiers & Qt.ControlModifier && event.key == Qt.Key_F) {
-            toolbar.searchField.forceActiveFocus();
-            toolbar.searchField.selectAll();
+            searchField.forceActiveFocus();
+            searchField.selectAll();
             event.accepted = true;
         } else if (event.key == Qt.Key_Down) {
             contactsList.incrementCurrentIndex();
-            goToCurrent()
+            scrollView.goToCurrent()
             event.accepted = true;
         } else if (event.key == Qt.Key_Up) {
             if (contactsList.currentIndex == 0) {
@@ -52,7 +56,7 @@ PlasmaComponents3.ScrollView {
                 searchField.selectAll();
             } else {
                 contactsList.decrementCurrentIndex();
-                goToCurrent();
+                scrollView.goToCurrent();
             }
             event.accepted = true;
         }
@@ -62,7 +66,7 @@ PlasmaComponents3.ScrollView {
     // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
     PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
 
-    contentWidth: availableWidth - contentItem.leftMargin - contentItem.rightMargin
+    contentWidth: availableWidth
 
     ItemSelectionModel {
         id: contactSelectionModel
@@ -71,6 +75,7 @@ PlasmaComponents3.ScrollView {
 
     contentItem: ListView {
         id: contactsList
+        objectName: "contactsList"
         model: ContactListProxyModel {
             filterCaseSensitivity: Qt.CaseInsensitive
             sourceModel: ContactsModel {}
@@ -92,9 +97,11 @@ PlasmaComponents3.ScrollView {
         clip: true
         focus: true
         delegate: ContactListItem {
+            id: contactDelegate
+
             selectionModel: contactSelectionModel
-            onClicked: stack.push(Qt.resolvedUrl('./ContactPage.qml'), {
-                itemId: model.itemId,
+            onClicked: scrollView.pageStack.push(Qt.resolvedUrl('./ContactPage.qml'), {
+                itemId: contactDelegate.itemId,
             })
         }
     }

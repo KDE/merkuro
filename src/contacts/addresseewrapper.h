@@ -124,7 +124,7 @@ public:
 
     EmailModel *emailModel() const;
     PhoneModel *phoneModel() const;
-    [[nodiscard]] KContacts::PhoneNumber::List phoneNumbers() const;
+    [[nodiscard]] QList<KContacts::PhoneNumber> phoneNumbers() const;
 
     [[nodiscard]] QString note() const;
     void setNote(const QString &note);
