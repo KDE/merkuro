@@ -20,6 +20,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormSwitchDelegate {
             text: i18n("Use popup to show incidence information")
             checked: Config.useIncidenceInfoPopup
@@ -168,6 +170,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         data: [
             QQC2.ButtonGroup {
                 id: monthGridModeGroup
@@ -220,7 +224,6 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             text: i18n("Weekday label alignment")
         }
@@ -250,8 +253,6 @@ FormCard.FormCardPage {
             }
         }
 
-
-        FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             text: i18n("Weekday label length:")
         }
@@ -271,7 +272,6 @@ FormCard.FormCardPage {
             QQC2.ButtonGroup.group: weekdayLabelLengthGroup
         }
         FormCard.FormRadioDelegate {
-            id: configLetterDelegate
             property int value: Config.Letter
             text: i18n("Letter only (M)")
             enabled: !Config.isWeekdayLabelLengthImmutable
@@ -279,9 +279,7 @@ FormCard.FormCardPage {
             QQC2.ButtonGroup.group: weekdayLabelLengthGroup
         }
 
-        FormCard.FormDelegateSeparator { above: showWeekNumbersDelegate; below: configLetterDelegate }
         FormCard.FormCheckDelegate {
-            id: showWeekNumbersDelegate
             text: i18n("Show week numbers")
             checked: Config.showWeekNumbers
             enabled: !Config.isShowWeekNumbersImmutable
@@ -290,7 +288,7 @@ FormCard.FormCardPage {
                 Config.save();
             }
         }
-        FormCard.FormDelegateSeparator { above: showWeekNumbersDelegate }
+
         FormCard.AbstractFormDelegate {
             background: Item {}
             Layout.fillWidth: true
@@ -324,6 +322,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         data: QQC2.ButtonGroup {
             id: hourlyViewModeGroup
             exclusive: true
@@ -364,6 +364,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         data: QQC2.ButtonGroup {
             id: monthListModeGroup
             exclusive: true
@@ -398,10 +400,7 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { above: showWeekHeaders }
-
         FormCard.FormCheckDelegate {
-            id: showWeekHeaders
             text: i18n("Show week headers")
             checked: Config.showWeekHeaders
             enabled: !Config.isShowWeekHeadersImmutable
@@ -411,9 +410,7 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { above: hideEmptyDays }
         FormCard.FormCheckDelegate {
-            id: hideEmptyDays
             text: i18n("Hide empty days")
             checked: Config.hideEmptyDays
             onCheckedChanged: {
@@ -428,6 +425,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             text: i18n("Show completed sub-tasks")
             checked: Config.showCompletedSubtodos
@@ -444,8 +443,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
-            id: enableMapsDelegate
             text: i18n("Enable maps")
             checked: Config.enableMaps
             enabled: !Config.isEnableMapsImmutable
@@ -455,8 +455,6 @@ FormCard.FormCardPage {
             }
             description: i18n("May cause crashing on some systems.")
         }
-
-        FormCard.FormDelegateSeparator { above: enableMapsDelegate }
     }
 
     FormCard.FormHeader {
@@ -464,6 +462,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormRadioDelegate {
             property int value: Config.Circle
             text: i18n("Circle (shows area of location)")

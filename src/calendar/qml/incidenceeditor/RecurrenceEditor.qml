@@ -14,6 +14,7 @@ import org.kde.merkuro.components as MerkuroComponents
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property Calendar.IncidenceWrapper incidenceWrapper
     property bool customMode: false

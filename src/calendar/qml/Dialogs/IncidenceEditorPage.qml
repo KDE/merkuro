@@ -170,7 +170,6 @@ FormCard.FormCardPage {
         }
     }
 
-
     Loader {
         id: editorLoader
 
@@ -202,7 +201,7 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
-		        autoSeparators: true
+                autoSeparators: true
 
                 Layout.topMargin: Kirigami.Units.gridUnit
 
@@ -350,6 +349,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 visible: incidenceForm.isTodo
 
                 FormCard.AbstractFormDelegate {
@@ -388,8 +389,6 @@ FormCard.FormCardPage {
                         }
                     }
                 }
-
-                FormCard.FormDelegateSeparator {}
 
                 FormCard.FormComboBoxDelegate {
                     text: i18n("Priority")
@@ -452,6 +451,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 FormCard.AbstractFormDelegate {
                     background: null
                     contentItem: RowLayout {
@@ -511,6 +512,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 visible: !incidenceForm.isJournal
 
                 FormCard.AbstractFormDelegate {
@@ -569,6 +572,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 FormCard.FormComboBoxDelegate {
                     id: timeZoneComboBox
                     text: i18n("Timezone:")
@@ -638,7 +643,7 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
-                Component.onCompleted: autoSeparators = true
+                autoSeparators: true
 
                 FormCard.FormComboBoxDelegate {
                     id: organizerComboBox
@@ -791,7 +796,7 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
-                Component.onCompleted: autoSeparators = true
+                autoSeparators: true
 
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no reminders")
@@ -823,6 +828,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 FormCard.AbstractFormDelegate {
                     background: null
                     contentItem: QQC2.ComboBox {
@@ -895,7 +902,7 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
-                Component.onCompleted: autoSeparators = true
+                autoSeparators: true
 
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no attachments")
@@ -937,6 +944,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 QQC2.TextArea {
                     objectName: "descriptionField"
                     text: root.incidenceWrapper.description

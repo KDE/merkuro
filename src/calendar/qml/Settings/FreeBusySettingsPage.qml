@@ -20,12 +20,13 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: freeBusyPublishSection
+        autoSeparators: true
 
         FormCard.FormTextDelegate {
             id: freeBusyPublishInfo
             description: i18n("When you publish your availability information, it enables others to consider your calendar availability when inviting you to a meeting. Only the times that are already marked as busy are disclosed, without revealing the specific reasons for your availability.")
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormCheckDelegate {
             id: autoPublishDelegate
             text: i18n("Publish your availability information automatically")
@@ -35,7 +36,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormSpinBoxDelegate {
             id: autoPublishDelayDelegate
             Layout.fillWidth: true
@@ -49,7 +50,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormSpinBoxDelegate {
             id: publishDaysDelegate
             Layout.fillWidth: true
@@ -62,7 +63,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormTextDelegate {
             id: publishServerTitle
             description: i18n("Server information")
@@ -76,7 +77,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormTextFieldDelegate {
             id: publishServerUser
             label: i18n("Username")
@@ -86,7 +87,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormPasswordFieldDelegate {
             id: publishServerPassword
             label: i18n("Password")
@@ -96,7 +97,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormCheckDelegate {
             id: publishServerSavePassword
             text: i18n("Save password")
@@ -106,13 +107,13 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormButtonDelegate {
             id: freeBusyPublishButton
             text: i18n("Click here to publish availability information manually")
             onClicked: Calendar.FreeBusyManager.publishFreeBusy();
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.AbstractFormDelegate {
             id: freeBusyMailDelegate
             background: null
@@ -141,12 +142,13 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: freeBusyRetrieveSection
+        autoSeparators: true
 
         FormCard.FormTextDelegate {
             id: freeBusyRetrieveInfo
             description: i18n("By retrieving Availability information that others have published, you can take their calendar into account when inviting them to a meeting.")
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormCheckDelegate {
             id: autoRetrieveDelegate
             text: i18n("Retrieve others' availability information automatically")
@@ -165,7 +167,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormTextDelegate {
             id: retrieveServerTitle
             description: i18n("Server information")
@@ -179,7 +181,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormTextFieldDelegate {
             id: retrieveServerUser
             label: i18n("Username")
@@ -189,7 +191,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormPasswordFieldDelegate {
             id: retrieveServerPassword
             label: i18n("Password")
@@ -199,7 +201,7 @@ FormCard.FormCardPage {
                 Calendar.CalendarSettings.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
+
         FormCard.FormCheckDelegate {
             id: retrieveServerSavePassword
             text: i18n("Save password")
