@@ -242,6 +242,7 @@ Kirigami.ScrollablePage {
             id: rescheduleDialog
             FormCard.FormCardDialog {
                 id: dialogRoot
+                autoSeparators: true
 
                 property var item
 

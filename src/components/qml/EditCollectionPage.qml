@@ -29,6 +29,8 @@ FormCard.FormCardPage {
         title: KI18n.i18nc("@title", "General")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: displayNameField
             text: editor.displayName
@@ -39,7 +41,6 @@ FormCard.FormCardPage {
             label: KI18n.i18nc("@label:textbox", "Name")
             enabled: root.collection.rights & Akonadi.collection.Right.CanChangeCollection
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormIconDelegate {
             id: iconField
             text: KI18n.i18nc("@label:textbox", "Icon")
@@ -49,7 +50,6 @@ FormCard.FormCardPage {
                 editor.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
 
         Repeater {
             model: root.extraActions
@@ -65,11 +65,12 @@ FormCard.FormCardPage {
         title: KI18n.i18nc("@title", "Statistics")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextDelegate {
             description: KI18n.i18ncp("@info", "%1 entry", "%1 entries", root.collection.statistics.count)
             text: KI18n.i18nc("@label", "Content")
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormTextDelegate {
             description: Format.formatByteSize(root.collection.statistics.size)
             text: KI18n.i18nc("@label", "Size")
@@ -79,6 +80,8 @@ FormCard.FormCardPage {
         title: KI18n.i18nc("@title", "Retrieval")
     }
     FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormCheckDelegate {
             id: useParent
             text: KI18n.i18nc("@option:check", "Use options from parent folder or account")
@@ -88,7 +91,6 @@ FormCard.FormCardPage {
                 editor.save();
             }
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormCheckDelegate {
             text: KI18n.i18nc("@option:check", "Synchronize when selecting this folder")
             checked: editor.cachePolicy.syncOnDemand
@@ -98,7 +100,6 @@ FormCard.FormCardPage {
             }
             enabled: !useParent.checked
         }
-        FormCard.FormDelegateSeparator {}
         FormCard.FormSpinBoxDelegate {
             label: KI18n.i18nc("@label:spinbox", "Synchronize after")
             value: editor.cachePolicy.intervalCheckTime

@@ -17,6 +17,7 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property ContactEditor contactEditor
 
@@ -28,8 +29,6 @@ FormCard.FormCard {
         placeholderText: KI18n.i18nc("Placeholder value for name of Organization", "KDE")
     }
 
-    FormCard.FormDelegateSeparator {}
-
     FormCard.FormTextFieldDelegate {
         id: professionId
         label: KI18n.i18n("Profession")
@@ -37,8 +36,6 @@ FormCard.FormCard {
         onTextChanged: root.contactEditor.contact.profession = text
         placeholderText: KI18n.i18nc("Placeholder value for name of Profession", "Software Developer")
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: titleId
@@ -48,8 +45,6 @@ FormCard.FormCard {
         placeholderText: KI18n.i18nc("Placeholder value for Title", "SDE-1")
     }
 
-    FormCard.FormDelegateSeparator {}
-
     FormCard.FormTextFieldDelegate {
         id: deptId
         label: KI18n.i18n("Department")
@@ -57,8 +52,6 @@ FormCard.FormCard {
         onTextChanged: root.contactEditor.contact.department = text
         placeholderText: KI18n.i18nc("Placeholder value for name of Department", "Merkuro-Team")
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: officeId
@@ -68,8 +61,6 @@ FormCard.FormCard {
         placeholderText: KI18n.i18nc("Placeholder value for Office", "Tech Wing, 4th Floor")
     }
 
-    FormCard.FormDelegateSeparator {}
-
     FormCard.FormTextFieldDelegate {
         id: managersNameId
         label: KI18n.i18n("Manager's Name")
@@ -77,8 +68,6 @@ FormCard.FormCard {
         onTextChanged: root.contactEditor.contact.managersName = text
         placeholderText: KI18n.i18nc("Placeholder value for Manager's Name", "Bob")
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormTextFieldDelegate {
         id: assistantsNameId

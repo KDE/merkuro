@@ -14,10 +14,9 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property ContactEditor contactEditor
-
-    Component.onCompleted: autoSeparators = true
 
     Repeater {
         model: root.contactEditor.contact.imppModel

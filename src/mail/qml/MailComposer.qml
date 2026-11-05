@@ -214,6 +214,7 @@ Kirigami.ScrollablePage {
 
     property Component sendLaterDialogComponent: FormCard.FormCardDialog {
         id: sendLaterDialog
+        autoSeparators: true
 
         property MailClient mailClient
         property int identity

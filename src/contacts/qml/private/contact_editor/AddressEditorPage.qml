@@ -60,6 +60,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormComboBoxDelegate {
@@ -79,6 +81,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Layout.topMargin: Kirigami.Units.smallSpacing
 
         FormCard.FormTextFieldDelegate {
@@ -88,15 +92,11 @@ FormCard.FormCardPage {
             text: root.originalAddress?.street ?? ""
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextFieldDelegate {
             id: extendedField
             label: KI18n.i18nc("@label:textbox", "Apartment, suite, etc.")
             text: root.originalAddress?.extended ?? ""
         }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: postOfficeBoxField
@@ -135,6 +135,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Layout.topMargin: Kirigami.Units.smallSpacing
 
         FormCard.FormTextFieldDelegate {

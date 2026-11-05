@@ -12,12 +12,12 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
+
     objectName: "addressEditorCard"
 
     required property ContactEditor contactEditor
     signal addressRequested(int row)
-
-    Component.onCompleted: autoSeparators = true
 
     Repeater {
         model: root.contactEditor?.contact.addressesModel

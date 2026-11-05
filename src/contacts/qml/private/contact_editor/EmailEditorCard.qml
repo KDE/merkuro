@@ -14,12 +14,11 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property ContactEditor contactEditor
     property alias toAddEmailText: toAddEmail.text
     property alias newEmailTypeCurrentValue: newEmailType.currentValue
-
-    Component.onCompleted: autoSeparators = true
 
     Repeater {
         id: emailRepeater

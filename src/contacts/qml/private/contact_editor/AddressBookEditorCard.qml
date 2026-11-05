@@ -16,6 +16,7 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     signal toggleAdvancedNameFields
 
@@ -46,11 +47,7 @@ FormCard.FormCard {
         onUserSelectedCollection: collection => root.contactEditor.setDefaultAddressBook(collection)
     }
 
-    FormCard.FormDelegateSeparator { above: addressBookComboBox; below: nameDelegate }
-
     FormCard.AbstractFormDelegate {
-        id: nameDelegate
-
         contentItem: ColumnLayout {
 		    spacing: Kirigami.Units.smallSpacing
 
@@ -86,70 +83,58 @@ FormCard.FormCard {
         }
     }
 
-    ColumnLayout {
+    FormCard.FormComboBoxDelegate {
         visible: root.displayAdvancedNameFields
+        text: KI18n.i18n("Honorific prefix")
 
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormComboBoxDelegate {
-            text: KI18n.i18n("Honorific prefix")
-
-            editable: true
-            model: [KI18n.i18n("Dr."), KI18n.i18n("Miss"), KI18n.i18n("Mr."), KI18n.i18n("Mrs."), KI18n.i18n("Ms."), KI18n.i18n("Prof.")]
-            currentIndex: -1
-            editText: root.contactEditor.contact.prefix
-            onCurrentValueChanged: root.contactEditor.contact.prefix = currentValue
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextFieldDelegate {
-            label: KI18n.i18n("Given name")
-            onTextChanged: root.contactEditor.contact.givenName = text
-            text: root.contactEditor.contact.givenName
-            placeholderText: KI18n.i18n("First name or chosen name")
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextFieldDelegate {
-            label: KI18n.i18n("Additional name")
-            onTextChanged: root.contactEditor.contact.additionalName = text
-            text: root.contactEditor.contact.additionalName
-            placeholderText: KI18n.i18n("Middle name or other name")
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextFieldDelegate {
-            label: KI18n.i18n("Family name:")
-            onTextChanged: root.contactEditor.contact.familyName = text
-            text: root.contactEditor.contact.familyName
-            placeholderText: KI18n.i18n("Surname or last name")
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormComboBoxDelegate {
-            text: KI18n.i18n("Honorific suffix")
-            onCurrentValueChanged: root.contactEditor.contact.suffix = currentValue
-            editable: true
-            editText: root.contactEditor.contact.suffix
-            model: [KI18n.i18n("I"), KI18n.i18n("II"), KI18n.i18n("III"), KI18n.i18n("Jr."), KI18n.i18n("Sr.")]
-            currentIndex: -1
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextFieldDelegate {
-            label: KI18n.i18n("Nickname")
-            onTextChanged: root.contactEditor.contact.nickName = text
-            text: root.contactEditor.contact.nickName
-            placeholderText: KI18n.i18n("Alternative name")
-        }
+        editable: true
+        model: [KI18n.i18n("Dr."), KI18n.i18n("Miss"), KI18n.i18n("Mr."), KI18n.i18n("Mrs."), KI18n.i18n("Ms."), KI18n.i18n("Prof.")]
+        currentIndex: -1
+        editText: root.contactEditor.contact.prefix
+        onCurrentValueChanged: root.contactEditor.contact.prefix = currentValue
     }
 
-    FormCard.FormDelegateSeparator {}
+    FormCard.FormTextFieldDelegate {
+        visible: root.displayAdvancedNameFields
+        label: KI18n.i18n("Given name")
+        onTextChanged: root.contactEditor.contact.givenName = text
+        text: root.contactEditor.contact.givenName
+        placeholderText: KI18n.i18n("First name or chosen name")
+    }
+
+    FormCard.FormTextFieldDelegate {
+        visible: root.displayAdvancedNameFields
+        label: KI18n.i18n("Additional name")
+        onTextChanged: root.contactEditor.contact.additionalName = text
+        text: root.contactEditor.contact.additionalName
+        placeholderText: KI18n.i18n("Middle name or other name")
+    }
+
+    FormCard.FormTextFieldDelegate {
+        visible: root.displayAdvancedNameFields
+        label: KI18n.i18n("Family name:")
+        onTextChanged: root.contactEditor.contact.familyName = text
+        text: root.contactEditor.contact.familyName
+        placeholderText: KI18n.i18n("Surname or last name")
+    }
+
+    FormCard.FormComboBoxDelegate {
+        visible: root.displayAdvancedNameFields
+        text: KI18n.i18n("Honorific suffix")
+        onCurrentValueChanged: root.contactEditor.contact.suffix = currentValue
+        editable: true
+        editText: root.contactEditor.contact.suffix
+        model: [KI18n.i18n("I"), KI18n.i18n("II"), KI18n.i18n("III"), KI18n.i18n("Jr."), KI18n.i18n("Sr.")]
+        currentIndex: -1
+    }
+
+    FormCard.FormTextFieldDelegate {
+        visible: root.displayAdvancedNameFields
+        label: KI18n.i18n("Nickname")
+        onTextChanged: root.contactEditor.contact.nickName = text
+        text: root.contactEditor.contact.nickName
+        placeholderText: KI18n.i18n("Alternative name")
+    }
 
     FormCard.FormTextFieldDelegate {
         id: blogFeedUrl

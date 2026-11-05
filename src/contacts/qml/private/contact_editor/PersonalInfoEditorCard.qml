@@ -11,6 +11,7 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property ContactEditor contactEditor
 
@@ -21,8 +22,6 @@ FormCard.FormCard {
         onTextChanged: root.contactEditor.contact.spousesName = text
     }
 
-    FormCard.FormDelegateSeparator {}
-
     FormCard.FormDateTimeDelegate {
         id: anniversaryDelegate
         text: KI18n.i18nc("@label", "Anniversary")
@@ -30,8 +29,6 @@ FormCard.FormCard {
         value: root.contactEditor.contact.anniversary
         onValueChanged: root.contactEditor.contact.anniversary = value
     }
-
-    FormCard.FormDelegateSeparator {}
 
     FormCard.FormDateTimeDelegate {
         id: birtdayDelegate

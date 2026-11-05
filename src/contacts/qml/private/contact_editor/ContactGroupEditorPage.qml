@@ -64,6 +64,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -86,8 +88,6 @@ FormCard.FormCardPage {
             onUserSelectedCollection: collection => contactGroupEditor.setDefaultAddressBook(collection)
         }
 
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormTextFieldDelegate {
             label: KI18n.i18n("Name:")
             text: contactGroupEditor.name
@@ -101,7 +101,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        Component.onCompleted: autoSeparators = true
+        autoSeparators: true
 
         Repeater {
             id: repeater

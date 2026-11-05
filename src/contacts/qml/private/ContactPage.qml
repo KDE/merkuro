@@ -178,6 +178,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: contactInfoCard
+        autoSeparators: true
 
         visible: addressee.formattedName.trim().length > 0
             || addressee.nickName.trim().length > 0
@@ -213,6 +214,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: personalInfoCard
+        autoSeparators: true
 
         visible: anniversary.visible || spousesName.visible
 
@@ -246,8 +248,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: phoneRepeater.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: phoneRepeater
@@ -280,8 +283,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: addressesRepeater.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: addressesRepeater
@@ -315,8 +319,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: imppRepeater.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: imppRepeater
@@ -355,6 +360,7 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         id: businessCard
+        autoSeparators: true
 
         visible: addressee.organization.length > 0
             || addressee.profession.length > 0
@@ -363,7 +369,6 @@ FormCard.FormCardPage {
             || addressee.office.length > 0
             || addressee.managersName.length > 0
             || addressee.assistantsName.length > 0
-
 
         FormCard.FormTextDelegate {
             id: organization
@@ -421,8 +426,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: emailRepeater.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: emailRepeater
@@ -443,6 +449,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: addressee.note.trim().length > 0
 
         FormCard.FormTextDelegate {
@@ -464,8 +472,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: recentMessages.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             model: recentMessages
@@ -489,8 +498,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: recentEvents.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             model: recentEvents
@@ -506,8 +516,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         visible: certificateRepeater.count > 0
-        Component.onCompleted: autoSeparators = true
 
         Repeater {
             id: certificateRepeater

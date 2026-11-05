@@ -13,12 +13,11 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property list<string> types
 
     property alias available: accountsModel.onlineAccountsAvailable
-
-    Component.onCompleted: autoSeparators = true
 
     AccountsModel {
         id: accountsModel

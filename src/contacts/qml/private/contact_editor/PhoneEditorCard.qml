@@ -17,12 +17,11 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property ContactEditor contactEditor
     property alias phoneText: toAddPhone.text
     property alias newPhoneTypeComboText: newPhoneTypeCombo.currentValue
-
-    Component.onCompleted: autoSeparators = true
 
     Repeater {
         id: phoneRepeater

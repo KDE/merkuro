@@ -52,6 +52,8 @@ ColumnLayout {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         Layout.topMargin: Kirigami.Units.largeSpacing
         visible: root.invitation.valid
 

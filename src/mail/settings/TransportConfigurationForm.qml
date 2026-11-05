@@ -15,6 +15,7 @@ import org.kde.ki18n
 
 FormCard.FormCard {
     id: root
+    autoSeparators: true
 
     required property string addPageTitle
 
@@ -22,10 +23,9 @@ FormCard.FormCard {
         id: _configuration
     }
 
-    Component.onCompleted: root.autoSeparators = true
-
     FormCard.FormCardDialog {
         id: renameDialog
+        autoSeparators: true
 
         property var transportDelegate
 
@@ -34,6 +34,8 @@ FormCard.FormCard {
         parent: root.QQC2.Overlay.overlay
 
         FormCard.FormCard {
+            autoSeparators: true
+
             FormCard.FormTextFieldDelegate {
                 id: nameDelegate
                 readonly property bool isValid: text.trim().length > 0
@@ -132,6 +134,8 @@ FormCard.FormCard {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 FormCard.FormTextFieldDelegate {
                     id: newNameDelegate
                     readonly property bool isValid: text.trim().length > 0
@@ -150,6 +154,8 @@ FormCard.FormCard {
             }
 
             FormCard.FormCard {
+                autoSeparators: true
+
                 Repeater {
                     model: root._configuration.availableTransportTypes
 

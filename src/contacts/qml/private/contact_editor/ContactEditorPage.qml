@@ -167,6 +167,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        autoSeparators: true
+
         QQC2.ScrollView {
             id: noteScrollView
             objectName: "contactNoteScrollView"
@@ -192,7 +194,6 @@ FormCard.FormCardPage {
             }
         }
     }
-
 
     footer: ColumnLayout {
         spacing: 0
@@ -265,6 +266,5 @@ FormCard.FormCardPage {
             }
         }
     }
-
 
 }

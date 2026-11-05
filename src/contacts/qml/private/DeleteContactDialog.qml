@@ -79,7 +79,7 @@ Components.MessageDialog {
         }
         root.pendingDeletions--;
         const pageStack = root.Kirigami.PageStack.pageStack as Kirigami.PageRow;
-        if (root.pendingDeletions === 0 && pageStack.depth > 1) {
+        if (root.pendingDeletions === 0 && pageStack && pageStack.depth > 1) {
             pageStack.pop()
         }
     }
