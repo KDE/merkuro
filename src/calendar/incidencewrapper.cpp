@@ -4,6 +4,8 @@
 #include "incidencewrapper.h"
 #include "merkuro_calendar_debug.h"
 #include "utils.h"
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KLocalizedString>
 #include <QBitArray>
 #include <QJSValue>
@@ -644,6 +646,31 @@ QVariantMap IncidenceWrapper::organizer()
     return QVariantMap{{u"name"_s, organizerPerson.name()}, {u"email"_s, organizerPerson.email()}, {u"fullName"_s, organizerPerson.fullName()}};
 }
 
+uint IncidenceWrapper::organizerIdentity() const
+{
+    const auto manager = KIdentityManagementCore::IdentityManager::self();
+    for (const auto &identity : *manager) {
+        if (identity.primaryEmailAddress() == m_incidence->organizer().email()) {
+            return identity.uoid();
+        }
+    }
+    return 0;
+}
+
+void IncidenceWrapper::setOrganizerIdentity(uint identityId)
+{
+    const auto &identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(identityId);
+    if (identity.isNull()) {
+        return;
+    }
+    const KCalendarCore::Person organizer(identity.fullName(), identity.primaryEmailAddress());
+    if (m_incidence->organizer() == organizer) {
+        return;
+    }
+    m_incidence->setOrganizer(organizer);
+    Q_EMIT organizerChanged();
+}
+
 KCalendarCore::Attendee::List IncidenceWrapper::attendees() const
 {
     return m_incidence->attendees();
@@ -768,6 +795,8 @@ void IncidenceWrapper::setNewTodo()
 
 void IncidenceWrapper::setNewIncidence(KCalendarCore::Incidence::Ptr incidence)
 {
+    const auto &identity = KIdentityManagementCore::IdentityManager::self()->defaultIdentity();
+    incidence->setOrganizer(KCalendarCore::Person(identity.fullName(), identity.primaryEmailAddress()));
     m_editing = false;
     Akonadi::Item incidenceItem;
     incidenceItem.setPayload<KCalendarCore::Incidence::Ptr>(incidence);

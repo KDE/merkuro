@@ -77,6 +77,7 @@ class IncidenceWrapper : public QObject, public Akonadi::ItemMonitor
 
     Q_PROPERTY(AttendeesModel *attendeesModel READ attendeesModel NOTIFY attendeesModelChanged)
     Q_PROPERTY(QVariantMap organizer READ organizer NOTIFY organizerChanged)
+    Q_PROPERTY(uint organizerIdentity READ organizerIdentity WRITE setOrganizerIdentity NOTIFY organizerChanged)
     Q_PROPERTY(KCalendarCore::Attendee::List attendees READ attendees NOTIFY attendeesChanged)
 
     Q_PROPERTY(AttachmentsModel *attachmentsModel READ attachmentsModel NOTIFY attachmentsModelChanged)
@@ -177,6 +178,8 @@ public:
     Q_INVOKABLE void setRecurrenceDataItem(const QString &key, const QVariant &value);
 
     QVariantMap organizer();
+    uint organizerIdentity() const;
+    void setOrganizerIdentity(uint identityId);
     [[nodiscard]] KCalendarCore::Attendee::List attendees() const;
 
     AttendeesModel *attendeesModel();

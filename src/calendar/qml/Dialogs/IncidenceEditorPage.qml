@@ -17,6 +17,7 @@ import org.kde.merkuro.contact
 import org.kde.merkuro.calendar as Calendar
 import org.kde.merkuro.components as MerkuroComponents
 import org.kde.akonadi as Akonadi
+import org.kde.kidentitymanagement as KIdentityManagement
 
 FormCard.FormCardPage {
     id: root
@@ -637,6 +638,20 @@ FormCard.FormCardPage {
 
             FormCard.FormCard {
                 Component.onCompleted: autoSeparators = true
+
+                FormCard.FormComboBoxDelegate {
+                    id: organizerComboBox
+                    objectName: "organizerComboBox"
+                    text: i18nc("@label:listbox", "Organizer:")
+                    visible: !root.editMode
+                    model: KIdentityManagement.IdentityModel {}
+                    textRole: "display"
+                    valueRole: "uoid"
+                    currentIndex: organizerComboBox.indexOfValue(root.incidenceWrapper.organizerIdentity)
+                    onActivated: function(index: int): void {
+                        root.incidenceWrapper.organizerIdentity = organizerComboBox.currentValue;
+                    }
+                }
 
                 FormCard.FormPlaceholderMessageDelegate {
                     text: i18nc("@info:placeholder", "There are no attendees")

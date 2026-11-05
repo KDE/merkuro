@@ -13,7 +13,10 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/ItemModifyJob>
+#include <KCalendarCore/ICalFormat>
 #include <KCheckableProxyModel>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KJob>
 #include <QSignalSpy>
 #include <QTest>
@@ -172,6 +175,8 @@ private:
     Akonadi::Collection m_source;
     Akonadi::Collection m_destination;
     Akonadi::Item m_item;
+    uint m_defaultIdentity = 0;
+    uint m_otherIdentity = 0;
 
     void checkCollections(const QModelIndex &parent = {})
     {
@@ -203,6 +208,47 @@ private:
     }
 
 private Q_SLOTS:
+    void newIncidenceOrganizer_data()
+    {
+        QTest::addColumn<bool>("todo");
+        QTest::newRow("event") << false;
+        QTest::newRow("todo") << true;
+    }
+
+    void newIncidenceOrganizer()
+    {
+        QFETCH(bool, todo);
+        IncidenceWrapper wrapper(m_manager.get());
+        if (todo) {
+            wrapper.setNewTodo();
+        } else {
+            wrapper.setNewEvent();
+        }
+        const auto incidence = wrapper.incidencePtr();
+        QCOMPARE(wrapper.organizerIdentity(), m_defaultIdentity);
+        QCOMPARE(incidence->organizer().name(), u"Event Organizer"_s);
+        QCOMPARE(incidence->organizer().email(), u"organizer@example.org"_s);
+        QSignalSpy organizerChanged(&wrapper, &IncidenceWrapper::organizerChanged);
+        wrapper.setOrganizerIdentity(m_otherIdentity);
+        QCOMPARE(wrapper.organizerIdentity(), m_otherIdentity);
+        QCOMPARE(organizerChanged.size(), 1);
+        QCOMPARE(incidence->organizer().email(), u"other@example.org"_s);
+        wrapper.setOrganizerIdentity(0);
+        QCOMPARE(wrapper.organizerIdentity(), m_otherIdentity);
+        QCOMPARE(organizerChanged.size(), 1);
+        incidence->addAttendee(KCalendarCore::Attendee(u"Attendee"_s, u"attendee@example.org"_s));
+        KCalendarCore::ICalFormat format;
+        const auto invitation = format.createScheduleMessage(incidence, KCalendarCore::iTIPRequest);
+        QVERIFY(invitation.contains(u"METHOD:REQUEST"_s));
+        const auto received = format.fromString(invitation);
+        QVERIFY(received);
+        QCOMPARE(received->organizer(), incidence->organizer());
+        QCOMPARE(received->attendees().size(), 1);
+        QCOMPARE(received->attendees().first().email(), u"attendee@example.org"_s);
+        QVERIFY(m_manager->incidenceChanger()->groupwareCommunication());
+        QCOMPARE(m_manager->incidenceChanger()->invitationPolicy(), Akonadi::IncidenceChanger::InvitationPolicyAsk);
+    }
+
     void childIncidencesWithoutService()
     {
         IncidenceWrapper wrapper(nullptr);
@@ -369,6 +415,17 @@ private Q_SLOTS:
     void initTestCase()
     {
         AkonadiTest::checkTestIsIsolated();
+        auto identities = KIdentityManagementCore::IdentityManager::self();
+        auto &organizer = identities->newFromScratch(u"Organizer"_s);
+        organizer.setFullName(u"Event Organizer"_s);
+        organizer.setPrimaryEmailAddress(u"organizer@example.org"_s);
+        m_defaultIdentity = organizer.uoid();
+        auto &other = identities->newFromScratch(u"Other"_s);
+        other.setFullName(u"Other Organizer"_s);
+        other.setPrimaryEmailAddress(u"other@example.org"_s);
+        m_otherIdentity = other.uoid();
+        QVERIFY(identities->setAsDefault(m_defaultIdentity));
+        identities->commit();
         m_manager = std::make_unique<ControlledCalendarManager>();
         m_manager->incidenceChanger()->setShowDialogsOnError(false);
 

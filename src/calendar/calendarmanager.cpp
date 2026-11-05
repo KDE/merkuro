@@ -168,6 +168,7 @@ CalendarManager::CalendarManager(QObject *parent)
     connect(m_calendar->entityTreeModel(), &Akonadi::EntityTreeModel::errorOccurred, this, &CalendarManager::errorOccurred);
 
     m_changer = m_calendar->incidenceChanger();
+    m_changer->setGroupwareCommunication(true);
     m_changer->setHistoryEnabled(true);
     connect(m_changer->history(), &Akonadi::History::changed, this, &CalendarManager::undoRedoDataChanged);
 
