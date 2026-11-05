@@ -32,6 +32,7 @@ MimeTreeParser.MailViewer {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+    title: ''
 
     icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
 
