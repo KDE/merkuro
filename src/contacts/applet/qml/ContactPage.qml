@@ -237,23 +237,29 @@ PlasmaComponents3.ScrollView {
 
             Repeater {
                 id: phoneRepeater
-                model: addressee.phoneModel
+                model: root.addressee.phoneModel
 
-                RowLayout { 
-                    visible: phoneNumberLabel.text !== ""
+                RowLayout {
+                    id: phoneRow
+
+                    required property int index
+                    required property string phoneNumber
+                    required property string type
+
+                    visible: phoneRow.phoneNumber.length > 0
                     PlasmaComponents3.Label {
                         id: phoneNumberLabel
-                        text: KI18n.i18n("%1:", model.type) + ` <a href="tel:${model.display}">${model.display}</a>`
+                        text: KI18n.i18n("%1:", phoneRow.type) + ` <a href="tel:${phoneRow.phoneNumber}">${phoneRow.phoneNumber}</a>`
                         Layout.leftMargin: Kirigami.Units.smallSpacing
                         Layout.rightMargin: Kirigami.Units.smallSpacing
                         PlasmaComponents3.ToolTip { text: KI18n.i18n("Call") }
                         onLinkActivated: Qt.openUrlExternally(link)
                         MouseArea {
-                            id: area
+                            id: phoneNumberMouseArea
                             anchors.fill: parent
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
-                            onClicked: Qt.openUrlExternally(`tel:${model.display}`)
+                            onClicked: Qt.openUrlExternally(`tel:${phoneRow.phoneNumber}`)
                         }
                     }
                     PlasmaComponents3.ToolButton {
@@ -262,7 +268,7 @@ PlasmaComponents3.ScrollView {
                         Accessible.name: KI18n.i18n("Copy phone number")
                         PlasmaComponents3.ToolTip { text: KI18n.i18n("Copy phone number to clipboard") }
                         onClicked: {
-                            model.copyToClipboard(index);
+                            root.addressee.phoneModel.copyToClipboard(phoneRow.index);
                         }
                     }
                 }
