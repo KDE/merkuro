@@ -178,6 +178,7 @@ MouseArea {
 
             Kirigami.Action {
                 id: setDueDateMenu
+                readonly property MerkuroComponents.KDateTime dateToday: MerkuroComponents.KDateTimeFactory.now()
                 text: i18n("Set due date…")
                 visible: incidenceData.incidenceType === Calendar.IncidenceWrapper.TypeTodo
 
@@ -202,15 +203,13 @@ MouseArea {
                 }
 
                 QQC2.Action {
-                    readonly property MerkuroComponents.KDateTime dateToday: MerkuroComponents.KDateTimeFactory.now()
-
                     icon.name: "go-jump-today"
-                    text: i18n("Today (%1)", dateToday.toLocaleDateString(Locale.NarrowFormat))
-                    onTriggered: setDueDateMenu.setDate(dateToday)
+                    text: i18n("Today (%1)", setDueDateMenu.dateToday.toLocaleDateString(Locale.NarrowFormat))
+                    onTriggered: setDueDateMenu.setDate(setDueDateMenu.dateToday)
                 }
 
                 QQC2.Action {
-                    readonly property MerkuroComponents.KDateTime dateTomorrow: dateToday.addDays(1)
+                    readonly property MerkuroComponents.KDateTime dateTomorrow: setDueDateMenu.dateToday.addDays(1)
 
                     icon.name: "view-calendar-day"
                     text: i18n("Tomorrow (%1)", dateTomorrow.toLocaleDateString(Locale.NarrowFormat))
@@ -218,14 +217,14 @@ MouseArea {
                 }
 
                 QQC2.Action {
-                    readonly property MerkuroComponents.KDateTime dateInAWeek: dateToday.addDays(7)
+                    readonly property MerkuroComponents.KDateTime dateInAWeek: setDueDateMenu.dateToday.addDays(7)
                     icon.name: "view-calendar-week"
                     text: i18n("In a week (%1)", dateInAWeek.toLocaleDateString(Locale.NarrowFormat))
                     onTriggered: setDueDateMenu.setDate(dateInAWeek);
                 }
 
                 QQC2.Action {
-                    readonly property MerkuroComponents.KDateTime dateInAMonth: dateToday.addMonths(1)
+                    readonly property MerkuroComponents.KDateTime dateInAMonth: setDueDateMenu.dateToday.addMonths(1)
 
                     icon.name: "view-calendar-month"
                     text: i18n("In a month (%1)", dateInAMonth.toLocaleDateString(Locale.NarrowFormat))
