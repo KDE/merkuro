@@ -29,7 +29,7 @@ FormCard.FormCard {
 
         property var transportDelegate
 
-        title: KI18n.i18nc("@title:dialog", "Rename %1", renameDialog.transportDelegate.transportName)
+        title: renameDialog.transportDelegate ? KI18n.i18nc("@title:dialog", "Rename %1", renameDialog.transportDelegate.transportName) : ""
         standardButtons:  QQC2.Dialog.Cancel | QQC2.Dialog.Ok
         parent: root.QQC2.Overlay.overlay
 
@@ -39,7 +39,7 @@ FormCard.FormCard {
                 readonly property bool isValid: text.trim().length > 0
 
                 label: KI18n.i18nc("Ask to the user to enter name for the Outgoing Account", "Account Name")
-                placeholderText: renameDialog.transportDelegate.transportName
+                placeholderText: renameDialog.transportDelegate ? renameDialog.transportDelegate.transportName : ""
             }
         }
 
