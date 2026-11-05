@@ -6,6 +6,8 @@ add_subdirectory(settings)
 set(merkuro_mail_SRCS
     calendarinvitation.cpp
     calendarinvitation.h
+    invitationresponsejob.cpp
+    invitationresponsejob.h
     abstractmailmodel.cpp
     abstractmailmodel.h
     mailactions.cpp
@@ -75,6 +77,8 @@ target_link_libraries(merkuro_mail_static
         KPim6::MailCommon
         KPim6::MailTransport
         KPim6::AkonadiMime
+        KPim6::AkonadiCalendar
+        KPim6::IdentityManagementCore
         KPim6::AkonadiSearchPIM
         KPim6::IdentityManagementQuick
         KPim6::Mbox

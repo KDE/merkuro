@@ -6,6 +6,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.ki18n
@@ -43,6 +44,13 @@ ColumnLayout {
         text: KI18n.i18nc("@info", "This calendar invitation could not be read.")
     }
 
+    Kirigami.InlineMessage {
+        Layout.fillWidth: true
+        visible: root.invitation.errorString.length > 0
+        type: Kirigami.MessageType.Error
+        text: root.invitation.errorString
+    }
+
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
         visible: root.invitation.valid
@@ -57,6 +65,17 @@ ColumnLayout {
                 textFormat: Text.PlainText
                 wrapMode: Text.WordWrap
             }
+        }
+        Detail {
+            text: root.invitation.replyStatusMessage
+            textItem.color: root.invitation.replyDeclined ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            icon.name: "mail-replied-symbolic"
+            Accessible.name: root.invitation.replyStatusMessage
+        }
+        Detail {
+            text: root.invitation.statusMessage
+            icon.name: "dialog-ok-symbolic"
+            Accessible.name: root.invitation.statusMessage
         }
         Detail {
             visible: root.invitation.canceled
@@ -89,6 +108,50 @@ ColumnLayout {
             text: root.invitation.description
             icon.name: "documentinfo"
             Accessible.name: KI18n.i18nc("@info:accessibility", "Details: %1", root.invitation.description)
+        }
+        FormCard.AbstractFormDelegate {
+            visible: root.invitation.responseAddresses.length > 0
+            background: null
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: KI18n.i18nc("@label", "Respond as %1", responseAddress.currentText)
+                    textFormat: Text.PlainText
+                    wrapMode: Text.WordWrap
+                }
+                QQC2.ComboBox {
+                    id: responseAddress
+
+                    Layout.fillWidth: true
+                    visible: count > 1
+                    enabled: !root.invitation.busy
+                    model: root.invitation.responseAddresses
+                    Accessible.name: KI18n.i18nc("@info:accessibility", "Response email address")
+                }
+                RowLayout {
+                    QQC2.Button {
+                        text: KI18n.i18nc("@action:button", "Accept")
+                        icon.name: "dialog-ok-symbolic"
+                        enabled: !root.invitation.busy && responseAddress.currentText.length > 0
+                        onClicked: root.invitation.respond(responseAddress.currentText, true)
+                    }
+                    QQC2.Button {
+                        text: KI18n.i18nc("@action:button", "Decline")
+                        icon.name: "dialog-cancel-symbolic"
+                        enabled: !root.invitation.busy && responseAddress.currentText.length > 0
+                        onClicked: root.invitation.respond(responseAddress.currentText, false)
+                    }
+                    QQC2.BusyIndicator {
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                        running: root.invitation.busy
+                        visible: running
+                        Accessible.name: KI18n.i18nc("@info:accessibility", "Responding to invitation")
+                    }
+                }
+            }
         }
     }
 }

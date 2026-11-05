@@ -2,10 +2,14 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "calendarinvitation.h"
+#include "invitationresponsejob.h"
 
 #include <KCalendarCore/ICalFormat>
 #include <KCalendarCore/MemoryCalendar>
 #include <KFormat>
+#include <KIdentityManagementCore/IdentityManager>
+#include <KLocalizedString>
+#include <QCoreApplication>
 #include <QLocale>
 #include <QTextDocumentFragment>
 #include <QTimeZone>
@@ -35,6 +39,10 @@ QString formattedDateTime(const QDateTime &dateTime, bool allDay)
 CalendarInvitation::CalendarInvitation(QObject *parent)
     : QObject(parent)
 {
+    connect(KIdentityManagementCore::IdentityManager::self(),
+            qOverload<>(&KIdentityManagementCore::IdentityManager::changed),
+            this,
+            &CalendarInvitation::responseAddressesChanged);
 }
 
 QString CalendarInvitation::content() const
@@ -48,18 +56,150 @@ void CalendarInvitation::setContent(const QString &content)
         return;
     }
     m_content = content;
+    m_errorString.clear();
+    m_statusMessage.clear();
+    m_schedule.clear();
     if (content.isEmpty()) {
         m_event.clear();
         m_canceled = false;
         Q_EMIT contentChanged();
+        Q_EMIT responseAddressesChanged();
+        Q_EMIT responseStateChanged();
         return;
     }
     KCalendarCore::ICalFormat format;
     const auto calendar = KCalendarCore::MemoryCalendar::Ptr::create(QTimeZone::systemTimeZone());
-    const auto schedule = format.parseScheduleMessage(calendar, content.toUtf8());
-    m_event = schedule ? schedule->event().dynamicCast<KCalendarCore::Event>() : format.fromString(content).dynamicCast<KCalendarCore::Event>();
-    m_canceled = schedule && schedule->method() == KCalendarCore::iTIPCancel;
+    m_schedule = format.parseScheduleMessage(calendar, content.toUtf8());
+    m_event = m_schedule ? m_schedule->event().dynamicCast<KCalendarCore::Event>() : format.fromString(content).dynamicCast<KCalendarCore::Event>();
+    m_canceled = m_schedule && m_schedule->method() == KCalendarCore::iTIPCancel;
     Q_EMIT contentChanged();
+    Q_EMIT responseAddressesChanged();
+    Q_EMIT responseStateChanged();
+}
+
+bool CalendarInvitation::responseRequested() const
+{
+    return m_event && m_schedule && m_schedule->method() == KCalendarCore::iTIPRequest && !canceled() && !m_event->organizer().email().isEmpty();
+}
+
+QStringList CalendarInvitation::responseAddresses() const
+{
+    return matchingResponseAddresses(KIdentityManagementCore::IdentityManager::self()->allEmails());
+}
+
+QStringList CalendarInvitation::matchingResponseAddresses(const QStringList &emails) const
+{
+    QStringList matches;
+    if (!responseRequested()) {
+        return matches;
+    }
+    for (const auto &attendee : m_event->attendees()) {
+        if (attendee.email().compare(m_event->organizer().email(), Qt::CaseInsensitive) == 0) {
+            continue;
+        }
+        if (emails.contains(attendee.email(), Qt::CaseInsensitive) && !matches.contains(attendee.email(), Qt::CaseInsensitive)) {
+            matches.push_back(attendee.email());
+        }
+    }
+    return matches;
+}
+
+KCalendarCore::Event::Ptr CalendarInvitation::responseEvent(const QString &receiver, bool accept) const
+{
+    if (!responseRequested() || receiver.compare(m_event->organizer().email(), Qt::CaseInsensitive) == 0) {
+        return {};
+    }
+    for (auto attendee : m_event->attendees()) {
+        if (attendee.email().compare(receiver, Qt::CaseInsensitive) == 0) {
+            attendee.setStatus(accept ? KCalendarCore::Attendee::Accepted : KCalendarCore::Attendee::Declined);
+            attendee.setRSVP(false);
+            auto reply = KCalendarCore::Event::Ptr(m_event->clone());
+            reply->setAttendees({attendee});
+            return reply;
+        }
+    }
+    return {};
+}
+
+bool CalendarInvitation::busy() const
+{
+    return !m_responseJob.isNull();
+}
+
+QString CalendarInvitation::errorString() const
+{
+    return m_errorString;
+}
+
+QString CalendarInvitation::statusMessage() const
+{
+    return m_statusMessage;
+}
+
+QString CalendarInvitation::replyStatusMessage() const
+{
+    if (!m_event || !m_schedule || m_schedule->method() != KCalendarCore::iTIPReply) {
+        return {};
+    }
+    QStringList replies;
+    for (const auto &attendee : m_event->attendees()) {
+        switch (attendee.status()) {
+        case KCalendarCore::Attendee::Accepted:
+            replies.push_back(i18nc("@info", "%1 accepted this invitation.", attendee.fullName()));
+            break;
+        case KCalendarCore::Attendee::Declined:
+            replies.push_back(i18nc("@info", "%1 declined this invitation.", attendee.fullName()));
+            break;
+        default:
+            break;
+        }
+    }
+    return replies.join(u'\n');
+}
+
+bool CalendarInvitation::replyDeclined() const
+{
+    if (!m_event || !m_schedule || m_schedule->method() != KCalendarCore::iTIPReply) {
+        return false;
+    }
+    for (const auto &attendee : m_event->attendees()) {
+        if (attendee.status() == KCalendarCore::Attendee::Declined) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void CalendarInvitation::respond(const QString &receiver, bool accept)
+{
+    if (busy()) {
+        return;
+    }
+    m_errorString.clear();
+    m_statusMessage.clear();
+    const auto reply = responseEvent(receiver, accept);
+    if (!reply || !responseAddresses().contains(receiver, Qt::CaseInsensitive)) {
+        m_errorString = i18n("No configured mail identity matches this invitation's attendee address.");
+        Q_EMIT responseStateChanged();
+        return;
+    }
+    auto job = new InvitationResponseJob(m_schedule, reply, reply->attendees().first().email(), accept, QCoreApplication::instance());
+    m_responseJob = job;
+    const auto content = m_content;
+    connect(job, &KJob::result, this, [this, content, accept](KJob *job) {
+        m_responseJob.clear();
+        if (content == m_content) {
+            if (job->error() && job->error() != KJob::KilledJobError) {
+                m_errorString = job->errorText();
+            } else if (!job->error()) {
+                m_statusMessage = accept ? i18n("You accepted this invitation. A response has been queued.")
+                                         : i18n("You declined this invitation. A response has been queued.");
+            }
+        }
+        Q_EMIT responseStateChanged();
+    });
+    Q_EMIT responseStateChanged();
+    job->start();
 }
 
 bool CalendarInvitation::isValid() const

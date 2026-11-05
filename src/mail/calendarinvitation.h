@@ -4,9 +4,13 @@
 #pragma once
 
 #include <KCalendarCore/Event>
+#include <KCalendarCore/ScheduleMessage>
 #include <QObject>
+#include <QPointer>
 #include <QQmlEngine>
 #include <QUrl>
+
+class InvitationResponseJob;
 
 class CalendarInvitation : public QObject
 {
@@ -14,6 +18,13 @@ class CalendarInvitation : public QObject
     QML_ELEMENT
 
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
+    Q_PROPERTY(bool responseRequested READ responseRequested NOTIFY contentChanged)
+    Q_PROPERTY(QStringList responseAddresses READ responseAddresses NOTIFY responseAddressesChanged)
+    Q_PROPERTY(bool busy READ busy NOTIFY responseStateChanged)
+    Q_PROPERTY(QString errorString READ errorString NOTIFY responseStateChanged)
+    Q_PROPERTY(QString statusMessage READ statusMessage NOTIFY responseStateChanged)
+    Q_PROPERTY(QString replyStatusMessage READ replyStatusMessage NOTIFY contentChanged)
+    Q_PROPERTY(bool replyDeclined READ replyDeclined NOTIFY contentChanged)
     Q_PROPERTY(bool valid READ isValid NOTIFY contentChanged)
     Q_PROPERTY(bool allDay READ allDay NOTIFY contentChanged)
     Q_PROPERTY(bool canceled READ canceled NOTIFY contentChanged)
@@ -32,6 +43,17 @@ public:
 
     QString content() const;
     void setContent(const QString &content);
+    bool responseRequested() const;
+    QStringList responseAddresses() const;
+    QStringList matchingResponseAddresses(const QStringList &emails) const;
+    KCalendarCore::Event::Ptr responseEvent(const QString &receiver, bool accept) const;
+    bool busy() const;
+    QString errorString() const;
+    QString statusMessage() const;
+    QString replyStatusMessage() const;
+    bool replyDeclined() const;
+    Q_INVOKABLE void respond(const QString &receiver, bool accept);
+
     bool isValid() const;
     bool allDay() const;
     bool canceled() const;
@@ -47,9 +69,15 @@ public:
 
 Q_SIGNALS:
     void contentChanged();
+    void responseStateChanged();
+    void responseAddressesChanged();
 
 private:
     QString m_content;
+    QString m_errorString;
+    QString m_statusMessage;
+    QPointer<InvitationResponseJob> m_responseJob;
+    KCalendarCore::ScheduleMessage::Ptr m_schedule;
     bool m_canceled = false;
     KCalendarCore::Event::Ptr m_event;
 };
