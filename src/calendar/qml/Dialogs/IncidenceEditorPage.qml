@@ -5,6 +5,7 @@ pragma ComponentBehavior: Bound
 
 import QtCore
 import QtQuick
+import QtQuick.Window
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
@@ -197,6 +198,114 @@ FormCard.FormCardPage {
             function clearAllDayForUndatedTodo(): void {
                 if (isTodo && !root.incidenceWrapper.incidenceStart.isValid && !root.incidenceWrapper.incidenceEnd.isValid) {
                     root.incidenceWrapper.allDay = false;
+                }
+            }
+
+            // Removing an entry (attendee, reminder, attachment or
+            // recurrence exception) destroys the delegate holding the
+            // clicked delete button, and the resulting focus change
+            // scrolls the page, losing the user's place. While a removal
+            // is in flight, hold the scroll position; the guard below
+            // has to act synchronously, as restoring the position after
+            // the removal still renders a frame at the wrong position.
+            property real scrollPositionBeforeRemoval: 0
+            property bool removingEntry: false
+
+            function saveScrollPosition(): void {
+                scrollPositionBeforeRemoval = root.flickable.contentY;
+                removingEntry = true;
+
+                // The delete button dies with its delegate and focus
+                // falls back to the editorLoader scope, which
+                // FormCardPage scrolls into view, jumping to the top of
+                // the form. Move focus to the page's scroll view first:
+                // it is never scrolled into view, so the position stays
+                // put. Only button-like controls are relocated; text
+                // fields and combo boxes keep focus.
+                const focusItem = root.Window.activeFocusItem;
+                let isButtonLike = false;
+                try {
+                    isButtonLike = focusItem !== null
+                        && focusItem !== root.contentItem
+                        && focusItem.clicked !== undefined
+                        && focusItem.checkable !== undefined
+                        && focusItem.display !== undefined;
+                } catch (e) {
+                }
+                if (isButtonLike) {
+                    root.contentItem.forceActiveFocus();
+                }
+            }
+
+            function restoreScrollPosition(): void {
+                // The removal is complete and the flickable Connections
+                // below has held the position throughout. Lift the guard
+                // once this event has settled, so that scrolling caused
+                // by the removal itself is still covered by it.
+                Qt.callLater(() => {
+                    removingEntry = false;
+                });
+            }
+
+            Connections {
+                target: root.flickable
+
+                function onContentYChanged(): void {
+                    if (incidenceForm.removingEntry) {
+                        const maxContentY = Math.max(0, root.flickable.contentHeight - root.flickable.height);
+                        const y = Math.min(incidenceForm.scrollPositionBeforeRemoval, maxContentY);
+                        if (root.flickable.contentY !== y) {
+                            root.flickable.contentY = y;
+                        }
+                    }
+                }
+            }
+
+            Connections {
+                target: root.incidenceWrapper.attendeesModel
+
+                function onRowsAboutToBeRemoved(): void {
+                    incidenceForm.saveScrollPosition();
+                }
+
+                function onRowsRemoved(): void {
+                    incidenceForm.restoreScrollPosition();
+                }
+            }
+
+            Connections {
+                target: remindersModel
+
+                function onRowsAboutToBeRemoved(): void {
+                    incidenceForm.saveScrollPosition();
+                }
+
+                function onRowsRemoved(): void {
+                    incidenceForm.restoreScrollPosition();
+                }
+            }
+
+            Connections {
+                target: root.incidenceWrapper.attachmentsModel
+
+                function onRowsAboutToBeRemoved(): void {
+                    incidenceForm.saveScrollPosition();
+                }
+
+                function onRowsRemoved(): void {
+                    incidenceForm.restoreScrollPosition();
+                }
+            }
+
+            Connections {
+                target: root.incidenceWrapper.recurrenceExceptionsModel
+
+                function onModelAboutToBeReset(): void {
+                    incidenceForm.saveScrollPosition();
+                }
+
+                function onModelReset(): void {
+                    incidenceForm.restoreScrollPosition();
                 }
             }
 
