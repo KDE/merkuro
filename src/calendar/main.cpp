@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     KirigamiAppDefaults::apply(&app);
 
     auto aboutData = KAboutData::fromAppStreamId(u"org.kde.merkuro.calendar"_s);
-    aboutData.setComponentName(u"merkuro.mail"_s);
+    aboutData.setComponentName(u"merkuro.calendar"_s);
     aboutData.setVersion(MERKURO_VERSION_STRING);
     aboutData.addAuthor(i18nc("@info:credit", "Carl Schwan"),
                         i18nc("@info:credit", "Maintainer"),
