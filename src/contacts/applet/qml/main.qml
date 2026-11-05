@@ -17,6 +17,9 @@ import org.kde.ki18n
 PlasmoidItem {
     id: contactApplet
 
+    width: Kirigami.Units.gridUnit * 24
+    height: Kirigami.Units.gridUnit * 30
+
     Plasmoid.icon: 'im-user-symbolic'
 
     switchWidth: Kirigami.Units.gridUnit * 5
@@ -27,6 +30,8 @@ PlasmoidItem {
     fullRepresentation: PlasmaExtras.Representation {
         Layout.minimumWidth: Kirigami.Units.gridUnit * 5
         Layout.minimumHeight: Kirigami.Units.gridUnit * 5
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 24
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 30
         collapseMarginsHint: true
 
         focus: true
