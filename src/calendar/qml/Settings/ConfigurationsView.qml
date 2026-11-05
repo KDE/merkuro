@@ -8,16 +8,32 @@ KirigamiSettings.ConfigurationView {
     objectName: "settingsPage"
     modules: [
         KirigamiSettings.ConfigurationModule {
+            moduleId: "users"
+            text: i18n("Calendars & Accounts")
+            icon.name: "preferences-system-users"
+            page: () => Qt.createComponent("SourceSettingsPage.qml")
+        },
+        KirigamiSettings.ConfigurationModule {
             moduleId: "appearance"
-            text: i18n("Appearance")
-            icon.name: "preferences-desktop-theme-global"
+            text: i18n("Calendar Views")
+            icon.name: "view-calendar-month"
             page: () => Qt.createComponent("ViewSettingsPage.qml")
         },
         KirigamiSettings.ConfigurationModule {
-            moduleId: "users"
-            text: i18n("Accounts")
-            icon.name: "preferences-system-users"
-            page: () => Qt.createComponent("SourceSettingsPage.qml")
+            moduleId: "tasks"
+            text: i18n("Tasks")
+            icon.name: "view-task"
+            page: function(): Component {
+                return Qt.createComponent("TaskSettingsPage.qml");
+            }
+        },
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "locations"
+            text: i18n("Locations")
+            icon.name: "mark-location"
+            page: function(): Component {
+                return Qt.createComponent("LocationSettingsPage.qml");
+            }
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "freebusy"

@@ -1,58 +1,49 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.merkuro.calendar
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.merkuro.calendar
 
 FormCard.FormCardPage {
-    id: root
-
-    title: i18n("Appearance")
+    title: i18n("Calendar Views")
 
     FormCard.FormHeader {
-        title: i18n("General settings")
-        Layout.fillWidth: true
+        title: i18n("Holidays")
     }
 
     FormCard.FormCard {
         autoSeparators: true
 
         FormCard.FormSwitchDelegate {
-            text: i18n("Use popup to show incidence information")
-            checked: Config.useIncidenceInfoPopup
-            enabled: !Config.isUseIncidenceInfoPopupImmutable && !Kirigami.Settings.isMobile
-            visible: !Kirigami.Settings.isMobile
-            onCheckedChanged: {
-                Config.useIncidenceInfoPopup = checked;
-                Config.save();
-            }
-        }
-
-        FormCard.FormSwitchDelegate {
+            id: showHolidays
+            objectName: "showHolidaysSwitch"
             text: i18n("Show holidays in calendar views")
             checked: Config.showHolidaysInCalendarViews
             enabled: !Config.isShowHolidaysInCalendarViewsImmutable
-            onClicked: {
-                Config.showHolidaysInCalendarViews = !Config.showHolidaysInCalendarViews;
+            onToggled: {
+                Config.showHolidaysInCalendarViews = showHolidays.checked;
                 Config.save();
             }
         }
 
         FormCard.FormComboBoxDelegate {
-            text: i18nc("@label:listbox", "Select Holiday Regions")
-            checked: Config.showHolidaysInCalendarViews
+            id: holidayRegions
+            objectName: "holidayRegionsCombo"
+            text: i18nc("@label:listbox", "Holiday regions")
             enabled: !Config.isShowHolidaysInCalendarViewsImmutable && Config.showHolidaysInCalendarViews
             model: HolidayRegionModel {
                 id: holidayRegionModel
             }
             currentIndex: Config.holidayRegions.length === 0 ? 0 : -1
             displayText: if (Config.holidayRegions.length === 0) {
-                return currentText;
+                return holidayRegions.currentText;
             } else {
                 return Config.holidayRegions.map((regionCode) => holidayRegionModel.regionLanguage(regionCode)).join(', ')
             }
@@ -122,30 +113,34 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormSwitchDelegate {
-            text: i18n("Show tasks in calendar views")
-            checked: Config.showTodosInCalendarViews
-            enabled: !Config.isShowTodosInCalendarViewsImmutable
-            onClicked: {
-                Config.showTodosInCalendarViews = !Config.showTodosInCalendarViews;
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Event Details")
+    }
+
+    FormCard.FormCard {
+        autoSeparators: true
+
+        FormCard.FormComboBoxDelegate {
+            id: eventDetails
+            objectName: "eventDetailsCombo"
+            text: i18n("Open event details in")
+            visible: !Kirigami.Settings.isMobile
+            enabled: !Config.isUseIncidenceInfoPopupImmutable
+            model: [i18n("Popup"), i18n("Side panel")]
+            currentIndex: Config.useIncidenceInfoPopup ? 0 : 1
+            onActivated: function(index: int): void {
+                Config.useIncidenceInfoPopup = index === 0;
                 Config.save();
             }
         }
 
-        FormCard.FormSwitchDelegate {
-            text: i18n("Show sub-tasks in calendar views")
-            checked: Config.showSubtodosInCalendarViews &&
-                     Config.showTodosInCalendarViews
-            enabled: !Config.isShowSubtodosInCalendarViewsImmutable &&
-                     Config.showTodosInCalendarViews
-            onCheckedChanged: {
-                Config.showSubtodosInCalendarViews = checked;
-                Config.save();
-            }
-        }
         FormCard.AbstractFormDelegate {
             background: null
             contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 QQC2.Label {
                     text: i18n("Past event transparency")
                     Layout.fillWidth: true
@@ -166,324 +161,165 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Month view settings")
+        title: i18n("Month View")
     }
 
     FormCard.FormCard {
         autoSeparators: true
 
-        data: [
-            QQC2.ButtonGroup {
-                id: monthGridModeGroup
-                exclusive: true
-                onCheckedButtonChanged: {
-                    Config.monthGridMode = checkedButton.value;
-                    Config.save();
-                }
-            },
-            QQC2.ButtonGroup {
-                id: weekdayLabelLengthGroup
-                exclusive: true
-                onCheckedButtonChanged: {
-                    Config.weekdayLabelLength = checkedButton.value;
-                    Config.save();
-                }
-            },
-            QQC2.ButtonGroup {
-                id: weekdayLabelGroup
-                exclusive: true
-                onCheckedButtonChanged: {
-                    Config.weekdayLabelAlignment = checkedButton.value;
-                    Config.save();
-                }
-            }
-        ]
-        FormCard.FormTextDelegate {
-            text: i18n("Month view mode")
-        }
-        ColumnLayout {
-            spacing: 0
-            Layout.fillWidth: true
-            FormCard.FormRadioDelegate {
-                property int value: Config.SwipeableMonthGrid
-                text: i18n("Swipeable month grid")
-                enabled: !Config.isMonthGridModeImmutable
-                checked: Config.monthGridMode === value
-                QQC2.ButtonGroup.group: monthGridModeGroup
-            }
-            FormCard.FormRadioDelegate {
-                property int value: Config.BasicMonthGrid
-                text: i18n("Basic month grid")
-                enabled: !Config.isMonthGridModeImmutable
-                checked: Config.monthGridMode === value
-                QQC2.ButtonGroup.group: monthGridModeGroup
-            }
-            FormCard.FormTextDelegate {
-                description: i18n("Swipeable month grid requires higher system performance.")
-                visible: Config.monthGridMode === Config.SwipeableMonthGrid
-            }
-        }
-
-        FormCard.FormTextDelegate {
-            text: i18n("Weekday label alignment")
-        }
-        ColumnLayout {
-            spacing: 0
-            Layout.fillWidth: true
-            FormCard.FormRadioDelegate {
-                property int value: Config.Left
-                text: i18n("Left")
-                enabled: !Config.isWeekdayLabelAlignmentImmutable
-                checked: Config.weekdayLabelAlignment === value
-                QQC2.ButtonGroup.group: weekdayLabelGroup
-            }
-            FormCard.FormRadioDelegate {
-                property int value: Config.Center
-                text: i18n("Center")
-                enabled: !Config.isWeekdayLabelAlignmentImmutable
-                checked: Config.weekdayLabelAlignment === value
-                QQC2.ButtonGroup.group: weekdayLabelGroup
-            }
-            FormCard.FormRadioDelegate {
-                property int value: Config.Right
-                text: i18n("Right")
-                enabled: !Config.isWeekdayLabelAlignmentImmutable
-                checked: Config.weekdayLabelAlignment === value
-                QQC2.ButtonGroup.group: weekdayLabelGroup
-            }
-        }
-
-        FormCard.FormTextDelegate {
-            text: i18n("Weekday label length:")
-        }
-
-        FormCard.FormRadioDelegate {
-            property int value: Config.Full
-            text: i18n("Full name (Monday)")
-            enabled: !Config.isWeekdayLabelLengthImmutable
-            checked: Config.weekdayLabelLength === value
-            QQC2.ButtonGroup.group: weekdayLabelLengthGroup
-        }
-        FormCard.FormRadioDelegate {
-            property int value: Config.Abbreviated
-            text: i18n("Abbreviated (Mon)")
-            enabled: !Config.isWeekdayLabelLengthImmutable
-            checked: Config.weekdayLabelLength === value
-            QQC2.ButtonGroup.group: weekdayLabelLengthGroup
-        }
-        FormCard.FormRadioDelegate {
-            property int value: Config.Letter
-            text: i18n("Letter only (M)")
-            enabled: !Config.isWeekdayLabelLengthImmutable
-            checked: Config.weekdayLabelLength === value
-            QQC2.ButtonGroup.group: weekdayLabelLengthGroup
-        }
-
-        FormCard.FormCheckDelegate {
+        FormCard.FormSwitchDelegate {
+            id: showWeekNumbers
             text: i18n("Show week numbers")
             checked: Config.showWeekNumbers
             enabled: !Config.isShowWeekNumbersImmutable
-            onCheckedChanged: {
-                Config.showWeekNumbers = checked;
+            onToggled: {
+                Config.showWeekNumbers = showWeekNumbers.checked;
                 Config.save();
             }
         }
 
-        FormCard.AbstractFormDelegate {
-            background: Item {}
-            Layout.fillWidth: true
-            contentItem: RowLayout {
-                QQC2.Label {
-                    text: i18n("Grid border width (pixels):")
-                }
-                QQC2.SpinBox {
-                    Layout.fillWidth: true
-                    value: Config.monthGridBorderWidth
-                    onValueModified: {
-                        Config.monthGridBorderWidth = value;
-                        Config.save();
-                    }
-                    from: 0
-                    to: 50
-                }
-                Rectangle {
-                    Layout.alignment: Qt.AlignVCenter
-                    width: Kirigami.Units.gridUnit * 4
-                    implicitHeight: height
-                    height: Config.monthGridBorderWidth
-                    color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.15)
-                }
+        FormCard.FormComboBoxDelegate {
+            id: weekdayAlignment
+            objectName: "weekdayAlignmentCombo"
+            text: i18n("Weekday label alignment")
+            enabled: !Config.isWeekdayLabelAlignmentImmutable
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                { text: i18n("Left"), value: Config.Left },
+                { text: i18n("Center"), value: Config.Center },
+                { text: i18n("Right"), value: Config.Right }
+            ]
+            currentIndex: Config.weekdayLabelAlignment
+            onActivated: function(index: int): void {
+                Config.weekdayLabelAlignment = weekdayAlignment.currentValue;
+                Config.save();
+            }
+        }
+
+        FormCard.FormComboBoxDelegate {
+            id: weekdayLength
+            objectName: "weekdayLengthCombo"
+            text: i18n("Weekday label length")
+            enabled: !Config.isWeekdayLabelLengthImmutable
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                { text: i18n("Full name (Monday)"), value: Config.Full },
+                { text: i18n("Abbreviated (Mon)"), value: Config.Abbreviated },
+                { text: i18n("Letter only (M)"), value: Config.Letter }
+            ]
+            currentIndex: Config.weekdayLabelLength
+            onActivated: function(index: int): void {
+                Config.weekdayLabelLength = weekdayLength.currentValue;
+                Config.save();
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Week view settings")
+        title: i18n("Schedule View")
     }
 
     FormCard.FormCard {
         autoSeparators: true
 
-        data: QQC2.ButtonGroup {
-            id: hourlyViewModeGroup
-            exclusive: true
-            onCheckedButtonChanged: {
-                Config.hourlyViewMode = checkedButton.value;
-                Config.save();
-            }
-        }
-        FormCard.FormTextDelegate {
-            text: i18n("Week view mode")
-        }
-        ColumnLayout {
-            spacing: 0
-            Layout.fillWidth: true
-            FormCard.FormRadioDelegate {
-                property int value: Config.SwipeableInternalHourlyView
-                text: i18n("Swipeable week view")
-                enabled: !Config.isHourlyViewModeImmutable
-                checked: Config.monthGridMode === value
-                QQC2.ButtonGroup.group: hourlyViewModeGroup
-            }
-            FormCard.FormRadioDelegate {
-                property int value: Config.BasicInternalHourlyView
-                text: i18n("Basic week view")
-                enabled: !Config.isHourlyViewModeImmutable
-                checked: Config.monthGridMode === value
-                QQC2.ButtonGroup.group: hourlyViewModeGroup
-            }
-            FormCard.FormTextDelegate {
-                description: i18n("Swipeable week view requires higher system performance.")
-                visible: Config.hourlyViewMode === Config.SwipeableInternalHourlyView
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18n("Schedule View settings")
-    }
-
-    FormCard.FormCard {
-        autoSeparators: true
-
-        data: QQC2.ButtonGroup {
-            id: monthListModeGroup
-            exclusive: true
-            onCheckedButtonChanged: {
-                Config.monthListMode = checkedButton.value;
-                Config.save();
-            }
-        }
-        FormCard.FormTextDelegate {
-            text: i18n("Schedule view mode")
-        }
-        ColumnLayout {
-            spacing: 0
-            Layout.fillWidth: true
-            FormCard.FormRadioDelegate {
-                property int value: Config.SwipeableMonthList
-                text: i18n("Swipeable schedule view")
-                enabled: !Config.isMonthListModeImmutable
-                checked: Config.monthListMode === value
-                QQC2.ButtonGroup.group: monthListModeGroup
-            }
-            FormCard.FormRadioDelegate {
-                property int value: Config.BasicMonthList
-                text: i18n("Basic schedule view")
-                enabled: !Config.isMonthListModeImmutable
-                checked: Config.monthListMode === value
-                QQC2.ButtonGroup.group: monthListModeGroup
-            }
-            FormCard.FormTextDelegate {
-                description: i18n("Swipeable schedule view requires higher system performance.")
-                visible: Config.monthListMode === Config.SwipeableMonthList
-            }
-        }
-
-        FormCard.FormCheckDelegate {
+        FormCard.FormSwitchDelegate {
+            id: showWeekHeaders
             text: i18n("Show week headers")
             checked: Config.showWeekHeaders
             enabled: !Config.isShowWeekHeadersImmutable
-            onCheckedChanged: {
-                Config.showWeekHeaders = checked;
+            onToggled: {
+                Config.showWeekHeaders = showWeekHeaders.checked;
                 Config.save();
             }
         }
 
-        FormCard.FormCheckDelegate {
+        FormCard.FormSwitchDelegate {
+            id: hideEmptyDays
             text: i18n("Hide empty days")
             checked: Config.hideEmptyDays
-            onCheckedChanged: {
-                Config.hideEmptyDays = checked;
+            enabled: !Config.isHideEmptyDaysImmutable
+            onToggled: {
+                Config.hideEmptyDays = hideEmptyDays.checked;
                 Config.save();
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Tasks View settings")
+        title: i18n("Advanced Presentation")
     }
 
     FormCard.FormCard {
         autoSeparators: true
 
-        FormCard.FormCheckDelegate {
-            text: i18n("Show completed sub-tasks")
-            checked: Config.showCompletedSubtodos
-            enabled: !Config.isShowCompletedSubtodosImmutable
-            onCheckedChanged: {
-                Config.showCompletedSubtodos = checked;
+        FormCard.FormComboBoxDelegate {
+            id: monthViewMode
+            objectName: "monthViewModeCombo"
+            text: i18n("Month view")
+            enabled: !Config.isMonthGridModeImmutable
+            description: Config.monthGridMode === Config.SwipeableMonthGrid ? i18n("Swipeable views require higher system performance.") : ""
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                { text: i18n("Swipeable"), value: Config.SwipeableMonthGrid },
+                { text: i18n("Basic"), value: Config.BasicMonthGrid }
+            ]
+            currentIndex: Config.monthGridMode === Config.SwipeableMonthGrid ? 0 : 1
+            onActivated: function(index: int): void {
+                Config.monthGridMode = monthViewMode.currentValue;
                 Config.save();
             }
         }
-    }
 
-    FormCard.FormHeader {
-        title: i18n("Maps")
-    }
-
-    FormCard.FormCard {
-        autoSeparators: true
-
-        FormCard.FormCheckDelegate {
-            text: i18n("Enable maps")
-            checked: Config.enableMaps
-            enabled: !Config.isEnableMapsImmutable
-            onCheckedChanged: {
-                Config.enableMaps = checked;
+        FormCard.FormComboBoxDelegate {
+            id: weekViewMode
+            objectName: "weekViewModeCombo"
+            text: i18n("Week view")
+            enabled: !Config.isHourlyViewModeImmutable
+            description: Config.hourlyViewMode === Config.SwipeableInternalHourlyView ? i18n("Swipeable views require higher system performance.") : ""
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                { text: i18n("Swipeable"), value: Config.SwipeableInternalHourlyView },
+                { text: i18n("Basic"), value: Config.BasicInternalHourlyView }
+            ]
+            currentIndex: Config.hourlyViewMode === Config.SwipeableInternalHourlyView ? 0 : 1
+            onActivated: function(index: int): void {
+                Config.hourlyViewMode = weekViewMode.currentValue;
                 Config.save();
             }
-            description: i18n("May cause crashing on some systems.")
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18n("Location marker")
-    }
-
-    FormCard.FormCard {
-        autoSeparators: true
-
-        FormCard.FormRadioDelegate {
-            property int value: Config.Circle
-            text: i18n("Circle (shows area of location)")
-            enabled: Config.enableMaps && !Config.isLocationMarkerImmutable
-            checked: Config.locationMarker === value
-            QQC2.ButtonGroup.group: locationGroup
-        }
-        FormCard.FormRadioDelegate {
-            property int value: Config.Pin
-            text: i18n("Pin (shows exact location)")
-            enabled: Config.enableMaps && !Config.isLocationMarkerImmutable
-            checked: Config.locationMarker === value
-            QQC2.ButtonGroup.group: locationGroup
         }
 
-        data: QQC2.ButtonGroup {
-            id: locationGroup
-            exclusive: true
-            onCheckedButtonChanged: {
-                Config.locationMarker = checkedButton.value;
+        FormCard.FormComboBoxDelegate {
+            id: scheduleViewMode
+            objectName: "scheduleViewModeCombo"
+            text: i18n("Schedule view")
+            enabled: !Config.isMonthListModeImmutable
+            description: Config.monthListMode === Config.SwipeableMonthList ? i18n("Swipeable views require higher system performance.") : ""
+            textRole: "text"
+            valueRole: "value"
+            model: [
+                { text: i18n("Swipeable"), value: Config.SwipeableMonthList },
+                { text: i18n("Basic"), value: Config.BasicMonthList }
+            ]
+            currentIndex: Config.monthListMode === Config.SwipeableMonthList ? 0 : 1
+            onActivated: function(index: int): void {
+                Config.monthListMode = scheduleViewMode.currentValue;
+                Config.save();
+            }
+        }
+
+        FormCard.FormSpinBoxDelegate {
+            id: gridBorderWidth
+            label: i18n("Month grid border width (pixels)")
+            enabled: !Config.isMonthGridBorderWidthImmutable
+            from: 0
+            to: 50
+            value: Config.monthGridBorderWidth
+            onValueModified: {
+                Config.monthGridBorderWidth = gridBorderWidth.value;
                 Config.save();
             }
         }

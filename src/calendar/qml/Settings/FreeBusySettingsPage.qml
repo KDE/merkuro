@@ -1,25 +1,23 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami as Kirigami
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.akonadi
 import org.kde.merkuro.calendar as Calendar
 import org.kde.kirigamiaddons.formcard as FormCard
 
 FormCard.FormCardPage {
-    id: freeBusySettingsPage
-
-    title: i18n("Configure Availability")
+    title: i18n("Availability")
 
     FormCard.FormHeader {
-        title: i18n("Availability Publishing settings")
+        title: i18n("Publishing")
     }
 
     FormCard.FormCard {
-        id: freeBusyPublishSection
         autoSeparators: true
 
         FormCard.FormTextDelegate {
@@ -31,7 +29,7 @@ FormCard.FormCardPage {
             id: autoPublishDelegate
             text: i18n("Publish your availability information automatically")
             checked: Calendar.CalendarSettings.freeBusyPublishAuto
-            onCheckedChanged: {
+            onToggled: {
                 Calendar.CalendarSettings.freeBusyPublishAuto = checked;
                 Calendar.CalendarSettings.save();
             }
@@ -39,13 +37,12 @@ FormCard.FormCardPage {
 
         FormCard.FormSpinBoxDelegate {
             id: autoPublishDelayDelegate
-            Layout.fillWidth: true
             visible: autoPublishDelegate.checked
-            label: i18n("Minimum time (in minutes) between uploads")
+            label: i18n("Minimum upload interval (minutes)")
             value: Calendar.CalendarSettings.freeBusyPublishDelay
             from: 1
             to: 10080
-            onValueChanged: {
+            onValueModified: {
                 Calendar.CalendarSettings.freeBusyPublishDelay = value;
                 Calendar.CalendarSettings.save();
             }
@@ -53,21 +50,24 @@ FormCard.FormCardPage {
 
         FormCard.FormSpinBoxDelegate {
             id: publishDaysDelegate
-            Layout.fillWidth: true
-            label: i18n("Number of days of availability info to publish: ")
+            label: i18n("Days of availability to publish")
             value: Calendar.CalendarSettings.freeBusyPublishDays
             from: 1
             to: 365
-            onValueChanged: {
+            onValueModified: {
                 Calendar.CalendarSettings.freeBusyPublishDays = value;
                 Calendar.CalendarSettings.save();
             }
         }
+    }
 
-        FormCard.FormTextDelegate {
-            id: publishServerTitle
-            description: i18n("Server information")
-        }
+    FormCard.FormHeader {
+        title: i18n("Publishing Server")
+    }
+
+    FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: publishServerUrl
             label: i18n("Server URL")
@@ -102,46 +102,18 @@ FormCard.FormCardPage {
             id: publishServerSavePassword
             text: i18n("Save password")
             checked: Calendar.CalendarSettings.freeBusyPublishSavePassword
-            onCheckedChanged: {
+            onToggled: {
                 Calendar.CalendarSettings.freeBusyPublishSavePassword = checked;
                 Calendar.CalendarSettings.save();
-            }
-        }
-
-        FormCard.FormButtonDelegate {
-            id: freeBusyPublishButton
-            text: i18n("Click here to publish availability information manually")
-            onClicked: Calendar.FreeBusyManager.publishFreeBusy();
-        }
-
-        FormCard.AbstractFormDelegate {
-            id: freeBusyMailDelegate
-            background: null
-            Layout.fillWidth: true
-            contentItem: RowLayout {
-                Layout.fillWidth: true
-                QQC2.Label {
-                    text: i18n("Email availability")
-                }
-                QQC2.TextField {
-                    id: freeBusyMailAddress
-                    Layout.fillWidth: true
-                    placeholderText: i18n("Enter email of recipient…")
-                }
-                QQC2.Button {
-                    text: i18n("Send")
-                    onClicked: Calendar.FreeBusyManager.mailFreeBusy(freeBusyMailAddress.text);
-                }
             }
         }
     }
 
     FormCard.FormHeader {
-        title: i18n("Availability Retrieval settings")
+        title: i18n("Retrieving")
     }
 
     FormCard.FormCard {
-        id: freeBusyRetrieveSection
         autoSeparators: true
 
         FormCard.FormTextDelegate {
@@ -153,25 +125,30 @@ FormCard.FormCardPage {
             id: autoRetrieveDelegate
             text: i18n("Retrieve others' availability information automatically")
             checked: Calendar.CalendarSettings.freeBusyRetrieveAuto
-            onCheckedChanged: {
+            onToggled: {
                 Calendar.CalendarSettings.freeBusyRetrieveAuto = checked;
                 Calendar.CalendarSettings.save();
             }
         }
+
         FormCard.FormCheckDelegate {
             id: fullDomainRetrievalDelegate
             text: i18n("Use full email address for retrieval")
             checked: Calendar.CalendarSettings.freeBusyFullDomainRetrieval
-            onCheckedChanged: {
+            onToggled: {
                 Calendar.CalendarSettings.freeBusyFullDomainRetrieval = checked;
                 Calendar.CalendarSettings.save();
             }
         }
+    }
 
-        FormCard.FormTextDelegate {
-            id: retrieveServerTitle
-            description: i18n("Server information")
-        }
+    FormCard.FormHeader {
+        title: i18n("Retrieval Server")
+    }
+
+    FormCard.FormCard {
+        autoSeparators: true
+
         FormCard.FormTextFieldDelegate {
             id: retrieveServerUrl
             label: i18n("Server URL")
@@ -206,10 +183,44 @@ FormCard.FormCardPage {
             id: retrieveServerSavePassword
             text: i18n("Save password")
             checked: Calendar.CalendarSettings.freeBusyRetrieveSavePassword
-            onCheckedChanged: {
+            onToggled: {
                 Calendar.CalendarSettings.freeBusyRetrieveSavePassword = checked;
                 Calendar.CalendarSettings.save();
             }
         }
     }
+
+    FormCard.FormHeader {
+        title: i18n("Actions")
+    }
+
+    FormCard.FormCard {
+        autoSeparators: true
+
+        FormCard.FormButtonDelegate {
+            id: freeBusyPublishButton
+            text: i18n("Publish now")
+            onClicked: Calendar.FreeBusyManager.publishFreeBusy();
+        }
+
+        FormCard.AbstractFormDelegate {
+            id: freeBusyMailDelegate
+            background: null
+            contentItem: RowLayout {
+                QQC2.Label {
+                    text: i18n("Email availability")
+                }
+                QQC2.TextField {
+                    id: freeBusyMailAddress
+                    Layout.fillWidth: true
+                    placeholderText: i18n("Enter email of recipient…")
+                }
+                QQC2.Button {
+                    text: i18n("Send")
+                    onClicked: Calendar.FreeBusyManager.mailFreeBusy(freeBusyMailAddress.text);
+                }
+            }
+        }
+    }
+
 }

@@ -14,7 +14,7 @@ import org.kde.merkuro.components
 FormCard.FormCardPage {
     id: root
 
-    title: i18n("Accounts")
+    title: i18n("Calendars & Accounts")
 
     FormCard.FormHeader {
         title: root.title
