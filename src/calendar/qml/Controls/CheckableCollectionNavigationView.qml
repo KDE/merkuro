@@ -266,7 +266,7 @@ QQC2.ScrollView {
                         Connections {
                             target: root.agentConfiguration
 
-                            function onAgentProgressChanged(agentInstance: Akonadi.AgentInstance) {
+                            function onAgentProgressChanged(agentInstance: Akonadi.agentInstance): void {
                                 if (agentInstance.identifier !== collectionSourceItem.collection.resource) {
                                     return;
                                 }
