@@ -23,11 +23,18 @@ Map {
     readonly property bool hasCoordinate: !isNaN(selectedLatitude) && !isNaN(selectedLongitude)
     property bool queryHasResults: geocodeModel.count > 0
     property int queryStatus: geocodeModel.status
-    property bool containsLocation: queryHasResults ? visibleRegion.contains(geocodeModel.get(0).coordinate) : false
+    property bool containsLocation: {
+        const location = queryHasResults ? geocodeModel.get(0) : null;
+        return location ? visibleRegion.contains(location.coordinate) : false;
+    }
     property bool selectMode: false
 
-    function goToLocation() {
-        map.fitViewportToGeoShape(geocodeModel.get(0).boundingShape, 0);
+    function goToLocation(): void {
+        const location = geocodeModel.count > 0 ? geocodeModel.get(0) : null;
+        if (!location) {
+            return;
+        }
+        map.fitViewportToGeoShape(location.boundingShape, 0);
         if (map.zoomLevel > 18.0) {
             map.zoomLevel = 18.0;
         }
@@ -62,6 +69,8 @@ Map {
     }
 
     MapItemView {
+        objectName: "locationMarkers"
+
         MouseArea {
             anchors.fill: parent
             enabled: map.selectMode
@@ -94,18 +103,30 @@ Map {
 
         property Component circle: MapCircle {
             id: mapCircle
-            radius: locationData.boundingBox.center.distanceTo(locationData.boundingBox.topRight)
+            required property Location locationData
+
+            visible: mapCircle.locationData !== null
+            radius: {
+                if (!mapCircle.locationData) {
+                    return 0;
+                }
+                const bounds = mapCircle.locationData.boundingShape.boundingGeoRectangle();
+                return bounds.center.distanceTo(bounds.topRight);
+            }
             color: Kirigami.Theme.highlightColor
             border.color: Kirigami.Theme.linkColor
             border.width: 2
             smooth: true
             opacity: 0.25
-            center: locationData.coordinate
+            center: mapCircle.locationData ? mapCircle.locationData.coordinate : QtPositioning.coordinate()
         }
 
         property Component pin: MapQuickItem {
             id: mapPin
-            coordinate: locationData.coordinate
+            required property Location locationData
+
+            visible: mapPin.locationData !== null
+            coordinate: mapPin.locationData ? mapPin.locationData.coordinate : QtPositioning.coordinate()
             anchorPoint.x: iconMarker.width/2
             anchorPoint.y: iconMarker.height
 

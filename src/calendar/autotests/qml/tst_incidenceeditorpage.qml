@@ -119,6 +119,28 @@ Item {
             compare(summarySpy.count, 1);
         }
 
+        function test_locationSearch(): void {
+            root.wrapper.location = "Tempelhofer Feld";
+            const page = createPage(false);
+            const field = findChild(page, "locationField");
+            verify(!!field);
+            compare(field.text, "Tempelhofer Feld");
+
+            field.suggestionModel = ["Tempelhofer Feld, Berlin"];
+            compare(root.wrapper.location, "Tempelhofer Feld");
+            field.activated(0);
+            compare(root.wrapper.location, "Tempelhofer Feld, Berlin");
+            compare(field.text, "Tempelhofer Feld, Berlin");
+
+            field.contentItem.forceActiveFocus();
+            tryCompare(field.contentItem, "activeFocus", true);
+            keyClick(Qt.Key_A, Qt.ControlModifier);
+            for (const letter of "Berlin") {
+                keyClick(letter);
+            }
+            compare(root.wrapper.location, "Berlin");
+        }
+
         function test_openingPreservesFullDraft(): void {
             editorTestHelper.setEditorFixture(root.wrapper, "monthly-position");
             const expected = editorTestHelper.draftContents(root.wrapper);

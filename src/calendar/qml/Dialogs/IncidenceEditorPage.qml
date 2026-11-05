@@ -202,6 +202,8 @@ FormCard.FormCardPage {
             }
 
             FormCard.FormCard {
+		        autoSeparators: true
+
                 Layout.topMargin: Kirigami.Units.gridUnit
 
                 FormCard.FormTextFieldDelegate {
@@ -221,48 +223,49 @@ FormCard.FormCardPage {
                     onTextEdited: root.incidenceWrapper.summary = text
                 }
 
-                FormCard.FormDelegateSeparator {}
+                FormCard.AbstractFormDelegate {
+                    background: null
 
-                // Todo make this again a combobox delegate
-                FormCard.FormTextFieldDelegate {
-                    id: locationField
+                    contentItem: ColumnLayout {
+                        QQC2.Label {
+                            text: i18nc("@label", "Location")
+                            Layout.fillWidth: true
+                        }
 
-                    label: i18nc("@label", "Location")
-                    text: root.incidenceWrapper.location
-                    onTextEdited: {
-                        root.incidenceWrapper.location = text;
-                    }
+                        RowLayout {
+                            QQC2.SearchField {
+                                id: locationField
+                                objectName: "locationField"
+                                Layout.fillWidth: true
+                                Accessible.name: i18nc("@label", "Location")
+                                text: root.incidenceWrapper.location
+                                onTextEdited: {
+                                    root.incidenceWrapper.location = locationField.text;
+                                    queryUpdateTimer.restart();
+                                }
+                                onActivated: function(index: int): void {
+                                    root.incidenceWrapper.location = locationField.suggestionModel[index];
+                                }
+                            }
 
-                    /*
-                    editable: true
-
-                    function openOrCloseLocationsPopup(): void {
-                        if (locationsModel.count > 0 && locationTextField.text !== ""){
-                            locationField.clicked();
-                        } else {
-                            locationField.closeDialog();
+                            QQC2.BusyIndicator {
+                                implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                                implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                                running: locationsModel.status === GeocodeModel.Loading
+                                visible: running
+                            }
                         }
                     }
 
-                    editText: root.incidenceWrapper.location
-                    valueRole: "locationData"
-                    // placeholderText: i18n("Optional")
-
-                    onTextEdited: {
-                        root.incidenceWrapper.location = text;
-                        //queryUpdateTimer.restart();
-                    }
-
-                    /*
                     Timer {
                         id: queryUpdateTimer
                         interval: 300
                         onTriggered: {
-                            locationsModel.query = root.incidenceWrapper.location;
+                            locationsModel.query = Calendar.Config.enableMaps ? root.incidenceWrapper.location : "";
                         }
                     }
 
-                    model: GeocodeModel {
+                    GeocodeModel {
                         id: locationsModel
                         plugin: Plugin {
                             name: "osm"
@@ -276,21 +279,20 @@ FormCard.FormCardPage {
                             }
                         }
                         autoUpdate: true
-                        onLocationsChanged: locationField.openOrCloseLocationsPopup()
+                        onLocationsChanged: {
+                            const suggestions = [];
+                            for (let index = 0; index < locationsModel.count; ++index) {
+                                suggestions.push(locationsModel.get(index).address.text);
+                            }
+                            locationField.suggestionModel = suggestions;
+                        }
                     }
-                    onActivated: root.incidenceWrapper.location = currentValue.address.text
-                    Keys.onPressed: locationField.openOrCloseLocationsPopup()
-
-                    QQC2.BusyIndicator {
-                        height: parent.height
-                        anchors.right: parent.right
-                        visible: locationsModel.status === GeocodeModel.Loading
-                    }*/
                 }
 
                 FormCard.AbstractFormDelegate {
                     id: mapDelegate
                     visible: Calendar.Config.enableMaps
+                    background: null
 
                     contentItem: Loader {
                         id: mapLoader
@@ -300,14 +302,13 @@ FormCard.FormCardPage {
 
                         sourceComponent: Calendar.LocationMap {
                             id: map
+                            implicitHeight: Kirigami.Units.gridUnit * 12
                             selectMode: true
                             query: root.incidenceWrapper.location
                             onSelectedLocationAddress: address => root.incidenceWrapper.location = address
                         }
                     }
                 }
-
-                FormCard.FormDelegateSeparator {}
 
                 Akonadi.FormCollectionComboBox {
                     id: calendarCombo
