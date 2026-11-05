@@ -28,7 +28,21 @@ Kirigami.ScrollablePage {
     property string initialTo: ""
     property string initialSubject: ""
     property string initialBody: ""
+    property string insertedSignature: ""
     readonly property Kirigami.ApplicationWindow appWindow: mailComposition.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow
+
+    function updateSignature(): void {
+        const cursorPosition = mailContent.cursorPosition;
+        if (mailComposition.insertedSignature.length > 0 && mailContent.text.endsWith(mailComposition.insertedSignature)) {
+            mailContent.remove(mailContent.length - mailComposition.insertedSignature.length, mailContent.length);
+        }
+        const signature = mailClient.signature(identity.currentValue);
+        mailComposition.insertedSignature = signature.length > 0 ? "\n\n" + signature : "";
+        mailContent.insert(mailContent.length, mailComposition.insertedSignature);
+        mailContent.cursorPosition = Math.min(cursorPosition, mailContent.length);
+    }
+
+    Component.onCompleted: mailComposition.updateSignature()
 
     MailClient {
         id: mailClient
@@ -64,7 +78,10 @@ Kirigami.ScrollablePage {
             // qmllint enable import
             textRole: "display"
             valueRole: "uoid"
-            onActivated: from.text = model.email(currentValue)
+            onActivated: {
+                from.text = model.email(currentValue);
+                mailComposition.updateSignature();
+            }
             Layout.rightMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
 

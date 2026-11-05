@@ -80,6 +80,7 @@ public:
     [[nodiscard]] AttachmentModel *attachmentModel() const;
 
     Q_INVOKABLE void send(uint senderUoid, const QString &subject, const QString &body);
+    Q_INVOKABLE QString signature(uint senderUoid) const;
     Q_INVOKABLE void setDeliveryMode(const DeliveryMode mode, const QDateTime &sendAfter = QDateTime());
 
 private:

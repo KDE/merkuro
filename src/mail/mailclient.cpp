@@ -31,6 +31,7 @@
 
 #include <KJob>
 #include <KLocalizedString>
+#include <QTextDocument>
 #include <messagecore/attachmentpart.h>
 
 using namespace Akonadi;
@@ -44,6 +45,31 @@ MailClient::MailClient(QObject *parent)
 }
 
 MailClient::~MailClient() = default;
+
+QString MailClient::signature(uint senderUoid) const
+{
+    const auto &identity = KIdentityManagementCore::IdentityManager::self()->identityForUoid(senderUoid);
+    auto signature = identity.signature();
+    if (!signature.isEnabledSignature()) {
+        return {};
+    }
+
+    bool ok = false;
+    QString errorMessage;
+    auto text = signature.rawText(&ok, &errorMessage);
+    if (!ok) {
+        qCWarning(MERKURO_MAIL_LOG) << "Could not load signature:" << errorMessage;
+        return {};
+    }
+    if (signature.type() == KIdentityManagementCore::Signature::Inlined && signature.isInlinedHtml()) {
+        QTextDocument document;
+        document.setHtml(text);
+        text = document.toPlainText();
+    }
+    signature.setText(text);
+    signature.setInlinedHtml(false);
+    return signature.withSeparator();
+}
 
 void MailClient::send(uint uoid, const QString &subject, const QString &body)
 {
