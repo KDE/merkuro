@@ -19,6 +19,7 @@ qt_add_qml_module(mail_settings
         org.kde.merkuro.mail
     QML_FILES
         AccountSettingsPage.qml
+        MessageViewerSettingsPage.qml
         Settings.qml
         TransportConfigurationForm.qml
 )

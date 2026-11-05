@@ -35,6 +35,7 @@ MimeTreeParser.MailViewer {
     title: ''
 
     icalCustomComponent: Qt.resolvedUrl("./mailpartview/ICalPart.qml")
+    showHtml: Config.preferHtml
 
     actions: [
         Kirigami.Action {

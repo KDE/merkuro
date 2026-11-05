@@ -14,7 +14,17 @@ KirigamiSettings.ConfigurationView {
             moduleId: "accounts"
             text: KI18n.i18nc("@title", "Accounts")
             icon.name: "preferences-system-users"
-            page: () => Qt.createComponent("AccountSettingsPage.qml")
+	        page: function(): Compoennt {
+                return Qt.createComponent("AccountSettingsPage.qml");
+            }
+        },
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "messageViewer"
+            text: KI18n.i18nc("@title", "Message Viewer")
+            icon.name: "mail-read"
+            page: function(): Component {
+                return Qt.createComponent("MessageViewerSettingsPage.qml");
+            }
         }
     ]
 }
