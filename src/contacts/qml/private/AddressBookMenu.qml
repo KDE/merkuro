@@ -22,7 +22,7 @@ QQC2.Menu {
 
     ColorDialog {
         id: colorDialog
-        selectedColor: actionsPopup.collectionDetails.color
+        selectedColor: actionsPopup.collectionDetails?.color ?? "transparent"
         onAccepted: ContactManager.setCollectionColor(actionsPopup.collection, selectedColor)
     }
 
@@ -45,7 +45,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "edit-delete"
         text: KI18n.i18nc("@action:inmenu", "Delete address book")
-        enabled: actionsPopup.collectionDetails.canDelete
+        enabled: actionsPopup.collectionDetails?.canDelete ?? false
         onClicked: ContactManager.deleteCollection(actionsPopup.collection)
     }
     QQC2.MenuSeparator {
@@ -56,25 +56,25 @@ QQC2.Menu {
         onClicked: colorDialog.open()
     }
     QQC2.MenuSeparator {
-        visible: actionsPopup.collectionDetails.isResource
+        visible: actionsPopup.collectionDetails?.isResource ?? false
     }
 
     QQC2.MenuItem {
         icon.name: "settings-configure"
         text: KI18n.i18nc("@action:inmenu", "Address book source settings…")
         onClicked: actionsPopup.agentConfiguration.editIdentifier(actionsPopup.collectionDetails.resource)
-        visible: actionsPopup.collectionDetails.isResource
+        visible: actionsPopup.collectionDetails?.isResource ?? false
     }
     QQC2.MenuItem {
         icon.name: "view-refresh"
         text: KI18n.i18nc("@action:inmenu", "Update address book source")
         onClicked: actionsPopup.agentConfiguration.restartIdentifier(actionsPopup.collectionDetails.resource)
-        visible: actionsPopup.collectionDetails.isResource
+        visible: actionsPopup.collectionDetails?.isResource ?? false
     }
     QQC2.MenuItem {
         icon.name: "edit-delete"
         text: KI18n.i18nc("@action:inmenu", "Delete address source")
         onClicked: actionsPopup.agentConfiguration.removeIdentifier(actionsPopup.collectionDetails.resource)
-        visible: actionsPopup.collectionDetails.isResource
+        visible: actionsPopup.collectionDetails?.isResource ?? false
     }
 }
