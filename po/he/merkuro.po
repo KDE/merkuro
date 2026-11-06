@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:04+0000\n"
-"PO-Revision-Date: 2026-11-03 20:29+0200\n"
+"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"PO-Revision-Date: 2026-11-05 13:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -70,6 +70,7 @@ msgid "Ctrl+4"
 msgstr "Ctrl+4"
 
 #: calendar/calendarapplication.cpp:129
+#: calendar/qml/Settings/ViewSettingsPage.qml:221
 #, kde-format
 msgid "Schedule View"
 msgstr "תצוגת לו״ז"
@@ -80,6 +81,7 @@ msgid "Ctrl+5"
 msgstr "Ctrl+5"
 
 #: calendar/calendarapplication.cpp:145
+#: calendar/qml/Settings/ViewSettingsPage.qml:164
 #, kde-format
 msgid "Month View"
 msgstr "תצוגת חודש"
@@ -278,7 +280,7 @@ msgstr "לא ניתן להעביר את החזרה: %1"
 msgid "An error occurred: %1"
 msgstr "אירעה שגיאה: %1"
 
-#: calendar/incidencewrapper.cpp:190
+#: calendar/incidencewrapper.cpp:192
 #: calendar/models/incidenceoccurrencemodel.cpp:312
 #: calendar/models/todosortfilterproxymodel.cpp:150
 #, kde-format
@@ -330,7 +332,7 @@ msgid "Default from locale"
 msgstr "ברירת מחדל מההגדרות האזוריות"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:817
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -655,7 +657,7 @@ msgid "Set priority…"
 msgstr "הגדרת עדיפות…"
 
 #: calendar/qml/Controls/IncidenceMouseArea.qml:120
-#: calendar/qml/Controls/IncidenceMouseArea.qml:200
+#: calendar/qml/Controls/IncidenceMouseArea.qml:201
 #, kde-format
 msgid "None"
 msgstr "אין"
@@ -705,27 +707,27 @@ msgstr "8 (עדיפות בינונית-נמוכה)"
 msgid "9 (lowest priority)"
 msgstr "9 (העדיפות הנמוכה ביותר)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:181
+#: calendar/qml/Controls/IncidenceMouseArea.qml:182
 #, kde-format
 msgid "Set due date…"
 msgstr "הגדרת תאריך סיום…"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:208
+#: calendar/qml/Controls/IncidenceMouseArea.qml:207
 #, kde-format
 msgid "Today (%1)"
 msgstr "היום (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:216
+#: calendar/qml/Controls/IncidenceMouseArea.qml:215
 #, kde-format
 msgid "Tomorrow (%1)"
 msgstr "מחר (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:223
+#: calendar/qml/Controls/IncidenceMouseArea.qml:222
 #, kde-format
 msgid "In a week (%1)"
 msgstr "תוך שבוע (%1)"
 
-#: calendar/qml/Controls/IncidenceMouseArea.qml:231
+#: calendar/qml/Controls/IncidenceMouseArea.qml:230
 #, kde-format
 msgid "In a month (%1)"
 msgstr "תוך חודש (%1)"
@@ -916,36 +918,36 @@ msgstr "למחוק רק את זה"
 msgid "Delete All"
 msgstr "למחוק הכול"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:72
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Reload Incidence"
 msgstr "ריענון חזרה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:73
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:75
 #, kde-format
 msgid ""
 "Reloading will discard your unsaved changes and load the latest version."
 msgstr "ריענון יסלק את השינויים שלא שמרת וירענן את הגרסה העדכנית ביותר."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:90
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:92
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Edit %1"
 msgstr "עריכת %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:91
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:93
 #, kde-format
 msgctxt "%1 is incidence type"
 msgid "Add %1"
 msgstr "הוספת %1"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:105
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:107
 #, kde-format
 msgid "This incidence was deleted. Your unsaved changes have been kept."
 msgstr "החזרה הזאת נמחקה. השינויים שלא שמרת נשארו."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:106
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
 #, kde-format
 msgid ""
 "This incidence changed outside this editor. Your unsaved changes have been "
@@ -954,311 +956,320 @@ msgstr ""
 "החזרה הזאת נערכה מחוץ לעורך הזה. השינויים שלא שמרת נשארו. כדאי לרענן לגרסה "
 "העדכנית ביותר לפני השמירה."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:108
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Reload"
 msgstr "ריענון"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:135
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:138
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:137
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:140
 #, kde-format
 msgid "Invalid dates provided."
 msgstr "סופקו תאריכים שגויים."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:140
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:142
 #, kde-format
 msgid "End date cannot be before start date."
 msgstr "תאריך הסיום לא יכול להיות לפני תאריך ההתחלה."
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:164
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:188
 #, kde-format
 msgid "Save"
 msgstr "שמירה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:162
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:211
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:164
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:212
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:188
 #, kde-format
 msgid "Add"
 msgstr "הוספה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:210
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:321
 #, kde-format
 msgid "Summary"
 msgstr "תקציר"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:213
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:324
 #, kde-format
 msgid "Add a title for your task"
 msgstr "הוספת כותרת למשימה שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:215
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:326
 #, kde-format
 msgid "Add a title for your event"
 msgstr "הוספת כותרת לאירוע שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:217
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:328
 #, kde-format
 msgid "Add a title for your journal entry"
 msgstr "הוספת כותרת לרשומת היומן שלך"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:229
-#: mail/qml/mailpartview/ICalPart.qml:73
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:339
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:348
+#: mail/qml/mailpartview/ICalPart.qml:94
 #, kde-format
 msgctxt "@label"
 msgid "Location"
 msgstr "מקום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:314
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:424
 #, kde-format
 msgctxt "@label"
 msgid "Calendar"
 msgstr "לוח שנה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:346
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:456
 #, kde-format
 msgctxt "@title:group"
 msgid "Task"
 msgstr "משימה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:362
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:474
 #, kde-format
 msgid "Completion"
 msgstr "השלמה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:372
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:484
 #, kde-format
 msgid "%1%"
 msgstr "%1%"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:393
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:503
 #, kde-format
 msgid "Priority"
 msgstr "עדיפות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:395
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:505
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:21
 #, kde-format
 msgid "Unassigned"
 msgstr "לא מוקצה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:396
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:506
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:22
 #, kde-format
 msgid "1 (Highest Priority)"
 msgstr "1 (העדיפות הגבוהה ביותר)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:397
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:507
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:23
 #, kde-format
 msgid "2"
 msgstr "2"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:398
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:508
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:24
 #, kde-format
 msgid "3"
 msgstr "3"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:399
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:509
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:25
 #, kde-format
 msgid "4"
 msgstr "4"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:400
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:510
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:26
 #, kde-format
 msgid "5 (Medium Priority)"
 msgstr "5 (עדיפות בינונית)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:401
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:511
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:27
 #, kde-format
 msgid "6"
 msgstr "6"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:402
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:512
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:28
 #, kde-format
 msgid "7"
 msgstr "7"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:403
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:513
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:29
 #, kde-format
 msgid "8"
 msgstr "8"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:404
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:514
 #: calendar/qml/incidenceeditor/PriorityComboBox.qml:30
 #, kde-format
 msgid "9 (Lowest Priority)"
 msgstr "9 (העדיפות הנמוכה ביותר)"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:417
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:527
 #, kde-format
 msgctxt "@title:group"
 msgid "Start"
 msgstr "התחלה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:422
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:532
 #, kde-format
 msgid "All day"
 msgstr "כל היום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:507
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:619
 #, kde-format
 msgctxt "@title:group"
 msgid "Due"
 msgstr "מועד תוקף"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:507
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:619
 #, kde-format
 msgctxt "@title:group"
 msgid "End"
 msgstr "סיום"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:566
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:680
 #, kde-format
 msgctxt "@title"
 msgid "Timezone"
 msgstr "אזור זמן"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:572
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:688
 #, kde-format
 msgid "Timezone:"
 msgstr "אזור זמן:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:585
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:701
 #, kde-format
 msgctxt "@title"
 msgid "Repeat"
 msgstr "חזרה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:593
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:709
 #, kde-format
 msgctxt "@title:group"
 msgid "Attendees"
 msgstr "משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:599
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:715
 #, kde-format
 msgid "Add Attendee"
 msgstr "הוספת משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:626
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:742
 #, kde-format
 msgid "Choose from Contacts"
 msgstr "בחירה מאנשי הקשר"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:631
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:747
 #, kde-format
 msgid "Fill in Manually"
 msgstr "מילוי ידני"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:642
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:760
+#, fuzzy, kde-format
+#| msgctxt "@info:accessibility"
+#| msgid "Organizer: %1"
+msgctxt "@label:listbox"
+msgid "Organizer:"
+msgstr "ארגון: %1"
+
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:772
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attendees"
 msgstr "אין משתתפים"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:686
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:816
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:92
-#: contacts/qml/private/ContactPage.qml:190
+#: contacts/qml/private/ContactPage.qml:191
 #, kde-format
 msgid "Name:"
 msgstr "שם:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:693
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:823
 #, kde-format
 msgid "Optional"
 msgstr "רשות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:712
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:842
 #, kde-format
 msgid "Email:"
 msgstr "דוא״ל:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:719
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
 #, kde-format
 msgid "Required"
 msgstr "חובה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:729
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
 #, kde-format
 msgid "Status:"
 msgstr "מצב:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:754
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
 #, kde-format
 msgid "Request RSVP"
 msgstr "בקשת אישור הגעה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:769
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "תזכורות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:771
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
 #, kde-format
 msgid "Add Reminder"
 msgstr "הוספת תזכורת"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:781
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "אין תזכורות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:801
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "תגיות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:803
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
 #, kde-format
 msgid "Manage tags…"
 msgstr "ניהול תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:818
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "יש לגעת כדי להגדיר תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:818
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
 #, kde-format
 msgid "Click to set tags…"
 msgstr "יש ללחוץ כדי להגדיר תגיות…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:865
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "צרופות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:867
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
 #, kde-format
 msgid "Add Attachment"
 msgstr "הוספת צרופה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:874
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
 #, kde-format
 msgid "Add an attachment"
 msgstr "הוספת צרופה"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:885
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "אין צרופות"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:920
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1367,50 +1378,50 @@ msgstr "הצגת כל המשימות"
 msgid "Priority:"
 msgstr "עדיפות:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:33
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:34
 #, kde-format
 msgid "Repeat:"
 msgstr "חזרה:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:69
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:292
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:70
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:293
 #: calendar/recurrencedata.cpp:66
 #, kde-format
 msgid "Never"
 msgstr "אף פעם"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:74
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:75
 #, kde-format
 msgid "Daily"
 msgstr "יומית"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:79
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:80
 #, kde-format
 msgid "Weekly"
 msgstr "שבועית"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:84
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:85
 #, kde-format
 msgid "Monthly"
 msgstr "חודשית"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:89
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:90
 #, kde-format
 msgid "Yearly"
 msgstr "שנתית"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:94
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:95
 #: calendar/qml/incidenceeditor/ReminderDelegate.qml:84
 #, kde-format
 msgid "Custom"
 msgstr "התאמה אישית"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:121
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:122
 #, kde-format
 msgid "Every:"
 msgstr "כל:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:167
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:168
 #, kde-format
 msgid "day"
 msgid_plural "days"
@@ -1419,7 +1430,7 @@ msgstr[1] "יומיים"
 msgstr[2] "ימים"
 msgstr[3] "ימים"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:172
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:173
 #, kde-format
 msgid "week"
 msgid_plural "weeks"
@@ -1428,7 +1439,7 @@ msgstr[1] "שבועיים"
 msgstr[2] "שבועות"
 msgstr[3] "שבועות"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:177
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:178
 #, kde-format
 msgid "month"
 msgid_plural "months"
@@ -1437,7 +1448,7 @@ msgstr[1] "חודשיים"
 msgstr[2] "חודשים"
 msgstr[3] "חודשים"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:182
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:183
 #, kde-format
 msgid "year"
 msgid_plural "years"
@@ -1446,45 +1457,45 @@ msgstr[1] "שנתיים"
 msgstr[2] "שנים"
 msgstr[3] "שנים"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:240
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:241
 #, kde-format
 msgid "On:"
 msgstr "ב־:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:250
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:251
 #, kde-format
 msgctxt "%1 is the day number of month"
 msgid "The %1 of each month"
 msgstr "ב־%1 בכל חודש"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:263
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:264
 #, kde-format
 msgctxt "the weekOfMonth dayOfWeekString of each month"
 msgid "The %1 %2 of each month"
 msgstr "ביום %2 ה־%1 בכל חודש"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:275
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:276
 #, kde-format
 msgid "Ends:"
 msgstr "מסתיים:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:296
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:297
 #, kde-format
 msgid "On"
 msgstr "בתאריך"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:300
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:301
 #, kde-format
 msgid "After"
 msgstr "אחרי"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:323
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:324
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Ends after:"
 msgstr "מסתיים לאחר:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:325
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:326
 #, kde-format
 msgid "%1 occurrence"
 msgid_plural "%1 occurrences"
@@ -1493,12 +1504,12 @@ msgstr[1] "שתי חזרות"
 msgstr[2] "%1 חזרות"
 msgstr[3] "%1 חזרות"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:334
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:335
 #, kde-format
 msgid "Exceptions:"
 msgstr "חריגות:"
 
-#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:337
+#: calendar/qml/incidenceeditor/RecurrenceEditor.qml:338
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
@@ -1540,7 +1551,7 @@ msgstr "אחרי התחלת אירוע"
 msgid "Remove"
 msgstr "הסרה"
 
-#: calendar/qml/Location/LocationMap.qml:58
+#: calendar/qml/Location/LocationMap.qml:65
 #, kde-format
 msgid "Return to Location"
 msgstr "חזרה למקום"
@@ -1826,6 +1837,8 @@ msgid " , is overdue"
 msgstr " , עבר את מועד הסיום שלו"
 
 #: calendar/qml/MainViews/TodoView.qml:48
+#: calendar/qml/Settings/ConfigurationsView.qml:24
+#: calendar/qml/Settings/TaskSettingsPage.qml:11
 #, kde-format
 msgid "Tasks"
 msgstr "משימות"
@@ -1857,6 +1870,7 @@ msgid "Add Task"
 msgstr "הוספת משימה"
 
 #: calendar/qml/MainViews/WeekViewHolidayRow.qml:47
+#: calendar/qml/Settings/ViewSettingsPage.qml:18
 #, kde-format
 msgid "Holidays"
 msgstr "חגים"
@@ -1968,33 +1982,43 @@ msgid "Sort Tasks"
 msgstr "מיון משימות"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:12
-#: calendar/qml/Settings/ViewSettingsPage.qml:15
-#, kde-format
-msgid "Appearance"
-msgstr "מראה"
+#: calendar/qml/Settings/SourceSettingsPage.qml:17
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@title:group Title for the list of sending accounts which are SMTP email "
+#| "accounts"
+#| msgid "Sending Accounts"
+msgid "Calendars & Accounts"
+msgstr "החשבונות שליחה"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:18
-#: calendar/qml/Settings/SourceSettingsPage.qml:17
-#, kde-format
-msgid "Accounts"
-msgstr "חשבונות"
+#: calendar/qml/Settings/TaskSettingsPage.qml:14
+#: calendar/qml/Settings/ViewSettingsPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Calendars"
+msgid "Calendar Views"
+msgstr "לוחות שנה"
 
-#: calendar/qml/Settings/ConfigurationsView.qml:24
+#: calendar/qml/Settings/ConfigurationsView.qml:32
+#: calendar/qml/Settings/LocationSettingsPage.qml:11
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Location"
+msgid "Locations"
+msgstr "מקום"
+
+#: calendar/qml/Settings/ConfigurationsView.qml:40
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:14
 #, kde-format
 msgid "Availability"
 msgstr "זמינות"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:15
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:17
 #, kde-format
-msgid "Configure Availability"
-msgstr "הגדרת זמינות"
+msgid "Publishing"
+msgstr ""
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:18
-#, kde-format
-msgid "Availability Publishing settings"
-msgstr "הגדרות פרסום זמינות"
-
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:26
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
 msgid ""
 "When you publish your availability information, it enables others to "
@@ -2006,78 +2030,59 @@ msgstr ""
 "לפגישה. רק הזמנים שכבר סומנו כעסוקים חשופים, מבלי לחשוף את הסיבה המסוימת "
 "להעדר הזמינות."
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:31
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:30
 #, kde-format
 msgid "Publish your availability information automatically"
 msgstr "פרסום מידע לגבי מועדי זמינות אוטומטית"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:43
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:41
 #, kde-format
-msgid "Minimum time (in minutes) between uploads"
-msgstr "זמן מזערי (בדקות) בין ההעלאות"
+msgid "Minimum upload interval (minutes)"
+msgstr ""
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:56
-#, kde-format
-msgid "Number of days of availability info to publish: "
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:53
+#, fuzzy, kde-format
+#| msgid "Number of days of availability info to publish: "
+msgid "Days of availability to publish"
 msgstr "מספר ימי פרטי זמינות לפרסום: "
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:68
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:171
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:65
 #, kde-format
-msgid "Server information"
-msgstr "פרטי שרת"
+msgid "Publishing Server"
+msgstr ""
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:72
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:175
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:73
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:154
 #, kde-format
 msgid "Server URL"
 msgstr "כתובת שרת"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:82
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:185
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:83
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:164
 #, kde-format
 msgid "Username"
 msgstr "שם משתמש"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:92
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:195
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:93
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:174
 #, kde-format
 msgid "Password"
 msgstr "סיסמה"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:102
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:205
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:103
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:184
 #, kde-format
 msgid "Save password"
 msgstr "שמירת סיסמה"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:112
-#, kde-format
-msgid "Click here to publish availability information manually"
-msgstr "נא ללחוץ כאן כדי לפרסם פרטי זמינות ידנית"
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:113
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Retrieval"
+msgid "Retrieving"
+msgstr "משיכה"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:123
-#, kde-format
-msgid "Email availability"
-msgstr "שליחת זמינות בדוא״ל"
-
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:128
-#, kde-format
-msgid "Enter email of recipient…"
-msgstr "נא למלא את כתובות דוא״ל הנמענים…"
-
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:131
-#: mail/qml/MailComposer.qml:190
-#, kde-format
-msgid "Send"
-msgstr "שליחה"
-
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:139
-#, kde-format
-msgid "Availability Retrieval settings"
-msgstr "הגדרות משיכת זמינות"
-
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:147
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:121
 #, kde-format
 msgid ""
 "By retrieving Availability information that others have published, you can "
@@ -2086,15 +2091,80 @@ msgstr ""
 "משיכה של פרטי זמינות שפורסמו על ידי אחרים, אפשר לקחת את לוח השנה שלהם בחשבון "
 "בהזמנתם לפגישה."
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:152
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:126
 #, kde-format
 msgid "Retrieve others' availability information automatically"
 msgstr "משיכת פרטי זמינות של אחרים אוטומטית"
 
-#: calendar/qml/Settings/FreeBusySettingsPage.qml:161
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:136
 #, kde-format
 msgid "Use full email address for retrieval"
 msgstr "להשתמש בכתובת הדוא״ל המלאה למשיכה"
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:146
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Retrieval"
+msgid "Retrieval Server"
+msgstr "משיכה"
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:194
+#, fuzzy, kde-format
+#| msgid "Exceptions:"
+msgid "Actions"
+msgstr "חריגות:"
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:202
+#, kde-format
+msgid "Publish now"
+msgstr ""
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:211
+#, kde-format
+msgid "Email availability"
+msgstr "שליחת זמינות בדוא״ל"
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:216
+#, kde-format
+msgid "Enter email of recipient…"
+msgstr "נא למלא את כתובות דוא״ל הנמענים…"
+
+#: calendar/qml/Settings/FreeBusySettingsPage.qml:219
+#: mail/qml/MailComposer.qml:207
+#, kde-format
+msgid "Send"
+msgstr "שליחה"
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:14
+#, kde-format
+msgid "Maps and Location Search"
+msgstr ""
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Unable to find location."
+msgid "Enable maps and location search"
+msgstr "לא ניתן למצוא מקום."
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:24
+#, kde-format
+msgid "May cause crashing on some systems."
+msgstr "יכול לגרום לקריסה בחלק מהמערכות."
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:36
+#, kde-format
+msgid "Location marker"
+msgstr "סמן מקום"
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:41
+#, kde-format
+msgid "Circle (shows area of location)"
+msgstr "עיגול (הצגת אזור המקום)"
+
+#: calendar/qml/Settings/LocationSettingsPage.qml:42
+#, kde-format
+msgid "Pin (shows exact location)"
+msgstr "נעץ (הצגת המקום במדויק)"
 
 #: calendar/qml/Settings/SourceSettingsPage.qml:25
 #, kde-format
@@ -2106,216 +2176,179 @@ msgstr "הוספת מקור לוח שנה חדש…"
 msgid "System Accounts"
 msgstr "חשבונות מערכת"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:18
-#, kde-format
-msgid "General settings"
-msgstr "הגדרות כלליות"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:24
-#, kde-format
-msgid "Use popup to show incidence information"
-msgstr "להשתמש בחלונית צצה כדי להציג פרטים על החזרה"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:35
-#, kde-format
-msgid "Show holidays in calendar views"
-msgstr "הצגת חגים בתצוגות לוח השנה"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:45
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Select Holiday Regions"
-msgstr "בחירת אזורי חגים"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:124
+#: calendar/qml/Settings/TaskSettingsPage.qml:23
 #, kde-format
 msgid "Show tasks in calendar views"
 msgstr "הצגת משימות בתצוגות לוח השנה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:134
-#, kde-format
-msgid "Show sub-tasks in calendar views"
+#: calendar/qml/Settings/TaskSettingsPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Show sub-tasks in calendar views"
+msgid "Show subtasks in calendar views"
 msgstr "הצגת תת־משימות בתצוגות לוח השנה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:148
+#: calendar/qml/Settings/TaskSettingsPage.qml:46
+#, fuzzy, kde-format
+#| msgid "Tasks View"
+msgid "Task View"
+msgstr "תצוגת משימות"
+
+#: calendar/qml/Settings/TaskSettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgid "Show completed sub-tasks"
+msgid "Show completed subtasks"
+msgstr "הצגת תת־משימות שהושלמו"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:27
+#, kde-format
+msgid "Show holidays in calendar views"
+msgstr "הצגת חגים בתצוגות לוח השנה"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:39
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Select Holiday Regions"
+msgctxt "@label:listbox"
+msgid "Holiday regions"
+msgstr "בחירת אזורי חגים"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:119
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Recent emails"
+msgid "Event Details"
+msgstr "הודעות דוא״ל אחרונות"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:128
+#, fuzzy, kde-format
+#| msgid "On event start"
+msgid "Open event details in"
+msgstr "עם התחלת האירוע"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:131
+#, kde-format
+msgid "Popup"
+msgstr ""
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Hide all"
+msgid "Side panel"
+msgstr "הסתרה של הכול"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
 msgid "Past event transparency"
 msgstr "שקיפות אירועי עבר"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:167
-#, kde-format
-msgid "Month view settings"
-msgstr "הגדרות תצוגת חודש"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:198
-#, kde-format
-msgid "Month view mode"
-msgstr "מצב תצוגת חודש"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:205
-#, kde-format
-msgid "Swipeable month grid"
-msgstr "טבלת חודשים להחלקה"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:212
-#, kde-format
-msgid "Basic month grid"
-msgstr "טבלת חודשים בסיסית"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:218
-#, kde-format
-msgid "Swipeable month grid requires higher system performance."
-msgstr "טבלת חודשים להחלקה דורשת יותר משאבים מהמערכת."
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:225
-#, kde-format
-msgid "Weekday label alignment"
-msgstr "יישור תווית היום בשבוע"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:232
-#, kde-format
-msgid "Left"
-msgstr "שמאל"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:239
-#, kde-format
-msgid "Center"
-msgstr "אמצע"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:246
-#, kde-format
-msgid "Right"
-msgstr "ימין"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:256
-#, kde-format
-msgid "Weekday label length:"
-msgstr "אורך תווית היום בשבוע:"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:261
-#, kde-format
-msgid "Full name (Monday)"
-msgstr "שם מלא (יום שני)"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:268
-#, kde-format
-msgid "Abbreviated (Mon)"
-msgstr "מקוצר (יום ב׳)"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:276
-#, kde-format
-msgid "Letter only (M)"
-msgstr "אות בלבד (ב׳)"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:285
+#: calendar/qml/Settings/ViewSettingsPage.qml:172
 #, kde-format
 msgid "Show week numbers"
 msgstr "הצגת מספרי השבועות"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:299
+#: calendar/qml/Settings/ViewSettingsPage.qml:184
 #, kde-format
-msgid "Grid border width (pixels):"
-msgstr "עובי מסגרת הטבלה (פיקסלים):"
+msgid "Weekday label alignment"
+msgstr "יישור תווית היום בשבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:323
+#: calendar/qml/Settings/ViewSettingsPage.qml:189
 #, kde-format
-msgid "Week view settings"
-msgstr "הגדרות תצוגת שבוע"
+msgid "Left"
+msgstr "שמאל"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:336
+#: calendar/qml/Settings/ViewSettingsPage.qml:190
 #, kde-format
-msgid "Week view mode"
-msgstr "מצב תצוגת שבוע"
+msgid "Center"
+msgstr "אמצע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:343
+#: calendar/qml/Settings/ViewSettingsPage.qml:191
 #, kde-format
-msgid "Swipeable week view"
-msgstr "תצוגת שבוע להחלקה"
+msgid "Right"
+msgstr "ימין"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:350
+#: calendar/qml/Settings/ViewSettingsPage.qml:203
+#, fuzzy, kde-format
+#| msgid "Weekday label length:"
+msgid "Weekday label length"
+msgstr "אורך תווית היום בשבוע:"
+
+#: calendar/qml/Settings/ViewSettingsPage.qml:208
 #, kde-format
-msgid "Basic week view"
-msgstr "תצוגת שבוע בסיסית"
+msgid "Full name (Monday)"
+msgstr "שם מלא (יום שני)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:356
+#: calendar/qml/Settings/ViewSettingsPage.qml:209
 #, kde-format
-msgid "Swipeable week view requires higher system performance."
-msgstr "תצוגת שבוע להחלקה דורשת יותר משאבים מהמערכת."
+msgid "Abbreviated (Mon)"
+msgstr "מקוצר (יום ב׳)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:363
+#: calendar/qml/Settings/ViewSettingsPage.qml:210
 #, kde-format
-msgid "Schedule View settings"
-msgstr "הגדרת תצוגת לו״ז"
+msgid "Letter only (M)"
+msgstr "אות בלבד (ב׳)"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:376
-#, kde-format
-msgid "Schedule view mode"
-msgstr "מצב תצוגת לו״ז"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:383
-#, kde-format
-msgid "Swipeable schedule view"
-msgstr "תצוגת לו״ז להחלקה"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:390
-#, kde-format
-msgid "Basic schedule view"
-msgstr "תצוגת לו״ז בסיסית"
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:396
-#, kde-format
-msgid "Swipeable schedule view requires higher system performance."
-msgstr "תצוגת לו״ז להחלקה דורשת יותר משאבים מהמערכת."
-
-#: calendar/qml/Settings/ViewSettingsPage.qml:405
+#: calendar/qml/Settings/ViewSettingsPage.qml:229
 #, kde-format
 msgid "Show week headers"
 msgstr "הצגת כותרות שבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:417
+#: calendar/qml/Settings/ViewSettingsPage.qml:240
 #, kde-format
 msgid "Hide empty days"
 msgstr "הסתרת ימים ריקים"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:427
+#: calendar/qml/Settings/ViewSettingsPage.qml:251
 #, kde-format
-msgid "Tasks View settings"
-msgstr "הגדרות תצוגת משימות"
+msgid "Advanced Presentation"
+msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:432
-#, kde-format
-msgid "Show completed sub-tasks"
-msgstr "הצגת תת־משימות שהושלמו"
+#: calendar/qml/Settings/ViewSettingsPage.qml:260
+#, fuzzy, kde-format
+#| msgid "Month View"
+msgid "Month view"
+msgstr "תצוגת חודש"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:443
-#, kde-format
-msgid "Maps"
-msgstr "מפות"
+#: calendar/qml/Settings/ViewSettingsPage.qml:262
+#: calendar/qml/Settings/ViewSettingsPage.qml:281
+#: calendar/qml/Settings/ViewSettingsPage.qml:300
+#, fuzzy, kde-format
+#| msgid "Swipeable week view requires higher system performance."
+msgid "Swipeable views require higher system performance."
+msgstr "תצוגת שבוע להחלקה דורשת יותר משאבים מהמערכת."
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:449
-#, kde-format
-msgid "Enable maps"
-msgstr "הפעלת מפות"
+#: calendar/qml/Settings/ViewSettingsPage.qml:266
+#: calendar/qml/Settings/ViewSettingsPage.qml:285
+#: calendar/qml/Settings/ViewSettingsPage.qml:304
+#, fuzzy, kde-format
+#| msgid "Swipeable week view"
+msgid "Swipeable"
+msgstr "תצוגת שבוע להחלקה"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:456
+#: calendar/qml/Settings/ViewSettingsPage.qml:267
+#: calendar/qml/Settings/ViewSettingsPage.qml:286
+#: calendar/qml/Settings/ViewSettingsPage.qml:305
 #, kde-format
-msgid "May cause crashing on some systems."
-msgstr "יכול לגרום לקריסה בחלק מהמערכות."
+msgid "Basic"
+msgstr ""
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:463
-#, kde-format
-msgid "Location marker"
-msgstr "סמן מקום"
+#: calendar/qml/Settings/ViewSettingsPage.qml:279
+#, fuzzy, kde-format
+#| msgid "Week View"
+msgid "Week view"
+msgstr "תצוגת שבוע"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:469
-#, kde-format
-msgid "Circle (shows area of location)"
-msgstr "עיגול (הצגת אזור המקום)"
+#: calendar/qml/Settings/ViewSettingsPage.qml:298
+#, fuzzy, kde-format
+#| msgid "Schedule View"
+msgid "Schedule view"
+msgstr "תצוגת לו״ז"
 
-#: calendar/qml/Settings/ViewSettingsPage.qml:476
-#, kde-format
-msgid "Pin (shows exact location)"
-msgstr "נעץ (הצגת המקום במדויק)"
+#: calendar/qml/Settings/ViewSettingsPage.qml:316
+#, fuzzy, kde-format
+#| msgid "Grid border width (pixels):"
+msgid "Month grid border width (pixels)"
+msgstr "עובי מסגרת הטבלה (פיקסלים):"
 
 #: calendar/recurrencedata.cpp:31
 #, kde-format
@@ -2400,7 +2433,7 @@ msgid "Complex recurrence rule"
 msgstr "כלל חזרה מורכב"
 
 #: calendar/recurrencedata.cpp:122
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:41
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:40
 #, kde-format
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -2478,13 +2511,13 @@ msgctxt "@title"
 msgid "General"
 msgstr "כללי"
 
-#: components/qml/EditCollectionPage.qml:39
+#: components/qml/EditCollectionPage.qml:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name"
 msgstr "שם"
 
-#: components/qml/EditCollectionPage.qml:45
+#: components/qml/EditCollectionPage.qml:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon"
@@ -2496,7 +2529,7 @@ msgctxt "@title"
 msgid "Statistics"
 msgstr "סטטיסטיקה"
 
-#: components/qml/EditCollectionPage.qml:69
+#: components/qml/EditCollectionPage.qml:71
 #, kde-format
 msgctxt "@info"
 msgid "%1 entry"
@@ -2506,49 +2539,49 @@ msgstr[1] "שתי רשומות"
 msgstr[2] "%1 רשומות"
 msgstr[3] "%1 רשומות"
 
-#: components/qml/EditCollectionPage.qml:70
+#: components/qml/EditCollectionPage.qml:72
 #, kde-format
 msgctxt "@label"
 msgid "Content"
 msgstr "תוכן"
 
-#: components/qml/EditCollectionPage.qml:75
+#: components/qml/EditCollectionPage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr "גודל"
 
-#: components/qml/EditCollectionPage.qml:79
+#: components/qml/EditCollectionPage.qml:80
 #, kde-format
 msgctxt "@title"
 msgid "Retrieval"
 msgstr "משיכה"
 
-#: components/qml/EditCollectionPage.qml:84
+#: components/qml/EditCollectionPage.qml:87
 #, kde-format
 msgctxt "@option:check"
 msgid "Use options from parent folder or account"
 msgstr "להשתמש באפשרויות מתיקיית או חשבון ההורה"
 
-#: components/qml/EditCollectionPage.qml:93
+#: components/qml/EditCollectionPage.qml:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Synchronize when selecting this folder"
 msgstr "לסנכרן בעת בחירה בתיקייה הזאת"
 
-#: components/qml/EditCollectionPage.qml:103
+#: components/qml/EditCollectionPage.qml:104
 #, kde-format
 msgctxt "@label:spinbox"
 msgid "Synchronize after"
 msgstr "לסנכרן לאחר"
 
-#: components/qml/EditCollectionPage.qml:108
+#: components/qml/EditCollectionPage.qml:109
 #, kde-format
 msgctxt "As in 'Never synchronize this account'"
 msgid "Never"
 msgstr "אף פעם"
 
-#: components/qml/EditCollectionPage.qml:110
+#: components/qml/EditCollectionPage.qml:111
 #, kde-format
 msgctxt "Interval for updating an account"
 msgid "%1 minute"
@@ -2666,7 +2699,7 @@ msgctxt "@action:menu"
 msgid "Enter Full Screen"
 msgstr "הגדלה למסך מלא"
 
-#: components/qml/SystemAccountsForm.qml:55
+#: components/qml/SystemAccountsForm.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account…"
@@ -2678,7 +2711,7 @@ msgid "Image request has been cancelled"
 msgstr "בקשת התמונה בוטלה"
 
 #: contacts/autotests/emailmodeltest.cpp:36 contacts/emailmodel.cpp:56
-#: contacts/qml/private/ContactPage.qml:297
+#: contacts/qml/private/ContactPage.qml:301
 #, kde-format
 msgid "Home:"
 msgstr "בית:"
@@ -3148,138 +3181,138 @@ msgctxt "@action:inmenu"
 msgid "Delete address source"
 msgstr "מחיקת מקור כתובות"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:36
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:37
 #, kde-format
 msgid "Address book:"
 msgstr "פנקס כתובות:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:58
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:73
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:55
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:70
 #, kde-format
 msgid "Name"
 msgstr "שם"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:71
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:68
 #, kde-format
 msgid "Contact name"
 msgstr "שם איש קשר"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:81
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:78
 #, kde-format
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:95
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:88
 #, kde-format
 msgid "Honorific prefix"
 msgstr "קידומת כבוד"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Dr."
 msgstr "ד״ר"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Miss"
 msgstr "גברת"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Mr."
 msgstr "אדון"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Mrs."
 msgstr "גב׳ (נשואה)"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Ms."
 msgstr "גב׳"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:98
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:91
 #, kde-format
 msgid "Prof."
 msgstr "פרופ׳"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:107
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:99
 #, kde-format
 msgid "Given name"
 msgstr "שם מלידה"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:110
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:102
 #, kde-format
 msgid "First name or chosen name"
 msgstr "שם פרטי או נבחר"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:116
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:107
 #, kde-format
 msgid "Additional name"
 msgstr "שם נוסף"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:119
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:110
 #, kde-format
 msgid "Middle name or other name"
 msgstr "שם אמצעי או שם אחר"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:125
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:115
 #, kde-format
 msgid "Family name:"
 msgstr "שם משפחה:"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:128
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:118
 #, kde-format
 msgid "Surname or last name"
 msgstr "שם משפחה או שם אחרון"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:134
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:123
 #, kde-format
 msgid "Honorific suffix"
 msgstr "סיומת כבוד"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
 #, kde-format
 msgid "I"
 msgstr "הראשון"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
 #, kde-format
 msgid "II"
 msgstr "השני"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
 #, kde-format
 msgid "III"
 msgstr "השלישי"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
 #, kde-format
 msgid "Jr."
 msgstr "הבן"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:138
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:127
 #, kde-format
 msgid "Sr."
 msgstr "האב"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:145
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:133
 #, kde-format
 msgid "Nickname"
 msgstr "כינוי"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:148
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:136
 #, kde-format
 msgid "Alternative name"
 msgstr "שם חלופי"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:156
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:141
 #, kde-format
 msgid "Blog Feed"
 msgstr "ערוץ בלוג"
 
-#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:159
+#: contacts/qml/private/contact_editor/AddressBookEditorCard.qml:144
 #, kde-format
 msgid "https://planet.kde.org/"
 msgstr "https://planet.kde.org/"
@@ -3350,25 +3383,25 @@ msgctxt "@title:window"
 msgid "Edit address"
 msgstr "עריכת כתובת"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:68
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Address type"
 msgstr "סוג כתובת"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:70
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:72
 #, kde-format
 msgctxt "@item:inlistbox Address type"
 msgid "Other"
 msgstr "אחרת"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:87
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:91
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Street"
 msgstr "רחוב"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:95
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Apartment, suite, etc."
@@ -3404,96 +3437,96 @@ msgctxt "@label:textbox"
 msgid "Country"
 msgstr "ארץ"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:142
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:144
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Delivery label"
 msgstr "תווית משלוח"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:162
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:164
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove address"
 msgstr "הסרת כתובת"
 
-#: contacts/qml/private/contact_editor/AddressEditorPage.qml:173
+#: contacts/qml/private/contact_editor/AddressEditorPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "שמירה"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:25
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:26
 #, kde-format
 msgid "Organization"
 msgstr "ארגון"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:28
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:29
 #, kde-format
 msgctxt "Placeholder value for name of Organization"
 msgid "KDE"
 msgstr "KDE"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:35
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:34
 #, kde-format
 msgid "Profession"
 msgstr "עיסוק"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:38
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:37
 #, kde-format
 msgctxt "Placeholder value for name of Profession"
 msgid "Software Developer"
 msgstr "מפתח תוכנה"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:45
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:42
 #, kde-format
 msgid "Title"
 msgstr "תפקיד"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:48
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:45
 #, kde-format
 msgctxt "Placeholder value for Title"
 msgid "SDE-1"
 msgstr "SDE-1"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:55
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:50
 #, kde-format
 msgid "Department"
 msgstr "מחלקה"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:58
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:53
 #, kde-format
 msgctxt "Placeholder value for name of Department"
 msgid "Merkuro-Team"
 msgstr "צוות Merkuro"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:65
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:58
 #, kde-format
 msgid "Office"
 msgstr "משרד"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:68
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:61
 #, kde-format
 msgctxt "Placeholder value for Office"
 msgid "Tech Wing, 4th Floor"
 msgstr "ראש העין, קומה 3"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:75
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:66
 #, kde-format
 msgid "Manager's Name"
 msgstr "שם מנהל או מנהלת"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:78
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:69
 #, kde-format
 msgctxt "Placeholder value for Manager's Name"
 msgid "Bob"
 msgstr "בני"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:85
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:74
 #, kde-format
 msgid "Assistant's Name"
 msgstr "שם עוזר או עוזרת"
 
-#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:88
+#: contacts/qml/private/contact_editor/BusinessEditorCard.qml:77
 #, kde-format
 msgctxt "Placeholder value for Assistants's Name"
 msgid "Jill"
@@ -3515,7 +3548,7 @@ msgid "Personal Information"
 msgstr "פרטים אישיים"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:120
-#: contacts/qml/private/ContactPage.qml:352
+#: contacts/qml/private/ContactPage.qml:357
 #, kde-format
 msgid "Business Information"
 msgstr "פרטים עסקיים"
@@ -3542,48 +3575,48 @@ msgid "Instant Messenger"
 msgstr "מסרים מיידיים"
 
 #: contacts/qml/private/contact_editor/ContactEditorPage.qml:166
-#: contacts/qml/private/ContactPage.qml:441
+#: contacts/qml/private/ContactPage.qml:447
 #, kde-format
 msgctxt "@title:group"
 msgid "Notes"
 msgstr "פתקיות"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:180
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:182
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Notes"
 msgstr "פתקיות"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:181
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:183
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add a note"
 msgstr "הוספת פתקית"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:230
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:231
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:206
 #, kde-format
 msgid "Warning"
 msgstr "אזהרה"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:240
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:241
 #, kde-format
 msgid "This contact was changed elsewhere during editing."
 msgstr "איש הקשר השתנה במקום אחר במהלך העריכה."
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:245
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:246
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:221
 #, kde-format
 msgid "Which changes should be kept?"
 msgstr "אילו שינויים לשמור?"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:258
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:259
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:234
 #, kde-format
 msgid "Current changes"
 msgstr "השינויים הנוכחיים"
 
-#: contacts/qml/private/contact_editor/ContactEditorPage.qml:263
+#: contacts/qml/private/contact_editor/ContactEditorPage.qml:264
 #: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:239
 #, kde-format
 msgid "External changes"
@@ -3599,7 +3632,7 @@ msgstr "עריכת %1"
 msgid "Create Contact Group"
 msgstr "יצירת קבוצת קשר"
 
-#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:74
+#: contacts/qml/private/contact_editor/ContactGroupEditorPage.qml:76
 #, kde-format
 msgid "Address Book:"
 msgstr "פנקס כתובות:"
@@ -3624,147 +3657,147 @@ msgstr "לקבוצת הקשר אפשר להוסיף אנשי קשר עם כתו�
 msgid "This contact group was changed elsewhere during editing."
 msgstr "קבוצת הקשר השתנתה במקום אחר במהלך העריכה."
 
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:41
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:83
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:45
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:93
+#, kde-format
+msgid "Home"
+msgstr "בית"
+
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:42
 #: contacts/qml/private/contact_editor/EmailEditorCard.qml:84
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:46
 #: contacts/qml/private/contact_editor/PhoneEditorCard.qml:94
 #, kde-format
-msgid "Home"
-msgstr "בית"
-
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:43
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:85
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:47
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:95
-#, kde-format
 msgid "Work"
 msgstr "עבודה"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:44
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:43
 #, kde-format
 msgid "Other"
 msgstr "אחר"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:65
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:64
 #, kde-format
 msgid "Remove email"
 msgstr "הסרת דוא״ל"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:86
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:85
 #, kde-format
 msgid "Both"
 msgstr "שניהם"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:87
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:86
 #, kde-format
 msgid "Other…"
 msgstr "אחר…"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:97
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:96
 #, kde-format
 msgid "user@example.org"
 msgstr "user@example.org"
 
-#: contacts/qml/private/contact_editor/EmailEditorCard.qml:107
+#: contacts/qml/private/contact_editor/EmailEditorCard.qml:106
 #, kde-format
 msgid "Add email"
 msgstr "הוספת דוא״ל"
 
-#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:69
+#: contacts/qml/private/contact_editor/InstantMessengerEditorCard.qml:68
 #, kde-format
 msgid "@person:example.com"
 msgstr "@person:example.com"
 
-#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:19
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:20
 #, kde-format
 msgctxt "@label"
 msgid "Partner's name"
 msgstr "שם השותף/פה:"
 
-#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:28
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:27
 #, kde-format
 msgctxt "@label"
 msgid "Anniversary"
 msgstr "יום נישואין"
 
-#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:38
+#: contacts/qml/private/contact_editor/PersonalInfoEditorCard.qml:35
 #, kde-format
 msgctxt "@label"
 msgid "Birthday"
 msgstr "יום הולדת"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:48
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:96
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:47
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:95
 #, kde-format
 msgid "Messaging"
 msgstr "התכתבות"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:49
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:97
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:48
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:96
 #, kde-format
 msgid "Voice"
 msgstr "שיחות קוליות"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:50
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:98
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:49
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:97
 #, kde-format
 msgid "Fax"
 msgstr "פקס"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:51
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:99
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:50
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:98
 #, kde-format
 msgid "Cell"
 msgstr "סלולרי"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:52
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:100
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:51
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:99
 #, kde-format
 msgid "Video"
 msgstr "שיחות וידאו"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:53
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:101
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:52
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:100
 #, kde-format
 msgid "Mailbox"
 msgstr "תיבת דואר"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:54
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:102
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:53
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:101
 #, kde-format
 msgid "Modem"
 msgstr "מודם"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:55
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:103
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:54
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:102
 #, kde-format
 msgid "Car"
 msgstr "מכונית"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:56
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:104
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:55
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:103
 #, kde-format
 msgid "ISDN"
 msgstr "ISDN"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:57
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:105
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:56
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:104
 #, kde-format
 msgid "PCS"
 msgstr "PCS"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:58
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:106
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:57
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:105
 #, kde-format
 msgid "Pager"
 msgstr "זימונית"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:59
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:58
 #, kde-format
 msgid "Undefined"
 msgstr "לא מוגדר"
 
-#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:119
+#: contacts/qml/private/contact_editor/PhoneEditorCard.qml:118
 #, kde-format
 msgid "+33 7 55 23 68 67"
 msgstr "+972 50 5050 505"
@@ -3807,14 +3840,14 @@ msgid "Email"
 msgstr "דוא״ל"
 
 #: contacts/qml/private/ContactGroupPage.qml:39
-#: mail/settings/TransportConfigurationForm.qml:74
+#: mail/settings/TransportConfigurationForm.qml:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "עריכה"
 
 #: contacts/qml/private/ContactPage.qml:35
-#: contacts/qml/private/ContactPage.qml:228
+#: contacts/qml/private/ContactPage.qml:230
 #, kde-format
 msgctxt "Day month format"
 msgid "dd.MM."
@@ -3894,32 +3927,32 @@ msgstr "הצגת קוד QR"
 msgid "Contact information"
 msgstr "פרטי קשר"
 
-#: contacts/qml/private/ContactPage.qml:197
+#: contacts/qml/private/ContactPage.qml:198
 #, kde-format
 msgid "Nickname:"
 msgstr "כינוי:"
 
-#: contacts/qml/private/ContactPage.qml:203
+#: contacts/qml/private/ContactPage.qml:204
 #, kde-format
 msgid "Blog Feed:"
 msgstr "ערוץ בלוג:"
 
-#: contacts/qml/private/ContactPage.qml:210
+#: contacts/qml/private/ContactPage.qml:211
 #, kde-format
 msgid "Personal information"
 msgstr "פרטים אישיים"
 
-#: contacts/qml/private/ContactPage.qml:232
+#: contacts/qml/private/ContactPage.qml:234
 #, kde-format
 msgid "Anniversary:"
 msgstr "יום נישואין:"
 
-#: contacts/qml/private/ContactPage.qml:239
+#: contacts/qml/private/ContactPage.qml:241
 #, kde-format
 msgid "Partner's name:"
 msgstr "שם השותף/פה:"
 
-#: contacts/qml/private/ContactPage.qml:244
+#: contacts/qml/private/ContactPage.qml:246
 #, kde-format
 msgid "Phone Number"
 msgid_plural "Phone Numbers"
@@ -3928,18 +3961,18 @@ msgstr[1] "מספרי טלפון"
 msgstr[2] "מספרי טלפון"
 msgstr[3] "מספרי טלפון"
 
-#: contacts/qml/private/ContactPage.qml:267
+#: contacts/qml/private/ContactPage.qml:270
 #, kde-format
 msgctxt "Label for a phone number type"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:271
+#: contacts/qml/private/ContactPage.qml:274
 #, kde-format
 msgid "Phone number copied to clipboard"
 msgstr "מספר הטלפון הועתק ללוח הגזירים"
 
-#: contacts/qml/private/ContactPage.qml:278
+#: contacts/qml/private/ContactPage.qml:281
 #, kde-format
 msgid "Address"
 msgid_plural "Addresses"
@@ -3948,77 +3981,77 @@ msgstr[1] "כתובות"
 msgstr[2] "כתובות"
 msgstr[3] "כתובות"
 
-#: contacts/qml/private/ContactPage.qml:297
+#: contacts/qml/private/ContactPage.qml:301
 #, kde-format
 msgctxt "%1 is the type of the address, e.g. home, work, ..."
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:305
+#: contacts/qml/private/ContactPage.qml:309
 #, kde-format
 msgctxt "@action:button Accessible name for opening a contact address in a map"
 msgid "Show %1 on a map"
 msgstr "הצגת %1 במפה"
 
-#: contacts/qml/private/ContactPage.qml:306
+#: contacts/qml/private/ContactPage.qml:310
 #, kde-format
 msgctxt ""
 "@action:button Accessible name for opening contact coordinates in a map"
 msgid "Show location on a map"
 msgstr "הצגת מקום במפה"
 
-#: contacts/qml/private/ContactPage.qml:313
+#: contacts/qml/private/ContactPage.qml:317
 #, kde-format
 msgid "Instant Messaging"
 msgstr "הודעות מיידיות"
 
-#: contacts/qml/private/ContactPage.qml:334
+#: contacts/qml/private/ContactPage.qml:339
 #, kde-format
 msgctxt "Label for a messaging protocol"
 msgid "%1:"
 msgstr "%1:"
 
-#: contacts/qml/private/ContactPage.qml:345
+#: contacts/qml/private/ContactPage.qml:350
 #, kde-format
 msgid "Instant Messaging ID copied to clipboard"
 msgstr "מזהה ההתכתבות המיידית הועתק ללוח הגזירים"
 
-#: contacts/qml/private/ContactPage.qml:371
+#: contacts/qml/private/ContactPage.qml:376
 #, kde-format
 msgid "Organization:"
 msgstr "ארגון:"
 
-#: contacts/qml/private/ContactPage.qml:378
+#: contacts/qml/private/ContactPage.qml:383
 #, kde-format
 msgid "Profession:"
 msgstr "עיסוק:"
 
-#: contacts/qml/private/ContactPage.qml:385
+#: contacts/qml/private/ContactPage.qml:390
 #, kde-format
 msgid "Title:"
 msgstr "תפקיד:"
 
-#: contacts/qml/private/ContactPage.qml:392
+#: contacts/qml/private/ContactPage.qml:397
 #, kde-format
 msgid "Department:"
 msgstr "מחלקה:"
 
-#: contacts/qml/private/ContactPage.qml:399
+#: contacts/qml/private/ContactPage.qml:404
 #, kde-format
 msgid "Office:"
 msgstr "משרד:"
 
-#: contacts/qml/private/ContactPage.qml:406
+#: contacts/qml/private/ContactPage.qml:411
 #, kde-format
 msgid "Manager's name:"
 msgstr "שם מנהל או מנהלת:"
 
-#: contacts/qml/private/ContactPage.qml:413
+#: contacts/qml/private/ContactPage.qml:418
 #, kde-format
 msgid "Assistant's name:"
 msgstr "שם העוזר/ת:"
 
-#: contacts/qml/private/ContactPage.qml:419
+#: contacts/qml/private/ContactPage.qml:424
 #, kde-format
 msgid "Email Address"
 msgid_plural "Email Addresses"
@@ -4027,19 +4060,19 @@ msgstr[1] "כתובות דוא״ל"
 msgstr[2] "כתובות דוא״ל"
 msgstr[3] "כתובות דוא״ל"
 
-#: contacts/qml/private/ContactPage.qml:462
+#: contacts/qml/private/ContactPage.qml:470
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent emails"
 msgstr "הודעות דוא״ל אחרונות"
 
-#: contacts/qml/private/ContactPage.qml:487
+#: contacts/qml/private/ContactPage.qml:496
 #, kde-format
 msgctxt "@title:group"
 msgid "Recent events"
 msgstr "אירועים אחרונים"
 
-#: contacts/qml/private/ContactPage.qml:505
+#: contacts/qml/private/ContactPage.qml:515
 #, kde-format
 msgctxt "@title:group"
 msgid "Cryptographic Certificates"
@@ -4166,10 +4199,83 @@ msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
 msgstr "לא ידוע"
 
+#: mail/calendarinvitation.cpp:148
+#, kde-format
+msgctxt "@info"
+msgid "%1 accepted this invitation."
+msgstr ""
+
+#: mail/calendarinvitation.cpp:151
+#, kde-format
+msgctxt "@info"
+msgid "%1 declined this invitation."
+msgstr ""
+
+#: mail/calendarinvitation.cpp:182
+#, kde-format
+msgid "No configured mail identity matches this invitation's attendee address."
+msgstr ""
+
+#: mail/calendarinvitation.cpp:195
+#, kde-format
+msgid "You accepted this invitation. A response has been queued."
+msgstr ""
+
+#: mail/calendarinvitation.cpp:196
+#, kde-format
+msgid "You declined this invitation. A response has been queued."
+msgstr ""
+
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
 msgid "No key"
 msgstr "אין מפתח"
+
+#: mail/invitationresponsejob.cpp:41
+#, fuzzy, kde-format
+#| msgid "The calendar is no longer available."
+msgid "The mail identity for %1 is no longer available."
+msgstr "לוח השנה לא זמין עוד."
+
+#: mail/invitationresponsejob.cpp:47
+#, kde-format
+msgid ""
+"Configure an outgoing mail account before responding to this invitation."
+msgstr ""
+
+#: mail/invitationresponsejob.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Could not prepare the contact for sharing."
+msgid "Could not update the calendar for this invitation."
+msgstr "לא ניתן להכין את איש הקשר לשיתוף."
+
+#: mail/invitationresponsejob.cpp:76
+#, kde-format
+msgid ""
+"The outgoing mail account is no longer available. The calendar was updated, "
+"but no response was queued."
+msgstr ""
+
+#: mail/invitationresponsejob.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:accessibility"
+#| msgid "Attendees: %1"
+msgid "Accepted: %1"
+msgstr "משתתפים: %1"
+
+#: mail/invitationresponsejob.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@info:accessibility"
+#| msgid "Details: %1"
+msgid "Declined: %1"
+msgstr "פרטים: %1"
+
+#: mail/invitationresponsejob.cpp:115
+#, fuzzy, kde-format
+#| msgid "The incidence was saved, but could not be moved: %1"
+msgid "The calendar was updated, but the response could not be queued: %1"
+msgstr "החזרה נשמרה אך לא ניתן להעביר אותה: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4217,19 +4323,19 @@ msgctxt "@action"
 msgid "Save as…"
 msgstr "שמירה בשם…"
 
-#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:40
+#: mail/mailapplication.cpp:70 mail/qml/ConversationViewer.qml:42
 #, kde-format
 msgctxt "@action"
 msgid "Reply"
 msgstr "להגיב"
 
-#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:46
+#: mail/mailapplication.cpp:74 mail/qml/ConversationViewer.qml:48
 #, kde-format
 msgctxt "@action"
 msgid "Reply to All"
 msgstr "להגיב לכולם"
 
-#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:52
+#: mail/mailapplication.cpp:78 mail/qml/ConversationViewer.qml:54
 #, kde-format
 msgctxt "@action"
 msgid "Forward"
@@ -4247,38 +4353,38 @@ msgctxt "@action"
 msgid "Reschedule"
 msgstr "תזמון מחדש"
 
-#: mail/mailclient.cpp:52 mail/mailclient.cpp:148
+#: mail/mailclient.cpp:78 mail/mailclient.cpp:174
 #, kde-format
 msgid "There are no recipients to e-mail"
 msgstr "אין נמענים לשליחת הודעת הדוא״ל"
 
-#: mail/mailclient.cpp:67
+#: mail/mailclient.cpp:93
 #, kde-format
 msgid "No transport found"
 msgstr "לא נמצאה תעבורה"
 
-#: mail/mailclient.cpp:114
+#: mail/mailclient.cpp:140
 #, kde-format
 msgid "Error creating transport"
 msgstr "שגיאה ביצירת תעבורה"
 
-#: mail/mailclient.cpp:163
+#: mail/mailclient.cpp:189
 #, kde-format
 msgid "Send date is not valid."
 msgstr "תאריך השליחה לא תקף."
 
-#: mail/mailclient.cpp:206
+#: mail/mailclient.cpp:232
 #, kde-format
 msgctxt "Separator between identity name and email address"
 msgid " — "
 msgstr " — "
 
-#: mail/mailclient.cpp:256
+#: mail/mailclient.cpp:282
 #, kde-format
 msgid "Error loading transport"
 msgstr "שגיאה בטעינת תעבורה"
 
-#: mail/mailclient.cpp:275
+#: mail/mailclient.cpp:301
 #, kde-format
 msgid "Error queuing message in outbox: %1"
 msgstr "שגיאה בהצבת ההודעה הזאת בתור של תיבת הדוא״ל היוצא: %1"
@@ -4394,37 +4500,37 @@ msgstr "יצירת תיקייה"
 msgid "Folder Name…"
 msgstr "שם תיקייה…"
 
-#: mail/qml/ConversationViewer.qml:85
+#: mail/qml/ConversationViewer.qml:87
 #, kde-format
 msgctxt "@info"
 msgid "Domain authentication (DKIM): %1"
 msgstr "אימות שמות תחום (DKIM): %1"
 
-#: mail/qml/ConversationViewer.qml:120
+#: mail/qml/ConversationViewer.qml:122
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature with warnings from domain %1"
 msgstr "אימות חתימה עם אזהרות משם התחום %1"
 
-#: mail/qml/ConversationViewer.qml:121
+#: mail/qml/ConversationViewer.qml:123
 #, kde-format
 msgctxt "@info"
 msgid "Valid signature from domain %1"
 msgstr "חתימה תקפה משם התחום %1"
 
-#: mail/qml/ConversationViewer.qml:123
+#: mail/qml/ConversationViewer.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "Invalid domain signature"
 msgstr "חתימת שם תחום שגויה"
 
-#: mail/qml/ConversationViewer.qml:125
+#: mail/qml/ConversationViewer.qml:127
 #, kde-format
 msgctxt "@info"
 msgid "No domain signature"
 msgstr "אין חתימת שם תחום"
 
-#: mail/qml/ConversationViewer.qml:127
+#: mail/qml/ConversationViewer.qml:129
 #, kde-format
 msgctxt "@info"
 msgid "Expected signature from domain %1"
@@ -4478,35 +4584,35 @@ msgstr "שמירת הודעה - דוא״ל Merkuro"
 msgid "Email messages (*.mbox)"
 msgstr "הודעות דוא״ל (‎*.mbox)"
 
-#: mail/qml/FolderView.qml:248
+#: mail/qml/FolderView.qml:249
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "תזמון הודעה מחדש"
 
-#: mail/qml/FolderView.qml:256 mail/qml/MailComposer.qml:242
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
 msgstr "שליחת תאריך ושעה"
 
-#: mail/qml/FolderView.qml:265
+#: mail/qml/FolderView.qml:266
 #, kde-format
 msgctxt "@action:menu"
 msgid "Mark Message"
 msgstr "סימון הודעה"
 
-#: mail/qml/FolderView.qml:331
+#: mail/qml/FolderView.qml:332
 #, kde-format
 msgid "No mailbox selected"
 msgstr "לא נבחרה תיבת דוא״ל"
 
-#: mail/qml/FolderView.qml:332
+#: mail/qml/FolderView.qml:333
 #, kde-format
 msgid "Select a mailbox from the sidebar."
 msgstr "נא לבחור תיבת דוא״ל מסרגל הצד הזה."
 
-#: mail/qml/FolderView.qml:339
+#: mail/qml/FolderView.qml:340
 #, kde-format
 msgid "Mailbox is empty"
 msgstr "תיבת הדוא״ל ריקה"
@@ -4522,135 +4628,156 @@ msgctxt "@title:window"
 msgid "New Message"
 msgstr "הודעה חדשה"
 
-#: mail/qml/MailComposer.qml:45
+#: mail/qml/MailComposer.qml:59
 #, kde-format
 msgid "From:"
 msgstr "מאת:"
 
-#: mail/qml/MailComposer.qml:56
+#: mail/qml/MailComposer.qml:70
 #, kde-format
 msgid "Identity:"
 msgstr "זהות:"
 
-#: mail/qml/MailComposer.qml:87
+#: mail/qml/MailComposer.qml:104
 #, kde-format
 msgid "To:"
 msgstr "אל:"
 
-#: mail/qml/MailComposer.qml:88
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "CC:"
 msgstr "עותק:"
 
-#: mail/qml/MailComposer.qml:89
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "BCC:"
 msgstr "עותק סמוי:"
 
-#: mail/qml/MailComposer.qml:90
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "Reply-To:"
 msgstr "להגיב אל:"
 
-#: mail/qml/MailComposer.qml:116
+#: mail/qml/MailComposer.qml:133
 #, kde-format
 msgid "Subject:"
 msgstr "נושא:"
 
-#: mail/qml/MailComposer.qml:176
+#: mail/qml/MailComposer.qml:193
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "צירוף מסמך"
 
-#: mail/qml/MailComposer.qml:199
+#: mail/qml/MailComposer.qml:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "שליחה בעיכוב"
 
-#: mail/qml/MailComposer.qml:223
+#: mail/qml/MailComposer.qml:241
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "תזמון שליחה"
 
-#: mail/qml/MailComposer.qml:236
+#: mail/qml/MailComposer.qml:254
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
 msgstr "מצב ידני"
 
-#: mail/qml/mailpartview/ICalPart.qml:43
-#, fuzzy, kde-format
-#| msgid "The incidence could not be moved."
+#: mail/qml/mailpartview/ICalPart.qml:44
+#, kde-format
 msgctxt "@info"
 msgid "This calendar invitation could not be read."
-msgstr "לא ניתן להעביר את החזרה."
+msgstr "לא ניתן לקרוא את הזמנת לוח השנה הזאת."
 
-#: mail/qml/mailpartview/ICalPart.qml:56
-#, fuzzy, kde-format
-#| msgid "Calendar"
+#: mail/qml/mailpartview/ICalPart.qml:66
+#, kde-format
 msgctxt "@title"
 msgid "Calendar event"
-msgstr "לוח שנה"
+msgstr "אירוע לוח שנה"
 
-#: mail/qml/mailpartview/ICalPart.qml:63
-#, fuzzy, kde-format
-#| msgid "Image request has been cancelled"
+#: mail/qml/mailpartview/ICalPart.qml:84
+#, kde-format
 msgctxt "@info"
 msgid "This event has been canceled."
-msgstr "בקשת התמונה בוטלה"
+msgstr "האירוע הזה בוטל."
 
-#: mail/qml/mailpartview/ICalPart.qml:67
-#, fuzzy, kde-format
-#| msgid "All day"
+#: mail/qml/mailpartview/ICalPart.qml:88
+#, kde-format
 msgctxt "@info"
 msgid "%1 · All day"
-msgstr "כל היום"
+msgstr "%1 · כל היום"
 
-#: mail/qml/mailpartview/ICalPart.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu %1 is the name of the action getting reverted"
-#| msgid "Undo: %1"
+#: mail/qml/mailpartview/ICalPart.qml:90
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "When: %1"
-msgstr "הסגה: %1"
+msgstr "מתי: %1"
 
-#: mail/qml/mailpartview/ICalPart.qml:75
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Location"
+#: mail/qml/mailpartview/ICalPart.qml:96
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Location: %1"
-msgstr "מקום"
+msgstr "מקום: %1"
 
-#: mail/qml/mailpartview/ICalPart.qml:79
+#: mail/qml/mailpartview/ICalPart.qml:100
 #, kde-format
 msgctxt "@info"
 msgid "%1 (organizer)"
-msgstr ""
+msgstr "%1 (ארגון)"
 
-#: mail/qml/mailpartview/ICalPart.qml:81
-#, fuzzy, kde-format
-#| msgid "<b>Organizer:</b>"
+#: mail/qml/mailpartview/ICalPart.qml:102
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Organizer: %1"
-msgstr "<b>ארגון:</b>"
+msgstr "ארגון: %1"
 
-#: mail/qml/mailpartview/ICalPart.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Attendees"
+#: mail/qml/mailpartview/ICalPart.qml:107
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Attendees: %1"
-msgstr "משתתפים"
+msgstr "משתתפים: %1"
 
-#: mail/qml/mailpartview/ICalPart.qml:91
+#: mail/qml/mailpartview/ICalPart.qml:112
 #, kde-format
 msgctxt "@info:accessibility"
 msgid "Details: %1"
+msgstr "פרטים: %1"
+
+#: mail/qml/mailpartview/ICalPart.qml:122
+#, kde-format
+msgctxt "@label"
+msgid "Respond as %1"
 msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:133
+#, fuzzy, kde-format
+#| msgid "Select Email Address"
+msgctxt "@info:accessibility"
+msgid "Response email address"
+msgstr "בחירת כתובת דוא״ל"
+
+#: mail/qml/mailpartview/ICalPart.qml:137
+#, kde-format
+msgctxt "@action:button"
+msgid "Accept"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:143
+#, kde-format
+msgctxt "@action:button"
+msgid "Decline"
+msgstr ""
+
+#: mail/qml/mailpartview/ICalPart.qml:153
+#, fuzzy, kde-format
+#| msgid "This mail contains an invitation"
+msgctxt "@info:accessibility"
+msgid "Responding to invitation"
+msgstr "ההודעה הזאת מכילה הזמנה"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4688,7 +4815,7 @@ msgctxt "@action:group"
 msgid "Identities"
 msgstr "זהויות"
 
-#: mail/settings/AccountSettingsPage.qml:29
+#: mail/settings/AccountSettingsPage.qml:32
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of receiving accounts which are imap or pop3 "
@@ -4696,19 +4823,38 @@ msgctxt ""
 msgid "Receiving Accounts"
 msgstr "החשבונות מתקבלים"
 
-#: mail/settings/AccountSettingsPage.qml:33
-#: mail/settings/AccountSettingsPage.qml:46
+#: mail/settings/AccountSettingsPage.qml:36
+#: mail/settings/AccountSettingsPage.qml:49
 #, kde-format
 msgid "Mail Account Configuration"
 msgstr "הגדרות חשבון דוא״ל"
 
-#: mail/settings/AccountSettingsPage.qml:42
+#: mail/settings/AccountSettingsPage.qml:45
 #, kde-format
 msgctxt ""
 "@title:group Title for the list of sending accounts which are SMTP email "
 "accounts"
 msgid "Sending Accounts"
 msgstr "החשבונות שליחה"
+
+#: mail/settings/MessageViewerSettingsPage.qml:11 mail/settings/Settings.qml:23
+#, fuzzy, kde-format
+#| msgid "Messaging"
+msgctxt "@title"
+msgid "Message Viewer"
+msgstr "התכתבות"
+
+#: mail/settings/MessageViewerSettingsPage.qml:14
+#, kde-format
+msgctxt "@title:group"
+msgid "Message Display"
+msgstr ""
+
+#: mail/settings/MessageViewerSettingsPage.qml:21
+#, kde-format
+msgctxt "@option:check"
+msgid "Prefer HTML to plain text"
+msgstr ""
 
 #: mail/settings/Settings.qml:15
 #, kde-format
@@ -4722,38 +4868,38 @@ msgctxt "@title:dialog"
 msgid "Rename %1"
 msgstr "שינוי השם של %1"
 
-#: mail/settings/TransportConfigurationForm.qml:41
-#: mail/settings/TransportConfigurationForm.qml:139
+#: mail/settings/TransportConfigurationForm.qml:40
+#: mail/settings/TransportConfigurationForm.qml:143
 #, kde-format
 msgctxt "Ask to the user to enter name for the Outgoing Account"
 msgid "Account Name"
 msgstr "שם חשבון"
 
-#: mail/settings/TransportConfigurationForm.qml:84
+#: mail/settings/TransportConfigurationForm.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: mail/settings/TransportConfigurationForm.qml:91
+#: mail/settings/TransportConfigurationForm.qml:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: mail/settings/TransportConfigurationForm.qml:102
+#: mail/settings/TransportConfigurationForm.qml:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "הוספת חשבון"
 
-#: mail/settings/TransportConfigurationForm.qml:144
+#: mail/settings/TransportConfigurationForm.qml:148
 #, kde-format
 msgctxt "@action:button Set the outgoing account as the default"
 msgid "Set as default"
 msgstr "הגדרה כברירת מחדל"
 
-#: mail/settings/TransportConfigurationForm.qml:149
+#: mail/settings/TransportConfigurationForm.qml:153
 #, kde-format
 msgctxt ""
 "@title:header Title of a list of transport types (SMTP, Microsoft Exchange, "
@@ -4761,8 +4907,83 @@ msgctxt ""
 msgid "Select the account type"
 msgstr "בחירת סוג החשבון"
 
-#~ msgid "This mail contains an invitation"
-#~ msgstr "ההודעה הזאת מכילה הזמנה"
+#~ msgid "Appearance"
+#~ msgstr "מראה"
+
+#~ msgid "Accounts"
+#~ msgstr "חשבונות"
+
+#~ msgid "Configure Availability"
+#~ msgstr "הגדרת זמינות"
+
+#~ msgid "Availability Publishing settings"
+#~ msgstr "הגדרות פרסום זמינות"
+
+#~ msgid "Minimum time (in minutes) between uploads"
+#~ msgstr "זמן מזערי (בדקות) בין ההעלאות"
+
+#~ msgid "Server information"
+#~ msgstr "פרטי שרת"
+
+#~ msgid "Click here to publish availability information manually"
+#~ msgstr "נא ללחוץ כאן כדי לפרסם פרטי זמינות ידנית"
+
+#~ msgid "Availability Retrieval settings"
+#~ msgstr "הגדרות משיכת זמינות"
+
+#~ msgid "General settings"
+#~ msgstr "הגדרות כלליות"
+
+#~ msgid "Use popup to show incidence information"
+#~ msgstr "להשתמש בחלונית צצה כדי להציג פרטים על החזרה"
+
+#~ msgid "Month view settings"
+#~ msgstr "הגדרות תצוגת חודש"
+
+#~ msgid "Month view mode"
+#~ msgstr "מצב תצוגת חודש"
+
+#~ msgid "Swipeable month grid"
+#~ msgstr "טבלת חודשים להחלקה"
+
+#~ msgid "Basic month grid"
+#~ msgstr "טבלת חודשים בסיסית"
+
+#~ msgid "Swipeable month grid requires higher system performance."
+#~ msgstr "טבלת חודשים להחלקה דורשת יותר משאבים מהמערכת."
+
+#~ msgid "Week view settings"
+#~ msgstr "הגדרות תצוגת שבוע"
+
+#~ msgid "Week view mode"
+#~ msgstr "מצב תצוגת שבוע"
+
+#~ msgid "Basic week view"
+#~ msgstr "תצוגת שבוע בסיסית"
+
+#~ msgid "Schedule View settings"
+#~ msgstr "הגדרת תצוגת לו״ז"
+
+#~ msgid "Schedule view mode"
+#~ msgstr "מצב תצוגת לו״ז"
+
+#~ msgid "Swipeable schedule view"
+#~ msgstr "תצוגת לו״ז להחלקה"
+
+#~ msgid "Basic schedule view"
+#~ msgstr "תצוגת לו״ז בסיסית"
+
+#~ msgid "Swipeable schedule view requires higher system performance."
+#~ msgstr "תצוגת לו״ז להחלקה דורשת יותר משאבים מהמערכת."
+
+#~ msgid "Tasks View settings"
+#~ msgstr "הגדרות תצוגת משימות"
+
+#~ msgid "Maps"
+#~ msgstr "מפות"
+
+#~ msgid "Enable maps"
+#~ msgstr "הפעלת מפות"
 
 #~ msgid "Move occurrence(s)"
 #~ msgstr "העברת החזרות"
