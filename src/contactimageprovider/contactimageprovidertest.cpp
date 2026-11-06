@@ -60,7 +60,10 @@ private Q_SLOTS:
         std::unique_ptr<QQuickImageResponse> response(provider.requestImageResponse(u"missing@example.org"_s, {}));
         QSignalSpy finished(response.get(), &QQuickImageResponse::finished);
         QTRY_COMPARE(finished.count(), 1);
-        QVERIFY(!response->errorString().isEmpty());
+        QCOMPARE(response->errorString(), QString());
+
+        std::unique_ptr<QQuickTextureFactory> texture(response->textureFactory());
+        QVERIFY(!texture || texture->image().isNull());
     }
 
 private:

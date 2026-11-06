@@ -78,7 +78,9 @@ ThumbnailResponse::ThumbnailResponse(QString email, QSize size, QNetworkAccessMa
     QFileInfo info(localFile);
     const auto aWeekAgo = QDate::currentDate().addDays(-7);
     if (info.exists() && info.lastModified().date() > aWeekAgo) {
-        errorStr = u"No image found last time we tried."_s;
+        // No image found last time we tried. This is not an error, return a null image
+        // to avoid QML printing a warning.
+        errorStr.clear();
         QMetaObject::invokeMethod(
             this,
             [this]() {
@@ -174,7 +176,8 @@ void ThumbnailResponse::prepareResult()
                 Q_EMIT finished();
                 return;
             }
-            errorStr = u"No image found"_s;
+            // Not having an image is not an error
+            errorStr.clear();
         } else if (job->error() == Akonadi::Job::UserCanceled) {
             errorStr = i18n("Image request has been cancelled");
         } else {
