@@ -22,6 +22,8 @@ add_library(MerkuroComponents SHARED
     sortedcollectionproxymodel.h
     utils.cpp
     utils.h
+    recipientcompletion.cpp
+    recipientcompletion.h
     collectionutils.cpp
     collectionutils.h
     kdatetime.cpp
@@ -57,6 +59,7 @@ target_link_libraries(MerkuroComponents PUBLIC
     KF6::Contacts
     KF6::WindowSystem
     KPim6::AkonadiCore
+    KPim6::AkonadiContactCore
     KPim6::AkonadiMime
 )
 
@@ -72,6 +75,7 @@ ecm_add_qml_module(MerkuroComponents
     VERSION 1.0
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
+        org.kde.kirigamiaddons.delegates
         org.kde.kirigamiaddons.actions
         org.kde.kirigamiaddons.actions.labs
         org.kde.kirigamiaddons.statefulapp
@@ -100,6 +104,7 @@ ecm_target_qml_sources(MerkuroComponents SOURCES
 
         # Small controls
         qml/ColoredCheckbox.qml
+        qml/RecipientField.qml
 
         qml/EditCollectionPage.qml
 )

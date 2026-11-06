@@ -841,17 +841,31 @@ FormCard.FormCardPage {
                                     Layout.column: 0
                                     text: i18n("Email:")
                                 }
-                                QQC2.TextField {
+                                MerkuroComponents.RecipientField {
+                                    id: attendeeEmailField
+
                                     Layout.fillWidth: true
                                     Layout.row: 1
                                     Layout.column: 1
                                     Layout.columnSpan: 4
-                                    placeholderText: i18n("Required")
+                                    Accessible.name: i18nc("@label", "Attendee email")
                                     objectName: "attendeeEmail" + attendeeDelegate.index
                                     text: attendeeDelegate.email
+                                    onTextChanged: {
+                                        if (text.length === 0 && attendeeDelegate.email.length > 0) {
+                                            root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                        "",
+                                                                                        Calendar.AttendeesModel.EmailRole);
+                                        }
+                                    }
                                     onTextEdited: root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
                                                                                                 text,
                                                                                                 Calendar.AttendeesModel.EmailRole)
+                                    onActivated: function(index: int): void {
+                                        root.incidenceWrapper.attendeesModel.setData(root.incidenceWrapper.attendeesModel.index(attendeeDelegate.index, 0),
+                                                                                    attendeeEmailField.text,
+                                                                                    Calendar.AttendeesModel.FullNameRole);
+                                    }
                                 }
                                 QQC2.Label {
                                     Layout.row: 2

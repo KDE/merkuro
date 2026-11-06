@@ -208,8 +208,10 @@ bool AttendeesModel::setData(const QModelIndex &idx, const QVariant &value, int 
         break;
     }
     case FullNameRole: {
-        // Not a writable property
-        return false;
+        const auto person = KCalendarCore::Person::fromFullName(value.toString());
+        currentAttendees[idx.row()].setName(person.name());
+        currentAttendees[idx.row()].setEmail(person.email());
+        break;
     }
     case IsNullRole: {
         // Not an editable value

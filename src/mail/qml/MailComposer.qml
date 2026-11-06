@@ -11,6 +11,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Controls as QQC2
 import org.kde.merkuro.mail
+import org.kde.merkuro.components as MerkuroComponents
 // The identity model is registered at runtime but omitted from the dependency's QML type metadata.
 // qmllint disable unused-imports
 import org.kde.kidentitymanagement 1.0 as KIdentityManagement
@@ -110,16 +111,16 @@ Kirigami.ScrollablePage {
         }
         Repeater {
             model: mailClient.headerModel
-            QQC2.TextField {
+            MerkuroComponents.RecipientField {
                 id: controlsText
                 required property int index
                 Layout.row: controlsText.index + 2
                 Layout.column: 1
                 Layout.fillWidth: true
                 Layout.rightMargin: Kirigami.Units.largeSpacing
-                wrapMode: Text.Wrap
+                Accessible.name: KI18n.i18nc("@label", "Recipient")
                 KeyNavigation.priority: KeyNavigation.BeforeItem
-                onTextChanged: mailClient.headerModel.setValue(controlsText.index, text);
+                onTextChanged: mailClient.headerModel.setValue(controlsText.index, text)
                 Component.onCompleted: {
                     if (controlsText.index === 0 && mailComposition.initialTo.length > 0) {
                         text = mailComposition.initialTo;
