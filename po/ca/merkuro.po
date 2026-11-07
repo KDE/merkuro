@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
-"PO-Revision-Date: 2026-11-05 09:47+0100\n"
+"POT-Creation-Date: 2026-11-07 00:59+0000\n"
+"PO-Revision-Date: 2026-11-06 13:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -340,7 +340,7 @@ msgid "Default from locale"
 msgstr "Predeterminat de la configuració regional"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -1174,12 +1174,10 @@ msgid "Fill in Manually"
 msgstr "Emplena manualment"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:760
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Organizer: %1"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Organizer:"
-msgstr "Organitzador: %1"
+msgstr "Organitzador:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:772
 #, kde-format
@@ -1204,82 +1202,84 @@ msgstr "Opcional"
 msgid "Email:"
 msgstr "Correu electrònic:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
-#, kde-format
-msgid "Required"
-msgstr "Requerit"
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
+#, fuzzy, kde-format
+#| msgid "Send email"
+msgctxt "@label"
+msgid "Attendee email"
+msgstr "Envia un correu"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
 msgid "Status:"
 msgstr "Estat:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Request RSVP"
 msgstr "Demana RSVP"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:913
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Recordatoris"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Add Reminder"
 msgstr "Afegeix un recordatori"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:925
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "No hi ha cap recordatori"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Etiquetes"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
 #, kde-format
 msgid "Manage tags…"
 msgstr "Gestiona les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Toqueu per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Feu clic per a establir les etiquetes…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1011
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Adjunts"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Add Attachment"
 msgstr "Afegeix un adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Add an attachment"
 msgstr "Afegeix un adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "No hi ha cap adjunt"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1985,29 +1985,22 @@ msgstr "Ordena les tasques"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:12
 #: calendar/qml/Settings/SourceSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@title:group Title for the list of sending accounts which are SMTP email "
-#| "accounts"
-#| msgid "Sending Accounts"
+#, kde-format
 msgid "Calendars & Accounts"
-msgstr "Comptes d'enviament"
+msgstr "Calendaris i comptes"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:18
 #: calendar/qml/Settings/TaskSettingsPage.qml:14
 #: calendar/qml/Settings/ViewSettingsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Calendars"
+#, kde-format
 msgid "Calendar Views"
-msgstr "Calendaris"
+msgstr "Vistes de calendari"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:32
 #: calendar/qml/Settings/LocationSettingsPage.qml:11
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Location"
+#, kde-format
 msgid "Locations"
-msgstr "Ubicació"
+msgstr "Ubicacions"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:40
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:14
@@ -2018,7 +2011,7 @@ msgstr "Disponibilitat"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:17
 #, kde-format
 msgid "Publishing"
-msgstr ""
+msgstr "Publicació"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
@@ -2041,18 +2034,17 @@ msgstr "Publica la informació de disponibilitat automàticament"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:41
 #, kde-format
 msgid "Minimum upload interval (minutes)"
-msgstr ""
+msgstr "Interval mínim de pujada (minuts)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:53
-#, fuzzy, kde-format
-#| msgid "Number of days of availability info to publish: "
+#, kde-format
 msgid "Days of availability to publish"
-msgstr "Nombre de dies d'informació de disponibilitat a publicar: "
+msgstr "Dies disponibilitat a publicar"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:65
 #, kde-format
 msgid "Publishing Server"
-msgstr ""
+msgstr "Servidor de publicació"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:73
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:154
@@ -2079,9 +2071,7 @@ msgid "Save password"
 msgstr "Desa la contrasenya"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:113
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieving"
 msgstr "Recuperació"
 
@@ -2105,22 +2095,19 @@ msgid "Use full email address for retrieval"
 msgstr "Usa l'adreça de correu completa per a la recuperació"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieval Server"
-msgstr "Recuperació"
+msgstr "Servidor de recuperació"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:194
-#, fuzzy, kde-format
-#| msgid "Exceptions:"
+#, kde-format
 msgid "Actions"
-msgstr "Excepcions:"
+msgstr "Accions"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:202
 #, kde-format
 msgid "Publish now"
-msgstr ""
+msgstr "Publica ara"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:211
 #, kde-format
@@ -2133,7 +2120,7 @@ msgid "Enter email of recipient…"
 msgstr "Introduïu el correu electrònic del destinatari…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:219
-#: mail/qml/MailComposer.qml:207
+#: mail/qml/MailComposer.qml:208
 #, kde-format
 msgid "Send"
 msgstr "Envia"
@@ -2141,13 +2128,12 @@ msgstr "Envia"
 #: calendar/qml/Settings/LocationSettingsPage.qml:14
 #, kde-format
 msgid "Maps and Location Search"
-msgstr ""
+msgstr "Cerca de mapes i ubicacions"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Unable to find location."
+#, kde-format
 msgid "Enable maps and location search"
-msgstr "No s'ha pogut trobar la ubicació."
+msgstr "Activa la cerca de mapes i ubicacions"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:24
 #, kde-format
@@ -2185,20 +2171,17 @@ msgid "Show tasks in calendar views"
 msgstr "Mostra les tasques a les vistes de calendari"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show sub-tasks in calendar views"
+#, kde-format
 msgid "Show subtasks in calendar views"
 msgstr "Mostra les subtasques a les vistes de calendari"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Tasks View"
+#, kde-format
 msgid "Task View"
-msgstr "Vista de les tasques"
+msgstr "Vista de tasques"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Show completed sub-tasks"
+#, kde-format
 msgid "Show completed subtasks"
 msgstr "Mostra les subtasques completades"
 
@@ -2208,37 +2191,30 @@ msgid "Show holidays in calendar views"
 msgstr "Mostra els festius a les vistes de calendari"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Select Holiday Regions"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Holiday regions"
-msgstr "Selecció de les regions de dies festius"
+msgstr "Regions de dies festius"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Recent emails"
+#, kde-format
 msgid "Event Details"
-msgstr "Correus electrònics recents"
+msgstr "Detalls d'esdeveniments"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "On event start"
+#, kde-format
 msgid "Open event details in"
-msgstr "Al començament de l'esdeveniment"
+msgstr "Obre els detalls dels esdeveniment a"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "Finestra emergent"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Hide all"
+#, kde-format
 msgid "Side panel"
-msgstr "Ocultar-ho tot"
+msgstr "Plafó lateral"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
@@ -2271,10 +2247,9 @@ msgid "Right"
 msgstr "Dreta"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Weekday label length:"
+#, kde-format
 msgid "Weekday label length"
-msgstr "Longitud de les etiquetes del dia de la setmana:"
+msgstr "Longitud de les etiquetes del dia de la setmana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:208
 #, kde-format
@@ -2304,56 +2279,49 @@ msgstr "Oculta els dies buits"
 #: calendar/qml/Settings/ViewSettingsPage.qml:251
 #, kde-format
 msgid "Advanced Presentation"
-msgstr ""
+msgstr "Presentació avançada"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Month View"
+#, kde-format
 msgid "Month view"
 msgstr "Vista mensual"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:262
 #: calendar/qml/Settings/ViewSettingsPage.qml:281
 #: calendar/qml/Settings/ViewSettingsPage.qml:300
-#, fuzzy, kde-format
-#| msgid "Swipeable week view requires higher system performance."
+#, kde-format
 msgid "Swipeable views require higher system performance."
 msgstr ""
-"La vista de setmana que es pot lliscar requereix un rendiment més gran del "
-"sistema."
+"Les vistes que es poden lliscar requereix un rendiment més gran del sistema."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #: calendar/qml/Settings/ViewSettingsPage.qml:285
 #: calendar/qml/Settings/ViewSettingsPage.qml:304
-#, fuzzy, kde-format
-#| msgid "Swipeable week view"
+#, kde-format
 msgid "Swipeable"
-msgstr "Vista de setmana que es pot lliscar"
+msgstr "Es pot lliscar"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:267
 #: calendar/qml/Settings/ViewSettingsPage.qml:286
 #: calendar/qml/Settings/ViewSettingsPage.qml:305
 #, kde-format
 msgid "Basic"
-msgstr ""
+msgstr "Bàsic"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Week view"
 msgstr "Vista de setmana"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:298
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgid "Schedule view"
 msgstr "Vista de la planificació"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Grid border width (pixels):"
+#, kde-format
 msgid "Month grid border width (pixels)"
-msgstr "Amplada de la vora de la quadrícula (píxels):"
+msgstr "Amplada de la vora de la quadrícula de mes (píxels)"
 
 #: calendar/recurrencedata.cpp:31
 #, kde-format
@@ -2690,7 +2658,7 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "Afegeix un compte…"
 
-#: contactimageprovider/contactimageprovider.cpp:179
+#: contactimageprovider/contactimageprovider.cpp:182
 #, kde-format
 msgid "Image request has been cancelled"
 msgstr "S'ha cancel·lat la sol·licitud d'imatge"
@@ -4176,28 +4144,30 @@ msgstr "Desconegut"
 #, kde-format
 msgctxt "@info"
 msgid "%1 accepted this invitation."
-msgstr ""
+msgstr "%1 ha acceptat aquesta invitació."
 
 #: mail/calendarinvitation.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "%1 declined this invitation."
-msgstr ""
+msgstr "%1 ha declinat aquesta invitació."
 
 #: mail/calendarinvitation.cpp:182
 #, kde-format
 msgid "No configured mail identity matches this invitation's attendee address."
 msgstr ""
+"No hi ha cap identitat de correu configurada que coincideixi amb l'adreça de "
+"l'assistent d'aquesta invitació."
 
 #: mail/calendarinvitation.cpp:195
 #, kde-format
 msgid "You accepted this invitation. A response has been queued."
-msgstr ""
+msgstr "Heu acceptat aquesta invitació. S'ha posat una resposta a la cua."
 
 #: mail/calendarinvitation.cpp:196
 #, kde-format
 msgid "You declined this invitation. A response has been queued."
-msgstr ""
+msgstr "Heu declinat aquesta invitació. S'ha posat una resposta a la cua."
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4205,23 +4175,22 @@ msgid "No key"
 msgstr "Sense clau"
 
 #: mail/invitationresponsejob.cpp:41
-#, fuzzy, kde-format
-#| msgid "The calendar is no longer available."
+#, kde-format
 msgid "The mail identity for %1 is no longer available."
-msgstr "El calendari ja no està disponible."
+msgstr "La identitat de correu %1 ja no està disponible."
 
 #: mail/invitationresponsejob.cpp:47
 #, kde-format
 msgid ""
 "Configure an outgoing mail account before responding to this invitation."
 msgstr ""
+"Configureu un compte de correu sortint abans de respondre a aquesta "
+"invitació."
 
 #: mail/invitationresponsejob.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not prepare the contact for sharing."
+#, kde-format
 msgid "Could not update the calendar for this invitation."
-msgstr "No s'ha pogut preparar el contacte per a compartir."
+msgstr "No s'ha pogut actualitzar el calendari amb aquesta invitació."
 
 #: mail/invitationresponsejob.cpp:76
 #, kde-format
@@ -4229,26 +4198,25 @@ msgid ""
 "The outgoing mail account is no longer available. The calendar was updated, "
 "but no response was queued."
 msgstr ""
+"El un compte de correu sortint ja no està disponible. S'ha actualitzat el "
+"calendari, però no s'ha posat cap resposta a la cua."
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Attendees: %1"
+#, kde-format
 msgid "Accepted: %1"
-msgstr "Assistents: %1"
+msgstr "Ha acceptat: %1"
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Details: %1"
+#, kde-format
 msgid "Declined: %1"
-msgstr "Detalls: %1"
+msgstr "Ha refusat: %1"
 
 #: mail/invitationresponsejob.cpp:115
-#, fuzzy, kde-format
-#| msgid "The incidence was saved, but could not be moved: %1"
+#, kde-format
 msgid "The calendar was updated, but the response could not be queued: %1"
-msgstr "S'ha desat la incidència, però no s'ha pogut moure: %1"
+msgstr ""
+"S'ha actualitzat el calendari, però la resposta no s'ha pogut posar a la "
+"cua: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4561,7 +4529,7 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Replanificació de missatge"
 
-#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
@@ -4593,66 +4561,72 @@ msgstr "La bústia està buida"
 msgid "Mailboxes"
 msgstr "Bústies"
 
-#: mail/qml/MailComposer.qml:22
+#: mail/qml/MailComposer.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Missatge nou"
 
-#: mail/qml/MailComposer.qml:59
+#: mail/qml/MailComposer.qml:60
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Identity:"
 msgstr "Identitat:"
 
-#: mail/qml/MailComposer.qml:104
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: mail/qml/MailComposer.qml:105
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: mail/qml/MailComposer.qml:107
+#: mail/qml/MailComposer.qml:108
 #, kde-format
 msgid "Reply-To:"
 msgstr "Respon a:"
 
-#: mail/qml/MailComposer.qml:133
+#: mail/qml/MailComposer.qml:121
+#, kde-format
+msgctxt "@label"
+msgid "Recipient"
+msgstr ""
+
+#: mail/qml/MailComposer.qml:134
 #, kde-format
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: mail/qml/MailComposer.qml:193
+#: mail/qml/MailComposer.qml:194
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Adjunta un document"
 
-#: mail/qml/MailComposer.qml:216
+#: mail/qml/MailComposer.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Envia més tard"
 
-#: mail/qml/MailComposer.qml:241
+#: mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Planificació d'enviament"
 
-#: mail/qml/MailComposer.qml:254
+#: mail/qml/MailComposer.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
@@ -4722,33 +4696,31 @@ msgstr "Detalls: %1"
 #, kde-format
 msgctxt "@label"
 msgid "Respond as %1"
-msgstr ""
+msgstr "Respon com a %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:133
-#, fuzzy, kde-format
-#| msgid "Select Email Address"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Response email address"
-msgstr "Seleccioneu una adreça de correu electrònic"
+msgstr "Adreça de correu de resposta"
 
 #: mail/qml/mailpartview/ICalPart.qml:137
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Accepta"
 
 #: mail/qml/mailpartview/ICalPart.qml:143
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Declina"
 
 #: mail/qml/mailpartview/ICalPart.qml:153
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Responding to invitation"
-msgstr "Aquest correu conté una invitació"
+msgstr "Resposta a la invitació"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4807,23 +4779,22 @@ msgid "Sending Accounts"
 msgstr "Comptes d'enviament"
 
 #: mail/settings/MessageViewerSettingsPage.qml:11 mail/settings/Settings.qml:23
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@title"
 msgid "Message Viewer"
-msgstr "Missatgeria"
+msgstr "Visualitzador de missatges"
 
 #: mail/settings/MessageViewerSettingsPage.qml:14
 #, kde-format
 msgctxt "@title:group"
 msgid "Message Display"
-msgstr ""
+msgstr "Visualització de missatge"
 
 #: mail/settings/MessageViewerSettingsPage.qml:21
 #, kde-format
 msgctxt "@option:check"
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Prefereix HTML sobre text net"
 
 #: mail/settings/Settings.qml:15
 #, kde-format
@@ -4875,6 +4846,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Selecció del tipus de compte"
+
+#~ msgid "Required"
+#~ msgstr "Requerit"
 
 #~ msgid "Appearance"
 #~ msgstr "Aparença"
