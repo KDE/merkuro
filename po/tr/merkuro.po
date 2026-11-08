@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
-"PO-Revision-Date: 2026-11-04 22:40+0300\n"
+"POT-Creation-Date: 2026-11-08 00:15+0000\n"
+"PO-Revision-Date: 2026-11-07 19:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -334,7 +334,7 @@ msgid "Default from locale"
 msgstr "Yerel ayardan öntanımlı"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -1167,12 +1167,10 @@ msgid "Fill in Manually"
 msgstr "El ile Doldur"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:760
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Organizer: %1"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Organizer:"
-msgstr "Organizatör: %1"
+msgstr "Organizatör:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:772
 #, kde-format
@@ -1197,82 +1195,83 @@ msgstr "İsteğe bağlı"
 msgid "Email:"
 msgstr "E-posta:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
-msgid "Required"
-msgstr "Gerekli"
+msgctxt "@label"
+msgid "Attendee email"
+msgstr "Katılımcı e-postası"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
 msgid "Status:"
 msgstr "Durum:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Request RSVP"
 msgstr "Davet Yanıtı İste"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:913
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Anımsatıcılar"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Add Reminder"
 msgstr "Anımsatıcı Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:925
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "Anımsatıcı yok"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Künyeler"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
 #, kde-format
 msgid "Manage tags…"
 msgstr "Künyeleri Yönet…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Ayarlamak için dokun…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Ayarlamak için tıkla…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1011
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Ekler"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Add Attachment"
 msgstr "Ek Ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Add an attachment"
 msgstr "Bir ek ekle"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "Ek yok"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1977,29 +1976,22 @@ msgstr "Görevleri Sırala"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:12
 #: calendar/qml/Settings/SourceSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@title:group Title for the list of sending accounts which are SMTP email "
-#| "accounts"
-#| msgid "Sending Accounts"
+#, kde-format
 msgid "Calendars & Accounts"
-msgstr "Gönderme Hesapları"
+msgstr "Takvimler ve Hesaplar"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:18
 #: calendar/qml/Settings/TaskSettingsPage.qml:14
 #: calendar/qml/Settings/ViewSettingsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Calendars"
+#, kde-format
 msgid "Calendar Views"
-msgstr "Takvimler"
+msgstr "Takvim Görünümleri"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:32
 #: calendar/qml/Settings/LocationSettingsPage.qml:11
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Location"
+#, kde-format
 msgid "Locations"
-msgstr "Konum"
+msgstr "Konumlar"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:40
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:14
@@ -2010,7 +2002,7 @@ msgstr "Uygunluk"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:17
 #, kde-format
 msgid "Publishing"
-msgstr ""
+msgstr "Yayımlama"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
@@ -2033,18 +2025,17 @@ msgstr "Uygunluk bilgisini kendiliğinden yayımla"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:41
 #, kde-format
 msgid "Minimum upload interval (minutes)"
-msgstr ""
+msgstr "En düşük yükleme aralığı (dakika)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:53
-#, fuzzy, kde-format
-#| msgid "Number of days of availability info to publish: "
+#, kde-format
 msgid "Days of availability to publish"
-msgstr "Yayımlanacak uygunluk bilgisi günü sayısı: "
+msgstr "Yayımlanacak uygunluk günleri"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:65
 #, kde-format
 msgid "Publishing Server"
-msgstr ""
+msgstr "Yayımlama Sunucusu"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:73
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:154
@@ -2071,9 +2062,7 @@ msgid "Save password"
 msgstr "Parolayı kaydet"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:113
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieving"
 msgstr "Alım"
 
@@ -2097,22 +2086,19 @@ msgid "Use full email address for retrieval"
 msgstr "Alım için tam e-posta adresi kullan"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieval Server"
-msgstr "Alım"
+msgstr "Alım Sunucusu"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:194
-#, fuzzy, kde-format
-#| msgid "Exceptions:"
+#, kde-format
 msgid "Actions"
-msgstr "İstisnalar:"
+msgstr "Eylemler"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:202
 #, kde-format
 msgid "Publish now"
-msgstr ""
+msgstr "Şimdi Yayımla"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:211
 #, kde-format
@@ -2125,7 +2111,7 @@ msgid "Enter email of recipient…"
 msgstr "Alıcının e-posta adresini gir…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:219
-#: mail/qml/MailComposer.qml:207
+#: mail/qml/MailComposer.qml:208
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
@@ -2133,13 +2119,12 @@ msgstr "Gönder"
 #: calendar/qml/Settings/LocationSettingsPage.qml:14
 #, kde-format
 msgid "Maps and Location Search"
-msgstr ""
+msgstr "Harita ve Konum Arama"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Unable to find location."
+#, kde-format
 msgid "Enable maps and location search"
-msgstr "Konum bulunamıyor."
+msgstr "Harita ve konum aramayı etkinleştir"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:24
 #, kde-format
@@ -2149,7 +2134,7 @@ msgstr "Bazı sistemlerde çökmelere neden olabilir."
 #: calendar/qml/Settings/LocationSettingsPage.qml:36
 #, kde-format
 msgid "Location marker"
-msgstr "Konum imleyici"
+msgstr "Konum imleyicisi"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:41
 #, kde-format
@@ -2177,20 +2162,17 @@ msgid "Show tasks in calendar views"
 msgstr "Takvim görünümlerinde görevleri göster"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show sub-tasks in calendar views"
+#, kde-format
 msgid "Show subtasks in calendar views"
 msgstr "Takvim görünümlerinde alt görevleri göster"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Tasks View"
+#, kde-format
 msgid "Task View"
-msgstr "Görevler Görünümü"
+msgstr "Görev Görünümü"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Show completed sub-tasks"
+#, kde-format
 msgid "Show completed subtasks"
 msgstr "Tamamlanan alt görevleri göster"
 
@@ -2200,37 +2182,30 @@ msgid "Show holidays in calendar views"
 msgstr "Takvim görünümlerinde tatilleri göster"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Select Holiday Regions"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Holiday regions"
-msgstr "Tatil bölgelerini seç"
+msgstr "Tatil bölgeleri"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:119
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Recent emails"
+#, kde-format
 msgid "Event Details"
-msgstr "Son E-postalar"
+msgstr "Etkinlik Ayrıntıları"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "On event start"
+#, kde-format
 msgid "Open event details in"
-msgstr "Etkinlik başlangıcında"
+msgstr "Etkinlik ayrıntılarını şurada aç:"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "Açılır pencere"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Hide all"
+#, kde-format
 msgid "Side panel"
-msgstr "Tümünü Gizle"
+msgstr "Kenar panel"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
@@ -2263,10 +2238,9 @@ msgid "Right"
 msgstr "Sağ"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Weekday label length:"
+#, kde-format
 msgid "Weekday label length"
-msgstr "Hafta günü etiket uzunluğu:"
+msgstr "Hafta günü etiketi uzunluğu"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:208
 #, kde-format
@@ -2296,54 +2270,48 @@ msgstr "Boş günleri gizle"
 #: calendar/qml/Settings/ViewSettingsPage.qml:251
 #, kde-format
 msgid "Advanced Presentation"
-msgstr ""
+msgstr "Gelişmiş Sunular"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Month View"
+#, kde-format
 msgid "Month view"
-msgstr "Ay Görünümü"
+msgstr "Ay görünümü"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:262
 #: calendar/qml/Settings/ViewSettingsPage.qml:281
 #: calendar/qml/Settings/ViewSettingsPage.qml:300
-#, fuzzy, kde-format
-#| msgid "Swipeable week view requires higher system performance."
+#, kde-format
 msgid "Swipeable views require higher system performance."
-msgstr "Kaydırılabilir hafta görünümü daha yüksek sistem başarımı gerektirir."
+msgstr "Kaydırılabilir görünümler, daha yüksek sistem başarımı gerektirir."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #: calendar/qml/Settings/ViewSettingsPage.qml:285
 #: calendar/qml/Settings/ViewSettingsPage.qml:304
-#, fuzzy, kde-format
-#| msgid "Swipeable week view"
+#, kde-format
 msgid "Swipeable"
-msgstr "Kaydırılabilir hafta görünümü"
+msgstr "Kaydırılabilir"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:267
 #: calendar/qml/Settings/ViewSettingsPage.qml:286
 #: calendar/qml/Settings/ViewSettingsPage.qml:305
 #, kde-format
 msgid "Basic"
-msgstr ""
+msgstr "Temel"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Week View"
+#, kde-format
 msgid "Week view"
-msgstr "Hafta Görünümü"
+msgstr "Hafta görünümü"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:298
-#, fuzzy, kde-format
-#| msgid "Schedule View"
+#, kde-format
 msgid "Schedule view"
-msgstr "Program Görünümü"
+msgstr "Program görünümü"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Grid border width (pixels):"
+#, kde-format
 msgid "Month grid border width (pixels)"
-msgstr "Izgara kenarlık genişliği (piksel):"
+msgstr "Ay ızgarası kenarlığı genişliği (piksel)"
 
 #: calendar/recurrencedata.cpp:31
 #, kde-format
@@ -2680,7 +2648,7 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "Hesap Ekle…"
 
-#: contactimageprovider/contactimageprovider.cpp:179
+#: contactimageprovider/contactimageprovider.cpp:182
 #, kde-format
 msgid "Image request has been cancelled"
 msgstr "Görsel isteği iptal edildi"
@@ -4160,28 +4128,30 @@ msgstr "Bilinmiyor"
 #, kde-format
 msgctxt "@info"
 msgid "%1 accepted this invitation."
-msgstr ""
+msgstr "%1, bu daveti kabul etti."
 
 #: mail/calendarinvitation.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "%1 declined this invitation."
-msgstr ""
+msgstr "%1, bu daveti reddetti."
 
 #: mail/calendarinvitation.cpp:182
 #, kde-format
 msgid "No configured mail identity matches this invitation's attendee address."
 msgstr ""
+"Hiçbir yapılandırılmış posta kimliği, bu davetin katılımcısının adresiyle "
+"uyuşmuyor."
 
 #: mail/calendarinvitation.cpp:195
 #, kde-format
 msgid "You accepted this invitation. A response has been queued."
-msgstr ""
+msgstr "Bu daveti kabul ettiniz. Bir yanıt sıraya konuldu."
 
 #: mail/calendarinvitation.cpp:196
 #, kde-format
 msgid "You declined this invitation. A response has been queued."
-msgstr ""
+msgstr "Bu daveti reddettiniz. Bir yanıt sıraya konuldu."
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4189,23 +4159,20 @@ msgid "No key"
 msgstr "Anahtar yok"
 
 #: mail/invitationresponsejob.cpp:41
-#, fuzzy, kde-format
-#| msgid "The calendar is no longer available."
+#, kde-format
 msgid "The mail identity for %1 is no longer available."
-msgstr "Takvim artık kullanılabilir değil."
+msgstr "%1 için olan posta kimliği artık kullanılabilir değil."
 
 #: mail/invitationresponsejob.cpp:47
 #, kde-format
 msgid ""
 "Configure an outgoing mail account before responding to this invitation."
-msgstr ""
+msgstr "Bu daveti yanıtlamadan önce bir giden posta hesabı yapılandırın."
 
 #: mail/invitationresponsejob.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not prepare the contact for sharing."
+#, kde-format
 msgid "Could not update the calendar for this invitation."
-msgstr "Kişi, paylaşım için hazırlanamadı."
+msgstr "Bu davet için olan takvim güncellenemedi."
 
 #: mail/invitationresponsejob.cpp:76
 #, kde-format
@@ -4213,26 +4180,23 @@ msgid ""
 "The outgoing mail account is no longer available. The calendar was updated, "
 "but no response was queued."
 msgstr ""
+"Giden posta hesabı artık kullanılabilir değil. Takvim güncellendi; ancak "
+"sıraya konulan bir yanıt yok."
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Attendees: %1"
+#, kde-format
 msgid "Accepted: %1"
-msgstr "Katılımcılar: %1"
+msgstr "Kabul etti: %1"
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Details: %1"
+#, kde-format
 msgid "Declined: %1"
-msgstr "Ayrıntılar: %1"
+msgstr "Reddetti: %1"
 
 #: mail/invitationresponsejob.cpp:115
-#, fuzzy, kde-format
-#| msgid "The incidence was saved, but could not be moved: %1"
+#, kde-format
 msgid "The calendar was updated, but the response could not be queued: %1"
-msgstr "Olay kaydedildi; ancak taşınamadı: %1"
+msgstr "Takvim güncellendi; ancak bir yanıt sıraya konulamadı: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4545,7 +4509,7 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "İletiyi Yeniden Planla"
 
-#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
@@ -4577,66 +4541,72 @@ msgstr "Posta kutusu boş"
 msgid "Mailboxes"
 msgstr "Posta Kutuları"
 
-#: mail/qml/MailComposer.qml:22
+#: mail/qml/MailComposer.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Yeni İleti"
 
-#: mail/qml/MailComposer.qml:59
+#: mail/qml/MailComposer.qml:60
 #, kde-format
 msgid "From:"
 msgstr "Kimden:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Identity:"
 msgstr "Kimlik:"
 
-#: mail/qml/MailComposer.qml:104
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "To:"
 msgstr "Kime:"
 
-#: mail/qml/MailComposer.qml:105
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "CC:"
 msgstr "Kopya:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "BCC:"
 msgstr "Gizli kopya:"
 
-#: mail/qml/MailComposer.qml:107
+#: mail/qml/MailComposer.qml:108
 #, kde-format
 msgid "Reply-To:"
 msgstr "Yanıt adresi:"
 
-#: mail/qml/MailComposer.qml:133
+#: mail/qml/MailComposer.qml:121
+#, kde-format
+msgctxt "@label"
+msgid "Recipient"
+msgstr "Alıcı"
+
+#: mail/qml/MailComposer.qml:134
 #, kde-format
 msgid "Subject:"
 msgstr "Konu:"
 
-#: mail/qml/MailComposer.qml:193
+#: mail/qml/MailComposer.qml:194
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Belge İliştir"
 
-#: mail/qml/MailComposer.qml:216
+#: mail/qml/MailComposer.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Daha Sonra Gönder"
 
-#: mail/qml/MailComposer.qml:241
+#: mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Göndermeyi Planla"
 
-#: mail/qml/MailComposer.qml:254
+#: mail/qml/MailComposer.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
@@ -4706,33 +4676,31 @@ msgstr "Ayrıntılar: %1"
 #, kde-format
 msgctxt "@label"
 msgid "Respond as %1"
-msgstr ""
+msgstr "%1 olarak yanıtla"
 
 #: mail/qml/mailpartview/ICalPart.qml:133
-#, fuzzy, kde-format
-#| msgid "Select Email Address"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Response email address"
-msgstr "E-posta Adresi Seç"
+msgstr "Yanıt e-posta adresi"
 
 #: mail/qml/mailpartview/ICalPart.qml:137
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Kabul Et"
 
 #: mail/qml/mailpartview/ICalPart.qml:143
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Reddet"
 
 #: mail/qml/mailpartview/ICalPart.qml:153
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Responding to invitation"
-msgstr "Bu posta bir davet içeriyor"
+msgstr "Davete yanıt veriliyor"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4792,23 +4760,22 @@ msgid "Sending Accounts"
 msgstr "Gönderme Hesapları"
 
 #: mail/settings/MessageViewerSettingsPage.qml:11 mail/settings/Settings.qml:23
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@title"
 msgid "Message Viewer"
-msgstr "İletileşme"
+msgstr "İleti Görüntüleyicisi"
 
 #: mail/settings/MessageViewerSettingsPage.qml:14
 #, kde-format
 msgctxt "@title:group"
 msgid "Message Display"
-msgstr ""
+msgstr "İleti Görüntüleme"
 
 #: mail/settings/MessageViewerSettingsPage.qml:21
 #, kde-format
 msgctxt "@option:check"
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Düz metin yerine HTML’yi yeğle"
 
 #: mail/settings/Settings.qml:15
 #, kde-format
@@ -4860,6 +4827,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Hesap Türünü Seç"
+
+#~ msgid "Required"
+#~ msgstr "Gerekli"
 
 #~ msgid "Appearance"
 #~ msgstr "Görünüş"

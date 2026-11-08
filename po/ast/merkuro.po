@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-08 00:15+0000\n"
 "PO-Revision-Date: 2023-11-07 21:27+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -330,7 +330,7 @@ msgid "Default from locale"
 msgstr ""
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -1171,82 +1171,83 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
 #, kde-format
-msgid "Required"
+msgctxt "@label"
+msgid "Attendee email"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
 msgid "Status:"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Request RSVP"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:913
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Add Reminder"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:925
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
 #, kde-format
 msgid "Manage tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Tap to set tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Click to set tags…"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1011
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Add Attachment"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Add an attachment"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr ""
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -2077,7 +2078,7 @@ msgid "Enter email of recipient…"
 msgstr ""
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:219
-#: mail/qml/MailComposer.qml:207
+#: mail/qml/MailComposer.qml:208
 #, kde-format
 msgid "Send"
 msgstr ""
@@ -2614,7 +2615,7 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr ""
 
-#: contactimageprovider/contactimageprovider.cpp:179
+#: contactimageprovider/contactimageprovider.cpp:182
 #, kde-format
 msgid "Image request has been cancelled"
 msgstr ""
@@ -4465,7 +4466,7 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr ""
 
-#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
@@ -4497,66 +4498,72 @@ msgstr ""
 msgid "Mailboxes"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:22
+#: mail/qml/MailComposer.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:59
+#: mail/qml/MailComposer.qml:60
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Identity:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:104
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:105
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:107
+#: mail/qml/MailComposer.qml:108
 #, kde-format
 msgid "Reply-To:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:133
+#: mail/qml/MailComposer.qml:121
+#, kde-format
+msgctxt "@label"
+msgid "Recipient"
+msgstr ""
+
+#: mail/qml/MailComposer.qml:134
 #, kde-format
 msgid "Subject:"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:193
+#: mail/qml/MailComposer.qml:194
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:216
+#: mail/qml/MailComposer.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:241
+#: mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr ""
 
-#: mail/qml/MailComposer.qml:254
+#: mail/qml/MailComposer.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"

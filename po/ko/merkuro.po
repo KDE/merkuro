@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-08 00:15+0000\n"
 "PO-Revision-Date: 2026-10-05 20:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -334,7 +334,7 @@ msgid "Default from locale"
 msgstr "로캘 기본값"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -1190,82 +1190,84 @@ msgstr "선택 사항"
 msgid "Email:"
 msgstr "이메일:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
-#, kde-format
-msgid "Required"
-msgstr "필요함"
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
+#, fuzzy, kde-format
+#| msgid "Send email"
+msgctxt "@label"
+msgid "Attendee email"
+msgstr "이메일 보내기"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
 msgid "Status:"
 msgstr "상태:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Request RSVP"
 msgstr "RSVP 요청"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:913
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "알림"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Add Reminder"
 msgstr "미리 알림 추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:925
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "알림이 없음"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "태그"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
 #, kde-format
 msgid "Manage tags…"
 msgstr "태그 관리…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "탭하여 태그 설정…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Click to set tags…"
 msgstr "클릭하여 태그 설정…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1011
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "첨부"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Add Attachment"
 msgstr "첨부 파일 추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Add an attachment"
 msgstr "첨부 파일 추가"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "첨부 파일이 없음"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -2112,7 +2114,7 @@ msgid "Enter email of recipient…"
 msgstr "수신자 이메일 주소 입력…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:219
-#: mail/qml/MailComposer.qml:207
+#: mail/qml/MailComposer.qml:208
 #, kde-format
 msgid "Send"
 msgstr "보내기"
@@ -2657,7 +2659,7 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "계정 추가…"
 
-#: contactimageprovider/contactimageprovider.cpp:179
+#: contactimageprovider/contactimageprovider.cpp:182
 #, kde-format
 msgid "Image request has been cancelled"
 msgstr "그림 요청이 취소됨"
@@ -4509,7 +4511,7 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "메시지 일정 재조정"
 
-#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
@@ -4541,66 +4543,72 @@ msgstr "편지함이 비어 있음"
 msgid "Mailboxes"
 msgstr "편지함"
 
-#: mail/qml/MailComposer.qml:22
+#: mail/qml/MailComposer.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "새 메시지"
 
-#: mail/qml/MailComposer.qml:59
+#: mail/qml/MailComposer.qml:60
 #, kde-format
 msgid "From:"
 msgstr "보내는 사람:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Identity:"
 msgstr "프로필:"
 
-#: mail/qml/MailComposer.qml:104
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "To:"
 msgstr "받는 사람:"
 
-#: mail/qml/MailComposer.qml:105
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "CC:"
 msgstr "참조:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "BCC:"
 msgstr "숨은 참조:"
 
-#: mail/qml/MailComposer.qml:107
+#: mail/qml/MailComposer.qml:108
 #, kde-format
 msgid "Reply-To:"
 msgstr "답장 주소:"
 
-#: mail/qml/MailComposer.qml:133
+#: mail/qml/MailComposer.qml:121
+#, kde-format
+msgctxt "@label"
+msgid "Recipient"
+msgstr ""
+
+#: mail/qml/MailComposer.qml:134
 #, kde-format
 msgid "Subject:"
 msgstr "제목:"
 
-#: mail/qml/MailComposer.qml:193
+#: mail/qml/MailComposer.qml:194
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "문서 첨부"
 
-#: mail/qml/MailComposer.qml:216
+#: mail/qml/MailComposer.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "나중에 보내기"
 
-#: mail/qml/MailComposer.qml:241
+#: mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "전송 예약"
 
-#: mail/qml/MailComposer.qml:254
+#: mail/qml/MailComposer.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
@@ -4833,6 +4841,9 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "계정 종류 선택"
+
+#~ msgid "Required"
+#~ msgstr "필요함"
 
 #~ msgid "Appearance"
 #~ msgstr "모양"

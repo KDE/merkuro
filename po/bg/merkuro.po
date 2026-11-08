@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:53+0000\n"
+"POT-Creation-Date: 2026-11-08 00:15+0000\n"
 "PO-Revision-Date: 2026-10-19 16:14+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -335,7 +335,7 @@ msgid "Default from locale"
 msgstr "По подразбиране от регионалните настройки"
 
 #: calendar/models/todosortfilterproxymodel.cpp:162
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:949
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:963
 #, kde-format
 msgctxt "List separator"
 msgid ", "
@@ -1170,7 +1170,7 @@ msgstr "Попълнете ръчно"
 #| msgid "<b>Organizer:</b>"
 msgctxt "@label:listbox"
 msgid "Organizer:"
-msgstr "<b>Организатор:</b>"
+msgstr "Организатор:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:772
 #, kde-format
@@ -1195,82 +1195,84 @@ msgstr "По избор"
 msgid "Email:"
 msgstr "Е-поща:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:849
-#, kde-format
-msgid "Required"
-msgstr "Задължителен"
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
+#, fuzzy, kde-format
+#| msgid "Send email"
+msgctxt "@label"
+msgid "Attendee email"
+msgstr "Имейл на участника"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:859
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
 msgid "Status:"
 msgstr "Състояние:"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:884
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:898
 #, kde-format
 msgid "Request RSVP"
 msgstr "Заявка за отговор"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:899
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:913
 #, kde-format
 msgctxt "@title:group"
 msgid "Reminders"
 msgstr "Напомняния"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:901
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:915
 #, kde-format
 msgid "Add Reminder"
 msgstr "Добавяне на напомняне"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:911
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:925
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no reminders"
 msgstr "Няма напомняния"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:931
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:945
 #, kde-format
 msgctxt "@title:group"
 msgid "Tags"
 msgstr "Етикети"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:933
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:947
 #, kde-format
 msgid "Manage tags…"
 msgstr "Управление на тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Tap to set tags…"
 msgstr "Докоснете, за да зададете тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:950
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:964
 #, kde-format
 msgid "Click to set tags…"
 msgstr "Кликнете, за да зададете тагове…"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:997
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1011
 #, kde-format
 msgctxt "@title:group"
 msgid "Attachments"
 msgstr "Прикачени файлове"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:999
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1013
 #, kde-format
 msgid "Add Attachment"
 msgstr "Добавяне на прикачен файл"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1006
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1020
 #, kde-format
 msgid "Add an attachment"
 msgstr "Добавяне на прикачен файл"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1017
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1031
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "There are no attachments"
 msgstr "Няма прикачени файлове"
 
-#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1052
+#: calendar/qml/Dialogs/IncidenceEditorPage.qml:1066
 #, kde-format
 msgctxt "@title:group"
 msgid "Note"
@@ -1981,7 +1983,7 @@ msgstr "Сортиране на задачи"
 #| "accounts"
 #| msgid "Sending Accounts"
 msgid "Calendars & Accounts"
-msgstr "Изпращане на акаунти"
+msgstr "Календари и акаунти"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:18
 #: calendar/qml/Settings/TaskSettingsPage.qml:14
@@ -1989,7 +1991,7 @@ msgstr "Изпращане на акаунти"
 #, fuzzy, kde-format
 #| msgid "Calendars"
 msgid "Calendar Views"
-msgstr "Календари"
+msgstr "Изгледи на календара"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:32
 #: calendar/qml/Settings/LocationSettingsPage.qml:11
@@ -1997,7 +1999,7 @@ msgstr "Календари"
 #| msgctxt "@label"
 #| msgid "Location"
 msgid "Locations"
-msgstr "Местоположение"
+msgstr "Местоположения"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:40
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:14
@@ -2006,9 +2008,9 @@ msgid "Availability"
 msgstr "Заетост"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:17
-#, kde-format
+#, fuzzy, kde-format
 msgid "Publishing"
-msgstr ""
+msgstr "Публикуване"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:25
 #, kde-format
@@ -2029,20 +2031,20 @@ msgid "Publish your availability information automatically"
 msgstr "Публикуване автоматично на вашата информация за заетост"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:41
-#, kde-format
+#, fuzzy, kde-format
 msgid "Minimum upload interval (minutes)"
-msgstr ""
+msgstr "Минимален интервал за качване (минути)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:53
 #, fuzzy, kde-format
 #| msgid "Number of days of availability info to publish: "
 msgid "Days of availability to publish"
-msgstr "Брой дни за публикуване на информация за заетост:"
+msgstr "Дни на наличност за публикуване"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:65
-#, kde-format
+#, fuzzy, kde-format
 msgid "Publishing Server"
-msgstr ""
+msgstr "Сървър за публикуване"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:73
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:154
@@ -2099,18 +2101,18 @@ msgstr "Използване на пълен имейл адрес за извл
 #| msgctxt "@title"
 #| msgid "Retrieval"
 msgid "Retrieval Server"
-msgstr "Извличане"
+msgstr "Сървър за извличане"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:194
 #, fuzzy, kde-format
 #| msgid "Exceptions:"
 msgid "Actions"
-msgstr "Изключения:"
+msgstr "Действия"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:202
-#, kde-format
+#, fuzzy, kde-format
 msgid "Publish now"
-msgstr ""
+msgstr "Публикуване сега"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:211
 #, kde-format
@@ -2123,21 +2125,21 @@ msgid "Enter email of recipient…"
 msgstr "Въведете имейл на получателя…"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:219
-#: mail/qml/MailComposer.qml:207
+#: mail/qml/MailComposer.qml:208
 #, kde-format
 msgid "Send"
 msgstr "Изпращане"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:14
-#, kde-format
+#, fuzzy, kde-format
 msgid "Maps and Location Search"
-msgstr ""
+msgstr "Карти и търсене на местоположение"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:23
 #, fuzzy, kde-format
 #| msgid "Unable to find location."
 msgid "Enable maps and location search"
-msgstr "Не може да се намери местоположение."
+msgstr "Активиране на карти и търсене по местоположение"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:24
 #, kde-format
@@ -2178,7 +2180,7 @@ msgstr "Показване на задачи в изгледи на календ
 #, fuzzy, kde-format
 #| msgid "Show sub-tasks in calendar views"
 msgid "Show subtasks in calendar views"
-msgstr "Показване на подзадачи в изгледи на календара"
+msgstr "Показване на подзадачи в изгледите на календара"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:46
 #, fuzzy, kde-format
@@ -2203,32 +2205,32 @@ msgstr "Показване на почивните дни в календара"
 #| msgid "Select Holiday Regions"
 msgctxt "@label:listbox"
 msgid "Holiday regions"
-msgstr "Избиране на регионални празнични дни"
+msgstr "Региони с празници"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:119
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Recent emails"
 msgid "Event Details"
-msgstr "Последни имейли"
+msgstr "Детайли за събитието"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
 #, fuzzy, kde-format
 #| msgid "On event start"
 msgid "Open event details in"
-msgstr "В началото на събитието"
+msgstr "Отваряне на подробности за събитието в"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
-#, kde-format
+#, fuzzy, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "Изскачащ прозорец"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Hide all"
 msgid "Side panel"
-msgstr "Скриване на &всичко"
+msgstr "Страничен панел"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
@@ -2264,7 +2266,7 @@ msgstr "Вдясно"
 #, fuzzy, kde-format
 #| msgid "Weekday label length:"
 msgid "Weekday label length"
-msgstr "Дължина на етикета за деня от седмицата:"
+msgstr "Дължина на етикетите за дни от седмицата"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:208
 #, kde-format
@@ -2292,15 +2294,15 @@ msgid "Hide empty days"
 msgstr "Скриване на празни дни"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:251
-#, kde-format
+#, fuzzy, kde-format
 msgid "Advanced Presentation"
-msgstr ""
+msgstr "Разширено представяне"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, fuzzy, kde-format
 #| msgid "Month View"
 msgid "Month view"
-msgstr "Месечен изглед"
+msgstr "Изглед по месеци"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:262
 #: calendar/qml/Settings/ViewSettingsPage.qml:281
@@ -2308,8 +2310,7 @@ msgstr "Месечен изглед"
 #, fuzzy, kde-format
 #| msgid "Swipeable week view requires higher system performance."
 msgid "Swipeable views require higher system performance."
-msgstr ""
-"Седмичен изглед с плъзгане изисква по-висока производителност на системата."
+msgstr "Плъзгащите се изгледи изискват по-висока системна производителност."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #: calendar/qml/Settings/ViewSettingsPage.qml:285
@@ -2317,20 +2318,20 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Swipeable week view"
 msgid "Swipeable"
-msgstr "Седмичен изглед с възможност за плъзгане"
+msgstr "Плъзгане"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:267
 #: calendar/qml/Settings/ViewSettingsPage.qml:286
 #: calendar/qml/Settings/ViewSettingsPage.qml:305
-#, kde-format
+#, fuzzy, kde-format
 msgid "Basic"
-msgstr ""
+msgstr "Основни"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:279
 #, fuzzy, kde-format
 #| msgid "Week View"
 msgid "Week view"
-msgstr "Седмичен изглед"
+msgstr "Изглед за седмица"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:298
 #, fuzzy, kde-format
@@ -2342,7 +2343,7 @@ msgstr "Изглед на график"
 #, fuzzy, kde-format
 #| msgid "Grid border width (pixels):"
 msgid "Month grid border width (pixels)"
-msgstr "Ширина на рамката на мрежата (пиксели):"
+msgstr "Ширина на границата на месечната мрежа (пиксели)"
 
 #: calendar/recurrencedata.cpp:31
 #, kde-format
@@ -2679,7 +2680,7 @@ msgctxt "@action:button"
 msgid "Add Account…"
 msgstr "Добавяне на акаунт…"
 
-#: contactimageprovider/contactimageprovider.cpp:179
+#: contactimageprovider/contactimageprovider.cpp:182
 #, kde-format
 msgid "Image request has been cancelled"
 msgstr "Заявката за изображение е отменена"
@@ -4156,31 +4157,33 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: mail/calendarinvitation.cpp:148
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 accepted this invitation."
-msgstr ""
+msgstr "%1 прие тази покана."
 
 #: mail/calendarinvitation.cpp:151
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 declined this invitation."
-msgstr ""
+msgstr "%1 отклони тази покана."
 
 #: mail/calendarinvitation.cpp:182
-#, kde-format
+#, fuzzy, kde-format
 msgid "No configured mail identity matches this invitation's attendee address."
 msgstr ""
+"Няма конфигурирана идентичност на имейл, която да съвпада с адреса на "
+"участника в тази покана."
 
 #: mail/calendarinvitation.cpp:195
-#, kde-format
+#, fuzzy, kde-format
 msgid "You accepted this invitation. A response has been queued."
-msgstr ""
+msgstr "Приехте тази покана. Ответът е добавен в опашката."
 
 #: mail/calendarinvitation.cpp:196
-#, kde-format
+#, fuzzy, kde-format
 msgid "You declined this invitation. A response has been queued."
-msgstr ""
+msgstr "Отклонихте тази покана. Ответът е в опашка."
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4191,45 +4194,49 @@ msgstr "Без ключ"
 #, fuzzy, kde-format
 #| msgid "The calendar is no longer available."
 msgid "The mail identity for %1 is no longer available."
-msgstr "Календарът вече не е наличен."
+msgstr "Пощенската идентичност за %1 вече не е налична."
 
 #: mail/invitationresponsejob.cpp:47
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Configure an outgoing mail account before responding to this invitation."
-msgstr ""
+msgstr "Конфигуриране на изходящ имейл акаунт преди отговор на тази покана."
 
 #: mail/invitationresponsejob.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Could not prepare the contact for sharing."
 msgid "Could not update the calendar for this invitation."
-msgstr "Неуспешно подготвяне на контакта за споделяне."
+msgstr "Неуспешно обновяване на календара за тази покана."
 
 #: mail/invitationresponsejob.cpp:76
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The outgoing mail account is no longer available. The calendar was updated, "
 "but no response was queued."
 msgstr ""
+"Акаунтът за изходяща поща вече не е наличен. Календарът беше актуализиран, "
+"но не беше добавен отговор в опашката."
 
 #: mail/invitationresponsejob.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Attendees"
 msgid "Accepted: %1"
-msgstr "Участници"
+msgstr "Прието: %1"
 
 #: mail/invitationresponsejob.cpp:85
-#, kde-format
+#, fuzzy, kde-format
 msgid "Declined: %1"
-msgstr ""
+msgstr "Отказано: %1"
 
 #: mail/invitationresponsejob.cpp:115
 #, fuzzy, kde-format
 #| msgid "The incidence was saved, but could not be moved: %1"
 msgid "The calendar was updated, but the response could not be queued: %1"
-msgstr "Събитието беше записано, но не можа да бъде преместено: %1"
+msgstr ""
+"Календарът беше актуализиран, но отговорът не можа да бъде добавен в "
+"опашката: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4542,7 +4549,7 @@ msgctxt "@title:dialog"
 msgid "Reschedule Message"
 msgstr "Пренасрочване на съобщение"
 
-#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:260
+#: mail/qml/FolderView.qml:257 mail/qml/MailComposer.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Send Date and Time"
@@ -4574,66 +4581,72 @@ msgstr "Пощенската кутия е празна"
 msgid "Mailboxes"
 msgstr "Пощенски кутии"
 
-#: mail/qml/MailComposer.qml:22
+#: mail/qml/MailComposer.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "New Message"
 msgstr "Ново съобщение"
 
-#: mail/qml/MailComposer.qml:59
+#: mail/qml/MailComposer.qml:60
 #, kde-format
 msgid "From:"
 msgstr "От:"
 
-#: mail/qml/MailComposer.qml:70
+#: mail/qml/MailComposer.qml:71
 #, kde-format
 msgid "Identity:"
 msgstr "Самоличност:"
 
-#: mail/qml/MailComposer.qml:104
+#: mail/qml/MailComposer.qml:105
 #, kde-format
 msgid "To:"
 msgstr "До:"
 
-#: mail/qml/MailComposer.qml:105
+#: mail/qml/MailComposer.qml:106
 #, kde-format
 msgid "CC:"
 msgstr "Копие до:"
 
-#: mail/qml/MailComposer.qml:106
+#: mail/qml/MailComposer.qml:107
 #, kde-format
 msgid "BCC:"
 msgstr "Скр. копие до:"
 
-#: mail/qml/MailComposer.qml:107
+#: mail/qml/MailComposer.qml:108
 #, kde-format
 msgid "Reply-To:"
 msgstr "Отговор до:"
 
-#: mail/qml/MailComposer.qml:133
+#: mail/qml/MailComposer.qml:121
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Recipient"
+msgstr "Получател"
+
+#: mail/qml/MailComposer.qml:134
 #, kde-format
 msgid "Subject:"
 msgstr "Тема:"
 
-#: mail/qml/MailComposer.qml:193
+#: mail/qml/MailComposer.qml:194
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach Document"
 msgstr "Прикрепяне на документ"
 
-#: mail/qml/MailComposer.qml:216
+#: mail/qml/MailComposer.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Send Later"
 msgstr "Изпращане по-късно"
 
-#: mail/qml/MailComposer.qml:241
+#: mail/qml/MailComposer.qml:242
 #, kde-format
 msgctxt "@title:dialog"
 msgid "Schedule Send"
 msgstr "Планиране на изпращане"
 
-#: mail/qml/MailComposer.qml:254
+#: mail/qml/MailComposer.qml:255
 #, kde-format
 msgctxt "@label"
 msgid "Manual mode"
@@ -4644,28 +4657,28 @@ msgstr "Ръчен режим"
 #| msgid "The incidence could not be moved."
 msgctxt "@info"
 msgid "This calendar invitation could not be read."
-msgstr "Събитието не можа да бъде преместено."
+msgstr "Тази покана за календара не можа да бъде прочетена."
 
 #: mail/qml/mailpartview/ICalPart.qml:66
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@title"
 msgid "Calendar event"
-msgstr "Календар"
+msgstr "Календарен запис"
 
 #: mail/qml/mailpartview/ICalPart.qml:84
 #, fuzzy, kde-format
 #| msgid "Image request has been cancelled"
 msgctxt "@info"
 msgid "This event has been canceled."
-msgstr "Заявката за изображение е отменена"
+msgstr "Това събитие е отменено."
 
 #: mail/qml/mailpartview/ICalPart.qml:88
 #, fuzzy, kde-format
 #| msgid "All day"
 msgctxt "@info"
 msgid "%1 · All day"
-msgstr "Цял ден"
+msgstr "%1 · Целия ден"
 
 #: mail/qml/mailpartview/ICalPart.qml:90
 #, fuzzy, kde-format
@@ -4673,7 +4686,7 @@ msgstr "Цял ден"
 #| msgid "Undo: %1"
 msgctxt "@info:accessibility"
 msgid "When: %1"
-msgstr "Отмяна: %1"
+msgstr "Кога: %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:96
 #, fuzzy, kde-format
@@ -4681,20 +4694,20 @@ msgstr "Отмяна: %1"
 #| msgid "Location"
 msgctxt "@info:accessibility"
 msgid "Location: %1"
-msgstr "Местоположение"
+msgstr "Местоположение: %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:100
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info"
 msgid "%1 (organizer)"
-msgstr ""
+msgstr "%1 (организатор)"
 
 #: mail/qml/mailpartview/ICalPart.qml:102
 #, fuzzy, kde-format
 #| msgid "<b>Organizer:</b>"
 msgctxt "@info:accessibility"
 msgid "Organizer: %1"
-msgstr "<b>Организатор:</b>"
+msgstr "Организатор: %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:107
 #, fuzzy, kde-format
@@ -4702,45 +4715,45 @@ msgstr "<b>Организатор:</b>"
 #| msgid "Attendees"
 msgctxt "@info:accessibility"
 msgid "Attendees: %1"
-msgstr "Участници"
+msgstr "Участници: %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:112
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:accessibility"
 msgid "Details: %1"
-msgstr ""
+msgstr "Детайли: %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:122
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label"
 msgid "Respond as %1"
-msgstr ""
+msgstr "Отговор като %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:133
 #, fuzzy, kde-format
 #| msgid "Select Email Address"
 msgctxt "@info:accessibility"
 msgid "Response email address"
-msgstr "Избиране на имейл адрес"
+msgstr "Имейл адрес за отговор"
 
 #: mail/qml/mailpartview/ICalPart.qml:137
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Приемане"
 
 #: mail/qml/mailpartview/ICalPart.qml:143
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Отказ"
 
 #: mail/qml/mailpartview/ICalPart.qml:153
 #, fuzzy, kde-format
 #| msgid "This mail contains an invitation"
 msgctxt "@info:accessibility"
 msgid "Responding to invitation"
-msgstr "Този имейл съдържа покана"
+msgstr "Отговор на покана"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4804,19 +4817,19 @@ msgstr "Изпращане на акаунти"
 #| msgid "Messaging"
 msgctxt "@title"
 msgid "Message Viewer"
-msgstr "Съобщения"
+msgstr "Преглед на съобщенията"
 
 #: mail/settings/MessageViewerSettingsPage.qml:14
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Message Display"
-msgstr ""
+msgstr "Изглед на съобщенията"
 
 #: mail/settings/MessageViewerSettingsPage.qml:21
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Prefer HTML to plain text"
-msgstr ""
+msgstr "Предпочитане на HTML пред обикновен текст"
 
 #: mail/settings/Settings.qml:15
 #, kde-format
@@ -4868,85 +4881,3 @@ msgctxt ""
 "etc.)"
 msgid "Select the account type"
 msgstr "Избиране на вида на акаунта"
-
-#~ msgid "Appearance"
-#~ msgstr "Външен вид"
-
-#~ msgid "Accounts"
-#~ msgstr "Сметки"
-
-#~ msgid "Configure Availability"
-#~ msgstr "Настройване на данни за заетост"
-
-#~ msgid "Availability Publishing settings"
-#~ msgstr "Настройки за публикуване на състояние на достъпност"
-
-#~ msgid "Minimum time (in minutes) between uploads"
-#~ msgstr "Минимално време (в минути) между качванията"
-
-#~ msgid "Server information"
-#~ msgstr "Информация за сървъра"
-
-#~ msgid "Click here to publish availability information manually"
-#~ msgstr "Щракнете тук, за да публикувате ръчно информацията за заетост"
-
-#~ msgid "Availability Retrieval settings"
-#~ msgstr "Настройки за извличане на заетост"
-
-#~ msgid "General settings"
-#~ msgstr "Общи настройки"
-
-#~ msgid "Use popup to show incidence information"
-#~ msgstr "Използване на изскачащ прозорец за информация за инцидента"
-
-#~ msgid "Month view settings"
-#~ msgstr "Настройки за месечен изглед"
-
-#~ msgid "Month view mode"
-#~ msgstr "Режим на преглед в месеци"
-
-#~ msgid "Swipeable month grid"
-#~ msgstr "Плъзгаща се месечна решетка"
-
-#~ msgid "Basic month grid"
-#~ msgstr "Опростена месечна решетка"
-
-#~ msgid "Swipeable month grid requires higher system performance."
-#~ msgstr ""
-#~ "Плъзгащата се месечна мрежа изисква по-висока производителност на "
-#~ "системата."
-
-#~ msgid "Week view settings"
-#~ msgstr "Настройки за седмичен изглед"
-
-#~ msgid "Week view mode"
-#~ msgstr "Режим на преглед в седмици"
-
-#~ msgid "Basic week view"
-#~ msgstr "Опростен седмичен изглед"
-
-#~ msgid "Schedule View settings"
-#~ msgstr "Настройки за изглед на график"
-
-#~ msgid "Schedule view mode"
-#~ msgstr "Режим на преглед на графика"
-
-#~ msgid "Swipeable schedule view"
-#~ msgstr "Изглед на график с възможност за плъзгане"
-
-#~ msgid "Basic schedule view"
-#~ msgstr "Опростен изглед на графика"
-
-#~ msgid "Swipeable schedule view requires higher system performance."
-#~ msgstr ""
-#~ "Изгледът на график с плъзгане изисква по-висока производителност на "
-#~ "системата."
-
-#~ msgid "Tasks View settings"
-#~ msgstr "Настройки на изглед на задачи"
-
-#~ msgid "Maps"
-#~ msgstr "Карти"
-
-#~ msgid "Enable maps"
-#~ msgstr "Активиране на карти"
