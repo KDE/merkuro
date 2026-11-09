@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: merkuro\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2026-11-07 21:38+0200\n"
+"PO-Revision-Date: 2026-11-08 09:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: calendar/calendarapplication.cpp:24 calendar/calendarapplication.cpp:28
 #: calendar/qml/MainViews/TodoView.qml:66
@@ -2030,7 +2030,7 @@ msgstr "פרסום מידע לגבי מועדי זמינות אוטומטית"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:41
 #, kde-format
 msgid "Minimum upload interval (minutes)"
-msgstr ""
+msgstr "משך העלאה מזערי (דקות)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:53
 #, kde-format
@@ -2205,7 +2205,7 @@ msgstr "פתיחת פרטי האירוע ב־"
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, kde-format
 msgid "Popup"
-msgstr ""
+msgstr "חלונית צצה"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, kde-format
@@ -2275,7 +2275,7 @@ msgstr "הסתרת ימים ריקים"
 #: calendar/qml/Settings/ViewSettingsPage.qml:251
 #, kde-format
 msgid "Advanced Presentation"
-msgstr ""
+msgstr "הצגה מתקדמת"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
@@ -2285,10 +2285,9 @@ msgstr "תצוגת חודש"
 #: calendar/qml/Settings/ViewSettingsPage.qml:262
 #: calendar/qml/Settings/ViewSettingsPage.qml:281
 #: calendar/qml/Settings/ViewSettingsPage.qml:300
-#, fuzzy, kde-format
-#| msgid "Swipeable week view requires higher system performance."
+#, kde-format
 msgid "Swipeable views require higher system performance."
-msgstr "תצוגת שבוע להחלקה דורשת יותר משאבים מהמערכת."
+msgstr "תצוגות להחלקה דורשות מהמערכת יותר ביצועים."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #: calendar/qml/Settings/ViewSettingsPage.qml:285
@@ -4172,18 +4171,18 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "@info"
 msgid "%1 accepted this invitation."
-msgstr ""
+msgstr "ההזמנה אושרה על ידי %1."
 
 #: mail/calendarinvitation.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "%1 declined this invitation."
-msgstr ""
+msgstr "ההזמנה סורבה על ידי %1."
 
 #: mail/calendarinvitation.cpp:182
 #, kde-format
 msgid "No configured mail identity matches this invitation's attendee address."
-msgstr ""
+msgstr "אף אחת מזהויות הדוא״ל המוגדרות תואמת לכתובת ההשתתפות של ההזמנה הזאת."
 
 #: mail/calendarinvitation.cpp:195
 #, kde-format
@@ -4209,7 +4208,7 @@ msgstr "זהות הדוא״ל עבור %1 לא זמינה יותר."
 #, kde-format
 msgid ""
 "Configure an outgoing mail account before responding to this invitation."
-msgstr ""
+msgstr "יש להגדיר חשבון דוא״ל יוצא בטרם שליחת מענה להזמנה הזאת."
 
 #: mail/invitationresponsejob.cpp:62
 #, kde-format
@@ -4225,24 +4224,19 @@ msgstr ""
 "חשבון הדוא״ל היוצא לא זמין יותר. לוח השנה עודכן, אבל לא נוספה תגובה לתור."
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Attendees: %1"
+#, kde-format
 msgid "Accepted: %1"
-msgstr "משתתפים: %1"
+msgstr "קיבלו: %1"
 
 #: mail/invitationresponsejob.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@info:accessibility"
-#| msgid "Details: %1"
+#, kde-format
 msgid "Declined: %1"
-msgstr "פרטים: %1"
+msgstr "דחו: %1"
 
 #: mail/invitationresponsejob.cpp:115
-#, fuzzy, kde-format
-#| msgid "The incidence was saved, but could not be moved: %1"
+#, kde-format
 msgid "The calendar was updated, but the response could not be queued: %1"
-msgstr "החזרה נשמרה אך לא ניתן להעביר אותה: %1"
+msgstr "לוח השנה עודכן אבל לא ניתן להוסיף את התגובה לתור: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4727,11 +4721,10 @@ msgid "Respond as %1"
 msgstr "תגובה בתור %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:133
-#, fuzzy, kde-format
-#| msgid "Select Email Address"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Response email address"
-msgstr "בחירת כתובת דוא״ל"
+msgstr "כתובת דוא״ל לתגובה"
 
 #: mail/qml/mailpartview/ICalPart.qml:137
 #, kde-format
@@ -4746,11 +4739,10 @@ msgid "Decline"
 msgstr "דחייה"
 
 #: mail/qml/mailpartview/ICalPart.qml:153
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Responding to invitation"
-msgstr "ההודעה הזאת מכילה הזמנה"
+msgstr "תגובה להזמנה"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4811,11 +4803,10 @@ msgid "Sending Accounts"
 msgstr "החשבונות שליחה"
 
 #: mail/settings/MessageViewerSettingsPage.qml:11 mail/settings/Settings.qml:23
-#, fuzzy, kde-format
-#| msgid "Messaging"
+#, kde-format
 msgctxt "@title"
 msgid "Message Viewer"
-msgstr "התכתבות"
+msgstr "מציג הודעות"
 
 #: mail/settings/MessageViewerSettingsPage.qml:14
 #, kde-format
