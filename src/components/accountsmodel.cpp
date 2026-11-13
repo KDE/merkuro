@@ -27,7 +27,7 @@ AccountsModel::AccountsModel(QObject *parent)
     QDBusMessage rm =
         QDBusMessage::createMethodCall(u"org.kde.KOnlineAccounts"_s, u"/org/kde/KOnlineAccounts"_s, u"org.kde.KOnlineAccounts.Manager"_s, u"registerApp"_s);
 
-    rm.setArguments({u"org.kde.akonadi"_s});
+    rm.setArguments({QGuiApplication::desktopFileName()}); // register each app individually in KOnlineAccounts
     QDBusConnection::sessionBus().call(rm);
 
     // watch for granted accounts
