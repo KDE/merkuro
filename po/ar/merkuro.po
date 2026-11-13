@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalendar\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2026-11-06 14:40+0400\n"
+"PO-Revision-Date: 2026-11-12 09:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1203,11 +1203,10 @@ msgid "Email:"
 msgstr "البريد الإلكترونيّ:"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:851
-#, fuzzy, kde-format
-#| msgid "Send email"
+#, kde-format
 msgctxt "@label"
 msgid "Attendee email"
-msgstr "أرسِل بريدًا إلكترونيًا"
+msgstr "بريد الحاضر"
 
 #: calendar/qml/Dialogs/IncidenceEditorPage.qml:873
 #, kde-format
@@ -2003,26 +2002,22 @@ msgstr "افرز المهامّ"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:12
 #: calendar/qml/Settings/SourceSettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Calendar Sources"
+#, kde-format
 msgid "Calendars & Accounts"
-msgstr "مصادر التقويم"
+msgstr "التقاويم والحسابات"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:18
 #: calendar/qml/Settings/TaskSettingsPage.qml:14
 #: calendar/qml/Settings/ViewSettingsPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Calendars"
+#, kde-format
 msgid "Calendar Views"
-msgstr "التقاويم"
+msgstr "عروض التقويم"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:32
 #: calendar/qml/Settings/LocationSettingsPage.qml:11
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Location"
+#, kde-format
 msgid "Locations"
-msgstr "المكان"
+msgstr "المواقع"
 
 #: calendar/qml/Settings/ConfigurationsView.qml:40
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:14
@@ -2055,18 +2050,17 @@ msgstr "انشر معلومات الإتاحة آليًّا"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:41
 #, kde-format
 msgid "Minimum upload interval (minutes)"
-msgstr ""
+msgstr "أدنى فاصل للرفع (دقائق)"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:53
-#, fuzzy, kde-format
-#| msgid "Number of days of availability info to publish: "
+#, kde-format
 msgid "Days of availability to publish"
-msgstr "عدد أيام معلومات الإتاحة المطلوب نشرها:"
+msgstr "أيام الإتاحة للنشر"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:65
 #, kde-format
 msgid "Publishing Server"
-msgstr ""
+msgstr "خادوم النشر"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:73
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:154
@@ -2093,11 +2087,9 @@ msgid "Save password"
 msgstr "احفظ ~كلمة السر"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:113
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieving"
-msgstr "الجلب"
+msgstr "جارٍ الاسترجاع"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:121
 #, kde-format
@@ -2119,11 +2111,9 @@ msgid "Use full email address for retrieval"
 msgstr "استخدم عنوان البريد كاملًا للجلب"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Retrieval"
+#, kde-format
 msgid "Retrieval Server"
-msgstr "الجلب"
+msgstr "خادوم الاسترجاع"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:194
 #, kde-format
@@ -2133,7 +2123,7 @@ msgstr "الإجراءات"
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:202
 #, kde-format
 msgid "Publish now"
-msgstr ""
+msgstr "انشر الآن"
 
 #: calendar/qml/Settings/FreeBusySettingsPage.qml:211
 #, kde-format
@@ -2154,13 +2144,12 @@ msgstr "أرسل"
 #: calendar/qml/Settings/LocationSettingsPage.qml:14
 #, kde-format
 msgid "Maps and Location Search"
-msgstr ""
+msgstr "الخرائط والبحث عن المواقع"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Unable to find location."
+#, kde-format
 msgid "Enable maps and location search"
-msgstr "تعذر العثور على الموقع."
+msgstr "مكّن الخرائط والبحث عن المواقع"
 
 #: calendar/qml/Settings/LocationSettingsPage.qml:24
 #, kde-format
@@ -2198,10 +2187,9 @@ msgid "Show tasks in calendar views"
 msgstr "أظهر المهام  في عرض التقويم"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Show sub-tasks in calendar views"
+#, kde-format
 msgid "Show subtasks in calendar views"
-msgstr "أظهر المهام الفرعية في عرض التقويم"
+msgstr "أظهر المهام الفرعية في عروض التقويم"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:46
 #, kde-format
@@ -2209,10 +2197,9 @@ msgid "Task View"
 msgstr "عرض المهام"
 
 #: calendar/qml/Settings/TaskSettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Show completed sub-tasks"
+#, kde-format
 msgid "Show completed subtasks"
-msgstr "اعرض المهامّ الفرعية المكتملة"
+msgstr "أظهر المهام الفرعية المنجزة"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:27
 #, kde-format
@@ -2231,10 +2218,9 @@ msgid "Event Details"
 msgstr "تفاصيل الحدث"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:128
-#, fuzzy, kde-format
-#| msgid "On event start"
+#, kde-format
 msgid "Open event details in"
-msgstr "عند بدء الحدث"
+msgstr "افتح تفاصيل الحدث في"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
 #, kde-format
@@ -2242,11 +2228,9 @@ msgid "Popup"
 msgstr "منبثق"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Hide all"
+#, kde-format
 msgid "Side panel"
-msgstr "أخفِ الكل"
+msgstr "لوحة جانبية"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:145
 #, kde-format
@@ -2311,7 +2295,7 @@ msgstr "أخفِ الأيام الفارغة"
 #: calendar/qml/Settings/ViewSettingsPage.qml:251
 #, kde-format
 msgid "Advanced Presentation"
-msgstr ""
+msgstr "عرض متقدم"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:260
 #, kde-format
@@ -2321,18 +2305,16 @@ msgstr "عرض الشهر"
 #: calendar/qml/Settings/ViewSettingsPage.qml:262
 #: calendar/qml/Settings/ViewSettingsPage.qml:281
 #: calendar/qml/Settings/ViewSettingsPage.qml:300
-#, fuzzy, kde-format
-#| msgid "Swipeable week view requires higher system performance."
+#, kde-format
 msgid "Swipeable views require higher system performance."
-msgstr "يحتاج عرض الأسبوع القابل للتمرير إلى أداء عالي من النظام."
+msgstr "تتطلب العروض القابلة للسحب أداءً أعلى للنظام."
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:266
 #: calendar/qml/Settings/ViewSettingsPage.qml:285
 #: calendar/qml/Settings/ViewSettingsPage.qml:304
-#, fuzzy, kde-format
-#| msgid "Swipeable week view"
+#, kde-format
 msgid "Swipeable"
-msgstr "عرض أسبوع قابل للتمرير"
+msgstr "قابل للسحب"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:267
 #: calendar/qml/Settings/ViewSettingsPage.qml:286
@@ -2352,10 +2334,9 @@ msgid "Schedule view"
 msgstr "عرض الجدولة"
 
 #: calendar/qml/Settings/ViewSettingsPage.qml:316
-#, fuzzy, kde-format
-#| msgid "Grid border width (pixels):"
+#, kde-format
 msgid "Month grid border width (pixels)"
-msgstr "عرض حدود الشبكة (بكسل):"
+msgstr "عرض حدود شبكة الشهر (بكسل)"
 
 #: calendar/recurrencedata.cpp:31
 #, kde-format
@@ -4249,28 +4230,28 @@ msgstr "مجهول"
 #, kde-format
 msgctxt "@info"
 msgid "%1 accepted this invitation."
-msgstr ""
+msgstr "قبل %1 هذه الدعوة."
 
 #: mail/calendarinvitation.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "%1 declined this invitation."
-msgstr ""
+msgstr "رفض %1 هذه الدعوة."
 
 #: mail/calendarinvitation.cpp:182
 #, kde-format
 msgid "No configured mail identity matches this invitation's attendee address."
-msgstr ""
+msgstr "لا تطابق أي هوية بريد مضبوطة عنوان حاضر هذه الدعوة."
 
 #: mail/calendarinvitation.cpp:195
 #, kde-format
 msgid "You accepted this invitation. A response has been queued."
-msgstr ""
+msgstr "قبلت هذه الدعوة. وُضع الرد في قائمة الانتظار."
 
 #: mail/calendarinvitation.cpp:196
 #, kde-format
 msgid "You declined this invitation. A response has been queued."
-msgstr ""
+msgstr "رفضت هذه الدعوة. وُضع الرد في قائمة الانتظار."
 
 #: mail/identity/identitykeylistmodel.cpp:34
 #, kde-format
@@ -4278,23 +4259,20 @@ msgid "No key"
 msgstr "بلا مفتاح"
 
 #: mail/invitationresponsejob.cpp:41
-#, fuzzy, kde-format
-#| msgid "The calendar is no longer available."
+#, kde-format
 msgid "The mail identity for %1 is no longer available."
-msgstr "لم يعد التقويم متاحًا."
+msgstr "هوية البريد لـ %1 لم تعد متاحة."
 
 #: mail/invitationresponsejob.cpp:47
 #, kde-format
 msgid ""
 "Configure an outgoing mail account before responding to this invitation."
-msgstr ""
+msgstr "اضبط حساب بريد صادر قبل الرد على هذه الدعوة."
 
 #: mail/invitationresponsejob.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Could not prepare the contact for sharing."
+#, kde-format
 msgid "Could not update the calendar for this invitation."
-msgstr "تعذّر تحضير المتراسل للمشاركة."
+msgstr "تعذر تحديث التقويم لهذه الدعوة."
 
 #: mail/invitationresponsejob.cpp:76
 #, kde-format
@@ -4302,6 +4280,8 @@ msgid ""
 "The outgoing mail account is no longer available. The calendar was updated, "
 "but no response was queued."
 msgstr ""
+"حساب البريد الصادر لم يعد متاحًا. حُدّث التقويم، لكن لم يُوضع أي رد في قائمة "
+"الانتظار."
 
 #: mail/invitationresponsejob.cpp:85
 #, kde-format
@@ -4314,10 +4294,9 @@ msgid "Declined: %1"
 msgstr "رُفضت: %1"
 
 #: mail/invitationresponsejob.cpp:115
-#, fuzzy, kde-format
-#| msgid "The incidence was saved, but could not be moved: %1"
+#, kde-format
 msgid "The calendar was updated, but the response could not be queued: %1"
-msgstr "حُفظ الحدث، لكن تعذّر نقله: %1"
+msgstr "حُدّث التقويم، لكن تعذر وضع الرد في قائمة الانتظار: %1"
 
 #: mail/mailapplication.cpp:26
 #, kde-format
@@ -4705,7 +4684,7 @@ msgstr "رُد إلى:"
 #, kde-format
 msgctxt "@label"
 msgid "Recipient"
-msgstr ""
+msgstr "المستلم"
 
 #: mail/qml/MailComposer.qml:134
 #, kde-format
@@ -4800,14 +4779,13 @@ msgstr "التفاصيل: %1"
 #, kde-format
 msgctxt "@label"
 msgid "Respond as %1"
-msgstr ""
+msgstr "رد بصفتك %1"
 
 #: mail/qml/mailpartview/ICalPart.qml:133
-#, fuzzy, kde-format
-#| msgid "Select Email Address"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Response email address"
-msgstr "اختر عنوان بريد إلكتروني"
+msgstr "عنوان بريد الرد"
 
 #: mail/qml/mailpartview/ICalPart.qml:137
 #, kde-format
@@ -4822,11 +4800,10 @@ msgid "Decline"
 msgstr "ارفض"
 
 #: mail/qml/mailpartview/ICalPart.qml:153
-#, fuzzy, kde-format
-#| msgid "This mail contains an invitation"
+#, kde-format
 msgctxt "@info:accessibility"
 msgid "Responding to invitation"
-msgstr "هذا البريد يحوي دعوة"
+msgstr "الرد على الدعوة"
 
 #: mail/qml/private/MailDelegate.qml:187
 #, kde-format
@@ -4898,7 +4875,7 @@ msgstr "عارض الرّسائل"
 #, kde-format
 msgctxt "@title:group"
 msgid "Message Display"
-msgstr ""
+msgstr "عرض الرسالة"
 
 #: mail/settings/MessageViewerSettingsPage.qml:21
 #, kde-format
