@@ -172,8 +172,6 @@ target_link_libraries(merkuro-mail
         mail_settingsplugin
         merkuro_mail_staticplugin
         merkuro_mail_static
-)
-target_link_libraries(merkuro-mail PRIVATE
         KF6::I18nQml
 )
 install(TARGETS merkuro-mail ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -22,10 +22,7 @@ target_link_libraries(merkurolauncher PUBLIC
     KF6::Crash
     KF6::KIOWidgets
     KirigamiApp
-)
-
-target_link_libraries(merkurolauncher PRIVATE
-        KF6::I18nQml
+    KF6::I18nQml
 )
 
 install(TARGETS merkurolauncher ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

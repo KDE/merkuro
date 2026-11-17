@@ -223,9 +223,7 @@ target_link_libraries(merkuro-contact
         KF6::IconThemes
         KirigamiApp
         KPim6::Libkleo
-)
-target_link_libraries(merkuro-contact PUBLIC
-   KF6::I18nQml
+        KF6::I18nQml
 )
 
 install(TARGETS merkuro-contact ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
