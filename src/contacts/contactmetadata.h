@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <QList>
 #include <QVariant>
 
 namespace Akonadi

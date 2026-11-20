@@ -5,6 +5,7 @@
 
 #include <KHolidays/HolidayRegion>
 #include <QDate>
+#include <QMap>
 #include <QObject>
 #include <merkurokdatetime.h>
 #include <qqmlintegration.h>

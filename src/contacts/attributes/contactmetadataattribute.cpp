@@ -10,6 +10,7 @@
 
 #include <QDataStream>
 #include <QIODevice>
+#include <QMap>
 
 class ContactMetaDataAttributePrivate
 {

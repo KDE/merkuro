@@ -10,6 +10,7 @@
 #include <KFormat>
 #include <KLocalizedString>
 #include <KMime/Message>
+#include <QMap>
 using namespace Qt::Literals::StringLiterals;
 QVariant AbstractMailModel::dataFromItem(const Akonadi::Item &item, int role) const
 {

@@ -6,6 +6,7 @@
 #include "attributes/contactmetadataattribute_p.h"
 
 #include <Akonadi/Item>
+#include <QMap>
 
 using namespace Akonadi;
 using namespace Qt::Literals::StringLiterals;
