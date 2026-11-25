@@ -56,6 +56,15 @@ Item {
             return item;
         }
 
+	// BUG: 526144
+        function test_loadingNonRecurringEventDoesNotAddRule(): void {
+            const editor = createTemporaryObject(editorComponent, root, {
+                incidenceWrapper: root.wrapper
+            });
+            verify(!!editor, "Component exists");
+            compare(editorTestHelper.draftContents(root.wrapper).includes("RRULE:"), false);
+        }
+
         function test_loadingPreservesRule_data(): list<var> {
             return [
                 {
