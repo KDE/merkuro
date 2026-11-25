@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "merkuro_contact_export.h"
+
 #include <QQuickAsyncImageProvider>
 #include <qqmlintegration.h>
 
@@ -24,7 +26,7 @@ private:
     AvatarImageProvider() = default;
 };
 
-class AvatarResponse : public QQuickImageResponse
+class MERKURO_CONTACT_EXPORT AvatarResponse : public QQuickImageResponse
 {
 public:
     AvatarResponse(const QString &itemId);

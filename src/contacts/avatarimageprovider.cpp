@@ -3,11 +3,11 @@
 
 #include "avatarimageprovider.h"
 #include "contactimageprovider.h"
-#include "contactmanager.h"
 
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <KContacts/Addressee>
+#include <QCoreApplication>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -29,29 +29,24 @@ QQuickImageResponse *AvatarImageProvider::requestImageResponse(const QString &id
 
 AvatarResponse::AvatarResponse(const QString &itemId)
 {
-    auto item = ContactManager::create(nullptr, nullptr)->getItem(itemId.toInt());
-    if (!item.hasPayload<KContacts::Addressee>()) {
-        // Payload not found, try to fetch it
-        auto job = new Akonadi::ItemFetchJob(item);
-        job->fetchScope().fetchFullPayload();
-        connect(job, &Akonadi::ItemFetchJob::result, this, [this](KJob *job) {
-            auto fetchJob = qobject_cast<Akonadi::ItemFetchJob *>(job);
-            auto item = fetchJob->items().at(0);
-            if (item.hasPayload<KContacts::Addressee>()) {
-                auto addressee = item.payload<KContacts::Addressee>();
-                if (addressee.photo().isIntern()) {
-                    m_image = addressee.photo().data();
-                    Q_EMIT finished();
+    moveToThread(QCoreApplication::instance()->thread());
+    QMetaObject::invokeMethod(
+        this,
+        [this, itemId]() {
+            auto job = new Akonadi::ItemFetchJob(Akonadi::Item(itemId.toLongLong()), this);
+            job->fetchScope().fetchFullPayload();
+            connect(job, &KJob::result, this, [this, job]() {
+                const auto items = job->items();
+                if (!job->error() && !items.isEmpty() && items.first().hasPayload<KContacts::Addressee>()) {
+                    const auto photo = items.first().payload<KContacts::Addressee>().photo();
+                    if (photo.isIntern()) {
+                        m_image = photo.data();
+                    }
                 }
-            }
-        });
-    } else {
-        auto addressee = item.payload<KContacts::Addressee>();
-        if (addressee.photo().isIntern()) {
-            m_image = addressee.photo().data();
-            Q_EMIT finished();
-        }
-    }
+                Q_EMIT finished();
+            });
+        },
+        Qt::QueuedConnection);
 }
 
 QQuickTextureFactory *AvatarResponse::textureFactory() const
