@@ -131,7 +131,8 @@ FormCard.FormCard {
     FormCard.FormTextFieldDelegate {
         visible: root.displayAdvancedNameFields
         label: KI18n.i18n("Nickname")
-        onTextChanged: root.contactEditor.contact.nickName = text
+        objectName: "nicknameField"
+        onTextEdited: root.contactEditor.contact.nickName = text
         text: root.contactEditor.contact.nickName
         placeholderText: KI18n.i18n("Alternative name")
     }
